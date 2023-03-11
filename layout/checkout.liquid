@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="{{ locale }}" dir="{{ direction }}" class="{{ checkout_html_classes }}">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, user-scalable=0">
+  <meta name="referrer" content="origin">
+
+  <title>{{ page_title }}</title>
+
+  {{ content_for_header }}
+
+  {{ checkout_stylesheets }}
+  {{ checkout_scripts }}
+
+<!--   <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/webTrack.js?v=1675687114"></script> -->
+  <script type="text/javascript"
+    src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/checkout.min.js?v=1670899417"></script>
+
+  <!--     clarity  -->
+  <script type="text/javascript">
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", "bnj03r1wrv");
+  </script>
+  <!-- Taboola Pixel Code -->
+  <script type='text/javascript'>
+    window._tfa = window._tfa || [];
+    window._tfa.push({ notify: 'event', name: 'page_view', id: 1410404 });
+    !function (t, f, a, x) {
+      if (!document.getElementById(x)) {
+        t.async = 1; t.src = a; t.id = x; f.parentNode.insertBefore(t, f);
+      }
+    }(document.createElement('script'),
+      document.getElementsByTagName('script')[0],
+      '//cdn.taboola.com/libtrc/unip/1410404/tfa.js',
+      'tb_tfa_script');
+  </script>
+  <!-- End of Taboola Pixel Code -->
+
+  <!-- Bing UET checkout -->
+  <!--<script>(function(w,d,t,r,u){var f,n,i;w[u]=w[u]||[],f=function(){var o={ti:"137013457", tm="shpfy_ui"};o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")},n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function(){var s=this.readyState;s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null)},i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i)})(window,document,"script","//bat.bing.com/bat.js","uetq");</script>
+-->
+  <script>(function (w, d, t, r, u) { var f, n, i; w[u] = w[u] || [], f = function () { var o = { ti: "52014030" }; o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad") }, n = d.createElement(t), n.src = r, n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && s !== "loaded" && s !== "complete" || (f(), n.onload = n.onreadystatechange = null) }, i = d.getElementsByTagName(t)[0], i.parentNode.insertBefore(n, i) })(window, document, "script", "//bat.bing.com/bat.js", "uetq");</script>
+
+  <script>window.uetq = window.uetq || []; window.uetq.push('event', 'begin_checkout', { "revenue_value": '{{ checkout.total_price | divided_by:100.0}}', "currency": "USD" });</script>
+  <!-- End of Bing UET checkout -->
+</head>
+
+<body>
+  {{ skip_to_content_link }}
+
+  <header class="banner" data-header role="banner">
+    <div class="wrap">
+      {{ content_for_logo }}
+    </div>
+  </header>
+
+  {{ order_summary_toggle }}
+  <div class="content" data-content>
+    <div class="wrap">
+      <div class="main">
+        <header class="main__header" role="banner">
+          {{ content_for_logo }}
+          {{ breadcrumb }}
+          {{ alternative_payment_methods }}
+        </header>
+        <main class="main__content" role="main">
+          {{ content_for_layout }}
+        </main>
+        <!--           <footer class="main__footer" role="contentinfo">
+            {{ content_for_footer }}
+          </footer> -->
+      </div>
+      <aside class="sidebar" role="complementary">
+        <div class="sidebar__header">
+          {{ content_for_logo }}
+        </div>
+        <div class="sidebar__content">
+          {{ content_for_order_summary }}
+        </div>
+      </aside>
+    </div>
+  </div>
+  {% assign backIndexArr = ""%}
+  {% assign speedBikeIdStr =
+  "43556899619064,43556899651832,43556899684600,43556899717368,43556899750136,43556895916280,43556895981816,43556896047352,43556899782904,43556899815672,43556895949048,43556896014584,43556896080120,43556899848440,43556899881208"
+  %}
+  {%assign isSpeedBike = false%}
+  {%assign isCarbonBikeBack = false%}
+  {% assign speedBikeIdArr = speedBikeIdStr|split:","%}
+  {% assign bikeQuantity = 0 %}
+  {% assign discountSavedPrice = 0 %}
+  {%- for item in checkout.line_items -%}
+  {%- if item.title contains "Carbon One" -%}
+  {%assign isEbike = true%}
+  {%- assign bikeQuantity = bikeQuantity | plus:item.quantity -%}
+  {%- assign saveCost = bikeQuantity| times:60000 -%}
+  {%- endif -%}
+  {%- if speedBikeIdStr contains item.variant.id -%}
+  {%assign isSpeedBike = true%}
+  {%- endif -%}
+  {%- if item.variant.inventory_quantity <= 0 -%} {% assign isCarbonBikeBack=true %}{%- assign temp=forloop.index -%}
+    {%- assign backIndexArr=backIndexArr | append: "," |append:temp -%} {%- endif -%} {%- assign
+    discountSavedPrice=discountSavedPrice | plus:item.original_line_price | minus:item.final_line_price -%} {%- endfor
+    -%} <div id="note-info" class=" hidden order-summary__section">
+    {%-if isEbike == true -%}
+    <div class="origin-old-price payment-due__price skeleton-while-loading--lg">
+      {% assign totalSaved = saveCost | plus: discountSavedPrice %}
+      {{checkout.total_price| plus:totalSaved |money}}
+    </div>
+    <!--     <div class="notification-tips"><img
+        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/cart-tipsicon.png?" />You saved
+      {{totalSaved |money}}!
+    </div> -->
+    {%-endif-%}
+<!--     <div class="notification-tips"><img
+        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/cart-tipsicon.png?" />
+      <span>Ships within 3-5 business days from local warehouse</span>
+    </div> -->
+    <div class="note-info-wrapper">
+      <p>Notes :&nbsp;</p>
+      <ul>
+        <li>
+          Bike orders may arrive separate from accessories. To ensure that our customers can get hands on the bike
+          ASAP.&nbsp;
+        </li>
+        <li>
+          Taxes will be calculated at payment.&nbsp;
+        </li>
+        <li>
+          We <strong>DO NOT</strong> ship to PO BOXES.
+        </li>
+<!--         <li>
+          Free accessories ships 1 week after the promotions ends from L.A. warehouse.
+        </li> -->
+        <li class="discount-code-tip">
+          If you discount is not correct,<br />please contact <a style="color:#fd4b17"
+            href="mailto:support@newurtopia.com">support@newurtopia.com</a>
+        </li>
+      </ul>
+    </div>
+    <div class="note-credit"><img class="credit-icon"
+        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/credit-card_2x_ea106d45-745a-4ffb-9f94-400068bfe194.png?v=1671520567">100%
+      Secure Payment</div>
+    <img class="note-img"
+      src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_19448_2x_0ee4099d-65d1-4fda-bf59-8d85c19625a1.jpg?v=1671520224">
+    </div>
+    {{ tracking_code }}
+</body>
+
+</html>
+
+
+<style>
+  div.content[data-content] {
+    overflow-y: auto;
+  }
+
+  aside.sidebar {
+    height: 107%;
+  }
+
+  #order-summary>div>div.order-summary__section.order-summary__section--total-lines>table>tbody>tr.total-line.total-line--shipping>th>a {
+    display: none;
+  }
+
+  .order-summary__section {
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+  }
+
+  .origin-old-price {
+    position: relative;
+    top: -15px;
+    text-align: right;
+    text-decoration: line-through;
+    opacity: .7;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
+  #note-info {
+    padding: 0;
+    border: 0;
+  }
+
+  .notification-tips {
+    display: flex;
+    margin: 0 0 9px 0;
+    padding: 3px 15px;
+    font-size: 14px;
+    text-align: left;
+    color: #ff612f;
+    background-color: #EDEEEE;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .notification-tips img {
+    width: 28px;
+    margin-right: 11px;
+  }
+
+  .note-info-wrapper {
+    max-width: 100%;
+    padding: 15px;
+    background: #f1f1f1;
+    border: 1px solid #f1f1f1;
+    border-radius: 4px;
+  }
+
+  .note-info-wrapper>p {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .note-info-wrapper>ul {
+    margin-left: 15px;
+    list-style-type: initial;
+  }
+
+  .note-credit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 9px;
+    background-color: #F4F8FD;
+    border-radius: 5px;
+    font: normal normal 500 16px/19px Urbane;
+    letter-spacing: 0px;
+    color: #000000;
+  }
+
+  .credit-icon {
+    width: 28px;
+    margin-right: 10px;
+  }
+
+  .note-img {
+    margin: 9px 0;
+    border-radius: 10px;
+  }
+
+  .note-info-wrapper>ul>li {
+    font-size: 14px;
+  }
+
+  li::marker {
+    color: #fd4b17;
+  }
+
+  .produt-list-toggle__text {
+    display: none;
+    cursor: pointer;
+    margin-bottom: 15px;
+  }
+
+  .produt-list-toggle__text.product-list-toggle__text--show {
+    margin-bottom: 0;
+  }
+
+  .discount-code-tip {
+    display: none;
+  }
+
+  @media (min-width: 1000px) {
+    .order-summary__section {
+      -webkit-box-flex: 0;
+      -webkit-flex: 0 0 auto;
+      -ms-flex: 0 0 auto;
+      flex: 0 0 auto;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    .product-table>tbody {
+      visibility: hidden;
+      position: absolute;
+    }
+  }
+
+  /*
+  .order-summary-toggle {
+         display: none;
+      }
+      
+      .js .order-summary--is-collapsed {
+        height: auto;
+        visibility: visible;
+      }*/
+</style>
+<script type="text/javascript"
+  src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/additionalScript.js?v=1662350955" defer></script>
+<script>
+  let $ = Checkout.$;
+  var backIndexArr = String('{{ backIndexArr }}');
+  var speedBikeIdArr = Array('{{ speedBikeIdArr }}');
+  var isSpeedBike = String('{{isSpeedBike}}');
+  var isCarbonBikeBack = String('{{isCarbonBikeBack}}');
+  backIndexArr.split(",").forEach((item) => {
+    if (item != '') {
+      let index = item - 1;
+      $(".product__description").eq(index).append("<span>Back-ordered Item</span>")
+    }
+  })
+  // if (isSpeedBike != "false") {
+  //   $(".notification-tips span").html("This is a back-ordered item to be shipped on Mar 15-31, 2023.")
+  // } else if (isCarbonBikeBack != "false") {
+  //   $(".notification-tips span").html("This is a back-ordered item to be shipped on Feb 10-25, 2023.")
+  // }
+  $("div.sidebar__content").change(function () {
+    backIndexArr.forEach((item) => {
+      let index = item - 1;
+      let isChange = false;
+      let times = 10000;
+      setTimeout(() => {
+        while ($(".product__description").eq(index) && !isChange && times) {
+          if (!$(".product__description").eq(index).html().includes("<span>Back-ordered Item</span>")) {
+            $(".product__description").eq(index).append("<span>Back-ordered Item</span>")
+            isChange = true;
+          }
+          times--;
+        }
+      }, 2000)
+    })
+  })
+</script>

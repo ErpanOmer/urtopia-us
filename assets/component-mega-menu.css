@@ -1,0 +1,173 @@
+.mega-menu {
+  position: static;
+}
+
+.mega-menu__content {
+  background-color: rgb(var(--color-background));
+  border-left: 0;
+  border-radius: 0;
+  border-right: 0;  
+  left: 0;
+  overflow-y: auto;
+  padding-bottom: 2.4rem;
+  padding-top: 2.4rem;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  z-index: -1;
+}
+
+.shopify-section-header-sticky .mega-menu__content {
+  max-height: calc(100vh - var(--header-bottom-position-desktop, 20rem) - 4rem);
+}
+
+.header-wrapper--border-bottom .mega-menu__content {
+  border-top: 0;
+}
+
+.js .mega-menu__content {
+  opacity: 0;
+  transform: translateY(-1.5rem);
+}
+
+.mega-menu[open] .mega-menu__content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mega-menu__list {
+  display: grid;
+  gap: 2.4rem 4rem;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  list-style: none;
+}
+
+.mega-menu__link {
+  color: rgba(var(--color-foreground), 0.75);
+  display: block;
+  font-size: 1.3rem;
+  line-height: calc(1 + 0.3 / var(--font-body-scale));
+  padding-bottom: 0.6rem;
+  padding-top: 0.6rem;
+  text-decoration: none;
+  transition: text-decoration var(--duration-short) ease;
+  word-wrap: break-word;
+}
+
+.mega-menu__link--level-2 {
+  font-size: 1.4rem;
+}
+
+.mega-menu__link--level-2:not(:only-child) {
+  margin-bottom: 0.8rem;
+}
+
+.header--top-center .mega-menu__list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: 0;
+}
+
+.header--top-center .mega-menu__list > li {
+  width: 16%;
+  padding-right: 2.4rem;
+}
+
+.mega-menu__link:hover,
+.mega-menu__link--active {
+  color: rgb(var(--color-foreground));
+  text-decoration: underline;
+}
+
+.mega-menu__link--active:hover {
+  text-decoration-thickness: 0.2rem;
+}
+
+.mega-menu .mega-menu__list--condensed {
+  display: block;
+}
+
+.mega-menu__list--condensed .mega-menu__link {
+  font-weight: normal;
+}
+
+/* 自定义超级菜单样式开始 */
+.ebike_shippment{
+  display: flex;
+  margin-bottom:28px;
+}
+.ebike_shippment>div{
+  margin-right:20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ebike_shippment>div img{
+  margin-right:10px;
+  width:25px;
+  height:25px;
+}
+.ebike_shippment .ship_font{
+  font:font: normal normal 500 16px/18px urbane;
+}
+.mega_ebike_content {
+  padding:15px 0px;
+  box-shadow: 0 10px 20px rgb(0 0 0 / 20%);
+  background:#fff !important;
+}
+.mega-menu .mega-menu__list--condensed.mega_ebike_ul{
+  display:flex;
+  justify-content: space-between;
+}
+.mega-menu .mega-menu__list--condensed.mega_ebike_ul li{
+  width: 48%;
+  padding-left: 2.4rem;
+  height: 270px;
+  overflow: hidden;
+  background: #F7F8FA;
+  border-radius: 15px;
+  transition: all .7s ease;
+}
+.mega-menu .mega-menu__list--condensed.mega_ebike_ul li:hover{
+  background-position-x: 100px !important;
+}
+
+.mega-menu .mega-menu__list--condensed.mega_ebike_ul li:nth-child(2){
+  background: #F7F8FA url(https://cdn.shopify.com/s/files/1/0583/5810/4213/files/nav_chord.png?v=1678241443) bottom left/100% no-repeat;
+}
+.mega-menu .mega-menu__list--condensed.mega_ebike_ul li:nth-child(1){
+  background: #F7F8FA url(https://cdn.shopify.com/s/files/1/0583/5810/4213/files/nav_bike.png?v=1678241443) bottom left/100% no-repeat;
+}
+.mega-menu .mega-menu__list--condensed.mega_ebike_ul a{
+  width: 100%;
+  height: 100%;
+  padding-top: 20px;
+  text-decoration:none;
+}
+.mega-menu .mega-menu__list--condensed.mega_ebike_ul h2{
+  margin: 0;
+  font: normal normal 600 24px/28px urbane;
+  color: #000;
+}
+.mega-menu .mega-menu__list--condensed.mega_ebike_ul p{
+  margin: 0;
+  font: normal normal 500 16px/18px urbane;
+  color: #000;
+}
+.chord_new{
+  position:relative;
+}
+.chord_new:after{
+  display: inline-block;
+  content: "New";
+  position: absolute;
+  top: 20px;
+  right: 32px;
+  background: #263B55;
+  color: #ffff;
+  padding: 4px 16px;
+  border-radius: 16px;
+}
+/* 自定义超级菜单样式结束 */
+

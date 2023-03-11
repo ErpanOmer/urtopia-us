@@ -1,0 +1,201 @@
+{
+  "sections": {
+    "1657212710159ada39": {
+      "type": "image-banner",
+      "blocks": {
+        "1657212710e2c184de-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Happy Test-Riding a Urtopia",
+            "heading_size": "h1"
+          }
+        },
+        "1657212710e2c184de-1": {
+          "type": "text",
+          "settings": {
+            "text": "Here we are! Check out our partner stores and give the bike a spin for free. Feel the Urtopia joy!",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "1657212710e2c184de-0",
+        "1657212710e2c184de-1"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/20220619-untitled-9871.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "small",
+        "adapt_height_first_image": true,
+        "desktop_content_position": "middle-right",
+        "show_text_box": true,
+        "desktop_content_alignment": "left",
+        "color_scheme": "background-2",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "1657260029ffcb7594": {
+      "type": "rich-text",
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "1657259341dfa77e5a": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<!-- Start Stockist.co widget -->\n<div class=\"page-width\">\n<div data-stockist-widget-tag=\"u12821\">Loading store locator\nfrom <a href=\"https:\/\/stockist.co\">Stockist store locator<\/a>...<\/div>\n<script>\n  (function(s,t,o,c,k){c=s.createElement(t);c.src=o;c.async=1;\n  k=s.getElementsByTagName(t)[0];k.parentNode.insertBefore(c,k);\n  })(document,'script','\/\/stockist.co\/embed\/v1\/widget.min.js');\n<\/script>\n<\/div>\n\n<!-- End Stockist.co widget -->",
+        "color_scheme": "background-1",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 24,
+        "padding_bottom": 24
+      }
+    },
+    "16572168942d117b22": {
+      "type": "image-with-text",
+      "blocks": {
+        "16572168943735c795-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Ride Before You Own It...",
+            "heading_size": "h2"
+          }
+        },
+        "16572168943735c795-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>But there is more! We partner with selected stores across the country to make the Urtopia dream within your reach. Our retail partners' extensive expertise will help you avoid headaches in fine-tuning and problem diagnosis, keeping your bike and yourself always in the best shape.<\/p><p><\/p><p>More stores are on the way, so keep coming back!<\/p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "16572168943735c795-0",
+        "16572168943735c795-1"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/20220620-untitled-2729.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "1657212330e7f0de41": {
+      "type": "image-with-text",
+      "blocks": {
+        "1657212330d0c5091a-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "No shops around you?",
+            "heading_size": "h2"
+          }
+        },
+        "1657212330d0c5091a-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Recommend your favorite stores to us, we’ll make it true!<br\/><\/p>",
+            "text_style": "body"
+          }
+        },
+        "1657212330d0c5091a-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Contact Us",
+            "button_link": "shopify:\/\/pages\/contactus"
+          }
+        }
+      },
+      "block_order": [
+        "1657212330d0c5091a-0",
+        "1657212330d0c5091a-1",
+        "1657212330d0c5091a-2"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/20220708-123307.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 60
+      }
+    },
+    "16572756762ff1b2e9": {
+      "type": "image-with-text",
+      "blocks": {
+        "165727567667310b21-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Don't hesitate to Order",
+            "heading_size": "h1"
+          }
+        },
+        "165727567667310b21-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The sooner you order the sooner you ride.<\/p>",
+            "text_style": "body"
+          }
+        },
+        "165727567667310b21-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Buy Now",
+            "button_link": "shopify:\/\/products\/urtopia-carbon-e-bike-2"
+          }
+        }
+      },
+      "block_order": [
+        "165727567667310b21-0",
+        "165727567667310b21-1",
+        "165727567667310b21-2"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/E-Bike119.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "1657212710159ada39",
+    "1657260029ffcb7594",
+    "1657259341dfa77e5a",
+    "main",
+    "16572168942d117b22",
+    "1657212330e7f0de41",
+    "16572756762ff1b2e9"
+  ]
+}

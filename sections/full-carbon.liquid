@@ -1,0 +1,209 @@
+
+  <section id="full-carbon" class="normalSection">
+    <div class="full-carbon-container wrappedbox pc-box">
+      
+      <div class="full-carbon-img">
+
+          {% if section.settings.img != blank %}
+                {% assign default_src = section.settings.img | img_url: 'master' %}
+            <img
+              src="{{ default_src }}"
+              alt="{{ section.settings.img.alt | escape }}"
+              loading="lazy"
+            />
+
+          {% endif %}
+
+      </div>
+      
+      
+      
+      <div class="full-carbon-des">
+        <div>
+          <span class="carbonTitle">Full Carbon</span>
+          <br>
+          <span class="carbonDes">Only 33 lbs.(15kg)</span>
+        </div>
+        {% if section.settings.text != blank %}
+        	<div class="des">{{section.settings.text}}</div>
+        {% endif %}
+        <div class="" style="borderRadius:30px">
+
+          {% if section.settings.right-img != blank %}
+                {% assign default_src = section.settings.right-img | img_url: 'master' %}
+            <img
+              src="{{ default_src }}"
+              alt="{{ section.settings.right-img.alt | escape }}"
+              loading="lazy"
+            />
+
+          {% endif %}
+
+         </div>
+      </div>          
+    </div>
+
+    <div class="full-carbon-container wrappedbox mobile-box">  
+      
+      <div class="full-carbon-des">
+        <div>
+          <span class="carbonTitle">Full Carbon</span>
+          <br>
+          <span class="carbonDes">Only 33 lbs.(15kg)</span>
+        </div>
+
+        <div class="full-carbon-img">
+
+          {% if section.settings.img != blank %}
+                {% assign default_src = section.settings.img | img_url: 'master' %}
+            <img
+              src="{{ default_src }}"
+              alt="{{ section.settings.img.alt | escape }}"
+              loading="lazy"
+            />
+
+          {% endif %}
+
+      </div>
+        
+        {% if section.settings.text != blank %}
+        	<div class="des" style="margin:24px 0px">{{section.settings.text}}</div>
+        {% endif %}
+
+      </div>
+
+      
+      
+    </div>
+    
+  <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1.14.2-TweenMax.js?v=1663912518"></script>
+  <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2.0.3-ScrollMagic.min.js?v=1663912592"></script>
+  <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2.0.3-animation.gsap.js?v=1663912682"></script>
+  <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2.0.3-debug.addIndicators.js?v=1663912891"></script>
+    <script>
+      
+      var fun_carbon_state1 = new TimelineMax({repeat: -1})
+      .add(TweenMax.to(".full-carbon-img>img", 1, { y:7,x:-3.5,  ease:Back }))
+      .add(TweenMax.to(".full-carbon-img>img", 1, { y:0, x:0,  ease:Back }))
+      
+      var h = document.getElementById("full-carbon").offsetHeight
+      new ScrollMagic.Scene({ triggerElement:"section#full-carbon", triggerHook:"1", duration:"100%"})
+        .setTween(fun_carbon_state1)
+        .addTo(controller);
+      
+    </script>
+      
+  </section>
+
+
+<style>
+  .full-carbon-container{
+  	display:flex;
+    align-items: flex-start;    
+  }
+  .full-carbon-container>div{
+  	flex:1;
+  }
+  .full-carbon-img{
+    position:relative;
+    z-index:1;
+  }
+  .full-carbon-img img{
+    width:100%;
+  }
+  .full-carbon-des{
+    transform:translate(-80px,0px);
+  }
+  .full-carbon-des > div:nth-child(1){
+  	line-height:2em;
+  }
+  .full-carbon-des img{
+    width:100%;
+    border-radius:30px;
+  }
+  .full-carbon-des .carbonTitle{
+  	font-weight:700;
+    font-size:48px;
+    background-image: linear-gradient(113deg, #283141 0%, #737A84 50%, #95a7b79e 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+  .full-carbon-des  .carbonDes{
+  	color:#161C1FA6;
+    font-size:30px;
+  }
+  .full-carbon-des  .carbonDes{
+  	color:#161C1FA6;
+    font-size:30px;
+    font-weight:600;
+  }
+  .full-carbon-des > .des{
+    margin:24px 0px;
+  }
+  .ebikebanner .stateBottom .responsive-image-wrapper{
+  	height:100%;
+    align-items: flex-end;
+  }
+
+  @media screen and (max-width: 990px){
+    section#full-carbon{
+    	max-height:unset;
+      height:auto;
+    }
+    .full-carbon-des>.full-carbon-img img{
+      width:80%;
+      max-height:540px;
+    }
+    .full-carbon-des{
+      font-size:30px;
+      transform:none;
+    }
+    .full-carbon-des .carbonTitle{
+    	font-size:48px;
+    }
+    .full-carbon-des > div:nth-child(1){
+    	line-height:normal;
+    }
+    .mobile-box .full-carbon-des .carbonDes{
+      font-size:30px;
+      line-height:30px;
+    }
+    .mobile-box .full-carbon-des .des{
+      margin-top:0px !important;
+    }
+  }
+
+
+</style>
+
+{% schema %}
+  {
+    "name": "full-carbon",	
+	"class":"full-carbon",
+    "settings": [
+		{
+			"type":"text",
+			"id":"text",
+			"label":"Des"
+		},
+		{
+			"type":"image_picker",
+			"id":"img",
+			"label":"图片1"
+		},
+		{
+			"type":"image_picker",
+			"id":"right-img",
+			"label":"图片2"
+		}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
+

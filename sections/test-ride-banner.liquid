@@ -1,0 +1,168 @@
+
+<div class="testRideImgWrapped">
+    {% if section.settings.img == blank %}
+        <div class="placeholder-wrap">
+            {{ 'image' | placeholder_svg_tag: 'icon icon--placeholder' }}
+        </div>
+    {% else %}
+        {% render 'responsive-image' with section.settings.img, alt: section.settings.img.alt, class: class %}
+    {% endif %}
+  
+</div>
+
+<div  class="testRideMobileImgWrapped">  
+  	{% if section.settings.mobile-img == blank %}
+        <div class="placeholder-wrap">
+            {{ 'image' | placeholder_svg_tag: 'icon icon--placeholder' }}
+        </div>
+    {% else %}
+        {% render 'responsive-image' with section.settings.mobile-img, alt: section.settings.mobile-img.alt, class: class %}
+    {% endif %}
+</div>
+
+<div class="eblikeBox">
+    <div class="eblikeInfo">
+        {% if section.settings.Heading != blank %}
+            <div>{{ section.settings.Heading }}</div>
+        {% endif %}
+        {% if section.settings.button != blank %}
+            <a  class="bannerBtn" href={{section.settings.link}}>{{section.settings.button}}</a>
+        {% endif %}
+    </div>
+</div>
+
+<style>
+  .banner2{
+      position: relative;
+      overflow: hidden;
+    }
+  .banner2 .eblikeInfo strong{
+    font-size:48px;
+    line-height:67.2px;
+    font-family:ProximaNova Bold;
+  }
+  .banner2 .eblikeInfo p:nth-child(2){
+    width:480px;
+    margin-bottom:48px;
+    font-size:20px;
+    line-height:28px;
+    font-family:Gotham Book;
+  }
+  .banner2 .eblikeInfo .bannerBtn{
+    padding:12px 24px;
+    font-size:20px;
+    font-family:ProximaNova Semibold;
+    line-height:28px;
+    background:#fff;
+    border-radius:30px;
+    color:#161C1F;
+  }
+  .banner2 .eblikeBox{
+/*     transform: translateY(50%); */
+        position: absolute;
+    bottom: 50%;
+    width: calc(100vw*1160/1440);
+    /* margin: 0 auto; */
+    left: 50%;
+    transform: translate(-50%,50%);
+    /* left: calc(100vw*150/1440); */
+    color: #FFFFFF;
+    z-index: 2;
+  }
+  
+  @media screen and (max-width: 768px){
+    .testRideImgWrapped{
+    	display:none;
+    }
+    .testRideMobileImgWrapped{
+    	display:block;
+    }
+    .banner2 .eblikeInfo strong{
+      font-size:36px;
+      line-height:40.5px;
+    }
+    .banner2 .eblikeInfo p:nth-child(1){
+    	margin-bottom:0px;
+    }
+    .banner2 .eblikeInfo p:nth-child(2){
+      margin-bottom:40px;
+      width:auto;
+      font-size:14px;
+      line-height:15.75px;
+    }
+    .banner2 .eblikeBox::before{
+    	background-image:none;
+    }
+
+    .banner2 .eblikeBox{  
+      left: 0;
+      height: 100%;
+      transform: translate(0);
+      top: 0;
+	}
+    .banner2 .eblikeInfo .bannerBtn{
+      font-size:18px;
+      line-height:25.3px;
+      padding:8px 20px;
+    }
+    .banner2 .eblikeInfo{
+      top: unset;
+      bottom: 50%;
+      padding: 0 8%;
+      transform: translate(0, 40%);
+    }
+  }
+  @media screen and (min-width: 769px){
+    .testRideImgWrapped{
+    	display:block;
+    }
+    .testRideMobileImgWrapped{
+    	display:none;
+    }
+  }
+</style>
+
+{% schema %}
+{
+    "name":"banner2",
+    "class":"banner2",
+    "settings":[
+        {
+            "type":"image_picker",
+            "id":"img",
+            "label":"图片"
+        },
+		{
+            "type":"image_picker",
+            "id":"mobile-img",
+            "label":"手机图片"
+        },
+        {
+            "type":"richtext",
+            "id":"Heading",
+            "label":"Heading"
+        },
+        {
+            "type":"text",
+            "id":"button",
+            "label":"button"
+        },
+        {
+            "type":"url",
+            "id":"link",
+            "label":"buttonlinks"
+        }
+    ],
+    "presets":[
+        {
+            "name":"Banner2"
+        }
+    ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

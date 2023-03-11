@@ -1,0 +1,266 @@
+{
+  "sections": {
+    "1656642506f02ea386": {
+      "type": "banner",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "165664257337e827e9": {
+      "type": "banner-text",
+      "disabled": true,
+      "settings": {
+        "img": "shopify:\/\/shop_images\/E-Bike119.png",
+        "Heading": "<p>Best-Selling E-Bike on<\/p><p>Crowdfunding 2021-2022<\/p>",
+        "button1": "Learn More",
+        "link1": "shopify:\/\/pages\/e-bike",
+        "button2": "Buy Now",
+        "link2": "shopify:\/\/products\/urtopia-carbon-e-bike-2"
+      }
+    },
+    "16566427160a843f2a": {
+      "type": "image-text",
+      "disabled": true,
+      "blocks": {
+        "16566427167e5741b4-0": {
+          "type": "list",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/IMG_2067.png",
+            "word": "“We always try to make everything as light as possible and this e-bike also helps you to do the same thing .”",
+            "Heading": "<p><strong>Max Lemke<\/strong><\/p><p><strong>2021 Olympic Champion<\/strong><\/p><p>        <\/p><p><a href=\"https:\/\/www.youtube.com\/watch?v=pLJlv-sP_JQ\" title=\"https:\/\/www.youtube.com\/watch?v=pLJlv-sP_JQ\">Watch More<\/a><\/p>"
+          }
+        },
+        "6441cfd2-1e2d-4dea-a8f7-01bc0cf4f42a": {
+          "type": "list",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/IMG_2067_copy_20618f39-ca24-4e22-8743-d3dbff2119c2.png",
+            "word": "“Urtopia makes me fall in love with riding, and I’m sure you will too.”",
+            "Heading": "<p><strong>Tracy McGrady<\/strong><\/p><p><strong>NBA Legend <\/strong><\/p><p><strong>Basketball Hall-of-Famer<\/strong><\/p><p><a href=\"https:\/\/www.youtube.com\/watch?v=OK8cz5u8rZg\" title=\"https:\/\/www.youtube.com\/watch?v=OK8cz5u8rZg\">Watch More<\/a><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "16566427167e5741b4-0",
+        "6441cfd2-1e2d-4dea-a8f7-01bc0cf4f42a"
+      ],
+      "settings": {
+      }
+    },
+    "1656642735c802b75a": {
+      "type": "photoWall",
+      "disabled": true,
+      "blocks": {
+        "5f3550fd-1be7-4239-95a6-0b1f445d4f3f": {
+          "type": "col",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/20220304-untitled-0363.jpg",
+            "Heading": "<p>Choose the one that design for you<\/p>",
+            "button1": "Shop E-Bike",
+            "link1": "shopify:\/\/products\/urtopia-carbon-e-bike-2",
+            "button2": "Ask for Help",
+            "link2": "shopify:\/\/pages\/contactus"
+          }
+        },
+        "302dd0ec-2125-4acd-adb4-a0ced134187c": {
+          "type": "col",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/20220630-225213.jpg",
+            "Heading": "<p>Enjoy now<\/p><p> pay later<\/p>",
+            "button1": "Learn More",
+            "link1": "shopify:\/\/pages\/klarnafaq",
+            "button2": "",
+            "link2": ""
+          }
+        },
+        "08f296ca-928d-42da-9a12-b1734df4605e": {
+          "type": "col",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/20220304-untitled-0612.jpg",
+            "Heading": "<p>Accessories that elevate your ride<\/p>",
+            "button1": "Shop Accessories",
+            "link1": "shopify:\/\/collections\/accessories",
+            "button2": "",
+            "link2": ""
+          }
+        },
+        "2bf92cc6-1993-4630-91ad-45d9b9d7cde1": {
+          "type": "col",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/URTOPIA_PISA-28.jpg",
+            "Heading": "<p>With Urtopia CARE<\/p><p>worry free<\/p>",
+            "button1": "Learn More",
+            "link1": "shopify:\/\/pages\/care",
+            "button2": "",
+            "link2": ""
+          }
+        }
+      },
+      "block_order": [
+        "5f3550fd-1be7-4239-95a6-0b1f445d4f3f",
+        "302dd0ec-2125-4acd-adb4-a0ced134187c",
+        "08f296ca-928d-42da-9a12-b1734df4605e",
+        "2bf92cc6-1993-4630-91ad-45d9b9d7cde1"
+      ],
+      "settings": {
+      }
+    },
+    "1656643011d454e339": {
+      "type": "media-review-list",
+      "disabled": true,
+      "blocks": {
+        "165664301155be9527-0": {
+          "type": "review",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/rnfater.png",
+            "review": "\"This is possibly the most technologically advanced model you'll see this year.\"",
+            "rate": 0,
+            "name": "",
+            "date": ""
+          }
+        },
+        "54537d3f-ff99-4445-8ba6-cf6b955648b7": {
+          "type": "review",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/tc.png",
+            "review": "“It’s pure curves and racing lines. It’s incredibly fun to ride.”",
+            "rate": 0,
+            "name": "",
+            "date": ""
+          }
+        },
+        "fbf640df-d1fa-478b-9ae9-f6c55b76bcfb": {
+          "type": "review",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/Forbes-logo_3840x_c09ce1b6-f4a5-4d80-9db1-3cc8a573433c.png",
+            "review": "“The tech features worked great with the exception of the voice controls. It’s a game changer in terms of safety.”",
+            "rate": 0,
+            "name": "",
+            "date": ""
+          }
+        },
+        "660de4c5-4a90-4419-b7b8-f4f33448dea0": {
+          "type": "review",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/20220629-190653.png",
+            "review": "“This e-bike does phone tech better than some phone.”",
+            "rate": 0,
+            "name": "",
+            "date": ""
+          }
+        },
+        "d1878f94-fef3-4336-88ff-4f463783404d": {
+          "type": "review",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/Forbes-logo_3840x1_7eda34ef-b180-495b-ac62-2738f5ab573b.png",
+            "review": "“I’d argue the Urtopia would be worth its price on the weight and ride quality alone.”",
+            "rate": 0,
+            "name": "",
+            "date": ""
+          }
+        }
+      },
+      "block_order": [
+        "165664301155be9527-0",
+        "54537d3f-ff99-4445-8ba6-cf6b955648b7",
+        "fbf640df-d1fa-478b-9ae9-f6c55b76bcfb",
+        "660de4c5-4a90-4419-b7b8-f4f33448dea0",
+        "d1878f94-fef3-4336-88ff-4f463783404d"
+      ],
+      "settings": {
+        "heading": ""
+      }
+    },
+    "16566433175ceb388b": {
+      "type": "comments-list",
+      "disabled": true,
+      "blocks": {
+        "1656643317bf5f1e5d-0": {
+          "type": "list",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/David_Spiro_2_22.5.11.jpg",
+            "comments": "Mine arrived today, and I enjoyed a ride around Central Park."
+          }
+        },
+        "7ad860be-885d-4f0b-b01f-9f88d4da6d41": {
+          "type": "list",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/Matt_3_22.5.11.jpg",
+            "comments": "Yay! I got my bike today too! Very well packed, easy assembly, and setup was simple with the app. I took a quick ride and my early impressions are great! Very smooth ride and I love how the electric assist kicks in."
+          }
+        },
+        "c17c8db9-0c00-42cb-8900-b1d3f4f680e1": {
+          "type": "list",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/WechatIMG18.jpg",
+            "comments": "Got it together and went for a great first ride."
+          }
+        },
+        "44187cf2-9bd6-423a-b798-301b3e9d29d7": {
+          "type": "list",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/Pedro_8_22.5.11.jpg",
+            "comments": "All the pedal-assist modes felt very natural and smooth. I’m new to bikes, so I really like not having to worry about a throttle. It feels much more like a standard bike, which I prefer. I want to be able to use it for exercise, so needing to pedal, even when on pedal-assist is great for me."
+          }
+        },
+        "652586ef-f77e-465e-85ae-40af1618b178": {
+          "type": "list",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/review.jpg",
+            "comments": "The packaging was solid, the attention to detail was evident. The assemby was pretty easy, the app update and connectivity went well and the ride was smooth."
+          }
+        },
+        "56eb5234-9031-463a-bdb8-b567cc284d43": {
+          "type": "list",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/WechatIMG18_copy.jpg",
+            "comments": "As far as the bicycle goes its an A+ …the acceleration and torque that kicks-in is smooth as butter. There is a LOT of effort that’s gone into designing this bike with all the available features and yet keeping it simple & stylish. Kudos to the team. I hope to enjoy this much more as spring and warmer weather rolls in."
+          }
+        }
+      },
+      "block_order": [
+        "1656643317bf5f1e5d-0",
+        "7ad860be-885d-4f0b-b01f-9f88d4da6d41",
+        "c17c8db9-0c00-42cb-8900-b1d3f4f680e1",
+        "44187cf2-9bd6-423a-b798-301b3e9d29d7",
+        "652586ef-f77e-465e-85ae-40af1618b178",
+        "56eb5234-9031-463a-bdb8-b567cc284d43"
+      ],
+      "settings": {
+        "heading": "What our customers say"
+      }
+    },
+    "165747210261f94820": {
+      "type": "test-ride-banner",
+      "disabled": true,
+      "settings": {
+        "img": "shopify:\/\/shop_images\/Mask_Group_18.jpg",
+        "mobile-img": "shopify:\/\/shop_images\/20220709-112343.jpg",
+        "Heading": "<p><strong>Test ride<\/strong><\/p><p>Want to know if the bike fits you? Book a test ride for our Urtopia full carbon e-bike. Try it, enjoy it and choose the one that fits you.<\/p>",
+        "button": "Book a test ride",
+        "link": "https:\/\/newurtopia.com\/pages\/test-ride"
+      }
+    },
+    "a2a33bb6-0cdc-4f84-b55e-36e640751a9e": {
+      "type": "homePage",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "pagefly-home": {
+      "type": "pagefly-home",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "1656642506f02ea386",
+    "165664257337e827e9",
+    "16566427160a843f2a",
+    "1656642735c802b75a",
+    "1656643011d454e339",
+    "16566433175ceb388b",
+    "165747210261f94820",
+    "a2a33bb6-0cdc-4f84-b55e-36e640751a9e",
+    "pagefly-home"
+  ]
+}
