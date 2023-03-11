@@ -20,7 +20,7 @@ shopify theme push --unpublished
 ```
 
 
-## pushlish
+## publish
 
 ```sh
 shopify theme publish
