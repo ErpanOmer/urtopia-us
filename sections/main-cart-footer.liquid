@@ -106,6 +106,42 @@
                 <div></div>
             </div>
     </div>
+    <script>
+      function refreshProductCode () {
+          const has_carbon = document.querySelectorAll(`.cart-items [data-line-item-product-id="7948552077560"]`)
+          const has_chord = document.querySelectorAll(`.cart-items [data-line-item-product-id="7902779474168"]`)
+
+          let carbon_quantly = 0
+          let chord_quantly = 0
+          for (const iterator of [...has_carbon]) {
+              carbon_quantly += parseInt(iterator.dataset.quantity)
+          }
+
+         for (const iterator of [...has_chord]) {
+              chord_quantly += parseInt(iterator.dataset.quantity)
+          }
+    
+          if (carbon_quantly > 0 && chord_quantly > 0) {
+            document.querySelector(`.product_code .bold`).innerHTML = 'SPEED600 and <br> Chord 600'
+            document.querySelector(`.product_code .carbon_text > div:nth-child(1) span`).innerHTML = `Save ＄${carbon_quantly * 300 + chord_quantly * 600}.00!`
+            document.querySelector(`.product_code .carbon_text > div:nth-child(2) span`).innerHTML = 'Free Accessories'
+          } else if (chord_quantly > 0) { 
+            document.querySelector(`.product_code .bold`).innerHTML = 'Chord 700'
+            document.querySelector(`.product_code .carbon_text > div:nth-child(1) span`).innerHTML = `Save ＄${chord_quantly * 600}.00!`
+            document.querySelector(`.product_code .carbon_text > div:nth-child(2)`).innerHTML = ''
+          } else {
+            if (carbon_quantly === 0) {
+               document.querySelector(`.product_code`).innerHTML = ''
+            } else {
+              document.querySelector(`.product_code .bold`).innerHTML = 'SPEED600
+              document.querySelector(`.product_code .carbon_text > div:nth-child(1) span`).innerHTML = `Save ＄${carbon_quantly * 300}.00!`
+              document.querySelector(`.product_code .carbon_text > div:nth-child(2) span`).innerHTML = 'Free Accessories'
+            }
+          }
+      }
+      
+      setTimeout(refreshProductCode, 500)
+    </script>
     <div class="cart__footer">
       {%- if settings.show_cart_note -%}
       <cart-note class="cart__note field">
