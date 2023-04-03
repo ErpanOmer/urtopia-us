@@ -117,27 +117,7 @@
               carbon_quantly += parseInt(iterator.dataset.quantity)
           }
 
-         for (const iterator of [...has_chord]) {
-              chord_quantly += parseInt(iterator.dataset.quantity)
-          }
-    
-          if (carbon_quantly > 0 && chord_quantly > 0) {
-            document.querySelector(`.product_code .bold`).innerHTML = 'SPEED600 and <br> Chord 600'
-            document.querySelector(`.product_code .carbon_text > div:nth-child(1) span`).innerHTML = `Save ${carbon_quantly * 300 + chord_quantly * 600}.00!`
-            document.querySelector(`.product_code .carbon_text > div:nth-child(2) span`).innerHTML = 'Free Accessories'
-          } else if (chord_quantly > 0) { 
-            document.querySelector(`.product_code .bold`).innerHTML = 'Chord 700'
-            document.querySelector(`.product_code .carbon_text > div:nth-child(1) span`).innerHTML = `Save ＄${chord_quantly * 600}.00!`
-            document.querySelector(`.product_code .carbon_text > div:nth-child(2)`).innerHTML = ''
-          } else {
-            if (carbon_quantly === 0) {
-               document.querySelector(`.product_code`).innerHTML = ''
-            } else {
-              document.querySelector(`.product_code .bold`).innerHTML = 'SPEED600
-              document.querySelector(`.product_code .carbon_text > div:nth-child(1) span`).innerHTML = `Save ＄${carbon_quantly * 300}.00!`
-              document.querySelector(`.product_code .carbon_text > div:nth-child(2) span`).innerHTML = 'Free Accessories'
-            }
-          }
+         
       }
       
       setTimeout(refreshProductCode, 500)
