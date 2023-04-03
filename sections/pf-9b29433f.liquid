@@ -3358,17 +3358,11 @@ let checkCodebox = document.querySelector(".checkout-dash-box")
 ones.addEventListener("click", function () {
   mSizeDom.querySelector("label").click();
   sStyleDom.querySelector("label").click();
-  activityIcon.classList.remove('optionHide');
   checkCodebox.classList.remove('optionHide');
 });
 one.addEventListener("click", function () {
   mSizeDom.querySelector("label").click();
   sStyleDom.querySelector("label").click();
-
-  console.log('activityIcon', document.querySelector("#activityIcon"))
-  console.log('activityIcon', activityIcon)
-
-  activityIcon.classList.add('optionHide');
   checkCodebox.classList.add('optionHide');
 });
 
