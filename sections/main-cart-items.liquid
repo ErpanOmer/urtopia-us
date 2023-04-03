@@ -101,7 +101,10 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
             {% assign alltotal = threedivided | plus: helmetQuantity %}
 
             {%- for item in cart.items -%}
-            <tr class="cart-item" id="CartItem-{{ item.index | plus: 1 }}">
+            <tr class="cart-item"
+              data-quantity="{{- item.quantity -}}"
+              data-line-item-product-id="{{- item.product_id -}}"
+              id="CartItem-{{ item.index | plus: 1 }}">
               <td class="cart-item__media">
                 {% if item.image %}
                 {% comment %} Leave empty space due to a:empty CSS display: none rule {% endcomment %}
