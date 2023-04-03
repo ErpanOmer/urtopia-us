@@ -104,7 +104,7 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
               {%- assign variant_option =  item.variant_options | first -%}
             <tr class="cart-item"
               data-quantity="{{- item.quantity -}}"
-              data-variant_option="{{- variant_option -}}"
+              data-variant_option="{{ variant_option }}"
               data-line-item-product-id="{{- item.product_id -}}"
               id="CartItem-{{ item.index | plus: 1 }}">
               <td class="cart-item__media">
