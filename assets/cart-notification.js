@@ -54,7 +54,8 @@ class CartNotification extends HTMLElement {
       .then((res1) => {
         let discountSavedPrice = 0;
         res1.items.forEach((item) => {
-          if (item.product_title.indexOf("Carbon One")!=-1) {
+          const title = item.product_title
+          if (title.indexOf("Carbon One")!=-1 || title.indexOf("Carbon 1")!=-1) {
             bikeQuantity += item.quantity;
           }
           discountSavedPrice += (item.original_line_price - item.final_line_price);

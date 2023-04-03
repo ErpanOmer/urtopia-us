@@ -111,9 +111,9 @@
           "announcement-bar-0": {
             "type": "announcement",
             "settings": {
-              "text1": "💥",
+              "text1": "Easter Sale -",
               "impText": "$600 off",
-              "text2": "on New Arrival Urtopia Chord",
+              "text2": "on Carbon 1s",
               "color_scheme": "inverse",
               "link": "shopify:\/\/products\/urtopia-chord-ebike"
             }

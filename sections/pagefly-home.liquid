@@ -1,258 +1,393 @@
 {% render 'pagefly-settings' %} <link rel="stylesheet" href="{{ 'pagefly.c9449e7a.css' | asset_url }}">
 		 <style>:root { 	user-select: none; } a { 	color: #000; } a:hover { 	color: #263B55; } body { 	letter-spacing: 0; } /* 全局字体设置start */ .u17Light { 	font: normal normal 300 17px/19px urbane; } .u20Light { 	font: normal normal 300 20px/24px urbane; } .u24Light { 	font: normal normal 300 24px/27px urbane; } .u36Light { 	font: normal normal 300 36px/42px urbane; } .u20Medium { 	font: normal normal 500 20px/24px urbane; } .u24Medium { 	font: normal normal 500 24px/27px urbane; } .u30Medium { 	font: normal normal 500 30px/34px urbane; } .u36Medium { 	font: normal normal 500 36px/42px urbane; } .u20DemiBold { 	font: normal normal 600 20px/24px urbane; } .u30DemiBold { 	font: normal normal 600 30px/34px urbane; } .u36DemiBold { 	font: normal normal 600 36px/42px urbane; } .u42DemiBold { 	font: normal normal 600 42px/48px urbane; } .u48DemiBold { 	font: normal normal 600 48px/54px urbane; } h2 { 	margin: auto; 	font: normal normal 600 72px/86px urbane; } h3 { 	margin: auto; 	font: normal normal 600 42px/50px urbane; } h1 { 	margin: 0; 	font-weight: bold; 	font: normal normal 600 48px/48px urbane; } body .my-button {   display: inline-block; 	padding: 14px 36px; 	background-color: #fff; 	color: #000; 	border-radius: 30px; 	font: normal normal 500 14px/16px urbane; 	cursor: pointer; 	white-space: nowrap; } body .my-button-ghost { 	background-color: transparent; 	border: 2px solid #fff; 	color: #fff; } body .my-button-black { 	background-color: #000; 	color: #fff; } body .my-button-white { 	background-color: transparent; 	border: 2px solid #000; } @media (max-width: 767px) { 	h2 { 	margin: auto; 	font: normal normal 600 48px/48px urbane; } body .my-button { 	padding: 11px 20px; } }</style> <style></style><div style="opacity:0" class="sc-bYoBSM hUVNGC __pf __pf_ihFswhsY" id="__pf"><div data-pf-type="Body" class="sc-hjGZqJ fNoOP pf-1_"><div data-pf-type="Layout" class="sc-htJRVC dNJAjO pf-2_"><div data-section-id="pf-a1b2" data-pf-type="Section" class="sc-fmciRz bheIgq pf-3_"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-4_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-5_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-6_"><style>
-.banner {
-    display: flex;
-    height: calc(100vh - 111px);
-    min-height: 800px;
-    position: relative;
-}
-
-.banner>div:first-child {
-    padding-top: 90px;
-    width: 50%;
-    background-color: #000;
-    color: #fff;
-    text-align: right;
-    padding-right: 10px;
-}
-
-.banner>img {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    min-width: 1280px;
-}
-
-.banner>div:last-child {
-    padding-top: 90px;
-    width: 50%;
-    background-color: #fff;
-    color: #000;
-    text-align: left;
-    padding-left: 10px;
-}
-
-.banner .u60DemiBold {
-    font: normal normal 600 60px urbane;
-    white-space: nowrap;
-    overflow: hidden;
-}
-
-.banner .u17Light {
-    margin-top: 15px;
-    font-weight: 100;
-    font-weight: 400;
-}
-
-.banner .my-button {
-    position: absolute;
-    top: 250px;
-    left: 50%;
-    transform: translateX(-50%);
-    margin: auto;
-    box-shadow: 0 0 20px rgb(0 0 0 / 10%);
-    z-index: 1;
-
-}
-
-@media (min-width: 768px) {
-    .mobileHide {
-        display: none !important;
+ #banner {
+        overflow-x: hidden;
+        height: calc(100vh - 111px);
+        /* height: 100vh; */
+        /* min-height: 800px; */
+        position: relative;
+        color: #fff;
     }
-}
-</style>
-
-<style>
-@media (max-width: 767px) {
-    .pcHide {
-        display: none !important;
+    
+    
+    #banner .two {
+        background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18459_f7b0a901-a6ef-47f0-bfac-3e98659eeca9.jpg?v=1679568839') center center/cover no-repeat;
     }
-
-    .banner-mobile {
-        height: 685px;
-        min-height: auto;
+    
+    #banner .two > div,
+    #banner .one > div,
+    #banner .three > div {
+        max-width: 1280px;
+        margin: auto;
     }
-
-    .banner-mobile>div:first-child {
+    
+    #banner .two>div {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 10vh;
+    }
+    
+    #banner .two img {
+        max-width: 408px;
+        max-height: 230px;
+    }
+    
+    #banner .two .left {
+        transform: translateY(30px);
+        color: #fff;
+    }
+    
+               #banner .two .left h2 {
+        color: #fff;
+    }
+    
+    #banner .two .u24Medium {
+        margin-top: 26px;
+        margin-bottom: 46px;
+    }
+    
+    #banner .two .my-button {
+        margin-right: 15px;
+    }
+    
+    
+    #banner .one {
+        background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18457_c4868f46-509a-4fc5-bdfd-5f36275dd375.jpg?v=1679568657') center bottom/cover no-repeat;
+    }
+    
+    #banner .one > div {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        height: 100%;
+    }
+    
+    #banner .one > div .right {
+        max-width: 577px;
         display: flex;
         flex-direction: column;
-        padding: 0;
-        text-align: left;
-        padding: 0 7%;
-        flex: 2.4;
+        padding-bottom: 5vh;
     }
-
-    .banner-mobile>div:last-child {
-        flex: 1;
-    }
-
-    .banner-mobile>img {
-        width: 100%;
-        min-width: auto;
-    }
-
-    .banner-mobile .my-button {
-        position: static;
-        margin: 0;
-        box-shadow: none;
-        margin-top: 35px;
-        transform: none;
-    }
-
-    .banner-mobile .u24Light {
-        padding-top: 25%;
-        font-weight: 400;
-    }
-
-    .banner-mobile .u42DemiBold {
-        margin: 5px 0 20px;
-    }
-}
-</style>
-
-
-<style>
-#banner {
-    overflow-x: hidden;
-    height: calc(100vh - 111px);
-    min-height: 800px;
-    position: relative;
-}
-
-#banner .swiper-wrapper .maksim {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    color: #fff;
-    background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_20696_2x_d80c45c9-3f9a-4b2a-a550-b7384473fa76.jpg?v=1678263715') center center/cover no-repeat;
-}
-
-#banner .swiper-wrapper .maksim .u48DemiBold {
-    font-size: 60px;
-}
-
-#banner .swiper-wrapper .maksim .u17Light {
-    margin: 40px 0 46px;
-    max-width: 400px;
-    line-height: 24px;
-}
-
-#banner .swiper-wrapper .maksim .text {
-    padding-left: 16.66666%;
-    display: flex;
-    flex-direction: column;
-    align-items: baseline;
-}
-
-#banner .swiper-pagination {
-    position: absolute;
-    --swiper-theme-color: #000;
-    --swiper-pagination-color: #000;/* 两种都可以 */
-    --swiper-pagination-bullet-inactive-opacity: 1;
-}
-
-#banner .swiper-pagination-bullet {
-    height: 6px;
-    width: 6px;
-    background-color: #ccc;
-}
-
-#banner .swiper-pagination-bullet-active {
-    width: 30px;
-    height: 6px;
-    border-radius: 5px;
-    transition: all .3s;
-    background-color: #ccc;
-    /* color: #fff; */
-}
-
-
-@media (max-width: 767px) {
-    #banner {
-        height: auto;
-        min-height: auto;
-    }
-
-    #banner .swiper-pagination {
-        top: 650px;
-    }
-
-    #banner .swiper-wrapper .maksim {
-        justify-content: flex-start;
-        height: 685px;
-        background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_20697_2x_442c0499-4bc9-4dbb-9b78-1d1f920460a4.png?v=1678269781') center center/cover no-repeat;
-        background-position-y: 100%;
-    }
-
-    #banner .swiper-wrapper .maksim .text {
-        padding: 13% 15px 0;
+    
+    #banner .one > div .right .texts {
+        display: flex;
         align-items: center;
     }
-
-    #banner .swiper-wrapper .maksim .u48DemiBold {
-        font-size: 30px;
+    
+    #banner .one > div .right > img {
+        margin-top: 3vh;
+        margin-bottom: 6vh;
     }
-
-    #banner .swiper-wrapper .maksim .u17Light {
-        font-size: 15px;
+    
+    #banner .one > div .right .texts .u20Medium {
+        font-size: 18px;
+        line-height: 18px;
+        margin-right: 12px;
+        transform: translateY(-5px);
+    }
+    
+    #banner .one > div .right .box {
+        display: flex;
+        align-items: center;
+    }
+    
+    #banner .one > div .right .box > span {
+        width: 56px;
+        height: 56px;
+        display: block;
+        background-color: #fff;
+        border-radius: 50%;
+        color: #479ABA;
+        font-size: 50px;
         text-align: center;
-        margin: 20px 0 40px;
-        line-height: 21px;
+        line-height: 56px;
+        min-width: 56px;
+        margin-right: 25px;
     }
-}
+    
+    #banner .one > div .right .box > div {
+        background-color: #fff;
+        padding: 14px;
+        border-radius: 14px;
+        display: flex;
+        flex: 1;
+        max-width: 480px;
+    }
+    
+    #banner .one > div .right .box > div .item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #000;
+        text-align: center;
+        flex: 1;
+    }
+    
+    #banner .one > div .right .box > div .item img {
+        max-width: 72px;
+    }
+    
+    #banner .one > div .right .box > div .item span {
+        font-size: 14px;
+        line-height: 18px;
+    }
+    
+    #banner .one > div .right .box > div .item > div {
+        background-color: #479ABA;
+        border-radius: 20px;
+        color: #fff;
+        padding: 10px 20px;
+        margin-bottom: 12px;
+        line-height: 18px;
+    }
+    
+    #banner .one > div .right .buttons {
+        display: flex;
+        margin-top: 6vh;
+        justify-content: center;
+        width: 100%;
+    }
+    
+    #banner .one > div .right .buttons .my-button {
+        margin: 0 10px;
+    }
+    
+    #banner .swiper-pagination-bullet {
+        height: 6px;
+        width: 6px;
+        background-color: #d5d5d5;
+        opacity: 0.5;
+    }
+    
+    #banner .swiper-pagination-bullet-active {
+        width: 30px;
+        height: 6px;
+        border-radius: 5px;
+        transition: all .3s;
+        opacity: 1;
+    }
+    
+    #banner .three {
+        background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18458.jpg?v=1679912156') center center/cover no-repeat;
+    }
+
+    #banner .usback {
+        background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18457_c4868f46-509a-4fc5-bdfd-5f36275dd375.jpg?v=1679568657') center bottom/cover no-repeat;
+    }
+    
+    #banner .three > div {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        height: 100%;
+    }
+    
+    #banner .three > div .right {
+        max-width: 579px;
+        text-align: left;
+    }
+    
+    #banner .three > div .right .u20Medium {
+        font-size: 18px;
+        line-height: 18px;
+    }
+    
+    #banner .three > div .right .u48DemiBold {
+        margin-top: 1vh;
+        margin-bottom: 7vh;
+    }
+    
+    #banner .three > div .right .buttons {
+        display: flex;
+        justify-content: center;
+        margin-top: 7vh;
+    }
+    
+    
+    
+    @media (max-width: 767px) {
+        #banner,
+        #banner .swiper-wrapper,
+        #banner .swiper-slide {
+            height: 746px;
+        }
+    
+        #banner .three {
+            background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18476_2x_f708d943-4a86-43f3-b989-226cf7d1795f.jpg?v=1679919175') center center/cover no-repeat;
+            position: relative;
+        }
+
+      #banner .usback {
+        background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18465_2x_8d57d433-07f3-408d-9cb9-932ca2943bf3.jpg?v=1679572207') center bottom/cover no-repeat;
+        position: relative;
+      }
+    
+        #banner .three > div {
+            text-align: center;
+            padding: 10% 17%;
+            align-items: flex-start;
+            justify-content: center;
+        }
+    
+        #banner .three > div .right .u48DemiBold {
+            font-size: 24px;
+            line-height: 28px;
+            margin-top: 0;
+            margin-bottom: 5vh;
+            text-align: center;
+        }
+    
+        #banner .three > div .right img {
+            max-width: 224px;
+        }
+    
+        #banner .two {
+            background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18461_2x_9ca60147-12ec-492e-aaec-4453b7420a69.jpg?v=1679919600') center center/cover no-repeat;
+            position: relative;
+        }
+    
+    
+        #banner .two>div {
+            padding-top: 3.5vh;
+            flex-direction: column;
+            text-align: center;
+        }
+    
+    
+        #banner .two .left {
+            transform: none;
+              text-align: center;
+        }
+    
+    
+        #banner .two img {
+            max-width: 189px;
+            max-height: 107px;
+            margin: auto;
+        }
+    
+        #banner .two h2 {
+            font-size: 36px;
+            line-height: 40px;
+        }
+    
+        #banner .two .u24Medium {
+            margin-top: 10px;
+            margin-bottom: 27px;
+            font-size: 16px;
+            line-height: 22px;
+        }
+    
+        #banner .buttons {
+            position: absolute;
+            bottom: 60px;
+            left: 0;
+            right: 0;
+            text-align: center;
+        }
+    
+    
+        #banner .one {
+            background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18465_2x_8d57d433-07f3-408d-9cb9-932ca2943bf3.jpg?v=1679572207') center center/cover no-repeat;
+            padding: 10%;
+        }
+    
+        #banner .one > div {
+            align-items: flex-start;
+        }
+    
+        #banner .one > div .right {
+            align-items: center;
+            width: 100%;
+        }
+    
+        #banner .one > div .right .texts .u48DemiBold {
+            font-size: 24px;
+            line-height: 20px;
+        }
+    
+        #banner .one > div .right > img {
+            max-width: 224px;
+            margin-top: 10%;
+            margin-bottom: 10%;
+        }
+    
+        #banner .one > div .right .box {
+            width: 100%;
+        }
+    
+        #banner .one > div .right .box > div {
+            padding: 6px;
+        }
+    
+        #banner .one > div .right .box > div .item img {
+            max-width: 45px;
+        }
+    
+        #banner .one > div .right .box > div .item span {
+            font-size: 11px;
+            line-height: 13px;
+        }
+    
+        #banner .one > div .right .box > div .item > div {
+            padding: 4px 14px;
+            font-size: 12px;
+        }
+    }
 </style>
 
     <div id="banner">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <div class="banner pcHide">
-                    <div>
-                        <div class="u60DemiBold">New Arrival</div>
-                        <div class="u17Light">Early birds enjoy $600 off</div>
-                    </div>
-                    <a class="my-button" href="/pages/lightweight-commuter-ebike-urtopia-chord">Shop Now</a>
-                    <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230306-093453.png?v=1678066544" />
-                    <div>
-                        <div class="u60DemiBold">Urtopia Chord</div>
-                        <div class="u17Light">on our limited-time offer</div>
-                    </div>
-                </div>
-                <div class="banner banner-mobile mobileHide">
-                    <div>
-                        <div class="u24Light">New Arrival</div>
-                        <div class="u42DemiBold">Chord</div>
-                        <div class="u17Light">Early birds enjoy $600 off on our limited-time offer.</div>
-                        <div style="z-index:2;">
-                            <a class="my-button" href="/pages/lightweight-commuter-ebike-urtopia-chord">Shop Now</a>
-                        </div>
-                    </div>
-                    <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230306-095205.png?v=1678067541" />
-                    <div></div>
-
-                </div>
-            </div>
-            <div class="swiper-slide maksim">
-                <div class="text">
-                    <div class="u48DemiBold">Chord ✕ Maksim</div>
-                    <div class="u17Light">
-                        A passionate prodigy, and one of the world’s fastest pianists, Mr. Mrvica inspired the design the
-                        philosophy of Chord, a crossover between art and tech.
-                    </div>
-                    <a class="my-button" href="/pages/lightweight-commuter-ebike-urtopia-chord">Shop Now</a>
-                </div>
-            </div>
-        </div>
-        <div class="swiper-pagination"></div>
-    </div>
+  <div class="swiper-wrapper">
+      <!--<div class="swiper-slide two">
+          <div>
+              <div class="left">
+                  <h2>HUGE <br>EASTER SALE</h2>
+                  <div class="u24Medium">Up to 30% OFF</div>
+                  <div class="buttons">
+                      <a class="my-button" href="/products/urtopia-carbon-e-bike">Shop Now</a>
+                      <a class="my-button my-button-black" href="/pages/test-ride">Test Rides</a>
+                  </div>
+              </div>
+              <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18455.png?v=1679559152"
+                  alt="">
+          </div>
+      </div>-->
+      <div class="swiper-slide three usback">
+          <div>
+              <div class="right">
+                  <div class="u20Medium mobileHide">Huge Easter Sale</div>
+                  <div class="u48DemiBold">Carbon 1s</div>
+                  <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18493.png?v=1679925516" alt="">
+                  <div class="buttons">
+                      <a class="my-button" href="/products/urtopia-carbon-e-bike">Shop Now</a>
+                      <!-- <a class="my-button my-button-black" href="">Test Rides</a> -->
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="swiper-slide three">
+          <div>
+              <div class="right">
+                  <div class="u20Medium mobileHide">Huge Easter Sale</div>
+                  <div class="u48DemiBold">Chord & Chord X</div>
+                  <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18493.png?v=1679925516" alt="">
+                  <div class="buttons">
+                      <a class="my-button" href="/products/urtopia-chord-ebike">Shop Now</a>
+                      <!-- <a class="my-button my-button-black" href="">Test Rides</a> -->
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="swiper-pagination"></div>
+</div>
 <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/8-swiper-bundle.min.js?v=1663912984"> </script>
 <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1.14.2-TweenMax.js?v=1663912518"></script>
 <script>
  new Swiper('#banner', {
         autoplay: {
             disableOnInteraction: false,
-            pauseOnMouseEnter: true,
+            // pauseOnMouseEnter: true,
             delay: 5000,
         },
         loop: true,
