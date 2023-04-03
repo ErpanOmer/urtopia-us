@@ -3364,6 +3364,10 @@ ones.addEventListener("click", function () {
 one.addEventListener("click", function () {
   mSizeDom.querySelector("label").click();
   sStyleDom.querySelector("label").click();
+
+  console.log('activityIcon', document.querySelector("#activityIcon"))
+  console.log('activityIcon', activityIcon)
+
   activityIcon.classList.add('optionHide');
   checkCodebox.classList.add('optionHide');
 });
