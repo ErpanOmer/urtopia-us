@@ -111,7 +111,8 @@
           const has_carbon = document.querySelectorAll(`.cart-items [data-variant_option*="350W"]`)
           const has_chord = document.querySelectorAll(`.cart-items [data-line-item-product-id="7948552077560"]`)
 
-          console.log('has_carbon', has_carbon)
+          console.log('has_carbon', has_carbon.length)
+          console.log('has_chord', has_chord.length)
 
           let carbon_quantly = 0
           let chord_quantly = 0
@@ -123,7 +124,7 @@
               chord_quantly += parseInt(iterator.dataset.quantity)
           }
     
-          {% comment %} if (carbon_quantly > 0 && chord_quantly > 0) {
+          if (carbon_quantly > 0 && chord_quantly > 0) {
             document.querySelector(`.product_code .bold`).innerHTML = 'SPEED600 and <br> Chord600'
             document.querySelector(`.product_code .carbon_text > div:nth-child(1) span`).innerHTML = `Save ＄${carbon_quantly * 300 + chord_quantly * 600}.00!`
             document.querySelector(`.product_code .carbon_text > div:nth-child(2) span`).innerHTML = 'Free Accessories'
@@ -139,7 +140,7 @@
               document.querySelector(`.product_code .carbon_text > div:nth-child(1) span`).innerHTML = `Save ＄${carbon_quantly * 300}.00!`
               document.querySelector(`.product_code .carbon_text > div:nth-child(2) span`).innerHTML = 'Free Accessories'
             }
-          } {% endcomment %}
+          }
       }
       
       setTimeout(refreshProductCode, 500)
