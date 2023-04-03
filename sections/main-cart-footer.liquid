@@ -111,6 +111,8 @@
           const has_carbon = document.querySelectorAll(`.cart-items [data-variant_option*="350W"]`)
           const has_chord = document.querySelectorAll(`.cart-items [data-line-item-product-id="7948552077560"]`)
 
+          console.log('has_carbon', has_carbon)
+
           let carbon_quantly = 0
           let chord_quantly = 0
           for (const iterator of [...has_carbon]) {
