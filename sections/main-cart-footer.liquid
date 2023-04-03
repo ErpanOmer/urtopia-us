@@ -2,6 +2,87 @@
 {{ 'component-totals.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
+<style>
+  .product_code {
+      /* display: flex; */
+        margin-bottom: 20px;
+  }
+  
+  .carbon_code {
+      max-width: 410px;
+      background: url(https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230324-171240.png?v=1679649232) no-repeat;
+      height: 46px;
+      background-size: 100% 46px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 18px;
+      box-shadow: 10px 10px 10px #6B869A1C;
+  }
+  
+  .carbon_code .bold {
+      font-size: 17px;
+      font-weight: bold;
+  }
+  
+  .carbon_code > span:first-child {
+      flex-basis: 68%;
+  }
+  
+  .carbon_code > span:last-child {
+      flex-basis: 32%;
+  }
+  
+  .carbon_code > span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  
+  .carbon_text {
+      max-width: 410px;
+      box-shadow: 10px 10px 10px #6B869A1C;
+      color: #fff;
+      padding: 10px 24px;
+      background: transparent linear-gradient(90deg, #2E26EE 0%, #2A8FF4 100%) 0% 0% no-repeat padding-box;
+      opacity: 0.78;
+  }
+  
+  .carbon_code,
+  .carbon_text {
+      margin-left: auto;
+  }
+  
+  .carbon_text>div {
+      display: flex;
+      align-items: center;
+      font-weight: 500;
+      line-height: 20px;
+  }
+  
+  .carbon_text>div+div {
+      margin-top: 3px;
+  }
+  
+  .carbon_text>div>span {
+      margin-left: 10px;
+  }
+  
+  
+  
+  @media (max-width: 767px) {
+      .carbon_code {
+          font-size: 13px;
+      }
+  
+      .carbon_code .bold {
+          font-size: 16px;
+      }
+  }
+  </style>
 
 <div class="page-width{% if cart == empty %} is-empty{% endif %}" id="main-cart-footer" data-id="{{ section.id }}">
   <div>
