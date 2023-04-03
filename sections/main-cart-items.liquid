@@ -101,10 +101,9 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
             {% assign alltotal = threedivided | plus: helmetQuantity %}
 
             {%- for item in cart.items -%}
-            {%- assign first_product = item.variant_options | first -%}
             <tr class="cart-item"
               data-quantity="{{- item.quantity -}}"
-              data-variant_option="{{- first_product -}}"
+              data-variant_option="{{- item.variant_options['0'] -}}"
               data-line-item-product-id="{{- item.product_id -}}"
               id="CartItem-{{ item.index | plus: 1 }}">
               <td class="cart-item__media">
