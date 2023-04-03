@@ -1,0 +1,20 @@
+{
+  "name": "urtopia-us",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "shopify theme dev -s urtopia.myshopify.com -t 136550744312 --port 9000",
+    "pull": "shopify theme pull -s urtopia.myshopify.com --live"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ErpanOmer/urtopia-us.git"
+  },
+  "author": "ErpanOmer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ErpanOmer/urtopia-us/issues"
+  },
+  "homepage": "https://github.com/ErpanOmer/urtopia-us#readme"
+}
