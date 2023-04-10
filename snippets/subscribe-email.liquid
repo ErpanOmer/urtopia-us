@@ -132,6 +132,18 @@
     }
     </style>
   <script>
+
+    function fetchBuried (name = '', type = '', data = {}) {
+        const body = {
+            module: "website-us",
+            trace_name: `${type}-us`,
+            trace_type: `${type}-${document.body.clientWidth > 768 ? 'pc' : 'mb'}`,
+            extras: data
+        }
+    }
+
+
+
     class MyStorage {
       constructor(props) {
         this.props = props || {};
