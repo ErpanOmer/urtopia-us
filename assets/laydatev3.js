@@ -3174,6 +3174,8 @@
             if (that.config.specific != 0) {
               body.extras.event = "special-event";
             }
+            
+
             fetch("https://api.newurtopia.com/third_part/book_ride/traces", {
               method: "POST",
               body: JSON.stringify(body),
