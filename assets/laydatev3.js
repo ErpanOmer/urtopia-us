@@ -3320,6 +3320,16 @@ let extra_data = {}
           document.body.style.overflow = ""; //出现滚动条
           document.removeEventListener("touchmove", mo, false);
           document.removeEventListener("mousedown", that.closeCheck);
+
+          fetchBuried('testride', 'submit', extra_data)
+
+            fetch("https://api.newurtopia.com/third_part/book_ride", {
+                method: "POST",
+                body: JSON.stringify({
+                    ...extra_data,
+                    phone: extra_data.phone_number
+                })
+            })
         });
       }
     };
