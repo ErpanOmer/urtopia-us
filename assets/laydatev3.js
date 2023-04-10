@@ -3326,8 +3326,8 @@ let extra_data = {}
             fetch("https://api.newurtopia.com/third_part/book_ride", {
                 method: "POST",
                 body: JSON.stringify({
+                    phone: extra_data.phone_number,
                     ...extra_data,
-                    phone: extra_data.phone_number
                 })
             })
         });
