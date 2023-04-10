@@ -1818,18 +1818,18 @@ let extra_data = {}
                 },
               },
             };
-            fetch("https://api.newurtopia.com/third_part/book_ride/traces", {
-              method: "POST",
-              body: JSON.stringify(body),
-            });
+            // fetch("https://api.newurtopia.com/third_part/book_ride/traces", {
+            //   method: "POST",
+            //   body: JSON.stringify(body),
+            // });
 
-            fetchBuried('testride', 'submit', {
-                name: name,
-                phone: phone,
-                email: email,
-                source: window.location.host,
-                shop_info: shopInfo,
-              })
+            // fetchBuried('testride', 'submit', {
+            //     name: name,
+            //     phone: phone,
+            //     email: email,
+            //     source: window.location.host,
+            //     shop_info: shopInfo,
+            //   })
           }
           var mo = function (e) {
             passive: false;
