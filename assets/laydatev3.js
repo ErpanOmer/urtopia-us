@@ -3178,11 +3178,11 @@ let extra_data = {}
             }
             
 
-            fetch("https://api.newurtopia.com/third_part/book_ride/traces", {
-              method: "POST",
-              body: JSON.stringify(body),
-            })
-              .then((res) => {
+            // fetch("https://api.newurtopia.com/third_part/book_ride/traces", {
+            //   method: "POST",
+            //   body: JSON.stringify(body),
+            // })
+              Promise.resolve().then((res) => {
                 that.submitInfoState = 1;
                 if (options.specific >= 1) that.step = 3;
                 that.next();
@@ -3937,10 +3937,10 @@ let extra_data = {}
                 userInfo: that.userInfo,
               },
             };
-            fetch("https://api.newurtopia.com/third_part/book_ride/traces", {
-              method: "POST",
-              body: JSON.stringify(body),
-            });
+            // fetch("https://api.newurtopia.com/third_part/book_ride/traces", {
+            //   method: "POST",
+            //   body: JSON.stringify(body),
+            // });
             that.next();
           }
         });
