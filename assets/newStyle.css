@@ -403,189 +403,269 @@ a.moreBtn.bannerBtn.buyBtn:hover,
 
 
 
-body {
-  letter-spacing: 0;
-  color: #000;
-}
-
-h2 {
-  font: normal normal 600 72px/86px urbane;
-}
-
-h3 {
-  font: normal normal 600 42px/50px urbane;
-}
-
-h1 {
-  margin: 0;
-  font-weight: bold;
-  font: normal normal 600 48px/48px urbane;
-}
-
-a {
-  color: #000;
-}
-
-a:hover {
-  color: #263B55;
-}
-
-/* 全局字体设置start */
-.u17Light {
-  font: normal normal 300 17px/19px urbane;
-}
-
-.u20Light {
-  font: normal normal 300 20px/24px urbane;
-}
-
-.u24Light {
-  font: normal normal 300 24px/27px urbane;
-}
-
-.u36Light {
-  font: normal normal 300 36px/42px urbane;
-}
-
-.u20Medium {
-  font: normal normal 500 20px/24px urbane;
-}
-
-.u24Medium {
-  font: normal normal 500 24px/27px urbane;
-}
-
-.u30Medium {
-  font: normal normal 500 30px/34px urbane;
-}
-
-.u36Medium {
-  font: normal normal 500 36px/42px urbane;
-}
-
-.u20DemiBold {
-  font: normal normal 600 20px/24px urbane;
-}
-
-.u30DemiBold {
-  font: normal normal 600 30px/34px urbane;
-}
-
-.u36DemiBold {
-  font: normal normal 600 36px/42px urbane;
-}
-
-.u42DemiBold {
-  font: normal normal 600 42px/48px urbane;
-}
-
-.u48DemiBold {
-  font: normal normal 600 48px/54px urbane;
-}
-
-.hide {
-  height: 0;
-  overflow: hidden;
-}
-
-body .my-button {
-  display: inline-block;
-  padding: 14px 36px;
-  background-color: #fff;
-  color: #000;
-  border-radius: 30px;
-  font: normal normal 500 14px/16px urbane;
-  cursor: pointer;
-  white-space: nowrap;
-}
-
-body .my-button-ghost {
-  background-color: transparent;
-  border: 2px solid #fff;
-  color: #fff;
-}
-
-body .my-button-black {
-  background-color: #000;
-  color: #fff;
-}
-
-body .my-button-white {
-  background-color: transparent;
-  border: 2px solid #000;
-}
-
-body .jBox-overlay {
-  background-color: rgba(0, 0, 0, 0.6);
-}
-
-body .jBox-Modal .jBox-container {
-  border-radius: 15px;
-  color: #000;
-  box-shadow: none;
-  overflow: hidden;
-}
-
-body .jBox-Modal .jBox-title {
-  border-radius: 15px 15px 0 0;
-  font: normal normal 600 16px/24px urbane;
-  background-color: #fff;
-  padding-left: 70px;
-}
-
-body .jBox-Modal .jBox-content {
-  padding: 30px 70px 50px 70px;
-  height: auto !important;
-}
-
-body .jBox-Modal .jBox-title .jBox-closeButton svg {
-  width: 20px;
-  height: 20px;
-  margin-top: -10px;
-  margin-right: -5px;
-}
-
-body .jBox-Modal {
-  /* inset: 10% auto auto 10% !important;
-	*/
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) !important;
-}
-
-@media (max-width: 767px) {
-  h2 {
-    font: normal normal 600 48px/48px urbane;
-  }
-
-  body .my-button {
-    padding: 11px 20px;
-  }
-
-  body .jBox-Modal .jBox-title {
-    padding: 10px 15px;
-  }
-
-  body .jBox-Modal .jBox-content {
-    padding: 30px 15px;
-    max-height: 80vh;
-  }
-
-  body .jBox-Modal .jBox-title .jBox-closeButton svg {
-    width: 15px;
-    height: 15px;
-    margin-top: -8px;
-    margin-right: -8px;
-  }
-
-  .mobileHide {
-    display: none !important;
-  }
-}
-
-
-@media (min-width: 767px) {
-  .pcHide {
-    display: none !important;
-  }
-}
+      body {
+        letter-spacing: 0;
+        color: #000;
+      }
+      
+      h2 {
+        font: normal normal 600 72px/86px urbane;
+      }
+      
+      h3 {
+        font: normal normal 600 42px/50px urbane;
+      }
+      
+      h1 {
+        margin: 0;
+        font-weight: bold;
+        font: normal normal 600 48px/48px urbane;
+      }
+      
+      a {
+        color: #000;
+      }
+      
+      a:hover {
+        color: #263B55;
+      }
+      
+      input {
+        &:focus-visible {
+          outline-offset: unset;
+          box-shadow: unset;
+          outline: unset;
+          border-color: #000;
+        }
+      }
+      
+      img,
+      video {
+        width: 100%;
+        height: auto;
+      }
+      
+      
+      .centeral-content {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 30px;
+        box-sizing: content-box;
+      }
+      
+      /* 全局字体设置start */
+      .u17Light {
+        font: normal normal 300 17px/19px urbane;
+      }
+      
+      .u17Light_v2 {
+        font: normal normal 300 17px/1.4em urbane;
+      }
+      
+      
+      .u20Light {
+        font: normal normal 300 20px/24px urbane;
+      }
+      
+      .u24Light {
+        font: normal normal 300 24px/27px urbane;
+      }
+      
+      .u36Light {
+        font: normal normal 300 36px/42px urbane;
+      }
+      
+      .u17Medium {
+        font: normal normal 500 17px/19px urbane;
+      }
+      
+      .u17Medium_v2 {
+        font: normal normal 500 17px/1.4em urbane;
+      }
+      
+      .u20Medium {
+        font: normal normal 500 20px/24px urbane;
+      }
+      
+      .u24Medium {
+        font: normal normal 500 24px/27px urbane;
+      }
+      
+      .u30Medium {
+        font: normal normal 500 30px/34px urbane;
+      }
+      
+      .u36Medium {
+        font: normal normal 500 36px/42px urbane;
+      }
+      
+      .u20DemiBold {
+        font: normal normal 600 20px/24px urbane;
+      }
+      
+      .u20DemiBold_v2 {
+        font: normal normal 600 20px/1.4em urbane;
+      }
+      
+      .u30DemiBold {
+        font: normal normal 600 30px/34px urbane;
+      }
+      
+      .u36DemiBold {
+        font: normal normal 600 36px/42px urbane;
+      }
+      
+      .u36DemiBold_v2 {
+        font: normal normal 600 36px/1.25em urbane;
+      }
+      
+      .u42DemiBold {
+        font: normal normal 600 42px/48px urbane;
+      }
+      
+      .u48DemiBold {
+        font: normal normal 600 48px/54px urbane;
+      }
+      
+      .u48DemiBold_v2 {
+        font: normal normal 600 48px/1.4em urbane;
+      }
+      
+      .hide {
+        height: 0;
+        overflow: hidden;
+      }
+      
+      .mini-dialog {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #000000b3;
+        justify-content: center;
+        align-items: center;
+        z-index: 100000000;
+        overflow: hidden;
+        padding: 0 8vw;
+        display: none;
+        user-select: none;
+      }
+      
+      .mini-dialog > div {
+        position: relative;
+        z-index: 100000001;
+        max-height: 85vh;
+        overflow: hidden;
+      }
+      
+      body .my-button {
+        display: inline-block;
+        padding: 14px 36px;
+        background-color: #fff;
+        color: #000;
+        border-radius: 30px;
+        font: normal normal 500 14px/16px urbane;
+        cursor: pointer;
+        white-space: nowrap;
+      }
+      
+      body .my-button-ghost {
+        background-color: transparent;
+        border: 2px solid #fff;
+        color: #fff;
+      }
+      
+      body .my-button-black {
+        background-color: #000;
+        color: #fff;
+      }
+      
+      body .my-button-white {
+        background-color: transparent;
+        border: 2px solid #000;
+      }
+      
+      body .jBox-overlay {
+        background-color: rgba(0, 0, 0, 0.6);
+      }
+      
+      body .jBox-Modal .jBox-container {
+        border-radius: 15px;
+        color: #000;
+        box-shadow: none;
+        overflow: hidden;
+      }
+      
+      body .jBox-Modal .jBox-title {
+        border-radius: 15px 15px 0 0;
+        font: normal normal 600 16px/24px urbane;
+        background-color: #fff;
+        padding-left: 70px;
+      }
+      
+      body .jBox-Modal .jBox-content {
+        padding: 30px 70px 50px 70px;
+        height: auto !important;
+      }
+      
+      body .jBox-Modal .jBox-title .jBox-closeButton svg {
+        width: 20px;
+        height: 20px;
+        margin-top: -10px;
+        margin-right: -5px;
+      }
+      
+      body .jBox-Modal {
+        /* inset: 10% auto auto 10% !important;
+        */
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+      }
+      
+      @media (max-width: 767px) {
+        h2 {
+          font: normal normal 600 48px/48px urbane;
+        }
+      
+        body .my-button {
+          padding: 11px 20px;
+        }
+      
+        body .jBox-Modal .jBox-title {
+          padding: 10px 15px;
+        }
+      
+        body .jBox-Modal .jBox-content {
+          padding: 30px 15px;
+          max-height: 80vh;
+        }
+      
+        body .jBox-Modal .jBox-title .jBox-closeButton svg {
+          width: 15px;
+          height: 15px;
+          margin-top: -8px;
+          margin-right: -8px;
+        }
+      
+        .mobileHide {
+          display: none !important;
+        }
+      
+        .centeral-content {
+          padding: 0 8%;
+          box-sizing: border-box;
+        }
+      }
+      
+      
+      @media (min-width: 767px) {
+        .pcHide {
+          display: none !important;
+        }
+      }
+      
+      
