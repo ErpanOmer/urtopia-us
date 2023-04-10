@@ -556,6 +556,73 @@ src="https://www.facebook.com/tr?id=1016696219071452&ev=PageView&noscript=1"
     </div>
     <span class="close" onclick="closeMiniDialog()">×</span>
 </div>`
+
+function showMiniDialog(html = '') {
+  if (storage.get('emailDialogHideDay')) {
+    return
+  }
+
+  $('body .mini-dialog').remove()
+  setTimeout(() => {
+    $("body").append(`<div class="mini-dialog" style="display: flex;">${html}</div>`)
+
+    {% comment %} setTimeout(() => {
+      $('body .mini-dialog > div').on('click', e => {
+        e.stopPropagation();
+        return false;
+      })
+    }, 100) {% endcomment %}
+
+
+     setTimeout(() => {
+        $('.subscribe-container form').on("submit", function (event) {
+          const email = $('.subscribe-container form input[type="email"]').val()
+          console.log('email', email)
+        const formData = new FormData()
+        formData.append('form_type', 'customer')
+        formData.append('contact[tags]', 'newsletter')
+        formData.append('contact[email]', email)
+        formData.append('commit', '')
+        console.log('formData', formData)
+
+          let body = {
+              module: "de-shopify-subscribe-email",
+              trace_name: "subscribe-email",
+              trace_type: "subscribe-email",
+              extras: {
+                email
+              }
+          }
+
+
+          fetch("https://api.newurtopia.com/third_part/traces", {
+              method: "POST",
+              body: JSON.stringify(body),
+              headers: {
+                  "Content-Type": "application/json",
+              },
+          })
+
+          
+        closeMiniDialog(14)
+      
+          event.preventDefault();
+          return false;
+      })
+    }, 1000)
+
+
+
+  })
+}
+
+function closeMiniDialog(day = 3) {
+  // console.log(a === document.querySelector('body .mini-dialog'))
+  $('body .mini-dialog').remove()
+
+
+  storage.set('emailDialogHideDay', 'emailDialogHideDay', day)
+}
 </script>
 
 </html>
