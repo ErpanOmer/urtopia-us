@@ -136,10 +136,18 @@
     function fetchBuried (name = '', type = '', data = {}) {
         const body = {
             module: "website-us",
-            trace_name: `${type}-us`,
+            trace_name: `${name}-us`,
             trace_type: `${type}-${document.body.clientWidth > 768 ? 'pc' : 'mb'}`,
             extras: data
         }
+
+        return fetch("https://api.newurtopia.com/third_part/traces", {
+            method: "POST",
+            body: JSON.stringify(body),
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })
     }
 
 
@@ -280,13 +288,7 @@
             }
   
   
-            fetch("https://api.newurtopia.com/third_part/traces", {
-                method: "POST",
-                body: JSON.stringify(body),
-                headers: {
-                    "Content-Type": "application/json",
-                },
-            })
+            
   
             
           closeMiniDialog(14)
