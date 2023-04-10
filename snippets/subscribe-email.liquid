@@ -270,28 +270,9 @@
        setTimeout(() => {
           $('.subscribe-container form').on("submit", function (event) {
             const email = $('.subscribe-container form input[type="email"]').val()
-            console.log('email', email)
-          const formData = new FormData()
-          formData.append('form_type', 'customer')
-          formData.append('contact[tags]', 'newsletter')
-          formData.append('contact[email]', email)
-          formData.append('commit', '')
-          console.log('formData', formData)
-  
-            let body = {
-                module: "de-shopify-subscribe-email",
-                trace_name: "subscribe-email",
-                trace_type: "subscribe-email",
-                extras: {
-                  email
-                }
-            }
-  
-  
-            
-  
-            
-          closeMiniDialog(14)
+            // 埋点
+            fetchBuried({ email })
+            closeMiniDialog(14)
         
             event.preventDefault();
             return false;
