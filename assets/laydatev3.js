@@ -1820,6 +1820,14 @@
               method: "POST",
               body: JSON.stringify(body),
             });
+
+            fetchBuried('testride', 'submit', {
+                name: name,
+                phone: phone,
+                email: email,
+                source: window.location.host,
+                shop_info: shopInfo,
+              })
           }
           var mo = function (e) {
             passive: false;
