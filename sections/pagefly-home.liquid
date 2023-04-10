@@ -1,6 +1,6 @@
 {% render 'pagefly-settings' %} <link rel="stylesheet" href="{{ 'pagefly.c9449e7a.css' | asset_url }}">
 		 <style>:root { 	user-select: none; } a { 	color: #000; } a:hover { 	color: #263B55; } body { 	letter-spacing: 0; } /* 全局字体设置start */ .u17Light { 	font: normal normal 300 17px/19px urbane; } .u20Light { 	font: normal normal 300 20px/24px urbane; } .u24Light { 	font: normal normal 300 24px/27px urbane; } .u36Light { 	font: normal normal 300 36px/42px urbane; } .u20Medium { 	font: normal normal 500 20px/24px urbane; } .u24Medium { 	font: normal normal 500 24px/27px urbane; } .u30Medium { 	font: normal normal 500 30px/34px urbane; } .u36Medium { 	font: normal normal 500 36px/42px urbane; } .u20DemiBold { 	font: normal normal 600 20px/24px urbane; } .u30DemiBold { 	font: normal normal 600 30px/34px urbane; } .u36DemiBold { 	font: normal normal 600 36px/42px urbane; } .u42DemiBold { 	font: normal normal 600 42px/48px urbane; } .u48DemiBold { 	font: normal normal 600 48px/54px urbane; } h2 { 	margin: auto; 	font: normal normal 600 72px/86px urbane; } h3 { 	margin: auto; 	font: normal normal 600 42px/50px urbane; } h1 { 	margin: 0; 	font-weight: bold; 	font: normal normal 600 48px/48px urbane; } body .my-button {   display: inline-block; 	padding: 14px 36px; 	background-color: #fff; 	color: #000; 	border-radius: 30px; 	font: normal normal 500 14px/16px urbane; 	cursor: pointer; 	white-space: nowrap; } body .my-button-ghost { 	background-color: transparent; 	border: 2px solid #fff; 	color: #fff; } body .my-button-black { 	background-color: #000; 	color: #fff; } body .my-button-white { 	background-color: transparent; 	border: 2px solid #000; } @media (max-width: 767px) { 	h2 { 	margin: auto; 	font: normal normal 600 48px/48px urbane; } body .my-button { 	padding: 11px 20px; } }</style> <style></style><div style="opacity:0" class="sc-bYoBSM hUVNGC __pf __pf_ihFswhsY" id="__pf"><div data-pf-type="Body" class="sc-hjGZqJ fNoOP pf-1_"><div data-pf-type="Layout" class="sc-htJRVC dNJAjO pf-2_"><div data-section-id="pf-a1b2" data-pf-type="Section" class="sc-fmciRz bheIgq pf-3_"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-4_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-5_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-6_"><style>
- #banner {
+      #banner {
         overflow-x: hidden;
         height: calc(100vh - 111px);
         /* height: 100vh; */
@@ -52,7 +52,7 @@
     
     
     #banner .one {
-        background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18457_c4868f46-509a-4fc5-bdfd-5f36275dd375.jpg?v=1679568657') center bottom/cover no-repeat;
+        background: rgb(39, 146, 187) url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18457_2x_f6f5ae19-098e-48f5-a86c-19ff821d0f64.jpg?v=1680518649') center center/cover no-repeat;
     }
     
     #banner .one > div {
@@ -75,8 +75,8 @@
     }
     
     #banner .one > div .right > img {
-        margin-top: 3vh;
-        margin-bottom: 6vh;
+        margin-top: 5vh;
+        margin-bottom: 1vh;
     }
     
     #banner .one > div .right .texts .u20Medium {
@@ -143,13 +143,17 @@
     
     #banner .one > div .right .buttons {
         display: flex;
-        margin-top: 6vh;
+        {% comment %} margin-top: 6vh; {% endcomment %}
         justify-content: center;
         width: 100%;
     }
     
     #banner .one > div .right .buttons .my-button {
         margin: 0 10px;
+    }
+
+    #banner .one .u36DemiBold_v2 {
+      text-align: left;
     }
     
     #banner .swiper-pagination-bullet {
@@ -169,10 +173,6 @@
     
     #banner .three {
         background: rgb(39, 146, 187) url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18458_2x_d1f3b0da-4245-4bb5-a66d-79f8abdd2dea.jpg?v=1680518473') center center/cover no-repeat;
-    }
-
-    #banner .usback {
-        background: rgb(39, 146, 187) url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18457_2x_f6f5ae19-098e-48f5-a86c-19ff821d0f64.jpg?v=1680518649') center center/cover no-repeat;
     }
     
     #banner .three > div {
@@ -194,13 +194,38 @@
     
     #banner .three > div .right .u48DemiBold {
         margin-top: 1vh;
-        margin-bottom: 7vh;
+        margin-bottom: 4vh;
     }
     
     #banner .three > div .right .buttons {
         display: flex;
         justify-content: center;
-        margin-top: 7vh;
+        margin-top: 8vh;
+    }
+
+    #banner .countdown {
+      background: #fff;
+    border-radius: 55px;
+    display: flex;
+    padding: 0 30px;
+    overflow: hidden;
+    max-width: 556px;
+    justify-content: space-between;
+    margin: 4vh 0 6vh;
+    }
+
+    #banner .countdown > div {
+      color: #3B65EB;
+      display: flex;
+      align-items: center;
+      font: normal normal 600 16px/25px Urbane;
+      text-align: left;
+    }
+
+    #banner .countdown > img {
+      width: 70%;
+      position: relative;
+      top: 12px;
     }
     
     
@@ -213,32 +238,46 @@
         }
     
         #banner .three {
-            background: rgb(39, 146, 187) url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18476_2x_0a96879d-c4ee-4954-8c75-4eae2ec78978.jpg?v=1680518989') center top/cover no-repeat;
+            background: rgb(39, 146, 187) url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18476_2x_0b3fc0a5-29ff-451e-9535-3f04fca0980e.png?v=1681093905') center top/cover no-repeat;
             position: relative;
         }
-
-      #banner .usback {
-        background: rgb(39, 146, 187) url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18465_2x_b820f9be-3eb9-48c9-b7a9-d97cfae28bdf.jpg?v=1680519138') center top/cover no-repeat;
-        position: relative;
-      }
     
         #banner .three > div {
             text-align: center;
-            padding: 10% 17%;
+            padding: 30px;
             align-items: flex-start;
             justify-content: center;
+        }
+
+        #banner .three > div .right {
+          text-align: center;
         }
     
         #banner .three > div .right .u48DemiBold {
             font-size: 24px;
             line-height: 28px;
             margin-top: 0;
-            margin-bottom: 5vh;
+            margin-bottom: 16px;
             text-align: center;
         }
     
         #banner .three > div .right img {
             max-width: 224px;
+        }
+
+        #banner .countdown {
+          padding: 0 15px;
+          margin-top: 24px;
+        }
+
+        #banner .countdown > div {
+          font-size: 12px;
+          line-height: 15px;
+        }
+
+        #banner .countdown > img {
+          top: 1.7vw;
+          width: 65%;
         }
     
         #banner .two {
@@ -288,12 +327,18 @@
     
     
         #banner .one {
-            background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18465_2x_8d57d433-07f3-408d-9cb9-932ca2943bf3.jpg?v=1679572207') center center/cover no-repeat;
-            padding: 10%;
+            background: rgb(39, 146, 187) url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18465_2x_2a49b0ac-3fa5-4093-9d29-c738f003170f.png?v=1681093615') center top/cover no-repeat;
+            padding: 30px 10%;
         }
     
         #banner .one > div {
             align-items: flex-start;
+        }
+
+        #banner .one .u36DemiBold_v2 {
+          text-align: center;
+          font-size: 18px;
+          line-height: 21px;
         }
     
         #banner .one > div .right {
@@ -308,8 +353,8 @@
     
         #banner .one > div .right > img {
             max-width: 224px;
-            margin-top: 10%;
-            margin-bottom: 10%;
+            margin-top: 16px;
+            margin-bottom: 24px;
         }
     
         #banner .one > div .right .box {
@@ -333,12 +378,16 @@
             padding: 4px 14px;
             font-size: 12px;
         }
+
+      #banner .three > div .right .buttons {
+        margin-top: 0;
+      }
     }
 </style>
 
-    <div id="banner">
+<div id="banner">
   <div class="swiper-wrapper">
-      <!--<div class="swiper-slide two">
+      <!--div class="swiper-slide two">
           <div>
               <div class="left">
                   <h2>HUGE <br>EASTER SALE</h2>
@@ -351,51 +400,82 @@
               <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18455.png?v=1679559152"
                   alt="">
           </div>
-      </div>-->
-      <div class="swiper-slide three usback">
+      </div> -->
+      <div class="swiper-slide one">
           <div>
               <div class="right">
-                  <div class="u20Medium mobileHide">Huge Easter Sale</div>
-                  <div class="u48DemiBold">Carbon 1s</div>
-                  <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18493.png?v=1679925516" alt="">
+                  <div class="texts">
+                      <!-- <span class="u20Medium mobileHide">Huge Easter Sale</span> -->
+                      <span class="u48DemiBold">Carbon 1</span>
+                  </div>
+                  <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18487.png?v=1679567557" alt="">
+                  <!-- <div class="box">
+                      <span class="mobileHide">+</span>
+                      <div>
+                          <div class="item">
+                              <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18445_2x_3206cd11-6e17-4cb3-be10-ad6201624cfd.jpg?v=1679919748" alt="">
+                              <span>Water Bottle <br>Cage</span>
+                          </div>
+                          <div class="item">
+                              <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18444_2x_4f420c03-d269-46ad-b2ab-6a440392bfab.jpg?v=1679919787" alt="">
+                              <span>Micro <br>Fender</span>
+                          </div>
+                          <div class="item">
+                              <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Image_140_2x_7115e41a-ce25-4dea-b7d7-761dc37e6114.jpg?v=1679919807" alt="">
+                              <span>Kickstand</span>
+                          </div>
+                          <div class="item" style="max-width: 87px;">
+                              <div>FREE</div>
+                              <span style="text-decoration: line-through;">€173</span>
+                          </div>
+                      </div>
+                  </div> -->
+                  <div class="u36DemiBold_v2">+ 173€ Free Accessories</div>
+                  <div class="countdown">
+                    <div>Easter sale expires Apr. 18</div>
+                    <img src="http://i.countdownmail.com/205dop.gif" border="0" alt="countdownmail.com"/>
+                  </div>
                   <div class="buttons">
                       <a class="my-button" href="/products/urtopia-carbon-e-bike">Shop Now</a>
-                      <!-- <a class="my-button my-button-black" href="">Test Rides</a> -->
+                      <a class="my-button my-button-black" href="/pages/test-ride">Test Rides</a>
                   </div>
               </div>
           </div>
       </div>
-      <div class="swiper-slide three">
-          <div>
-              <div class="right">
-                  <div class="u20Medium mobileHide">Huge Easter Sale</div>
-                  <div class="u48DemiBold">Chord & Chord X</div>
-                  <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18493.png?v=1679925516" alt="">
-                  <div class="buttons">
-                      <a class="my-button" href="/products/urtopia-chord-ebike">Shop Now</a>
-                      <!-- <a class="my-button my-button-black" href="">Test Rides</a> -->
-                  </div>
-              </div>
-          </div>
-      </div>
+    <div class="swiper-slide three">
+        <div>
+            <div class="right">
+                <div class="u20Medium mobileHide">Chord pre-order ending soon</div>
+                <div class="u48DemiBold">Chord & Chord X</div>
+                <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230404-091537.png?v=1680570978" alt="">
+                <div class="countdown">
+                  <div>Easter sale expires Apr. 18</div>
+                  <img src="http://i.countdownmail.com/205dop.gif" border="0" alt="countdownmail.com"/>
+                </div>
+                <div class="buttons">
+                    <a class="my-button" href="/products/urtopia-chord-ebike">Shop Now</a>
+                    <!-- <a class="my-button my-button-black" href="">Test Rides</a> -->
+                </div>
+            </div>
+        </div>
+    </div>
   </div>
   <div class="swiper-pagination"></div>
 </div>
 <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/8-swiper-bundle.min.js?v=1663912984"> </script>
-<script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1.14.2-TweenMax.js?v=1663912518"></script>
 <script>
- new Swiper('#banner', {
-        autoplay: {
+new Swiper('#banner', {
+        {% comment %} autoplay: {
             disableOnInteraction: false,
-            // pauseOnMouseEnter: true,
+            pauseOnMouseEnter: true,
             delay: 5000,
-        },
+        }, {% endcomment %}
         loop: true,
         speed: 1000,
         pagination: {
-            el:'.swiper-pagination',
+            el: '.swiper-pagination',
             clickable: true
-        },
+        }
     })
 
 </script>
