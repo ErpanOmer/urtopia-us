@@ -250,7 +250,7 @@
       <span class="close" onclick="closeMiniDialog()">×</span>
   </div>`
 
-  function debounce(fn, wait) {
+  function debounce(fn, wait = 300) {
     // 自由变量，debounce执行完成被释放，time也不会被释放
     let time;
     // 返回一个闭包，接受参数
@@ -297,7 +297,13 @@
             return false;
         })
 
-        $
+
+        $('.subscribe-container input').on('input', debounce(e => {
+
+
+        }))
+
+        
 
       }, 1000)
 
