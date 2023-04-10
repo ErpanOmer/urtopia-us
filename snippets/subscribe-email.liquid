@@ -249,6 +249,25 @@
       </div>
       <span class="close" onclick="closeMiniDialog()">×</span>
   </div>`
+
+  function debounce(fn, wait) {
+    // 自由变量，debounce执行完成被释放，time也不会被释放
+    let time;
+    // 返回一个闭包，接受参数
+    return function (...args) {
+        // 保存闭包被调用时的this
+        const this_ = this;
+        // 清除上一次的定时器
+        if (time) {
+            clearTimeout(time);
+        };
+        // 不再是直接执行fn，在内部传递参数
+        time = setTimeout(function () {
+            // 通过apply修改fn的this
+            fn.apply(this_, args);
+        }, wait);
+    }
+};
   
   function showMiniDialog(html = '') {
     if (storage.get('emailDialogHideDay')) {
@@ -277,6 +296,8 @@
             event.preventDefault();
             return false;
         })
+
+        $
 
       }, 1000)
 
