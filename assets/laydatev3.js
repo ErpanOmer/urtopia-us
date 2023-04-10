@@ -3922,7 +3922,7 @@ let extra_data = {}
             //         lay(".booking-info-form").append(it);
             //       }*/
             //     });
-            // });
+            });
   
           //改-点击右侧显示
           if (options.showSide && lay("." + ELEM_SIDE).css("display") == "none") {
