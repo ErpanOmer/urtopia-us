@@ -124,9 +124,9 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
                 {%- endif -%}
 
                 <a href="{{ item.url }}" class="cart-item__name h4 break">{{ item.product.title | escape }}</a>
-                {%- if item.variant.inventory_quantity<=0-%} <div>Back-ordered Item
+                {% comment %} {%- if item.variant.inventory_quantity<=0-%} <div>Back-ordered Item
       </div>
-      {%- endif -%}
+      {%- endif -%} {% endcomment %}
       {%- if item.original_price != item.final_price -%}
       <div class="cart-item__discounted-prices">
         <span class="visually-hidden">
