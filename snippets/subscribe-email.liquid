@@ -298,8 +298,17 @@
         })
 
 
+        let startInput = false
         $('.subscribe-container input').on('input', debounce(e => {
-            console.log(e.target.value)
+            if (startInput) {
+                return
+            }
+
+            startInput = true
+            fetchBuried('emailpop', 'popupview', {
+                email: 'e.target.value',
+                tag: 'US,POPUP'
+            })
         }, 2000))
 
         
