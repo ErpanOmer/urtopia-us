@@ -271,7 +271,7 @@
           $('.subscribe-container form').on("submit", function (event) {
             const email = $('.subscribe-container form input[type="email"]').val()
             // 埋点
-            fetchBuried('emailpop', 'submit', { email })
+            fetchBuried('emailpop', 'submit', { email, tag: 'US,POPUP' })
             closeMiniDialog(14)
         
             event.preventDefault();
@@ -281,7 +281,9 @@
       }, 1000)
 
 
-      fetchBuried('emailpop', 'popupview')
+      fetchBuried('emailpop', 'popupview', {
+        tag: 'US,POPUP'
+      })
     })
   }
   
