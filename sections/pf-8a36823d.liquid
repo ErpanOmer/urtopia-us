@@ -1165,6 +1165,15 @@ color: rgb(112, 112, 112);
       $(this).children("i").toggleClass("faq-content-plus");
       $(this).parent().siblings().find(".faq-title").children("i").addClass("faq-content-plus")
     })
+
+
+
+    if (!sessionStorage.isPreviewTestRide) {
+        fetchBuried('testride', 'pageview')
+    }
+
+    // 记录来过这个页面
+    sessionStorage.isPreviewTestRide = 'isPreviewTestRide'
   </script>
   <style>
     .faq-navigation {
