@@ -470,7 +470,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
   }
 </style>
 <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/shopInfoList-us-3.js?v=1674893114"></script>
-<script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/laydatev3.js"></script>
+{{ 'laydatev3.js' | asset_url | script_tag }}
 <div id="urtopia-calendar">
 </div>
 <div class="store-section">
@@ -691,13 +691,12 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 	{
 	  body.extras.spot="special-event"
 	}
-    fetch("https://api.newurtopia.com/third_part/book_ride/traces", {
-      method: "POST",
-      body: JSON.stringify(body),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
+
+  fetchBuried('testride', 'booknow', {
+    spot: shopPoint,
+  })
+
+
     }
 </script>
 
@@ -1333,3 +1332,13 @@ window.addEventListener('load',()=>{
   ]
 }
 {% endschema %}
+
+
+<script>
+  if (!sessionStorage.isPreviewTestRide) {
+    fetchBuried('testride', 'pageview')
+}
+
+// 记录来过这个页面
+sessionStorage.isPreviewTestRide = 'isPreviewTestRide'
+</script>
