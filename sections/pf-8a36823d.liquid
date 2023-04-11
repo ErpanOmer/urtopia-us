@@ -1334,3 +1334,12 @@ window.addEventListener('load',()=>{
 }
 {% endschema %}
 
+
+<script>
+  if (!sessionStorage.isPreviewTestRide) {
+    fetchBuried('testride', 'pageview')
+}
+
+// 记录来过这个页面
+sessionStorage.isPreviewTestRide = 'isPreviewTestRide'
+</script>
