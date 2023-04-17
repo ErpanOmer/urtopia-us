@@ -174,10 +174,12 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
           {% if option.name == 'Size' or option.name == 'Frame' %}
             <span style="color:#484848;">
             {% case option.value %}
+              {% when 'S' %}
+                (Fit for 5’3’’~5’9’’ Inseam 30’’)
               {% when 'M' %}
-                (Fit for 170-185 cm)
+                (Fit for 5’7’’~6’1’’ Inseam 31’’)
               {% when 'L' %}
-                (Fit for 180-195 cm)
+                (- Fit for 5’11’’~6’5’’ Inseam 33’’)
               {% when 'High-Step' %}
                 (Fit for 170cm - 195cm)
               {% when 'Step-Through' %}
