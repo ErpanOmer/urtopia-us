@@ -2,11 +2,18 @@
   "sections": {
     "pf-c74c2764": {
       "type": "pf-c74c2764",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "about-us": {
+      "type": "about-us",
       "settings": {
       }
     }
   },
   "order": [
-    "pf-c74c2764"
+    "pf-c74c2764",
+    "about-us"
   ]
 }

@@ -439,12 +439,6 @@ a.moreBtn.bannerBtn.buyBtn:hover,
         }
       }
       
-      img,
-      video {
-        width: 100%;
-        height: auto;
-      }
-      
       
       .centeral-content {
         max-width: 1280px;
@@ -454,6 +448,10 @@ a.moreBtn.bannerBtn.buyBtn:hover,
       }
       
       /* 全局字体设置start */
+      .u11Light_v2 {
+        font: normal normal 300 11px/1.4em urbane;
+      }
+      
       .u17Light {
         font: normal normal 300 17px/19px urbane;
       }
@@ -492,11 +490,15 @@ a.moreBtn.bannerBtn.buyBtn:hover,
       }
       
       .u30Medium {
-        font: normal normal 500 30px/34px urbane;
+        font: normal normal 500 30px/1.4em urbane;
       }
       
       .u36Medium {
         font: normal normal 500 36px/42px urbane;
+      }
+      
+      .u17DemiBold_v2 {
+        font: normal normal 600 17px/1.4em urbane;
       }
       
       .u20DemiBold {
@@ -505,6 +507,10 @@ a.moreBtn.bannerBtn.buyBtn:hover,
       
       .u20DemiBold_v2 {
         font: normal normal 600 20px/1.4em urbane;
+      }
+      
+      .u24DemiBold_v2 {
+        font: normal normal 600 24px/1.4em urbane;
       }
       
       .u30DemiBold {
@@ -523,12 +529,24 @@ a.moreBtn.bannerBtn.buyBtn:hover,
         font: normal normal 600 42px/48px urbane;
       }
       
+      .u42DemiBold_v2 {
+        font: normal normal 600 42px/1.25em urbane;
+      }
+      
       .u48DemiBold {
         font: normal normal 600 48px/54px urbane;
       }
       
       .u48DemiBold_v2 {
         font: normal normal 600 48px/1.4em urbane;
+      }
+      
+      .u60DemiBold_v2 {
+        font: normal normal 600 60px/1.4em urbane;
+      }
+      
+      .u72DemiBold_v2 {
+        font: normal normal 600 72px/1.25em urbane;
       }
       
       .hide {
@@ -667,5 +685,3 @@ a.moreBtn.bannerBtn.buyBtn:hover,
           display: none !important;
         }
       }
-      
-      
