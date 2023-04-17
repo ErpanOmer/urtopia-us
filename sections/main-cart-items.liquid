@@ -170,7 +170,25 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
         {%- for option in item.options_with_values -%}
         <div class="product-option">
           <dt>{{ option.name }}: </dt>
-          <dd>{{ option.value }}</dd>
+          <dd>{{ option.value }}
+          {% if option.name == 'Size' or option.name == 'Frame' %}
+            <span style="color:#484848;">
+            {% case option.value %}
+              {% when 'S' %}
+                (Fit for 5’3’’~5’9’’)
+              {% when 'M' %}
+                (Fit for 5’7’’~6’1’’)
+              {% when 'L' %}
+                (Fit for 5'11’’~6’5’’)
+              {% when 'High-Step' %}
+                (Fit for  5'7'' – 6'5'')
+              {% when 'Step-Through' %}
+                (Fit for 5'3'' – 6’1'')
+              {% else %}
+          {% endcase %}
+            </span>
+          {% endif%}
+      </dd>
         </div>
         {%- endfor -%}
         {%- endif -%}
