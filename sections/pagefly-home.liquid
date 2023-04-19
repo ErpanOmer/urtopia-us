@@ -59,11 +59,11 @@
     const isMultipartBanner = document.querySelectorAll('.banner .swiper-slide')
     
     isMultipartBanner.length > 1 && new Swiper('.banner', {
-        autoplay: {
+        {% comment %} autoplay: {
             disableOnInteraction: false,
             pauseOnMouseEnter: false,
             delay: 5000,
-        },
+        }, {% endcomment %}
         loop: true,
         speed: 1000,
         pagination: {
