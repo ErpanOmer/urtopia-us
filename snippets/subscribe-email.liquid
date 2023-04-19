@@ -357,8 +357,8 @@
     const template = `<div class="video-box">
       <div style="position: relative">
         <iframe
-          width="${document.body.clientWidth > 768 ? 840 : ''}"
-          height="${document.body.clientWidth > 768 ? 472 : ''}"
+          width="${document.body.clientWidth > 768 ? 840 : document.body.clientWidth - 30}"
+          height="${document.body.clientWidth > 768 ? 472 : 'auto'}"
           src="${src}"
           title="YouTube video player"
           frameborder="0"
