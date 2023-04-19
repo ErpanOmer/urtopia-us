@@ -356,7 +356,9 @@
 
     const template = `<div class="video-box">
       <div style="position: relative">
-        <video src="https://youtu.be/gjYMDVGv_C4" autoplay>
+          <video autoplay="" loop="" class="mobileHide">
+            <source src="https://youtu.be/gjYMDVGv_C4">
+        </video>
         <span class="close" onclick="closeMiniDialog()">x</span>
       </div>
     </div>`
