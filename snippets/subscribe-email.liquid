@@ -277,14 +277,14 @@
 
 
   function showEmailDialog () {
-
-  }
-  
-  function showMiniDialog(html = '') {
     if (storage.get('emailDialogHideDay')) {
       return
     }
+    
+    showMiniDialog(subscribeHtml)
+  }
   
+  function showMiniDialog(html = '') {
     $('body .mini-dialog').remove()
     setTimeout(() => {
       $("body").append(`<div class="mini-dialog" style="display: flex;">${html}</div>`)
@@ -341,5 +341,5 @@
     storage.set('emailDialogHideDay', 'emailDialogHideDay', day)
   }
   
-  setTimeout(showEmailDialog, 5000, subscribeHtml)
+  setTimeout(showEmailDialog, 5000)
   </script>
