@@ -319,6 +319,27 @@
     // 关闭弹窗
     closeMiniDialog()
   }
+
+
+  // 视频播放
+  function playVideo () {
+    const template = `<div class="movieBox">
+      <div style="position: relative">
+        <iframe
+          width="840"
+          height="472.5"
+          src=""
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+        <span class="closeBtn" id="case-closeBtn">x</span>
+      </div>
+    </div>`
+  }
+
+
   
   function showMiniDialog(html = '') {
     $('body .mini-dialog').remove()
