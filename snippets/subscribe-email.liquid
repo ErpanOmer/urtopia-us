@@ -231,7 +231,7 @@
           </div>
         </form>
       </div>
-      <span class="close" onclick="closeMiniDialog()">×</span>
+      <span class="close" onclick="closeEmailDialog()">×</span>
   </div>`
   */
 
@@ -253,7 +253,7 @@
         </div>
       </form>
     </div>
-    <span class="close" onclick="closeMiniDialog()">×</span>
+    <span class="close" onclick="closeEmailDialog()">×</span>
 </div>`
 
   function debounce(fn, wait = 300) {
@@ -288,7 +288,7 @@
           const email = $('.subscribe-container form input[type="email"]').val()
           // 埋点
           fetchBuried('emailpop', 'submit', { email, tag: 'US,POPUP' })
-          closeMiniDialog(14)
+          closeEmailDialog(14)
       
           event.preventDefault();
           return false;
