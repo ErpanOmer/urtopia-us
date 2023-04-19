@@ -489,6 +489,10 @@ a.moreBtn.bannerBtn.buyBtn:hover,
         font: normal normal 500 24px/27px urbane;
       }
       
+      .u24Medium_v2 {
+        font: normal normal 500 24px/1.25em urbane; 
+      }
+      
       .u30Medium {
         font: normal normal 500 30px/1.4em urbane;
       }
@@ -515,6 +519,10 @@ a.moreBtn.bannerBtn.buyBtn:hover,
       
       .u30DemiBold {
         font: normal normal 600 30px/34px urbane;
+      }
+      
+      .u30DemiBold_v2 {
+        font: normal normal 600 30px/1.25em urbane;
       }
       
       .u36DemiBold {
@@ -554,6 +562,10 @@ a.moreBtn.bannerBtn.buyBtn:hover,
         overflow: hidden;
       }
       
+      .flex-1 {
+        flex: 1;
+      }
+      
       .mini-dialog {
         position: fixed;
         top: 0;
@@ -579,31 +591,53 @@ a.moreBtn.bannerBtn.buyBtn:hover,
         overflow: hidden;
       }
       
-      body .my-button {
-        display: inline-block;
-        padding: 14px 36px;
-        background-color: #fff;
-        color: #000;
-        border-radius: 30px;
-        font: normal normal 500 14px/16px urbane;
-        cursor: pointer;
-        white-space: nowrap;
-      }
+      body {
+        .my-button {
+          display: inline-block;
+          padding: 14px 36px;
+          background-color: #fff;
+          color: #000;
+          border-radius: 30px;
+          font: normal normal 500 16px/19px urbane;
+          cursor: pointer;
+          white-space: nowrap;
+          transition: all .3s;
+        
+          &:hover {
+            background-color: #F5F6F8;
+          }
+        
+          &:active {
+            opacity: 0.95;
+          }
+        }
       
-      body .my-button-ghost {
-        background-color: transparent;
-        border: 2px solid #fff;
-        color: #fff;
-      }
+        
+        .my-button-ghost {
+          background-color: transparent;
+          border: 2px solid #fff;
+          color: #fff;
+          padding: 12px 36px;
+        
+          &:hover {
+            background-color: transparent;
+          }
+        }
       
-      body .my-button-black {
-        background-color: #000;
-        color: #fff;
-      }
+        .my-button-black {
+          background-color: #000;
+          color: #fff;
+        
+          &:hover {
+            background-color: #2C2C2C;
+          }
+        }
       
-      body .my-button-white {
-        background-color: transparent;
-        border: 2px solid #000;
+        .my-button-white {
+          background-color: transparent;
+          border: 2px solid #000;
+          padding: 12px 36px;
+        }
       }
       
       body .jBox-overlay {
@@ -649,8 +683,17 @@ a.moreBtn.bannerBtn.buyBtn:hover,
           font: normal normal 600 48px/48px urbane;
         }
       
-        body .my-button {
-          padding: 11px 20px;
+        body {
+          .my-button {
+            padding: 11px 20px;
+            font-size: 14px;
+            line-height: 17px;
+          }
+      
+          .my-button-white,
+          .my-button-ghost {
+            padding: 9px 20px;
+          }
         }
       
         body .jBox-Modal .jBox-title {
