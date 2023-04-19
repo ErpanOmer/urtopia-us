@@ -274,6 +274,11 @@
         }, wait);
     }
 };
+
+
+  function showEmailDialog () {
+
+  }
   
   function showMiniDialog(html = '') {
     if (storage.get('emailDialogHideDay')) {
@@ -336,5 +341,5 @@
     storage.set('emailDialogHideDay', 'emailDialogHideDay', day)
   }
   
-  setTimeout(showMiniDialog, 5000, subscribeHtml)
+  setTimeout(showEmailDialog, 5000, subscribeHtml)
   </script>
