@@ -365,7 +365,7 @@
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
         ></iframe>
-        <span class="close">x</span>
+        <span class="close" onclick="closeMiniDialog()">x</span>
       </div>
     </div>`
 
@@ -388,7 +388,7 @@
     })
   }
   
-  function closeMiniDialog(day = 3) {
+  function closeMiniDialog() {
     // console.log(a === document.querySelector('body .mini-dialog'))
     $('body .mini-dialog').remove()
   }
