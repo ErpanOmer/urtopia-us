@@ -284,33 +284,33 @@
     showMiniDialog(subscribeHtml)
 
     setTimeout(() => {
-      $('.subscribe-container form').on("submit", function (event) {
-        const email = $('.subscribe-container form input[type="email"]').val()
-        // 埋点
-        fetchBuried('emailpop', 'submit', { email, tag: 'US,POPUP' })
-        closeMiniDialog(14)
-    
-        event.preventDefault();
-        return false;
-    })
+        $('.subscribe-container form').on("submit", function (event) {
+          const email = $('.subscribe-container form input[type="email"]').val()
+          // 埋点
+          fetchBuried('emailpop', 'submit', { email, tag: 'US,POPUP' })
+          closeMiniDialog(14)
+      
+          event.preventDefault();
+          return false;
+      })
 
 
-    let startInput = false
-    $('.subscribe-container input').on('input', debounce(e => {
-        if (startInput) {
-            return
-        }
+      let startInput = false
+      $('.subscribe-container input').on('input', debounce(e => {
+          if (startInput) {
+              return
+          }
 
-        startInput = true
-        fetchBuried('emailpop', 'enter', {
-            email: e.target.value,
-            tag: 'US,POPUP'
-        })
-    }, 2000))
+          startInput = true
+          fetchBuried('emailpop', 'enter', {
+              email: e.target.value,
+              tag: 'US,POPUP'
+          })
+      }, 2000))
 
-    
+      
 
-  }, 1000)
+    }, 1000)
   }
   
   function showMiniDialog(html = '') {
@@ -324,9 +324,6 @@
           return false;
         })
       }, 100) {% endcomment %}
-  
-  
-       
     })
   }
   
