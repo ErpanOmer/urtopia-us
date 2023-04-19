@@ -131,6 +131,31 @@
         }
     }
     </style>
+
+    <style>
+      .video-box {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+
+      .video-box .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        color: #fff;
+        width: 30px;
+        height: 30px;
+        background: #0c0c0ccc;
+        text-align: center;
+        line-height: 30px;
+        border-radius: 50%;
+      }
+    </style>
+
     <link rel="preload" href="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DSCF9660_2x_cfe9f780-faad-4036-85d2-f962c7cde9bb.jpg?v=1681806863" as="image">
     <link rel="preload" href="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230418-164331.jpg?v=1681807423" as="image">
   <script>
@@ -329,7 +354,7 @@
       return
     }
 
-    const template = `<div class="movieBox">
+    const template = `<div class="video-box">
       <div style="position: relative">
         <iframe
           width="840"
