@@ -909,7 +909,7 @@ letter-spacing: 0px;
 					assign options = product.options_with_values
 					assign selected_variant = product.selected_or_first_available_variant
                 %}
-            <input type="hidden" name="id" data-product-id="{{product.id}}" value="{{ product.selected_or_first_available_variant.id }}"/>{% unless product.has_only_default_variant %}<div class="pf-th">
+            <input type="hidden" name="id" data-product-id="{{product.id}}" oninput="changeVariantId" value="{{ product.selected_or_first_available_variant.id }}"/>{% unless product.has_only_default_variant %}<div class="pf-th">
 					{% liquid 
 						assign swatches = shop.metafields.pfVariantSwatchesV2
 						assign keys = swatches.pf_keys | split: "; "
