@@ -2,7 +2,77 @@
 {% render 'pagefly-settings' %} <link rel="stylesheet" href="{{ 'pagefly.c9449e7a.css' | asset_url }}">
 		 <style>:root { 	user-select: none; } a { 	color: #000; } a:hover { 	color: #263B55; } body { 	letter-spacing: 0; } /* 全局字体设置start */ .u17Light { 	font: normal normal 300 17px/19px urbane; } .u20Light { 	font: normal normal 300 20px/24px urbane; } .u24Light { 	font: normal normal 300 24px/27px urbane; } .u36Light { 	font: normal normal 300 36px/42px urbane; } .u20Medium { 	font: normal normal 500 20px/24px urbane; } .u24Medium { 	font: normal normal 500 24px/27px urbane; } .u30Medium { 	font: normal normal 500 30px/34px urbane; } .u36Medium { 	font: normal normal 500 36px/42px urbane; } .u20DemiBold { 	font: normal normal 600 20px/24px urbane; } .u30DemiBold { 	font: normal normal 600 30px/34px urbane; } .u36DemiBold { 	font: normal normal 600 36px/42px urbane; } .u42DemiBold { 	font: normal normal 600 42px/48px urbane; } .u48DemiBold { 	font: normal normal 600 48px/54px urbane; } h2 { 	margin: auto; 	font: normal normal 600 72px/86px urbane; } h3 { 	margin: auto; 	font: normal normal 600 42px/50px urbane; } h1 { 	margin: 0; 	font-weight: bold; 	font: normal normal 600 48px/48px urbane; } body .my-button {   display: inline-block; 	padding: 14px 36px; 	background-color: #fff; 	color: #000; 	border-radius: 30px; 	font: normal normal 500 14px/16px urbane; 	cursor: pointer; 	white-space: nowrap; } body .my-button-ghost { 	background-color: transparent; 	border: 2px solid #fff; 	color: #fff; } body .my-button-black { 	background-color: #000; 	color: #fff; } body .my-button-white { 	background-color: transparent; 	border: 2px solid #000; } @media (max-width: 767px) { 	h2 { 	margin: auto; 	font: normal normal 600 48px/48px urbane; } body .my-button { 	padding: 11px 20px; } }</style> <style></style><div style="opacity:0" class="sc-bYoBSM hUVNGC __pf __pf_ihFswhsY" id="__pf"><div data-pf-type="Body" class="sc-hjGZqJ fNoOP pf-1_"><div data-pf-type="Layout" class="sc-htJRVC dNJAjO pf-2_"><div data-section-id="pf-a1b2" data-pf-type="Section" class="sc-fmciRz bheIgq pf-3_"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-4_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-5_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-6_">
 
-      
+        <div class="banner">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide common">
+                    <div class="centeral-content">
+                        <div></div>
+                        <div class="right">
+                            <div class="u24Medium_v2">Carbon 1</div>
+                            <div class="u60DemiBold_v2">Your Smart and Lightweight Pal</div>
+                            <div class="flex-1 pcHide"></div>
+                            <div class="buttons">
+                                <a class="my-button" href="/products/urtopia-carbon-e-bike">Order now</a>
+                                <a class="my-button my-button-ghost mobileHide" href="/pages/test-ride">Test rides</a>
+                                <a class="my-button pcHide" href="/pages/test-ride">Test rides</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide maksim">
+                    <div class="centeral-content">
+                        <div></div>
+                        <div class="right">
+                            <div class="u17Medium_v2 mobileHide">Tune your ride with Chord.</div>
+                            <div class="u48DemiBold_v2">"Elegant, powerful and reliable"</div>
+                            <div class="flex-1 pcHide"></div>
+                            <div class="buttons">
+                                <a class="my-button" href="">Meet Chord</a>
+                                <a class="my-button my-button-ghost mobileHide" href="">Watch video</a>
+                                <a class="my-button pcHide" href="">Watch video</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide us-downcount">
+                    <div class="centeral-content">
+                        <div class="left">
+                            <div class="u30DemiBold_v2">Early Bird Sale $600 off <br> on Chord Expires Apr.25</div>
+                            <div class="flex-1 pcHide"></div>
+                            <div class="buttons">
+                                <a class="my-button" href="">Meet Chord</a>
+                                <a class="my-button my-button-ghost" href="">Order now</a>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <iframe class="mobileHide" height="308" scrolling="no" src="https://w2.countingdownto.com/4697973" frameborder="0"></iframe>
+                            <iframe class="pcHide" scrolling="no" height="203" src="https://w2.countingdownto.com/4698560" frameborder="0"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    
+    <script setup>    
+    // 是否有多个banner, 如果有 开启swiper
+    const isMultipartBanner = document.querySelectorAll('.banner .swiper-slide')
+    
+    isMultipartBanner.length > 1 && new Swiper('.banner', {
+        autoplay: {
+            disableOnInteraction: false,
+            pauseOnMouseEnter: false,
+            delay: 5000,
+        },
+        loop: true,
+        speed: 1000,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true
+        }
+    })
+    </script>
+
 </div></div></div></div></div></div><div data-section-id="pf-d8e0" data-pf-type="Section" class="sc-fmciRz bheIgq pf-7_ pf-sm-hide pf-hide"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-8_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-9_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-10_"><div id="section1">
     <div class="texts">
       <div>“It's incredibly fun to ride”</div>
