@@ -1763,33 +1763,7 @@ function addAllToCart(parse) {
 	  $(".buyNowBtn").addClass("soldout");
 	} else {
 		const id = document.querySelector('input[name="id"]').value
-
-		// 如果这些id 存在
-		if (ignore.includes(id)) {
-			$(".tip-b").html("Shipped from <span>May 15-30, 2023 </span>from L.A. warehouse.");
-		} else {
-			$(".tip-b").html("Ships within <span>3 business days</span> from L.A. warehouse.");
-		}
-
-		console.log('id', id)
-	  /* 
-	  if (formData.get(modelname) == "Carbon 1s · 350W · Shimano 7-Speed") {
-		if (formData.get(sizename) !== "S") {
-		  $(".tip-b").html(
-			"Ships within <span>3 business days</span> from L.A. warehouse."
-		  );
-		} else {
-		  $(".tip-b").html(
-			"Ships within <span>3 business days</span> from L.A. warehouse."
-		  );
-		}
-	  } else {
-		$(".tip-b").html(
-		  "Ships within <span>3 business days</span> from L.A. warehouse."
-		);
-	  }
-	  */
-
+		$(".tip-b").html(ignore.includes(id) ? "Shipped from <span>May 15-30, 2023 </span>from L.A. warehouse." : "Ships within <span>3 business days</span> from L.A. warehouse.");
 	  
 
 	  $(".addToCartBtn")[0].style.display = "block";
