@@ -17,7 +17,7 @@
     
     .subscribe-container .subscribe img {
         margin: 30px 0;
-        max-width: 265px;
+        max-width: 210px;
     }
     
     .subscribe-container .subscribe .u17Light {
@@ -106,7 +106,7 @@
     
         .subscribe-container .subscribe img {
             margin: 15px 0;
-            max-width: 205px;
+            max-width: 125px;
         }
     
         .subscribe-container .subscribe .u17Light {
@@ -131,6 +131,33 @@
         }
     }
     </style>
+
+    <style>
+      .video-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #0009;
+      }
+
+
+      .video-box .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        color: #fff;
+        width: 30px;
+        height: 30px;
+        background: #0c0c0ccc;
+        text-align: center;
+        line-height: 30px;
+        border-radius: 50%;
+      }
+    </style>
+
+    <link rel="preload" href="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DSCF9660_2x_cfe9f780-faad-4036-85d2-f962c7cde9bb.jpg?v=1681806863" as="image">
+    <link rel="preload" href="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230418-164331.jpg?v=1681807423" as="image">
   <script>
 
     class MyStorage {
@@ -211,6 +238,7 @@
   
     const storage = new MyStorage()
 
+    /*
     const subscribeHtml = `<div class="subscribe-container">
       <img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Urtopia_Photo_Sesh_14_of_14_2x_9ec4000c-c609-4829-b4a2-430a5b7aae63.jpg?v=1680259217" alt="">
       <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Urtopia_Photo_Sesh_9_of_14_2x_dc648c2b-067f-4357-bda8-d917f51fd883.jpg?v=1680259100" alt="">
@@ -228,11 +256,11 @@
           </div>
         </form>
       </div>
-      <span class="close" onclick="closeMiniDialog()">×</span>
+      <span class="close" onclick="closeEmailDialog()">×</span>
   </div>`
+  */
 
 
-  /*
   const subscribeHtml = `<div class="subscribe-container">
     <img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DSCF9660_2x_cfe9f780-faad-4036-85d2-f962c7cde9bb.jpg?v=1681806863" alt="">
     <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230418-164331.jpg?v=1681807423" alt="">
@@ -250,9 +278,8 @@
         </div>
       </form>
     </div>
-    <span class="close" onclick="closeMiniDialog()">×</span>
+    <span class="close" onclick="closeEmailDialog()">×</span>
 </div>`
-*/
 
   function debounce(fn, wait = 300) {
     // 自由变量，debounce执行完成被释放，time也不会被释放
@@ -272,12 +299,82 @@
         }, wait);
     }
 };
-  
-  function showMiniDialog(html = '') {
+
+
+  function showEmailDialog () {
     if (storage.get('emailDialogHideDay')) {
       return
     }
+
+    showMiniDialog(subscribeHtml)
+
+    setTimeout(() => {
+        $('.subscribe-container form').on("submit", function (event) {
+          const email = $('.subscribe-container form input[type="email"]').val()
+          // 埋点
+          fetchBuried('emailpop', 'submit', { email, tag: 'US,POPUP' })
+          closeEmailDialog(14)
+      
+          event.preventDefault();
+          return false;
+      })
+
+
+      let startInput = false
+      $('.subscribe-container input').on('input', debounce(e => {
+          if (startInput) {
+              return
+          }
+
+          startInput = true
+          fetchBuried('emailpop', 'enter', {
+              email: e.target.value,
+              tag: 'US,POPUP'
+          })
+      }, 2000))
+
+      
+
+    }, 1000)
+  }
+
+  function closeEmailDialog (day = 3) {
+    storage.set('emailDialogHideDay', 'emailDialogHideDay', day)
+
+    // 关闭弹窗
+    closeMiniDialog()
+  }
+
+
+  // 视频播放
+  function playVideo (src = '') {
+    console.log('src', src)
+
+    if (!src) {
+      return
+    }
+
+    const template = `<div class="video-box">
+      <div style="position: relative">
+        <iframe
+          width="${document.body.clientWidth > 768 ? 840 : document.body.clientWidth * 0.84 }"
+          height="${document.body.clientWidth > 768 ? 472 : 'auto'}"
+          src="${src}"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+        <span class="close" onclick="closeMiniDialog()">x</span>
+      </div>
+    </div>`
+
+    showMiniDialog(template)
+  }
+
+
   
+  function showMiniDialog(html = '') {
     $('body .mini-dialog').remove()
     setTimeout(() => {
       $("body").append(`<div class="mini-dialog" style="display: flex;">${html}</div>`)
@@ -288,51 +385,13 @@
           return false;
         })
       }, 100) {% endcomment %}
-  
-  
-       setTimeout(() => {
-          $('.subscribe-container form').on("submit", function (event) {
-            const email = $('.subscribe-container form input[type="email"]').val()
-            // 埋点
-            fetchBuried('emailpop', 'submit', { email, tag: 'US,POPUP' })
-            closeMiniDialog(14)
-        
-            event.preventDefault();
-            return false;
-        })
-
-
-        let startInput = false
-        $('.subscribe-container input').on('input', debounce(e => {
-            if (startInput) {
-                return
-            }
-
-            startInput = true
-            fetchBuried('emailpop', 'enter', {
-                email: e.target.value,
-                tag: 'US,POPUP'
-            })
-        }, 2000))
-
-        
-
-      }, 1000)
-
-
-      // fetchBuried('emailpop', 'popupview', {
-       // tag: 'US,POPUP'
-      //})
     })
   }
   
-  function closeMiniDialog(day = 3) {
+  function closeMiniDialog() {
     // console.log(a === document.querySelector('body .mini-dialog'))
     $('body .mini-dialog').remove()
-  
-  
-    storage.set('emailDialogHideDay', 'emailDialogHideDay', day)
   }
   
-  setTimeout(showMiniDialog, 5000, subscribeHtml)
+  setTimeout(showEmailDialog, 5000)
   </script>
