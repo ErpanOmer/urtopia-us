@@ -1759,7 +1759,7 @@ function addAllToCart(parse) {
 	  $(".buyNowBtn span").html("Out of stock");
 	  $(".buyNowBtn").addClass("soldout");
 	} else {
-		const id = document.querySelector('input[name="id"]')
+		const id = document.querySelector('input[name="id"]').value
 		console.log('id', id)
 	  /* 
 	  if (formData.get(modelname) == "Carbon 1s · 350W · Shimano 7-Speed") {
