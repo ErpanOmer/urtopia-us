@@ -1751,6 +1751,9 @@ function addAllToCart(parse) {
 	  bStyleDom.classList.add("optionHide");
 	}
 
+	// 这些是发货时间为三天的variant id
+	const ignore = ['43556899684600', '43556899750136', '43556899815672', '43556899881208', '43556895949048', '43556896014584']
+
 	// 按钮消失隐藏逻辑end
 	if (productQuantity[formData.get("id")] <= 0) {
 	  $(".tip-b").html("");
@@ -1760,6 +1763,14 @@ function addAllToCart(parse) {
 	  $(".buyNowBtn").addClass("soldout");
 	} else {
 		const id = document.querySelector('input[name="id"]').value
+
+		// 如果这些id 存在
+		if (ignore.includes(id)) {
+			$(".tip-b").html("Shipped from <span>May 15-30, 2023 </span>from L.A. warehouse.");
+		} else {
+			$(".tip-b").html("Ships within <span>3 business days</span> from L.A. warehouse.");
+		}
+
 		console.log('id', id)
 	  /* 
 	  if (formData.get(modelname) == "Carbon 1s · 350W · Shimano 7-Speed") {
@@ -3701,19 +3712,6 @@ window.onload=function(){
   //
 
 }
-
-	const ignore = ['']
-	function changeVariantId (e) {
-		const variantId = e[0].target.value
-		console.log(variantId)
-	}
-
-    const targetNode = document.querySelector('input[name="id"]')
-	// 创建一个观察器实例并传入回调函数
-	const observerr = new MutationObserver(changeVariantId);
-
-	// 以上述配置开始观察目标节点
-	observerr.observe(targetNode, { attributes: true });
 
 </script>
 {% schema %}
