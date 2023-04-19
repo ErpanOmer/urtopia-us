@@ -231,7 +231,11 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
   	}
   }
 </style>
-</div></div></div><div class="pf-c" style="--c-xs:12;--c-sm:5;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-15_"><h1 data-product-type="title" data-product-id="{{ product.id }}" data-pf-type="ProductTitle" class="sc-hgKiOD dlknTu pf-16_">{{ product.title }}</h1><div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-17_ order-djs"><div class="pf-judme">{% render "judgeme_widgets", widget_type: "judgeme_preview_badge", jm_style: "", concierge_install: false, product: product %}</div></div><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-18_"><div class="chrod_text">
+</div></div></div><div class="pf-c" style="--c-xs:12;--c-sm:5;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-15_"><h1 data-product-type="title" data-product-id="{{ product.id }}" data-pf-type="ProductTitle" class="sc-hgKiOD dlknTu pf-16_">{{ product.title }}</h1><div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-17_ order-djs"><div class="pf-judme">{% render "judgeme_widgets", widget_type: "judgeme_preview_badge", jm_style: "", concierge_install: false, product: product %}</div></div><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-18_">
+  <div data-pf-type="ProductPrice2" class="sc-kTqLtj ihdlmX pf-27_">
+    <div data-product-type="price" data-product-id="{{ product.id }}" data-product-price="true" data-pf-type="ProductPrice2Item" class="sc-haTkiu fcLDTw pf-28_">{{ product.variants[0].price | money }}</div>
+  </div>
+  <div class="chrod_text">
  Meet the new lightweight city ebike 2023 - the perfect smart electric town bike for urban adventurers. With a range of up to 120km, this ebike is ideal for commuting or leisurely rides around town. With the extra safety and convenience that comes with smart features like anti-theft GPS, onboard navigation and automatic synchronization of ride data, the Chord Ebike is your first step into a new era of cycling.
   <a href="#chrod_details"> Read more</a>
 </div>
@@ -387,7 +391,11 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 						{% else %} 
 					
                             {% assign key = option_name | replace: '"', '&quot;' %}
-                        <div class="pf-option-swatches" data-swatch-type="radio" data-unique-id="{{option.position}}">{% for option_value in option.values %}{% capture option_id %}pf-sw{{swatches_count}}-{{key}}-{{option_value | remove: '"' | replace: ' ', '-' }}{% endcapture %}{% assign optionValue = option_value | replace: '"', '&quot;' %}<div data-option-name="{{key | default: formatted_option_name}}" class="pf-vs-radio"><input {% if option.selected_value == option_value %}checked{% endif %} type="radio" id="{{option_id}}" name="sw{{swatches_count}}-{{key}}" value="{{optionValue}}"/><label style="overflow:hidden" for="{{option_id}}"><span>{{option_value}}</span></label></div>{% endfor %}</div>{% endif %} {% endfor %}</div>{% endunless %}</div><div data-pf-type="ProductPrice2" class="sc-kTqLtj ihdlmX pf-27_"><div data-product-type="price" data-product-id="{{ product.id }}" data-product-price="true" data-pf-type="ProductPrice2Item" class="sc-haTkiu fcLDTw pf-28_">{{ product.variants[0].price | money }}</div></div><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-30_">  <!-- Placement v2 -->
+                        <div class="pf-option-swatches" data-swatch-type="radio" data-unique-id="{{option.position}}">{% for option_value in option.values %}{% capture option_id %}pf-sw{{swatches_count}}-{{key}}-{{option_value | remove: '"' | replace: ' ', '-' }}{% endcapture %}{% assign optionValue = option_value | replace: '"', '&quot;' %}<div data-option-name="{{key | default: formatted_option_name}}" class="pf-vs-radio"><input {% if option.selected_value == option_value %}checked{% endif %} type="radio" id="{{option_id}}" name="sw{{swatches_count}}-{{key}}" value="{{optionValue}}"/><label style="overflow:hidden" for="{{option_id}}"><span>{{option_value}}</span></label></div>{% endfor %}</div>{% endif %} {% endfor %}</div>{% endunless %}</div>
+                        
+                  
+                        
+                        <div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-30_">  <!-- Placement v2 -->
 <klarna-placement
   data-key="credit-promotion-badge"
   data-locale="de-DE"
@@ -396,6 +404,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 <!-- end Placement -->
 
 </div>
+
 <div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-31_"><div class="chrod_code">
   <img
     src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_20664.svg?v=1678094921"
