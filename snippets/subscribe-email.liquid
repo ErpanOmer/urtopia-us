@@ -322,7 +322,11 @@
 
 
   // 视频播放
-  function playVideo () {
+  function playVideo (src = '') {
+    if (!src) {
+      return
+    }
+
     const template = `<div class="movieBox">
       <div style="position: relative">
         <iframe
