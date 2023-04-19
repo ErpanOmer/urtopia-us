@@ -3694,15 +3694,20 @@ window.onload=function(){
   },6000)
   //
 
+}
 
-  function changeVariantId (e) {
-	console.log('e')
-  }
+	function changeVariantId (e) {
+		console.log(e)
+	}
 
-  const targetNode = document.querySelector('input[name="id"]')
+    const targetNode = document.querySelector('input[name="id"]')
+	// 创建一个观察器实例并传入回调函数
+	const observer = new MutationObserver(changeVariantId);
 
+	// 以上述配置开始观察目标节点
+	observer.observe(targetNode, { attributes: true });
 
-}</script>
+</script>
 {% schema %}
 {
   "name": "PageFly Page 9b29433f",
