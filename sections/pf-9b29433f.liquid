@@ -1759,6 +1759,9 @@ function addAllToCart(parse) {
 	  $(".buyNowBtn span").html("Out of stock");
 	  $(".buyNowBtn").addClass("soldout");
 	} else {
+		const id = document.querySelector('input[name="id"]')
+		console.log('id', id)
+	  /* 
 	  if (formData.get(modelname) == "Carbon 1s · 350W · Shimano 7-Speed") {
 		if (formData.get(sizename) !== "S") {
 		  $(".tip-b").html(
@@ -1774,6 +1777,9 @@ function addAllToCart(parse) {
 		  "Ships within <span>3 business days</span> from L.A. warehouse."
 		);
 	  }
+	  */
+
+	  
 
 	  $(".addToCartBtn")[0].style.display = "block";
 
@@ -3696,8 +3702,10 @@ window.onload=function(){
 
 }
 
+	const ignore = ['']
 	function changeVariantId (e) {
-		console.log(e[0].target.value)
+		const variantId = e[0].target.value
+		console.log(variantId)
 	}
 
     const targetNode = document.querySelector('input[name="id"]')
