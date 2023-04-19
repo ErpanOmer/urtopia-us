@@ -312,6 +312,13 @@
 
     }, 1000)
   }
+
+  function closeEmailDialog (day = 3) {
+    storage.set('emailDialogHideDay', 'emailDialogHideDay', day)
+
+    // 关闭弹窗
+    closeMiniDialog()
+  }
   
   function showMiniDialog(html = '') {
     $('body .mini-dialog').remove()
@@ -330,9 +337,6 @@
   function closeMiniDialog(day = 3) {
     // console.log(a === document.querySelector('body .mini-dialog'))
     $('body .mini-dialog').remove()
-  
-  
-    storage.set('emailDialogHideDay', 'emailDialogHideDay', day)
   }
   
   setTimeout(showEmailDialog, 5000)
