@@ -190,28 +190,27 @@
 </style>
 
 <script>
-    let temp = `“It's incredibly fun to ride”`
-
-    function moveTop (text, target) {
-      const active = target.getAttribute('active')
-
-      if (active !== null) {
-        return
-      }
-
-      const current = document.querySelector('#section1 .logos img[active]')
-
-      current.removeAttribute('active')
-      target.setAttribute('active', '')
-
-      const texts = document.querySelector('#section1 .texts')
-      texts.innerHTML = `
-                          <div class="toBottom">${temp}</div>
-                          <div class="toTop">${text}</div>
-                        `
-
-      temp = text
+  let temp = `“It's incredibly fun to ride”`
+  function moveTop (text, target) {
+    const active = target.getAttribute('active')
+    if (active !== null) {
+      return
     }
+    const current = document.querySelector('#section1 .logos img[active]')
+    current.removeAttribute('active')
+    target.setAttribute('active', '')
+    const texts = document.querySelector('#section1 .texts')
+    texts.innerHTML = `
+                        <div class="toBottom">${temp}</div>
+                        <div class="toTop">${text}</div>
+                      `
+    temp = text
+  }
+  document.body.clientWidth > 1024 && setInterval(() => {
+    const active = document.querySelector('#section1 .logos img[active]')
+    const next = active.nextElementSibling || document.querySelector('#section1 .logos img')
+    next.click()
+  }, 5000)
   </script></div></div></div></div></div></div><div data-section-id="pf-22ce" data-pf-type="Section" class="sc-fmciRz bheIgq pf-11_ pf-lg-hide pf-md-hide"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-12_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-13_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-14_"><style>
 
 #section1-mobile {
