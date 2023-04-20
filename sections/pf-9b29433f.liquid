@@ -1144,6 +1144,11 @@ letter-spacing: 0px;
    },
  });
 </script></div><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-44_"><!-- Placement v2 -->
+
+<style>
+
+</style>
+
 <klarna-placement
   data-key="credit-promotion-badge"
   data-locale="en-US"
@@ -3658,33 +3663,6 @@ let show = function(index){
   }
   //setAccessoriesDetailShow(accNameList);
   setTotalPriceContent();
-}
-
-
-window.onload=function(){
-  $("ul.splide__pagination li").attr("onclick","this.querySelector('button').click()");
-    let timer = setInterval(()=>{
-	let gtx = document.querySelector("klarna-placement div");
-	if(gtx&&gtx.shadowRoot){
-	  let style = document.createElement("style");
-	  style.innerHTML =".container {text-align: left; border: 0; box-shadow: 0 0 5px #00000033; border-radius: 10px;padding: 9px 11px;font: normal normal 300 14px Urbane;display: inline-flex;flex-direction: row-reverse;justify-content: flex-end;} button.link{font: normal normal 300 14px Urbane} button.link:nth-child(2){display: block;} .text-wrapper{margin-left:0;margin-right:15px;}";
-	  gtx.shadowRoot.appendChild(style);
-	  clearInterval(timer);
-	  timer=null;
-	}
-  },500)
-  setTimeout(()=>{
-	if(timer){
-	  clearInterval(timer);
-	  timer=null;
-	}
-	if(mediaTimer){
-	  clearInterval(mediaTimer);
-	  mediaTimer=null;
-	}
-  },6000)
-  //
-
 }
 
 </script>
