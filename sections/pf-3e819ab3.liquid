@@ -418,19 +418,18 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 <script>
   function changeBike (gotoUrl, imgUrl, target) {
     const parent = target.parentNode
-
     const active = parent.querySelector('.active')
-
     active.className = ''
     target.className = 'active'
-
-    const img = parent.parentNode.querySelector('img')
+    const img = parent.parentNode.parentNode.parentNode.querySelector('img')
     img.src = imgUrl
-
     // 新增的代码
-    const a = parent.parentNode.querySelector('a')
+    const a = parent.parentNode.parentNode.parentNode.querySelector('a')
     a.href = gotoUrl
   }
+  $('#bike .swiper-slide > img').on('click', e => {
+    e.target.parentNode.querySelector('a').click()
+  })
 </script></div></div></div></div></div></div><div data-section-id="pf-ae4f" data-pf-type="Section" class="sc-fmciRz bheIgq pf-11_"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-12_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-13_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-14_"><div id="section3">
     <div class="u42DemiBold">Urtopia CARE</div>
     <div class="boxs">
