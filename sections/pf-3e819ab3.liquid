@@ -96,17 +96,30 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
   #bike .swiper-slide .new {
     position: absolute;
     left: 0;
-    top: 20px;
+    top: 0;
     background-color: #263B55;
     padding: 10px 20px;
     font: normal normal 600 14px/14px urbane;
     border-radius: 0px 20px 20px 0px;
     background-image: linear-gradient(to bottom, #2E26EE, #2A60F4);
   }
-
+  #bike .swiper-slide .big-new {
+    border-radius: 0px 50px 50px 0px;
+    line-height: 21px;
+  }
   #bike .swiper-slide img {
     width: 100%;
     margin: 40px 0 30px;
+    cursor: pointer;
+  }
+  #bike .swiper-slide .dots-and-price-and-size {
+    display: flex;
+    flex-direction: column;
+  }
+  #bike .swiper-slide .dots-and-price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   #bike .swiper-slide .dots {
