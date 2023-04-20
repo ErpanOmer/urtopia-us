@@ -618,40 +618,37 @@
     </div>
 <script setup>
 
-const isMobile = document.body.clientWidth < 768
-
-new Swiper ('#bike', {
-        // direction: 'vertical',  
-        slidesPerView: isMobile ? 1 : 3,
-        // spaceBetween: 30,
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-      },
-      // 如果需要滚动条
-        scrollbar: {
-            el: '.swiper-scrollbar',
-        },
-  })
-
+  const isMobile = document.body.clientWidth < 768
+    new Swiper ('#bike', {
+            // direction: 'vertical',  
+            slidesPerView: isMobile ? 1 : 3,
+            spaceBetween: isMobile ? 0 : 20,
+            navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+          },
+          // 如果需要滚动条
+            scrollbar: {
+                el: '.swiper-scrollbar',
+            },
+      })
 </script>
 
 <script>
   function changeBike (gotoUrl, imgUrl, target) {
     const parent = target.parentNode
-
     const active = parent.querySelector('.active')
-
     active.className = ''
     target.className = 'active'
-
-    const img = parent.parentNode.querySelector('img')
+    const img = parent.parentNode.parentNode.parentNode.querySelector('img')
     img.src = imgUrl
-
     // 新增的代码
-    const a = parent.parentNode.querySelector('a')
+    const a = parent.parentNode.parentNode.parentNode.querySelector('a')
     a.href = gotoUrl
   }
+  $('#bike .swiper-slide > img').on('click', e => {
+    e.target.parentNode.querySelector('a').click()
+  })
 </script></div></div></div></div></div></div>
 
 <style>
