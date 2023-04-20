@@ -397,11 +397,17 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
         <div class="name">Chord X</div>
         <div class="info"> </div>
           <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18400_2x_6789324f-33d2-4342-9519-0ee3bc943699.png?v=1677639718" alt="">
-          <div class="dots">
-            <div onclick="changeBike('/products/urtopia-chord-ebike?variant=43694976729336', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18400_2x_6789324f-33d2-4342-9519-0ee3bc943699.png?v=1677639718', this)" white class="active"></div>
-            <div onclick="changeBike('/products/urtopia-chord-ebike?variant=43694976762104', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2.88_2x_4ebddfe8-c42e-4196-80e2-2f844bdec3dc.png?v=1677639816', this)" black></div>
-          </div>
-          <div class="size">Fit for 5’3’’~6’1’’</div>
+          <div class="dots-and-price-and-size">
+            <div class="dots-and-price">
+              <div class="dots">
+                <div onclick="changeBike('/products/urtopia-chord-ebike?variant=43694976729336', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18400_2x_6789324f-33d2-4342-9519-0ee3bc943699.png?v=1677639718', this)" white class="active"></div>
+                <div onclick="changeBike('/products/urtopia-chord-ebike?variant=43694976762104', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2.88_2x_4ebddfe8-c42e-4196-80e2-2f844bdec3dc.png?v=1677639816', this)" black></div>
+              </div>
+              <div class="u24DemiBold_v2">{{ all_products['urtopia-chord-ebike'].price | money | slice: 0, 6 | replace: '.', '' }}</div>
+            </div>
+            <div class="size">Fit for 5’3’’~6’1’’</div>
+          </div> 
+
           <a class="my-button my-button-white" href="/products/urtopia-chord-ebike?variant=43694976729336">Order now</a>
           <div class="my-button my-button-black new">$600 OFF</div>
         </div>
