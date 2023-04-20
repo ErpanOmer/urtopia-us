@@ -235,7 +235,15 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
   <div data-pf-type="ProductPrice2" style="margin-top: 12px;" class="sc-kTqLtj ihdlmX pf-27_">
     <div data-product-type="price" data-product-id="{{ product.id }}" data-product-price="true" data-pf-type="ProductPrice2Item" class="sc-haTkiu fcLDTw pf-28_">{{ product.variants[0].price | money }}</div>
   </div>
+  <style>
+    #credit-promotion-badge *::part(osm-container) {
+      padding: 0;
+      border: none;
+      line-height: 12px;
+    }
+    </style>
   <klarna-placement
+    id="credit-promotion-badge"
     data-key="credit-promotion-badge"
     data-locale="en-US"
     data-purchase-amount=""
