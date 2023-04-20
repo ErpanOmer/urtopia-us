@@ -1627,6 +1627,24 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
         }
       });
     }
+
+
+    $('.faq-title').click(function () {
+      $(this)
+        .siblings('.faq-content')
+        .slideToggle()
+        .parent()
+        .siblings()
+        .find('.faq-content')
+        .slideUp();
+      $(this).children('i').toggleClass('faq-content-plus');
+      $(this)
+        .parent()
+        .siblings()
+        .find('.faq-title')
+        .children('i')
+        .addClass('faq-content-plus');
+    });
 </script></div><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-34_"><div class="chrod_info">
   <div class="ship_wrapped">
     <div class="ship_item">
