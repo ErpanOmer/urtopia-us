@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .compared {
     background-color: #F7F8FA;
     padding-bottom: 80px;
@@ -215,4 +216,223 @@
             }
         }
     }
+=======
+.compared {
+    background-color: #F7F8FA;
+    padding-bottom: 80px;
+    .centeral-content {
+        .items {
+            display: flex;
+            flex-direction: column;
+
+            .item {
+                display: flex;
+                padding: 40px 0;
+                
+                & + .item {
+                    border-top: 1px solid #0006;
+                }
+
+
+                .dimension {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+
+                    .u20Medium_v2 {
+                        margin: 10% 0 20%;
+                        opacity: 0.7;
+                        padding-right: 15%;
+                    }
+                }
+
+
+                .params {
+                    flex: 2;
+                    display: flex;
+                    align-items: center;
+
+                    .param {
+                        display: flex;
+                        flex-direction: column;
+                        flex: 1;
+                        text-align: left;
+
+                        .select {
+                            background-color: #fff;
+                            border-radius: 30px;
+                            padding: 0 40px;
+                            margin-top: 30px;
+                            height: 60px;
+                            border: 2px solid #fff;
+                            transition: all .3s;
+                            overflow: hidden;
+
+                            select {
+                                width: 100%;
+                                height: 100%;
+                                font: normal normal 600 20px/1.4em urbane;
+                                border: none;
+
+                                
+
+                                &:focus-visible {
+                                    outline-offset: unset;
+                                    box-shadow: unset;
+                                    outline: unset;
+                                    border-color: #000;
+                                }
+
+                                option[disabled] {
+                                    cursor: not-allowed;
+                                    color: #ccc;
+                                }
+                            }
+
+                            &::after,
+                            &::before {
+                                content: unset;
+                            }
+
+                            &:focus-within {
+                                border: 2px solid #000;
+                            }
+                        }
+
+
+                        .sizes {
+                            display: flex;
+                            flex-direction: column;
+                            margin-top: 36px;
+
+                            & > div {
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: space-between;
+
+                                span {
+                                    &:first-child {
+                                        color: #000;
+                                    }
+                                }
+
+                                & + div {
+                                    margin-top: 12px;
+
+                                    
+                                }
+                            }
+
+                        }
+
+                        
+                    }
+
+                    .param + .param {
+                        margin-left: 16px;
+                    }
+
+
+                    .u17Medium_v2 {
+                        color: #000000b3;
+                        padding-right: 10%;
+                        line-height: 1.6em;
+                    }
+                }
+
+
+                .params-dimensions {
+                    .u17Medium_v2 {
+                        padding-right: 5%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 767px) {
+    .compared {
+        padding: 0 0 40px;
+        .centeral-content {
+            padding: 0 4%;
+            .items {
+                .item {
+                    flex-direction: column;
+                    padding: 30px 0;
+
+                    .dimension {
+                        position: relative;
+
+                        .u42DemiBold_v2 {
+                            font-size: 24px;
+                        }
+
+                        .u20Medium_v2 {
+                            margin: 24px 0;
+                            font-size: 14px;
+                            padding: 0;
+                            line-height: 22px;
+                        }
+
+                        i {
+                            position: absolute;
+                            right: 0;
+                        }
+                    }
+
+                    .params {
+                        .param {
+                            .select {
+                                height: 45px;
+                                padding: 0 15px;
+                                
+                                select {
+                                    font-size: 12px;
+                                }
+                            }
+
+                            
+                        }
+
+                        .u17Medium_v2 {
+                            font-size: 12px;
+                            padding-right: 0;
+                        }
+                    }
+
+                    .params-dimensions {
+                        flex-direction: column;
+                        padding: 0 5%;
+
+                        .param {
+                            margin: 20px 0;
+
+                            .u14DemiBold_v2 {
+                                margin: 12px 0;
+                                color: #000;
+                            }
+
+                            .sizes {
+                                margin: 0;
+                            }
+                        }
+
+                        .param + .param {
+                            margin-left: 0;
+                            margin-bottom: 0;
+                        }
+                    }
+
+                    .u24DemiBold_v2 {
+                        font-size: 18px;
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        }
+    }
+>>>>>>> 745d823ec299e62d1916a38767a97aa16196694d
 }
