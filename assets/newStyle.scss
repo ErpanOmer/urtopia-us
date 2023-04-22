@@ -485,6 +485,10 @@ a.moreBtn.bannerBtn.buyBtn:hover,
         font: normal normal 500 20px/24px urbane;
       }
       
+      .u20Medium_v2 {
+        font: normal normal 500 20px/1.25em urbane;
+      }
+      
       .u24Medium {
         font: normal normal 500 24px/27px urbane;
       }
@@ -499,6 +503,10 @@ a.moreBtn.bannerBtn.buyBtn:hover,
       
       .u36Medium {
         font: normal normal 500 36px/42px urbane;
+      }
+      
+      .u14DemiBold_v2 {
+        font: normal normal 600 14px/1.4em urbane;
       }
       
       .u17DemiBold_v2 {
@@ -546,7 +554,7 @@ a.moreBtn.bannerBtn.buyBtn:hover,
       }
       
       .u48DemiBold_v2 {
-        font: normal normal 600 48px/1.4em urbane;
+        font: normal normal 600 48px/1.25em urbane;
       }
       
       .u60DemiBold_v2 {
@@ -602,6 +610,7 @@ a.moreBtn.bannerBtn.buyBtn:hover,
           cursor: pointer;
           white-space: nowrap;
           transition: all .3s;
+          text-align: center;
         
           &:hover {
             background-color: #F5F6F8;
