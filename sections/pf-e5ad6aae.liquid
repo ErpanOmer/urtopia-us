@@ -438,7 +438,7 @@ function addAllToCart(parse) {
   if (adding == false) {
     changeAddToCartText(parse,1);
     adding = true;
-    var form = document.querySelector("form#product_form_7902779474168");
+    var form = document.querySelector("form#product_form_7982118142200");
     let formData = new FormData(form);
     id = formData.get("id");
     cartList.items.push({ id: id, quantity: 1 });
@@ -783,7 +783,7 @@ function addAllToCart(parse) {
   
    function chekoutInventory() {
 	let formData = new FormData(
-	  document.querySelector("form#product_form_7902779474168")
+	  document.querySelector("form#product_form_7982118142200")
 	);
 	let productQuantity = {};
 	let modelname = "";
