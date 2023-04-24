@@ -874,9 +874,14 @@ function addAllToCart(parse) {
 	if (Number(productQuantity[formData.get("id")]) <= 0) {
 	  $(".tip-b").html("");
 	  // $(".addToCartBtn")[0].style.display = "none";
-	  $(".buyNowBtn")[0].disabled = "true";
-	  $(".buyNowBtn span").html("Out of stock");
-	  $(".buyNowBtn").addClass("soldout");
+
+	  $(".addToCartBtn")[0].disabled = "true";
+	  $(".addToCartBtn span").html("Out of stock");
+	  $(".addToCartBtn").addClass("soldout");
+
+	  // $(".buyNowBtn")[0].disabled = "true";
+	  // $(".buyNowBtn span").html("Out of stock");
+	  // $(".buyNowBtn").addClass("soldout");
 	} else {
 	  if (formData.get(modelname) == "Carbon 1s · 350W · Shimano 7-Speed") {
 		if (formData.get(sizename) !== "S") {
