@@ -899,11 +899,15 @@ function addAllToCart(parse) {
 		);
 	  }
 
-	  $(".addToCartBtn")[0].style.display = "block";
+	  //$(".addToCartBtn")[0].style.display = "block";
 
-	  $(".buyNowBtn")[0].disabled = false;
-	  $(".buyNowBtn span").html("Buy Now");
-	  $(".buyNowBtn").removeClass("soldout");
+	  $(".addToCartBtn")[0].disabled = false;
+	  $(".addToCartBtn span").html("Add to Cart");
+	  $(".addToCartBtn").removeClass("soldout");
+
+	  // $(".buyNowBtn")[0].disabled = false;
+	  // $(".buyNowBtn span").html("Buy Now");
+	  // $(".buyNowBtn").removeClass("soldout");
 	}
   }
 
