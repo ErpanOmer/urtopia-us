@@ -438,7 +438,7 @@ function addAllToCart(parse) {
   if (adding == false) {
     changeAddToCartText(parse,1);
     adding = true;
-    var form = document.querySelector("form#product_form_7982118142200");
+    var form = document.querySelector("form#product_form_7902779474168");
     let formData = new FormData(form);
     id = formData.get("id");
     cartList.items.push({ id: id, quantity: 1 });
@@ -783,7 +783,7 @@ function addAllToCart(parse) {
   
    function chekoutInventory() {
 	let formData = new FormData(
-	  document.querySelector("form#product_form_7982118142200")
+	  document.querySelector("form#product_form_7902779474168")
 	);
 	let productQuantity = {};
 	let modelname = "";
@@ -801,7 +801,7 @@ function addAllToCart(parse) {
 	  }
 	}
 
-	products["7982118142200"].quantity.forEach((item) => {
+	products["7902779474168"].quantity.forEach((item) => {
 	  let temp = item.split(":");
 	  productQuantity[temp[0]] = temp[1];
 	});
@@ -1379,8 +1379,8 @@ img.attr("src","https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/img
 
 //accessories -----------------------
 const products = window.__pageflyProducts;
-console.log("nihao",products)//7523710664952product_form_7902779474168
-var totalPrice = products["7982118142200"].variants[0].price;
+//console.log("nihao",products)//7523710664952product_form_7902779474168
+var totalPrice = products["7902779474168"].variants[0].price;
 setTotalPriceContent();
 function setTotalPriceContent(){
   let currencyCode = Shopify.currency.active;
