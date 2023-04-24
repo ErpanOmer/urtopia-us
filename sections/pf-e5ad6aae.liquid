@@ -868,8 +868,6 @@ function addAllToCart(parse) {
 	  //bStyleDom.classList.add("optionHide");
 	}
 
-	console.log('productQuantity[formData.get("id")]', productQuantity[formData.get("id")])
-
 	// 按钮消失隐藏逻辑end
 	if (Number(productQuantity[formData.get("id")]) <= 0) {
 	  $(".tip-b").html("");
