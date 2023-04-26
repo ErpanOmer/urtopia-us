@@ -44,14 +44,16 @@
 
   <div id="announcement-bar" dir="rtl">
     <div class="swiper-wrapper">
-      <div class="swiper-slide"><p>Early bird sale - <span>Save $600 </span> on Carbon 1s. <br class="pcHide"> <a href="/products/urtopia-carbon-e-bike">Get yours Now</a></p></div>
-      <div class="swiper-slide"><p>Early bird sale - <span>Save $600 </span> on Chord, ends Apr. 25. <br class="pcHide"> <a href="/products/urtopia-chord-ebike">Get yours Now</a></p></div>
+      <div class="swiper-slide"><p>Spring break sale - <span>Save $600 </span> on Carbon 1s. <br class="pcHide"> <a href="/products/urtopia-carbon-e-bike">Get yours Now</a></p></div>
+      <div class="swiper-slide"><p>Spring break sale - <span>Save $300 </span> on Chord, ends May. 3. <br class="pcHide"> <a href="/products/urtopia-chord-ebike">Get yours Now</a></p></div>
     </div>
   </div>
 
   <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/8-swiper-bundle.min.js?v=1663912984"> </script>
 <script>
-  new Swiper('#announcement-bar', {
+  const length = document.querySelectorAll('#announcement-bar .swiper-wrapper > .swiper-slide').length
+
+  length > 1 && new Swiper('#announcement-bar', {
     direction: 'vertical',
     speed: 600,
     loop: true,

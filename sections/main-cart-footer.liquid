@@ -44,11 +44,12 @@
   
   .carbon_text {
       max-width: 410px;
-      box-shadow: 10px 10px 10px #6B869A1C;
       color: #fff;
-      padding: 10px 24px;
-      background: transparent linear-gradient(90deg, #2E26EE 0%, #2A8FF4 100%) 0% 0% no-repeat padding-box;
-      opacity: 0.78;
+      padding: 10px 0;
+      background: transparent linear-gradient(270deg, #EE6426 0%, #F4492A 100%) 0% 0% no-repeat padding-box;
+      box-shadow: 10px 10px 10px #6B869A1C;
+      opacity: 0.88;
+      border-radius: 0 0 5px 5px;
   }
   
   .carbon_code,
@@ -61,6 +62,7 @@
       align-items: center;
       font-weight: 500;
       line-height: 20px;
+      padding-left: 6%;
   }
   
   .carbon_text>div+div {
@@ -81,15 +83,27 @@
       .carbon_code .bold {
           font-size: 16px;
       }
+
+
+      
+      .sale_coupon > div:first-child { 
+        font-size: 13px;
+      }
+
+      .sale_coupon > div:last-child { 
+        font-size: 15px;
+      }
   }
   </style>
 
 <div class="page-width{% if cart == empty %} is-empty{% endif %}" id="main-cart-footer" data-id="{{ section.id }}">
   <div>
     <div class="product_code">
-            <div class="carbon_code">
-                <span>Check out with <br> Early Bird Sale Code to Enjoy:</span>
-                <span class="bold">Chord 700</span>
+            <div class="sale_coupon" style="margin-left:auto;border-radius: 5px 5px 0 0;">
+              <div class="l" style="text-align: left;">
+                Check out with <br> Spring Break Sale Code to Enjoy:
+              </div>
+              <div class="r">Chord 700</div>
             </div>
             <div class="carbon_text">
                 <div>
@@ -125,20 +139,20 @@
           }
     
           if (carbon_quantly > 0 && chord_quantly > 0) {
-            document.querySelector(`.product_code .bold`).innerHTML = 'SPEED600 and <br> Chord600'
-            document.querySelector(`.product_code .carbon_text > div:nth-child(1) span`).innerHTML = `Save ＄${carbon_quantly * 600 + chord_quantly * 600}.00!`
-            document.querySelector(`.product_code .carbon_text > div:nth-child(2) span`).innerHTML = 'Free Accessories'
+            document.querySelector(`.sale_coupon div:last-child`).innerHTML = 'SPEED600 <br> OK300'
+            document.querySelector(`.product_code .carbon_text > div:nth-child(1) span`).innerHTML = `Save ＄${carbon_quantly * 600 + chord_quantly * 300}.00!`
+            // document.querySelector(`.product_code .carbon_text > div:nth-child(2) span`).innerHTML = 'Free Accessories'
           } else if (chord_quantly > 0) { 
-            document.querySelector(`.product_code .bold`).innerHTML = 'Chord600'
-            document.querySelector(`.product_code .carbon_text > div:nth-child(1) span`).innerHTML = `Save ＄${chord_quantly * 600}.00!`
+            document.querySelector(`.sale_coupon div:last-child`).innerHTML = 'OK300'
+            document.querySelector(`.product_code .carbon_text > div:nth-child(1) span`).innerHTML = `Save ＄${chord_quantly * 300}.00!`
             document.querySelector(`.product_code .carbon_text > div:nth-child(2)`).innerHTML = ''
           } else {
             if (carbon_quantly === 0) {
                document.querySelector(`.product_code`).innerHTML = ''
             } else {
-              document.querySelector(`.product_code .bold`).innerHTML = 'SPEED600'
+              document.querySelector(`.sale_coupon div:last-child`).innerHTML = 'SPEED600'
               document.querySelector(`.product_code .carbon_text > div:nth-child(1) span`).innerHTML = `Save ＄${carbon_quantly * 600}.00!`
-              document.querySelector(`.product_code .carbon_text > div:nth-child(2) span`).innerHTML = 'Free Accessories'
+              // document.querySelector(`.product_code .carbon_text > div:nth-child(2) span`).innerHTML = 'Free Accessories'
             }
           }
       }

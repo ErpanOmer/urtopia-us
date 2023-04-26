@@ -403,6 +403,7 @@ a.moreBtn.bannerBtn.buyBtn:hover,
 
 
 
+
       body {
         letter-spacing: 0;
         color: #000;
@@ -437,6 +438,69 @@ a.moreBtn.bannerBtn.buyBtn:hover,
           outline: unset;
           border-color: #000;
         }
+      }
+      
+      .sale_coupon {
+        max-width: 410px;
+        height: 46px;
+        position: relative;
+        border-radius: 5px;
+        overflow: hidden;
+        color: #fff;
+        display: flex;
+        background: transparent linear-gradient(270deg, #EE6426 0%, #F4492A 100%) 0% 0% no-repeat padding-box;
+        box-shadow: 10px 10px 10px #6B869A1C;
+        opacity: 1;
+        z-index: 1;
+      
+        & > div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            height: 100%;
+            line-height: 1.20em;
+      
+            &:first-child {
+                flex-basis: 68%;
+                padding: 0 6%;
+                font-size: 15px;
+                font-weight: 500;
+            }
+      
+            &:last-child {
+                flex-basis: 32%;
+                border-left: 2px dashed #fff;
+                font-size: 17px;
+                font-weight: 600;
+                padding: 0 3%;
+            }
+        }
+      
+        &::before,
+        &::after {
+          content: '';
+          position: absolute;
+          height: 15px;
+          width: 15px;
+          top: 50%;
+          background-color: #fff;
+          border-radius: 50%;
+        }
+      
+        &::before {
+            left: 0;
+            transform: translate(-60%, -50%);
+        }
+      
+        &::after {
+            right: 0;
+            transform: translate(60%, -50%);
+        }
+      }
+      
+      .gray-background-color {
+        background-color: #F7F8FA;
       }
       
       
@@ -499,6 +563,10 @@ a.moreBtn.bannerBtn.buyBtn:hover,
       
       .u30Medium {
         font: normal normal 500 30px/1.4em urbane;
+      }
+      
+      .u30Medium_v2 {
+        font: normal normal 500 30px/1.25em urbane;
       }
       
       .u36Medium {
@@ -610,7 +678,6 @@ a.moreBtn.bannerBtn.buyBtn:hover,
           cursor: pointer;
           white-space: nowrap;
           transition: all .3s;
-          text-align: center;
         
           &:hover {
             background-color: #F5F6F8;

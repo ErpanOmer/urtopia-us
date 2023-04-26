@@ -16,13 +16,16 @@
     }
     
     .subscribe-container .subscribe img {
-        margin: 30px 0;
+        margin: 25px 0;
         max-width: 210px;
     }
-    
+
     .subscribe-container .subscribe .u17Light {
-        line-height: 24px;
-        margin-bottom: 86px;
+      margin-bottom: 25%;
+    }
+    
+    .subscribe-container .subscribe .u17Light_v2 {
+        margin: 13% 0 24%;
     }
     
     .subscribe-container .subscribe .email {
@@ -129,6 +132,18 @@
             top: 0.5%;
             right: 1%;
         }
+
+
+
+        .subscribe-container .subscribe .u30DemiBold_v2 {
+          font-size: 20px;
+        }
+
+
+        .subscribe-container .subscribe .u17Light_v2 {
+          font-size: 15px;
+          margin: 10% 0 12%;
+        }
     }
     </style>
 
@@ -156,8 +171,8 @@
       }
     </style>
 
-    <link rel="preload" href="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DSCF9660_2x_cfe9f780-faad-4036-85d2-f962c7cde9bb.jpg?v=1681806863" as="image">
-    <link rel="preload" href="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230418-164331.jpg?v=1681807423" as="image">
+    <link rel="preload" href="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Urtopia_Photo_Sesh_14_of_14_2x_9ec4000c-c609-4829-b4a2-430a5b7aae63.jpg?v=1680259217" as="image">
+    <link rel="preload" href="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Urtopia_Photo_Sesh_9_of_14_2x_dc648c2b-067f-4357-bda8-d917f51fd883.jpg?v=1680259100" as="image">
   <script>
 
     class MyStorage {
@@ -238,14 +253,13 @@
   
     const storage = new MyStorage()
 
-    /*
-    const subscribeHtml = `<div class="subscribe-container">
+    
+    {% comment %} const subscribeHtml = `<div class="subscribe-container">
       <img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Urtopia_Photo_Sesh_14_of_14_2x_9ec4000c-c609-4829-b4a2-430a5b7aae63.jpg?v=1680259217" alt="">
       <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Urtopia_Photo_Sesh_9_of_14_2x_dc648c2b-067f-4357-bda8-d917f51fd883.jpg?v=1680259100" alt="">
       <div class="subscribe">
-          <span class="u20Medium">Easter sale expires Apr. 18</span>
-          <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Union_14_2x_db30ba9d-299e-42e4-8520-ba8afda8fb27.jpg?v=1681112942">
-          <span class="u17Light">Subscribe for Easter exclusive coupon and Utopia stories</span>
+          <span class="u30DemiBold_v2">Join Urtopia and<br>Get Exclusive Coupon</span>
+          <span class="u17Light_v2">Subscribe to Urtopia for exclusive coupons, engaging stories, and the latest product news.</span>
           <form class="new-contact" action="/contact#ContactFooter" target="_blank" method="post" accept-charset="UTF-8">
           <div class="email">
                 <input type="hidden" name="form_type" value="customer">
@@ -257,17 +271,16 @@
         </form>
       </div>
       <span class="close" onclick="closeEmailDialog()">×</span>
-  </div>`
-  */
+  </div>` {% endcomment %}
 
 
   const subscribeHtml = `<div class="subscribe-container">
-    <img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DSCF9660_2x_cfe9f780-faad-4036-85d2-f962c7cde9bb.jpg?v=1681806863" alt="">
-    <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230418-164331.jpg?v=1681807423" alt="">
+    <img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Urtopia_Photo_Sesh_14_of_14_2x_9ec4000c-c609-4829-b4a2-430a5b7aae63.jpg?v=1680259217" alt="">
+    <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Urtopia_Photo_Sesh_9_of_14_2x_dc648c2b-067f-4357-bda8-d917f51fd883.jpg?v=1680259100" alt="">
     <div class="subscribe">
-        <span class="u20Medium">Chord early bird sale expires Apr. 25</span>
+        <span class="u20Medium">Carbon 1s sale expires May. 3</span>
         <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20871_2x_079b4ff0-88bd-4831-9360-db26a30db658.jpg?v=1681806969">
-        <span class="u17Light">Subscribe for early bird coupons on Chord and Urtopia stories.</span>
+        <span class="u17Light">Subscribe to Urtopia for exclusive coupons, engaging stories, and the latest product news.</span>
         <form class="new-contact" action="/contact#ContactFooter" target="_blank" method="post" accept-charset="UTF-8">
         <div class="email">
               <input type="hidden" name="form_type" value="customer">
