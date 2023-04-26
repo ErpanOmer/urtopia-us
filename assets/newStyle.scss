@@ -799,12 +799,15 @@ a.moreBtn.bannerBtn.buyBtn:hover,
 
 
         .sale_coupon {
-          .l {
-            font-size: 13px;
-          }
 
-          .r {
-            font-size: 15px;
+          & > div {
+            &:first-child {
+              font-size: 13px;
+            }
+
+            &:last-child {
+              font-size: 15px;
+            }
           }
         }
       }
