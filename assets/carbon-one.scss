@@ -1,0 +1,138 @@
+.carbon-one {
+    .mediaaaaa {
+        padding: 80px 0;
+
+        .centeral-content {
+            display: grid;
+            grid-template-columns: repeat(3, 300px);
+            grid-row-gap: 10vh;
+            justify-content: space-between;
+
+
+            &>div {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+
+                img {
+                    &:nth-child(3) {
+                        max-width: 100px;
+                        margin: 15px 0;
+                    }
+
+                    &:nth-child(4) {
+                        height: 60px;
+                        width: auto;
+                    }
+                }
+            }
+        }
+    }
+
+
+
+    .assembly {
+        margin: 120px 0;
+
+        .centeral-content {
+            display: grid;
+            grid-template-columns: 1fr 1.8fr;
+
+            &>div {
+                &:first-child {
+                    padding: 14vh 3.5vw;
+
+                    .u36DemiBold_v2 {
+                        margin-bottom: 40px;
+                    }
+                }
+
+                &:last-child {
+                    background: center center/cover no-repeat;
+                    background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20940_2x_f524b1be-7a39-4892-b6d0-279d260cbbd2.jpg?v=1682581556');
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    img {
+                        width: 76px;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 767px) {
+    .carbon-one {
+        .mediaaaaa {
+            .centeral-content {
+                display: flex;
+                justify-content: unset;
+                overflow: hidden;
+                box-sizing: content-box;
+                padding: unset;
+
+
+                &>div {
+                    padding: 0 8vw;
+                }
+            }
+
+            .swiper-pagination {
+                position: static;
+                margin-top: 30px;
+
+
+                .swiper-pagination-bullet {
+                    height: 6px;
+                    width: 6px;
+                }
+
+                .swiper-pagination-bullet-active {
+                    width: 30px;
+                    height: 6px;
+                    border-radius: 5px;
+                    transition: all .3s;
+                }
+            }
+
+
+        }
+
+
+        .assembly {
+            margin: 60px 0;
+    
+            .centeral-content {
+                grid-template-columns: 1fr;
+    
+                &>div {
+                    &:last-child {
+                        height: calc(84vw - 60px);
+                    }
+
+                    &:first-child {                        
+                        order: 1;
+                        padding: 40px 15px;
+
+
+                        .u36DemiBold_v2 {
+                            font-size: 24px;
+                            margin-bottom: 20px;
+                        }
+
+
+                        .u17DemiLight_v2 {
+                            font-size: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
