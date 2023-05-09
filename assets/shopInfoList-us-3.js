@@ -150,19 +150,19 @@ var shopInfoList = {
             phone: "214-370-9010",
             businessHours: ["12:00\u201317:00", "11:00\u201319:00", "11:00\u201319:00", "11:00\u201319:00", "11:00\u201319:00", "11:00\u201319:00", "09:00\u201317:00"]
         }
-    },
-    Sarasota: {
-        "941-730-5565 ": {
-            name: "Playtri Sarasota",
-            testRideSize: "M",
-            testrideSpot: "Sarasota",
-            imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Playtri_Sarasota.jpg?v=1668230046",
-            add: "315 N Cattlemen Road Unit 5, Sarasota, FL 34235",
-            timezone: "Sarasota, FL (GMT-5)",
-            email: "sarasota@playtri.com",
-            phone: "941-730-5565 ",
-            businessHours: ["12:00\u201317:00", "11:00\u201319:00", "11:00\u201319:00", "11:00\u201319:00", "11:00\u201319:00", "11:00\u201319:00", "09:00\u201317:00"]
-        }
     }
+    //Sarasota: {
+       // "941-730-5565 ": {
+         //   name: "Playtri Sarasota",
+         //   testRideSize: "M",
+         //   testrideSpot: "Sarasota",
+         //   imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Playtri_Sarasota.jpg?v=1668230046",
+         //   add: "315 N Cattlemen Road Unit 5, Sarasota, FL 34235",
+         //   timezone: "Sarasota, FL (GMT-5)",
+         //   email: "sarasota@playtri.com",
+        //    phone: "941-730-5565 ",
+        //    businessHours: ["12:00\u201317:00", "11:00\u201319:00", "11:00\u201319:00", "11:00\u201319:00", "11:00\u201319:00", "11:00\u201319:00", "09:00\u201317:00"]
+       // }
+   // }
 };
 //# sourceMappingURL=/s/files/1/0583/5810/4213/files/shopInfoList-us-3.js.map?v=1674893114
