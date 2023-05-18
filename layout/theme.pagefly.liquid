@@ -5,40 +5,9 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 <!doctype html>
 <html class="no-js" lang="{{ request.locale.iso_code }}">
 
-<head>{% render 'pagefly-head' %}
-
-<!-- Meta Pixel Code -->
-<!-- <script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1016696219071452');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1016696219071452&ev=PageView&noscript=1"
-/></noscript> -->
-<!-- End Meta Pixel Code -->
+<head>
   
-<script>
- window.addEventListener("load", function(){    
-  document.querySelectorAll("button[class*='checkout-button']").forEach(function(e){        
-    e.addEventListener('click', function(e){          
-      gtag('event', '支付处理中', {
-  'method': 'Google'
-});     
-    });        
-  });
-});
-</script>
- <!-- end Google tag (gtag.js) ga4-->
-  
-
+  {% render 'pagefly-head' %}
   <!-- Cozy Country Redirect Optimization Code Start -->
   {{shop.metafields.CCR.shopat_script}}
   <!-- Cozy Country Redirect Optimization Code Start -->
@@ -50,11 +19,16 @@ src="https://www.facebook.com/tr?id=1016696219071452&ev=PageView&noscript=1"
   <meta name="google-site-verification" content="4CyyxbiT2JJKwsI1xsr_c7Qf-ihbvBm4WMiPhI0rOeA" />
   <meta name="google-site-verification" content="1L3RQDlBxPuNpF21De0Ah8NwPfQRUDie4JA9sbgKwfo" />
 
-  <!--  A/B Test ga3 -->
-  <script aysnc src="https://www.googletagmanager.com/gtag/js?id=UA-205871538-1"></script>
-  <!-- Google tag (gtag.js) -->
-
-  
+    <!-- Google Tag Manager -->
+  <script>
+window.dataLayer = window.dataLayer || [];
+</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P9MZH68');</script>
+<!-- End Google Tag Manager -->
   <!--out brain-->
   <script data-obct type="text/javascript">
     /** DO NOT MODIFY THIS CODE**/
@@ -87,7 +61,7 @@ src="https://www.facebook.com/tr?id=1016696219071452&ev=PageView&noscript=1"
 
 
   <!-- 引入插件   -->
-  <script src="https://www.googleoptimize.com/optimize.js?id=OPT-TP8DWLT"></script>
+  <!--<script src="https://www.googleoptimize.com/optimize.js?id=OPT-TP8DWLT"></script>-->
   <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1.9.1-jquery.min.js?v=1663911504"></script>
 <!--   <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/webTrack.js?v=1675687114"></script> -->
   <!-- <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1.14.2-TweenMax.js?v=1663912518"></script>
@@ -142,7 +116,8 @@ src="https://www.facebook.com/tr?id=1016696219071452&ev=PageView&noscript=1"
 
   <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
 
-  {{ content_for_header }}
+{% comment %}{{ content_for_header }}{% endcomment %}
+{{ content_for_header | remove: '<link href="https://monorail-edge.shopifysvc.com" rel="dns-prefetch">' }}
 
   <!-- Taboola Pixel Code -->
   <script type='text/javascript'>
@@ -366,14 +341,8 @@ src="https://www.facebook.com/tr?id=1016696219071452&ev=PageView&noscript=1"
         document.documentElement.classList.add('shopify-design-mode');
       }
     </script>
-    {% if content_for_header contains "hga.helloshopowner.com" %}
-
-    {% render 'hso-hello-google-analytics' %}
-
-    {% endif %}
-
-
-</head>
+  {% include 'dataLayer-allPages' %}
+  </head>
 
 <body class="gradient"><div class="pagefly-container">{{ content_for_layout }}</div></body>
 {% render 'subscribe-email' %}
