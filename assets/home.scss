@@ -1,5 +1,5 @@
 .banner {
-    height: calc(100vh - 111px);
+    height: calc(100vh - 106px);
     position: relative;
     color: #fff;
     overflow-x: hidden;
@@ -111,6 +111,27 @@
                 max-width: 364px;
             }
         }
+
+
+       // 美国独立日活动 banner
+        .memorial-day {
+            background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_20991_2x_95618ddf-2fda-46b4-9835-fbbd94b12582.jpg?v=1684399864');
+            color: #000;
+            // background-position-x: left;
+            .left {
+                max-width: 485px;
+            }
+
+
+            .u36DemiBold_v2 {
+                margin: 24px 0 48px;
+            }
+
+
+            .centeral-content {
+                height: 85%;
+            }
+        }
     }
 
 
@@ -133,7 +154,7 @@
 
 @media (max-width: 767px) {
     .banner {
-        height: calc(100vh - 107px);
+        height: calc(100vh - 102px);
 
         .centeral-content {
             &>div {
@@ -230,6 +251,29 @@
                     .right {
                         //margin: 0 0 6px;
                     }
+                }
+            }
+
+
+          .memorial-day {
+                background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_20993_2x_4866a074-59b9-4eaa-bb1b-feb24e5820fd.jpg?v=1684402291');
+
+                .left {
+                    padding: 20vw 0;
+
+                    .u36DemiBold_v2 {
+                        margin-top: 12px;
+                        font-size: 20px;
+                    }
+
+
+                    img {
+                        max-width: 263px;
+                    }
+                }
+
+                .centeral-content {
+                    height: 100%;
                 }
             }
 
