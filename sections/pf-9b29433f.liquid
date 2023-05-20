@@ -1469,7 +1469,17 @@ function addAllToCart(parse) {
 		const deleteItems = event_accessories.concat([id])
 		console.log('deleteItems', deleteItems)
 
-		{% comment %} cartList.items.find() {% endcomment %}
+		cartList.items.forEach((item, index) => {
+
+			if (deleteItems.includes(item.id)) {
+				cartList.items.splice(index, 1, null);
+			}			
+		})
+
+
+		cartList.items = cartList.items.filter(Boolean)
+
+		console.log('cartList.items', cartList.items)
 	})
   }
 }
