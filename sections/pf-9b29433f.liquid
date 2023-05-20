@@ -1409,6 +1409,12 @@ function addAllToCart(parse) {
     	var sections = cart1.getSectionsToRender().map((section) => section.id);
     	cartList.sections = sections.join(",");
 	}
+
+	const find = __pageflyProducts["7902779474168"].variants.find(i => id === String(i.id))
+	console.log('find', find)
+	{% comment %} const isCarbon1s =  {% endcomment %}
+
+
     fetch("/cart/add.js", {
       method: "POST",
       body: JSON.stringify(cartList),
