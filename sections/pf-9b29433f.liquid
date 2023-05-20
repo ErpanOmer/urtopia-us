@@ -1414,11 +1414,9 @@ function addAllToCart(parse) {
 
 	// 如果存在carbon 1s
 	if (hasCarbon1s) {
-		cartList.items.push(
-			{ id: '43830635561208', quantity: 1 },
-			{ id: '43830633365752', quantity: 1 },
-			{ id: '43830634119416', quantity: 1 }
-		)
+		event_accessories.forEach(i => {
+			cartList.items.push({ id: i, quantity: 1 })
+		})
 	}
 
 
