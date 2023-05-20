@@ -83,8 +83,8 @@ class CartItems extends HTMLElement {
     const pruduct_id = lineItem.dataset.lineItemProductId
     const quantity = lineItem.dataset.quantity
     const index = lineItem.dataset.lineItem
-    const title = lineItem.dataset.variantOption
-    console.log('pruduct_id', pruduct_id, lineItem.dataset)
+    const title = lineItem.dataset.variant_option
+    console.log('pruduct_id', pruduct_id, title)
 
     return
 
