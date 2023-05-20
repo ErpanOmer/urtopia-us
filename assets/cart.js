@@ -4,6 +4,20 @@ class CartRemoveButton extends HTMLElement {
     this.addEventListener('click', (event) => {
       event.preventDefault();
       const cartItems = this.closest('cart-items') || this.closest('cart-drawer-items');
+
+      const lineItem = this.closest('[data-line-item]');
+      const lineId = lineItem.dataset.lineItemVariantId;
+      const pruduct_id = lineItem.dataset.lineItemProductId
+      const quantity = lineItem.dataset.quantity
+      const index = lineItem.dataset.lineItem
+      const title = lineItem.dataset.variant_option
+      console.log('pruduct_id', lineItem.dataset)
+
+      // 如果是carbon one 单车
+      if (pruduct_id === '7902779474168' && title.includes('350W')) {
+          return cartItems.updateCarbonOneWithComponents(parseInt(index), lineId, parseInt(quantity), 0)
+      }
+
       cartItems.updateQuantity(this.dataset.index, 0,"","remove");//更改
     });
   }
@@ -24,7 +38,72 @@ class CartItems extends HTMLElement {
     this.addEventListener('change', this.debouncedOnChange.bind(this));
   }
 
+  updateCarbonOneWithComponents (currentIndex, lineItemVariantId, beforeQuantity, afterQuantity) {
+    console.log('beforeQuantity', beforeQuantity)
+    console.log('afterQuantity', afterQuantity)
+
+    const items = document.querySelectorAll('.cart-items [data-cart-item]');
+
+    let itemsQuantityArray = [];
+
+    items.forEach((item, index) => {
+      if (item.dataset.lineItemVariantId === lineItemVariantId && currentIndex === index + 1) {
+        
+        const insuranceId = item.dataset.insuranceVariantId;
+        const insuranceItem = items[index + 1]
+        if (insuranceId && insuranceItem && insuranceItem.dataset.lineItemVariantId === insuranceId) {
+          // const insuranceItem = document.querySelector(`.cart-items [data-line-item-variant-id="${insuranceId}"]`)
+          // console.log('insuranceItem', insuranceItem)
+          // console.log('dataset.index')
+
+          itemsQuantityArray[parseInt(insuranceItem.dataset.lineItem) -1] = afterQuantity
+        }
+
+        itemsQuantityArray[index] = afterQuantity
+      } else if (event_accessories.includes(item.dataset.lineItemVariantId)) {
+        const componentQuantity = parseInt(item.dataset.quantity)
+        itemsQuantityArray[index] = componentQuantity + (afterQuantity - beforeQuantity)
+      } else {
+        if ((itemsQuantityArray[index] === undefined) || item.dataset.insuranceProductVariantId !== lineItemVariantId) {
+          itemsQuantityArray[index] = parseInt(item.dataset.quantity)
+        }
+      }
+    });
+    
+    console.log('items', itemsQuantityArray);
+
+    const formData = {
+      updates: itemsQuantityArray
+    }
+
+    let info = fetch('/cart/update.js', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': `application/json` },
+      body: JSON.stringify(formData)
+    }).then(response => response.json()).then(data => {
+      location.reload(true);
+
+      return data
+    }).catch((error) => {
+      throw new Error(error);
+    });
+
+    // this.disableLoading(index);
+  }
+
   onChange(event) {
+    const lineItem = event.target.closest('[data-line-item]');
+    const lineId = lineItem.dataset.lineItemVariantId;
+    const pruduct_id = lineItem.dataset.lineItemProductId
+    const quantity = lineItem.dataset.quantity
+    const index = lineItem.dataset.lineItem
+    const title = lineItem.dataset.variant_option
+    console.log('pruduct_id', pruduct_id, lineItem.dataset)
+
+
+    if (pruduct_id === '7902779474168' && title.includes('350W')) {
+        return this.updateCarbonOneWithComponents(parseInt(index), lineId, parseInt(quantity), parseInt(event.target.value));
+    }
     ////购物车逻辑
     /*
     var data = event.target.dataset;

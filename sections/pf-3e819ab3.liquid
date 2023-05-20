@@ -20,6 +20,14 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 	line-height: 24px;
 
   }
+
+
+  .sale .centeral-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    box-sizing: content-box;
+  }
   
   @media (max-width: 767px) {	
 	#section1 .u42DemiBold {
@@ -32,16 +40,42 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 	      font-size: 15px;
          line-height: 21px;
 	}
+
+
+  .sale .centeral-content {
+    grid-template-columns: 1fr;
+  }
   } 
 </style>
 
-<div id="section1">
+<div class="sale">
+  <div class="centeral-content">
+      <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230519-150438.png?v=1684479890"/>
+      <div id="section1">
+        <!--<div class="u42DemiBold">The E-Bike of<br> Art-Tech Fusion</div>-->
+        <div class="u17Light">
+          Who said you can’t have a little fun on two wheels? Electric bikes are the hottest trend on the streets, and Urtopia ebike is ready to show you the ride of your life! From the Chord to the Carbon 1s, we’ve got the perfect model to suit your style. Let’s take ‘em for a spin!
+        </div>
+        <a class="my-button my-button-black" href="#compared">Find Your Match</a>
+      </div>
+  </div>
+</div>
+
+<!--<div id="section1">
   <div class="u42DemiBold">The E-Bike of<br> Art-Tech Fusion</div>
   <div class="u17Light">
 		Who said you can’t have a little fun on two wheels? Electric bikes are the hottest trend on the streets, and Urtopia ebike is ready to show you the ride of your life! From the Chord to the Carbon 1s, we’ve got the perfect model to suit your style. Let’s take ‘em for a spin!
   </div>
   <a class="my-button my-button-black" href="#compared">Find Your Match</a>
-</div></div></div></div></div></div></div><div data-section-id="pf-34af" data-pf-type="Section" class="sc-fmciRz bheIgq pf-7_"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-8_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-9_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-10_"><style>
+</div>-->
+
+
+
+</div></div></div></div></div></div>
+
+
+
+<div data-section-id="pf-34af" data-pf-type="Section" class="sc-fmciRz bheIgq pf-7_"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-8_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-9_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-10_"><style>
   #bike {
     max-width: 1280px;
 	/* background-color: #F7F8FA; */
@@ -98,7 +132,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 
   #bike .swiper-slide .new {
     position: absolute;
-    top: 50px;
+    top: 40px;
     left: 0;
     transform: translateY(-10%);
     background-color: #263B55;
@@ -338,7 +372,8 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
                 <div class="size">Fit for 5’3’’~6’5’’</div>
               </div> 
               <a class="my-button my-button-white" href="/products/urtopia-carbon-e-bike?variant=43556895916280">Order now</a>
-              <div class="my-button my-button-black new">$600 OFF</div>
+              <div class="my-button my-button-black new" style="background-image: linear-gradient(90deg, #AF0A0A, #CB2C2C);">600 off +</div>
+              <div class="my-button my-button-black new" style="transform: translateY(105%);background-image: linear-gradient(90deg, #1657A3, #2C75CB);">3 Freebies</div>
           </div>
 		  <div class="swiper-slide">
             <div class="name">Carbon 1</div>
@@ -374,7 +409,8 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
               </div> 
 
 				 <a class="my-button my-button-white" href="/products/urtopia-carbon-e-bike?variant=43556899815672">Order now</a>
-         <div class="my-button my-button-black new">$600 OFF</div>
+         <div class="my-button my-button-black new" style="background-image: linear-gradient(90deg, #AF0A0A, #CB2C2C);">600 off +</div>
+         <div class="my-button my-button-black new" style="transform: translateY(105%);background-image: linear-gradient(90deg, #1657A3, #2C75CB);">3 Freebies</div>
           </div>
       </div>
       <div class="swiper-wrapper">
