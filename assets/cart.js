@@ -72,9 +72,6 @@ class CartItems extends HTMLElement {
     
     console.log('items', itemsQuantityArray);
 
-
-    return 
-
     const formData = {
       updates: itemsQuantityArray
     }
