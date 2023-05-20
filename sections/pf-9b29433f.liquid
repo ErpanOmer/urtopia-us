@@ -1413,7 +1413,13 @@ function addAllToCart(parse) {
 	const hasCarbon1s = __pageflyProducts["7902779474168"].variants.find(i => id === String(i.id)).title.includes('350W')
 
 	// 如果存在carbon 1s
-
+	if (hasCarbon1s) {
+		cartList.items.push({
+			id: 43830635561208, quantity: 1,
+			id: 43830633365752, quantity: 1,
+			id: 43830634119416, quantity: 1
+		})
+	}
 
 
     fetch("/cart/add.js", {
