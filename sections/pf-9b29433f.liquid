@@ -1467,7 +1467,6 @@ function addAllToCart(parse) {
 		},5000)
       }).finally(() => {
 		const deleteItems = event_accessories.concat([id])
-		console.log('deleteItems', deleteItems)
 
 		cartList.items.forEach((item, index) => {
 
@@ -1478,8 +1477,6 @@ function addAllToCart(parse) {
 
 
 		cartList.items = cartList.items.filter(Boolean)
-
-		console.log('cartList.items', cartList.items)
 	})
   }
 }
@@ -3662,8 +3659,6 @@ let ones = document.querySelector(
 let one = document.querySelector(
   "#urtopiaEbike > div > div:nth-child(2) > div:nth-child(2)"
 );
-
-console.log(JSON.parse(JSON.stringify({{ product | json }})))
 
 // 活动icon
 let activityIcon = document.querySelector("#activityIcon")
