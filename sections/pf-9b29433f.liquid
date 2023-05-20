@@ -1412,6 +1412,9 @@ function addAllToCart(parse) {
 
 	const hasCarbon1s = __pageflyProducts["7902779474168"].variants.find(i => id === String(i.id)).title.includes('350W')
 
+	console.log(__pageflyProducts["7902779474168"].variants.find(i => id === String(i.id)))
+	console.log('hasCarbon1s', hasCarbon1s)
+
 	// 如果存在carbon 1s
 	if (hasCarbon1s) {
 		event_accessories.forEach(i => {
