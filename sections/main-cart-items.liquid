@@ -102,9 +102,11 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
 
             {%- for item in cart.items -%}
             <tr class="cart-item"
+              data-line-item="{{ forloop.index }}"
               data-quantity="{{- item.quantity -}}"
               data-variant_option="{{- item.title -}}"
               data-line-item-product-id="{{- item.product_id -}}"
+              data-line-item-variant-id="{{- item.variant_id -}}"
               id="CartItem-{{ item.index | plus: 1 }}">
               <td class="cart-item__media">
                 {% if item.image %}
