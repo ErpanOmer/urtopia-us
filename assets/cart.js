@@ -84,12 +84,10 @@ class CartItems extends HTMLElement {
     const quantity = lineItem.dataset.quantity
     const index = lineItem.dataset.lineItem
     const title = lineItem.dataset.variant_option
-    console.log('pruduct_id', pruduct_id, title)
-
-    return
+    console.log('pruduct_id', pruduct_id, lineItem.dataset)
 
 
-    if (pruduct_id === '7902779474168') {
+    if (pruduct_id === '7902779474168' && title.includes('350W')) {
         return this.updateCarbonOneWithComponents(parseInt(index), lineId, parseInt(quantity), parseInt(event.target.value));
     }
     ////购物车逻辑
