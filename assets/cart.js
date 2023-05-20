@@ -69,7 +69,7 @@ class CartItems extends HTMLElement {
       }
     });
     
-    console.log('items', items);
+    console.log('items', itemsQuantityArray);
 
 
     return 
