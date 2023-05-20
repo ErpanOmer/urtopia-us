@@ -102,6 +102,7 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
 
             {%- for item in cart.items -%}
             <tr class="cart-item"
+              data-cart-item="{{ item.key }}"
               data-line-item="{{ forloop.index }}"
               data-quantity="{{- item.quantity -}}"
               data-variant_option="{{- item.title -}}"
