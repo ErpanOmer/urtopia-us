@@ -1417,12 +1417,14 @@ function addAllToCart(parse) {
 
 	// 如果存在carbon 1s
 	if (hasCarbon1s) {
+		console.log('id', id)
+		
 		event_accessories.forEach(i => {
 			cartList.items.push({ id: i, quantity: 1 })
 		})
 	}
 
-	console.log('id', id)
+	
 
 
     fetch("/cart/add.js", {
