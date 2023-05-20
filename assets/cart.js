@@ -86,6 +86,8 @@ class CartItems extends HTMLElement {
     const title = lineItem.dataset.variantOption
     console.log('pruduct_id', pruduct_id, title)
 
+    return
+
 
     if (pruduct_id === '7902779474168') {
         return this.updateCarbonOneWithComponents(parseInt(index), lineId, parseInt(quantity), parseInt(event.target.value));
