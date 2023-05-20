@@ -24,7 +24,72 @@ class CartItems extends HTMLElement {
     this.addEventListener('change', this.debouncedOnChange.bind(this));
   }
 
+  updateCarbonOneWithComponents (currentIndex, lineItemVariantId, beforeQuantity, afterQuantity) {
+    console.log('beforeQuantity', beforeQuantity)
+    console.log('afterQuantity', afterQuantity)
+
+    const items = document.querySelectorAll('.cart-items [data-cart-item]');
+
+    let itemsQuantityArray = [];
+
+    items.forEach((item, index) => {
+      if (item.dataset.lineItemVariantId === lineItemVariantId && currentIndex === index + 1) {
+        
+        const insuranceId = item.dataset.insuranceVariantId;
+        const insuranceItem = items[index + 1]
+        if (insuranceId && insuranceItem && insuranceItem.dataset.lineItemVariantId === insuranceId) {
+          // const insuranceItem = document.querySelector(`.cart-items [data-line-item-variant-id="${insuranceId}"]`)
+          // console.log('insuranceItem', insuranceItem)
+          // console.log('dataset.index')
+
+          itemsQuantityArray[parseInt(insuranceItem.dataset.lineItem) -1] = afterQuantity
+        }
+
+        itemsQuantityArray[index] = afterQuantity
+      } else if (components.includes(item.dataset.lineItemVariantId)) {
+        const componentQuantity = parseInt(item.dataset.quantity)
+        itemsQuantityArray[index] = componentQuantity + (afterQuantity - beforeQuantity)
+      } else {
+        if ((itemsQuantityArray[index] === undefined) || item.dataset.insuranceProductVariantId !== lineItemVariantId) {
+          itemsQuantityArray[index] = parseInt(item.dataset.quantity)
+        }
+      }
+    });
+    
+    console.log('items', items);
+
+    const formData = {
+      updates: itemsQuantityArray
+    }
+
+    let info = fetch('/cart/update.js', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': `application/json` },
+      body: JSON.stringify(formData)
+    }).then(response => response.json()).then(data => {
+      location.reload(true);
+
+      return data
+    }).catch((error) => {
+      throw new Error(error);
+    });
+
+    // this.disableLoading(index);
+  }
+
   onChange(event) {
+    const lineItem = event.target.closest('[data-line-item]');
+    const lineId = lineItem.dataset.lineItemVariantId;
+    const pruduct_id = lineItem.dataset.lineItemProductId
+    const quantity = lineItem.dataset.quantity
+    const index = lineItem.dataset.lineItem
+    const title = lineItem.dataset.variantOption
+    console.log('pruduct_id', pruduct_id, title)
+
+
+    if (pruduct_id === '7902779474168') {
+        return this.updateCarbonOneWithComponents(parseInt(index), lineId, parseInt(quantity), parseInt(event.target.value));
+    }
     ////购物车逻辑
     /*
     var data = event.target.dataset;
