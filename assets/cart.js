@@ -4,6 +4,23 @@ class CartRemoveButton extends HTMLElement {
     this.addEventListener('click', (event) => {
       event.preventDefault();
       const cartItems = this.closest('cart-items') || this.closest('cart-drawer-items');
+
+      const lineItem = this.closest('[data-line-item]');
+      const lineId = lineItem.dataset.lineItemVariantId;
+      const insuranceId = lineItem.dataset.insuranceVariantId;
+
+      const pruduct_id = lineItem.dataset.lineItemProductId
+      const quantity = lineItem.dataset.quantity
+      const index = lineItem.dataset.lineItem
+      console.log('pruduct_id', lineItem.dataset)
+
+      return
+
+      // 如果是carbon one 单车
+      if (pruduct_id === '7902779474168' && title.includes('350W')) {
+          return cartItems.updateCarbonOneWithComponents(parseInt(index), lineId, parseInt(quantity), 0)
+      }
+
       cartItems.updateQuantity(this.dataset.index, 0,"","remove");//更改
     });
   }

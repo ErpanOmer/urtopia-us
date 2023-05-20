@@ -307,14 +307,14 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
               {% render 'icon-plus' %}
             </button>
           </quantity-input>
+          {% endif %}
+
           <cart-remove-button id="Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
-            <a href="{{ item.url_to_remove }}" class="button button--tertiary" {% if item.product.id !=7523710664952 and
-              discountTitle contains 'Memorial' %}style='display:none' {% endif %}
+            <a href="{{ item.url_to_remove }}" class="button button--tertiary" {% if item.product.id !=7902779474168 and discountTitle contains 'Memorial' %}style='display:none' {% endif %}
               aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}">
               {% render 'icon-remove' %}
             </a>
           </cart-remove-button>
-          {% endif %}
         </div>
         <div class="cart-item__error" id="Line-item-error-{{ item.index | plus: 1 }}" role="alert">
           <small class="cart-item__error-text"></small>
