@@ -1435,7 +1435,7 @@ function addAllToCart(parse) {
       .then((res) => res.json())
       .then((res1) => {
         res1.key = "";
-        cartList.items.splice(-1, 1);
+        // cartList.items.splice(-1, 1);
 		let body = {
 		  trace_name: "order-pc"+parse
   		}	
@@ -1459,7 +1459,7 @@ function addAllToCart(parse) {
       })
       .catch((err) => {
        	changeAddToCartText(parse, 0);
-        cartList.items.splice(-1, 1);
+        // cartList.items.splice(-1, 1);
 		console.log('err==',err)
 		$(".error-tip").css("visibility","visible");
 		setTimeout(()=>{
