@@ -10,6 +10,7 @@ class CartRemoveButton extends HTMLElement {
       const pruduct_id = lineItem.dataset.lineItemProductId
       const quantity = lineItem.dataset.quantity
       const index = lineItem.dataset.lineItem
+      const title = lineItem.dataset.variant_option
       console.log('pruduct_id', lineItem.dataset)
 
       // 如果是carbon one 单车
