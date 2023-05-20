@@ -7,14 +7,10 @@ class CartRemoveButton extends HTMLElement {
 
       const lineItem = this.closest('[data-line-item]');
       const lineId = lineItem.dataset.lineItemVariantId;
-      const insuranceId = lineItem.dataset.insuranceVariantId;
-
       const pruduct_id = lineItem.dataset.lineItemProductId
       const quantity = lineItem.dataset.quantity
       const index = lineItem.dataset.lineItem
       console.log('pruduct_id', lineItem.dataset)
-
-      return
 
       // 如果是carbon one 单车
       if (pruduct_id === '7902779474168' && title.includes('350W')) {
