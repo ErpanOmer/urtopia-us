@@ -1070,6 +1070,7 @@ letter-spacing: 0px;
 						assign types = swatches.pf_types | split: "; "
 					    assign length = keys.size | minus: 1
         %}  {% for option in product.options_with_values %} 
+				{{ option | json }}
 				   {% assign option_name = option.name %}
 				   {% assign formatted_option_name = option.name | replace: '"', '&quot;' %}
 				<label data-pf-type="OptionLabel" class="pf-variant-label">{{option.name}}</label>  {% if keys contains option_name %}
