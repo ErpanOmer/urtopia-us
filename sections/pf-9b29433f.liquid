@@ -1417,8 +1417,6 @@ function addAllToCart(parse) {
 
 	// 如果存在carbon 1s
 	if (hasCarbon1s) {
-		console.log('id', id)
-
 		event_accessories.forEach(i => {
 			cartList.items.push({ id: i, quantity: 1 })
 		})
@@ -1437,7 +1435,7 @@ function addAllToCart(parse) {
       .then((res) => res.json())
       .then((res1) => {
         res1.key = "";
-        cartList.items.splice(-1, hasCarbon1s ? 3 : 1);
+        cartList.items.splice(-1, 1);
 		let body = {
 		  trace_name: "order-pc"+parse
   		}	
@@ -1461,13 +1459,18 @@ function addAllToCart(parse) {
       })
       .catch((err) => {
        	changeAddToCartText(parse, 0);
-		cartList.items.splice(-1, hasCarbon1s ? 3 : 1);
+        cartList.items.splice(-1, 1);
 		console.log('err==',err)
 		$(".error-tip").css("visibility","visible");
 		setTimeout(()=>{
 			  $(".error-tip").css("visibility","hidden");
 		},5000)
-      });
+      }).finally(() => {
+		const deleteItems = event_accessories.concat([id])
+		console.log('deleteItems', deleteItems)
+
+		{% comment %} cartList.items.find() {% endcomment %}
+	})
   }
 }
   
