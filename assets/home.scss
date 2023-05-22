@@ -3,7 +3,7 @@
     position: relative;
     color: #fff;
     overflow-x: hidden;
-    background-color: rgb(39, 146, 187);
+    background-color: rgb(231, 231, 231);
 
     .centeral-content {
         display: flex;
@@ -105,6 +105,7 @@
 
         .carbon-1s {
             background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20911_2x_3a8616af-69f0-4ab3-b0cd-2c5e76af9baa.jpg?v=1681894751');
+            background-color: rgb(231, 231, 231);
 
             .right {
                 transform: unset;
@@ -259,10 +260,10 @@
                 background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_20993_2x_4866a074-59b9-4eaa-bb1b-feb24e5820fd.jpg?v=1684402291');
 
                 .left {
-                    padding: 20vw 0;
+                    padding: 40vw 0 20vw;
 
                     .u36DemiBold_v2 {
-                        margin-top: 12px;
+                        margin-top: 3vw;
                         font-size: 20px;
                     }
 
