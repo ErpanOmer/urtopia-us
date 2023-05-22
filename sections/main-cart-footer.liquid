@@ -144,9 +144,9 @@
               carbon_quantly += parseInt(iterator.dataset.quantity)
           }
 
-         for (const iterator of [...has_chord]) {
-              chord_quantly += parseInt(iterator.dataset.quantity)
-          }
+         // for (const iterator of [...has_chord]) {
+         //     chord_quantly += parseInt(iterator.dataset.quantity)
+         // }
     
           if (carbon_quantly > 0 && chord_quantly > 0) {
             document.querySelector(`.sale_coupon div:last-child`).innerHTML = 'SPEED600 <br> OK300'
