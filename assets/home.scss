@@ -114,11 +114,12 @@
         }
 
 
-       // 美国独立日活动 banner
+        // 美国独立日活动 banner
         .memorial-day {
             background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_20991_2x_95618ddf-2fda-46b4-9835-fbbd94b12582.jpg?v=1684399864');
             color: #000;
             background-position-y: bottom;
+
             .left {
                 img {
                     max-width: 485px;
@@ -260,6 +261,7 @@
 
                 .centeral-content {
                     padding-top: 6vw;
+
                     .right {
                         //margin: 0 0 6px;
                     }
@@ -267,7 +269,7 @@
             }
 
 
-          .memorial-day {
+            .memorial-day {
                 background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_20993_2x_4866a074-59b9-4eaa-bb1b-feb24e5820fd.jpg?v=1684402291');
 
                 .left {
@@ -287,6 +289,15 @@
                 .centeral-content {
                     height: 100%;
                 }
+            }
+
+
+            .count-down {
+                height: 150px;
+                width: 180px;
+                transform: translate(-17px);
+                margin-bottom: unset;
+                margin-top: -15px;
             }
 
         }
