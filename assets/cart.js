@@ -14,7 +14,7 @@ class CartRemoveButton extends HTMLElement {
       console.log('pruduct_id', lineItem.dataset)
 
       // 如果是carbon one 单车
-      if (pruduct_id === '7902779474168' && title.includes('350W')) {
+      if (pruduct_id === global_config.event_bike_product_id && title.includes('350W')) {
           return cartItems.updateCarbonOneWithComponents(parseInt(index), lineId, parseInt(quantity), 0)
       }
 
@@ -60,7 +60,7 @@ class CartItems extends HTMLElement {
         }
 
         itemsQuantityArray[index] = afterQuantity
-      } else if (event_accessories.includes(item.dataset.lineItemVariantId)) {
+      } else if (global_config.event_accessories_variant_ids.includes(item.dataset.lineItemVariantId)) {
         const componentQuantity = parseInt(item.dataset.quantity)
         itemsQuantityArray[index] = componentQuantity + (afterQuantity - beforeQuantity)
       } else {
@@ -101,7 +101,7 @@ class CartItems extends HTMLElement {
     console.log('pruduct_id', pruduct_id, lineItem.dataset)
 
 
-    if (pruduct_id === '7902779474168' && title.includes('350W')) {
+    if (pruduct_id === global_config.event_bike_product_id && title.includes('350W')) {
         return this.updateCarbonOneWithComponents(parseInt(index), lineId, parseInt(quantity), parseInt(event.target.value));
     }
     ////购物车逻辑

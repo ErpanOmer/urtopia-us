@@ -177,7 +177,14 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 </style>
 <script>
 	window.addEventListener('scroll',()=>{
-  	  let showTop = document.querySelector("#detail-title").getBoundingClientRect().top;
+		const tttt = document.querySelector("#detail-title")
+
+		if (tttt) {
+			return
+		}
+
+  	  let showTop = tttt.getBoundingClientRect().top;
+
 	  /*
 	  let detailTop;
 	  let reviewTop;
@@ -1417,7 +1424,7 @@ function addAllToCart(parse) {
 
 	// 如果存在carbon 1s
 	if (hasCarbon1s) {
-		event_accessories.forEach(i => {
+		global_config.event_accessories_variant_ids.forEach(i => {
 			cartList.items.push({ id: i, quantity: 1 })
 		})
 	}
@@ -1466,7 +1473,7 @@ function addAllToCart(parse) {
 			  $(".error-tip").css("visibility","hidden");
 		},5000)
       }).finally(() => {
-		const deleteItems = event_accessories.concat([id])
+		const deleteItems = global_config.event_accessories_variant_ids.concat([id])
 
 		cartList.items.forEach((item, index) => {
 
