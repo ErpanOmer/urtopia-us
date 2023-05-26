@@ -1,3 +1,7 @@
+// 邮件弹窗 延迟弹出时间，单位:s
+const subscribe_email_show_delay_time = 30
+
+
 // 发货时间映射表
 // key:    vairant_id
 // value:  发货时间文案
@@ -18,17 +22,17 @@ const ebike_delivery_time = {
     43556899750136: 'Ships within <span>3 business days</span> from L.A. warehouse.',
     43556899881208: 'Ships within <span>3 business days</span> from L.A. warehouse.',
 
-    43556895916280: 'Shipped from <span>June 1-15, 2023 </span>from L.A. warehouse.',
-    43556896047352: 'Shipped from <span>June 1-15, 2023 </span>from L.A. warehouse.',
+    43556895916280: 'Ships within <span>June 1-15, 2023 </span>from L.A. warehouse.',
+    43556896047352: 'Ships within <span>June 1-15, 2023 </span>from L.A. warehouse.',
 
-    43556899619064: 'Shipped from <span>June 15-30, 2023 </span>from L.A. warehouse.',
-    43645495345400: 'Shipped from <span>June 15-30, 2023 </span>from L.A. warehouse.',
-    43556899815672: 'Shipped from <span>June 15-30, 2023 </span>from L.A. warehouse.',
-    43556895981816: 'Shipped from <span>June 15-30, 2023 </span>from L.A. warehouse.',
-    43645495378168: 'Shipped from <span>June 15-30, 2023 </span>from L.A. warehouse.',
-    43556895949048: 'Shipped from <span>June 15-30, 2023 </span>from L.A. warehouse.',
-    43556896080120: 'Shipped from <span>June 15-30, 2023 </span>from L.A. warehouse.',
-    43645495410936: 'Shipped from <span>June 15-30, 2023 </span>from L.A. warehouse.',
+    43556899619064: 'Ships within <span>June 15-30, 2023 </span>from L.A. warehouse.',
+    43645495345400: 'Ships within <span>June 15-30, 2023 </span>from L.A. warehouse.',
+    43556899815672: 'Ships within <span>June 15-30, 2023 </span>from L.A. warehouse.',
+    43556895981816: 'Ships within <span>June 15-30, 2023 </span>from L.A. warehouse.',
+    43645495378168: 'Ships within <span>June 15-30, 2023 </span>from L.A. warehouse.',
+    43556895949048: 'Ships within <span>June 15-30, 2023 </span>from L.A. warehouse.',
+    43556896080120: 'Ships within <span>June 15-30, 2023 </span>from L.A. warehouse.',
+    43645495410936: 'Ships within <span>June 15-30, 2023 </span>from L.A. warehouse.',
     // chord
     // chord x
 }
