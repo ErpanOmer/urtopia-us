@@ -646,7 +646,9 @@
     
     if(window.location.href.indexOf("urtopia-carbon-e-bike")>0 && document.querySelector("#shopify-section-header > sticky-header > header > nav > ul  a.orderBtn")){
     	document.querySelector("#shopify-section-header > sticky-header > header > nav > ul  a.orderBtn").style.backgroundColor="#FD4B17"
-        document.querySelector("#shopify-section-header > sticky-header > header > nav > ul  a.orderBtn .header__active-menu-item").style.color="#fff"
+      const btn = document.querySelector("#shopify-section-header > sticky-header > header > nav > ul  a.orderBtn .header__active-menu-item")
+
+      btn && btn.style.color="#fff"
     }
   </script>    
 
