@@ -177,7 +177,14 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 </style>
 <script>
 	window.addEventListener('scroll',()=>{
-  	  let showTop = document.querySelector("#detail-title").getBoundingClientRect().top;
+		const tttt = document.querySelector("#detail-title")
+
+		if (tttt) {
+			return
+		}
+
+  	  let showTop = tttt.getBoundingClientRect().top;
+
 	  /*
 	  let detailTop;
 	  let reviewTop;
