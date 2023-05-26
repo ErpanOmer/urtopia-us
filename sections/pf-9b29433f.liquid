@@ -1956,7 +1956,7 @@ function addAllToCart(parse) {
 	  $(".buyNowBtn").addClass("soldout");
 	} else {
 		const id = document.querySelector('input[name="id"]').value
-      $(".tip-b").html(ebike_delivery_time[id] || 'Ships within <span>3 business days</span> from L.A. warehouse.');
+      $(".tip-b").html(global_config.ebike_delivery_time[id] || 'Ships within <span>3 business days</span> from L.A. warehouse.');
 	  
 
 	  $(".addToCartBtn")[0].style.display = "block";
