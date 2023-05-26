@@ -648,7 +648,9 @@
     	document.querySelector("#shopify-section-header > sticky-header > header > nav > ul  a.orderBtn").style.backgroundColor="#FD4B17";
       const btn = document.querySelector("#shopify-section-header > sticky-header > header > nav > ul  a.orderBtn .header__active-menu-item");
 
-      btn && btn.style.color="#fff"
+      if (btn) {
+        btn.style.color="#fff"
+      }
     }
   </script>    
 
