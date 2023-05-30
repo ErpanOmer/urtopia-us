@@ -8,7 +8,7 @@ const global_config = {
     is_mobile: document.documentElement.clientWidth < 768,
     
     // 邮件弹窗 延迟弹出时间，单位:s
-    subscribe_email_show_delay_time: 30,
+    subscribe_email_show_delay_time: 10,
 
     // 发货时间映射表
     // key:    vairant_id
