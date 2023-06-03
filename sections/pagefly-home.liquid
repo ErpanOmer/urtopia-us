@@ -39,7 +39,7 @@
                     <div class="left">
                         <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/231_2x_78eb3cc8-b8cd-4d30-babf-f12df4298d7d.png?v=1684401205"
                             alt="">
-                        <div class="u36DemiBold_v2">Get $600 Off + 3 Freebies <br>On Carbon 1s <span class="mobileHide">- Ends May 31</span></div>
+                        <div class="u36DemiBold_v2">Get $600 Off + 3 Freebies <br>On Carbon 1s <span class="mobileHide">- Ends June 6</span></div>
                         <div class="u17DemiBold_v2 pcHide">Ends in</div>
                         <div class="count-down pcHide">
                           <iframe width="352" height="155" src="https://w2.countingdownto.com/4780378" scrolling="no" frameborder="0"></iframe>
@@ -51,6 +51,20 @@
                         </div>
                         <div class="count-down mobileHide">
                           <iframe width="700" height="308" src="https://w2.countingdownto.com/4780368" scrolling="no" frameborder="0"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+              <div class="swiper-slide bluetti">
+                <div class="centeral-content">
+                    <div>
+                        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21026_2x_1fff6f8e-1729-48a7-a825-b915950c3611.png?v=1685619836" alt="">
+                        <div class="u56DemiBold_v2">Blue Sky Rider</div>
+                        <div class="u36DemiBold_v2">Enjoy $600 OFF Exclusive <br class="pcHide"> Code: GREENERBIKE</div>
+                        <div class="flex-1 pcHide"></div>
+                        <div class="buttons">
+                            <a class="my-button" href="/products/urtopia-carbon-e-bike">Order now</a>
+                            <a target="_blank" class="my-button my-button-ghost" href="https://bit.ly/3WHDnCy">Visit Bluetti</a>
                         </div>
                     </div>
                 </div>
@@ -75,6 +89,16 @@
             clickable: true
         }
     })
+
+
+      $('.banner a').on('click', e => {
+          const t = $(e.target)
+          const slide = t.closest('.swiper-slide')
+      
+          fetchBuried('websiteclick', 'homepage-banner', {
+              button: slide.hasClass('bluetti') ? (t.hasClass('my-button-ghost') ? 'goto_bluetti' : 'order_now_buletti') : (t.hasClass('my-button-black') ? 'order_now' : 'meet_carbon')
+          }, true)
+       })
     </script>
 
 </div></div></div></div></div></div><div data-section-id="pf-d8e0" data-pf-type="Section" class="sc-fmciRz bheIgq pf-7_ pf-sm-hide pf-hide"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-8_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-9_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-10_"><div id="section1">

@@ -137,6 +137,29 @@
             }
         }
 
+      .bluetti {
+            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/banner_3_2x_3e80c46d-96b2-4d40-a29c-1e23702f2bba.jpg?v=1685619448');
+
+            .centeral-content {
+                align-items: flex-start;
+                text-align: center;
+
+                & > div {
+                    align-items: center;
+
+                    .u36DemiBold_v2 {
+                        margin: 1vh 0 4.5vh;
+                      text-align: center;
+                    }
+
+                    img {
+                        max-width: 380px;
+                        margin: 4vh 0;
+                    }
+                }
+            }
+        }
+
 
         .count-down {
             height: 300px;
@@ -294,6 +317,31 @@
 
                 .centeral-content {
                     height: 100%;
+                }
+            }
+
+          .bluetti {
+                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18562_2x_0e6bea7e-9e64-48ce-b6ae-aafcce7796a3.png?v=1685620282');
+                background-position-y: center;
+                
+                .centeral-content {
+                    padding: 6vw 0 18vw;
+                    
+                    & > div {
+                        img {
+                            max-width: 240px;
+                        }
+
+
+                        .u56DemiBold_v2 {
+                            font-size: 36px;
+                            margin: 4vw 0 0;
+                        }
+
+                        .u36DemiBold_v2 {
+                            font-size: 20px;
+                        }
+                    }
                 }
             }
 
