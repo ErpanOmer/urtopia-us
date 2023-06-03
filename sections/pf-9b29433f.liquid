@@ -790,28 +790,30 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 {% for collection in collections %}
    {% if collection.title == 'on page' %}
    	{% for producti in collection.products %}
-	  <div class="swiper-slide Accessories-item" data-product-id="{{producti.id}}">
+		{% if producti.available %}
+			<div class="swiper-slide Accessories-item" data-product-id="{{producti.id}}">
 
-		{% if producti.id == 7918340964600 or producti.id == 7883128406264 or producti.id == 7918465122552 %}
-		  <div class="accessories-new">
-			<img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_19846_2x_4ad36615-6dbd-499b-9643-5d399dce10c9.png?v=1674142990" alt="urtopia_new"/>
-		  </div>
+				{% if producti.id == 7918340964600 or producti.id == 7883128406264 or producti.id == 7918465122552 %}
+				  <div class="accessories-new">
+					<img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_19846_2x_4ad36615-6dbd-499b-9643-5d399dce10c9.png?v=1674142990" alt="urtopia_new"/>
+				  </div>
+				{% endif %}
+				<div class="accessories-left">
+				  <img src="{{ producti.media[0] | image_url}}"/>
+				</div>
+				<div class="accessories-right">
+				  <div class="icon">
+					<i class="fa fa-solid fa-plus"></i>
+				  </div>
+				  <div class="accessories-price">
+					{{producti.price | money}}
+				  </div>
+				  <div class="accessories-name">
+					{{producti.title}}
+				  </div>
+				</div>
+			  </div>
 		{% endif %}
-		<div class="accessories-left">
-		  <img src="{{ producti.media[0] | image_url}}"/>
-		</div>
-		<div class="accessories-right">
-		  <div class="icon">
-			<i class="fa fa-solid fa-plus"></i>
-		  </div>
-		  <div class="accessories-price">
-			{{producti.price | money}}
-		  </div>
-		  <div class="accessories-name">
-			{{producti.title}}
-		  </div>
-		</div>
-	  </div>
 	  {% endfor %}
    {% endif %}
 {% endfor %}
@@ -3401,8 +3403,17 @@ let giveawayShow = function(index){
 	}
 }*/
 
+
+{% for collection in collections %}
+	{% if collection.title == 'on page' %}
+		const accessories = JSON.parse(JSON.stringify({{ collection.products | json }}))
+	{% endif %}
+{% endfor %}
+
+
 let show = function(index){
-  let accessoriesVariant=products[list[index].getAttribute("data-product-id")].variants[0];
+  let accessoriesVariant = accessories.find(a => String(a.id) === list[index].getAttribute("data-product-id")).variants[0];
+
   if(list[index].style.borderColor=="rgb(0, 0, 0)")
 	{
 	  list[index].style.borderColor = "#E0E0E0";
