@@ -790,28 +790,30 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 {% for collection in collections %}
    {% if collection.title == 'on page' %}
    	{% for producti in collection.products %}
-	  <div class="swiper-slide Accessories-item" data-product-id="{{producti.id}}">
+		{% unless producti.available %}
+			<div class="swiper-slide Accessories-item" data-product-id="{{producti.id}}">
 
-		{% if producti.id == 7918340964600 or producti.id == 7883128406264 or producti.id == 7918465122552 %}
-		  <div class="accessories-new">
-			<img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_19846_2x_4ad36615-6dbd-499b-9643-5d399dce10c9.png?v=1674142990" alt="urtopia_new"/>
-		  </div>
-		{% endif %}
-		<div class="accessories-left">
-		  <img src="{{ producti.media[0] | image_url}}"/>
-		</div>
-		<div class="accessories-right">
-		  <div class="icon">
-			<i class="fa fa-solid fa-plus"></i>
-		  </div>
-		  <div class="accessories-price">
-			{{producti.price | money}}
-		  </div>
-		  <div class="accessories-name">
-			{{producti.title}}
-		  </div>
-		</div>
-	  </div>
+				{% if producti.id == 7918340964600 or producti.id == 7883128406264 or producti.id == 7918465122552 %}
+				  <div class="accessories-new">
+					<img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_19846_2x_4ad36615-6dbd-499b-9643-5d399dce10c9.png?v=1674142990" alt="urtopia_new"/>
+				  </div>
+				{% endif %}
+				<div class="accessories-left">
+				  <img src="{{ producti.media[0] | image_url}}"/>
+				</div>
+				<div class="accessories-right">
+				  <div class="icon">
+					<i class="fa fa-solid fa-plus"></i>
+				  </div>
+				  <div class="accessories-price">
+					{{producti.price | money}}
+				  </div>
+				  <div class="accessories-name">
+					{{producti.title}}
+				  </div>
+				</div>
+			  </div>
+		{% endunless %}
 	  {% endfor %}
    {% endif %}
 {% endfor %}
@@ -3410,13 +3412,6 @@ let giveawayShow = function(index){
 
 
 let show = function(index){
-	console.log('index', index)
-	console.log('products', accessories)
-	console.log('list[index]', list[index])
-	console.log('list[index].getAttribute("data-product-id")', list[index].getAttribute("data-product-id"))
-	console.log('products[list[index].getAttribute("data-product-id")]', accessories.find(a => String(a.id) === list[index].getAttribute("data-product-id")))
-
-
   let accessoriesVariant = accessories.find(a => String(a.id) === list[index].getAttribute("data-product-id")).variants[0];
 
   if(list[index].style.borderColor=="rgb(0, 0, 0)")
