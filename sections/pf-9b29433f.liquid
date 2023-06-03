@@ -3404,7 +3404,7 @@ let giveawayShow = function(index){
 
 {% for collection in collections %}
 	{% if collection.title == 'on page' %}
-		console.log(JSON.parse(JSON.stringify({{ collection.products | json }})))
+		const accessories = JSON.parse(JSON.stringify({{ collection.products | json }}))
 	{% endif %}
 {% endfor %}
 
@@ -3417,7 +3417,7 @@ let show = function(index){
 	console.log('products[list[index].getAttribute("data-product-id")]', products[list[index].getAttribute("data-product-id")])
 
 
-  let accessoriesVariant=products[list[index].getAttribute("data-product-id")].variants[0];
+  let accessoriesVariant=accessories[list[index].getAttribute("data-product-id")].variants[0];
   if(list[index].style.borderColor=="rgb(0, 0, 0)")
 	{
 	  list[index].style.borderColor = "#E0E0E0";
