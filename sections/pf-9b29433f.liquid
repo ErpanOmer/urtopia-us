@@ -3401,6 +3401,14 @@ let giveawayShow = function(index){
 	}
 }*/
 
+
+{% for collection in collections %}
+	{% if collection.title == 'on page' %}
+		conslog.log(JSON.parse(JSON.stringify(collection.products)))
+	{% endif %}
+{% endfor %}
+
+
 let show = function(index){
 	console.log('index', index)
 	console.log('products', products)
