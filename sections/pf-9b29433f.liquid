@@ -790,7 +790,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 {% for collection in collections %}
    {% if collection.title == 'on page' %}
    	{% for producti in collection.products %}
-		{% unless producti.available %}
+		{% if producti.available %}
 			<div class="swiper-slide Accessories-item" data-product-id="{{producti.id}}">
 
 				{% if producti.id == 7918340964600 or producti.id == 7883128406264 or producti.id == 7918465122552 %}
@@ -813,7 +813,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 				  </div>
 				</div>
 			  </div>
-		{% endunless %}
+		{% endif %}
 	  {% endfor %}
    {% endif %}
 {% endfor %}
