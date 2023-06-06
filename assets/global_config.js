@@ -30,8 +30,8 @@ const global_config = {
         43556899750136: 'Ships within <span>3 business days</span> from L.A. warehouse.',
         43556899881208: 'Ships within <span>3 business days</span> from L.A. warehouse.',
 
-        43556895916280: 'Ships within <span>7 business days </span>from L.A. warehouse.',
-        43556896047352: 'Ships within <span>7 business days </span>from L.A. warehouse.',
+        43556895916280: 'Ships within <span>10 business days </span>from L.A. warehouse.',
+        43556896047352: 'Ships within <span>10 business days </span>from L.A. warehouse.',
 
         43556899619064: 'Ships within <span>June 15-30, 2023 </span>from L.A. warehouse.',
         43645495345400: 'Ships within <span>June 15-30, 2023 </span>from L.A. warehouse.',
