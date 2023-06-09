@@ -1,0 +1,193 @@
+<style>
+    .sale_coupon {
+		background-image: linear-gradient(90deg, #1657A3, #2C75CB);
+		border-radius: 10px;
+	}	
+
+	.sale_coupon:before,
+	.sale_coupon:after {
+		width: 0;
+	}
+
+	.sale_coupon>div:first-child {
+		font-size: 14px;
+		font-weight: 600;
+		text-align: left;
+        padding: 0 0 0 4%;
+        flex-basis: 75%;
+	}
+
+  .sale_coupon>div:last-child {
+    padding: 0;
+        flex-basis: 30%;
+    font-size: 14px;
+  }
+
+    .eggs {
+        max-width: 450px;
+        margin: 10px 0 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0px 3px 20px #00000015;
+    }
+    
+    .eggs .background {
+        height: 49px;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+		border-radius: 10px 10px 0 0;
+		position: relative;
+        color: #fff;
+        padding-left: 4%;
+        background-image: linear-gradient(90deg, #0091B4, #003C68);
+        background-size: 100% 100%;
+    }
+
+    .eggs .background img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 142px;
+    }
+    
+    .eggs .components {
+        padding: 14px;
+        display: flex;
+        flex: 1;
+    }
+    
+    .eggs .components .item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #000;
+        text-align: center;
+        flex: 1;
+    }
+    
+    .eggs .components .item img {
+        max-width: 72px;
+    }
+    
+    .eggs .components .item span {
+        font-size: 12px;
+        line-height: 18px;
+        font-weight: 500;
+        display: flex;
+        height: 100%;
+        align-items: center;
+    }
+    
+    .eggs .components .item .price {
+        text-decoration: line-through;
+        align-items: flex-start;
+     }
+    
+    .eggs .components .item>div {
+        background-image: linear-gradient(180deg, #0091B4, #003C68);
+        border-radius: 20px;
+        color: #fff;
+        padding: 8px 20px;
+        margin-bottom: 12px;
+        line-height: 22px;
+    }
+    
+    
+    .eggs .components .item .yellow {
+        line-height: 11px;
+        padding: 14px 0;
+        background-image: linear-gradient(180deg, #0091B4, #003C68);
+        color: #fff;
+        border-radius: 20px;
+        font-size: 16px;
+        font-weight: 500;
+        width: 100%;
+        margin-bottom: 16px;
+    }
+
+    .eggs > .u11Light_v2 {
+        padding: 0 20px 14px;
+        margin-top: -7px;
+    }
+    
+      @media (max-width: 767px) {
+        
+        .sale_coupon>div:first-child {
+			font-size: 12px;
+		}
+
+       .eggs .background {
+            font-size: 14px;
+        }
+
+        .eggs > .u11Light_v2 {
+            padding: 0 10px 14px;
+            margin-top: 0
+        }
+      
+        .eggs .components {
+            padding: 6px;
+        }
+    
+        .eggs .components .item img {
+            max-width: 45px;
+        }
+    
+        .eggs .components .item span {
+            font-size: 11px;
+            line-height: 13px;
+        }
+    
+        .eggs .components .item > div {
+            padding: 4px 14px;
+            font-size: 12px;
+        }
+    
+        .eggs .components .item .yellow {
+            line-height: 8px;
+        } 
+    }
+    </style>
+
+    {% assign send_accessories_list = "kickstand,customized-mudguards,esim-card" | split: ',' %}
+
+    <div class="sale_coupon">
+		<div>€600 OFF code on Carbon 1</div>
+		<div>BLUESKY</div>
+	</div>
+
+    <div class="eggs">
+        <div class="background">
+            <div class="u17DemiBold_v2" style="font-size: 12px;">{{ send_accessories_list | size }} Free Accessories with {{ settings.sale_name }}</div>
+			<div class="u11Light_v2">(Not available with leasing)</div>
+        </div>
+        <div class="components">
+                {% for item in send_accessories_list %}
+                    <div class="item" price="{{ all_products[item].selected_or_first_available_variant.price | divided_by: 100 }}">
+                        {{ all_products[item].featured_image | image_url: width: 400 | image_tag }}
+                        {% if item == "customized-mudguards" %}
+                            <span>{{ all_products[item].title | truncatewords: 3, "" | replace: "-", "" }}</span>
+                        {% else %}
+                            <span>{{ all_products[item].title }}</span>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+                <div class="item" style="max-width: 87px;">
+                    <div class="yellow">FREE</div>
+                    <span style="align-items: flex-start;font-size: 16px;text-decoration: line-through;"></span>
+                </div>
+        </div>
+        <div class="u11Light_v2">*Apply in your cart automatically</div>
+    </div>
+
+    <script>
+        let total_price = 0
+        $('.eggs .components .item[price]').each((index, item) => {
+            total_price += Number($(item).attr('price'))
+        })
+
+        $('.eggs .components .item:not([price]) span').text(`€${total_price}`)
+
+    </script>
