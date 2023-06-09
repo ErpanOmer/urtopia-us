@@ -273,6 +273,9 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 	showList.push(document.querySelector('.hide9'));
 	hideshow();
   },1000)
+
+
+  console.log(JSON.parse(JSON.stringify({{ all_products['One-Year eSIM Service-Carbon 1'] | json }})))
 </script></div></div></div></div></div></div><div data-section-id="pf-535a" data-pf-type="Section" id="Product-Title" class="sc-fmciRz bheIgq pf-8_"><div style="--cw:1280px" class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-9_ pf-r pf-c-cm pf-r-eh" style="--s-xs:15px" data-pf-type="Row" id="product-row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" id="main-product-column" class="sc-gUQvok iVVDxu pf-10_"><div data-product-id="7902779474168" data-default-variant="43556895916280" data-pf-type="ProductBox" class="sc-bUhFKy jriKsr pf-11_">{% assign defaultProduct = product %}{% assign product = product_7902779474168 %}{% if product != null %}{% form "product", product, data-productid: product.id, class: "pf-product-form" %}<div class="sc-ezbkAF A-dmbO pf-12_ pf-r pf-c-ct pf-r-eh" style="--s-xs:15px" data-pf-type="Row" id="product-detail-row"><div class="pf-c" style="--c-xs:12;--c-sm:7;--c-md:7;--c-lg:8"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-13_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-14_"><script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1.14.2-TweenMax.js?v=1663912518"></script>
 <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2.0.3-ScrollMagic.min.js?v=1663912592"></script>
 <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2.0.3-animation.gsap.js?v=1663912682"></script>
@@ -507,171 +510,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
   
 <div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-25_"><div class="pf-judme">{% render "judgeme_widgets", widget_type: "judgeme_preview_badge", jm_style: "", concierge_install: false, product: product %}</div></div><div data-pf-type="ProductPrice2" id="product-price" class="sc-kTqLtj ihdlmX pf-26_"><div data-product-type="price" data-product-id="{{ product.id }}" data-product-price="true" data-pf-type="ProductPrice2Item" class="sc-haTkiu fcLDTw pf-27_">{{ product.variants[0].price | money }}</div><div data-product-type="compare_at_price" data-product-id="{{ product.id }}" data-pf-type="ProductPrice2Item" class="sc-haTkiu fcLDTw pf-28_ pf-lg-hide pf-md-hide pf-sm-hide pf-hide">{{ product.variants[0].compare_at_price | money }}</div></div>
 
-
-<style>
-	.sale_coupon {
-		background-image: linear-gradient(90deg, #AF0A0A, #CB2C2C);
-		border-radius: 10px;
-	}	
-
-	.sale_coupon:before,
-	.sale_coupon:after {
-		width: 0;
-	}
-
-	.sale_coupon>div:first-child {
-		font-size: 16px;
-		font-weight: 600;
-		text-align: left;
-	}
-
-	@media (max-width: 767px) {
-		.sale_coupon>div:first-child {
-			font-size: 14px;
-		}
-	}
-</style>
-
-<div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-32_">
-	<div class="sale_coupon">
-		<div>$600 OFF code on Carbon 1s</div>
-		<div>SPEED600</div>
-	  </div>
-</div>
-
-<style>
-	.eggs {
-		max-width: 450px;
-		margin: 10px 0 20px;
-	}
-	
-	.eggs .background {
-		height: 46px;
-		line-height: 46px;
-		font-size: 16px;
-		color: #fff;
-		padding: 0 6%;
-		font-weight: 600;
-		border-radius: 10px 10px 0px 0px;
-		background-image: linear-gradient(90deg, #1657A3, #2C75CB);
-		position: relative;
-	}
-
-	.eggs .background img {
-		position: absolute;
-		top: 0;
-		right: 0;
-		width: 142px;
-	}
-	
-	.eggs .components {
-		background-color: #fff;
-		padding: 14px;
-		border-radius: 0 0 10px 10px;
-		display: flex;
-		flex: 1;
-		box-shadow: 0px 3px 20px #00000015;
-	}
-	
-	.eggs .components .item {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		color: #000;
-		text-align: center;
-		flex: 1;
-	}
-	
-	.eggs .components .item img {
-		max-width: 72px;
-	}
-	
-	.eggs .components .item span {
-		font-size: 14px;
-		line-height: 18px;
-		font-weight: 500;
-		display: flex;
-		height: 100%;
-		align-items: flex-end;
-	}
-	
-	.eggs .components .item .price {
-		text-decoration: line-through;
-		align-items: flex-start;
-	 }
-	
-	.eggs .components .item>div {
-		background-image: linear-gradient(to bottom, #2E26EE, #2A60F4);
-		border-radius: 20px;
-		color: #fff;
-		padding: 8px 20px;
-		margin-bottom: 12px;
-		line-height: 22px;
-	}
-	
-	
-	.eggs .components .item .yellow {
-		line-height: 11px;
-		padding: 14px 0;
-		background-image: linear-gradient(180deg, #1657A3, #2C75CB);
-		color: #fff;
-		border-radius: 20px;
-		font-size: 16px;
-		font-weight: 600;
-		width: 100%;
-	}
-	
-	  @media (max-width: 767px) {
-	   .eggs .background {
-			font-size: 14px;
-		}
-	  
-		.eggs .components {
-			padding: 6px;
-		}
-	
-		.eggs .components .item img {
-			max-width: 45px;
-		}
-	
-		.eggs .components .item span {
-			font-size: 11px;
-			line-height: 13px;
-		}
-	
-		.eggs .components .item > div {
-			padding: 4px 14px;
-			font-size: 12px;
-		}
-	
-		.eggs .components .item .yellow {
-			line-height: 8px;
-		} 
-	}
-	</style>
-
-	<div class="eggs">
-		<div class="background">Get 3 Accessories for FREE <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18546_2x_dd131523-4a27-4a41-ba03-82ffcbecc27a.png?v=1684493847"/></div>
-        <div class="components">
-            <div class="item">
-                <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18445_2x_3206cd11-6e17-4cb3-be10-ad6201624cfd.jpg?v=1679919748" alt="">
-                <span>Water Bottle Cage</span>
-            </div>
-            <div class="item">
-                <img src="//cdn.shopify.com/s/files/1/0583/5810/4213/files/img_v2_1f820b29-6f18-4693-8a4a-af03aa7ae90g_6fa74817-5ff4-443c-b9cf-3d8f9c19adf2.png?v=1684554467&width=140" alt="">
-                <span>Micro<br>Fender</span>
-            </div>
-            <div class="item">
-                <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Image_140_2x_7115e41a-ce25-4dea-b7d7-761dc37e6114.jpg?v=1679919807" alt="">
-                <span>Kickstand</span>
-            </div>
-				<div class="item" style="max-width: 87px;">
-					<div class="yellow">FREE</div>
-					<span style="align-items: flex-start;font-size: 16px;text-decoration: line-through;">$167</span>
-				</div>
-			  
-        </div>
-    </div>
+{% render 'carbon-one-send-accessories-template' %}
 
 <style>
 	.countdown {
@@ -698,7 +537,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 </style>
 
 <div class="countdown">
-	<div>Memorial Day sale end on June.9</div>
+	<div>{{ settings.sale_name }} {{ settings.sale_end_time }}</div>
 	<img src="http://i.countdownmail.com/205dop.gif" border="0" alt="countdownmail.com"/>
 </div>
 

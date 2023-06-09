@@ -116,19 +116,19 @@
 
         // 美国独立日活动 banner
         .memorial-day {
-            background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_20991_2x_95618ddf-2fda-46b4-9835-fbbd94b12582.jpg?v=1684399864');
-            color: #000;
+            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20911_2x_992ad80f-af7b-4df9-bae4-4c614e72c8e0.jpg?v=1686278713');
+            background-color: rgb(60, 160, 200);
             background-position-y: bottom;
 
             .left {
                 img {
-                    max-width: 485px;
+                    max-width: 342px;
                 }
             }
 
 
             .u36DemiBold_v2 {
-                margin: 24px 0 48px;
+                margin: 40px 0;
             }
 
 
@@ -293,25 +293,25 @@
 
 
             .memorial-day {
-                background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_20993_2x_4866a074-59b9-4eaa-bb1b-feb24e5820fd.jpg?v=1684402291');
+                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18530_2x_edc8ed26-1dfa-46b7-ae34-e56c8f26a2d9.jpg?v=1686279306');
 
                 .left {
-                    padding: 20vw 0;
+                    padding: 8vw 0 20vw;
 
                     .u36DemiBold_v2 {
-                        margin-top: 3vw;
+                        margin-top: 6vw;
                         font-size: 20px;
                         margin-bottom: 0;
                     }
 
                     .u17DemiBold_v2 {
-                        color: #104686;
-                        margin: 15px 0 -10px;
+                        // color: #104686;
+                        margin: 15px 0 -5px;
                     }
 
 
                     img {
-                        max-width: 263px;
+                        max-width: 200px;
                     }
                 }
 

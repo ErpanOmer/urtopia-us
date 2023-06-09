@@ -5,6 +5,8 @@
 {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
 {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
 
+{% assign event_name = settings.sale_name %}
+
 {%- style -%}
 .section-{{ section.id }}-padding {
 padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
@@ -288,7 +290,7 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
           </label>
           {% assign discountTitle = item.discounts.first.title %}
 
-          {% if item.product.id!=7902779474168 and discountTitle contains 'Memorial' %}
+          {% if item.product.id!=7902779474168 and discountTitle contains event_name %}
             <div style="width: 100%;display: flex;align-items: center;">{{ item.quantity }}</div>
           {% else %}
           <quantity-input class="quantity">
@@ -311,7 +313,7 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
           {% endif %}
 
           <cart-remove-button id="Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
-            <a href="{{ item.url_to_remove }}" class="button button--tertiary" {% if item.product.id !=7902779474168 and discountTitle contains 'Memorial' %}style='display:none' {% endif %}
+            <a href="{{ item.url_to_remove }}" class="button button--tertiary" {% if item.product.id !=7902779474168 and discountTitle contains event_name %}style='display:none' {% endif %}
               aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}">
               {% render 'icon-remove' %}
             </a>
