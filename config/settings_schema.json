@@ -1,5 +1,34 @@
 [
   {
+    "name": "global_variable",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enabled_sale",
+        "label": "活动开关",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "enabled_sale_countdown",
+        "label": "活动倒计时开关",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "sale_name",
+        "label": "活动名称",
+        "default": "Happy Riding Sale"
+      },
+      {
+        "type": "text",
+        "id": "sale_end_time",
+        "label": "活动结束文案",
+        "default": "Ends on June 12"
+      }
+    ]
+  },
+  {
     "name": "theme_info",
     "theme_name": "Refresh",
     "theme_version": "1.0.0",
