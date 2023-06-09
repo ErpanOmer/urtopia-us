@@ -101,7 +101,9 @@
     "show_vendor": false,
     "show_cart_note": false,
     "cart_drawer_collection": "accessories",
-    "checkout_logo_image": "shopify:\/\/shop_images\/Artboard_37_a3075923-1ad6-40fe-bd23-de8853b9e3c6.png",
+    "checkout_logo_image": "shopify:\/\/shop_images\/logo_0707__1_bb20a36e-0db5-4d65-b13f-b4cab6d3a943.png",
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "medium",
     "checkout_accent_color": "#161c1f",
     "checkout_button_color": "#fd4b17",
     "sections": {
