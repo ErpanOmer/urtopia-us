@@ -154,14 +154,14 @@
     {% assign send_accessories_list = "kickstand,customized-mudguards,esim-card" | split: ',' %}
 
     <div class="sale_coupon">
-		<div>€600 OFF code on Carbon 1</div>
-		<div>BLUESKY</div>
+		<div>$600 OFF code on Carbon 1s</div>
+		<div>SPEED600</div>
 	</div>
 
     <div class="eggs">
         <div class="background">
             <div class="u17DemiBold_v2" style="font-size: 12px;">{{ send_accessories_list | size }} Free Accessories with {{ settings.sale_name }}</div>
-			<div class="u11Light_v2">(Not available with leasing)</div>
+			<div class="u11Light_v2">(Apply in your cart automatically)</div>
         </div>
         <div class="components">
                 {% for item in send_accessories_list %}
@@ -179,7 +179,7 @@
                     <span style="align-items: flex-start;font-size: 16px;text-decoration: line-through;"></span>
                 </div>
         </div>
-        <div class="u11Light_v2">*Apply in your cart automatically</div>
+        <!--<div class="u11Light_v2">*Apply in your cart automatically</div>-->
     </div>
 
     <script>
