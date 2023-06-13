@@ -137,6 +137,35 @@
             }
         }
 
+
+        .spring-sale {
+            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21007_2x_d1322bcb-7328-456e-a3b6-78650374f1a3.jpg?v=1686576435');
+            background-color: #3CB1B1;
+
+            .centeral-content {
+                &>div {
+
+                    img {
+                        max-width: 440px;
+                        transform: translateX(-20%);
+                    }
+
+                    .u56DemiBold_v2 {
+                        text-transform: uppercase;
+                    }
+
+                    .u56DemiBold_v2,
+                    .u48Medium_v2 {
+                        color: #FFFCDD;
+                    }
+
+                    .u36DemiBold_v2 {
+                        margin: 50px 0;
+                    }
+                }
+            }
+        }
+
       .bluetti {
             background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/banner_3_2x_3e80c46d-96b2-4d40-a29c-1e23702f2bba.jpg?v=1685619448');
 
