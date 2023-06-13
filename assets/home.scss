@@ -358,6 +358,8 @@
 
                     &>div {
                         padding: 12vw 0 18vw;
+                        display: flex;
+                        flex-direction: column;
 
                         img {
                             max-width: 260px;
