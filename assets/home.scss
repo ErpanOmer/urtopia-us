@@ -116,7 +116,7 @@
 
         // 美国独立日活动 banner
         .memorial-day {
-            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20911_2x_992ad80f-af7b-4df9-bae4-4c614e72c8e0.jpg?v=1686278713');
+            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/background_2x_08d84a6b-d71e-4413-8b8c-301ec71e96ca.jpg?v=1686620761');
             background-color: rgb(60, 160, 200);
             background-position-y: bottom;
 
@@ -134,6 +134,35 @@
 
             .centeral-content {
                 // height: 85%;
+            }
+        }
+
+
+        .spring-sale {
+            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21007_2x_add09fd6-b209-46ba-8c3e-052a1167afee.jpg?v=1686621549');
+            background-color: #3CB1B1;
+
+            .centeral-content {
+                &>div {
+
+                    img {
+                        max-width: 440px;
+                        transform: translateX(-20%);
+                    }
+
+                    .u56DemiBold_v2 {
+                        text-transform: uppercase;
+                    }
+
+                    .u56DemiBold_v2,
+                    .u48Medium_v2 {
+                        color: #E2F8B6;
+                    }
+
+                    .u36DemiBold_v2 {
+                        margin: 50px 0;
+                    }
+                }
             }
         }
 
@@ -317,6 +346,39 @@
 
                 .centeral-content {
                     height: 100%;
+                }
+            }
+
+            .spring-sale {
+                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20985_2x_a482df29-72c1-4b26-8273-3babc3cf6771.jpg?v=1686576642');
+
+                .centeral-content {
+                    height: 100%;
+                    align-items: unset;
+
+                    &>div {
+                        padding: 12vw 0 18vw;
+                        display: flex;
+                        flex-direction: column;
+
+                        img {
+                            max-width: 260px;
+                            transform: translate(-15%);
+                        }
+
+                        .u56DemiBold_v2 {
+                            font-size: 26px;
+                        }
+
+                        .u48Medium_v2,
+                        .u36DemiBold_v2 {
+                            font-size: 20px;
+                        }
+
+                        .u36DemiBold_v2 {
+                            margin: 20px 0 0;
+                        }
+                    }
                 }
             }
 

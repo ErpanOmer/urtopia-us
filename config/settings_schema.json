@@ -18,13 +18,13 @@
         "type": "text",
         "id": "sale_name",
         "label": "活动名称",
-        "default": "Happy Riding Sale"
+        "default": "Green Travel Sale"
       },
       {
         "type": "text",
         "id": "sale_end_time",
         "label": "活动结束文案",
-        "default": "Ends on June 12"
+        "default": "Ends June 16"
       }
     ]
   },

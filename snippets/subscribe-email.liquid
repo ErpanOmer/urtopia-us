@@ -27,12 +27,15 @@
 
     .subscribe-container .subscribe .u17Light {
       margin-bottom: 8%;
-      margin-top: 14%;
     }
 
 
     .subscribe-container .subscribe .u20Medium {
       font-weight: 600;
+    }
+
+    .subscribe-container .subscribe .u30DemiBold_v2 {
+      margin: 10% 0 14%;
     }
     
     .subscribe-container .subscribe .u17Light_v2 {
@@ -128,8 +131,21 @@
     
         .subscribe-container .subscribe .u17Light {
             line-height: 21px;
-            margin: 30px 0 15px;
+            margin: 0 0 15px;
             font-size: 13px;
+        }
+
+        .subscribe-container .subscribe .u30DemiBold_v2 {
+          font-size: 20px;
+          margin: 8% 0;
+        }
+
+        .subscribe-container .subscribe .u30DemiBold_v2 .u72DemiBold_v2 {
+          font-size: 48px;
+        }
+
+        .subscribe-container .subscribe .u30DemiBold_v2 .u30Medium_v2 {
+          font-size: 20px;
         }
     
         .subscribe-container .subscribe .email {
@@ -185,8 +201,8 @@
       }
     </style>
 
-    <link rel="preload" href="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Urtopia_Photo_Sesh_14_of_14_2x_9ec4000c-c609-4829-b4a2-430a5b7aae63.jpg?v=1680259217" as="image">
-    <link rel="preload" href="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Urtopia_Photo_Sesh_9_of_14_2x_dc648c2b-067f-4357-bda8-d917f51fd883.jpg?v=1680259100" as="image">
+    <link rel="preload" href="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Urtopia_Photo_Sesh_14_of_14_2x_2089792d-0ea2-40bf-892b-4bc20667231f.jpg?v=1686626582" as="image">
+    <link rel="preload" href="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Urtopia_Photo_Sesh_14_of_14_2x_b4e6e98d-bfb4-48f9-abd9-410a00161f75.jpg?v=1686626642" as="image">
   <script>
 
     class MyStorage {
@@ -289,12 +305,11 @@
 
 
   const subscribeHtml = `<div class="subscribe-container">
-    <img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Urtopia_Photo_Sesh_14_of_14_2x_9ec4000c-c609-4829-b4a2-430a5b7aae63.jpg?v=1680259217" alt="">
-    <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Urtopia_Photo_Sesh_9_of_14_2x_dc648c2b-067f-4357-bda8-d917f51fd883.jpg?v=1680259100" alt="">
+    <img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Urtopia_Photo_Sesh_14_of_14_2x_2089792d-0ea2-40bf-892b-4bc20667231f.jpg?v=1686626582" alt="">
+    <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Urtopia_Photo_Sesh_14_of_14_2x_b4e6e98d-bfb4-48f9-abd9-410a00161f75.jpg?v=1686626642" alt="">
     <div class="subscribe">
-        <span class="u20Medium">{{ settings.sale_name }} {{ settings.sale_end_time }}</span>
-        <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230609-144754.jpg?v=1686293295">
-        <!--<span class="ffff">+$167 Freebies</span>-->
+        <span class="u20Medium">{{ settings.sale_name }} <br class="pcHide"> {{ settings.sale_end_time }}</span>
+        <div class="u30DemiBold_v2"><span class="u72DemiBold_v2">$600</span>OFF<span class="u30Medium_v2" style="color:#2B8F8D;"><br>+€169 Freebies</span></div>
         <span class="u17Light">Subscribe to Urtopia for exclusive coupons, engaging stories, and the latest product news.</span>
         <form class="new-contact" action="/contact#ContactFooter" target="_blank" method="post" accept-charset="UTF-8">
         <div class="email">
