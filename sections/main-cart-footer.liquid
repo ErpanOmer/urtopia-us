@@ -458,6 +458,14 @@
       document.querySelector('#cart').submit();
     });
   });
+
+
+  function testRideTrace(type = '', target) {
+
+    fetchBuried('websiteclick', `cart-page`, { button: type, action_type: sessionStorage.carbon_one_a_b_test_flag }, true)
+
+    location.href = `/checkout?show_klarna_dialog=show_klarna_dialog`
+  }
 </script>
 
 {% schema %}
