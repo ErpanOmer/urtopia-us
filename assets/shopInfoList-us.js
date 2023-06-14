@@ -237,5 +237,33 @@ const testRides = [
         ],
       },
     ]
+  },
+  {
+    city: 'Orlando',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Buna_Bicycle_Works_Washington_dc.jpg?v=1665374977',
+    stores: [
+      {
+        name: "Wheel Works E-Bikes",
+        phone: "407-614-4539",
+        email: "ebikes@wgwheelworks.com",
+        timezone: "Orlando, FL (GMT-4)",
+        add: "855 E Plant St Suite 600, Winter Garden, FL 34787",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Wheel_Works_E-Bikes.jpg?v=1667368641",
+        testrideSpot: "Washington DC",
+        testRideSize: "M/L",
+        availableSizes: [
+          'Carbon One Size M/L',
+        ],
+        businessHours: [
+          "",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "09:00-17:00",
+        ],
+      },
+    ]
   }
 ]
