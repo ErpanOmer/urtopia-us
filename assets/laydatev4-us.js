@@ -3391,13 +3391,14 @@ function splitTimeFormat(item = '') {
 
       setTimeout(() => {
         $('.choose .item').on('click', e => {
-          const find = e.currentTarget.id === '1' ? carbonM : e.currentTarget.id === '2' ? carbonL : chordX
+          const id = e.currentTarget.id
+          const find = bike_sizes.find(i => String(i.id) === id)
 
           console.log(find)
           $('.shop-detail').append(`
           <div class="item test-ride" style="border-top: 1px solid #ddd;padding-top: 12px;">
               <label class="u20DemiBold">Test ride model:</label>
-              <span class="u20Medium">${find.size ? `Carbon One, size ${find.size}` : 'Chord'}</br>${find.fit}</span>
+              <span class="u20Medium">${find.name} Size ${find.size}</br>${find.fit}</span>
           </div>
           `)
 
