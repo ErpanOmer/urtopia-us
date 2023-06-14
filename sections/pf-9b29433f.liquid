@@ -1470,7 +1470,7 @@ function testRideTrace(type = '', target) {
 	  $(".tip-b").html("");
 	  //$(".addToCartBtn")[0].style.display = "none";
 	  //$(".buyNowBtn")[0].disabled = "true";
-	  $(".addToCartBtn")[0].disabled = "true";
+	  $(".addToCartBtn")[0].disabled = true;
 	  $(".addToCartBtn span").html("Out of stock");
 	  $(".addToCartBtn").addClass("soldout");
 
@@ -1481,11 +1481,13 @@ function testRideTrace(type = '', target) {
       $(".tip-b").html(global_config.ebike_delivery_time[id] || 'Ships within <span>3 business days</span> from L.A. warehouse.');
 	  
 
-	  $(".addToCartBtn")[0].style.display = "block";
+	  $(".addToCartBtn")[0].disabled = false;
+	  $(".addToCartBtn span").html("Add to Cart");
+	  $(".addToCartBtn").removeClass("soldout");
 
-	  $(".buyNowBtn")[0].disabled = false;
-	  $(".buyNowBtn span").html("Buy Now");
-	  $(".buyNowBtn").removeClass("soldout");
+	  //$(".buyNowBtn")[0].disabled = false;
+	  //$(".buyNowBtn span").html("Buy Now");
+	  //$(".buyNowBtn").removeClass("soldout");
 	}
   }
 
