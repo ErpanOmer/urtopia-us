@@ -430,7 +430,9 @@ function fetchBuried (name = '', type = '', data = {}, isSendBeacon = false) {
 
 
 
-$(document).on('page:load', function() {
+$(document).on('page:load', function(e) {
+  console.log('e', e)
+
   if (window.sessionStorage.clicked_klarna_checkout_button) {
     fetchBuried('a-b-test', 'order-page-klarna', {
       action_type: window.sessionStorage.carbon_one_a_b_test_flag,
