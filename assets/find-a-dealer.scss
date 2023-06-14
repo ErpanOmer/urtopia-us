@@ -46,7 +46,7 @@
         height: 520px;
 
         .centeral-content {
-            padding-top: 15vw;
+            padding: 15vw 4vw 0;
             justify-content: flex-start;
 
             .u48DemiBold_v2 {
@@ -62,10 +62,11 @@
 
     .service {    
         .centeral-content {
+            padding: 0 4vw;
             grid-template-columns: 1fr;
 
             .u48DemiBold_v2 {
-                margin-bottom: 40px;
+                margin-bottom: 24px;
                 font-size: 30px;
             }
         }
