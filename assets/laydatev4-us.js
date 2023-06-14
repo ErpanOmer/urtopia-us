@@ -3357,7 +3357,7 @@ function splitTimeFormat(item = '') {
          } else {
             // 如果是chrod
             if (size.includes('Chord')) {
-
+              choose.push(bike_sizes.find(b => b.name === 'Chord'))
             } else {
 
             }
