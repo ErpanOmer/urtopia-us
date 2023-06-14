@@ -23,21 +23,17 @@ function createdisableDates(limit = 0, ignore_date = []) {
 
 const testRides = [
   {
-    city: 'Frankfurt am Main',
-    cityBackground: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Frankfurt_am_Main.jpg?v=1679406972',
-    series: [
-      'Urtopia Carbon 1',
-      // 'Urtopia Carbon 1'
-    ],
+    city: 'Fremont',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Bicycle_Garage_Fremont_fremont.jpg?v=1665374978',
     stores: [
       {
-        name: 'Service Zentrum',
-        phone: '+4961032076414',
-        email: 'yiming.song@iedau.com',
-        timezone: "Mainz, Germany (GMT+1)",
-        add: "Otto-Hahn-Str. 5-7 63225 Langen",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Frankfurt_am_Main_dcfbb429-041a-46e8-809c-988adaf41dfd.jpg?v=1680920985",
-        testrideSpot: "Frankfurt am Main",
+        name: 'Bicycle Garage Fremont',
+        phone: '510-795-9622',
+        email: 'bikeshoptina@gmail.com',
+        timezone: "Fremont, California, USA (GMT-7)",
+        add: "5006 Mowry Avenue, Fremont, CA 94538",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Bicycle_Garage_Fremont_fremont.jpg?v=1665374978",
+        testrideSpot: "Fremont",
         testRideSize: "M/L",
         businessHours: [
           "",
@@ -50,5 +46,5 @@ const testRides = [
         ],
       },
     ]
-  }
+  },
 ]
