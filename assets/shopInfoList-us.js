@@ -136,6 +136,28 @@ const testRides = [
           "11:00-17:00"
         ],
       },
+      {
+        name: "Eze Ryders Electric Bikes",
+        phone: "619-786-7161",
+        email: "manager@ezeryders.com, sales@ezeryders.com",
+        timezone: "San Diego, CA, USA (GMT-7)",
+        add: "4051 Voltaire St Ste C, San Diego, CA 92107",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Eze_Ryders_Electric_Bikes_san_dieago.jpg?v=1665374977",
+        testrideSpot: "California",
+        testRideSize: "M/L",
+        availableSizes: [
+          'Carbon One Size M/L',
+        ],
+        businessHours: [
+          "10:00-17:00",
+          "",
+          "12:00-17:00",
+          "12:00-17:00",
+          "12:00-17:00",
+          "12:00-17:00",
+          "10:00-17:00"
+        ],
+      },
     ]
   },
 ]
