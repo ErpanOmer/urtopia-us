@@ -21,9 +21,18 @@
     .banner {
         background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230614-194431.jpg?v=1686743080');
         height: 520px;
-        
-        .u48DemiBold_v2 {
-            font-size: 24px;
+
+        .centeral-content {
+            padding-top: 15vw;
+            justify-content: flex-start;
+
+            .u48DemiBold_v2 {
+                font-size: 24px;
+            }
+    
+            .u17Medium_v2 {
+                font-size: 15px;
+            }
         }
     }
 }
