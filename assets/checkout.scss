@@ -55,8 +55,9 @@
     padding: 6px 20px;
     align-items: center;
     margin: 12px 0;
-    cursor: pointer;
     justify-content: flex-start;
+    position: relative;
+    cursor: pointer;
 
     img {
         height: 20px;
