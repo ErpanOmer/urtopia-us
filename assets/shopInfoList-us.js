@@ -23,7 +23,7 @@ function createdisableDates(limit = 0, ignore_date = []) {
 
 const testRides = [
   {
-    city: 'Fremont',
+    city: 'California',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Bicycle_Garage_Fremont_fremont.jpg?v=1665374978',
     stores: [
       {
@@ -33,7 +33,7 @@ const testRides = [
         timezone: "Fremont, California, USA (GMT-7)",
         add: "5006 Mowry Avenue, Fremont, CA 94538",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Bicycle_Garage_Fremont_fremont.jpg?v=1665374978",
-        testrideSpot: "Fremont",
+        testrideSpot: "California",
         testRideSize: "M/L",
         businessHours: [
           "11:00-17:00",
