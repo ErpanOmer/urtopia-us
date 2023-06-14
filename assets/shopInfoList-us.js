@@ -92,6 +92,28 @@ const testRides = [
           "10:00-18:00",
         ],
       },
+      {
+        name: "DTLA Bikes",
+        phone: "213-533-8000",
+        email: "rodney@dtlabikes.com",
+        timezone: "Los Angeles, CA, USA (GMT-7)",
+        add: "425 S. Broadway, Los Angeles, CA 90013",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-dtla_bikes.jpg?v=1665374977",
+        testrideSpot: "California",
+        testRideSize: "M/L",
+        availableSizes: [
+          'Carbon One Size M/L',
+        ],
+        businessHours: [
+          "9:30-18:30",
+          "9:30-18:30",
+          "9:30-18:30",
+          "9:30-18:30",
+          "9:30-18:30",
+          "9:30-18:30",
+          "",
+        ],
+      },
     ]
   },
 ]
