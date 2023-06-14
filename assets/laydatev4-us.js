@@ -3408,7 +3408,7 @@ function splitTimeFormat(item = '') {
           that.next();
 
 
-          extra_data.test_ride_model = `${find.size ? `Carbon One, size ${find.size}` : 'Chord'}</br>${find.fit}`
+          extra_data.test_ride_model = `${find.name} Size ${find.size}</br>${find.fit}`
         })
       }, 300)
 
