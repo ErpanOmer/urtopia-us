@@ -19,7 +19,7 @@
     <div class="map" id="map">
         <div class="centeral-content">
             <div class="u36DemiBold_v2">Choose your location</div>
-            <div id="storepoint-container" data-tags="de,Test Ride" data-map-id="162f21804990ff"></div>
+            <div id="storepoint-container" data-tags="us,Test Ride" data-map-id="162f21804990ff"></div>
         </div>
     </div>
     <div class="explained">
@@ -325,14 +325,13 @@
     b.parentNode.insertBefore(a, b);
 
     function reset() {
-        // STOREPOINT.set_tags(['DE'])
         STOREPOINT.reset()
-        document.querySelector('.storepoint-tag-checkbox[value="de"]').click()
+        document.querySelector('.storepoint-tag-checkbox[value="us"]').click()
         document.querySelector('.storepoint-tag-checkbox[value="test%20ride"]').click()
     }
 
     function refresh(tags = []) {
-        tags.push('DE', 'Test Ride')
+        tags.push('US', 'Test Ride')
 
         STOREPOINT.set_tags(tags)
         STOREPOINT.reload_locations()
