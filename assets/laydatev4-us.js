@@ -3339,64 +3339,30 @@ function splitTimeFormat(item = '') {
     //预约时间，即初始s
 
     else if (that.step == 0) {
-      const carbonM = {
-        id: 1,
-        name: 'Carbon 1',
-        fit: 'Fit for 170 - 185cm',
-        size: 'M',
-        img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18409_2x_87c499be-99e5-457b-869b-963e270f0ea1.jpg?v=1683614780'
-      }
+      let sizes = that.config.shopInfo.availableSizes || []
+      let choose = []
 
-      const carbonL = {
-        id: 2,
-        name: 'Carbon 1',
-        fit: 'Fit for 180 - 195cm',
-        size: 'L',
-        img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18409_2x_87c499be-99e5-457b-869b-963e270f0ea1.jpg?v=1683614780'
-      }
+      for (const size of sizes) {
+        const s = size.split(' ').pop().split('/')
 
-      const chordX = {
-        id: 3,
-        name: 'Chord',
-        fit: 'Fit for 170 - 195cm',
-        size: '',
-        img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/1_1_2x_c0a40bb0-8853-4818-aa56-0b6cdad81548.jpg?v=1683612101'
-      }
+         // 如果是1s 车
+         if (size.includes('Carbon 1s')) {
+          choose = choose.concat(s.map(i => {
+            const find = bike_sizes.find(b => b.name === 'Carbon 1s' && b.size === i)
 
-      let sizes = that.config.shopInfo.availableSizes || that.config.shopInfo.testRideSize
-      const choose = []
+            return find
 
-      // 如果是数组
-      if (Array.isArray(sizes)) {
-        const carbon = sizes.find(s => s.includes('Carbon'))
-        const chord = sizes.includes('Chord')
+          }).filter(Boolean))
 
-        // 如果carbon 存在
-        if (carbon) {
-          const size = carbon.split(' ').pop()
-          if (size === 'M/L') {
-            choose.push(carbonM, carbonL)
-          } else if (size === 'M') {
-            choose.push(carbonM)
-          } else {
-            choose.push(carbonL)
-          }
-        }
+         } else {
+            // 如果是chrod
+            if (size.includes('Chord')) {
 
-        // 如果chord存在
-        if (chord) {
-          choose.push(chordX)
-        }
+            } else {
 
-      } else {
-          const size = sizes
-          if (size === 'M/L') {
-            choose.push(carbonM, carbonL)
-          } else if (size === 'M') {
-            choose.push(carbonM)
-          } else {
-            choose.push(carbonL)
-          }
+            }
+
+         }
       }
 
       console.log('choose', choose)
