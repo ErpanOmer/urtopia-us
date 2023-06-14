@@ -35,6 +35,10 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Bicycle_Garage_Fremont_fremont.jpg?v=1665374978",
         testrideSpot: "California",
         testRideSize: "M/L",
+        availableSizes: [
+          'Carbon One Size M/L',
+          'Chord'
+        ],
         businessHours: [
           "11:00-17:00",
           "10:00-19:00",
