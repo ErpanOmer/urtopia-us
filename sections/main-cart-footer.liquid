@@ -3,6 +3,64 @@
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
 <style>
+  .orderTestRideBtn{
+    width: 100%;
+	height: 50px;
+	font: normal normal 600 23px/28px Urbane;
+	color: #fff;
+	background: #FD4B17;
+	border: 2px solid #FD4B17;
+	border-radius: 30px;
+	margin-bottom: 6px;
+	transition:all 0.3s;
+	line-height: 50px;
+    text-align: center;
+	background: #161c1f;
+	border: 2px solid #161c1f;
+	font-size: 15px;
+	cursor: pointer;
+    line-height: unset;
+      text-align: center;
+    background: #fff;
+    color: #000;
+    border: 2px solid #161c1f;
+    display: grid;
+      grid-template-columns: 0.5fr 1fr;
+      grid-column-gap: 12px;
+    align-items: center;
+      justify-items: right;
+    }
+
+    .orderTestRideBtn:hover {
+      opacity: 0.7;
+    }
+  
+    .orderTestRideBtn > span {
+    display: flex;
+      width: 100%;
+    flex-direction: column;
+      align-items: flex-start;
+    line-height: 16px;
+    font-size: 16px;
+      font-weight: 500;
+    }
+  
+    .orderTestRideBtn > span .u17DemiBold_v2 {
+    font-weight: 700;
+    }
+  
+    .orderTestRideBtn .oneeee {
+    width: 90px;
+    }
+  
+    .orderTestRideBtn .twoooo {
+    width: 95px;
+    }
+  
+    .orderTestRideBtn .threeee {
+    width: 125px;
+    }
+
   .product_code {
       /* display: flex; */
         margin-bottom: 20px;
@@ -93,6 +151,26 @@
       .sale_coupon > div:last-child { 
         font-size: 15px;
       }
+
+      .orderTestRideBtn{
+        font-size:14px;
+      }
+    
+      .orderTestRideBtn > span {
+        grid-template-columns: 0.7fr 1fr;
+      }
+    
+      .orderTestRideBtn .oneeee {
+        width: 80px;
+        }
+      
+        .orderTestRideBtn .twoooo {
+        width: 85px;
+        }
+      
+        .orderTestRideBtn .threeee {
+        width: 110px;
+        }
   }
   </style>
 
