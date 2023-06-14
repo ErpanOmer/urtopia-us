@@ -411,6 +411,23 @@ if(Shopify.Checkout.step){
     }               
 }
 
+function fetchBuried (name = '', type = '', data = {}, isSendBeacon = false) {
+  const body = {
+      module: "website-us",
+      trace_name: `${name}-us`,
+      trace_type: `${type}-${document.body.clientWidth > 768 ? 'pc' : 'mb'}` + (window.__SHOPIFY_CLI_ENV__ ? ':test' : ''),
+      extras: data
+  }
+
+  return isSendBeacon ? navigator.sendBeacon('https://api.newurtopia.com/third_part/traces', JSON.stringify(body)) : fetch("https://api.newurtopia.com/third_part/traces", {
+      method: "POST",
+      body: JSON.stringify(body),
+      headers: {
+          "Content-Type": "application/json",
+      },
+  })
+}
+
 
 
 $(document).on('page:load', function() {
