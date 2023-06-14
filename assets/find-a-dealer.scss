@@ -108,9 +108,15 @@
     }
 
     .shops {
+        margin: 0;
+
         .centeral-content {
             padding: 0;
             grid-template-columns: 1fr;
+
+            & > div {
+                padding: 4vw;
+            }
         }
     }
 }
