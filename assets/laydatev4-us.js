@@ -12,6 +12,58 @@
 
 let extra_data = {}
 
+const bike_sizes = [
+  {
+    id: 1,
+    name: 'Carbon 1',
+    fit: 'Fit for 5’7’’~6’1’’',
+    size: 'M',
+    img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18409_2x_87c499be-99e5-457b-869b-963e270f0ea1.jpg?v=1683614780'
+  },
+  {
+    id: 2,
+    name: 'Carbon 1',
+    fit: 'Fit for  5’11’’~6’5’’',
+    size: 'L',
+    img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18409_2x_87c499be-99e5-457b-869b-963e270f0ea1.jpg?v=1683614780'
+  },
+  {
+    id: 3,
+    name: 'Carbon 1s',
+    fit: 'Fit for 5’3’’~5’9’’',
+    size: 'S',
+    img: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230614-215228.png?v=1686750766'
+  },
+  {
+    id: 4,
+    name: 'Carbon 1s',
+    fit: 'Fit for  5’7’’~6’1’’',
+    size: 'M',
+    img: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230614-215228.png?v=1686750766'
+  },
+  {
+    id: 5,
+    name: 'Carbon 1s',
+    fit: 'Fit for 5’11’’~6’5’’',
+    size: 'L',
+    img: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230614-215228.png?v=1686750766'
+  },
+  {
+    id: 6,
+    name: 'Chord',
+    fit: 'Fit for 5’7’’~6’5’’',
+    size: '',
+    img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/1_1_2x_c0a40bb0-8853-4818-aa56-0b6cdad81548.jpg?v=1683612101'
+  },
+  {
+    id: 7,
+    name: 'Chord X',
+    fit: 'Fit for 5’3’’~6’1’’',
+    size: '',
+    img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/1_1_2x_c0a40bb0-8853-4818-aa56-0b6cdad81548.jpg?v=1683612101'
+  }
+]
+
 function splitTimeFormat(item = '') {
   if (!item) {
     return ''
