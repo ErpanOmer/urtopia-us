@@ -898,6 +898,8 @@ var cart1 =
     }
   
 function addAllToCart(parse, show = false) {
+  window.show_notification_checkout_button = false
+
   if (adding == false) {
     !show && changeAddToCartText(parse,1);
     adding = true;
