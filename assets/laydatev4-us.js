@@ -3359,9 +3359,13 @@ function splitTimeFormat(item = '') {
             if (size.includes('Chord')) {
               choose.push(bike_sizes.find(b => b.name === 'Chord'))
             } else {
-
+              choose = choose.concat(s.map(i => {
+                const find = bike_sizes.find(b => b.name === 'Carbon 1' && b.size === i)
+    
+                return find
+    
+              }).filter(Boolean))
             }
-
          }
       }
 
