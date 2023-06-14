@@ -65,8 +65,12 @@
             padding: 0 4vw;
             grid-template-columns: 1fr;
 
-            .u48DemiBold_v2 {
+
+            & > div {
                 margin-bottom: 24px;
+            }
+
+            .u48DemiBold_v2 {
                 font-size: 30px;
             }
         }
