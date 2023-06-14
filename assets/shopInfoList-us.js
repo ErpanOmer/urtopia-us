@@ -70,6 +70,28 @@ const testRides = [
           "11:00-18:00",
         ],
       },
+      {
+        name: "Bike Attack Playa Vista",
+        phone: "310-862-5001",
+        email: "sales@bikeattack.com",
+        timezone: "Los Angeles, CA, USA (GMT-7)",
+        add: "12775 W Millennium, Los Angeles, CA 90094",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-BikeAttackPlayaVista.jpg?v=1665374977",
+        testrideSpot: "California",
+        testRideSize: "M/L",
+        availableSizes: [
+          'Carbon One Size M/L',
+        ],
+        businessHours: [
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+        ],
+      },
     ]
   },
 ]
