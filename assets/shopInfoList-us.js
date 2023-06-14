@@ -171,7 +171,7 @@ const testRides = [
         timezone: "Long Island City, Queens, NY, USA (GMT-4)",
         add: "49-04 Vernon Blvd, Long Island City, NY 11101",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Spokesman_Cycles_LIC_ny.jpg?v=1665374977",
-        testrideSpot: "California",
+        testrideSpot: "New York",
         testRideSize: "M/L",
         availableSizes: [
           'Carbon One Size M/L',
@@ -184,6 +184,28 @@ const testRides = [
           "10:00-19:00",
           "10:00-19:00",
           "10:00-19:00",
+        ],
+      },
+      {
+        name: "Spokesman Cycles (Glendale)",
+        phone: "929-295-0955",
+        email: "bikesnyc@gmail.com",
+        timezone: "Queens, NY, USA (GMT-4)",
+        add: "78-17 Myrtle Ave, Queens, NY 11385",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Spokesman_Cycles_Midtown.jpg",
+        testrideSpot: "New York",
+        testRideSize: "M/L",
+        availableSizes: [
+          'Carbon One Size M/L',
+        ],
+        businessHours: [
+          "",
+          "",
+          "11:00-19:00",
+          "11:00-19:00",
+          "11:00-19:00",
+          "11:00-19:00",
+          "11:00-19:00",
         ],
       },
     ]
