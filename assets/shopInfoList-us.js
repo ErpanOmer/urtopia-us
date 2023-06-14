@@ -37,7 +37,28 @@ const testRides = [
         testRideSize: "M/L",
         availableSizes: [
           'Carbon One Size M/L',
-          'Chord'
+        ],
+        businessHours: [
+          "11:00-17:00",
+          "10:00-19:00",
+          "",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-18:00"
+        ],
+      },
+      {
+        name: 'Groove E-Bikes',
+        phone: '949-274-7944',
+        email: 'bob@grooveebikes.com',
+        timezone: "Newport Beach, CA, USA (GMT-8)",
+        add: "3740 Campus Drive, Suite A, Newport Beach, 92660",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/test-ride-groove_ebike.png?v=1670312992",
+        testrideSpot: "California",
+        testRideSize: "M/L",
+        availableSizes: [
+          'Carbon One Size M/L',
         ],
         businessHours: [
           "11:00-17:00",
