@@ -56,6 +56,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   <script>window.uetq = window.uetq || []; window.uetq.push('event', 'begin_checkout', { "revenue_value": '{{ checkout.total_price | divided_by:100.0}}', "currency": "USD" });</script>
   <!-- End of Bing UET checkout -->
+  <link rel="stylesheet" href="https://use.typekit.net/fzb3fxo.css" onload="this.onload=null;this.rel='stylesheet'">
+  {{ 'checkout.scss.css' | asset_url | stylesheet_tag }}
 </head>
 
 <body>
@@ -74,6 +76,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <header class="main__header" role="banner">
           {{ content_for_logo }}
           {{ breadcrumb }}
+          <div class="klarna">
+            <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Klarna-Logo.wine_2x_4831cc33-3ad3-4cb7-8d01-bc04c379811a.png?v=1686369579">
+            <div class="u14Medium_v2">{{ 'checkout_klarna.Klarna_for' | t }}<span class="learn">{{ 'checkout_klarna.Klarna_learn' | t }}</span></div>
+          </div>
           {{ alternative_payment_methods }}
         </header>
         <main class="main__content" role="main">
@@ -161,8 +167,89 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </div>
     </div>
     {{ tracking_code }}
+    <div class="klarna-dialog" style="height: 0;overflow: hidden;padding: 0;">
+      <div class="u24DemiBold_v2"><img
+              src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Image_167_2x_a31405e4-22c9-4546-8404-ec68e30f98ad.png?v=1685686187"
+              alt="">{{ 'checkout_klarna.title' | t }}</div>
+      <div class="scroll">
+          <div class="u17Medium_v2">{{ 'checkout_klarna.title1' | t }}<br class="mobileHide">{{ 'checkout_klarna.title2' | t }}</div>
+          <div class="pay">
+              <div class="u20DemiBold_v2">{{ 'checkout_klarna.pay_in' | t }}</div>
+              <div class="u17Medium_v2"><span>{{ 'checkout_klarna.month' | t }}</span>
+                  <div>{{ 'checkout_klarna.payments' | t }}</div>
+              </div>
+              <div class="total">
+                  <div class="u17Medium_v2" style="color:#8E8E8E">
+                      <span>APR</span>
+                      <span>{{ 'checkout_klarna.total' | t }}</span>
+                  </div>
+                  <div class="u17Medium_v2">
+                      <span>{{ 'checkout_klarna.fixed' | t }}</span>
+                      <span>$2199 + Tax*</span>
+                  </div>
+                  <div class="u11Medium_v2">{{ 'checkout_klarna.limited' | t }}</div>
+              </div>
+          </div>
+          <div class="u24DemiBold_v2 how">{{ 'checkout_klarna.works' | t }}</div>
+          <div class="works">
+              <div class="u17Medium_v2">{{ 'checkout_klarna.work1' | t }}<span></span></div>
+              <div class="u17Medium_v2">{{ 'checkout_klarna.work2' | t }}<span></span></div>
+              <div class="u17Medium_v2">{{ 'checkout_klarna.work3' | t }}<span></span>
+              </div>
+              <div class="u17Medium_v2">{{ 'checkout_klarna.work4' | t }}<span></span>
+                  <img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230614-142808.png?v=1686724102" alt="">
+                  <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230614-143316.png?v=1686724422" alt=""></div>
+                  <div class="u17Medium_v2">{{ 'checkout_klarna.work5' | t }}<span></span></div>
+                  <div class="u17Medium_v2">{{ 'checkout_klarna.work6' | t }}<span></span></div>
+                  <div class="u17Medium_v2">{{ 'checkout_klarna.work7' | t }}<span></span></div>
+          </div>
+      </div>
+      <div onclick="closeMiniDialog()" class="my-button my-button-black">{{ 'checkout_klarna.button' | t }}</div>
+      <span onclick="closeMiniDialog()" class="close">×</span>
+    </div>
 </body>
+<script>
+  // 查询url 参数
+function getSearchValues () {
+  const search = {}
 
+  // 页面url
+  const url = new URL(location.href)
+
+  for (const [k, v] of url.searchParams.entries()) {
+      search[k] = v
+  }
+
+  return search
+}
+
+  function showMiniDialog(html = '') {
+    Checkout.$('body .mini-dialog').remove()
+    setTimeout(() => {
+      Checkout.$("body").append(`<div class="mini-dialog" style="display: flex;">${html}</div>`)
+    
+        {% comment %} setTimeout(() => {
+        $('body .mini-dialog > div').on('click', e => {
+            e.stopPropagation();
+            return false;
+        })
+        }, 100) {% endcomment %}
+    })
+}
+
+function closeMiniDialog() {
+    // console.log(a === document.querySelector('body .mini-dialog'))
+    Checkout.$('body .mini-dialog').remove()
+}  
+
+  const html = Checkout.$('.klarna-dialog').html()
+
+  getSearchValues().show_klarna_dialog && showMiniDialog(`<div class="klarna-dialog">${html}</div>`)
+
+  setTimeout(() => {
+    Checkout.$('.klarna').on('click', () => showMiniDialog(`<div class="klarna-dialog">${html}</div>`))
+  }, 100)
+</script>
 </html>
 
 
@@ -404,4 +491,39 @@ if(Shopify.Checkout.step){
         });
     }               
 }
+
+function fetchBuried (name = '', type = '', data = {}, isSendBeacon = false) {
+  const body = {
+      module: "website-us",
+      trace_name: `${name}-us`,
+      trace_type: `${type}-${document.body.clientWidth > 768 ? 'pc' : 'mb'}` + (window.__SHOPIFY_CLI_ENV__ ? ':test' : ''),
+      extras: data
+  }
+
+  return isSendBeacon ? navigator.sendBeacon('https://api.newurtopia.com/third_part/traces', JSON.stringify(body)) : fetch("https://api.newurtopia.com/third_part/traces", {
+      method: "POST",
+      body: JSON.stringify(body),
+      headers: {
+          "Content-Type": "application/json",
+      },
+  })
+}
+
+
+
+/*$(document).on('page:load', function(e) {
+  console.log('e', e)
+
+  if (window.sessionStorage.clicked_klarna_checkout_button) {
+    fetchBuried('a-b-test', 'order-page-klarna', {
+      action_type: window.sessionStorage.carbon_one_a_b_test_flag,
+      payment_step: Shopify.Checkout.step,
+      value: Shopify.Checkout.totalPrice,
+      check_id: ecommerce.transaction_id,
+      ecommerce
+    })
+  }
+
+});
+*/
 </script>

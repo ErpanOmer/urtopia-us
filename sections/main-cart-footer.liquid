@@ -3,6 +3,78 @@
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
 <style>
+  .orderTestRideBtn{
+    width: 100%;
+	height: 50px;
+	font: normal normal 600 23px/28px Urbane;
+	color: #fff;
+	background: #FD4B17;
+	border: 2px solid #FD4B17;
+	border-radius: 30px;
+	margin-bottom: 6px;
+	transition:all 0.3s;
+	line-height: 50px;
+    text-align: center;
+	background: #161c1f;
+	border: 2px solid #161c1f;
+	font-size: 15px;
+	cursor: pointer;
+    line-height: unset;
+      text-align: center;
+    background: #fff;
+    color: #000;
+    border: 2px solid #161c1f;
+    display: grid;
+      grid-template-columns: 0.5fr 1fr;
+      grid-column-gap: 12px;
+    align-items: center;
+      justify-items: right;
+    }
+
+    .orderTestRideBtn:hover {
+      opacity: 0.7;
+    }
+  
+    .orderTestRideBtn > span {
+    display: flex;
+      width: 100%;
+    flex-direction: column;
+      align-items: flex-start;
+    line-height: 16px;
+    font-size: 16px;
+      font-weight: 500;
+    }
+  
+    .orderTestRideBtn > span .u17DemiBold_v2 {
+    font-weight: 700;
+    }
+  
+    .orderTestRideBtn .oneeee {
+    width: 90px;
+    }
+  
+    .orderTestRideBtn .twoooo {
+    width: 95px;
+    }
+  
+    .orderTestRideBtn .threeee {
+    width: 125px;
+    }
+
+    .loading {
+      opacity: 0.7;
+        cursor: not-allowed;
+      }
+    
+      .loading > span {
+      flex-direction: row;
+        align-items: center;
+      }
+    
+      .loading > span i {
+      margin-right: 6px;
+      }
+
   .product_code {
       /* display: flex; */
         margin-bottom: 20px;
@@ -93,6 +165,26 @@
       .sale_coupon > div:last-child { 
         font-size: 15px;
       }
+
+      .orderTestRideBtn{
+        font-size:14px;
+      }
+    
+      .orderTestRideBtn > span {
+        grid-template-columns: 0.7fr 1fr;
+      }
+    
+      .orderTestRideBtn .oneeee {
+        width: 80px;
+        }
+      
+        .orderTestRideBtn .twoooo {
+        width: 85px;
+        }
+      
+        .orderTestRideBtn .threeee {
+        width: 110px;
+        }
   }
   </style>
 
@@ -272,6 +364,10 @@
             {{ 'sections.cart.checkout' | t }}<img style="width: 70px;margin-left: 12px;" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Norton_by-DigiCert_177x98_2x_8f472313-bb84-4e64-8891-3a426a0a8f91.png?v=1681735955"/>
           </button>
         </div>
+        <div onclick="testRideTrace('klarna_check_out', this)" class="orderTestRideBtn">
+          <img class="twoooo"src="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/files/20230530-121400.png?v=1685420054"/>
+          <span><span class="u17DemiBold_v2">0% APR</span><span>24 months, $91.6/month</span></span>
+          </div>
         {% comment %}
         {%- if additional_checkout_buttons -%}
         <div class="cart__dynamic-checkout-buttons additional-checkout-buttons">
@@ -340,6 +436,8 @@
   //Bing UET
   document.querySelector('#checkout').addEventListener('click', function () {
     window.uetq = window.uetq || []; window.uetq.push('event', 'begin_checkout', { "revenue_value": 1, "currency": "USD" });
+
+    fetchBuried('websiteclick', `cart-page`, { button: 'checkout' }, true)
   })
   //
   document.addEventListener('DOMContentLoaded', function () {
@@ -360,6 +458,14 @@
       document.querySelector('#cart').submit();
     });
   });
+
+
+  function testRideTrace(type = '', target) {
+
+    fetchBuried('websiteclick', `cart-page`, { button: type, action_type: sessionStorage.carbon_one_a_b_test_flag }, true)
+
+    location.href = `/checkout?show_klarna_dialog=show_klarna_dialog`
+  }
 </script>
 
 {% schema %}

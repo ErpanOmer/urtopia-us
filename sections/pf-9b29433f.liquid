@@ -805,12 +805,12 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
       line-height: 12px;
     }
     </style>
-<klarna-placement
+<!--<klarna-placement
 	id="credit-promotion-badge"
   data-key="credit-promotion-badge"
   data-locale="en-US"
   data-purchase-amount=""
-></klarna-placement>
+></klarna-placement>-->
 <!-- end Placement --></div><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-45_"><div id="pay-content">
   <div id="total-price-pc">
 	Total:
@@ -831,7 +831,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 	<i class="fa fa-spinner fa-spin"></i
 	><span data-pf-type="Text" class="addToCartText">Add to Cart</span>
   </button>
-  <button
+  <!--<button
 		  data-product-id="7902779474168"
 		  data-checkout="same"
 		  data-soldout="Not available"
@@ -844,7 +844,12 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 		  >
 	<i class="fa fa-spinner fa-spin"></i
 	  ><span data-pf-type="Text">Buy Now</span>
-  </button>
+  </button>-->
+  <div onclick="testRideTrace('klarna_check_out', this)" class="orderTestRideBtn">
+	<img class="twoooo"src="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/files/20230530-121400.png?v=1685420054"/>
+	<span><span class="u17DemiBold_v2">0% APR</span><span>24 months, $91.6/month</span></span>
+  </div>
+
 
   <div class="checkout-dash-box">
 	<p>Checkout with Code: <span style="color: #fd4b17">SPEED600</span></p>
@@ -892,9 +897,12 @@ var cart1 =
 	  }
     }
   
-function addAllToCart(parse) {
+function addAllToCart(parse, show = false) {
+	// 如果 B test 需要显示 klarna checkout
+  window.show_notification_checkout_button = show
+
   if (adding == false) {
-    changeAddToCartText(parse,1);
+    !show && changeAddToCartText(parse,1);
     adding = true;
     var form = document.querySelector("form#product_form_7902779474168");
     let formData = new FormData(form);
@@ -906,9 +914,6 @@ function addAllToCart(parse) {
 	}
 
 	const hasCarbon1s = __pageflyProducts["7902779474168"].variants.find(i => id === String(i.id)).title.includes('350W')
-
-	console.log(__pageflyProducts["7902779474168"].variants.find(i => id === String(i.id)))
-	console.log('hasCarbon1s', hasCarbon1s)
 
 	// 如果存在carbon 1s
 	if (hasCarbon1s) {
@@ -931,29 +936,16 @@ function addAllToCart(parse) {
       .then((res1) => {
         res1.key = "";
         // cartList.items.splice(-1, 1);
-		let body = {
-		  trace_name: "order-pc"+parse
-  		}	
-		if(window.innerWidth <=768){
-			body.trace_name = "order-mb"+parse;
-		}
-		fetch("https://api.newurtopia.com/third_part/book_ride/traces", {
-		  method: "POST",
-		  body: JSON.stringify(body),
-		  headers: {
-			"Content-Type": "application/json",
-		  },
-		})
 	  	
 		if(parse=="buynow"){
 		  window.location.href="/checkout"
 		}else{
 		  cart1.renderContents(res1);
-		  changeAddToCartText(parse, 0);
+		  !show && changeAddToCartText(parse, 0);
 		}
       })
       .catch((err) => {
-       	changeAddToCartText(parse, 0);
+       	!show && changeAddToCartText(parse, 0);
         // cartList.items.splice(-1, 1);
 		console.log('err==',err)
 		$(".error-tip").css("visibility","visible");
@@ -972,8 +964,44 @@ function addAllToCart(parse) {
 
 
 		cartList.items = cartList.items.filter(Boolean)
+
+		setTimeout(() => {
+			adding = false
+		})
+
+		!show && fetchBuried('websiteclick', `carbon-order-page`, { button: 'ATC' })
 	})
   }
+}
+
+
+function testRideTrace(type = '', target) {
+	// 如果已经有按钮 loading ,直接退出来
+	if (!type || $('.orderTestRideBtn').hasClass('loading')) {
+		return
+	}
+
+	const t = $(target)
+
+	t.addClass('loading')
+	// 原本的html 存起来
+	const text = t.find('span').html()
+	const loading = '<i class="fa fa-spinner fa-spin"></i>Processing...'
+
+	// loading
+	t.find('span').html(loading)
+
+	fetchBuried('websiteclick', `carbon-order-page`, { button: type, action_type: sessionStorage.carbon_one_a_b_test_flag }, true)
+	window.sessionStorage.clicked_klarna_checkout_button = 'clicked_klarna_checkout_button'
+
+	if (sessionStorage.carbon_one_a_b_test_flag === 'B') {
+		setTimeout(() => {
+			t.removeClass('loading')
+			t.find('span').html(text)
+		}, 2000)
+	
+		return addAllToCart("atc", true)
+	}
 }
   
 </script>
@@ -1029,19 +1057,79 @@ function addAllToCart(parse) {
   }
   .addToCartBtn {
 	width: 100%;
-	height: 57px;
-	font: normal normal 600 23px/28px Proxima Nova Lt;
+	height: 50px;
+	font: normal normal 600 15px/1.25em Urbane;
 	color: #fff;
-	background: #161c1f;
-	border: 2px solid #161c1f;
+	background: #FD4B17;
+	border: 2px solid #FD4B17;
 	border-radius: 30px;
-	margin-bottom: 21px;
+	margin-bottom: 10px;
 	transition:all 0.3s;
   }
+
+  .orderTestRideBtn{
+	width: 100%;
+	height: 50px;
+	font: normal normal 600 23px/1.25em Urbane;
+	color: #fff;
+	background: #FD4B17;
+	border: 2px solid #FD4B17;
+	border-radius: 30px;
+	margin-bottom: 15px;
+	transition:all 0.3s;
+	line-height: 50px;
+    text-align: center;
+	background: #161c1f;
+	border: 2px solid #161c1f;
+	font-size: 15px;
+	cursor: pointer;
+	line-height: unset;
+    text-align: center;
+	background: #fff;
+	color: #000;
+	border: 2px solid #161c1f;
+	display: grid;
+    grid-template-columns: 0.7fr 1fr;
+    grid-column-gap: 12px;
+	align-items: center;
+    justify-items: right;
+  }
+
+  .orderTestRideBtn > span {
+	display: flex;
+    width: 100%;
+	flex-direction: column;
+    align-items: flex-start;
+	line-height: 16px;
+	font-size: 16px;
+    font-weight: 500;
+  }
+
+  .orderTestRideBtn a{
+	color:#fff;
+  }
+
+
+  .orderTestRideBtn > span .u17DemiBold_v2 {
+	font-weight: 700;
+  }
+
+  .orderTestRideBtn .oneeee {
+	width: 90px;
+  }
+
+  .orderTestRideBtn .twoooo {
+	width: 95px;
+  }
+
+  .orderTestRideBtn .threeee {
+	width: 125px;
+  }
+
   .buyNowBtn{
 	width: 100%;
 	height: 57px;
-	font: normal normal 600 23px/28px Proxima Nova Lt;
+	font: normal normal 600 23px/28px Urbane;
 	color: #fff;
 	background: #FD4B17;
 	border: 2px solid #FD4B17;
@@ -1062,8 +1150,24 @@ function addAllToCart(parse) {
   .checkout-dash-box p>span{
 	font:normal normal 600 14px/18px urbane;
   }
+
+  .loading {
+	opacity: 0.7;
+    cursor: not-allowed;
+  }
+
+  .loading > span {
+	flex-direction: row;
+    align-items: center;
+  }
+
+  .loading > span i {
+	margin-right: 6px;
+  }
+
   @media screen and (min-width: 767px){
-	.addToCartBtn:hover {
+	.addToCartBtn:hover,
+	.orderTestRideBtn:hover {
 	  opacity:0.7;
   }
   .buyNowBtn:hover {
@@ -1071,8 +1175,29 @@ function addAllToCart(parse) {
 	}
   }
   @media screen and (max-width: 767px){
+	.orderTestRideBtn{
+		font-size:14px;
+	  }
+  
+	  .orderTestRideBtn > span {
+		  grid-template-columns: 0.7fr 1fr;
+	  }
+  
+	  .orderTestRideBtn .oneeee {
+		  width: 80px;
+		}
+	  
+		.orderTestRideBtn .twoooo {
+		  width: 85px;
+		}
+	  
+		.orderTestRideBtn .threeee {
+		  width: 110px;
+		}
+
+
 	.buyNowBtn {
-	  font: normal normal 600 15px/18px Proxima-Nova;
+	  font: normal normal 600 15px/18px Urbane;
 	}
 	
   .soldout.buyNowBtn{
@@ -1080,7 +1205,7 @@ function addAllToCart(parse) {
   }
 	.addToCartBtn {
 	  margin-bottom:10px;
-	  font: normal normal 600 15px/18px Proxima-Nova;
+	  font: normal normal 600 15px/18px Urbane;
 	}
       #pay-content>.list-payment {
         justify-content: flex-start;

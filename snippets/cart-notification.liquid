@@ -40,10 +40,7 @@ Usage
       <div class="cart-notification__links">
         <a href="{{ routes.cart_url }}" id="cart-notification-button"
           class="button button--secondary button--full-width"></a>
-        <form action="{{ routes.cart_url }}" method="post" id="cart-notification-form">
-          <button class="button button--primary button--full-width" name="checkout">{{ 'sections.cart.checkout' | t
-            }}</button>
-        </form>
+          <button class="button button--primary button--full-width" name="checkout">{{ 'sections.cart.checkout' | t }}</button>
         <button type="button" class="link button-label">{{ 'general.continue_shopping' | t }}</button>
       </div>
     </div>
@@ -54,3 +51,15 @@ Usage
 display: none;
 }
 {% endstyle %}
+
+<script>
+  $('.cart-notification__links .button--primary').on('click', e => {
+    const show = window.show_notification_checkout_button
+
+    if (show) {
+      fetchBuried('websiteclick', `carbon-order-page-popup`, { button: 'klarna_check_out', action_type: sessionStorage.carbon_one_a_b_test_flag }, true)
+    }
+
+    location.href = show ? `/checkout?show_klarna_dialog=show_klarna_dialog` : '/checkout'
+  })
+</script>
