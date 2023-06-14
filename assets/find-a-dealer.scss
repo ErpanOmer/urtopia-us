@@ -63,6 +63,11 @@
     .service {    
         .centeral-content {
             grid-template-columns: 1fr;
+
+            .u48DemiBold_v2 {
+                margin-bottom: 40px;
+                font-size: 30px;
+            }
         }
     }
 }
