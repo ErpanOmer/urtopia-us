@@ -410,4 +410,19 @@ if(Shopify.Checkout.step){
         });
     }               
 }
+
+
+
+$(document).on('page:load', function() {
+  if (window.sessionStorage.clicked_klarna_checkout_button) {
+    fetchBuried('a-b-test', 'order-page-klarna', {
+      action_type: window.sessionStorage.carbon_one_a_b_test_flag,
+      payment_step: Shopify.Checkout.step,
+      value: Shopify.Checkout.totalPrice,
+      check_id: ecommerce.transaction_id,
+      ecommerce
+    }, true)
+  }
+
+});
 </script>
