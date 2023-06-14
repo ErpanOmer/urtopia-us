@@ -21,6 +21,10 @@
     .centeral-content {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
+
+        .u24DemiBold_v2 {
+            margin: 24px 0 12px;
+        }
     }
 }
 
