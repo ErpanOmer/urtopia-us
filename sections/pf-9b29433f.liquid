@@ -898,7 +898,7 @@ var cart1 =
     }
   
 function addAllToCart(parse, show = false) {
-  window.show_notification_checkout_button = false
+  window.show_notification_checkout_button = show
 
   if (adding == false) {
     !show && changeAddToCartText(parse,1);
