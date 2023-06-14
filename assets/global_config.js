@@ -24,23 +24,24 @@ const global_config = {
         43556900045048: 'Ships within <span>3 business days</span> from L.A. warehouse.',
         43645495476472: 'Ships within <span>3 business days</span> from L.A. warehouse.',
         // carbon 1s
-        43556899651832: 'Ships within <span>3 business days</span> from L.A. warehouse.',
-        43556896014584: 'Ships within <span>3 business days</span> from L.A. warehouse.',
-        43556899684600: 'Ships within <span>3 business days</span> from L.A. warehouse.',
-        43556899750136: 'Ships within <span>3 business days</span> from L.A. warehouse.',
-        43556899881208: 'Ships within <span>3 business days</span> from L.A. warehouse.',
+        43556899651832: 'Ships within <span>10 business days</span> from L.A. warehouse.',
+        43556896014584: 'Ships within <span>10 business days</span> from L.A. warehouse.',
+        43556899684600: 'Ships within <span>10 business days</span> from L.A. warehouse.',
+        43556899750136: 'Ships within <span>10 business days</span> from L.A. warehouse.',
+        43556899881208: 'Ships within <span>10 business days</span> from L.A. warehouse.',
 
         43556895916280: 'Ships within <span>10 business days </span>from L.A. warehouse.',
         43556896047352: 'Ships within <span>10 business days </span>from L.A. warehouse.',
 
-        43556899619064: 'Ships within <span>June 15-30, 2023 </span>from L.A. warehouse.',
-        43645495345400: 'Ships within <span>June 15-30, 2023 </span>from L.A. warehouse.',
-        43556899815672: 'Ships within <span>June 15-30, 2023 </span>from L.A. warehouse.',
-        43556895981816: 'Ships within <span>June 15-30, 2023 </span>from L.A. warehouse.',
-        43645495378168: 'Ships within <span>June 15-30, 2023 </span>from L.A. warehouse.',
-        43556895949048: 'Ships within <span>June 15-30, 2023 </span>from L.A. warehouse.',
-        43556896080120: 'Ships within <span>June 15-30, 2023 </span>from L.A. warehouse.',
-        43645495410936: 'Ships within <span>June 15-30, 2023 </span>from L.A. warehouse.',
+        43556899619064: 'Ships within <span>10 business days </span>from L.A. warehouse.',
+        43645495345400: 'Ships within <span>10 business days </span>from L.A. warehouse.',
+        43556899815672: 'Ships within <span>10 business days </span>from L.A. warehouse.',
+        43556895981816: 'Ships within <span>10 business days </span>from L.A. warehouse.',
+        43645495378168: 'Ships within <span>10 business days </span>from L.A. warehouse.',
+        43556895949048: 'Ships within <span>10 business days </span>from L.A. warehouse.',
+        43556896080120: 'Ships within <span>10 business days </span>from L.A. warehouse.',
+        43645495410936: 'Ships within <span>10 business days </span>from L.A. warehouse.',
+        //日期写法： 'Ships within <span>June 15-30, 2023 </span>from L.A. warehouse.',
         // chord
         // chord x
     }
