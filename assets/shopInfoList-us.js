@@ -209,5 +209,33 @@ const testRides = [
         ],
       },
     ]
+  },
+  {
+    city: 'Washington DC',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Buna_Bicycle_Works_Washington_dc.jpg?v=1665374977',
+    stores: [
+      {
+        name: "Buna Bicycle Works",
+        phone: "202-209-8563",
+        email: "guy@bunabicycleworks.com",
+        timezone: "Washington, DC, USA (GMT-4)",
+        add: "4828 MacArthur Blvd NW, Washington, DC 20007",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Buna_Bicycle_Works_Washington_dc.jpg?v=1665374977",
+        testrideSpot: "Washington DC",
+        testRideSize: "M/L",
+        availableSizes: [
+          'Carbon One Size M/L',
+        ],
+        businessHours: [
+          "08:00-15:00",
+          "08:00-18:00",
+          "08:00-18:00",
+          "08:00-18:00",
+          "08:00-18:00",
+          "08:00-18:00",
+          "08:00-15:00",
+        ],
+      },
+    ]
   }
 ]
