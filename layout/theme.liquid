@@ -145,6 +145,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             },
         })
     }
+
+    // 立即执行
+    (w => {
+      const falg = w.sessionStorage.carbon_one_a_b_test_flag
+
+      // carbon 车 A/B TEST ,出现50% 的概率
+      if (!falg) {
+          w.sessionStorage.carbon_one_a_b_test_flag = Math.round(Math.random()) === 10 ? 'A' : 'B'
+      }    
+    })(window);
   </script>
   <!-- End of Taboola Pixel Code -->
   {%- liquid
