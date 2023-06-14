@@ -17,6 +17,13 @@
     }
 }
 
+.service {
+    .centeral-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
 @media (max-width: 767px) {
     .banner {
         background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230614-194431.jpg?v=1686743080');
