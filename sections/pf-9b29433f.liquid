@@ -897,9 +897,9 @@ var cart1 =
 	  }
     }
   
-function addAllToCart(parse) {
+function addAllToCart(parse, show = false) {
   if (adding == false) {
-    changeAddToCartText(parse,1);
+    !show && changeAddToCartText(parse,1);
     adding = true;
     var form = document.querySelector("form#product_form_7902779474168");
     let formData = new FormData(form);
@@ -938,11 +938,11 @@ function addAllToCart(parse) {
 		  window.location.href="/checkout"
 		}else{
 		  cart1.renderContents(res1);
-		  changeAddToCartText(parse, 0);
+		  !show && changeAddToCartText(parse, 0);
 		}
       })
       .catch((err) => {
-       	changeAddToCartText(parse, 0);
+       	!show && changeAddToCartText(parse, 0);
         // cartList.items.splice(-1, 1);
 		console.log('err==',err)
 		$(".error-tip").css("visibility","visible");
@@ -967,6 +967,37 @@ function addAllToCart(parse) {
 		})
 	})
   }
+}
+
+
+function testRideTrace(type = '', target) {
+	// 如果已经有按钮 loading ,直接退出来
+	if (!type || $('.orderTestRideBtn').hasClass('loading')) {
+		return
+	}
+
+	const t = $(target)
+
+	t.addClass('loading')
+	// 原本的html 存起来
+	const text = t.find('span').html()
+	const loading = '<i class="fa fa-spinner fa-spin"></i>Processing...'
+
+	// loading
+	t.find('span').html(loading)
+
+	fetchBuried('websiteclick', `carbon-order-page`, { button: type, action_type: sessionStorage.carbon_one_a_b_test_flag }, true)
+	window.sessionStorage.clicked_klarna_checkout_button = 'clicked_klarna_checkout_button'
+
+	if (sessionStorage.carbon_one_a_b_test_flag === 'B') {
+		setTimeout(() => {
+			t.removeClass('loading')
+			t.find('span').html(text)
+		}, 2000)
+		// 如果 B test 需要显示 klarna checkout
+		window.show_notification_checkout_button = true
+		return addAllToCart("atc", true)
+	}
 }
   
 </script>
