@@ -249,7 +249,7 @@ const testRides = [
         timezone: "Orlando, FL (GMT-4)",
         add: "855 E Plant St Suite 600, Winter Garden, FL 34787",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Wheel_Works_E-Bikes.jpg?v=1667368641",
-        testrideSpot: "Washington DC",
+        testrideSpot: "Orlando",
         testRideSize: "M/L",
         availableSizes: [
           'Carbon One Size M/L',
