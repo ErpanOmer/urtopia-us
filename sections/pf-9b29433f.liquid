@@ -965,6 +965,8 @@ function addAllToCart(parse, show = false) {
 		setTimeout(() => {
 			adding = false
 		})
+
+		!show && fetchBuried('websiteclick', `carbon-order-page`, { button: 'ATC' })
 	})
   }
 }
