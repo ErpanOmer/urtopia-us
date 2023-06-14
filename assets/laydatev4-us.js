@@ -52,14 +52,14 @@ const bike_sizes = [
     id: 6,
     name: 'Chord',
     fit: 'Fit for 5’7’’~6’5’’',
-    size: '',
+    size: 'High-step',
     img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/1_1_2x_c0a40bb0-8853-4818-aa56-0b6cdad81548.jpg?v=1683612101'
   },
   {
     id: 7,
     name: 'Chord X',
     fit: 'Fit for 5’3’’~6’1’’',
-    size: '',
+    size: 'Step-Through',
     img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/1_1_2x_c0a40bb0-8853-4818-aa56-0b6cdad81548.jpg?v=1683612101'
   }
 ]
