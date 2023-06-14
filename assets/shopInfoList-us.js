@@ -36,8 +36,7 @@ const testRides = [
         testrideSpot: "California",
         testRideSize: "M/L",
         availableSizes: [
-          'Carbon 1 Size M/L',
-          'Carbon 1s Size M/L',
+          'Carbon One Size M/L',
           'Chord'
         ],
         businessHours: [
