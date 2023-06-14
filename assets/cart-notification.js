@@ -28,6 +28,11 @@ class CartNotification extends HTMLElement {
     );
 
     document.body.addEventListener("click", this.onBodyClick);
+
+    
+    setTimeout(() => {
+      $('.cart-notification__links .button--primary').text(window.show_notification_checkout_button ? 'Check out with klarna' : 'Check out')
+    })
   }
 
   close() {
