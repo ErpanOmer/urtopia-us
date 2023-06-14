@@ -1468,8 +1468,9 @@ function testRideTrace(type = '', target) {
 	// 按钮消失隐藏逻辑end
 	if (productQuantity[formData.get("id")] <= 0) {
 	  $(".tip-b").html("");
-	  $(".addToCartBtn")[0].style.display = "none";
-	  $(".buyNowBtn")[0].disabled = "true";
+	  //$(".addToCartBtn")[0].style.display = "none";
+	  //$(".buyNowBtn")[0].disabled = "true";
+	  
 	  $(".buyNowBtn span").html("Out of stock");
 	  $(".buyNowBtn").addClass("soldout");
 	} else {
