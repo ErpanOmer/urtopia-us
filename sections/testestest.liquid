@@ -634,39 +634,4 @@
     }
 
     search.name && booknow(search.name)
-
-
-    const sale_store = {
-        name: 'Golf & Bike',
-        phone: '+4917632496651',
-        email: 'info@golfclubhosel.de',
-        timezone: "Mainz, Germany (GMT+1)",
-        add: "Höseler Str. 147, 42579 Heiligenhaus, Germany",
-        imgUrl: "https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/files/20230607-142007.jpg?v=1686118943",
-        testrideSpot: "Berlin",
-        testRideSize: "M, Chord",
-        isPartner: true,
-        availableSizes: [
-          'Carbon One Size M',
-          'Chord'
-        ],
-        isAutoSelected: true,
-        businessHours: [
-          "09:00-16:00",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-        ],
-        disableDate: createdisableDates(100, ['2023-6-18']),
-      }
-
-    // banner 按钮
-    $('.testride .banner .my-button').on('click', () => {
-        booknow(sale_store)
-    })
-
-    search.from_home_page && booknow(sale_store)
     </script>
