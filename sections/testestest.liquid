@@ -160,6 +160,7 @@
     let select_city_count = 0
     let select_store_count = 0
     const reg = /("|'|\s*)/g
+    const ignore = ['Bike Attack Playa Vista', 'DTLA Bikes', 'ELV Motors', 'EZE Ryders Electric Bikes', 'Spokesman Cycles (LIC)', 'Spokesman Cycles (Glendale)', 'Wheel Works E-Bikes', 'E-Cycle Adventures', 'Groove E-Bikes']
 
     const getData = function (date = new Date()) {
         if (typeof date !== 'object') {
