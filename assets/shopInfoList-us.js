@@ -345,6 +345,33 @@ const testRides = [
     ]
   },
   {
+    city: 'Pennsylvania',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Buna_Bicycle_Works_Washington_dc.jpg?v=1665374977',
+    stores: [
+      {
+        name: "Bell's Bike Shop",
+        phone: "215-857-5793",
+        email: "steve@bellsbikeshop.com",
+        timezone: "Washington, DC, USA (GMT-4)",
+        add: "1320 E Passyunk Ave, Philadelphia, PA 19147",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Buna_Bicycle_Works_Washington_dc.jpg?v=1665374977",
+        testrideSpot: "Pennsylvania",
+        availableSizes: [
+          'Carbon 1 Size M',
+        ],
+        businessHours: [
+          "08:00-15:00",
+          "08:00-18:00",
+          "08:00-18:00",
+          "08:00-18:00",
+          "08:00-18:00",
+          "08:00-18:00",
+          "08:00-15:00",
+        ],
+      },
+    ]
+  },
+  {
     city: 'Washington DC',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Buna_Bicycle_Works_Washington_dc.jpg?v=1665374977',
     stores: [
