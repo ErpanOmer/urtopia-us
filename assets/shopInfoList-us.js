@@ -34,11 +34,8 @@ const testRides = [
         add: "5006 Mowry Avenue, Fremont, CA 94538",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Bicycle_Garage_Fremont_fremont.jpg?v=1665374978",
         testrideSpot: "California",
-        testRideSize: "M/L",
         availableSizes: [
-          'Carbon 1 Size M/L',
-          'Carbon 1s Size S/M/L',
-          'Chord',
+          'Carbon 1 Size M'
         ],
         businessHours: [
           "11:00-17:00",
