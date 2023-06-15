@@ -543,16 +543,36 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Playtri_dallas.jpg?v=1665374977',
     stores: [
       {
-        name: "Playtri",
-        phone: "214-370-9010",
-        email: "store@playtri.com",
+        name: "Bay Area Cycling",
+        phone: "713-472-6651",
+        email: "salespas@bayareacycling.com",
         timezone: "Dallas, TX, USA (GMT-5)",
-        add: "6465 E Mockingbird Ln #358, Dallas, TX 75214",
+        add: "2049 S Richey St, Pasadena, TX 77502",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-E-Cycle_Adventures_fl.jpg?v=1665374977",
         testrideSpot: "Texas",
-        testRideSize: "M/L",
         availableSizes: [
-          'Carbon One Size M/L',
+          'Carbon 1 Size M',
+        ],
+        businessHours: [
+          "12:00-17:00",
+          "11:00-19:00",
+          "11:00-19:00",
+          "11:00-19:00",
+          "11:00-19:00",
+          "11:00-19:00",
+          "09:00-17:00",
+        ],
+      },
+      {
+        name: "Bay Area Cycling",
+        phone: "713-472-6651",
+        email: "salespas@bayareacycling.com",
+        timezone: "Dallas, TX, USA (GMT-5)",
+        add: "2049 S Richey St, Pasadena, TX 77502",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-E-Cycle_Adventures_fl.jpg?v=1665374977",
+        testrideSpot: "Texas",
+        availableSizes: [
+          'Carbon 1 Size M',
         ],
         businessHours: [
           "12:00-17:00",
