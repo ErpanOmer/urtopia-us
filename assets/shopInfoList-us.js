@@ -291,6 +291,33 @@ const testRides = [
     ]
   },
   {
+    city: 'New Jersey',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Buna_Bicycle_Works_Washington_dc.jpg?v=1665374977',
+    stores: [
+      {
+        name: "Jersey City Bicycle Co.",
+        phone: "551-229-7894",
+        email: "jcbcscorp@gmail.com",
+        timezone: "Washington, DC, USA (GMT-4)",
+        add: "231 Pavonia Ave, Jersey City, NJ 07302",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Buna_Bicycle_Works_Washington_dc.jpg?v=1665374977",
+        testrideSpot: "New Jersey",
+        availableSizes: [
+          'Carbon 1 Size M',
+        ],
+        businessHours: [
+          "08:00-15:00",
+          "08:00-18:00",
+          "08:00-18:00",
+          "08:00-18:00",
+          "08:00-18:00",
+          "08:00-18:00",
+          "08:00-15:00",
+        ],
+      },
+    ]
+  }
+  {
     city: 'Washington DC',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Buna_Bicycle_Works_Washington_dc.jpg?v=1665374977',
     stores: [
