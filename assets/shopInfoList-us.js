@@ -391,11 +391,11 @@ const testRides = [
         ],
       },
       {
-        name: "Drexel Hill Cyclery",
-        phone: "610-626-4477",
-        email: "drexhillcycles@gmail.com",
+        name: "Kayuh Bicycles & Cafe",
+        phone: "215-235-1838",
+        email: "henry@kayuhbicycles.com",
         timezone: "Washington, DC, USA (GMT-4)",
-        add: "703 Burmont Rd, Drexel Hill, PA 19026",
+        add: "1900 W Girard Ave, Philadelphia, PA 19130",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Buna_Bicycle_Works_Washington_dc.jpg?v=1665374977",
         testrideSpot: "Pennsylvania",
         availableSizes: [
