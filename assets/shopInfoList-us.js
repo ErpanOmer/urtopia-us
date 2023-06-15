@@ -517,12 +517,11 @@ const testRides = [
       {
         name: "Wheel Works E-Bikes",
         phone: "407-614-4539",
-        email: "ebikes@wgwheelworks.com",
+        email: "dennis@wgwheelworks.com, shanna@wgwheelworks.com",
         timezone: "Orlando, FL (GMT-4)",
         add: "855 E Plant St Suite 600, Winter Garden, FL 34787",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Wheel_Works_E-Bikes.jpg?v=1667368641",
         testrideSpot: "Florida",
-        testRideSize: "M/L",
         availableSizes: [
           'Carbon 1 Size M',
           'Carbon 1s Size M'
