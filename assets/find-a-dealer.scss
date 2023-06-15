@@ -1,0 +1,140 @@
+.banner {
+    background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230614-193830.jpg?v=1686742723') center center/cover no-repeat;
+    height: 440px;
+    color: #fff;
+
+    .centeral-content {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .u48DemiBold_v2,
+        .u17Medium_v2 {
+            max-width: 500px;
+            margin-bottom: 24px;
+            color: #fff;
+        }
+    }
+}
+
+.service {
+    background-color: #F7F8FA;
+    padding: 40px 0;
+
+    .centeral-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-column-gap: 15px;
+
+        .u24DemiBold_v2 {
+            margin: 24px 0 12px;
+        }
+
+        .u17Light_v2 {
+            max-width: 80%;
+        }
+
+        img {
+            border-radius: 10px;
+        }
+    }
+}
+
+.shops {
+    margin: 80px 0;
+
+    .centeral-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+
+        & > div {
+            background-color: #F7F8FA;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 10% 10% 10% 15%;
+            height: 100%;
+
+            .u17Light_v2 {
+                margin: 40px 0;
+            }
+        }
+    }
+}
+
+
+h3, h2 {
+    letter-spacing: 0;
+    margin: 0;
+}
+
+@media (max-width: 767px) {
+    .banner {
+        background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230614-194431.jpg?v=1686743080');
+        height: 520px;
+
+        .centeral-content {
+            padding: 15vw 4vw 0;
+            justify-content: flex-start;
+
+            .u48DemiBold_v2 {
+                font-size: 24px;
+                margin-bottom: 12px;
+            }
+    
+            .u17Medium_v2 {
+                font-size: 15px;
+            }
+        }
+    }
+
+    .service {    
+        .centeral-content {
+            padding: 0 4vw;
+            grid-template-columns: 1fr;
+
+
+            & > div {
+                margin-bottom: 24px;
+            }
+
+            .u48DemiBold_v2 {
+                font-size: 30px;
+                margin-bottom: 24px;
+            }
+
+            .u24DemiBold_v2 {
+                font-size: 20px;
+            }
+
+            .u17Light_v2 {
+                font-size: 14px;
+            }
+        }
+    }
+
+    .shops {
+        margin: 0;
+
+        .centeral-content {
+            padding: 0;
+            grid-template-columns: 1fr;
+
+            & > div {
+                padding: 12vw 4vw;
+
+                .u36DemiBold_v2 {
+                    font-size: 24px;
+                }
+
+                .u17Light_v2 {
+                    font-size: 15px;
+                    margin: 20px 0;
+                }
+            }
+        }
+    }
+}
