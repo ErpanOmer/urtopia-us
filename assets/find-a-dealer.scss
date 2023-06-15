@@ -13,6 +13,7 @@
         .u17Medium_v2 {
             max-width: 500px;
             margin-bottom: 24px;
+            color: #fff;
         }
     }
 }
@@ -65,8 +66,9 @@
 }
 
 
-h3 {
+h3, h2 {
     letter-spacing: 0;
+    margin: 0;
 }
 
 @media (max-width: 767px) {
