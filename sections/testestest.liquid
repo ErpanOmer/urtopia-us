@@ -191,7 +191,7 @@
     const oneDay = 24 * 60 * 60 * 1000
     
     const findStore = name => {
-            const reg = /\s*/g
+            const reg = /\s*|'/g
 
             for (const city of testRides) {
                 for (const store of city.stores) {
