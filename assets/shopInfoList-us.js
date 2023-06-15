@@ -349,7 +349,7 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Buna_Bicycle_Works_Washington_dc.jpg?v=1665374977',
     stores: [
       {
-        name: "Bell\u0027s Bike Shop",
+        name: "Bell's Bike Shop",
         phone: "215-857-5793",
         email: "steve@bellsbikeshop.com",
         timezone: "Washington, DC, USA (GMT-4)",

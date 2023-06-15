@@ -159,7 +159,7 @@
     let last_select_store = ''
     let select_city_count = 0
     let select_store_count = 0
-    const reg = /\s*|'/g
+    const reg = /("|'|\s*)/g
 
     const getData = function (date = new Date()) {
         if (typeof date !== 'object') {
