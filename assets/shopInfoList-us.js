@@ -475,7 +475,7 @@ const testRides = [
         testrideSpot: "Washington DC",
         testRideSize: "M/L",
         availableSizes: [
-          'Carbon One Size M/L',
+          'Carbon 1 Size M/L',
         ],
         businessHours: [
           "08:00-15:00",
@@ -495,15 +495,14 @@ const testRides = [
     stores: [
       {
         name: "E-Cycle Adventures",
-        phone: "+1 352-600-6422",
+        phone: "352-600-6422",
         email: "ecycleadventures@gmail.com",
         timezone: "New Port Richey, FL, USA (GMT-4)",
         add: "9904 Little Rd, New Port Richey, FL 34654",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-E-Cycle_Adventures_fl.jpg?v=1665374977",
         testrideSpot: "Florida",
-        testRideSize: "M/L",
         availableSizes: [
-          'Carbon One Size M/L',
+          'Carbon 1 Size M',
         ],
         businessHours: [
           "",
@@ -525,7 +524,8 @@ const testRides = [
         testrideSpot: "Florida",
         testRideSize: "M/L",
         availableSizes: [
-          'Carbon One Size M/L',
+          'Carbon 1 Size M',
+          'Carbon 1s Size M'
         ],
         businessHours: [
           "",
