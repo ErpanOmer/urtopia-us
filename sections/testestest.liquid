@@ -191,6 +191,8 @@
     const oneDay = 24 * 60 * 60 * 1000
     
     const findStore = name => {
+            const reg = /\s*/g
+
             for (const city of testRides) {
                 for (const store of city.stores) {
                   const businessHours = store.businessHours
@@ -221,7 +223,7 @@
                     return `${time[2]}. ${time[1]}`
                   }
     
-                    if (store.name.replace(/ /g, '') === name.replace(/ /g, '')) {
+                    if (store.name.replace(reg, '') === name.replace(reg, '')) {
                         return store
                     }
                 }
