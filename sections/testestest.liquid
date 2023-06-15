@@ -225,7 +225,9 @@
                   }
     
                     if (store.name.replace(reg, '') === name.replace(reg, '')) {
-                        return store
+                        if (ignore.includes(store.name.replace(reg, ''))) {
+                            return store
+                        }
                     }
                 }
             }
