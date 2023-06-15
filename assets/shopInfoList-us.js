@@ -612,5 +612,32 @@ const testRides = [
         ],
       },
     ]
+  },
+  {
+    city: 'West Virginia',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Playtri_dallas.jpg?v=1665374977',
+    stores: [
+      {
+        name: "The Emporium",
+        phone: "304-913-4290",
+        email: "eccoproperties1@gmail.com",
+        timezone: "Dallas, TX, USA (GMT-5)",
+        add: "921 Mercer St, Princeton, WV 24740, United States",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-E-Cycle_Adventures_fl.jpg?v=1665374977",
+        testrideSpot: "West Virginia",
+        availableSizes: [
+          'Carbon 1 Size M',
+        ],
+        businessHours: [
+          "12:00-17:00",
+          "11:00-19:00",
+          "11:00-19:00",
+          "11:00-19:00",
+          "11:00-19:00",
+          "11:00-19:00",
+          "09:00-17:00",
+        ],
+      },
+    ]
   }
 ]
