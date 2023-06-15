@@ -592,12 +592,12 @@ const testRides = [
     stores: [
       {
         name: "On-Site Bike Repair",
-        phone: "713-472-6651",
-        email: "salespas@bayareacycling.com",
+        phone: "703-424-8036",
+        email: "osbrepair@gmail.com",
         timezone: "Dallas, TX, USA (GMT-5)",
-        add: "2049 S Richey St, Pasadena, TX 77502",
+        add: "9208 Maria Ave, Great Falls, VA 22066",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-E-Cycle_Adventures_fl.jpg?v=1665374977",
-        testrideSpot: "Texas",
+        testrideSpot: "Virginia",
         availableSizes: [
           'Carbon 1 Size M',
         ],
