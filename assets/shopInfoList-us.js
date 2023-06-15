@@ -140,9 +140,8 @@ const testRides = [
         add: "425 S. Broadway, Los Angeles, CA 90013",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-dtla_bikes.jpg?v=1665374977",
         testrideSpot: "California",
-        testRideSize: "M/L",
         availableSizes: [
-          'Carbon 1 Size M/L',
+          'Carbon 1 Size M',
         ],
         businessHours: [
           "9:30-18:30",
@@ -162,7 +161,6 @@ const testRides = [
         add: "2332 El Camino Real, Santa Clara, CA 95050",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-ELV_Motors_ca_san_jose.jpg?v=1665374977",
         testrideSpot: "California",
-        testRideSize: "M/L",
         availableSizes: [
           'Carbon 1 Size M/L',
         ],
@@ -179,14 +177,15 @@ const testRides = [
       {
         name: "Eze Ryders Electric Bikes",
         phone: "619-786-7161",
-        email: "manager@ezeryders.com, sales@ezeryders.com",
+        email: "sales@ezeryders.com",
         timezone: "San Diego, CA, USA (GMT-7)",
         add: "4051 Voltaire St Ste C, San Diego, CA 92107",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Eze_Ryders_Electric_Bikes_san_dieago.jpg?v=1665374977",
         testrideSpot: "California",
         testRideSize: "M/L",
         availableSizes: [
-          'Carbon 1 Size M/L',
+          'Carbon 1 Size M',
+          'Carbon 1s Size M'
         ],
         businessHours: [
           "10:00-17:00",
