@@ -316,7 +316,7 @@ const testRides = [
         ],
       },
     ]
-  }
+  },
   {
     city: 'Washington DC',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Buna_Bicycle_Works_Washington_dc.jpg?v=1665374977',
