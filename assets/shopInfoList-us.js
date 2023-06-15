@@ -211,9 +211,8 @@ const testRides = [
         add: "49-04 Vernon Blvd, Long Island City, NY 11101",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Spokesman_Cycles_LIC_ny.jpg?v=1665374977",
         testrideSpot: "New York",
-        testRideSize: "M/L",
         availableSizes: [
-          'Carbon One Size M/L',
+          'Carbon 1 Size L',
         ],
         businessHours: [
           "10:00-19:00",
@@ -235,7 +234,7 @@ const testRides = [
         testrideSpot: "New York",
         testRideSize: "M/L",
         availableSizes: [
-          'Carbon One Size M/L',
+          'Carbon 1 Size M',
         ],
         businessHours: [
           "",
@@ -245,6 +244,48 @@ const testRides = [
           "11:00-19:00",
           "11:00-19:00",
           "11:00-19:00",
+        ],
+      },
+      {
+        name: "BikeFixNYC",
+        phone: "347-699-1935",
+        email: "bikefixnyc@gmail.com",
+        timezone: "Long Island City, Queens, NY, USA (GMT-4)",
+        add: "334 E 6th St, New York, NY 10003",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Spokesman_Cycles_LIC_ny.jpg?v=1665374977",
+        testrideSpot: "New York",
+        availableSizes: [
+          'Carbon 1 Size M',
+        ],
+        businessHours: [
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+        ],
+      },
+      {
+        name: "Liberty Cycles",
+        phone: "212-375-3360",
+        email: "libertycycles846@gmail.com",
+        timezone: "Long Island City, Queens, NY, USA (GMT-4)",
+        add: "846 9th Ave, New York, NY 10019",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Spokesman_Cycles_LIC_ny.jpg?v=1665374977",
+        testrideSpot: "New York",
+        availableSizes: [
+          'Carbon 1 Size M',
+        ],
+        businessHours: [
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
         ],
       },
     ]
