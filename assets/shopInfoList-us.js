@@ -55,9 +55,29 @@ const testRides = [
         add: "3740 Campus Drive, Suite A, Newport Beach, 92660",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/test-ride-groove_ebike.png?v=1670312992",
         testrideSpot: "California",
-        testRideSize: "M/L",
         availableSizes: [
-          'Carbon One Size M/L',
+          'Carbon 1 Size M',
+        ],
+        businessHours: [
+          "11:00-15:00",
+          "11:00-18:00",
+          "11:00-18:00",
+          "11:00-18:00",
+          "11:00-18:00",
+          "11:00-18:00",
+          "11:00-18:00",
+        ],
+      },
+      {
+        name: 'Icar Lifestyle',
+        phone: '949-274-7944',
+        email: 'bob@grooveebikes.com',
+        timezone: "Newport Beach, CA, USA (GMT-8)",
+        add: "3740 Campus Drive, Suite A, Newport Beach, 92660",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/test-ride-groove_ebike.png?v=1670312992",
+        testrideSpot: "California",
+        availableSizes: [
+          'Carbon 1 Size M/L',
         ],
         businessHours: [
           "11:00-15:00",
