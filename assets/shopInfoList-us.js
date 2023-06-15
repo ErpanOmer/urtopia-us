@@ -318,6 +318,33 @@ const testRides = [
     ]
   },
   {
+    city: 'Georgia',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Buna_Bicycle_Works_Washington_dc.jpg?v=1665374977',
+    stores: [
+      {
+        name: "Aztec Cycles",
+        phone: "678-636-9043",
+        email: "aztec718@gmail.com",
+        timezone: "Washington, DC, USA (GMT-4)",
+        add: "901 Main Street, Stone Mountain, GA 30083",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Buna_Bicycle_Works_Washington_dc.jpg?v=1665374977",
+        testrideSpot: "Georgia",
+        availableSizes: [
+          'Carbon 1 Size M',
+        ],
+        businessHours: [
+          "08:00-15:00",
+          "08:00-18:00",
+          "08:00-18:00",
+          "08:00-18:00",
+          "08:00-18:00",
+          "08:00-18:00",
+          "08:00-15:00",
+        ],
+      },
+    ]
+  },
+  {
     city: 'Washington DC',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Buna_Bicycle_Works_Washington_dc.jpg?v=1665374977',
     stores: [
