@@ -119,7 +119,8 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-BikeAttackPlayaVista.jpg?v=1665374977",
         testrideSpot: "California",
         availableSizes: [
-          'Carbon 1 Size M',
+          'Carbon 1 Size L',
+          'Carbon 1s Size M'
         ],
         businessHours: [
           "10:00-18:00",
@@ -141,7 +142,7 @@ const testRides = [
         testrideSpot: "California",
         testRideSize: "M/L",
         availableSizes: [
-          'Carbon One Size M/L',
+          'Carbon 1 Size M/L',
         ],
         businessHours: [
           "9:30-18:30",
@@ -163,7 +164,7 @@ const testRides = [
         testrideSpot: "California",
         testRideSize: "M/L",
         availableSizes: [
-          'Carbon One Size M/L',
+          'Carbon 1 Size M/L',
         ],
         businessHours: [
           "12:00-16:00",
@@ -185,7 +186,7 @@ const testRides = [
         testrideSpot: "California",
         testRideSize: "M/L",
         availableSizes: [
-          'Carbon One Size M/L',
+          'Carbon 1 Size M/L',
         ],
         businessHours: [
           "10:00-17:00",
