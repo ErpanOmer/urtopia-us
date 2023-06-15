@@ -564,11 +564,11 @@ const testRides = [
         ],
       },
       {
-        name: "Bay Area Cycling",
-        phone: "713-472-6651",
-        email: "salespas@bayareacycling.com",
+        name: "Oak Cliff Bike Synergy",
+        phone: "469-456-1136",
+        email: "jorge.samano@hotmail.com",
         timezone: "Dallas, TX, USA (GMT-5)",
-        add: "2049 S Richey St, Pasadena, TX 77502",
+        add: "1300 S Polk St, Suite #152, Dallas, TX 75224",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-E-Cycle_Adventures_fl.jpg?v=1665374977",
         testrideSpot: "Texas",
         availableSizes: [
