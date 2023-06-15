@@ -70,10 +70,10 @@ const testRides = [
       },
       {
         name: 'Icar Lifestyle',
-        phone: '949-274-7944',
-        email: 'bob@grooveebikes.com',
+        phone: '310-926-6999',
+        email: 'royfang@icarlifestyle.com',
         timezone: "Newport Beach, CA, USA (GMT-8)",
-        add: "3740 Campus Drive, Suite A, Newport Beach, 92660",
+        add: "414 Rolyn Pl, Arcadia, CA 91007, United States",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/test-ride-groove_ebike.png?v=1670312992",
         testrideSpot: "California",
         availableSizes: [
