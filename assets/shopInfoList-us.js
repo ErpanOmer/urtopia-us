@@ -414,6 +414,33 @@ const testRides = [
     ]
   },
   {
+    city: 'Massachusetts',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Buna_Bicycle_Works_Washington_dc.jpg?v=1665374977',
+    stores: [
+      {
+        name: "Battle Road Bikes",
+        phone: "781-734-6464",
+        email: "jimc@battleroadbikes.com",
+        timezone: "Washington, DC, USA (GMT-4)",
+        add: "145 Massachusetts Ave, Lexington, MA 02420",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Buna_Bicycle_Works_Washington_dc.jpg?v=1665374977",
+        testrideSpot: "Massachusetts",
+        availableSizes: [
+          'Carbon 1 Size M',
+        ],
+        businessHours: [
+          "08:00-15:00",
+          "08:00-18:00",
+          "08:00-18:00",
+          "08:00-18:00",
+          "08:00-18:00",
+          "08:00-18:00",
+          "08:00-15:00",
+        ],
+      },
+    ]
+  },
+  {
     city: 'Washington DC',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Buna_Bicycle_Works_Washington_dc.jpg?v=1665374977',
     stores: [
