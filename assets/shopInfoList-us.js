@@ -48,6 +48,27 @@ const testRides = [
         ],
       },
       {
+        name: 'Velocipede Cyclery',
+        phone: '415-796-3465',
+        email: 'bikeshoptina@gmail.com',
+        timezone: "Fremont, California, USA (GMT-7)",
+        add: "2405 3rd street San Francisco, CA 94107",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Bicycle_Garage_Fremont_fremont.jpg?v=1665374978",
+        testrideSpot: "California",
+        availableSizes: [
+          'Carbon 1 Size M'
+        ],
+        businessHours: [
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-18:00"
+        ],
+      },
+      {
         name: 'Groove E-Bikes',
         phone: '949-274-7944',
         email: 'bob@grooveebikes.com',
