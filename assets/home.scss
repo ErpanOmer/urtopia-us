@@ -370,7 +370,8 @@
                         display: flex;
                         flex-direction: column;
 
-                        img {
+                        & > img {
+                            max-width: 160px;
                         }
 
                         .u56DemiBold_v2 {
