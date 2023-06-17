@@ -146,8 +146,6 @@
                 &>div {
 
                     img {
-                        max-width: 440px;
-                        transform: translateX(-20%);
                     }
 
                     .u56DemiBold_v2 {
@@ -196,6 +194,16 @@
             transform: translateX(-35px);
             overflow: hidden;
             margin-top: -10px;
+        }
+
+      .count-down-gif {
+            max-width: 370px;
+            overflow: hidden;
+            margin-top: 20px;
+
+            img {
+                transform: translateY(15%);
+            }
         }
     }
 
@@ -362,8 +370,6 @@
                         flex-direction: column;
 
                         img {
-                            max-width: 260px;
-                            transform: translate(-15%);
                         }
 
                         .u56DemiBold_v2 {
@@ -414,6 +420,11 @@
                 transform: translate(-17px);
                 margin-bottom: unset;
                 margin-top: -15px;
+            }
+
+          .count-down-gif {
+                max-width: 210px;
+                margin-top: 15px;
             }
 
         }
