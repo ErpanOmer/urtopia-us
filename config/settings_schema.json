@@ -18,13 +18,13 @@
         "type": "text",
         "id": "sale_name",
         "label": "活动名称",
-        "default": "Green Travel Sale"
+        "default": "Father’s Day Sale"
       },
       {
         "type": "text",
         "id": "sale_end_time",
         "label": "活动结束文案",
-        "default": "Ends June 16"
+        "default": "Ends June 19"
       }
     ]
   },
