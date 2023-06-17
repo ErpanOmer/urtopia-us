@@ -18,7 +18,7 @@
         "type": "text",
         "id": "sale_name",
         "label": "活动名称",
-        "default": "Father Day Sale"
+        "default": "Father’s Day Sale"
       },
       {
         "type": "text",
