@@ -145,7 +145,8 @@
             .centeral-content {
                 &>div {
 
-                    img {
+                    & > img {
+                        max-width: 370px;
                     }
 
                     .u56DemiBold_v2 {
