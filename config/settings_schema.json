@@ -18,13 +18,13 @@
         "type": "text",
         "id": "sale_name",
         "label": "活动名称",
-        "default": "Blue Sky Riding Sale"
+        "default": "Summer Sale"
       },
       {
         "type": "text",
         "id": "sale_end_time",
         "label": "活动结束文案",
-        "default": "Ends June 22"
+        "default": "Ends June 26"
       }
     ]
   },
