@@ -290,6 +290,485 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 			<span class="u14Light_v2">or as low as €112/Month</span>
 		</div>
 	</div>
+
+	<script>
+    const search = getSearchValues()
+    const variants = JSON.parse(JSON.stringify({{ product.variants | json }}))
+    const size_map = {
+        M: 'Fit for 170-185 cm',
+        L: 'Fit for 180-195 cm'
+    }
+
+    let current_variant_id = null
+    let current_variant = null
+    const styles = {}
+    const sizes = {}
+    const models = {}
+
+    const commonSwiper = [
+        'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230620-232407.png?v=1687274659',
+        'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230620-232428.png?v=1687274678',
+        'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230620-232506.png?v=1687274717',
+        'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230620-232525.png?v=1687274790',
+        'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230620-232545.png?v=1687274794',
+        'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230620-232556.png?v=1687274807'
+    ]
+
+    const medias = [
+        {
+            text: `“Best Electric Bike for 2022”`,
+            img: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/CNET-Logo_2x_585b6404-bc14-4a34-af64-299587c59efd.png?v=1687187217"
+        },
+        {
+            text: `“Urtopia is an over the top e-bike”`,
+            img: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18604_2x_dbde7d31-6b13-4fa7-80be-7f7c1ea23c13.png?v=1687188893"
+        },
+        {
+            text: `“Eye-catching styled carbon frame”`,
+            img: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18605_2x_1fb17080-bba1-42a3-a5e0-b5a5fe63c252.png?v=1687188923"
+        },
+        {
+            text: `“The carbon pedelec from Urtopia is also stylish, light and electric.”`,
+            img: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18537_2x_ab067425-468d-4359-8136-daf2681d1af6.png?v=1687188959"
+        },
+        {
+            text: `“Lightweight, networked and highly secure”`,
+            img: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18603_2x_a65ec9f7-1b63-459d-8b53-fb3624b5d492.png?v=1687188993"
+        },
+        {
+            text: `“Lightweight carbon fiber road e-bike with affordably-price”`,
+            img: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18602_2x_d83cb682-76f4-43f5-809c-0212ebf68b24.png?v=1687188826"
+        }
+    ]
+
+    const swiper_series = {
+        "Carbon Belt": {
+          Sirius: [
+            "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18687.png?v=1688112408",
+            "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18686.png?v=1688112407",
+            "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18685.png?v=1688112407"
+          ],
+          Lyra: [
+              'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18525.png?v=1688112407'
+          ],
+          "Midnight in Paris": [
+              "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18526.png?v=1688112407"
+          ],
+          vanilla: [
+              "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18699.png?v=1688112407",
+              "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18698.png?v=1688112407",
+              "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18697.png?v=1688112407",
+              "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18695.png?v=1688112407",
+              "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18696.png?v=1688112407"
+          ],
+          commonSwiper: [
+            "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18693.png?v=1688112407",
+            "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18692.png?v=1688112407",
+            "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18691.png?v=1688112407",
+            "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18690.png?v=1688112407",
+            "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18689.png?v=1688112407",
+            "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18688.png?v=1688112407",
+            "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/ssss_6e9b22f2-3d7e-4f41-82b7-dd7b575dea98.png?v=1688112407"
+          ]
+        },
+        "Shimano Gear": {
+          Sirius: [
+            "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18145.png?v=1688113259",
+            "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18704.png?v=1688113258",
+            "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18705.png?v=1688113259"
+          ],
+          Lyra: [
+              'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18700.png?v=1688113259'
+          ],
+          "Midnight in Paris": [
+              "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18701.png?v=1688113259"
+          ],
+          commonSwiper: [
+            "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/14031687412304_.pic_hd_eb7f49ff-842e-4ab5-8736-f1b98393fc17.png?v=1688113259",
+            "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/14051687412317_.pic_hd_20e0b017-4162-47fa-884b-2301802ce812.png?v=1688113259",
+            "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/45_9d0ec03f-9490-4093-96ea-907e4d4ffdeb.png?v=1688113259",
+            "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18702.png?v=1688113259",
+            "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18703.png?v=1688113259",
+            "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/ssss_1c3776c9-2428-4a84-8576-35639d72ec78.png?v=1688113259",
+          ]
+        }
+    }
+    
+    const leftSwiper = new Swiper(".product .left-swiper", {
+        direction: 'vertical',
+        spaceBetween: 8,
+        slidesPerView: 8,
+        freeMode: true,
+        watchSlidesProgress: true,
+      })
+
+      const rightSwiper = new Swiper(".product .right-swiper", {
+        autoHeight: true,
+        navigation: {
+          nextEl: ".product .right-swiper .swiper-button-next",
+          prevEl: ".product .right-swiper .swiper-button-prev",
+        },
+        pagination: {el:'.swiper-pagination'},
+        effect: 'fade',
+        fadeEffect:{
+            crossFade: true
+        },
+        thumbs: {
+          swiper: leftSwiper,
+        },
+      });
+
+    function findVariantOptions (model, size, style) {
+        return variants.find(v => `${model} / ${size} / ${style}` === v.title)
+    }
+
+    function findVariantFromId (id) {
+        return variants.find(v => String(v.id) === String(id))
+    }
+
+    function findAvailableVariant () {
+        return variants.find(v => v.available)
+    }
+
+    function changeVariant (model, size, style) {
+        if (model) {
+            $(`.product .product-panel .Model .active`).removeClass('active')
+            $(`.product .product-panel .Model > div[attribute="${model}"]`).addClass('active')
+            $(`.product .product-panel .options > div[option="Model"] .u17DemiBold_v2 .u17Light_v2`).text(`Urtopia Carbon ${model === 'Carbon Belt' ? '1' : '1s'}`)
+
+            $(`.product .commonComponent .sale .u20DemiBold_v2`).text(`${model === 'Carbon Belt' ? '{{ 269900 | money }}' : '{{ 299900 | money }}'} NOW`)
+            $(`.product .commonComponent .sale .u17DemiBold_v2`).text(`with ${model === 'Carbon Belt' ? '{{ settings.sale_name }}' : 'Pre-order Sale'}`)
+
+            $(`.product .count-down .u17Medium_v2`).text(`with ${model === 'Carbon Belt' ? '€600 off + 3 Free Accessories Ends in:' : '€300 off + 3 Free Accessories Ends in:'}`)
+
+            if (model === 'Carbon Belt') {
+                //$('.product .belt').show()
+                //$('.product .gear').hide()
+                
+
+                global_config.event_accessories_variant_ids = ['43817744793816', '43745263255768', '43745261748440'];
+
+                $(`.product .product-panel .options .option .vanilla`).show();
+
+                $('.buttons .orderTestRideBtn .stages').text('112');
+                $('.product .buttons .jobrad').css({ height: '47px', overflow: 'unset', border: '2px solid #161c1f' });
+            } else {
+                //$('.product .belt').hide()
+                //$('.product .gear').show()
+                
+
+                global_config.event_accessories_variant_ids = ['43866498891992', '43866499121368', '43871557779672'];
+
+                $(`.product .product-panel .options .option .vanilla`).hide();
+
+                $('.buttons .orderTestRideBtn .stages').text('124');
+
+                $('.product .buttons .jobrad').css({ height: 0, overflow: 'hidden', border: 'none' });
+            }
+        }
+
+        if (style) {
+            $(`.product .product-panel .Style .active`).removeClass('active')
+            $(`.product .product-panel .Style > div[attribute="${style}"]`).addClass('active')
+            $(`.product .product-panel .options > div[option="Style"] .u17DemiBold_v2 .u17Light_v2`).text(style)
+
+            let swiper_arr = []
+
+            swiper_arr = swiper_arr.concat(swiper_series[model][style], style === 'vanilla' ? [] : swiper_series[model]['commonSwiper'])
+
+            $('.product .right-swiper .swiper-wrapper').html(swiper_arr.map((s, i) => {
+                const index = i % 6
+
+                return  `<div class="swiper-slide">
+                            <img src="${s}">
+                            <div>
+                                <span class="u20DemiBold_v2">${medias[index].text}</span>
+                                <img src="${medias[index].img}">
+                            </div>
+                        </div>`
+              }).join(''))
+            $('.product .left-swiper .swiper-wrapper').html(swiper_arr.map(s => `<div class="swiper-slide"><img src="${s}"></div>`).join(''))
+            
+            // update
+            setTimeout(() => {
+                rightSwiper.update()
+                rightSwiper.slideTo(0, 0)
+                
+                leftSwiper.update()
+                leftSwiper.slideTo(0, 0)
+            }, 0)
+        }
+
+        if (size) {
+            $(`.product .product-panel .Size .active`).removeClass('active')
+            $(`.product .product-panel .Size > div[attribute="${size}"]`).addClass('active')
+            $(`.product .product-panel .options > div[option="Size"] .u17DemiBold_v2 .u17Light_v2`).text(size_map[size])
+        }
+
+
+        if (model && style && size) {
+            current_variant = findVariantOptions(model, size, style)
+            current_variant_id = current_variant.id
+
+
+            history.replaceState(null, '', `${location.pathname}?variant=${current_variant_id}`);
+            $('.product .product-panel input[name="id"]').val(current_variant_id)
+            $('.product .delivery_time').html(global_config.ebike_delivery_time[current_variant_id] || 'Free shipping <span>within 5 days</span>')
+
+            const btn =  $('.product .buttons .addToCartBtn')
+            if (current_variant.available) {
+                btn.find('span').text('Add to Cart')
+                btn.removeClass('disabled')
+                $('.product .buttons .orderTestRideBtn').show()
+            } else {
+                btn.find('span').text('Sold out')
+                btn.addClass('disabled')
+                $('.product .buttons .orderTestRideBtn').hide()
+            }
+
+
+            if (model === "Shimano Gear" && style === "vanilla") {
+
+              for (const style in styles) {
+                if (Object.hasOwnProperty.call(styles, style) && style !== "vanilla") {
+                  const f = findVariantOptions(model, size, style)
+
+                  // 查找可用的variant
+                  if (f) {
+                    changeVariant(f.option1, f.option2, f.option3)
+                    break
+                  }                  
+                }
+              }
+              
+            }
+        }
+
+        console.log(current_variant)
+    }
+
+
+    function changeAddToCartText (parse, step = 0) {
+        if (step) {
+            $(".addToCartBtn i").toggleClass("showi");
+            document.querySelector(".addToCartBtn span").innerHTML = "Adding...";
+        } else {
+            setTimeout(()=>{
+                $(".addToCartBtn i").toggleClass("showi");
+                document.querySelector(".addToCartBtn span").innerHTML = "Add to Cart";
+            }, 800)
+        }
+    }
+
+    function testRideTrace(type = '', target){
+
+        // 如果已经有按钮 loading ,直接退出来
+        if (!type || $('.orderTestRideBtn').hasClass('loading')) {
+            return
+        }
+    
+        const t = $(target)
+    
+        t.addClass('loading')
+        // 原本的html 存起来
+        const text = t.find('span').html()
+        const loading = '<i class="fa fa-spinner fa-spin"></i>Processing...'
+    
+        // loading
+        t.find('span').html(loading)
+    
+        
+    
+        if (type === 'lease_on_jobrad') {
+            fetchBuried('websiteclick', `carbon-order-page`, { button: type }, true)
+    
+            t.removeClass('loading')
+            t.find('span').html(text)
+            return window.open(`/pages/ebike-leasing?bike_style=${current_variant.option1}&bike_size=${current_variant.option2}&utm_source=order_page#forms`)
+        }
+    
+        if (type === 'klarna_check_out') {
+            fetchBuried('websiteclick', `carbon-order-page`, { button: type, action_type: sessionStorage.carbon_one_a_b_test_flag }, true)
+            window.sessionStorage.clicked_klarna_checkout_button = 'clicked_klarna_checkout_button'
+    
+            if (sessionStorage.carbon_one_a_b_test_flag === 'B') {
+                setTimeout(() => {
+                    t.removeClass('loading')
+                    t.find('span').html(text)
+                }, 2000)
+                // 如果 B test 需要显示 klarna checkout
+                window.show_notification_checkout_button = true
+                return addToCartInsurance("atc", true)
+            }
+    
+            const body = { items: [{ id: current_variant_id, quantity: 1 }] }
+            body.items = body.items.concat(global_config.event_accessories_variant_ids.map(id => ({ id, quantity: 1 })))
+    
+    
+            console.log('body', body)
+    
+    
+            return fetch(window.Shopify.routes.root + 'cart/add.js', {
+                method: 'POST',
+                headers: {
+                'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(body)
+            }).then(response => {
+                location.href = `/checkout?show_klarna_dialog=show_klarna_dialog`
+            }).catch((error) => {
+                t.removeClass('loading')
+                t.find('span').html(text)
+            
+                console.error('Error:', error);
+            })
+        }
+    
+        if (type === 'shop_on_mediamarkt') {
+            t.removeClass('loading')
+            t.find('span').html(text)
+            return window.open('https://www.mediamarkt.de/de/search.html?query=urtopia&filter=carType%3ACitybike')
+          
+        }
+    }
+
+    {% for variant in product.variants %}
+        models[{{ variant.option1 | json }}] = 1
+        styles[{{ variant.option3 | json }}] = 1
+        sizes[{{ variant.option2 | json }}] = 1
+    {% endfor %}
+
+    console.log('variants', variants)
+
+    for (const model of Object.keys(models)) {
+        $('.product .product-panel .Model').append(`<div attribute="${model}" class="${model}">${model}</div>`)
+    }
+
+    for (const style of Object.keys(styles)) {
+        $('.product .product-panel .Style').append(`<div attribute="${style}" class="${style}"></div>`)
+    }
+
+    for (const size of Object.keys(sizes)) {
+        $('.product .product-panel .Size').append(`<div attribute="${size}" class="${size} u17Light_v2">${size}</div>`)
+    }
+
+
+    $('.product-panel .options .option >div:not(.u17DemiBold_v2) > div').on('click',e => {
+        const t = $(e.target)
+
+        if ($(e.target).parent().hasClass('Model')) {
+            changeVariant(t.attr('attribute'), current_variant.option2, current_variant.option3)
+        } else if ($(e.target).parent().hasClass('Size')) {
+            changeVariant(current_variant.option1, t.attr('attribute'), current_variant.option3)
+        } else {
+            changeVariant(current_variant.option1, current_variant.option2, t.attr('attribute'))
+        }
+    })
+
+    // 如果有查询参数
+    if (search.variant) {
+        const find = findVariantFromId(search.variant)
+        changeVariant(find.option1, find.option2, find.option3) 
+    } else {
+        const find = findAvailableVariant()
+        changeVariant(find.option1, find.option2, find.option3) 
+    }
+
+
+
+    $('.accessories .navigate > div').on('click', e => {
+        const items = $('.accessories .items')
+
+        items.animate({
+            scrollLeft: $('.accessories .items').scrollLeft() + ($(e.target).hasClass('next') ? 180 : -180)
+        }, 300)
+    })
+
+    $('.accessories .items .item').on('click', e => {
+        const item = $(e.target).closest('.item')
+        const icon = item.find('.u11Light_v2')
+
+        if (item.hasClass('active')) {
+            item.removeClass('active')
+            icon.html('<i class="fa-solid fa-plus"></i>')
+            
+        } else {
+            item.addClass('active')
+            icon.html('<i class="fa-solid fa-check"></i>')
+        }
+    })
+
+    $('.product .product-panel').on("submit", function (event) {
+
+        // 阻止默认行为
+        event.preventDefault();
+        return false;
+    })
+
+    $('.product .dialogs > div').on('click', e => {
+        const m = {
+            0: 'one',
+            1: 'two',
+            2: 'three',
+            3: 'four'
+        }
+
+        $('.product .dialogs > div').each((i, t) => {
+            if ($(e.target).closest('.u17Medium_v2')[0] === t) {
+                console.log(i)
+
+                const layer = document.querySelector(`.order-modal-${m[i]}`);
+                const laybox = document.querySelector(`.order-modal-layer-${m[i]}`);
+                layer.style.display = "flex";
+                laybox.className += " dialog-open";
+            }
+        })
+    })
+
+    $('.toTop').on('click', e => {
+        $('html').animate({
+            scrollTop: 0
+        }, 300)
+    })
+
+
+    let currnetScroolTop = 0
+    $(document).on('scroll', throttle(e => {
+        const top1 = $('#freedom').offset().top
+        const top3 = $('.product .addToCartBtn').offset().top
+        const top2 = $(e.target).scrollTop()
+
+        const h = window.screen.height
+
+        if (global_config.is_mobile) {
+            if (top2 > top3) {
+                $('.bottom-fixed').show()
+            } else {
+                $('.bottom-fixed').hide()
+            }
+        } else {
+            if (top2 > top1) {
+                $('.top-fixed').show()
+            } else {
+                $('.top-fixed').hide()
+            }
+
+            if (currnetScroolTop > top2) {
+                $('.top-fixed').hide()
+            }
+
+            currnetScroolTop = top2
+        }
+
+        top2 > (h * 2) ? $('.toTop').show() : $('.toTop').hide()
+
+    }, 300, 100))
+
+    // 默认隐藏
+    $('.bottom-fixed').hide()
+    $('.top-fixed').hide()
+    $('.toTop').hide()
+</script>
 	
 
 <div data-section-id="pf-535a" data-pf-type="Section" id="Product-Title" class="sc-fmciRz bheIgq pf-8_">		
