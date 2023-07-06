@@ -510,7 +510,11 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 
         if (model && style && size) {
             current_variant = findVariantOptions(model, size, style)
+
+			console.log('current_variant', current_variant)
+
             current_variant_id = current_variant.id
+			
 
 
             history.replaceState(null, '', `${location.pathname}?variant=${current_variant_id}`);
@@ -662,10 +666,6 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 
     $('.product-panel .options .option >div:not(.u17DemiBold_v2) > div').on('click',e => {
         const t = $(e.target)
-
-		console.log('current_variant', current_variant)
-
-		console.log('ttt', $(e.target).parent())
 
         if ($(e.target).parent().hasClass('Model')) {
             changeVariant(t.attr('attribute'), current_variant.option2, current_variant.option3)
