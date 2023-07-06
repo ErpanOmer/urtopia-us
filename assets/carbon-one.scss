@@ -553,11 +553,11 @@ $sale_text_color: #13B698;
                         }
                     }
 
-                    div[attribute="Carbon Belt"]::after {
+                    div[attribute*="350W"]::after {
                         content: "Sale";
                     }
 
-                    div[attribute="Shimano Gear"]::after {
+                    div[attribute*="250W"]::after {
                         content: "New";
                     }
 
