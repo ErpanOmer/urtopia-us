@@ -557,18 +557,10 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 				$(`.product .product-panel .options .option .Style div[attribute="Sirius"]`).show();
 				$(`.product .product-panel .options .option .Style div[attribute="Lyra"]`).show();
 
-				const f = findAvailableVariant(model)
-
-				console.log('ffff', f)
-
 				if (style === 'Vanilla') {
-
-				}
-
-
-				{% comment %} if (!(model === f.option1 && size === f.option2 && style === f.option3)) {
+					const f = findAvailableVariant(model)
 					return changeVariant(f.option1, f.option2, f.option3)
-				} {% endcomment %}
+				}
 			}
 
 			
