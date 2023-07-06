@@ -550,6 +550,14 @@ input {
   font: normal normal 300 36px/42px urbane;
 }
 
+.u11Medium_v2 {
+  font: normal normal 500 11px/1.25em urbane;
+}
+
+.u14Medium_v2 {
+  font: normal normal 500 14px/1.25em urbane;
+}
+
 .u17Medium {
   font: normal normal 500 17px/19px urbane;
 }
@@ -732,6 +740,17 @@ body {
 
     &:hover {
       background-color: #2C2C2C;
+    }
+  }
+
+  .my-button-origin {
+    color: #fff;
+    background: #FD4B17;
+
+    &:hover {
+      opacity: 0.95;
+      color: #fff;
+      background: #FD4B17;
     }
   }
 
