@@ -58,7 +58,239 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 	</script><div style="opacity:0" class="sc-bYoBSM hUVNGC __pf __pf_kIY6jB09" id="__pf"><div data-pf-type="Body" class="sc-hjGZqJ fNoOP pf-1_"><div data-pf-type="Layout" class="sc-htJRVC dNJAjO pf-2_"><div data-pf-type="ProductPreview" class="sc-cvlWTT btfkZr pf-3_"> </div>
 
 
-
+	<div class="product" data-pf-type="ProductBox">
+		<div class="centeral-content">
+			<div class="commonComponent pcHide">
+				<div class="u36DemiBold_v2">{{ product.title }}</div>
+				<div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-25_ order-djs mb6">
+					<div class="pf-judme">{% render "judgeme_widgets", widget_type: "judgeme_preview_badge", jm_style: "", concierge_install: false, product: product %}</div>
+				</div>
+				<div class="u30DemiBold_v2 mb6">{{ product.price | money }}</div>
+				<div class="sale mb6" id="sale_accmb">
+					<div class="u20DemiBold_v2">€2.699,00 NOW</div>
+					<div class="u17DemiBold_v2">with {{ settings.sale_name }}</div>
+				</div>
+			</div>
+			<div class="featured_image">
+				<div class="swiper left-swiper mobileHide">
+					<div class="swiper-wrapper">
+					</div>
+				</div>
+				<div class="swiper right-swiper" style="--swiper-navigation-color: #fff;--swiper-theme-color: #000;--swiper-pagination-color: #000;">
+					<div class="swiper-wrapper">
+						{% comment %} {% for image in product.images %}
+							<div class="swiper-slide">
+								{{ image | image_url: width: 1000 | image_tag }}
+							</div>
+						{% endfor %} {% endcomment %}
+					</div>
+					<div class="swiper-button-prev mobileHide"></div><!--左箭头。如果放置在swiper外面，需要自定义样式。-->
+					<div class="swiper-button-next mobileHide"></div><!--右箭头。如果放置在swiper外面，需要自定义样式。-->
+					<div class="swiper-pagination pcHide"></div>
+					<div class="flex-1 mobileHide"></div>
+					<div class="parameters mobileHide">
+						<div>
+							<img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18448_2x_833c8995-fa19-4297-af29-678ac4064d0c.png?v=1687176385"/>
+							<span><span class="u14Light_v2">Carbon Fiber</span><span class="u17DemiBold_v2">15 kg.</span></span>
+						</div>
+						<div>
+							<img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18449_2x_e118ab7b-18ca-4612-afb3-20758874d9c7.png?v=1687177181"/>
+							<span><span class="u14Light_v2">Fast & Easy</span><span class="u17DemiBold_v2">90% Assembled</span></span>
+						</div>
+						<div>
+							<img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18445_2x_2e6c6230-7ed1-4c3d-99ad-54ba48fa57b4.png?v=1687177370"/>
+							<span><span class="u14Light_v2">Adaptive</span><span class="u17DemiBold_v2">Torque Sensor</span></span>
+						</div>
+						<div>
+							<img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18447_2x_c102facd-9087-4028-8f97-34a7af31b1f6.png?v=1687177414"/>
+							<span><span class="u14Light_v2">Range</span><span class="u17DemiBold_v2">100 Km</span></span>
+						</div>
+						<div>
+							<img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18450_2x_50383af6-61df-4632-9cbc-531630580f61.png?v=1687177242"/>
+							<span><span class="u14Light_v2">Phone App</span><span class="u17DemiBold_v2">iOS, Android</span></span>
+						</div>
+						<div>
+							<img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18446_2x_791e060a-ed39-42c5-9cf0-965d7e5110bb.png?v=1687177232"/>
+							<span><span class="u14Light_v2">Anti-theft</span><span class="u17DemiBold_v2">GPS Tracking</span></span>
+						</div>
+					</div>
+				</div>            
+			</div>
+			<form method="post" accept-charset="UTF-8" action="/cart/add" class="product-panel pf-product-form" data-productid={{ product.id }} id="product_form_{{ product.id }}" enctype="multipart/form-data">
+				<input type="hidden" name="id" data-product-id="{{product.id}}" value="{{ product.selected_or_first_available_variant.id }}"/>
+				<input type="hidden" name="form_type" value="product">
+				<input type="hidden" name="utf8" value="✓">
+				<div class="commonComponent mobileHide" id="sale_acc">
+					<div class="u36DemiBold_v2 mb12">{{ product.title }}</div>
+					<div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-25_ order-djs mb12">
+						<div class="pf-judme">{% render "judgeme_widgets", widget_type: "judgeme_preview_badge", jm_style: "", concierge_install: false, product: product %}</div>
+					</div>
+					<div class="u30DemiBold_v2 mb12">{{ product.price | money }}</div>
+					<div class="sale mb12" >
+						<div class="u20DemiBold_v2">€2.699,00 NOW</div>
+						<div class="u17DemiBold_v2">with {{ settings.sale_name }}</div>
+					</div>
+				</div>
+				<div class="sale_acc mb12 belt">
+					<div class="u14Light_v2">And get <span style="font-weight: 600;"> €169 </span> Accessories for <span class="u20DemiBold_v2"> Free</span></div>
+					{% assign accessories_map = "7633738596568,7633738662104,7633738531032" | split: ',' %}
+					<div class="accs">
+						{% for acc in accessories_map %}
+							{% for prod in collections["accessories"].products %}
+								{% if acc contains prod.id %}
+									<div class="acc">
+										{{ prod.featured_image | image_url: width: 400 | image_tag }}
+										{% if acc == "7633738662104" %}
+											<span class="u11Medium_v2">{{ prod.title | truncatewords: 3, "" | replace: "-", "" }}</span>
+										{% else %}
+											<span class="u11Medium_v2">{{ prod.title }}</span>
+										{% endif %}
+									</div>
+								{% endif %}
+							{% endfor %}
+						{% endfor %}
+					</div>
+					<div class="u11Light_v2">*Not available with leasing</div>
+				</div>
+				<!--<div class="sale_acc mb12 gear" id="sale_acc">
+					<div class="u14Light_v2">Get Accessories for <span class="u20DemiBold_v2">Free</span></div>
+					{% assign accessories_map_1s = "7633738596568,7633738531032" | split: ',' %}
+					<div class="accs_1s">
+						{% for acc in accessories_map_1s %}
+							{% for prod in collections["accessories"].products %}
+								{% if acc contains prod.id %}
+									<div>
+										{{ prod.featured_image | image_url: width: 400 | image_tag }}
+										<div>
+											<span class="u14Medium_v2">{{ prod.title }}</span><br>
+											<span class="u17DemiBold_v2">{{ prod.price | money }}</span>
+										</div>
+									</div>
+								{% endif %}
+							{% endfor %}
+						{% endfor %}
+					</div>
+					<div class="u11Light_v2">*Not available with leasing</div>
+				</div>-->
+				<div class="count-down mb12 mobileHide">
+					<div class="u17Medium_v2">€600 off + 3 Free Accessories Ends in：</div>
+					<img src="http://i.countdownmail.com/2mmaed.gif">
+				</div>
+				<div class="options">
+					{% for option in product.options %}
+						<div class="option" option={{option}}>
+							<div class="u17DemiBold_v2 mb12">{{ option }} - <span class="u17Light_v2"></span></div>
+							<div class="{{ option }} mb12"></div>
+						</div>
+					{% endfor %}
+				</div>
+				<div class="accessories">
+					<div class="u17DemiBold_v2 mb12">Accessories</div>
+					<div class="navigate">
+						<div class="prev"></div>
+						<div class="next"></div>
+					</div>
+					<div class="items mb12">
+						{% for prod in collections['on-page'].products %}
+							{% if prod.available %}
+								{% assign variant = prod.variants | first %}
+								<div class="item" variant-id="{{ variant.id }}">
+								  <div class="u11Medium_v2">{{ prod.title }}</div>
+								  <div>
+									<div>
+									  <span class="u17DemiBold_v2">{{ prod.price | money }}</span>
+									  <span class=u11Light_v2>
+										<i class="fa-solid fa-plus"></i>
+									  </span>
+									</div>
+									{{ prod.featured_image | image_url: width: 400 | image_tag }}
+								  </div>
+								</div>
+							{% endif %}
+						{% endfor %}
+					</div>
+				</div>       
+				<div class="buttons">
+					<div class="count-down mb12 pcHide">
+						<div class="u17Medium_v2">€600 off + 3 Free Accessories Ends in：</div>
+						<img src="http://i.countdownmail.com/2mmaed.gif">
+					</div>
+					<div
+						data-product-id="{{ product.id }}"
+						class="my-button my-button-origin addToCartBtn"
+						onclick="addAllToCart('atc')"
+						id="addToCart"
+						>
+						<i class="fa fa-spinner fa-spin"></i><span data-pf-type="Text" class="addToCartText u17DemiBold_v2">Add to Cart</span>
+					</div>
+					<div onclick="testRideTrace('lease_on_jobrad', this)" class="orderTestRideBtn jobrad">
+						<img class="oneeee" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/jobradorg_2x_423443a0-1c79-4785-97a0-2be8ae66ceb6.png?v=1685414275"/>
+						<span><span class="u17DemiBold_v2">Lease Now</span><!--<span>36 months, €48/month</span>--></span>
+					  </div>
+					  <div onclick="testRideTrace('klarna_check_out', this)" class="orderTestRideBtn">
+						<img class="twoooo"src="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/files/20230530-121400.png?v=1685420054"/>
+						<span><span class="u17DemiBold_v2">0% APR Financing</span><span>24 months, €<span class="stages">112</span>/month</span></span>
+					</div>
+				</div>
+				<div class="delivery_time mb12">Free shipping <span>within 5 days</span></div>
+				<div class="support mb12">
+					<a href="#boxs3">
+						<img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230621-005713.png?v=1687280264"/>
+						<span class="u11Medium_v2">30+ Spots<br>of Service</span>
+					</a>
+					<a href="/pages/shipping-and-return" target="_blank">
+						<img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_17959_2x_cff00041-4dce-479b-b87d-55b1cb89cd7a.png?v=1687161086"/>
+						<span class="u11Medium_v2">14-Day<br>Returns</span>
+					</a>
+					<a href="/pages/warranty" target="_blank">
+						<img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_17958_2x_1e776f09-0686-4672-a22f-b29d2df3898d.png?v=1687161098"/>
+						<span class="u11Medium_v2">2-Year<br>Warranty</span>
+					</a>
+				</div>
+				<div class="dialogs">
+					<div class="u17Medium_v2">
+						<span>Size & Fit</span>
+						<span>&gt;</span>
+					</div>
+					<div class="u17Medium_v2">
+						<span>Technical Specifications</span>
+						<span>&gt;</span>
+					</div>
+					<div class="u17Medium_v2">
+						<span>Support & Service</span>
+						<span>&gt;</span>
+					</div>
+					<div class="u17Medium_v2">
+						<span>FAQs</span>
+						<span>&gt;</span>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	
+	<img class="toTop" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21049.svg?v=1687267470">
+	
+	<div class="top-fixed mobileHide">
+		<div class="centeral-content">
+			<span class="u20DemiBold_v2">{{ product.title }}</span>
+			<span class="flex-1"></span>
+			<div>
+				<span class="u17Light_v2"><span class="u20DemiBold_v2 emphasize" style="font-weight: 600;">{{ 269900 | money }}</span> <span style="text-decoration: line-through;">{{ product.price | money }}</span></span>
+				<span class="u14Light_v2">or as low as €112/Month</span>
+			</div>
+			<a href="#sale_acc" class="my-button my-button-origin">Order Now</a>
+		</div>
+	</div>
+	
+	<div class="bottom-fixed pcHide">
+		<a href="#sale_accmb" class="my-button my-button-origin">Order Now</a>
+		<div>
+			<span class="u14Light_v2"><span class="emphasize" style="font-weight: 600;">{{ 269900 | money }}</span> <span style="text-decoration: line-through;">{{ product.price | money }}</span></span>
+			<span class="u14Light_v2">or as low as €112/Month</span>
+		</div>
+	</div>
+	
 
 <div data-section-id="pf-535a" data-pf-type="Section" id="Product-Title" class="sc-fmciRz bheIgq pf-8_">		
 				<div data-section-id="pf-6418" data-category="Sales Boost" data-name="Luna" data-pf-type="Section" class="sc-fmciRz bheIgq pf-91_"><div style="--cw:1280px" class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-92_ pf-r" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-93_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-94_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-96_">Feel the New Shape of Freedom</span></h3></div></div></div><div class="sc-ezbkAF A-dmbO pf-97_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px;--s-sm:15px;--s-md:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:6;--c-md:3;--c-lg:3"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-98_"><p class="sc-jtXEFf bTWrMn pf-99_ dropcap--none" data-pf-type="Paragraph"><span data-pf-type="Dropcap" class="sc-eldieg iFEjjj pf-100_">33</span><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-101_">lbs</span></p><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-102_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-104_">Net Weight</span></h3></div></div><div class="pf-c" style="--c-xs:6;--c-md:3;--c-lg:3"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-105_"><p class="sc-jtXEFf bTWrMn pf-106_ dropcap--none" data-pf-type="Paragraph"><span data-pf-type="Dropcap" class="sc-eldieg iFEjjj pf-107_">60+</span><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-108_">miles</span></p><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-109_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-111_">per charge</span></h3></div></div><div class="pf-c" style="--c-xs:6;--c-md:3;--c-lg:3"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-112_"><p class="sc-jtXEFf bTWrMn pf-113_ dropcap--none" data-pf-type="Paragraph"><span data-pf-type="Dropcap" class="sc-eldieg iFEjjj pf-114_">4</span><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-115_">levels</span></p><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-116_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-118_">pedal assist</span></h3></div></div><div class="pf-c" style="--c-xs:6;--c-md:3;--c-lg:3"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-119_"><p class="sc-jtXEFf bTWrMn pf-120_ dropcap--none" data-pf-type="Paragraph"><span data-pf-type="Dropcap" class="sc-eldieg iFEjjj pf-121_">2.5</span><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-122_">hrs</span></p><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-123_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-125_">Full Charge</span></h3></div></div></div><div class="sc-ezbkAF A-dmbO pf-126_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px;--s-sm:15px;--s-md:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:6;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-127_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-128_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-130_">Full <br>Carbon Fiber</span></h3></div></div><div class="pf-c" style="--c-xs:6;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-131_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-132_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-134_">Magnetic<br>Torque Sensor</span></h3></div></div><div class="pf-c" style="--c-xs:6;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-135_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-136_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-138_">Portable <br>Samsung Battery</span></h3></div></div><div class="pf-c" style="--c-xs:6;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-139_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-140_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-142_">TEKTRO Hydraulic<br>Disc Brakes</span></h3></div></div><div class="pf-c" style="--c-xs:6;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-143_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-144_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-146_">Brushless <br>Hub Motor</span></h3></div></div><div class="pf-c" style="--c-xs:6;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-147_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-148_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-150_">Integrated <br>lighting system</span></h3></div></div></div></div></div><div data-section-id="pf-2547" data-category="Product Information" data-name="Flip" data-pf-type="Section" class="sc-fmciRz bheIgq pf-151_"><div style="--cw:1170px" class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-152_ pf-r pf-c-cm" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-sm:6;--c-md:6;--c-lg:6"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-153_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-154_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-156_">Carbon 1s</span></h3><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-157_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-159_">Next-level adventures with gears</span></h3><p class="sc-jtXEFf jydWoQ pf-160_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-162_"><span style="color: rgb(253, 75, 23);">● </span><span style="color: rgb(0, 0, 0);">Up to 25mph</span><br><span style="color: rgb(253, 75, 23);">● </span>350W 45Nm motor<br><span style="color: rgb(253, 75, 23);">●</span>&nbsp;Assist levels x Gears: 4 x 7<br><span style="color: rgb(253, 75, 23);">● </span>Increased ride range<br><span style="background-color: rgb(255, 255, 255); color: rgb(253, 75, 23);">●</span> Wider terrain capabilities</span></p><p class="sc-jtXEFf jydWoQ pf-163_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-165_">Carbon 1s offers the options of pushing a harder gear to get more workout or speed; or riding an easy gear with less stress on the legs. The 350W motor with gears makes your ride speedier and easier to travel up the hills.&nbsp;</span></p></div></div><div class="pf-c" style="--c-xs:12;--c-sm:6;--c-md:6;--c-lg:6"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-166_"><img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/20221230untitled2931-1674195298153.jpg?v=1674195300" srcSet="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/20221230untitled2931-1674195298153.jpg?v=1674195300 1536w, https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/20221230untitled2931-1674195298153_500x.jpg?v=1674195300 320w" width="1220" height="852" style="aspect-ratio:1220 / 852" data-pf-type="Image3" class="sc-nVkyK eXnudJ pf-167_"/></div></div></div><div class="sc-ezbkAF A-dmbO pf-168_ pf-r pf-c-cm" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-sm:6;--c-md:6;--c-lg:6"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-169_"><img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/20221013untitled2-1674194064226.jpg?v=1674194065" srcSet="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/20221013untitled2-1674194064226.jpg?v=1674194065 1536w, https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/20221013untitled2-1674194064226_500x.jpg?v=1674194065 320w" width="1220" height="852" style="aspect-ratio:1220 / 852" data-pf-type="Image3" class="sc-nVkyK eXnudJ pf-170_"/></div></div><div class="pf-c" style="--c-xs:12;--c-sm:6;--c-md:6;--c-lg:6"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-171_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-172_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-174_">Carbon 1</span></h3><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-175_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-177_">Urban thrills obtained with elegance</span></h3><p class="sc-jtXEFf jydWoQ pf-178_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-180_"><span style="color: rgb(253, 75, 23);">●</span><span style="color: rgb(0, 0, 0);">Gates carbon belt drive</span><br><span style="color: rgb(253, 75, 23);">●</span>Cleaner, quieter and smoother<br><span style="color: rgb(253, 75, 23);">● </span><span style="color: rgb(0, 0, 0);">Relative maintenance free</span><br><span style="background-color: rgb(255, 255, 255); color: rgb(253, 75, 23);">●</span>&nbsp;Last forever (rated 19,000miles )</span></p><p class="sc-jtXEFf jydWoQ pf-181_" data-pf-type="Paragraph"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-183_">Carbon1 is great for commuters because you’ll never get a grease mark on your nice slacks. If you enjoy quiet rides in the morning while enjoying nature and the birds’ singing, you may want to opt for a belt drive.</span></p></div></div></div></div></div><div data-section-id="pf-3b95" data-pf-type="GlobalSection" id="bbc90aa3-abdf-4f01-af53-86100506c75b" class="sc-fpYaaq boGbAB pf-184_">{% capture content %}{% include 'pf-bbc90aa3' %}{% endcapture %}
