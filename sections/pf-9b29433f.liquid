@@ -581,77 +581,95 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
         }
     }
 
-    function testRideTrace(type = '', target){
+    function testRideTrace(type = '', target) {
+		// 如果已经有按钮 loading ,直接退出来
+		if (!type || $('.orderTestRideBtn').hasClass('loading')) {
+			return
+		}
 
-        // 如果已经有按钮 loading ,直接退出来
-        if (!type || $('.orderTestRideBtn').hasClass('loading')) {
-            return
-        }
-    
-        const t = $(target)
-    
-        t.addClass('loading')
-        // 原本的html 存起来
-        const text = t.find('span').html()
-        const loading = '<i class="fa fa-spinner fa-spin"></i>Processing...'
-    
-        // loading
-        t.find('span').html(loading)
-    
-        
-    
-        if (type === 'lease_on_jobrad') {
-            fetchBuried('websiteclick', `carbon-order-page`, { button: type }, true)
-    
-            t.removeClass('loading')
-            t.find('span').html(text)
-            return window.open(`/pages/ebike-leasing?bike_style=${current_variant.option1}&bike_size=${current_variant.option2}&utm_source=order_page#forms`)
-        }
-    
-        if (type === 'klarna_check_out') {
-            fetchBuried('websiteclick', `carbon-order-page`, { button: type, action_type: sessionStorage.carbon_one_a_b_test_flag }, true)
-            window.sessionStorage.clicked_klarna_checkout_button = 'clicked_klarna_checkout_button'
-    
-            if (sessionStorage.carbon_one_a_b_test_flag === 'B') {
-                setTimeout(() => {
-                    t.removeClass('loading')
-                    t.find('span').html(text)
-                }, 2000)
-                // 如果 B test 需要显示 klarna checkout
-                window.show_notification_checkout_button = true
-                return addToCartInsurance("atc", true)
-            }
-    
-            const body = { items: [{ id: current_variant_id, quantity: 1 }] }
-            body.items = body.items.concat(global_config.event_accessories_variant_ids.map(id => ({ id, quantity: 1 })))
-    
-    
-            console.log('body', body)
-    
-    
-            return fetch(window.Shopify.routes.root + 'cart/add.js', {
-                method: 'POST',
-                headers: {
-                'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(body)
-            }).then(response => {
-                location.href = `/checkout?show_klarna_dialog=show_klarna_dialog`
-            }).catch((error) => {
-                t.removeClass('loading')
-                t.find('span').html(text)
-            
-                console.error('Error:', error);
-            })
-        }
-    
-        if (type === 'shop_on_mediamarkt') {
-            t.removeClass('loading')
-            t.find('span').html(text)
-            return window.open('https://www.mediamarkt.de/de/search.html?query=urtopia&filter=carType%3ACitybike')
-          
-        }
-    }
+		const t = $(target)
+
+		t.addClass('loading')
+		// 原本的html 存起来
+		const text = t.find('span').html()
+		const loading = '<i class="fa fa-spinner fa-spin"></i>Processing...'
+
+		// loading
+		t.find('span').html(loading)
+
+		fetchBuried('websiteclick', `carbon-order-page`, { button: type, action_type: sessionStorage.carbon_one_a_b_test_flag }, true)
+		window.sessionStorage.clicked_klarna_checkout_button = 'clicked_klarna_checkout_button'
+
+		if (sessionStorage.carbon_one_a_b_test_flag === 'B') {
+			setTimeout(() => {
+				t.removeClass('loading')
+				t.find('span').html(text)
+			}, 2000)
+		
+			return addAllToCart("atc", true)
+		}
+	}
+
+
+	let id = 0;
+	let adding = false;
+	let cart1 = document.querySelector("cart-notification") || document.querySelector("cart-drawer");
+
+	function addAllToCart(parse, show = false) {
+			// 如果 B test 需要显示 klarna checkout
+		window.show_notification_checkout_button = show
+		const cartList = { items: [] }
+
+		if (adding == false) {
+			!show && changeAddToCartText(parse,1);
+			adding = true;
+
+			cartList.items.push({ id: current_variant_id, quantity: 1 });
+
+			if(cart1){
+				var sections = cart1.getSectionsToRender().map((section) => section.id);
+				cartList.sections = sections.join(",");
+			}
+
+			// 如果存在carbon 1s, 送配件
+			if (current_variant.title.includes('350W')) {
+				global_config.event_accessories_variant_ids.forEach(i => {
+					cartList.items.push({ id: i, quantity: 1 })
+				})
+			}
+
+			// 新增普通配件
+			$('.product .accessories .items .active').each((i, item) => {
+				cartList.items.push({ 
+					id: $(item).attr('variant-id'), 
+					quantity: 1
+				})
+			})
+
+			
+			fetch("/cart/add.js", {
+				method: "POST",
+				body: JSON.stringify(cartList),
+				headers: {
+					"Content-Type": "application/json",
+				},
+			})
+			.then((res) => res.json())
+			.then((res1) => {
+				res1.key = "";
+				cart1.renderContents(res1);
+				!show && changeAddToCartText(parse, 0);
+			})
+			.catch((err) => {
+				!show && changeAddToCartText(parse, 0);
+				// cartList.items.splice(-1, 1);
+				console.log('err==',err)
+			}).finally(() => {
+				adding = false
+				!show && fetchBuried('websiteclick', `carbon-order-page`, { button: 'ATC' })
+			})
+		}
+	}
 
     {% for variant in product.variants %}
         models[{{ variant.option1 | json }}] = 1
