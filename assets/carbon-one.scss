@@ -1407,6 +1407,13 @@ $sale_text_color: #236ABE;
                 max-width: 92vw;
 
 
+                .options {
+                    .Model {
+                        & > div {
+                            width: 50%;
+                        }
+                    }
+                }
 
                 .sale_acc {
                     .u14Light_v2 {
