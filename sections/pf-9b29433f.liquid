@@ -629,6 +629,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 			// 如果 B test 需要显示 klarna checkout
 		window.show_notification_checkout_button = show
 		const cartList = { items: [] }
+		$('.product .error-tip').hide()
 
 		if (adding == false) {
 			!show && changeAddToCartText(parse,1);
