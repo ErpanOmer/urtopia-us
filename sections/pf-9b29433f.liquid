@@ -685,6 +685,8 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 			}).finally(() => {
 				adding = false
 				!show && fetchBuried('websiteclick', `carbon-order-page`, { button: 'ATC' })
+
+				setTimeout(() => $('.product .error-tip').show(), 10000)
 			})
 		}
 	}
