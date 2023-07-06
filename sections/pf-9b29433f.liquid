@@ -647,6 +647,10 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
     }
 
     for (const style of Object.keys(styles)) {
+		if (style === 'Black') {
+			continue
+		}
+
         $('.product .product-panel .Style').append(`<div attribute="${style}" class="${style}"></div>`)
     }
 
