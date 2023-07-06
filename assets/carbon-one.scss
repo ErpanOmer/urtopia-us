@@ -533,14 +533,14 @@ $sale_text_color: #13B698;
                         border: 2px solid #0000004D;
                         opacity: .5;
                         padding: 12px;
-                        font-size: 14px;
-                        line-height: 14px;
-                        display: flex;
-                        align-items: center;
                         width: 40%;
-                        justify-content: space-between;
                         cursor: pointer;
                         position: relative;
+                        display: flex;
+                        flex-direction: column;
+                        text-align: left;
+                        align-items: flex-start;
+                        justify-content: center;
                     }
 
                     div[attribute*="350W"]::after {
