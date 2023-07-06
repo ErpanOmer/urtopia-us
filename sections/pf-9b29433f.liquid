@@ -723,15 +723,13 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 
 
     $('.product-panel .options .option >div:not(.u17DemiBold_v2) > div').on('click',e => {
-        const t = $(e.target)
-
-		console.log(e.target)
-		console.log(t.attr('attribute'))
+        const t = $(e.target).closest('[attribute]')
+		const option = t.closest('.option').attr('option')
 
 
-        if ($(e.target).parent().hasClass('Model')) {
+        if (option === 'Model') {
             changeVariant(t.attr('attribute'), current_variant.option2, current_variant.option3)
-        } else if ($(e.target).parent().hasClass('Size')) {
+        } else if (option === 'Size') {
             changeVariant(current_variant.option1, t.attr('attribute'), current_variant.option3)
         } else {
             changeVariant(current_variant.option1, current_variant.option2, t.attr('attribute'))
