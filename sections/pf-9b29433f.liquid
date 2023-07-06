@@ -568,9 +568,6 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 
 
             current_variant = findVariantOptions(model, size, style)
-
-			console.log('current_variant', current_variant)
-
             current_variant_id = current_variant.id
 			
 
@@ -589,24 +586,6 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
                 btn.addClass('disabled')
                 $('.product .buttons .orderTestRideBtn').hide()
             }
-
-			/*
-            if (model.includes('350W') && style === "Vanilla") {
-
-              for (const style in styles) {
-                if (Object.hasOwnProperty.call(styles, style) && style !== "Vanilla") {
-                  const f = findVariantOptions(model, size, style)
-
-                  // 查找可用的variant
-                  if (f) {
-                    changeVariant(f.option1, f.option2, f.option3)
-                    break
-                  }                  
-                }
-              }
-              
-            }
-			*/
         }
 
         console.log(current_variant)
