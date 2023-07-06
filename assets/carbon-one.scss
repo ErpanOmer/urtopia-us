@@ -557,10 +557,6 @@ $sale_text_color: #13B698;
                         content: "Sale";
                     }
 
-                    div[attribute*="250W"]::after {
-                        content: "New";
-                    }
-
                     &>div+div {
                         margin-left: 12px;
                     }
