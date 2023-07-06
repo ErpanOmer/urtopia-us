@@ -545,6 +545,21 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 				return changeVariant(f.option1, f.option2, f.option3)
 			}
 
+			if (model.includes('350W')) {
+				if (size === 'S') {
+					$(`.product .product-panel .options .option .Style div[attribute="Sirius"]`).hide();
+					$(`.product .product-panel .options .option .Style div[attribute="Lyra"]`).hide();
+				} else {
+					$(`.product .product-panel .options .option .Style div[attribute="Sirius"]`).show();
+					$(`.product .product-panel .options .option .Style div[attribute="Lyra"]`).show();
+				}
+
+				const f = findAvailableVariant(model)
+				return changeVariant(f.option1, f.option2, f.option3)
+			}
+
+
+
             current_variant = findVariantOptions(model, size, style)
 
 			console.log('current_variant', current_variant)
