@@ -671,8 +671,10 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 
 				if (!(res1.message && res1.status)) {
 					cart1.renderContents(res1);
+				} else {
+					$('.product .error-tip').show()
 				}
-				
+
 				!show && changeAddToCartText(parse, 0);
 			})
 			.catch((err) => {
