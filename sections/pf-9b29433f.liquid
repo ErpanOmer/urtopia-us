@@ -421,6 +421,8 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
       });
 
     function findVariantOptions (model, size, style) {
+		console.log('variants', variants)
+
         return variants.find(v => `${model} / ${size} / ${style}` === v.title)
     }
 
