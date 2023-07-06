@@ -543,6 +543,7 @@ $sale_text_color: #13B698;
                     }
 
                     div[attribute*="350W"]::after {
+                        content: "Sale";
                         position: absolute;
                         color: #fff;
                         background-color: #236ABE6b;
@@ -553,6 +554,7 @@ $sale_text_color: #13B698;
                         text-align: center;
                         height: 22px;
                         line-height: 22px;
+                        content: '';
                     }
 
                     &>div+div {
