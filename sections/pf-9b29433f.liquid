@@ -296,8 +296,9 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
     const search = getSearchValues()
     const variants = JSON.parse(JSON.stringify({{ product.variants | json }}))
     const size_map = {
-        M: 'Fit for 170-185 cm',
-        L: 'Fit for 180-195 cm'
+		S: `Fit for 5’3’’~5’9’’ Inseam 30’’`,
+        M: `Fit for 5’7’’~6’1’’ Inseam 31’’`,
+        L: `Fit for 5’11’’~6’5’’ Inseam 33’’`
     }
 
     let current_variant_id = null
