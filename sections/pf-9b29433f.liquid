@@ -434,8 +434,30 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 		console.log(args)
 		
 
-		if (!model && !size && !style) {
+		if (!args.length) {
 			return variants.find(v => v.available)
+		}
+
+		if (args.length === 1) {
+			for (const size in sizes) {
+				for (const style in styles) {
+					const find = findVariantOptions(args[0], size, style)
+
+					if (find && find.available) {
+						return find
+					}
+				}
+			}
+		}
+
+		if (args.length === 2) {
+			for (const style in styles) {
+				const find = findVariantOptions(args[0], args[1], style)
+
+				if (find && find.available) {
+					return find
+				}
+			}
 		}
     }
 
