@@ -460,31 +460,6 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
             $(`.product .product-panel .Model .active`).removeClass('active')
             $(`.product .product-panel .Model > div[attribute="${model}"]`).addClass('active')
             $(`.product .product-panel .options > div[option="Model"] .u17DemiBold_v2 .u17Light_v2`).text(`Urtopia Carbon ${model.includes('350W') ? '1s' : '1'}`)
-
-            //$(`.product .commonComponent .sale .u20DemiBold_v2`).text(`${!model.includes('350W') ? '{{ 269900 | money }}' : '{{ 299900 | money }}'} NOW`)
-            //$(`.product .commonComponent .sale .u17DemiBold_v2`).text(`with ${!model.includes('350W') ? '{{ settings.sale_name }}' : 'Pre-order Sale'}`)
-
-            //$(`.product .count-down .u17Medium_v2`).text(`with ${!model.includes('350W') ? '€600 off + 3 Free Accessories Ends in:' : '€300 off + 3 Free Accessories Ends in:'}`)
-
-            if (model.includes('350W')) {
-                //$('.product .belt').show()
-                //$('.product .gear').hide()
-                
-
-                global_config.event_accessories_variant_ids = ['43830635561208', '43830633365752', '43858617204984'];
-                //$('.buttons .orderTestRideBtn .stages').text('112');
-                //$('.product .buttons .jobrad').css({ height: '47px', overflow: 'unset', border: '2px solid #161c1f' });
-            } else {
-                //$('.product .belt').hide()
-                //$('.product .gear').show()
-                
-
-                global_config.event_accessories_variant_ids = [];
-
-                //$('.buttons .orderTestRideBtn .stages').text('124');
-
-                //$('.product .buttons .jobrad').css({ height: 0, overflow: 'hidden', border: 'none' });
-            }
         }
 
         if (style) {
