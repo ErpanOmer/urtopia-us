@@ -554,7 +554,7 @@ $sale_text_color: #13B698;
                         content: "Sale";
                         position: absolute;
                         color: #fff;
-                        background-color: #236ABE6b;
+                        background-color: $sale_text_color;
                         right: 0;
                         transform: rotate(30deg) translate(29%,-250%);
                         font-size: 16px;
