@@ -540,11 +540,6 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 
 
         if (model && style && size) {
-			if (model.includes('250W') && size === 'S') {
-				const f = findAvailableVariant(model)
-				return changeVariant(f.option1, f.option2, f.option3)
-			}
-
 			if (model.includes('350W')) {
 				if (size === 'S') {
 					$(`.product .product-panel .options .option .Style div[attribute="Sirius"]`).hide();
@@ -559,6 +554,11 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 					$(`.product .product-panel .options .option .Style div[attribute="Lyra"]`).show();
 				}
 			} else {
+				if (size === 'S') {
+					const f = findAvailableVariant(model)
+					return changeVariant(f.option1, f.option2, f.option3)
+				}
+
 				$(`.product .product-panel .options .option .Style div[attribute="Sirius"]`).show();
 				$(`.product .product-panel .options .option .Style div[attribute="Lyra"]`).show();
 			}
