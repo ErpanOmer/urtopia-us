@@ -548,10 +548,18 @@ $sale_text_color: #13B698;
                             line-height: 1.25em;
                             font-weight: 300;
 
+                            &::before {
+                                content: "·";
+                            }
+
                             &:first-child {
                                 font-size: 15px;
                                 font-weight: 500;
                                 margin-bottom: 6px;
+                                
+                                &::before {
+                                    content: "";
+                                }
                             }
                         }
                     }
