@@ -356,7 +356,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
           "Midnight in Paris": [
               "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18526.png?v=1688112407"
           ],
-          vanilla: [
+          Vanilla: [
               "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18699.png?v=1688112407",
               "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18698.png?v=1688112407",
               "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18697.png?v=1688112407",
@@ -450,7 +450,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 
                 global_config.event_accessories_variant_ids = ['43830635561208', '43830633365752', '43858617204984'];
 
-                $(`.product .product-panel .options .option .vanilla`).show();
+                $(`.product .product-panel .options .option .Vanilla`).show();
 
                 $('.buttons .orderTestRideBtn .stages').text('112');
                 $('.product .buttons .jobrad').css({ height: '47px', overflow: 'unset', border: '2px solid #161c1f' });
@@ -461,7 +461,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 
                 global_config.event_accessories_variant_ids = [];
 
-                $(`.product .product-panel .options .option .vanilla`).hide();
+                $(`.product .product-panel .options .option .Vanilla`).hide();
 
                 $('.buttons .orderTestRideBtn .stages').text('124');
 
@@ -476,7 +476,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 
             let swiper_arr = []
 
-            swiper_arr = swiper_arr.concat(swiper_series[model][style], style === 'vanilla' ? [] : swiper_series[model]['commonSwiper'])
+            swiper_arr = swiper_arr.concat(swiper_series[model][style], style === 'Vanilla' ? [] : swiper_series[model]['commonSwiper'])
 
             $('.product .right-swiper .swiper-wrapper').html(swiper_arr.map((s, i) => {
                 const index = i % 6
@@ -529,10 +529,10 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
             }
 
 
-            if (model.includes('350W') && style === "vanilla") {
+            if (model.includes('350W') && style === "Vanilla") {
 
               for (const style in styles) {
-                if (Object.hasOwnProperty.call(styles, style) && style !== "vanilla") {
+                if (Object.hasOwnProperty.call(styles, style) && style !== "Vanilla") {
                   const f = findVariantOptions(model, size, style)
 
                   // 查找可用的variant
