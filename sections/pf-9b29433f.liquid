@@ -421,11 +421,6 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
       });
 
     function findVariantOptions (model, size, style) {
-		console.log('variants', variants)
-		console.log(model)
-		console.log(style)
-		console.log(size)
-
         return variants.find(v => `${model} / ${size} / ${style}` === v.title)
     }
 
@@ -517,6 +512,8 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 			if (model.includes('250W') && size === 'S') {
 				for (const style in styles) {
 					const f = findVariantOptions(model, 'M', style)
+
+					console.log('ffff', f)
 
 					// 查找可用的variant
 					if (f && f.available) {
