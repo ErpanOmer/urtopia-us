@@ -576,6 +576,7 @@ $sale_text_color: #236ABE;
                         text-align: center;
                         height: 22px;
                         line-height: 22px;
+                        border-color: $sale_text_color;
                     }
 
                     &>div+div {
@@ -583,7 +584,6 @@ $sale_text_color: #236ABE;
                     }
 
                     .active {
-                        border-color: $sale_text_color;
                         opacity: 1;
 
                         span {
