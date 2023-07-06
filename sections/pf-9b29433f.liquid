@@ -546,6 +546,8 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 			}
 
 			if (model.includes('350W')) {
+				console.log(size === 'S' && (style === 'Sirius' || style === 'Lyra'))
+
 				if (size === 'S' && (style === 'Sirius' || style === 'Lyra')) {
 					$(`.product .product-panel .options .option .Style div[attribute="Sirius"]`).hide();
 					$(`.product .product-panel .options .option .Style div[attribute="Lyra"]`).hide();
