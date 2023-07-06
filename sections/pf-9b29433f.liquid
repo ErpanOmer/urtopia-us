@@ -706,7 +706,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
     console.log('variants', variants)
 
     for (const model of Object.keys(models)) {
-        $('.product .product-panel .Model').append(`<div attribute="${model}" class="${model}">${model}</div>`)
+        $('.product .product-panel .Model').append(`<div attribute="${model}" class="${model}">${model.split(' · ').map(m => `<span>${m}</span>`).join('')}</div>`)
     }
 
     for (const style of Object.keys(styles)) {
