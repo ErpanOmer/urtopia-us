@@ -547,6 +547,12 @@ $sale_text_color: #13B698;
                             font-size: 15px;
                             line-height: 1.25em;
                             font-weight: 300;
+
+                            &:first-child {
+                                font-size: 15px;
+                                font-weight: 500;
+                                margin-bottom: 6px;
+                            }
                         }
                     }
 
