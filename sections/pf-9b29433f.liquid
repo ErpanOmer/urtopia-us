@@ -460,6 +460,16 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
             $(`.product .product-panel .Model .active`).removeClass('active')
             $(`.product .product-panel .Model > div[attribute="${model}"]`).addClass('active')
             $(`.product .product-panel .options > div[option="Model"] .u17DemiBold_v2 .u17Light_v2`).text(`Urtopia Carbon ${model.includes('350W') ? '1s' : '1'}`)
+
+			if (model.includes('350W')) {
+				$('.product .product-panel .sale').show()
+				$('.product .product-panel .sale_acc').show()
+				$('.product .product-panel .count-down').show()
+			} else {
+				$('.product .product-panel .sale').hide()
+				$('.product .product-panel .sale_acc').hide()
+				$('.product .product-panel .count-down').hide()
+			}
         }
 
         if (style) {
