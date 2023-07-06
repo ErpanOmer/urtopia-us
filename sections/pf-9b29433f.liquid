@@ -428,9 +428,13 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
         return variants.find(v => String(v.id) === String(id))
     }
 
-    function findAvailableVariant () {
-        return variants.find(v => v.available)
+    function findAvailableVariant (model, size, style) {
+		if (!model && !size && !style) {
+			return variants.find(v => v.available)
+		}
     }
+
+	function
 
     function changeVariant (model, size, style) {
         if (model) {
