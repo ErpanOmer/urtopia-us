@@ -436,19 +436,19 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
         if (model) {
             $(`.product .product-panel .Model .active`).removeClass('active')
             $(`.product .product-panel .Model > div[attribute="${model}"]`).addClass('active')
-            $(`.product .product-panel .options > div[option="Model"] .u17DemiBold_v2 .u17Light_v2`).text(`Urtopia Carbon ${model === 'Carbon Belt' ? '1' : '1s'}`)
+            $(`.product .product-panel .options > div[option="Model"] .u17DemiBold_v2 .u17Light_v2`).text(`Urtopia Carbon ${model.includes('350W') ? '1s' : '1'}`)
 
-            $(`.product .commonComponent .sale .u20DemiBold_v2`).text(`${model === 'Carbon Belt' ? '{{ 269900 | money }}' : '{{ 299900 | money }}'} NOW`)
-            $(`.product .commonComponent .sale .u17DemiBold_v2`).text(`with ${model === 'Carbon Belt' ? '{{ settings.sale_name }}' : 'Pre-order Sale'}`)
+            $(`.product .commonComponent .sale .u20DemiBold_v2`).text(`${!model.includes('350W') ? '{{ 269900 | money }}' : '{{ 299900 | money }}'} NOW`)
+            $(`.product .commonComponent .sale .u17DemiBold_v2`).text(`with ${!model.includes('350W') ? '{{ settings.sale_name }}' : 'Pre-order Sale'}`)
 
-            $(`.product .count-down .u17Medium_v2`).text(`with ${model === 'Carbon Belt' ? '€600 off + 3 Free Accessories Ends in:' : '€300 off + 3 Free Accessories Ends in:'}`)
+            $(`.product .count-down .u17Medium_v2`).text(`with ${!model.includes('350W') ? '€600 off + 3 Free Accessories Ends in:' : '€300 off + 3 Free Accessories Ends in:'}`)
 
-            if (model === 'Carbon Belt') {
+            if (model.includes('350W')) {
                 //$('.product .belt').show()
                 //$('.product .gear').hide()
                 
 
-                global_config.event_accessories_variant_ids = ['43817744793816', '43745263255768', '43745261748440'];
+                global_config.event_accessories_variant_ids = ['43830635561208', '43830633365752', '43858617204984'];
 
                 $(`.product .product-panel .options .option .vanilla`).show();
 
@@ -459,7 +459,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
                 //$('.product .gear').show()
                 
 
-                global_config.event_accessories_variant_ids = ['43866498891992', '43866499121368', '43871557779672'];
+                global_config.event_accessories_variant_ids = [];
 
                 $(`.product .product-panel .options .option .vanilla`).hide();
 
@@ -529,7 +529,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
             }
 
 
-            if (model === "Shimano Gear" && style === "vanilla") {
+            if (model.includes('350W') && style === "vanilla") {
 
               for (const style in styles) {
                 if (Object.hasOwnProperty.call(styles, style) && style !== "vanilla") {
