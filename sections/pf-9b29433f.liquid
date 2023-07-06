@@ -514,6 +514,17 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 
 
         if (model && style && size) {
+			if (model.includes('250W') && size === 'S') {
+				for (const style in styles) {
+					const f = findVariantOptions(model, 'M', style)
+
+					// 查找可用的variant
+					if (f && f.available) {
+					  return changeVariant(f.option1, f.option2, f.option3)
+					}
+              	}
+			}
+
             current_variant = findVariantOptions(model, size, style)
 
 			console.log('current_variant', current_variant)
