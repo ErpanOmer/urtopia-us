@@ -562,7 +562,7 @@ $sale_text_color: #13B698;
                         color: #fff;
                         background-color: $sale_text_color;
                         right: 0;
-                        transform: rotate(30deg) translate(29%,-250%);
+                        transform: rotate(30deg) translate(28%,-250%);
                         font-size: 16px;
                         width: 200px;
                         text-align: center;
@@ -577,6 +577,10 @@ $sale_text_color: #13B698;
                     .active {
                         border-color: $sale_text_color;
                         opacity: 1;
+
+                        span {
+                            font-weight: 600;
+                        }
                     }
                 }
             }
