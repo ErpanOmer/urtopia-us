@@ -480,9 +480,6 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
                 
 
                 global_config.event_accessories_variant_ids = ['43830635561208', '43830633365752', '43858617204984'];
-
-                $(`.product .product-panel .options .option .Size div[attribute="S"]`).show();
-
                 $('.buttons .orderTestRideBtn .stages').text('112');
                 $('.product .buttons .jobrad').css({ height: '47px', overflow: 'unset', border: '2px solid #161c1f' });
             } else {
@@ -491,8 +488,6 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
                 
 
                 global_config.event_accessories_variant_ids = [];
-
-                $(`.product .product-panel .options .option .Size div[attribute="S"]`).hide();
 
                 $('.buttons .orderTestRideBtn .stages').text('124');
 
@@ -541,6 +536,9 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 
         if (model && style && size) {
 			if (model.includes('350W')) {
+				$(`.product .product-panel .options .option .Size div[attribute="S"]`).show();
+				$(`.product .product-panel .options .option .Style div[attribute="Vanilla"]`).show();
+
 				if (size === 'S') {
 					$(`.product .product-panel .options .option .Style div[attribute="Sirius"]`).hide();
 					$(`.product .product-panel .options .option .Style div[attribute="Lyra"]`).hide();
@@ -554,13 +552,23 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 					$(`.product .product-panel .options .option .Style div[attribute="Lyra"]`).show();
 				}
 			} else {
-				if (size === 'S') {
-					const f = findAvailableVariant(model)
-					return changeVariant(f.option1, f.option2, f.option3)
-				}
-
+				$(`.product .product-panel .options .option .Size div[attribute="S"]`).hide();
+				$(`.product .product-panel .options .option .Style div[attribute="Vanilla"]`).hide();
 				$(`.product .product-panel .options .option .Style div[attribute="Sirius"]`).show();
 				$(`.product .product-panel .options .option .Style div[attribute="Lyra"]`).show();
+
+				const f = findAvailableVariant(model)
+
+				console.log('ffff', f)
+
+				if (style === 'Vanilla') {
+
+				}
+
+
+				if (!(model === f.option1 && size === f.option2 && style === f.option3)) {
+					return changeVariant(f.option1, f.option2, f.option3)
+				}
 			}
 
 			
