@@ -197,6 +197,28 @@ const testRides = [
           "10:00-17:00"
         ],
       },
+       /*{
+        name: "Burn The Ships Electrics",
+        phone: "310-372-1122",
+        email: "info@burntheshipselectrics.com ",
+        timezone: "San Diego, CA, USA (GMT-7)",
+        add: "1012 S Pacific Coast Hwy Suite B, Redondo Beach, CA 90277",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Burn_The_Ships_Electrics.png?v=1687327236",
+        testrideSpot: "California",
+        testRideSize: "M",
+        availableSizes: [
+          'Carbon 1 Size M',
+        ],
+        businessHours: [
+          "12:00-17:00",
+          "",
+          "11:00-18:00",
+          "11:00-18:00",
+          "11:00-18:00",
+          "11:00-18:00",
+          "11:00-18:00"
+        ],
+      },*/
     ]
   },
   {
@@ -609,6 +631,60 @@ const testRides = [
           "10:00-18:00",
           "10:00-18:00",
           "10:00-18:00",
+        ],
+      },
+    ]
+  },
+    {
+    city: 'Alaska',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/LoopEride.png?v=1687327237',
+    stores: [
+      {
+        name: "LoopEride",
+        phone: "907-435-7437",
+        email: "dale@loopylupine.com",
+        timezone: "AK, USA (GMT-5)",
+        add: "195 E Bunnell Ave, Homer, AK 99603, United States",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/LoopEride.png?v=1687327237",
+        testrideSpot: "Alaska",
+        availableSizes: [
+          'Carbon 1 Size M',
+        ],
+        businessHours: [
+          "",
+          "",
+          "",
+          "",
+          "12:00-18:00",
+          "12:00-18:00",
+          "12:00-18:00",
+        ],
+      },
+    ]
+  },
+   {
+    city: 'Lowa',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Ebike_Iowa.png?v=1687327236',
+    stores: [
+      {
+        name: "Ebike Iowa",
+        phone: "(515) 400-3970",
+        email: "john.burdine@gmail.com",
+        timezone: "Lowa, USA (GMT-5)",
+        add: "1900 E Lincoln Way, Suite B, Ames, Lowa 50010",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Ebike_Iowa.png?v=1687327236",
+        testrideSpot: "Lowa",
+        availableSizes: [
+          'Carbon 1 Size M',
+        ],
+        businessHours: [
+          "",
+          "12:00-17:00",
+          "12:00-17:00",
+          "",
+          "",
+          "12:00-17:00",
+          "10:00-14:00",
         ],
       },
     ]

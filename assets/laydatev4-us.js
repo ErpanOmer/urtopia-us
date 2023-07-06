@@ -3297,18 +3297,16 @@ function splitTimeFormat(item = '') {
 
           extra_data = {
             ...extra_data,
-            ...body.extras
+            ...body.extras,
+            ...body.extras.userInfo,
+            test_ride_model: extra_data.test_ride_model
           }
 
           fetchBuried('testride', 'submit', extra_data)
 
           fetch("https://api.newurtopia.com/third_part/book_ride", {
                 method: "POST",
-                body: JSON.stringify({
-                  ...extra_data,
-                  ...body.extras.userInfo,
-                  test_ride_model: extra_data.test_ride_model
-                })
+                body: JSON.stringify(extra_data)
           })
 
           // that.submitInfoState = 1;
