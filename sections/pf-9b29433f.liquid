@@ -223,13 +223,9 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 						>
 						<i class="fa fa-spinner fa-spin"></i><span data-pf-type="Text" class="addToCartText u17DemiBold_v2">Add to Cart</span>
 					</div>
-					<div onclick="testRideTrace('lease_on_jobrad', this)" class="orderTestRideBtn jobrad">
-						<img class="oneeee" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/jobradorg_2x_423443a0-1c79-4785-97a0-2be8ae66ceb6.png?v=1685414275"/>
-						<span><span class="u17DemiBold_v2">Lease Now</span><!--<span>36 months, €48/month</span>--></span>
-					  </div>
 					  <div onclick="testRideTrace('klarna_check_out', this)" class="orderTestRideBtn">
 						<img class="twoooo"src="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/files/20230530-121400.png?v=1685420054"/>
-						<span><span class="u17DemiBold_v2">0% APR Financing</span><span>24 months, €<span class="stages">112</span>/month</span></span>
+						<span><span class="u17DemiBold_v2">0% APR</span><span>24 months, <span class="stages">$91.6</span>/month</span></span>
 					</div>
 				</div>
 				<div class="delivery_time mb12">Free shipping <span>within 5 days</span></div>
@@ -430,10 +426,6 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 
     function findAvailableVariant () {
 		const args = Array.from(arguments)
-
-		console.log(args)
-		
-
 		if (!args.length) {
 			return variants.find(v => v.available)
 		}
@@ -469,10 +461,10 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
             $(`.product .product-panel .Model > div[attribute="${model}"]`).addClass('active')
             $(`.product .product-panel .options > div[option="Model"] .u17DemiBold_v2 .u17Light_v2`).text(`Urtopia Carbon ${model.includes('350W') ? '1s' : '1'}`)
 
-            $(`.product .commonComponent .sale .u20DemiBold_v2`).text(`${!model.includes('350W') ? '{{ 269900 | money }}' : '{{ 299900 | money }}'} NOW`)
-            $(`.product .commonComponent .sale .u17DemiBold_v2`).text(`with ${!model.includes('350W') ? '{{ settings.sale_name }}' : 'Pre-order Sale'}`)
+            //$(`.product .commonComponent .sale .u20DemiBold_v2`).text(`${!model.includes('350W') ? '{{ 269900 | money }}' : '{{ 299900 | money }}'} NOW`)
+            //$(`.product .commonComponent .sale .u17DemiBold_v2`).text(`with ${!model.includes('350W') ? '{{ settings.sale_name }}' : 'Pre-order Sale'}`)
 
-            $(`.product .count-down .u17Medium_v2`).text(`with ${!model.includes('350W') ? '€600 off + 3 Free Accessories Ends in:' : '€300 off + 3 Free Accessories Ends in:'}`)
+            //$(`.product .count-down .u17Medium_v2`).text(`with ${!model.includes('350W') ? '€600 off + 3 Free Accessories Ends in:' : '€300 off + 3 Free Accessories Ends in:'}`)
 
             if (model.includes('350W')) {
                 //$('.product .belt').show()
@@ -480,8 +472,8 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
                 
 
                 global_config.event_accessories_variant_ids = ['43830635561208', '43830633365752', '43858617204984'];
-                $('.buttons .orderTestRideBtn .stages').text('112');
-                $('.product .buttons .jobrad').css({ height: '47px', overflow: 'unset', border: '2px solid #161c1f' });
+                //$('.buttons .orderTestRideBtn .stages').text('112');
+                //$('.product .buttons .jobrad').css({ height: '47px', overflow: 'unset', border: '2px solid #161c1f' });
             } else {
                 //$('.product .belt').hide()
                 //$('.product .gear').show()
@@ -489,9 +481,9 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 
                 global_config.event_accessories_variant_ids = [];
 
-                $('.buttons .orderTestRideBtn .stages').text('124');
+                //$('.buttons .orderTestRideBtn .stages').text('124');
 
-                $('.product .buttons .jobrad').css({ height: 0, overflow: 'hidden', border: 'none' });
+                //$('.product .buttons .jobrad').css({ height: 0, overflow: 'hidden', border: 'none' });
             }
         }
 
