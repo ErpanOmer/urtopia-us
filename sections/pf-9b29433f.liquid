@@ -464,8 +464,6 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
     }
 
     function changeVariant (model, size, style) {
-		console.log('model', model)
-
         if (model) {
             $(`.product .product-panel .Model .active`).removeClass('active')
             $(`.product .product-panel .Model > div[attribute="${model}"]`).addClass('active')
@@ -726,6 +724,10 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 
     $('.product-panel .options .option >div:not(.u17DemiBold_v2) > div').on('click',e => {
         const t = $(e.target)
+
+		console.log(e.target)
+		console.log(t.attr('attribute'))
+
 
         if ($(e.target).parent().hasClass('Model')) {
             changeVariant(t.attr('attribute'), current_variant.option2, current_variant.option3)
