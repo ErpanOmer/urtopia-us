@@ -161,22 +161,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 
     function throttle(method, delay, duration){
-      var timer=null;
-      var begin=new Date();    
-      return function(){                
-          var context=this, args=arguments;
-          var current=new Date();        
-          clearTimeout(timer);
-          if(current-begin>=duration){
-              method.apply(context,args);
-              begin=current;
-          }else{
-              timer=setTimeout(function(){
-                  method.apply(context,args);
-              },delay);
-          }
-      }
-  }
+        var timer=null;
+        var begin=new Date();    
+        return function(){                
+            var context=this, args=arguments;
+            var current=new Date();        
+            clearTimeout(timer);
+            if(current-begin>=duration){
+                method.apply(context,args);
+                begin=current;
+            }else{
+                timer=setTimeout(function(){
+                    method.apply(context,args);
+                },delay);
+            }
+        }
+    }
 
     // 立即执行
     (w => {
@@ -330,6 +330,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     *::after {
     box-sizing: inherit;
     }
+
+    :root {
+        --sale-color1: #49B3F7;
+        --sale-color2: #7EDAFF;
+        --sale-color3: #009BFF;
+        --sale-color4: #009BFF;
+      }
 
     html {
     box-sizing: border-box;
