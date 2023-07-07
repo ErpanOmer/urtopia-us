@@ -967,9 +967,7 @@
 		console.log(e.target.id)
 
 		$('.order-layer-body > div').hide()
-		setTimeout(() => {
-			$(`.order-layer-body #carbon-${e.target.id}`).show()
-		})
+		$(`.order-layer-body #carbon-${e.target.id}`).show()
 	})
 
 	function onCloseOrderLayer() {
