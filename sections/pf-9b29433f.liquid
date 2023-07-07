@@ -473,7 +473,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 
             let swiper_arr = []
 
-            swiper_arr = swiper_arr.concat(swiper_series[model][style], style === 'Vanilla' ? [] : swiper_series[model]['commonSwiper'])
+            swiper_arr = swiper_arr.concat(swiper_series[model][style], swiper_series[model]['commonSwiper'])
 
             $('.product .right-swiper .swiper-wrapper').html(swiper_arr.map((s, i) => {
                 const index = i % 5
