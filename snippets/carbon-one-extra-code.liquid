@@ -484,21 +484,21 @@
 	  <div style="overflow-y: auto;max-height: 550px;">
 	  <div class="sizefit-switch order-flex-row">
 		<div class="switch-radio">
-		  <input id="tab-1" name="Chord" type="radio" checked />
+		  <input id="tab-s" name="Chord" type="radio" checked />
 		  <button class="btn">S</button>
 		</div>
 		<div class="switch-radio">
-		  <input id="tab-2" name="Chord" type="radio" checked />
+		  <input id="tab-m" name="Chord" type="radio" checked />
 		  <button class="btn">M</button>
 		</div>
 		<div class="switch-radio">
-		  <input id="tab-3" name="Chord" type="radio" />
+		  <input id="tab-l" name="Chord" type="radio" />
 		  <button class="btn">L</button>
 		</div>
 	  </div>
 	  <div class="order-layer-body order-flex-row" style="min-height: 400px">
 		<!-- 内容 -->
-		<div id="carbon-dom" class="order-flex-row" style="width: 100%">
+		<div id="carbon-tab-s" class="order-flex-row" style="width: 100%">
 		  <div class="sizefit-box">
 			<div class="sizefit-item order-flex-row">
 			  <p>A. Standover height</p>
@@ -544,7 +544,7 @@
 		  <div class="sizefit-bg"></div>
 		</div>
 
-		<div id="chord-dom" class="order-flex-row" style="width: 100%; display: none;">
+		<div id="carbon-tab-m" class="order-flex-row" style="width: 100%; display: none;">
 		  <div class="sizefit-box">
 			<div class="sizefit-item order-flex-row">
 			  <p>A. Standover height</p>
@@ -591,7 +591,7 @@
 		</div>
 
 		<div
-		  id="chordx-dom"
+		  id="carbon-tab-l"
 		  class="order-flex-row"
 		  style="width: 100%; display: none"
 		>
@@ -963,26 +963,10 @@
   </div>
 
   <script>
-	const carbonTab = document.getElementById("tab-1");
-	const chordTab = document.getElementById("tab-2");
-	  const chordXTab = document.getElementById("tab-3");
-	  const chordDom = document.getElementById("chord-dom");
-	  const chordXDom = document.getElementById("chordx-dom");
+	$('.sizefit-switch .switch-radio input').on('change', e => {
+		console.log(e.target.id)
+	})
 
-	  chordTab.addEventListener("click", function () {
-		chordDom.style.display = "flex";
-		chordXDom.style.display = "none";
-	  });
-  
-	  chordTab.addEventListener("click", function () {
-		chordDom.style.display = "flex";
-		chordXDom.style.display = "none";
-	  });
-	  chordXTab.addEventListener("click", function () {
-		chordDom.style.display = "none";
-		chordXDom.style.display = "flex";
-	  });
-	
 	function onCloseOrderLayer() {
 		let arr = ["order-modal-one", "order-modal-two", "order-modal-three", "order-modal-four"];
 		let arr2 = [
