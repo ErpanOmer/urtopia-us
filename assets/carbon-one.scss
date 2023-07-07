@@ -842,7 +842,7 @@ $sale_text_color: #236ABE;
         .featured_image {
             display: grid;
             grid-template-columns: 64px 1fr;
-            grid-template-rows: 725px;
+            grid-template-rows: 675px;
             grid-column-gap: 40px;
 
 
@@ -1479,7 +1479,7 @@ $sale_text_color: #236ABE;
 
             .featured_image {
                 grid-template-columns: 1fr;
-                grid-template-rows: 90vw;
+                grid-template-rows: 85vw;
 
                 .swiper-pagination {
                     // position: static;
