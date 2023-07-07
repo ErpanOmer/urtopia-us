@@ -918,10 +918,16 @@
   </div>
 
   <script>
-	const chordTab = document.getElementById("tab-1");
-	  const chordXTab = document.getElementById("tab-2");
+	const carbonTab = document.getElementById("tab-1");
+	const chordTab = document.getElementById("tab-2");
+	  const chordXTab = document.getElementById("tab-3");
 	  const chordDom = document.getElementById("chord-dom");
 	  const chordXDom = document.getElementById("chordx-dom");
+
+	  chordTab.addEventListener("click", function () {
+		chordDom.style.display = "flex";
+		chordXDom.style.display = "none";
+	  });
   
 	  chordTab.addEventListener("click", function () {
 		chordDom.style.display = "flex";
