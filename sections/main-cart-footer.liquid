@@ -4,12 +4,12 @@
 {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
 <style>
   :root {
-    --sale_backround_color: linear-gradient(90deg, #AA0419, #D63A4D);
+    --sale_backround_color: linear-gradient(90deg, var(--sale), #D63A4D);
     --sale_backround_color-anti: linear-gradient(90deg, #236ABE, #3E89E2);
   }
 
   .sale_coupon {
-    background-image: var(--sale_backround_color);
+    background-image: linear-gradient(90deg, var(--sale-color1), var(--sale-color2));
   }
 
   
