@@ -1283,25 +1283,12 @@ $sale_text_color: #236ABE;
                 margin-right: 15px;
             }
 
-            .sizes {
+            .lines {
                 display: grid;
-                grid-template-columns: 1fr 1fr;
-                grid-column-gap: 50px;
-                align-items: center;
-                padding: 30px 0px;
+                grid-template-columns: repeat(4, 1fr);
 
-                .texts {
-                    display: flex;
-                    justify-content: space-between;
-
-                    .text {
-                        display: flex;
-                        flex-direction: column;
-
-                        div + div {
-                            margin-top: 20px;
-                        }
-                    }
+                .line {
+                    
                 }
             }
         }
