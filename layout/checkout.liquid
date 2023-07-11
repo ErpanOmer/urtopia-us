@@ -1,315 +1,255 @@
 <!DOCTYPE html>
-<html
-  lang="{{ locale }}"
-  dir="{{ direction }}"
-  class="{{ checkout_html_classes }}">
+<html lang="{{ locale }}" dir="{{ direction }}" class="{{ checkout_html_classes }}">
 
-  <head>
-    <!-- Google Tag Manager -->
-    <script>
-      (function(w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != 'dataLayer'
-            ? '&l=' + l
-            : '';
-        j.async = true;
-        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, 'script', 'dataLayer', 'GTM-P9MZH68');
-    </script>
-    <!-- End Google Tag Manager -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, user-scalable=0">
-    <meta name="referrer" content="origin">
+<head>
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P9MZH68');</script>
+<!-- End Google Tag Manager -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, user-scalable=0">
+  <meta name="referrer" content="origin">
 
-    <title>{{ page_title }}</title>
+  <title>{{ page_title }}</title>
 
-    {{ content_for_header }}
+  {{ content_for_header }}
 
-    {{ checkout_stylesheets }}
-    {{ checkout_scripts }}
+  {{ checkout_stylesheets }}
+  {{ checkout_scripts }}
 
-    <!--   <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/webTrack.js?v=1675687114"></script> -->
-    <script type="text/javascript" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/checkout.min.js?v=1670899417"></script>
+<!--   <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/webTrack.js?v=1675687114"></script> -->
+  <script type="text/javascript"
+    src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/checkout.min.js?v=1670899417"></script>
 
-    <!--     clarity  -->
-    <script type="text/javascript">
-      (function (c, l, a, r, i, t, y) {
+  <!--     clarity  -->
+  <script type="text/javascript">
+    (function (c, l, a, r, i, t, y) {
       c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
-            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
-            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
-          })(window, document, "clarity", "script", "bnj03r1wrv");
-    </script>
-    <!-- Taboola Pixel Code -->
-    <script type='text/javascript'>
-      window._tfa = window._tfa || [];
-      window._tfa.push({ notify: 'event', name: 'page_view', id: 1410404 });
-          !function (t, f, a, x) {
-            if (!document.getElementById(x)) {
-              t.async = 1; t.src = a; t.id = x; f.parentNode.insertBefore(t, f);
-            }
-          }(document.createElement('script'),
-            document.getElementsByTagName('script')[0],
-            '//cdn.taboola.com/libtrc/unip/1410404/tfa.js',
-            'tb_tfa_script');
-    </script>
-    <!-- End of Taboola Pixel Code -->
+      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", "bnj03r1wrv");
+  </script>
+  <!-- Taboola Pixel Code -->
+  <script type='text/javascript'>
+    window._tfa = window._tfa || [];
+    window._tfa.push({ notify: 'event', name: 'page_view', id: 1410404 });
+    !function (t, f, a, x) {
+      if (!document.getElementById(x)) {
+        t.async = 1; t.src = a; t.id = x; f.parentNode.insertBefore(t, f);
+      }
+    }(document.createElement('script'),
+      document.getElementsByTagName('script')[0],
+      '//cdn.taboola.com/libtrc/unip/1410404/tfa.js',
+      'tb_tfa_script');
+  </script>
+  <!-- End of Taboola Pixel Code -->
 
-    <!-- Bing UET checkout -->
-    <!--<script>(function(w,d,t,r,u){var f,n,i;w[u]=w[u]||[],f=function(){var o={ti:"137013457", tm="shpfy_ui"};o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")},n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function(){var s=this.readyState;s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null)},i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i)})(window,document,"script","//bat.bing.com/bat.js","uetq");</script>
-    -->
-      <script>
-(function(w, d, t, r, u) {
-  var f,
-    n,
-    i;
-  w[u] = w[u] || [],
-  f = function() {
-    var o = {
-      ti: "52014030"
-    };
-    o.q = w[u],
-    w[u] = new UET(o),
-    w[u].push("pageLoad")
-  },
-  n = d.createElement(t),
-  n.src = r,
-  n.async = 1,
-  n.onload = n.onreadystatechange = function() {
-    var s = this.readyState;
-    s && s !== "loaded" && s !== "complete" || (f(), n.onload = n.onreadystatechange = null)
-  },
-  i = d.getElementsByTagName(t)[0],
-  i.parentNode.insertBefore(n, i)
-})(window, document, "script", "//bat.bing.com/bat.js", "uetq");
-</script>
+  <!-- Bing UET checkout -->
+  <!--<script>(function(w,d,t,r,u){var f,n,i;w[u]=w[u]||[],f=function(){var o={ti:"137013457", tm="shpfy_ui"};o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")},n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function(){var s=this.readyState;s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null)},i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i)})(window,document,"script","//bat.bing.com/bat.js","uetq");</script>
+-->
+  <script>(function (w, d, t, r, u) { var f, n, i; w[u] = w[u] || [], f = function () { var o = { ti: "52014030" }; o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad") }, n = d.createElement(t), n.src = r, n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && s !== "loaded" && s !== "complete" || (f(), n.onload = n.onreadystatechange = null) }, i = d.getElementsByTagName(t)[0], i.parentNode.insertBefore(n, i) })(window, document, "script", "//bat.bing.com/bat.js", "uetq");</script>
 
-      <script>
-window.uetq = window.uetq || [];
-window.uetq.push('event', 'begin_checkout', {
-  "revenue_value": '{{ checkout.total_price | divided_by:100.0}}',
-  "currency": "USD"
-});
-</script>
-    <!-- End of Bing UET checkout -->
-    <link
-      rel="stylesheet"
-      href="https://use.typekit.net/fzb3fxo.css"
-      onload="this.onload=null;this.rel='stylesheet'"> {{ 'checkout.scss.css' | asset_url | stylesheet_tag }}
-  </head>
+  <script>window.uetq = window.uetq || []; window.uetq.push('event', 'begin_checkout', { "revenue_value": '{{ checkout.total_price | divided_by:100.0}}', "currency": "USD" });</script>
+  <!-- End of Bing UET checkout -->
+  <link rel="stylesheet" href="https://use.typekit.net/fzb3fxo.css" onload="this.onload=null;this.rel='stylesheet'">
+  {{ 'checkout.scss.css' | asset_url | stylesheet_tag }}
+</head>
 
-  <body>
-    {{ skip_to_content_link }}
+<body>
+  {{ skip_to_content_link }}
 
-    <header
-      class="banner"
-      data-header
-      role="banner">
-      <div class="wrap">
-        {{ content_for_logo }}
-      </div>
-    </header>
-
-    {{ order_summary_toggle }}
-    <div class="content" data-content>
-      <div class="wrap">
-        <div class="main">
-          <header class="main__header" role="banner">
-            {{ content_for_logo }}
-            {{ breadcrumb }}
-            <div class="klarna">
-              <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Klarna-Logo.wine_2x_4831cc33-3ad3-4cb7-8d01-bc04c379811a.png?v=1686369579">
-              <div class="u14Medium_v2">{{ 'checkout_klarna.Klarna_for' | t }}<br class="mobileHide"><span class="learn">{{ 'checkout_klarna.Klarna_learn' | t }}</span>
-              </div>
-            </div>
-            {{ alternative_payment_methods }}
-          </header>
-          <main class="main__content" role="main">
-            {{ content_for_layout }}
-          </main>
-          <!--           <footer class="main__footer" role="contentinfo">
-          {{ content_for_footer }}
-          </footer> -->
-        </div>
-        <aside class="sidebar" role="complementary">
-          <div class="sidebar__header">
-            {{ content_for_logo }}
-          </div>
-          <div class="sidebar__content">
-            {{ content_for_order_summary }}
-          </div>
-        </aside>
-      </div>
+  <header class="banner" data-header role="banner">
+    <div class="wrap">
+      {{ content_for_logo }}
     </div>
-    {% assign backIndexArr = "" %}
-    {% assign speedBikeIdStr = 
-     "43556899619064,43556899651832,43556899684600,43556899717368,43556899750136,43556895916280,43556895981816,43556896047352,43556899782904,43556899815672,43556895949048,43556896014584,43556896080120,43556899848440,43556899881208" %}
-    {% assign isSpeedBike = false %}
-    {% assign isCarbonBikeBack = false %}
-    {% assign speedBikeIdArr = speedBikeIdStr | split: "," %}
-    {% assign bikeQuantity = 0 %}
-    {% assign discountSavedPrice = 0 %}
-    {%- for item in checkout.line_items -%}
-      {%- if item.title contains "Carbon One" -%}
-        {% assign isEbike = true %}
-        {%- assign bikeQuantity = bikeQuantity | plus: item.quantity -%}
-        {%- assign saveCost = bikeQuantity | times: 60000 -%}
-      {%- endif -%}
-      {%- if speedBikeIdStr contains item.variant.id -%}
-        {% assign isSpeedBike = true %}
-      {%- endif -%}
-      {%- if item.variant.inventory_quantity <= 0 -%}
-        {% assign isCarbonBikeBack = true %}{%- assign temp = forloop.index -%}
-        {%- assign backIndexArr = backIndexArr | append: "," | append: temp -%}
-      {%- endif -%}
-      {%- assign 
-        discountSavedPrice = discountSavedPrice | plus: item.original_line_price | minus: item.final_line_price -%}
-    {%- endfor 
- -%}
-    <div id="note-info" class=" hidden order-summary__section">
-      {%- if isEbike == true -%}
-        <div class="origin-old-price payment-due__price skeleton-while-loading--lg">
-          {% assign totalSaved = saveCost | plus: discountSavedPrice %}
-          {{ checkout.total_price | plus: totalSaved | money }}
+  </header>
+
+  {{ order_summary_toggle }}
+  <div class="content" data-content>
+    <div class="wrap">
+      <div class="main">
+        <header class="main__header" role="banner">
+          {{ content_for_logo }}
+          {{ breadcrumb }}
+          <div class="klarna">
+            <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Klarna-Logo.wine_2x_4831cc33-3ad3-4cb7-8d01-bc04c379811a.png?v=1686369579">
+            <div class="u14Medium_v2">{{ 'checkout_klarna.Klarna_for' | t }}<br class="mobileHide"><span class="learn">{{ 'checkout_klarna.Klarna_learn' | t }}</span></div>
+          </div>
+          {{ alternative_payment_methods }}
+        </header>
+        <main class="main__content" role="main">
+          {{ content_for_layout }}
+        </main>
+        <!--           <footer class="main__footer" role="contentinfo">
+            {{ content_for_footer }}
+          </footer> -->
+      </div>
+      <aside class="sidebar" role="complementary">
+        <div class="sidebar__header">
+          {{ content_for_logo }}
         </div>
-        <!--     <div class="notification-tips"><img
+        <div class="sidebar__content">
+          {{ content_for_order_summary }}
+        </div>
+      </aside>
+    </div>
+  </div>
+  {% assign backIndexArr = ""%}
+  {% assign speedBikeIdStr =
+  "43556899619064,43556899651832,43556899684600,43556899717368,43556899750136,43556895916280,43556895981816,43556896047352,43556899782904,43556899815672,43556895949048,43556896014584,43556896080120,43556899848440,43556899881208"
+  %}
+  {%assign isSpeedBike = false%}
+  {%assign isCarbonBikeBack = false%}
+  {% assign speedBikeIdArr = speedBikeIdStr|split:","%}
+  {% assign bikeQuantity = 0 %}
+  {% assign discountSavedPrice = 0 %}
+  {%- for item in checkout.line_items -%}
+  {%- if item.title contains "Carbon One" -%}
+  {%assign isEbike = true%}
+  {%- assign bikeQuantity = bikeQuantity | plus:item.quantity -%}
+  {%- assign saveCost = bikeQuantity| times:60000 -%}
+  {%- endif -%}
+  {%- if speedBikeIdStr contains item.variant.id -%}
+  {%assign isSpeedBike = true%}
+  {%- endif -%}
+  {%- if item.variant.inventory_quantity <= 0 -%} {% assign isCarbonBikeBack=true %}{%- assign temp=forloop.index -%}
+    {%- assign backIndexArr=backIndexArr | append: "," |append:temp -%} {%- endif -%} {%- assign
+    discountSavedPrice=discountSavedPrice | plus:item.original_line_price | minus:item.final_line_price -%} {%- endfor
+    -%} <div id="note-info" class=" hidden order-summary__section">
+    {%-if isEbike == true -%}
+    <div class="origin-old-price payment-due__price skeleton-while-loading--lg">
+      {% assign totalSaved = saveCost | plus: discountSavedPrice %}
+      {{checkout.total_price| plus:totalSaved |money}}
+    </div>
+    <!--     <div class="notification-tips"><img
         src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/cart-tipsicon.png?" />You saved
-        {{totalSaved |money}}!
-        </div> -->
-      {%- endif -%}
-      <!--     <div class="notification-tips"><img
-      src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/cart-tipsicon.png?" />
+      {{totalSaved |money}}!
+    </div> -->
+    {%-endif-%}
+<!--     <div class="notification-tips"><img
+        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/cart-tipsicon.png?" />
       <span>Ships within 3-5 business days from local warehouse</span>
-      </div> -->
-      <div style="display: flex;justify-content: flex-end;margin-bottom: 12px;">
-        <img style="width: 100px;" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Norton_by-DigiCert_177x98_2x_5222bced-9208-4c88-95a0-51586b5b4055.png?v=1681735148">
-      </div>
-      <div class="note-credit"><img class="credit-icon" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/credit-card_2x_ea106d45-745a-4ffb-9f94-400068bfe194.png?v=1671520567">100%
-        Secure Payment</div>
-      <img class="note-img" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_19448_2x_0ee4099d-65d1-4fda-bf59-8d85c19625a1.jpg?v=1671520224">
-      <div class="note-info-wrapper">
-        <p>Notes :&nbsp;</p>
-        <ul>
-          <li>
-            Bike orders may arrive separate from accessories. To ensure that our customers can get hands on the bike
-            ASAP.&nbsp;
-          </li>
-          <li>
-            Taxes will be calculated at payment.&nbsp;
-          </li>
-          <li>
-            We
-            <strong>DO NOT</strong>
-            ship to PO BOXES.
-          </li>
-          <!--         <li>
+    </div> -->
+    <div style="display: flex;justify-content: flex-end;margin-bottom: 12px;">
+      <img style="width: 100px;" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Norton_by-DigiCert_177x98_2x_5222bced-9208-4c88-95a0-51586b5b4055.png?v=1681735148">
+    </div>
+    <div class="note-credit"><img class="credit-icon"
+      src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/credit-card_2x_ea106d45-745a-4ffb-9f94-400068bfe194.png?v=1671520567">100%
+    Secure Payment</div>
+  <img class="note-img"
+    src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_19448_2x_0ee4099d-65d1-4fda-bf59-8d85c19625a1.jpg?v=1671520224">
+    <div class="note-info-wrapper">
+      <p>Notes :&nbsp;</p>
+      <ul>
+        <li>
+          Bike orders may arrive separate from accessories. To ensure that our customers can get hands on the bike
+          ASAP.&nbsp;
+        </li>
+        <li>
+          Taxes will be calculated at payment.&nbsp;
+        </li>
+        <li>
+          We <strong>DO NOT</strong> ship to PO BOXES.
+        </li>
+<!--         <li>
           Free accessories ships 1 week after the promotions ends from L.A. warehouse.
-          </li> -->
-          <li class="discount-code-tip">
-            If you discount is not correct,<br/>please contact
-            <a style="color:#fd4b17" href="mailto:support@newurtopia.com">support@newurtopia.com</a>
-          </li>
-        </ul>
-      </div>
+        </li> -->
+        <li class="discount-code-tip">
+          If you discount is not correct,<br />please contact <a style="color:#fd4b17"
+            href="mailto:support@newurtopia.com">support@newurtopia.com</a>
+        </li>
+      </ul>
+    </div>
     </div>
     {{ tracking_code }}
     <div class="klarna-dialog" style="height: 0;overflow: hidden;padding: 0;">
-      <div class="u24DemiBold_v2"><img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Image_167_2x_a31405e4-22c9-4546-8404-ec68e30f98ad.png?v=1685686187" alt="">{{ 'checkout_klarna.title' | t }}</div>
+      <div class="u24DemiBold_v2"><img
+              src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Image_167_2x_a31405e4-22c9-4546-8404-ec68e30f98ad.png?v=1685686187"
+              alt="">{{ 'checkout_klarna.title' | t }}</div>
       <div class="scroll">
-        <div class="u17Medium_v2">{{ 'checkout_klarna.title1' | t }}<br class="mobileHide">{{ 'checkout_klarna.title2' | t }}</div>
-        <div class="pay">
-          <div class="u20DemiBold_v2">{{ 'checkout_klarna.pay_in' | t }}</div>
-          <div class="u17Medium_v2">
-            <span>{{ 'checkout_klarna.month' | t }}</span>
-            <div>{{ 'checkout_klarna.payments' | t }}</div>
+          <div class="u17Medium_v2">{{ 'checkout_klarna.title1' | t }}<br class="mobileHide">{{ 'checkout_klarna.title2' | t }}</div>
+          <div class="pay">
+              <div class="u20DemiBold_v2">{{ 'checkout_klarna.pay_in' | t }}</div>
+              <div class="u17Medium_v2"><span>{{ 'checkout_klarna.month' | t }}</span>
+                  <div>{{ 'checkout_klarna.payments' | t }}</div>
+              </div>
+              <div class="total">
+                  <div class="u17Medium_v2" style="color:#8E8E8E">
+                      <span>APR</span>
+                      <span>{{ 'checkout_klarna.total' | t }}</span>
+                  </div>
+                  <div class="u17Medium_v2">
+                      <span>{{ 'checkout_klarna.fixed' | t }}</span>
+                      <span>$2199 + Tax*</span>
+                  </div>
+                  <div class="u11Medium_v2">{{ 'checkout_klarna.limited' | t }}</div>
+              </div>
           </div>
-          <div class="total">
-            <div class="u17Medium_v2" style="color:#8E8E8E">
-              <span>APR</span>
-              <span>{{ 'checkout_klarna.total' | t }}</span>
-            </div>
-            <div class="u17Medium_v2">
-              <span>{{ 'checkout_klarna.fixed' | t }}</span>
-              <span>$2199 + Tax*</span>
-            </div>
-            <div class="u11Medium_v2">{{ 'checkout_klarna.limited' | t }}</div>
+          <div class="u24DemiBold_v2 how">{{ 'checkout_klarna.works' | t }}</div>
+          <div class="works">
+              <div class="u17Medium_v2">{{ 'checkout_klarna.work1' | t }}<span></span></div>
+              <div class="u17Medium_v2">{{ 'checkout_klarna.work2' | t }}<span></span></div>
+              <div class="u17Medium_v2">{{ 'checkout_klarna.work3' | t }}<span></span>
+              </div>
+              <div class="u17Medium_v2">{{ 'checkout_klarna.work4' | t }}<span></span>
+                  <img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230614-142808.png?v=1686724102" alt="">
+                  <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230614-143316.png?v=1686724422" alt=""></div>
+                  <div class="u17Medium_v2">{{ 'checkout_klarna.work5' | t }}<span></span></div>
+                  <div class="u17Medium_v2">{{ 'checkout_klarna.work6' | t }}<span></span></div>
+                  <div class="u17Medium_v2">{{ 'checkout_klarna.work7' | t }}<span></span></div>
           </div>
-        </div>
-        <div class="u24DemiBold_v2 how">{{ 'checkout_klarna.works' | t }}</div>
-        <div class="works">
-          <div class="u17Medium_v2">{{ 'checkout_klarna.work1' | t }}<span></span>
-          </div>
-          <div class="u17Medium_v2">{{ 'checkout_klarna.work2' | t }}<span></span>
-          </div>
-          <div class="u17Medium_v2">{{ 'checkout_klarna.work3' | t }}<span></span>
-          </div>
-          <div class="u17Medium_v2">{{ 'checkout_klarna.work4' | t }}<span></span>
-            <img
-              class="mobileHide"
-              src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230614-142808.png?v=1686724102"
-              alt="">
-            <img
-              class="pcHide"
-              src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230614-143316.png?v=1686724422"
-              alt=""></div>
-          <div class="u17Medium_v2">{{ 'checkout_klarna.work5' | t }}<span></span>
-          </div>
-          <div class="u17Medium_v2">{{ 'checkout_klarna.work6' | t }}<span></span>
-          </div>
-          <div class="u17Medium_v2">{{ 'checkout_klarna.work7' | t }}<span></span>
-          </div>
-        </div>
       </div>
       <div onclick="closeMiniDialog()" class="my-button my-button-black">{{ 'checkout_klarna.button' | t }}</div>
       <span onclick="closeMiniDialog()" class="close">×</span>
     </div>
-  </body>
-  <script>
-    // 查询url 参数
-    function getSearchValues() {
-      const search = {}
+</body>
+<script>
+  // 查询url 参数
+function getSearchValues () {
+  const search = {}
 
-// 页面url
-      const url = new URL(location.href)
+  // 页面url
+  const url = new URL(location.href)
 
-      for (const [k, v] of url.searchParams.entries()) {
-        search[k] = v
-      }
+  for (const [k, v] of url.searchParams.entries()) {
+      search[k] = v
+  }
 
-      return search
-    }
+  return search
+}
 
-    function showMiniDialog(html = '') {
-      Checkout.$('body .mini-dialog').remove()
-      setTimeout(() => {
-        Checkout.$("body").append(`<div class="mini-dialog" style="display: flex;">${html}</div>`){% comment %}
-          setTimeout(() => {
-            $('body .mini-dialog > div').on('click', e => {
-              e.stopPropagation();
-              return false;
-            })
-          }, 100){% endcomment %}
-      })
-    }
-
-    function closeMiniDialog() {
-
-// console.log(a === document.querySelector('body .mini-dialog'))
-      Checkout.$('body .mini-dialog').remove()
-    }
-
-    const html = Checkout.$('.klarna-dialog').html()
-
-// getSearchValues().show_klarna_dialog && showMiniDialog(`<div class="klarna-dialog">${Checkout.$('.klarna-dialog').html()}</div>`)
-
+  function showMiniDialog(html = '') {
+    Checkout.$('body .mini-dialog').remove()
     setTimeout(() => {
-      Checkout.$('.klarna').on('click', () => showMiniDialog(`<div class="klarna-dialog">${html}</div>`))
-    }, 100)
-  </script>
+      Checkout.$("body").append(`<div class="mini-dialog" style="display: flex;">${html}</div>`)
+    
+        {% comment %} setTimeout(() => {
+        $('body .mini-dialog > div').on('click', e => {
+            e.stopPropagation();
+            return false;
+        })
+        }, 100) {% endcomment %}
+    })
+}
+
+function closeMiniDialog() {
+    // console.log(a === document.querySelector('body .mini-dialog'))
+    Checkout.$('body .mini-dialog').remove()
+}  
+
+  const html = Checkout.$('.klarna-dialog').html()
+
+  // getSearchValues().show_klarna_dialog && showMiniDialog(`<div class="klarna-dialog">${Checkout.$('.klarna-dialog').html()}</div>`)
+
+  setTimeout(() => {
+    Checkout.$('.klarna').on('click', () => showMiniDialog(`<div class="klarna-dialog">${html}</div>`))
+  }, 100)
+</script>
 </html>
 
 
@@ -322,7 +262,7 @@ window.uetq.push('event', 'begin_checkout', {
     height: 107%;
   }
 
-  #order-summary > div > div.order-summary__section.order-summary__section--total-lines > table > tbody > tr.total-line.total-line--shipping > th > a {
+  #order-summary>div>div.order-summary__section.order-summary__section--total-lines>table>tbody>tr.total-line.total-line--shipping>th>a {
     display: none;
   }
 
@@ -350,7 +290,7 @@ window.uetq.push('event', 'begin_checkout', {
 
   .notification-tips {
     display: flex;
-    margin: 0 0 9px;
+    margin: 0 0 9px 0;
     padding: 3px 15px;
     font-size: 14px;
     text-align: left;
@@ -373,12 +313,12 @@ window.uetq.push('event', 'begin_checkout', {
     border-radius: 4px;
   }
 
-  .note-info-wrapper > p {
+  .note-info-wrapper>p {
     font-size: 20px;
     font-weight: bold;
   }
 
-  .note-info-wrapper > ul {
+  .note-info-wrapper>ul {
     margin-left: 15px;
     list-style-type: initial;
   }
@@ -390,8 +330,8 @@ window.uetq.push('event', 'begin_checkout', {
     margin-top: 9px;
     background-color: #F4F8FD;
     border-radius: 5px;
-    font: normal normal 500 16px / 19px Urbane;
-    letter-spacing: 0;
+    font: normal normal 500 16px/19px Urbane;
+    letter-spacing: 0px;
     color: #000000;
   }
 
@@ -405,7 +345,7 @@ window.uetq.push('event', 'begin_checkout', {
     border-radius: 10px;
   }
 
-  .note-info-wrapper > ul > li {
+  .note-info-wrapper>ul>li {
     font-size: 14px;
   }
 
@@ -427,7 +367,7 @@ window.uetq.push('event', 'begin_checkout', {
     display: none;
   }
 
-  @media(min-width: 1000px) {
+  @media (min-width: 1000px) {
     .order-summary__section {
       -webkit-box-flex: 0;
       -webkit-flex: 0 0 auto;
@@ -436,8 +376,8 @@ window.uetq.push('event', 'begin_checkout', {
     }
   }
 
-  @media(max-width: 1000px) {
-    .product-table > tbody {
+  @media (max-width: 1000px) {
+    .product-table>tbody {
       visibility: hidden;
       position: absolute;
     }
@@ -453,10 +393,8 @@ window.uetq.push('event', 'begin_checkout', {
         visibility: visible;
       }*/
 </style>
-<script
-  type="text/javascript"
-  src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/additionalScript.js?v=1662350955"
-  defer></script>
+<script type="text/javascript"
+  src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/additionalScript.js?v=1662350955" defer></script>
 <script>
   let $ = Checkout.$;
   var backIndexArr = String('{{ backIndexArr }}');
@@ -469,20 +407,19 @@ window.uetq.push('event', 'begin_checkout', {
       $(".product__description").eq(index).append("<span>Back-ordered Item</span>")
     }
   })
-
-// if (isSpeedBike != "false") {
-// $(".notification-tips span").html("This is a back-ordered item to be shipped on Mar 15-31, 2023.")
-// } else if (isCarbonBikeBack != "false") {
-// $(".notification-tips span").html("This is a back-ordered item to be shipped on Feb 10-25, 2023.")
-// }
-  $("div.sidebar__content").change(function() {
+  // if (isSpeedBike != "false") {
+  //   $(".notification-tips span").html("This is a back-ordered item to be shipped on Mar 15-31, 2023.")
+  // } else if (isCarbonBikeBack != "false") {
+  //   $(".notification-tips span").html("This is a back-ordered item to be shipped on Feb 10-25, 2023.")
+  // }
+  $("div.sidebar__content").change(function () {
     backIndexArr.forEach((item) => {
       let index = item - 1;
       let isChange = false;
       let times = 10000;
       setTimeout(() => {
-        while ($(".product__description").eq(index) && ! isChange && times) {
-          if (! $(".product__description").eq(index).html().includes("<span>Back-ordered Item</span>")) {
+        while ($(".product__description").eq(index) && !isChange && times) {
+          if (!$(".product__description").eq(index).html().includes("<span>Back-ordered Item</span>")) {
             $(".product__description").eq(index).append("<span>Back-ordered Item</span>")
             isChange = true;
           }
@@ -493,97 +430,94 @@ window.uetq.push('event', 'begin_checkout', {
   })
 </script>
 
-<script>
+      <script>
   var ecommerce = {
     'transaction_id': '{{checkout.order_number | json}}',
     'affiliation': {{shop.name | json}},
-    'value': parseInt(
-      (Number({{checkout.total_price | json }})) / 100
-    ),
-    'tax': parseInt(
-      (Number({{checkout.tax_price | json }})) / 100
-    ),
-    'shipping': parseInt(
-      (Number({{checkout.shipping_price | json }})) / 100
-    ),
-    'subtotal': parseInt(
-      (Number({{checkout.subtotal_price | json }})) / 100
-    ),
-    'currency': {{checkout.currency | json}},{% for discount in checkout.discounts %}
-      'coupon' : {{discount.code | json}},
-      'discount' : {{discount.amount | money_without_currency | json}},{% endfor %}
+    'value': parseInt((Number({{checkout.total_price | json }})) / 100),
+    'tax': parseInt((Number({{checkout.tax_price | json }})) / 100),
+    'shipping': parseInt((Number({{checkout.shipping_price | json }})) / 100),
+    'subtotal': parseInt((Number({{checkout.subtotal_price | json }})) / 100),
+    'currency': {{checkout.currency | json}},
+    {% for discount in checkout.discounts %}
+    'coupon': {{discount.code | json}},
+    'discount'  : {{discount.amount | money_without_currency | json}},
+    {% endfor %}
     'email': {{checkout.email | json}},
-    'items': [{% for line_item in checkout.line_items %}{
-          'item_id': {{line_item.product.id | json}},
-          'item_variant': {{line_item.product.selected_or_first_available_variant.id | json}},
-          'item_name': {{line_item.product.title | json}},
-          'price': parseInt(
-            (Number({{line_item.product.price | json }})) / 100
-          ),
-          'item_brand': {{line_item.product.vendor | json}},
-          'item_category': {{line_item.product.type | json}},
-          'item_list_name': {{line_item.collection.title | json}},
-          'quantity': {{line_item.quantity | json}},
-          'discount': {{line_item.discount.code | json}}
-        },{% endfor %}]
-  };
+    'items':[{% for line_item in checkout.line_items %}{
+        'item_id'        : {{line_item.product.id | json}},                  
+        'item_variant'    : {{line_item.product.selected_or_first_available_variant.id | json}},             
+        'item_name'      : {{line_item.product.title | json}},
+        'price'           : parseInt((Number({{line_item.product.price | json }})) / 100),
+        'item_brand'      : {{line_item.product.vendor | json}},
+        'item_category'   : {{line_item.product.type | json}},
+        'item_list_name'  : {{line_item.collection.title | json}},
+        'quantity'        : {{line_item.quantity | json}},
+        'discount'		  : {{line_item.discount.code | json}}
+        },{% endfor %}],
+    };
 
-  console.log('ecommerce', ecommerce)
-  if (Shopify.Checkout.step) {
-    if (Shopify.Checkout.step.length > 0) {
-      if (Shopify.Checkout.step === 'contact_information') {
-        dataLayer.push({'event': 'begin_checkout', 'pageType': 'Customer Information', 'step': 1, ecommerce});
-      } else if (Shopify.Checkout.step === 'shipping_method') {
-        dataLayer.push({'event': 'add_shipping_info', 'pageType': 'Shipping Information', ecommerce});
-      } else if (Shopify.Checkout.step === "payment_method") {
-        dataLayer.push({'event': 'add_payment_info', 'pageType': 'Add Payment Info', ecommerce});
-      }
+    console.log('ecommerce', ecommerce)
+if(Shopify.Checkout.step){ 
+    if(Shopify.Checkout.step.length > 0){
+        if (Shopify.Checkout.step === 'contact_information'){
+            dataLayer.push({
+                'event'    :'begin_checkout',
+                'pageType' :'Customer Information',
+                'step': 1,
+              ecommerce
+            });
+        }else if (Shopify.Checkout.step === 'shipping_method'){
+            dataLayer.push({
+                'event'    :'add_shipping_info',
+                'pageType' :'Shipping Information',
+                ecommerce
+            });
+        }else if( Shopify.Checkout.step === "payment_method" ){
+            dataLayer.push({
+                'event'    :'add_payment_info',
+                'pageType' :'Add Payment Info',
+              ecommerce
+            });
+        }
     }
+                
+    /** DATALAYER: Transaction */
+    if(Shopify.Checkout.page == "thank_you"){
+        dataLayer.push({
+        'pageType' :'Transaction',
+        'event'    :'purchase',
+        ecommerce
+        });
+    }               
+}
 
-/** DATALAYER: Transaction */
-    if (Shopify.Checkout.page == "thank_you") {
-      dataLayer.push({'pageType': 'Transaction', 'event': 'purchase', ecommerce});
-    }
-  }
-
-  function fetchBuried(name = '', type = '', data = {}, isSendBeacon = false) {
-    const body = {
+function fetchBuried (name = '', type = '', data = {}, isSendBeacon = false) {
+  const body = {
       module: "website-us",
       trace_name: `${name}-us`,
-      trace_type: `${type}-${
-        document.body.clientWidth > 768
-          ? 'pc'
-          : 'mb'
-        }` + (
-          window.__SHOPIFY_CLI_ENV__
-            ? ':test'
-            : ''
-        ),
+      trace_type: `${type}-${document.body.clientWidth > 768 ? 'pc' : 'mb'}` + (window.__SHOPIFY_CLI_ENV__ ? ':test' : ''),
       extras: data
-    }
-
-    return isSendBeacon
-      ? navigator.sendBeacon('https://api.newurtopia.com/third_part/traces', JSON.stringify(body))
-      : fetch("https://api.newurtopia.com/third_part/traces", {
-        method: "POST",
-        body: JSON.stringify(body),
-        headers: {
-          "Content-Type": "application/json"
-        }
-      })
   }
 
+  return isSendBeacon ? navigator.sendBeacon('https://api.newurtopia.com/third_part/traces', JSON.stringify(body)) : fetch("https://api.newurtopia.com/third_part/traces", {
+      method: "POST",
+      body: JSON.stringify(body),
+      headers: {
+          "Content-Type": "application/json",
+      },
+  })
+}
 
 
-  $(document).on('page:load', function(e) {
-    console.log('e', e)
 
-    if (window.sessionStorage.clicked_klarna_checkout_button) {
-      showMiniDialog(`<div class="klarna-dialog">${
-        Checkout.$('.klarna-dialog').html()
-      }</div>`)
+$(document).on('page:load', function(e) {
+  console.log('e', e)
 
-/*
+  if (window.sessionStorage.clicked_klarna_checkout_button) {
+    showMiniDialog(`<div class="klarna-dialog">${Checkout.$('.klarna-dialog').html()}</div>`)
+
+    /*
     fetchBuried('a-b-test', 'order-page-klarna', {
       action_type: window.sessionStorage.carbon_one_a_b_test_flag,
       payment_step: Shopify.Checkout.step,
@@ -592,7 +526,7 @@ window.uetq.push('event', 'begin_checkout', {
       ecommerce
     })
     */
-    }
+  }
 
-  });
+});
 </script>
