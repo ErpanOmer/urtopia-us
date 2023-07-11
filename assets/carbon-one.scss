@@ -1295,6 +1295,10 @@ $sale_text_color: #236ABE;
                         display: grid;
                         grid-template-columns: 2fr 1fr 1fr 1fr;
                     }
+
+                    .line + .line {
+                        margin-top: 20px;
+                    }
                 }
             }
         }
