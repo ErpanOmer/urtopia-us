@@ -1293,7 +1293,7 @@ $sale_text_color: #236ABE;
 
                     .line {
                         display: grid;
-                        grid-template-columns: repeat(4, 1fr);
+                        grid-template-columns: 2fr 1fr 1fr 1fr;
                     }
                 }
             }
