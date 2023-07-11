@@ -1897,6 +1897,7 @@ $sale_text_color: #236ABE;
     }
 
     .size-and-specs {
+        margin-top: 40px;
         .centeral-content {
             padding: 0 4%;
             .item {
@@ -1923,7 +1924,7 @@ $sale_text_color: #236ABE;
 
                     .lines {
                         margin-top: 30px;
-                        
+
                         .line {
                             grid-template-columns: 1.5fr 1fr 1fr 1fr;
                         }
