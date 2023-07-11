@@ -1918,14 +1918,9 @@ $sale_text_color: #236ABE;
                         order: 1;
                         font-size: 12px;
 
-                        .text {
-                            div + div {
-                                margin-top: 10px !important;
-                                
-                            }
-
-                            .u17DemiBold_v2 {
-                                font-size: 14px;
+                        .lines {
+                            .line {
+                                grid-template-columns: 1.5fr 1fr 1fr 1fr;
                             }
                         }
                     }
