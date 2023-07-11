@@ -1926,6 +1926,10 @@ $sale_text_color: #236ABE;
                             grid-template-columns: 1.5fr 1fr 1fr 1fr;
                         }
 
+                        .line + .line {
+                            margin-top: 10px;
+                        }
+
                         .u17DemiBold_v2 {
                             font-size: 14px;
                         }
