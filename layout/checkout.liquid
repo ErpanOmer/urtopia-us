@@ -244,7 +244,7 @@ function closeMiniDialog() {
 
   const html = Checkout.$('.klarna-dialog').html()
 
-  getSearchValues().show_klarna_dialog && showMiniDialog(`<div class="klarna-dialog">${html}</div>`)
+  // getSearchValues().show_klarna_dialog && showMiniDialog(`<div class="klarna-dialog">${Checkout.$('.klarna-dialog').html()}</div>`)
 
   setTimeout(() => {
     Checkout.$('.klarna').on('click', () => showMiniDialog(`<div class="klarna-dialog">${html}</div>`))
@@ -511,10 +511,13 @@ function fetchBuried (name = '', type = '', data = {}, isSendBeacon = false) {
 
 
 
-/*$(document).on('page:load', function(e) {
+$(document).on('page:load', function(e) {
   console.log('e', e)
 
   if (window.sessionStorage.clicked_klarna_checkout_button) {
+    showMiniDialog(`<div class="klarna-dialog">${Checkout.$('.klarna-dialog').html()}</div>`)
+
+    /*
     fetchBuried('a-b-test', 'order-page-klarna', {
       action_type: window.sessionStorage.carbon_one_a_b_test_flag,
       payment_step: Shopify.Checkout.step,
@@ -522,8 +525,8 @@ function fetchBuried (name = '', type = '', data = {}, isSendBeacon = false) {
       check_id: ecommerce.transaction_id,
       ecommerce
     })
+    */
   }
 
 });
-*/
 </script>
