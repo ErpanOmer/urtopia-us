@@ -2209,3 +2209,21 @@ document.querySelectorAll(".Body>table").forEach(item=>{
 {% endschema %}
 
 {% render 'carbon-one-extra-code' %}
+<script>
+  $('.size-and-specs .u36DemiBold_v2').click(function () {
+        $(this)
+            .siblings('.size-and-specs .content')
+            .slideToggle()
+            .parent()
+            .siblings()
+            .find('.size-and-specs .content')
+            .slideUp();
+        $(this).children('img').toggleClass('down');
+        $(this)
+            .parent()
+            .siblings()
+            .find('.size-and-specs .u36DemiBold_v2')
+            .children('img')
+            .addClass('down');
+    });
+</script>
