@@ -40,22 +40,22 @@
     <script type="text/javascript">
       (function (c, l, a, r, i, t, y) {
       c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
-                  t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
-                  y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
-                })(window, document, "clarity", "script", "bnj03r1wrv");
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+          })(window, document, "clarity", "script", "bnj03r1wrv");
     </script>
     <!-- Taboola Pixel Code -->
     <script type='text/javascript'>
       window._tfa = window._tfa || [];
       window._tfa.push({ notify: 'event', name: 'page_view', id: 1410404 });
-                !function (t, f, a, x) {
-                  if (!document.getElementById(x)) {
-                    t.async = 1; t.src = a; t.id = x; f.parentNode.insertBefore(t, f);
-                  }
-                }(document.createElement('script'),
-                  document.getElementsByTagName('script')[0],
-                  '//cdn.taboola.com/libtrc/unip/1410404/tfa.js',
-                  'tb_tfa_script');
+          !function (t, f, a, x) {
+            if (!document.getElementById(x)) {
+              t.async = 1; t.src = a; t.id = x; f.parentNode.insertBefore(t, f);
+            }
+          }(document.createElement('script'),
+            document.getElementsByTagName('script')[0],
+            '//cdn.taboola.com/libtrc/unip/1410404/tfa.js',
+            'tb_tfa_script');
     </script>
     <!-- End of Taboola Pixel Code -->
 
@@ -95,7 +95,8 @@ window.uetq.push('event', 'begin_checkout', {
   "currency": "USD"
 });
 </script>
-    <!-- End of Bing UET checkout --> <link
+    <!-- End of Bing UET checkout -->
+    <link
       rel="stylesheet"
       href="https://use.typekit.net/fzb3fxo.css"
       onload="this.onload=null;this.rel='stylesheet'"> {{ 'checkout.scss.css' | asset_url | stylesheet_tag }}
@@ -285,7 +286,8 @@ window.uetq.push('event', 'begin_checkout', {
     function showMiniDialog(html = '') {
       Checkout.$('body .mini-dialog').remove()
       setTimeout(() => {
-        Checkout.$("body").append(`<div class="mini-dialog" style="display: flex;">${html}</div>`){% comment %}setTimeout(() => {
+        Checkout.$("body").append(`<div class="mini-dialog" style="display: flex;">${html}</div>`){% comment %}
+          setTimeout(() => {
             $('body .mini-dialog > div').on('click', e => {
               e.stopPropagation();
               return false;
@@ -507,8 +509,10 @@ window.uetq.push('event', 'begin_checkout', {
     'subtotal': parseInt(
       (Number({{checkout.subtotal_price | json }})) / 100
     ),
-    'currency': {{checkout.currency | json}},{% for discount in checkout.discounts %}'coupon' : {{discount.code | json}},
-      'discount' : {{discount.amount | money_without_currency | json}},{% endfor %}'email': {{checkout.email | json}},
+    'currency': {{checkout.currency | json}},{% for discount in checkout.discounts %}
+      'coupon' : {{discount.code | json}},
+      'discount' : {{discount.amount | money_without_currency | json}},{% endfor %}
+    'email': {{checkout.email | json}},
     'items': [{% for line_item in checkout.line_items %}{
           'item_id': {{line_item.product.id | json}},
           'item_variant': {{line_item.product.selected_or_first_available_variant.id | json}},
