@@ -1294,6 +1294,10 @@ $sale_text_color: #236ABE;
                     .line {
                         display: grid;
                         grid-template-columns: 2fr 1fr 1fr 1fr;
+
+                        span:not(:first-child) {
+                            text-align: center;
+                        }
                     }
 
                     .line + .line {
