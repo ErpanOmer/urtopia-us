@@ -1286,6 +1286,8 @@ $sale_text_color: #236ABE;
             .sizes {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
+                padding: 30px 0;
+                align-items: center;
 
                 .lines {
                     display: flex;
