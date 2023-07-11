@@ -26,28 +26,28 @@ const global_config = {
         // carbon 1s
         43556899651832: 'Ships within <span>10 business days</span> from L.A. warehouse.',
         //lb l
-        43556896014584: 'Ships between <span>July 10-20, 2023 </span>from L.A. warehouse.',
+        43556896014584: 'Ships between <span>August 1-15, 2023 </span>from L.A. warehouse.',
         //pb s
-        43556899684600: 'Ships between <span>July 10-20, 2023 </span>from L.A. warehouse.',
+        43556899684600: 'Ships between <span>August 1-15, 2023 </span>from L.A. warehouse.',
         //pw s
-        43556899750136: 'Ships within <span>10 business days</span> from L.A. warehouse.',
+        43556899750136: 'Ships between <span>August 1-15, 2023 </span>from L.A. warehouse.',
         //pw l
-        43556899881208: 'Ships within <span>3 business days</span> from L.A. warehouse.',
+        43556899881208: 'Ships between <span>August 1-15, 2023 </span>from L.A. warehouse.',
         //sb m
-        43556895916280: 'Ships between <span>July 10-20, 2023 </span>from L.A. warehouse.',
+        43556895916280: 'Ships within <span>5 business days</span> from L.A. warehouse.',
         //pb m
-        43556896047352: 'Ships within <span>10 business days </span>from L.A. warehouse.',
+        43556896047352: 'Ships within <span>5 business days</span> from L.A. warehouse.',
         43556899619064: 'Ships within <span>10 business days </span>from L.A. warehouse.',
         43645495345400: 'Ships within <span>10 business days </span>from L.A. warehouse.',
         //pw m
-        43556899815672: 'Ships between <span>July 10-20, 2023 </span>from L.A. warehouse.',
+        43556899815672: 'Ships within <span>5 business days</span> from L.A. warehouse.',
         //lb m
-        43556895981816: 'Ships between <span>July 10-20, 2023 </span>from L.A. warehouse.',
+        43556895981816: 'Ships within <span>5 business days</span> from L.A. warehouse.',
         43645495378168: 'Ships within <span>10 business days </span>from L.A. warehouse.',
         //sb l
-        43556895949048: 'Ships between <span>July 10-20, 2023 </span>from L.A. warehouse.',
+        43556895949048: 'Ships within <span>5 business days</span> from L.A. warehouse.',
         //pb l
-        43556896080120: 'Ships between <span>July 10-20, 2023 </span>from L.A. warehouse.',
+        43556896080120: 'Ships between <span>August 1-15, 2023 </span>from L.A. warehouse.',
         43645495410936: 'Ships within <span>10 business days </span>from L.A. warehouse.',
         //日期写法： 'Ships between <span>July 10-20, 2023 </span>from L.A. warehouse.',
         // chord

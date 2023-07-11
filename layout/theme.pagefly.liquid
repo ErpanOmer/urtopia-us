@@ -150,6 +150,38 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         })
     }
 
+    // 查询url 参数
+    function getSearchValues () {
+      const search = {}
+
+      // 页面url
+      const url = new URL(location.href)
+
+      for (const [k, v] of url.searchParams.entries()) {
+          search[k] = v
+      }
+
+      return search
+    }
+
+    function throttle(method, delay, duration){
+        var timer=null;
+        var begin=new Date();    
+        return function(){                
+            var context=this, args=arguments;
+            var current=new Date();        
+            clearTimeout(timer);
+            if(current-begin>=duration){
+                method.apply(context,args);
+                begin=current;
+            }else{
+                timer=setTimeout(function(){
+                    method.apply(context,args);
+                },delay);
+            }
+        }
+    }
+
     // 立即执行
     (w => {
       const falg = w.sessionStorage.carbon_one_a_b_test_flag
@@ -302,6 +334,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     *::after {
     box-sizing: inherit;
     }
+
+    :root {
+        --sale-color1: #49B3F7;
+        --sale-color2: #7EDAFF;
+        --sale-color3: #009BFF;
+        --sale-color4: #009BFF;
+      }
 
     html {
     box-sizing: border-box;
