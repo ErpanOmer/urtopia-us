@@ -1288,11 +1288,12 @@ $sale_text_color: #236ABE;
                 grid-template-columns: 1fr 1fr;
 
                 .lines {
-                    display: grid;
-                    grid-template-columns: repeat(4, 1fr);
-    
+                    display: flex;
+                    flex-direction: column;
+
                     .line {
-    
+                        display: grid;
+                        grid-template-columns: repeat(4, 1fr);
                     }
                 }
             }
