@@ -52,5 +52,9 @@ const global_config = {
         //日期写法： 'Ships between <span>July 10-20, 2023 </span>from L.A. warehouse.',
         // chord
         // chord x
+    },
+    carbon_bike_config: {
+        // carbon 车默认显示 variant_id, 只有 url 上的 variant 参数为空的时候生效
+        default_variant: 43556895916280,
     }
 }

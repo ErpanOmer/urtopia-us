@@ -1328,7 +1328,14 @@ function addAllToCart(parse, show = false) {
       const find = findVariantFromId(search.variant)
       changeVariant(find.option1, find.option2, find.option3) 
   } else {
-      const find = findAvailableVariant()
+    const default_variant = global_config.carbon_bike_config.default_variant
+    let find = findVariantFromId(default_variant)
+
+    // 如果默认 variant 也不可用，那晒显出能用的variant
+    if (!find.available) {
+      find = findAvailableVariant()
+    }
+
       changeVariant(find.option1, find.option2, find.option3) 
   }
 
