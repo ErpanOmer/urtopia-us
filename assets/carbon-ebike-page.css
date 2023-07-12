@@ -96,6 +96,62 @@
     .menu-title {
         margin-left: 0px;
     }
+
+
+    .new_mobile_sporty {
+        display: flex;
+        align-items: center;
+      }
+      .new_mobile_sporty_container{
+        height: 100%;
+      }
+      .new_mobile_sporty_container .new_mobile_top {
+        opacity: 0;
+        transform: translateY(100px);
+        padding: 0 8%;
+        padding-top: 30px;
+      }
+      .new_mobile_sporty_container h2 {
+        color: #fff;
+        font: normal normal 600 24px/30px Urbane;
+      }
+      .new_mobile_sporty_container .title {
+        margin: 12px 0px;
+        display: inline-block;
+        background-image: linear-gradient(90deg, #178afd 0%, #1ffff6 100%);
+        -webkit-background-clip: text;
+        color: transparent;
+        font-weight: bold;
+        font-size: 14px;
+      }
+      .new_mobile_sporty_container p > span {
+        font: normal normal 600 36px/28px Urbane;
+      }
+      .new_mobile_sporty_container p {
+        color: #fff;
+        font-size: 16px;
+        line-height: 24px;
+      }
+      .new_mobile_sporty_container .videobox {
+        position: relative;
+      }
+      .new_mobile_sporty_container video {
+        width: 100%;
+      }
+      .new_mobile_sporty_container .mbDesignTestBtn {
+        position: absolute;
+        z-index: 1;
+        top: 40px;
+        left: 8%;
+        color: #dedede;
+        background: #fd4b17;
+        border-radius: 20px;
+        padding: 8px 0px;
+        font: normal normal 500 16px/22px urbane;
+        text-decoration: none;
+        width: 84%;
+        text-align: center;
+      }
 }
 
 /* 修改ebike导航条样式 */
