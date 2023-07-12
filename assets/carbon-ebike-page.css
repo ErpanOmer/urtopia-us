@@ -102,7 +102,7 @@
         display: flex;
         align-items: center;
         transform: translateY(5%);
-        height: 700px;
+        min-height: 700px;
       }
       .new_mobile_sporty_container{
         height: 100%;
