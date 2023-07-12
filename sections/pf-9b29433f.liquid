@@ -919,79 +919,6 @@
   const styles = {}
   const sizes = {}
   const models = {}
-
-  const medias = [
-      {
-          text: `“Best Electric Bike for 2022”`,
-          img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/cnet-1671527740909.png"
-      },
-      {
-          text: `“One of the smartest and lightest ebike”`,
-          img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/img_v2_1f5341a218124ab39b4bb5cd49cc335g-1668500914564.png"
-      },
-      {
-          text: `“Like a phone’s than a next-gen fixie”`,
-          img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/mask-group-181222x-1672131955609.png"
-      },
-      {
-          text: `“Does phone tech better than some phones”`,
-          img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/img_v2_c977d9efae3a4c46ad2ddac55c5dabfg-1668500914568.png"
-      },
-      {
-          text: `“It’s incredibly fun to ride”`,
-          img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/20221227174330-1672134242872.png"
-      }
-  ]
-
-  const swiper_series = {
-      "Carbon 1 · 250W · Carbon Belt": {
-        Sirius: [
-          "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18718.png?v=1688710795",
-          "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18719.png?v=1688710795",
-          "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18720.png?v=1688710795"
-        ],
-        Lyra: [
-            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18721.png?v=1688710795'
-        ],
-        "Midnight in Paris": [
-            "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18722.png?v=1688710795"
-        ],
-        Vanilla: [],
-        commonSwiper: [
-          "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18729.png?v=1688710794",
-          "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18728.png?v=1688710795",
-          "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18727.png?v=1688710794",
-          "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18726.png?v=1688710795",
-          "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18725.png?v=1688710795",
-          "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18724.png?v=1688710795",
-          "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/ssss.png?v=1688710795"
-        ]
-      },
-      "Carbon 1s · 350W · Shimano 7-Speed": {
-        Sirius: [
-          "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18748.png?v=1688711251",
-          "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18749.png?v=1688711251",
-        ],
-        Lyra: [
-            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18746.png?v=1688711251'
-        ],
-        Vanilla: [
-          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18750.png?v=1688711251'
-        ],
-        "Midnight in Paris": [
-            "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18747.png?v=1688711251"
-        ],
-        commonSwiper: [
-          "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18741.png?v=1688711251",
-          "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/45.png?v=1688711251",
-          "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18739.png?v=1688711251",
-          "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18738.png?v=1688711251",
-          "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18737.png?v=1688711251",
-          "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18736.png?v=1688711251",
-          "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/ssss_42ab57d5-1e69-4b74-8cba-ffc1452a3dec.png?v=1688711251"
-        ]
-      }
-  }
   
   const leftSwiper = new Swiper(".product .left-swiper", {
       direction: 'vertical',
@@ -1080,7 +1007,7 @@
 
           let swiper_arr = []
 
-          swiper_arr = swiper_arr.concat(swiper_series[model][style], swiper_series[model]['commonSwiper'])
+          swiper_arr = swiper_arr.concat(global_config.carbon_bike_config.product_images[model][style], global_config.carbon_bike_config.product_images[model]['commonSwiper'])
 
           $('.product .right-swiper .swiper-wrapper').html(swiper_arr.map((s, i) => {
               const index = i % 5
@@ -1088,8 +1015,8 @@
               return  `<div class="swiper-slide">
                           <img src="${s}">
                           <div>
-                              <span class="u20DemiBold_v2">${medias[index].text}</span>
-                              <img src="${medias[index].img}">
+                              <span class="u20DemiBold_v2">${global_config.carbon_bike_config.product_media_images[index].text}</span>
+                              <img src="${global_config.carbon_bike_config.product_media_images[index].img}">
                           </div>
                       </div>`
             }).join(''))
