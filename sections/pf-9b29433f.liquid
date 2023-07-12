@@ -1007,7 +1007,7 @@
 
           let swiper_arr = []
 
-          swiper_arr = swiper_arr.concat(global_config.carbon_bike_config.product_images[model][style], global_config.carbon_bike_config.product_images[model]['commonSwiper'])
+          swiper_arr = swiper_arr.concat(global_config.carbon_order_page_config.product_images[model][style], global_config.carbon_order_page_config.product_images[model]['commonSwiper'])
 
           $('.product .right-swiper .swiper-wrapper').html(swiper_arr.map((s, i) => {
               const index = i % 5
@@ -1015,8 +1015,8 @@
               return  `<div class="swiper-slide">
                           <img src="${s}">
                           <div>
-                              <span class="u20DemiBold_v2">${global_config.carbon_bike_config.product_media_images[index].text}</span>
-                              <img src="${global_config.carbon_bike_config.product_media_images[index].img}">
+                              <span class="u20DemiBold_v2">${global_config.carbon_order_page_config.product_media_images[index].text}</span>
+                              <img src="${global_config.carbon_order_page_config.product_media_images[index].img}">
                           </div>
                       </div>`
             }).join(''))
@@ -1255,7 +1255,7 @@ function addAllToCart(parse, show = false) {
       const find = findVariantFromId(search.variant)
       changeVariant(find.option1, find.option2, find.option3) 
   } else {
-    const default_variant = global_config.carbon_bike_config.default_variant
+    const default_variant = global_config.carbon_order_page_config.default_variant
     let find = findVariantFromId(default_variant)
 
     // 如果默认 variant 也不可用，那晒显出能用的variant

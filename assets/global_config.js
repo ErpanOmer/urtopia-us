@@ -53,7 +53,8 @@ const global_config = {
         // chord
         // chord x
     },
-    carbon_bike_config: {
+    // carbon 产品页面配置
+    carbon_order_page_config: {
         // carbon 车默认显示 variant_id, 只有 url 上的 variant 参数为空的时候生效
         default_variant: 43556895916280,
         // 产品系列图
