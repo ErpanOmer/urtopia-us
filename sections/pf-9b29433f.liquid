@@ -1,5 +1,7 @@
-<link rel="stylesheet" href="{{ 'pagefly.9b29433f.css' | asset_url }}">
-<link rel="stylesheet" href="{{ 'carbon-one.scss.css' | asset_url }}">
+{{ 'pagefly-main.css' | asset_url | stylesheet_tag: preload: true }}
+{{ 'pagefly.9b29433f.css' | asset_url | stylesheet_tag: preload: true }}
+{{ 'carbon-one.scss.css' | asset_url | stylesheet_tag: preload: true }}
+
 <style>
   .product .centeral-content .product-panel .options .Model div[attribute*="350W"] {
     border-color: var(--sale-color3);
