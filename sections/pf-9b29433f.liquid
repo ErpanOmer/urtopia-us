@@ -1245,165 +1245,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 </style></div></div></div></div></div></div>
 
 
-<div data-section-id="pf-09f3" data-pf-type="Section" class="sc-fmciRz bheIgq pf-418_"><div style="--cw:1170px" class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-419_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-420_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-421_"><div class="world-title">
-  Users Like You, Worldwide
-</div>
-<div id="world-swiper" class="swiper">
-  <div class="swiper-wrapper swiper-no-swiping">
-	<div class="swiper-slide slide">
-	  <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/img_77662x-1672048952210.jpg"/>
-		<div class="description">
-		  <span>Karina Schwirtlich</span>
-		  “it is much easier to use :) Going uphill is so much easier, I could even read a book while doing this.”
-		</div>
-	</div>
-	<div class="swiper-slide slide">
-	  <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/screen-shot-20221018-at-72910-pm-1666785985034.jpg"/>
-		<div class="description">
-		  <span>Rex Peters</span>
-		  “I got 4 other brands and I still learning the Urtopia but so far my favorite e-bike . Look how far technology has come so fast . Happy and safe riding.”
-		</div>
-	</div>
-	<div class="swiper-slide slide">
-	  <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/072a06992x-1672048952203.jpg"/>
-		<div class="description">
-		  <span>v.wrightfitness</span>
-		  “The smoothest riding e-bike I have tried! Thank you.”
-		</div>
-	</div>
-	<div class="swiper-slide slide">
-	  <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/5590a91dd1b546e99f5f381a1c1aa0c4-1666785985022.jpg"/>
-		<div class="description">
-		  <span>Chris</span>
-		  “Outstanding performance. I love this bike.”
-		</div>
-	</div>
-	<div class="swiper-slide slide">
-	  <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/85831919d8ee4553808b75fb1ffc469e-1666785985025.jpg"/>
-		<div class="description">
-		  <span>Rino Folisi</span>
-		  “Finally Endlich vereint.”
-		</div>
-	</div>
-  </div>
-</div>
-<style>
-  .world-title{
-	color:#fff;
-	text-align:center;
-	font: normal normal 600 42px/58px Urbane;
-	margin-bottom:55px;
-  }
-  #world-swiper{
-	
-	z-index:0;
-  }
-  #world-swiper .slide{
-	width:30%!important;
-  }
-  #world-swiper img{
-	width:80%;
-	height:auto;
-	margin-bottom:28px;
-  }
-  #world-swiper .description{
-	color:#fff;
-	font: italic normal 300 16px/19px Urbane;
-	width:80%;
-  }
-  
-  #world-swiper .description span{
-	font-weight:bold;
-  }
-   #world-swiper .swiper-pagination {
-	position: static;
-    width: auto;
-    display: flex;
-    align-items: flex-end;
-    font-size: 30px;
-    font-weight: 550;
-    color: #161c1f;
-    line-height: 42px;
-  }
-  #world-swiper .btnWraped {
-	display: flex;
-	width: 900px;
-	margin: 0 auto;
-	transform: translateY(-100%);
-	position:relative;
-	z-index:2;
-  }
-      .swiper .swiper-wrapper {
-        -webkit-transition-timing-function: linear !important; /*之前是ease-out*/
-        -moz-transition-timing-function: linear !important;
-        -ms-transition-timing-function: linear !important;
-        -o-transition-timing-function: linear !important;
-        transition-timing-function: linear !important;
-      }
-  @media screen and (max-width:768px){
-	#world-swiper .slide{
-	  width:80%!important;
-	}
-	.world-title{
-	  font: normal normal 600 36px/44px Urbane;
-	}
-  }
-</style>
-<script>
-  let slideNo = 0;
-  var swiperSectionWorld = new Swiper("#world-swiper", {
-		autoplay: {
-          delay: 0,
-          disableOnInteraction: false
-        },
-		noSwiping:true,
-		freeMode:true,
-        loop: true,
-        speed: 6000,
-        slidesPerView: "auto", 
-  });
-  let nextTransForm = "";
-      // 轮播图从暂停位置移动到原本应到的位置所用的时间
-      let nextTime = 0;
-	let slideWidth = 165;
-  $("#world-swiper").hover(()=>{
-    	slideWidth = document.querySelector("#world-swiper .swiper-slide.slide").offsetWidth;
-        nextTransForm = document.querySelector("#world-swiper .swiper-wrapper").style.transform;
-        // 轮播图原本应移动到的位置
-        let nextTransPosition =
-          -1 *
-          parseInt(
-            document.querySelector("#world-swiper .swiper-wrapper")
-              .style.transform.split("translate3d(")[1]
-              .split("px")[0]
-          );
-
-        // 鼠标悬浮时时轮播图位置
-        let nowTransPosition =
-          -1 *
-          parseInt(
-            window
-              .getComputedStyle(
-                document.querySelector("#world-swiper .swiper-wrapper"),
-                false
-              )
-              ["transform"].split("1, ")[2]
-              .split(",")[0]
-          );
-        let nowTransForm = window.getComputedStyle(
-            document.querySelector("#world-swiper .swiper-wrapper"),
-          false
-        )["transform"];
-        nextTime = 6000 * ((nextTransPosition - nowTransPosition) / slideWidth);
-        document.querySelector("#world-swiper .swiper-wrapper").style.transform = nowTransForm;
-        document.querySelector("#world-swiper .swiper-wrapper").style.transitionDuration = "0ms";
-    swiperSectionWorld.autoplay.stop();
-  },()=>{
-        document.querySelector("#world-swiper .swiper-wrapper").style.transform = nextTransForm;
-        document.querySelector("#world-swiper .swiper-wrapper").style.transitionDuration = nextTime+"ms";
-	swiperSectionWorld.autoplay.start();
-  })
-</script></div></div></div></div></div></div><div data-section-id="pf-616e" data-pf-type="Section" class="sc-fmciRz bheIgq pf-422_"><div style="--cw:1280px" class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-423_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-424_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-425_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-427_">Smartest E-Bike Ever</span></h3></div></div></div><div class="sc-ezbkAF A-dmbO pf-428_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-429_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-430_"><div class="component" onclick="openComponent(0)">
+<div data-section-id="pf-616e" data-pf-type="Section" class="sc-fmciRz bheIgq pf-422_"><div style="--cw:1280px" class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-423_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-424_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-425_"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-427_">Smartest E-Bike Ever</span></h3></div></div></div><div class="sc-ezbkAF A-dmbO pf-428_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-429_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-430_"><div class="component" onclick="openComponent(0)">
   <div class="img-container">
 	<img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/finger_print-1.jpg?v=1675741851" srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/finger_print-1.jpg?v=1675741851 768w" width="737" height="432" sizes="(min-width: 1536px) 1536px, (min-width: 1024px) 1280px, (min-width: 640px) 768px, 320px" loading="lazy" data-pf-type="Image3" class="hover-bigger pf-hide">
 	<img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/finger_print-1.jpg?v=1675741851"  loading="lazy" data-pf-type="Image3" class="pf-lg-hide pf-md-hide pf-sm-hide hover-bigger">
@@ -1845,9 +1687,165 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
   {% render 'pf-bbc90aa3' %}
   {% endif %}</div>
 
-
-
-
+  <div data-section-id="pf-09f3" data-pf-type="Section" class="sc-fmciRz bheIgq pf-418_"><div style="--cw:1170px" class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-419_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-420_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-421_"><div class="world-title">
+    Users Like You, Worldwide
+  </div>
+  <div id="world-swiper" class="swiper">
+    <div class="swiper-wrapper swiper-no-swiping">
+    <div class="swiper-slide slide">
+      <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/img_77662x-1672048952210.jpg"/>
+      <div class="description">
+        <span>Karina Schwirtlich</span>
+        “it is much easier to use :) Going uphill is so much easier, I could even read a book while doing this.”
+      </div>
+    </div>
+    <div class="swiper-slide slide">
+      <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/screen-shot-20221018-at-72910-pm-1666785985034.jpg"/>
+      <div class="description">
+        <span>Rex Peters</span>
+        “I got 4 other brands and I still learning the Urtopia but so far my favorite e-bike . Look how far technology has come so fast . Happy and safe riding.”
+      </div>
+    </div>
+    <div class="swiper-slide slide">
+      <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/072a06992x-1672048952203.jpg"/>
+      <div class="description">
+        <span>v.wrightfitness</span>
+        “The smoothest riding e-bike I have tried! Thank you.”
+      </div>
+    </div>
+    <div class="swiper-slide slide">
+      <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/5590a91dd1b546e99f5f381a1c1aa0c4-1666785985022.jpg"/>
+      <div class="description">
+        <span>Chris</span>
+        “Outstanding performance. I love this bike.”
+      </div>
+    </div>
+    <div class="swiper-slide slide">
+      <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/85831919d8ee4553808b75fb1ffc469e-1666785985025.jpg"/>
+      <div class="description">
+        <span>Rino Folisi</span>
+        “Finally Endlich vereint.”
+      </div>
+    </div>
+    </div>
+  </div>
+  <style>
+    .world-title{
+    color:#fff;
+    text-align:center;
+    font: normal normal 600 42px/58px Urbane;
+    margin-bottom:55px;
+    }
+    #world-swiper{
+    
+    z-index:0;
+    }
+    #world-swiper .slide{
+    width:30%!important;
+    }
+    #world-swiper img{
+    width:80%;
+    height:auto;
+    margin-bottom:28px;
+    }
+    #world-swiper .description{
+    color:#fff;
+    font: italic normal 300 16px/19px Urbane;
+    width:80%;
+    }
+    
+    #world-swiper .description span{
+    font-weight:bold;
+    }
+     #world-swiper .swiper-pagination {
+    position: static;
+      width: auto;
+      display: flex;
+      align-items: flex-end;
+      font-size: 30px;
+      font-weight: 550;
+      color: #161c1f;
+      line-height: 42px;
+    }
+    #world-swiper .btnWraped {
+    display: flex;
+    width: 900px;
+    margin: 0 auto;
+    transform: translateY(-100%);
+    position:relative;
+    z-index:2;
+    }
+        .swiper .swiper-wrapper {
+          -webkit-transition-timing-function: linear !important; /*之前是ease-out*/
+          -moz-transition-timing-function: linear !important;
+          -ms-transition-timing-function: linear !important;
+          -o-transition-timing-function: linear !important;
+          transition-timing-function: linear !important;
+        }
+    @media screen and (max-width:768px){
+    #world-swiper .slide{
+      width:80%!important;
+    }
+    .world-title{
+      font: normal normal 600 36px/44px Urbane;
+    }
+    }
+  </style>
+  <script>
+    let slideNo = 0;
+    var swiperSectionWorld = new Swiper("#world-swiper", {
+      autoplay: {
+            delay: 0,
+            disableOnInteraction: false
+          },
+      noSwiping:true,
+      freeMode:true,
+          loop: true,
+          speed: 6000,
+          slidesPerView: "auto", 
+    });
+    let nextTransForm = "";
+        // 轮播图从暂停位置移动到原本应到的位置所用的时间
+        let nextTime = 0;
+    let slideWidth = 165;
+    $("#world-swiper").hover(()=>{
+        slideWidth = document.querySelector("#world-swiper .swiper-slide.slide").offsetWidth;
+          nextTransForm = document.querySelector("#world-swiper .swiper-wrapper").style.transform;
+          // 轮播图原本应移动到的位置
+          let nextTransPosition =
+            -1 *
+            parseInt(
+              document.querySelector("#world-swiper .swiper-wrapper")
+                .style.transform.split("translate3d(")[1]
+                .split("px")[0]
+            );
+  
+          // 鼠标悬浮时时轮播图位置
+          let nowTransPosition =
+            -1 *
+            parseInt(
+              window
+                .getComputedStyle(
+                  document.querySelector("#world-swiper .swiper-wrapper"),
+                  false
+                )
+                ["transform"].split("1, ")[2]
+                .split(",")[0]
+            );
+          let nowTransForm = window.getComputedStyle(
+              document.querySelector("#world-swiper .swiper-wrapper"),
+            false
+          )["transform"];
+          nextTime = 6000 * ((nextTransPosition - nowTransPosition) / slideWidth);
+          document.querySelector("#world-swiper .swiper-wrapper").style.transform = nowTransForm;
+          document.querySelector("#world-swiper .swiper-wrapper").style.transitionDuration = "0ms";
+      swiperSectionWorld.autoplay.stop();
+    },()=>{
+          document.querySelector("#world-swiper .swiper-wrapper").style.transform = nextTransForm;
+          document.querySelector("#world-swiper .swiper-wrapper").style.transitionDuration = nextTime+"ms";
+    swiperSectionWorld.autoplay.start();
+    })
+  </script></div></div></div></div></div></div>
 
 
 <div data-section-id="pf-6c29" data-pf-type="Section" class="sc-fmciRz bheIgq pf-870_"><div style="--cw:1280px" class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-871_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-872_"><div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-873_"><div class="pf-judme">{% include "judgeme_widgets", widget_type: "judgeme_review_widget", concierge_install: false %}</div></div></div></div></div></div></div><div data-section-id="pf-5df2" data-pf-type="Section" class="sc-fmciRz bheIgq pf-874_"><div style="--cw:1920px" class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-875_ pf-r pf-c-cm pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:4;--c-md:4;--c-lg:4"><div data-href="https://newurtopiahelp.zendesk.com/hc/en-us" data-target="_self" data-pf-type="Column" class="sc-gUQvok iVVDxu pf-876_"><div data-pf-type="Block" class="sc-cbTzjv cciAhs pf-877_"><div data-pf-type="Image" class="sc-jgrJph bzUUvT pf-878_"><img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/undraw_designer_girl_re_h54c-1642130420787.png?v=1642130429" srcSet="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/undraw_designer_girl_re_h54c-1642130420787.png?v=1642130429 1536w" width="803" height="669"/></div></div><div data-pf-type="Block" class="sc-cbTzjv cciAhs pf-879_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-880_ pf-gs-heading-5 Title"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-882_">FAQ</span></h3></div></div></div><div class="pf-c" style="--c-xs:4;--c-md:4;--c-lg:4"><div data-href="/pages/tutorials" data-target="_self" data-pf-type="Column" class="sc-gUQvok iVVDxu pf-883_"><div data-pf-type="Block" class="sc-cbTzjv cciAhs pf-884_"><div data-pf-type="Image" class="sc-jgrJph bzUUvT pf-885_"><img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/undraw_biking_kc4f-1642130420783.png?v=1642130425" srcSet="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/undraw_biking_kc4f-1642130420783.png?v=1642130425 1536w" width="803" height="669"/></div></div><div data-pf-type="Block" class="sc-cbTzjv cciAhs pf-886_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-887_ pf-gs-heading-5 Title"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-889_">Tutorials</span></h3></div></div></div><div class="pf-c" style="--c-xs:4;--c-md:4;--c-lg:4"><div data-href="/pages/care" data-target="_self" data-pf-type="Column" class="sc-gUQvok iVVDxu pf-890_"><div data-pf-type="Block" class="sc-cbTzjv cciAhs pf-891_"><div data-pf-type="Image" class="sc-jgrJph bzUUvT pf-892_"><img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/undraw_team_spirit_re_yl1v-1642130420780.png?v=1642130422" srcSet="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/undraw_team_spirit_re_yl1v-1642130420780.png?v=1642130422 1536w" width="803" height="669"/></div></div><div data-pf-type="Block" class="sc-cbTzjv cciAhs pf-893_"><h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-894_ pf-gs-heading-5 Title"><span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-896_">CARE</span></h3></div></div></div></div></div></div></div></div></div><script>
