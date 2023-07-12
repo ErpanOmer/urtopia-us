@@ -1079,7 +1079,7 @@
 
           history.replaceState(null, '', `${location.pathname}?variant=${current_variant_id}`);
           $('.product .product-panel input[name="id"]').val(current_variant_id)
-          $('.product .delivery_time').html(global_config.ebike_delivery_time[current_variant_id] || 'Free shipping <span>within 5 days</span>')
+          $('.product .delivery_time').html(global_config.carbon_order_page_config.ebike_delivery_time[current_variant_id] || 'Free shipping <span>within 5 days</span>')
 
           const btn =  $('.product .buttons .addToCartBtn')
           if (current_variant.available) {
