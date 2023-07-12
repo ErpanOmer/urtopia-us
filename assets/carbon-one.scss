@@ -62,12 +62,12 @@ $sale_text_color: #236ABE;
 	height:100%;
 	content:'';
 	display:inline-block;
-	background: linear-gradient(269deg, #F4F8FD, #F4F8FD00);
+	background: linear-gradient(269deg, #F4F8FD, #F4F8FD);
 	top:0;
 	left:0;
   }
   .convenience-banner .banner-img-box::before{
-	background: linear-gradient(89deg, #F4F8FD, #F4F8FD00);
+	background: linear-gradient(89deg, #F4F8FD, #F4F8FD);
 	z-index:2;
   }
   .convenience-banner .banner-img-box>img{
