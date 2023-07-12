@@ -3243,7 +3243,30 @@ new ScrollMagic.Scene({
   triggerHook: 0.8,
 })
   .setTween(mobile_power_video_state)
-  .addTo(controller);</script>
+  .addTo(controller);
+
+
+  // =======new_mobile_sporty==========
+var mb_sporty_state = new TimelineMax().add(
+  TweenMax.to(".new_mobile_sporty_container .new_mobile_top", 0.5, {
+    y: 0,
+    opacity: 1,
+    ease: Expo,
+    onStart:function(){
+     document.getElementById('mobile-agility-video2')?.play()
+    }
+  })
+);
+
+new ScrollMagic.Scene({
+  triggerElement: "section.new_mobile_sporty",
+  triggerHook: 0.8,
+  offset: 100,
+})
+  .setTween(mb_sporty_state)
+  .addTo(controller);
+  
+  </script>
 {% schema %}
 {
   "name": "PageFly Page 198df0c3",
