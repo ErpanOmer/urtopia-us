@@ -1051,6 +1051,20 @@ section.more {
     font-size: 50px;
 }
 
+.designTestBtn {
+    margin-top: 10px;
+    width: 375px;
+    text-align: center;
+    color: #dedede;
+    background: #fd4b17cc;
+    border-radius: 20px;
+    padding: 8px 0px;
+    font: normal normal 500 16px/22px urbane;
+    text-decoration: none;
+    transform: translateY(-200%);
+    opacity: 0;
+}
+
 .wbike-top {
     position: relative;
     width: 100vw;
@@ -2550,18 +2564,4 @@ section.mobile-range,
 section.mobile-motor {
     height: auto;
     min-height: unset;
-}
-
-.designTestBtn {
-    margin-top: 10px;
-    width: 375px;
-    text-align: center;
-    color: #dedede;
-    background: #fd4b17cc;
-    border-radius: 20px;
-    padding: 8px 0px;
-    font: normal normal 500 16px/22px urbane;
-    text-decoration: none;
-    transform: translateY(-200%);
-    opacity: 0;
 }
