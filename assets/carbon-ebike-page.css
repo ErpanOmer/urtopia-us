@@ -1030,6 +1030,15 @@ section.more {
     font: normal normal 600 36px/45px urbane;
 }
 
+
+.agility-container > p:nth-child(4) {
+    margin-top: 20px;
+    width: 550px;
+    color: #CBCBCB;
+    font: normal normal 300 20px/28px urbane;
+    text-align: center;
+}
+
 .agility-container>p:last-child {
     width: 350px;
     color: #dedede;
