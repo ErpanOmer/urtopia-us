@@ -1467,67 +1467,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 	}
 }
 </style>
-<script>
-  var closeCheck2 = function (e,force) {
-	let t = document.querySelector(".componentBox");
-	if (force || t && !e.target.closest(".componentBox") ) {
-	  var mo = function (e) {
-		passive: false;
-	  };
-	  document.body.style.overflow = ""; 
-	  document.removeEventListener("touchmove", mo, false);
-	  document.removeEventListener("mousedown", closeCheck2);
-	  $('.overlay').remove()
-	}
-  };
-  var openComponent = function(index){
-	var componentImg = "https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/sectioncustomizedim1-1666927938072_397x.jpg?v=1666927940"
-	var componentTit = "Anti-glare LED Display"
-	var componentDes = "The dot matrix screen is the Brian of the whole bike works like a removeable computer. You can check your route, speed, and weather information in real time with a quick glance on it at any light. And the ally tuned will react to your every order, change speed or control the light. So you do not need to focus on the screen while riding, throw away your phone with nothing to lose."
-	var componentHtml = ""
-	var imgStyle = ""
-	switch(index){
-	  case 0:componentImg = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/finger_print.jpg?v=1675741851"
-			 componentTit="Anti-Glare LED";
-			 componentDes="The brain of all the smartness, with a face of big dot-matrix display and ears ready for your oral commands. Now, a simple glance captures all essential stats, and mere words control the bike. Who needs a smart phone for a Urtopia ride, anyways?";break;
-	  case 1:componentImg = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_20064.jpg?v=1675741851"
-			 componentTit="Gamepad Controls";
-			 componentDes="Inspired by a gamepad, the handlebar control is reduced to only two buttons with intuitive key functions. Riding a bike? Yes! Playing a game? Almost!";break;
-		     imgStyle="padding:10px";break;
-	  case 2:componentImg = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/852.jpg?v=1675741851"
-			 componentTit="";
-			 componentDes="";
-			componentHtml="<div class='title1'>Quiet Motor</div><div class='description'>Light and compact yet powerful enough, the rear-hub motor is quiet and responsive, offering enough slope-climbing capacity for most urban roads.</div><div class='bike-box'><div class='bike-item'><div class='bike-title'>Carbon 1</div><p>36 V 250 W (rated)</p><p>35 N⋅m</p></div><div class='bike-item'> <div class='bike-title'>Carbon 1s</div><p>36 V 350 W (rated)</p><p>45 N⋅m</p></div></div>";break;
-	  case 3:componentImg = "https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/group-190132x-1668421098616.jpg"
-			 componentTit="Smart App";
-			 componentDes="Believing that software brings out true potentials of the hardware, Urtopia pays equal attention to the app that fully connects and controls the e-bike. Real-time locating, route tracking, anti-theft alert, navigation, speaker, community share etc., are all waiting for you to explore.";break;
-	  case 4:componentImg = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/ssss.jpg?v=1675741851"
-			 componentTit="Removable Battery";
-			 componentDes="A 360Wh lithium-ion removable battery provides ample energy so a rider can travel up to 100km (40km min.) after a mere 2.5-hr charge.";break;
-	  case 5:componentImg = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230117-untitled-4204.jpg?v=1675741851"
-			 componentTit="Modular Rear Light";
-			 componentDes="Main red light is ambient-sensing to keep you focused on the joy of riding, while turn-indicators are one touch away to warn vehicles approaching from behind. Oh, don’t forget the blinker when braking!";break;
-	  case 6:componentImg = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/8952.jpg?v=1675741851"
-			 componentTit="20 Lux Headlight";
-			 componentDes="Streamlined shape and integrated design, the German road regulation-compliant light is dazzling to look at but never blinding to anyone coming towards you. A well-balanced combination of beauty and safety.";break;
-	  case 7:componentImg = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_20063.jpg?v=1675741852"
-			 componentTit="";
-		     componentHtml="<div class='title1'>Carbon 1 <span class='smtips'>- Carbon Belt</span></div><div class='description'>An innovative but highly reliable means of power transmission, the Gates carbon belt drive is clean and literally maintenance free. Got dirty? Just rinse with water!</div><div class='title1' style='margin-top:60px;'>Carbon 1s<span class='smtips'> - Shimano 7-Speed</span></div><div class='description'>Gears? Check!While our default carbon belt drive offers maximum peace of mind in cleanness and maintenance, now there is also the option of 7-speed Shimano gears to take on steep hills and flat roads alike, but with higher speed and better efficiency.</div>";
-			 componentDes="";
-			 imgStyle="padding:10px";break;
-	  case 8:componentImg = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/yyyy.jpg?v=1675741851"
-			 componentTit="Torque Sensor";
-			 componentDes="Unlike jerky cadence sensing, proprietary torque sensor enables super-fast speedadaption.";break;
-	}
-	$("body").append('<div class="overlay"><div class="componentBox" id="componentBox"><div class="close" onclick="closeCheck2(this,true)"><i class="fa fa-solid fa-xmark"></i></div><div class="left-container" style="'+imgStyle+'"><img src="'+componentImg+'"/></div><div class="right-container">'+componentHtml+'<div class="title1">'+componentTit+'</div><div class="description">'+componentDes+'</div><div/></div></div>')
-	document.addEventListener("mousedown", closeCheck2);
-	var mo = function (e) {
-	  passive: false;
-	};
-	document.body.style.overflow = "hidden";
-	document.addEventListener("touchmove", mo, false);
-  }
-</script></div></div></div></div><div class="sc-ezbkAF A-dmbO pf-442_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-443_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-444_">
+</div></div></div></div><div class="sc-ezbkAF A-dmbO pf-442_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-443_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-444_">
 <div class="component" onclick="openComponent(6)">
   <div class="img-container">
 	
@@ -1844,4 +1784,66 @@ document.querySelectorAll(".Body>table").forEach(item=>{
               document.querySelector("#world-swiper .swiper-wrapper").style.transitionDuration = nextTime+"ms";
         swiperSectionWorld.autoplay.start();
         })
+      </script>
+
+      <script>
+        var closeCheck2 = function (e,force) {
+        let t = document.querySelector(".componentBox");
+        if (force || t && !e.target.closest(".componentBox") ) {
+          var mo = function (e) {
+          passive: false;
+          };
+          document.body.style.overflow = ""; 
+          document.removeEventListener("touchmove", mo, false);
+          document.removeEventListener("mousedown", closeCheck2);
+          $('.overlay').remove()
+        }
+        };
+        var openComponent = function(index){
+        var componentImg = "https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/sectioncustomizedim1-1666927938072_397x.jpg?v=1666927940"
+        var componentTit = "Anti-glare LED Display"
+        var componentDes = "The dot matrix screen is the Brian of the whole bike works like a removeable computer. You can check your route, speed, and weather information in real time with a quick glance on it at any light. And the ally tuned will react to your every order, change speed or control the light. So you do not need to focus on the screen while riding, throw away your phone with nothing to lose."
+        var componentHtml = ""
+        var imgStyle = ""
+        switch(index){
+          case 0:componentImg = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/finger_print.jpg?v=1675741851"
+             componentTit="Anti-Glare LED";
+             componentDes="The brain of all the smartness, with a face of big dot-matrix display and ears ready for your oral commands. Now, a simple glance captures all essential stats, and mere words control the bike. Who needs a smart phone for a Urtopia ride, anyways?";break;
+          case 1:componentImg = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_20064.jpg?v=1675741851"
+             componentTit="Gamepad Controls";
+             componentDes="Inspired by a gamepad, the handlebar control is reduced to only two buttons with intuitive key functions. Riding a bike? Yes! Playing a game? Almost!";break;
+               imgStyle="padding:10px";break;
+          case 2:componentImg = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/852.jpg?v=1675741851"
+             componentTit="";
+             componentDes="";
+            componentHtml="<div class='title1'>Quiet Motor</div><div class='description'>Light and compact yet powerful enough, the rear-hub motor is quiet and responsive, offering enough slope-climbing capacity for most urban roads.</div><div class='bike-box'><div class='bike-item'><div class='bike-title'>Carbon 1</div><p>36 V 250 W (rated)</p><p>35 N⋅m</p></div><div class='bike-item'> <div class='bike-title'>Carbon 1s</div><p>36 V 350 W (rated)</p><p>45 N⋅m</p></div></div>";break;
+          case 3:componentImg = "https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/group-190132x-1668421098616.jpg"
+             componentTit="Smart App";
+             componentDes="Believing that software brings out true potentials of the hardware, Urtopia pays equal attention to the app that fully connects and controls the e-bike. Real-time locating, route tracking, anti-theft alert, navigation, speaker, community share etc., are all waiting for you to explore.";break;
+          case 4:componentImg = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/ssss.jpg?v=1675741851"
+             componentTit="Removable Battery";
+             componentDes="A 360Wh lithium-ion removable battery provides ample energy so a rider can travel up to 100km (40km min.) after a mere 2.5-hr charge.";break;
+          case 5:componentImg = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230117-untitled-4204.jpg?v=1675741851"
+             componentTit="Modular Rear Light";
+             componentDes="Main red light is ambient-sensing to keep you focused on the joy of riding, while turn-indicators are one touch away to warn vehicles approaching from behind. Oh, don’t forget the blinker when braking!";break;
+          case 6:componentImg = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/8952.jpg?v=1675741851"
+             componentTit="20 Lux Headlight";
+             componentDes="Streamlined shape and integrated design, the German road regulation-compliant light is dazzling to look at but never blinding to anyone coming towards you. A well-balanced combination of beauty and safety.";break;
+          case 7:componentImg = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_20063.jpg?v=1675741852"
+             componentTit="";
+               componentHtml="<div class='title1'>Carbon 1 <span class='smtips'>- Carbon Belt</span></div><div class='description'>An innovative but highly reliable means of power transmission, the Gates carbon belt drive is clean and literally maintenance free. Got dirty? Just rinse with water!</div><div class='title1' style='margin-top:60px;'>Carbon 1s<span class='smtips'> - Shimano 7-Speed</span></div><div class='description'>Gears? Check!While our default carbon belt drive offers maximum peace of mind in cleanness and maintenance, now there is also the option of 7-speed Shimano gears to take on steep hills and flat roads alike, but with higher speed and better efficiency.</div>";
+             componentDes="";
+             imgStyle="padding:10px";break;
+          case 8:componentImg = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/yyyy.jpg?v=1675741851"
+             componentTit="Torque Sensor";
+             componentDes="Unlike jerky cadence sensing, proprietary torque sensor enables super-fast speedadaption.";break;
+        }
+        $("body").append('<div class="overlay"><div class="componentBox" id="componentBox"><div class="close" onclick="closeCheck2(this,true)"><i class="fa fa-solid fa-xmark"></i></div><div class="left-container" style="'+imgStyle+'"><img src="'+componentImg+'"/></div><div class="right-container">'+componentHtml+'<div class="title1">'+componentTit+'</div><div class="description">'+componentDes+'</div><div/></div></div>')
+        document.addEventListener("mousedown", closeCheck2);
+        var mo = function (e) {
+          passive: false;
+        };
+        document.body.style.overflow = "hidden";
+        document.addEventListener("touchmove", mo, false);
+        }
       </script>
