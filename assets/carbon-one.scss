@@ -5,6 +5,80 @@ $sale_text_color: #236ABE;
     padding: 0;
 }
 
+.convenience-box{
+	margin-bottom:140px;
+	text-align:center;
+  }
+  .convenience-box h2,
+  .convenience-box h3{
+	margin:0;
+  }
+  .convenience-box h2{
+	font:normal normal 600 42px/72px urbane;
+  }
+  .convenience-box h3{
+	text-align:left;
+	font:normal normal 600 24px/30px urbane;
+  }
+  .convenience-box p{
+	font:normal normal 300 24px/30px urbane;
+  }
+  .convenience-banner{
+	background: #E7EDF5;
+  }
+  .convenience-banner .banner-container{
+	width: 100%;
+    height: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .convenience-banner .banner-container .banner-text-box{
+	flex:0 0 30%;
+	overflow:hidden;
+  }
+  .convenience-banner .banner-text-box .choice-box{
+	width: 300px;
+    display: flex;
+    margin-top: 30px;
+    justify-content: space-between;
+  }
+  .choice-box .choice-item img{
+	width:70px;
+	height:70px;
+  }
+  .choice-box .choice-item p{
+	font:normal normal 300 16px/20px urbane;
+  }
+  .convenience-banner .banner-img-box{
+	position:relative;
+  }
+  .convenience-banner .banner-img-box::after,
+  .convenience-banner .banner-img-box::before{
+	position:absolute;
+	width:100%;
+	height:100%;
+	content:'';
+	display:inline-block;
+	background: linear-gradient(269deg, #F4F8FD, #F4F8FD00 20%);
+	top:0;
+	left:0;
+  }
+  .convenience-banner .banner-img-box::before{
+	background: linear-gradient(89deg, #F4F8FD, #F4F8FD00 20%);
+	z-index:2;
+  }
+  .convenience-banner .banner-img-box>img{
+	height: 488px;
+    margin-top: -88px;
+  }
+  .convenience-banner:nth-child(4) .banner-img-box::before,
+  .convenience-banner:nth-child(4) .banner-img-box::after{
+	background:transparent;
+  }
+
 
 .speed-mb{
 	text-align:center;
