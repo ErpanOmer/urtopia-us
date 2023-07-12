@@ -101,6 +101,7 @@
     .new_mobile_sporty {
         display: flex;
         align-items: center;
+        transform: translateY(10%);
       }
       .new_mobile_sporty_container{
         height: 100%;
