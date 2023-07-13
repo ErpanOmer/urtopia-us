@@ -825,8 +825,8 @@ loc=external&signature=b4ef0be9fe17055f9e9af17495e1c3950e3237013d1
 </div></div></div></div></div></div><div data-section-id="pf-2c23" data-pf-type="Section" class="sc-fmciRz bheIgq pf-35_"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-36_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-37_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-38_"><section class="whiteBg section3">
   <div class="chordContainer maxWidth">
 	<div class="chordItem">
-	  <div style="padding-bottom: 62px;position: relative">
-		<img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/chord_white.jpg" id="chrodImg"/>
+	  <div style="padding: 62px 0;position: relative">
+		<img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1_1_2x_3f9f6132-5cac-4f49-bac7-ce6258edad1c.jpg?v=1689154301" id="chrodImg"/>
 		<ul class="optionUl_chord">
 		  <li class="active" data_type="white"></li>
 		  <li data_type="black"></li>
@@ -839,8 +839,8 @@ loc=external&signature=b4ef0be9fe17055f9e9af17495e1c3950e3237013d1
 	  </div>
 	</div>
 	<div class="chordItem">
-	  <div style="padding-bottom: 62px;position: relative">
-		<img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/chordx_white.jpg" id="chrodxImg"/>
+	  <div style="padding: 62px 0;position: relative">
+		<img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/chordX_2x_fe86f1a1-6d47-4dd4-b1b9-80ee149da0fe.jpg?v=1689154670" id="chrodxImg"/>
 		<ul class="optionUl_chordx">
 		  <li class="active" data_type="white"></li>
 		  <li data_type="black"></li>
@@ -870,9 +870,7 @@ loc=external&signature=b4ef0be9fe17055f9e9af17495e1c3950e3237013d1
 		  .forEach((v) => v.classList.remove("active"));
 
 		let type = v.getAttribute("data_type");
-		document.querySelector(
-		  "#chrodImg"
-		).src = `https://cdn.shopify.com/s/files/1/0633/2068/6808/files/chord_${type}.jpg`;
+		document.querySelector("#chrodImg").src = type === 'white' ? 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1_1_2x_3f9f6132-5cac-4f49-bac7-ce6258edad1c.jpg?v=1689154301' : 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3_1_2x_c75e6ef5-a3ac-49af-bb2f-c19dd565cfad.jpg?v=1689154308'
 		v.classList.add("active");
 
 		if (type == "white") {
@@ -890,9 +888,8 @@ loc=external&signature=b4ef0be9fe17055f9e9af17495e1c3950e3237013d1
 		  .forEach((v) => v.classList.remove("active"));
 
 		let type = v.getAttribute("data_type");
-		document.querySelector(
-		  "#chrodxImg"
-		).src = `https://cdn.shopify.com/s/files/1/0633/2068/6808/files/chordx_${type}.jpg`;
+
+		document.querySelector("#chrodxImg").src = type === 'white' ? 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/chordX_2x_fe86f1a1-6d47-4dd4-b1b9-80ee149da0fe.jpg?v=1689154670' : 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/chordX_2x_ac6e3457-6ab6-4c57-a190-b58c8171d6c8.jpg?v=1689154690'
 		v.classList.add("active");
 
 		if (type == "white") {
