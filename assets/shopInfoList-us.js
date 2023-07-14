@@ -197,7 +197,7 @@ const testRides = [
           "10:00-17:00"
         ],
       },
-       /*{
+       {
         name: "Burn The Ships Electrics",
         phone: "310-372-1122",
         email: "info@burntheshipselectrics.com ",
@@ -207,7 +207,7 @@ const testRides = [
         testrideSpot: "California",
         testRideSize: "M",
         availableSizes: [
-          'Carbon 1 Size M',
+          'Carbon 1s Size M',
         ],
         businessHours: [
           "12:00-17:00",
@@ -218,7 +218,29 @@ const testRides = [
           "11:00-18:00",
           "11:00-18:00"
         ],
-      },*/
+      },
+      {
+        name: "Epic Power Bikes",
+        phone: "(949) 503-3525",
+        email: "epiccyclessc@gmail.com ",
+        timezone: "San Diego, CA, USA (GMT-7)",
+        add: "85 Via Pico Plaza, San Clemente, CA 92672, United States",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Epic_Power_Bikes2.jpg?v=1689228574",
+        testrideSpot: "California",
+        testRideSize: "M",
+        availableSizes: [
+          'Carbon 1 Size M',
+        ],
+        businessHours: [
+          "10:00-16:00",
+          "",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-16:00"
+        ],
+      },
     ]
   },
   {
@@ -685,6 +707,34 @@ const testRides = [
           "",
           "12:00-17:00",
           "10:00-14:00",
+        ],
+      },
+    ]
+  },
+  {
+    city: 'Utah',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/WinterSkyline-DouglasPuslipher-Alamy-D44ETX31-1024x683_jpg.webp?v=1689229044',
+    stores: [
+      {
+        name: "E-Power Bike and Board",
+        phone: "435-315-3044",
+        email: "epowerbb@gmail.com",
+        timezone: "Utah, USA (GMT-7)",
+        add: "44 West 100 South Heber City, UT 84032",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/E-Power_Bike_and_Board_1.jpg?v=1689228575",
+        testrideSpot: "Utah",
+        availableSizes: [
+          'Carbon 1 Size M/L',
+          'Carbon 1 now instock',
+        ],
+        businessHours: [
+          "",
+          "",
+          "9:00-17:00",
+          "9:00-17:00",
+          "9:00-17:00",
+          "9:00-17:00",
+          "09:00-15:00",
         ],
       },
     ]
