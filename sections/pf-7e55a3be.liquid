@@ -501,64 +501,9 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
         </div>
     </div>
 
-<script>
-const widthh = document.body.clientWidth
-const isMobilee = widthh < 768
-  
- new jBox('Modal', {
-        width: isMobilee ? 'calc(100vw - 30px)' : '70%',
-        height: 'auto',
-        appendTo: $('#section2'),
-        title: 'Design',
-        closeButton: 'title',
-        content: $('#section2-design-dialog'),
-    }).attach('#section2 .design')
-  
-   new jBox('Modal', {
-        width: isMobilee ? 'calc(100vw - 30px)' : 1000,
-        height: 'auto',
-        appendTo: $('#section2'),
-        title: 'Smart',
-        closeButton: 'title',
-        content: $('#section2-smart-dialog'),
-	 onOpenComplete: function () {
-            const videos =  document.querySelectorAll('video')
 
-            videos.forEach(video => {
-                video.play()
-            })
-          }
-    }).attach('#section2 .smart')
-  
-  new Swiper('#section2-design-dialog', {    
-        spaceBetween: isMobilee ? 0 : '3%',
-        slidesPerView: isMobilee ? 1 : 2.5,
-        // slidesOffsetAfter: 70,
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-       },
-	    pagination: {
-         el:'.swiper-pagination'
-       },
-  })
-  
-  new Swiper('#section2-smart-dialog', {    
-        spaceBetween: isMobilee ? 0 : '3%',
-          slidesPerView: 1,
-          height: '100%',
-          autoHeight: true,
-        // slidesOffsetAfter: 70,
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-       },
-	    pagination: {
-         el:'.swiper-pagination'
-       },
-  })
-  
-</script></div></div></div></div></div></div><div data-section-id="pf-59fa" data-pf-type="Section" class="sc-fmciRz bheIgq pf-48_"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-49_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-50_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-51_"><style>
+
+</div></div></div></div></div></div><div data-section-id="pf-59fa" data-pf-type="Section" class="sc-fmciRz bheIgq pf-48_"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-49_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-50_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-51_"><style>
 
 #section3 {
       /* max-width: 1280px; */
@@ -1189,5 +1134,64 @@ new Swiper('#section3', {
     a.src="https://cdn.storepoint.co/api/v1/js/162f21804990ff.js";
     var b=document.getElementsByTagName("script")[0];
     b.parentNode.insertBefore(a,b);}());
+</script>
+
+<script>
+const widthh = document.body.clientWidth
+const isMobilee = widthh < 768
+  
+ new jBox('Modal', {
+        width: isMobilee ? 'calc(100vw - 30px)' : '70%',
+        height: 'auto',
+        appendTo: $('#section2'),
+        title: 'Design',
+        closeButton: 'title',
+        content: $('#section2-design-dialog'),
+    }).attach('#section2 .design')
+  
+   new jBox('Modal', {
+        width: isMobilee ? 'calc(100vw - 30px)' : 1000,
+        height: 'auto',
+        appendTo: $('#section2'),
+        title: 'Smart',
+        closeButton: 'title',
+        content: $('#section2-smart-dialog'),
+	 onOpenComplete: function () {
+            const videos =  document.querySelectorAll('video')
+
+            videos.forEach(video => {
+                video.play()
+            })
+          }
+    }).attach('#section2 .smart')
+  
+  new Swiper('#section2-design-dialog', {    
+        spaceBetween: isMobilee ? 0 : '3%',
+        slidesPerView: isMobilee ? 1 : 2.5,
+        // slidesOffsetAfter: 70,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+       },
+	    pagination: {
+         el:'.swiper-pagination'
+       },
+  })
+  
+  new Swiper('#section2-smart-dialog', {    
+        spaceBetween: isMobilee ? 0 : '3%',
+          slidesPerView: 1,
+          height: '100%',
+          autoHeight: true,
+        // slidesOffsetAfter: 70,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+       },
+	    pagination: {
+         el:'.swiper-pagination'
+       },
+  })
+  
 </script>
 {% render 'chord-extra-code' %}
