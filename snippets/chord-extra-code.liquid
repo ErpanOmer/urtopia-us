@@ -925,3 +925,67 @@
       </div>
       </div>
     </div>
+
+    
+<script>
+    const chordTab = document.getElementById("tab-1");
+      const chordXTab = document.getElementById("tab-2");
+      const chordDom = document.getElementById("chord-dom");
+      const chordXDom = document.getElementById("chordx-dom");
+  
+      chordTab.addEventListener("click", function () {
+        chordDom.style.display = "flex";
+        chordXDom.style.display = "none";
+      });
+      chordXTab.addEventListener("click", function () {
+        chordDom.style.display = "none";
+        chordXDom.style.display = "flex";
+      });
+    
+    function onCloseOrderLayer() {
+      let arr = ["order-modal-one", "order-modal-two", "order-modal-three", "order-modal-four"];
+      let arr2 = [
+        "order-modal-layer-one",
+        "order-modal-layer-two",
+        "order-modal-layer-three",
+        "order-modal-layer-four"
+      ];
+        arr2.map((u) => {
+          const dom = document.querySelector(`.${u}`);
+          if (dom) {
+            dom.className = `order-layer-box ${u} dialog-close`;
+            setTimeout(() => {
+              dom.className = dom.className.replace("dialog-close", "").trim();
+            }, 100);
+          }
+        });
+        arr.map((u) => {
+          const dom = document.querySelector(`.${u}`);
+          if (dom) {
+            dom.className += " dialog-close-out";
+            setTimeout(() => {
+              dom.className = dom.className.replace("dialog-close-out", "").trim();
+              dom.style.display = "none";
+            }, 300);
+          }
+        });
+      }
+  
+  
+      $('.faq-title').click(function () {
+        $(this)
+          .siblings('.faq-content')
+          .slideToggle()
+          .parent()
+          .siblings()
+          .find('.faq-content')
+          .slideUp();
+        $(this).children('i').toggleClass('faq-content-plus');
+        $(this)
+          .parent()
+          .siblings()
+          .find('.faq-title')
+          .children('i')
+          .addClass('faq-content-plus');
+      });
+  </script>
