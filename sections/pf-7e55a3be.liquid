@@ -49,7 +49,12 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 		images: {{ product.images | json }},
 		quantity: {% assign quantity = '' %}{% for variant in product.variants %}{% assign quantity = quantity | append: variant.id | append: ':' | append: variant.inventory_quantity | append: ',' %}{% endfor %}{% assign quantity = quantity | split: ','%}{{quantity | json }}
 	};{% endunless %}
-	</script><div style="opacity:0" class="sc-bYoBSM hUVNGC __pf __pf_oWvcundu" id="__pf"><div data-pf-type="Body" class="sc-hjGZqJ fNoOP pf-1_"><div data-pf-type="Layout" class="sc-htJRVC dNJAjO pf-2_"><div data-pf-type="ProductPreview" class="sc-cvlWTT btfkZr pf-3_"> </div><div data-section-id="pf-5b74" data-pf-type="Section" id="Product-Title" class="sc-fmciRz bheIgq pf-4_"><div style="--cw:1280px" class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-5_ pf-r pf-c-cm pf-r-eh" style="--s-xs:15px" data-pf-type="Row" id="product-row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" id="main-product-column" class="sc-gUQvok iVVDxu pf-6_"><div data-product-id="7948552077560" data-default-variant="43694976663800" data-pf-type="ProductBox" class="sc-bUhFKy jriKsr pf-7_">{% assign defaultProduct = product %}{% assign product = product_7948552077560 %}{% if product != null %}{% form "product", product, data-productid: product.id, class: "pf-product-form" %}<div class="sc-ezbkAF A-dmbO pf-8_ pf-r pf-c-ct pf-r-eh" style="--s-xs:15px" data-pf-type="Row" id="product-detail-row"><div class="pf-c" style="--c-xs:12;--c-sm:7;--c-md:8;--c-lg:8"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-9_"><div data-product-id="{{ product.id }}" data-media-id="{% liquid
+	</script><div style="opacity:0" class="sc-bYoBSM hUVNGC __pf __pf_oWvcundu" id="__pf"><div data-pf-type="Body" class="sc-hjGZqJ fNoOP pf-1_"><div data-pf-type="Layout" class="sc-htJRVC dNJAjO pf-2_"><div data-pf-type="ProductPreview" class="sc-cvlWTT btfkZr pf-3_"> </div>
+  
+  
+  
+  
+  <div data-section-id="pf-5b74" data-pf-type="Section" id="Product-Title" class="sc-fmciRz bheIgq pf-4_"><div style="--cw:1280px" class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-5_ pf-r pf-c-cm pf-r-eh" style="--s-xs:15px" data-pf-type="Row" id="product-row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" id="main-product-column" class="sc-gUQvok iVVDxu pf-6_"><div data-product-id="7948552077560" data-default-variant="43694976663800" data-pf-type="ProductBox" class="sc-bUhFKy jriKsr pf-7_">{% assign defaultProduct = product %}{% assign product = product_7948552077560 %}{% if product != null %}{% form "product", product, data-productid: product.id, class: "pf-product-form" %}<div class="sc-ezbkAF A-dmbO pf-8_ pf-r pf-c-ct pf-r-eh" style="--s-xs:15px" data-pf-type="Row" id="product-detail-row"><div class="pf-c" style="--c-xs:12;--c-sm:7;--c-md:8;--c-lg:8"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-9_"><div data-product-id="{{ product.id }}" data-media-id="{% liquid
     assign min = 10000000000
     assign max = 99999999999
     assign diff = max | minus: min
@@ -3047,14 +3052,6 @@ document.querySelectorAll('[data-option-name="Style"]').forEach((v) => {
     }
   };
 });</script>
-{% schema %}
-{
-  "name": "PageFly Page 7e55a3be",
-  "settings": [
-    {
-      "type": "paragraph",
-      "content": "For full configuration, [visit PageFly Editor](https://apps.pagefly.io/editor?id=7e55a3be-04bc-4f1e-8261-e1b1b1668578)."
-    }
-  ]
-}
-{% endschema %}
+
+
+{% render 'chord-extra-code' %}
