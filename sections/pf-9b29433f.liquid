@@ -1211,6 +1211,18 @@ function addAllToCart(parse, show = false) {
   }
 }
 
+function pageInit() {
+    const variant_id = search.variant || global_config.carbon_order_page_config.default_variant
+    let find = findVariantFromId(variant_id)
+
+    if (!find || !find.available) {
+      find = findAvailableVariant()
+    }
+
+    // 如果默认 variant 也不可用，那晒显出能用的variant
+    changeVariant(find.option1, find.option2, find.option3) 
+}
+
   {% for variant in product.variants %}
       models[{{ variant.option1 | json }}] = 1
       styles[{{ variant.option3 | json }}] = 1
@@ -1249,22 +1261,6 @@ function addAllToCart(parse, show = false) {
           changeVariant(current_variant.option1, current_variant.option2, t.attr('attribute'))
       }
   })
-
-  // 如果有查询参数
-  if (search.variant) {
-      const find = findVariantFromId(search.variant)
-      changeVariant(find.option1, find.option2, find.option3) 
-  } else {
-    const default_variant = global_config.carbon_order_page_config.default_variant
-    let find = findVariantFromId(default_variant)
-
-    // 如果默认 variant 也不可用，那晒显出能用的variant
-    if (!find.available) {
-      find = findAvailableVariant()
-    }
-
-      changeVariant(find.option1, find.option2, find.option3) 
-  }
 
 
 
@@ -1361,6 +1357,9 @@ function addAllToCart(parse, show = false) {
   $('.top-fixed').hide()
   $('.toTop').hide()
 $('.product .error-tip').hide()
+
+// 初始化页面
+pageInit()
 </script>
 
 {% render 'carbon-one-extra-code' %}
