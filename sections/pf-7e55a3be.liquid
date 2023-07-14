@@ -912,24 +912,7 @@ new Swiper('#section3', {
      <div class="swiper-scrollbar"></div>
   </div>
 
-
-<script>
-  
-console.log({{collections | json }})
-new Swiper('#section5', {    
-        spaceBetween: 15,
-        slidesPerView: isMobile ? 1 : 4,
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-       },
-       scrollbar: {
-            el: '.swiper-scrollbar',
-      },
- })
-  
-
-</script></div></div></div></div></div></div>
+</div></div></div></div></div></div>
 
 
 <style>
@@ -1200,6 +1183,23 @@ new Swiper('#section5', {
 
 </div></div></div></div></div></div><div data-section-id="pf-0736" data-pf-type="Section" class="sc-fmciRz bheIgq pf-64_"><div style="--cw:1280px" class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-65_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-66_"><div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-67_"><div class="pf-judme">{% include "judgeme_widgets", widget_type: "judgeme_review_widget", concierge_install: false %}</div></div></div></div></div></div></div></div></div></div>
 
+<script>
+  
+console.log({{collections | json }})
+new Swiper('#section5', {    
+        spaceBetween: 15,
+        slidesPerView: isMobile ? 1 : 4,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+       },
+       scrollbar: {
+            el: '.swiper-scrollbar',
+      },
+ })
+  
+
+</script>
 
 <script>
   document.body.clientWidth < 768 && new Swiper ('.mediaaaaa', {    
