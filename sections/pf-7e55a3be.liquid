@@ -129,7 +129,7 @@
                     {% endfor %}
                 </div>
                 <div class="items mb12 chord-accessories-1">
-                    {% for prod in collections['chord-accessories-1'].products %}
+                    {% for prod in collections['chord-x-accessories'].products %}
                         {% if prod.available %}
                             {% assign variant = prod.variants | first %}
                             <div class="item" variant-id="{{ variant.id }}">
