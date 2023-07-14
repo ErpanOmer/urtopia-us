@@ -7,8 +7,17 @@ const global_config = {
     // 是否是手机
     is_mobile: document.documentElement.clientWidth < 768,
 
-    // 邮件弹窗 延迟弹出时间，单位:s
-    subscribe_email_show_delay_time: 10,
+    // 邮件弹窗有关配置
+    subscribe_email_dialog_config: {
+        // 是否隐藏 邮件弹窗
+        is_hide: false,
+        // 邮件弹窗 延迟弹出时间，单位:s
+        show_delay_time: 10,
+        // 邮件 pc 背景图
+        background_imgae_pc: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221008-untitled-4659_2x_026f342b-e152-496e-8149-4edb28692c0d.jpg?v=1689301493',
+        // 邮件 mobile 背景图
+        background_imgae_mb: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221008-untitled-4659_2x_acdb2959-15a8-4839-b643-76b62eb34bd2.jpg?v=1689301955'
+    },
 
     
     // carbon 产品页面配置
