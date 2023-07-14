@@ -1,4 +1,154 @@
-  
+
+<style>
+    .faq-navigation {
+        display: flex;
+        font: normal normal 600 24px / 34px Proxima Nova;
+        letter-spacing: 0;
+        color: #707070;
+        align-items: center;
+        justify-content: center;
+        margin-top: 30px;
+        display: none;
+    }
+    
+    .faq-navigation .swiper-pagination {
+        position: static;
+        width: auto;
+    }
+    
+    .faq-navigation .prev_btn,
+    .faq-navigation .next_btn {
+        font-family: fontAwesome;
+        display: inline-block;
+        height: 51px;
+        width: 51px;
+        text-align: center;
+        line-height: 51px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-weight: 650;
+        font-size: 30px;
+        color: #707070;
+        box-shadow: unset;
+    }
+    
+    .faq-navigation .prev_btn:before {
+        content: '\f104';
+    }
+    
+    .faq-navigation .next_btn:before {
+        content: '\f105';
+    }
+    
+    #faq-list .faq-title {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-style: solid;
+        border-width: 0 0 1px;
+        border-color: #ebebeb;
+        text-align: left;
+        font: normal normal 600 16px/28px Urbane;
+        letter-spacing: 0;
+        padding: 19px 0px 12px 100px;
+        color: #000;
+        background: #fff;
+        position: relative;
+        cursor: pointer;
+    }
+    
+    #faq-list .faq-title i {
+        position: absolute;
+        /* right: 20px; */
+        left: 30px;
+        display: inline-block;
+        font-size: 17px;
+        line-height: 1;
+        font-family: FontAwesome !important;
+        font-style: normal;
+        text-rendering: auto;
+        transition: transform 0.4s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    }
+    
+    #faq-list .faq-content {
+        display: none;
+        padding: 12px 100px;
+        font: normal normal normal 14px/20px Urbane;
+        color: #000;
+        opacity: 0.7;
+    }
+    
+    #faq-list .faq-content-plus {
+        transform: rotate(90deg);
+    }
+    
+    #faq-list .faq-title .faq-content-plus:before {
+        content: '\f067';
+    }
+    
+    #faq-list .faq-title i:before {
+        content: '\f068';
+    }
+    
+    #faq .titlee {
+        font: normal normal 600 20px/24px Urbane;
+        color: #000;
+        border-bottom: 1px solid #ebebeb;
+        padding-bottom: 20px;
+    }
+    
+    #faq .swiper {
+        max-height: 420px;
+        overflow: auto;
+    }
+    
+    #faq .buttons {
+        padding-top: 20px;
+    }
+    
+    #faq .buttons a + a {
+        margin-left: 10px;
+    }
+    
+    @media screen and (max-width: 750px) {
+        #faq {
+            margin: 0 -25px -25px;
+        }
+    
+        #faq .swiper {
+            padding-right: 10px;
+        }
+        
+        #faq .titlee {
+            margin-right: 10px;
+        }
+    
+        #faq .swiper {
+            max-height: 50vh;
+            overflow: auto;
+        }
+    
+        #faq-list .faq-title {
+            font-size: 14px;
+            line-height: 16px;
+            padding: 19px 0px 12px 35px;
+        }
+    
+        #faq-list .faq-title i {
+            left: 10px;
+            top: 20px;
+        }
+    
+        #faq-list .faq-content {
+            padding-left: 35px;
+            padding-right: 0;
+        }
+        .order-modal-four .order-modal-layer-four .order-layer-header {
+          padding-left: 0;
+        }
+    }</style>
+
+
 <style>
     .order-flex-row {
       display: flex;
