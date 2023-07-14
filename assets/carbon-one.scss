@@ -1944,6 +1944,13 @@ $sale_text_color: #236ABE;
                                 }
                             }
                         }
+
+                        div[attribute*="350W"] {
+                            &::after {
+                                font-size: 13px;
+                                transform: rotate(30deg) translate(31%,-240%);
+                            }
+                        }
                     }
                 }
 
