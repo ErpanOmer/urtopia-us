@@ -283,33 +283,12 @@
   
     const storage = new MyStorage()
 
-    
-    {% comment %} const subscribeHtml = `<div class="subscribe-container">
-      <img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Urtopia_Photo_Sesh_14_of_14_2x_9ec4000c-c609-4829-b4a2-430a5b7aae63.jpg?v=1680259217" alt="">
-      <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Urtopia_Photo_Sesh_9_of_14_2x_dc648c2b-067f-4357-bda8-d917f51fd883.jpg?v=1680259100" alt="">
-      <div class="subscribe">
-          <span class="u30DemiBold_v2">Join Urtopia and<br>Get Exclusive Coupon</span>
-          <span class="u17Light_v2">Subscribe to Urtopia for exclusive coupons, engaging stories, and the latest product news.</span>
-          <form class="new-contact" action="/contact#ContactFooter" target="_blank" method="post" accept-charset="UTF-8">
-          <div class="email">
-                <input type="hidden" name="form_type" value="customer">
-                <input type="hidden" name="utf8" value="✓">
-                <input type="hidden" name="contact[tags]" value="newsletter">
-                <input placeholder="Enter email here" type="email" name="contact[email]" required>
-                <button class="my-button my-button-black" type="submit">Subscribe</button>
-          </div>
-        </form>
-      </div>
-      <span class="close" onclick="closeEmailDialog()">×</span>
-  </div>` {% endcomment %}
-
-
   const subscribeHtml = `<div class="subscribe-container">
-    <img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20220619-untitled-0871_2x_f6439b5c-615f-4548-b595-f7802687c479.jpg?v=1687287311" alt="">
-    <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20220619-untitled-0871_2x_e406f8a6-a3d4-4d92-8ce5-ef35f4d76d43.jpg?v=1687286430" alt="">
+    <img class="mobileHide" src="${global_config.subscribe_email_dialog_config.background_imgae_pc}" alt="">
+    <img class="pcHide" src="${global_config.subscribe_email_dialog_config.background_imgae_mb}" alt="">
     <div class="subscribe">
-        <span class="u20Medium">{{ settings.sale_name }} <br class="pcHide"> {{ settings.sale_end_time }}</span>
-        <div class="u30DemiBold_v2"><span class="u72DemiBold_v2">$600</span>OFF<span class="u30Medium_v2" style="color:#1657A4;"><br>+$167 Freebies</span></div>
+        <span class="u20Medium">{{ settings.sale_name }}<br class="pcHide"> {{ settings.sale_end_time }}</span>
+        <div class="u30DemiBold_v2"><span class="u72DemiBold_v2">$600</span>OFF<span class="u30Medium_v2" style="color:var(--sale-color3);"><br>+$167 Freebies</span></div>
         <span class="u17Light">Subscribe to Urtopia for exclusive coupons, engaging stories, and the latest product news.</span>
         <form class="new-contact" action="/contact#ContactFooter" target="_blank" method="post" accept-charset="UTF-8">
         <div class="email">
@@ -345,6 +324,10 @@
 
 
   function showEmailDialog () {
+    if (global_config.subscribe_email_dialog_config.is_hide) {
+      return
+    }
+
     if (storage.get('emailDialogHideDay')) {
       return
     }
@@ -436,5 +419,5 @@
     $('body .mini-dialog').remove()
   }
   
-  setTimeout(showEmailDialog, global_config.subscribe_email_show_delay_time * 1000)
+  setTimeout(showEmailDialog, global_config.subscribe_email_dialog_config.show_delay_time * 1000)
   </script>

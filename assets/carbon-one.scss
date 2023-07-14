@@ -1934,6 +1934,22 @@ $sale_text_color: #236ABE;
                     .Model {
                         &>div {
                             width: 50%;
+
+                            span {
+                                font-size: 12px;
+
+                                &:first-child {
+                                    font-size: 12px;
+                                    margin-bottom: 3px;
+                                }
+                            }
+                        }
+
+                        div[attribute*="350W"] {
+                            &::after {
+                                font-size: 13px;
+                                transform: rotate(30deg) translate(31%,-240%);
+                            }
                         }
                     }
                 }
