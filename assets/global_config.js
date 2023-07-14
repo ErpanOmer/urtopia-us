@@ -98,6 +98,8 @@ const global_config = {
                 img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/20221227174330-1672134242872.png"
             }
         ],
+        // 默认的发货时间 文案
+        ebike_default_delivery_time: 'Free shipping <span>within 5 days</span>',
         // 发货时间映射表
         // key:    vairant_id
         // value:  发货时间文案
