@@ -1428,56 +1428,52 @@
     let cart1 = document.querySelector("cart-notification") || document.querySelector("cart-drawer");
 
     function addAllToCart(parse) {
+        const cartList = { items: [] }
 
-    const cartList = { items: [] }
+        if (adding == false) {
+          changeAddToCartText(parse, 1);
+          adding = true;
+          
+          cartList.items.push({ id: current_variant_id, quantity: 1 });
 
-
-    if (adding == false) {
-      changeAddToCartText(parse, 1);
-      adding = true;
-      
-      cartList.items.push({ id: current_variant_id, quantity: 1 });
-
-      if (cart1) {
-        var sections = cart1.getSectionsToRender().map((section) => section.id);
-        cartList.sections = sections.join(",");
-      }
-
-      // 新增普通配件
-    $('.product .accessories .items .active').each((i, item) => {
-      cartList.items.push({ 
-        id: $(item).attr('variant-id'), 
-        quantity: 1
-      })
-    })
-
-      fetch("/cart/add.js", {
-        method: "POST",
-        body: JSON.stringify(cartList),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
-        .then((res) => res.json())
-        .then((res1) => {
-          res1.key = "";
-
-          if (!(res1.message && res1.status)) {
-            cart1.renderContents(res1);
+          if (cart1) {
+            var sections = cart1.getSectionsToRender().map((section) => section.id);
+            cartList.sections = sections.join(",");
           }
-          
-          changeAddToCartText(parse, 0);
+
+          // 新增普通配件
+        $('.product .accessories .items .active').each((i, item) => {
+          cartList.items.push({ 
+            id: $(item).attr('variant-id'), 
+            quantity: 1
+          })
         })
-        .catch((err) => {
-          changeAddToCartText(parse, 0);
-          
-        }).finally(() => {
-          adding = false
-          !show && fetchBuried('websiteclick', `carbon-order-page`, { button: 'ATC' })
-    
-          setTimeout(() => $('.product .error-tip').hide(), 10000)
-        })
-    }
+
+          fetch("/cart/add.js", {
+            method: "POST",
+            body: JSON.stringify(cartList),
+            headers: {
+              "Content-Type": "application/json",
+            },
+          })
+            .then((res) => res.json())
+            .then((res1) => {
+              res1.key = "";
+
+              if (!(res1.message && res1.status)) {
+                cart1.renderContents(res1);
+              }
+
+              changeAddToCartText(parse, 0);
+            })
+            .catch((err) => {
+              changeAddToCartText(parse, 0);
+              
+            }).finally(() => {
+              adding = false
+              fetchBuried('websiteclick', `chord-order-page`, { button: 'ATC' })
+            })
+        }
   }
 
     {% for variant in product.variants %}
