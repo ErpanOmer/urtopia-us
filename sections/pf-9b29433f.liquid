@@ -21,8 +21,8 @@
 					<div class="pf-judme">{% render "judgeme_widgets", widget_type: "judgeme_preview_badge", jm_style: "", concierge_install: false, product: product %}</div>
 				</div>
 				<div class="u30DemiBold_v2 mb6">{{ product.price | money }}</div>
-				<div class="sale mb6" id="sale_accmb" style="background-image: linear-gradient(90deg,var(--sale-color1),var(--sale-color2));">
-					<div class="u20DemiBold_v2" style="color: var(--sale-color1);">{{ product.price | minus: 60000 | money }} NOW</div>
+				<div class="sale mb6" id="sale_accmb" style="background-image: linear-gradient(180deg,var(--sale-color1),var(--sale-color2));">
+					<div class="u20DemiBold_v2" style="color: var(--sale-color3);">{{ product.price | minus: 60000 | money }} NOW</div>
 					<div class="u17DemiBold_v2">with {{ settings.sale_name }}</div>
 				</div>
 			</div>
