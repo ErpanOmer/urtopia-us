@@ -204,16 +204,11 @@ const global_config = {
             }
         },
         // 默认的发货时间 文案
-        ebike_default_delivery_time: 'Free shipping <span>within 5 days</span>',
+        ebike_default_delivery_time: 'Pre-order items ships from August 15 - 30, 2023',
         // 每一种variant 的发货时间文案
         ebike_delivery_time: {
-
             // chord
-            43705718997208: 'Pre-order items shipped from September 1 - 15, 2023',
-            43705719029976: 'Pre-order items shipped from September 1 - 15, 2023',
             // chord x
-            43705719062744: 'Pre-order items shipped from September 1 - 15, 2023',
-            43705719095512: 'Pre-order items shipped from September 1 - 15, 2023',
         }
     }
 }
