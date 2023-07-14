@@ -19,7 +19,7 @@ const global_config = {
         background_imgae_mb: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221008-untitled-4659_2x_acdb2959-15a8-4839-b643-76b62eb34bd2.jpg?v=1689301955'
     },
 
-    
+
     // carbon 产品页面配置
     carbon_order_page_config: {
         // carbon 车默认显示 variant_id, 只有 url 上的 variant 参数为空的时候生效
@@ -143,5 +143,77 @@ const global_config = {
             // chord
             // chord x
         },
+    },
+    // chrod order page 配置项
+    chord_order_page_config: {
+        // chord 车默认显示 variant_id, 只有 url 上的 variant 参数为空的时候生效
+        default_variant: 43694976729336,
+        // 产品图
+        product_images: {
+            "High-Step": {
+                White: [
+                    "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18755.png?v=1689236358",
+                    "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18760.png?v=1689236358",
+                    "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18762.png?v=1689236358",
+
+                    'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18765.png?v=1689236562',
+                    'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18769.png?v=1689236563',
+                    'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18766.png?v=1689236562'
+                ],
+                Black: [
+                    'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18754.png?v=1689236445',
+                    'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18758.png?v=1689236445',
+                    'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18759.png?v=1689236445',
+
+                    'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18770_ae2056ef-cd08-42d1-a7b4-e8f125eae35a.png?v=1689237082',
+                    'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18771.png?v=1689237081',
+                    'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18772.png?v=1689237082'
+                ],
+                commonSwiper: [
+                    'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230224-145020_4c046e1d-5af9-48af-a786-4b35087a5a87.png?v=1689236898',
+                    'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230224-145010_f48cb52f-2d3d-4a4f-b7f7-c6c2980349c9.png?v=1689236897',
+                    'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_-1.png?v=1689236897',
+                    'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DSCF-1.png?v=1689236898'
+                ]
+            },
+            "Step-Through": {
+                White: [
+                    "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18757.png?v=1689237250",
+                    "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18763.png?v=1689237250",
+                    "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18764.png?v=1689237251",
+
+                    'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18765.png?v=1689236562',
+                    'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18769.png?v=1689236563',
+                    'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18766.png?v=1689236562'
+                ],
+                Black: [
+                    'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18756.png?v=1689237251',
+                    'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18767.png?v=1689237251',
+                    'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18768.png?v=1689237250',
+
+                    'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18770_ae2056ef-cd08-42d1-a7b4-e8f125eae35a.png?v=1689237082',
+                    'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18771.png?v=1689237081',
+                    'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18772.png?v=1689237082'
+                ],
+                commonSwiper: [
+                    'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230224-145020_4c046e1d-5af9-48af-a786-4b35087a5a87.png?v=1689236898',
+                    'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230224-145010_f48cb52f-2d3d-4a4f-b7f7-c6c2980349c9.png?v=1689236897',
+                    'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_-1.png?v=1689236897',
+                    'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DSCF-1.png?v=1689236898'
+                ]
+            }
+        },
+        // 默认的发货时间 文案
+        ebike_default_delivery_time: 'Free shipping <span>within 5 days</span>',
+        // 每一种variant 的发货时间文案
+        ebike_delivery_time: {
+
+            // chord
+            43705718997208: 'Pre-order items shipped from September 1 - 15, 2023',
+            43705719029976: 'Pre-order items shipped from September 1 - 15, 2023',
+            // chord x
+            43705719062744: 'Pre-order items shipped from September 1 - 15, 2023',
+            43705719095512: 'Pre-order items shipped from September 1 - 15, 2023',
+        }
     }
 }
