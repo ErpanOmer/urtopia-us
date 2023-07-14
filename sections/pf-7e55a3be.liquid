@@ -1248,7 +1248,307 @@
 
 </div></div></div></div></div></div><div data-section-id="pf-0736" data-pf-type="Section" class="sc-fmciRz bheIgq pf-64_"><div style="--cw:1280px" class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-65_ pf-r pf-r-eh" style="--s-xs:15px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-66_"><div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-67_"><div class="pf-judme">{% include "judgeme_widgets", widget_type: "judgeme_review_widget", concierge_install: false %}</div></div></div></div></div></div></div></div></div></div>
 
+<img class="toTop" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21049.svg?v=1687267470">
 
+<div class="top-fixed mobileHide">
+    <div class="centeral-content">
+        <span class="u20DemiBold_v2">{{ product.title }}</span>
+        <span class="flex-1"></span>
+        <div>
+            <span class="u17Light_v2"><span class="u20DemiBold_v2 emphasize" style="font-weight: 600;">{{ product.price | money }}</span></span>
+            <span class="u14Light_v2">or as low as {{ 9580 | money }}/Month</span>
+        </div>
+        <a href="#product_form_{{ product.id }}" class="my-button my-button-origin">Order Now</a>
+    </div>
+</div>
+
+<div class="bottom-fixed pcHide">
+    <a href="#product_form_{{ product.id }}" class="my-button my-button-origin">Order Now</a>
+    <div>
+        <span class="u14Light_v2"><span class="emphasize" style="font-weight: 600;">{{ product.price | money }}</span></span>
+        <span class="u14Light_v2">or as low as {{ 9580 | money }}/Month</span>
+    </div>
+</div>
+
+<script>
+    const search = getSearchValues()
+    const variants = JSON.parse(JSON.stringify({{ product.variants | json }}))
+    const size_map = {
+        'High-Step': 'Fit for 170-195 cm',
+        'Step-Through': 'Fit for 160-185 cm'
+    }
+
+    let current_variant_id = null
+    let current_variant = null
+    const frames = {}
+    const styles = {}
+    
+    const leftSwiper = new Swiper(".product .left-swiper", {
+        direction: 'vertical',
+        spaceBetween: 8,
+        slidesPerView: 8,
+        freeMode: true,
+        watchSlidesProgress: true,
+      })
+
+      const rightSwiper = new Swiper(".product .right-swiper", {
+        autoHeight: true,
+        navigation: {
+          nextEl: ".product .right-swiper .swiper-button-next",
+          prevEl: ".product .right-swiper .swiper-button-prev",
+        },
+        pagination: {el:'.swiper-pagination'},
+        effect: 'fade',
+        fadeEffect:{
+            crossFade: true
+        },
+        thumbs: {
+          swiper: leftSwiper,
+        },
+      });
+
+    function findVariantOptions (frame, style) {
+        return variants.find(v => `${frame} / ${style}` === v.title)
+    }
+
+    function findVariantFromId (id) {
+        return variants.find(v => String(v.id) === String(id))
+    }
+
+    function findAvailableVariant () {
+        return variants.find(v => v.available)
+    }
+
+    let current_frame = ''
+    let current_style = ''
+    function changeVariant (frame, style) {
+        if (current_frame !== frame) {
+            $(`.product .product-panel .Frame .active`).removeClass('active')
+            $(`.product .product-panel .Frame > div[attribute="${frame}"]`).addClass('active')
+
+            if (frame === 'High-Step') {
+              $(`.product .product-panel .accessories .chord-accessories-1 .active`).click()
+              $(`.product .product-panel .accessories .chord-accessories`).show()
+              $(`.product .product-panel .accessories .chord-accessories-1`).hide()
+
+              $(`.product .product-panel .options > div[option="Frame"] .u17DemiBold_v2 .u17Light_v2`).text(`Chord - ${size_map[frame]}`)
+
+
+            } else {
+              $(`.product .product-panel .accessories .chord-accessories .active`).click()
+              $(`.product .product-panel .accessories .chord-accessories`).hide()
+              $(`.product .product-panel .accessories .chord-accessories-1`).show()
+
+              $(`.product .product-panel .options > div[option="Frame"] .u17DemiBold_v2 .u17Light_v2`).text(`Chord X - ${size_map[frame]}`)
+            }
+
+            $(`.product .product-panel .accessories .items`).animate({
+                scrollLeft: 0
+            }, 300)
+        }
+
+        if (current_style !== style) {
+            $(`.product .product-panel .Style .active`).removeClass('active')
+            $(`.product .product-panel .Style > div[attribute="${style}"]`).addClass('active')
+            $(`.product .product-panel .options > div[option="Style"] .u17DemiBold_v2 .u17Light_v2`).text(style)
+        }
+
+
+        if (frame !== current_frame || style !== current_style) {
+            current_variant = findVariantOptions(frame, style)
+            current_variant_id = current_variant.id
+            current_frame = frame
+            current_style = style
+
+
+            history.replaceState(null, '', `${location.pathname}?variant=${current_variant_id}`);
+            $('.product .product-panel input[name="id"]').val(current_variant_id)
+            $('.product .delivery_time').html(global_config.chord_order_page_config.ebike_delivery_time[current_variant_id] || global_config.chord_order_page_config.ebike_default_delivery_time)
+
+            const btn =  $('.product .buttons .addToCartBtn')
+            if (current_variant.available) {
+                btn.find('span').text('Add to Cart')
+                btn.removeClass('disabled')
+            } else {
+                btn.find('span').text('Sold out')
+                btn.addClass('disabled')
+            }
+
+            const swiper_arr = global_config.chord_order_page_config.product_images[frame][style].concat(global_config.chord_order_page_config.product_images[frame]['commonSwiper'])
+
+            $('.product .right-swiper .swiper-wrapper').html(swiper_arr.map((s, i) => {
+                const index = i % 6
+
+                return  `<div class="swiper-slide">
+                            <img src="${s}">
+                        </div>`
+              }).join(''))
+            $('.product .left-swiper .swiper-wrapper').html(swiper_arr.map(s => `<div class="swiper-slide"><img src="${s}"></div>`).join(''))
+            
+            // update
+            setTimeout(() => {
+                rightSwiper.update()
+                rightSwiper.slideTo(0, 0)
+                
+                leftSwiper.update()
+                leftSwiper.slideTo(0, 0)
+            }, 0)
+        }
+
+        console.log(current_variant)
+    }
+
+
+    function changeAddToCartText (parse, step = 0) {
+        if (step) {
+            $(".addToCartBtn i").toggleClass("showi");
+            document.querySelector(".addToCartBtn span").innerHTML = "Adding...";
+        } else {
+            setTimeout(()=>{
+                $(".addToCartBtn i").toggleClass("showi");
+                document.querySelector(".addToCartBtn span").innerHTML = "Add to Cart";
+            }, 800)
+        }
+    }
+
+    function pageInit() {
+      const variant_id = search.variant || global_config.chord_order_page_config.default_variant
+      let find = findVariantFromId(variant_id)
+
+      if (!find || !find.available) {
+        find = findAvailableVariant()
+      }
+
+      // 如果默认 variant 也不可用，那晒显出能用的variant
+      changeVariant(find.option1, find.option2) 
+    }
+
+    {% for variant in product.variants %}
+        frames[{{ variant.option1 | json }}] = 1
+        styles[{{ variant.option2 | json }}] = 1
+    {% endfor %}
+
+    console.log('variants', variants)
+
+    for (const frame of Object.keys(frames)) {
+        $('.product .product-panel .Frame').append(`<div attribute="${frame}" class="${frame}">${frame}</div>`)
+    }
+
+    for (const style of Object.keys(styles)) {
+        $('.product .product-panel .Style').append(`<div attribute="${style}" class="${style}"></div>`)
+    }
+
+
+    $('.product-panel .options .option >div:not(.u17DemiBold_v2) > div').on('click',e => {
+        const t = $(e.target)
+
+        if ($(e.target).parent().hasClass('Frame')) {
+            changeVariant(t.attr('attribute'), current_variant.option2)
+        } else {
+            changeVariant(current_variant.option1, t.attr('attribute'))
+        }
+    })
+
+    $('.accessories .navigate > div').on('click', e => {
+        const items1 = $('.product .accessories .chord-accessories')
+        const items2 = $('.product .accessories .chord-accessories-1')
+
+        items1.animate({
+            scrollLeft: items1.scrollLeft() + ($(e.target).hasClass('next') ? 180 : -180)
+        }, 300)
+
+        items2.animate({
+            scrollLeft: items2.scrollLeft() + ($(e.target).hasClass('next') ? 180 : -180)
+        }, 300)
+    })
+
+    $('.accessories .items .item').on('click', e => {
+        const item = $(e.target).closest('.item')
+        const icon = item.find('.u11Light_v2')
+
+        if (item.hasClass('active')) {
+            item.removeClass('active')
+            icon.html('<i class="fa-solid fa-plus"></i>')
+            
+        } else {
+            item.addClass('active')
+            icon.html('<i class="fa-solid fa-check"></i>')
+        }
+    })
+
+    $('.product .product-panel').on("submit", function (event) {
+
+        // 阻止默认行为
+        event.preventDefault();
+        return false;
+    })
+
+    $('.product .dialogs > div').on('click', e => {
+        const m = {
+            0: 'one',
+            1: 'two',
+            2: 'three',
+            3: 'four'
+        }
+
+        $('.product .dialogs > div').each((i, t) => {
+            if ($(e.target).closest('.u17Medium_v2')[0] === t) {
+                console.log(i)
+
+                const layer = document.querySelector(`.order-modal-${m[i]}`);
+                const laybox = document.querySelector(`.order-modal-layer-${m[i]}`);
+                layer.style.display = "flex";
+                laybox.className += " dialog-open";
+            }
+        })
+    })
+
+    $('.toTop').on('click', e => {
+        $('html').animate({
+            scrollTop: 0
+        }, 300)
+    })
+
+    let currnetScroolTop = 0
+    $(document).on('scroll', throttle(e => {
+        const top1 = $('div[data-section-id="pf-b3fb"]').offset().top
+        const top3 = $('.product .addToCartBtn').offset().top
+        const top2 = $(e.target).scrollTop()
+
+        const h = window.screen.height
+
+        if (global_config.is_mobile) {
+            if (top2 > top3) {
+                $('.bottom-fixed').show()
+            } else {
+                $('.bottom-fixed').hide()
+            }
+        } else {
+            if (top2 > top1) {
+                $('.top-fixed').show()
+            } else {
+                $('.top-fixed').hide()
+            }
+
+            if (currnetScroolTop > top2) {
+                $('.top-fixed').hide()
+            }
+
+            currnetScroolTop = top2
+        }
+
+        top2 > (h * 2) ? $('.toTop').show() : $('.toTop').hide()
+
+    }, 300, 100))
+
+    // 默认隐藏
+    $('.bottom-fixed').hide()
+    $('.top-fixed').hide()
+    $('.toTop').hide()
+
+    // 页面初始化
+    pageInit()
+</script>
 
 <script src="https://cdn.jsdelivr.net/gh/StephanWagner/jBox@v1.3.3/dist/jBox.all.min.js"></script>
 <link href="https://cdn.jsdelivr.net/gh/StephanWagner/jBox@v1.3.3/dist/jBox.all.min.css" rel="stylesheet">
