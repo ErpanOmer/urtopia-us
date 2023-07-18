@@ -190,6 +190,16 @@
 
         .strava {
             background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21253_2x_945b0603-6617-4e75-8180-997dd03fc967.jpg?v=1689664830');
+
+            .centeral-content {
+                height: 50%;
+
+                & > div {
+                    text-align: center;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
         }
 
 
