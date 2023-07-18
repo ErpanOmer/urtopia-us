@@ -1,25 +1,12 @@
 class CartRemoveButton extends HTMLElement {
   constructor() {
     super();
-    this.addEventListener('click', (event) => {
-      event.preventDefault();
+
+    this.addEventListener('click', event => {
       const cartItems = this.closest('cart-items') || this.closest('cart-drawer-items');
-
-      const lineItem = this.closest('[data-line-item]');
-      const lineId = lineItem.dataset.lineItemVariantId;
-      const pruduct_id = lineItem.dataset.lineItemProductId
-      const quantity = lineItem.dataset.quantity
-      const index = lineItem.dataset.lineItem
-      const title = lineItem.dataset.variant_option
-      console.log('pruduct_id', lineItem.dataset)
-
-      // 如果是carbon one 单车
-      if (pruduct_id === global_config.event_bike_product_id && title.includes('350W')) {
-          return cartItems.updateCarbonOneWithComponents(parseInt(index), lineId, parseInt(quantity), 0)
-      }
-
-      cartItems.updateQuantity(this.dataset.index, 0,"","remove");//更改
-    });
+      
+      cartItems.onCartChange(event)
+    })
   }
 }
 
@@ -38,87 +25,118 @@ class CartItems extends HTMLElement {
     this.addEventListener('change', this.debouncedOnChange.bind(this));
   }
 
-  updateCarbonOneWithComponents (currentIndex, lineItemVariantId, beforeQuantity, afterQuantity) {
-    console.log('beforeQuantity', beforeQuantity)
-    console.log('afterQuantity', afterQuantity)
-
-    const items = document.querySelectorAll('.cart-items [data-cart-item]');
-
-    let itemsQuantityArray = [];
-
-    items.forEach((item, index) => {
-      if (item.dataset.lineItemVariantId === lineItemVariantId && currentIndex === index + 1) {
-        
-        const insuranceId = item.dataset.insuranceVariantId;
-        const insuranceItem = items[index + 1]
-        if (insuranceId && insuranceItem && insuranceItem.dataset.lineItemVariantId === insuranceId) {
-          // const insuranceItem = document.querySelector(`.cart-items [data-line-item-variant-id="${insuranceId}"]`)
-          // console.log('insuranceItem', insuranceItem)
-          // console.log('dataset.index')
-
-          itemsQuantityArray[parseInt(insuranceItem.dataset.lineItem) -1] = afterQuantity
-        }
-
-        itemsQuantityArray[index] = afterQuantity
-      } else if (global_config.event_accessories_variant_ids.includes(item.dataset.lineItemVariantId)) {
-        const componentQuantity = parseInt(item.dataset.quantity)
-        itemsQuantityArray[index] = componentQuantity + (afterQuantity - beforeQuantity)
-      } else {
-        if ((itemsQuantityArray[index] === undefined) || item.dataset.insuranceProductVariantId !== lineItemVariantId) {
-          itemsQuantityArray[index] = parseInt(item.dataset.quantity)
-        }
-      }
-    });
-    
-    console.log('items', itemsQuantityArray);
-
-    const formData = {
-      updates: itemsQuantityArray
-    }
-
-    let info = fetch('/cart/update.js', {
+  fetchAndRefreshCart(updates = []) {
+    fetch('/cart/update.js', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': `application/json` },
-      body: JSON.stringify(formData)
-    }).then(response => response.json()).then(data => {
-      location.reload(true);
+      body: JSON.stringify({ 
+        updates,
+        sections: this.getSectionsToRender().map((section) => section.section),
+        sections_url: window.location.pathname
+      })
+    }).then(response => response.json()).then(parsedState => {
+      console.log('parsedState', parsedState)
+      // location.reload(true);
+      this.classList.toggle('is-empty', parsedState.item_count === 0);
+      const cartDrawerWrapper = document.querySelector('cart-drawer');
+      const cartFooter = document.getElementById('main-cart-footer');
 
-      return data
+      if (cartFooter) cartFooter.classList.toggle('is-empty', parsedState.item_count === 0);
+      if (cartDrawerWrapper) cartDrawerWrapper.classList.toggle('is-empty', parsedState.item_count === 0);
+      
+      this.getSectionsToRender().forEach((section => {
+        const elementToReplace =
+          document.getElementById(section.id).querySelector(section.selector) || document.getElementById(section.id);
+        elementToReplace.innerHTML =
+          this.getSectionInnerHTML(parsedState.sections[section.section], section.selector);
+      }));
+
+      return parsedState
     }).catch((error) => {
       throw new Error(error);
-    });
+    }).finally(() => {
+      this.disableLoading()
+    })
+  }
 
-    // this.disableLoading(index);
+  onCartChange (event) {
+    // 查找当前行
+    const items = $(event.target.closest('.cart-items'))
+    const line_item = $(event.target.closest('.cart-item'))
+
+    const product_id = line_item.attr('data-line-item-product-id')
+    const variant_id = line_item.attr('data-line-item-variant-id')
+
+    const quantity = parseInt(line_item.attr('data-quantity'))
+    // 如果 target value 有值，是onchange , 否则 onremove
+    const to_quantity = event.target.value ? parseInt(event.target.value) : 0
+
+    const index = parseInt(line_item.attr('data-index'))
+    const sale_name = line_item.attr('data-line-item-sale-name')
+
+    console.log(variant_id, sale_name, index, quantity, to_quantity)
+
+    // 数量变动
+    const quantity_arr = []
+
+    // 查找保险产品
+    const insurance = items.find(`.cart-item[data-insurance-product-variant-id="${variant_id}"][data-index="${index + 1}"]`)
+
+    console.log('insurance', insurance)
+
+    // 如果是带活动产品
+    if (sale_name) {
+      const sale_components = items.find(`.cart-item[data-line-item-sale-name="${sale_name}"]:not([data-line-item-variant-id="${variant_id}"]):not([data-line-item-product-id="${product_id}"])`)
+      const sale_bikes = items.find(`.cart-item[data-line-item-sale-name="${sale_name}"][data-line-item-product-id="${product_id}"]`)
+
+      // 计算车总数
+      let count = 0
+      // 遍历活动车
+      sale_bikes.each((i, item) => {
+        if (item === line_item[0]) {
+          count += quantity
+        } else {
+          count += parseInt($(item).attr('data-quantity'))
+        }      
+      })
+
+      // 活动配件
+      sale_components.each((i, item) => {
+        quantity_arr[$(item).attr('data-index') - 1] = (count - quantity) + to_quantity
+      })
+
+    }
+
+    // 如果当前车variant 存在保险
+    if (insurance.length === 1) {
+      quantity_arr[insurance.attr('data-index') - 1] = to_quantity
+    }
+
+    // 修改产品本身 quantity
+    quantity_arr[index - 1] = to_quantity
+
+    // batch update quantity
+    items.find('.cart-item').each((index, item) => {
+      if (quantity_arr[index] === undefined) {
+        quantity_arr[index] = parseInt($(item).attr('data-quantity'))
+      }
+    })
+
+    
+
+    console.log('quantity_arr', quantity_arr)
+
+    // loading
+    this.enableLoading(index)
+    // fetch
+    this.fetchAndRefreshCart(quantity_arr)
+    event.preventDefault();
   }
 
   onChange(event) {
-    const lineItem = event.target.closest('[data-line-item]');
-    const lineId = lineItem.dataset.lineItemVariantId;
-    const pruduct_id = lineItem.dataset.lineItemProductId
-    const quantity = lineItem.dataset.quantity
-    const index = lineItem.dataset.lineItem
-    const title = lineItem.dataset.variant_option
-    console.log('pruduct_id', pruduct_id, lineItem.dataset)
-
-
-    if (pruduct_id === global_config.event_bike_product_id && title.includes('350W')) {
-        return this.updateCarbonOneWithComponents(parseInt(index), lineId, parseInt(quantity), parseInt(event.target.value));
-    }
-    ////购物车逻辑
-    /*
-    var data = event.target.dataset;
-  
-   if(data.type && data.type.indexOf("Carbon One") > -1)
-   {
-    var discountTitle = data.discount;
-     var accessoriesNum = {hNum:Number(data.hnum),gNum:Number(data.gnum),kNum:Number(data.knum),mNum:Number(data.mnum),wNum:Number(data.wnum),bNum:Number(data.bnum),blNum:Number(data.blnum),bikeID:data.id}
-     
-     this.updateQuantityLabour(data.index, event.target.value, document.activeElement.getAttribute('name'),accessoriesNum,discountTitle);
-   }
-   else{*/
-      this.updateQuantity(event.target.dataset.index, event.target.value, document.activeElement.getAttribute('name'));
-    //}
+    this.onCartChange(event)
   }
+
   getSectionsToRender() {
     return [
       {
@@ -142,66 +160,6 @@ class CartItems extends HTMLElement {
         selector: '.js-contents',
       }
     ];
-  }
-  // 活动
-  updateQuantityLabour(line,quantity,name,allQuantity,actName){
-    this.enableLoading(line);
-    var num = quantity - allQuantity.blNum;
-    var updates={};
-    /*
-    if(actName=="Christmas Sale Plan 1")
-    {
-      updates["43494248874232"]=allQuantity.hNum+num;
-    }else if(actName=="Christmas Sale Plan 2"){
-      updates["42285924188408"]=allQuantity.kNum+num;
-      updates["42549464465656"]=allQuantity.wNum+num;
-      updates["43512432754936"]=allQuantity.mNum+num;
-    }*/
-    updates["43494248874232"]=allQuantity.hNum+num;
-    updates["43524949999864"]=allQuantity.gNum+num;
-    //console.log("b",allQuantity.bNum,"bl",allQuantity.blNum,"v",quantity)
-    updates[allQuantity.bikeID]=quantity;
-    const body = JSON.stringify({
-      updates:updates,
-      sections: this.getSectionsToRender().map((section) => section.section),
-      sections_url: window.location.pathname
-    });
-    fetch(`${routes.cart_update_url}`, {...fetchConfig(), ...{ body }})
-      .then((response) => {
-        return response.text();
-      })
-      .then((state) => {
-        const parsedState = JSON.parse(state);
-        this.classList.toggle('is-empty', parsedState.item_count === 0);
-        const cartDrawerWrapper = document.querySelector('cart-drawer');
-        const cartFooter = document.getElementById('main-cart-footer');
-
-        if (cartFooter) cartFooter.classList.toggle('is-empty', parsedState.item_count === 0);
-        if (cartDrawerWrapper) cartDrawerWrapper.classList.toggle('is-empty', parsedState.item_count === 0);
-
-        this.getSectionsToRender().forEach((section => {
-          const elementToReplace =
-            document.getElementById(section.id).querySelector(section.selector) || document.getElementById(section.id);
-          elementToReplace.innerHTML =
-            this.getSectionInnerHTML(parsedState.sections[section.section], section.selector);
-        }));
-
-        this.updateLiveRegions(line, parsedState.item_count);
-        const lineItem =  document.getElementById(`CartItem-${line}`) || document.getElementById(`CartDrawer-Item-${line}`);
-        if (lineItem && lineItem.querySelector(`[name="${name}"]`)) {
-          cartDrawerWrapper ? trapFocus(cartDrawerWrapper, lineItem.querySelector(`[name="${name}"]`)) : lineItem.querySelector(`[name="${name}"]`).focus();
-        } else if (parsedState.item_count === 0 && cartDrawerWrapper) {
-          trapFocus(cartDrawerWrapper.querySelector('.drawer__inner-empty'), cartDrawerWrapper.querySelector('a'))
-        } else if (document.querySelector('.cart-item') && cartDrawerWrapper) {
-          trapFocus(cartDrawerWrapper, document.querySelector('.cart-item__name'))
-        }
-        this.disableLoading();
-      }).catch(() => {
-        this.querySelectorAll('.loading-overlay').forEach((overlay) => overlay.classList.add('hidden'));
-        const errors = document.getElementById('cart-errors') || document.getElementById('CartDrawer-CartErrors');
-        errors.textContent = window.cartStrings.error;
-        this.disableLoading();
-      });
   }
   //
    updateQuantity(line, quantity, name,type) {
