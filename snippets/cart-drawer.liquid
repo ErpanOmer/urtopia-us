@@ -360,14 +360,16 @@
                                       {% if option.name == 'Size' or option.name == 'Frame' %}
                                         <span>
                                         {% case option.value %}
+                                          {% when 'S' %}
+                                            (Fit for 5’3’’~5’9’’)
                                           {% when 'M' %}
-                                            (Fit for 170-185 cm)
+                                            (Fit for 5’7’’~6’1’’)
                                           {% when 'L' %}
-                                            (Fit for 180-195 cm)
+                                            (Fit for 5’11’’~6’5’’)
                                           {% when 'High-Step' %}
-                                            (Fit for 170cm - 195cm)
+                                            (Fit for 5’7’’~6’5’’)
                                           {% when 'Step-Through' %}
-                                            (Fit for 160cm - 185cm)
+                                            (Fit for 5’3’’~6’1’’)
                                           {% else %}
                                       {% endcase %}
                                         </span>
