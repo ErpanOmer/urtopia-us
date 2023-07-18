@@ -34,15 +34,6 @@
                         </div>
                     </div>
                 </div>-->
-                <div class="swiper-slide strava">
-                  <div class="centeral-content">
-                    <div>
-                      <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21258_2x_b6eefd8c-d9c9-4a58-ae7b-284408aad2af.png?v=1689664928" alt="">
-                      <div class="u24Medium_v2">World’s First Full E-bike Integrated with Strava</div>
-                      <a class="my-button" target="_blank" href="/blogs/blog/urtopia-x-strava">Read the blog</a>
-                    </div>
-                  </div>
-                </div>
                 <div class="swiper-slide spring-sale" style="background-color: var(--sale-color3);">
                   <div class="centeral-content">
                       <div>
@@ -71,6 +62,15 @@
                       <div></div>
                   </div>
               </div>
+              <div class="swiper-slide strava">
+                <div class="centeral-content">
+                  <div>
+                    <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21258_2x_b6eefd8c-d9c9-4a58-ae7b-284408aad2af.png?v=1689664928" alt="">
+                    <div class="u24Medium_v2">World’s First Full E-bike Integrated with Strava</div>
+                    <a class="my-button" target="_blank" href="/blogs/blog/urtopia-x-strava">Read the blog</a>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="swiper-pagination"></div>
         </div>
@@ -78,7 +78,7 @@
     // 是否有多个banner, 如果有 开启swiper
     const isMultipartBanner = document.querySelectorAll('.banner .swiper-slide')
     
-    isMultipartBanner.length > 11 && new Swiper('.banner', {
+    isMultipartBanner.length > 1 && new Swiper('.banner', {
         autoplay: {
             disableOnInteraction: false,
             pauseOnMouseEnter: false,
