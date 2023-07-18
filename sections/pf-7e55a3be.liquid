@@ -1460,6 +1460,8 @@
             .then((res1) => {
               res1.key = "";
 
+              cart1.classList.contains('is-empty') && cart1.classList.remove('is-empty');
+
               if (!(res1.message && res1.status)) {
                 cart1.renderContents(res1);
               }
