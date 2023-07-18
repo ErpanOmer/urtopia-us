@@ -241,6 +241,28 @@ const testRides = [
           "10:00-16:00"
         ],
       },
+      {
+        name: "Rebel Bikes Electric",
+        phone: "(951) 894-2453",
+        email: "shelliekay122@gmail.com",
+        timezone: "San Diego, CA, USA (GMT-7)",
+        add: "26175 Jefferson Ave STE 200, Murrieta, CA 92562",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230718-121032.jpg?v=1689658963",
+        testrideSpot: "California",
+        testRideSize: "M",
+        availableSizes: [
+          'Carbon 1 Size M',
+        ],
+        businessHours: [
+          "12:00-18:00",
+          "12:00-18:00",
+          "12:00-18:00",
+          "12:00-18:00",
+          "12:00-18:00",
+          "12:00-18:00",
+          "12:00-18:00"
+        ],
+      },
     ]
   },
   {
