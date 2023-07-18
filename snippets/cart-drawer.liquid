@@ -304,9 +304,6 @@
                         data-line-item-product-id="{{- item.product_id -}}"
                         data-line-item-variant-id="{{- item.variant_id -}}"
                         data-line-item-sale-name="{{- item.discounts.first.title -}}"
-                        {% if item.properties['_insurance_variant_id'] %} data-insurance-variant-id="{{- item.properties['_insurance_variant_id'] -}}"{% endif %}
-                        {% if item.properties['_product_variant_id'] %} data-insurance-product-variant-id="{{- item.properties['_product_variant_id'] -}}"{% endif %}
-                        {% if item.properties['_insurance_key'] %} data-insurance-key="{{- item.properties['_insurance_key'] -}}"{% endif %}
                         >
                         <td class="cart-item__media" role="cell" headers="CartDrawer-ColumnProductImage">
                           {% if item.image %}
