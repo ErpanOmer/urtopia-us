@@ -286,7 +286,7 @@
                     {% assign has_chord = false %}
 
                     {%- for item in cart.items -%}
-                      {% if item.product.id == 7633738727640 %}
+                      {% if item.product.id == 7902779474168 %}
                         {% assign has_carbon = true %}
                       {% endif %}
 
@@ -457,16 +457,11 @@
 
                         <td class="cart-item__quantity" role="cell" headers="CartDrawer-ColumnQuantity">
                           {% assign discountTitle = item.discounts.first.title %}
-                          {% assign sale_product_id = 7633738727640 %}
-                          {%- assign is_insurance_product = false -%}
-              
-                          {% if item.properties._product_variant_id != blank %}
-                            {%- assign is_insurance_product = true -%}
-                          {%- endif -%}
+                          {% assign sale_product_id = 7902779474168 %}
 
 
                           <div class="cart-item__quantity-wrapper" id="{{item.product.id}}">
-                            {% if item.product.id != sale_product_id and discountTitle or is_insurance_product %}
+                            {% if item.product.id != sale_product_id and discountTitle %}
                               <div style="width: 99%;display: flex;align-items: center;">{{ item.quantity }}</div>
                             {% else %}
                                 <quantity-input class="quantity">
