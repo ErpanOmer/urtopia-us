@@ -61,6 +61,9 @@ class CartDrawer extends HTMLElement {
   }
 
   renderContents(parsedState) {
+    console.log(this.querySelector('.drawer__inner').classList)
+    //cart1.classList.contains('is-empty') && cart1.classList.remove('is-empty');
+
     this.querySelector('.drawer__inner').classList.contains('is-empty') && this.querySelector('.drawer__inner').classList.remove('is-empty');
     this.productId = parsedState.id;
     this.getSectionsToRender().forEach((section => {
