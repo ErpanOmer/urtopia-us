@@ -18,7 +18,7 @@
         "type": "text",
         "id": "sale_name",
         "label": "活动名称",
-        "default": "Summer Sale"
+        "default": "Tech+ESG Sale"
       },
       {
         "type": "text",
