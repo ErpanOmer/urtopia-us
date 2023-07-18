@@ -138,7 +138,7 @@
 
 
         .spring-sale {
-            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21250_2x_3d31fa4e-f9a9-4e72-bff1-d827b8fa8ee7.jpg?v=1689297884');
+            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21467_2x_2d59f664-a09b-4ba4-b162-6a1ce0da50a1.jpg?v=1689663491');
 
             .centeral-content {
                 // height: 85%;
@@ -146,7 +146,7 @@
                 &>div {
 
                     & > img {
-                        max-width: 318px;
+                        max-width: 480px;
                     }
 
                     .u56DemiBold_v2 {
@@ -183,6 +183,29 @@
                     img {
                         max-width: 380px;
                         margin: 4vh 0;
+                    }
+                }
+            }
+        }
+
+        .strava {
+            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21253_2x_945b0603-6617-4e75-8180-997dd03fc967.jpg?v=1689664830');
+
+            .centeral-content {
+                height: 42%;
+
+                & > div {
+                    text-align: center;
+                    justify-content: center;
+                    align-items: center;
+
+                    img {
+                        max-height: 54px;
+                        width: auto;
+                    }
+
+                    .u24Medium_v2 {
+                        margin: 32px 0 40px;
                     }
                 }
             }
@@ -359,7 +382,7 @@
             }
 
             .spring-sale {
-                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230714-092736.jpg?v=1689298074');
+                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21036_2x_1565b182-ee4f-426f-b49b-ef9ee9d8fe1b.png?v=1689663814');
 
                 .centeral-content {
                     height: 100%;
@@ -369,7 +392,7 @@
                         padding: 6vw 0 18vw;
                         display: flex;
                         flex-direction: column;
-                        align-items: center;
+                        // align-items: center;
 
                         & > img {
                             max-width: 200px;
@@ -411,6 +434,17 @@
 
                         .u36DemiBold_v2 {
                             font-size: 20px;
+                        }
+                    }
+                }
+            }
+
+
+            .strava {
+                .centeral-content {
+                    & > div {
+                        .u24Medium_v2 {
+                            margin: 30px 0;
                         }
                     }
                 }
