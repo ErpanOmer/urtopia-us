@@ -14,9 +14,9 @@ const global_config = {
         // 邮件弹窗 延迟弹出时间，单位:s
         show_delay_time: 10,
         // 邮件 pc 背景图
-        background_imgae_pc: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Urtopia_Photo_Sesh_14_of_14_2x_a41a7ead-23bd-447d-b467-52b3c8c231f6.jpg?v=1689904640',
+        background_imgae_pc: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221008-untitled-4659_2x_026f342b-e152-496e-8149-4edb28692c0d.jpg?v=1689301493',
         // 邮件 mobile 背景图
-        background_imgae_mb: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Urtopia_Photo_Sesh_14_of_14_2x_db4fd2bf-28a8-4e13-a099-8ab8ccf01500.jpg?v=1689904654'
+        background_imgae_mb: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221008-untitled-4659_2x_acdb2959-15a8-4839-b643-76b62eb34bd2.jpg?v=1689301955'
     },
 
 
@@ -118,9 +118,9 @@ const global_config = {
             //lb l
             43556896014584: 'Ships between <span>August 1-15, 2023 </span>from L.A. warehouse.',
             //pb s
-            43556899684600: 'Ships between <span>August 1-15, 2023 </span>from L.A. warehouse.',
+            43556899684600: 'Ships within <span>5 business days</span> from L.A. warehouse.',
             //pw s
-            43556899750136: 'Ships between <span>August 1-15, 2023 </span>from L.A. warehouse.',
+            43556899750136: 'Ships within <span>5 business days</span> from L.A. warehouse.',
             //pw l
             43556899881208: 'Ships between <span>August 1-15, 2023 </span>from L.A. warehouse.',
             //sb m
@@ -132,7 +132,7 @@ const global_config = {
             //pw m
             43556899815672: 'Ships within <span>5 business days</span> from L.A. warehouse.',
             //lb m
-            43556895981816: 'Ships within <span>5 business days</span> from L.A. warehouse.',
+            43556895981816: 'Ships between <span>August 1-15, 2023 </span>from L.A. warehouse.',
             43645495378168: 'Ships within <span>10 business days </span>from L.A. warehouse.',
             //sb l
             43556895949048: 'Ships within <span>5 business days</span> from L.A. warehouse.',
