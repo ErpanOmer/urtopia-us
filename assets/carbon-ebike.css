@@ -2589,4 +2589,56 @@ section.mobile-motor {
         font-size: 14px;
         margin: 15px 0 30px;
     }
+
+  .strava-mobile {
+        background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230721-141800.jpg?v=1689920301') center center/cover no-repeat;
+        color: #CBCBCB;
+        padding: 30vw 8vw;
+        height: 900px;
+    }
+
+    .strava-mobile .u17Light_v2 {
+        margin: 20px 0;
+    }
+
+    .strava-mobile .u24DemiBold_v2 {
+        color: #fff;
+    }
+
+    .strava-mobile img {
+        max-width: 92px;
+    }
+}
+
+
+
+.strava {
+    max-height: 500px;
+    margin-top: 16px;
+}
+
+.strava .pc-maxW {
+    background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21550_2x_ec1e88f3-df60-4d79-8a10-f35c6a337e7b.jpg?v=1689910497') center center/cover no-repeat;
+    border-radius: 25px;
+    color: #CBCBCB;
+    padding: 24px;
+}
+
+.strava .pc-maxW > div {
+    display: flex;
+    flex-direction: column;
+    max-width: 40%;
+}
+
+.strava .pc-maxW > div .u17Light_v2 {
+    margin: 40px 0 30px;
+}
+
+.strava .pc-maxW > div .u30DemiBold_v2 {
+    color: #fff;
+    margin-top: 8px;
+}
+
+.strava .pc-maxW > div img {
+    max-width: 135px;
 }

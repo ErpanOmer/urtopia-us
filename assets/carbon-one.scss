@@ -1531,6 +1531,21 @@ $sale_text_color: #236ABE;
                 background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21043_2x_45da7cac-1f09-442d-b718-3b6a8371d176.jpg?v=1687253628') center center/cover no-repeat;
                 padding-bottom: 75%;
             }
+
+            &:nth-child(5) {
+                background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21557_2x_1335a1e2-80ed-4736-8c0d-3a48d997a72d.jpg?v=1689909470') center center/cover no-repeat;
+                padding-bottom: 75%;
+            }
+
+            .icons {
+                display: flex;
+                margin: 12px 0 24px;
+
+                img {
+                    max-width: 40px;
+                    margin-right: 8px;
+                }
+            }
         }
     }
 }
@@ -2140,6 +2155,15 @@ $sale_text_color: #236ABE;
 
                 &:nth-child(4) {
                     order: 3;
+                }
+
+              &:nth-child(5) {
+                    order: 5;
+                }
+
+                &:nth-child(6) {
+                    padding: 8vw 4vw;
+                    order: 6;
                 }
 
                 .u36DemiBold_v2 {
