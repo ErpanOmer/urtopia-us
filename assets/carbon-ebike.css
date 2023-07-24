@@ -2607,6 +2607,7 @@ section.mobile-motor {
 
     .strava-mobile img {
         max-width: 92px;
+        margin-bottom: 24px;
     }
 }
 
@@ -2641,4 +2642,5 @@ section.mobile-motor {
 
 .strava .pc-maxW > div img {
     max-width: 135px;
+  margin-bottom: 40px;
 }

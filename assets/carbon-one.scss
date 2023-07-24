@@ -1520,6 +1520,7 @@ $sale_text_color: #236ABE;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            align-items: flex-start;
             padding: 0 10%;
 
             &:nth-child(1) {
@@ -1545,6 +1546,11 @@ $sale_text_color: #236ABE;
                     max-width: 40px;
                     margin-right: 8px;
                 }
+            }
+
+          .my-button {
+                background-color: #FD4B17;
+                margin-top: 24px;
             }
         }
     }
