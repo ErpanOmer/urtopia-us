@@ -18,13 +18,13 @@
         "type": "text",
         "id": "sale_name",
         "label": "活动名称",
-        "default": "Outdoor Season Sale"
+        "default": "Summer Flash Sale"
       },
       {
         "type": "text",
         "id": "sale_end_time",
         "label": "活动结束文案",
-        "default": "Ends July 24"
+        "default": "Ends July 27"
       }
     ]
   },
