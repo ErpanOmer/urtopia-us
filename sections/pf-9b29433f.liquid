@@ -916,7 +916,7 @@
 
 
 <script>
-  console.log(JSON.parse(JSON.stringify({{ localization.country | json }})))
+  console.log(JSON.parse(JSON.stringify({{ localization.language | json }})))
   const search = getSearchValues()
   const variants = JSON.parse(JSON.stringify({{ product.variants | json }}))
   const size_map = {
