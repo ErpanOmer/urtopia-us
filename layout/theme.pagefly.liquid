@@ -119,20 +119,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 {% comment %}{{ content_for_header }}{% endcomment %}
 {{ content_for_header | remove: '<link href="https://monorail-edge.shopifysvc.com" rel="dns-prefetch">' }}
 
-  <!-- Taboola Pixel Code -->
+
   <script type='text/javascript'>
-    window._tfa = window._tfa || [];
-    window._tfa.push({ notify: 'event', name: 'page_view', id: 1410404 });
-    !function (t, f, a, x) {
-      if (!document.getElementById(x)) {
-        t.async = 1; t.src = a; t.id = x; f.parentNode.insertBefore(t, f);
-      }
-    }(document.createElement('script'),
-      document.getElementsByTagName('script')[0],
-      '//cdn.taboola.com/libtrc/unip/1410404/tfa.js',
-      'tb_tfa_script');
-
-
       function fetchBuried (name = '', type = '', data = {}, isSendBeacon = false) {
         const body = {
             module: "website-us",
@@ -336,10 +324,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 
     :root {
-      --sale-color1: #EA9E67;
-        --sale-color2: #EB5A2D;
-        --sale-color3: #EE6426;
-        --sale-color4: #F4492A;
+        --sale-color1: #FF9238;
+        --sale-color2: #F47003;
+        --sale-color3: #FF9238;
+        --sale-color4: #F47003;
       }
 
     html {

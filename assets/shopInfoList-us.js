@@ -263,6 +263,28 @@ const testRides = [
           "12:00-18:00"
         ],
       },
+      {
+        name: "California eBikes",
+        phone: "(916) 699-7872",
+        email: "shelliekay122@gmail.com",
+        timezone: "San Diego, CA, USA (GMT-7)",
+        add: "fairoakscoastalcruisers@gmail.com ",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230725-174130.jpg?v=1690278127",
+        testrideSpot: "California",
+        testRideSize: "M",
+        availableSizes: [
+          'Carbon 1s Size M',
+        ],
+        businessHours: [
+          "",
+          "11:00-18:00",
+          "11:00-18:00",
+          "11:00-18:00",
+          "11:00-18:00",
+          "11:00-18:00",
+          "11:00-16:00"
+        ],
+      },
     ]
   },
   {
