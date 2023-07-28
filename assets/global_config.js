@@ -14,9 +14,9 @@ const global_config = {
         // 邮件弹窗 延迟弹出时间，单位:s
         show_delay_time: 10,
         // 邮件 pc 背景图
-        background_imgae_pc: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Urtopia_Photo_Sesh_14_of_14_2x_a41a7ead-23bd-447d-b467-52b3c8c231f6.jpg?v=1689904640',
+        background_imgae_pc: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221009-untitled-5447_2x_58bd6f85-e2af-426c-8871-41ea2dc0972a.jpg?v=1690510541',
         // 邮件 mobile 背景图
-        background_imgae_mb: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Urtopia_Photo_Sesh_14_of_14_2x_db4fd2bf-28a8-4e13-a099-8ab8ccf01500.jpg?v=1689904654'
+        background_imgae_mb: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221009-untitled-5447_2x_6af28115-d0a0-490a-8ec6-032da514efcd.jpg?v=1690510546'
     },
 
 
