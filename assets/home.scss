@@ -248,6 +248,59 @@
     }
 }
 
+.test-ride {
+    margin: 100px 0 0;
+
+    .centeral-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        &>div {
+            padding-bottom: 100%;
+            position: relative;
+
+            &>div {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background-color: #F7F8FA;
+
+                &:first-child {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: flex-start;
+                    padding: 0 10%;
+
+                }
+
+                .u20DemiBold_v2 {
+                    margin: 24px 0 48px;
+                }
+            }
+
+            #storepoint-tag-dropdown,
+            #storepoint-search,
+            #storepoint-panel {
+                display: none !important;
+            }
+
+            #storepoint-map,
+            #storepoint-container,
+            #storepoint-map canvas {
+                width: 100% !important;
+                height: 100% !important;
+                max-height: 100% !important;
+                border: none;
+            }
+        }
+    }
+}
+
 
 @media (max-width: 767px) {
     .banner {
