@@ -2,7 +2,7 @@ const global_config = {
     // 活动产品id
     event_bike_product_id: '7902779474168',
     // 活动送配件 variant_id
-    event_accessories_variant_ids: ['43830635561208', '43830633365752', '43858617204984'],
+    event_accessories_variant_ids: ['43830635561208', '43944029552888', '43858617204984'],
 
     // 是否是手机
     is_mobile: document.documentElement.clientWidth < 768,
@@ -14,9 +14,9 @@ const global_config = {
         // 邮件弹窗 延迟弹出时间，单位:s
         show_delay_time: 10,
         // 邮件 pc 背景图
-        background_imgae_pc: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221009-untitled-5447_2x_58bd6f85-e2af-426c-8871-41ea2dc0972a.jpg?v=1690510541',
+        background_imgae_pc: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20220619-untitled-0871_2x_e63191d7-5f9d-4404-b894-f4b28129f24b.jpg?v=1690854939',
         // 邮件 mobile 背景图
-        background_imgae_mb: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221009-untitled-5447_2x_6af28115-d0a0-490a-8ec6-032da514efcd.jpg?v=1690510546'
+        background_imgae_mb: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20220619-untitled-0871_2x_91cbff9f-2300-461f-8787-99af11d73d76.jpg?v=1690854946'
     },
 
 

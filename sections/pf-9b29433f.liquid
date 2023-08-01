@@ -88,15 +88,15 @@
 				</div>
 				<div class="sale_acc mb12 belt">
 					<div class="u14Light_v2" style="background-image: linear-gradient(-90deg,var(--sale-color3),var(--sale-color4));">And get <span style="font-weight: 600;"> $167 </span> Accessories for <span class="u20DemiBold_v2"> Free</span></div>
-					{% assign accessories_map = "7523826008312,7523819716856,7523827613944" | split: ',' %}
+					{% assign accessories_map = "7523826008312,7883128406264,7523827613944" | split: ',' %}
 					<div class="accs">
 						{% for acc in accessories_map %}
 							{% for prod in collections["accessories"].products %}
 								{% if acc contains prod.id %}
 									<div class="acc">
 										{{ prod.featured_image | image_url: width: 400 | image_tag }}
-										{% if acc == "7523819716856" %}
-											<span class="u11Medium_v2">{{ prod.title | truncatewords: 3, "" | replace: "-", "" }}</span>
+										{% if acc == "7883128406264" %}
+											<span class="u11Medium_v2">{{ prod.title | truncatewords: 1, "" | replace: "-", "" }}</span>
 										{% else %}
 											<span class="u11Medium_v2">{{ prod.title }}</span>
 										{% endif %}
