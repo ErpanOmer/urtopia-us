@@ -24,7 +24,7 @@
         "type": "text",
         "id": "sale_end_time",
         "label": "活动结束文案",
-        "default": "Ends July 31"
+        "default": "Ends on August 3"
       }
     ]
   },
