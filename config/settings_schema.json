@@ -18,7 +18,7 @@
         "type": "text",
         "id": "sale_name",
         "label": "活动名称",
-        "default": "Happy riding Sale"
+        "default": "August Sale"
       },
       {
         "type": "text",
