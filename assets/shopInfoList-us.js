@@ -505,7 +505,7 @@ const testRides = [
     city: 'Massachusetts',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Buna_Bicycle_Works_Washington_dc.jpg?v=1665374977',
     stores: [
-      {
+      /*{
         name: "Battle Road Bikes",
         phone: "781-734-6464",
         email: "jimc@battleroadbikes.com",
@@ -525,7 +525,7 @@ const testRides = [
           "10:00-18:00",
           "10:00-18:00",
         ],
-      },
+      },*/
       {
         name: "Dedham Bike",
         phone: "781-326-1531",
@@ -622,6 +622,27 @@ const testRides = [
           "10:00-18:00",
           "10:00-18:00",
           "09:00-17:00",
+        ],
+      },
+      {
+        name: "Espresso Bicycle Repairs",
+        phone: "941-202-1536",
+        email: "espressobicyclerepairs@gmail.com",
+        timezone: "New Port Richey, FL, USA (GMT-4)",
+        add: "7632 Lockwood Ridge Rd, Sarasota, FL 34243",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230731-114143.jpg?v=1690775188",
+        testrideSpot: "Florida",
+        availableSizes: [
+          'Carbon 1s Size M',
+        ],
+        businessHours: [
+          "10:00-17:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-17:00",
         ],
       },
     ]
