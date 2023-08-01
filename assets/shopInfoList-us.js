@@ -626,7 +626,7 @@ const testRides = [
       },
       {
         name: "Espresso Bicycle Repairs",
-        phone: "941-202-1536",
+        phone: "941-893-5209",
         email: "espressobicyclerepairs@gmail.com",
         timezone: "New Port Richey, FL, USA (GMT-4)",
         add: "7632 Lockwood Ridge Rd, Sarasota, FL 34243",
