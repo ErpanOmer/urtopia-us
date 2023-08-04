@@ -36,7 +36,7 @@
 
     setTimeout(() => {
         global_config.is_pc && !global_config.is_mobile && document.body.addEventListener("mouseleave", debounce((evt) => {
-        if (!window.sessionStorage.hideTestRideDialog && !Test_ride_spots_near_you_is_show) {
+        if (!window.sessionStorage.hideTestRideDialog && !Test_ride_spots_near_you_is_show && !global_config.test_ride_dialog_config.is_hide) {
             Test_ride_spots_near_you_is_show = true
             showMiniDialog(testride_dialog)
         }
