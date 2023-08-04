@@ -21,12 +21,13 @@ const global_config = {
         // 邮件 mobile 背景图
         background_imgae_mb: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20220619-untitled-0871_2x_91cbff9f-2300-461f-8787-99af11d73d76.jpg?v=1690854946'
     },
+    // test ride 弹窗
     test_ride_dialog_config: {
-        // 是否隐藏 邮件弹窗
+        // 是否隐藏
         is_hide: false,
         // 延迟弹出时间，单位:s
         show_delay_time: 15,
-        // 邮件 pc 背景图
+        // pc 背景图
         background_imgae: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230609-untitled-9762.jpg?v=1691048775'
     },
 
