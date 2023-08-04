@@ -27,7 +27,7 @@ const global_config = {
         // 延迟弹出时间，单位:s
         show_delay_time: 15,
         // 邮件 pc 背景图
-        background_imgae: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20220619-untitled-0871_2x_e63191d7-5f9d-4404-b894-f4b28129f24b.jpg?v=1690854939'
+        background_imgae: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230609-untitled-9762.jpg?v=1691048775'
     },
 
 
