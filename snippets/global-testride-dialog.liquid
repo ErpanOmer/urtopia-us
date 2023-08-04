@@ -34,12 +34,14 @@
         }
     }, 300))
 
-    global_config.is_pc && !global_config.is_mobile && document.body.addEventListener("mouseleave", debounce((evt) => {
+    setTimeout(() => {
+        global_config.is_pc && !global_config.is_mobile && document.body.addEventListener("mouseleave", debounce((evt) => {
         if (!window.sessionStorage.hideTestRideDialog && !Test_ride_spots_near_you_is_show) {
             Test_ride_spots_near_you_is_show = true
             showMiniDialog(testride_dialog)
         }
-    }, 500))
+        }, 500))
+    }, global_config.test_ride_dialog_config.show_delay_time * 1000)
 
 
     
