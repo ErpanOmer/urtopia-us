@@ -16,7 +16,7 @@
 
     const testride_dialog = `
         <div class="testride_dialog">
-            <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230609-untitled-9762.jpg?v=1691048775">
+            <img src="${global_config.test_ride_dialog_config.background_imgae}">
             <div>
                 <div class="u30DemiBold_v2">Test ride spots near you</div>
                 <div class="u24Medium_v2">Experience the bike in real</div>
@@ -34,13 +34,12 @@
         }
     }, 300))
 
-    global_config.is_pc && !global_config.is_mobile && document.body.addEventListener("mouseleave", debounce((evt) => {
-        if (!window.sessionStorage.hideTestRideDialog && !Test_ride_spots_near_you_is_show) {
+    setTimeout(() => {
+        global_config.is_pc && !global_config.is_mobile && document.body.addEventListener("mouseleave", debounce((evt) => {
+        if (!window.sessionStorage.hideTestRideDialog && !Test_ride_spots_near_you_is_show && !global_config.test_ride_dialog_config.is_hide) {
             Test_ride_spots_near_you_is_show = true
             showMiniDialog(testride_dialog)
         }
-    }, 500))
-
-
-    
+        }, 500))
+    }, global_config.test_ride_dialog_config.show_delay_time * 1000)
 </script>
