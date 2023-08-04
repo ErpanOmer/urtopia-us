@@ -6,6 +6,9 @@ const global_config = {
 
     // 是否是手机
     is_mobile: document.documentElement.clientWidth < 768,
+     // 是否是 pc
+    is_pc: !!!navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i),
+
 
     // 邮件弹窗有关配置
     subscribe_email_dialog_config: {
