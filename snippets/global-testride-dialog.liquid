@@ -1,0 +1,46 @@
+<link rel="prefetch" href="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230609-untitled-9762.jpg?v=1691048775" as="image">
+<script>
+    let Test_ride_spots_near_you_is_show = false
+    function Test_ride_spots_near_you () {
+        fetchBuried('emailpop', 'exitpop', { button: 'book a test ride' }, true)
+        Test_ride_spots_near_you_is_show = false
+        window.sessionStorage.hideTestRideDialog = 'hideTestRideDialog'
+        closeMiniDialog()
+    }
+
+    function Test_ride_spots_near_you_close () {
+        Test_ride_spots_near_you_is_show = false
+        window.sessionStorage.hideTestRideDialog = 'hideTestRideDialog'
+        closeMiniDialog()
+    }
+
+    const testride_dialog = `
+        <div class="testride_dialog">
+            <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230609-untitled-9762.jpg?v=1691048775">
+            <div>
+                <div class="u30DemiBold_v2">Test ride spots near you</div>
+                <div class="u24Medium_v2">Experience the bike in real</div>
+                <a href="/pages/test-ride" class="my-button my-button-black" onclick="Test_ride_spots_near_you()">Book Now</a>
+            </div>
+            <span class="close" onclick="Test_ride_spots_near_you_close()">×</span>
+        </div>
+    `
+
+    document.body.addEventListener("mouseout", debounce((evt) => {
+        let readWinCountry = window.CozyCountryRedirect && window.CozyCountryRedirect.country;
+        // console.log("离开页面====读取window下国家====", readWinCountry);
+        if (readWinCountry) {
+            localStorage.setItem("CountryCode", readWinCountry);
+        }
+    }, 300))
+
+    global_config.is_pc && !global_config.is_mobile && document.body.addEventListener("mouseleave", debounce((evt) => {
+        if (!window.sessionStorage.hideTestRideDialog && !Test_ride_spots_near_you_is_show) {
+            Test_ride_spots_near_you_is_show = true
+            showMiniDialog(testride_dialog)
+        }
+    }, 500))
+
+
+    
+</script>
