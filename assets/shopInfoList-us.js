@@ -119,8 +119,7 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-BikeAttackPlayaVista.jpg?v=1665374977",
         testrideSpot: "California",
         availableSizes: [
-          'Carbon 1 Size L',
-          'Carbon 1s Size M'
+          'Carbon 1 Size L'
         ],
         businessHours: [
           "10:00-18:00",
@@ -800,6 +799,33 @@ const testRides = [
           "9:00-17:00",
           "9:00-17:00",
           "09:00-15:00",
+        ],
+      },
+    ]
+  },
+  {
+    city: 'New Mexico',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/istockphoto-1160412954-612x612.jpg?v=1691482552',
+    stores: [
+      {
+        name: "E-BIKES OF SOUTHERN NEW MEXICO",
+        phone: "575-635-9961",
+        email: "ebikesnewmexico.com",
+        timezone: "New Mexico, USA (GMT-7)",
+        add: "1230 Osage Ct  Las Cruces NM 88005",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/166556405_938400133573480_4023440075912235609_n.jpg?v=1691482553",
+        testrideSpot: "New Mexico",
+        availableSizes: [
+          'Carbon 1 Size M/L',
+        ],
+        businessHours: [
+          "",
+          "9:00-17:00",
+          "9:00-17:00",
+          "9:00-17:00",
+          "9:00-17:00",
+          "9:00-17:00",
+          "9:00-17:00",
         ],
       },
     ]
