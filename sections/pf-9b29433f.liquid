@@ -105,7 +105,7 @@
 							{% endfor %}
 						{% endfor %}
 					</div>
-					<div class="u11Light_v2">*Not available with leasing</div>
+					<div class="u11Light_v2"></div>
 				</div>
 				<!--<div class="sale_acc mb12 gear" id="sale_acc">
 					<div class="u14Light_v2">Get Accessories for <span class="u20DemiBold_v2">Free</span></div>
@@ -1276,15 +1276,15 @@ function pageInit() {
 
 
 
-  $('.accessories .navigate > div').on('click', e => {
-      const items = $('.accessories .items')
+  $('.product .product-panel .accessories .navigate > div').on('click', e => {
+      const items = $('.product .product-panel .accessories .items')
 
       items.animate({
-          scrollLeft: $('.accessories .items').scrollLeft() + ($(e.target).hasClass('next') ? 180 : -180)
+          scrollLeft: $('.product .product-panel .accessories .items').scrollLeft() + ($(e.target).hasClass('next') ? 180 : -180)
       }, 300)
   })
 
-  $('.accessories .items .item').on('click', e => {
+  $('.product .product-panel .accessories .items .item').on('click', e => {
       const item = $(e.target).closest('.item')
       const icon = item.find('.u11Light_v2')
 
