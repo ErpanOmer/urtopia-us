@@ -1,0 +1,777 @@
+{{ 'pagefly-main.css' | asset_url | stylesheet_tag: preload: true }}
+{{ 'pagefly.d095440b.css' | asset_url | stylesheet_tag: preload: true }}
+{{ 'carbon-ebike-v2.scss.css' | asset_url | stylesheet_tag }}
+
+<div class="top-fixed mobileHide">
+    <div class="centeral-content">
+        <span class="u20DemiBold_v2">Urtopia Carbon 1/1s</span>
+        <span class="flex-1"></span>
+        <div>
+            <span class="u17Light_v2"><span class="u20DemiBold_v2 emphasize"
+                    style="font-weight: 600;">{{ all_products['urtopia-carbon-e-bike'].price | minus: 60000 | money }}</span> <span
+                    style="text-decoration: line-through;">{{ all_products['urtopia-carbon-e-bike'].price | money }}</span></span>
+            <span class="u14Light_v2">or as low as €112/Month</span>
+        </div>
+        <a href="/products/urtopia-carbon-e-bike" target="_blank" class="my-button my-button-origin" action_type="Buynow_0">order/lease now</a>
+    </div>
+</div>
+<div class="bottom-fixed pcHide">
+    <a href="/products/urtopia-carbon-e-bike" target="_blank" class="my-button my-button-origin" action_type="Buynow_0">order/lease now</a>
+    <div>
+        <span>
+            <span class="u17DemiBold_v2 emphasize">{{ all_products['urtopia-carbon-e-bike'].price | minus: 60000 | money }}</span> 
+            <span class="u11Light_v2" style="text-decoration: line-through;">{{ all_products['urtopia-carbon-e-bike'].price | money }}</span>
+        </span>
+        <span class="u11Light_v2">or as low as €112/Month</span>
+    </div>
+</div>
+
+<div class="carbon-ebike-v2">
+        <div class="banner">
+            <div class="centeral-content">
+                <div class="sale mobileHide">
+                    <div class="u17DemiBold_v2">{{ settings.sale_name }} ends in:</div>
+                    <img src="http://i.countdownmail.com/2ml0k2.gif"/>
+                </div>
+                <div class="u60Medium_v2">Urtopia<br>Carbon 1/1s</div>
+                <div class="u36Light_extra_v2">
+                    <span>Smarter</span>
+                    <span>Lighter</span>
+                    <span>Easier</span>
+                </div>
+                <div class="buttons mobileHide">
+                    <div class="my-button" onclick="showVideoDialog('https://www.youtube.com/embed/aCcjbT6NKSQ?autoplay=1&cc_load_policy=1')">Watch Video</div>
+                </div>
+            </div>
+        </div>
+        <div class="design">
+            <div class="centeral-content">
+                <div>
+                    <div class="u48Medium_v2">Design is <br class="pcHide">the Soul</div>
+                    <div class="logos">
+                        <img style="max-width: 210px;"
+                            src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18793_2x_bccf20b5-51e1-4dbc-abbe-a7359094c98c.png?v=1690619934"
+                            alt="">
+                        <img style="max-width: 78px;"
+                            src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21573_2x_3ef5c6d7-993d-4c20-bd6b-92f9703bb289.png?v=1690619929"
+                            alt="">
+                    </div>
+                    <div class="u17Light_v2">Formerly a designer for BMW and Siemens, and inspired by the Möbius strip, Mr.
+                        Heller built a stunning frame shape that symbolizes sustain- ability and interconnectedness.</div>
+                </div>
+                <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/IMG_4817_2x_91d4bb29-16c3-4e76-b5e1-b9e01ffd66d1.jpg?v=1690619924"
+                    alt="">
+            </div>
+        </div>
+        <div class="full-carbon">
+            <div class="centeral-content">
+                <div class="mobileHide"></div>
+                <div>
+                    <div class="u24Medium_v2">Full Carbon</div>
+                    <div class="u48Medium_v2">Only 15kg</div>
+                    <div class="u17Light_v2">Adopting high-end racing bike materials enables Urtopia to be 30% lighter than
+                        most peers. No breath holding needed carrying Urtopia in-and-out.</div>
+                    <a href="/pages/test-ride" target="_blank" class="my-button my-button-origin" action_type="Bookatest ride_1">Book a Free Test Ride</a>
+                </div>
+            </div>
+        </div>
+        <div class="all-hands gray-background-color">
+            <div class="centeral-content">
+                <div class="u24Medium_v2">All in Hands</div>
+                <div class="u48Medium_v2">Smart is the <br class="pcHide">new sexy</div>
+                <div class="box">
+                    <div>
+                        <div class="u30Medium_v2">Navigation without Cellphone</div>
+                        <div class="u17Light_v2"><br>Bright screen shows navigation clearly under daylight, no more ugly phone holder. <br><br>Let you explore the unknown safe and free.
+                        </div>
+                    </div>
+                    <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/smartbar_2x_7fb3ab31-9cd0-4651-bf40-2251da955b26.jpg?v=1690622819"
+                        alt="">
+                </div>
+                <div class="movement">
+                    <div>
+                        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Screen_Shot_2023-07-26_at_3.37.41_PM_2x_ee5079cc-29d4-489f-bb3c-76439ffdae28.jpg?v=1690623586"
+                            alt="">
+                        <div class="u24Medium_v2">Movement Alarm</div>
+                        <div class="u17Light_v2">Once locked, the onboard alarm monitors movements and alerts you against
+                            unauthorized ones.</div>
+                    </div>
+                    <div>
+                        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21596_2x_92e68a96-6881-4d4e-b05e-b3b29da20aa2.jpg?v=1690623911"
+                            alt="">
+                        <div class="u24Medium_v2">GPS Tracking and Fence</div>
+                        <div class="u17Light_v2">Aided by a constant 4G connection, GPS tracking keeps you informed of the
+                            e-bike’s position, even in the worst scenario of theft.</div>
+                        <img class="mobileHide" style="max-width: 60px;cursor: pointer;margin-top: 24px;"
+                            onclick="showVideoDialog('https://www.youtube.com/embed/GBt6O-Zw8C8?autoplay=1&cc_load_policy=1')"
+                            src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Component_65_14_2x_2cce20fa-311c-4052-a7e1-d36f098e4e10.png?v=1690624190"
+                            alt="">
+                        <img class="pcHide" style="max-width: 60px;order: 0;cursor: pointer;margin-bottom: 24px;"
+                          onclick="showVideoDialog('https://www.youtube.com/embed/GBt6O-Zw8C8?autoplay=1&cc_load_policy=1')"
+                          src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Component_65_14_2x_2cce20fa-311c-4052-a7e1-d36f098e4e10.png?v=1690624190"
+                          alt="">
+                    </div>
+                    <div>
+                        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/smartbar_2x_3ad6bbde-f148-4822-a2ec-503bf3949326.jpg?v=1690623928"
+                            alt="">
+                        <div class="u24Medium_v2">Fingerprint Unlock</div>
+                        <div class="u17Light_v2">Fingerprint unlock provide maximum convenience whenever you hop on the
+                            e-bike. No more hassle worrying about losing another key.</div>
+                    </div>
+                </div>
+                <div class="strava">
+                    <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21598_2x_8413d465-6048-4ce0-8dd8-c440846aa733.jpg?v=1690624545"
+                        alt="">
+                    <div>
+                        <div class="u30Medium_v2">Integrated with <br>Apple Watch and Strava</div>
+                        <div class="icons">
+                            <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230721-134446.png?v=1689918329"
+                                alt="">
+                            <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Path_67707_2x_806d4e68-ba1e-4ce8-9b92-3b936a3ec301.png?v=1689909699"
+                                alt="">
+                        </div>
+                        <div class="u17Light_v2">Urtopia E-Bike allow syncing Apple Watch for Heart Rate Monitoring on
+                            Smartbar in real time. Urtopia App also break data barriers, sync with Apple Health, and share
+                            to Strava in just one click!</div>
+                        <div href="" class="my-button my-button-origin" onclick="showVideoDialog('https://www.youtube.com/embed/GBt6O-Zw8C8?autoplay=1&cc_load_policy=1')">Watch Video</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="safe-fun">
+            <div class="centeral-content">
+                <div>
+                    <div class="u30Medium_v2">Safe and Fun on Road</div>
+                    <div class="u24Medium_v2">Brake and Projection light</div>
+                    <div class="u17Light_v2">Brake light will flash when you brake to notice incoming traffic behind you.
+                        Projection light let you be more visible at night, also it makes you shine in the darkness.</div>
+                </div>
+                <div>
+                    <div class="u30Medium_v2 mobileHide">&nbsp;</div>
+                    <div class="u24Medium_v2">StVZO Front Light</div>
+                    <div class="u17Light_v2">Compliant with German Road Traffic Licensing Regulations, the ambient-light
+                        auto-controllable headlight can also be switched on and off via your voice, a Smartbar button, or
+                        the app.</div>
+                </div>
+            </div>
+        </div>
+        <div class="anti-glare-display">
+            <div class="centeral-content">
+                <div>
+                    <div class="u24Medium_v2">Anti-glare Display</div>
+                    <div class="u36Medium_v2">Big and Clear</div>
+                    <div class="u17Light_v2">Key information shown large and clear, keep your focus on the road.</div>
+                </div>
+                <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Screen_Shot_2023-07-27_at_4.08.01_PM_2x_a98e9d04-337f-40ac-828c-bcdfba030c3d.jpg?v=1690769455"
+                    alt="">
+                <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2x.jpg?v=1690769757" alt="xxx">
+                <div>
+                    <div class="u36Medium_v2">Simple and Intuitive</div>
+                    <div class="u24Medium_v2">
+                        <div>Game pad Control</div>
+                        <div class="u17Light_v2">Know gaming, know riding. Take full control of your ride.</div>
+                    </div>
+                    <div class="u24Medium_v2">
+                        <div>Talk to it just like to your friend</div>
+                        <div class="u17Light_v2">Voice, the only command you’ll never forget, and a more intuitive and safe
+                            way to interact.</div>
+                    </div>
+                    <div class="u24Medium_v2">
+                        <div>Bluetooth Speaker</div>
+                        <div class="u17Light_v2">We know the importance of music, so we built in a bluetooth speaker, you
+                            can enjoy your favourite music when riding without carrying an external speaker.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="your-whole">
+            <div class="centeral-content">
+                <div class="u30Medium_v2">Your whole <br>journey in one <br class="mobileHide">app</div>
+                <div class="u17Light_v2">The app is an extension of your bike, <br class="mobileHide">allowing you to control and know
+                    everything <br class="mobileHide">there is.</div>
+            </div>
+        </div>
+        <div class="boxs gray-background-color">
+            <div class="centeral-content">
+                <div>
+                    <div class="u36Medium_v2">Track Your Rides and Fitness</div>
+                    <div class="u17Light_v2">Journey Captured, Memories Made. Routes, speed, calories burned…all captured.
+                    </div>
+                </div>
+                <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230802-111940.jpg?v=1690946402"
+                    alt="">
+                <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230802-111931.jpg?v=1690946402"
+                    alt="xxx">
+                <div>
+                    <div class="u36Medium_v2">Share Your Story and Meet New Friends</div>
+                    <div class="u17Light_v2">Share rides, photos, stories with Urtopia community in app.</div>
+                </div>
+            </div>
+        </div>
+        <div class="powertrain gray-background-color">
+            <div class="centeral-content">
+                <div class="u36Medium_v2">Powertrain</div>
+                <div class="u54Medium_v2">Invisible is Invincible</div>
+                <div class="box">
+                    <div>
+                        <div class="u30Medium_v2">Gearing</div>
+                        <div class="u24Medium_v2">
+                            <div>Carbon 1 - Carbon Belt</div>
+                            <div class="u17Light_v2">30,000-km maintenance free. Farewell to old chains and greasy hands.
+                            </div>
+                        </div>
+                        <div class="u24Medium_v2">
+                            <div>Carbon 1s - <br class="pcHide">Shimano 7-Speed</div>
+                            <div class="u17Light_v2">Provides a gear ratio range from 1.5 to 4, It means that you get up to
+                                40% more efficiency when riding up slopes, and up to 60% faster speed when pedaling at the
+                                same cadence.</div>
+                        </div>
+                    </div>
+                    <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/faf_2x_f6d24ae0-30b3-4bfc-8645-8886554a7aee.jpg?v=1690773780"
+                        alt="">
+                </div>
+            </div>
+        </div>
+        <div class="torque-sensor gray-background-color">
+            <div class="centeral-content">
+                <div>
+                    <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2x_38ec2540-2e11-4aee-b202-e71b4637bd81.jpg?v=1690774576"
+                        alt="">
+                    <div class="u24Medium_v2">Torque sensor</div>
+                    <div class="u17Light_v2">Responsive and intuitive, we take smooth riding to the next level.</div>
+                </div>
+                <div>
+                    <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2x_18a24f44-6c7d-414c-9c19-8f577636aa72.jpg?v=1690774584"
+                        alt="">
+                    <div class="u24Medium_v2">100-km Range Battery</div>
+                    <div class="u17Light_v2">9.8Ah Samsung Li-ion battery embedded in the down frame, removable and
+                        extendable.</div>
+                </div>
+                <div>
+                    <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Screen_Shot_2023-07-26_at_6.17.24_PM_2x_f4917c24-44fe-4da5-b0c1-98e69f34c0f2.jpg?v=1690774593"
+                        alt="">
+                    <div class="u24Medium_v2">5 Pedal Modes</div>
+                    <div class="u17Light_v2">A 250-W compact motor enables riding in comfort and cruising in peace.</div>
+                </div>
+            </div>
+        </div>
+        <div class="styles4">
+            <div class="centeral-content gray-background-color">
+                <div class="texts">
+                    <div class="u30Medium_v2">4 Styles</div>
+                    <div class="u17Light_v2">Always one that can fit your style.</div>
+                    <a href="/products/urtopia-carbon-e-bike" target="_blank" class="my-button my-button-black" action_type="Buynow_1">Choose now</a>
+                </div>
+                <div class="imgaes">
+                    <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20220617-143005_2x_d8fe4f9a-0caf-4684-9c1d-a35fcad47d71.png?v=1690775625"
+                        alt="">
+                    <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20220617-143000_2x_e34d2104-c5f6-4325-98d0-35b9c362d067.png?v=1690776151"
+                        alt="">
+                    <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_18705_2x_f4fcd89d-d08f-4f46-a229-d8f9342731bf.png?v=1690776158"
+                        alt="">
+                    <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18299_2x_42e548af-3d0b-4402-a481-208f3a42e104.png?v=1690776143"
+                        alt="">
+                </div>
+            </div>
+        </div>
+        <div class="accessories">
+            <div class="centeral-content">
+                <div>
+                    <div class="u30Medium_v2">Accessories</div>
+                    <div class="u17Light_v2">Multiple accessories suit your needs <br>and empower your riding.</div>
+                    <a href="/products/urtopia-carbon-e-bike" target="_blank" class="my-button my-button-black" action_type="Buynow_2">Choose now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="size-and-specs">
+  <div class="centeral-content">
+    <div class="item">
+      <div class="u36DemiBold_v2"><img class="down" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20413.svg?v=1688982520" alt=""/> Size Guide</div>
+      <div class="content sizes">
+        <div class="texts">
+          <div class="text u11DemiBold_v2">
+            <div style="color: #fff;">sss</div>
+            <div>Recomm. rider height</div>
+            <div>A. Standover height</div>
+            <div>B. Adjustable seat range</div>
+            <div>C. Handlebar grips height</div>
+            <div>D. Seat tube length</div>
+            <div>E. Wheelbase</div>
+            <div>F. Overall length</div>
+            <div>G. Wheel diameter</div>
+            <div>H. Top tube length (effective)</div>
+            <div>I. Head tube length</div>
+            <div>J. Headset height</div>
+          </div>
+          <div class="text">
+            <div class="u17DemiBold_v2">Medium</div>
+            <div>170-185 cm</div>
+            <div>800 mm</div>
+            <div>60 mm</div>
+            <div>1010 mm</div>
+            <div>460 mm</div>
+            <div>1080 mm</div>
+            <div>1810 mm</div>
+            <div>690 mm</div>
+            <div>580 mm</div>
+            <div>170 mm</div>
+            <div>100 mm</div>
+          </div>
+          <div class="text">
+            <div class="u17DemiBold_v2">Large</div>
+            <div>180-195 cm</div>
+            <div>840 mm</div>
+            <div>60 mm</div>
+            <div>1020 mm</div>
+            <div>500 mm</div>
+            <div>1120 mm</div>
+            <div>1850 mm</div>
+            <div>690 mm</div>
+            <div>610 mm</div>
+            <div>180 mm</div>
+            <div>100 mm</div>
+          </div>
+        </div>
+        <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230413-101607.jpg?v=1681352192" alt="">
+      </div>
+    </div>
+    <div class="item __pf __pf_lUQL6LKn">
+      <div class="u36DemiBold_v2"><img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20413.svg?v=1688982520" alt=""/>Specs</div>
+      <div class="content">
+        <div
+          data-section-id="pf-f457"
+          data-pf-type="Section"
+          class="sc-fmciRz bheIgq pf-637_">
+          <div style="--cw:1280px" class="sc-gjNHFA gwWIgj">
+            <div
+              class="sc-ezbkAF A-dmbO pf-643_ pf-r pf-c-cm pf-r-eh"
+              style="--s-xs:15px;justify-content:unset;"
+              data-pf-type="Row">
+              <div class="pf-c" style="--c-xs:0.5;--c-sm:0.5;--c-md:0.5;--c-lg:0.5">
+                <div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-644_">
+                  <div data-pf-type="Image" class="sc-jgrJph bzUUvT pf-645_"><img
+                      src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/icon2-1649931441565.png?v=1649931443"
+                      srcSet="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/icon2-1649931441565.png?v=1649931443 1536w"
+                      width="2560"
+                      height="1829" /></div>
+                </div>
+              </div>
+              <div class="pf-c" style="--c-xs:0.5;--c-sm:0.5;--c-md:0.5;--c-lg:0.5">
+                <div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-646_">
+                  <div data-pf-type="Image" class="sc-jgrJph bzUUvT pf-647_"><img
+                      src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/cpsc_logo-1662445677565.svg?v=1662445680"
+                      width="40"
+                      height="44" /></div>
+                </div>
+              </div>
+              <div class="pf-c" style="--c-xs:0.5;--c-sm:0.5;--c-md:0.5;--c-lg:0.5">
+                <div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-648_">
+                  <div data-pf-type="Image" class="sc-jgrJph bzUUvT pf-649_"><img
+                      src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/icon1png-1649931441566.png?v=1649931446"
+                      srcSet="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/icon1png-1649931441566.png?v=1649931446 1536w"
+                      width="540"
+                      height="546" /></div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="sc-ezbkAF A-dmbO pf-650_ pf-r pf-r-eh"
+              style="--s-xs:15px;--s-lg:5px"
+              data-pf-type="Row">
+              <div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12">
+                <div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-651_">
+                  <h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-652_">
+                    <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-654_">Smart</span>
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div
+              class="sc-ezbkAF A-dmbO pf-655_ without-padding-bt pf-r pf-r-eh"
+              style="--s-xs:15px;--s-lg:5px"
+              data-pf-type="Row">
+              <div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4">
+                <div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-656_">
+                  <h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-657_">
+                    <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-659_">Smartbar features</span>
+                  </h3>
+                  <p class="sc-jtXEFf jydWoQ pf-660_" data-pf-type="Paragraph">
+                    <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-662_">Voice control, fingerprint unlock, LED dot-matrix display</span>
+                  </p>
+                </div>
+              </div>
+              <div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4">
+                <div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-663_">
+                  <h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-664_">
+                    <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-666_">Connectivity</span>
+                  </h3>
+                  <p class="sc-jtXEFf jydWoQ pf-667_" data-pf-type="Paragraph">
+                    <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-669_">eSIM with 4G, Bluetooth &amp; WiFi</span>
+                  </p>
+                </div>
+              </div>
+              <div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4">
+                <div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-670_">
+                  <h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-671_">
+                    <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-673_">IoT sensors</span>
+                  </h3>
+                  <p class="sc-jtXEFf jydWoQ pf-674_" data-pf-type="Paragraph">
+                    <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-676_">accelerometer, gyroscope &amp; torque</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="sc-ezbkAF A-dmbO pf-677_ without-padding-bt pf-r pf-r-eh"
+              style="--s-xs:15px;--s-lg:5px"
+              data-pf-type="Row">
+              <div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12">
+                <div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-678_">
+                  <h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-679_">
+                    <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-681_">App</span>
+                  </h3>
+                  <p class="sc-jtXEFf jydWoQ pf-682_" data-pf-type="Paragraph">
+                    <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-684_">iOS &amp; Android</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="sc-ezbkAF A-dmbO pf-685_ pf-r pf-r-eh"
+              style="--s-xs:15px;--s-lg:5px"
+              data-pf-type="Row">
+              <div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12">
+                <div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-686_">
+                  <h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-687_">
+                    <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-689_">Power</span>
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div
+              class="sc-ezbkAF A-dmbO pf-690_ without-padding-bt pf-r pf-r-eh"
+              style="--s-xs:15px;--s-lg:5px"
+              data-pf-type="Row">
+              <div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4">
+                <div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-691_">
+                  <h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-692_">
+                    <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-694_">Motor</span>
+                  </h3>
+                  <p class="sc-jtXEFf jydWoQ pf-695_" data-pf-type="Paragraph">
+                    <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-697_">Carbon 1: 36V 250W(rated), 35 N.m <br>Carbon 1s: 36V 250W(rated), 45 N.m </span>
+                  </p>
+                </div>
+              </div>
+              <div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4">
+                <div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-698_">
+                  <h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-699_">
+                    <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-701_">Speed modes</span>
+                  </h3>
+                  <p class="sc-jtXEFf jydWoQ pf-702_" data-pf-type="Paragraph">
+                    <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-704_">Pedal, Eco, Comfort, Sport, Turbo&nbsp;</span>
+                  </p>
+                </div>
+              </div>
+              <div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4">
+                <div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-705_">
+                  <h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-706_">
+                    <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-708_">Top speed (assisted)</span>
+                  </h3>
+                  <p class="sc-jtXEFf jydWoQ pf-709_" data-pf-type="Paragraph">
+                    <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-711_">20 mph</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="sc-ezbkAF A-dmbO pf-712_ without-padding-bt pf-r pf-r-eh"
+              style="--s-xs:15px;--s-lg:5px"
+              data-pf-type="Row">
+              <div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4">
+                <div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-713_">
+                  <h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-714_">
+                    <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-716_">Range</span>
+                  </h3>
+                  <p class="sc-jtXEFf jydWoQ pf-717_" data-pf-type="Paragraph">
+                    <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-719_">40～100 km</span>
+                  </p>
+                </div>
+              </div>
+              <div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4">
+                <div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-720_">
+                  <h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-721_">
+                    <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-723_">Removable battery</span>
+                  </h3>
+                  <p class="sc-jtXEFf jydWoQ pf-724_" data-pf-type="Paragraph">
+                    <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-726_">9.8 Ah 352.8 Wh Samsung Li-ion, 2.5-hr quick charge</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="sc-ezbkAF A-dmbO pf-727_ pf-r pf-r-eh"
+              style="--s-xs:15px;--s-lg:5px"
+              data-pf-type="Row">
+              <div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12">
+                <div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-728_">
+                  <h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-729_">
+                    <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-731_">General</span>
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div
+              class="sc-ezbkAF A-dmbO pf-732_ without-padding-bt pf-r pf-r-eh"
+              style="--s-xs:15px;--s-lg:5px"
+              data-pf-type="Row">
+              <div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4">
+                <div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-733_">
+                  <h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-734_">
+                    <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-736_">Weight</span>
+                  </h3>
+                  <p class="sc-jtXEFf jydWoQ pf-737_" data-pf-type="Paragraph">
+                    <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-739_">Carbon 1: &nbsp;&nbsp;15 kg<br>Carbon 1s: &nbsp;&nbsp;15.8 kg</span>
+                  </p>
+                </div>
+              </div>
+              <div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4">
+                <div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-740_">
+                  <h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-741_">
+                    <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-743_">Load-bearing capacity</span>
+                  </h3>
+                  <p class="sc-jtXEFf jydWoQ pf-744_" data-pf-type="Paragraph">
+                    <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-746_">Max. 110 kg.</span>
+                  </p>
+                </div>
+              </div>
+              <div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4">
+                <div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-747_">
+                  <h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-748_">
+                    <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-750_">Sizes&nbsp;</span>
+                  </h3>
+                  <p class="sc-jtXEFf jydWoQ pf-751_" data-pf-type="Paragraph">
+                    <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-753_">Medium, Large (see Size Guide)</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="sc-ezbkAF A-dmbO pf-754_ without-padding-bt pf-r pf-r-eh"
+              style="--s-xs:15px;--s-lg:5px"
+              data-pf-type="Row">
+              <div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4">
+                <div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-755_">
+                  <h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-756_">
+                    <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-758_">Body material</span>
+                  </h3>
+                  <p class="sc-jtXEFf jydWoQ pf-759_" data-pf-type="Paragraph">
+                    <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-761_">Carbon fiber (frame, fork, handlebar, seatpost)</span>
+                  </p>
+                </div>
+              </div>
+              <div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4">
+                <div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-762_">
+                  <h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-763_">
+                    <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-765_">Brakes</span>
+                  </h3>
+                  <p class="sc-jtXEFf jydWoQ pf-766_" data-pf-type="Paragraph">
+                    <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-768_">Front &amp; rear dual-piston hydraulic disc</span>
+                  </p>
+                </div>
+              </div>
+              <div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4">
+                <div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-769_">
+                  <h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-770_">
+                    <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-772_">Gearing</span>
+                  </h3>
+                  <p class="sc-jtXEFf jydWoQ pf-773_" data-pf-type="Paragraph">
+                    <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-775_">Carbon 1: Gates Carbon Drive™ CDN™ belt(up to 30,000km)<br><br>Carbon 1s: Shimano 7-Speed Rear Drivetrain with ALIVIO Rear Derailleur</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="sc-ezbkAF A-dmbO pf-776_ without-padding-bt pf-r pf-r-eh"
+              style="--s-xs:15px;--s-lg:5px"
+              data-pf-type="Row">
+              <div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4">
+                <div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-777_">
+                  <h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-778_">
+                    <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-780_">Integrated lights</span>
+                  </h3>
+                  <p class="sc-jtXEFf jydWoQ pf-781_" data-pf-type="Paragraph">
+                    <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-783_">StVZO headlight; Advanced Rear Early-indication System (ARES)</span>
+                  </p>
+                </div>
+              </div>
+              <div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4">
+                <div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-784_">
+                  <h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-785_">
+                    <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-787_">Wheels</span>
+                  </h3>
+                  <p class="sc-jtXEFf jydWoQ pf-788_" data-pf-type="Paragraph">
+                    <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-790_">700C (ISO 622 mm BSD), inner rim 19 mm</span>
+                  </p>
+                </div>
+              </div>
+              <div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4">
+                <div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-791_">
+                  <h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-792_">
+                    <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-794_">Tires</span>
+                  </h3>
+                  <p class="sc-jtXEFf jydWoQ pf-795_" data-pf-type="Paragraph">
+                    <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-797_">Kenda Kwest 700x35C (35 mm / 1.4”) (30~45 mm compatible)</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="sc-ezbkAF A-dmbO pf-798_ pf-r pf-r-eh pf-hide"
+              style="--s-xs:15px;--s-lg:5px"
+              data-pf-type="Row">
+              <div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12">
+                <div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-799_">
+                  <h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-800_">
+                    <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-802_">What’s in the Box</span>
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div
+              class="sc-ezbkAF A-dmbO pf-803_ without-padding-bt pf-r pf-r-eh pf-hide"
+              style="--s-xs:15px;--s-lg:5px"
+              data-pf-type="Row">
+              <div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4">
+                <div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-804_">
+                  <h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-805_">
+                    <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-807_">Urtopia Carbon one</span>
+                  </h3>
+                  <p class="sc-jtXEFf jydWoQ pf-808_" data-pf-type="Paragraph">
+                    <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-810_">Front Wheel, Frame, Seatpost, saddle, Pedals</span>
+                  </p>
+                </div>
+              </div>
+              <div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4">
+                <div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-811_">
+                  <h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-812_">
+                    <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-814_">Removable battery</span>
+                  </h3>
+                  <p class="sc-jtXEFf jydWoQ pf-815_" data-pf-type="Paragraph">
+                    <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-817_">Battery, Charger, Battery key</span>
+                  </p>
+                </div>
+              </div>
+              <div class="pf-c" style="--c-xs:12;--c-sm:4;--c-md:4;--c-lg:4">
+                <div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-818_">
+                  <h3 data-pf-type="Heading" class="sc-cTAqQK eHolsa pf-819_">
+                    <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-821_">Frame (accessory) bag
+                    </span>
+                  </h3>
+                  <p class="sc-jtXEFf jydWoQ pf-822_" data-pf-type="Paragraph">
+                    <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-824_">4mm Allen wrench, 15mm combination wrench, front-wheel quick-release device
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="assembly">
+  <div class="centeral-content">
+    <div class="gray-background-color">
+      <div class="u36DemiBold_v2">90% assembly</div>
+      <div class="u17DemiLight_v2">Delight in the convenience of our 90% pre-assembled e-bike package, making assembly a breeze!</div>
+    </div>
+    <div>
+      <img
+        onclick="showVideoDialog('https://www.youtube.com/embed/7q-5PuNG3KM?autoplay=1&cc_load_policy=1')"
+        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/openvideo-1667475097262.svg"
+        alt="">
+    </div>
+  </div>
+</div>
+
+<script>
+  $('.size-and-specs .u36DemiBold_v2').click(function () {
+        $(this)
+            .siblings('.size-and-specs .content')
+            .slideToggle()
+            .parent()
+            .siblings()
+            .find('.size-and-specs .content')
+            .slideUp();
+        $(this).children('img').toggleClass('down');
+        $(this)
+            .parent()
+            .siblings()
+            .find('.size-and-specs .u36DemiBold_v2')
+            .children('img')
+            .addClass('down');
+    });
+</script>
+
+<script>
+  let scrollAction = { x: 'undefined', y: 'undefined' }
+  let scrollDirection = ''
+
+function scrollFunc() {
+  if (typeof scrollAction.x == 'undefined') {
+    scrollAction.x = window.pageXOffset;
+    scrollAction.y = window.pageYOffset;
+  }
+  var diffX = scrollAction.x - window.pageXOffset;
+  var diffY = scrollAction.y - window.pageYOffset;
+  if (diffX < 0) {
+    // Scroll right
+    scrollDirection = 'right';
+  } else if (diffX > 0) {
+    // Scroll left
+    scrollDirection = 'left';
+  } else if (diffY < 0) {
+    // Scroll down
+    scrollDirection = 'down';
+  } else if (diffY > 0) {
+    // Scroll up
+    scrollDirection = 'up';
+  } else {
+    // First scroll event
+  }
+  scrollAction.x = window.pageXOffset;
+  scrollAction.y = window.pageYOffset;
+}
+
+if (!global_config.is_mobile && global_config.is_pc) {
+      window.onscroll = throttle(function (e) {
+        scrollFunc()
+      try {
+        if (scrollDirection == 'down') {
+          //页面向下滚动要做的事情
+          // console.log('-====向下滚动了');
+          document.querySelector('.header-wrapper').style.position = 'inherit';
+          $('.top-fixed').css({ top: 0, 'z-index': 3 })
+
+          if ($('.tl-select').hasClass('open')) {
+            $('.tl-select')[0].click()
+          }
+          
+        } else if (scrollDirection == 'up') {
+          //页面向上滚动要做的事情
+          // console.log('-====向上滚动了');
+          document.querySelector('.header-wrapper').style.position = 'fixed';
+          document.querySelector('.header-wrapper').style.top = 0;
+          document.querySelector('.header-wrapper').style.width = '100%';
+          $('.top-fixed').css({ top: '60px', 'z-index': 2 })
+
+          if (scrollAction.y < 80) {
+            document.querySelector('.header-wrapper').style.position = 'inherit';
+          }
+        }
+      } catch (error) {}
+    }, 50);
+}
+</script>
