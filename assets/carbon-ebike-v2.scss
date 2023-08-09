@@ -1004,4 +1004,56 @@
     #launcher {
         bottom: 55px!important;
     }
+
+    .size-and-specs {
+        margin-top: 60px;
+
+        .centeral-content {
+            padding: 0 4%;
+
+            .item {
+
+
+                .u36DemiBold_v2 {
+                    font-size: 24px;
+
+                    img {
+                        max-width: 20px;
+                    }
+                }
+
+                .sizes {
+                    grid-template-columns: 1fr;
+                    padding: 15px 0;
+
+                    &>div {
+                        order: 1;
+                        font-size: 12px;
+
+
+                    }
+
+                    .lines {
+                        margin-top: 30px;
+
+                        .line {
+                            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+                        }
+
+                        .line+.line {
+                            margin-top: 10px;
+                        }
+
+                        .u17DemiBold_v2 {
+                            font-size: 14px;
+                        }
+                    }
+                }
+
+                .pf-682_ {
+                    padding: 0;
+                }
+            }
+        }
+    }
 }
