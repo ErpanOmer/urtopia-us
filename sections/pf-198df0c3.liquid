@@ -467,8 +467,8 @@ if (!global_config.is_mobile && global_config.is_pc) {
           document.querySelector('.header-wrapper').style.position = 'inherit';
           $('.top-fixed').css({ top: 0, 'z-index': 3 })
 
-          if ($('.tl-select').hasClass('open')) {
-            $('.tl-select')[0].click()
+          if ($('header-menu details[open]')) {
+            $('header-menu details[open] summary')[0].click()
           }
           
         } else if (scrollDirection == 'up') {
