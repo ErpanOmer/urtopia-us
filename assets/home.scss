@@ -138,7 +138,7 @@
 
 
         .spring-sale {
-            background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_21492_2x_055c44a0-7758-4e6e-9617-93c5b51797c5.jpg?v=1691486342');
+            background-image: var(--sale-banner-background-image-pc);
 
             .centeral-content {
                 // height: 85%;
@@ -146,7 +146,7 @@
                 &>div {
 
                     & > img {
-                        max-width: 460px;
+                        max-width: var(--sale-banner-image-max-width);
                     }
 
                     .u56DemiBold_v2 {
@@ -435,7 +435,7 @@
             }
 
             .spring-sale {
-                background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1s_stock_g_2x_d2b08928-ff0d-4301-82dc-b3eb72c08933.jpg?v=1691486466');
+                background-image: var(--sale-banner-background-image-mb);
 
                 .centeral-content {
                     height: 100%;
