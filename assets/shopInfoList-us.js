@@ -546,6 +546,27 @@ const testRides = [
           "09:00-17:00",
         ],
       },
+      {
+        name: "Evolution E-Bikes",
+        phone: "888-545-2453",
+        email: "EvolutionE-Bikes.com",
+        timezone: "Washington, DC, USA (GMT-4)",
+        add: "25 Accord Park Dr.  Unit 3 Rockland, MA 02341",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Evolution_E-Bikes.jpg?v=1691635464",
+        testrideSpot: "Massachusetts",
+        availableSizes: [
+          'Carbon 1s Size M',
+        ],
+        businessHours: [
+          "12:00-17:00",
+          "12:00-17:00",
+          "12:00-17:00",
+          "12:00-17:00",
+          "12:00-17:00",
+          "12:00-17:00",
+          "10:00-16:00",
+        ],
+      },
     ]
   },
   {
