@@ -486,4 +486,21 @@ if (!global_config.is_mobile && global_config.is_pc) {
       } catch (error) {}
     }, 30);
 }
+
+
+$('[action_type]').on('click', e => {
+
+    // 如果点击过 就别再统计
+    if (!window.sessionStorage.ebikePageButtonClicked) {
+      const action_type = $(e.target).closest('[action_type]').attr('action_type')
+
+      window.sessionStorage.ebikePageButtonClicked = 'ebikePageButtonClicked'
+
+      fetchBuried('websiteclick', 'carbon-ebikepage', {
+        //action_type: abtest_type,
+        event_name: 'button-click',
+        button: action_type
+      }, true)
+    }
+  })
 </script>
