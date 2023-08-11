@@ -435,7 +435,7 @@
             }
 
             .spring-sale {
-                background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1s_stock_g_2x_d2b08928-ff0d-4301-82dc-b3eb72c08933.jpg?v=1691486466');
+                background-image: url(var(--sale-banner-background-image-mb));
 
                 .centeral-content {
                     height: 100%;
