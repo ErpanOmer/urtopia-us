@@ -146,7 +146,7 @@
                 &>div {
 
                     & > img {
-                        max-width: 440px;
+                        max-width: var(--sale-banner-image-max-width);
                     }
 
                     .u56DemiBold_v2 {
