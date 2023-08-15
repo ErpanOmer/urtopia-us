@@ -801,7 +801,8 @@ $sale-components_image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/fi
 
 
                 .u14Light_v2 {
-                    background-image: $sale_background_image;
+                    background: $sale-components_background;
+                    background-image: $sale-components_image;
                     color: #fff;
                     position: absolute;
                     left: 0;
