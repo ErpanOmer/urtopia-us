@@ -828,8 +828,8 @@ $sale_text_color: #236ABE;
                 .accs_1s {
                     display: grid;
                     grid-template-columns: repeat(2, 1fr);
-                    grid-column-gap: 5%;
-                    margin: 2.5% 0;
+                    // grid-column-gap: 5%;
+                    // margin: 2.5% 0;
 
                     &>div {
                         display: flex;
@@ -838,6 +838,7 @@ $sale_text_color: #236ABE;
 
                         img {
                             max-width: 40%;
+                            margin-right: 5%;
                         }
 
                         .u17DemiBold_v2 {
