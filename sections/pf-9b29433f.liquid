@@ -118,7 +118,7 @@
 										{{ prod.featured_image | image_url: width: 400 | image_tag }}
 										<div>
 											<span class="u14Medium_v2">{{ prod.title }}</span><br>
-											<span class="u17DemiBold_v2">{{ prod.price | money }}</span>
+											<span class="u17DemiBold_v2">{{ prod.price | money_without_trailing_zeros }}</span>
 										</div>
 									</div>
 								{% endif %}
