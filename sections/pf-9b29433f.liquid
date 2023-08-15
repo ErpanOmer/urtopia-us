@@ -108,7 +108,7 @@
 					<div class="u11Light_v2"></div>
 				</div>-->
 				<div class="sale_acc mb12 gear" id="sale_acc">
-					<div class="u14Light_v2" style="background-image: linear-gradient(-90deg,var(--sale-color3),var(--sale-color4));">And get <span style="font-weight: 600;"> $167 </span> Accessories for <span class="u20DemiBold_v2"> Free</span></div>
+					<div class="u14Light_v2" style="background-image: linear-gradient(-90deg,var(--sale-color3),var(--sale-color4));">And get <span style="font-weight: 600;"> {{ settings.carbon_ebike_free_accessories_price | money_without_trailing_zeros}} </span> Accessories for <span class="u20DemiBold_v2"> Free</span></div>
 					{% assign accessories_map_1s = "7523826008312,7523827613944" | split: ',' %}
 					<div class="accs_1s">
 						{% for acc in accessories_map_1s %}
