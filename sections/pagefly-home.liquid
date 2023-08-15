@@ -39,8 +39,8 @@
                       <div>
                           <!--<div class="u56DemiBold_v2">{{ settings.sale_name }}</div>-->
                           <!--<div class="u48Medium_v2">Urtopia embraces ESG</div>-->
-                          <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_22684_2x_bd4613ef-851f-46fb-ba35-efbd9544085c.png?v=1691739776">
-                          <div class="u36DemiBold_v2">Get $600 + 3 Freebies<br>on Carbon 1s {{ settings.sale_end_time }}</div>
+                          <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21459_2x_6c9b02fb-1675-4a59-8a48-9fb5d67ce072.png?v=1691460270">
+                          <div class="u36DemiBold_v2">Get {{ settings.carbon_ebike_discount_price | money_without_trailing_zeros}} + {{ settings.carbon_ebike_free_accessories_count }} Freebies<br>on Carbon 1s {{ settings.sale_end_time }}</div>
                           <!--<div class="count-down pcHide">
                               <iframe height="155" width="352" src="https://w2.countingdownto.com/4780378" scrolling="no" frameborder="0"></iframe>
                           </div>-->
@@ -586,8 +586,8 @@
                 <div class="size">Fit for 5’3’’~6’5’’</div>
               </div> 
               <a class="my-button my-button-white" href="/products/urtopia-carbon-e-bike?variant=43556895916280">Order now</a>
-              <div class="my-button my-button-black new" style="background-image: linear-gradient(90deg, var(--sale-color1), var(--sale-color2));">$600 off +</div>
-              <div class="my-button my-button-black new" style="transform: translateY(110%);background-image: linear-gradient(90deg, var(--sale-color3), var(--sale-color4));">3 Freebies</div>
+              <div class="my-button my-button-black new" style="background-image: linear-gradient(90deg, var(--sale-color1), var(--sale-color2));">{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros}} off +</div>
+              <div class="my-button my-button-black new" style="transform: translateY(110%);background-image: linear-gradient(90deg, var(--sale-color3), var(--sale-color4));">{{ settings.carbon_ebike_free_accessories_count }} Freebies</div>
           </div>
           <!--
           <div class="swiper-slide">
@@ -599,7 +599,7 @@
               </div>
               <div class="size">Fit for 5’3’’~6’5’’</div>
 				 <a class="my-button my-button-white" href="/products/urtopia-carbon-e-bike?variant=43556899815672">Order now</a>
-         <div class="my-button my-button-black new">$600 OFF</div>
+         <div class="my-button my-button-black new">{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros}} OFF</div>
           </div>-->
           <div class="swiper-slide">
             <div class="name">Carbon 1</div>

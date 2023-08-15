@@ -2,7 +2,7 @@ const global_config = {
     // 活动产品id
     event_bike_product_id: '7902779474168',
     // 活动送配件 variant_id
-    event_accessories_variant_ids: ['43830635561208', '43944029552888', '43858617204984'],
+    event_accessories_variant_ids: ['43830635561208', '43858617204984'],
 
     // 是否是手机
     is_mobile: document.documentElement.clientWidth < 768,

@@ -3,28 +3,34 @@
     "name": "global_variable",
     "settings": [
       {
-        "type": "checkbox",
-        "id": "enabled_sale",
-        "label": "活动开关",
-        "default": false
-      },
-      {
-        "type": "checkbox",
-        "id": "enabled_sale_countdown",
-        "label": "活动倒计时开关",
-        "default": false
-      },
-      {
         "type": "text",
         "id": "sale_name",
         "label": "活动名称",
-        "default": "Back to School Sale"
+        "default": "Outdoor Riding Sale"
       },
       {
         "type": "text",
         "id": "sale_end_time",
         "label": "活动结束文案",
-        "default": "Ends on August 14"
+        "default": "Ends on August 17"
+      },
+      {
+        "type": "text",
+        "id": "carbon_ebike_discount_price",
+        "label": "carbon车折扣价",
+        "default": "60000"
+      },
+      {
+        "type": "text",
+        "id": "carbon_ebike_free_accessories_price",
+        "label": "carbon车送配件价格统一显示",
+        "default": "6800"
+      },
+      {
+        "type": "text",
+        "id": "carbon_ebike_free_accessories_count",
+        "label": "carbon车送配件数量",
+        "default": "2"
       }
     ]
   },
