@@ -6,13 +6,13 @@
         "type": "text",
         "id": "sale_name",
         "label": "活动名称",
-        "default": "Back to School Sale"
+        "default": "Outdoor Riding Sale"
       },
       {
         "type": "text",
         "id": "sale_end_time",
         "label": "活动结束文案",
-        "default": "Ends on August 14"
+        "default": "Ends on August 17"
       },
       {
         "type": "text",
