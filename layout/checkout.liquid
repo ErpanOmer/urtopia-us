@@ -249,6 +249,30 @@ function closeMiniDialog() {
   setTimeout(() => {
     Checkout.$('.klarna').on('click', () => showMiniDialog(`<div class="klarna-dialog">${html}</div>`))
   }, 100)
+
+  const checkout_email = getSearchValues().checkout_email
+
+    const fn = c => {
+      Checkout.$('.step__sections input[type="email"]').val(c).attr('disabled', true)
+      Checkout.$('nav').hide()
+      Checkout.$('.logo--left').hide()
+      Checkout.$('.step__footer__previous-link').hide()
+      Checkout.$('.layout-flex__item').hide()
+    }
+
+    if (checkout_email) {
+      window.sessionStorage.checkout_email = checkout_email
+      window.sessionStorage.checkout_email_local = `${Shopify.Checkout.token}=${checkout_email}`
+      fn(checkout_email)
+    } else {
+        if (window.sessionStorage.checkout_email_local === `${Shopify.Checkout.token}=${window.sessionStorage.checkout_email}`) {
+          fn(window.sessionStorage.checkout_email)
+        } else {
+          window.sessionStorage.checkout_email = ''
+          window.sessionStorage.checkout_email_local = ''
+        }
+    }
+
 </script>
 </html>
 

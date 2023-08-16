@@ -117,6 +117,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
   <script type='text/javascript'>
+      // 普通页面清掉这两个参数
+      window.sessionStorage.checkout_email = ''
+      window.sessionStorage.checkout_email_local = ''
+          // 当前页面id
+      const current_page_id = '{{ template }}'
+      console.log('current_page_id:', current_page_id);
+
+    
       function fetchBuried (name = '', type = '', data = {}, isSendBeacon = false) {
         const body = {
             module: "website-us",
@@ -384,6 +392,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </head>
 
 <body class="gradient">
+  {%- assign page_url = content_for_header | split:'"pageurl":"' | last | split:'"' | first | split: request.host | last | replace:'\/','/' | replace:'%20',' ' | replace:'\u0026','&' -%}
+  {% if product and product.id == 7523827613944 and product.available and page_url contains "checkout_email"%}
+     {% render 'product-to-checkout' %}
+  {% endif %}
+      
   <!--   <p class='21123'>{{ request.origin }}</p> -->
   <a class="skip-to-content-link button visually-hidden" href="#MainContent">
     {{ "accessibility.skip_to_text" | t }}

@@ -850,5 +850,33 @@ const testRides = [
         ],
       },
     ]
+  },
+  {
+    city: 'Oklahoma',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/OP7039_oklahoma-city.jpg?v=1692092307',
+    stores: [
+      {
+        name: "Thomas J. Kerr Jr",
+        phone: "405-474-5965",
+        email: "tjkok67@gmail.com",
+        timezone: "Oklahoma, USA (GMT-7)",
+        add: "Edmond, OK 73013",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/OP7039_oklahoma-city.jpg?v=1692092307",
+        testrideSpot: "Oklahoma",
+        availableSizes: [
+          'Carbon 1s Size M',
+        ],
+        businessHours: [
+          "12:00-19:00",
+          "16:00-19:00",
+          "16:00-19:00",
+          "16:00-19:00",
+          "16:00-19:00",
+          "16:00-19:00",
+          "12:00-19:00",
+        ],
+        isPartner: true,
+      },
+    ]
   }
 ]
