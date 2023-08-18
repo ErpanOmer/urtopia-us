@@ -175,7 +175,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <div class="u17Medium_v2">{{ 'checkout_klarna.title1' | t }}<br class="mobileHide">{{ 'checkout_klarna.title2' | t }}</div>
           <div class="pay">
               <div class="u20DemiBold_v2">{{ 'checkout_klarna.pay_in' | t }}</div>
-              <div class="u17Medium_v2"><span>From {{checkout.total_price| plus: totalSaved |divided_by: 24 | money }} /month</span>
+              <div class="u17Medium_v2"><span>From {{checkout.total_price |divided_by: 24 | money }} /month</span>
                   <div>{{ 'checkout_klarna.payments' | t }}</div>
               </div>
               <div class="total">
@@ -185,7 +185,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   </div>
                   <div class="u17Medium_v2">
                       <span>{{ 'checkout_klarna.fixed' | t }}</span>
-                      <span>{{ checkout.total_price| plus: totalSaved |money }} + Tax*</span>
+                      <span>{{ checkout.total_price | money }} + Tax*</span>
                   </div>
                   <div class="u11Medium_v2">{{ 'checkout_klarna.limited' | t }}</div>
               </div>
