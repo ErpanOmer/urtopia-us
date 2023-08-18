@@ -1464,11 +1464,11 @@
       return addAllToCart("atc", true)
     }
 
-    function addAllToCart(parse) {
+    function addAllToCart(parse, show = false) {
         const cartList = { items: [] }
 
         if (adding == false) {
-          changeAddToCartText(parse, 1);
+          !show && changeAddToCartText(parse, 1);
           adding = true;
           
           cartList.items.push({ id: current_variant_id, quantity: 1 });
@@ -1503,14 +1503,14 @@
                 cart1.renderContents(res1);
               }
 
-              changeAddToCartText(parse, 0);
+              !show && changeAddToCartText(parse, 0);
             })
             .catch((err) => {
-              changeAddToCartText(parse, 0);
+              !show && changeAddToCartText(parse, 0);
               
             }).finally(() => {
               adding = false
-              fetchBuried('websiteclick', `chord-order-page`, { button: 'ATC' })
+              !show && fetchBuried('websiteclick', `chord-order-page`, { button: 'ATC' })
             })
         }
   }
