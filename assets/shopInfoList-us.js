@@ -838,6 +838,7 @@ const testRides = [
         testrideSpot: "New Mexico",
         availableSizes: [
           'Carbon 1 Size M/L',
+          'Carbon 1s Size M',
         ],
         businessHours: [
           "",
@@ -876,6 +877,33 @@ const testRides = [
           "12:00-19:00",
         ],
         isPartner: true,
+      },
+    ]
+  },
+  {
+    city: 'Mississippi',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/The_Bike_Crossing.png?v=1692265471',
+    stores: [
+      {
+        name: "The Bike Crossing",
+        phone: "691-856-0069",
+        email: "tbcridgeland@gmail.com",
+        timezone: "Mississippi, USA (GMT-7)",
+        add: "192 Old Town Crossing, Ridgeland, MS 39157",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/The_Bike_Crossing.png?v=1692265471",
+        testrideSpot: "Mississippi",
+        availableSizes: [
+          'Carbon 1s Size M',
+        ],
+        businessHours: [
+          "",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-17:00",
+        ],
       },
     ]
   }
