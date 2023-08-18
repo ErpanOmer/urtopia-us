@@ -1268,6 +1268,11 @@
 </div>
 
 <script>
+  // 默认隐藏
+  $('.bottom-fixed').hide()
+  $('.top-fixed').hide()
+  $('.toTop').hide()
+  
     const search = getSearchValues()
     const variants = JSON.parse(JSON.stringify({{ product.variants | json }}))
     const size_map = {
@@ -1593,11 +1598,6 @@
         top2 > (h * 2) ? $('.toTop').show() : $('.toTop').hide()
 
     }, 300, 100))
-
-    // 默认隐藏
-    $('.bottom-fixed').hide()
-    $('.top-fixed').hide()
-    $('.toTop').hide()
 
     // 页面初始化
     pageInit()
