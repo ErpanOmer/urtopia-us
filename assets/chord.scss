@@ -341,7 +341,7 @@ $sale_text_color: #13B698;
                     }
 
                     .active {
-                        border-color: $sale_text_color;
+                        border-color: var(--sale-color3);
                         opacity: 1;
                     }
                 }
