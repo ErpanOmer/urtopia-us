@@ -457,10 +457,11 @@
                         <td class="cart-item__quantity" role="cell" headers="CartDrawer-ColumnQuantity">
                           {% assign discountTitle = item.discounts.first.title %}
                           {% assign sale_product_id = 7902779474168 %}
+                          {% assign chord_sale_product_id = 7948552077560 %}
 
 
                           <div class="cart-item__quantity-wrapper" id="{{item.product.id}}">
-                            {% if item.product.id != sale_product_id and discountTitle %}
+                            {% if item.product.id != sale_product_id and item.product.id != chord_sale_product_id and discountTitle %}
                               <div style="width: 99%;display: flex;align-items: center;">{{ item.quantity }}</div>
                             {% else %}
                                 <quantity-input class="quantity">
@@ -484,7 +485,7 @@
                                 </quantity-input>
                             {% endif %}
 
-                            {% unless item.product.id != sale_product_id and discountTitle %}
+                            {% unless item.product.id != sale_product_id and item.product.id != chord_sale_product_id and discountTitle %}
                               <cart-remove-button id="CartDrawer-Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}" class="cart-remove-button">
                                 <button class="button button--tertiary" aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}">
                                   {% render 'icon-remove' %}

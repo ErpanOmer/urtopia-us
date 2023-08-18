@@ -294,8 +294,9 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
           </label>
           {% assign discountTitle = item.discounts.first.title %}
           {% assign sale_product_id = 7902779474168 %}
+          {% assign chord_sale_product_id = 7948552077560 %}
 
-          {% if item.product.id != sale_product_id and discountTitle %}
+          {% if item.product.id != sale_product_id and item.product.id != chord_sale_product_id and discountTitle %}
             <div style="width: 100%;display: flex;align-items: center;">{{ item.quantity }}</div>
           {% else %}
           <quantity-input class="quantity">
@@ -318,7 +319,7 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
           {% endif %}
 
           <cart-remove-button id="Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
-            <a href="{{ item.url_to_remove }}" class="button button--tertiary" {% if item.product.id != sale_product_id and discountTitle %}style='display:none' {% endif %}
+            <a href="{{ item.url_to_remove }}" class="button button--tertiary" {% if item.product.id != sale_product_id and item.product.id != chord_sale_product_id and discountTitle %}style='display:none' {% endif %}
               aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}">
               {% render 'icon-remove' %}
             </a>
