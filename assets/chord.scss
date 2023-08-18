@@ -54,6 +54,8 @@ $sale_text_color: #13B698;
         display: flex;
         flex-direction: column;
         text-align: right;
+
+
     }
 }
 
@@ -78,6 +80,12 @@ $sale_text_color: #13B698;
             display: flex;
             flex-direction: column;
             align-items: flex-end;
+
+            .u17Light_v2 {
+                .u20DemiBold_v2 {
+                    margin-right: 8px;
+                }
+            }
         }
 
         .my-button-origin {
