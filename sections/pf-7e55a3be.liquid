@@ -1437,6 +1437,33 @@
     let adding = false;
     let cart1 = document.querySelector("cart-notification") || document.querySelector("cart-drawer");
 
+    function testRideTrace(type = '', target) {
+      // 如果已经有按钮 loading ,直接退出来
+      if (!type || $('.orderTestRideBtn').hasClass('loading')) {
+        return
+      }
+    
+      const t = $(target)
+    
+      t.addClass('loading')
+      // 原本的html 存起来
+      const text = t.find('span').html()
+      const loading = '<i class="fa fa-spinner fa-spin"></i>Processing...'
+    
+      // loading
+      t.find('span').html(loading)
+    
+      fetchBuried('websiteclick', `chord-order-page`, { button: type }, true)
+      window.sessionStorage.clicked_klarna_checkout_button = 'clicked_klarna_checkout_button'
+    
+      setTimeout(() => {
+          t.removeClass('loading')
+          t.find('span').html(text)
+        }, 2000)
+      
+      return addAllToCart("atc", true)
+    }
+
     function addAllToCart(parse) {
         const cartList = { items: [] }
 
