@@ -9,21 +9,6 @@
                       <div>
                         <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_22746_2x_b41392be-03d6-451c-9883-846121d14877.png?v=1692343562">
                         <div class="u36DemiBold_v2">Get $300 on Chord <br>{{ settings.chord_sale_end_time }}</div>
-                        <div class="count-down-gif pcHide">
-                          <img src="http://i.countdownmail.com/2mcmh4.gif"/>
-                        </div>
-                          <div class="flex-1 pcHide"></div>
-                          <div class="buttons mobileHide">
-                              <a class="my-button" href="/products/urtopia-carbon-e-bike">Order now</a>
-                              <a class="my-button my-button-ghost" href="/pages/e-bike">Meet Carbon 1s</a>
-                          </div>
-                          <div class="buttons pcHide">
-                              <a class="my-button my-button-black" href="/products/urtopia-carbon-e-bike">Order now</a>
-                              <a class="my-button" href="/pages/e-bike">Meet Carbon 1s</a>
-                          </div>
-                        <div class="count-down-gif mobileHide">
-                          <img src="http://i.countdownmail.com/2mcmh4.gif"/>
-                        </div>
                       </div>
                       <div></div>
                     </div>
@@ -35,6 +20,9 @@
                           <!--<div class="u48Medium_v2">Urtopia embraces ESG</div>-->
                           <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21459_2x_6c9b02fb-1675-4a59-8a48-9fb5d67ce072.png?v=1691460270">
                           <div class="u36DemiBold_v2">Get {{ settings.carbon_ebike_discount_price | money_without_trailing_zeros}} + {{ settings.carbon_ebike_free_accessories_count }} Freebies<br>on Carbon 1s {{ settings.sale_end_time }}</div>
+                          <!--<div class="count-down pcHide">
+                              <iframe height="155" width="352" src="https://w2.countingdownto.com/4780378" scrolling="no" frameborder="0"></iframe>
+                          </div>-->
                         <div class="count-down-gif pcHide">
                           <img src="http://i.countdownmail.com/2mcmh4.gif"/>
                         </div>
@@ -47,6 +35,9 @@
                               <a class="my-button my-button-black" href="/products/urtopia-carbon-e-bike">Order now</a>
                               <a class="my-button" href="/pages/e-bike">Meet Carbon 1s</a>
                           </div>
+                          <!--<div class="count-down mobileHide">
+                              <iframe height="308" width="350" src="https://w2.countingdownto.com/4780368" scrolling="no" frameborder="0"></iframe>
+                          </div>-->
                         <div class="count-down-gif mobileHide">
                           <img src="http://i.countdownmail.com/2mcmh4.gif"/>
                         </div>
@@ -70,7 +61,7 @@
     // 是否有多个banner, 如果有 开启swiper
     const isMultipartBanner = document.querySelectorAll('.banner .swiper-slide')
     
-    isMultipartBanner.length > 11 && new Swiper('.banner', {
+    isMultipartBanner.length > 1 && new Swiper('.banner', {
         autoplay: {
             disableOnInteraction: false,
             pauseOnMouseEnter: false,
