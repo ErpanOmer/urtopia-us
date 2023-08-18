@@ -43,6 +43,12 @@
         "id": "chord_ebike_discount_price",
         "label": "chord 车折扣价",
         "default": "30000"
+      },
+      {
+        "type": "text",
+        "id": "chord_sale_end_time",
+        "label": "chord 活动结束文案",
+        "default": "Ends on August 21"
       }
     ]
   },
