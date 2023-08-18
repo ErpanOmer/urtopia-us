@@ -31,6 +31,12 @@
         "id": "carbon_ebike_free_accessories_count",
         "label": "carbon车送配件数量",
         "default": "2"
+      },
+      {
+        "type": "text",
+        "id": "chord_ebike_discount_price",
+        "label": "chord 车折扣价",
+        "default": "30000"
       }
     ]
   },
