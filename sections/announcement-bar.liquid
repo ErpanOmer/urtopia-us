@@ -75,7 +75,11 @@
 
 {% if template == "product.pf-9b29433f" or template == "page.pf-198df0c3" or template == "product.pf-7e55a3be" %}
   <div id="announcement-bar" class="pcHide"  style="height: 60px;display: flex;flex-direction: column;align-items: center;justify-content: flex-start;text-align: center;">
-    <div class="u11Light_v2">{{ settings.sale_name }} ends in:</div>
+    {% if template == "product.pf-7e55a3be" %}
+        <div class="u11Light_v2">{{ settings.chord_sale_name }} ends in:</div>
+    {% else %}
+        <div class="u11Light_v2">{{ settings.sale_name }} ends in:</div>
+    {% endif %}
     <img src="http://i.countdownmail.com/2nt2wp.gif"/>
   </div>
 
