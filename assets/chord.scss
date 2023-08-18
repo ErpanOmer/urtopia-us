@@ -305,56 +305,35 @@ $sale_text_color: #13B698;
                     &>div {
                         border-radius: 10px;
                         border: 2px solid #0000004D;
-                        opacity: .6;
-                        padding: 6px 12px;
-                        width: 40%;
-                        cursor: pointer;
-                        position: relative;
+                        opacity: .5;
+                        padding: 12px;
+                        font-size: 14px;
+                        line-height: 14px;
                         display: flex;
-                        flex-direction: column;
-                        text-align: left;
-                        align-items: flex-start;
-                        justify-content: center;
-                        overflow: hidden;
+                        align-items: center;
+                        //width: 40%;
+                        justify-content: space-between;
+                        cursor: pointer;
 
-                        span {
-                            font-size: 15px;
-                            line-height: 1.25em;
-                            font-weight: 300;
-
-                            &::before {
-                                content: "·";
-                            }
-
-                            &:first-child {
-                                font-size: 15px;
-                                font-weight: 500;
-                                margin-bottom: 6px;
-
-                                &::before {
-                                    content: "";
-                                }
-                            }
+                        &::after {
+                            display: flex;
+                            background-color: $sale_text_color;
+                            color: #fff;
+                            border-radius: 10px;
+                            padding: 2px 6px;
+                            font-size: 12px;
+                            align-items: center;
+                            justify-content: center;
+                            margin-left: 6px;
                         }
                     }
 
-                    div[attribute*="High-Step"] {
-                        border-color: $sale_text_color;
+                    div[attribute="Carbon Belt"]::after {
+                        content: "Sale";
                     }
 
-                    div[attribute*="High-Step"]::after {
-                        content: "Sale";
-                        position: absolute;
-                        color: #fff;
-                        background-color: $sale_text_color;
-                        right: 0;
-                        transform: rotate(30deg) translate(28%, -250%);
-                        font-size: 16px;
-                        width: 200px;
-                        text-align: center;
-                        height: 22px;
-                        line-height: 22px;
-
+                    div[attribute="Shimano Gear"]::after {
+                        content: "New";
                     }
 
                     &>div+div {
@@ -362,12 +341,8 @@ $sale_text_color: #13B698;
                     }
 
                     .active {
+                        border-color: $sale_text_color;
                         opacity: 1;
-                        border-color: #000;
-
-                        span {
-                            font-weight: 600;
-                        }
                     }
                 }
             }
