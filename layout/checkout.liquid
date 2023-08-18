@@ -78,7 +78,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           {{ breadcrumb }}
           <div class="klarna">
             <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Klarna-Logo.wine_2x_4831cc33-3ad3-4cb7-8d01-bc04c379811a.png?v=1686369579">
-            <div class="u14Medium_v2">{{ 'checkout_klarna.Klarna_for' | t }}<br class="mobileHide"><span class="learn">{{ 'checkout_klarna.Klarna_learn' | t }}</span></div>
+            <div class="u14Medium_v2">0% APR, 24 months, {{checkout.total_price| plus: totalSaved |divided_by: 24 | money }}/month for e-bikes<br class="mobileHide"><span class="learn">{{ 'checkout_klarna.Klarna_learn' | t }}</span></div>
           </div>
           {{ alternative_payment_methods }}
         </header>
@@ -175,7 +175,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <div class="u17Medium_v2">{{ 'checkout_klarna.title1' | t }}<br class="mobileHide">{{ 'checkout_klarna.title2' | t }}</div>
           <div class="pay">
               <div class="u20DemiBold_v2">{{ 'checkout_klarna.pay_in' | t }}</div>
-              <div class="u17Medium_v2"><span>{{checkout.total_price| plus: totalSaved |divided_by: 24 | money }}</span>
+              <div class="u17Medium_v2"><span>From {{checkout.total_price| plus: totalSaved |divided_by: 24 | money }} /month</span>
                   <div>{{ 'checkout_klarna.payments' | t }}</div>
               </div>
               <div class="total">
