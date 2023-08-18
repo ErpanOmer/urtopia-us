@@ -1265,7 +1265,7 @@
 <div class="bottom-fixed pcHide">
     <a href="#product_form_{{ product.id }}" class="my-button my-button-origin">Order Now</a>
     <div>
-        <span class="u14Light_v2"><span class="emphasize" style="font-weight: 600;">{{ product.price | minus: settings.chord_ebike_discount_price | money }}</span><span style="text-decoration: line-through;">{{ product.price | money }}</span></span>
+        <span class="u14Light_v2"><span class="u17DemiBold_v2 emphasize" style="font-weight: 600;">{{ product.price | minus: settings.chord_ebike_discount_price | money }}</span><span style="text-decoration: line-through;">{{ product.price | money }}</span></span>
         <span class="u14Light_v2">or as low as {{ product.price | minus: settings.chord_ebike_discount_price | divided_by: 12 | money_without_trailing_zeros }}/Month</span>
     </div>
 </div>
