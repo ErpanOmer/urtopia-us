@@ -1359,7 +1359,7 @@
 
               $(`.product .product-panel .sale`).hide()
               $(`.product .product-panel .count-down`).hide()
-              $(`.product .product-panel .orderTestRideBtn .stages`).text({{ product.price | divided_by: 12 | money_without_trailing_zeros }})
+              $(`.product .product-panel .orderTestRideBtn .stages`).text('{{ product.price | divided_by: 12 | money_without_trailing_zeros }}')
             }
 
             $(`.product .product-panel .accessories .items`).animate({
