@@ -1256,7 +1256,7 @@
         <span class="flex-1"></span>
         <div>
             <span class="u17Light_v2"><span class="u20DemiBold_v2 emphasize" style="font-weight: 600;">{{ product.price | minus: settings.chord_ebike_discount_price | money }}</span></span>
-            <span class="u14Light_v2">or as low as {{ product.price | minus: settings.chord_ebike_discount_price | divided_by: 12 | money_without_trailing_zeros }}/Month</span>
+            <span class="u14Light_v2">or as low as {{ product.price | minus: settings.chord_ebike_discount_price | divided_by: 1200 | money_without_trailing_zeros }}/Month</span>
         </div>
         <a href="#product_form_{{ product.id }}" class="my-button my-button-origin">Order Now</a>
     </div>
