@@ -541,7 +541,7 @@ $(document).on('page:load', function(e) {
   console.log('e', e)
 
   if (window.sessionStorage.clicked_klarna_checkout_button) {
-    {% if checkout.total_price >= 150000 %}
+    {% if checkout.total_price <= 150000 %}
         showMiniDialog(`<div class="klarna-dialog">${Checkout.$('.klarna-dialog').html()}</div>`)
     {% endif %}
 
