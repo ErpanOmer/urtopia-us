@@ -294,8 +294,9 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
           </label>
           {% assign discountTitle = item.discounts.first.title %}
           {% assign sale_product_id = 7902779474168 %}
+          {% assign chord_sale_product_id = 7948552077560 %}
 
-          {% if item.product.id != sale_product_id and discountTitle %}
+          {% if item.product.id != sale_product_id and item.product.id != chord_sale_product_id and discountTitle %}
             <div style="width: 100%;display: flex;align-items: center;">{{ item.quantity }}</div>
           {% else %}
           <quantity-input class="quantity">
