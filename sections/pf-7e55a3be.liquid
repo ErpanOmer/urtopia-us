@@ -1354,6 +1354,11 @@
                 <span class="u14Light_v2">or as low as {{ product.price | minus: settings.chord_ebike_discount_price | divided_by: 12 | money_without_trailing_zeros }}/Month</span>
               `)
 
+              $('.bottom-fixed > div').html(`
+                <span class="u14Light_v2"><span class="u17DemiBold_v2 emphasize" style="font-weight: 600;">{{ product.price | minus: settings.chord_ebike_discount_price | money }}</span><span style="text-decoration: line-through;">{{ product.price | money }}</span></span>
+                <span class="u14Light_v2">or as low as {{ product.price | minus: settings.chord_ebike_discount_price | divided_by: 12 | money_without_trailing_zeros }}/Month</span>
+              `)
+
             } else {
               $(`.product .product-panel .accessories .chord-accessories .active`).click()
               $(`.product .product-panel .accessories .chord-accessories`).hide()
@@ -1365,6 +1370,10 @@
               $(`.product .product-panel .orderTestRideBtn .stages`).text('{{ product.price | divided_by: 12 | money_without_trailing_zeros }}')
               $('.top-fixed .centeral-content > div').html(`
                 <span class="u17Light_v2"><span class="u20DemiBold_v2 emphasize" style="font-weight: 600;">{{ product.price | money }}</span></span>
+                <span class="u14Light_v2">or as low as {{ product.price | divided_by: 12 | money_without_trailing_zeros }}/Month</span>
+              `)
+              $('.bottom-fixed > div').html(`
+                <span class="u14Light_v2"><span class="u17DemiBold_v2 emphasize" style="font-weight: 600;">{{ product.price | money }}</span></span>
                 <span class="u14Light_v2">or as low as {{ product.price | divided_by: 12 | money_without_trailing_zeros }}/Month</span>
               `)
             }
