@@ -922,6 +922,7 @@ $sale_text_color: #13B698;
                     }
     
                     .orderTestRideBtn {
+                        grid-template-columns: .6fr 1fr;
                         span {
                             font-size: 14px;
                         }
