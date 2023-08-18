@@ -299,22 +299,75 @@ $sale_text_color: #13B698;
 
                 .Frame {
                     display: flex;
+                    // align-items: center;
+                    justify-content: flex-start;
 
-                    & > div {
-                        padding: 4px 25px;
-                        border: 2px solid #000;
-                        border-radius: 30px;
+                    &>div {
+                        border-radius: 10px;
+                        border: 2px solid #0000004D;
+                        opacity: .6;
+                        padding: 6px 12px;
+                        width: 40%;
                         cursor: pointer;
-                        transition: all .1s;
+                        position: relative;
+                        display: flex;
+                        flex-direction: column;
+                        text-align: left;
+                        align-items: flex-start;
+                        justify-content: center;
+                        overflow: hidden;
+
+                        span {
+                            font-size: 15px;
+                            line-height: 1.25em;
+                            font-weight: 300;
+
+                            &::before {
+                                content: "·";
+                            }
+
+                            &:first-child {
+                                font-size: 15px;
+                                font-weight: 500;
+                                margin-bottom: 6px;
+
+                                &::before {
+                                    content: "";
+                                }
+                            }
+                        }
                     }
 
-                    div + div {
-                        margin-left: 15px;
+                    div[attribute*="350W"] {
+                        border-color: $sale_text_color;
+                    }
+
+                    div[attribute*="350W"]::after {
+                        content: "Sale";
+                        position: absolute;
+                        color: #fff;
+                        background-color: $sale_text_color;
+                        right: 0;
+                        transform: rotate(30deg) translate(28%, -250%);
+                        font-size: 16px;
+                        width: 200px;
+                        text-align: center;
+                        height: 22px;
+                        line-height: 22px;
+
+                    }
+
+                    &>div+div {
+                        margin-left: 12px;
                     }
 
                     .active {
-                        background-color: #000;
-                        color: #fff;
+                        opacity: 1;
+                        border-color: #000;
+
+                        span {
+                            font-weight: 600;
+                        }
                     }
                 }
             }
