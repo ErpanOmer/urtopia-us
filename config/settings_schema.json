@@ -34,6 +34,12 @@
       },
       {
         "type": "text",
+        "id": "chord_sale_name",
+        "label": "chord 活动名称",
+        "default": "Chrod Back to Stock Sale"
+      },
+      {
+        "type": "text",
         "id": "chord_ebike_discount_price",
         "label": "chord 车折扣价",
         "default": "30000"
