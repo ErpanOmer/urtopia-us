@@ -342,10 +342,15 @@
             }
 
             .buttons {
-                &>a {
-                    margin-right: 12px;
-                }
-            }
+                a {
+                     margin:0;
+                       width: 100%;
+                 }
+
+                & > a + a {
+                     margin-top: 12px;
+                 }
+             }
         }
 
 
