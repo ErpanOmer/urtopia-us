@@ -33,6 +33,7 @@
 .mega-menu[open] .mega-menu__content {
   opacity: 1;
   transform: translateY(0);
+  top: unset;
 }
 
 .mega-menu__list {
