@@ -332,6 +332,10 @@ $sale_text_color: #13B698;
                         content: "Sale";
                     }
 
+                    div[attribute="High-Step"].active {
+                        color: var(--sale-color3);
+                    }
+
                     div[attribute="Shimano Gear"]::after {
                         content: "New";
                     }
