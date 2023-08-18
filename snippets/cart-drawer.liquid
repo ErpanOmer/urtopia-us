@@ -457,10 +457,11 @@
                         <td class="cart-item__quantity" role="cell" headers="CartDrawer-ColumnQuantity">
                           {% assign discountTitle = item.discounts.first.title %}
                           {% assign sale_product_id = 7902779474168 %}
+                          {% assign chord_sale_product_id = 7902779474168 %}
 
 
                           <div class="cart-item__quantity-wrapper" id="{{item.product.id}}">
-                            {% if item.product.id != sale_product_id and discountTitle %}
+                            {% if item.product.id != sale_product_id and item.product.id != chord_sale_product_id and discountTitle %}
                               <div style="width: 99%;display: flex;align-items: center;">{{ item.quantity }}</div>
                             {% else %}
                                 <quantity-input class="quantity">
