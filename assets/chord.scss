@@ -496,28 +496,6 @@ $sale_text_color: #13B698;
                     }
                 }
 
-                .disabled {
-                    cursor: not-allowed;
-                    opacity: .5;
-                    pointer-events: none;
-                }
-
-                .loading {
-                    opacity: 0.7;
-                    cursor: not-allowed;
-                }
-
-                .loading {
-                    span {
-                        flex-direction: row;
-                        align-items: center;
-
-                        i {
-                            margin-right: 6px;
-                        }
-                    }
-                }
-
                 .orderTestRideBtn {
                     width: 100%;
                     height: 47px;
@@ -567,6 +545,30 @@ $sale_text_color: #13B698;
                         width: 95px;
                     }
                 }
+
+                .disabled {
+                    cursor: not-allowed;
+                    opacity: .5;
+                    pointer-events: none;
+                }
+
+                .loading {
+                    opacity: 0.7;
+                    cursor: not-allowed;
+                }
+
+                .loading {
+                    span {
+                        flex-direction: row;
+                        align-items: center;
+
+                        i {
+                            margin-right: 6px;
+                        }
+                    }
+                }
+
+                
             }
 
             .support {
