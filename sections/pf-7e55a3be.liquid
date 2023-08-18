@@ -91,6 +91,10 @@
                     <div class="u17Light_v2">Free Fenders, Kickstand, <br>1-Year eSIM Service Included</div>
                   </div>
             </div>
+            <div class="count-down mb12 mobileHide">
+              <div class="u17Medium_v2" style="color: var(--sale-color4);">{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros}} off + {{ settings.carbon_ebike_free_accessories_count }} Free Accessories Ends in：</div>
+              <img src="http://i.countdownmail.com/205dop.gif">
+            </div>
             <div class="options">
                 {% for option in product.options %}
                     <div class="option" option={{option}}>
@@ -1272,7 +1276,7 @@
   $('.bottom-fixed').hide()
   $('.top-fixed').hide()
   $('.toTop').hide()
-  
+
     const search = getSearchValues()
     const variants = JSON.parse(JSON.stringify({{ product.variants | json }}))
     const size_map = {
