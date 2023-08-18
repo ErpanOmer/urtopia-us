@@ -111,7 +111,7 @@ const global_config = {
             }
         ],
         // 默认的发货时间 文案
-        ebike_default_delivery_time: 'Free shipping <span>within 5 days</span>',
+        ebike_default_delivery_time: 'Free shipping <span>within 5 business days</span>',
         // 发货时间映射表
         // key:    vairant_id
         // value:  发货时间文案
@@ -216,11 +216,16 @@ const global_config = {
             }
         },
         // 默认的发货时间 文案
-        ebike_default_delivery_time: 'Pre-order items ships from August 15 - 30, 2023',
+        ebike_default_delivery_time: 'Free shipping <span>within 5 business days</span>',
         // 每一种variant 的发货时间文案
         ebike_delivery_time: {
-            // chord
-            // chord x
+           // chord
+      43694976663800: 'Free shipping <span>within 10 business days</span>',
+      43694976696568: 'Free shipping <span>within 10 business days</span>',
+      // chord x
+      43694976729336: 'Pre-order items shipped from October 15 - 30, 2023',
+      43694976762104: 'Pre-order items shipped from October 15 - 30, 2023',
+            
         }
     }
 }
