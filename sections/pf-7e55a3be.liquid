@@ -150,7 +150,7 @@
             </div>
             <div class="buttons">
                 <div class="count-down mb12 pcHide">
-                  <div class="u17Medium_v2" style="color:var(--sale-color4);">$600 off + 2 Free Accessories Ends in：</div>
+                  <div class="u17Medium_v2" style="color:var(--sale-color4);">Ends in：</div>
                   <img src="http://i.countdownmail.com/205dop.gif">
                 </div>
                 <div
@@ -1343,16 +1343,22 @@
               $(`.product .product-panel .accessories .chord-accessories-1 .active`).click()
               $(`.product .product-panel .accessories .chord-accessories`).show()
               $(`.product .product-panel .accessories .chord-accessories-1`).hide()
-
               $(`.product .product-panel .options > div[option="Frame"] .u17DemiBold_v2 .u17Light_v2`).text(`Chord - ${size_map[frame]}`)
+
+
+              $(`.product .product-panel .sale`).show()
+              $(`.product .product-panel .count-down`).show()
+              
 
 
             } else {
               $(`.product .product-panel .accessories .chord-accessories .active`).click()
               $(`.product .product-panel .accessories .chord-accessories`).hide()
               $(`.product .product-panel .accessories .chord-accessories-1`).show()
-
               $(`.product .product-panel .options > div[option="Frame"] .u17DemiBold_v2 .u17Light_v2`).text(`Chord X - ${size_map[frame]}`)
+
+              $(`.product .product-panel .sale`).hide()
+              $(`.product .product-panel .count-down`).hide()
             }
 
             $(`.product .product-panel .accessories .items`).animate({
