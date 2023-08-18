@@ -166,7 +166,7 @@
         }
 
         .chord-sale {
-            background-image: var(--sale-banner-background-image-pc);
+            background-image: var(--chord-sale-banner-background-image-pc);
 
             .centeral-content {
                 // height: 85%;
@@ -174,7 +174,7 @@
                 &>div {
 
                     & > img {
-                        max-width: var(--sale-banner-image-max-width);
+                        max-width: var(--chord-sale-banner-image-max-width);
                     }
 
                     .u56DemiBold_v2 {
