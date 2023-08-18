@@ -891,6 +891,14 @@ $sale_text_color: #13B698;
                         font-size: 12px;
                     }
                 }
+
+                .options {
+                    .Frame {
+                        & > div {
+                            width: 50%;
+                        }
+                    }
+                }
     
                 .accessories {
                     .navigate {
