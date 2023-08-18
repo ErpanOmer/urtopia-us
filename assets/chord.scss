@@ -338,11 +338,11 @@ $sale_text_color: #13B698;
                         }
                     }
 
-                    div[attribute*="350W"] {
+                    div[attribute*="High-Step"] {
                         border-color: $sale_text_color;
                     }
 
-                    div[attribute*="350W"]::after {
+                    div[attribute*="High-Step"]::after {
                         content: "Sale";
                         position: absolute;
                         color: #fff;
