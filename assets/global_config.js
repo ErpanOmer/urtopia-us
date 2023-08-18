@@ -17,9 +17,9 @@ const global_config = {
         // 邮件弹窗 延迟弹出时间，单位:s
         show_delay_time: 10,
         // 邮件 pc 背景图
-        background_imgae_pc: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20220619-untitled-0871_2x_e63191d7-5f9d-4404-b894-f4b28129f24b.jpg?v=1690854939',
+        background_imgae_pc: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/MAKSIM_BIKE-18_2x_255e3b41-cf1c-4463-b49a-557e94f0675e.jpg?v=1692345204&width=500',
         // 邮件 mobile 背景图
-        background_imgae_mb: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20220619-untitled-0871_2x_91cbff9f-2300-461f-8787-99af11d73d76.jpg?v=1690854946'
+        background_imgae_mb: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/MAKSIM_BIKE-18_2x_e63ccaa2-03b1-473c-aeb5-a7d9fe45b8a3.jpg?v=1692345210&width=375'
     },
     // test ride 弹窗
     test_ride_dialog_config: {
@@ -111,7 +111,7 @@ const global_config = {
             }
         ],
         // 默认的发货时间 文案
-        ebike_default_delivery_time: 'Free shipping <span>within 5 days</span>',
+        ebike_default_delivery_time: 'Free shipping <span>within 5 business days</span>',
         // 发货时间映射表
         // key:    vairant_id
         // value:  发货时间文案
@@ -216,11 +216,16 @@ const global_config = {
             }
         },
         // 默认的发货时间 文案
-        ebike_default_delivery_time: 'Pre-order items ships from August 15 - 30, 2023',
+        ebike_default_delivery_time: 'Free shipping <span>within 5 business days</span>',
         // 每一种variant 的发货时间文案
         ebike_delivery_time: {
-            // chord
-            // chord x
+           // chord
+      43694976663800: 'Free shipping <span>within 10 business days</span>',
+      43694976696568: 'Free shipping <span>within 10 business days</span>',
+      // chord x
+      43694976729336: 'Pre-order items shipped from October 15 - 30, 2023',
+      43694976762104: 'Pre-order items shipped from October 15 - 30, 2023',
+            
         }
     }
 }

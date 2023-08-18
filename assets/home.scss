@@ -159,7 +159,35 @@
                     }
 
                     .u36DemiBold_v2 {
-                        margin: 20px 0;
+                        margin: 7vh 0 4vh;
+                    }
+                }
+            }
+        }
+
+        .chord-sale {
+            background-image: var(--chord-sale-banner-background-image-pc);
+
+            .centeral-content {
+                // height: 85%;
+                
+                &>div {
+
+                    & > img {
+                        max-width: var(--chord-sale-banner-image-max-width);
+                    }
+
+                    .u56DemiBold_v2 {
+                        text-transform: uppercase;
+                    }
+
+                    .u56DemiBold_v2,
+                    .u48Medium_v2 {
+                        // color: #E2F8B6;
+                    }
+
+                    .u36DemiBold_v2 {
+                        margin: 7vh 0 4vh;
                     }
                 }
             }
@@ -314,10 +342,15 @@
             }
 
             .buttons {
-                &>a {
-                    margin-right: 12px;
-                }
-            }
+                a {
+                     margin:0;
+                       width: 100%;
+                 }
+
+                & > a + a {
+                     margin-top: 12px;
+                 }
+             }
         }
 
 
@@ -445,10 +478,45 @@
                         padding: 6vw 0 18vw;
                         display: flex;
                         flex-direction: column;
-                        // align-items: center;
+                        align-items: center;
+                        text-align: center;
 
                         & > img {
-                            max-width: 200px;
+                            max-width: var(--sale-banner-image-max-width-mb);
+                        }
+
+                        .u56DemiBold_v2 {
+                            font-size: 26px;
+                        }
+
+                        .u48Medium_v2,
+                        .u36DemiBold_v2 {
+                            font-size: 20px;
+                        }
+
+                        .u36DemiBold_v2 {
+                            margin: 20px 0 0;
+                        }
+                    }
+                }
+            }
+
+            .chord-sale {
+                background-image: var(--chord-sale-banner-background-image-mb);
+
+                .centeral-content {
+                    height: 100%;
+                    align-items: unset;
+
+                    &>div {
+                        padding: 6vw 0 18vw;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        text-align: center;
+
+                        & > img {
+                            max-width: var(--chord-sale-banner-image-max-width-mb);
                         }
 
                         .u56DemiBold_v2 {

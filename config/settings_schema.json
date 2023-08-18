@@ -12,7 +12,7 @@
         "type": "text",
         "id": "sale_end_time",
         "label": "活动结束文案",
-        "default": "Ends on August 17"
+        "default": "Ends on August 20"
       },
       {
         "type": "text",
@@ -31,6 +31,30 @@
         "id": "carbon_ebike_free_accessories_count",
         "label": "carbon车送配件数量",
         "default": "2"
+      },
+      {
+        "type": "text",
+        "id": "chord_sale_name",
+        "label": "chord 活动名称",
+        "default": "Back to Stock Sale"
+      },
+      {
+        "type": "text",
+        "id": "chord_ebike_free_accessories_count",
+        "label": "chord 车送配件数量",
+        "default": "2"
+      },
+      {
+        "type": "text",
+        "id": "chord_ebike_discount_price",
+        "label": "chord 车折扣价",
+        "default": "30000"
+      },
+      {
+        "type": "text",
+        "id": "chord_sale_end_time",
+        "label": "chord 活动结束文案",
+        "default": "Ends on August 20"
       }
     ]
   },

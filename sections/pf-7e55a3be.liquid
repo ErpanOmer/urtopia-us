@@ -12,11 +12,10 @@
                 <div class="pf-judme">{% render "judgeme_widgets", widget_type: "judgeme_preview_badge", jm_style: "", concierge_install: false, product: product %}</div>
             </div>
             <div class="u30DemiBold_v2 mb6">{{ product.price | money }}</div>
-            <klarna-placement
-              id="credit-promotion-badge"
-              data-key="credit-promotion-badge"
-              data-locale="en-US"
-            ></klarna-placement>
+            <div class="sale mb6" id="sale_accmb" style="background-image: linear-gradient(-90deg,var(--sale-color3),var(--sale-color4));">
+              <div class="u20DemiBold_v2" style="color: var(--sale-color4);">{{ product.price | minus: settings.chord_ebike_discount_price | money }} NOW</div>
+              <div class="u17DemiBold_v2">with {{ settings.chord_sale_name }}</div>
+            </div>
         </div>
         <div class="featured_image">
             <div class="swiper left-swiper mobileHide">
@@ -79,11 +78,10 @@
                     <div class="pf-judme">{% render "judgeme_widgets", widget_type: "judgeme_preview_badge", jm_style: "", concierge_install: false, product: product %}</div>
                 </div>
                 <div class="u30DemiBold_v2 mb6">{{ product.price | money }}</div>
-                <klarna-placement
-                  id="credit-promotion-badge"
-                  data-key="credit-promotion-badge"
-                  data-locale="en-US"
-                ></klarna-placement>
+                <div class="sale mb12" style="background-image: linear-gradient(-90deg,var(--sale-color3),var(--sale-color4));">
+                  <div class="u20DemiBold_v2" style="color: var(--sale-color4);">{{ product.price | minus: settings.chord_ebike_discount_price | money }} NOW</div>
+                  <div class="u17DemiBold_v2">with {{ settings.chord_sale_name }}</div>
+                </div>
             </div>
             <div class="fenders pcHide">
                   <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230307-201732.jpg?v=1678191479" alt="">
@@ -92,6 +90,10 @@
                     <span class="u17DemiBold_v2" style="text-decoration: line-through;">{{ 16700 | money }}</span>
                     <div class="u17Light_v2">Free Fenders, Kickstand, <br>1-Year eSIM Service Included</div>
                   </div>
+            </div>
+            <div class="count-down mobileHide">
+              <div class="u17Medium_v2" style="color: var(--sale-color4);">Ends in：</div>
+              <img src="http://i.countdownmail.com/205dop.gif">
             </div>
             <div class="options">
                 {% for option in product.options %}
@@ -147,6 +149,10 @@
                 </div>
             </div>
             <div class="buttons">
+                <div class="count-down mb12 pcHide">
+                  <div class="u17Medium_v2" style="color:var(--sale-color4);">Ends in：</div>
+                  <img src="http://i.countdownmail.com/205dop.gif">
+                </div>
                 <div
                     data-product-id="{{ product.id }}"
                     class="my-button my-button-black addToCartBtn"
@@ -155,7 +161,10 @@
                     >
                     <i class="fa fa-spinner fa-spin"></i><span data-pf-type="Text" class="addToCartText u17DemiBold_v2">Add to Cart</span>
                 </div>
-                <a class="my-button my-button-white" href="/pages/test-ride">Book a Test Ride</a>
+                <div onclick="testRideTrace('klarna_check_out', this)" class="orderTestRideBtn">
+                  <img class="twoooo"src="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/files/20230530-121400.png?v=1685420054"/>
+                  <span><span class="u17DemiBold_v2">0% APR</span><span>12 months, <span class="stages">{{ product.price | minus: settings.chord_ebike_discount_price | divided_by: 24 | money_without_trailing_zeros }}</span>/month</span></span>
+                </div>
             </div>
             <div class="delivery_time mb12">Free shipping <span>within 5 days</span></div>
             <div class="support mb12">
@@ -1254,8 +1263,8 @@
         <span class="u20DemiBold_v2">{{ product.title }}</span>
         <span class="flex-1"></span>
         <div>
-            <span class="u17Light_v2"><span class="u20DemiBold_v2 emphasize" style="font-weight: 600;">{{ product.price | money }}</span></span>
-            <span class="u14Light_v2">or as low as {{ 14992 | money }}/Month</span>
+            <span class="u17Light_v2"><span class="u20DemiBold_v2 emphasize" style="font-weight: 600;">{{ product.price | minus: settings.chord_ebike_discount_price | money }}</span><span style="text-decoration: line-through;">{{ product.price | money }}</span></span>
+            <span class="u14Light_v2">or as low as {{ product.price | minus: settings.chord_ebike_discount_price | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
         </div>
         <a href="#product_form_{{ product.id }}" class="my-button my-button-origin">Order Now</a>
     </div>
@@ -1264,12 +1273,17 @@
 <div class="bottom-fixed pcHide">
     <a href="#product_form_{{ product.id }}" class="my-button my-button-origin">Order Now</a>
     <div>
-        <span class="u14Light_v2"><span class="emphasize" style="font-weight: 600;">{{ product.price | money }}</span></span>
-        <span class="u14Light_v2">or as low as {{ 14992 | money }}/Month</span>
+        <span class="u14Light_v2"><span class="u17DemiBold_v2 emphasize" style="font-weight: 600;">{{ product.price | minus: settings.chord_ebike_discount_price | money }}</span><span style="text-decoration: line-through;">{{ product.price | money }}</span></span>
+        <span class="u14Light_v2">or as low as {{ product.price | minus: settings.chord_ebike_discount_price | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
     </div>
 </div>
 
 <script>
+  // 默认隐藏
+  $('.bottom-fixed').hide()
+  $('.top-fixed').hide()
+  $('.toTop').hide()
+
     const search = getSearchValues()
     const variants = JSON.parse(JSON.stringify({{ product.variants | json }}))
     const size_map = {
@@ -1329,16 +1343,39 @@
               $(`.product .product-panel .accessories .chord-accessories-1 .active`).click()
               $(`.product .product-panel .accessories .chord-accessories`).show()
               $(`.product .product-panel .accessories .chord-accessories-1`).hide()
-
               $(`.product .product-panel .options > div[option="Frame"] .u17DemiBold_v2 .u17Light_v2`).text(`Chord - ${size_map[frame]}`)
 
+
+              $(`.product .product-panel .sale`).show()
+              $(`.product .product-panel .count-down`).show()
+              $(`.product .product-panel .orderTestRideBtn .stages`).text('{{ product.price | minus: settings.chord_ebike_discount_price | divided_by: 24 | money_without_trailing_zeros }}')
+              $('.top-fixed .centeral-content > div').html(`
+                <span class="u17Light_v2"><span class="u20DemiBold_v2 emphasize" style="font-weight: 600;">{{ product.price | minus: settings.chord_ebike_discount_price | money }}</span><span style="text-decoration: line-through;">{{ product.price | money }}</span></span>
+                <span class="u14Light_v2">or as low as {{ product.price | minus: settings.chord_ebike_discount_price | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
+              `)
+
+              $('.bottom-fixed > div').html(`
+                <span class="u14Light_v2"><span class="u17DemiBold_v2 emphasize" style="font-weight: 600;">{{ product.price | minus: settings.chord_ebike_discount_price | money }}</span><span style="text-decoration: line-through;">{{ product.price | money }}</span></span>
+                <span class="u14Light_v2">or as low as {{ product.price | minus: settings.chord_ebike_discount_price | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
+              `)
 
             } else {
               $(`.product .product-panel .accessories .chord-accessories .active`).click()
               $(`.product .product-panel .accessories .chord-accessories`).hide()
               $(`.product .product-panel .accessories .chord-accessories-1`).show()
-
               $(`.product .product-panel .options > div[option="Frame"] .u17DemiBold_v2 .u17Light_v2`).text(`Chord X - ${size_map[frame]}`)
+
+              $(`.product .product-panel .sale`).hide()
+              $(`.product .product-panel .count-down`).hide()
+              $(`.product .product-panel .orderTestRideBtn .stages`).text('{{ product.price | divided_by: 24 | money_without_trailing_zeros }}')
+              $('.top-fixed .centeral-content > div').html(`
+                <span class="u17Light_v2"><span class="u20DemiBold_v2 emphasize" style="font-weight: 600;">{{ product.price | money }}</span></span>
+                <span class="u14Light_v2">or as low as {{ product.price | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
+              `)
+              $('.bottom-fixed > div').html(`
+                <span class="u14Light_v2"><span class="u17DemiBold_v2 emphasize" style="font-weight: 600;">{{ product.price | money }}</span></span>
+                <span class="u14Light_v2">or as low as {{ product.price | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
+              `)
             }
 
             $(`.product .product-panel .accessories .items`).animate({
@@ -1427,11 +1464,38 @@
     let adding = false;
     let cart1 = document.querySelector("cart-notification") || document.querySelector("cart-drawer");
 
-    function addAllToCart(parse) {
+    function testRideTrace(type = '', target) {
+      // 如果已经有按钮 loading ,直接退出来
+      if (!type || $('.orderTestRideBtn').hasClass('loading')) {
+        return
+      }
+    
+      const t = $(target)
+    
+      t.addClass('loading')
+      // 原本的html 存起来
+      const text = t.find('span').html()
+      const loading = '<i class="fa fa-spinner fa-spin"></i>Processing...'
+    
+      // loading
+      t.find('span').html(loading)
+    
+      fetchBuried('websiteclick', `chord-order-page`, { button: type }, true)
+      window.sessionStorage.clicked_klarna_checkout_button = 'clicked_klarna_checkout_button'
+    
+      setTimeout(() => {
+          t.removeClass('loading')
+          t.find('span').html(text)
+        }, 2000)
+      
+      return addAllToCart("atc", true)
+    }
+
+    function addAllToCart(parse, show = false) {
         const cartList = { items: [] }
 
         if (adding == false) {
-          changeAddToCartText(parse, 1);
+          !show && changeAddToCartText(parse, 1);
           adding = true;
           
           cartList.items.push({ id: current_variant_id, quantity: 1 });
@@ -1466,14 +1530,14 @@
                 cart1.renderContents(res1);
               }
 
-              changeAddToCartText(parse, 0);
+              !show && changeAddToCartText(parse, 0);
             })
             .catch((err) => {
-              changeAddToCartText(parse, 0);
+              !show && changeAddToCartText(parse, 0);
               
             }).finally(() => {
               adding = false
-              fetchBuried('websiteclick', `chord-order-page`, { button: 'ATC' })
+              !show && fetchBuried('websiteclick', `chord-order-page`, { button: 'ATC' })
             })
         }
   }
@@ -1595,11 +1659,6 @@
         top2 > (h * 2) ? $('.toTop').show() : $('.toTop').hide()
 
     }, 300, 100))
-
-    // 默认隐藏
-    $('.bottom-fixed').hide()
-    $('.top-fixed').hide()
-    $('.toTop').hide()
 
     // 页面初始化
     pageInit()
