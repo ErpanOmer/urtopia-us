@@ -137,29 +137,19 @@
         }
 
 
-        .spring-sale {
+        .summer-sale {
             background-image: var(--sale-banner-background-image-pc);
 
             .centeral-content {
                 // height: 85%;
                 
                 &>div {
-
                     & > img {
                         max-width: var(--sale-banner-image-max-width);
                     }
 
-                    .u56DemiBold_v2 {
-                        text-transform: uppercase;
-                    }
-
-                    .u56DemiBold_v2,
-                    .u48Medium_v2 {
-                        // color: #E2F8B6;
-                    }
-
                     .u36DemiBold_v2 {
-                        margin: 7vh 0 4vh;
+                        margin: 20px 0 20px;
                     }
                 }
             }
@@ -468,22 +458,28 @@
             }
 
             .summer-sale {
-                background-image: var(--sale-banner-background-image-pc);
+                background-image: var(--sale-banner-background-image-mb);
     
-                .centeral-content {
-                    // height: 85%;
-                    
-                    &>div {
-                        & > img {
-                            max-width: var(--sale-banner-image-max-width);
-                        }
+                    .centeral-content {
+                        height: 100%;
+                        align-items: unset;
     
-                        .u36DemiBold_v2 {
-                            margin: 20px 0 20px;
+                        &>div {
+                            padding: 6vw 0 8vw;
+                            align-items: center;
+                            text-align: center;
+    
+                            & > img {
+                                max-width: 192px;
+                            }
+        
+                            .u36DemiBold_v2 {
+                                font-size: 20px;
+                                margin: 10px 0 0;
+                            }
                         }
                     }
                 }
-            }
 
             .chord-sale {
                 background-image: var(--chord-sale-banner-background-image-mb);
