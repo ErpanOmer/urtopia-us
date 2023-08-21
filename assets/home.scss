@@ -567,6 +567,8 @@
                             padding: 6vw 0 8vw;
                             align-items: center;
                             text-align: center;
+                            display: flex;
+                            flex-direction: column;
     
                             & > img {
                                 max-width: var(--sale-banner-image-max-width-mb);
