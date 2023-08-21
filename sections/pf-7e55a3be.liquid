@@ -1405,9 +1405,11 @@
             if (current_variant.available) {
                 btn.find('span').text('Add to Cart')
                 btn.removeClass('disabled')
+              $('.product .buttons .orderTestRideBtn').show()
             } else {
                 btn.find('span').text('Sold out')
                 btn.addClass('disabled')
+              $('.product .buttons .orderTestRideBtn').hide()
             }
 
             const swiper_arr = global_config.chord_order_page_config.product_images[frame][style].concat(global_config.chord_order_page_config.product_images[frame]['commonSwiper'])

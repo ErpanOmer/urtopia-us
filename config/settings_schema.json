@@ -36,7 +36,7 @@
         "type": "text",
         "id": "chord_sale_name",
         "label": "chord 活动名称",
-        "default": "Back to Stock Sale"
+        "default": "Back in Stock Sale"
       },
       {
         "type": "text",
