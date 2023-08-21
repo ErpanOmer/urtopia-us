@@ -470,7 +470,7 @@
                             text-align: center;
     
                             & > img {
-                                max-width: 192px;
+                                max-width: var(--sale-banner-image-max-width-mb);
                             }
         
                             .u36DemiBold_v2 {
