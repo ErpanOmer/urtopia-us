@@ -319,6 +319,71 @@
     }
 }
 
+.page-media {
+    background-color: #f7f8fa;
+
+    .centeral-content {
+        background-color: #f7f8fa;
+
+        .home-page-media {
+            display: flex;
+            height: 340px;
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+            padding: 75px 0;
+            box-sizing: border-box;
+        
+            .texts {
+                flex: 1;
+                font: normal normal bold 30px/40px Urbane;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                text-align: center;
+        
+                div {
+                    animation-duration: 0.5s;
+                    animation-timing-function: ease-out;
+                }
+        
+                .toTop {
+                    opacity: 1;
+                    animation-name: toTop;
+                    transform: translateY(-40px);
+                }
+        
+                .toBottom {
+                    opacity: 0;
+                    animation-name: toBottom;
+                    transform: translateY(40px);
+                }
+            }
+        
+            .logos {
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+                width: 100%;
+                flex-wrap: wrap;
+
+                img {
+                    width: auto;
+                    opacity: 0.5;
+                    margin: 0 24px 24px;
+                    max-height: 48px;
+                    height: unset;
+        
+                    &[active] {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
 
 @media (max-width: 767px) {
     .banner {
