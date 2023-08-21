@@ -17,9 +17,9 @@ const global_config = {
         // 邮件弹窗 延迟弹出时间，单位:s
         show_delay_time: 10,
         // 邮件 pc 背景图
-        background_imgae_pc: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/MAKSIM_BIKE-18_2x_255e3b41-cf1c-4463-b49a-557e94f0675e.jpg?v=1692345204&width=500',
+        background_imgae_pc: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20221009-untitled-5445_2x_5e50b65a-4b24-44bf-9678-89b824437498.jpg?v=1692610981&width=500',
         // 邮件 mobile 背景图
-        background_imgae_mb: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/MAKSIM_BIKE-18_2x_e63ccaa2-03b1-473c-aeb5-a7d9fe45b8a3.jpg?v=1692345210&width=375'
+        background_imgae_mb: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20221009-untitled-5385_2x_54c3ce5e-7b43-400c-be8a-e9b1bbf22dd6.jpg?v=1692610972&width=375'
     },
     // test ride 弹窗
     test_ride_dialog_config: {
@@ -28,7 +28,7 @@ const global_config = {
         // 延迟弹出时间，单位:s
         show_delay_time: 15,
         // pc 背景图
-        background_imgae: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230609-untitled-9762.jpg?v=1691048775'
+        background_imgae: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230609-untitled-9762.jpg?v=1691048775&width=500'
     },
 
 

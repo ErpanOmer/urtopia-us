@@ -661,6 +661,14 @@ $sale-components_image: linear-gradient(-90deg,var(--sale-color3),var(--sale-col
         display: flex;
         flex-direction: column;
         text-align: right;
+
+        .u14Light_v2 {
+            span {
+                &:last-child {
+                    margin-left: 3px;
+                }
+            }
+        }
     }
 }
 
@@ -684,6 +692,15 @@ $sale-components_image: linear-gradient(-90deg,var(--sale-color3),var(--sale-col
         &>div {
             display: flex;
             flex-direction: column;
+            align-items: flex-end;
+
+            .u17Light_v2 {
+                span {
+                    &:last-child {
+                        margin-left: 6px;
+                    }
+                }
+            }
         }
 
         .my-button-origin {
@@ -1202,7 +1219,7 @@ $sale-components_image: linear-gradient(-90deg,var(--sale-color3),var(--sale-col
                     color: #000;
                     border: 2px solid #161c1f;
                     display: grid;
-                    grid-template-columns: 0.7fr 1fr;
+                    grid-template-columns: 0.6fr 1fr;
                     grid-column-gap: 12px;
                     align-items: center;
                     justify-items: right;

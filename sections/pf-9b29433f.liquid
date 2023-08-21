@@ -22,7 +22,7 @@
 				</div>
 				<div class="u30DemiBold_v2 mb6">{{ product.price | money }}</div>
 				<div class="sale mb6" id="sale_accmb" style="background-image: linear-gradient(-90deg,var(--sale-color3),var(--sale-color4));">
-					<div class="u20DemiBold_v2" style="color: var(--sale-color4);">{{ product.price | minus: 60000 | money }} NOW</div>
+					<div class="u20DemiBold_v2" style="color: var(--sale-color4);">{{ product.price | minus: settings.carbon_ebike_discount_price | money }} NOW</div>
 					<div class="u17DemiBold_v2">with {{ settings.sale_name }}</div>
 				</div>
 			</div>
@@ -82,7 +82,7 @@
 					</div>
 					<div class="u30DemiBold_v2 mb6">{{ product.price | money }}</div>
 					<div class="sale mb12" style="background-image: linear-gradient(-90deg,var(--sale-color3),var(--sale-color4));">
-						<div class="u20DemiBold_v2" style="color: var(--sale-color4);">{{ product.price | minus: 60000 | money }} NOW</div>
+						<div class="u20DemiBold_v2" style="color: var(--sale-color4);">{{ product.price | minus: settings.carbon_ebike_discount_price | money }} NOW</div>
 						<div class="u17DemiBold_v2">with {{ settings.sale_name }}</div>
 					</div>
 				</div>
@@ -179,7 +179,7 @@
 					</div>
 					  <div onclick="testRideTrace('klarna_check_out', this)" class="orderTestRideBtn">
 						<img class="twoooo"src="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/files/20230530-121400.png?v=1685420054"/>
-						<span><span class="u17DemiBold_v2">0% APR</span><span>24 months, <span class="stages">$91.6</span>/month</span></span>
+						<span><span class="u17DemiBold_v2">0% APR</span><span>24 months, <span class="stages">{{ product.price | minus: settings.carbon_ebike_discount_price | divided_by: 24 | money_without_trailing_zeros }}</span>/month</span></span>
 					</div>
 				</div>
 				<div class="delivery_time mb12">Free shipping <span>within 5 days</span></div>
@@ -226,8 +226,8 @@
 			<span class="u20DemiBold_v2">{{ product.title }}</span>
 			<span class="flex-1"></span>
 			<div>
-				<span class="u17Light_v2"><span class="u20DemiBold_v2 emphasize" style="font-weight: 600;">{{ product.price | minus: 60000 | money }}</span> <span style="text-decoration: line-through;">{{ product.price | money }}</span></span>
-				<span class="u14Light_v2">or as low as $91.6/Month</span>
+				<span class="u17Light_v2"><span class="u20DemiBold_v2 emphasize" style="font-weight: 600;">{{ product.price | minus: settings.carbon_ebike_discount_price | money }}</span> <span style="text-decoration: line-through;">{{ product.price | money }}</span></span>
+				<span class="u14Light_v2">or as low as {{ product.price | minus: settings.carbon_ebike_discount_price | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
 			</div>
 			<a href="#sale_acc" class="my-button my-button-origin">Order Now</a>
 		</div>
@@ -236,8 +236,8 @@
 	<div class="bottom-fixed pcHide">
 		<a href="#sale_accmb" class="my-button my-button-origin">Order Now</a>
 		<div>
-			<span class="u14Light_v2"><span class="emphasize" style="font-weight: 600;">{{ product.price | minus: 60000 | money }}</span> <span style="text-decoration: line-through;">{{ product.price | money }}</span></span>
-			<span class="u14Light_v2">or as low as $91.6/Month</span>
+			<span class="u14Light_v2"><span class="emphasize" style="font-weight: 600;">{{ product.price | minus: settings.carbon_ebike_discount_price | money }}</span> <span style="text-decoration: line-through;">{{ product.price | money }}</span></span>
+			<span class="u14Light_v2">or as low as {{ product.price | minus: settings.carbon_ebike_discount_price | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
 		</div>
 	</div>
 
@@ -997,15 +997,36 @@
           $(`.product .product-panel .Model > div[attribute="${model}"]`).addClass('active')
           $(`.product .product-panel .options > div[option="Model"] .u17DemiBold_v2 .u17Light_v2`).text(`Urtopia Carbon ${model.includes('350W') ? '1s' : '1'}`)
 
-    if (model.includes('350W')) {
-      $('.product .sale').show()
-      $('.product .sale_acc').show()
-      $('.product .count-down').show()
-    } else {
-      $('.product .sale').hide()
-      $('.product .sale_acc').hide()
-      $('.product .count-down').hide()
-    }
+          if (model.includes('350W')) {
+            $('.product .sale').show()
+            $('.product .sale_acc').show()
+            $('.product .count-down').show()
+
+            $(`.product .product-panel .orderTestRideBtn .stages`).text('{{ product.price | minus: settings.carbon_ebike_discount_price | divided_by: 24 | money_without_trailing_zeros }}')
+            $('.top-fixed .centeral-content > div').html(`
+                <span class="u17Light_v2"><span class="u20DemiBold_v2 emphasize" style="font-weight: 600;">{{ product.price | minus: settings.carbon_ebike_discount_price | money }}</span><span style="text-decoration: line-through;">{{ product.price | money }}</span></span>
+                <span class="u14Light_v2">or as low as {{ product.price | minus: settings.carbon_ebike_discount_price | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
+              `)
+
+              $('.bottom-fixed > div').html(`
+                <span class="u14Light_v2"><span class="u17DemiBold_v2 emphasize" style="font-weight: 600;">{{ product.price | minus: settings.carbon_ebike_discount_price | money }}</span><span style="text-decoration: line-through;">{{ product.price | money }}</span></span>
+                <span class="u14Light_v2">or as low as {{ product.price | minus: settings.carbon_ebike_discount_price | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
+              `)
+          } else {
+            $('.product .sale').hide()
+            $('.product .sale_acc').hide()
+            $('.product .count-down').hide()
+
+            $(`.product .product-panel .orderTestRideBtn .stages`).text('{{ product.price | divided_by: 24 | money_without_trailing_zeros }}')
+            $('.top-fixed .centeral-content > div').html(`
+                <span class="u17Light_v2"><span class="u20DemiBold_v2 emphasize" style="font-weight: 600;">{{ product.price | money }}</span></span>
+                <span class="u14Light_v2">or as low as {{ product.price | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
+              `)
+              $('.bottom-fixed > div').html(`
+              <span class="u14Light_v2"><span class="u17DemiBold_v2 emphasize" style="font-weight: 600;">{{ product.price | money }}</span></span>
+              <span class="u14Light_v2">or as low as {{ product.price | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
+            `)
+          }
       }
 
       if (style) {
