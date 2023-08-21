@@ -726,11 +726,68 @@ input {
   align-items: center;
   justify-items: center;
 
-  & > div {
+  &>div {
     padding: 0 5%;
 
-    .u24Medium_v2 {
-      margin: 24px 0 60px;
+    &>.u24Medium_v2 {
+      margin: 12px 0 24px;
+    }
+
+    .announce {
+      background-color: #F7F8FA;
+      border-radius: 10px;
+      padding: 24px 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-top: 40px;
+
+      .u17DemiBold_v2 {
+        display: flex;
+        align-items: center;
+
+        .icon {
+          display: flex;
+          align-items: center;
+          color: #fff;
+          margin-right: 15px;
+
+          &>div {
+            background-image: linear-gradient(-90deg, #AAD85C, #65B165);
+            padding: 4px 10px;
+            max-height: 30px;
+
+            &:first-child {
+              border-left: 15px solid transparent;
+              border-bottom: 15px solid #65B165;
+              border-top: 15px solid #65B165;
+              padding: 0;
+            }
+
+            &:last-child {
+              border-top: 15px solid transparent;
+              border-right: 15px solid #AAD85C;
+              border-bottom: 15px solid transparent;
+              rotate: 180deg;
+              padding: 0;
+            }
+          }
+        }
+      }
+
+      .u14Light_v2 {
+        margin: 18px 0;
+        display: flex;
+        align-items: center;
+        
+        img {
+          max-width: 64px;
+          margin-right: 12px;
+        }
+      }
+
+
+
     }
   }
 
