@@ -664,4 +664,56 @@
             }
         }
     }
+
+    .page-media {
+        .centeral-content {
+            padding: 0;
+            
+            .home-page-media-mb {
+                padding-top: 65px;
+                padding-bottom: 65px;
+                background-color: #f7f8fa;
+                overflow: hidden;
+            
+                .swiper-slide {
+                    box-sizing: border-box;
+                    padding: 0 10%;
+                      display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+            
+                    img {
+                        height: 48px;
+                      width: auto;
+                    }
+            
+                    .u20Medium {
+                        font-weight: 600;
+                        margin: 20px 0 40px;
+                        font-size: 22px;
+                        line-height: 26px;
+                    }
+                }
+            
+                .swiper-pagination {
+                    position: static;
+                }
+            
+                .swiper-pagination-bullet {
+                    height: 6px;
+                    width: 6px;
+                }
+            
+                .swiper-pagination-bullet-active {
+                    width: 30px;
+                    height: 6px;
+                    border-radius: 5px;
+                    transition: all .3s;
+                }
+            }
+        }
+    }
+
 }
