@@ -368,7 +368,9 @@
                     <div onclick="changeBike('/products/urtopia-carbon-e-bike?variant=43556895981816', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18138_2x_de02f431-3e7d-48c0-b887-85eda46c2421.png?v=1677640174', this)" gray></div>
                     <div onclick="changeBike('/products/urtopia-carbon-e-bike?variant=43556899815672', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230428-104445.png?v=1682649982', this)" peach></div>
                   </div>
-                  <div class="u24DemiBold_v2">{{ all_products['urtopia-carbon-e-bike'].price | minus: settings.carbon_ebike_discount_price | money_without_trailing_zeros }}</div>
+                  <div class="u24DemiBold_v2" {% if settings.carbon_ebike_discount_price > 0 %} data-price="{{all_products['urtopia-carbon-e-bike'].price}}"{% endif %}>
+                    {{ all_products['urtopia-carbon-e-bike'].price | minus: settings.carbon_ebike_discount_price | money_without_trailing_zeros }}
+                  </div>
                 </div>
                 <div class="size">Fit for 5’3’’~6’5’’</div>
               </div> 
