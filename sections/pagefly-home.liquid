@@ -405,7 +405,6 @@
                   </div>
                   <div class="u24DemiBold_v2" {% if settings.carbon_ebike_discount_price != "0" %} data-price="{{all_products['urtopia-chord-ebike'].price | money_without_trailing_zeros }}"{% endif %}>
                     {{ all_products['urtopia-chord-ebike'].price | minus: settings.chord_ebike_discount_price | money_without_trailing_zeros }}
-                    <span>{{all_products['urtopia-chord-ebike'].price | money_without_trailing_zeros }}</span>
                   </div>
                 </div>
                 <div class="size">Fit for 5’7’’~6’5’’</div>
