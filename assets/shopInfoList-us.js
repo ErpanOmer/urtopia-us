@@ -906,5 +906,33 @@ const testRides = [
         ],
       },
     ]
-  }
+  },
+  {
+    city: 'Illinois',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Jason_Mathews.jpg?v=1692617852',
+    stores: [
+      {
+        name: "Jason Mathews",
+        phone: "708-493-4896",
+        email: "akafenoy@gmail.com",
+        timezone: "Illinois, USA (GMT-7)",
+        add: "King Drive, Berkeley, IL 60163",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Jason_Mathews.jpg?v=1692617852",
+        testrideSpot: "Illinois",
+        availableSizes: [
+          'Carbon 1s Size M',
+        ],
+        businessHours: [
+          "10:00-14:00",
+          "10:00-14:00",
+          "10:00-14:00",
+          "10:00-14:00",
+          "10:00-14:00",
+          "10:00-14:00",
+          "10:00-14:00",
+        ],
+        isPartner: true,
+      },
+    ]
+  },
 ]
