@@ -279,6 +279,16 @@
 
   #bike .swiper-slide .u24DemiBold_v2 {
     margin-left: 30px;
+    position: relative;
+  }
+
+  #bike .swiper-slide .u24DemiBold_v2::after {
+    content: attr(data-price);
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 300;
+    text-decoration: line-through;
+    transform: translate(-5%, -40%);
   }
 
 
@@ -334,6 +344,10 @@
         margin: 75px auto 0;
         width: calc(100vw - 100px);
     }
+
+    #bike .swiper-slide .u24DemiBold_v2 {
+      margin-left: 15px;
+    }
 }
 
 
@@ -368,7 +382,9 @@
                     <div onclick="changeBike('/products/urtopia-carbon-e-bike?variant=43556895981816', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18138_2x_de02f431-3e7d-48c0-b887-85eda46c2421.png?v=1677640174', this)" gray></div>
                     <div onclick="changeBike('/products/urtopia-carbon-e-bike?variant=43556899815672', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230428-104445.png?v=1682649982', this)" peach></div>
                   </div>
-                  <div class="u24DemiBold_v2">{{ all_products['urtopia-carbon-e-bike'].price | money_without_trailing_zeros }}</div>
+                  <div class="u24DemiBold_v2" {% if settings.carbon_ebike_discount_price != "0" %} data-price="{{all_products['urtopia-carbon-e-bike'].price | money_without_trailing_zeros }}"{% endif %}>
+                    {{ all_products['urtopia-carbon-e-bike'].price | minus: settings.carbon_ebike_discount_price | money_without_trailing_zeros }}
+                  </div>
                 </div>
                 <div class="size">Fit for 5’3’’~6’5’’</div>
               </div> 
@@ -386,7 +402,9 @@
                     <div onclick="changeBike('/products/urtopia-chord-ebike?variant=43694976663800', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1_1_2x_3f9f6132-5cac-4f49-bac7-ce6258edad1c.jpg?v=1689154301', this)" white class="active"></div>
                     <div onclick="changeBike('/products/urtopia-chord-ebike?variant=43694976696568', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3_1_2x_c75e6ef5-a3ac-49af-bb2f-c19dd565cfad.jpg?v=1689154308', this)" black></div>
                   </div>
-                  <div class="u24DemiBold_v2">{{ all_products['urtopia-chord-ebike'].price | money_without_trailing_zeros }}</div>
+                  <div class="u24DemiBold_v2" {% if settings.carbon_ebike_discount_price != "0" %} data-price="{{all_products['urtopia-chord-ebike'].price | money_without_trailing_zeros }}"{% endif %}>
+                    {{ all_products['urtopia-chord-ebike'].price | minus: settings.chord_ebike_discount_price | money_without_trailing_zeros }}
+                  </div>
                 </div>
                 <div class="size">Fit for 5’7’’~6’5’’</div>
               </div> 
