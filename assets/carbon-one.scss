@@ -1,9 +1,3 @@
-$sale_background_image: linear-gradient(90deg, #1657A3, #3E89E2);
-$sale_text_color: #236ABE;
-
-$sale-components_background: transparent 100% 100%/cover no-repeat;
-$sale-components_image: linear-gradient(-90deg,var(--sale-color3),var(--sale-color4)) !important;
-
 .__pf_kIY6jB09 .pf-8_ {
     padding: 0;
 }
@@ -780,7 +774,7 @@ $sale-components_image: linear-gradient(-90deg,var(--sale-color3),var(--sale-col
 
         .commonComponent {
             .sale {
-                background-image: $sale_background_image;
+                background-image: var(--sale-order-page-sale-background);
                 border-radius: 25px;
                 display: flex;
                 justify-content: space-between;
@@ -795,7 +789,7 @@ $sale-components_image: linear-gradient(-90deg,var(--sale-color3),var(--sale-col
                 }
 
                 .u20DemiBold_v2 {
-                    color: $sale_text_color;
+                    color: var(--sale-color4);
                     background-color: #fff;
                     border-radius: 20px;
                     padding: 3px 10px;
@@ -818,8 +812,7 @@ $sale-components_image: linear-gradient(-90deg,var(--sale-color3),var(--sale-col
 
 
                 .u14Light_v2 {
-                    background: $sale-components_background;
-                    background-image: $sale-components_image;
+                    background-image: var(--sale-order-page-acc-background);
                     color: #fff;
                     position: absolute;
                     left: 0;
@@ -876,7 +869,7 @@ $sale-components_image: linear-gradient(-90deg,var(--sale-color3),var(--sale-col
             }
 
             .count-down {
-                color: $sale_text_color;
+                color: var(--sale-color4);
                 overflow: hidden;
 
                 img {
@@ -1033,14 +1026,14 @@ $sale-components_image: linear-gradient(-90deg,var(--sale-color3),var(--sale-col
                     }
 
                     div[attribute*="350W"] {
-                        border-color: $sale_text_color;
+                        border-color: var(--sale-color4);
                     }
 
                     div[attribute*="350W"]::after {
                         content: "Sale";
                         position: absolute;
                         color: #fff;
-                        background-color: $sale_text_color;
+                        background-color: var(--sale-color4);
                         right: 0;
                         transform: rotate(30deg) translate(28%, -250%);
                         font-size: 16px;

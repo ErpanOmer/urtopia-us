@@ -6,13 +6,13 @@
         "type": "text",
         "id": "sale_name",
         "label": "活动名称",
-        "default": "2nd Anniversary Sale"
+        "default": "Labor Day Sale"
       },
       {
         "type": "text",
         "id": "sale_end_time",
         "label": "活动结束文案",
-        "default": "Ends on August 27"
+        "default": "Ends on Sep 4"
       },
       {
         "type": "text",
@@ -36,7 +36,7 @@
         "type": "text",
         "id": "chord_sale_name",
         "label": "chord 活动名称",
-        "default": "2nd Anniversary Sale"
+        "default": "Labor Day Sale"
       },
       {
         "type": "text",
@@ -54,7 +54,7 @@
         "type": "text",
         "id": "chord_sale_end_time",
         "label": "chord 活动结束文案",
-        "default": "Ends on August 27"
+        "default": "Ends on Sep 4"
       }
     ]
   },

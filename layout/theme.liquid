@@ -327,23 +327,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     box-sizing: inherit;
     }
 
-    :root {
-          --sale-color1: #0E8059;
-          --sale-color2: #0E8059;
-          --sale-color3: #0E8059;
-          --sale-color4: #0E8059;
-          --sale-banner-background-image-pc: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_22689_2x_b64db022-159f-4450-b97a-20af765b797e.jpg?v=1691994330');
-          --sale-banner-background-image-mb: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_22690_2x_d44eed89-a847-4252-a053-9bef76b8182a.jpg?v=1691994550');
-          --sale-banner-image-max-width: 550px;
-          --sale-banner-image-max-width-mb: 275px;
-          --sale-collection-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_22070_2x_d4d82e6d-efaa-499e-84da-7fab49073b0d.png?v=1691995508');
-          --sale-collection-image-max-width: 550px;
-
-          --chord-sale-banner-background-image-pc: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_22742_2x_08212bf1-bd91-437a-8c2e-23efbf7886f6.jpg?v=1692343557');
-          --chord-sale-banner-background-image-mb: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/sdd_2x_816e443e-a591-4106-9a2a-0882b191c315.jpg?v=1692344655');
-          --chord-sale-banner-image-max-width: 550px;
-          --chord-sale-banner-image-max-width-mb: 275px;
-        }
+    
 
     html {
     box-sizing: border-box;
@@ -370,7 +354,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     font-size: 1.6rem;
     }
     }
+
+
+  
     {% endstyle %}
+
+    {% render 'sale-color' %}
 
     {{ 'global-font-face.css' | asset_url | stylesheet_tag }}
     {{ 'base.css' | asset_url | stylesheet_tag }}
