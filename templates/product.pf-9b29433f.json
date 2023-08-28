@@ -2,7 +2,6 @@
   "sections": {
     "main": {
       "type": "main-product",
-      "disabled": true,
       "blocks": {
         "vendor": {
           "type": "text",
@@ -80,6 +79,7 @@
         "description",
         "share"
       ],
+      "disabled": true,
       "settings": {
         "enable_sticky_info": true,
         "gallery_layout": "thumbnail_slider",
@@ -92,7 +92,6 @@
       }
     },
     "judgeme_section_review_widget_f144": {
-      "disabled": true,
       "type": "apps",
       "blocks": {
         "judgeme_review_widget_c56227c3": {
@@ -104,6 +103,7 @@
       "block_order": [
         "judgeme_review_widget_c56227c3"
       ],
+      "disabled": true,
       "settings": {
         "include_margins": true
       }
