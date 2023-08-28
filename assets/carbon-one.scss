@@ -786,6 +786,15 @@
                     flex: 1;
                     text-align: center;
                     line-height: 1em;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    img {
+                        max-height: 24px;
+                        width: auto;
+                        margin-left: 2.5%;
+                    }
                 }
 
                 .u20DemiBold_v2 {
