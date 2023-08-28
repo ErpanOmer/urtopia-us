@@ -17,9 +17,9 @@ const global_config = {
         // 邮件弹窗 延迟弹出时间，单位:s
         show_delay_time: 10,
         // 邮件 pc 背景图
-        background_imgae_pc: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20221009-untitled-5445_2x_5e50b65a-4b24-44bf-9678-89b824437498.jpg?v=1692610981&width=500',
+        background_imgae_pc: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DSC9850_2x_2c7acf3e-9256-4fbc-9f01-7a5baa78d8ee.jpg?v=1693190776&width=500',
         // 邮件 mobile 背景图
-        background_imgae_mb: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20221009-untitled-5385_2x_54c3ce5e-7b43-400c-be8a-e9b1bbf22dd6.jpg?v=1692610972&width=375'
+        background_imgae_mb: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DSC9850_2x_d5965f74-e288-45be-9b68-dd7283a3da05.jpg?v=1693190845&width=375'
     },
     // test ride 弹窗
     test_ride_dialog_config: {

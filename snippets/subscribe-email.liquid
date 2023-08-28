@@ -29,17 +29,8 @@
       margin-bottom: 8%;
     }
 
-
-    .subscribe-container .subscribe .u20Medium {
-      font-weight: 600;
-    }
-
-    .subscribe-container .subscribe .u30DemiBold_v2 {
-      margin: 10% 0 14%;
-    }
-    
-    .subscribe-container .subscribe .u17Light_v2 {
-        margin: 13% 0 24%;
+    .subscribe-container .subscribe .u17Medium_v2  {
+      margin: 10% 0;
     }
     
     .subscribe-container .subscribe .email {
@@ -116,11 +107,6 @@
             padding: 8%;
         }
     
-        .subscribe-container .subscribe .u20Medium {
-            font-size: 18px;
-            line-height: 21px;
-        }
-    
         .subscribe-container .subscribe img {
             margin: 15px 0 0;
         }
@@ -133,19 +119,6 @@
             line-height: 21px;
             margin: 0 0 15px;
             font-size: 13px;
-        }
-
-        .subscribe-container .subscribe .u30DemiBold_v2 {
-          font-size: 20px;
-          margin: 8% 0;
-        }
-
-        .subscribe-container .subscribe .u30DemiBold_v2 .u72DemiBold_v2 {
-          font-size: 48px;
-        }
-
-        .subscribe-container .subscribe .u30DemiBold_v2 .u24Medium_v2 {
-          font-size: 20px;
         }
     
         .subscribe-container .subscribe .email {
@@ -163,17 +136,15 @@
             right: 1%;
         }
 
-
-
-        .subscribe-container .subscribe .u30DemiBold_v2 {
-          font-size: 20px;
+        .subscribe-container .subscribe .u17Medium_v2 {
+          font-size: 14px;
+          margin: 5% 0;
         }
 
-
-        .subscribe-container .subscribe .u17Light_v2 {
-          font-size: 15px;
-          margin: 10% 0 12%;
+        .subscribe-container .subscribe .u17Medium_v2  .u72DemiBold_v2 {
+            font-size: 42px;
         }
+
     }
     </style>
 
@@ -201,8 +172,8 @@
       }
     </style>
 
-    <link rel="preload" href="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20221009-untitled-5445_2x_5e50b65a-4b24-44bf-9678-89b824437498.jpg?v=1692610981&width=500" as="image">
-    <link rel="preload" href="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20221009-untitled-5385_2x_54c3ce5e-7b43-400c-be8a-e9b1bbf22dd6.jpg?v=1692610972&width=375" as="image">
+    <link rel="preload" href="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DSC9850_2x_2c7acf3e-9256-4fbc-9f01-7a5baa78d8ee.jpg?v=1693190776&width=500" as="image">
+    <link rel="preload" href="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DSC9850_2x_d5965f74-e288-45be-9b68-dd7283a3da05.jpg?v=1693190845&width=375" as="image">
     <link rel="preload" href="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230609-untitled-9762.jpg?v=1691048775&width=500" as="image">
   <script>
 
@@ -288,8 +259,8 @@
     <img class="mobileHide" src="${global_config.subscribe_email_dialog_config.background_imgae_pc}" alt="">
     <img class="pcHide" src="${global_config.subscribe_email_dialog_config.background_imgae_mb}" alt="">
     <div class="subscribe">
-        <span class="u20Medium">{{ settings.sale_name }}</span>
-        <div class="u30DemiBold_v2" style="color:var(--sale-color4);"><span class="u72DemiBold_v2">{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros}}</span>OFF<span class="u24Medium_v2" style="color: #000;"><br>+{{ settings.carbon_ebike_free_accessories_count }} Freebies On Carbon 1s</span></div>
+        <span class="u20DemiBold_v2">Sign up and get an</span>
+        <div class="u17Medium_v2" style="color:var(--sale-color3);"><span class="u72DemiBold_v2">{{ 5000 | money_without_trailing_zeros }} OFF</span><br>Code on Your Order of Accessories</span></div>
         <span class="u17Light">Subscribe to Urtopia for exclusive coupons, engaging stories, and the latest product news.</span>
         <form class="new-contact" action="/contact#ContactFooter" target="_blank" method="post" accept-charset="UTF-8">
         <div class="email">
