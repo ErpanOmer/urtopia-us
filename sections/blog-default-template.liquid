@@ -1,0 +1,21 @@
+{{ 'blog.scss.css' | asset_url | stylesheet_tag: preload: true }}
+
+{{ article.content }}
+
+<script>
+  window.addEventListener("scroll", throttle(() => {
+    $('article .fade').each((i, item) => {
+      let { top } = item.getBoundingClientRect();
+        let s = window.innerHeight - top;
+        if (s > 0) {
+          item.classList.add("fade-in-show")
+        }
+    })
+  }, 50))
+  $('article').append(`{% render 'blog-common-footer' %}`)
+  {% for article in blogs.blog.articles %}
+    {% if forloop.index <= 3 %}
+        console.log(JSON.parse(JSON.stringify({{ article | json }})))
+    {% endif %}
+  {% endfor %}
+</script>

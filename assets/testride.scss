@@ -735,6 +735,33 @@
                             }
                         }
 
+                      .nobook {
+                            .name {
+                                margin-bottom: 12px;
+                            }
+
+                            .contact {
+                                display: flex;
+                                flex-direction: column;
+                                margin-bottom: 6px;
+
+                                & > div {
+                                    display: grid;
+                                    grid-template-columns: 1fr 3fr;
+                                    margin: 2px 0;
+
+
+                                    .u14Light_v2 {
+                                        word-break: break-word;
+                                    }
+                                }
+                            }
+
+                            & > .u14DemiBold_v2 {
+                                margin-top: 10px;
+                            }
+                        }
+
                         & > img {
                             height: 100%;
                             object-fit: cover;

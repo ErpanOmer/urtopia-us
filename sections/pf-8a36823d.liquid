@@ -571,6 +571,35 @@
         const href = document.querySelector('#storepoint-map .storepoint-location-popup .storepoint-popup-directions').getAttribute('href')
         const n = store.name.replace(reg, '')
 
+      if (store.noBook) {
+          $(popup).append(`
+                <div class="map-popup">
+                    <img src="${store.imgUrl}"/>
+                    <div class="infos nobook">
+                        <div class="name">${store.name}</div>
+                        <div class="available">Available Model:</div>
+                        <ul>
+                          ${store.availableSizes ? store.availableSizes.map(i => `<li class="gray">${i}</li>`).join('') : `<li class="gray">Carbon One Size ${store.testRideSize}</li>`}
+                        </ul>
+                        <div class="contact">
+                            <div>
+                                <span class="u14DemiBold_v2">Email: </span>
+                                <span class="u14Light_v2">${store.email}</span>
+                            </div>
+                            <div>
+                                <span class="u14DemiBold_v2">Phone: </span>
+                                <span class="u14Light_v2">${store.phone}</span>
+                            </div>
+                            <div>
+                                <span class="u14DemiBold_v2">Add: </span>
+                                <span class="u14Light_v2">${store.add}</span>
+                            </div>
+                        </div>
+                        <div class="u14DemiBold_v2">Please contact the Ambassadors directly to arrange test ride</div>
+                    </div>
+                </div>
+            `)
+      } else {
         $(popup).append(`
             <div class="map-popup">
                 <img src="${store.imgUrl}"/>
@@ -590,6 +619,7 @@
                 </div>
             </div>
         `)
+      }
     }
 
     observerElement('#storepoint-container').then(r => {
