@@ -1034,11 +1034,13 @@
                         }
                     }
 
-                    div[attribute*="350W"] {
+                    div[attribute*="350W"],
+                    div[attribute*="250W"]  {
                         border-color: var(--sale-color4);
                     }
 
-                    div[attribute*="350W"]::after {
+                    div[attribute*="350W"]::after,
+                    div[attribute*="250W"]::after {
                         content: "Sale";
                         position: absolute;
                         color: #fff;

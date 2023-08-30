@@ -883,16 +883,18 @@
   }
 
   function changeVariant (model, size, style) {
+    console.log(model, size, style)
       if (model) {
           $(`.product .product-panel .Model .active`).removeClass('active')
           $(`.product .product-panel .Model > div[attribute="${model}"]`).addClass('active')
           $(`.product .product-panel .options > div[option="Model"] .u17DemiBold_v2 .u17Light_v2`).text(`Urtopia Carbon ${model.includes('350W') ? '1s' : '1'}`)
 
           if (model.includes('350W')) {
-            $('.product .sale').show()
+            //$('.product .sale').show()
             $('.product .sale_acc').show()
             $('.product .count-down').show()
 
+            /*
             $(`.product .product-panel .orderTestRideBtn .stages`).text('{{ product.price | minus: settings.carbon_ebike_discount_price | divided_by: 24 | money_without_trailing_zeros }}')
             $('.top-fixed .centeral-content > div').html(`
                 <span class="u17Light_v2"><span class="u20DemiBold_v2 emphasize" style="font-weight: 600;">{{ product.price | minus: settings.carbon_ebike_discount_price | money }}</span><span style="text-decoration: line-through;">{{ product.price | money }}</span></span>
@@ -903,10 +905,13 @@
                 <span class="u14Light_v2"><span class="u17DemiBold_v2 emphasize" style="font-weight: 600;">{{ product.price | minus: settings.carbon_ebike_discount_price | money }}</span><span style="text-decoration: line-through;">{{ product.price | money }}</span></span>
                 <span class="u14Light_v2">or as low as {{ product.price | minus: settings.carbon_ebike_discount_price | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
               `)
+              */
           } else {
-            $('.product .sale').hide()
+            //$('.product .sale').hide()
             $('.product .sale_acc').hide()
             $('.product .count-down').hide()
+
+            /*
 
             $(`.product .product-panel .orderTestRideBtn .stages`).text('{{ product.price | divided_by: 24 | money_without_trailing_zeros }}')
             $('.top-fixed .centeral-content > div').html(`
@@ -917,6 +922,8 @@
               <span class="u14Light_v2"><span class="u17DemiBold_v2 emphasize" style="font-weight: 600;">{{ product.price | money }}</span></span>
               <span class="u14Light_v2">or as low as {{ product.price | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
             `)
+
+            */
           }
       }
 
@@ -960,33 +967,53 @@
 
 
       if (model && style && size) {
-    if (model.includes('350W')) {
-      $(`.product .product-panel .options .option .Size div[attribute="S"]`).show();
-      $(`.product .product-panel .options .option .Style div[attribute="Vanilla"]`).show();
+        if (model.includes('350W')) {
+          $(`.product .product-panel .options .option .Size div[attribute="S"]`).show();
+          $(`.product .product-panel .options .option .Style div[attribute="Vanilla"]`).show();
+          $(`.product .product-panel .options .option .Style div[attribute="Midnight in Paris"]`).show();
 
-      if (size === 'S') {
-        $(`.product .product-panel .options .option .Style div[attribute="Sirius"]`).hide();
-        $(`.product .product-panel .options .option .Style div[attribute="Lyra"]`).hide();
+          if (size === 'S') {
+            $(`.product .product-panel .options .option .Style div[attribute="Sirius"]`).hide();
+            $(`.product .product-panel .options .option .Style div[attribute="Lyra"]`).hide();
 
-        if (style === 'Sirius' || style === 'Lyra') {
-          const f = findAvailableVariant(model, size)
-          return changeVariant(f.option1, f.option2, f.option3)
-        }					
-      } else {
-        $(`.product .product-panel .options .option .Style div[attribute="Sirius"]`).show();
-        $(`.product .product-panel .options .option .Style div[attribute="Lyra"]`).show();
-      }
-    } else {
-      $(`.product .product-panel .options .option .Size div[attribute="S"]`).hide();
-      $(`.product .product-panel .options .option .Style div[attribute="Vanilla"]`).hide();
-      $(`.product .product-panel .options .option .Style div[attribute="Sirius"]`).show();
-      $(`.product .product-panel .options .option .Style div[attribute="Lyra"]`).show();
+            if (style === 'Sirius' || style === 'Lyra') {
+              const f = findAvailableVariant(model, size)
+              return changeVariant(f.option1, f.option2, f.option3)
+            }					
+          } else {
+            $(`.product .product-panel .options .option .Style div[attribute="Sirius"]`).show();
+            $(`.product .product-panel .options .option .Style div[attribute="Lyra"]`).show();
+          }
+        } else {
+          $(`.product .product-panel .options .option .Size div[attribute="S"]`).hide();
+          $(`.product .product-panel .options .option .Style div[attribute="Vanilla"]`).hide();
+          $(`.product .product-panel .options .option .Style div[attribute="Sirius"]`).show();
+          $(`.product .product-panel .options .option .Style div[attribute="Lyra"]`).show();
 
-      if (style === 'Vanilla' || size === 'S') {
-        const f = findAvailableVariant(model)
-        return changeVariant(f.option1, f.option2, f.option3)
-      }
-    }
+          if (size === 'M') {
+            $(`.product .product-panel .options .option .Style div[attribute="Sirius"]`).hide();
+            $(`.product .product-panel .options .option .Style div[attribute="Midnight in Paris"]`).hide();
+          }
+
+          if (size === 'L') {
+            $(`.product .product-panel .options .option .Style div[attribute="Midnight in Paris"]`).hide();
+          }
+
+          if (style === 'Vanilla' || size === 'S') {
+            const f = findAvailableVariant(model)
+            return changeVariant(f.option1, f.option2, f.option3)
+          }
+
+          if (style === 'Sirius' && size === 'M') {
+            const f = findAvailableVariant(model, size)
+            return changeVariant(f.option1, f.option2, f.option3)
+          }
+
+          if (style === 'Midnight in Paris') {
+            const f = findAvailableVariant(model, size)
+            return changeVariant(f.option1, f.option2, f.option3)
+          }
+        }
 
     
 
