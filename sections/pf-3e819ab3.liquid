@@ -480,12 +480,15 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
                   <div onclick="changeBike('/products/urtopia-carbon-e-bike?variant=43556899979512', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18150_2x_63ea456b-69c1-4d96-988f-efa931148bc1.png?v=1677640442', this)" yellow></div>
                   <div onclick="changeBike('/products/urtopia-carbon-e-bike?variant=43556899946744', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18139_2x_ee2cf1ae-8693-42a3-ab99-d53ea78e2802.png?v=1677640511', this)" gray></div>
                 </div>
-                <div class="u24DemiBold_v2">{{ all_products['urtopia-carbon-e-bike'].price | money_without_trailing_zeros }}</div>
+                <div class="u24DemiBold_v2" {% if settings.carbon_ebike_discount_price != "0" %} data-price="{{all_products['urtopia-carbon-e-bike'].price | money_without_trailing_zeros }}"{% endif %}>
+                  {{ all_products['urtopia-carbon-e-bike'].price | minus: settings.carbon_ebike_discount_price | money_without_trailing_zeros }}
+                </div>
               </div>
               <div class="size">Fit for 5’7’’~6’5’’</div>
             </div> 
 
             <a href="/products/urtopia-carbon-e-bike?variant=43556899913976" class="my-button my-button-white">Order now</a>
+           <div class="my-button my-button-black new" style="background-image: var(--sale-bike-tags1);">{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros}} off</div>
           </div>
 
     </div>
