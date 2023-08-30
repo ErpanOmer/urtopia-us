@@ -18,7 +18,7 @@ $color-opacity: 95, 85, 75, 65, 55, 45, 35, 25, 15;
 
 // 颜色取值
 $colors: #000, #fff, #FD4B17, #191D3B, #FFDA12, #808080, #dedede;
-$colors-name: "black", "white", "orange", "secondary", "yellow", "gray", "light_gray";
+$colors-name: "black", "white", "orange", "secondary", "yellow", "gray", "light-gray";
 
 
 article {
@@ -52,7 +52,8 @@ article {
     p,
     span,
     img,
-    video {
+    video,
+    xmp {
         margin: 0;
         padding: 0;
         border: 0;
@@ -112,17 +113,27 @@ article {
         transition: color .3s;
     }
 
+    xmp {
+        font-family: 'urbane';
+        font-size: 14px;
+        text-align: left;
+        word-break: break-word;
+        white-space: break-spaces;
+        
+    }
+
     table {
         text-align: center;
         background-color: rgb(15, 23, 42);
         color: #e5e5e5;
         border: none;
         border-spacing: 0;
+        font-family: urbane;
 
         th,
         td {
             border-color: #94a3b81a;
-            padding: 0.75em;
+            padding: 0.75em 1.5em;
         }
 
         tr {
@@ -172,11 +183,11 @@ article {
         }
 
         .#{$prefix}margin-top-bottom-#{$i * $size-gap } {
-            margin: $i * $size-gap + px 0;
+            margin: $i * $size-gap + px auto;
         }
 
         .#{$prefix}margin-left-right-#{$i * $size-gap } {
-            margin: 0 $i * $size-gap + px;
+            margin: auto $i * $size-gap + px;
         }
 
         .#{$prefix}padding-#{$i * $size-gap } {
@@ -200,11 +211,11 @@ article {
         }
 
         .#{$prefix}padding-left-right-#{$i * $size-gap } {
-            padding: 0 $i * $size-gap + px;
+            padding: auto $i * $size-gap + px;
         }
 
         .#{$prefix}padding-top-bottom-#{$i * $size-gap } {
-            padding: $i * $size-gap + px 0;
+            padding: $i * $size-gap + px auto;
         }
 
         .#{$prefix}grid-column-gap-#{$i * $size-gap } {
@@ -312,6 +323,10 @@ article {
         flex-direction: column;
     }
 
+    .#{$prefix}flex-row {
+        flex-direction: row;
+    }
+
     .#{$prefix}flex-align-center {
         align-items: center;
     }
@@ -348,8 +363,27 @@ article {
         height: 100%;
     }
 
+    .#{$prefix}height-fill-viewport {
+        height: 100vh;
+        height: 100dvh;
+    }
+
     .#{$prefix}width-fill {
         width: 100%;
+    }
+
+    .#{$prefix}width-fill-viewport {
+        width: 100vw;
+        width: 100dvw;
+    }
+
+    .#{$prefix}text-wrap {
+        word-break: break-word;
+        white-space: break-spaces;
+    }
+
+    .#{$prefix}text-nowrap {
+        white-space: nowrap;
     }
 }
 
@@ -434,5 +468,15 @@ article {
         @media screen and (max-width: 768px) {
             padding: 12vw 4vw;
         }
+    }
+}
+
+.video {
+    position: relative;
+    padding-bottom: 56.25%;
+
+    iframe,
+    video {
+        position: absolute;
     }
 }
