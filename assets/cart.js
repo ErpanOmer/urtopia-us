@@ -3,9 +3,17 @@ class CartRemoveButton extends HTMLElement {
     super();
 
     this.addEventListener('click', event => {
+      event.preventDefault();
+
+      if ($(event.target).hasClass('button--tertiary')) {
+        return false
+      }
+      
       const cartItems = this.closest('cart-items') || this.closest('cart-drawer-items');
       
       cartItems.onCartChange(event)
+
+      return false
     })
   }
 }
@@ -131,6 +139,7 @@ class CartItems extends HTMLElement {
     // fetch
     this.fetchAndRefreshCart(quantity_arr)
     event.preventDefault();
+    return false
   }
 
   onChange(event) {
