@@ -22,7 +22,7 @@
                           {% endunless %}
                           <div class="buttons mobileHide">
                               <a class="my-button" href="/products/urtopia-carbon-e-bike">Order now</a>
-                              <a class="my-button" style="border-color: #000;color: #000;" href="/pages/e-bike">Meet Carbon 1</a>
+                              <a class="my-button my-button-ghost"  href="/pages/e-bike">Meet Carbon 1</a>
                           </div>
                           <div class="buttons pcHide">
                               <a class="my-button" href="/products/urtopia-carbon-e-bike">Order now</a>
@@ -78,7 +78,7 @@
     // 是否有多个banner, 如果有 开启swiper
     const isMultipartBanner = document.querySelectorAll('.banner .swiper-slide')
     
-    isMultipartBanner.length > 11 && new Swiper('.banner', {
+    isMultipartBanner.length > 1 && new Swiper('.banner', {
         autoplay: {
             disableOnInteraction: false,
             pauseOnMouseEnter: false,
