@@ -91,10 +91,12 @@
                     <div class="u17Light_v2">Free Fenders, Kickstand, <br>1-Year Connect Service Included</div>
                   </div>
             </div>
-            <div class="count-down mobileHide pcHide">
-              <div class="u17Medium_v2">Ends in：</div>
-              <img src="http://i.countdownmail.com/205dop.gif">
-            </div>
+            {% unless settings.hide_sale_countdown %}
+              <div class="count-down mb12 mobileHide">
+                <div class="u17Medium_v2">Ends in：</div>
+                <img src="http://i.countdownmail.com/205dop.gif">
+              </div>
+            {% endunless %}
             <div class="options">
                 {% for option in product.options %}
                     <div class="option" option={{option}}>
@@ -149,10 +151,12 @@
                 </div>
             </div>
             <div class="buttons">
-                <div class="count-down mb12 pcHide mobileHide">
-                  <div class="u17Medium_v2">Ends in：</div>
-                  <img src="http://i.countdownmail.com/205dop.gif">
-                </div>
+                {% unless settings.hide_sale_countdown %}
+                  <div class="count-down mb12 pcHide">
+                    <div class="u17Medium_v2">Ends in：</div>
+                    <img src="http://i.countdownmail.com/205dop.gif">
+                  </div>
+                {% endunless %}
                 <div
                     data-product-id="{{ product.id }}"
                     class="my-button my-button-black addToCartBtn"

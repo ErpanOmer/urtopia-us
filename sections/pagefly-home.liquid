@@ -9,9 +9,11 @@
                       <div>
                           <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1_2x_dbd9336c-8205-44e6-a5a0-d7eb5794e413.png?v=1693205964">
                           <div class="u36DemiBold_v2">Get {{ settings.carbon_ebike_discount_price | money_without_trailing_zeros }} off + {{ settings.carbon_ebike_free_accessories_count }} Freebies<br> on Carbon 1s {{ settings.sale_end_time }}</div>
-                        <div class="count-down-gif pcHide mobileHide">
-                          <img src="http://i.countdownmail.com/2mcmh4.gif"/>
-                        </div>
+                          {% unless settings.hide_sale_countdown %}
+                          <div class="count-down-gif pcHide">
+                            <img src="http://i.countdownmail.com/2mcmh4.gif"/>
+                          </div>
+                          {% endunless %}
                           <div class="flex-1 pcHide"></div>
                           <div class="buttons mobileHide">
                               <a class="my-button my-button-black" href="/products/urtopia-carbon-e-bike">Order now</a>
@@ -21,9 +23,11 @@
                               <a class="my-button" href="/products/urtopia-carbon-e-bike">Order now</a>
                               <a class="my-button" href="/pages/e-bike">Meet Carbon 1</a>
                           </div>
-                        <div class="count-down-gif mobileHide pcHide">
-                          <img src="http://i.countdownmail.com/2mcmh4.gif"/>
-                        </div>
+                          {% unless settings.hide_sale_countdown %}
+                            <div class="count-down-gif mobileHide">
+                              <img src="http://i.countdownmail.com/2mcmh4.gif"/>
+                            </div>
+                          {% endunless %}
                       </div>
                       <div></div>
                   </div>
@@ -33,9 +37,12 @@
                       <div>
                         <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1_2x_4e04ee91-4d08-4566-b909-f75a15287206.png?v=1693206923">
                         <div class="u36DemiBold_v2">Get {{ settings.chord_ebike_discount_price | money_without_trailing_zeros }} off on Chord <br>{{ settings.chord_sale_end_time }}</div>
-                        <div class="count-down-gif pcHide mobileHide">
-                          <img src="http://i.countdownmail.com/2q61sj.gif"/>
-                        </div>
+                        {% unless settings.hide_sale_countdown %}
+                          <div class="count-down-gif pcHide">
+                            <img src="http://i.countdownmail.com/2q61sj.gif"/>
+                          </div>
+                        {% endunless %}
+
                           <div class="flex-1 pcHide"></div>
                           <div class="buttons mobileHide">
                               <a class="my-button" href="/products/urtopia-chord-ebike">Order now</a>
@@ -45,9 +52,11 @@
                               <a class="my-button my-button-black" href="/products/urtopia-chord-ebike">Order now</a>
                               <a class="my-button" href="/pages/lightweight-commuter-ebike-urtopia-chord">Meet Chord/Chord x</a>
                           </div>
-                        <div class="count-down-gif mobileHide pcHide">
-                          <img src="http://i.countdownmail.com/2q61sj.gif"/>
-                        </div>
+                          {% unless settings.hide_sale_countdown %}
+                          <div class="count-down-gif mobileHide">
+                            <img src="http://i.countdownmail.com/2q61sj.gif"/>
+                          </div>
+                          {% endunless %}
                       </div>
                       <div></div>
                     </div>

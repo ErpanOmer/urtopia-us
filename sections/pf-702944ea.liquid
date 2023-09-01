@@ -33,10 +33,12 @@
 <div class="chord-ebike">
     <div class="banner">
         <div class="centeral-content">
-			<div class="sale mobileHide pcHide">
-				<div class="u17DemiBold_v2">{{ settings.chord_sale_name }} ends in:</div>
-				<img src="http://i.countdownmail.com/2qa2op.gif">
-			</div>
+			{% unless settings.hide_sale_countdown %}
+                <div class="sale mobileHide">
+                    <div class="u17DemiBold_v2">{{ settings.chord_sale_name }} ends in:</div>
+                    <img src="http://i.countdownmail.com/2qa2op.gif">
+                </div>
+            {% endunless %}
             <div class="u72DemiBold_v2">Urtopia Chord</div>
             <div class="u24Light_v2">Experience elegance and efficiency in one ride</div>
             <div class="flex-1 pcHide"></div>

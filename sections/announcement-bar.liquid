@@ -73,7 +73,8 @@
   });
 </script>
 
-{% comment %} {% if template == "product.pf-9b29433f" or template == "page.pf-198df0c3" or template == "product.pf-7e55a3be" or template == "page.pf-702944ea" %}
+{% unless settings.hide_sale_countdown %}
+  {% if template == "product.pf-9b29433f" or template == "page.pf-198df0c3" or template == "product.pf-7e55a3be" or template == "page.pf-702944ea" %}
   <div id="announcement-bar" class="pcHide"  style="height: 60px;display: flex;flex-direction: column;align-items: center;justify-content: flex-start;text-align: center;">
     {% if template == "product.pf-7e55a3be" or template == "page.pf-702944ea"%}
         <div class="u11Light_v2">{{ settings.chord_sale_name }} ends in:</div>
@@ -88,7 +89,10 @@
       $('.announcement-bar-common').hide()
     }
   </script>
-{% endif %} {% endcomment %}
+  {% endif %}
+
+{% endunless %}
+
 
 {%- for block in section.blocks -%}
   {%- case block.type -%}

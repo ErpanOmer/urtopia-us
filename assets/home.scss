@@ -73,104 +73,6 @@
             background: center center/cover no-repeat;
         }
 
-
-        // 常规banner
-        .common {
-            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230418-105138.jpg?v=1681786322');
-
-            .centeral-content {
-                &>div {
-                    &:last-child {
-                        max-width: 500px;
-                    }
-                }
-            }
-
-            .right {
-                .u60DemiBold_v2 {
-                    margin: 10px 0 110px;
-                }
-            }
-        }
-
-
-        // maksim banner
-        .maksim {
-            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230418-110500.jpg?v=1681787114');
-
-            .centeral-content {
-                &>div {
-                    &:last-child {
-                        max-width: 550px;
-                    }
-                }
-            }
-
-            .right {
-                .u48DemiBold_v2 {
-                    margin: 16px 0 136px;
-                }
-            }
-        }
-
-        // 美国倒计时banner
-        .us-downcount {
-            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230420-211003.jpg?v=1681996217');
-
-            .centeral-content {
-                height: 50%;
-                overflow: hidden;
-            }
-
-            .left {
-                max-width: 430px;
-
-                .u30DemiBold_v2 {
-                    margin-bottom: 50px;
-                }
-            }
-
-            .right {
-                transform: translateX(40%);
-                max-width: 700px;
-                width: 700px;
-            }
-        }
-
-        .carbon-1s {
-            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20911_2x_3a8616af-69f0-4ab3-b0cd-2c5e76af9baa.jpg?v=1681894751');
-            background-color: rgb(231, 231, 231);
-
-            .right {
-                transform: unset;
-                max-width: 364px;
-            }
-        }
-
-
-        // 美国独立日活动 banner
-        .memorial-day {
-            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/background_2x_08d84a6b-d71e-4413-8b8c-301ec71e96ca.jpg?v=1686620761');
-            background-position-y: bottom;
-
-            .left {
-                img {
-                    max-width: 342px;
-                }
-            }
-
-
-            .u36DemiBold_v2 {
-                margin: 40px 0;
-            }
-
-
-            .centeral-content {
-                // height: 85%;
-            }
-        }
-
-
         .summer-sale {
             background-color: var(--sale-color1);
             background-image: var(--sale-banner-background-image-pc);
@@ -204,29 +106,6 @@
 
                     .u36DemiBold_v2 {
                         margin: 40px 0;
-                    }
-                }
-            }
-        }
-
-      .bluetti {
-            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/banner_3_2x_3e80c46d-96b2-4d40-a29c-1e23702f2bba.jpg?v=1685619448');
-
-            .centeral-content {
-                align-items: flex-start;
-                text-align: center;
-
-                & > div {
-                    align-items: center;
-
-                    .u36DemiBold_v2 {
-                        margin: 1vh 0 4.5vh;
-                      text-align: center;
-                    }
-
-                    img {
-                        max-width: 380px;
-                        margin: 4vh 0;
                     }
                 }
             }
@@ -440,114 +319,6 @@
                 background-position-y: top;
             }
 
-            // 常规banner
-            .common {
-                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230418-102832.png?v=1681784932');
-
-                .right {
-                    padding: 20vw 0;
-                    color: #000;
-
-                    .u24Medium_v2 {
-                        font-size: 17px;
-                    }
-
-                    .u60DemiBold_v2 {
-                        font-size: 30px;
-                        margin-bottom: 0;
-                        // margin: 10px 0 110px;
-                    }
-                }
-            }
-
-
-            .maksim {
-                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20869_2x_095b2a64-3bee-4b82-a920-f596bd11b508.jpg?v=1681788172');
-
-                .right {
-                    padding: 10vw 0 20vw;
-
-                    .u48DemiBold_v2 {
-                        font-size: 36px;
-                        margin: 0;
-                    }
-                }
-            }
-
-            // 美国倒计时banner
-            .us-downcount {
-                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230420-211018.jpg?v=1681996227');
-
-                .centeral-content {
-                    flex-direction: column-reverse;
-                    height: 100%;
-                    padding-top: 6vw;
-                    padding-bottom: 20vw;
-                    align-items: flex-start;
-
-                    .right {
-                        transform: unset;
-                        height: unset;
-                        width: 100%;
-                        margin-left: -22px;
-                        overflow: hidden;
-                    }
-
-                    .left {
-                        display: flex;
-                        flex-direction: column;
-                        height: 100%;
-
-                        .u30DemiBold_v2 {
-                            font-size: 20px;
-                            margin: 0;
-                        }
-                    }
-                }
-            }
-
-
-            .carbon-1s {
-                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18530_2x_75a2c3bb-0170-4e15-be6b-5f993ccb48c1.jpg?v=1681895088');
-
-                .centeral-content {
-                    padding-top: 6vw;
-
-                    .right {
-                        //margin: 0 0 6px;
-                    }
-                }
-            }
-
-
-            .memorial-day {
-                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18530_2x_edc8ed26-1dfa-46b7-ae34-e56c8f26a2d9.jpg?v=1686279306');
-
-                .left {
-                    padding: 8vw 0 20vw;
-
-                    .u36DemiBold_v2 {
-                        margin-top: 6vw;
-                        font-size: 20px;
-                        margin-bottom: 0;
-                    }
-
-                    .u17DemiBold_v2 {
-                        // color: #104686;
-                        margin: 15px 0 -5px;
-                    }
-
-
-                    img {
-                        max-width: 200px;
-                    }
-                }
-
-                .centeral-content {
-                    height: 100%;
-                }
-            }
-
             .summer-sale {
                 background-image: var(--sale-banner-background-image-mb);
     
@@ -568,6 +339,7 @@
         
                             .u36DemiBold_v2 {
                                 font-size: 20px;
+                                margin-bottom: 0;
                                 //margin: 10px 0 0;
                             }
                         }
@@ -594,32 +366,8 @@
 
                         .u36DemiBold_v2 {
                             font-size: 20px;
+                            margin-bottom: 0;
                             //margin: 10px 0 0;
-                        }
-                    }
-                }
-            }
-
-          .bluetti {
-                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18562_2x_0e6bea7e-9e64-48ce-b6ae-aafcce7796a3.png?v=1685620282');
-                background-position-y: center;
-                
-                .centeral-content {
-                    padding: 6vw 0 18vw;
-                    
-                    & > div {
-                        img {
-                            max-width: 240px;
-                        }
-
-
-                        .u56DemiBold_v2 {
-                            font-size: 36px;
-                            margin: 4vw 0 0;
-                        }
-
-                        .u36DemiBold_v2 {
-                            font-size: 20px;
                         }
                     }
                 }
