@@ -10,11 +10,11 @@
 				<div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-25_ order-djs mb6">
 					<div class="pf-judme">{% render "judgeme_widgets", widget_type: "judgeme_preview_badge", jm_style: "", concierge_install: false, product: product %}</div>
 				</div>
-				<div class="u30DemiBold_v2 mb6">{{ product.price | money }}</div>
-				<div class="sale mb6" id="sale_accmb">
-					<div class="u20DemiBold_v2">{{ product.price | minus: settings.carbon_ebike_discount_price | money }} NOW</div>
-					<div class="u17DemiBold_v2">with {{ settings.sale_name | truncatewords: 2, "" }}<img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18797_2x_aaa420e2-313c-4054-955d-dd56c92f4531.png?v=1693212600"/></div>
-				</div>
+				<div class="product-price u30DemiBold_v2" data-price="{{ product.price | money }}">{{ product.price | minus: settings.carbon_ebike_discount_price | money }}</div>
+        <div class="sale-tag mb6">
+          <div class="u17Medium_v2">{{ settings.sale_name }}</div>
+          <div class="u14Light_v2">Free shipping.</div>
+        </div>
 			</div>
 			<div class="featured_image">
 				<div class="swiper left-swiper mobileHide">
@@ -70,11 +70,11 @@
 					<div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-25_ order-djs mb6">
 						<div class="pf-judme">{% render "judgeme_widgets", widget_type: "judgeme_preview_badge", jm_style: "", concierge_install: false, product: product %}</div>
 					</div>
-					<div class="u30DemiBold_v2 mb6">{{ product.price | money }}</div>
-					<div class="sale mb12">
-						<div class="u20DemiBold_v2">{{ product.price | minus: settings.carbon_ebike_discount_price | money }} NOW</div>
-						<div class="u17DemiBold_v2">with {{ settings.sale_name |  truncatewords: 2, "" }}<img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18797_2x_aaa420e2-313c-4054-955d-dd56c92f4531.png?v=1693212600"/></div>
-					</div>
+					<div class="product-price u30DemiBold_v2" data-price="{{ product.price | money }}">{{ product.price | minus: settings.carbon_ebike_discount_price | money }}</div>
+          <div class="sale-tag">
+            <div class="u17Medium_v2">{{ settings.sale_name }}</div>
+            <div class="u14Light_v2">Free shipping.</div>
+          </div>
 				</div>
 				<!--<div class="sale_acc mb12 belt">
 					<div class="u14Light_v2" style="background-image: linear-gradient(-90deg,var(--sale-color3),var(--sale-color4));">And get <span style="font-weight: 600;"> {{ settings.carbon_ebike_free_accessories_price | money_without_trailing_zeros}} </span> Accessories for <span class="u20DemiBold_v2"> Free</span></div>
@@ -96,8 +96,8 @@
 						{% endfor %}
 					</div>
 				</div>-->
-				<div class="sale_acc mb12 gear" id="sale_acc">
-					<div class="u14Light_v2">And get <span style="font-weight: 600;"> {{ settings.carbon_ebike_free_accessories_price | money_without_trailing_zeros}} </span> Accessories for <span class="u20DemiBold_v2"> Free</span></div>
+				<div class="sale_acc gear" id="sale_acc">
+					<div class="u14Light_v2">Save <span class="discount" style="font-weight: 600;">{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros }}</span> and Get <span style="font-weight: 600;">{{ settings.carbon_ebike_free_accessories_price | money_without_trailing_zeros }}</span>  Accessories for <span style="font-weight: 600;"> Free</span></div>
 					{% assign accessories_map_1s = "7523826008312,7523827613944" | split: ',' %}
 					<div class="accs_1s">
 						{% for acc in accessories_map_1s %}
@@ -117,7 +117,7 @@
 				</div>
 				{% unless settings.hide_sale_countdown %}
           <div class="count-down mb12 mobileHide">
-            <div class="u17Medium_v2">{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros}} off + {{ settings.carbon_ebike_free_accessories_count }} Free Accessories Ends in：</div>
+            <div class="u17Medium_v2">{{ settings.sale_name }} Ends in:</div>
             <img src="http://i.countdownmail.com/205dop.gif">
           </div>
         {% endunless %}
@@ -159,7 +159,7 @@
 				<div class="buttons">
 					{% unless settings.hide_sale_countdown %}
             <div class="count-down mb12 pcHide">
-              <div class="u17Medium_v2">{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros}} off + {{ settings.carbon_ebike_free_accessories_count }} Free Accessories Ends in：</div>
+              <div class="u17Medium_v2">{{ settings.sale_name }} Ends in:</div>
               <img src="http://i.countdownmail.com/205dop.gif">
             </div>
           {% endunless %}
@@ -272,6 +272,32 @@
     </div>
   </div>
 </div>
+
+<div class="design">
+            <div class="centeral-content">
+                <div>
+                    <div class="u48Medium_v2">Design is <br class="pcHide">the Soul</div>
+                    <div class="u30DemiBold_v2">
+                        <img class="mobileHide lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21729_2x_c5c01b2a-77b3-4b36-bf5c-152c7fb76598.jpg?v=1693820382&widht=600" alt="">
+                        <div>Mathis Heller</div>
+                        <div class="u17Light_v2">Urtopia’s Concept Designer</div>
+                    </div>
+                    <!--<div class="logos">
+                        <img style="max-width: 210px;"
+                            src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18793_2x_bccf20b5-51e1-4dbc-abbe-a7359094c98c.png?v=1690619934"
+                            alt="">
+                        <img style="max-width: 78px;"
+                            src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21573_2x_3ef5c6d7-993d-4c20-bd6b-92f9703bb289.png?v=1690619929"
+                            alt="">
+                    </div>-->
+                    <div class="u17Light_v2">Formerly a designer for BMW and Siemens, and inspired by the Möbius strip, Mr.
+                        Heller built a stunning frame shape that symbolizes sustain- ability and interconnectedness.</div>
+                        <img class="pcHide lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21728_2x_3d84de67-6ef3-44fe-895f-356822930838.jpg?v=1693820153&widht=400" alt="">
+                </div>
+                <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/IMG_4817_2x_91d4bb29-16c3-4e76-b5e1-b9e01ffd66d1.jpg?v=1690619924&width=640"
+                    alt="">
+            </div>
+        </div>
 
 <div class="boxs">
   <div class="centeral-content">
@@ -896,7 +922,7 @@
           if (model.includes('350W')) {
             //$('.product .sale').show()
             $('.product .sale_acc').show()
-            $('.product .count-down').show()
+            //$('.product .count-down').show()
 
             /*
             $(`.product .product-panel .orderTestRideBtn .stages`).text('{{ product.price | minus: settings.carbon_ebike_discount_price | divided_by: 24 | money_without_trailing_zeros }}')
@@ -913,7 +939,7 @@
           } else {
             //$('.product .sale').hide()
             $('.product .sale_acc').hide()
-            $('.product .count-down').hide()
+            //$('.product .count-down').hide()
 
             /*
 

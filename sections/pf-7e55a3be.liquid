@@ -11,10 +11,10 @@
             <div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-25_ order-djs mb6">
                 <div class="pf-judme">{% render "judgeme_widgets", widget_type: "judgeme_preview_badge", jm_style: "", concierge_install: false, product: product %}</div>
             </div>
-            <div class="u30DemiBold_v2 mb6">{{ product.price | money }}</div>
-            <div class="sale mb6" id="sale_accmb">
-              <div class="u20DemiBold_v2">{{ product.price | minus: settings.chord_ebike_discount_price | money }} NOW</div>
-              <div class="u17DemiBold_v2">with {{ settings.chord_sale_name }}</div>
+            <div class="product-price u30DemiBold_v2" data-price="{{ product.price | money }}">{{ product.price | minus: settings.chord_ebike_discount_price | money }}</div>
+            <div class="sale-tag mb6">
+              <div class="u17Medium_v2">{{ settings.chord_sale_name }}</div>
+              <div class="u14Light_v2">Free shipping.</div>
             </div>
         </div>
         <div class="featured_image">
@@ -77,10 +77,10 @@
                 <div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-25_ order-djs mb6">
                     <div class="pf-judme">{% render "judgeme_widgets", widget_type: "judgeme_preview_badge", jm_style: "", concierge_install: false, product: product %}</div>
                 </div>
-                <div class="u30DemiBold_v2 mb6">{{ product.price | money }}</div>
-                <div class="sale mb12">
-                  <div class="u20DemiBold_v2">{{ product.price | minus: settings.chord_ebike_discount_price | money }} NOW</div>
-                  <div class="u17DemiBold_v2">with {{ settings.chord_sale_name }}</div>
+                <div class="product-price u30DemiBold_v2" data-price="{{ product.price | money }}">{{ product.price | minus: settings.chord_ebike_discount_price | money }}</div>
+                <div class="sale-tag mb12">
+                  <div class="u17Medium_v2">{{ settings.chord_sale_name }}</div>
+                  <div class="u14Light_v2">Free shipping.</div>
                 </div>
             </div>
             <div class="fenders pcHide">
@@ -1363,6 +1363,15 @@
                 <span class="u14Light_v2">or as low as {{ product.price | minus: settings.chord_ebike_discount_price | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
               `)
 
+
+              $('.product .sale-tag').show()
+              $('.product .product-price').attr('data-price', "{{ product.price | money }}")
+              $('.product .product-price').text('{{ product.price | minus: settings.chord_ebike_discount_price | money }}')
+              $('.product .product-price').css({
+                margin: '12px 0 0',
+                color: 'var(--sale-order-page-text-color)'
+              })
+
             } else {
               $(`.product .product-panel .accessories .chord-accessories .active`).click()
               $(`.product .product-panel .accessories .chord-accessories`).hide()
@@ -1380,6 +1389,14 @@
                 <span class="u14Light_v2"><span class="u17DemiBold_v2 emphasize" style="font-weight: 600;">{{ product.price | money }}</span></span>
                 <span class="u14Light_v2">or as low as {{ product.price | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
               `)
+
+              $('.product .sale-tag').hide()
+              $('.product .product-price').attr('data-price', "")
+              $('.product .product-price').text('{{ product.price | money }}')
+              $('.product .product-price').css({
+                margin: '0 0 6px',
+                color: '#000'
+              })
             }
 
             $(`.product .product-panel .accessories .items`).animate({

@@ -166,11 +166,46 @@
                 }
 
                 .u20DemiBold_v2 {
-                    color: var(--sale-color4);
+                    color: var(--sale-order-page-text-color);
                     background-color: #fff;
                     border-radius: 20px;
                     padding: 3px 10px;
                     margin: 6px 0;
+                }
+            }
+
+            .product-price {
+                color: var(--sale-order-page-text-color);
+                margin-top: 12px;
+
+                &[data-price]::after {
+                    content: attr(data-price);
+                    display: inline-block;
+                    color: #000;
+                    text-decoration: line-through;
+                    margin-left: 5px;
+                    font-size: 17px;
+                    font-weight: 600;
+                    transform: translateY(-40%);
+                }
+            }
+
+            .sale-tag {
+                display: flex;
+                align-items: baseline;
+                flex-wrap: wrap;
+
+                .u17Medium_v2 {
+                    background-image: var(--sale-order-page-sale-background);
+                    color: #fff;
+                    padding: 2px 3%;
+                    border-radius: 12px;
+                    margin-right: 8px;
+                }
+
+                .u14Light_v2 {
+                    text-decoration: underline;
+                    margin-top: 6px;
                 }
             }
         }
@@ -249,7 +284,7 @@
             }
 
             .count-down {
-                color: var(--sale-color4);
+                color: var(--sale-order-page-text-color);
                 overflow: hidden;
 
                 img {
@@ -325,7 +360,7 @@
 
                         &::after {
                             display: flex;
-                            background-color: var(--sale-color4);
+                            background-color: var(--sale-order-page-text-color);
                             color: #fff;
                             border-radius: 10px;
                             padding: 2px 6px;
@@ -341,8 +376,8 @@
                     }
 
                     div[attribute="High-Step"].active {
-                        border-color: var(--sale-color4);
-                        color: var(--sale-color4);
+                        border-color: var(--sale-order-page-text-color);
+                        color: var(--sale-order-page-text-color);
                     }
 
                     div[attribute="Shimano Gear"]::after {
@@ -857,6 +892,16 @@
     
                     .u17DemiBold_v2 {
                         font-size: 12px;
+                    }
+                }
+
+                .sale-tag {
+                    .u17Medium_v2 {
+                        font-size: 12px;
+                    }
+
+                    .u14Light_v2 {
+                        margin: 0;
                     }
                 }
             }

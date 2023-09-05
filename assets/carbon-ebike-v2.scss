@@ -83,6 +83,16 @@
                     }
                 }
 
+                .u30DemiBold_v2 {
+                    margin: 5% 0 4%;
+
+                    img {
+                        width: auto;
+                        max-width: 75%;
+                        margin-bottom: 6px;
+                    }
+                }
+
                 .u17Light_v2 {
                     padding-right: 30%;
                     opacity: 0.78;
@@ -629,6 +639,16 @@
                     .logos {
                         margin: 24px 0;
                     }
+
+                    .u30DemiBold_v2 {
+                        .u17Light_v2 {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+
+                & > img {
+                    padding: 0 8vw;
                 }
             }
         }

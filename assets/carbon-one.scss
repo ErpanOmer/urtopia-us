@@ -798,11 +798,46 @@
                 }
 
                 .u20DemiBold_v2 {
-                    color: var(--sale-color4);
+                    color: var(--sale-order-page-text-color);
                     background-color: #fff;
                     border-radius: 20px;
                     padding: 3px 10px;
                     margin: 6px 0;
+                }
+            }
+
+            .product-price {
+                color: var(--sale-order-page-text-color);
+                margin-top: 12px;
+
+                &[data-price]::after {
+                    content: attr(data-price);
+                    display: inline-block;
+                    color: #000;
+                    text-decoration: line-through;
+                    margin-left: 5px;
+                    font-size: 17px;
+                    font-weight: 600;
+                    transform: translateY(-40%);
+                }
+            }
+
+            .sale-tag {
+                display: flex;
+                align-items: baseline;
+                flex-wrap: wrap;
+
+                .u17Medium_v2 {
+                    background-image: var(--sale-order-page-sale-background);
+                    color: #fff;
+                    padding: 2px 3%;
+                    border-radius: 12px;
+                    margin-right: 8px;
+                }
+
+                .u14Light_v2 {
+                    text-decoration: underline;
+                    margin-top: 6px;
                 }
             }
         }
@@ -815,21 +850,17 @@
             .sale_acc {
                 border-radius: 10px;
                 box-shadow: 0px 3px 20px #00000015;
-                padding: 10% 2% 2.5%;
+                padding: 0 2% 2.5%;
                 position: relative;
                 overflow: hidden;
+                margin-top: 12px;
 
 
                 .u14Light_v2 {
-                    background-image: var(--sale-order-page-acc-background);
+                    background-image: var(--sale-order-page-sale-background);
                     color: #fff;
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                    right: 0;
-                    height: 33px;
-                    line-height: 33px;
-                    padding-left: 2%;
+                    margin: 0 -2%;
+                    padding: 1.6% 3%;
                 }
 
                 .accs {
@@ -873,13 +904,14 @@
                 }
 
                 .u11Light_v2 {
-                    margin-top: 2.5%;
+                    //margin-top: 2.5%;
                 }
             }
 
             .count-down {
-                color: var(--sale-color4);
+                color: var(--sale-order-page-text-color);
                 overflow: hidden;
+                margin-top: 12px;
 
                 img {
                     max-width: 70%;
@@ -1036,7 +1068,7 @@
 
                     div[attribute*="350W"],
                     div[attribute*="250W"]  {
-                        border-color: var(--sale-color4);
+                        border-color: var(--sale-order-page-text-color);
                     }
 
                     div[attribute*="350W"]::after,
@@ -1044,7 +1076,7 @@
                         content: "Sale";
                         position: absolute;
                         color: #fff;
-                        background-color: var(--sale-color4);
+                        background-color: var(--sale-order-page-text-color);
                         right: 0;
                         transform: rotate(30deg) translate(28%, -250%);
                         font-size: 16px;
@@ -1813,7 +1845,82 @@
 }
 
 
+.design {
+    margin: 120px 0;
+    .centeral-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+
+
+        & > div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .logos {
+                display: flex;
+                margin: 24px 0 60px;
+
+                img + img {
+                    margin-left: 24px;
+                }
+            }
+
+            .u30DemiBold_v2 {
+                margin: 5% 0 4%;
+
+                img {
+                    width: auto;
+                    max-width: 75%;
+                    margin-bottom: 6px;
+                }
+            }
+
+            .u17Light_v2 {
+                padding-right: 30%;
+                opacity: 0.78;
+            }
+        }
+    }
+}
+
+
 @media (max-width: 767px) {
+    .design {
+        margin: 60px 0;
+
+        .centeral-content {
+            grid-template-columns: 1fr;
+            padding: 0 4vw;
+
+            & > div {
+
+
+                .u48Medium_v2 {
+                    font-size: 36px;
+                }
+
+                .u17Light_v2 {
+                    padding: 0;
+                    margin-bottom: 24px;
+                    font-size: 14px;
+                }
+
+                .logos {
+                    margin: 24px 0;
+                }
+
+                .u30DemiBold_v2 {
+                    .u17Light_v2 {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+
+
     .test-ride {
         margin: 60px 0 0;
 
@@ -1971,6 +2078,16 @@
                         font-size: 12px;
                     }
                 }
+
+                .sale-tag {
+                    .u17Medium_v2 {
+                        font-size: 12px;
+                    }
+
+                    .u14Light_v2 {
+                        margin: 0;
+                    }
+                }
             }
 
             .product-panel {
@@ -1994,7 +2111,8 @@
                             }
                         }
 
-                        div[attribute*="350W"] {
+                        div[attribute*="350W"],
+                        div[attribute*="250W"] {
                             &::after {
                                 font-size: 13px;
                                 transform: rotate(30deg) translate(31%,-240%);
@@ -2004,6 +2122,9 @@
                 }
 
                 .sale_acc {
+                    margin-top: 0;
+                    margin-bottom: 12px;
+
                     .u14Light_v2 {
                         .u20DemiBold_v2 {
                             font-size: 17px;
@@ -2461,4 +2582,79 @@
             }
         }
     }
+}
+
+
+.heller {
+    margin: 120px auto;
+    background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230904-154226_b5328575-0782-49d0-915f-c2fcaf26828a.jpg?v=1693814386&width=1280') center center/cover no-repeat;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    grid-column-gap: 4%;
+    color: #fff;
+    background-clip: content-box;
+    justify-items: center;
+
+    & > div {
+        background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230904-155924.png?v=1693814386&width=640');
+        background-repeat: no-repeat;
+        background-position: right bottom;
+        background-size: contain;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        height: 100%;
+
+        & > div {
+            max-width: 45%;
+
+            &:last-child {
+                margin: 6% 0;
+            }
+
+            &:first-child {
+                margin-top: 6%;
+            }
+        }
+
+    }
+
+    & > img {
+        max-width: 85%;
+    }
+
+    @media (max-width: 767px) {
+        grid-template-columns: 1fr;
+        padding: 0 4vw;
+        margin: 60px auto;
+        background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230904-162518.jpg?v=1693815973');
+        background-size: 100% 65%;
+        background-position: bottom;
+
+        .u17Light_v2 {
+            font-size: 14px;
+            height: 90vw;
+            justify-content: flex-start;
+            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230904-162823.png?v=1693816141');
+            background-size: 50%;
+
+            & > div {
+                margin: 0;
+                max-width: unset;
+                padding-left: 4vw;
+
+                &:last-child {
+                    max-width: 60%;
+                    margin: 12% 0;
+                }
+
+                &:first-child {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+    
 }
