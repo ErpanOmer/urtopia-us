@@ -265,9 +265,9 @@ const testRides = [
       {
         name: "California eBikes",
         phone: "(916) 699-7872",
-        email: "shelliekay122@gmail.com",
+        email: "fairoakscoastalcruisers@gmail.com ",
         timezone: "San Diego, CA, USA (GMT-7)",
-        add: "fairoakscoastalcruisers@gmail.com ",
+        add: "8522 Madison Ave, Fair Oaks, CA 95628, United States ",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230725-174130.jpg?v=1690278127",
         testrideSpot: "California",
         testRideSize: "M",
@@ -283,6 +283,29 @@ const testRides = [
           "11:00-18:00",
           "11:00-16:00"
         ],
+      },
+      {
+        name: "Bakari Chavanu",
+        phone: "916-402-5841",
+        email: "bakaric@me.com",
+        timezone: "San Diego, CA, USA (GMT-7)",
+        add: "Elk Grove, CA 95624 ",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/No1-DJI_0605-1024x576.jpg?v=1693830949",
+        testrideSpot: "California",
+        testRideSize: "M",
+        availableSizes: [
+          'Carbon 1s Size M',
+        ],
+        businessHours: [
+          "12:00-18:00",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "12:00-18:00"
+        ],
+        isPartner: true,
       },
     ]
   },
