@@ -134,6 +134,35 @@
             }
         }
 
+        .michaeal {
+            background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_22784_2x_c04d2cff-9be1-4956-8786-269eb56b260d.jpg?v=1693981525');
+
+            .centeral-content {
+                & > div {
+                    align-items: flex-start;
+    
+                    .u17Light_v2 {
+                        max-width: 450px;
+                        margin: 4.5vh 0 5vh;
+                        opacity: 0.78;
+                    }
+        
+                    img {
+                        &:nth-of-type(1) {
+                            max-width: 650px;
+                            margin-top: 2.5vh;
+                        }
+
+                        &:nth-of-type(2) {
+                            max-width: 440px;
+                            margin-top: 5vh;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+
 
         .count-down {
             height: 300px;
@@ -379,6 +408,38 @@
                     & > div {
                         .u24Medium_v2 {
                             margin: 30px 0;
+                        }
+                    }
+                }
+            }
+
+            .michaeal {
+                background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18856_2x_d1ef15b4-07cb-462f-b5e8-a894722094d5.jpg?v=1693984442&width=500');
+
+                .centeral-content {
+                    & > div {
+                        padding: 10vw 0 8vw;
+
+                        .u24Light_v2,
+                        .u24DemiBold_v2 {
+                            font-size: 15px;
+                        }
+
+                        .u17Light_v2 {
+                            font-size: 14px;
+                            margin-top: 8vw;
+                        }
+
+                        img {
+                            &:nth-of-type(1) {
+                                margin-top: 3vw;
+                            }
+                        }
+
+                        .buttons {
+                            display: flex;
+                            flex-direction: column;
+                            width: 100%;
                         }
                     }
                 }
