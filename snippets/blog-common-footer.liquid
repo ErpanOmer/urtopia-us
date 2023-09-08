@@ -1,3 +1,5 @@
+ {% assign current_article_id = article.id %}
+ 
  <section class="grid-box grid-columns-2 margin-top-60 margin-bottom-60 explore mb-grid-columns-1">
     <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/group-191472x-1671691397514.jpg?v=1671691399&width=640" alt="">
     <div>
@@ -15,16 +17,20 @@
     <section class="more-stories">
       <h2 class="text-center padding-top-40 padding-bottom-60 mb-padding-bottom-4 mb-font-size-36 mb-text-left">More Stories</h2>
       <div class="grid-box grid-columns-3 grid-column-gap-32 mb-grid-columns-1">
+        {% assign count = 0 %}
         {% for article in blogs.blog.articles %}
-          {% if forloop.index < 5 and forloop.index > 1 %}
-            <a href="{{ article.url }}" class="flex flex-column border-radius-10 mb-margin-top-40" style="overflow: hidden;border: 1px solid #e6e6e6;">
-              <div class="lozad" data-background-image="{{ article.image.src | image_url: width: 400 }}"></div>
-              <div class="flex-1 padding-top-24 padding-bottom-24 padding-right-12 padding-left-12 mb-padding-12">
-                <h6 class="color-orange font-size-16 margin-bottom-4">Blog</h6>
-                <h5 class="mb-font-size-20">{{ article.title }}</h5>
-              </div>
-            </a>
-          {% endif %}
+          {% unless current_article_id == article.id %}
+            {% assign count = count | plus:1 %}
+            {% if count < 4 %}
+              <a href="{{ article.url }}" class="flex flex-column border-radius-10 mb-margin-top-40" style="overflow: hidden;border: 1px solid #e6e6e6;">
+                <div class="lozad" data-background-image="{{ article.image.src | image_url: width: 400 }}"></div>
+                <div class="flex-1 padding-top-24 padding-bottom-24 padding-right-12 padding-left-12 mb-padding-12">
+                  <h6 class="color-orange font-size-16 margin-bottom-4">Blog</h6>
+                  <h5 class="mb-font-size-20">{{ article.title }}</h5>
+                </div>
+              </a>
+            {% endif %}
+          {% endunless %}
         {% endfor %}
       </div>
     </section>
