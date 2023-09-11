@@ -4,10 +4,10 @@
 
         <div class="banner">
             <div class="swiper-wrapper">
-              <div class="swiper-slide summer-sale" style="color:#000;" >
+              <div class="swiper-slide summer-sale">
                   <div class="centeral-content">
                       <div>
-                          <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1_2x_dbd9336c-8205-44e6-a5a0-d7eb5794e413.png?v=1693205964">
+                          <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_21451_2x_c57815f7-374e-4410-82bd-6c56046762e3.png?v=1694418366">
                           <div class="u36DemiBold_v2">Get {{ settings.carbon_ebike_discount_price | money_without_trailing_zeros }} off + {{ settings.carbon_ebike_free_accessories_count }} Freebies<br> on Carbon 1s {{ settings.sale_end_time }}</div>
                           {% unless settings.hide_sale_countdown %}
                           <div class="count-down-gif pcHide">
@@ -15,15 +15,15 @@
                           </div>
                           {% endunless %}
                           <div class="flex-1 pcHide"></div>
+                          <div class="buttons mobileHide">
+                            <a class="my-button" href="/products/urtopia-carbon-e-bike">Order now</a>
+                            <a class="my-button my-button-ghost"  href="/pages/e-bike">Meet Carbon 1</a>
+                          </div>
                           {% unless settings.hide_sale_countdown %}
-                            <div class="count-down-gif mobileHide" style="margin-top: -20px;margin-bottom: 50px;">
+                            <div class="count-down-gif mobileHide">
                               <img src="http://i.countdownmail.com/2mcmh4.gif"/>
                             </div>
                           {% endunless %}
-                          <div class="buttons mobileHide">
-                              <a class="my-button" href="/products/urtopia-carbon-e-bike">Order now</a>
-                              <a class="my-button my-button-ghost"  href="/pages/e-bike">Meet Carbon 1</a>
-                          </div>
                           <div class="buttons pcHide">
                               <a class="my-button" href="/products/urtopia-carbon-e-bike">Order now</a>
                               <a class="my-button" href="/pages/e-bike">Meet Carbon 1</a>

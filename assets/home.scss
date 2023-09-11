@@ -76,9 +76,9 @@
         .summer-sale {
             background-color: var(--sale-color1);
             background-image: var(--sale-banner-background-image-pc);
+            color: var(--sale-banner-text-color);
 
             .centeral-content {
-                height: 85%;
                 
                 &>div {
                     & > img {
@@ -96,8 +96,6 @@
             background-image: var(--chord-sale-banner-background-image-pc);
 
             .centeral-content {
-                height: 75%;
-                
                 &>div {
 
                     & > img {
@@ -368,8 +366,7 @@
         
                             .u36DemiBold_v2 {
                                 font-size: 20px;
-                                margin-bottom: 0;
-                                //margin: 10px 0 0;
+                                margin: 20px 0 0;
                             }
                         }
                     }
@@ -395,8 +392,7 @@
 
                         .u36DemiBold_v2 {
                             font-size: 20px;
-                            margin-bottom: 0;
-                            //margin: 10px 0 0;
+                            margin: 20px 0 0;
                         }
                     }
                 }
