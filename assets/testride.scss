@@ -1251,3 +1251,150 @@
         }
     }
 }
+
+.test-ride-new-banner {
+    position: relative;
+    color: #fff;
+    overflow-x: hidden;
+
+    .swiper-wrapper {
+        .swiper-slide {
+            background: center center/cover no-repeat;
+
+            .centeral-content {
+                height: 600px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                & > div {
+                    height: 70%;
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .u36DemiBold_v2 {
+                    margin: 16px 0 32px;    
+                }
+
+                .u17Medium_v2 {
+                    max-width: 440px;
+                }
+
+                .buttons {
+                    //display: none;
+                    .my-button {
+                        margin-right: 20px;
+                    }
+                }
+            }
+        }
+
+        .one {
+            background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_21367_2x_3e45df5e-89a4-4e10-86a6-3dd2347edc79.jpg?v=1694506706');
+        }
+
+        .two {
+            background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_21366_2x_c353da43-fe1c-4c42-b1f3-3b00caa58d58.jpg?v=1694506966');
+        }
+
+        .three {
+            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230912-151432.jpg?v=1694502895');
+        }
+
+        .common {
+            background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_20828_2x_171a90b4-fb4e-43f8-b5f1-9366db738aea.jpg?v=1686734762');
+
+            .centeral-content {
+                & > div {
+                    height: 50%;
+
+                    .u48DemiBold_v2 {
+                        margin-bottom: 24px;
+                    }
+                }
+            }
+        }
+    }
+
+    .swiper-pagination-bullet {
+        height: 6px;
+        width: 6px;
+        background-color: #d5d5d5;
+        opacity: 0.5;
+    }
+
+    .swiper-pagination-bullet-active {
+        width: 30px;
+        height: 6px;
+        border-radius: 5px;
+        transition: all .3s;
+        opacity: 1;
+    }
+
+    @media (max-width: 767px) {
+        .swiper-wrapper {
+            .swiper-slide {
+
+                .centeral-content {
+                    height: 550px;
+
+                    & > div {
+                        height: 84%;
+                    }
+
+                    .u20Light_v2 {
+                        font-size: 16px;
+
+                        .u20DemiBold_v2 {
+                            font-size: 16px;
+                        }
+                    }
+
+                    .u36DemiBold_v2 {
+                        font-size: 27px;
+                        margin: 16px 0;
+                    }
+
+                    .buttons {
+                        .my-button {
+                            margin-right: 10px;
+                        }
+                    }
+                }
+            }
+
+
+            .one {
+                background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_21389_2x_a66b20d3-585b-4319-8708-13dc6cfe597d.jpg?v=1694507357');
+            }
+
+            .two {
+                background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_21388_2x_5c1c14a7-af9d-4c56-adb0-f8b8c4627576.jpg?v=1694507365');
+            }
+
+            .three {
+                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21380_2x_db08778e-b262-434c-b088-45dbfb3f472c.jpg?v=1694501124');
+            }
+
+            .common {
+                background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_20831_2x_c22c2296-d840-4acb-94a2-a37ce27a5336.jpg?v=1686735038');
+
+                .centeral-content {
+                    & > div {
+                        height: 50%;
+
+                        .u48DemiBold_v2 {
+                            margin: 5vw 0;
+                            font-size: 24px;
+                        }
+
+                        .u17Medium_v2 {
+                            font-size: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
