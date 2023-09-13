@@ -1348,6 +1348,7 @@
               $(`.product .product-panel .accessories .chord-accessories`).show()
               $(`.product .product-panel .accessories .chord-accessories-1`).hide()
               $(`.product .product-panel .options > div[option="Frame"] .u17DemiBold_v2 .u17Light_v2`).text(`Chord - ${size_map[frame]}`)
+              $(`.product .product-panel .Style > div[attribute="Black"]`).show()
 
 
               $(`.product .product-panel .sale`).show()
@@ -1377,6 +1378,7 @@
               $(`.product .product-panel .accessories .chord-accessories`).hide()
               $(`.product .product-panel .accessories .chord-accessories-1`).show()
               $(`.product .product-panel .options > div[option="Frame"] .u17DemiBold_v2 .u17Light_v2`).text(`Chord X - ${size_map[frame]}`)
+              $(`.product .product-panel .Style > div[attribute="Black"]`).hide()
 
               $(`.product .product-panel .sale`).hide()
               $(`.product .product-panel .count-down`).hide()
@@ -1416,6 +1418,10 @@
             current_variant_id = current_variant.id
             current_frame = frame
             current_style = style
+
+            if (frame === "Step-Through" && style === "Black") {
+                return changeVariant(frame, 'White')
+            }
 
 
             history.replaceState(null, '', `${location.pathname}?variant=${current_variant_id}`);
