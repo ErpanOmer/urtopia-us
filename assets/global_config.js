@@ -128,7 +128,7 @@ const global_config = {
             // carbon 1s
             43556899651832: 'Ships within <span>10 business days</span> from L.A. warehouse.',
             //lb l
-            43556896014584: 'Ships between <span>September 1-15, 2023 </span>from L.A. warehouse.',
+            43556896014584: 'Ships within <span>5 business days</span> from L.A. warehouse.',
             //pb s
             43556899684600: 'Ships between <span>September 15-30, 2023 </span>from L.A. warehouse.',
             //pw s
@@ -149,7 +149,7 @@ const global_config = {
             //sb l
             43556895949048: 'Ships within <span>5 business days</span> from L.A. warehouse.',
             //pb l
-            43556896080120: 'Ships between <span>September 1-15, 2023 </span>from L.A. warehouse.',
+            43556896080120: 'Ships within <span>5 business days</span> from L.A. warehouse.',
             43645495410936: 'Ships within <span>10 business days </span>from L.A. warehouse.',
             //日期写法： 'Ships between <span>July 10-20, 2023 </span>from L.A. warehouse.',
             // chord
@@ -220,8 +220,8 @@ const global_config = {
         // 每一种variant 的发货时间文案
         ebike_delivery_time: {
            // chord
-      43694976663800: 'Free shipping <span>within 10 business days</span>',
-      43694976696568: 'Free shipping <span>within 10 business days</span>',
+      43694976663800: 'Free shipping <span>within 5 business days</span>',
+      43694976696568: 'Free shipping <span>within 5 business days</span>',
       // chord x
       43694976729336: 'Pre-order items shipped from October 15 - 30, 2023',
       43694976762104: 'Pre-order items shipped from October 15 - 30, 2023',
