@@ -4,7 +4,7 @@ class CartDrawer extends HTMLElement {
 
     this.addEventListener('keyup', (evt) => evt.code === 'Escape' && this.close());
     this.querySelector('#CartDrawer-Overlay').addEventListener('click', this.close.bind(this));
-    //this.setHeaderCartIconAccessibility();
+    this.setHeaderCartIconAccessibility();
   }
 
   setHeaderCartIconAccessibility() {
@@ -61,6 +61,7 @@ class CartDrawer extends HTMLElement {
   }
 
   renderContents(parsedState) {
+    this.classList.contains('is-empty') && this.classList.remove('is-empty');
     this.querySelector('.drawer__inner').classList.contains('is-empty') && this.querySelector('.drawer__inner').classList.remove('is-empty');
     this.productId = parsedState.id;
     this.getSectionsToRender().forEach((section => {

@@ -116,7 +116,11 @@
 	  flex: 1;
 	  height: 340px;
 	  margin-left: 50px;
+	  {% if hide_bala %}
+	  background-image: url("https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230823-113031.png?v=1692761477") ;
+	  {% else %}
 	  background-image: url("https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230413-101607.jpg?v=1681352192") ;
+	  {% endif %}
 	  background-position: center;
 	  background-size: auto 100%;
 	  background-repeat: no-repeat;
@@ -476,6 +480,10 @@
 	.order-modal-four .order-modal-layer-four .order-layer-header {
 	  padding-left: 0;
 	}
+
+	.order-modal-layer .sizefit-switch button {
+		font-size: 13px;
+	}
 }</style>
 
 <div class="order-modal-layer order-modal-one">
@@ -486,22 +494,24 @@
 	  </div>
 	  <div style="overflow-y: auto;max-height: 550px;">
 	  <div class="sizefit-switch order-flex-row">
+		{% unless hide_bala %}
+			<div class="switch-radio">
+				<input id="tab-s" name="Chord" type="radio" checked/>
+				<button class="btn">S<br>5’3’’~5’9’’</button>
+			</div>
+		{% endunless %}
 		<div class="switch-radio">
-		  <input id="tab-s" name="Chord" type="radio" checked />
-		  <button class="btn">S</button>
-		</div>
-		<div class="switch-radio">
-		  <input id="tab-m" name="Chord" type="radio"/>
-		  <button class="btn">M</button>
+		  <input id="tab-m" name="Chord" type="radio" {% if hide_bala %}checked{% endif %}/>
+		  <button class="btn">M<br>5’7’’~6’1’’</button>
 		</div>
 		<div class="switch-radio">
 		  <input id="tab-l" name="Chord" type="radio" />
-		  <button class="btn">L</button>
+		  <button class="btn">L<br>5’11’’~6’5’’</button>
 		</div>
 	  </div>
 	  <div class="order-layer-body order-flex-row" style="min-height: 400px">
 		<!-- 内容 -->
-		<div id="carbon-tab-s" class="order-flex-row" style="width: 100%">
+		<div id="carbon-tab-s" class="order-flex-row" style="width: 100%;{% if hide_bala %}display: none;{% endif %}">
 		  <div class="sizefit-box">
 			<div class="sizefit-item order-flex-row">
 			  <p>A. Standover height</p>
@@ -547,7 +557,7 @@
 		  <div class="sizefit-bg"></div>
 		</div>
 
-		<div id="carbon-tab-m" class="order-flex-row" style="width: 100%; display: none;">
+		<div id="carbon-tab-m" class="order-flex-row" style="width: 100%; display: none;{% if hide_bala %}display: flex;{% endif %}">
 		  <div class="sizefit-box">
 			<div class="sizefit-item order-flex-row">
 			  <p>A. Standover height</p>
@@ -668,7 +678,7 @@
 		  </div>
 		  <div class="tec-spac-item order-flex-row">
 			<h4>Connectivity</h4>
-			<p>eSIM with 4G, Bluetooth & WiFi</p>
+			<p>Connect Service with 4G, Bluetooth & WiFi</p>
 		  </div>
 		  <div class="tec-spac-item order-flex-row">
 			<h4>IoT sensors</h4>
@@ -684,7 +694,9 @@
 		<div class="tec-spac-b order-flex-row">
 		  <div class="tec-spac-item order-flex-row">
 			<h4>Motor</h4>
-			<p>Carbon 1: 36V 250W(rated), 35 N.m <br>Carbon 1s: 36V 350W(rated), 45 N.m </p>
+			<p>Carbon 1: 36V 250W(rated), 35 N.m {% unless hide_bala %}
+				<br>Carbon 1s: 36V 350W(rated), 45 N.m
+			{% endunless %} </p>
 		  </div>
 		  <div class="tec-spac-item order-flex-row">
 			<h4>Speed modes</h4>
@@ -692,7 +704,9 @@
 		  </div>
 		  <div class="tec-spac-item order-flex-row">
 			<h4>Top speed (assisted)</h4>
-			<p>Carbon 1: 20mph<br>Carbon 1s: 25mph</p>
+			<p>Carbon 1: 20mph {% unless hide_bala %}
+				<br>Carbon 1s: 25mph
+			{% endunless %} </p>
 		  </div>
 		  <div class="tec-spac-item order-flex-row">
 			<h4>Range</h4>
@@ -700,7 +714,7 @@
 		  </div>
 		  <div class="tec-spac-item order-flex-row">
 			<h4>Removable battery</h4>
-			<p>9.8 Ah 352.8 Wh Samsung Li-ion, 2.5-hr quick charge</p>
+			<p>9.8 Ah 352.8 Wh Samsung Li-ion, 2.5-hr quick charge, certified to UL-2271</p>
 		  </div>
 		  <div style="width: 30%"></div>
 		</div>
@@ -709,7 +723,9 @@
 		<div class="tec-spac-b order-flex-row">
 		  <div class="tec-spac-item order-flex-row">
 			<h4>Weight</h4>
-			<p>Carbon 1:&nbsp;&nbsp;33 lbs<br>Carbon 1s: &nbsp;&nbsp;35 lbs</p>
+			<p>Carbon 1:&nbsp;&nbsp;33 lbs {% unless hide_bala %}
+				<br>Carbon 1s: &nbsp;&nbsp;35 lbs
+			{% endunless %} </p>
 		  </div>
 		  <div class="tec-spac-item order-flex-row">
 			<h4>Payload Capacity</h4>
@@ -717,7 +733,9 @@
 		  </div>
 		  <div class="tec-spac-item order-flex-row">
 			<h4>Size</h4>
-			<p>Small, Medium, Large (see Size Guide)</p>
+			<p>{% unless hide_bala %}
+				Small, 
+			{% endunless %} Medium, Large (see Size Guide)</p>
 		  </div>
 		  <div class="tec-spac-item order-flex-row">
 			<h4>Body material</h4>
@@ -729,7 +747,9 @@
 		  </div>
 		  <div class="tec-spac-item order-flex-row">
 			<h4>Gearing</h4>
-			<p>Carbon 1: Gates Carbon Drive™ CDN™ belt(up to 19,000 miles)<br><br>Carbon 1s: Shimano 7-Speed Rear Drivetrain with ALIVIO Rear Derailleur</p>
+			<p>Carbon 1: Gates Carbon Drive™ CDN™ belt(up to 19,000 miles) {% unless hide_bala %}
+				<br><br>Carbon 1s: Shimano 7-Speed Rear Drivetrain
+			{% endunless %} </p>
 		  </div>
 		  <div class="tec-spac-item order-flex-row">
 			<h4>Integrated lights</h4>
@@ -801,7 +821,7 @@
 		<div class="tec-spac-item2 order-flex-row">
 		  <div>
 			  <p>
-			  We have over 20 authorized repair shops across major cities in Germany to provide reliable after-sales service for our e-bikes. Our repair partners are experts in their field and have been carefully selected and trained to provide you with quality products and services. Simply visit one of our authorized repair shops for repairs or maintenance. We’re committed to ensuring that you have a positive experience with our e-bikes.
+			  We have over 20 authorized repair shops across major cities in USA to provide reliable after-sales service for our e-bikes. Our repair partners are experts in their field and have been carefully selected and trained to provide you with quality products and services. Simply visit one of our authorized repair shops for repairs or maintenance. We’re committed to ensuring that you have a positive experience with our e-bikes.
 			  </p>
 			  <p>
 				  <a class="my-button my-button-black" href="/pages/find-a-dealer">Find stores</a>

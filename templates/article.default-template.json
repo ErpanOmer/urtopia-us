@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "blog-default-template": {
+      "type": "blog-default-template",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "blog-default-template"
+  ]
+}

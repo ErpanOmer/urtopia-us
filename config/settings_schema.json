@@ -3,28 +3,64 @@
     "name": "global_variable",
     "settings": [
       {
-        "type": "checkbox",
-        "id": "enabled_sale",
-        "label": "活动开关",
-        "default": false
-      },
-      {
-        "type": "checkbox",
-        "id": "enabled_sale_countdown",
-        "label": "活动倒计时开关",
-        "default": false
-      },
-      {
         "type": "text",
         "id": "sale_name",
         "label": "活动名称",
-        "default": "Prime Day Sale"
+        "default": "Clearance Sale"
       },
       {
         "type": "text",
         "id": "sale_end_time",
         "label": "活动结束文案",
-        "default": "Ends July 10"
+        "default": "Ends on Sep 17"
+      },
+      {
+        "type": "text",
+        "id": "carbon_ebike_discount_price",
+        "label": "carbon车折扣价",
+        "default": "60000"
+      },
+      {
+        "type": "text",
+        "id": "carbon_ebike_free_accessories_price",
+        "label": "carbon车送配件价格统一显示",
+        "default": "6800"
+      },
+      {
+        "type": "text",
+        "id": "carbon_ebike_free_accessories_count",
+        "label": "carbon车送配件数量",
+        "default": "2"
+      },
+      {
+        "type": "text",
+        "id": "chord_sale_name",
+        "label": "chord 活动名称",
+        "default": "Clearance Sale"
+      },
+      {
+        "type": "text",
+        "id": "chord_ebike_free_accessories_count",
+        "label": "chord 车送配件数量",
+        "default": "2"
+      },
+      {
+        "type": "text",
+        "id": "chord_ebike_discount_price",
+        "label": "chord 车折扣价",
+        "default": "50000"
+      },
+      {
+        "type": "text",
+        "id": "chord_sale_end_time",
+        "label": "chord 活动结束文案",
+        "default": "Ends on Sep 17"
+      },
+      {
+        "type": "checkbox",
+        "id": "hide_sale_countdown",
+        "default": false,
+        "label": "活动倒计时显示和隐藏"
       }
     ]
   },

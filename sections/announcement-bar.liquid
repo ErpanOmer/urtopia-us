@@ -2,7 +2,7 @@
   #announcement-bar {
     height: 38px;
     overflow: hidden;
-    background-color: var(--sale-color1);
+    background-color: var(--sale-order-page-text-color);
     color: #fff;
     text-align: center;
   }
@@ -50,9 +50,9 @@
 
   <div id="announcement-bar" class="announcement-bar-common" dir="rtl">
     <div class="swiper-wrapper">
-      <div class="swiper-slide"><p><span>Free</span> mirco fender, kickstand & 1 year eSIM service with {{ settings.sale_name }}. <a href="/products/urtopia-carbon-e-bike">Get yours Now</a></p></div>
-      <div class="swiper-slide"><p>Financing with 24 months, <span>0% APR. </span><a href="/products/urtopia-carbon-e-bike">Get yours Now</a></p><img style="width:45px;margin-right:10px;" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Image_154_2x_a6f60481-bf07-4fd4-93c7-8b9964570bbd.png?v=1685605445"/></div>
-      <div class="swiper-slide"><p>Try Urtopia Carbon 1 for <span>Free </span> <br class="pcHide"> <a href="/pages/test-ride">Book My Test Ride Now</a></p></div>
+      <div class="swiper-slide"><p>{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros }} off + {{ settings.carbon_ebike_free_accessories_count }} Freebies with Carbon 1s.<a href="/products/urtopia-carbon-e-bike">Get yours Now</a></p></div>
+      <div class="swiper-slide"><p>Financing with 24 months, 0% APR. <a href="/products/urtopia-carbon-e-bike">Get yours Now</a></p><img style="width:45px;margin-right:10px;" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Image_154_2x_a6f60481-bf07-4fd4-93c7-8b9964570bbd.png?v=1685605445"/></div>
+      <div class="swiper-slide"><p>Try Urtopia Carbon 1 for Free <br class="pcHide"> <a href="/pages/test-ride">Book My Test Ride Now</a></p></div>
     </div>
   </div>
 
@@ -73,10 +73,15 @@
   });
 </script>
 
-{% if template == "product.pf-9b29433f" %}
+{% unless settings.hide_sale_countdown %}
+  {% if template == "product.pf-9b29433f" or template == "page.pf-198df0c3" or template == "product.pf-7e55a3be" or template == "page.pf-702944ea" %}
   <div id="announcement-bar" class="pcHide"  style="height: 60px;display: flex;flex-direction: column;align-items: center;justify-content: flex-start;text-align: center;">
-    <div class="u11Light_v2">{{ settings.sale_name }} ends in:</div>
-    <img src="http://i.countdownmail.com/2ml0k2.gif"/>
+    {% if template == "product.pf-7e55a3be" or template == "page.pf-702944ea"%}
+        <div class="u11Light_v2">{{ settings.chord_sale_name }} ends in:</div>
+    {% else %}
+        <div class="u11Light_v2">{{ settings.sale_name }} ends in:</div>
+    {% endif %}
+    <img src="http://i.countdownmail.com/2nt2wp.gif"/>
   </div>
 
   <script>
@@ -84,7 +89,10 @@
       $('.announcement-bar-common').hide()
     }
   </script>
-{% endif %}
+  {% endif %}
+
+{% endunless %}
+
 
 {%- for block in section.blocks -%}
   {%- case block.type -%}

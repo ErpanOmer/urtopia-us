@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "sustainability-carbon-credit": {
+      "type": "sustainability-carbon-credit",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "sustainability-carbon-credit"
+  ]
+}

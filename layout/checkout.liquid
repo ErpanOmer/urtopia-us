@@ -76,10 +76,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <header class="main__header" role="banner">
           {{ content_for_logo }}
           {{ breadcrumb }}
-          <div class="klarna">
-            <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Klarna-Logo.wine_2x_4831cc33-3ad3-4cb7-8d01-bc04c379811a.png?v=1686369579">
-            <div class="u14Medium_v2">{{ 'checkout_klarna.Klarna_for' | t }}<br class="mobileHide"><span class="learn">{{ 'checkout_klarna.Klarna_learn' | t }}</span></div>
-          </div>
+          {% if checkout.total_price >= 150000 %}
+            <div class="klarna">
+              <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Klarna-Logo.wine_2x_4831cc33-3ad3-4cb7-8d01-bc04c379811a.png?v=1686369579">
+              <div class="u14Medium_v2">0% APR, 24 months, {{checkout.total_price | divided_by: 24 | money }}/month. <span class="learn">{{ 'checkout_klarna.Klarna_learn' | t }}</span></div>
+            </div>
+          {% endif %}
           {{ alternative_payment_methods }}
         </header>
         <main class="main__content" role="main">
@@ -175,7 +177,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <div class="u17Medium_v2">{{ 'checkout_klarna.title1' | t }}<br class="mobileHide">{{ 'checkout_klarna.title2' | t }}</div>
           <div class="pay">
               <div class="u20DemiBold_v2">{{ 'checkout_klarna.pay_in' | t }}</div>
-              <div class="u17Medium_v2"><span>{{ 'checkout_klarna.month' | t }}</span>
+              <div class="u17Medium_v2"><span>From {{checkout.total_price |divided_by: 24 | money }} /month</span>
                   <div>{{ 'checkout_klarna.payments' | t }}</div>
               </div>
               <div class="total">
@@ -185,7 +187,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   </div>
                   <div class="u17Medium_v2">
                       <span>{{ 'checkout_klarna.fixed' | t }}</span>
-                      <span>$2199 + Tax*</span>
+                      <span>{{ checkout.total_price | money }} + Tax</span>
                   </div>
                   <div class="u11Medium_v2">{{ 'checkout_klarna.limited' | t }}</div>
               </div>
@@ -203,6 +205,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   <div class="u17Medium_v2">{{ 'checkout_klarna.work6' | t }}<span></span></div>
                   <div class="u17Medium_v2">{{ 'checkout_klarna.work7' | t }}<span></span></div>
           </div>
+          <div style="padding: 10px;">
+            
+          the 0% APR financing is a special subsidy provided by Urtopia, there will be a 13% cancelling fee if an order made with this financing support is cancelled, other payments method made through Klarna shall shall stay unaffected.
+              </div>
       </div>
       <div onclick="closeMiniDialog()" class="my-button my-button-black">{{ 'checkout_klarna.button' | t }}</div>
       <span onclick="closeMiniDialog()" class="close">×</span>
@@ -244,11 +250,35 @@ function closeMiniDialog() {
 
   const html = Checkout.$('.klarna-dialog').html()
 
-  getSearchValues().show_klarna_dialog && showMiniDialog(`<div class="klarna-dialog">${html}</div>`)
+  // getSearchValues().show_klarna_dialog && showMiniDialog(`<div class="klarna-dialog">${Checkout.$('.klarna-dialog').html()}</div>`)
 
   setTimeout(() => {
     Checkout.$('.klarna').on('click', () => showMiniDialog(`<div class="klarna-dialog">${html}</div>`))
   }, 100)
+
+  const checkout_email = getSearchValues().checkout_email
+
+    const fn = c => {
+      Checkout.$('.step__sections input[type="email"]').val(c).attr('disabled', true)
+      Checkout.$('nav').hide()
+      Checkout.$('.logo--left').hide()
+      Checkout.$('.step__footer__previous-link').hide()
+      Checkout.$('.layout-flex__item').hide()
+    }
+
+    if (checkout_email) {
+      window.sessionStorage.checkout_email = checkout_email
+      window.sessionStorage.checkout_email_local = `${Shopify.Checkout.token}=${checkout_email}`
+      fn(checkout_email)
+    } else {
+        if (window.sessionStorage.checkout_email_local === `${Shopify.Checkout.token}=${window.sessionStorage.checkout_email}`) {
+          fn(window.sessionStorage.checkout_email)
+        } else {
+          window.sessionStorage.checkout_email = ''
+          window.sessionStorage.checkout_email_local = ''
+        }
+    }
+
 </script>
 </html>
 
@@ -511,10 +541,15 @@ function fetchBuried (name = '', type = '', data = {}, isSendBeacon = false) {
 
 
 
-/*$(document).on('page:load', function(e) {
+$(document).on('page:load', function(e) {
   console.log('e', e)
 
   if (window.sessionStorage.clicked_klarna_checkout_button) {
+    {% if checkout.total_price >= 150000 %}
+        showMiniDialog(`<div class="klarna-dialog">${Checkout.$('.klarna-dialog').html()}</div>`)
+    {% endif %}
+
+    /*
     fetchBuried('a-b-test', 'order-page-klarna', {
       action_type: window.sessionStorage.carbon_one_a_b_test_flag,
       payment_step: Shopify.Checkout.step,
@@ -522,8 +557,8 @@ function fetchBuried (name = '', type = '', data = {}, isSendBeacon = false) {
       check_id: ecommerce.transaction_id,
       ecommerce
     })
+    */
   }
 
 });
-*/
 </script>

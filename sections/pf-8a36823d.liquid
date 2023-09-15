@@ -3,11 +3,62 @@
 {{ 'testride.scss.css' | asset_url | stylesheet_tag }}
 
 <div class="testride">
-    <div class="banner">
-        <div class="centeral-content">
-            <div class="u48DemiBold_v2">Your first hand on Urtopia</div>
-            <div class="u17Medium_v2">Take your first step in to experience the stunning appearance and smooth riding. Book a test ride today with our partners and ambassadors! Their extensive expertise and enthusiasm will help you out with any questions in and out.</div>
+    <div class="test-ride-new-banner">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide common">
+                <div class="centeral-content">
+                    <div>
+                        <div class="u48DemiBold_v2">Your first hand on Urtopia</div>
+                        <div class="u17Medium_v2">
+                            Take your first step in to experience the stunning appearance and smooth riding. Book a test ride today with our partners and ambassadors! Their extensive expertise and enthusiasm will help you out with any questions in and out.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide one">
+                <div class="centeral-content">
+                    <div>
+                        <div class="u20Light_v2">Partner’s Story - <span class="u20DemiBold_v2">Hugo Rodriguez</span></div>
+                        <div class="u36DemiBold_v2">The Answer is<br class="mobileHide">Always Yes</div>
+                        <div class="u17Medium_v2">Address: 7632 Lockwood Ridge Rd, Sarasota, FL 34243</div>
+                        <div class="flex-1"></div>
+                        <div class="buttons">
+                            <a href="/blogs/blog/partner-s-story-hugo-rodriguez" target="_blank" class="my-button">Read more</a>
+                            <div onclick="booknow('Espresso Bicycle Repairs')" class="my-button">Test ride</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide two">
+                <div class="centeral-content">
+                    <div>
+                        <div class="u20Light_v2">Partner’s Story - <span class="u20DemiBold_v2">Devin Raymond</span></div>
+                        <div class="u36DemiBold_v2">Striving for 100%<br class="mobileHide">quality service</div>
+                        <div class="u17Medium_v2">Address: 4051 Voltaire St Ste C, San Diego, CA 92107</div>
+                        <div class="flex-1"></div>
+                        <div class="buttons">
+                            <a href="/blogs/blog/eze-ryders-electric-bikes" target="_blank" class="my-button">Read more</a>
+                            <div onclick="booknow('Eze Ryders Electric Bikes')" class="my-button">Test ride</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--<div class="swiper-slide three">
+                <div class="centeral-content">
+                    <div>
+                        <div class="u20Light_v2">Ambassador’s Story - <span class="u20DemiBold_v2">Henky R.</span></div>
+                        <div class="u36DemiBold_v2">An E-bike, a Scenic City,<br class="mobileHide">and a Plate of Sardines</div>
+                        <div class="u17Medium_v2">Address: Nippes, 50737 Köln (in der Nähe der Straßenbahn und Bus Haltestelle: Wilhelm Sollmann Straße)</div>
+                        <div class="flex-1"></div>
+                        <div class="buttons">
+                            <a href="/blogs/blog/henky-s-story" target="_blank" class="my-button">Read more</a>
+                            <div onclick="booknow('Henky Roucourt')" class="my-button">Test ride</div>
+                        </div>
+                    </div>
+                </div>
+            </div>-->
         </div>
+        <div class="swiper-pagination"></div>
     </div>
     <div class="map" id="map">
         <div class="centeral-content">
@@ -15,7 +66,7 @@
             <div id="storepoint-container" data-tags="us,Test Ride" data-map-id="162f21804990ff"></div>
         </div>
     </div>
-    <!--<div class="explained">
+    <div class="explained">
         <div class="centeral-content">
             <div class="u36DemiBold_v2">Test ride <br>options explained</div>
             <div class="item">
@@ -40,10 +91,11 @@
                 </div>
                 <div class="u17Light_v2">Ambassadors are Urtopia representatives who are passionate about our e-bikes.
                     While an ambassador may not have every model on hand they are there to meet you to show you the ins
-                    and outs of our bikes. They offer real insight into the benefits of being a daily e-bike user.<br><a class="my-link" href="#stories">Read the story</a></div>
+                    and outs of our bikes. They offer real insight into the benefits of being a daily e-bike user.<br>
+                    <!--<a class="my-link" href="#stories">Read the story</a>--></div>
             </div>
         </div>
-    </div>-->
+    </div>
     <div class="howto">
         <div class="centeral-content">
             <div class="u36DemiBold_v2">How to Test Ride</div>
@@ -570,6 +622,35 @@
         const href = document.querySelector('#storepoint-map .storepoint-location-popup .storepoint-popup-directions').getAttribute('href')
         const n = store.name.replace(reg, '')
 
+      if (store.noBook) {
+          $(popup).append(`
+                <div class="map-popup">
+                    <img src="${store.imgUrl}"/>
+                    <div class="infos nobook">
+                        <div class="name">${store.name}</div>
+                        <div class="available">Available Model:</div>
+                        <ul>
+                          ${store.availableSizes ? store.availableSizes.map(i => `<li class="gray">${i}</li>`).join('') : `<li class="gray">Carbon One Size ${store.testRideSize}</li>`}
+                        </ul>
+                        <div class="contact">
+                            <div>
+                                <span class="u14DemiBold_v2">Email: </span>
+                                <span class="u14Light_v2">${store.email}</span>
+                            </div>
+                            <div>
+                                <span class="u14DemiBold_v2">Phone: </span>
+                                <span class="u14Light_v2">${store.phone}</span>
+                            </div>
+                            <div>
+                                <span class="u14DemiBold_v2">Add: </span>
+                                <span class="u14Light_v2">${store.add}</span>
+                            </div>
+                        </div>
+                        <div class="u14DemiBold_v2">Please contact the Ambassadors directly to arrange test ride</div>
+                    </div>
+                </div>
+            `)
+      } else {
         $(popup).append(`
             <div class="map-popup">
                 <img src="${store.imgUrl}"/>
@@ -589,6 +670,7 @@
                 </div>
             </div>
         `)
+      }
     }
 
     observerElement('#storepoint-container').then(r => {
@@ -631,4 +713,19 @@
     }
 
     search.name && booknow(search.name)
+
+
+    new Swiper('.test-ride-new-banner', {
+        autoplay: {
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+            delay: 10000,
+        },
+        loop: true,
+        speed: 1000,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true
+        }
+    })
     </script>

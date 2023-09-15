@@ -119,20 +119,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 {% comment %}{{ content_for_header }}{% endcomment %}
 {{ content_for_header | remove: '<link href="https://monorail-edge.shopifysvc.com" rel="dns-prefetch">' }}
 
-  <!-- Taboola Pixel Code -->
+
   <script type='text/javascript'>
-    window._tfa = window._tfa || [];
-    window._tfa.push({ notify: 'event', name: 'page_view', id: 1410404 });
-    !function (t, f, a, x) {
-      if (!document.getElementById(x)) {
-        t.async = 1; t.src = a; t.id = x; f.parentNode.insertBefore(t, f);
-      }
-    }(document.createElement('script'),
-      document.getElementsByTagName('script')[0],
-      '//cdn.taboola.com/libtrc/unip/1410404/tfa.js',
-      'tb_tfa_script');
+      // 普通页面清掉这两个参数
+      window.sessionStorage.checkout_email = ''
+      window.sessionStorage.checkout_email_local = ''
+          // 当前页面id
+      const current_page_id = '{{ template }}'
+      console.log('current_page_id:', current_page_id);
 
-
+    
       function fetchBuried (name = '', type = '', data = {}, isSendBeacon = false) {
         const body = {
             module: "website-us",
@@ -148,6 +144,38 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 "Content-Type": "application/json",
             },
         })
+    }
+
+    // 查询url 参数
+    function getSearchValues () {
+      const search = {}
+
+      // 页面url
+      const url = new URL(location.href)
+
+      for (const [k, v] of url.searchParams.entries()) {
+          search[k] = v
+      }
+
+      return search
+    }
+
+    function throttle(method, delay, duration){
+        var timer=null;
+        var begin=new Date();    
+        return function(){                
+            var context=this, args=arguments;
+            var current=new Date();        
+            clearTimeout(timer);
+            if(current-begin>=duration){
+                method.apply(context,args);
+                begin=current;
+            }else{
+                timer=setTimeout(function(){
+                    method.apply(context,args);
+                },delay);
+            }
+        }
     }
 
     // 立即执行
@@ -303,6 +331,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     box-sizing: inherit;
     }
 
+    
+
     html {
     box-sizing: border-box;
     font-size: calc(var(--font-body-scale) * 62.5%);
@@ -328,7 +358,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     font-size: 1.6rem;
     }
     }
+
+
+  
     {% endstyle %}
+
+    {% render 'sale-color' %}
 
     {{ 'global-font-face.css' | asset_url | stylesheet_tag }}
     {{ 'base.css' | asset_url | stylesheet_tag }}
@@ -357,4 +392,5 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <body class="gradient"><div class="pagefly-container">{{ content_for_layout }}</div></body>
 {% render 'subscribe-email' %}
+{% render 'global-testride-dialog' %}
 </html>

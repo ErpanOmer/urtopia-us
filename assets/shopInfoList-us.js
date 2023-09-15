@@ -119,8 +119,7 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-BikeAttackPlayaVista.jpg?v=1665374977",
         testrideSpot: "California",
         availableSizes: [
-          'Carbon 1 Size L',
-          'Carbon 1s Size M'
+          'Carbon 1 Size L'
         ],
         businessHours: [
           "10:00-18:00",
@@ -197,7 +196,7 @@ const testRides = [
           "10:00-17:00"
         ],
       },
-       /*{
+       {
         name: "Burn The Ships Electrics",
         phone: "310-372-1122",
         email: "info@burntheshipselectrics.com ",
@@ -207,7 +206,7 @@ const testRides = [
         testrideSpot: "California",
         testRideSize: "M",
         availableSizes: [
-          'Carbon 1 Size M',
+          'Carbon 1s Size M',
         ],
         businessHours: [
           "12:00-17:00",
@@ -218,7 +217,96 @@ const testRides = [
           "11:00-18:00",
           "11:00-18:00"
         ],
-      },*/
+      },
+      {
+        name: "Epic Power Bikes",
+        phone: "(949) 503-3525",
+        email: "epiccyclessc@gmail.com ",
+        timezone: "San Diego, CA, USA (GMT-7)",
+        add: "85 Via Pico Plaza, San Clemente, CA 92672, United States",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Epic_Power_Bikes2.jpg?v=1689228574",
+        testrideSpot: "California",
+        testRideSize: "M",
+        availableSizes: [
+          'Carbon 1 Size M',
+        ],
+        businessHours: [
+          "10:00-16:00",
+          "",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-16:00"
+        ],
+      },
+      {
+        name: "Rebel Bikes Electric",
+        phone: "(951) 894-2453",
+        email: "shelliekay122@gmail.com",
+        timezone: "San Diego, CA, USA (GMT-7)",
+        add: "26175 Jefferson Ave STE 200, Murrieta, CA 92562",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230718-121032.jpg?v=1689658963",
+        testrideSpot: "California",
+        testRideSize: "M",
+        availableSizes: [
+          'Carbon 1 Size M',
+        ],
+        businessHours: [
+          "12:00-18:00",
+          "12:00-18:00",
+          "12:00-18:00",
+          "12:00-18:00",
+          "12:00-18:00",
+          "12:00-18:00",
+          "12:00-18:00"
+        ],
+      },
+      {
+        name: "California eBikes",
+        phone: "(916) 699-7872",
+        email: "fairoakscoastalcruisers@gmail.com ",
+        timezone: "San Diego, CA, USA (GMT-7)",
+        add: "8522 Madison Ave, Fair Oaks, CA 95628, United States ",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230725-174130.jpg?v=1690278127",
+        testrideSpot: "California",
+        testRideSize: "M",
+        availableSizes: [
+          'Carbon 1s Size M',
+        ],
+        businessHours: [
+          "",
+          "11:00-18:00",
+          "11:00-18:00",
+          "11:00-18:00",
+          "11:00-18:00",
+          "11:00-18:00",
+          "11:00-16:00"
+        ],
+      },
+      {
+        name: "Bakari Chavanu",
+        phone: "916-402-5841",
+        email: "bakaric@me.com",
+        timezone: "San Diego, CA, USA (GMT-7)",
+        add: "Elk Grove, CA 95624 ",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/No1-DJI_0605-1024x576.jpg?v=1693830949",
+        testrideSpot: "California",
+        testRideSize: "M",
+        availableSizes: [
+          'Carbon 1s Size M',
+        ],
+        businessHours: [
+          "12:00-18:00",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "12:00-18:00"
+        ],
+        isPartner: true,
+      },
     ]
   },
   {
@@ -439,7 +527,7 @@ const testRides = [
     city: 'Massachusetts',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Buna_Bicycle_Works_Washington_dc.jpg?v=1665374977',
     stores: [
-      {
+      /*{
         name: "Battle Road Bikes",
         phone: "781-734-6464",
         email: "jimc@battleroadbikes.com",
@@ -459,7 +547,7 @@ const testRides = [
           "10:00-18:00",
           "10:00-18:00",
         ],
-      },
+      },*/
       {
         name: "Dedham Bike",
         phone: "781-326-1531",
@@ -479,6 +567,27 @@ const testRides = [
           "10:00-18:00",
           "10:00-18:00",
           "09:00-17:00",
+        ],
+      },
+      {
+        name: "Evolution E-Bikes",
+        phone: "888-545-2453",
+        email: "David@EvolutionE-Bikes.com",
+        timezone: "Washington, DC, USA (GMT-4)",
+        add: "25 Accord Park Dr.  Unit 3 Rockland, MA 02341",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Evolution_E-Bikes.jpg?v=1691635464",
+        testrideSpot: "Massachusetts",
+        availableSizes: [
+          'Carbon 1s Size M',
+        ],
+        businessHours: [
+          "12:00-17:00",
+          "12:00-17:00",
+          "12:00-17:00",
+          "12:00-17:00",
+          "12:00-17:00",
+          "12:00-17:00",
+          "10:00-16:00",
         ],
       },
     ]
@@ -556,6 +665,27 @@ const testRides = [
           "10:00-18:00",
           "10:00-18:00",
           "09:00-17:00",
+        ],
+      },
+      {
+        name: "Espresso Bicycle Repairs",
+        phone: "941-893-5209",
+        email: "espressobicyclerepairs@gmail.com",
+        timezone: "New Port Richey, FL, USA (GMT-4)",
+        add: "7632 Lockwood Ridge Rd, Sarasota, FL 34243",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230731-114143.jpg?v=1690775188",
+        testrideSpot: "Florida",
+        availableSizes: [
+          'Carbon 1s Size M',
+        ],
+        businessHours: [
+          "10:00-17:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-17:00",
         ],
       },
     ]
@@ -688,5 +818,144 @@ const testRides = [
         ],
       },
     ]
-  }
+  },
+  {
+    city: 'Utah',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/WinterSkyline-DouglasPuslipher-Alamy-D44ETX31-1024x683_jpg.webp?v=1689229044',
+    stores: [
+      {
+        name: "E-Power Bike and Board",
+        phone: "435-315-3044",
+        email: "epowerbb@gmail.com",
+        timezone: "Utah, USA (GMT-7)",
+        add: "44 West 100 South Heber City, UT 84032",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/E-Power_Bike_and_Board_1.jpg?v=1689228575",
+        testrideSpot: "Utah",
+        availableSizes: [
+          'Carbon 1 Size M/L',
+          'Carbon 1 now instock',
+        ],
+        businessHours: [
+          "",
+          "",
+          "9:00-17:00",
+          "9:00-17:00",
+          "9:00-17:00",
+          "9:00-17:00",
+          "09:00-15:00",
+        ],
+      },
+    ]
+  },
+  {
+    city: 'New Mexico',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/istockphoto-1160412954-612x612.jpg?v=1691482552',
+    stores: [
+      {
+        name: "E-BIKES OF SOUTHERN NEW MEXICO",
+        phone: "575-635-9961",
+        email: "ebikesnewmexico.com",
+        timezone: "New Mexico, USA (GMT-7)",
+        add: "1230 Osage Ct  Las Cruces NM 88005",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/166556405_938400133573480_4023440075912235609_n.jpg?v=1691482553",
+        testrideSpot: "New Mexico",
+        availableSizes: [
+          'Carbon 1 Size M/L',
+          'Carbon 1s Size M',
+        ],
+        businessHours: [
+          "",
+          "9:00-17:00",
+          "9:00-17:00",
+          "9:00-17:00",
+          "9:00-17:00",
+          "9:00-17:00",
+          "9:00-17:00",
+        ],
+      },
+    ]
+  },
+  {
+    city: 'Oklahoma',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/OP7039_oklahoma-city.jpg?v=1692092307',
+    stores: [
+      {
+        name: "Thomas J. Kerr Jr",
+        phone: "405-474-5965",
+        email: "tjkok67@gmail.com",
+        timezone: "Oklahoma, USA (GMT-7)",
+        add: "Edmond, OK 73013",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/OP7039_oklahoma-city.jpg?v=1692092307",
+        testrideSpot: "Oklahoma",
+        availableSizes: [
+          'Carbon 1s Size M',
+        ],
+        businessHours: [
+          "12:00-19:00",
+          "16:00-19:00",
+          "16:00-19:00",
+          "16:00-19:00",
+          "16:00-19:00",
+          "16:00-19:00",
+          "12:00-19:00",
+        ],
+        isPartner: true,
+      },
+    ]
+  },
+  {
+    city: 'Mississippi',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/The_Bike_Crossing.png?v=1692265471',
+    stores: [
+      {
+        name: "The Bike Crossing",
+        phone: "691-856-0069",
+        email: "tbcridgeland@gmail.com",
+        timezone: "Mississippi, USA (GMT-7)",
+        add: "192 Old Town Crossing, Ridgeland, MS 39157",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/The_Bike_Crossing.png?v=1692265471",
+        testrideSpot: "Mississippi",
+        availableSizes: [
+          'Carbon 1s Size M',
+        ],
+        businessHours: [
+          "",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-17:00",
+        ],
+      },
+    ]
+  },
+  {
+    city: 'Illinois',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Jason_Mathews.jpg?v=1692617852',
+    stores: [
+      {
+        name: "Jason Mathews",
+        phone: "708-493-4896",
+        email: "akafenoy@gmail.com",
+        timezone: "Illinois, USA (GMT-7)",
+        add: "King Drive, Berkeley, IL 60163",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Jason_Mathews.jpg?v=1692617852",
+        testrideSpot: "Illinois",
+        availableSizes: [
+          'Carbon 1s Size M',
+        ],
+        businessHours: [
+          "10:00-14:00",
+          "10:00-14:00",
+          "10:00-14:00",
+          "10:00-14:00",
+          "10:00-14:00",
+          "10:00-14:00",
+          "10:00-14:00",
+        ],
+        isPartner: true,
+      },
+    ]
+  },
 ]

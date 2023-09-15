@@ -1,0 +1,60 @@
+<link rel="prefetch" href="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230609-untitled-9762.jpg?v=1691048775" as="image">
+<script>
+    let Test_ride_spots_near_you_is_show = false
+    function Test_ride_spots_near_you () {
+        fetchBuried('emailpop', 'exitpop', { button: 'book a test ride' }, true)
+        Test_ride_spots_near_you_is_show = false
+        window.sessionStorage.hideTestRideDialog = 'hideTestRideDialog'
+        closeMiniDialog()
+    }
+
+    function Test_ride_spots_near_you_close () {
+        Test_ride_spots_near_you_is_show = false
+        window.sessionStorage.hideTestRideDialog = 'hideTestRideDialog'
+        closeMiniDialog()
+    }
+
+    const testride_dialog = `
+        <div class="testride_dialog">
+            <img src="${global_config.test_ride_dialog_config.background_imgae}">
+            <div>
+                <div class="u30DemiBold_v2">Test ride spots near you</div>
+                <div class="u24Medium_v2">Experience the bike in real</div>
+                <a href="/pages/test-ride" class="my-button my-button-black" onclick="Test_ride_spots_near_you()">Book Now</a>
+                <div class="announce">
+                            <div class="u17DemiBold_v2">
+                                <div class="icon">
+                                    <div></div>
+                                    <div>Announce</div>
+                                    <div></div>
+                                </div>
+                                Carbon Credits
+                            </div>
+                            <div class="u14Light_v2">
+                                <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Image_214_2x_5dad4f52-6b18-4abb-b947-52c70bfcb898.png?v=1691999231"/>
+                                <span>This programme take a big step that Urtopia aims to advance carbon neutrality through tech. Also award our customer.</span>
+                            </div>
+                            <a href="/pages/sustainability-carbon-credit" class="my-button my-button-black" onclick="Test_ride_spots_near_you_close()">Learn More</a>
+                        </div>
+            </div>
+            <span class="close" onclick="Test_ride_spots_near_you_close()">×</span>
+        </div>
+    `
+
+    document.body.addEventListener("mouseout", debounce((evt) => {
+        let readWinCountry = window.CozyCountryRedirect && window.CozyCountryRedirect.country;
+        // console.log("离开页面====读取window下国家====", readWinCountry);
+        if (readWinCountry) {
+            localStorage.setItem("CountryCode", readWinCountry);
+        }
+    }, 300))
+
+    setTimeout(() => {
+        global_config.is_pc && !global_config.is_mobile && document.body.addEventListener("mouseleave", debounce((evt) => {
+        if (!window.sessionStorage.hideTestRideDialog && !Test_ride_spots_near_you_is_show && !global_config.test_ride_dialog_config.is_hide) {
+            Test_ride_spots_near_you_is_show = true
+            showMiniDialog(testride_dialog)
+        }
+        }, 500))
+    }, global_config.test_ride_dialog_config.show_delay_time * 1000)
+</script>

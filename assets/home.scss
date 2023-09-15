@@ -1,9 +1,43 @@
+@keyframes toTop {
+    0% {
+        opacity: 0;
+        transform: translateY(0px);
+    }
+
+    /* 50% {
+      opacity: 0.5;
+      transform: translateY(-20px);
+    } */
+
+    100% {
+        transform: translateY(-40px);
+        opacity: 1;
+    }
+}
+
+@keyframes toBottom {
+    0% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+
+    /* 50% {
+      opacity: 0.5;
+      transform: translateY(20px);
+    } */
+
+    100% {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+}
+
 .banner {
     height: calc(100vh - 106px);
     position: relative;
     color: #fff;
     overflow-x: hidden;
-    background-color: rgb(231, 231, 231);
+    background-color: var(--sale-order-page-text-color);
 
     .centeral-content {
         display: flex;
@@ -39,123 +73,15 @@
             background: center center/cover no-repeat;
         }
 
-
-        // 常规banner
-        .common {
-            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230418-105138.jpg?v=1681786322');
-
-            .centeral-content {
-                &>div {
-                    &:last-child {
-                        max-width: 500px;
-                    }
-                }
-            }
-
-            .right {
-                .u60DemiBold_v2 {
-                    margin: 10px 0 110px;
-                }
-            }
-        }
-
-
-        // maksim banner
-        .maksim {
-            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230418-110500.jpg?v=1681787114');
+        .summer-sale {
+            background-image: var(--sale-banner-background-image-pc);
+            color: var(--sale-banner-text-color);
 
             .centeral-content {
-                &>div {
-                    &:last-child {
-                        max-width: 550px;
-                    }
-                }
-            }
-
-            .right {
-                .u48DemiBold_v2 {
-                    margin: 16px 0 136px;
-                }
-            }
-        }
-
-        // 美国倒计时banner
-        .us-downcount {
-            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230420-211003.jpg?v=1681996217');
-
-            .centeral-content {
-                height: 50%;
-                overflow: hidden;
-            }
-
-            .left {
-                max-width: 430px;
-
-                .u30DemiBold_v2 {
-                    margin-bottom: 50px;
-                }
-            }
-
-            .right {
-                transform: translateX(40%);
-                max-width: 700px;
-                width: 700px;
-            }
-        }
-
-        .carbon-1s {
-            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20911_2x_3a8616af-69f0-4ab3-b0cd-2c5e76af9baa.jpg?v=1681894751');
-            background-color: rgb(231, 231, 231);
-
-            .right {
-                transform: unset;
-                max-width: 364px;
-            }
-        }
-
-
-        // 美国独立日活动 banner
-        .memorial-day {
-            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/background_2x_08d84a6b-d71e-4413-8b8c-301ec71e96ca.jpg?v=1686620761');
-            background-position-y: bottom;
-
-            .left {
-                img {
-                    max-width: 342px;
-                }
-            }
-
-
-            .u36DemiBold_v2 {
-                margin: 40px 0;
-            }
-
-
-            .centeral-content {
-                // height: 85%;
-            }
-        }
-
-
-        .spring-sale {
-            background-image: url('https://newurtopia.de/cdn/shop/files/Group_21039_2x_1cb9b026-5642-49ed-9914-abb3e6630212.jpg?v=1688695332');
-
-            .centeral-content {
-                // height: 85%;
                 
                 &>div {
-
                     & > img {
-                        max-width: 318px;
-                    }
-
-                    .u56DemiBold_v2 {
-                        text-transform: uppercase;
-                    }
-
-                    .u56DemiBold_v2,
-                    .u48Medium_v2 {
-                        // color: #E2F8B6;
+                        max-width: var(--sale-banner-image-max-width);
                     }
 
                     .u36DemiBold_v2 {
@@ -165,24 +91,70 @@
             }
         }
 
-      .bluetti {
-            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/banner_3_2x_3e80c46d-96b2-4d40-a29c-1e23702f2bba.jpg?v=1685619448');
+        .chord-sale {
+            background-image: var(--chord-sale-banner-background-image-pc);
 
             .centeral-content {
-                align-items: flex-start;
-                text-align: center;
+                &>div {
 
-                & > div {
-                    align-items: center;
-
-                    .u36DemiBold_v2 {
-                        margin: 1vh 0 4.5vh;
-                      text-align: center;
+                    & > img {
+                        max-width: var(--chord-sale-banner-image-max-width);
                     }
 
+                    .u36DemiBold_v2 {
+                        margin: 40px 0;
+                    }
+                }
+            }
+        }
+
+        .strava {
+            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21253_2x_945b0603-6617-4e75-8180-997dd03fc967.jpg?v=1689664830');
+
+            .centeral-content {
+                height: 42%;
+
+                & > div {
+                    text-align: center;
+                    justify-content: center;
+                    align-items: center;
+
                     img {
-                        max-width: 380px;
-                        margin: 4vh 0;
+                        max-height: 54px;
+                        width: auto;
+                    }
+
+                    .u24Medium_v2 {
+                        margin: 32px 0 40px;
+                    }
+                }
+            }
+        }
+
+        .michaeal {
+            background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_22784_2x_c04d2cff-9be1-4956-8786-269eb56b260d.jpg?v=1693981525');
+
+            .centeral-content {
+                & > div {
+                    align-items: flex-start;
+    
+                    .u17Light_v2 {
+                        max-width: 450px;
+                        margin: 4.5vh 0 5vh;
+                        opacity: 0.78;
+                    }
+        
+                    img {
+                        &:nth-of-type(1) {
+                            max-width: 650px;
+                            margin-top: 2.5vh;
+                        }
+
+                        &:nth-of-type(2) {
+                            max-width: 440px;
+                            margin-top: 5vh;
+                            cursor: pointer;
+                        }
                     }
                 }
             }
@@ -225,6 +197,124 @@
     }
 }
 
+.test-ride {
+    margin-bottom: 120px;
+
+    .centeral-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        &>div {
+            padding-bottom: 100%;
+            position: relative;
+
+            &>div {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background-color: #F7F8FA;
+
+                &:first-child {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: flex-start;
+                    padding: 0 10%;
+
+                }
+
+                .u20DemiBold_v2 {
+                    margin: 24px 0 48px;
+                }
+            }
+
+            #storepoint-tag-dropdown,
+            #storepoint-search,
+            #storepoint-panel {
+                display: none !important;
+            }
+
+            #storepoint-map,
+            #storepoint-container,
+            #storepoint-map canvas {
+                width: 100% !important;
+                height: 100% !important;
+                max-height: 100% !important;
+                border: none;
+            }
+        }
+    }
+}
+
+.page-media {
+    background-color: #f7f8fa;
+
+    .centeral-content {
+        background-color: #f7f8fa;
+
+        .home-page-media {
+            display: flex;
+            height: 340px;
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+            padding: 75px 0;
+            box-sizing: border-box;
+        
+            .texts {
+                flex: 1;
+                font: normal normal bold 30px/40px Urbane;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                text-align: center;
+        
+                div {
+                    animation-duration: 0.5s;
+                    animation-timing-function: ease-out;
+                }
+        
+                .toTop {
+                    opacity: 1;
+                    animation-name: toTop;
+                    transform: translateY(-40px);
+                }
+        
+                .toBottom {
+                    opacity: 0;
+                    animation-name: toBottom;
+                    transform: translateY(40px);
+                }
+            }
+        
+            .logos {
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+                width: 100%;
+                flex-wrap: wrap;
+
+                img {
+                    width: auto;
+                    opacity: 0.5;
+                    margin: 0 24px 24px;
+                    max-height: 60px;
+                    height: unset;
+        
+                    &[active] {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
 
 @media (max-width: 767px) {
     .banner {
@@ -238,10 +328,15 @@
             }
 
             .buttons {
-                &>a {
-                    margin-right: 12px;
-                }
-            }
+                a {
+                     margin:0;
+                       width: 100%;
+                 }
+
+                & > a + a {
+                     margin-top: 12px;
+                 }
+             }
         }
 
 
@@ -250,167 +345,96 @@
                 background-position-y: top;
             }
 
-            // 常规banner
-            .common {
-                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230418-102832.png?v=1681784932');
-
-                .right {
-                    padding: 20vw 0;
-                    color: #000;
-
-                    .u24Medium_v2 {
-                        font-size: 17px;
-                    }
-
-                    .u60DemiBold_v2 {
-                        font-size: 30px;
-                        margin-bottom: 0;
-                        // margin: 10px 0 110px;
-                    }
-                }
-            }
-
-
-            .maksim {
-                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20869_2x_095b2a64-3bee-4b82-a920-f596bd11b508.jpg?v=1681788172');
-
-                .right {
-                    padding: 10vw 0 20vw;
-
-                    .u48DemiBold_v2 {
-                        font-size: 36px;
-                        margin: 0;
-                    }
-                }
-            }
-
-            // 美国倒计时banner
-            .us-downcount {
-                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230420-211018.jpg?v=1681996227');
-
-                .centeral-content {
-                    flex-direction: column-reverse;
-                    height: 100%;
-                    padding-top: 6vw;
-                    padding-bottom: 20vw;
-                    align-items: flex-start;
-
-                    .right {
-                        transform: unset;
-                        height: unset;
-                        width: 100%;
-                        margin-left: -22px;
-                        overflow: hidden;
-                    }
-
-                    .left {
-                        display: flex;
-                        flex-direction: column;
+            .summer-sale {
+                background-image: var(--sale-banner-background-image-mb);
+    
+                    .centeral-content {
                         height: 100%;
-
-                        .u30DemiBold_v2 {
-                            font-size: 20px;
-                            margin: 0;
+                        align-items: unset;
+    
+                        &>div {
+                            padding: 6vw 0 8vw;
+                            align-items: center;
+                            text-align: center;
+                            display: flex;
+                            flex-direction: column;
+    
+                            & > img {
+                                max-width: var(--sale-banner-image-max-width-mb);
+                            }
+        
+                            .u36DemiBold_v2 {
+                                font-size: 20px;
+                                margin: 20px 0 0;
+                            }
                         }
                     }
                 }
-            }
 
-
-            .carbon-1s {
-                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18530_2x_75a2c3bb-0170-4e15-be6b-5f993ccb48c1.jpg?v=1681895088');
-
-                .centeral-content {
-                    padding-top: 6vw;
-
-                    .right {
-                        //margin: 0 0 6px;
-                    }
-                }
-            }
-
-
-            .memorial-day {
-                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18530_2x_edc8ed26-1dfa-46b7-ae34-e56c8f26a2d9.jpg?v=1686279306');
-
-                .left {
-                    padding: 8vw 0 20vw;
-
-                    .u36DemiBold_v2 {
-                        margin-top: 6vw;
-                        font-size: 20px;
-                        margin-bottom: 0;
-                    }
-
-                    .u17DemiBold_v2 {
-                        // color: #104686;
-                        margin: 15px 0 -5px;
-                    }
-
-
-                    img {
-                        max-width: 200px;
-                    }
-                }
-
-                .centeral-content {
-                    height: 100%;
-                }
-            }
-
-            .spring-sale {
-                background-image: url('https://newurtopia.de/cdn/shop/files/prime_day_2x_3115957c-1fdb-4af1-90bd-988b22081918.jpg?v=1688696134');
+            .chord-sale {
+                background-image: var(--chord-sale-banner-background-image-mb);
 
                 .centeral-content {
                     height: 100%;
                     align-items: unset;
 
                     &>div {
-                        padding: 12vw 0 18vw;
+                        padding: 6vw 0 8vw;
                         display: flex;
                         flex-direction: column;
                         align-items: center;
+                        text-align: center;
 
                         & > img {
-                            max-width: 140px;
+                            max-width: var(--chord-sale-banner-image-max-width-mb);
                         }
 
-                        .u56DemiBold_v2 {
-                            font-size: 26px;
-                        }
-
-                        .u48Medium_v2,
                         .u36DemiBold_v2 {
                             font-size: 20px;
-                        }
-
-                        .u36DemiBold_v2 {
                             margin: 20px 0 0;
                         }
                     }
                 }
             }
 
-          .bluetti {
-                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18562_2x_0e6bea7e-9e64-48ce-b6ae-aafcce7796a3.png?v=1685620282');
-                background-position-y: center;
-                
+
+            .strava {
                 .centeral-content {
-                    padding: 6vw 0 18vw;
-                    
                     & > div {
+                        .u24Medium_v2 {
+                            margin: 30px 0;
+                        }
+                    }
+                }
+            }
+
+            .michaeal {
+                background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18856_2x_d1ef15b4-07cb-462f-b5e8-a894722094d5.jpg?v=1693984442&width=500');
+
+                .centeral-content {
+                    & > div {
+                        padding: 10vw 0 8vw;
+
+                        .u24Light_v2,
+                        .u24DemiBold_v2 {
+                            font-size: 15px;
+                        }
+
+                        .u17Light_v2 {
+                            font-size: 14px;
+                            margin-top: 8vw;
+                        }
+
                         img {
-                            max-width: 240px;
+                            &:nth-of-type(1) {
+                                margin-top: 3vw;
+                            }
                         }
 
-
-                        .u56DemiBold_v2 {
-                            font-size: 36px;
-                            margin: 4vw 0 0;
-                        }
-
-                        .u36DemiBold_v2 {
-                            font-size: 20px;
+                        .buttons {
+                            display: flex;
+                            flex-direction: column;
+                            width: 100%;
                         }
                     }
                 }
@@ -430,6 +454,135 @@
                 margin-top: 15px;
             }
 
+        }
+    }
+
+
+    .test-ride {
+        margin-bottom: 60px;
+
+        .centeral-content {
+            grid-template-columns: 1fr;
+
+            &>div {
+
+                &>div {
+                    &:first-child {
+                        padding: 8vw 4vw;
+                    }
+                }
+
+                &:first-child {
+                    order: 1;
+                    padding-bottom: 60vw;
+
+                    .u36DemiBold_v2 {
+                        font-size: 24px;
+                    }
+
+                    .u20DemiBold_v2 {
+                        font-size: 16px;
+                        margin-top: 6px;
+                    }
+                }
+            }
+        }
+    }
+
+    .page-media {
+        .centeral-content {
+            padding: 0;
+            
+            .home-page-media-mb {
+                padding-top: 65px;
+                padding-bottom: 65px;
+                background-color: #f7f8fa;
+                overflow: hidden;
+            
+                .swiper-slide {
+                    box-sizing: border-box;
+                    padding: 0 10%;
+                      display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+            
+                    img {
+                        height: 48px;
+                      width: auto;
+                    }
+            
+                    .u20Medium {
+                        font-weight: 600;
+                        margin: 20px 0 40px;
+                        font-size: 22px;
+                        line-height: 26px;
+                    }
+                }
+            
+                .swiper-pagination {
+                    position: static;
+                }
+            
+                .swiper-pagination-bullet {
+                    height: 6px;
+                    width: 6px;
+                }
+            
+                .swiper-pagination-bullet-active {
+                    width: 30px;
+                    height: 6px;
+                    border-radius: 5px;
+                    transition: all .3s;
+                }
+            }
+        }
+    }
+
+}
+
+
+.greenest {
+    margin: 120px 0;
+
+    .centeral-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        background-clip: content-box;
+        align-items: center;
+
+        & > div {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 0 10%;
+
+            .u17Light_v2 {
+                margin: 30px 0;
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+        margin: 60px 0;
+
+        .centeral-content {
+            grid-template-columns: 1fr;
+
+            & > div {
+                padding: 8vw 4vw;
+
+                .u36DemiBold_v2 {
+                    font-size: 24px
+                }
+
+                .u17Light_v2 {
+                    font-size: 14px;
+                    margin: 15px 0 30px;
+                }
+            }
         }
     }
 }

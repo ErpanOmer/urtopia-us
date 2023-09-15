@@ -1,0 +1,127 @@
+{% assign img_1 = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230228-165148.png?v=1677574346" %}
+{% assign img_2 = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230228-165209.png?v=1677574346" %}
+{% assign img_3 = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18075_2x_5ed82c19-16b6-4f05-870a-623b5429a75f.png?v=1677303615" %}
+{% assign img_4 = "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230913-173450.png?v=1694597715" %}
+{% assign img_5 = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230228-165159.png?v=1677574346" %}
+
+{% assign text_1 = "“It's incredibly fun to ride”" %}
+{% assign text_2 = "“Like a phone’s than a next-gen fixie”" %}
+{% assign text_3 = "“One of the smartest ebike”" %}
+{% assign text_4 = "“The AI-powered co-pilot adds a new level<br>of intelligence and interactivity”" %}
+{% assign text_5 = "“Does phone tech better than some phones”" %}
+
+{% if is_center %}
+<style>
+  .page-media {
+    background-color: transparent;
+    margin-bottom: 120px;
+  }
+
+  .page-media .centeral-content {
+    background-clip: content-box;
+  }
+
+  .page-media .centeral-content .home-page-media {
+    height: 400px;
+  }
+
+  @media (max-width: 767px) {
+    .page-media {
+        margin-bottom: 60px;
+    }
+  }
+</style>
+{% endif %}
+
+<div class="page-media">
+  <div class="centeral-content">
+      <div class="home-page-media mobileHide">
+        <div class="texts">
+          <div>{{text_1}}</div>
+          <div></div>
+        </div>
+        <div class="logos">
+          <img active src="{{ img_1 }}" onclick="moveTop(`{{text_1}}`, this)"/>
+          <img src="{{ img_2 }}" onclick="moveTop('{{text_2}}', this)"/>
+          <img src="{{ img_3 }}" onclick="moveTop(`{{text_3}}`, this)"/>
+          <img src="{{ img_4 }}" onclick="moveTop('{{text_4}}', this)"/>
+          <img src="{{ img_5 }}" onclick="moveTop('{{text_5}}', this)"/>
+        </div>
+      </div>
+    
+      <div class="home-page-media-mb pcHide" style="--swiper-theme-color: #000;--swiper-pagination-color: #000;">
+        <div class="swiper-wrapper swiper-container-horizontal swiper-container-fade">
+          <div class="swiper-slide">
+            <img src="{{img_1}}"/>
+            <div class="u20Medium">{{text_1}}</div>
+          </div>
+          <div class="swiper-slide">
+            <img src="{{img_2}}"/>
+            <div class="u20Medium">{{text_2}}</div>
+          </div>
+          <div class="swiper-slide">
+            <img src="{{img_3}}"/>
+            <div class="u20Medium">{{text_3}}</div>
+          </div>
+          <div class="swiper-slide">
+            <img src="{{img_4}}"/>
+            <div class="u20Medium">{{text_4}}</div>
+          </div>
+          <div class="swiper-slide">
+            <img src="{{img_5}}"/>
+            <div class="u20Medium">{{text_5}}</div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+  </div>
+</div>
+
+
+  <script>
+    let temp = `{{text_1}}`
+
+    function moveTop (text, target) {
+      const active = target.getAttribute('active')
+
+      if (active !== null) {
+        return
+      }
+
+      const current = document.querySelector('.home-page-media .logos img[active]')
+
+      current.removeAttribute('active')
+      target.setAttribute('active', '')
+
+      const texts = document.querySelector('.home-page-media .texts')
+      texts.innerHTML = `
+                          <div class="toBottom">${temp}</div>
+                          <div class="toTop">${text}</div>
+                        `
+
+      temp = text
+    }
+
+    global_config.is_pc && setInterval(() => {
+      const active = document.querySelector('.home-page-media .logos img[active]')
+      const next = active.nextElementSibling || document.querySelector('.home-page-media .logos img')
+
+      next.click()
+    }, 5000)
+
+
+    global_config.is_mobile && new Swiper ('.home-page-media-mb', {    
+        autoplay: {
+            disableOnInteraction: false,
+            pauseOnMouseEnter: false,
+            delay: 5000,
+        },
+        loop: true,
+        effect: 'fade',
+        fadeEffect:{
+            crossFade: true
+        },
+        pagination: {el:'.swiper-pagination'},
+        speed: 300
+      }) 
+  </script>

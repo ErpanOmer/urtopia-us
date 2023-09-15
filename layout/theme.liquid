@@ -115,20 +115,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 {% comment %}{{ content_for_header }}{% endcomment %}
 {{ content_for_header | remove: '<link href="https://monorail-edge.shopifysvc.com" rel="dns-prefetch">' }}
 
-  <!-- Taboola Pixel Code -->
+
   <script type='text/javascript'>
-    window._tfa = window._tfa || [];
-    window._tfa.push({ notify: 'event', name: 'page_view', id: 1410404 });
-    !function (t, f, a, x) {
-      if (!document.getElementById(x)) {
-        t.async = 1; t.src = a; t.id = x; f.parentNode.insertBefore(t, f);
-      }
-    }(document.createElement('script'),
-      document.getElementsByTagName('script')[0],
-      '//cdn.taboola.com/libtrc/unip/1410404/tfa.js',
-      'tb_tfa_script');
+      // 普通页面清掉这两个参数
+      window.sessionStorage.checkout_email = ''
+      window.sessionStorage.checkout_email_local = ''
+          // 当前页面id
+      const current_page_id = '{{ template }}'
+      console.log('current_page_id:', current_page_id);
 
-
+    
       function fetchBuried (name = '', type = '', data = {}, isSendBeacon = false) {
         const body = {
             module: "website-us",
@@ -331,12 +327,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     box-sizing: inherit;
     }
 
-    :root {
-        --sale-color1: #49B3F7;
-        --sale-color2: #7EDAFF;
-        --sale-color3: #009BFF;
-        --sale-color4: #009BFF;
-      }
+    
 
     html {
     box-sizing: border-box;
@@ -363,7 +354,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     font-size: 1.6rem;
     }
     }
+
+
+  
     {% endstyle %}
+
+    {% render 'sale-color' %}
 
     {{ 'global-font-face.css' | asset_url | stylesheet_tag }}
     {{ 'base.css' | asset_url | stylesheet_tag }}
@@ -391,6 +387,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </head>
 
 <body class="gradient">
+  {%- assign page_url = content_for_header | split:'"pageurl":"' | last | split:'"' | first | split: request.host | last | replace:'\/','/' | replace:'%20',' ' | replace:'\u0026','&' -%}
+  {% if product and product.id == 7523827613944 and product.available and page_url contains "checkout_email"%}
+     {% render 'product-to-checkout' %}
+  {% endif %}
+      
   <!--   <p class='21123'>{{ request.origin }}</p> -->
   <a class="skip-to-content-link button visually-hidden" href="#MainContent">
     {{ "accessibility.skip_to_text" | t }}
@@ -486,4 +487,5 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- CRITEO END -->
 </body>
 {% render 'subscribe-email' %}
+{% render 'global-testride-dialog' %}
 </html>

@@ -4,63 +4,88 @@
 
         <div class="banner">
             <div class="swiper-wrapper">
-                <!--<div class="swiper-slide common">
-                    <div class="centeral-content">
-                        <div></div>
-                        <div class="right">
-                            <div class="u24Medium_v2">Carbon 1</div>
-                            <div class="u60DemiBold_v2">Your Smart and Lightweight Pal</div>
-                            <div class="flex-1 pcHide"></div>
-                            <div class="buttons">
-                                <a class="my-button" href="/products/urtopia-carbon-e-bike">Order now</a>
-                                <a class="my-button my-button-ghost mobileHide" href="/pages/test-ride">Test rides</a>
-                                <a class="my-button pcHide" href="/pages/test-ride">Test rides</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide maksim">
-                    <div class="centeral-content">
-                        <div></div>
-                        <div class="right">
-                            <div class="u17Medium_v2 mobileHide">Tune your ride with Chord.</div>
-                            <div class="u48DemiBold_v2">"Elegant, powerful and reliable"</div>
-                            <div class="flex-1 pcHide"></div>
-                            <div class="buttons">
-                                <a class="my-button" href="">Meet Chord</a>
-                                <a class="my-button my-button-ghost mobileHide" href="">Watch video</a>
-                                <a class="my-button pcHide" href="">Watch video</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>-->
-                <div class="swiper-slide spring-sale" style="background-color: var(--sale-color3);">
+              <div class="swiper-slide summer-sale">
                   <div class="centeral-content">
                       <div>
-                          <!--<div class="u56DemiBold_v2">{{ settings.sale_name }}</div>-->
-                          <!--<div class="u48Medium_v2">Urtopia embraces ESG</div>-->
-                          <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21034_2x_13433c49-0c28-4507-82bc-9f1056b391a9.png?v=1688695430">
-                          <div class="u36DemiBold_v2">Get $600 Off + 3 Freebies<br>on Carbon 1s {{ settings.sale_end_time }}</div>
-                          <!--<div class="count-down pcHide">
-                              <iframe height="155" width="352" src="https://w2.countingdownto.com/4780378" scrolling="no" frameborder="0"></iframe>
-                          </div>-->
-                        <div class="count-down-gif pcHide">
-                          <img src="http://i.countdownmail.com/2mcmh4.gif"/>
-                        </div>
-                          <div class="flex-1 pcHide"></div>
-                          <div class="buttons">
-                              <a class="my-button" href="/products/urtopia-carbon-e-bike">Order now</a>
-                              <a class="my-button my-button-ghost" href="/pages/e-bike">Meet Carbon 1s</a>
+                          <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20998_2x_ce576d65-ec90-42eb-8547-c867fdddd6e5.png?v=1693794217">
+                          <div class="u36DemiBold_v2">Get {{ settings.carbon_ebike_discount_price | money_without_trailing_zeros }} off + {{ settings.carbon_ebike_free_accessories_count }} Freebies<br> on Carbon 1s {{ settings.sale_end_time }}</div>
+                          {% unless true %}
+                          <div class="count-down-gif pcHide">
+                            <img src="http://i.countdownmail.com/2mcmh4.gif"/>
                           </div>
-                          <!--<div class="count-down mobileHide">
-                              <iframe height="308" width="350" src="https://w2.countingdownto.com/4780368" scrolling="no" frameborder="0"></iframe>
-                          </div>-->
-                        <div class="count-down-gif mobileHide">
-                          <img src="http://i.countdownmail.com/2mcmh4.gif"/>
-                        </div>
+                          {% endunless %}
+                          <div class="flex-1 pcHide"></div>
+                          <div class="buttons mobileHide">
+                            <a class="my-button" href="/products/urtopia-carbon-e-bike">Order now</a>
+                            <a class="my-button my-button-ghost"  href="/pages/e-bike">Meet Carbon 1</a>
+                          </div>
+                          {% unless true %}
+                            <div class="count-down-gif mobileHide">
+                              <img src="http://i.countdownmail.com/2mcmh4.gif"/>
+                            </div>
+                          {% endunless %}
+                          <div class="buttons pcHide">
+                              <a class="my-button" href="/products/urtopia-carbon-e-bike">Order now</a>
+                              <a class="my-button" href="/pages/e-bike">Meet Carbon 1</a>
+                          </div>
                       </div>
                       <div></div>
                   </div>
+              </div>
+              <div class="swiper-slide chord-sale">
+                    <div class="centeral-content">
+                      <div>
+                        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20998_2x_ce576d65-ec90-42eb-8547-c867fdddd6e5.png?v=1693794217">
+                        <div class="u36DemiBold_v2">Get {{ settings.chord_ebike_discount_price | money_without_trailing_zeros }} off on Chord <br>{{ settings.chord_sale_end_time }}</div>
+                        {% unless true %}
+                          <div class="count-down-gif pcHide">
+                            <img src="http://i.countdownmail.com/2q61sj.gif"/>
+                          </div>
+                        {% endunless %}
+
+                          <div class="flex-1 pcHide"></div>
+                          <div class="buttons mobileHide">
+                              <a class="my-button" href="/products/urtopia-chord-ebike">Order now</a>
+                              <a class="my-button my-button-ghost" href="/pages/lightweight-commuter-ebike-urtopia-chord">Meet Chord/Chord x</a>
+                          </div>
+                          <div class="buttons pcHide">
+                              <a class="my-button my-button-black" href="/products/urtopia-chord-ebike">Order now</a>
+                              <a class="my-button" href="/pages/lightweight-commuter-ebike-urtopia-chord">Meet Chord/Chord x</a>
+                          </div>
+                          {% unless true %}
+                          <div class="count-down-gif mobileHide">
+                            <img src="http://i.countdownmail.com/2q61sj.gif"/>
+                          </div>
+                          {% endunless %}
+                      </div>
+                      <div></div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide michaeal">
+                    <div class="centeral-content">
+                      <div style="display: none;"></div>
+                      <div>
+                        <div class="u24Light_v2">Ambassador’s Story: <span class="u24DemiBold_v2">Michael J. Coles</span></div>
+                        <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230906-172118.png?v=1693992114&" alt="">
+                        <div class="u17Light_v2">A rock almost took his life. Doctors said he would never walk again. Yet, five years later, he set a world record for cycling across continents. He is a Urtopian, a billionaire entrepreneur, a soldier. This is his story.</div>
+                        <div class="flex-1 pcHide"></div>
+                        <div class="buttons">
+                          <a href="https://newurtopia.com/blogs/blog/ambassador-s-story-michael-j-coles-over-that-rock" target="_blank" class="my-button">Read his story</a>
+                          <a onclick="showVideoDialog('https://www.youtube.com/embed/kw2bKnKxLtY?autoplay=1&cc_load_policy=1')" class="my-button my-button-ghost pcHide">Watch the video</a>
+                        </div>
+                        <img class="mobileHide" onclick="showVideoDialog('https://www.youtube.com/embed/kw2bKnKxLtY?autoplay=1&cc_load_policy=1')" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_22785_2x_7ec81132-dba8-4553-b0c4-2407b943a62f.png?v=1693982796&width=440" alt="">
+                      </div>
+                    </div>
+                  </div>
+                  
+              <div class="swiper-slide strava">
+                <div class="centeral-content">
+                  <div>
+                    <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21258_2x_b6eefd8c-d9c9-4a58-ae7b-284408aad2af.png?v=1689664928" alt="">
+                    <div class="u24Medium_v2">World’s First E-bike Integrated with Strava</div>
+                    <a class="my-button" target="_blank" href="/blogs/blog/urtopia-x-strava">Read the blog</a>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="swiper-pagination"></div>
@@ -94,220 +119,20 @@
        })
     </script>
 
-</div></div></div></div></div></div><div data-section-id="pf-d8e0" data-pf-type="Section" class="sc-fmciRz bheIgq pf-7_ pf-sm-hide pf-hide"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-8_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-9_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-10_"><div id="section1">
-    <div class="texts">
-      <div>“It's incredibly fun to ride”</div>
-      <div></div>
-    </div>
-    <div class="logos">
-      <img active src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230228-165148.png?v=1677574346" onclick="moveTop(`“It's incredibly fun to ride”`, this)"/>
-      <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230228-165209.png?v=1677574346" onclick="moveTop('“Like a phone’s than a next-gen fixie”', this)"/>
-      <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18075_2x_5ed82c19-16b6-4f05-870a-623b5429a75f.png?v=1677303615" onclick="moveTop(`“One of the smartest ebike”`, this)"/>
-      <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230228-165154.png?v=1677574346" onclick="moveTop('“Best Electric Bike for 2022”', this)"/>
-      <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230228-165159.png?v=1677574346" onclick="moveTop('“Does phone tech better than some phones”', this)"/>
+</div></div></div></div></div></div>
+  
+<div class="greenest">
+  <div class="centeral-content gray-background-color">
+    <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18811_2x_552d51e2-13f7-4175-aa88-d5b0ecdf3988.png?v=1691825401" alt="">
+    <div>
+        <div class="u36DemiBold_v2">Green Deserves Rewards</div>
+        <div class="u17Light_v2">We are introducing the Carbon Credit Rewards program. By riding the most environmentally-friendly e-bike, tracking your routes, and reducing CO2 emissions, you have the opportunity to win exciting prizes. Join us in our mission to create a greener world!</div>
+        <a class="my-button my-button-black" href="/pages/sustainability-carbon-credit">Learn More</a>
     </div>
   </div>
+</div>
 
-<style>
-@keyframes toTop {
-    0% {
-      opacity: 0;
-      transform: translateY(0px);
-    }
-
-    /* 50% {
-      opacity: 0.5;
-      transform: translateY(-20px);
-    } */
-
-    100% {
-      transform: translateY(-40px);
-      opacity: 1;
-    }
-}
-
-@keyframes toBottom {
-    0% {
-      opacity: 1;
-      transform: translateY(0px);
-    }
-
-    /* 50% {
-      opacity: 0.5;
-      transform: translateY(20px);
-    } */
-
-    100% {
-      transform: translateY(40px);
-      opacity: 0;
-    }
-}
-
-#section1 .texts div {
-  animation-duration: 0.5s;
-  animation-timing-function: ease-out;
-}
-
-#section1 .texts .toTop {
-  opacity: 1;
-  animation-name: toTop;
-  transform: translateY(-40px);
-}
-
-#section1 .texts .toBottom {
-  opacity: 0;
-  animation-name: toBottom;
-  transform: translateY(40px);
-}
-
-
-#section1 {
-  display: flex;
-  height: 340px;
-  width: 100%;
-  flex-direction: column;
-  align-items: center;
-  padding: 75px 0;
-  box-sizing: border-box;
-}
-
-#section1 .texts {
-  flex: 1;
-  font: normal normal bold 30px/40px Urbane;
-  display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-#section1 .logos img {
-  height: 60px;
-  width: auto;
-  margin: 0 39px;
-  opacity: 0.5;
-}
-
-#section1 .logos img[active] {
-  opacity: 1;
-}
-
-
-
-</style>
-
-<script>
-  let temp = `“It's incredibly fun to ride”`
-  function moveTop (text, target) {
-    const active = target.getAttribute('active')
-    if (active !== null) {
-      return
-    }
-    const current = document.querySelector('#section1 .logos img[active]')
-    current.removeAttribute('active')
-    target.setAttribute('active', '')
-    const texts = document.querySelector('#section1 .texts')
-    texts.innerHTML = `
-                        <div class="toBottom">${temp}</div>
-                        <div class="toTop">${text}</div>
-                      `
-    temp = text
-  }
-  document.body.clientWidth > 1024 && setInterval(() => {
-    const active = document.querySelector('#section1 .logos img[active]')
-    const next = active.nextElementSibling || document.querySelector('#section1 .logos img')
-    next.click()
-  }, 5000)
-  </script></div></div></div></div></div></div><div data-section-id="pf-22ce" data-pf-type="Section" class="sc-fmciRz bheIgq pf-11_ pf-lg-hide pf-md-hide"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-12_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-13_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-14_"><style>
-
-#section1-mobile {
-    overflow: hidden;
-    --swiper-theme-color: #000;
-    --swiper-pagination-color: #000;/* 两种都可以 */
-}
-
-#section1-mobile .swiper-slide {
-    box-sizing: border-box;
-    padding: 0 10%;
-      display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-#section1-mobile .swiper-slide img {
-    height: 60px;
-  width: auto;
-}
-
-
-#section1-mobile .swiper-slide .u20Medium {
-    font-weight: 600;
-    margin: 20px 0 40px;
-    font-size: 22px;
-    line-height: 26px;
-}
-
-#section1-mobile .swiper-pagination {
-    position: static;
-}
-
-#section1-mobile .swiper-pagination-bullet {
-    height: 6px;
-    width: 6px;
-}
-
-#section1-mobile .swiper-pagination-bullet-active {
-    width: 30px;
-    height: 6px;
-    border-radius: 5px;
-    transition: all .3s;
-}
-</style>
-
-
-<div id="section1-mobile">
-        <div class="swiper-wrapper swiper-container-horizontal swiper-container-fade">
-          <div class="swiper-slide">
-            <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230228-165148.png?v=1677574346"/>
-            <div class="u20Medium">“It's incredibly fun to ride”</div>
-          </div>
-          <div class="swiper-slide">
-            <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230228-165209.png?v=1677574346"/>
-            <div class="u20Medium">“Like a phone’s than a next-gen fixie”</div>
-          </div>
-          <div class="swiper-slide">
-            <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18075_2x_5ed82c19-16b6-4f05-870a-623b5429a75f.png?v=1677303615"/>
-            <div class="u20Medium">“One of the smartest ebike”</div>
-          </div>
-          <div class="swiper-slide">
-            <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230228-165154.png?v=1677574346"/>
-            <div class="u20Medium">“Best Electric Bike for 2022”</div>
-          </div>
-          <div class="swiper-slide">
-            <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230228-165159.png?v=1677574346"/>
-            <div class="u20Medium">“Does phone tech better than some phones”</div>
-          </div>
-        </div>
-        <div class="swiper-pagination"></div>
-    </div>
-
-<script setup>
-  new Swiper ('#section1-mobile', {    
-    autoplay: {
-        disableOnInteraction: false,
-        pauseOnMouseEnter: false,
-        delay: 5000,
-    },
-    loop: true,
-    effect: 'fade',
-    fadeEffect:{
-        crossFade: true
-    },
-    pagination: {el:'.swiper-pagination'},
-    speed: 300
-  }) 
-
-</script></div></div></div></div></div></div><div data-section-id="pf-20b1" data-pf-type="Section" class="sc-fmciRz bheIgq pf-15_"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-16_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-17_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-18_"><style>
+<div data-section-id="pf-20b1" data-pf-type="Section" class="sc-fmciRz bheIgq pf-15_"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-16_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-17_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-18_"><style>
   #bike {
     max-width: 1280px;
 	/* background-color: #F7F8FA; */
@@ -479,6 +304,16 @@
 
   #bike .swiper-slide .u24DemiBold_v2 {
     margin-left: 30px;
+    position: relative;
+  }
+
+  #bike .swiper-slide .u24DemiBold_v2::after {
+    content: attr(data-price);
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 300;
+    text-decoration: line-through;
+    transform: translate(-5%, -40%);
   }
 
 
@@ -534,6 +369,10 @@
         margin: 75px auto 0;
         width: calc(100vw - 100px);
     }
+
+    #bike .swiper-slide .u24DemiBold_v2 {
+      margin-left: 15px;
+    }
 }
 
 
@@ -543,13 +382,17 @@
     }
 }
 </style>
-<link rel="preload" href="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18397_2x_1f9c1e43-b341-430d-aa9d-bdc5432ac4d4.png?v=1677639396" as="image">
-<link rel="preload" href="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2.88_2x_4ebddfe8-c42e-4196-80e2-2f844bdec3dc.png?v=1677639816" as="image">
+
+
 <link rel="preload" href="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18151_2x_702ec45e-0fe8-49ed-865a-df341d3033d7.png?v=1677640124" as="image">
 <link rel="preload" href="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18138_2x_de02f431-3e7d-48c0-b887-85eda46c2421.png?v=1677640174" as="image">
 <link rel="preload" href="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18150_2x_63ea456b-69c1-4d96-988f-efa931148bc1.png?v=1677640442" as="image">
 <link rel="preload" href="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18139_2x_ee2cf1ae-8693-42a3-ab99-d53ea78e2802.png?v=1677640511" as="image">
 <link rel="preload" href="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230428-104445.png?v=1682649982" as="image">
+
+<link rel="preload" href="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/chordX_2x_ac6e3457-6ab6-4c57-a190-b58c8171d6c8.jpg?v=1689154690" as="image">
+<link rel="preload" href="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3_1_2x_c75e6ef5-a3ac-49af-bb2f-c19dd565cfad.jpg?v=1689154308" as="image">
+
 <div id="bike">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
@@ -564,26 +407,35 @@
                     <div onclick="changeBike('/products/urtopia-carbon-e-bike?variant=43556895981816', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18138_2x_de02f431-3e7d-48c0-b887-85eda46c2421.png?v=1677640174', this)" gray></div>
                     <div onclick="changeBike('/products/urtopia-carbon-e-bike?variant=43556899815672', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230428-104445.png?v=1682649982', this)" peach></div>
                   </div>
-                  <div class="u24DemiBold_v2">{{ all_products['urtopia-carbon-e-bike'].price | money | slice: 0, 6 | replace: '.', '' }}</div>
+                  <div class="u24DemiBold_v2" {% if settings.carbon_ebike_discount_price != "0" %} data-price="{{all_products['urtopia-carbon-e-bike'].price | money_without_trailing_zeros }}"{% endif %}>
+                    {{ all_products['urtopia-carbon-e-bike'].price | minus: settings.carbon_ebike_discount_price | money_without_trailing_zeros }}
+                  </div>
                 </div>
                 <div class="size">Fit for 5’3’’~6’5’’</div>
               </div> 
               <a class="my-button my-button-white" href="/products/urtopia-carbon-e-bike?variant=43556895916280">Order now</a>
-              <div class="my-button my-button-black new" style="background-image: linear-gradient(90deg, var(--sale-color1), var(--sale-color2));">$600 off +</div>
-              <div class="my-button my-button-black new" style="transform: translateY(110%);background-image: linear-gradient(90deg, var(--sale-color3), var(--sale-color4));">3 Freebies</div>
+              <div class="my-button my-button-black new" style="background-image: var(--sale-bike-tags1);">{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros}} off</div>
+              <div class="my-button my-button-black new" style="transform: translateY(120%);background-image: var(--sale-bike-tags2);">{{ settings.carbon_ebike_free_accessories_count }} Freebies</div>
           </div>
-          <!--
           <div class="swiper-slide">
-            <div class="name">Carbon 1s</div>
-            <div class="info">Vanilla</div>
-              <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230428-104445.png?v=1682649982" alt="">
-              <div class="dots">
-                <div peach></div>
-              </div>
-              <div class="size">Fit for 5’3’’~6’5’’</div>
-				 <a class="my-button my-button-white" href="/products/urtopia-carbon-e-bike?variant=43556899815672">Order now</a>
-         <div class="my-button my-button-black new">$600 OFF</div>
-          </div>-->
+              <div class="name">Chord</div>
+              <div class="info"> </div>
+              <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1_1_2x_3f9f6132-5cac-4f49-bac7-ce6258edad1c.jpg?v=1689154301" alt="">
+              <div class="dots-and-price-and-size">
+                <div class="dots-and-price">
+                  <div class="dots">
+                    <div onclick="changeBike('/products/urtopia-chord-ebike?variant=43694976663800', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1_1_2x_3f9f6132-5cac-4f49-bac7-ce6258edad1c.jpg?v=1689154301', this)" white class="active"></div>
+                    <div onclick="changeBike('/products/urtopia-chord-ebike?variant=43694976696568', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3_1_2x_c75e6ef5-a3ac-49af-bb2f-c19dd565cfad.jpg?v=1689154308', this)" black></div>
+                  </div>
+                  <div class="u24DemiBold_v2" {% if settings.chord_ebike_discount_price != "0" %} data-price="{{all_products['urtopia-chord-ebike'].price | money_without_trailing_zeros }}"{% endif %}>
+                    {{ all_products['urtopia-chord-ebike'].price | minus: settings.chord_ebike_discount_price | money_without_trailing_zeros }}
+                  </div>
+                </div>
+                <div class="size">Fit for 5’7’’~6’5’’</div>
+              </div> 
+              <a class="my-button my-button-white" href="/products/urtopia-chord-ebike?variant=43694976663800">Order now</a>
+              <div class="my-button my-button-black new" style="background-image: var(--sale-bike-tags1);">{{ settings.chord_ebike_discount_price | money_without_trailing_zeros}} off</div>
+          </div>
           <div class="swiper-slide">
             <div class="name">Carbon 1</div>
             <div class="info">Carbon Belt</div>
@@ -595,40 +447,26 @@
                     <div onclick="changeBike('/products/urtopia-carbon-e-bike?variant=43556899979512', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18150_2x_63ea456b-69c1-4d96-988f-efa931148bc1.png?v=1677640442', this)" yellow></div>
                     <div onclick="changeBike('/products/urtopia-carbon-e-bike?variant=43556899946744', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18139_2x_ee2cf1ae-8693-42a3-ab99-d53ea78e2802.png?v=1677640511', this)" gray></div>
                   </div>
-                  <div class="u24DemiBold_v2">{{ all_products['urtopia-carbon-e-bike'].price | money | slice: 0, 6 | replace: '.', '' }}</div>
+                  <div class="u24DemiBold_v2" {% if settings.carbon_ebike_discount_price != "0" %} data-price="{{all_products['urtopia-carbon-e-bike'].price | money_without_trailing_zeros }}"{% endif %}>
+                    {{ all_products['urtopia-carbon-e-bike'].price | minus: settings.carbon_ebike_discount_price | money_without_trailing_zeros }}
+                  </div>
                 </div>
                 <div class="size">Fit for 5’7’’~6’5’’</div>
               </div> 
               <a href="/products/urtopia-carbon-e-bike?variant=43556899913976" class="my-button my-button-white">Order now</a>
+            <div class="my-button my-button-black new" style="background-image: var(--sale-bike-tags1);">{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros}} off</div>
             </div>
-          <div class="swiper-slide">
-              <div class="name">Chord</div>
-              <div class="info"> </div>
-              <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1_1_2x_c29f513e-3efa-4fb3-a74d-f83107bdd824.png?v=1677639590" alt="">
-              <div class="dots-and-price-and-size">
-                <div class="dots-and-price">
-                  <div class="dots">
-                    <div onclick="changeBike('/products/urtopia-chord-ebike?variant=43694976663800', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1_1_2x_c29f513e-3efa-4fb3-a74d-f83107bdd824.png?v=1677639590', this)" white class="active"></div>
-                    <div onclick="changeBike('/products/urtopia-chord-ebike?variant=43694976696568', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18397_2x_1f9c1e43-b341-430d-aa9d-bdc5432ac4d4.png?v=1677639396', this)" black></div>
-                  </div>
-                  <div class="u24DemiBold_v2">{{ all_products['urtopia-chord-ebike'].price | money | slice: 0, 6 | replace: '.', '' }}</div>
-                </div>
-                <div class="size">Fit for 5’7’’~6’5’’</div>
-              </div> 
-              <a class="my-button my-button-white" href="/products/urtopia-chord-ebike?variant=43694976663800">Order now</a>
-              <!--<div class="my-button my-button-black new">$300 OFF</div>-->
-          </div>
           <div class="swiper-slide">
             <div class="name">Chord X</div>
             <div class="info"> </div>
-              <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18400_2x_6789324f-33d2-4342-9519-0ee3bc943699.png?v=1677639718" alt="">
+              <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/chordX_2x_fe86f1a1-6d47-4dd4-b1b9-80ee149da0fe.jpg?v=1689154670" alt="">
               <div class="dots-and-price-and-size">
                 <div class="dots-and-price">
                   <div class="dots">
-                    <div onclick="changeBike('/products/urtopia-chord-ebike?variant=43694976729336', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18400_2x_6789324f-33d2-4342-9519-0ee3bc943699.png?v=1677639718', this)" white class="active"></div>
-                    <div onclick="changeBike('/products/urtopia-chord-ebike?variant=43694976762104', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2.88_2x_4ebddfe8-c42e-4196-80e2-2f844bdec3dc.png?v=1677639816', this)" black></div>
+                    <div onclick="changeBike('/products/urtopia-chord-ebike?variant=43694976729336', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/chordX_2x_fe86f1a1-6d47-4dd4-b1b9-80ee149da0fe.jpg?v=1689154670', this)" white></div>
+                    <!--<div onclick="changeBike('/products/urtopia-chord-ebike?variant=43694976762104', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/chordX_2x_ac6e3457-6ab6-4c57-a190-b58c8171d6c8.jpg?v=1689154690', this)" black></div>-->
                   </div>
-                  <div class="u24DemiBold_v2">{{ all_products['urtopia-chord-ebike'].price | money | slice: 0, 6 | replace: '.', '' }}</div>
+                  <div class="u24DemiBold_v2">{{ all_products['urtopia-chord-ebike'].price | money_without_trailing_zeros }}</div>
                 </div>
                 <div class="size">Fit for 5’3’’~6’1’’</div>
               </div>
@@ -749,7 +587,7 @@
   }
   </style>
 
-  <div class="maksim">
+  <!--<div class="maksim">
     <div class="centeral-content">
         <div class="left">
             <div class="u42DemiBold_v2">Chord X Maksim</div>
@@ -760,7 +598,33 @@
         </div>
         <div class="right"></div>
     </div>
-</div>
+</div>-->
+
+
+{% render 'home-page-media' is_center: true %}
+<div class="test-ride">
+    <div class="centeral-content">
+      <div>
+        <div>
+          <div class="u36DemiBold_v2">Test ride spots near you</div>
+          <div class="u20DemiBold_v2">Experience the bike in real</div>
+          <a
+            class="my-button my-button-origin"
+            href="/pages/test-ride"
+            style="background: #FD4B17;color: #fff;"
+            target="_blank">Book a Free Test Ride</a>
+        </div>
+      </div>
+      <div>
+        <div style="padding: 0;">
+          <div
+            id="storepoint-container"
+            data-tags="us"
+            data-map-id="162f21804990ff"></div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 <div data-section-id="pf-2dc6" data-pf-type="Section" class="sc-fmciRz bheIgq pf-23_"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-24_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-25_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-26_"><style>
@@ -1284,3 +1148,15 @@ new Swiper('#section7', {
   ]
 }
 {% endschema %}
+
+<script>
+  (function() {
+    var a = document.createElement("script");
+    a.type = "text/javascript";
+    a.src = "https://cdn.storepoint.co/api/v1/js/162f21804990ff.js";
+    var b = document.getElementsByTagName("script")[0];
+    b.parentNode.insertBefore(a, b);
+  }());
+
+//
+</script>
