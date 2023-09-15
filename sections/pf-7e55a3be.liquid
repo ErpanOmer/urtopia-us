@@ -98,11 +98,20 @@
               </div>
             {% endunless %}
             <div class="options">
-                {% for option in product.options %}
-                    <div class="option" option={{option}}>
-                        <div class="u17DemiBold_v2 mb12">{{ option }} - <span class="u17Light_v2"></span></div>
-                        <div class="{{ option }} mb12"></div>
+                {% for option in product.options_with_values %}
+                  <div class="option" option={{option.name}} position="{{ option.position }}">
+                    <div class="u17DemiBold_v2 mb12">{{ option.name }} - <span class="u17Light_v2"></span></div>
+                    <div class="{{ option.name }} mb12">
+                      {% for value in option.values %}
+                        {% case option.name %}
+                        {% when "Style" %}
+                          <div attribute="{{ value }}" class="{{ value }}"></div>
+                        {% else %}
+                            <div attribute="{{ value }}" class="{{ value }}">{{ value }}</div>
+                        {% endcase %}                     
+                      {% endfor %}
                     </div>
+                  </div>
                 {% endfor %}
             </div>
             <div class="accessories">
@@ -1288,17 +1297,59 @@
   $('.top-fixed').hide()
   $('.toTop').hide()
 
+   // options 树状结构
+   const options_tree = []
+   // 可以通过value, 查找 option
+   const options_with_values = []
+   // vairiants 
+   const variants = []
+   let temp = null
+
+   {% for item in product.options_with_values %}
+        options_with_values.push({
+          name: '{{ item.name }}',
+          position: {{ item.position }},
+          values: [{%- for value in item.values -%}{%- if forloop.index != 1 -%},{%- endif -%}"{{value}}"{%- endfor -%}]
+        })
+   {% endfor %}
+
+   {% for variant in product.variants %}
+        if ({{ variant.available }} || global_config.chord_order_page_config.ignore_variants_available_false.includes({{ variant.id }})) {
+          temp = options_tree
+          {% for option in variant.options %}
+            if (!temp['{{ option }}']) {
+              temp['{{ option }}'] = {}
+            }
+        
+            temp = temp['{{ option }}']
+          {% endfor %}
+                
+          Object.assign(temp, {
+            id: '{{ variant.id }}',
+            title: '{{ variant.title }}',
+            price: '{{ variant.price }}',
+            compare_at_price: '{{ variant.compare_at_price }}',
+            inventory_quantity: '{{ variant.inventory_quantity }}',
+            available: {{ variant.available }}
+          })
+  
+          variants.push(temp)
+        }
+   {% endfor %}
+
+   console.log(options_with_values)
+   console.log(variants)
+   console.log(options_tree)
+
     const search = getSearchValues()
-    const variants = JSON.parse(JSON.stringify({{ product.variants | json }}))
     const size_map = {
         'High-Step': `Fit for 5’7’’~6’5’’`,
         'Step-Through': `Fit for 5’3’’~6’1’’`
     }
 
-    let current_variant_id = null
-    let current_variant = null
-    const frames = {}
-    const styles = {}
+    let current_variant_id = 0
+    let current_variant = {}
+    let current_variant_options = {}
     
     const leftSwiper = new Swiper(".product .left-swiper", {
         direction: 'vertical',
@@ -1324,33 +1375,41 @@
         },
       });
 
-    function findVariantOptions (frame, style) {
-        return variants.find(v => `${frame} / ${style}` === v.title)
-    }
-
     function findVariantFromId (id) {
         return variants.find(v => String(v.id) === String(id))
     }
 
-    function findAvailableVariant () {
-        return variants.find(v => v.available)
+    function getOptionNameFromValue(v) {
+      for (const option of options_with_values) {
+        for (const value of option.values) {
+          if (value === v) {
+            return option.name
+          }
+        }
+      }
     }
 
-    let current_frame = ''
-    let current_style = ''
-    function changeVariant (frame, style) {
-        if (current_frame !== frame) {
-            $(`.product .product-panel .Frame .active`).removeClass('active')
-            $(`.product .product-panel .Frame > div[attribute="${frame}"]`).addClass('active')
+    function asyncFn () {
+      const [fn, ...args] = Array.from(arguments)
+      window.requestAnimationFrame(() => fn(...args))
+    }
 
-            if (frame === 'High-Step') {
+    function getOptionNamesFromValues (options = []) {
+      const temp = {}
+
+      for (const option of options) {
+        temp[getOptionNameFromValue(option)] = option
+      }
+
+      return temp
+    }
+
+    function changeFrame (value) {
+      if (value === "High-Step") {
               $(`.product .product-panel .accessories .chord-accessories-1 .active`).click()
               $(`.product .product-panel .accessories .chord-accessories`).show()
               $(`.product .product-panel .accessories .chord-accessories-1`).hide()
-              $(`.product .product-panel .options > div[option="Frame"] .u17DemiBold_v2 .u17Light_v2`).text(`Chord - ${size_map[frame]}`)
-              $(`.product .product-panel .Style > div[attribute="Black"]`).show()
-
-
+              $(`.product .product-panel .options > div[option="Frame"] .u17DemiBold_v2 .u17Light_v2`).text(`Chord - ${size_map[value]}`)
               $(`.product .product-panel .sale`).show()
               $(`.product .product-panel .count-down`).show()
               $(`.product .product-panel .orderTestRideBtn .stages`).text('{{ product.price | minus: settings.chord_ebike_discount_price | divided_by: 24 | money_without_trailing_zeros }}')
@@ -1372,74 +1431,44 @@
                 margin: '12px 0 0',
                 color: 'var(--sale-order-page-text-color)'
               })
+      } else {
+            $(`.product .product-panel .accessories .chord-accessories .active`).click()
+            $(`.product .product-panel .accessories .chord-accessories`).hide()
+            $(`.product .product-panel .accessories .chord-accessories-1`).show()
+            $(`.product .product-panel .options > div[option="Frame"] .u17DemiBold_v2 .u17Light_v2`).text(`Chord X - ${size_map[value]}`)
 
-            } else {
-              $(`.product .product-panel .accessories .chord-accessories .active`).click()
-              $(`.product .product-panel .accessories .chord-accessories`).hide()
-              $(`.product .product-panel .accessories .chord-accessories-1`).show()
-              $(`.product .product-panel .options > div[option="Frame"] .u17DemiBold_v2 .u17Light_v2`).text(`Chord X - ${size_map[frame]}`)
-              $(`.product .product-panel .Style > div[attribute="Black"]`).hide()
+            $(`.product .product-panel .sale`).hide()
+            $(`.product .product-panel .count-down`).hide()
+            $(`.product .product-panel .orderTestRideBtn .stages`).text('{{ product.price | divided_by: 24 | money_without_trailing_zeros }}')
+            $('.top-fixed .centeral-content > div').html(`
+              <span class="u17Light_v2"><span class="u20DemiBold_v2 emphasize" style="font-weight: 600;">{{ product.price | money }}</span></span>
+              <span class="u14Light_v2">or as low as {{ product.price | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
+            `)
+            $('.bottom-fixed > div').html(`
+              <span class="u14Light_v2"><span class="u17DemiBold_v2 emphasize" style="font-weight: 600;">{{ product.price | money }}</span></span>
+              <span class="u14Light_v2">or as low as {{ product.price | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
+            `)
 
-              $(`.product .product-panel .sale`).hide()
-              $(`.product .product-panel .count-down`).hide()
-              $(`.product .product-panel .orderTestRideBtn .stages`).text('{{ product.price | divided_by: 24 | money_without_trailing_zeros }}')
-              $('.top-fixed .centeral-content > div').html(`
-                <span class="u17Light_v2"><span class="u20DemiBold_v2 emphasize" style="font-weight: 600;">{{ product.price | money }}</span></span>
-                <span class="u14Light_v2">or as low as {{ product.price | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
-              `)
-              $('.bottom-fixed > div').html(`
-                <span class="u14Light_v2"><span class="u17DemiBold_v2 emphasize" style="font-weight: 600;">{{ product.price | money }}</span></span>
-                <span class="u14Light_v2">or as low as {{ product.price | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
-              `)
-
-              $('.product .sale-tag').hide()
-              $('.product .product-price').attr('data-price', "")
-              $('.product .product-price').text('{{ product.price | money }}')
-              $('.product .product-price').css({
-                margin: '0 0 6px',
-                color: '#000'
-              })
-            }
+            $('.product .sale-tag').hide()
+            $('.product .product-price').attr('data-price', "")
+            $('.product .product-price').text('{{ product.price | money }}')
+            $('.product .product-price').css({
+              margin: '0 0 6px',
+              color: '#000'
+            })
+      }
 
             $(`.product .product-panel .accessories .items`).animate({
                 scrollLeft: 0
             }, 300)
-        }
+    }
 
-        if (current_style !== style) {
-            $(`.product .product-panel .Style .active`).removeClass('active')
-            $(`.product .product-panel .Style > div[attribute="${style}"]`).addClass('active')
-            $(`.product .product-panel .options > div[option="Style"] .u17DemiBold_v2 .u17Light_v2`).text(style)
-        }
+    function changeStyle (value) {
+        $(`.product .product-panel .options > div[option="Style"] .u17DemiBold_v2 .u17Light_v2`).text(value)
+    }
 
-
-        if (frame !== current_frame || style !== current_style) {
-            current_variant = findVariantOptions(frame, style)
-            current_variant_id = current_variant.id
-            current_frame = frame
-            current_style = style
-
-            if (frame === "Step-Through" && style === "Black") {
-                return changeVariant(frame, 'White')
-            }
-
-
-            history.replaceState(null, '', `${location.pathname}?variant=${current_variant_id}`);
-            $('.product .product-panel input[name="id"]').val(current_variant_id)
-            $('.product .delivery_time').html(global_config.chord_order_page_config.ebike_delivery_time[current_variant_id] || global_config.chord_order_page_config.ebike_default_delivery_time)
-
-            const btn =  $('.product .buttons .addToCartBtn')
-            if (current_variant.available) {
-                btn.find('span').text('Add to Cart')
-                btn.removeClass('disabled')
-              $('.product .buttons .orderTestRideBtn').show()
-            } else {
-                btn.find('span').text('Sold out')
-                btn.addClass('disabled')
-              $('.product .buttons .orderTestRideBtn').hide()
-            }
-
-            const swiper_arr = global_config.chord_order_page_config.product_images[frame][style].concat(global_config.chord_order_page_config.product_images[frame]['commonSwiper'])
+    function changeOther (options) {
+            const swiper_arr = global_config.chord_order_page_config.product_images[current_variant_options.Frame][current_variant_options.Style].concat(global_config.chord_order_page_config.product_images[current_variant_options.Frame]['commonSwiper'])
 
             $('.product .right-swiper .swiper-wrapper').html(swiper_arr.map((s, i) => {
                 const index = i % 6
@@ -1451,17 +1480,127 @@
             $('.product .left-swiper .swiper-wrapper').html(swiper_arr.map(s => `<div class="swiper-slide"><img src="${s}"></div>`).join(''))
             
             // update
-            setTimeout(() => {
+            asyncFn(() => {
                 rightSwiper.update()
                 rightSwiper.slideTo(0, 0)
                 
                 leftSwiper.update()
                 leftSwiper.slideTo(0, 0)
-            }, 0)
+            })
+
+            $('.product .product-panel input[name="id"]').val(current_variant_id)
+            $('.product .delivery_time').html(global_config.chord_order_page_config.ebike_delivery_time[current_variant_id] || global_config.chord_order_page_config.ebike_default_delivery_time)
+
+            const btn =  $('.product .buttons .addToCartBtn')
+            if (current_variant.available) {
+                btn.find('span').text('Add to Cart')
+                btn.removeClass('disabled')
+                $('.product .buttons .orderTestRideBtn').show()
+            } else {
+                btn.find('span').text('Sold out')
+                btn.addClass('disabled')
+                $('.product .buttons .orderTestRideBtn').hide()
+            }
+    }
+
+    const changeFns = {
+      Frame: changeFrame,
+      Style: changeStyle
+    }
+
+    function batchChange (options = [], position = 0) {
+      changeOther(options)
+
+      if (position === 0) {
+        for (let i = 0;i < options.length;i++) {
+          asyncFn(changeFns[getOptionNameFromValue(options[i])], options[i])
         }
 
-        console.log(current_variant)
+        return
+      }
+
+      const value = options[position - 1]
+      asyncFn(changeFns[getOptionNameFromValue(value)], value)
     }
+
+
+    function renderActiveOptions (options = []) {
+      for (const option of options) {
+        const elem = $(`.product .options .option div[attribute="${option}"]`)
+
+        elem.siblings().removeClass('active')
+        elem.addClass('active')
+      }
+  }
+
+  function renderOptionsTree (options = [], position = 0) {
+      let tree = options_tree
+
+      for (let i = 0;i < options.length;i++) {
+        // 一级选项 不需要显示隐藏
+        if (i === 0) {
+          tree = tree[options[i]]
+          continue
+        }
+
+        const option = getOptionNameFromValue(options[i])
+
+        $(`.product .options .${option} > div`).hide()
+
+        for (const tre in tree) {
+          if (tre === options[i]) {
+            tree = tree[tre]
+          }
+
+          $(`.product .options .${option} div[attribute="${tre}"]`).show()
+        }
+      }
+  }
+
+  function findAvailableVariant (options = []) {
+      for (let i = options.length - 1; i >0; i--) {
+        const title = options.slice(0, i).join(' / ')
+
+        for (const variant of variants) {
+          if (variant.title.includes(title)) {
+              return variant
+          }
+        }
+      }
+  }
+
+  const titleToOptions = t => t.split(' / ')
+  const optionsToTtitle = o => o.join(' / ')
+
+  function changeOptions (options = [], position = 0) {
+    const old_title = current_variant.title
+    const title = optionsToTtitle(options)
+
+    // 重复调用 退出
+    if (old_title === title) {
+      return
+    }
+
+    let find = variants.find(v => v.title === title)
+
+    // 如果找不到 此option， 重写进入进来
+    if (!find) {
+      find = findAvailableVariant(options)
+      return asyncFn(changeOptions, titleToOptions(find.title))
+    }
+
+    console.log('find', find)
+    current_variant = find
+    current_variant_options = getOptionNamesFromValues(options)
+    current_variant_id = find.id
+    history.replaceState(null, '', `${location.pathname}?variant=${current_variant_id}`);
+
+    renderOptionsTree(options, position)
+    renderActiveOptions(options)
+
+    // 最后批量修改业务
+    batchChange(options, position)
+  }
 
 
     function changeAddToCartText (parse, step = 0) {
@@ -1481,11 +1620,10 @@
       let find = findVariantFromId(variant_id)
 
       if (!find || !find.available) {
-        find = findAvailableVariant()
+        find = variants[0]
       }
 
-      // 如果默认 variant 也不可用，那晒显出能用的variant
-      changeVariant(find.option1, find.option2) 
+      asyncFn(changeOptions, titleToOptions(find.title))
     }
 
 
@@ -1571,30 +1709,16 @@
         }
   }
 
-    {% for variant in product.variants %}
-        frames[{{ variant.option1 | json }}] = 1
-        styles[{{ variant.option2 | json }}] = 1
-    {% endfor %}
-
-    console.log('variants', variants)
-
-    for (const frame of Object.keys(frames)) {
-        $('.product .product-panel .Frame').append(`<div attribute="${frame}" class="${frame}">${frame}</div>`)
-    }
-
-    for (const style of Object.keys(styles)) {
-        $('.product .product-panel .Style').append(`<div attribute="${style}" class="${style}"></div>`)
-    }
-
 
     $('.product-panel .options .option >div:not(.u17DemiBold_v2) > div').on('click',e => {
-        const t = $(e.target)
+        const target = $(e.target)
+        const options = titleToOptions(current_variant.title)
+        const value = target.closest('div[attribute]').attr('attribute')
+        const position = Number(target.closest('.option').attr('position'))
 
-        if ($(e.target).parent().hasClass('Frame')) {
-            changeVariant(t.attr('attribute'), current_variant.option2)
-        } else {
-            changeVariant(current_variant.option1, t.attr('attribute'))
-        }
+        options[position - 1] = value
+
+        changeOptions(options, position)
     })
 
     $('.accessories .navigate > div').on('click', e => {
@@ -1721,8 +1845,6 @@ new Swiper('#section3', {
 </script>
 
 <script>
-  
-console.log({{collections | json }})
 new Swiper('#section5', {    
         spaceBetween: 15,
         slidesPerView: isMobile ? 1 : 4,
