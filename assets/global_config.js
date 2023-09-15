@@ -90,7 +90,7 @@ const global_config = {
         // 产品图下面的media模块, 根据产品图 循环轮播 
         product_media_images: [
             {
-                text: `“The AI-powered co-pilot adds a new level of intelligence and interactivity”`,
+                text: `“The AI-powered co-pilot adds a new level<br>of intelligence and interactivity”`,
                 img: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230913-173450.png?v=1694597715"
             },
             {
@@ -130,7 +130,7 @@ const global_config = {
             //lb l
             43556896014584: 'Ships within <span>5 business days</span> from L.A. warehouse.',
             //pb s
-            43556899684600: 'Ships between <span>September 15-30, 2023 </span>from L.A. warehouse.',
+            43556899684600: 'Ships within <span>5 business days</span> from L.A. warehouse.',
             //pw s
             43556899750136: 'Ships between <span>October 15-30, 2023 </span>from L.A. warehouse.',
             //pw l
