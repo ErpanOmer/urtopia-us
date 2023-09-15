@@ -37,7 +37,7 @@
     position: relative;
     color: #fff;
     overflow-x: hidden;
-    background-color: rgb(231, 231, 231);
+    background-color: var(--sale-order-page-text-color);
 
     .centeral-content {
         display: flex;
@@ -74,7 +74,6 @@
         }
 
         .summer-sale {
-            background-color: var(--sale-color1);
             background-image: var(--sale-banner-background-image-pc);
             color: var(--sale-banner-text-color);
 
