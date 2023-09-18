@@ -1296,13 +1296,6 @@
   $('.bottom-fixed').hide()
   $('.top-fixed').hide()
   $('.toTop').hide()
-
-  const size_map = {
-      'High-Step': `Fit for 5’7’’~6’5’’`,
-      'Step-Through': `Fit for 5’3’’~6’1’’`
-  }
- 
-
     
     const leftSwiper = new Swiper(".product .left-swiper", {
         direction: 'vertical',
@@ -1334,7 +1327,7 @@
               $(`.product .product-panel .accessories .chord-accessories-1 .active`).click()
               $(`.product .product-panel .accessories .chord-accessories`).show()
               $(`.product .product-panel .accessories .chord-accessories-1`).hide()
-              $(`.product .product-panel .options > div[option="Frame"] .u17DemiBold_v2 .u17Light_v2`).text(`Chord - ${size_map[e.value]}`)
+              $(`.product .product-panel .options > div[option="Frame"] .u17DemiBold_v2 .u17Light_v2`).text(`Chord - ${global_config.chord_order_page_config.size_map[e.value]}`)
               $(`.product .product-panel .sale`).show()
               $(`.product .product-panel .count-down`).show()
               $(`.product .product-panel .orderTestRideBtn .stages`).text('{{ product.price | minus: settings.chord_ebike_discount_price | divided_by: 24 | money_without_trailing_zeros }}')
@@ -1360,7 +1353,7 @@
             $(`.product .product-panel .accessories .chord-accessories .active`).click()
             $(`.product .product-panel .accessories .chord-accessories`).hide()
             $(`.product .product-panel .accessories .chord-accessories-1`).show()
-            $(`.product .product-panel .options > div[option="Frame"] .u17DemiBold_v2 .u17Light_v2`).text(`Chord X - ${size_map[e.value]}`)
+            $(`.product .product-panel .options > div[option="Frame"] .u17DemiBold_v2 .u17Light_v2`).text(`Chord X - ${global_config.chord_order_page_config.size_map[e.value]}`)
 
             $(`.product .product-panel .sale`).hide()
             $(`.product .product-panel .count-down`).hide()
@@ -1414,7 +1407,6 @@
                 leftSwiper.slideTo(0, 0)
             })
 
-            $('.product .product-panel input[name="id"]').val(current_variant_id)
             $('.product .delivery_time').html(global_config.chord_order_page_config.ebike_delivery_time[current_variant_id] || global_config.chord_order_page_config.ebike_default_delivery_time)
 
             const btn =  $('.product .buttons .addToCartBtn')

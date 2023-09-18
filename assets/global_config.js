@@ -36,6 +36,13 @@ const global_config = {
     carbon_order_page_config: {
         // carbon 车默认显示 variant_id, 只有 url 上的 variant 参数为空的时候生效
         default_variant: 43556895916280,
+        // variant 为 available:false 的情况下 也要强制显示 
+        ignore_variants_available_false: [],
+        size_map: {
+            S: `Fit for 5’3’’~5’9’’ Inseam 30’’`,
+            M: `Fit for 5’7’’~6’1’’ Inseam 31’’`,
+            L: `Fit for 5’11’’~6’5’’ Inseam 33’’`
+        },
         // 产品系列图
         product_images: {
             "Carbon 1 · 250W · Carbon Belt": {
@@ -162,6 +169,10 @@ const global_config = {
         default_variant: 43694976663800,
         // variant 为 available:false 的情况下 也要强制显示 
         ignore_variants_available_false: [],
+        size_map: {
+            'High-Step': `Fit for 5’7’’~6’5’’`,
+            'Step-Through': `Fit for 5’3’’~6’1’’`
+        },
         // 产品图
         product_images: {
             "High-Step": {

@@ -118,13 +118,7 @@
     function renderOptionsTree (options = [], position = 0) {
         let tree = options_tree
   
-        for (let i = 0;i < options.length;i++) {
-          // 一级选项 不需要显示隐藏
-          if (i === 0) {
-            tree = tree[options[i]]
-            continue
-          }
-  
+        for (let i = 0;i < options.length;i++) {  
           const option = getOptionNameFromValue(options[i])
   
           $(`.product .options .${option} > div`).hide()
@@ -172,7 +166,8 @@
     current_variant = find
     current_variant_options = getOptionNamesFromValues(options)
     current_variant_id = find.id
-    history.replaceState(null, '', `${location.pathname}?variant=${current_variant_id}`);
+    history.replaceState(null, '', `${location.pathname}?variant=${current_variant_id}`)
+    $('.product .product-panel input[name="id"]').val(current_variant_id)
 
     asyncFn(renderOptionsTree, options)
     asyncFn(renderActiveOptions, options)

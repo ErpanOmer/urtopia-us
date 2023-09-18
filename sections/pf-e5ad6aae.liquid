@@ -16,14 +16,6 @@
       margin-top: 100px;
     }
 
-    .product .options [option="Style"] {
-      display: none;
-    }
-
-    .product .centeral-content .product-panel .options .Model div[attribute*="350W"] {
-      display: none;
-    }
-
     .product .centeral-content .product-panel .options .Model>div+div {
       margin: 0;
     }
@@ -126,20 +118,34 @@
 					</div>
 					<div class="u30DemiBold_v2 mb6" data-price={{ product.compare_at_price | money }}>{{ product.price | money }}</div>
 				</div>
-                <ul class="emphasize-list u17Medium_v2">
-                    <li><span>●</span><span >Include sample bikes with the same quality and appearance as new bikes</span></li>
-                    <li><span>●</span><span>2 year warranty</span></li>
-                    <li><span>●</span><span>Not avaliable for leasing</span></li>
-                    <li><span>●</span><span>Model and Style is</span></li>
-                    <li><span>●</span><span>Carbon1-Carbon Belt-Sirius</span></li>
-                </ul>
+          <ul class="emphasize-list u17Medium_v2">
+            <li><span>●</span><span>Include sample bikes with the same quality and appearance as new bikes</span></li>
+            <li><span>●</span><span>2-year warranty</span></li>
+            <li><span>●</span><span>14-Day Returns</span></li>
+            <li><span>●</span><span>Free shipping </span></li>
+          </ul>
 				<div class="options">
-					{% for option in product.options %}
-						<div class="option" option={{option}}>
-							<div class="u17DemiBold_v2 mb12">{{ option }} - <span class="u17Light_v2"></span></div>
-							<div class="{{ option }} mb12"></div>
-						</div>
-					{% endfor %}
+          {% for option in product.options_with_values %}
+              <div class="option" option={{option.name}} position="{{ option.position }}">
+                <div class="u17DemiBold_v2 mb12">{{ option.name }} - <span class="u17Light_v2"></span></div>
+                <div class="{{ option.name }} mb12">
+                  {% for value in option.values %}
+                    {% case option.name %}
+                    {% when "Model" %}
+                        <div data-sale="{{ "order_page.sale" | t }}" attribute="{{ value }}" class="{{ value }}">{% assign values = value | split: " · " %}
+                          {% for value in values %}
+                            <span>{{ value }}</span>
+                          {% endfor %}
+                        </div>
+                    {% when "Style" %}
+                      <div attribute="{{ value }}" class="{{ value }}"></div>
+                    {% else %}
+                        <div attribute="{{ value }}" class="{{ value }}">{{ value }}</div>
+                    {% endcase %}                     
+                  {% endfor %}
+                </div>
+              </div>
+          {% endfor %}
 				</div>
 				<div class="accessories">
 					<div class="u17DemiBold_v2 mb12">Accessories</div>
@@ -728,37 +734,11 @@
 </div>
 
 <script>
-    // 默认隐藏
-    $('.bottom-fixed').hide()
-    $('.top-fixed').hide()
-    $('.toTop').hide()
-  	$('.product .error-tip').hide()
-
-  const search = getSearchValues()
-  const variants = []
-
-  let temp = null
-    {% for variant in product.variants %}
-        {% if variant.available %}
-            temp = JSON.parse(JSON.stringify({{ variant | json }}))
-            temp.inventory_quantity = {{ variant.inventory_quantity }}
-            
-            variants.push(temp)
-        {% endif %}
-    {% endfor %}
-
-
-  const size_map = {
-      S: `Fit for 5’3’’~5’9’’ Inseam 30’’`,
-      M: `Fit for 5’7’’~6’1’’ Inseam 31’’`,
-      L: `Fit for 5’11’’~6’5’’ Inseam 33’’`
-  }
-
-  let current_variant_id = null
-  let current_variant = null
-  const styles = {}
-  const sizes = {}
-  const models = {}
+  // 默认隐藏
+  $('.bottom-fixed').hide()
+  $('.top-fixed').hide()
+  $('.toTop').hide()
+  $('.product .error-tip').hide()
   
   const leftSwiper = new Swiper(".product .left-swiper", {
       direction: 'vertical',
@@ -784,74 +764,22 @@
       },
     });
 
-  function findVariantOptions (model, size, style) {
-      return variants.find(v => `${model} / ${size} / ${style}` === v.title)
-  }
 
-  function findVariantFromId (id) {
-      return variants.find(v => String(v.id) === String(id))
-  }
+  document.addEventListener('onChangeModel', e => {
+        $(`.product .product-panel .options > div[option="Model"] .u17DemiBold_v2 .u17Light_v2`).text(`Urtopia Carbon ${e.value.includes('350W') ? '1s' : '1'}`)
+  })
 
-  function findAvailableVariant () {
-  const args = Array.from(arguments)
-  if (!args.length) {
-    return variants.find(v => v.available)
-  }
+  document.addEventListener('onChangeStyle', e => {
+        $(`.product .product-panel .options > div[option="Style"] .u17DemiBold_v2 .u17Light_v2`).text(e.value)
+  })
 
-  if (args.length === 1) {
-    for (const size in sizes) {
-      for (const style in styles) {
-        const find = findVariantOptions(args[0], size, style)
+  document.addEventListener('onChangeSize', e => {
+        $(`.product .product-panel .options > div[option="Size"] .u17DemiBold_v2 .u17Light_v2`).text(global_config.carbon_order_page_config.size_map[e.value])
+  })
 
-        if (find && find.available) {
-          return find
-        }
-      }
-    }
-  }
-
-  if (args.length === 2) {
-    for (const style in styles) {
-      const find = findVariantOptions(args[0], args[1], style)
-
-      if (find && find.available) {
-        return find
-      }
-    }
-  }
-
-  return null
-  }
-
-  function changeVariant (model, size, style) {
-      if (model) {
-          $(`.product .product-panel .Model .active`).removeClass('active')
-          $(`.product .product-panel .Model > div[attribute="${model}"]`).addClass('active')
-          $(`.product .product-panel .options > div[option="Model"] .u17DemiBold_v2 .u17Light_v2`).text(`Urtopia Carbon ${model.includes('350W') ? '1s' : '1'}`)
-
-          if (model.includes('350W')) {
-            $('.product .sale').show()
-            $('.product .sale_acc').show()
-            $('.product .count-down').show()
-
-            $(`.product .product-panel .orderTestRideBtn .stages`).text('{{ product.price | minus: 0 | divided_by: 24 | money_without_trailing_zeros }}')
-          } else {
-            $('.product .sale').hide()
-            $('.product .sale_acc').hide()
-            $('.product .count-down').hide()
-
-            $(`.product .product-panel .orderTestRideBtn .stages`).text('{{ product.price | divided_by: 24 | money_without_trailing_zeros }}')
-          }
-      }
-
-      if (style) {
-          $(`.product .product-panel .Style .active`).removeClass('active')
-          $(`.product .product-panel .Style > div[attribute="${style}"]`).addClass('active')
-          $(`.product .product-panel .options > div[option="Style"] .u17DemiBold_v2 .u17Light_v2`).text(style)
-
+  document.addEventListener('onChangeOptions', e => {
           let swiper_arr = []
-
-          swiper_arr = swiper_arr.concat(global_config.carbon_order_page_config.product_images[model][style], global_config.carbon_order_page_config.product_images[model]['commonSwiper'])
+          swiper_arr = swiper_arr.concat(global_config.carbon_order_page_config.product_images[e.value.Model][e.value.Style], global_config.carbon_order_page_config.product_images[e.value.Model]['commonSwiper'])
 
           $('.product .right-swiper .swiper-wrapper').html(swiper_arr.map((s, i) => {
               const index = i % 5
@@ -874,73 +802,25 @@
               leftSwiper.update()
               leftSwiper.slideTo(0, 0)
           }, 0)
-      }
-
-      if (size) {
-          $(`.product .product-panel .Size .active`).removeClass('active')
-          $(`.product .product-panel .Size > div[attribute="${size}"]`).addClass('active')
-          $(`.product .product-panel .options > div[option="Size"] .u17DemiBold_v2 .u17Light_v2`).text(size_map[size])
-      }
 
 
-      if (model && style && size) {
-    if (model.includes('350W')) {
-      $(`.product .product-panel .options .option .Size div[attribute="S"]`).show();
-      $(`.product .product-panel .options .option .Style div[attribute="Vanilla"]`).show();
+      $('.product .delivery_time').html(global_config.carbon_order_page_config.ebike_delivery_time[current_variant_id] || global_config.carbon_order_page_config.ebike_default_delivery_time)
 
-      if (size === 'S') {
-        $(`.product .product-panel .options .option .Style div[attribute="Sirius"]`).hide();
-        $(`.product .product-panel .options .option .Style div[attribute="Lyra"]`).hide();
-
-        if (style === 'Sirius' || style === 'Lyra') {
-          const f = findAvailableVariant(model, size)
-          return changeVariant(f.option1, f.option2, f.option3)
-        }					
+      const btn =  $('.product .buttons .addToCartBtn')
+      if (current_variant.available) {
+          btn.find('span').text('Add to Cart')
+          btn.removeClass('disabled')
+          $('.product .buttons .orderTestRideBtn').show()
+          $('.product .buttons div[onclick="buynow(this)"]').show()
       } else {
-        $(`.product .product-panel .options .option .Style div[attribute="Sirius"]`).show();
-        $(`.product .product-panel .options .option .Style div[attribute="Lyra"]`).show();
-      }
-    } else {
-      $(`.product .product-panel .options .option .Size div[attribute="S"]`).hide();
-      $(`.product .product-panel .options .option .Style div[attribute="Vanilla"]`).hide();
-      $(`.product .product-panel .options .option .Style div[attribute="Sirius"]`).show();
-      $(`.product .product-panel .options .option .Style div[attribute="Lyra"]`).show();
-
-      if (style === 'Vanilla' || size === 'S') {
-        const f = findAvailableVariant(model)
-        return changeVariant(f.option1, f.option2, f.option3)
-      }
-    }
-
-    
-
-
-
-          current_variant = findVariantOptions(model, size, style)
-          current_variant_id = current_variant.id
-    
-
-
-          history.replaceState(null, '', `${location.pathname}?variant=${current_variant_id}`);
-          $('.product .product-panel input[name="id"]').val(current_variant_id)
-          $('.product .delivery_time').html(global_config.carbon_order_page_config.ebike_delivery_time[current_variant_id] || global_config.carbon_order_page_config.ebike_default_delivery_time)
-
-          const btn =  $('.product .buttons .addToCartBtn')
-          if (current_variant.available) {
-              btn.find('span').text('Add to Cart')
-              btn.removeClass('disabled')
-              $('.product .buttons .orderTestRideBtn').show()
-          } else {
-              btn.find('span').text('Sold out')
-              btn.addClass('disabled')
-              $('.product .buttons .orderTestRideBtn').hide()
-          }
+          btn.find('span').text('Sold out')
+          btn.addClass('disabled')
+          $('.product .buttons .orderTestRideBtn').hide()
+          $('.product .buttons div[onclick="buynow(this)"]').hide()
       }
 
-
-  $('.product .error-tip').hide()
-      console.log(current_variant)
-  }
+      $('.product .error-tip').hide()
+  })
 
 
   function changeAddToCartText (parse, step = 0) {
@@ -1011,7 +891,7 @@
   // loading
   t.find('span').html(loading)
 
-  fetchBuried('websiteclick', `carbon-order-page`, { button: type, action_type: sessionStorage.carbon_one_a_b_test_flag }, true)
+  fetchBuried('websiteclick', `outlet-order-page`, { button: type, action_type: sessionStorage.carbon_one_a_b_test_flag }, true)
   window.sessionStorage.clicked_klarna_checkout_button = 'clicked_klarna_checkout_button'
 
   if (sessionStorage.carbon_one_a_b_test_flag === 'B') {
@@ -1083,67 +963,12 @@ function addAllToCart(parse, show = false) {
       $('.product .error-tip').show()
     }).finally(() => {
       adding = false
-      !show && fetchBuried('websiteclick', `carbon-order-page`, { button: 'ATC' })
+      !show && fetchBuried('websiteclick', `outlet-order-page`, { button: 'ATC' })
 
       setTimeout(() => $('.product .error-tip').hide(), 10000)
     })
   }
 }
-
-function pageInit() {
-    const variant_id = search.variant || global_config.carbon_order_page_config.default_variant
-    let find = findVariantFromId(43987465601272)
-
-    if (!find || !find.available) {
-      find = findAvailableVariant()
-    }
-
-    // 如果默认 variant 也不可用，那晒显出能用的variant
-    changeVariant(find.option1, find.option2, find.option3) 
-}
-
-  {% for variant in product.variants %}
-      {% if variant.available %}
-        models[{{ variant.option1 | json }}] = 1
-        styles[{{ variant.option3 | json }}] = 1
-        sizes[{{ variant.option2 | json }}] = 1
-      {% endif %}
-  {% endfor %}
-
-  console.log('variants', variants)
-
-  for (const model of Object.keys(models)) {
-      $('.product .product-panel .Model').append(`<div attribute="${model}" class="${model}">${model.split(' · ').map(m => `<span>${m}</span>`).join('')}</div>`)
-  }
-
-  for (const style of Object.keys(styles)) {
-  if (style === 'Black') {
-    continue
-  }
-
-      $('.product .product-panel .Style').append(`<div attribute="${style}" class="${style}"></div>`)
-  }
-
-  for (const size of Object.keys(sizes)) {
-      $('.product .product-panel .Size').append(`<div attribute="${size}" class="${size} u17Light_v2">${size}</div>`)
-  }
-
-
-  $('.product-panel .options .option >div:not(.u17DemiBold_v2) > div').on('click',e => {
-      const t = $(e.target).closest('[attribute]')
-      const option = t.closest('.option').attr('option')
-
-
-      if (option === 'Model') {
-          changeVariant(t.attr('attribute'), current_variant.option2, current_variant.option3)
-      } else if (option === 'Size') {
-          changeVariant(current_variant.option1, t.attr('attribute'), current_variant.option3)
-      } else {
-          changeVariant(current_variant.option1, current_variant.option2, t.attr('attribute'))
-      }
-  })
-
-
 
   $('.product .product-panel .accessories .navigate > div').on('click', e => {
       const items = $('.product .product-panel .accessories .items')
@@ -1232,12 +1057,8 @@ function pageInit() {
       top2 > (h * 2) ? $('.toTop').show() : $('.toTop').hide()
 
   }, 300, 100))
-
-
-
-// 初始化页面
-pageInit()
 </script>
+{% render 'product-options', config_name: 'chord_order_page_config' %}
 
 <script>
 				document.body.clientWidth < 768 && new Swiper ('.mediaaaaa', {    
