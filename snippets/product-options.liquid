@@ -1,0 +1,210 @@
+<script>
+    const search = getSearchValues()
+    let current_variant_id = 0
+    let current_variant = {}
+    let current_variant_options = {}
+   // options 树状结构
+   const options_tree = []
+   // 可以通过value, 查找 option
+   const options_with_values = []
+   // vairiants 
+   const variants = []
+   // events
+   const events = {
+      onChangeOptions: new Event("onChangeOptions")
+   }
+
+   let temp = null
+
+   {% for item in product.options_with_values %}
+        options_with_values.push({
+          name: '{{ item.name }}',
+          position: {{ item.position }},
+          values: [{%- for value in item.values -%}{%- if forloop.index != 1 -%},{%- endif -%}"{{value}}"{%- endfor -%}]
+        })
+
+        events["{{ item.name }}"] = new Event("onChange{{ item.name }}")
+   {% endfor %}
+
+
+   {% for variant in product.variants %}
+        if ({{ variant.available }} || global_config.{{ config_name }}.ignore_variants_available_false.includes({{ variant.id }})) {
+          temp = options_tree
+          {% for option in variant.options %}
+            if (!temp['{{ option }}']) {
+              temp['{{ option }}'] = {}
+            }
+        
+            temp = temp['{{ option }}']
+          {% endfor %}
+                
+          Object.assign(temp, {
+            id: '{{ variant.id }}',
+            title: '{{ variant.title }}',
+            price: '{{ variant.price }}',
+            compare_at_price: '{{ variant.compare_at_price }}',
+            inventory_quantity: '{{ variant.inventory_quantity }}',
+            available: {{ variant.available }}
+          })
+  
+          variants.push(temp)
+        }
+   {% endfor %}
+
+   const titleToOptions = t => t.split(' / ')
+   const optionsToTtitle = o => o.join(' / ')
+
+   function asyncFn () {
+      const [fn, ...args] = Array.from(arguments)
+      window.requestAnimationFrame(() => fn(...args))
+    }
+
+    function findVariantFromId (id) {
+        return variants.find(v => String(v.id) === String(id))
+    }
+
+    function getOptionNameFromValue(v) {
+      for (const option of options_with_values) {
+        for (const value of option.values) {
+          if (value === v) {
+            return option.name
+          }
+        }
+      }
+    }
+
+    function getOptionNamesFromValues (options = []) {
+      const temp = {}
+
+      for (const option of options) {
+        temp[getOptionNameFromValue(option)] = option
+      }
+
+      return temp
+    }
+
+    function batchChange (options = [], position = 0) {
+      events.onChangeOptions.value = Object.assign({}, current_variant, current_variant_options)
+      document.dispatchEvent(events.onChangeOptions)
+
+      if (position === 0) {
+        for (const option of options) {
+          const event = events[getOptionNameFromValue(option)]
+          event.value = option
+
+          // dispatchEvent
+          document.dispatchEvent(event)
+        }
+
+        return
+      }
+
+      const value = options[position - 1]
+      const event = events[getOptionNameFromValue(value)]
+      event.value = value
+      // dispatchEvent
+      document.dispatchEvent(event)
+    }
+
+    function renderActiveOptions (options = []) {
+        for (const option of options) {
+          const elem = $(`.product .options .option div[attribute="${option}"]`)
+  
+          elem.siblings().removeClass('active')
+          elem.addClass('active')
+        }
+    }
+  
+    function renderOptionsTree (options = [], position = 0) {
+        let tree = options_tree
+  
+        for (let i = 0;i < options.length;i++) {
+          // 一级选项 不需要显示隐藏
+          if (i === 0) {
+            tree = tree[options[i]]
+            continue
+          }
+  
+          const option = getOptionNameFromValue(options[i])
+  
+          $(`.product .options .${option} > div`).hide()
+
+          for (const tre of Object.keys(tree)) {
+            if (tre === options[i]) {
+              tree = tree[tre]
+            }
+  
+            $(`.product .options .${option} div[attribute="${tre}"]`).show()
+          }
+        }
+    }
+  
+    function findAvailableVariant (options = []) {
+        for (let i = options.length - 1; i >0; i--) {
+          const title = options.slice(0, i).join(' / ')
+  
+          for (const variant of variants) {
+            if (variant.title.includes(title)) {
+                return variant
+            }
+          }
+        }
+    }
+
+    function changeOptions (options = [], position = 0) {
+    const old_title = current_variant.title
+    const title = optionsToTtitle(options)
+
+    // 重复调用 退出
+    if (old_title === title) {
+      return
+    }
+
+    let find = variants.find(v => v.title === title)
+
+    // 如果找不到 此option， 重写进入进来
+    if (!find) {
+      find = findAvailableVariant(options)
+      return asyncFn(changeOptions, titleToOptions(find.title))
+    }
+
+    console.log('find', find)
+    current_variant = find
+    current_variant_options = getOptionNamesFromValues(options)
+    current_variant_id = find.id
+    history.replaceState(null, '', `${location.pathname}?variant=${current_variant_id}`);
+
+    asyncFn(renderOptionsTree, options)
+    asyncFn(renderActiveOptions, options)
+    asyncFn(batchChange, options, position)
+  }
+
+  $('.product-panel .options .option >div:not(.u17DemiBold_v2) > div').on('click',e => {
+    const target = $(e.target)
+    const options = titleToOptions(current_variant.title)
+    const value = target.closest('div[attribute]').attr('attribute')
+    const position = Number(target.closest('.option').attr('position'))
+
+    options[position - 1] = value
+
+    asyncFn(changeOptions, options, position)
+  })
+
+  function pageInit() {
+      const variant_id = search.variant || global_config.{{ config_name }}.default_variant
+      let find = findVariantFromId(variant_id)
+
+      if (!find || !find.available) {
+        find = variants[0]
+      }
+
+      asyncFn(changeOptions, titleToOptions(find.title))
+    }
+
+   console.log(options_with_values)
+   console.log(variants)
+   console.log(options_tree)
+
+    // 页面初始化
+    pageInit()
+</script>
