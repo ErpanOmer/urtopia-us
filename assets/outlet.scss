@@ -343,38 +343,33 @@
     }
 }
 
-.ebikes {
-    margin-bottom: 120px;
+
+#bike {
+    margin-bottom: 120px !important;
 
     @media (max-width: 767px) {
-        .centeral-content {
-            padding: 0 4vw;
+        padding: 0 4vw;
+        
+        .swiper-scrollbar {
+            display: none;
         }
-
-        #bike {
-            width: unset;
-
-            .swiper-scrollbar {
-                display: none;
+    
+        .swiper-wrapper {
+            flex-direction: column;
+        }
+    
+        .swiper-slide {
+            img {
+                margin: 4vw 0;
             }
-
-            .swiper-wrapper {
-                flex-direction: column;
+    
+            .size {
+                margin-bottom: 4vw;
             }
-
-            .swiper-slide {
-                img {
-                    margin: 4vw 0;
-                }
-
-                .size {
-                    margin-bottom: 4vw;
-                }
-            }
-
-            .swiper-slide + .swiper-slide {
-                margin-top: 16vw;
-            }
+        }
+    
+        .swiper-slide + .swiper-slide {
+            margin-top: 16vw;
         }
     }
 }

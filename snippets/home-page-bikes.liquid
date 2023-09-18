@@ -1,0 +1,386 @@
+<style>
+    #bike {
+      max-width: 1280px;
+      /* background-color: #F7F8FA; */
+      margin: auto;
+        --swiper-theme-color: #ff6600;/* 设置Swiper风格 */
+        --swiper-navigation-color: #fff;/* 单独设置按钮颜色 */
+        --swiper-navigation-size: 30px;/* 设置按钮大小 */
+        position: relative;
+        overflow-x: hidden;
+    }
+  
+    #bike .swiper-slide {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      padding: 5px 0;
+      box-sizing: border-box;
+    }
+  
+    #bike .swiper-slide .name {
+      font: normal normal 600 24px/27px urbane;
+    }
+  
+    #bike .swiper-slide .info {
+      font: normal normal 400 14px/14px urbane;
+      color: #a1a1a1;
+      margin-top: 10px;
+    }
+  
+    #bike .swiper-slide .new {
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-color: #263B55;
+      padding: 10px 20px;
+      font: normal normal 600 14px/14px urbane;
+      border-radius: 0px 20px 20px 0px;
+      background-image: linear-gradient(to bottom, #2E26EE, #2A60F4);
+    }
+    #bike .swiper-slide .big-new {
+      border-radius: 0px 50px 50px 0px;
+      line-height: 21px;
+    }
+    #bike .swiper-slide img {
+      width: 100%;
+      margin: 40px 0 30px;
+      cursor: pointer;
+    }
+    #bike .swiper-slide .dots-and-price-and-size {
+      display: flex;
+      flex-direction: column;
+    }
+    #bike .swiper-slide .dots-and-price {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  
+    #bike .swiper-slide .dots {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    #bike .swiper-slide .dots > div {
+      width: 20px;
+      height: 20px;
+      margin: 10px 15px 10px 0;
+      border-radius: 50%;
+      cursor: pointer;
+       box-sizing: content-box;
+    }
+  
+    #bike .swiper-slide .dots > div::after {
+      content: "";
+      display: inline-block;
+      height: 16px;
+      margin: 2px;
+      width: 16px;
+      border-radius: 100%;
+    }
+    
+    
+    #bike .swiper-slide .dots > div[yellow] {
+      background-color: #fbcf40;
+    }
+  
+    #bike .swiper-slide .dots .active[yellow] {
+      background-color: transparent;
+      border: 2px solid #666;
+    }
+  
+    #bike .swiper-slide .dots .active[yellow]::after  {
+      background-color: #fbcf40;
+    }
+  
+    #bike .swiper-slide .dots > div[black] {
+      background-color: #000;
+    }
+  
+    #bike .swiper-slide .dots .active[black] {
+      background-color: transparent;
+      border: 2px solid #666;
+    }
+  
+    #bike .swiper-slide .dots .active[black]::after  {
+      background-color: #000;
+    }
+  
+    #bike .swiper-slide .dots > div[white] {
+      background-color: #ddd;
+    }
+  
+    #bike .swiper-slide .dots .active[white] {
+      background-color: transparent;
+      border: 2px solid #666;
+    }
+  
+    #bike .swiper-slide .dots .active[white]::after  {
+      background-color: #ddd;
+    }
+  
+    #bike .swiper-slide .dots > div[orange] {
+      background-color: #FD4B17;
+    }
+  
+    #bike .swiper-slide .dots .active[orange] {
+      background-color: transparent;
+      border: 2px solid #666;
+    }
+  
+    #bike .swiper-slide .dots .active[orange]::after  {
+      background-color: #FD4B17;
+    }
+  
+    #bike .swiper-slide .dots > div[gray] {
+      background-color: #919191;
+    }
+  
+    #bike .swiper-slide .dots .active[gray] {
+      background-color: transparent;
+      border: 2px solid #666;
+    }
+  
+    #bike .swiper-slide .dots .active[gray]::after  {
+      background-color: #919191;
+    }
+  
+    #bike .swiper-slide .dots > div[peach] {
+      background-color: #F0EEDF;
+    }
+  
+    #bike .swiper-slide .dots .active[peach] {
+      background-color: transparent;
+      border: 2px solid #F0EEDF;
+    }
+  
+    #bike .swiper-slide .dots .active[peach]::after  {
+      background-color: #F0EEDF;
+    }
+  
+    #bike .swiper-slide .size {
+      font: normal normal 500 20px/36px urbane;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+  
+    #bike .swiper-slide .u24DemiBold_v2 {
+      margin-left: 30px;
+      position: relative;
+    }
+  
+    #bike .swiper-slide .u24DemiBold_v2::after {
+      content: attr(data-price);
+      display: inline-block;
+      font-size: 16px;
+      font-weight: 300;
+      text-decoration: line-through;
+      transform: translate(-5%, -40%);
+    }
+  
+  
+    #bike .swiper-button-prev,
+    #bike .swiper-button-next {
+      background-color: #000;
+      opacity: 0.5;
+      border-radius: 50%;
+      height: 30px;
+      width: 30px;
+      top: 35%;
+    }
+  
+    #bike .swiper-button-prev::after,
+    #bike .swiper-button-next::after {
+      font-size: 14px;
+    }
+  
+    #bike .swiper-button-prev.swiper-button-disabled,
+    #bike .swiper-button-next.swiper-button-disabled {
+      opacity: 0.2;
+    }
+    
+  </style>
+  
+  <style>
+  @media (max-width: 767px) {
+      #bike {
+          width: 100vw;
+      }
+  
+      #bike .swiper-slide {
+        padding: 5px 20px 0;
+      }
+  
+      #bike .swiper-slide .new {
+        font-weight: 500;
+        padding: 10px 15px;
+    }
+  
+      #bike .swiper-slide img {
+          margin: 40px 0 15px;
+      }
+  
+      #bike .swiper-button-prev,
+      #bike .swiper-button-next {
+          display: none;
+      }
+  
+      #bike .swiper-scrollbar {
+          height: 2px;
+          position: static;
+          margin: 75px auto 0;
+          width: calc(100vw - 100px);
+      }
+  
+      #bike .swiper-slide .u24DemiBold_v2 {
+        margin-left: 15px;
+      }
+  }
+  
+  
+  @media (min-width: 768px) {
+      #bike .swiper-scrollbar {
+          display: none;
+      }
+  }
+  </style>
+
+<link rel="preload" href="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18151_2x_702ec45e-0fe8-49ed-865a-df341d3033d7.png?v=1677640124" as="image">
+<link rel="preload" href="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18138_2x_de02f431-3e7d-48c0-b887-85eda46c2421.png?v=1677640174" as="image">
+<link rel="preload" href="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18150_2x_63ea456b-69c1-4d96-988f-efa931148bc1.png?v=1677640442" as="image">
+<link rel="preload" href="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18139_2x_ee2cf1ae-8693-42a3-ab99-d53ea78e2802.png?v=1677640511" as="image">
+<link rel="preload" href="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230428-104445.png?v=1682649982" as="image">
+
+<link rel="preload" href="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/chordX_2x_ac6e3457-6ab6-4c57-a190-b58c8171d6c8.jpg?v=1689154690" as="image">
+<link rel="preload" href="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3_1_2x_c75e6ef5-a3ac-49af-bb2f-c19dd565cfad.jpg?v=1689154308" as="image">
+
+
+<div id="bike">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="name">Carbon 1s</div>
+            <div class="info">Shimano 7-Speed</div>
+              <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18297_2x_eae075fb-1d14-4217-bbef-0d2f2e476f2e.png?v=1677640028" alt="">
+              <div class="dots-and-price-and-size">
+                <div class="dots-and-price">
+                  <div class="dots">
+                    <div onclick="changeBike('/products/urtopia-carbon-e-bike?variant=43556895916280','https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18297_2x_eae075fb-1d14-4217-bbef-0d2f2e476f2e.png?v=1677640028', this)" orange class="active"></div>
+                    <div onclick="changeBike('/products/urtopia-carbon-e-bike?variant=43556896047352', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18151_2x_702ec45e-0fe8-49ed-865a-df341d3033d7.png?v=1677640124', this)" yellow></div>
+                    <div onclick="changeBike('/products/urtopia-carbon-e-bike?variant=43556895981816', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18138_2x_de02f431-3e7d-48c0-b887-85eda46c2421.png?v=1677640174', this)" gray></div>
+                    <div onclick="changeBike('/products/urtopia-carbon-e-bike?variant=43556899815672', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230428-104445.png?v=1682649982', this)" peach></div>
+                  </div>
+                  <div class="u24DemiBold_v2" {% if settings.carbon_ebike_discount_price != "0" %} data-price="{{all_products['urtopia-carbon-e-bike'].price | money_without_trailing_zeros }}"{% endif %}>
+                    {{ all_products['urtopia-carbon-e-bike'].price | minus: settings.carbon_ebike_discount_price | money_without_trailing_zeros }}
+                  </div>
+                </div>
+                <div class="size">Fit for 5’3’’~6’5’’</div>
+              </div> 
+              <a class="my-button my-button-white" href="/products/urtopia-carbon-e-bike?variant=43556895916280">Order now</a>
+              <div class="my-button my-button-black new" style="background-image: var(--sale-bike-tags1);">{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros}} off</div>
+              <div class="my-button my-button-black new" style="transform: translateY(120%);background-image: var(--sale-bike-tags2);">{{ settings.carbon_ebike_free_accessories_count }} Freebies</div>
+          </div>
+          <div class="swiper-slide">
+              <div class="name">Chord</div>
+              <div class="info"> </div>
+              <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1_1_2x_3f9f6132-5cac-4f49-bac7-ce6258edad1c.jpg?v=1689154301" alt="">
+              <div class="dots-and-price-and-size">
+                <div class="dots-and-price">
+                  <div class="dots">
+                    <div onclick="changeBike('/products/urtopia-chord-ebike?variant=43694976663800', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1_1_2x_3f9f6132-5cac-4f49-bac7-ce6258edad1c.jpg?v=1689154301', this)" white class="active"></div>
+                    <div onclick="changeBike('/products/urtopia-chord-ebike?variant=43694976696568', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3_1_2x_c75e6ef5-a3ac-49af-bb2f-c19dd565cfad.jpg?v=1689154308', this)" black></div>
+                  </div>
+                  <div class="u24DemiBold_v2" {% if settings.chord_ebike_discount_price != "0" %} data-price="{{all_products['urtopia-chord-ebike'].price | money_without_trailing_zeros }}"{% endif %}>
+                    {{ all_products['urtopia-chord-ebike'].price | minus: settings.chord_ebike_discount_price | money_without_trailing_zeros }}
+                  </div>
+                </div>
+                <div class="size">Fit for 5’7’’~6’5’’</div>
+              </div> 
+              <a class="my-button my-button-white" href="/products/urtopia-chord-ebike?variant=43694976663800">Order now</a>
+              <div class="my-button my-button-black new" style="background-image: var(--sale-bike-tags1);">{{ settings.chord_ebike_discount_price | money_without_trailing_zeros}} off</div>
+          </div>
+          <div class="swiper-slide">
+            <div class="name">Carbon 1</div>
+            <div class="info">Carbon Belt</div>
+              <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18298_2x_c9d66b5e-a0bb-4339-92db-e30b51859060.png?v=1677640298" alt="">
+              <div class="dots-and-price-and-size">
+                <div class="dots-and-price">
+                  <div class="dots">
+                    <div onclick="changeBike('/products/urtopia-carbon-e-bike?variant=43556899913976', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18298_2x_c9d66b5e-a0bb-4339-92db-e30b51859060.png?v=1677640298', this)" orange class="active"></div>
+                    <div onclick="changeBike('/products/urtopia-carbon-e-bike?variant=43556899979512', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18150_2x_63ea456b-69c1-4d96-988f-efa931148bc1.png?v=1677640442', this)" yellow></div>
+                    <div onclick="changeBike('/products/urtopia-carbon-e-bike?variant=43556899946744', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18139_2x_ee2cf1ae-8693-42a3-ab99-d53ea78e2802.png?v=1677640511', this)" gray></div>
+                  </div>
+                  <div class="u24DemiBold_v2" {% if settings.carbon_ebike_discount_price != "0" %} data-price="{{all_products['urtopia-carbon-e-bike'].price | money_without_trailing_zeros }}"{% endif %}>
+                    {{ all_products['urtopia-carbon-e-bike'].price | minus: settings.carbon_ebike_discount_price | money_without_trailing_zeros }}
+                  </div>
+                </div>
+                <div class="size">Fit for 5’7’’~6’5’’</div>
+              </div> 
+              <a href="/products/urtopia-carbon-e-bike?variant=43556899913976" class="my-button my-button-white">Order now</a>
+            <div class="my-button my-button-black new" style="background-image: var(--sale-bike-tags1);">{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros}} off</div>
+            </div>
+          <div class="swiper-slide">
+            <div class="name">Chord X</div>
+            <div class="info"> </div>
+              <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/chordX_2x_fe86f1a1-6d47-4dd4-b1b9-80ee149da0fe.jpg?v=1689154670" alt="">
+              <div class="dots-and-price-and-size">
+                <div class="dots-and-price">
+                  <div class="dots">
+                    <div onclick="changeBike('/products/urtopia-chord-ebike?variant=43694976729336', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/chordX_2x_fe86f1a1-6d47-4dd4-b1b9-80ee149da0fe.jpg?v=1689154670', this)" white></div>
+                    <!--<div onclick="changeBike('/products/urtopia-chord-ebike?variant=43694976762104', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/chordX_2x_ac6e3457-6ab6-4c57-a190-b58c8171d6c8.jpg?v=1689154690', this)" black></div>-->
+                  </div>
+                  <div class="u24DemiBold_v2">{{ all_products['urtopia-chord-ebike'].price | money_without_trailing_zeros }}</div>
+                </div>
+                <div class="size">Fit for 5’3’’~6’1’’</div>
+              </div>
+              <a class="my-button my-button-white" href="/products/urtopia-chord-ebike?variant=43694976729336">Order now</a>
+              <!--<div class="my-button my-button-black new">$300 OFF</div>-->
+            </div>
+          
+      </div>
+      <div class="swiper-button-prev"></div><!--左箭头。如果放置在swiper外面，需要自定义样式。-->
+      <div class="swiper-button-next"></div><!--右箭头。如果放置在swiper外面，需要自定义样式。-->
+      <div class="swiper-scrollbar"></div>
+    </div>
+
+<script>
+    let use_swiper = true
+
+    {% if hide_mobile %}
+          if (global_config.is_mobile) {
+              use_swiper = false
+          }
+    {% endif %}
+
+    use_swiper && new Swiper ('#bike', {
+        // direction: 'vertical',  
+        slidesPerView: global_config.is_mobile ? 1 : 3,
+        spaceBetween: global_config.is_mobile ? 0 : 20,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+      },
+      // 如果需要滚动条
+        scrollbar: {
+            el: '.swiper-scrollbar',
+        },
+  })
+
+  function changeBike (gotoUrl, imgUrl, target) {
+    const parent = target.parentNode
+    const active = parent.querySelector('.active')
+    active.className = ''
+    target.className = 'active'
+    const img = parent.parentNode.parentNode.parentNode.querySelector('img')
+    img.src = imgUrl
+    // 新增的代码
+    const a = parent.parentNode.parentNode.parentNode.querySelector('a')
+    a.href = gotoUrl
+  }
+  $('#bike .swiper-slide > img').on('click', e => {
+    e.target.parentNode.querySelector('a').click()
+  })
+</script>
