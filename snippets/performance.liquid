@@ -11,7 +11,7 @@
 
     $(document).ready(debounce(function (e) {
         if (pages_map['{{ request.path }}']) {
-            setTimeout(fetchBuried, 0, 'performance', pages_map['{{ request.path }}'], {
+            setTimeout(fetchBuried, 300, 'performance', pages_map['{{ request.path }}'], {
                 contentLoaded: `${((performance.timing.domContentLoadedEventEnd - performance.timing.connectStart) / 1000).toFixed(2)} s`,
                 userAgent: navigator.userAgent
             }, true)
