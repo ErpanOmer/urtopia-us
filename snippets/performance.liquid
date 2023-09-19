@@ -1,0 +1,19 @@
+<script>
+    const pages_map = {
+        "/products/urtopia-carbon-e-bike": 'carbon-order-page',
+        "/products/urtopia-chord-ebike": 'chord-order-page',
+        "/products/outlet-carbon-1-1s": 'carbon-outlet-order-page',
+        "/pages/e-bike": 'carbon-ebike-page',
+        "/pages/lightweight-commuter-ebike-urtopia-chord": 'chord-ebike-page',
+        "/collections/e-bikes": 'collection-ebike-page',
+        "/collections/outlet-ebike": 'collection-outlet-page'
+    }
+
+    $(document).ready(debounce(function (e) {
+        if (pages_map['{{ request.path }}']) {
+            setTimeout(fetchBuried, 0, 'performance', pages_map['{{ request.path }}'], {
+                contentLoaded: `${((performance.timing.domContentLoadedEventEnd - performance.timing.connectStart) / 1000).toFixed(2)} s`,
+            })
+        }
+    }, 300))
+</script>
