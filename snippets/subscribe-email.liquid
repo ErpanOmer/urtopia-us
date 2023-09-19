@@ -307,12 +307,12 @@
 };
 
 
-  function showEmailDialog () {
+  function showEmailDialog (emailtag) {
     if (global_config.subscribe_email_dialog_config.is_hide) {
       return
     }
 
-    if (storage.get('emailDialogHideDay')) {
+    if (!emailtag && storage.get('emailDialogHideDay')) {
       return
     }
 
@@ -322,7 +322,7 @@
         $('.subscribe-container form').on("submit", function (event) {
           const email = $('.subscribe-container form input[type="email"]').val()
           // 埋点
-          fetchBuried('emailpop', 'submit', { email, tag: 'US,POPUP' })
+          fetchBuried('emailpop', 'submit', { email, tag: emailtag || 'US,POPUP' })
           closeEmailDialog(14)
       
           event.preventDefault();
@@ -400,6 +400,8 @@
     // console.log(a === document.querySelector('body .mini-dialog'))
     $('body .mini-dialog').remove()
   }
-  
-  setTimeout(showEmailDialog, global_config.subscribe_email_dialog_config.show_delay_time * 1000)
+
+
+  const emailtag = getSearchValues().emailtag
+  setTimeout(showEmailDialog, emailtag ? 1000 : global_config.subscribe_email_dialog_config.show_delay_time * 1000, emailtag)
   </script>
