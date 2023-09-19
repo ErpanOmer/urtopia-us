@@ -1,3 +1,17 @@
+{% if hide_bala %}
+<style>
+  .size-and-specs .centeral-content .item .sizes .lines .line {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: 767px) {
+    .size-and-specs .centeral-content .item .sizes .lines .line {
+      grid-template-columns: 3fr 1fr;
+    }
+  }
+</style>
+{% endif %}
+
 <div class="size-and-specs">
   <div class="centeral-content">
     <div class="item">

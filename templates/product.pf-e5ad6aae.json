@@ -133,8 +133,8 @@
   },
   "order": [
     "main",
+    "pf-e5ad6aae",
     "judgeme_section_review_widget_f144",
-    "product-recommendations",
-    "pf-e5ad6aae"
+    "product-recommendations"
   ]
 }
