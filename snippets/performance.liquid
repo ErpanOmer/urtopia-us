@@ -9,23 +9,27 @@
         "/collections/outlet-ebike": 'collection-outlet-page'
     }
 
-    const performance_script = document.createElement('script');
-    performance_script.src = "{{ 'performance.js' | asset_url }}";
-    performance_script.defer = "true"
-    performance_script.onload = debounce(function () {
-            if (pages_map['{{ request.path }}']) {
+    if (pages_map['{{ request.path }}']) {
+        const performance_script = document.createElement('script');
+        performance_script.src = "{{ 'performance.js' | asset_url }}";
+        performance_script.defer = "true"
+        performance_script.onload = debounce(function () {
+            $(document).ready(debounce(function () {
                 webVitals.getFCP(debounce(function (fcp) {
-                    setTimeout(fetchBuried, 300, 'performance', pages_map['{{ request.path }}'], {
-                        FCP: `${(fcp.value / 1000).toFixed(2)} s`,
-                        LCP: `${((performance.timing.domContentLoadedEventEnd - performance.timing.connectStart) / 1000).toFixed(2)} s`,
-                        userAgent: navigator.userAgent
-                    }, true)
+                        const FCP = fcp.value / 1000
+                        const LCP = (performance.timing.domContentLoadedEventEnd - performance.timing.connectStart) / 1000
+                        const min = Math.min(FCP, LCP)
+                        const max = Math.max(FCP, LCP)
+
+                        setTimeout(fetchBuried, 300, 'performance', pages_map['{{ request.path }}'], {
+                            FCP: `${min.toFixed(2)} s`,
+                            LCP: `${max.toFixed(2)} s`,
+                            userAgent: navigator.userAgent
+                        }, true)
                 }, 300))
+            }, 300))
+        }, 300)
 
-
-                    
-            }
-    }, 300)
-
-    document.head.appendChild(performance_script)
+        document.head.appendChild(performance_script)
+    }
 </script>
