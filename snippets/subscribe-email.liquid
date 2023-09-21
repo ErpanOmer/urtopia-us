@@ -322,7 +322,7 @@
         $('.subscribe-container form').on("submit", function (event) {
           const email = $('.subscribe-container form input[type="email"]').val()
           // 埋点
-          fetchBuried('emailpop', 'submit', { email, tag: emailtag || 'US,POPUP' })
+          fetchBuried('emailpop', 'submit', { email, tag: `DE,POPUP${emailtag ? ',' + emailtag : ''}` })
           closeEmailDialog(14)
       
           event.preventDefault();
