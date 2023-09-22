@@ -307,6 +307,27 @@ const testRides = [
         ],
         isPartner: true,
       },
+      {
+        name: 'IB Rents',
+        phone: '(619)-227-7734',
+        email: 'ibeachrents@gmail.com',
+        timezone: "California, USA (GMT-7)",
+        add: "235 Palm Ave. Imperial Beach, CA 91932",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/IB_Rents.jpg?v=1695291344",
+        testrideSpot: "California",
+        availableSizes: [
+          'Carbon 1 Size M'
+        ],
+        businessHours: [
+          "10:00-17:00",
+          "",
+          "11:00-17:00",
+          "11:00-17:00",
+          "11:00-17:00",
+          "11:00-17:00",
+          "10:00-17:00",
+        ],
+      },
     ]
   },
   {
@@ -939,7 +960,7 @@ const testRides = [
         phone: "708-493-4896",
         email: "akafenoy@gmail.com",
         timezone: "Illinois, USA (GMT-7)",
-        add: "King Drive, Berkeley, IL 60163",
+        add: "1542 King Drive Berkeley, ILL 60163",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Jason_Mathews.jpg?v=1692617852",
         testrideSpot: "Illinois",
         availableSizes: [
@@ -955,6 +976,33 @@ const testRides = [
           "10:00-14:00",
         ],
         isPartner: true,
+      },
+    ]
+  },
+  {
+    city: 'Colorado',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/co.webp?v=1695291345',
+    stores: [
+      {
+        name: "Ebike Tours & Rental",
+        phone: "719-246-2675",
+        email: "gcobble@gmail.com",
+        timezone: "Colorado, USA (GMT-7)",
+        add: "906 Manitou Avenue, #102, Manitou Springs, CO. 80829",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/E-Bike_Sales_and_Rental.png?v=1695291344",
+        testrideSpot: "Colorado",
+        availableSizes: [
+          'Carbon 1s Size M',
+        ],
+        businessHours: [
+          "11:00-16:00",
+          "",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-17:00",
+        ],
       },
     ]
   },
