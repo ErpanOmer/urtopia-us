@@ -4,9 +4,23 @@
       "type": "outlet-ebike",
       "settings": {
       }
+    },
+    "1695375655a6bb8dcc": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "169537476718691f96": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
-    "outlet-ebike"
+    "outlet-ebike",
+    "1695375655a6bb8dcc",
+    "169537476718691f96"
   ]
 }
