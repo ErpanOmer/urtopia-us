@@ -145,7 +145,7 @@
                   {% for value in option.values %}
                     {% case option.name %}
                     {% when "Model" %}
-                        <div data-sale="{{ "order_page.sale" | t }}" attribute="{{ value }}" class="{{ value }}">{% assign values = value | split: " · " %}
+                        <div attribute="{{ value }}" class="{{ value }}">{% assign values = value | split: " · " %}
                           {% for value in values %}
                             <span>{{ value }}</span>
                           {% endfor %}
@@ -672,7 +672,7 @@
     <span class="flex-1"></span>
     <div>
       <span class="u17Light_v2"><span class="u20DemiBold_v2 emphasize" style="font-weight: 600;">{{ product.price | minus: 0 | money }}</span> <span style="text-decoration: line-through;">{{ product.compare_at_price | money }}</span></span>
-      <span class="u14Light_v2">or as low as {{ product.price | minus: 0 | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
+      <span class="u14Light_v2">or as low as <span class="stages">{{ product.price | minus: 0 | divided_by: 24 | money_without_trailing_zeros }}</span>/Month</span>
     </div>
     <a href="#sale_acc" class="my-button my-button-origin">Order Now</a>
   </div>
@@ -682,7 +682,7 @@
   <a href="#sale_accmb" class="my-button my-button-origin">Order Now</a>
   <div>
     <span class="u14Light_v2"><span class="emphasize" style="font-weight: 600;">{{ product.price | minus: 0 | money }}</span> <span style="text-decoration: line-through;">{{ product.compare_at_price | money }}</span></span>
-    <span class="u14Light_v2">or as low as {{ product.price | minus: 0 | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
+    <span class="u14Light_v2">or as low as <span class="stages">{{ product.price | minus: 0 | divided_by: 24 | money_without_trailing_zeros }}</span>/Month</span>
   </div>
 </div>
 
@@ -773,6 +773,16 @@
       }
 
       $('.product .error-tip').hide()
+
+      $('.product .commonComponent > .u30DemiBold_v2').text(getPriceFormat(e.value.price)).attr('data-price', getPriceFormat(e.value.compare_at_price))
+      $('.product .buttons .orderTestRideBtn .stages').text(getPriceFormat(e.value.price / 24))
+      $('.top-fixed .u17Light_v2 .u20DemiBold_v2').text(getPriceFormat(e.value.price))
+      $('.top-fixed .u17Light_v2 > span:not(.u20DemiBold_v2)').text(getPriceFormat(e.value.compare_at_price))
+      $('.top-fixed .u14Light_v2 .stages').text(getPriceFormat(e.value.price / 24))
+
+      $('.bottom-fixed .u14Light_v2 .emphasize').text(getPriceFormat(e.value.price))
+      $('.bottom-fixed .u14Light_v2 > span:not(.emphasize)').text(getPriceFormat(e.value.compare_at_price))
+      $('.bottom-fixed .u14Light_v2 .stages').text(getPriceFormat(e.value.price / 24))
   })
 
 
