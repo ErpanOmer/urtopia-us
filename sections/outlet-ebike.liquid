@@ -235,6 +235,14 @@
     setTimeout(() => {
         $('.product-card .dots > div:first-child').click()
 
+        $('.product-card .variant-image').on('click', e => {
+            const button = $(e.target).closest('.product-card').find('.my-button')
+
+            if (button.length) {
+                button[0].click()
+            }
+        })
+
         new Swiper('.components .swiper', {
                 spaceBetween: 20,
                 slidesPerView: global_config.is_mobile ? 1.25 : 4,

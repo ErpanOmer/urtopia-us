@@ -147,6 +147,10 @@ $product-tags-color: #FFE2D9;
         }
     }
 
+    .variant-image {
+        cursor: pointer;
+    }
+
     .dots {
         @include dots;
     }
