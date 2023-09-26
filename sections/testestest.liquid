@@ -1,126 +1,264 @@
-{% assign carbon1_Sirius = "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230630-181731.png?v=1688120408" %}
-{% assign carbon1_Paris = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18150_2x_63ea456b-69c1-4d96-988f-efa931148bc1.png?v=1677640442" %}
-{% assign carbon1_Lyra = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18139_2x_ee2cf1ae-8693-42a3-ab99-d53ea78e2802.png?v=1677640511" %}
-{% assign carbon1_Vanilla = "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230420-182731.jpg?v=1681986478" %}
+{{ 'outlet_v2.scss.css' | asset_url | stylesheet_tag: preload: true }}
+<script>
+    console.log(JSON.parse(JSON.stringify({{ collection.products | json }})))
+</script>
 
-{% assign carbon1s_Sirius = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230922-181515.png?v=1695377746&width=1000" %}
-{% assign carbon1s_Paris = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18151_2x_702ec45e-0fe8-49ed-865a-df341d3033d7.png?v=1677640124" %}
-{% assign carbon1s_Lyra = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18138_2x_de02f431-3e7d-48c0-b887-85eda46c2421.png?v=1677640174" %}
-{% assign carbon1s_Vanilla = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230428-104445.png?v=1682649982" %}
-
-{% assign chord_white = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1_1_2x_3f9f6132-5cac-4f49-bac7-ce6258edad1c.jpg?v=1689154301" %}
-{% assign chord_black = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3_1_2x_c75e6ef5-a3ac-49af-bb2f-c19dd565cfad.jpg?v=1689154308" %}
-{% assign chordx_white = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/chordX_2x_fe86f1a1-6d47-4dd4-b1b9-80ee149da0fe.jpg?v=1689154670" %}
-{% assign chordx_black = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/chordX_2x_ac6e3457-6ab6-4c57-a190-b58c8171d6c8.jpg?v=1689154690" %}
-
-{{ 'outlet.scss.css' | asset_url | stylesheet_tag: preload: true }}
-{% assign carbon = collection.products.first %}
-{% assign chord = collection.products.last %}
-
-<div class="gray-background-color top-area">
+<div class="banner">
     <div class="centeral-content">
-        <div class="u72DemiBold_v2">OUTLET</div>
-        <div class="u24Medium_v2">The Urtopia Outlet includes demo e-bikes with the same quality and performance as new ones. The e-bikes are tested by our engineers for our customers. Also, meticulous quality control measures are implemented prior to offering them for sale.</div>
-        <div class="product item">
-            <div>
-                <div class="u36DemiBold_v2">Outlet Carbon 1</div>
-                <div class="u20Light_v2">Fit for 5’11’’~6’5’’</div>
-                <div class="u30DemiBold_v2 emphasize" data-price={{ carbon.compare_at_price | money_without_trailing_zeros }}>{{ carbon.price | money_without_trailing_zeros }}</div>
-                <div class="dots">
-                    
-                    <div data-img="{{ carbon1_Sirius }}" data-variant="43987465765112" orange class="active"></div>
-                    <!--<div data-img="{{ carbon1_Paris }}" data-variant="43935607324888" yellow></div>-->
-                    <div data-img="{{ carbon1_Lyra }}" data-variant="43987465863416" gray></div>
-                    <!--<div data-img="{{ carbon1_Vanilla }}" data-variant="43935607357656" peach></div>-->
-                </div>
-                <a href="/products/outlet-carbon-1-1s?variant=43987465765112" class="my-button my-button-origin">Order now</a>
-            </div>
-            <div style="flex: 1.5;">
-                <img src="{{carbon1_Sirius}}" alt="">
-                <div class="u48DemiBold_v2 off">{{ carbon.compare_at_price | minus: carbon.price | money_without_trailing_zeros }} OFF</div>
-            </div>
+        <div class="u48DemiBold_v2">Affordable Luxury</div>
+        <div>
+            <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18793_2x_8db49a70-586c-425b-a37d-bfe55f4731aa.png?v=1695626171" alt="">
+            <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_21573_2x_9f840b32-64a2-4cd1-a4c1-b4028593c226.png?v=1695626161" alt="">
         </div>
-        <div class="product item">
-            <div>
-                <div class="u36DemiBold_v2">Outlet Carbon 1s</div>
-                <div class="u20Light_v2">Fit for 5’3’’~6’5’’</div>
-                <div class="u30DemiBold_v2 emphasize" data-price={{ carbon.compare_at_price | money_without_trailing_zeros }}>{{ carbon.price | money_without_trailing_zeros }}</div>
-                <div class="dots">
-                    
-                    <div data-img="{{ carbon1s_Sirius }}" data-variant="43780147511544" orange class="active"></div>
-                    <div data-img="{{ carbon1s_Paris }}" data-variant="43987465142520" yellow></div>
-                    <div data-img="{{ carbon1s_Lyra }}" data-variant="43987465175288" gray></div>
-                    <div data-img="{{ carbon1s_Vanilla }}" data-variant="43987465208056" peach></div>
-                </div>
-                <a href="/products/outlet-carbon-1-1s?variant=43780147511544" class="my-button my-button-origin">Order now</a>
-            </div>
-            <div style="flex: 1.5;">
-                <img src="{{carbon1s_Sirius}}" alt="">
-                <div class="u48DemiBold_v2 off">{{ carbon.compare_at_price | minus: carbon.price | money_without_trailing_zeros }} OFF</div>
-            </div>
-        </div>
-        <!--<div class="product-chord">
-            <div class="item">
-                <div class="u36DemiBold_v2 mobileHide">Outlet Chord</div>
-                <div class="u24DemiBold_v2 mobileHide">{{ chord.compare_at_price | minus: chord.price | money_without_trailing_zeros }} OFF</div>
-                <div style="position: relative;">
-                    <img src="{{ chord_white }}" alt="">
-                    <div class="u48DemiBold_v2 off pcHide">{{ chord.compare_at_price | minus: chord.price | money_without_trailing_zeros }} OFF</div>
-                </div>
-                <div class="u36DemiBold_v2 pcHide">Outlet Chord</div>
-                <div class="u20Light_v2 pcHide">Fit for 170cm - 195cm</div>
-                <div class="price">
-                    <div class="dots">
-                        <div data-img="{{ chord_white }}" data-variant="43950919024856" white class="active"></div>
-                        <div data-img="{{ chord_black }}" data-variant="43950919057624" black></div>
-                    </div>
-                    <div class="u24DemiBold_v2 emphasize" data-price={{ chord.compare_at_price | money_without_trailing_zeros }}>{{ chord.price | money_without_trailing_zeros }}</div>
-                </div>
-                <div class="u20Light_v2 mobileHide">Fit for 170cm - 195cm</div>
-                <a href="/products/outlet-urtopia-chord?variant=43950919024856" class="my-button my-button-origin">Order now</a>
-            </div>
-            <div class="item">
-                <div class="u36DemiBold_v2 mobileHide">Outlet Chord X</div>
-                <div class="u24DemiBold_v2 mobileHide">{{ chord.compare_at_price | minus: chord.price | money_without_trailing_zeros }} OFF</div>
-                <div style="position: relative;">
-                    <img src="{{ chordx_white }}" alt="">
-                    <div class="u48DemiBold_v2 off pcHide">{{ chord.compare_at_price | minus: chord.price | money_without_trailing_zeros }} OFF</div>
-                </div>
-                <div class="u36DemiBold_v2 pcHide">Outlet Chord X</div>
-                <div class="u20Light_v2 pcHide">Fit for 160cm - 185cm</div>
-                <div class="price">
-                    <div class="dots">
-                        <div data-img="{{ chordx_white }}" data-variant="43950919090392" white class="active"></div>
-                        <div data-img="{{ chordx_black }}" data-variant="43950919123160" black></div>
-                    </div>
-                    <div class="u24DemiBold_v2 emphasize" data-price={{ chord.compare_at_price | money_without_trailing_zeros }}>{{ chord.price | money_without_trailing_zeros }}</div>
-                </div>
-                <div class="u20Light_v2 mobileHide">Fit for 160cm - 185cm</div>
-                <a href="/products/outlet-urtopia-chord?variant=43950919090392" class="my-button my-button-origin">Order now</a>
-            </div>
-        </div>-->
     </div>
 </div>
-<div class="centeral-content need">
-    <div class="u48DemiBold_v2">Need a different <br class="pcHide">size or style?</div>
-    <div class="u30DemiBold_v2">Check out the new e-bikes <span class="emphasize">in stock</span></div>
+<div class="gray-background-color support">
+    <div class="centeral-content">
+        <div class="u20DemiBold_v2">
+            <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/placeholder_2x_fc2bfb7f-cdd3-428b-9855-2ffbde0f88a8.png?v=1695626894" alt="">
+            <span>40+ Spots of Service</span>
+        </div>
+        <div class="u20DemiBold_v2">
+            <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18846_2x_62c7bce3-b183-4286-88f1-929c9233a2a3.png?v=1695626886" alt="">
+            <span>Free Shipping</span>
+        </div>
+        <div class="u20DemiBold_v2">
+            <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18844_2x_1f1932ef-fe7b-4f0c-9447-505a0309ac06.png?v=1695626877" alt="">
+            <span>2-Year Warranty</span>
+        </div>
+    </div>
 </div>
-{% render 'home-page-bikes', hide_mobile: true %}
+<div class="centeral-content ebike-products">
+    <div class="u36DemiBold_v2">Best seller at <span class="emphasize">lowest</span> price</div>
+    <div class="u24Medium_v2">Limited stock ships with 5 working days</div>
+    <div class="product-grid">
+        {% assign product = collection.products | where: 'handle', "urtopia-carbon-e-bike" | first %}
+        {% assign product_variants = product.variants | where: "option1", "Carbon 1s · 350W · Shimano 7-Speed" | where: "available" %}
+        {% assign product_tags = settings.carbon_ebike_free_accessories_count | append: ' Freebies'   %}
+        {% render 'product-card',
+            product_variants: product_variants,
+            product_variant_options_find_sort: "M,L,S",
+            product_name: 'Carbon 1s',
+            product_tags: product_tags,
+            product_description: 'Powerful drive system ensures minimal effort and maximum fun',
+            product_discount_price: settings.carbon_ebike_discount_price,
+            product_url: product.url,
+        %}
+        {% assign product_variants = product.variants | where: "option1", "Carbon 1 · 250W · Carbon Belt" | where: "available" %}
+        {% assign product_tags = settings.carbon_ebike_free_accessories_count | append: ' Freebies'  %}
+        {% render 'product-card',
+            product_variants: product_variants,
+            product_variant_options_find_sort: "L,M",
+            product_name: 'Carbon 1',
+            product_tags: product_tags,
+            product_description: 'Sporty, light and nimble e-bike for everyday transport, fitness and fun.',
+            product_discount_price: settings.carbon_ebike_discount_price,
+            product_url: product.url,
+        %}
+        <div class="gray-background-color u30DemiBold_v2 lozad mobileHide" data-background-image="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_22829_2x_82531e4b-8b9c-40c7-822f-c58f9db7d477.jpg?v=1695625176">Full Carbon Lightweight Sporty</div>
+        <div class="gray-background-color u30DemiBold_v2 lozad mobileHide" data-background-image="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_22830_2x_8c178fff-ea2f-4b60-99c8-a44937213f1f.jpg?v=1695625131">Casual Comfortable Elegant</div>
+        {% assign product = collection.products | where: 'handle', "urtopia-chord-ebike" | first %}
+        {% assign product_variants = product.variants | where: "option1", "High-Step" | where: "available" %}
+        {% render 'product-card',
+            product_variants: product_variants,
+            product_name: 'Chord',
+            product_description: 'Elegantly zip around town for meet-ups, errands, or Sunday fun.',
+            product_discount_price: settings.chord_ebike_discount_price,
+            product_url: product.url,
+        %}
+        {% assign product_variants = product.variants | where: "option1", "Step-Through" | where: "available" %}
+        {% render 'product-card',
+            product_variants: product_variants,
+            product_name: 'Chord X',
+            product_description: 'Easily kickstart your ride for workouts, city cruising, and pure enjoyment.',
+            product_url: product.url,
+        %}
+    </div>
+</div>
+<div class="centeral-content components">
+    <div class="u36DemiBold_v2">Upgrade Your Ride</div>
+    <div class="swiper-box">
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                {% for prod in collections['on-page'].products %}
+                    {% if prod.available %}
+                        <div class="swiper-slide" data-url="{{ prod.url }}">
+                            <img data-src="{{ prod.featured_image | image_url: width: 400 }}" alt="" class="lozad">
+                            <div class="u24DemiBold_v2">{{ prod.title }}</div>
+                            <div class="flex-1"></div>
+                            <div class="u17Medium_v2">{{ prod.price | money }}</div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        <img data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_18608_2x_10966514-e838-45c3-8f3d-029c79a44d25.png?v=1691836122" class="swiper-button-prev lozad mobileHide"/><!--左箭头。如果放置在swiper外面，需要自定义样式。-->
+        <img data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_18608_2x_10966514-e838-45c3-8f3d-029c79a44d25.png?v=1691836122" class="swiper-button-next lozad mobileHide"/><!--右箭头。如果放置在swiper外面，需要自定义样式。-->
+        <div class="swiper-scrollbar"></div>
+    </div>
+</div>
+
+<div class="gray-background-color outlet-products">
+    <div class="centeral-content">
+        <div class="u48DemiBold_v2">OUTLET</div>
+        <div class="u24Medium_v2">The Urtopia Outlet includes sample bikes with the same quality and appearance as new bikes. They are all fully serviced before we place them for sale.</div>
+        <div class="u17Medium_v2">
+            <div>
+                <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18846_2x_62c7bce3-b183-4286-88f1-929c9233a2a3.png?v=1695626886" alt="">
+                <span>Free Shipping</span>
+            </div>
+            <div>
+                <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18844_2x_1f1932ef-fe7b-4f0c-9447-505a0309ac06.png?v=1695626877" alt="">
+                <span>2-Year Warranty</span>
+            </div>
+        </div>
+        <div class="product-grid">
+            {% assign product = collection.products | where: 'handle', "outlet-carbon-1-1s" | first %}
+            {% assign product_variants = product.variants | where: "option1", "Carbon 1s · 350W · Shimano 7-Speed" | where: "available" %}
+            {% assign product_tags = "Limited Stock" %}
+            {% render 'product-card',
+                product_variants: product_variants,
+                product_variant_options_find_sort: "L,M,S",
+                product_name: 'Carbon 1s',
+                product_tags: product_tags,
+                product_description: 'Powerful drive system ensures minimal effort and maximum fun',
+                product_url: product.url,
+            %}
+            {% assign product_variants = product.variants | where: "option1", "Carbon 1 · 250W · Carbon Belt" | where: "available" %}
+            {% assign product_tags = "Only size L available" %}
+            {% render 'product-card',
+                product_variants: product_variants,
+                product_variant_options_find_sort: "L,M",
+                product_name: 'Carbon 1',
+                product_tags: product_tags,
+                product_description: 'Sporty, light and nimble e-bike for everyday transport, fitness and fun.',
+                product_url: product.url,
+            %}
+        </div>
+    </div>
+</div>
+
+<div class="test-ride">
+    <div class="centeral-content">
+        <div>
+        <div>
+            <div class="u36DemiBold_v2">Test ride spots near you</div>
+            <div class="u20DemiBold_v2">Experience the bike in real</div>
+            <a
+            class="my-button my-button-origin"
+            href="/pages/test-ride"
+            target="_blank">Book a Free Test Ride</a>
+        </div>
+        </div>
+        <div>
+        <div style="padding: 0;">
+            <div
+            id="storepoint-container"
+            data-tags="us"
+            data-map-id="162f21804990ff"></div>
+        </div>
+        </div>
+    </div>
+</div>
+<div class="boxs3" id="boxs3">
+  <div class="centeral-content">
+    <div data-background-image="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/IMG_0305_2x_50da775b-04f1-4130-ae17-56de65a34399.jpg?v=1687259019" class="lozad"></div>
+    <div>
+      <div class="u30DemiBold_v2">Local care all the time</div>
+      <div class="u17Light_v2">
+        <div><img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/shopping-mall_2x_44d99fcd-f0f4-443b-927e-b68e48af010f.png?v=1687259496">30+ service partners</div>
+        <div><img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24-hours_2x_d6a8eeb2-4564-4351-8cb9-096dbb778479.png?v=1687259501">24hrs service response, App build-in portal</div>
+        <div><img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/box_2x_2b3b7c15-f5ae-4305-956f-7543b63b2dda.png?v=1687259506"><span>Spare parts available locally, ships in 3 days.1 service center, 30+ service partners</span>
+        </div>
+        <div><img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/customer-satisfaction_2x_c7081e3a-1864-43b6-8ed2-f77895eafa6a.png?v=1687259512">10+ technical experts, 99% satisfaction rate.</div>
+      </div>
+      <a class="my-button my-button-black" href="/pages/care" target="_blank">Learn more</a>
+    </div>
+    <!--<div>
+      <div class="u30DemiBold_v2">Leasing Partners at Your Choice</div>
+      <div class="u17Light_v2">We offer you the opportunity to get your dream bike at low monthly leasing rates through various leasing providers.</div>
+      <div class="logos">
+        <div>
+          <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/JR-Logo_-RGB-schwarz-large-4x_2x_90eff7ba-f64b-45ef-8e7e-65490e740385.png?v=1687260470">
+        </div>
+        <div>
+          <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18616_2x_d0fb1804-0a96-4524-9463-6cd30673cf6d.png?v=1687260793">
+        </div>
+       <div>
+          <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18617_2x_6706fd9c-d8f3-434b-b77f-6e35eb007eb3.png?v=1687260762">
+       </div>
+        <div>
+          <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/logo_meinstdienstrad_2021_2x_d5a1936d-fc18-418a-bb45-b9bb73e6c96a.png?v=1687260731">
+        </div>
+      </div>
+      <a class="my-button my-button-black" href="/pages/ebike-leasing" target="_blank">Lease Now</a>
+    </div>
+    <div></div>-->
+  </div>
+</div>
 
 <script>
-    $('.top-area .dots > div').on('click', e => {
+    $('.product-card .dots > div').on('click', e => {
         const target = $(e.target)
+        const product_card = target.closest('.product-card')
 
-        const variant = target.attr('data-variant')
-        const image = target.attr('data-img')
-
+        // 先取消 其它兄弟元素的active, 再设置active
         target.siblings().removeClass('active')
         target.addClass('active')
 
-        const item = target.closest('.item')
-        item.find('img').attr('src', image)
+        const price = Number(target.attr('data-price'))
+        const compare_at_price = Number(target.attr('data-compare-at-price'))
+        const discount_price = Number(target.attr('data-product-discount-price'))
+        const variant_id = target.attr('data-variant')
+        const variant_image = target.attr('data-img')
 
-        const button = item.find('.my-button')
-        button.attr('href', `${button.attr('href').split('?').shift()}?variant=${variant}`)
+        // outlet 车型
+        if (discount_price === 0) {
+            product_card.find('.product_price .u24DemiBold_v2').text(getPriceFormat(price, true)).attr('data-price', getPriceFormat(compare_at_price, true))
+            product_card.find('.tags > span:first-child').text(`Save ${parseInt((compare_at_price - price) / compare_at_price * 100)}%`)
+
+            if (price === compare_at_price) {
+                product_card.find('.product_price .u24DemiBold_v2').attr('data-price', '')
+                product_card.find('.tags > span:first-child').hide()
+            }
+        } else {
+            product_card.find('.product_price .u24DemiBold_v2').text(getPriceFormat(price - discount_price, true)).attr('data-price', getPriceFormat(price, true))
+            product_card.find('.product_price .u17Light_v2 > span').text(getPriceFormat((price - discount_price) / 24))
+            product_card.find('.tags > span:first-child').text(`Save ${parseInt(discount_price / price * 100)}%`)
+        }
+
+        product_card.find('.variant-image').attr('src', variant_image)
+
+        console.log(variant_image)
+        console.log(product_card.find('.variant-image'))
+
+        product_card.find('.my-button').attr('href', `${product_card.find('.my-button').attr('href').split('?').shift()}?variant=${variant_id}`)
+
+        
+
+        console.log(price, compare_at_price, discount_price)
+
+    })
+
+    setTimeout(() => {
+        $('.product-card .dots > div:first-child').click()
+
+        new Swiper('.components .swiper', {
+                spaceBetween: 20,
+                slidesPerView: global_config.is_mobile ? 1.25 : 4,
+                navigation: {
+                    nextEl: '.components .swiper-button-next',
+                    prevEl: '.components .swiper-button-prev',
+                },
+                scrollbar: {
+                        el: '.components .swiper-scrollbar',
+                        draggable: true,
+                },
+        })
+
+        $('.components .swiper-slide').on('click', e => {
+            window.open($(e.target).closest('.swiper-slide').attr('data-url'))
+        })
     })
 </script>
+<script src="https://cdn.storepoint.co/api/v1/js/162f21804990ff.js" defer></script>
