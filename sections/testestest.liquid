@@ -1,302 +1,126 @@
-{{ 'blog.scss.css' | asset_url | stylesheet_tag: preload: true }}
+{% assign carbon1_Sirius = "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230630-181731.png?v=1688120408" %}
+{% assign carbon1_Paris = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18150_2x_63ea456b-69c1-4d96-988f-efa931148bc1.png?v=1677640442" %}
+{% assign carbon1_Lyra = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18139_2x_ee2cf1ae-8693-42a3-ab99-d53ea78e2802.png?v=1677640511" %}
+{% assign carbon1_Vanilla = "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230420-182731.jpg?v=1681986478" %}
 
-<article>
-  <header style="--background-image-pc: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_22784_2x_c04d2cff-9be1-4956-8786-269eb56b260d.jpg?v=1693981525');">
-    <div class="background-blur"></div>
-    <section class="flex flex-center flex-column text-center height-600 mb-height-240">
-      <h1 class="color-white mb-font-size-24">Over That Rock</h1>
-      <h2 class="color-light-gray font-size-24 margin-top-32 mb-font-size-16 ">Ambassador’s story: Michael J Coles</h2>
-    </section>
-  </header>
-  <section class="margin-top-60 margin-bottom-60 max-width-720 mb-margin-top-40 mb-margin-bottom-40">
-    <div class="video margin-bottom-60 mb-margin-bottom-40">
-      <iframe
-        width="100%"
-        height="100%"
-        src="https://www.youtube.com/embed/kw2bKnKxLtY?start=0&autoplay=0&loop=0&mute=0&controls=0&enablejsapi=1"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen></iframe>
+{% assign carbon1s_Sirius = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230922-181515.png?v=1695377746&width=1000" %}
+{% assign carbon1s_Paris = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18151_2x_702ec45e-0fe8-49ed-865a-df341d3033d7.png?v=1677640124" %}
+{% assign carbon1s_Lyra = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18138_2x_de02f431-3e7d-48c0-b887-85eda46c2421.png?v=1677640174" %}
+{% assign carbon1s_Vanilla = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230428-104445.png?v=1682649982" %}
+
+{% assign chord_white = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1_1_2x_3f9f6132-5cac-4f49-bac7-ce6258edad1c.jpg?v=1689154301" %}
+{% assign chord_black = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3_1_2x_c75e6ef5-a3ac-49af-bb2f-c19dd565cfad.jpg?v=1689154308" %}
+{% assign chordx_white = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/chordX_2x_fe86f1a1-6d47-4dd4-b1b9-80ee149da0fe.jpg?v=1689154670" %}
+{% assign chordx_black = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/chordX_2x_ac6e3457-6ab6-4c57-a190-b58c8171d6c8.jpg?v=1689154690" %}
+
+{{ 'outlet.scss.css' | asset_url | stylesheet_tag: preload: true }}
+{% assign carbon = collection.products.first %}
+{% assign chord = collection.products.last %}
+
+<div class="gray-background-color top-area">
+    <div class="centeral-content">
+        <div class="u72DemiBold_v2">OUTLET</div>
+        <div class="u24Medium_v2">The Urtopia Outlet includes demo e-bikes with the same quality and performance as new ones. The e-bikes are tested by our engineers for our customers. Also, meticulous quality control measures are implemented prior to offering them for sale.</div>
+        <div class="product item">
+            <div>
+                <div class="u36DemiBold_v2">Outlet Carbon 1</div>
+                <div class="u20Light_v2">Fit for 5’11’’~6’5’’</div>
+                <div class="u30DemiBold_v2 emphasize" data-price={{ carbon.compare_at_price | money_without_trailing_zeros }}>{{ carbon.price | money_without_trailing_zeros }}</div>
+                <div class="dots">
+                    
+                    <div data-img="{{ carbon1_Sirius }}" data-variant="43987465765112" orange class="active"></div>
+                    <!--<div data-img="{{ carbon1_Paris }}" data-variant="43935607324888" yellow></div>-->
+                    <div data-img="{{ carbon1_Lyra }}" data-variant="43987465863416" gray></div>
+                    <!--<div data-img="{{ carbon1_Vanilla }}" data-variant="43935607357656" peach></div>-->
+                </div>
+                <a href="/products/outlet-carbon-1-1s?variant=43987465765112" class="my-button my-button-origin">Order now</a>
+            </div>
+            <div style="flex: 1.5;">
+                <img src="{{carbon1_Sirius}}" alt="">
+                <div class="u48DemiBold_v2 off">{{ carbon.compare_at_price | minus: carbon.price | money_without_trailing_zeros }} OFF</div>
+            </div>
+        </div>
+        <div class="product item">
+            <div>
+                <div class="u36DemiBold_v2">Outlet Carbon 1s</div>
+                <div class="u20Light_v2">Fit for 5’3’’~6’5’’</div>
+                <div class="u30DemiBold_v2 emphasize" data-price={{ carbon.compare_at_price | money_without_trailing_zeros }}>{{ carbon.price | money_without_trailing_zeros }}</div>
+                <div class="dots">
+                    
+                    <div data-img="{{ carbon1s_Sirius }}" data-variant="43780147511544" orange class="active"></div>
+                    <div data-img="{{ carbon1s_Paris }}" data-variant="43987465142520" yellow></div>
+                    <div data-img="{{ carbon1s_Lyra }}" data-variant="43987465175288" gray></div>
+                    <div data-img="{{ carbon1s_Vanilla }}" data-variant="43987465208056" peach></div>
+                </div>
+                <a href="/products/outlet-carbon-1-1s?variant=43780147511544" class="my-button my-button-origin">Order now</a>
+            </div>
+            <div style="flex: 1.5;">
+                <img src="{{carbon1s_Sirius}}" alt="">
+                <div class="u48DemiBold_v2 off">{{ carbon.compare_at_price | minus: carbon.price | money_without_trailing_zeros }} OFF</div>
+            </div>
+        </div>
+        <!--<div class="product-chord">
+            <div class="item">
+                <div class="u36DemiBold_v2 mobileHide">Outlet Chord</div>
+                <div class="u24DemiBold_v2 mobileHide">{{ chord.compare_at_price | minus: chord.price | money_without_trailing_zeros }} OFF</div>
+                <div style="position: relative;">
+                    <img src="{{ chord_white }}" alt="">
+                    <div class="u48DemiBold_v2 off pcHide">{{ chord.compare_at_price | minus: chord.price | money_without_trailing_zeros }} OFF</div>
+                </div>
+                <div class="u36DemiBold_v2 pcHide">Outlet Chord</div>
+                <div class="u20Light_v2 pcHide">Fit for 170cm - 195cm</div>
+                <div class="price">
+                    <div class="dots">
+                        <div data-img="{{ chord_white }}" data-variant="43950919024856" white class="active"></div>
+                        <div data-img="{{ chord_black }}" data-variant="43950919057624" black></div>
+                    </div>
+                    <div class="u24DemiBold_v2 emphasize" data-price={{ chord.compare_at_price | money_without_trailing_zeros }}>{{ chord.price | money_without_trailing_zeros }}</div>
+                </div>
+                <div class="u20Light_v2 mobileHide">Fit for 170cm - 195cm</div>
+                <a href="/products/outlet-urtopia-chord?variant=43950919024856" class="my-button my-button-origin">Order now</a>
+            </div>
+            <div class="item">
+                <div class="u36DemiBold_v2 mobileHide">Outlet Chord X</div>
+                <div class="u24DemiBold_v2 mobileHide">{{ chord.compare_at_price | minus: chord.price | money_without_trailing_zeros }} OFF</div>
+                <div style="position: relative;">
+                    <img src="{{ chordx_white }}" alt="">
+                    <div class="u48DemiBold_v2 off pcHide">{{ chord.compare_at_price | minus: chord.price | money_without_trailing_zeros }} OFF</div>
+                </div>
+                <div class="u36DemiBold_v2 pcHide">Outlet Chord X</div>
+                <div class="u20Light_v2 pcHide">Fit for 160cm - 185cm</div>
+                <div class="price">
+                    <div class="dots">
+                        <div data-img="{{ chordx_white }}" data-variant="43950919090392" white class="active"></div>
+                        <div data-img="{{ chordx_black }}" data-variant="43950919123160" black></div>
+                    </div>
+                    <div class="u24DemiBold_v2 emphasize" data-price={{ chord.compare_at_price | money_without_trailing_zeros }}>{{ chord.price | money_without_trailing_zeros }}</div>
+                </div>
+                <div class="u20Light_v2 mobileHide">Fit for 160cm - 185cm</div>
+                <a href="/products/outlet-urtopia-chord?variant=43950919090392" class="my-button my-button-origin">Order now</a>
+            </div>
+        </div>-->
     </div>
-    <p>
-      <i class="font-weight-700">"What doesn't kill me, makes me stronger."</i>
-      <br>
-      <i class="font-weight-700">— Friedrich Nietzsche</i>
-      <br>
-      <br>
-      <span>
-        For Michael J Coles, a life-altering accident revolved around a small rock. The same rock that 
-        nearly cost him his life became the catalyst for his rebirth. This rock got lodged in his 
-                        motorcycle's chain, locking the rear wheel. He was flung from the motorcycle into a utility pole, 
-                        narrowly escaping death. Doctors conveyed that he might never walk unaided again. Yet, his 
-                        indomitable will propelled him to set a world record for cycling across continents just five years 
-                        later. As a Urtopia user, he connected deeply with our CEO, becoming an influential brand 
-                        ambassador. His capacity to endure adversity and bounce back touched me as a writer. Now, 
-                        let's delve into his legendary story:
-      </span>
-    </p>
-    <br>
-    <br>
-    <h6>
-      <i class="mb-font-size-16">"If you are going through hell, keep going.”</i>
-    </h6>
-    <br>
-    <p>
-      <span>
-        Michael J Coles, an entrepreneur, co-founded the Great American Cookie company, initially 
-        investing a mere $8000. This partnership evolved into a multi-million-dollar venture. The 
-                        accident and subsequent arduous recovery served as a driving force in his entrepreneurial 
-                        journey. As Nietzsche rightly said, "What doesn't kill me, makes me stronger."
-      </span>
-      <br>
-      <br>
-      <span>
-        Returning to when he built his first cookie store's sixth week, an accident triggered by a rock 
-        left him teetering on the brink of death. The prognosis of never walking again without 
-                        assistance initially held him captive in pain and doubt. Months of rehabilitation brought minimal 
-                        progress. His young daughter Taryn invited him for a run, which made Coles realize that he 
-                        might never be able to move like a normal person again. He refused to accept this fate; he 
-                        didn't want to be seen as a cripple in front of his daughter for the rest of his life. He realized, 
-                        "My disability is not in my legs but in my mind." He chose cycling as a tool for recovery, 
-                        starting with a rusty Schwinn bicycle. Gradually, movement returned to his legs, offering 
-                        positive feedback. But why not set a real challenge for himself? How about a cross-continental 
-                        bicycle race of about 2600 miles? Before that, let's take on a 12-hour, 90-mile bicycle 
-                        challenge. He aimed for a 90-mile cycling challenge as his first major milestone, using just one 
-                        leg for the final five miles. This challenge marked his foremost recovery milestone. Even in the 
-                        final five kilometers, he pedaled with just one leg, the other almost immobilized. Determined, he 
-                        channeled all his energy, questioning, "If I can't manage 90 miles, how can you manage 2600 
-                        miles?" With that determination, he crossed the finish line, aiming to prove the truth of the 
-                        famous utterance by Winston Churchill, "If you are going through hell, keep going."
-      </span>
-      <br>
-      <br>
-      <span>
-        At that moment, he realized his legs were salvageable.
-      </span>
-    </p>
-    <img
-      class="fade margin-top-60 mb-margin-top-40"
-      src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230906-155411.jpg?v=1693986869"
-      alt="">
-  </section>
-  <section class="margin-top-60 margin-bottom-60 max-width-720 mb-margin-top-40 mb-margin-bottom-40">
-    <h5 class="mb-font-size-24">Setting a World Record</h5>
-    <br>
-    <p>
-      <span>
-        In 1982, Coles cycled from Savannah to San Diego in 15 days, setting a new world record. 
-        Hard to believe this was the same person who couldn't walk five years prior. Coles's journey 
-                        from crutches to cycling across the nation proved the truth in Churchill's words.
-      </span>
-      <br>
-      <br>
-      <i class="font-weight-700">"I knew I could beat my original time."</i>
-      <br>
-      <br>
-      <span>
-        Indeed, he sought to surpass himself. In 1983, close to breaking his record, a desert whirlwind 
-        hurled him off his bike, fracturing his collarbone, just 380 miles short of his goal. In 1984, 
-                        undeterred, he embarked on another attempt to conquer the 2600-mile cross-country route.
-      </span>
-      <br>
-      <br>
-      <span>
-        For the initial days, Michael J Coles contended with aggressive winds ranging from 30 to 40 
-        mph. Three states lay behind him, and five stretched ahead. His body exhibited the 
-                        consequences of the conflict against the wind. The force he exerted on the pedals led to 
-                        significant swelling in his feet, necessitating the cutting open of his shoes. His neck ached, and 
-                        his hands grew so numb that he had to shake them every few minutes to restore blood 
-                        circulation. At this juncture, he looked forward to merely two things: eating and sleeping. But 
-                        for Michael to break records, these two things had to be restrained: sleep, limited to just two 
-                        hours a day, and food for energy consumed while riding.
-      </span>
-    </p>
-    <div class="margin-top-bottom-60 mb-margin-top-bottom-40 grid-box grid-columns-2 grid-column-gap-24 mb-grid-columns-1 grid-row-gap-24">
-      <img
-        class="fade"
-        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230906-160045.jpg?v=1693987274"
-        alt="">
-      <img
-        class="fade"
-        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230906-160055.jpg?v=1693987273"
-        alt="">
-    </div>
-    <p>
-      <span>
-        In Michael J Coles's 2,600-mile journey across the U.S., every state, city, mile, and inch was a 
-        battle against the relentless headwind, reshaping his perspective. He had to strive toward 
-                        California. This intense focus brought unprecedented clarity, revealing the inadequacy of "good 
-                        enough."
-      </span>
-      <br>
-      <br>
-      <span>
-        On May 15th at 5:15 PM Beijing time, Michael J Coles reached San Diego. Enduring stop-andgo traffic in the final race hours, only in rest did true exhaustion hit. While moving, pain 
-        remained subdued. Over the last three hours, seven pounds shed due to body strain. Turning 
-                        onto Broadway Street, crowds surged, adrenaline soaring. Exhilarating yet agonizing, he was 
-                        certain. He would finish. Pushed to unearth his essence, future challenges seemed less 
-                        daunting
-      </span>
-      <br>
-      <br>
-      <span>
-        After 11 days, 8 hours, and 15 minutes from Savannah, Michael J Coles achieved a new world 
-        record. Sleeping just 22 hours total, less than two hours each day, he shattered his record at 
-                        40, lifting his bike on destination courthouse steps, -nothing would ever be the same.
-      </span>
-    </p>
-    <img
-      class="fade margin-top-60 mb-margin-top-40"
-      src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230906-160456.jpg?v=1693987512"
-      alt="">
-  </section>
-  <section class="margin-top-60 margin-bottom-60 max-width-720 mb-margin-top-40 mb-margin-bottom-40">
-    <h5 class="mb-font-size-24">Over that Rock, miracle will happen</h5>
-    <br>
-    <br>
-    <p>
-      <span>
-        For Michael, it was that very rock that almost took his life and then bestowed upon him the 
-        rebirth, instilling an unwavering belief to never give up, even in the face of the abyss. So, when 
-                he conquered the seemingly impossible task "Over That Rock," he believed it was a miracle. 
-                However, this "miracle" was one he single-handedly engineered. He once said, "Life is a gift, 
-                your ability to work is a bonus, and pedaling a bicycle is a miracle." Grateful for this 
-                experience, he transformed what appeared to be a failure into a pivotal moment in business.
-      </span>
-      <br>
-      <br>
-      <span>
-        He forever holds onto the faith of "keep going," leading his company to become the largest 
-        cookie store company in America, the "Great American Cookie." Gratitude for everything 
-                received, "my whole life is about giving back." It's time to give back to society. In 2018, he 
-                authored his autobiography, "Time to Get Tough: How Cookies Coffee and a Crash Led To 
-                Success in Business and Life." His life's 75-year journey is encapsulated within these pages, 
-                embracing both success and failure, near-death experiences and rebirth. He aims to inspire 
-                youth with his story. This is the link to this book:
-        <a
-          href="https://www.amazon.com/gp/product/
-                    0820354627"
-          class="my-link"
-          target="_blank">https://www.amazon.com/gp/product/
-          0820354627</a>
-      </span>
-    </p>
-    <div class="margin-top-bottom-60 mb-margin-top-bottom-40 flex flex-center">
-      <img
-        class="fade max-width-400"
-        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230906-160809.jpg?v=1693987708"
-        alt="">
-    </div>
-    <p>
-      <span>
-        In 2021, Michael and Donna donated $1 million to Kennesaw State University for The Michael 
-        J. and Donna N. Coles Veterans Scholarship Endowment Fund, providing scholarships for 
-                                veterans who've exhausted their GI Bill® benefits before finishing their degrees.
-      </span>
-      <br>
-      <br>
-      <span>
-        His story deeply moved me—always keep going and giving back. In his documentary, his 
-        conclusion resonates, "A true champion determined not to quit but soar." Now, this true 
-                champion chooses to continue soaring while giving back to everything that lifted him.
-      </span>
-      <br>
-      <br>
-      <i>He over that rock, and indeed, miracles happened—overcoming everything. 
-        And now, he's returning to that rock with gratitude. It's time to give back.</i>
-    </p>
-    <img
-      class="fade margin-top-60 mb-margin-top-40"
-      src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230906-161302.jpg?v=1693988023"
-      alt="">
-  </section>
-  <section class="margin-top-60 margin-bottom-60 max-width-720 mb-margin-top-40 mb-margin-bottom-40">
-    <h5 class="mb-font-size-24">Conversation with Michael J. Coles</h5>
-    <div class="video margin-top-bottom-60 mb-margin-top-bottom-32">
-      <iframe
-        width="100%"
-        height="100%"
-        src="https://www.youtube.com/embed/Jbl43VwNAoU?start=0&autoplay=0&loop=0&mute=0&controls=0&enablejsapi=1"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen></iframe>
-    </div>
-    <p>
-      <span>
-        As a proud user of the Urtopia ebike, we are honored to interview Michael and share essence 
-        of Urtopia: Inspire Passion, Activate Life.
-      </span>
-    </p>
-    <br>
-    <p>
-      <span class="font-weight-700">Q: Which three words would it be if you described Urtopia Ebike?</span><br><br>
-      <span>A: Sexy, Comfortable and Flawless.</span>
-    </p>
-    <br>
-    <br>
-    <p>
-      <span class="font-weight-700">Q: You are such a rich experience of life and go through many things. Could you tell about the 
-        life of philosophy? What do you think about life?</span><br><br>
-      <span>A: Well, that's a pretty big question. But I would say that, first of all, To Get Tough. If you're 
-        asking me about life, I would say that you should try to approach everything in your life to 
-                            make it the best possible thing it could possibly be. It doesn't matter whether you have money 
-                            or not, it's just that. And second, live an honest life. I think an honest life for me is the most 
-                            important thing.</span>
-    </p>
-    <br>
-    <br>
-    <p>
-      <span class="font-weight-700">Q: We would love to learn something from you as we face the challenges of life and business. 
-        How do young people cope when something bad happens?</span><br><br>
-      <span>A: I think that things that go wrong are frankly the biggest learning opportunity for the future of 
-        all the things that go right. Because when things go right, there's not much to learn. But when 
-                            something happens, that's a glitch that you have to power through and figure out how to solve 
-                            the problem. In business and life you have to know you are going to make mistakes. The 
-                            important thing is to learn from those mistakes and not repeat them.</span><br><br>
-      <span>
-        And so for me, I'm sure when I was younger, things that I went through would seem 
-        devastating. But as I've gotten older and realized that most things that seem devastating are 
-                big learning opportunities and if you the fortitude to hold things together, you can learn.
-      </span>
-      <br>
-      <br>
-      <span>
-        Six weeks after we started the company, I was involved in a near fatal motorcycle accident. 
-        And I was told by doctors I'd never walk again unaided, but I wound up using a bicycle to 
-                rehab. I was very lucky because I had the determination. So I started using the bike to prove 
-                the doctor's wrong. I decided I wanted to try to do something that I could use as an example. I 
-                was going to ride my bike from Savannah, GA to San Diego, CA, which is 2600 miles. And I 
-                trained for two years to do it. I crossed the country in 15 days. I knew it was not the best I 
-                could do and 2 years later broke my record by over 4 days.
-      </span>
-    </p>
-    <br>
-    <br>
-    <p>
-      <span class="font-weight-700">Q: If you could give us 3 pieces of advice to the young people, what would it be?</span><br><br>
-      <span>A: 1. Take risks as early as you possibly can. Because it may not work out and give yourself 
-        plenty of time to recover. It was given to me when I was 22 years old by a very successful guy 
-                            on an airplane.<br>
-        2. Don't try to build a business with the intention of selling it. Build a great business and people 
-        will want to buy it.<br>
-        3. Build your life around integrity. If you tell the truth the whole time, you never have to question 
-        what the answer is. If you made-up stories along the way, you got to go back and remember 
-                            the story you made-up.</span>
-    </p>
-  </section>
-</article>
+</div>
+<div class="centeral-content need">
+    <div class="u48DemiBold_v2">Need a different <br class="pcHide">size or style?</div>
+    <div class="u30DemiBold_v2">Check out the new e-bikes <span class="emphasize">in stock</span></div>
+</div>
+{% render 'home-page-bikes', hide_mobile: true %}
 
 <script>
-  window.addEventListener("scroll", throttle(() => {
-    $('article .fade').each((i, item) => {
-      let {top} = item.getBoundingClientRect();
-      let s = window.innerHeight - top;
-      if (s > 0) {
-        item.classList.add("fade-in-show")
-      }
+    $('.top-area .dots > div').on('click', e => {
+        const target = $(e.target)
+
+        const variant = target.attr('data-variant')
+        const image = target.attr('data-img')
+
+        target.siblings().removeClass('active')
+        target.addClass('active')
+
+        const item = target.closest('.item')
+        item.find('img').attr('src', image)
+
+        const button = item.find('.my-button')
+        button.attr('href', `${button.attr('href').split('?').shift()}?variant=${variant}`)
     })
-  }, 50))
-  $('article').append(`{% render 'blog-common-footer' %}`){% for article in blogs.blog.articles %}{% if forloop.index <= 3 %}console.log(JSON.parse(JSON.stringify({{ article | json }}))){% endif %}{% endfor %}
 </script>
