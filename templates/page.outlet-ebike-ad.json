@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "outlet-ebike-ad": {
+      "type": "outlet-ebike-ad",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "outlet-ebike-ad"
+  ]
+}
