@@ -55,6 +55,30 @@
           margin-bottom: 120px;
         }
 
+        .product .commonComponent > .count-down {
+          color: var(--sale-order-page-text-color);
+          overflow: hidden;
+          margin-top: 6px;
+        }
+
+        .product .centeral-content .product-panel .count-down {
+          margin-top: 6px;
+        }
+
+        .product .centeral-content .product-panel .count-down img {
+          transform: translateY(13%);
+        }
+
+        .product .commonComponent > .count-down .u17Medium_v2 {
+          font-size: 12px;
+        }
+
+        .product .commonComponent > .count-down img {
+            max-width: 70%;
+            transform: translateY(13%);
+        }
+
+
         @media (max-width: 767px) {
             .product .emphasize-list {
               font-size: 14px;
@@ -79,7 +103,13 @@
 				<div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-25_ order-djs mb6">
 					<div class="pf-judme">{% render "judgeme_widgets", widget_type: "judgeme_preview_badge", jm_style: "", concierge_install: false, product: product %}</div>
 				</div>
-				<div class="u30DemiBold_v2 mb6" data-price={{ product.compare_at_price | money }}>{{ product.price | money }}</div>
+				<div class="u30DemiBold_v2" data-price={{ product.compare_at_price | money }}>{{ product.price | money }}</div>
+        {% unless settings.hide_sale_countdown %}
+          <div class="count-down mb12 pcHide">
+            <div class="u17Medium_v2">Price going up in:</div>
+            <img src="http://i.countdownmail.com/205dop.gif">
+          </div>
+        {% endunless %}
 			</div>
 			<div class="featured_image">
 				<div class="swiper left-swiper mobileHide">
@@ -129,8 +159,14 @@
 					<div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-25_ order-djs mb6">
 						<div class="pf-judme">{% render "judgeme_widgets", widget_type: "judgeme_preview_badge", jm_style: "", concierge_install: false, product: product %}</div>
 					</div>
-					<div class="u30DemiBold_v2 mb6" data-price={{ product.compare_at_price | money }}>{{ product.price | money }}</div>
+					<div class="u30DemiBold_v2" data-price={{ product.compare_at_price | money }}>{{ product.price | money }}</div>
 				</div>
+        {% unless settings.hide_sale_countdown %}
+          <div class="count-down mb12 mobileHide">
+            <div class="u17Medium_v2">Price going up in:</div>
+            <img src="http://i.countdownmail.com/205dop.gif">
+          </div>
+        {% endunless %}
           <ul class="emphasize-list u17Medium_v2">
             <li><span>●</span><span>Include sample bikes with the same quality and appearance as new bikes</span></li>
             <li><span>●</span><span>2-year warranty</span></li>

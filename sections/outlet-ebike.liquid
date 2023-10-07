@@ -23,7 +23,15 @@
 <div class="gray-background-color top-area">
     <div class="centeral-content">
         <div class="u72DemiBold_v2">OUTLET</div>
-        <div class="u24Medium_v2">The Urtopia Outlet includes demo e-bikes with the same quality and performance as new ones. The e-bikes are tested by our engineers for our customers. Also, meticulous quality control measures are implemented prior to offering them for sale.</div>
+        <div class="count">
+            <div class="u24Medium_v2">The Urtopia Outlet includes demo e-bikes with the same quality and performance as new ones. The e-bikes are tested by our engineers for our customers. Also, meticulous quality control measures are implemented prior to offering them for sale.</div>
+            {% unless settings.hide_sale_countdown %}
+                <div class="count-down">
+                    <div class="u24Medium_v2">Price going up in：</div>
+                    <img src="http://i.countdownmail.com/205dop.gif" alt="">
+                </div>
+            {% endunless %}
+        </div>
       <div class="product item">
             <div>
                 <div class="u36DemiBold_v2">Outlet Carbon 1s</div>
