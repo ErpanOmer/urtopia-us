@@ -161,6 +161,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       const instance =  new Intl.NumberFormat("en-US", {
         style: "currency",
         currency: Shopify.currency.active,
+        roundingMode: 'floor',
         minimumFractionDigits: ignoreZero ? 0 : 2,
         maximumFractionDigits: ignoreZero ? 0 : 2
       })
