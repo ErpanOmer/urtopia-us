@@ -37,7 +37,7 @@ const global_config = {
         // carbon 车默认显示 variant_id, 只有 url 上的 variant 参数为空的时候生效
         default_variant: 43556895916280,
         // variant 为 available:false 的情况下 也要强制显示 
-        ignore_variants_available_false: [],
+        ignore_variants_available_false: [43556900077816],
         size_map: {
             S: `Fit for 5’3’’~5’9’’ Inseam 30’’`,
             M: `Fit for 5’7’’~6’1’’ Inseam 31’’`,
