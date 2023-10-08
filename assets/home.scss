@@ -102,7 +102,7 @@
                     }
 
                     .u36DemiBold_v2 {
-                        margin: 40px 0;
+                        // margin: 40px 0;
                     }
                 }
             }
@@ -129,6 +129,46 @@
                     }
                 }
             }
+        }
+
+        .holiday {
+            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_19228_2x_530a3d76-7847-45ca-8e34-b08c73fdb91d.jpg?v=1695796443');
+
+            .centeral-content {
+                align-items: flex-end;
+
+                & > div {
+                    align-items: flex-start;
+                    height: 80%;
+                    padding-bottom: 8vh;
+
+                    img {
+                        max-width: 640px;
+                        margin-bottom: 40px;
+                    }
+
+                    .u14Light_v2 {
+                        max-width: 480px;
+                        opacity: 0.7;
+                    }
+
+                    .u17DemiBold_v2 {
+                        border-radius: 12px;
+                        padding: 2px 11px;
+                        background-image: linear-gradient(90deg, #EE6426, #F4492A);
+                        font-size: 16px;
+                        margin: 12px 0 24px;
+                    }
+
+                    &:first-child {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .chord-sale {
+            background-image: var(--chord-sale-banner-background-image-pc);
         }
 
         .michaeal {
@@ -386,7 +426,7 @@
                         text-align: center;
 
                         & > img {
-                            max-width: var(--chord-sale-banner-image-max-width-mb);
+                            // max-width: var(--chord-sale-banner-image-max-width-mb);
                         }
 
                         .u36DemiBold_v2 {
@@ -406,6 +446,49 @@
                         }
                     }
                 }
+            }
+
+            .holiday {
+                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_19460_2x_af860527-f616-40ef-9dce-9230fc26a56d.jpg?v=1695797764');
+                background-position-y: center;
+
+                .centeral-content {
+                    & > div {
+                        padding: 6vw 0 8vw;
+                        height: 100%;
+
+                        .u14Light_v2 {
+                            font-size: 12px;
+                        }
+
+                        img {
+                            // height: 52px;
+                            // width: auto;
+                            margin: auto;
+                        }
+
+                        .u36DemiBold_v2 {
+                            font-size: 20px;
+                            margin: auto;
+                            text-align: center;
+                        }
+
+                        .u17DemiBold_v2 {
+                            font-size: 13px;
+                            text-align: center;
+                            margin: 1vw auto;
+                        }
+
+                        .buttons {
+                            width: 100%;
+                            margin-bottom: 4vw;
+                        }
+                    }
+                }
+            }
+
+            .chord-sale {
+                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230927-172346.jpg?v=1695806668')
             }
 
             .michaeal {

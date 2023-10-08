@@ -2,6 +2,24 @@
 {{ 'pagefly.7e55a3be.css' | asset_url | stylesheet_tag: preload: true }}
 {{ 'chord.scss.css' | asset_url | stylesheet_tag: preload: true }}
 
+<style>
+  .sale-big-text {
+    border-radius: 12px;
+    padding: 8px 12px;
+    background-image: linear-gradient(90deg, #EE6426, #F4492A);
+    color: #fff;
+    margin: 6px 0 -6px;
+  }
+  .sale-big-text .u20DemiBold_v2 {
+    font-size: 18px;
+  }
+  @media (max-width: 767px) { 
+    .sale-big-text .u20DemiBold_v2 {
+      font-size: 14px;
+    }
+  }
+</style>
+
 <div style="opacity:0" class="sc-bYoBSM hUVNGC __pf __pf_oWvcundu" id="__pf"><div data-pf-type="Body" class="sc-hjGZqJ fNoOP pf-1_"><div data-pf-type="Layout" class="sc-htJRVC dNJAjO pf-2_"><div data-pf-type="ProductPreview" class="sc-cvlWTT btfkZr pf-3_"> </div>
 
 <div class="product" data-pf-type="ProductBox">
@@ -11,10 +29,15 @@
             <div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-25_ order-djs mb6">
                 <div class="pf-judme">{% render "judgeme_widgets", widget_type: "judgeme_preview_badge", jm_style: "", concierge_install: false, product: product %}</div>
             </div>
-            <div class="product-price u30DemiBold_v2" data-price="{{ product.price | money }}">{{ product.price | minus: settings.chord_ebike_discount_price | money }}</div>
+            <div class="u14DemiBold_v2" style="color: var(--sale-order-page-text-color);margin-bottom:3px;">{{ settings.chord_sale_name }}</div>
+            <div class="product-price u30DemiBold_v2" style="margin: 0;" data-price="{{ product.price | money }}">{{ product.price | minus: settings.chord_ebike_discount_price | money }}</div>
             <div class="sale-tag mb6">
-              <div class="u17Medium_v2">{{ settings.chord_sale_name }}</div>
+              <!--<div class="u17Medium_v2">{{ settings.chord_sale_name }}</div>-->
               <div class="u14Light_v2">Free shipping.</div>
+            </div>
+            <div class="sale-big-text mb6">
+              <div class="u20DemiBold_v2">LOWEST PRICE OF THE YEAR GUARANTEED!</div>
+              <div class="u11Light_v2">For any order during Oct 1 - Dec 31 2023, if there is a price drop within this period on our website, you will get a refund for the difference.</div>
             </div>
         </div>
         <div class="featured_image">
@@ -77,10 +100,15 @@
                 <div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-25_ order-djs mb6">
                     <div class="pf-judme">{% render "judgeme_widgets", widget_type: "judgeme_preview_badge", jm_style: "", concierge_install: false, product: product %}</div>
                 </div>
-                <div class="product-price u30DemiBold_v2" data-price="{{ product.price | money }}">{{ product.price | minus: settings.chord_ebike_discount_price | money }}</div>
-                <div class="sale-tag mb12">
-                  <div class="u17Medium_v2">{{ settings.chord_sale_name }}</div>
-                  <div class="u14Light_v2">Free shipping.</div>
+                <div class="u17DemiBold_v2" style="color: var(--sale-order-page-text-color);margin-bottom:3px;">{{ settings.chord_sale_name }}</div>
+                <div style="margin: 0" class="product-price u30DemiBold_v2" data-price="{{ product.price | money }}">{{ product.price | minus: settings.chord_ebike_discount_price | money }}</div>
+                <div class="sale-tag mb6">
+                  <!--<div class="u17Medium_v2">{{ settings.chord_sale_name }}</div>-->
+                  <div class="u14Light_v2" style="margin: 0">Free shipping.</div>
+                </div>
+                <div class="sale-big-text mb12">
+                  <div class="u20DemiBold_v2">LOWEST PRICE OF THE YEAR GUARANTEED!</div>
+                  <div class="u11Light_v2">For any order during Oct 1 - Dec 31 2023, if there is a price drop within this period on our website, you will get a refund for the difference.</div>
                 </div>
             </div>
             <div class="fenders pcHide">
@@ -1328,6 +1356,8 @@
               $(`.product .product-panel .accessories .chord-accessories`).show()
               $(`.product .product-panel .accessories .chord-accessories-1`).hide()
               $(`.product .product-panel .options > div[option="Frame"] .u17DemiBold_v2 .u17Light_v2`).text(`Chord - ${global_config.chord_order_page_config.size_map[e.value]}`)
+
+              /*
               $(`.product .product-panel .sale`).show()
               $(`.product .product-panel .count-down`).show()
               $(`.product .product-panel .orderTestRideBtn .stages`).text('{{ product.price | minus: settings.chord_ebike_discount_price | divided_by: 24 | money_without_trailing_zeros }}')
@@ -1349,12 +1379,14 @@
                 margin: '12px 0 0',
                 color: 'var(--sale-order-page-text-color)'
               })
+              */
       } else {
             $(`.product .product-panel .accessories .chord-accessories .active`).click()
             $(`.product .product-panel .accessories .chord-accessories`).hide()
             $(`.product .product-panel .accessories .chord-accessories-1`).show()
             $(`.product .product-panel .options > div[option="Frame"] .u17DemiBold_v2 .u17Light_v2`).text(`Chord X - ${global_config.chord_order_page_config.size_map[e.value]}`)
 
+            /*
             $(`.product .product-panel .sale`).hide()
             $(`.product .product-panel .count-down`).hide()
             $(`.product .product-panel .orderTestRideBtn .stages`).text('{{ product.price | divided_by: 24 | money_without_trailing_zeros }}')
@@ -1374,6 +1406,8 @@
               margin: '0 0 6px',
               color: '#000'
             })
+
+            */
       }
 
             $(`.product .product-panel .accessories .items`).animate({

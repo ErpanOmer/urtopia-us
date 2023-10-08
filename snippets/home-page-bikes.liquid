@@ -273,14 +273,14 @@
                     <div onclick="changeBike('/products/urtopia-carbon-e-bike?variant=43556895981816', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18138_2x_de02f431-3e7d-48c0-b887-85eda46c2421.png?v=1677640174', this)" gray></div>
                     <div onclick="changeBike('/products/urtopia-carbon-e-bike?variant=43556899815672', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230428-104445.png?v=1682649982', this)" peach></div>
                   </div>
-                  <div class="u24DemiBold_v2" {% if settings.carbon_ebike_discount_price != "0" %} data-price="{{all_products['urtopia-carbon-e-bike'].price | money_without_trailing_zeros }}"{% endif %}>
-                    {{ all_products['urtopia-carbon-e-bike'].price | minus: settings.carbon_ebike_discount_price | money_without_trailing_zeros }}
+                  <div class="u24DemiBold_v2" {% if settings.carbon1s_ebike_discount_price != "0" %} data-price="{{all_products['urtopia-carbon-e-bike'].price | money_without_trailing_zeros }}"{% endif %}>
+                    {{ all_products['urtopia-carbon-e-bike'].price | minus: settings.carbon1s_ebike_discount_price | money_without_trailing_zeros }}
                   </div>
                 </div>
                 <div class="size">Fit for 5’3’’~6’5’’</div>
               </div> 
               <a class="my-button my-button-white" href="/products/urtopia-carbon-e-bike?variant=43556895916280">Order now</a>
-              <div class="my-button my-button-black new" style="background-image: var(--sale-bike-tags1);">{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros}} off</div>
+              <div class="my-button my-button-black new" style="background-image: var(--sale-bike-tags1);">{{ settings.carbon1s_ebike_discount_price | money_without_trailing_zeros}} off</div>
               <div class="my-button my-button-black new" style="transform: translateY(120%);background-image: var(--sale-bike-tags2);">{{ settings.carbon_ebike_free_accessories_count }} Freebies</div>
           </div>
           <div class="swiper-slide">
@@ -321,7 +321,9 @@
                 <div class="size">Fit for 5’7’’~6’5’’</div>
               </div> 
               <a href="/products/urtopia-carbon-e-bike?variant=43556899913976" class="my-button my-button-white">Order now</a>
-            <div class="my-button my-button-black new" style="background-image: var(--sale-bike-tags1);">{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros}} off</div>
+              {% unless settings.carbon_ebike_discount_price == "0" %}
+                <div class="my-button my-button-black new" style="background-image: var(--sale-bike-tags1);">{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros}} off</div>
+              {% endunless %}
             </div>
           {% endunless %}
           <div class="swiper-slide">
@@ -334,12 +336,14 @@
                     <div onclick="changeBike('/products/urtopia-chord-ebike?variant=43694976729336', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/chordX_2x_fe86f1a1-6d47-4dd4-b1b9-80ee149da0fe.jpg?v=1689154670', this)" white></div>
                     <!--<div onclick="changeBike('/products/urtopia-chord-ebike?variant=43694976762104', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/chordX_2x_ac6e3457-6ab6-4c57-a190-b58c8171d6c8.jpg?v=1689154690', this)" black></div>-->
                   </div>
-                  <div class="u24DemiBold_v2">{{ all_products['urtopia-chord-ebike'].price | money_without_trailing_zeros }}</div>
+                <div class="u24DemiBold_v2" {% if settings.chord_ebike_discount_price != "0" %} data-price="{{all_products['urtopia-chord-ebike'].price | money_without_trailing_zeros }}"{% endif %}>
+                  {{ all_products['urtopia-chord-ebike'].price | minus: settings.chord_ebike_discount_price | money_without_trailing_zeros }}
+                </div>
                 </div>
                 <div class="size">Fit for 5’3’’~6’1’’</div>
               </div>
               <a class="my-button my-button-white" href="/products/urtopia-chord-ebike?variant=43694976729336">Order now</a>
-              <!--<div class="my-button my-button-black new">$300 OFF</div>-->
+              <div class="my-button my-button-black new" style="background-image: var(--sale-bike-tags1);">{{ settings.chord_ebike_discount_price | money_without_trailing_zeros}} off</div>
             </div>
           
       </div>

@@ -6,7 +6,7 @@
         "type": "text",
         "id": "sale_name",
         "label": "活动名称",
-        "default": "Seasonal Clearance Sale"
+        "default": "Holiday Season Sale"
       },
       {
         "type": "text",
@@ -16,9 +16,15 @@
       },
       {
         "type": "text",
-        "id": "carbon_ebike_discount_price",
+        "id": "carbon1s_ebike_discount_price",
         "label": "carbon车折扣价",
         "default": "60000"
+      },
+      {
+        "type": "text",
+        "id": "carbon_ebike_discount_price",
+        "label": "carbon 1 活动折扣价",
+        "default": "0"
       },
       {
         "type": "text",
@@ -36,7 +42,7 @@
         "type": "text",
         "id": "chord_sale_name",
         "label": "chord 活动名称",
-        "default": "Seasonal Clearance Sale"
+        "default": "Holiday Season Sale"
       },
       {
         "type": "text",
