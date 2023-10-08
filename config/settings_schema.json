@@ -6,13 +6,13 @@
         "type": "text",
         "id": "sale_name",
         "label": "活动名称",
-        "default": "Holiday Season Sale"
+        "default": "Early Black Friday Sale"
       },
       {
         "type": "text",
         "id": "sale_end_time",
         "label": "活动结束文案",
-        "default": "Ends on Oct 07"
+        "default": "Ends on Oct 12"
       },
       {
         "type": "text",
@@ -42,7 +42,7 @@
         "type": "text",
         "id": "chord_sale_name",
         "label": "chord 活动名称",
-        "default": "Holiday Season Sale"
+        "default": "Early Black Friday Sale"
       },
       {
         "type": "text",
@@ -60,7 +60,7 @@
         "type": "text",
         "id": "chord_sale_end_time",
         "label": "chord 活动结束文案",
-        "default": "Ends on Oct 07"
+        "default": "Ends on Oct 12"
       },
       {
         "type": "checkbox",
