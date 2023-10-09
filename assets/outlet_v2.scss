@@ -47,6 +47,11 @@ $product-tags-color: #FFE2D9;
             background-color: #000;
         }
 
+        &[data-stye="Gray"] {
+            border-color: #405364;
+            background-color: #405364;
+        }
+
         &[data-stye="Midnight in Paris"]::before {
             content: "";
             display: inline-block;
@@ -94,6 +99,10 @@ $product-tags-color: #FFE2D9;
 
         &[data-stye="Black"]::after {
             background-color: #000;
+        }
+
+        &[data-stye="Gray"]::after {
+            background-color: #405364;
         }
     }
 
