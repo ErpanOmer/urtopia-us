@@ -332,7 +332,7 @@ const testRides = [
   },
   {
     city: 'New York',
-    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Spokesman_Cycles_LIC_ny.jpg?v=1665374977',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/New_york_times_square-terabass.jpg?v=1696759734',
     stores: [
       {
         name: "Spokesman Cycles (LIC)",
@@ -418,6 +418,28 @@ const testRides = [
           "10:00-19:00",
           "10:00-19:00",
         ],
+      },
+      {
+        name: "Richard Fine",
+        phone: "914-523-3207",
+        email: "richardfine42@hotmail.com",
+        timezone: "New York, Queens, NY, USA (GMT-4)",
+        add: "Rhinebeck NY, 12572",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/New_york_times_square-terabass.jpg?v=1696759734",
+        testrideSpot: "New York",
+        availableSizes: [
+          'Carbon 1 Size L',
+        ],
+        businessHours: [
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+        ],
+        isPartner: true,
       },
     ]
   },

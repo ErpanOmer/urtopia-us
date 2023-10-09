@@ -37,7 +37,7 @@ const global_config = {
         // carbon 车默认显示 variant_id, 只有 url 上的 variant 参数为空的时候生效
         default_variant: 43556895916280,
         // variant 为 available:false 的情况下 也要强制显示 
-        ignore_variants_available_false: [43556900077816],
+        ignore_variants_available_false: [],
         size_map: {
             S: `Fit for 5’3’’~5’9’’ Inseam 30’’`,
             M: `Fit for 5’7’’~6’1’’ Inseam 31’’`,
@@ -220,6 +220,15 @@ const global_config = {
                     'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18770_ae2056ef-cd08-42d1-a7b4-e8f125eae35a.png?v=1689237082',
                     'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18771.png?v=1689237081',
                     'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18772_58e3cebc-b65d-42e2-bee0-f40c0662e725.png?v=1695388441'
+                ],
+              Gray: [
+                    'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/chord_x_gr_side.png?v=1696833425',
+                    'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/chord_x_gr_front.png?v=1696833426',
+                    'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/chord_x_gr_back.png?v=1696833425',
+
+                    'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/chord_x_gr_bar.png?v=1696833426',
+                    'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/chord_x_gr_gear.png?v=1696833426',
+                    'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/chord_x_gr_downtube.png?v=1696833426'
                 ],
                 commonSwiper: [
                     'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230224-145010_f48cb52f-2d3d-4a4f-b7f7-c6c2980349c9.png?v=1689236897',

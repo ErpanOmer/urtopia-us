@@ -6,7 +6,7 @@
         "type": "text",
         "id": "sale_name",
         "label": "活动名称",
-        "default": "Early Black Friday Sale"
+        "default": "Early Black Friday Deals"
       },
       {
         "type": "text",
@@ -18,7 +18,7 @@
         "type": "text",
         "id": "carbon1s_ebike_discount_price",
         "label": "carbon车折扣价",
-        "default": "60000"
+        "default": "80000"
       },
       {
         "type": "text",
@@ -42,7 +42,7 @@
         "type": "text",
         "id": "chord_sale_name",
         "label": "chord 活动名称",
-        "default": "Early Black Friday Sale"
+        "default": "Early Black Friday Deals"
       },
       {
         "type": "text",
