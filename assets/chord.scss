@@ -380,10 +380,12 @@
                         }
                     }
 
+                    div[attribute="Step-Through"]::after,
                     div[attribute="High-Step"]::after {
                         content: "Sale";
                     }
 
+                    div[attribute="Step-Through"].active,
                     div[attribute="High-Step"].active {
                         border-color: var(--sale-order-page-text-color);
                         color: var(--sale-order-page-text-color);
