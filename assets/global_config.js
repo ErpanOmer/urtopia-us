@@ -249,6 +249,7 @@ const global_config = {
       // chord x
       43694976729336: 'Pre-order items shipped from October 15 - 30, 2023',
       43694976762104: 'Pre-order items shipped from October 15 - 30, 2023',
+          44047038447864:'Pre-order items shipped from October 15 - 30, 2023',
             
         }
     }

@@ -295,7 +295,7 @@
                 flex-direction: column;
 
                 .u20Medium_v2 {
-                    margin: 20px 0 96px;
+                    margin-top: 20px;
                 }
 
                 .boxs {
@@ -503,7 +503,7 @@
 
                 &:first-child {
                     background: center center/cover no-repeat;
-                    background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18440_2x_e6bc177e-f3cd-48aa-b71e-248fd8494cf6.jpg?v=1685613039');
+                    background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_21617_2x_5118edc4-833e-45c3-b6ae-ea5ed874296d.jpg?v=1696835748');
                     padding-bottom: 85%;
                     color: #fff;
                     padding-top: 8%;
@@ -511,6 +511,12 @@
 
                     .u17Light_v2 {
                         margin-top: 4px;
+                    }
+                }
+
+                 &:last-child {
+                    .u17Light_v2 {
+                        max-width: 400px;
                     }
                 }
             }
@@ -529,6 +535,11 @@
                 grid-column-gap: 3vw;
                 margin-bottom: 80px;
                 align-items: center;
+                padding: 0 50px;
+
+                 .u17Light_v2 {
+                    max-width: 400px;
+                }
             }
 
             .ooo {
@@ -1339,7 +1350,7 @@
         }
 
         .artist {
-            padding: 60px 0 80px;
+            padding: 20px 0 80px;
 
             .centeral-content {
                 grid-template-columns: 1fr;
@@ -1442,15 +1453,23 @@
 
             .centeral-content {
                 grid-template-columns: 1fr;
+                padding: 0;
 
                 &>div {
                     &:first-child {
                         order: 1;
-                        padding: 42% 4%;
+                        background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_22134_2x_a7dae110-2afb-411c-9723-76632586bff8.jpg?v=1696837180');
+                        height: 100vw;
+                        justify-content: flex-start;
+                        padding: 8vw;
 
                         .u24Medium_v2 {
                             font-size: 18px;
                         }
+                    }
+
+                   &:last-child {
+                        padding: 0 8vw;
                     }
 
                     .u30Medium_v2 {
@@ -1472,7 +1491,7 @@
 
 
         .forging {
-            padding: 20px 0 60px;
+            padding: 20px 0;
 
             .centeral-content {
                 padding: 0;

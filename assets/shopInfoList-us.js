@@ -24,7 +24,7 @@ function createdisableDates(limit = 0, ignore_date = []) {
 const testRides = [
   {
     city: 'California',
-    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Bicycle_Garage_Fremont_fremont.jpg?v=1665374978',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/what-is-california-known-for-the-golden-gate-bridge-hero.webp?v=1697020664',
     stores: [
       {
         name: 'Bicycle Garage Fremont',
@@ -327,6 +327,29 @@ const testRides = [
           "11:00-17:00",
           "10:00-17:00",
         ],
+      },
+      {
+        name: 'Dawna Stone',
+        phone: '559760-5838',
+        email: 'dawnastone2525@gmail.com',
+        timezone: "California, USA (GMT-7)",
+        add: "Cara Way, Temecula, CA 92591",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/what-is-california-known-for-the-golden-gate-bridge-hero.webp?v=1697020664",
+        testrideSpot: "California",
+        availableSizes: [
+          'Carbon 1 Size M',
+          'Carbon 1s Size S'
+        ],
+        businessHours: [
+          "10:00-19:00",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "10:00-19:00",
+        ],
+        isPartner: true,
       },
     ]
   },
@@ -1067,6 +1090,34 @@ const testRides = [
           "10:00-18:00",
           "10:00-17:00",
         ],
+      },
+    ]
+  },
+  {
+    city: 'Boulder',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Boulder_Large_2223a94d-810c-44ad-a54a-5cf0b16e76e7.jpg?v=1697019539',
+    stores: [
+      {
+        name: "Michael Gehmeyr",
+        phone: "303-324-6617",
+        email: "michael_gehmeyr@hotmail.com",
+        timezone: "Boulder, USA (GMT-7)",
+        add: "Scrub Oak Cir, Boulder, CO 80305",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Boulder_Large_2223a94d-810c-44ad-a54a-5cf0b16e76e7.jpg?v=1697019539",
+        testrideSpot: "Boulder",
+        availableSizes: [
+          'Carbon 1s Size S',
+        ],
+        businessHours: [
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+        ],
+        isPartner: true,
       },
     ]
   },

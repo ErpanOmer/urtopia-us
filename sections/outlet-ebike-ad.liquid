@@ -1,5 +1,5 @@
 {{ 'outlet_v2.scss.css' | asset_url | stylesheet_tag: preload: true }}
-<div class="banner">
+<!--<div class="banner">
     <div class="centeral-content">
         <div class="u48DemiBold_v2">Affordable Luxury</div>
         <div>
@@ -7,8 +7,16 @@
             <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_21573_2x_9f840b32-64a2-4cd1-a4c1-b4028593c226.png?v=1695626161" alt="">
         </div>
     </div>
+</div>-->
+<div class="banner_v2">
+    <img class="pcHide" src="https://cdn.shopifycdn.net/s/files/1/0583/5810/4213/files/20231011-180457.png?v=1697018826" alt="">
+    <div class="u48DemiBold_v2">The Best Lightweight E-Bikes</div>
+    <div class="u30DemiBold_v2">EARLY BLACK FRIDAY DEALS</div>
+    <div class="u17DemiBold_v2">LOWEST PRICE OF THE YEAR GUARANTEED!</div>
+    <img class="pcHide" src="https://cdn.shopifycdn.net/s/files/1/0583/5810/4213/files/20231011-180450.png?v=1697018826" alt="">
+    <img class="mobileHide" src="https://cdn.shopifycdn.net/s/files/1/0583/5810/4213/files/20231011-180420.png?v=1697018827" alt="">
 </div>
-<div class="gray-background-color support">
+<!--<div class="gray-background-color support">
     <div class="centeral-content">
         <div class="u20DemiBold_v2">
             <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/placeholder_2x_fc2bfb7f-cdd3-428b-9855-2ffbde0f88a8.png?v=1695626894" alt="">
@@ -23,7 +31,8 @@
             <span>2-Year Warranty</span>
         </div>
     </div>
-</div>
+</div>-->
+<div class="centeral-content u14Light_v2 tips">*For any order during Oct 1 - Dec 31 2023, if there is a price drop within this period on our website, you can request a refund for the difference by contacting our support. The refund will be automatically approved and returned to your account.</div>
 <div class="centeral-content ebike-products">
     <div class="u36DemiBold_v2">Best seller at <span class="emphasize">lowest</span> price</div>
     <div class="u24Medium_v2">Limited stock ships with 5 working days</div>
@@ -48,7 +57,6 @@
             product_name: 'Carbon 1',
             product_tags: product_tags,
             product_description: 'Sporty, light and nimble e-bike for everyday transport, fitness and fun.',
-            product_discount_price: settings.carbon1s_ebike_discount_price,
             product_url: product.url,
         %}
         <div class="gray-background-color u30DemiBold_v2 lozad mobileHide" data-background-image="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_22829_2x_82531e4b-8b9c-40c7-822f-c58f9db7d477.jpg?v=1695625176">Full Carbon Lightweight Sporty</div>
@@ -66,6 +74,7 @@
         {% render 'product-card',
             product_variants: product_variants,
             product_name: 'Chord X',
+            product_discount_price: settings.chord_ebike_discount_price,
             product_description: 'Easily kickstart your ride for workouts, city cruising, and pure enjoyment.',
             product_url: product.url,
         %}

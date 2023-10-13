@@ -1064,6 +1064,10 @@
                                 }
                             }
                         }
+
+                      &:not(:last-child) {
+                          margin-right: 12px;
+                        }
                     }
 
                     div[attribute*="350W"],
@@ -1085,10 +1089,6 @@
                         height: 22px;
                         line-height: 22px;
 
-                    }
-
-                    &>div+div {
-                        margin-left: 12px;
                     }
 
                     .active {
