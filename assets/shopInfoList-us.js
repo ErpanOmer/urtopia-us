@@ -730,7 +730,7 @@ const testRides = [
   },
   {
     city: 'Florida',
-    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-E-Cycle_Adventures_fl.jpg?v=1665374977',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/shutterstock_469708088.jpg?v=1697188978',
     stores: [
       {
         name: "E-Cycle Adventures",
@@ -795,6 +795,28 @@ const testRides = [
           "10:00-18:00",
           "10:00-17:00",
         ],
+      },
+      {
+        name: "José Luis",
+        phone: "951-451-1300",
+        email: "adonai01@me.com",
+        timezone: "New Port Richey, FL, USA (GMT-4)",
+        add: "6970 Bird Rd. 108. Miami Fl 33155, US",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/shutterstock_469708088.jpg?v=1697188978",
+        testrideSpot: "Florida",
+        availableSizes: [
+          'Carbon 1s Size S',
+        ],
+        businessHours: [
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+        ],
+        isPartner: true,
       },
     ]
   },
@@ -1116,6 +1138,34 @@ const testRides = [
           "10:00-18:00",
           "10:00-18:00",
           "10:00-18:00",
+        ],
+        isPartner: true,
+      },
+    ]
+  },
+  {
+    city: 'North Carolina',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/North-Carolina.jpg?v=1697188784',
+    stores: [
+      {
+        name: "Ben Major",
+        phone: "910-964-4528",
+        email: "benjaminmajor2019@gmail.com",
+        timezone: "North Carolina, USA (GMT-7)",
+        add: "Gables Dr.  Fayetteville, NC 28311",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/North-Carolina.jpg?v=1697188784",
+        testrideSpot: "North Carolina",
+        availableSizes: [
+          'Carbon 1s Size L',
+        ],
+        businessHours: [
+          "11:00-19:00",
+          "14:00-19:00",
+          "14:00-19:00",
+          "14:00-19:00",
+          "14:00-19:00",
+          "14:00-19:00",
+          "14:00-19:00",
         ],
         isPartner: true,
       },
