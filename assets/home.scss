@@ -1,3 +1,215 @@
+$product-tags-color: #FFE2D9;
+
+@mixin dots {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 6px 0;
+
+    &>div {
+        width: 34px;
+        height: 34px;
+        margin-right: 20px;
+        border-radius: 50%;
+        cursor: pointer;
+
+        &::after {
+            content: "";
+            display: inline-block;
+            height: 26px;
+            margin: 2px;
+            width: 26px;
+            border-radius: 100%;
+        }
+
+        &[data-stye="Sirius"] {
+            background-color: #FA812B;
+        }
+
+        &[data-stye="Lyra"] {
+            background-color: #747474;
+        }
+
+        &[data-stye="Vanilla"] {
+            background-color: #F0EEDF;
+        }
+
+        &[data-stye="Midnight in Paris"] {
+            background-color: #FFEC0B;
+            position: relative;
+        }
+
+        &[data-stye="White"] {
+            background-color: #ddd;
+        }
+
+        &[data-stye="Black"] {
+            background-color: #000;
+        }
+
+        &[data-stye="Gray"] {
+            border-color: #405364;
+            background-color: #405364;
+        }
+
+        &[data-stye="Midnight in Paris"]::before {
+            content: "";
+            display: inline-block;
+            background-color: #ff6c00;
+            position: absolute;
+            z-index: 1;
+            width: 100%;
+            height: 55%;
+            border-top-right-radius: 100px;
+            border-top-left-radius: 100px;
+        }
+    }
+
+    .active {
+        background-color: transparent !important;
+        border: 2px solid #666;
+
+        &[data-stye="Sirius"]::after {
+            background-color: #FA812B;
+        }
+
+        &[data-stye="Lyra"]::after {
+            background-color: #747474;
+        }
+
+        &[data-stye="Vanilla"]::after {
+            background-color: #F0EEDF;
+        }
+
+        &[data-stye="Midnight in Paris"]::after {
+            background-color: #FFEC0B;
+        }
+
+        &[data-stye="Midnight in Paris"]::before {
+            left: 2px;
+            top: 2px;
+            right: 2px;
+            height: 14px;
+            width: 26px;
+        }
+
+        &[data-stye="White"]::after {
+            background-color: #ddd;
+        }
+
+        &[data-stye="Black"]::after {
+            background-color: #000;
+        }
+
+        &[data-stye="Gray"]::after {
+            background-color: #405364;
+        }
+    }
+
+    @media (max-width: 767px) {
+        & > div {
+            width: 28px;
+            height: 28px;
+            margin-right: 12px;
+            
+            &::after {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        .active {
+            &[data-stye="Midnight in Paris"]::before {
+                height: 12px;
+                width: 20px;
+            }
+        }
+    }
+}
+
+@mixin product-card {
+    padding: 5%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+
+    *,
+    ::after,
+    ::before {
+        box-sizing: border-box;
+    }
+
+    .tags {
+        display: flex;
+        min-height: 28px;
+        flex-wrap: wrap;
+        flex: 1;
+
+        span {
+            background-color: $product-tags-color;
+            border-radius: 10px;
+            padding: 4px 10px;
+        }
+
+        span {
+            margin: 0 6px 6px 0;
+        }
+    }
+
+    .variant-image {
+        cursor: pointer;
+    }
+
+    .dots {
+        @include dots;
+    }
+
+    .product_price {
+        display: flex;
+        align-items: center;
+        margin: 10px 0 6px;
+        flex-wrap: wrap;
+
+        img {
+            max-width: 40px;
+            margin-left: 6px;
+        }
+
+        .u24DemiBold_v2 {
+            margin-right: 5%;
+
+            &[data-price]::after {
+                content: attr(data-price);
+                display: inline-block;
+                color: #161c1f;
+                text-decoration: line-through;
+                margin-left: 6px;
+                font-size: 24px;
+                font-weight: 300;
+                opacity: 0.53;
+            }
+        }
+
+        &>.u17Light_v2 {
+            display: flex;
+        }
+    }
+
+    .my-button {
+        width: fit-content;
+    }
+
+    @media (max-width: 767px) {
+        padding: 4vw;
+
+        .product_price {
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+    }
+}
+
 @keyframes toTop {
     0% {
         opacity: 0;
@@ -298,7 +510,7 @@
 
         .home-page-media {
             display: flex;
-            height: 340px;
+            height: 360px;
             width: 100%;
             flex-direction: column;
             align-items: center;
@@ -668,4 +880,370 @@
             }
         }
     }
+}
+
+
+@mixin home-page-ebike-banner {
+    background: transparent center center/cover no-repeat;
+    color: #fff;
+
+    .centeral-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        height: 500px;
+
+        .u17Light_v2 {
+            margin: 2.5vh 0 8vh;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .centeral-content {
+            height: 108vw;
+            align-items: center;
+            text-align: center;
+            justify-content: flex-end;
+            padding-bottom: 6vw;
+
+            .u42DemiBold_v2 {
+                font-size: 30px;
+            }
+
+            .u24Medium_v2 {
+                font-size: 17px;
+                margin: 1vw 0 8vw;
+            }
+
+            .u17Light_v2 {
+                font-size: 14px;
+                margin-bottom: 24px;
+            }
+        }
+    }
+}
+
+.home-page-ebike-banner {
+	@include home-page-ebike-banner;
+    background-image: url("https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_22136_2x_9f5b5344-d6f4-4434-a094-6f6863b7ee7a.jpg?v=1697163199");
+
+    @media (max-width: 767px) {
+        background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_22847_2x_82dafcfa-dabf-4918-a312-39e7d6cc57ee.jpg?v=1697175545');
+    }
+}
+
+.home-page-ebike-banner-chord {
+	@include home-page-ebike-banner;
+    background-image: url("https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_23012_2x_ba6a0d01-fe5c-486d-ad78-cd6db5eddae0.jpg?v=1697165184");
+
+    @media (max-width: 767px) {
+        background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_22848_2x_c75bff55-52fb-4fe5-a151-b64d749ccbad.jpg?v=1697175538');
+    }
+}
+
+.boxs {
+    padding: 120px 0;
+
+    .centeral-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 33.33%;
+        overflow: hidden;
+        //grid-template-rows: repeat(3, calc(100% / 3));
+
+        img[alt="app"] {
+            background-color: #161A22;
+            max-height: 600px;
+            object-fit: contain;
+            padding-top: 10%;
+        }
+
+        & > div {
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            justify-content: center;
+            padding: 15%;
+            background-color: #fff;
+
+            .u17Light_v2 {
+                margin: 20px 0 40px;
+            }
+
+            .images {
+                display: flex;
+
+                a {
+                    display: block;
+                    margin-right: 16px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+        padding: 60px 0;
+
+        .centeral-content {
+            grid-template-columns: 1fr;
+            grid-template-rows: 92vw;
+            padding: 0 4vw;
+
+            & > div {
+                padding: 12vw 4vw;
+
+                .u48DemiBold_v2 {
+                    font-size: 24px;
+                }
+
+                .u17Light_v2 {
+                    margin: 10px 0 20px;
+                    font-size: 14px;
+                }
+
+                &:nth-of-type(2) {
+                    order: 1;
+                }
+
+                &:nth-of-type(1) {
+                    order: 2;
+                }
+
+                &:nth-of-type(3) {
+                    order: 4;
+                }
+
+                &:nth-of-type(4) {
+                    order: 6;
+                }
+            }
+
+            & > img {
+                &:nth-of-type(1) {
+                    order: 3;
+                    max-height: 80vw;
+                }
+
+                &:nth-of-type(2) {
+                    order: 5;
+                }
+            }
+
+            
+        }
+    }
+}
+
+
+.ambass {
+    padding-bottom: 60px;
+
+    .centeral-content {
+        .u20Medium_v2 {
+            margin-top: 20px;
+        }
+    }
+
+    @media (max-width: 767px) {
+        padding-bottom: 30px;
+
+        .centeral-content {
+            padding: 0 4vw;
+            .u48DemiBold_v2 {
+                font-size: 24px;
+            }
+
+            .u20Medium_v2,
+            .u20DemiBold_v2 {
+                font-size: 14px;
+            }
+
+            .u20Medium_v2 {
+                margin-top: 10px;
+            }
+        }
+    }
+}
+
+.nba {
+    padding-bottom: 120px;
+
+    @media (max-width: 767px) {
+        padding-bottom: 60px;
+
+        .centeral-content {
+            padding: 0 4vw;
+        }
+    }
+}
+
+
+.ebikes {
+    margin: 120px 0;
+
+    @media (max-width: 767px) {
+        margin: 60px 0;
+
+        .centeral-content {
+            padding: 0;
+        }
+    }
+}
+
+
+.greenest {
+    margin: 120px 0;
+
+    .centeral-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        background-clip: content-box;
+        align-items: center;
+
+        & > div {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 0 10%;
+
+            .u17Light_v2 {
+                margin: 30px 0;
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+        margin: 60px 0;
+
+        .centeral-content {
+            grid-template-columns: 1fr;
+
+            & > div {
+                padding: 8vw 4vw;
+
+                .u36DemiBold_v2 {
+                    font-size: 24px
+                }
+
+                .u17Light_v2 {
+                    font-size: 14px;
+                    margin: 15px 0 30px;
+                }
+            }
+        }
+    }
+}
+
+
+.ebike-products {
+    margin: 120px auto 180px;
+
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 22px;
+
+        .product-card {
+            @include product-card;
+        }
+
+        &>.lozad {
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 10px;
+            overflow: hidden;
+            color: #fff;
+            display: flex;
+            align-items: flex-end;
+            padding: 20px 50% 20px 30px;
+        }
+    }
+
+    @media (max-width: 767px) {
+        margin: 40px auto;
+        padding: 0 4vw;
+
+        & > .u36DemiBold_v2 {
+            font-size: 30px;
+        }
+        
+        & > .u24Medium_v2 {
+            font-size: 17px;
+        }
+
+        .product-grid {
+            grid-template-columns: 1fr;
+            grid-row-gap: 12px;
+        }
+    }
+}
+
+.mind {
+    background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2122_2x_47750c26-bb56-4c4b-8c27-78d6d686798a.jpg?v=1697168118') center center/cover no-repeat;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-clip: content-box;
+    color: #fff;
+
+    .u42DemiBold_v2 {
+        margin: 7.5vh 0 1vh;
+    }
+
+    .my-button {
+        margin-bottom: 6vh;
+    }
+
+    @media (max-width: 767px) {
+        background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2122_2x_a919852b-20a8-477e-a4b0-1e948660d2c0.jpg?v=1697176334');
+        height: 108vw;
+        padding: 0 8vw;
+        margin: 0 4vw;
+        background-clip: unset;
+
+        .u42DemiBold_v2 {
+            font-size: 30px;
+            margin: 8vw 0 3vw;
+        }
+
+        .u17Light_v2 {
+            font-size: 15px;
+        }
+
+        .my-button {
+            margin-bottom: 8vw;
+        }
+    }
+}
+
+.greener {
+    background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_22945_2x_b935df70-70cd-47f5-abb5-eaa5fd2b733a.jpg?v=1697179240');
+    margin-top: 60px;
+    margin-bottom: 150px;
+
+    @media (max-width: 767px) {
+        background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_22947_2x_83b5f620-4bb4-4cd9-b9e2-3c9bd9a33baa.jpg?v=1697176342');
+        margin: 8vw 4vw;
+    }
+}
+
+
+#storepoint-tag-dropdown,
+#storepoint-search,
+#storepoint-panel {
+    display: none !important;
+}
+
+#storepoint-map,
+#storepoint-container,
+#storepoint-map canvas {
+    width: 100% !important;
+    height: 100% !important;
+    max-height: 100% !important;
+    border: none;
 }

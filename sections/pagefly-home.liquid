@@ -1,8 +1,6 @@
 {{ 'home.scss.css' | asset_url | stylesheet_tag }}
-{% render 'pagefly-settings' %} <link rel="stylesheet" href="{{ 'pagefly.c9449e7a.css' | asset_url }}">
-		 <style>:root { 	user-select: none; } a { 	color: #000; } a:hover { 	color: #263B55; } body { 	letter-spacing: 0; } /* 全局字体设置start */ .u17Light { 	font: normal normal 300 17px/19px urbane; } .u20Light { 	font: normal normal 300 20px/24px urbane; } .u24Light { 	font: normal normal 300 24px/27px urbane; } .u36Light { 	font: normal normal 300 36px/42px urbane; } .u20Medium { 	font: normal normal 500 20px/24px urbane; } .u24Medium { 	font: normal normal 500 24px/27px urbane; } .u30Medium { 	font: normal normal 500 30px/34px urbane; } .u36Medium { 	font: normal normal 500 36px/42px urbane; } .u20DemiBold { 	font: normal normal 600 20px/24px urbane; } .u30DemiBold { 	font: normal normal 600 30px/34px urbane; } .u36DemiBold { 	font: normal normal 600 36px/42px urbane; } .u42DemiBold { 	font: normal normal 600 42px/48px urbane; } .u48DemiBold { 	font: normal normal 600 48px/54px urbane; } h2 { 	margin: auto; 	font: normal normal 600 72px/86px urbane; } h3 { 	margin: auto; 	font: normal normal 600 42px/50px urbane; } h1 { 	margin: 0; 	font-weight: bold; 	font: normal normal 600 48px/48px urbane; } body .my-button {   display: inline-block; 	padding: 14px 36px; 	background-color: #fff; 	color: #000; 	border-radius: 30px; 	font: normal normal 500 14px/16px urbane; 	cursor: pointer; 	white-space: nowrap; } body .my-button-ghost { 	background-color: transparent; 	border: 2px solid #fff; 	color: #fff; } body .my-button-black { 	background-color: #000; 	color: #fff; } body .my-button-white { 	background-color: transparent; 	border: 2px solid #000; } @media (max-width: 767px) { 	h2 { 	margin: auto; 	font: normal normal 600 48px/48px urbane; } body .my-button { 	padding: 11px 20px; } }</style> <style></style><div style="opacity:0" class="sc-bYoBSM hUVNGC __pf __pf_ihFswhsY" id="__pf"><div data-pf-type="Body" class="sc-hjGZqJ fNoOP pf-1_"><div data-pf-type="Layout" class="sc-htJRVC dNJAjO pf-2_"><div data-section-id="pf-a1b2" data-pf-type="Section" class="sc-fmciRz bheIgq pf-3_"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-4_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-5_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-6_">
 
-        <div class="banner">
+<div class="banner">
             <div class="swiper-wrapper">
               <div class="swiper-slide holiday">
                 <div class="centeral-content">
@@ -67,510 +65,124 @@
             </div>
             <div class="swiper-pagination"></div>
         </div>
-    <script setup>    
-    // 是否有多个banner, 如果有 开启swiper
-    const isMultipartBanner = document.querySelectorAll('.banner .swiper-slide')
-    
-    isMultipartBanner.length > 1 && new Swiper('.banner', {
-        autoplay: {
-            disableOnInteraction: false,
-            pauseOnMouseEnter: false,
-            delay: 10000,
-        },
-        loop: true,
-        speed: 1000,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true
-        }
-    })
 
+{% render 'home-page-media' %}
+<div class="home-page-ebike-banner">
+  <div class="centeral-content ">
+    <div class="flex-1 pcHide"></div>
+    <div class="u42DemiBold_v2">Carbon 1</div>
+    <div class="u24Medium_v2">Sporty and Lightweight</div>
+    <div class="u17Light_v2 mobileHide">Achieve your fitness goals while enjoying a<br class="mobileHide"> fast and sporty ride in style</div>
+    <a class="my-button" href="/pages/e-bike">Learn more</a>
+  </div>
+</div>
 
-      $('.banner a').on('click', e => {
-          const t = $(e.target)
-          const slide = t.closest('.swiper-slide')
-      
-          fetchBuried('websiteclick', 'homepage-banner', {
-              button: slide.hasClass('bluetti') ? (t.hasClass('my-button-ghost') ? 'learn_more' : 'order_now_buletti') : (t.hasClass('my-button-black') ? 'order_now' : 'meet_carbon')
-          }, true)
-       })
-    </script>
+<div class="centeral-content ebike-products">
+  <div class="product-grid">
+      {% assign product = all_products["urtopia-carbon-e-bike"] %}
+      {% assign product_tags = settings.carbon_ebike_free_accessories_count | append: ' Freebies'   %}
+      {% assign product_variants = product.variants | where: "option1", "Carbon 1s · 350W · Shimano 7-Speed" | where: "available" %}
+      {% render 'product-card',
+          product_variants: product_variants,
+          product_variant_options_find_sort: "M,L,S",
+          product_name: 'Carbon 1s',
+          product_description: 'Powerful drive system ensures minimal effort and maximum fun',
+          product_discount_price: settings.carbon1s_ebike_discount_price,
+          product_url: product.url,
+      %}
+      {% assign product_variants = product.variants | where: "option1", "Carbon 1 · 250W · Carbon Belt" | where: "available" %}
+      {% render 'product-card',
+          product_variants: product_variants,
+          product_variant_options_find_sort: "M,L",
+          product_name: 'Carbon 1',
+          product_description: 'Sporty, light and nimble e-bike for everyday transport, fitness and fun.',
+          product_discount_price: settings.carbon_ebike_discount_price,
+          product_url: product.url,
+      %}
+  </div>
+</div>
 
-</div></div></div></div></div></div>
-  
-<div class="greenest">
-  <div class="centeral-content gray-background-color">
-    <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18811_2x_552d51e2-13f7-4175-aa88-d5b0ecdf3988.png?v=1691825401" alt="">
+<div class="home-page-ebike-banner home-page-ebike-banner-chord">
+  <div class="centeral-content ">
+    <div class="flex-1 pcHide"></div>
+    <div class="u42DemiBold_v2">Chord</div>
+    <div class="u24Medium_v2">Comfort and Elegance</div>
+    <div class="u17Light_v2 mobileHide">Achieve your fitness goals while enjoying a <br class="mobileHide">fast and sporty ride in style</div>
+    <a class="my-button" href="/products/urtopia-chord-ebike">Learn more</a>
+  </div>
+</div>
+
+<div class="centeral-content ebike-products">
+  <div class="product-grid">
+    {% assign product = all_products["urtopia-chord-ebike"] %}
+    {% assign product_variants = product.variants | where: "option1", "High-Step" | where: "available" %}
+    {% render 'product-card',
+        product_variants: product_variants,
+        product_name: 'Chord',
+        product_description: 'Elegantly zip around town for meet-ups, errands, or Sunday fun.',
+        product_discount_price: settings.chord_ebike_discount_price,
+        product_url: product.url,
+    %}
+    {% assign product_variants = product.variants | where: "option1", "Step-Through" | where: "available" %}
+    {% render 'product-card',
+        product_variants: product_variants,
+        product_name: 'Chord X',
+        product_description: 'Easily kickstart your ride for workouts, city cruising, and pure enjoyment.',
+        product_discount_price: settings.chord_ebike_discount_price,
+        product_url: product.url,
+    %}
+  </div>
+</div>
+
+<div class="centeral-content mind">
+  <div class="u42DemiBold_v2">The Bike with a Mind</div>
+  <div class="u17Light_v2">An AI-Driven Smartebike, offering you more than riding.</div>
+  <div class="flex-1"></div>
+  <a class="my-button" href="/pages/pages-smartest-ebike" target="_blank">Learn more</a>
+</div>
+
+<div class="centeral-content mind greener">
+  <div class="u42DemiBold_v2">Sustainability: Ride Greener</div>
+  <div class="u17Light_v2">Sustainability at the Heart of Urtopia</div>
+  <div class="flex-1"></div>
+  <a class="my-button" href="/pages/sustainability-carbon-credit" target="_blank">Learn more</a>
+</div>
+
+<div class="boxs gray-background-color">
+  <div class="centeral-content">
     <div>
-        <div class="u36DemiBold_v2">Green Deserves Rewards</div>
-        <div class="u17Light_v2">We are introducing the Carbon Credit Rewards program. By riding the most environmentally-friendly e-bike, tracking your routes, and reducing CO2 emissions, you have the opportunity to win exciting prizes. Join us in our mission to create a greener world!</div>
-        <a class="my-button my-button-black" href="/pages/sustainability-carbon-credit">Learn More</a>
+      <div class="u48DemiBold_v2">Test ride spots near you</div>
+      <div class="u17Light_v2">Experience the bike in real</div>
+      <a class="my-button my-button-black" href="/pages/test-ride">Book a Free Test Ride</a>
     </div>
-  </div>
-</div>
-
-<div data-section-id="pf-20b1" data-pf-type="Section" class="sc-fmciRz bheIgq pf-15_"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-16_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-17_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-18_">
-
-{% render 'home-page-bikes' %}
-
-</div></div></div></div></div></div>
-
-<style>
-  .maksim {
-      margin-bottom: 120px;
-  }
-  
-  .maksim .centeral-content {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .maksim .centeral-content > div {
-      width: 100%;
-      background-color: #F7F8FA;
-  }
-  
-  .maksim .left {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      padding-left: 64px;
-  }
-  
-  .maksim .left .u17Light_v2 {
-      margin: 15px 0 75px;
-  }
-  
-  .maksim .right {
-      background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/123.jpg?v=1681887510');
-      background-position: center center;
-      background-size: cover;
-      background-repeat: no-repeat;
-      height: 695px;
-  }
-  
-  @media (max-width: 767px) {
-      .maksim {
-        margin-bottom: 60px;
-      }
-  
-      .maksim .centeral-content {
-          padding: 0;
-          grid-template-columns: 1fr;
-      }
-  
-      .maksim .right {
-          max-width: 100vw;
-          height: 80vw;
-          flex: auto;
-      }
-  
-      .maksim .left {
-          margin: 0;
-          padding: 10% 4%;
-          box-sizing: border-box;
-          order: 1;
-      }
-  
-      .maksim .left .u42DemiBold_v2 {
-          font-size: 24px;
-      }
-  
-      .maksim .left .u17Light_v2 {
-          margin: 5vw 0 10vw;
-          font-size: 15px;
-      }
-  
-      .maksim .left .my-button {
-          margin: 0 auto;
-      }
-  }
-  </style>
-
-  <!--<div class="maksim">
-    <div class="centeral-content">
-        <div class="left">
-            <div class="u42DemiBold_v2">Chord X Maksim</div>
-            <div class="u17Light_v2">A passionate prodigy, and one of the world’s <br> fastest pianists. Mr. Mrvica
-                inspired the design <br> the
-                philosophy of Chord, a crossover between <br> art and tech.</div>
-            <a onclick="showVideoDialog('https://www.youtube.com/embed/gjYMDVGv_C4?autoplay=1&cc_load_policy=1')" class="my-button my-button-black">Watch video</a>
-        </div>
-        <div class="right"></div>
-    </div>
-</div>-->
-
-
-{% render 'home-page-media' is_center: true %}
-<div class="test-ride">
-    <div class="centeral-content">
-      <div>
-        <div>
-          <div class="u36DemiBold_v2">Test ride spots near you</div>
-          <div class="u20DemiBold_v2">Experience the bike in real</div>
-          <a
-            class="my-button my-button-origin"
-            href="/pages/test-ride"
-            style="background: #FD4B17;color: #fff;"
-            target="_blank">Book a Free Test Ride</a>
-        </div>
-      </div>
-      <div>
-        <div style="padding: 0;">
-          <div
-            id="storepoint-container"
-            data-tags="us"
-            data-map-id="162f21804990ff"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-<div data-section-id="pf-2dc6" data-pf-type="Section" class="sc-fmciRz bheIgq pf-23_"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-24_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-25_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-26_"><style>
-  #section3 {
-	height: 800px;
-	background: url("https://cdn.shopify.com/s/files/1/0583/5810/4213/files/img_v2_e35c9305-6b5b-4545-98c7-cb826aa79c4g_2x_c6e5837f-d3db-412c-90cb-80e5c97dc4c7.png?v=1677566638") center center/cover no-repeat;
-	color: #fff;
-	  display: flex;
-    color: #fff;
-    flex-direction: column;
-    justify-content: center;
-    padding-left: 15vw;
-  }
-  
-  #section3 h1 {
-	color: #fff;
-	margin: 0;
-  }
-  
-  #section3 .u20Light {
-    margin: 12px 0 30px;
-  max-width: 375px;
-  line-height: 1.4em;
-  }
-</style>
-
-<style>
-@media (max-width: 767px) {
-  #section3 {
-	height: 600px;
-	background: url("https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18371_2x_650a7a22-6c8e-4295-b1d2-a44c5759079a.png?v=1677662189") center center/cover no-repeat;
-	padding-left: 0;
-	align-items: center;
-	justify-content: unset;
-	padding-top: 5%;
-  }
-  
-  #section3 .u20Light {
-	  font-size: 14px;
-	  margin: -5px 0 15px;
-    text-align: center;
-    padding: 0 15px;
-	}
-	
-	#section3 h1 {
-	  font-size: 24px;
-	}
- }
-  
-  	
-</style>
-
-<div id="section3">
-  <h1>Carbon 1s</h1>
-  <div class="u20Light">Achieve your fitness goals while enjoying a fast and sporty ride in style</div>
-  <div>
-	<a class="my-button" href="/pages/e-bike">Learn more</a>
-  </div>
-</div>
-</div></div></div></div></div></div>
-<div data-section-id="pf-3cb6" data-pf-type="Section" class="sc-fmciRz bheIgq pf-19_"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-20_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-21_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-22_"><style>
-  #section2 {
-	height: 800px;
-	background: url("https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230217-untitled-7317_2x_f9e6e7ad-635a-44c8-a608-87a568febfd0.png?v=1677566487") center center/cover no-repeat;
-	color: #fff;
-	  display: flex;
-    color: #fff;
-    flex-direction: column;
-    justify-content: center;
-    padding-left: 15vw;
-  }
-  
-  #section2 h1 {
-	color: #fff;
-	margin: 0;
-  }
-  
-  #section2 .u20Light {
-    margin: 12px 0 30px;
-    max-width: 375px;
-    line-height: 1.4em;
-    }
-</style>
-
-
-<style>
-@media (max-width: 767px) {
-  #section2 {
-	height: 600px;
-	background: url("https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18372_2x_6af0891a-02ab-4e62-83a2-9b7318118d67.png?v=1677661324") center center/cover no-repeat;
-	padding-left: 0;
-	align-items: center;
-	justify-content: unset;
-	padding-top: 5%;
-  }
-  
-  #section2 .u20Light {
-	  font-size: 14px;
-	  margin: -5px 0 15px;
-    text-align: center;
-    padding: 0 15px;
-	}
-	
-	#section2 h1 {
-	  font-size: 24px;
-	}
- }
-</style>
-
-<div id="section2">
-  <h1>Chord</h1>
-  <div class="u20Light">Power up your commute and extend your leisurely daily ride</div>
-  <div>
-	
-		<a class="my-button" href="/pages/lightweight-commuter-ebike-urtopia-chord">Learn more</a>
-  </div>
-</div>
-
-
-</div></div></div></div></div></div>
-
-
-<div data-section-id="pf-ff96" data-pf-type="Section" class="sc-fmciRz bheIgq pf-27_"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-28_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-29_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-30_"><style>
-
-#section4 {
-  max-width: 1280px;
-      margin: auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 600px 600px;
-    justify-content: center;
-  background-color: #fff;
-}
-  
-  #section4 > div {
-	display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 14% 0 19%;
-  }
-  
-
-  #section4 > div:first-child {
-	    background: url(https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18294_2x_849210ff-f5fe-4be8-a248-3afbe6674080.png?v=1677557363) bottom center/cover no-repeat;
-    background-color: #161A22;
-    background-size: 75%;
-}
-  
-    #section4 > div:last-child {
-	    background: url(https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230306-114106.jpg?v=1678074104) bottom center/cover no-repeat;
-    background-color: #161A22;
-	  
-}
-
-#section4 > div .images {
-  display: flex;
-}
-
-#section4 > div .images a {
-  display: block;
-  /* max-width: 150px; */
-  margin-right: 16px;
-  cursor: pointer;
-}
-  
-   #section4 h1 {
-	margin: 0;
-  }
-  
-  #section4 .u20Medium {
-	margin: 20px 0 40px;
-  }
-</style>
-
-<style>
-@media (max-width: 767px) {
-  #section4 {
-		grid-template-columns: 1fr;
-	   padding: 0;
-	   grid-template-rows: 330px 266px 266px 295px;
-  }
-  
-  #section4 > div {
-	  display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 15px;
-  }
-  
-  #section4 h1 {
-	font-size: 24px;
-	font-weight: bold;
-  }
-  
-  #section4 .u20Medium {
-	font-size: 14px;
-	margin: 10px 0 20px;
-  }
-  
-  #section4 > div:last-child {
-	position: relative;
-	top: -266px;
-  }
-  
-  #section4 > div:nth-child(3) {
-	position: relative;
-	top: 295px;
-  }
-  
- }
-</style>
-
-<div id="section4">
-    <div></div>
+    <div id="storepoint-container" data-tags="us" data-map-id="162f21804990ff"></div>
+    <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18294_2x_849210ff-f5fe-4be8-a248-3afbe6674080.png?v=1677557363" alt="app">
     <div>
-	  	  <h1>Smart App</h1>
-		  <div class="u20Medium">Connect, track, share, achieve - Urtopia app: Your perfect cycling companion!</div>
+      <div class="u48DemiBold_v2">Smart App</div>
+      <div class="u17Light_v2">Connect, track, share, achieve - Urtopia app: Your perfect cycling companion!</div>
       <div class="images">
-        <a target="_blank" href="https://apps.apple.com/app/urtopia/id1592975789"><img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/321.jpg?v=1680155095" alt=""></a>
-        <a target="_blank" href="https://play.google.com/store/apps/details?id=com.newurtopia"><img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/get-it-on-google-play-badge-1.jpg?v=1680154868" alt=""></a>
+          <a target="_blank" href="https://apps.apple.com/de/app/urtopia/id1592975789"><img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/321.jpg?v=1680155095" alt=""></a>
+          <a target="_blank" href="https://play.google.com/store/apps/details?id=com.newurtopia"><img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/get-it-on-google-play-badge-1.jpg?v=1680154868" alt=""></a>
+      </div>
     </div>
-  	  </div>
     <div>
-	  	  <h1>Peace of Mind</h1>
-		  <div class="u20Medium">Enjoy complete peace of mind with our 2-year warranty and 24/7 support, plus full after-sales service.</div>
-		  <div>
-			<a class="my-button my-button-black" href="/pages/care">Learn more</a>
-	  </div>
-  		</div>
-    <div></div>
- </div>
-
-</div></div></div></div></div></div><div data-section-id="pf-c819" data-pf-type="Section" class="sc-fmciRz bheIgq pf-31_"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-32_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-33_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-34_"><div id="section5">
-  <div class="info">
-	  <h1>Test Ride</h1>
-	  <div class="u20Light">Experience the perfect ride – try it and you'll know!</div>
-	  <a class="my-button" href="https://newurtopia.com/pages/test-ride">Book Now</a>
+      <div class="u48DemiBold_v2">Peace of Mind</div>
+      <div class="u17Light_v2">Enjoy complete peace of mind with our 2-year warranty and 24/7 support, plus full after-sales service.</div>
+      <a class="my-button my-button-black" href="/pages/care">Learn more</a>
+    </div>
+    <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230306-114106.jpg?v=1678074104" alt="">
+    
   </div>
 </div>
 
-
-<style>
-  #section5 {
-	height: 650px;
-	max-width: 1280px;
-	background: url("https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSCF9950_2x_8687d7e5-88f3-465b-869e-b322d8fef18a.png?v=1677563399") center center/cover no-repeat;
-	color: #fff;
-	  display: flex;
-    color: #fff;
-	    justify-content: flex-end;
-    align-items: center;
-	  margin: 0 auto;
-	padding-right: 250px;
-  }
-  
-  #section5 h1 {
-	color: #fff;
-	margin: 0;
-  }
-  
-  #section5 .u20Light {
-	margin: 12px 0 30px;
-	width: 280px;
-  }
-  
-  #section5 .info {
-	width: 280px;
-  }
-</style>
-
-<style>
-  @media (max-width: 767px) {
-	#section5 {
-	  height: 390px;
-	  justify-content: center;
-    align-items: unset;
-	  padding: 0;
-	      padding-top: 10%;
-	  background: url("https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSCF9950_2x_6f2c5510-a3b0-4500-9e96-753bf86d0e45.png?v=1677666583") center center/cover no-repeat;
-	}
-	
-	#section5 .info {
-	  display: flex;
-     flex-direction: column;
-     align-items: center;
-	      text-align: center;
-	}
-	
-	#section5 .info h1 {
-	  font-size: 30px;
-	}
-	
-	#section5 .info .u20Light {
-	  font-size: 14px;
-	  width: 240px;
-	}
-	
-	#section5 .info .my-button {
-	  position: absolute;
-     bottom: 10%;
-	}
-	
-  }
-</style></div></div></div></div></div></div><div data-section-id="pf-15ce" data-pf-type="Section" class="sc-fmciRz bheIgq pf-35_"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-36_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-37_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-38_"><div id="section6">
-  <h1>Ambass Reviews</h1>
-  <div class="u20Medium">
-		Feel the Love From Celebrities and Athletes <a href="https://newurtopia.com/pages/ambass-reviews">Learn more<a>
+<div class="ambass gray-background-color">
+  <div class="centeral-content">
+    <div class="u48DemiBold_v2">Ambass Reviews</div>
+    <div class="u20Medium_v2">Feel the Love From Celebrities and Athletes <br><a class="my-link u20DemiBold_v2" href="/pages/community">Learn more<a></a></div>
   </div>
 </div>
 
 <style>
-  #section6 {
-	max-width: 1280px;
-	margin: auto;
-  }
-  
-  #section6 .u20Medium {
-	margin-top: 20px;
-	width: 400px;
-	line-height: 28px;
-  }
-  
-  #section6 a {
-	text-decoration: underline;
-    font-weight: bold;
-	cursor: pointer;
-  }
-</style>
-	
-<style>
-  @media (max-width: 767px) {
-	#section6 h1 {
-	  font-size: 24px;
-	}
-	
-	#section6 .u20Medium {
-	  width: 100%;
-    font-size: 14px;
-    margin-top: 5px;
-    font-weight: 300;
-	  font-size: 14px;
-	}
-  }	
-</style></div></div></div></div></div></div><div data-section-id="pf-e123" data-pf-type="Section" class="sc-fmciRz bheIgq pf-39_"><div class="sc-gjNHFA gwWIgj"><div class="sc-ezbkAF A-dmbO pf-40_ pf-r pf-c-cm pf-r-eh" style="--s-xs:0px" data-pf-type="Row"><div class="pf-c" style="--c-xs:12;--c-md:12;--c-lg:12"><div data-pf-type="Column" class="sc-gUQvok iVVDxu pf-41_"><div data-pf-type="Custom.HTML" class="sc-AjmGg eCTxfx pf-42_"><style>
-
 #section7 {
       max-width: 1280px;
       margin: auto;
@@ -612,11 +224,7 @@
 	    margin-top: 20px;
   }
   
-  
-</style>
-
-<style>
-@media (max-width: 767px) {
+  @media (max-width: 767px) {
     #section7 .swiper-button-prev,
     #section7 .swiper-button-next {
         display: none;
@@ -652,7 +260,8 @@
 }
 </style>
 
-
+<div class="nba gray-background-color">
+  <div class="centeral-content">
     <div id="section7">
       <div class="swiper-wrapper">
           <div class="swiper-slide">
@@ -662,7 +271,7 @@
                 <div class="u24Medium">Tracy Mcgrady</div>
               </div>
           </div>
-		<div class="swiper-slide">
+		 <div class="swiper-slide">
               <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18449.jpg?v=1678259406" alt="">
               <div class="text">
                 <div class="u17Light">Classical Crossover Pianist</div>
@@ -683,7 +292,7 @@
                 <div class="u24Medium">Franz Loeschke</div>
               </div>
           </div>
-			  
+			 
 			  <div class="swiper-slide">
               <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18384_2x_a1e993bf-6c59-495e-9144-249560a9464f.png?v=1677571548" alt="">
               <div class="text">
@@ -718,46 +327,102 @@
      <div class="swiper-button-next"></div><!--右箭头。如果放置在swiper外面，需要自定义样式。-->
      <div class="swiper-scrollbar"></div>
   </div>
-
+  </div>
+</div>
 
 
 <script>
-const isMobilee = document.body.clientWidth < 768
-new Swiper('#section7', {    
-        spaceBetween: 15,
-        slidesPerView: isMobilee ? 1.5 : 3.5,
-  			freeMode: isMobilee ? true : false,
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-       },
-       scrollbar: {
-            el: '.swiper-scrollbar',
-      },
-  }) 
-</script></div></div></div></div></div></div></div></div></div><script>
-    !function(){window.__pagefly_setting__&&(window.__pagefly_setting2__=window.__pagefly_setting__),window.__pagefly_setting__={"baseURL":"https://apps.pagefly.io","analyticsURL":"https://analytics.pagefly.io","isBackend":false,"cdnURL":"https://cdn.pagefly.io","pageflyVersion":"3.30.0","shopDomain":"urtopia.myshopify.com","elementData":{},"pageTitle":"new_homepage ","pageType":"home","pageId":"c9449e7a-8327-4fa4-a01f-dd187e0cf15f","lazyLoad":true,"forceByPassGoogleLightHouse":false,"imageLazyLoad":true,"nativeImageLazyLoad":true,"useThemeJQ":false,"selectedFonts":{},"trackingIDs":[],"shopifyProxyPath":"/a/pf_preview"},window.__pagefly_setting2__&&(window.__pagefly_setting__=function _(d,b){let c={...d||{}};for(let a of Object.keys(b))b[a]instanceof Object&&(Array.isArray(b[a])&&c[a]?Object.assign(b[a],[...b[a],...c[a]]):Object.assign(b[a],_(c[a],b[a])));return Object.assign(c||{},b),c}(__pagefly_setting2__,__pagefly_setting__),delete window.__pagefly_setting2__),window.__pagefly_setting__.moneyFormat={{shop.money_format|json}}}();
-    </script><script src="https://cdn.pagefly.io/pagefly/3.30.0/core/helper.js" async></script>
-{% schema %}
-{
-  "name": "PageFly Home Page",
-  "settings": [
-    {
-      "type": "paragraph",
-      "content": "For full configuration, [visit PageFly Editor](https://apps.pagefly.io/editor?id=c9449e7a-8327-4fa4-a01f-dd187e0cf15f)."
-    }
-  ]
-}
-{% endschema %}
-
-<script>
-  (function() {
-    var a = document.createElement("script");
-    a.type = "text/javascript";
-    a.src = "https://cdn.storepoint.co/api/v1/js/162f21804990ff.js";
-    var b = document.getElementsByTagName("script")[0];
-    b.parentNode.insertBefore(a, b);
-  }());
-
-//
+  new Swiper('#section7', {    
+          spaceBetween: 15,
+          slidesPerView: global_config.is_mobile ? 1.5 : 3.5,
+          freeMode: global_config.is_mobile ? true : false,
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        scrollbar: {
+              el: '.swiper-scrollbar',
+        },
+    })
 </script>
+<script>
+    $('.product-card .dots > div').on('click', e => {
+        const target = $(e.target)
+        const product_card = target.closest('.product-card')
+
+        // 先取消 其它兄弟元素的active, 再设置active
+        target.siblings().removeClass('active')
+        target.addClass('active')
+
+        const price = Number(target.attr('data-price'))
+        const compare_at_price = Number(target.attr('data-compare-at-price'))
+        const discount_price = Number(target.attr('data-product-discount-price'))
+        const variant_id = target.attr('data-variant')
+        const variant_image = target.attr('data-img')
+
+        // outlet 车型
+        if (discount_price === 0) {
+            product_card.find('.product_price .u24DemiBold_v2').text(getPriceFormat(price, true)).attr('data-price', getPriceFormat(compare_at_price, true))
+            product_card.find('.tags > span:first-child').text(`${getPriceFormat(compare_at_price - price, true)} OFF`)
+
+            console.log(price, compare_at_price)
+
+            if (price === compare_at_price) {
+                product_card.find('.product_price .u24DemiBold_v2').attr('data-price', '')
+                product_card.find('.tags > span:first-child').hide()
+            }
+        } else {
+            product_card.find('.product_price .u24DemiBold_v2').text(getPriceFormat(price - discount_price, true)).attr('data-price', getPriceFormat(price, true))
+            product_card.find('.product_price .u17Light_v2 > span').text(getPriceFormat((price - discount_price) / 24))
+            product_card.find('.tags > span:first-child').text(`${getPriceFormat(discount_price, true)} OFF`)
+        }
+
+        product_card.find('.variant-image').attr('src', variant_image)
+        product_card.find('.my-button').attr('href', `${product_card.find('.my-button').attr('href').split('?').shift()}?variant=${variant_id}`)
+    })
+
+    setTimeout(() => {
+        $('.product-card .dots > div:first-child').click()
+
+        $('.product-card .variant-image').on('click', e => {
+            const button = $(e.target).closest('.product-card').find('.my-button')
+
+            if (button.length) {
+                button[0].click()
+            }
+        })
+
+        $('.ebike-products .product-grid .product-card .my-button').removeClass('my-button-origin').addClass('my-button-black')
+    }, 30)
+</script>
+<script src="https://cdn.storepoint.co/api/v1/js/162f21804990ff.js" defer></script>
+
+
+    <script>    
+    // 是否有多个banner, 如果有 开启swiper
+    const isMultipartBanner = document.querySelectorAll('.banner .swiper-slide')
+    
+    isMultipartBanner.length > 1 && new Swiper('.banner', {
+        autoplay: {
+            disableOnInteraction: false,
+            pauseOnMouseEnter: false,
+            delay: 10000,
+        },
+        loop: true,
+        speed: 1000,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true
+        }
+    })
+
+
+      $('.banner a').on('click', e => {
+          const t = $(e.target)
+          const slide = t.closest('.swiper-slide')
+      
+          fetchBuried('websiteclick', 'homepage-banner', {
+              button: slide.hasClass('bluetti') ? (t.hasClass('my-button-ghost') ? 'learn_more' : 'order_now_buletti') : (t.hasClass('my-button-black') ? 'order_now' : 'meet_carbon')
+          }, true)
+       })
+    </script>

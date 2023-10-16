@@ -1,6 +1,6 @@
 <div class="gray-background-color product-card" {% unless product_variants.size != 0 %}style="display:none;"{% endunless %}>
     <div class="u14DemiBold_v2 emphasize tags">
-        <span>Save 20%</span>
+        <span>{{ product_discount_price | money_without_trailing_zeros }} OFF</span>
         {% if product_tags %}
             {% assign tags = product_tags | split: "," %}
             {% for tag in tags %}

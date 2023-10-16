@@ -55,7 +55,6 @@
             product_variants: product_variants,
             product_variant_options_find_sort: "L,M",
             product_name: 'Carbon 1',
-            product_tags: product_tags,
             product_description: 'Sporty, light and nimble e-bike for everyday transport, fitness and fun.',
             product_url: product.url,
         %}
@@ -221,7 +220,7 @@
         // outlet 车型
         if (discount_price === 0) {
             product_card.find('.product_price .u24DemiBold_v2').text(getPriceFormat(price, true)).attr('data-price', getPriceFormat(compare_at_price, true))
-            product_card.find('.tags > span:first-child').text(`Save ${parseInt((compare_at_price - price) / compare_at_price * 100)}%`)
+            product_card.find('.tags > span:first-child').text(`${getPriceFormat(compare_at_price - price, true)} OFF`)
 
             if (price === compare_at_price) {
                 product_card.find('.product_price .u24DemiBold_v2').attr('data-price', '')
@@ -230,7 +229,7 @@
         } else {
             product_card.find('.product_price .u24DemiBold_v2').text(getPriceFormat(price - discount_price, true)).attr('data-price', getPriceFormat(price, true))
             product_card.find('.product_price .u17Light_v2 > span').text(getPriceFormat((price - discount_price) / 24))
-            product_card.find('.tags > span:first-child').text(`Save ${parseInt(discount_price / price * 100)}%`)
+            product_card.find('.tags > span:first-child').text(`${getPriceFormat(discount_price, true)} OFF`)
         }
 
         product_card.find('.variant-image').attr('src', variant_image)
