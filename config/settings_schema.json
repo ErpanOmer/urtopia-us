@@ -67,6 +67,12 @@
         "id": "hide_sale_countdown",
         "default": false,
         "label": "活动倒计时显示和隐藏"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_choose_different_size",
+        "default": false,
+        "label": "显示隐藏 Choose different size"
       }
     ]
   },
