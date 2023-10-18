@@ -191,10 +191,10 @@
           </div>
         {% endunless %}
           <ul class="emphasize-list u17Medium_v2">
-            <li><span>●</span><span>Include sample bikes with the same quality and functions as new bikes</span></li>
-            <li><span>●</span><span>2-year warranty</span></li>
-            <li><span>●</span><span>14-Day Returns</span></li>
-            <li><span>●</span><span>Free shipping </span></li>
+            <li><span>●</span><span>Used, Refurbish or Showroom Bike</span></li>
+            <li><span>●</span><span>Small to none damage</span></li>
+            <li><span>●</span><span>2 year Warranty</span></li>
+            <li><span>●</span><span>Not returnable (*see FAQ)</span></li>
           </ul>
 				<div class="options">
           {% for option in product.options_with_values %}
@@ -278,10 +278,10 @@
 						<img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230621-005713.png?v=1687280264"/>
 						<span class="u11Medium_v2">30+ Spots<br>of Service</span>
 					</a>
-					<a href="/pages/shipping-and-return" target="_blank">
+					<!--<a href="/pages/shipping-and-return" target="_blank">
 						<img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_17959_2x_cff00041-4dce-479b-b87d-55b1cb89cd7a.png?v=1687161086"/>
 						<span class="u11Medium_v2">14-Day<br>Returns</span>
-					</a>
+					</a>-->
 					<a href="/pages/warranty" target="_blank">
 						<img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_17958_2x_1e776f09-0686-4672-a22f-b29d2df3898d.png?v=1687161098"/>
 						<span class="u11Medium_v2">2-Year<br>Warranty</span>
@@ -296,11 +296,11 @@
 						<span>Technical Specifications</span>
 						<span>&gt;</span>
 					</div>
-					<div class="u17Medium_v2">
+					<!--<div class="u17Medium_v2">
 						<span>Support & Service</span>
 						<span>&gt;</span>
 					</div>
-					<!--<div class="u17Medium_v2">
+					<div class="u17Medium_v2">
 						<span>FAQs</span>
 						<span>&gt;</span>
 					</div>-->
@@ -740,6 +740,20 @@
 			</div>
 		</div>
 	</div>
+</div>
+<div class="faqs">
+      <div class="centeral-content">
+          <div class="faq">
+              <div class="titlee">FAQ</div>
+              <div class="swiper swiper-no-swiping faq-list">
+                  <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
 </div>
 
 <div data-section-id="pf-3b95" data-pf-type="GlobalSection" id="bbc90aa3-abdf-4f01-af53-86100506c75b" class="sc-fpYaaq boGbAB pf-184_">{% capture content %}{% include 'pf-bbc90aa3' %}{% endcapture %}
@@ -1305,7 +1319,29 @@ function addAllToCart(parse, show = false) {
     b.parentNode.insertBefore(a, b);
   }());
 
-//
+  const faqs = [
+        {
+            title: 'What happens if I want to return my Outlet Urtopia?',
+            content: `Generally this is not possible. When you receive your bike, it is very important that you carefully inspect it for any imperfections or defects. If your bike was delivered malfunction, please contact our customer service. An exchange for the same bike is possible in certain cases.`
+        },
+        {
+            title: 'Are these outlet bikes still safe?',
+            content: `Rest assured that each bike undergoes a thorough evaluation and approval process by our experienced Bike expert, guaranteeing that its functionality and safety performance meet the same high standards as our brand new bikes. We prioritize your safety above all else, ensuring a reliable and secure riding experience.`
+        },
+        {
+            title: 'Do outlet bikes come with a warranty?',
+            content: `In general, there is a 2-year limited warranty on components and parts. For more details, please check out our <a href="/pages/warranty" target="_blank" class="my-link">warranty policy</a>`
+        }
+    ]
+
+    $('.faqs .swiper-slide').html(faqs.map((faq, index) => `
+        <div class="faq-item" index=${index + 1}>
+          <div class="faq-title">
+            <span>${faq.title}</span>
+            <i class="faq-content-plus"></i>
+          </div>
+          <div class="faq-content">${faq.content}</div>
+        </div>`).join(''))
 </script>
 
 {% render 'carbon-one-extra-code' %}

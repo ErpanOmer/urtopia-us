@@ -2925,3 +2925,109 @@ $product-tags-color: #FFE2D9;
         padding: 40px 0;
   }
 }
+
+
+
+.faqs {
+    padding: 80px 0;
+
+    .faq {
+        .faq-list {
+            .faq-title {
+                width: 100%;
+                display: flex;
+                border-style: solid;
+                border-width: 0 0 1px;
+                border-color: #ebebeb;
+                text-align: left;
+                font: normal normal 600 24px/28px Urbane;
+                letter-spacing: 0;
+                color: #000;
+                background: #fff;
+                position: relative;
+                cursor: pointer;
+                align-items: center;
+                padding: 2.5vh 9%;
+
+                .faq-content-plus:before {
+                    content: '\f067';
+                }
+            }
+
+            .faq-title i {
+                position: absolute;
+                /* right: 20px; */
+                left: 3%;
+                display: inline-block;
+                font-size: 17px;
+                line-height: 1;
+                font-family: FontAwesome !important;
+                font-style: normal;
+                text-rendering: auto;
+                transition: transform 0.4s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+            }
+
+            .faq-content {
+                display: none;
+                padding: 20px 18% 0 9%;
+                font: normal normal normal 17px/24px Urbane;
+                color: #000;
+                opacity: 0.9;
+
+                a {
+                    text-decoration: underline;
+                }
+            }
+
+            .faq-content-plus {
+                transform: rotate(90deg);
+            }
+        }
+
+        .titlee {
+            font: normal normal 600 42px/50px Urbane;
+            color: #000;
+            border-bottom: 1px solid #ebebeb;
+            padding-bottom: 40px;
+        }
+    }
+
+    @media (max-width: 767px) {
+        padding: 60px 0;
+
+            .centeral-content {
+                padding: 0 4%;
+
+                .faq {
+                    .faq-list {
+                        .faq-title {
+                            font-size: 18px;
+                            line-height: 24px;
+                            padding: 20px 9%;
+
+                            i {
+                                top: 20px;
+                            }
+                        }
+
+                        .faq-content {
+                            padding: 10px 9%;
+                            padding-right: 0;
+                            font-size: 15px;
+                            line-height: 21px;
+                        }
+                    }
+
+                    .swiper {
+                        padding-right: 10px;
+                    }
+
+                    .titlee {
+                        font-size: 24px;
+                        line-height: 27px;
+                        padding-bottom: 24px;
+                    }
+                }
+            }
+    }
+}
