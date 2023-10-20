@@ -139,7 +139,7 @@ const global_config = {
             //pb s
             43556899684600: 'Ships within <span>5 business days</span> from L.A. warehouse.',
             //pw s
-            43556899750136: 'Ships between <span>October 15-30, 2023 </span>from L.A. warehouse.',
+            43556899750136: 'Ships between <span>November 15-30, 2023 </span>from L.A. warehouse.',
             //pw l
             43556899881208: 'Ships within <span>5 business days</span> from L.A. warehouse.',
             //sb m
@@ -154,9 +154,9 @@ const global_config = {
             43556895981816: 'Ships within <span>5 business days</span> from L.A. warehouse.',
             43645495378168: 'Ships within <span>10 business days </span>from L.A. warehouse.',
             //sb l
-            43556895949048: 'Ships within <span>5 business days</span> from L.A. warehouse.',
+            43556895949048: 'Ships between <span>November 15-30, 2023 </span>from L.A. warehouse.',
             //pb l
-            43556896080120: 'Ships within <span>5 business days</span> from L.A. warehouse.',
+            43556896080120: 'Ships between <span>November 15-30, 2023 </span>from L.A. warehouse.',
             43645495410936: 'Ships within <span>10 business days </span>from L.A. warehouse.',
             //日期写法： 'Ships between <span>July 10-20, 2023 </span>from L.A. warehouse.',
             // chord
@@ -247,8 +247,10 @@ const global_config = {
       43694976663800: 'Free shipping <span>within 5 business days</span>',
       43694976696568: 'Free shipping <span>within 5 business days</span>',
       // chord x
-      43694976729336: 'Pre-order items shipped from October 15 - 30, 2023',
+          //white
+      43694976729336: 'Free shipping <span>within 5 business days</span>',
       43694976762104: 'Pre-order items shipped from October 15 - 30, 2023',
+          //gray
           44047038447864:'Pre-order items shipped from October 15 - 30, 2023',
             
         }
