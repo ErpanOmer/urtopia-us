@@ -568,32 +568,16 @@ $product-tags-color: #FFE2D9;
 
 
 
-    .centeral-content {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+@media (max-width: 767px) {
+    .banner {
+        height: calc(100vh - 102px);
 
-        &>div {
-            padding-bottom: 100%;
-            position: relative;
-
+        .centeral-content {
             &>div {
-                position: absolute;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                left: 0;
-                height: 100%;
-                width: 100%;
-                background-color: #F7F8FA;
-
-                &:first-child {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: flex-start;
-                    padding: 0 10%;
-
+                &:last-child {
+                    height: 100%;
                 }
+            }
 
             .buttons {
                 a {
@@ -608,10 +592,9 @@ $product-tags-color: #FFE2D9;
         }
 
 
-            #storepoint-tag-dropdown,
-            #storepoint-search,
-            #storepoint-panel {
-                display: none !important;
+        .swiper-wrapper {
+            .swiper-slide {
+                background-position-y: top;
             }
 
             .summer-sale {
@@ -665,13 +648,6 @@ $product-tags-color: #FFE2D9;
                     }
                 }
             }
-        
-            .logos {
-                display: flex;
-                align-items: center;
-                justify-content: space-evenly;
-                width: 100%;
-                flex-wrap: wrap;
 
 
             .strava {
@@ -726,9 +702,6 @@ $product-tags-color: #FFE2D9;
                     }
                 }
             }
-        }
-    }
-}
 
             .chord-sale {
                 background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230927-172346.jpg?v=1695806668')
@@ -766,17 +739,6 @@ $product-tags-color: #FFE2D9;
                 }
             }
 
-            .buttons {
-                a {
-                     margin:0;
-                       width: 100%;
-                 }
-
-                & > a + a {
-                     margin-top: 12px;
-                 }
-             }
-        }
 
             .count-down {
                 height: 150px;

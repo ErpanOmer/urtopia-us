@@ -334,6 +334,7 @@
                         background-color: transparent !important;
                         border: 2px solid #000;
 
+
                         &[attribute="White"]::after {
                             background-color: #F7F8FA;
                         }
@@ -430,6 +431,7 @@
                         .u17DemiBold_v2 {
                             color: #484848;
                         }
+
 
                         &>div {
                             text-align: left;
@@ -607,6 +609,7 @@
                         }
                     }
                 }
+
 
             }
 
@@ -823,11 +826,13 @@
                 &>.u36DemiBold_v2 {
                     font-size: 24px;
                 }
+
                 .sale {
                     .u20DemiBold_v2 {
                         font-size: 16px;
                         margin: 3px 0;
                     }
+
                     .u17DemiBold_v2 {
                         font-size: 12px;
                     }
@@ -843,6 +848,7 @@
                     }
                 }
             }
+
             .product-panel {
                 min-width: unset;
                 width: 92vw;
@@ -856,12 +862,14 @@
                             font-size: 17px;
                         }
                     }
+
                     .accs_1s {
                         .u14Medium_v2 {
                             font-size: 12px;
                         }
                     }
                 }
+
                 .count-down {
                     .u17Medium_v2 {
                         font-size: 12px;
@@ -875,19 +883,23 @@
                         }
                     }
                 }
+
                 .accessories {
                     .navigate {
                         display: none;
                     }
+
                     .items {
                         overflow-x: auto;
                     }
                 }
+
                 .dialogs {
                     .u17Medium_v2 {
                         font-size: 14px;
                     }
                 }
+
                 .buttons {
                     .addToCartBtn {
                         font-size: 14px;
@@ -924,12 +936,14 @@
                     height: 6px;
                     width: 6px;
                 }
+
                 .swiper-pagination-bullet-active {
                     width: 30px;
                     height: 6px;
                     border-radius: 5px;
                     transition: all .3s;
                 }
+
                 .right-swiper {
                     .swiper-wrapper {
                         .swiper-slide {
