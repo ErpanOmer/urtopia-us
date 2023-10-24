@@ -432,6 +432,10 @@ $product-tags-color: #FFE2D9;
         }
     }
 
+    .swiper-pagination {
+        z-index: 1;
+    }
+
 
     .swiper-pagination-bullet {
         height: 6px;
