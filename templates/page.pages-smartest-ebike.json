@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "pages-smartest-ebike": {
+      "type": "pages-smartest-ebike",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "pages-smartest-ebike"
+  ]
+}

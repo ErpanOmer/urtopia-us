@@ -6,19 +6,25 @@
         "type": "text",
         "id": "sale_name",
         "label": "活动名称",
-        "default": "Clearance Sale"
+        "default": "Early Black Friday Deals"
       },
       {
         "type": "text",
         "id": "sale_end_time",
         "label": "活动结束文案",
-        "default": "Ends on Sep 17"
+        "default": "Ends on Oct 12"
+      },
+      {
+        "type": "text",
+        "id": "carbon1s_ebike_discount_price",
+        "label": "carbon车折扣价",
+        "default": "80000"
       },
       {
         "type": "text",
         "id": "carbon_ebike_discount_price",
-        "label": "carbon车折扣价",
-        "default": "60000"
+        "label": "carbon 1 活动折扣价",
+        "default": "0"
       },
       {
         "type": "text",
@@ -36,7 +42,7 @@
         "type": "text",
         "id": "chord_sale_name",
         "label": "chord 活动名称",
-        "default": "Clearance Sale"
+        "default": "Early Black Friday Deals"
       },
       {
         "type": "text",
@@ -54,13 +60,19 @@
         "type": "text",
         "id": "chord_sale_end_time",
         "label": "chord 活动结束文案",
-        "default": "Ends on Sep 17"
+        "default": "Ends on Oct 12"
       },
       {
         "type": "checkbox",
         "id": "hide_sale_countdown",
         "default": false,
         "label": "活动倒计时显示和隐藏"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_choose_different_size",
+        "default": false,
+        "label": "显示隐藏 Choose different size"
       }
     ]
   },

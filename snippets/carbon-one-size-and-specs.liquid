@@ -1,3 +1,17 @@
+{% if hide_bala %}
+<style>
+  .size-and-specs .centeral-content .item .sizes .lines .line {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: 767px) {
+    .size-and-specs .centeral-content .item .sizes .lines .line {
+      grid-template-columns: 3fr 1fr;
+    }
+  }
+</style>
+{% endif %}
+
 <div class="size-and-specs">
   <div class="centeral-content">
     <div class="item">
@@ -239,8 +253,8 @@
                     <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-564_">Top speed (assisted)</span>
                   </h3>
                   <p class="sc-jtXEFf jydWoQ pf-565_" data-pf-type="Paragraph">
-                    <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-567_">Carbon 1s: 25mph {% unless hide_bala %}
-                      <br>Carbon 1: 20mph
+                    <span data-pf-type="Text" class="sc-jKTccl dCeBIC pf-567_">Carbon 1: 20mph {% unless hide_bala %}
+                      <br>Carbon 1s: 25mph
                     {% endunless %} </span>
                   </p>
                 </div>
@@ -823,6 +837,7 @@
 
   {% if hide_bala %}
   $('.size-and-specs .sizes .line span:nth-child(2)').hide()
+  $('.size-and-specs .sizes .line span:nth-child(3)').hide()
   {% endif %}
 
 </script>

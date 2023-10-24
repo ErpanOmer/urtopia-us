@@ -260,6 +260,19 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
     background-color: #919191;
   }
 
+  #bike .swiper-slide .dots > div[gray2] {
+    background-color: #405364;
+  }
+
+  #bike .swiper-slide .dots .active[gray2] {
+    background-color: transparent;
+    border: 2px solid #405364;
+  }
+
+  #bike .swiper-slide .dots .active[gray2]::after  {
+    background-color: #405364;
+  }
+
   #bike .swiper-slide .dots > div[peach] {
     background-color: #F0EEDF;
   }
@@ -352,7 +365,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 }
 </style>
 
-<link rel="preload" href="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/chordX_2x_ac6e3457-6ab6-4c57-a190-b58c8171d6c8.jpg?v=1689154690" as="image">
+<link rel="preload" href="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/chordXgreycollection.png?v=1696840938" as="image">
 <link rel="preload" href="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3_1_2x_c75e6ef5-a3ac-49af-bb2f-c19dd565cfad.jpg?v=1689154308" as="image">
 <link rel="preload" href="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18151_2x_702ec45e-0fe8-49ed-865a-df341d3033d7.png?v=1677640124" as="image">
 <link rel="preload" href="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18138_2x_de02f431-3e7d-48c0-b887-85eda46c2421.png?v=1677640174" as="image">
@@ -385,26 +398,69 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
           <div class="swiper-slide">
             <div class="name">Carbon 1s</div>
             <div class="info">Shimano 7-Speed</div>
-              <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18297_2x_eae075fb-1d14-4217-bbef-0d2f2e476f2e.png?v=1677640028" alt="">
+              <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230922-181515.png?v=1695377746&width=1000" alt="">
               <div class="dots-and-price-and-size">
                 <div class="dots-and-price">
                   <div class="dots">
-                    <div onclick="changeBike('/products/urtopia-carbon-e-bike?variant=43556895916280', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18297_2x_eae075fb-1d14-4217-bbef-0d2f2e476f2e.png?v=1677640028', this)" orange class="active"></div>
+                    <div onclick="changeBike('/products/urtopia-carbon-e-bike?variant=43556895916280', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230922-181515.png?v=1695377746&width=1000', this)" orange class="active"></div>
                     <div onclick="changeBike('/products/urtopia-carbon-e-bike?variant=43556896047352', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18151_2x_702ec45e-0fe8-49ed-865a-df341d3033d7.png?v=1677640124', this)" yellow></div>
                     <div onclick="changeBike('/products/urtopia-carbon-e-bike?variant=43556895981816', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18138_2x_de02f431-3e7d-48c0-b887-85eda46c2421.png?v=1677640174', this)" gray></div>
                 <!-- <div onclick="changeBike('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230428-104445.png?v=1682649982', this)" peach></div> -->
                   </div>
-                <div class="u24DemiBold_v2" {% if settings.carbon_ebike_discount_price != "0" %} data-price="{{all_products['urtopia-carbon-e-bike'].price | money_without_trailing_zeros }}"{% endif %}>
-                  {{ all_products['urtopia-carbon-e-bike'].price | minus: settings.carbon_ebike_discount_price | money_without_trailing_zeros }}
+                <div class="u24DemiBold_v2" {% if settings.carbon1s_ebike_discount_price != "0" %} data-price="{{all_products['urtopia-carbon-e-bike'].price | money_without_trailing_zeros }}"{% endif %}>
+                  {{ all_products['urtopia-carbon-e-bike'].price | minus: settings.carbon1s_ebike_discount_price | money_without_trailing_zeros }}
                 </div>
                 </div>
                 <div class="size">Fit for 5’3’’~6’5’’</div>
               </div> 
               <a class="my-button my-button-white" href="/products/urtopia-carbon-e-bike?variant=43556895916280">Order now</a>
-              <div class="my-button my-button-black new" style="background-image: var(--sale-bike-tags1);">{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros}} off</div>
+              <div class="my-button my-button-black new" style="background-image: var(--sale-bike-tags1);">{{ settings.carbon1s_ebike_discount_price | money_without_trailing_zeros}} off</div>
               <div class="my-button my-button-black new" style="transform: translateY(110%);background-image: var(--sale-bike-tags2);">{{ settings.carbon_ebike_free_accessories_count }} Freebies</div>
           </div>
-		  <div class="swiper-slide">
+          <div class="swiper-slide">
+          <div class="name">Chord X</div>
+          <div class="info"> </div>
+            <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/chordX_2x_fe86f1a1-6d47-4dd4-b1b9-80ee149da0fe.jpg?v=1689154670" alt="">
+            <div class="dots-and-price-and-size">
+              <div class="dots-and-price">
+                <div class="dots">
+                  <div onclick="changeBike('/products/urtopia-chord-ebike?variant=43694976729336', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/chordX_2x_fe86f1a1-6d47-4dd4-b1b9-80ee149da0fe.jpg?v=1689154670', this)" white class="active"></div>
+                  <div onclick="changeBike('/products/urtopia-chord-ebike?variant=44047038447864', 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/chordXgreycollection.png?v=1696840938', this)" gray2></div>
+                </div>
+              <div class="u24DemiBold_v2" {% if settings.carbon1s_ebike_discount_price != "0" %} data-price="{{all_products['urtopia-chord-ebike'].price | money_without_trailing_zeros }}"{% endif %}>
+                {{ all_products['urtopia-chord-ebike'].price | minus: settings.chord_ebike_discount_price | money_without_trailing_zeros }}
+              </div>
+              </div>
+              <div class="size">Fit for 5’3’’~6’1’’</div>
+            </div> 
+  
+            <a class="my-button my-button-white" href="/products/urtopia-chord-ebike?variant=43694976729336">Order now</a>
+            <div class="my-button my-button-black new" style="background-image: var(--sale-bike-tags1)">{{ settings.chord_ebike_discount_price | money_without_trailing_zeros}} off</div>
+          </div>
+          <div class="swiper-slide">
+            <div class="name">Chord</div>
+            <div class="info"> </div>
+            <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1_1_2x_3f9f6132-5cac-4f49-bac7-ce6258edad1c.jpg?v=1689154301" alt="">
+            <div class="dots-and-price-and-size">
+              <div class="dots-and-price">
+                <div class="dots">
+                  <div onclick="changeBike('/products/urtopia-chord-ebike?variant=43694976663800', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1_1_2x_3f9f6132-5cac-4f49-bac7-ce6258edad1c.jpg?v=1689154301', this)" white class="active"></div>
+                  <div onclick="changeBike('/products/urtopia-chord-ebike?variant=43694976696568', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3_1_2x_c75e6ef5-a3ac-49af-bb2f-c19dd565cfad.jpg?v=1689154308', this)" black></div>
+                </div>
+              <div class="u24DemiBold_v2" {% if settings.carbon1s_ebike_discount_price != "0" %} data-price="{{all_products['urtopia-chord-ebike'].price | money_without_trailing_zeros }}"{% endif %}>
+                {{ all_products['urtopia-chord-ebike'].price | minus: settings.chord_ebike_discount_price | money_without_trailing_zeros }}
+              </div>
+              </div>
+              <div class="size">Fit for 5’7’’~6’5’’</div>
+            </div> 
+  
+            <a class="my-button my-button-white" href="/products/urtopia-chord-ebike?variant=43694976663800">Order now</a>
+            <div class="my-button my-button-black new" style="background-image: var(--sale-bike-tags1)">{{ settings.chord_ebike_discount_price | money_without_trailing_zeros}} off</div>
+            <!--<div class="my-button my-button-black new">$300 OFF</div>-->
+        </div>
+      </div>
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
             <div class="name">Carbon 1s</div>
             <div class="info">Vanilla</div>
               <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230428-104445.png?v=1682649982" alt="">
@@ -413,36 +469,16 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
                   <div class="dots">
                     <div peach></div>
                   </div>
-                <div class="u24DemiBold_v2" {% if settings.carbon_ebike_discount_price != "0" %} data-price="{{all_products['urtopia-carbon-e-bike'].price | money_without_trailing_zeros }}"{% endif %}>
-                  {{ all_products['urtopia-carbon-e-bike'].price | minus: settings.carbon_ebike_discount_price | money_without_trailing_zeros }}
+                <div class="u24DemiBold_v2" {% if settings.carbon1s_ebike_discount_price != "0" %} data-price="{{all_products['urtopia-carbon-e-bike'].price | money_without_trailing_zeros }}"{% endif %}>
+                  {{ all_products['urtopia-carbon-e-bike'].price | minus: settings.carbon1s_ebike_discount_price | money_without_trailing_zeros }}
                 </div>
                 </div>
                 <div class="size">Fit for 5’3’’~6’5’’</div>
               </div> 
 
 				 <a class="my-button my-button-white" href="/products/urtopia-carbon-e-bike?variant=43556899815672">Order now</a>
-              <div class="my-button my-button-black new" style="background-image: var(--sale-bike-tags1);">{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros}} off</div>
+              <div class="my-button my-button-black new" style="background-image: var(--sale-bike-tags1);">{{ settings.carbon1s_ebike_discount_price | money_without_trailing_zeros}} off</div>
               <div class="my-button my-button-black new" style="transform: translateY(110%);background-image: var(--sale-bike-tags2);">{{ settings.carbon_ebike_free_accessories_count }} Freebies</div>
-          </div>
-      </div>
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <div class="name">Chord X</div>
-          <div class="info"> </div>
-            <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/chordX_2x_fe86f1a1-6d47-4dd4-b1b9-80ee149da0fe.jpg?v=1689154670" alt="">
-            <div class="dots-and-price-and-size">
-              <div class="dots-and-price">
-                <div class="dots">
-                  <div onclick="changeBike('/products/urtopia-chord-ebike?variant=43694976729336', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/chordX_2x_fe86f1a1-6d47-4dd4-b1b9-80ee149da0fe.jpg?v=1689154670', this)" white></div>
-                  <!--<div onclick="changeBike('/products/urtopia-chord-ebike?variant=43694976762104', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/chordX_2x_ac6e3457-6ab6-4c57-a190-b58c8171d6c8.jpg?v=1689154690', this)" black></div>-->
-                </div>
-                <div class="u24DemiBold_v2">{{ all_products['urtopia-chord-ebike'].price | money_without_trailing_zeros }}</div>
-              </div>
-              <div class="size">Fit for 5’3’’~6’1’’</div>
-            </div> 
-  
-            <a class="my-button my-button-white" href="/products/urtopia-chord-ebike?variant=43694976729336">Order now</a>
-            <!--<div class="my-button my-button-black new">$300 OFF</div>-->
           </div>
         <div class="swiper-slide">
           <div class="name">Carbon 1</div>
@@ -464,7 +500,9 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
             </div> 
 
             <a href="/products/urtopia-carbon-e-bike?variant=43556899913976" class="my-button my-button-white">Order now</a>
-           <div class="my-button my-button-black new" style="background-image: var(--sale-bike-tags1);">{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros}} off</div>
+            {% unless settings.carbon_ebike_discount_price == "0" %}
+              <div class="my-button my-button-black new" style="background-image: var(--sale-bike-tags1);">{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros}} off</div>
+            {% endunless %}
           </div>
 
     </div>
@@ -506,7 +544,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
                       </div>
                   </div>
                   <div class="param" name="img">
-                      <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18297_2x_eae075fb-1d14-4217-bbef-0d2f2e476f2e.png?v=1677640028"
+                      <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230922-181515.png?v=1695377746&width=1000"
                           alt="">
                       <div class="select">
                           <select index="1"></select>
@@ -665,7 +703,7 @@ const parameters = [
   },
   {
       name: 'Carbon 1s (size S)',
-      img: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18297_2x_eae075fb-1d14-4217-bbef-0d2f2e476f2e.png?v=1677640028',
+      img: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230922-181515.png?v=1695377746&width=1000',
       size: 'Fit for 5’3” - 5’9”',
       weight: '35 lbs',
       capacity: 'Max. 240 lbs',
@@ -693,7 +731,7 @@ const parameters = [
   }, 
   {
       name: 'Carbon 1s (size M)',
-      img: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18297_2x_eae075fb-1d14-4217-bbef-0d2f2e476f2e.png?v=1677640028',
+      img: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230922-181515.png?v=1695377746&width=1000',
       size: 'Fit for 5’7”~6’1”',
       weight: '35 lbs',
       capacity: 'Max. 240 lbs',
@@ -721,7 +759,7 @@ const parameters = [
   }, 
   {
       name: 'Carbon 1s(size L)',
-      img: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18297_2x_eae075fb-1d14-4217-bbef-0d2f2e476f2e.png?v=1677640028',
+      img: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230922-181515.png?v=1695377746&width=1000',
       size: 'Fit for 5’11”~6’5”',
       weight: '35 lbs',
       capacity: 'Max. 240 lbs',

@@ -10,7 +10,7 @@
     .subscribe-container .subscribe {
         display: flex;
         flex-direction: column;
-        padding: 12%;
+        padding: 10%;
         justify-content: center;
         background-color: #fff;
     }
@@ -23,10 +23,6 @@
       font-size: 30px;
       color: #104686;
       font-weight: 600;
-    }
-
-    .subscribe-container .subscribe .u17Light {
-      margin-bottom: 8%;
     }
 
     .subscribe-container .subscribe .u17Medium_v2  {
@@ -101,6 +97,24 @@
     .subscribe-container .u72DemiBold_v2 {
       margin: 12% 0;
     }
+
+    .subscribe-container .subscribe .u72DemiBold_v2 {
+      margin: 6% 0 2%;
+    }
+    .subscribe-container .subscribe .u17DemiBold_v2 {
+        color: #fff;
+        border-radius: 12px;
+        padding: 2px 11px;
+        background-image: linear-gradient(90deg, #EE6426, #F4492A);
+        font-size: 16px;
+    }
+    .subscribe-container .subscribe .u17Light {
+      margin: 12% 0 0;
+      font-size: 15px;
+    }
+    .subscribe-container .subscribe .new-contact {
+      margin: 3% 0 12%;
+    }
     
     @media (max-width: 767px) {
         .subscribe-container {
@@ -149,13 +163,22 @@
             font-size: 42px;
         }
 
-        .subscribe-container .u72DemiBold_v2 {
-          margin: 10% 0;
-          font-size: 48px;
-        }
-        .subscribe-container .u72DemiBold_v2 .u30DemiBold_v2 {
-          font-size: 20px;
-        }
+        .subscribe-container .subscribe .u72DemiBold_v2 {
+      margin: 4% 0 2%;
+      font-size: 48px;
+    }
+    .subscribe-container .subscribe .u17DemiBold_v2 {
+      font-size: 14px;
+    }
+    .subscribe-container .u72DemiBold_v2 .u30DemiBold_v2 {
+      font-size: 20px;
+    }
+    .subscribe-container .subscribe .u17Light {
+      margin-top: 8%;
+    }
+      .subscribe-container .subscribe .u30Medium_v2 {
+        font-size: 18px;
+    }
 
     }
     </style>
@@ -184,8 +207,8 @@
       }
     </style>
 
-    <link rel="preload" href="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DSCF1917_2x_0b6b06c9-1b85-4b3c-a719-ec14d98e1f44.jpg?v=1694504440&width=500" as="image">
-    <link rel="preload" href="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DSCF1917_2x_dfd4cb85-f938-4f12-a549-6eedec9aa47c.jpg?v=1694504405&width=375" as="image">
+    <link rel="preload" href="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Urtopia_-_Auto_Rack_-_Original_Size_-_RAW-299_2x_84a04d1d-8f14-49ec-a1d8-571133a24a22.jpg?v=1697185452" as="image">
+    <link rel="preload" href="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Urtopia_-_Auto_Rack_-_Original_Size_-_RAW-299_2x_607ae381-92e3-4927-9b90-7f9af7256e5b.jpg?v=1697185459&width=500" as="image">
     <link rel="preload" href="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230609-untitled-9762.jpg?v=1691048775&width=500" as="image">
   <script>
 
@@ -271,8 +294,9 @@
     <img class="mobileHide" src="${global_config.subscribe_email_dialog_config.background_imgae_pc}" alt="">
     <img class="pcHide" src="${global_config.subscribe_email_dialog_config.background_imgae_mb}" alt="">
     <div class="subscribe">
-        <span class="u20DemiBold_v2">{{ settings.sale_name }} {{ settings.sale_end_time }}</span>
-        <div class="u72DemiBold_v2">{{ settings.carbon_ebike_discount_price | money_without_trailing_zeros }}<span class="u30DemiBold_v2">OFF</span></div>
+        <span class="u20DemiBold_v2">{{ settings.sale_name }}</span>
+        <div class="u72DemiBold_v2">{{ settings.carbon1s_ebike_discount_price | money_without_trailing_zeros }}<span class="u30DemiBold_v2">OFF</span></div>
+        <div class="u30Medium_v2">On Carbon1s</div>
         <span class="u17Light">Subscribe to Urtopia for exclusive coupons, engaging stories, and the latest product news.</span>
         <form class="new-contact" action="/contact#ContactFooter" target="_blank" method="post" accept-charset="UTF-8">
         <div class="email">
@@ -283,6 +307,7 @@
               <button class="my-button my-button-black" type="submit">Subscribe</button>
         </div>
       </form>
+      <div class="u11Light_v2 mobileHide">*For any order during Oct 1 - Dec 31 2023, if there is a price drop within this period on our website, you can request a refund for the difference by contacting our support. The refund will be automatically approved and returned to your account.</div>
     </div>
     <span class="close" onclick="closeEmailDialog()">×</span>
 </div>`
@@ -307,12 +332,12 @@
 };
 
 
-  function showEmailDialog () {
+  function showEmailDialog (emailtag) {
     if (global_config.subscribe_email_dialog_config.is_hide) {
       return
     }
 
-    if (storage.get('emailDialogHideDay')) {
+    if (!emailtag && storage.get('emailDialogHideDay')) {
       return
     }
 
@@ -322,7 +347,7 @@
         $('.subscribe-container form').on("submit", function (event) {
           const email = $('.subscribe-container form input[type="email"]').val()
           // 埋点
-          fetchBuried('emailpop', 'submit', { email, tag: 'US,POPUP' })
+          fetchBuried('emailpop', 'submit', { email, tag: `US,POPUP${emailtag ? ',' + emailtag : ''}` })
           closeEmailDialog(14)
       
           event.preventDefault();
@@ -400,6 +425,8 @@
     // console.log(a === document.querySelector('body .mini-dialog'))
     $('body .mini-dialog').remove()
   }
-  
-  setTimeout(showEmailDialog, global_config.subscribe_email_dialog_config.show_delay_time * 1000)
+
+
+  const emailtag = getSearchValues().emailtag
+  setTimeout(showEmailDialog, emailtag ? 1000 : global_config.subscribe_email_dialog_config.show_delay_time * 1000, emailtag)
   </script>

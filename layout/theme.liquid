@@ -156,6 +156,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       return search
     }
 
+    // product price 格式化函数
+    function getPriceFormat (value = 0, ignoreZero = false) {
+      const instance =  new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: Shopify.currency.active,
+        roundingMode: 'floor',
+        minimumFractionDigits: ignoreZero ? 0 : 2,
+        maximumFractionDigits: ignoreZero ? 0 : 2
+      })
+
+      return instance.format(value / 100)
+    }
+
     function throttle(method, delay, duration){
         var timer=null;
         var begin=new Date();    
@@ -488,4 +501,5 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </body>
 {% render 'subscribe-email' %}
 {% render 'global-testride-dialog' %}
+{% render 'performance' %}
 </html>

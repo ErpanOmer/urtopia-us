@@ -9,7 +9,7 @@
         <div class="switch">
             <div class="switch-radio">
               <input id="tab-1" name="Chord" type="radio" checked>
-              <button class="btn">Chord</button>
+              <button class="btn active">Chord</button>
             </div>
             <div class="switch-radio">
               <input id="tab-2" name="ChordX" type="radio">
@@ -751,7 +751,7 @@
   }
 
 
-  $('.size-and-specs .switch .switch-radio :input').on('click', e => {
+  $('.size-and-specs .switch .switch-radio input').on('click', function (e) {
     $('.size-and-specs .switch .switch-radio input').prop('checked', false)
 
     const input = $(e.target).prop('checked', true)
@@ -767,5 +767,10 @@
         $(e).text(sizes[name][i])
     })
 
+    $(this).parent().parent().find('.btn').removeClass('active')
+
+    setTimeout(() => {
+        $(this).siblings().addClass('active')
+    }, 30)
   })
 </script>

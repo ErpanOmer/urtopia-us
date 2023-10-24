@@ -103,6 +103,7 @@
       "block_order": [
         "judgeme_review_widget_c56227c3"
       ],
+      "disabled": true,
       "settings": {
         "include_margins": true
       }
@@ -125,16 +126,16 @@
         "padding_bottom": 60
       }
     },
-    "pf-e5ad6aae": {
-      "type": "pf-e5ad6aae",
+    "pf-0d688511": {
+      "type": "pf-0d688511",
       "settings": {
       }
     }
   },
   "order": [
     "main",
-    "pf-e5ad6aae",
     "judgeme_section_review_widget_f144",
-    "product-recommendations"
+    "product-recommendations",
+    "pf-0d688511"
   ]
 }

@@ -1064,6 +1064,10 @@
                                 }
                             }
                         }
+
+                      &:not(:last-child) {
+                          margin-right: 12px;
+                        }
                     }
 
                     div[attribute*="350W"],
@@ -1085,10 +1089,6 @@
                         height: 22px;
                         line-height: 22px;
 
-                    }
-
-                    &>div+div {
-                        margin-left: 12px;
                     }
 
                     .active {
@@ -1954,7 +1954,6 @@
     }
 
     .freedom {
-        margin-top: 20px;
 
         .centeral-content {
             padding: 15vw 8vw;
@@ -2188,6 +2187,7 @@
 
                 .swiper-pagination {
                     // position: static;
+                    bottom: 0;
                 }
 
                 .swiper-pagination-bullet {
@@ -2657,4 +2657,377 @@
         }
     }
     
+}
+
+
+$product-tags-color: #FFE2D9;
+
+@mixin dotssss {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 6px 0;
+
+    &>div {
+        width: 34px;
+        height: 34px;
+        margin-right: 20px;
+        border-radius: 50%;
+        cursor: pointer;
+
+        &::after {
+            content: "";
+            display: inline-block;
+            height: 26px;
+            margin: 2px;
+            width: 26px;
+            border-radius: 100%;
+        }
+
+        &[data-stye="Sirius"] {
+            background-color: #FA812B;
+        }
+
+        &[data-stye="Lyra"] {
+            background-color: #747474;
+        }
+
+        &[data-stye="Vanilla"] {
+            background-color: #F0EEDF;
+        }
+
+        &[data-stye="Midnight in Paris"] {
+            background-color: #FFEC0B;
+            position: relative;
+        }
+
+        &[data-stye="White"] {
+            background-color: #ddd;
+        }
+
+        &[data-stye="Black"] {
+            background-color: #000;
+        }
+
+        &[data-stye="Gray"] {
+            border-color: #405364;
+            background-color: #405364;
+        }
+
+        &[data-stye="Midnight in Paris"]::before {
+            content: "";
+            display: inline-block;
+            background-color: #ff6c00;
+            position: absolute;
+            z-index: 1;
+            width: 100%;
+            height: 55%;
+            border-top-right-radius: 100px;
+            border-top-left-radius: 100px;
+        }
+    }
+
+    .active {
+        background-color: transparent !important;
+        border: 2px solid #666;
+
+        &[data-stye="Sirius"]::after {
+            background-color: #FA812B;
+        }
+
+        &[data-stye="Lyra"]::after {
+            background-color: #747474;
+        }
+
+        &[data-stye="Vanilla"]::after {
+            background-color: #F0EEDF;
+        }
+
+        &[data-stye="Midnight in Paris"]::after {
+            background-color: #FFEC0B;
+        }
+
+        &[data-stye="Midnight in Paris"]::before {
+            left: 2px;
+            top: 2px;
+            right: 2px;
+            height: 14px;
+            width: 26px;
+        }
+
+        &[data-stye="White"]::after {
+            background-color: #ddd;
+        }
+
+        &[data-stye="Black"]::after {
+            background-color: #000;
+        }
+
+        &[data-stye="Gray"]::after {
+            background-color: #405364;
+        }
+    }
+
+    @media (max-width: 767px) {
+        & > div {
+            width: 28px;
+            height: 28px;
+            margin-right: 12px;
+
+            &::after {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        .active {
+            &[data-stye="Midnight in Paris"]::before {
+                height: 12px;
+                width: 20px;
+            }
+        }
+    }
+}
+
+@mixin product-card {
+    padding: 5%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+
+    *,
+    ::after,
+    ::before {
+        box-sizing: border-box;
+    }
+
+    .tags {
+        display: flex;
+        min-height: 28px;
+        flex-wrap: wrap;
+        flex: 1;
+
+        span {
+            background-color: $product-tags-color;
+            border-radius: 10px;
+            padding: 4px 10px;
+        }
+
+        span {
+            margin: 0 6px 6px 0;
+        }
+    }
+
+    .variant-image {
+        cursor: pointer;
+    }
+
+    .dots {
+        @include dotssss;
+    }
+
+    .product_price {
+        display: flex;
+        align-items: center;
+        margin: 10px 0 6px;
+        flex-wrap: wrap;
+
+        img {
+            max-width: 40px;
+            margin-left: 6px;
+        }
+
+        .u24DemiBold_v2 {
+            margin-right: 5%;
+
+            &[data-price]::after {
+                content: attr(data-price);
+                display: inline-block;
+                color: #161c1f;
+                text-decoration: line-through;
+                margin-left: 6px;
+                font-size: 24px;
+                font-weight: 300;
+                opacity: 0.53;
+            }
+        }
+
+        &>.u17Light_v2 {
+            display: flex;
+        }
+    }
+
+    .my-button {
+        width: fit-content;
+    }
+
+    @media (max-width: 767px) {
+        padding: 4vw;
+
+        .product_price {
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+    }
+}
+
+.ebike-products {
+    .u24Medium_v2 {
+        margin:10px 0 4vh;
+    }
+
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 22px;
+
+        .product-card {
+            @include product-card;
+            background-color: #fff;
+        }
+
+        &>.lozad {
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 10px;
+            overflow: hidden;
+            color: #fff;
+            display: flex;
+            align-items: flex-end;
+            padding: 20px 50% 20px 30px;
+        }
+    }
+
+    @media (max-width: 767px) {
+      padding: 0 4vw;
+
+        & > .u36DemiBold_v2 {
+            font-size: 30px;
+        }
+
+        & > .u24Medium_v2 {
+            font-size: 17px;
+            margin-bottom: 10vw;
+        }
+
+        .product-grid {
+            grid-template-columns: 1fr;
+            grid-row-gap: 12px;
+        }
+    }
+}
+
+#choose {
+  background-color: #F7F8FA;
+  padding:100px 0;
+  @media (max-width: 767px) {
+        padding: 40px 0;
+  }
+}
+
+
+
+.faqs {
+    padding: 80px 0;
+
+    .faq {
+        .faq-list {
+            .faq-title {
+                width: 100%;
+                display: flex;
+                border-style: solid;
+                border-width: 0 0 1px;
+                border-color: #ebebeb;
+                text-align: left;
+                font: normal normal 600 24px/28px Urbane;
+                letter-spacing: 0;
+                color: #000;
+                background: #fff;
+                position: relative;
+                cursor: pointer;
+                align-items: center;
+                padding: 2.5vh 9%;
+
+                .faq-content-plus:before {
+                    content: '\f067';
+                }
+            }
+
+            .faq-title i {
+                position: absolute;
+                /* right: 20px; */
+                left: 3%;
+                display: inline-block;
+                font-size: 17px;
+                line-height: 1;
+                font-family: FontAwesome !important;
+                font-style: normal;
+                text-rendering: auto;
+                transition: transform 0.4s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+            }
+
+            .faq-content {
+                display: none;
+                padding: 20px 18% 0 9%;
+                font: normal normal normal 17px/24px Urbane;
+                color: #000;
+                opacity: 0.9;
+
+                a {
+                    text-decoration: underline;
+                }
+            }
+
+            .faq-content-plus {
+                transform: rotate(90deg);
+            }
+        }
+
+        .titlee {
+            font: normal normal 600 42px/50px Urbane;
+            color: #000;
+            border-bottom: 1px solid #ebebeb;
+            padding-bottom: 40px;
+        }
+    }
+
+    @media (max-width: 767px) {
+        padding: 60px 0;
+
+            .centeral-content {
+                padding: 0 4%;
+
+                .faq {
+                    .faq-list {
+                        .faq-title {
+                            font-size: 18px;
+                            line-height: 24px;
+                            padding: 20px 9%;
+
+                            i {
+                                top: 20px;
+                            }
+                        }
+
+                        .faq-content {
+                            padding: 10px 9%;
+                            padding-right: 0;
+                            font-size: 15px;
+                            line-height: 21px;
+                        }
+                    }
+
+                    .swiper {
+                        padding-right: 10px;
+                    }
+
+                    .titlee {
+                        font-size: 24px;
+                        line-height: 27px;
+                        padding-bottom: 24px;
+                    }
+                }
+            }
+    }
 }

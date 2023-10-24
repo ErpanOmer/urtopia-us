@@ -1,0 +1,137 @@
+{% assign carbon1_Sirius = "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230630-181731.png?v=1688120408" %}
+{% assign carbon1_Paris = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18150_2x_63ea456b-69c1-4d96-988f-efa931148bc1.png?v=1677640442" %}
+{% assign carbon1_Lyra = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18139_2x_ee2cf1ae-8693-42a3-ab99-d53ea78e2802.png?v=1677640511" %}
+{% assign carbon1_Vanilla = "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230420-182731.jpg?v=1681986478" %}
+
+{% assign carbon1s_Sirius = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230922-181515.png?v=1695377746&width=1000" %}
+{% assign carbon1s_Paris = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18151_2x_702ec45e-0fe8-49ed-865a-df341d3033d7.png?v=1677640124" %}
+{% assign carbon1s_Lyra = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18138_2x_de02f431-3e7d-48c0-b887-85eda46c2421.png?v=1677640174" %}
+{% assign carbon1s_Vanilla = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230428-104445.png?v=1682649982" %}
+
+{% assign chord_white = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1_1_2x_3f9f6132-5cac-4f49-bac7-ce6258edad1c.jpg?v=1689154301" %}
+{% assign chord_black = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3_1_2x_c75e6ef5-a3ac-49af-bb2f-c19dd565cfad.jpg?v=1689154308" %}
+{% assign chordx_white = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/chordX_2x_fe86f1a1-6d47-4dd4-b1b9-80ee149da0fe.jpg?v=1689154670" %}
+{% assign chordx_black = "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/chordXgreycollection.png?v=1696840938" %}
+
+{{ 'outlet.scss.css' | asset_url | stylesheet_tag: preload: true }}
+{% assign carbon = all_products["outlet-carbon-1-1s"] %}
+
+<script>
+    console.log(JSON.parse(JSON.stringify({{ carbon | json }})))
+</script>
+
+<div class="gray-background-color top-area">
+    <div class="centeral-content">
+        <div class="u72DemiBold_v2">OUTLET</div>
+        <div class="count">
+            <div class="u24Medium_v2">The Urtopia Outlet includes demo e-bikes with the same quality and performance as new ones. The e-bikes are tested by our engineers for our customers. Also, meticulous quality control measures are implemented prior to offering them for sale.</div>
+            {% unless true %}
+                <div class="count-down">
+                    <div class="u24Medium_v2">Price going up in：</div>
+                    <img src="http://i.countdownmail.com/205dop.gif" alt="">
+                </div>
+            {% endunless %}
+        </div>
+      <div class="product item">
+            <div>
+                <div class="u36DemiBold_v2">Outlet Carbon 1s</div>
+                <div class="u20Light_v2">Fit for 5’3’’~6’5’’</div>
+                <div class="u30DemiBold_v2 emphasize" data-price={{ carbon.compare_at_price | money_without_trailing_zeros }}>{{ carbon.price | money_without_trailing_zeros }}</div>
+                <div class="dots">
+                    
+                    <div data-img="{{ carbon1s_Sirius }}" data-variant="43780147511544" orange class="active"></div>
+                    <div data-img="{{ carbon1s_Paris }}" data-variant="43987465142520" yellow></div>
+                    <div data-img="{{ carbon1s_Lyra }}" data-variant="43987465175288" gray></div>
+                    <div data-img="{{ carbon1s_Vanilla }}" data-variant="43987465208056" peach></div>
+                </div>
+                <a href="/products/outlet-carbon-1-1s?variant=43780147511544" class="my-button my-button-origin">Order now</a>
+            </div>
+            <div style="flex: 1.5;">
+                <img src="{{carbon1s_Sirius}}" alt="">
+                <div class="u48DemiBold_v2 off">{{ carbon.compare_at_price | minus: carbon.price | money_without_trailing_zeros }} OFF</div>
+            </div>
+        </div>  
+      <!--<div class="product item">
+            <div>
+                <div class="u36DemiBold_v2">Outlet Carbon 1</div>
+                <div class="u20Light_v2">Fit for 5’11’’~6’5’’</div>
+                <div class="u30DemiBold_v2 emphasize" data-price={{ carbon.compare_at_price | money_without_trailing_zeros }}>{{ 179900 | money_without_trailing_zeros }}</div>
+                <div class="dots">
+                    
+                    <div data-img="{{ carbon1_Sirius }}" data-variant="43987465765112" orange class="active"></div>
+                    <div data-img="{{ carbon1_Paris }}" data-variant="43935607324888" yellow></div>
+                    <div data-img="{{ carbon1_Lyra }}" data-variant="43987465863416" gray></div>
+                    <div data-img="{{ carbon1_Vanilla }}" data-variant="43935607357656" peach></div>
+                </div>
+                <a href="/products/outlet-carbon-1-1s?variant=43987465765112" class="my-button my-button-origin">Order now</a>
+            </div>
+            <div style="flex: 1.5;">
+                <img src="{{carbon1_Sirius}}" alt="">
+                <div class="u48DemiBold_v2 off">{{ 100000 | money_without_trailing_zeros }} OFF</div>
+            </div>
+        </div>-->
+        <!--<div class="product-chord">
+            <div class="item">
+                <div class="u36DemiBold_v2 mobileHide">Outlet Chord</div>
+                <div class="u24DemiBold_v2 mobileHide">{{ chord.compare_at_price | minus: chord.price | money_without_trailing_zeros }} OFF</div>
+                <div style="position: relative;">
+                    <img src="{{ chord_white }}" alt="">
+                    <div class="u48DemiBold_v2 off pcHide">{{ chord.compare_at_price | minus: chord.price | money_without_trailing_zeros }} OFF</div>
+                </div>
+                <div class="u36DemiBold_v2 pcHide">Outlet Chord</div>
+                <div class="u20Light_v2 pcHide">Fit for 170cm - 195cm</div>
+                <div class="price">
+                    <div class="dots">
+                        <div data-img="{{ chord_white }}" data-variant="43950919024856" white class="active"></div>
+                        <div data-img="{{ chord_black }}" data-variant="43950919057624" black></div>
+                    </div>
+                    <div class="u24DemiBold_v2 emphasize" data-price={{ chord.compare_at_price | money_without_trailing_zeros }}>{{ chord.price | money_without_trailing_zeros }}</div>
+                </div>
+                <div class="u20Light_v2 mobileHide">Fit for 170cm - 195cm</div>
+                <a href="/products/outlet-urtopia-chord?variant=43950919024856" class="my-button my-button-origin">Order now</a>
+            </div>
+            <div class="item">
+                <div class="u36DemiBold_v2 mobileHide">Outlet Chord X</div>
+                <div class="u24DemiBold_v2 mobileHide">{{ chord.compare_at_price | minus: chord.price | money_without_trailing_zeros }} OFF</div>
+                <div style="position: relative;">
+                    <img src="{{ chordx_white }}" alt="">
+                    <div class="u48DemiBold_v2 off pcHide">{{ chord.compare_at_price | minus: chord.price | money_without_trailing_zeros }} OFF</div>
+                </div>
+                <div class="u36DemiBold_v2 pcHide">Outlet Chord X</div>
+                <div class="u20Light_v2 pcHide">Fit for 160cm - 185cm</div>
+                <div class="price">
+                    <div class="dots">
+                        <div data-img="{{ chordx_white }}" data-variant="43950919090392" white class="active"></div>
+                        <div data-img="{{ chordx_black }}" data-variant="43950919123160" black></div>
+                    </div>
+                    <div class="u24DemiBold_v2 emphasize" data-price={{ chord.compare_at_price | money_without_trailing_zeros }}>{{ chord.price | money_without_trailing_zeros }}</div>
+                </div>
+                <div class="u20Light_v2 mobileHide">Fit for 160cm - 185cm</div>
+                <a href="/products/outlet-urtopia-chord?variant=43950919090392" class="my-button my-button-origin">Order now</a>
+            </div>
+        </div>-->
+    </div>
+</div>
+<div class="centeral-content need">
+    <div class="u48DemiBold_v2">Need a different <br class="pcHide">size or style?</div>
+    <div class="u30DemiBold_v2">Check out the new e-bikes <span class="emphasize">in stock</span></div>
+</div>
+{% render 'home-page-bikes', hide_mobile: true %}
+
+<script>
+    $('.top-area .dots > div').on('click', e => {
+        const target = $(e.target)
+
+        const variant = target.attr('data-variant')
+        const image = target.attr('data-img')
+
+        target.siblings().removeClass('active')
+        target.addClass('active')
+
+        const item = target.closest('.item')
+        item.find('img').attr('src', image)
+
+        const button = item.find('.my-button')
+        button.attr('href', `${button.attr('href').split('?').shift()}?variant=${variant}`)
+    })
+</script>

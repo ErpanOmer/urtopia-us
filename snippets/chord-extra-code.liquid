@@ -226,8 +226,8 @@
       margin: 0;
       opacity: 0;
     }
-    #tab-1:checked ~ .btn,
-    #tab-2:checked ~ .btn {
+
+    .sizefit-switch .switch-radio .active {
       background: #000000;
       color: #fff;
     }
@@ -477,11 +477,11 @@
     max-height: 550px;">
         <div class="sizefit-switch order-flex-row">
           <div class="switch-radio">
-            <input id="tab-1" name="Chord" type="radio" checked />
-            <button class="btn">Chord</button>
+            <input id="tab-1111" name="Chord" type="radio" checked />
+            <button class="btn active">Chord</button>
           </div>
           <div class="switch-radio">
-            <input id="tab-2" name="Chord" type="radio" />
+            <input id="tab-2222" name="Chord" type="radio" />
             <button class="btn">Chord X</button>
           </div>
         </div>
@@ -928,19 +928,22 @@
 
     
 <script>
-    const chordTab = document.getElementById("tab-1");
-      const chordXTab = document.getElementById("tab-2");
-      const chordDom = document.getElementById("chord-dom");
-      const chordXDom = document.getElementById("chordx-dom");
-  
-      chordTab.addEventListener("click", function () {
-        chordDom.style.display = "flex";
-        chordXDom.style.display = "none";
-      });
-      chordXTab.addEventListener("click", function () {
-        chordDom.style.display = "none";
-        chordXDom.style.display = "flex";
-      });
+    $('.sizefit-switch .switch-radio input').on('change', function () {
+      $('.order-layer-body > div').hide()
+
+      if (this.id === "tab-1111") {
+        $(`.order-layer-body #chord-dom`).show()
+      } else {
+        $(`.order-layer-body #chordx-dom`).show()
+      }
+
+      $(this).parent().parent().find('.btn').removeClass('active')
+
+      setTimeout(() => {
+        $(this).siblings().addClass('active')
+      }, 30)
+    })
+
     
     function onCloseOrderLayer() {
       let arr = ["order-modal-one", "order-modal-two", "order-modal-three", "order-modal-four"];

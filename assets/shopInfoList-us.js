@@ -24,7 +24,7 @@ function createdisableDates(limit = 0, ignore_date = []) {
 const testRides = [
   {
     city: 'California',
-    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Bicycle_Garage_Fremont_fremont.jpg?v=1665374978',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/what-is-california-known-for-the-golden-gate-bridge-hero.webp?v=1697020664',
     stores: [
       {
         name: 'Bicycle Garage Fremont',
@@ -307,11 +307,55 @@ const testRides = [
         ],
         isPartner: true,
       },
+      {
+        name: 'IB Rents',
+        phone: '(619)-227-7734',
+        email: 'ibeachrents@gmail.com',
+        timezone: "California, USA (GMT-7)",
+        add: "235 Palm Ave. Imperial Beach, CA 91932",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/IB_Rents.jpg?v=1695291344",
+        testrideSpot: "California",
+        availableSizes: [
+          'Carbon 1 Size M'
+        ],
+        businessHours: [
+          "10:00-17:00",
+          "",
+          "11:00-17:00",
+          "11:00-17:00",
+          "11:00-17:00",
+          "11:00-17:00",
+          "10:00-17:00",
+        ],
+      },
+      {
+        name: 'Dawna Stone',
+        phone: '559760-5838',
+        email: 'dawnastone2525@gmail.com',
+        timezone: "California, USA (GMT-7)",
+        add: "Cara Way, Temecula, CA 92591",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/what-is-california-known-for-the-golden-gate-bridge-hero.webp?v=1697020664",
+        testrideSpot: "California",
+        availableSizes: [
+          'Carbon 1 Size M',
+          'Carbon 1s Size S'
+        ],
+        businessHours: [
+          "10:00-19:00",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "10:00-19:00",
+        ],
+        isPartner: true,
+      },
     ]
   },
   {
     city: 'New York',
-    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Spokesman_Cycles_LIC_ny.jpg?v=1665374977',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/New_york_times_square-terabass.jpg?v=1696759734',
     stores: [
       {
         name: "Spokesman Cycles (LIC)",
@@ -398,6 +442,28 @@ const testRides = [
           "10:00-19:00",
         ],
       },
+      {
+        name: "Richard Fine",
+        phone: "914-523-3207",
+        email: "richardfine42@hotmail.com",
+        timezone: "New York, Queens, NY, USA (GMT-4)",
+        add: "Rhinebeck NY, 12572",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/New_york_times_square-terabass.jpg?v=1696759734",
+        testrideSpot: "New York",
+        availableSizes: [
+          'Carbon 1 Size L',
+        ],
+        businessHours: [
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+        ],
+        isPartner: true,
+      },
     ]
   },
   {
@@ -462,7 +528,7 @@ const testRides = [
         name: "Bell's Bike Shop",
         phone: "215-857-5793",
         email: "steve@bellsbikeshop.com",
-        timezone: "Washington, DC, USA (GMT-4)",
+        timezone: "Pennsylvania, USA (GMT-4)",
         add: "1320 E Passyunk Ave, Philadelphia, PA 19147",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Bell_s_Bike_Shop.jpg?v=1686878451",
         testrideSpot: "Pennsylvania",
@@ -483,7 +549,7 @@ const testRides = [
         name: "Drexel Hill Cyclery",
         phone: "610-626-4477",
         email: "drexhillcycles@gmail.com",
-        timezone: "Washington, DC, USA (GMT-4)",
+        timezone: "Pennsylvania, USA (GMT-4)",
         add: "703 Burmont Rd, Drexel Hill, PA 19026",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Drexel_Hill_Cyclery_pa.jpg?v=1686878451",
         testrideSpot: "Pennsylvania",
@@ -504,7 +570,7 @@ const testRides = [
         name: "Kayuh Bicycles & Cafe",
         phone: "215-235-1838",
         email: "henry@kayuhbicycles.com",
-        timezone: "Washington, DC, USA (GMT-4)",
+        timezone: "Pennsylvania, USA (GMT-4)",
         add: "1900 W Girard Ave, Philadelphia, PA 19130",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Kayuh_Bicycles_Cafe.jpg?v=1686878451",
         testrideSpot: "Pennsylvania",
@@ -519,6 +585,48 @@ const testRides = [
           "07:00-16:00",
           "07:00-16:00",
           "07:00-16:00",
+        ],
+      },
+      {
+        name: "FITNESS EXCHANGE CONSHOHOCKEN",
+        phone: "610-551-9266",
+        email: "caroline@fitnessexchange.com",
+        timezone: "Pennsylvania, USA (GMT-4)",
+        add: "1004 Ridge Pike Conshohocken, PA 19428",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/FITNESS_EXCHANGE_CONSHOHOCKEN.jpg?v=1696118203",
+        testrideSpot: "Pennsylvania",
+        availableSizes: [
+          'Carbon 1 Size M',
+        ],
+        businessHours: [
+          "",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "11:00-17:00",
+        ],
+      },
+      {
+        name: "FITNESS EXCHANGE EMMAUS",
+        phone: "610-965-6597",
+        email: "caroline@fitnessexchange.com",
+        timezone: "Pennsylvania, USA (GMT-4)",
+        add: "693 State Ave I Emmaus, PA 18049 ",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/FITNESS_EXCHANGE_EMMAUS.webp?v=1696118202",
+        testrideSpot: "Pennsylvania",
+        availableSizes: [
+          'Carbon 1 Size M',
+        ],
+        businessHours: [
+          "",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
         ],
       },
     ]
@@ -622,7 +730,7 @@ const testRides = [
   },
   {
     city: 'Florida',
-    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-E-Cycle_Adventures_fl.jpg?v=1665374977',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/shutterstock_469708088.jpg?v=1697188978',
     stores: [
       {
         name: "E-Cycle Adventures",
@@ -687,6 +795,28 @@ const testRides = [
           "10:00-18:00",
           "10:00-17:00",
         ],
+      },
+      {
+        name: "José Luis",
+        phone: "951-451-1300",
+        email: "adonai01@me.com",
+        timezone: "New Port Richey, FL, USA (GMT-4)",
+        add: "6970 Bird Rd. 108. Miami Fl 33155, US",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/shutterstock_469708088.jpg?v=1697188978",
+        testrideSpot: "Florida",
+        availableSizes: [
+          'Carbon 1s Size S',
+        ],
+        businessHours: [
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+        ],
+        isPartner: true,
       },
     ]
   },
@@ -939,7 +1069,7 @@ const testRides = [
         phone: "708-493-4896",
         email: "akafenoy@gmail.com",
         timezone: "Illinois, USA (GMT-7)",
-        add: "King Drive, Berkeley, IL 60163",
+        add: "1542 King Drive Berkeley, ILL 60163",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Jason_Mathews.jpg?v=1692617852",
         testrideSpot: "Illinois",
         availableSizes: [
@@ -953,6 +1083,89 @@ const testRides = [
           "10:00-14:00",
           "10:00-14:00",
           "10:00-14:00",
+        ],
+        isPartner: true,
+      },
+    ]
+  },
+  {
+    city: 'Colorado',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/co.webp?v=1695291345',
+    stores: [
+      {
+        name: "Ebike Tours & Rental",
+        phone: "719-246-2675",
+        email: "gcobble@gmail.com",
+        timezone: "Colorado, USA (GMT-7)",
+        add: "906 Manitou Avenue, #102, Manitou Springs, CO. 80829",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/E-Bike_Sales_and_Rental.png?v=1695291344",
+        testrideSpot: "Colorado",
+        availableSizes: [
+          'Carbon 1s Size M',
+        ],
+        businessHours: [
+          "11:00-16:00",
+          "",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-17:00",
+        ],
+      },
+    ]
+  },
+  {
+    city: 'Boulder',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Boulder_Large_2223a94d-810c-44ad-a54a-5cf0b16e76e7.jpg?v=1697019539',
+    stores: [
+      {
+        name: "Michael Gehmeyr",
+        phone: "303-324-6617",
+        email: "michael_gehmeyr@hotmail.com",
+        timezone: "Boulder, USA (GMT-7)",
+        add: "Scrub Oak Cir, Boulder, CO 80305",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Boulder_Large_2223a94d-810c-44ad-a54a-5cf0b16e76e7.jpg?v=1697019539",
+        testrideSpot: "Boulder",
+        availableSizes: [
+          'Carbon 1s Size S',
+        ],
+        businessHours: [
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+        ],
+        isPartner: true,
+      },
+    ]
+  },
+  {
+    city: 'North Carolina',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/North-Carolina.jpg?v=1697188784',
+    stores: [
+      {
+        name: "Ben Major",
+        phone: "910-964-4528",
+        email: "benjaminmajor2019@gmail.com",
+        timezone: "North Carolina, USA (GMT-7)",
+        add: "Gables Dr.  Fayetteville, NC 28311",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/North-Carolina.jpg?v=1697188784",
+        testrideSpot: "North Carolina",
+        availableSizes: [
+          'Carbon 1s Size L',
+        ],
+        businessHours: [
+          "11:00-19:00",
+          "14:00-19:00",
+          "14:00-19:00",
+          "14:00-19:00",
+          "14:00-19:00",
+          "14:00-19:00",
+          "14:00-19:00",
         ],
         isPartner: true,
       },
