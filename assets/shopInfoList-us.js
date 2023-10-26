@@ -351,6 +351,28 @@ const testRides = [
         ],
         isPartner: true,
       },
+      {
+        name: 'Fred DiDominick',
+        phone: '(630) 291-7648',
+        email: 'fdidominick@gmail.com',
+        timezone: "California, USA (GMT-7)",
+        add: "Fire Barrel Drive, La Quinta, CA. 92253",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/what-is-california-known-for-the-golden-gate-bridge-hero.webp?v=1697020664",
+        testrideSpot: "California",
+        availableSizes: [
+          'Carbon 1s Size M',
+        ],
+        businessHours: [
+          "9:00-17:00",
+          "9:00-17:00",
+          "9:00-17:00",
+          "9:00-17:00",
+          "9:00-17:00",
+          "9:00-17:00",
+          "9:00-17:00",
+        ],
+        isPartner: true,
+      },
     ]
   },
   {
