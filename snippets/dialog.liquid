@@ -550,6 +550,10 @@
                 return resolve()
             }
 
+            if (!document.referrer) {
+                return resolve()
+            }
+
             const url = new URL(document.referrer)
             if (!url.pathname.includes('/products/')) {
                 return resolve()
