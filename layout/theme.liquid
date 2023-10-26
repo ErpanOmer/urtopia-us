@@ -187,6 +187,72 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
     }
 
+
+    function debounce(fn, wait = 300) {
+        // 自由变量，debounce执行完成被释放，time也不会被释放
+        let time;
+        // 返回一个闭包，接受参数
+        return function (...args) {
+            // 保存闭包被调用时的this
+            const this_ = this;
+            // 清除上一次的定时器
+            if (time) {
+                clearTimeout(time);
+            };
+            // 不再是直接执行fn，在内部传递参数
+            time = setTimeout(function () {
+                // 通过apply修改fn的this
+                fn.apply(this_, args);
+            }, wait);
+        }
+    };
+
+
+      // 视频播放
+  function showVideoDialog (src = '') {
+    console.log('src', src)
+
+    if (!src) {
+      return
+    }
+
+    const template = `<div class="video-box">
+      <div style="position: relative">
+        <iframe
+          width="${document.body.clientWidth > 768 ? 840 : document.body.clientWidth * 0.84 }"
+          height="${document.body.clientWidth > 768 ? 472 : 'auto'}"
+          src="${src}"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+        <span class="close" onclick="closeMiniDialog()">x</span>
+      </div>
+    </div>`
+
+    showMiniDialog(template)
+  }
+
+
+  
+  function showMiniDialog(html = '') {
+    const mini_dialog = $('body .mini-dialog')
+
+    if (mini_dialog.length) {
+        return setTimeout(showMiniDialog, 5000, html)
+    }
+
+    setTimeout(() => {
+      $("body").append(`<div class="mini-dialog" style="display: flex;">${html}</div>`)
+    })
+  }
+  
+  function closeMiniDialog() {
+    // console.log(a === document.querySelector('body .mini-dialog'))
+    $('body .mini-dialog').remove()
+  }
+
     // 立即执行
     (w => {
       const falg = w.sessionStorage.carbon_one_a_b_test_flag
@@ -499,7 +565,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 {% render 'criteo-tracking' %}
 <!-- CRITEO END -->
 </body>
-{% render 'subscribe-email' %}
-{% render 'global-testride-dialog' %}
+{% render 'dialog' %}
 {% render 'performance' %}
 </html>

@@ -928,7 +928,6 @@ body .jBox-Modal {
 }
 
 
-
 .message-box {
   width: 360px;
   position: fixed;
@@ -936,54 +935,70 @@ body .jBox-Modal {
   bottom: 70px;
   background-color: #eff1f8;
   border-radius: 10px;
-  transition: all 0.3s;
+  transition: all .3s;
   z-index: 9999;
-  padding: 28px 40px;
+  padding: 20px 24px;
+}
 
-  .u11Light_v2 {
-    margin: 16px 0 24px;
-  }
+.message-box .u11Light_v2 {
+  margin-bottom: 12px;
+}
 
-  .u17DemiBold_v2 {
-    display: flex;
-    align-items: center;
+.message-box .u17DemiBold_v2 {
+  margin-bottom: 12px;
+}
 
-    &>div {
-      display: flex;
-      align-items: center;
-      color: #fff;
+.message-box .email {
+  box-sizing: border-box;
+  display: flex;
+  height: 34px;
+  position: relative
+}
 
-      &>div {
-        background-image: linear-gradient(-90deg, #ee6426, #f4492a);
-        padding: 4px 10px;
-        max-height: 30px;
+.message-box .email input {
+  height: 100%;
+  width: 100%;
+  border-color: #0000004d;
+  border-radius: 30px;
+  color: #000;
+  padding: 0 12px;
+  font-size: 14px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  box-sizing: border-box
+}
 
-        &:first-child {
-          border-left: 15px solid transparent;
-          border-bottom: 15px solid #f4492a;
-          border-top: 15px solid #f4492a;
-          padding: 0;
-        }
+.message-box .email input:focus-visible {
+  border-color: #000
+}
 
-        &:last-child {
-          border-top: 15px solid transparent;
-          border-right: 15px solid #ee6426;
-          border-bottom: 15px solid transparent;
-          rotate: 180deg;
-          padding: 0;
-        }
-      }
-    }
-  }
+.message-box .email input::placeholder {
+  color: #aaa
+}
 
-  .close {
-    position: absolute;
-    right: 15px;
-    top: -5px;
-    font-size: 30px;
-    color: #999;
-    cursor: pointer;
-  }
+.message-box .email button {
+  border: none
+}
+
+.message-box .email .my-button {
+  position: absolute;
+  right: 0;
+  z-index: 2;
+  height: 100%;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding: 6px 24px;
+  font-size: 14px;
+}
+
+.message-box .close {
+  position: absolute;
+  right: 15px;
+  top: -5px;
+  font-size: 30px;
+  color: #999;
+  cursor: pointer
 }
 
 
@@ -1148,12 +1163,7 @@ body .jBox-Modal {
     border-bottom-right-radius: 0;
     z-index: 999999;
     transform: translateY(100%);
-    padding: 12px 30px;
-
-    .u11Light_v2 {
-      margin: 8px 0 12px;
-    }
-  }
+}
 
 
   .subscribe-container {

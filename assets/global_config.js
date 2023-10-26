@@ -8,30 +8,23 @@ const global_config = {
     is_mobile: document.documentElement.clientWidth < 768,
      // 是否是 pc
     is_pc: !!!navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i),
-
-
-    // 邮件弹窗有关配置
-    subscribe_email_dialog_config: {
-        // 是否隐藏 邮件弹窗
-        is_hide: false,
-        // 邮件弹窗 延迟弹出时间，单位:s
-        show_delay_time: 10,
-        // 邮件 pc 背景图
-        background_imgae_pc: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Urtopia_-_Auto_Rack_-_Original_Size_-_RAW-299_2x_84a04d1d-8f14-49ec-a1d8-571133a24a22.jpg?v=1697185452',
-        // 邮件 mobile 背景图
-        background_imgae_mb: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Urtopia_-_Auto_Rack_-_Original_Size_-_RAW-299_2x_607ae381-92e3-4927-9b90-7f9af7256e5b.jpg?v=1697185459&width=500'
-    },
-    // test ride 弹窗
-    test_ride_dialog_config: {
-        // 是否隐藏
-        is_hide: false,
-        // 延迟弹出时间，单位:s
-        show_delay_time: 15,
-        // pc 背景图
-        background_imgae: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230609-untitled-9762.jpg?v=1691048775&width=500'
-    },
-
-
+    dialog: {
+        email: {
+          is_hide: false,
+          subscribe_email_close_expires_time: 1,              // 邮件进入弹窗 关闭过期时间
+          subscribe_email_message_close_expires_time_mb: 3,   // 邮件小弹窗 关闭过期时间 -> 移动端
+          subscribe_email_message_close_expires_time_pc: 1,   // 邮件小弹窗 关闭过期时间 -> pc端
+          submit_expires_time: 30,                            // 邮件类弹窗 提交过期时间
+          close_expires_time: 3,                              // 邮件类弹窗 关闭过去时间
+          show_delay_time: 15                                 // 邮件类延迟弹出时间，单位:s
+        },
+        test_ride: {
+          is_hide: false,
+          submit_expires_time: 7,
+          close_expires_time: 3,
+          show_delay_time: 15
+        }
+      },
     // carbon 产品页面配置
     carbon_order_page_config: {
         // carbon 车默认显示 variant_id, 只有 url 上的 variant 参数为空的时候生效

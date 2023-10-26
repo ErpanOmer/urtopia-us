@@ -1,0 +1,619 @@
+<style>
+    dialog {
+    position: fixed;
+    left: 0; 
+    right: 0;
+    bottom: 0;
+    top: 0;
+    width: -moz-fit-content;
+    width: -webkit-fit-content;
+    width: fit-content;
+    max-width: 84vw;
+    height: -moz-fit-content;
+    height: -webkit-fit-content;
+    height: fit-content;
+    max-height: 85vh;
+    margin: auto;
+    border: none;
+    padding: 0;
+    background: transparent;
+    color: black;
+    display: block;
+    animation: mini-dialog-show .4s;
+    z-index: 100000001;
+    }
+
+    dialog:not([open]) {
+    display: none;
+    }
+
+    dialog + .backdrop {
+    position: fixed;
+    top: 0; 
+    right: 0; 
+    bottom: 0; 
+    left: 0;
+    background-color: #000000b3;
+    }
+
+
+    .subscribe-container {
+        display: grid;
+        max-width: 976px;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        border-radius: 10px;
+        background-color: transparent;
+        overflow: hidden;
+    }
+    
+    .subscribe-container .subscribe {
+        display: flex;
+        flex-direction: column;
+        padding: 10%;
+        justify-content: center;
+        background-color: #fff;
+    }
+    
+    .subscribe-container .subscribe img {
+        margin: 25px 0 0;
+    }
+
+    .subscribe-container .subscribe .ffff {
+      font-size: 30px;
+      color: #104686;
+      font-weight: 600;
+    }
+
+    .subscribe-container .subscribe .u17Medium_v2  {
+      margin: 10% 0;
+    }
+    
+    .subscribe-container .subscribe .email {
+        box-sizing: border-box;
+        display: flex;
+        height: 47px;
+        position: relative;
+    }
+    
+    .subscribe-container .subscribe .email input {
+        height: 100%;
+        width: 100%;
+        border-color: #0000004d;
+        border-radius: 30px;
+        color: #000;
+        padding: 0 25px;
+        font-size: 14px;
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+
+    .subscribe-container .subscribe .email input:focus-visible {
+        outline-offset: unset;
+        box-shadow: unset;
+        outline: unset;
+        border-color: #000;
+      }
+  
+    .subscribe-container .subscribe .email button {
+      border: none;
+  }
+  
+    .subscribe-container .subscribe .email input:focus-visible {
+      border-color: #000;
+    }
+    
+    .subscribe-container .subscribe .email .my-button {
+        position: absolute;
+        right: 0;
+        z-index: 2;
+        height: 100%;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+    
+    .subscribe-container .subscribe .email input::placeholder {
+        color: #aaa;
+    }
+    
+    .subscribe-container .close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 40px;
+      color: #999;
+      cursor: pointer;
+      font-weight: 100;
+      display: block;
+      height: 40px;
+      line-height: 40px;
+      width: 40px;
+      text-align: center;
+    }
+
+    .subscribe-container .u72DemiBold_v2 {
+      margin: 12% 0;
+    }
+
+    .subscribe-container .subscribe .u72DemiBold_v2 {
+      margin: 6% 0 2%;
+    }
+
+    .subscribe-container .subscribe > .u30DemiBold_v2 {
+        margin: 6px 0 40px;
+    }
+
+    .subscribe-container .subscribe .u17Light {
+      margin: 12% 0 0;
+      font-size: 15px;
+    }
+    .subscribe-container .subscribe .new-contact {
+      margin: 3% 0 12%;
+    }
+    
+    @media (max-width: 767px) {
+        .subscribe-container {
+            grid-template-columns: 1fr;
+        }
+    
+        .subscribe-container .subscribe {
+            padding: 8%;
+        }
+    
+        .subscribe-container .subscribe img {
+            margin: 15px 0 0;
+        }
+
+        .subscribe-container .subscribe .ffff {
+          font-size: 20px;
+        }
+    
+        .subscribe-container .subscribe .u17Light {
+            line-height: 21px;
+            margin: 0 0 15px;
+            font-size: 13px;
+        }
+    
+        .subscribe-container .subscribe .email {
+            height: 40px;   
+        }
+    
+        .subscribe-container .subscribe .email input {
+            font-size: 12px;
+            padding: 0 15px;
+        }
+    
+        .subscribe-container .close {
+            color: #fff;
+            top: 0.5%;
+            right: 1%;
+        }
+
+        .subscribe-container .subscribe .u17Medium_v2 {
+          font-size: 14px;
+          margin: 5% 0;
+        }
+
+        .subscribe-container .subscribe .u17Medium_v2  .u72DemiBold_v2 {
+            font-size: 42px;
+        }
+
+        .subscribe-container .subscribe .u72DemiBold_v2 {
+      margin: 4% 0 2%;
+      font-size: 48px;
+    }
+    .subscribe-container .subscribe .u17DemiBold_v2 {
+      font-size: 14px;
+    }
+    .subscribe-container .u72DemiBold_v2 .u30DemiBold_v2 {
+      font-size: 20px;
+    }
+    .subscribe-container .subscribe .u17Light {
+      margin-top: 8%;
+    }
+      .subscribe-container .subscribe .u30Medium_v2 {
+        font-size: 18px;
+    }
+
+    }
+
+
+    .video-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #0009;
+      }
+
+
+      .video-box .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        color: #fff;
+        width: 30px;
+        height: 30px;
+        background: #0c0c0ccc;
+        text-align: center;
+        line-height: 30px;
+        border-radius: 50%;
+      }
+</style>
+
+<dialog id="SubscribeEmailDialog">
+    <div class="subscribe-container">
+        <img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Urtopia_-_Auto_Rack_-_Original_Size_-_RAW-299_2x_84a04d1d-8f14-49ec-a1d8-571133a24a22.jpg?v=1697185452" alt="">
+        <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Urtopia_-_Auto_Rack_-_Original_Size_-_RAW-299_2x_607ae381-92e3-4927-9b90-7f9af7256e5b.jpg?v=1697185459&width=500" alt="">
+        <div class="subscribe">
+            <span class="u20DemiBold_v2">{{ settings.sale_name }}</span>
+            <div class="u72DemiBold_v2">{{ settings.carbon1s_ebike_discount_price | money_without_trailing_zeros }}<span class="u30DemiBold_v2">OFF</span></div>
+            <div class="u30Medium_v2">On Carbon1s</div>
+            <span class="u17Light">Join Our Thriving Community of 200,000+ Enthusiasts! Unlock Urtopia’s Exclusive Offers, Be the First to Know About New Products, Receive Expert Riding Tips, and Dive into Captivating Customer Stories.</span>
+            <form class="new-contact" action="/contact#ContactFooter" target="_blank" method="post" accept-charset="UTF-8">
+            <div class="email">
+                <input type="hidden" name="form_type" value="customer">
+                <input type="hidden" name="utf8" value="✓">
+                <input type="hidden" name="contact[tags]" value="newsletter">
+                <input placeholder="Enter email here" type="email" name="contact[email]" required>
+                <button class="my-button my-button-black" type="submit">Subscribe</button>
+            </div>
+        </form>
+        </div>
+        <span class="close">×</span>
+    </div>
+</dialog>
+
+<dialog id="ExitSubscribeEmailDialog">
+    <div class="subscribe-container">
+        <img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Artboard_5_copy_6_2x_02975b13-dd9f-4b13-8ce1-184b716a96aa.jpg?v=1698310315" alt="">
+        <div class="subscribe">
+            <div class="u17DemiBold_v2">Stay with us, Don’t Miss Out on</div>
+            <div class="u30DemiBold_v2">Exclusive Offers!</div>
+            <span class="u17Light_v2" style="margin: 0 0 10%;">Don’t go just yet! Subscribe to our newsletter for exclusive e-bike offers, riding tips, and exciting updates. Stay connected with over 200,000 member in the community.</span>
+            <form class="new-contact" action="/contact#ContactFooter" target="_blank" method="post" accept-charset="UTF-8">
+            <div class="email">
+                <input type="hidden" name="form_type" value="customer">
+                <input type="hidden" name="utf8" value="✓">
+                <input type="hidden" name="contact[tags]" value="newsletter">
+                <input placeholder="Enter email here" type="email" name="contact[email]" required>
+                <button class="my-button my-button-black" id="global_email_submit_button" type="submit">Subscribe</button>
+            </div>
+        </form>
+        </div>
+        <span class="close">×</span>
+    </div>
+</dialog>
+
+<dialog id="TestRideDialog">
+    <div class="testride_dialog">
+        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230609-untitled-9762.jpg?v=1691048775">
+        <div>
+            <div class="u30DemiBold_v2">Test ride spots near you</div>
+            <div class="u24Medium_v2">Experience the bike in real</div>
+            <div class="my-button my-button-black"">Book Now</div>
+        </div>
+        <span class="close">×</span>
+    </div>
+</dialog>
+
+<div class="message-box">
+  <div class="u17DemiBold_v2">Don’t Miss Out on Exclusive Updates and Offers!</div>
+  <div class="u14DemiBold_v2 emphasize">UP TO <span class="u24DemiBold_v2">{{ settings.carbon1s_ebike_discount_price | money_without_trailing_zeros }}</span> OFF NOW</div>
+  <div class="u11Light_v2">Limited-time offer with stock flying off the shelves. Subscribe now for the latest updates and instant notifications.</div>
+  <form class="email" action="/" target="_blank" method="post" accept-charset="UTF-8">
+      <input placeholder="Enter email here" type="email" name="contact[email]" required>
+      <button class="my-button my-button-black" id="global_email_submit_button" type="submit">Subscribe</button>
+  </form>
+  <span class="close">×</span>
+</div>
+
+{{ 'dialog-polyfill.js' | asset_url | script_tag }}
+
+<script>
+    const storage = {
+        set: function (key, value, expires = 3) {
+            const obj = {
+                data: value, //存储值
+                expires: Date.now() + (expires * 24 * 60 * 60 * 1000), //过期时间
+            }
+
+            localStorage.setItem(`__${key}`, JSON.stringify(obj));
+        },
+        get: function (key) {
+            try {
+                const { data, expires } = JSON.parse(localStorage.getItem(`__${key}`))
+
+                if (expires < Date.now()) {
+                    localStorage.removeItem(`__${key}`);
+                    return undefined;
+                }
+
+                return data;
+            } catch {
+                return undefined
+            }
+        }
+    }
+
+    function showDialog (dialog, callback) {
+        dialogPolyfill.forceRegisterDialog(dialog)
+        dialog.showModal()
+
+        return new Promise(resolve => {
+            dialog.addEventListener("cancel", (event) => {                
+                resolve('close')
+            });
+
+            dialog.addEventListener("close", (event) => {
+                resolve('close')
+            })
+
+            $(dialog).find('.close').on('click', function () {
+                dialog.close()
+            })
+
+            setTimeout(callback, 300, dialog, resolve)
+        })
+    }
+
+    function showSubscribeEmailDialog () {
+        const email_dialog_key = 'emailDialog'
+        const subscribe_email_close_expires_time = 'subscribe_email_close_expires_time'
+
+        return new Promise(resolve => {
+            if (global_config.dialog.email.is_hide) {
+                return resolve()
+            }
+
+            if (storage.get(email_dialog_key)) {
+                return resolve()
+            }
+
+            if (storage.get(subscribe_email_close_expires_time)) {
+                return resolve()
+            }
+
+            showDialog(document.getElementById('SubscribeEmailDialog'), (dialog, r) => {
+                $(dialog).find('form').on('submit', function (event) {
+                    r($(dialog).find('form input[type="email"]').val())
+
+                    dialog.close()
+                    event.preventDefault();
+                    return false;
+                });
+
+                let startInput = false;
+                $(dialog).find('form input[type="email"]').on(
+                    'input',
+                    debounce((e) => {
+                    if (startInput) {
+                        return;
+                    }
+
+                    startInput = true;
+                    fetchBuried('emailpop', 'enter', {
+                        email: e.target.value,
+                        tag: 'US,POPUP,enter pop',
+                    });
+                    }, 2000)
+                );
+            }).then(email => {
+                storage.set(subscribe_email_close_expires_time, subscribe_email_close_expires_time, global_config.dialog.email.subscribe_email_close_expires_time)
+
+                if (email !== 'close') {
+                    const emailtag = getSearchValues().emailtag
+                    // 埋点
+                    fetchBuried('emailpop', 'submit', { email, tag: `US,POPUP,enter pop${emailtag ? ',' + emailtag : ''}` }).then(() => {
+                        dataLayer.push({
+                            'event'    :'global_email_submit',
+                            'pageType' :'emailpop',
+                        });
+                    });
+
+                    storage.set(email_dialog_key, email_dialog_key, global_config.dialog.email.submit_expires_time)
+                }
+
+                setTimeout(resolve, global_config.dialog.email.show_delay_time * 1000)
+            })
+        })
+    }
+
+    function showExitSubscribeEmailDialog () {
+        const email_dialog_key = 'emailDialog'
+        let show = false
+
+        return new Promise(resolve => {
+            if (global_config.dialog.email.is_hide) {
+                return resolve()
+            }
+
+            if (storage.get(email_dialog_key)) {
+                return resolve()
+            }
+
+            if (!global_config.is_pc && global_config.is_mobile) {
+                return resolve()
+            } 
+
+            document.body.addEventListener("mouseleave", debounce((evt) => {
+                    !show && showDialog(document.getElementById('ExitSubscribeEmailDialog'), (dialog, r) => {
+                        show = true
+
+                        $(dialog).find('form').on('submit', function (event) {
+                            r($(dialog).find('form input[type="email"]').val())
+
+                            dialog.close()
+                            event.preventDefault();
+                            return false;
+                        });
+
+                        let startInput = false;
+                        $(dialog).find('form input[type="email"]').on(
+                            'input',
+                            debounce((e) => {
+                            if (startInput) {
+                                return;
+                            }
+
+                            startInput = true;
+                            fetchBuried('emailpop', 'enter', {
+                                email: e.target.value,
+                                tag: 'US,POPUP,exit pop',
+                            });
+                            }, 2000)
+                        );
+
+                    }).then(email => {
+                        console.log(email)
+                        storage.set(email_dialog_key, email_dialog_key, global_config.dialog.email.close_expires_time)
+
+                        if (email !== 'close') {
+                            const emailtag = getSearchValues().emailtag
+                            // 埋点
+                            fetchBuried('emailpop', 'submit', { email, tag: `US,POPUP,exit pop${emailtag ? ',' + emailtag : ''}` }).then(() => {
+                                dataLayer.push({
+                                    'event'    :'global_email_submit',
+                                    'pageType' :'emailpop',
+                                });
+                            });
+
+                            storage.set(email_dialog_key, email_dialog_key, global_config.dialog.email.submit_expires_time)
+                        }
+
+                        setTimeout(resolve, global_config.dialog.email.show_delay_time * 1000)
+                    })
+                }, 500))
+        })
+    }
+
+    function showTestRideDialog () {
+        const test_ride_dialog_key = 'TestRideDialog'
+        let show = false
+
+        return new Promise(resolve => {
+            if (global_config.dialog.test_ride.is_hide) {
+                return resolve()
+            }
+
+            if (storage.get(test_ride_dialog_key)) {
+                return resolve()
+            }
+
+            if (!global_config.is_pc && global_config.is_mobile) {
+                return resolve()
+            }
+
+            document.body.addEventListener("mouseleave", debounce((evt) => {
+                !show && showDialog(document.getElementById('TestRideDialog'), (dialog, r) => {
+                    show = true
+
+                    $(dialog).find('.my-button').on('click', () => {
+                        r('book now')
+                        dialog.close()
+                    })
+
+                }).then(result => {
+                    storage.set(test_ride_dialog_key, test_ride_dialog_key, global_config.dialog.test_ride.close_expires_time)
+
+                    if (result !== 'close') {
+                        fetchBuried('emailpop', 'exitpop', { button: 'book a test ride' }, true)
+
+                        storage.set(test_ride_dialog_key, test_ride_dialog_key, global_config.dialog.test_ride.submit_expires_time)
+
+                        location.href = `${window.sessionStorage.localPathPerfix}/pages/test-ride?form_page=restride-dialog`
+                    }
+
+                    setTimeout(resolve, global_config.dialog.test_ride.show_delay_time * 1000)
+                })
+            }, 500))
+        })
+    }
+
+
+    function showSubscribeEmailMessageBox () {
+        const email_dialog_key = 'emailDialog'
+        const subscribe_email_message_close_expires_time = 'subscribe_email_message_close_expires_time'
+
+        return new Promise(resolve => {
+            if (global_config.dialog.email.is_hide) {
+                return resolve()
+            }
+
+            if (storage.get(email_dialog_key)) {
+                return resolve()
+            }
+
+            if (storage.get(subscribe_email_message_close_expires_time)) {
+                return resolve()
+            }
+
+            const url = new URL(document.referrer)
+            if (!url.pathname.includes('/products/')) {
+                return resolve()
+            }
+
+            const close = () => {
+                $('.message-box').animate({}, 300, function () {
+                    //第一个花括号里面是动画内容，可以为空，但不能省去中括号
+                    $('.message-box').css(global_config.is_mobile ? { transform: 'translateY(100%)' } : { right: '-360px' }); //在回调函数里面改变css属性来实现transform中的动画变换
+                });
+
+                setTimeout(resolve, global_config.dialog.email.show_delay_time * 1000)
+            }
+
+            $('.message-box').animate({}, 300, function () {
+                //第一个花括号里面是动画内容，可以为空，但不能省去中括号
+                $('.message-box').css(global_config.is_mobile ? { transform: 'translateY(0)' } : { right: '18px' }); //在回调函数里面改变css属性来实现transform中的动画变换
+            });
+
+            $('.message-box').find('form').on('submit', function (event) {
+                const email = $('.message-box').find('form input[type="email"]').val()
+
+                const emailtag = getSearchValues().emailtag
+                // 埋点
+                fetchBuried('emailpop', 'submit', { email, tag: `US,POPUP,small pop${emailtag ? ',' + emailtag : ''}` }).then(() => {
+                    dataLayer.push({
+                        'event'    :'global_email_submit',
+                        'pageType' :'emailpop',
+                    });
+                });
+
+                storage.set(email_dialog_key, email_dialog_key, global_config.dialog.email.submit_expires_time)
+
+                close()
+                event.preventDefault();
+                return false;
+            });
+
+            let startInput = false;
+            $('.message-box').find('form input[type="email"]').on(
+                'input',
+                debounce((e) => {
+                    if (startInput) {
+                        return;
+                    }
+
+                    startInput = true;
+                    fetchBuried('emailpop', 'enter', {
+                        email: e.target.value,
+                        tag: 'US,POPUP,smail pop',
+                    });
+                }, 2000)
+            );
+
+            $('.message-box .close').on('click', () => {
+                storage.set(subscribe_email_message_close_expires_time, subscribe_email_message_close_expires_time, global_config.is_mobile ? global_config.dialog.email.subscribe_email_message_close_expires_time_mb : global_config.dialog.email.subscribe_email_message_close_expires_time_pc)
+
+                close()
+            })
+        })
+    }
+
+
+    $(function () {
+        showSubscribeEmailDialog().then(showSubscribeEmailMessageBox).then(showExitSubscribeEmailDialog).then(showTestRideDialog)
+    })
+</script>
