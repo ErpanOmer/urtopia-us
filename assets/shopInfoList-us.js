@@ -1135,6 +1135,28 @@ const testRides = [
           "10:00-17:00",
         ],
       },
+      {
+        name: "Bill Mestrezat",
+        phone: "941-223-4865",
+        email: "eyefxer@aim.com",
+        timezone: "Colorado, USA (GMT-7)",
+        add: "Washburn Ave, Lakewood, CO 80228",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/co.webp?v=1695291345",
+        testrideSpot: "Colorado",
+        availableSizes: [
+          'Carbon 1s Size M',
+        ],
+        businessHours: [
+          "",
+          "13:00-16:00",
+          "13:00-16:00",
+          "13:00-16:00",
+          "13:00-16:00",
+          "13:00-16:00",
+          "",
+        ],
+        isPartner: true,
+      },
     ]
   },
   {

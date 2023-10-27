@@ -138,7 +138,7 @@ const global_config = {
             //sb m
             43556895916280: 'Ships within <span>5 business days</span> from L.A. warehouse.',
             //pb m
-            43556896047352: 'Ships within <span>5 business days</span> from L.A. warehouse.',
+            43556896047352: 'Ships within <span>November 15-30, 2023 </span> from L.A. warehouse.',
             43556899619064: 'Ships within <span>10 business days </span>from L.A. warehouse.',
             43645495345400: 'Ships within <span>10 business days </span>from L.A. warehouse.',
             //pw m
