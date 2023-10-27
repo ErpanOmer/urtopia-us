@@ -106,10 +106,9 @@
 
 
   .hedaer-secondary-menu {
-    padding: 10px 5% 35px;
+    padding: 0 5%;
     color: #000;
     display: flex;
-    align-items: flex-end;
   }
 
   .hedaer-secondary-menu .links {
@@ -119,6 +118,15 @@
     place-self: flex-start;
   }
 
+  .hedaer-secondary-menu .sale-image {
+    max-width: 270px;
+    width: 20%;
+    background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23277_2x_dd8e661f-39e1-47fa-9368-83afd96869cd.jpg?v=1698377804') center center/cover no-repeat;
+    color: #fff;
+    border-radius: 10px;
+    padding: 15px 30px;
+  }
+
   .hedaer-secondary-menu .links .u14Medium_v2 {
     opacity: 0.77;
     margin-top: 20px;
@@ -126,11 +134,6 @@
 
   .hedaer-secondary-menu .links .u14Medium_v2:hover {
     opacity: 1;
-  }
-
-  .hedaer-secondary-menu > img {
-    max-width: 270px;
-    width: 20%;
   }
 
   .hedaer-secondary-menu .centreallllll {
@@ -167,7 +170,7 @@
 
   .hedaer-secondary-menu .centreallllll .supportssssss {
     display: flex;
-    margin: 20px auto 40px;
+    margin: 0 auto 40px;
   }
 
 
@@ -199,9 +202,14 @@
     cursor: pointer;
   }
 
+  .hedaer-secondary-menu .centreallllll .bikesssssss > div:hover img {
+    transform: scale(1.25);
+  }
+
   .hedaer-secondary-menu .centreallllll .bikesssssss > div img {
     max-width: 90%;
     margin-bottom: 6%;
+    transition: all 0.6s;
   }
 
   .hedaer-secondary-menu .centreallllll .bikesssssss > div .my-button {
@@ -209,10 +217,21 @@
     border-width: 1px;
   }
 
-
+  
 
   .hedaer-secondary-menu .centreallllll .bikesssssss > div .u14Light_v2 {
-      margin: 4% 0 8%;
+      margin: 3% 0;
+      opacity: 0.77;
+  }
+
+  .hedaer-secondary-menu .centreallllll .bikesssssss > div .emphasize::after {
+    content: attr(data-price);
+    text-decoration: line-through;
+    position: relative;
+    left: 5px;
+    bottom: 5px;
+    font-size: 14px;
+    color: #000;
   }
 
   .hedaer-secondary-menu .centreallllll .bikesssssss > div .u20DemiBold_v2 {
@@ -233,7 +252,7 @@
 
 
   @media (max-width: 1500px) {
-    .hedaer-secondary-menu > img {
+    .hedaer-secondary-menu .sale-image {
       display: none;
     }
   }
@@ -243,7 +262,7 @@
   .hedaer-secondary-menu-mb {
     display: flex;
     flex-direction: column;
-    padding: 3vw 2.6rem;
+    padding: 0 2.6rem 3vw;
     color: #000;
   }
 
@@ -287,7 +306,7 @@
 
 .hedaer-secondary-menu-mb .supportssssss {
   display: flex;
-  margin: 5vw 0;
+  margin-bottom: 5vw;
   justify-content: space-between;
 } 
 
@@ -335,6 +354,17 @@
   align-items: center;
 }
 
+.hedaer-secondary-menu-mb .bikesssssss > div .emphasize::after {
+  content: attr(data-price);
+  text-decoration: line-through;
+  position: relative;
+  left: 3px;
+  bottom: 3px;
+  font-size: 12px;
+  color: #000;
+}
+
+
 .hedaer-secondary-menu-mb .bikesssssss > div .u14DemiBold_v2 span {
   display: inline-block;
   border-top: 2px solid black;
@@ -343,6 +373,14 @@
   height: 8px;
   transform: rotate(45deg) translateY(-1px);
   margin-left: 5px;
+}
+
+
+.hedaer-secondary-menu-mb .sale-image {
+  background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23277_2x_dd8e661f-39e1-47fa-9368-83afd96869cd.jpg?v=1698377804') center center/cover no-repeat;
+  color: #fff;
+  border-radius: 10px;
+  padding: 4vw 4vw 52.25vw;
 }
 </style>
 
@@ -418,77 +456,62 @@
                                   {{ link.title | escape }}
                                 </button>
                                 <div class="hedaer-secondary-menu-mb">
-                                    
-                                    <div class="switchsssss">
-                                      <div class="active">Shop by Model</div>
-                                      <div>Shop by style</div>
-                                    </div>
                                     <div class="supportssssss">
                                         <div class="u11Medium_v2">
                                           <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_17960_2x_b54a5500-60e1-44b7-ba11-ffac13f27945.png?v=1697791367" alt="">
-                                          <span>Free Shipping</span>
+                                          <span>Free</span>
+                                          <span>Shipping</span>
                                         </div>
                                         <div class="u11Medium_v2">
                                           <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_17959_2x_5daec689-64b5-442d-b3f2-64aa9bdf17f0.png?v=1697791373" alt="">
-                                          <span>14-Day Returns</span>
+                                          <span>14-Day</span>
+                                          <span>Returns</span>
                                         </div>
                                         <div class="u11Medium_v2">
                                           <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_17958_2x_41614a03-d5f7-4c8a-b655-e3ba79c626a6.png?v=1697791379" alt="">
-                                          <span>2-Year Warranty</span>
+                                          <span>2-Year</span>
+                                          <span>Warranty</span>
                                         </div>
+                                        <div class="u11Medium_v2">
+                                          <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20231027-142058.png?v=1698387684" alt="">
+                                          <span>Flexible</span>
+                                          <span>Payment</span>
+                                      </div>
                                     </div>
                                     <div class="bikesssssss">
-                                        {% assign productttttt = all_products['urtopia-carbon-e-bike'].variants | where: "title", "Carbon 1 · 250W · Carbon Belt / L / Sirius" %}
-                                        <div class="by-model" href="/pages/e-bike">
+                                        {% assign productttttt = all_products['urtopia-carbon-e-bike'].variants | where: "title", "Carbon 1s · 350W · Shimano 7-Speed / M / Midnight in Paris" %}
+                                        <div class="by-model" href="{{ productttttt.first.url }}">
                                             <div>
-                                              <div class="u14DemiBold_v2">Carbon 1 <span></span></div>
-                                              <div class="u11Light_v2">Lightweight and less maintainance</div>
-                                              <a class="u14DemiBold_v2" href="{{ productttttt.first.url }}">Order now</a>
+                                              <div class="u14DemiBold_v2">Carbon 1s</div>
+                                              <div class="u11Light_v2">Lightweight and speedy</div>
+                                              <span class="u14DemiBold_v2 emphasize" data-price="{{ productttttt.first.price | money_without_trailing_zeros }}">{{ productttttt.first.price | minus: settings.carbon1s_ebike_discount_price | money_without_trailing_zeros }}</span>
                                             </div>
                                             <img src="{{ productttttt.first.featured_image | image_url: width: 300 }}">
                                         </div>
-                                        {% assign productttttt = all_products['urtopia-carbon-e-bike'].variants | where: "title", "Carbon 1s · 350W · Shimano 7-Speed / M / Midnight in Paris" %}
-                                        <div class="by-model" href="/pages/e-bike">
+                                        {% assign productttttt = all_products['urtopia-carbon-e-bike'].variants | where: "title", "Carbon 1 · 250W · Carbon Belt / L / Sirius" %}
+                                        <div class="by-model" href="{{ productttttt.first.url }}">
                                             <div>
-                                              <div class="u14DemiBold_v2">Carbon 1s <span></span></div>
-                                              <div class="u11Light_v2">Lightweight and speedy</div>
-                                              <a class="u14DemiBold_v2" href="{{ productttttt.first.url }}">Order now</a>
+                                              <div class="u14DemiBold_v2">Carbon 1</div>
+                                              <div class="u11Light_v2">Lightweight and less maintainance</div>
+                                              <span class="u14DemiBold_v2 emphasize" {% unless settings.carbon_ebike_discount_price == "0" %}data-price="{{ productttttt.first.price | money_without_trailing_zeros }}"{% endunless %}>{{ productttttt.first.price | minus: settings.carbon_ebike_discount_price | money_without_trailing_zeros }}</span>
                                             </div>
                                             <img src="{{ productttttt.first.featured_image | image_url: width: 300 }}">
                                         </div>
                                         {% assign productttttt = all_products['urtopia-chord-ebike'].variants | where: "title", "High-Step / White" %}
-                                        <div class="by-model" href="/pages/lightweight-commuter-ebike-urtopia-chord">
+                                        <div class="by-model" href="{{ productttttt.first.url }}">
                                             <div>
-                                              <div class="u14DemiBold_v2">Chord <span></span></div>
+                                              <div class="u14DemiBold_v2">Chord</div>
                                               <div class="u11Light_v2">Comfort and elegance</div>
-                                              <a class="u14DemiBold_v2" href="{{ productttttt.first.url }}">Order now</a>
+                                              <span class="u14DemiBold_v2 emphasize" data-price="{{ productttttt.first.price | money_without_trailing_zeros }}">{{ productttttt.first.price | minus: settings.chord_ebike_discount_price | money_without_trailing_zeros }}</span>
                                             </div>
                                             <img src="{{ productttttt.first.featured_image | image_url: width: 300 }}">
                                         </div>
                                         {% assign productttttt = all_products['urtopia-chord-ebike'].variants | where: "title", "Step-Through / White" %}
-                                        <div class="by-model" href="/pages/lightweight-commuter-ebike-urtopia-chord">
+                                        <div class="by-model" href="{{ productttttt.first.url }}">
                                             <div>
-                                              <div class="u14DemiBold_v2">Chord X <span></span></div>
+                                              <div class="u14DemiBold_v2">Chord X</div>
                                               <div class="u11Light_v2">Easy on, easy off</div>
-                                              <a class="u14DemiBold_v2" href="{{ productttttt.first.url }}">Order now</a>
-                                            </div>
-                                            <img src="{{ productttttt.first.featured_image | image_url: width: 300 }}">
-                                        </div>
-                                        {% assign productttttt = all_products['urtopia-carbon-e-bike'].variants | where: "title", "Carbon 1 · 250W · Carbon Belt / L / Sirius" %}
-                                        <div class="by-style" href="/pages/e-bike">
-                                            <div>
-                                              <div class="u14DemiBold_v2">Carbon 1/1s <span></span></div>
-                                              <div class="u11Light_v2">Lightweight and sporty</div>
-                                              <a class="u14DemiBold_v2" href="{{ productttttt.first.url }}">Order now</a>
-                                            </div>
-                                            <img src="{{ productttttt.first.featured_image | image_url: width: 300 }}">
-                                        </div>
-                                        {% assign productttttt = all_products['urtopia-chord-ebike'].variants | where: "title", "High-Step / White" %}
-                                        <div class="by-style" href="/pages/lightweight-commuter-ebike-urtopia-chord">
-                                            <div>
-                                              <div class="u14DemiBold_v2">Chord/Chord X <span></span></div>
-                                              <div class="u11Light_v2">Comfort and elegance</div>
-                                              <a class="u14DemiBold_v2" href="{{ productttttt.first.url }}">Order now</a>
+                                              <span class="u14DemiBold_v2 emphasize" data-price="{{ productttttt.first.price | money_without_trailing_zeros }}">{{ productttttt.first.price | minus: settings.chord_ebike_discount_price | money_without_trailing_zeros }}</span>
                                             </div>
                                             <img src="{{ productttttt.first.featured_image | image_url: width: 300 }}">
                                         </div>
@@ -498,7 +521,11 @@
                                         <a class="u14Medium_v2" href="{{ childlink.url }}">{{ childlink.title }}</a>
                                       {% endfor %}
                                     </div>
-                                    <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23172_2x_3a541e48-e9d0-4fa5-9723-1ea11548e723.jpg?v=1697789876" alt="">
+                                    <div class="sale-image">
+                                        <div class="u17DemiBold_v2">{{ settings.sale_name }}</div>
+                                        <div>Up to</div>
+                                        <div class="u36DemiBold_v2">{{ settings.carbon1s_ebike_discount_price | money_without_trailing_zeros }} OFF</div>
+                                    </div>
                                 </div>
                               </div>
                             </div>
@@ -769,87 +796,74 @@
                       </summary>
                       <div id="MegaMenu-Content-{{ forloop.index }}" class="mega-menu__content gradient motion-reduce global-settings-popup {% if link.title == 'E-Bike' %}mega_ebike_content{% endif %}" tabindex="-1">
                         <div class="hedaer-secondary-menu">
-                          <div class="links">
-                              <div class="u24Medium_v2">Explore Urtopia world</div>
-                              {%- for childlink in link.links -%}
-                                <a class="u14Medium_v2" href="{{ childlink.url }}">{{ childlink.title }}</a>
-                              {% endfor %}
-                              <span class="flex-1"></span>
-                          </div>
-                          <div class="flex-1 centreallllll">
-                              <div class="switchsssss">
-                                  <div class="active">Shop by Model</div>
-                                  <div>Shop by style</div>
+                              <div class="links">
+                                  <div class="u24Medium_v2">Explore Urtopia world</div>
+                                  {%- for childlink in link.links -%}
+                                    <a class="u14Medium_v2" href="{{ childlink.url }}">{{ childlink.title }}</a>
+                                  {% endfor %}
+                                  <span class="flex-1"></span>
                               </div>
-                              <div class="supportssssss">
-                                  <div class="u11Medium_v2">
-                                    <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_17960_2x_b54a5500-60e1-44b7-ba11-ffac13f27945.png?v=1697791367" alt="">
-                                    <span>Free Shipping</span>
+                              <div class="flex-1 centreallllll">
+                                  <div class="supportssssss">
+                                      <div class="u11Medium_v2">
+                                        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_17960_2x_b54a5500-60e1-44b7-ba11-ffac13f27945.png?v=1697791367" alt="">
+                                        <span>Free Shipping</span>
+                                      </div>
+                                      <div class="u11Medium_v2">
+                                        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_17959_2x_5daec689-64b5-442d-b3f2-64aa9bdf17f0.png?v=1697791373" alt="">
+                                        <span>14-Day Returns</span>
+                                      </div>
+                                      <div class="u11Medium_v2">
+                                        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_17958_2x_41614a03-d5f7-4c8a-b655-e3ba79c626a6.png?v=1697791379" alt="">
+                                        <span>2-Year Warranty</span>
+                                      </div>
+                                      <div class="u11Medium_v2">
+                                        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20231027-142058.png?v=1698387684" alt="">
+                                        <span>Flexible Payment</span>
+                                      </div>
                                   </div>
-                                  <div class="u11Medium_v2">
-                                    <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_17959_2x_5daec689-64b5-442d-b3f2-64aa9bdf17f0.png?v=1697791373" alt="">
-                                    <span>14-Day Returns</span>
-                                  </div>
-                                  <div class="u11Medium_v2">
-                                    <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_17958_2x_41614a03-d5f7-4c8a-b655-e3ba79c626a6.png?v=1697791379" alt="">
-                                    <span>2-Year Warranty</span>
+                                  <div class="flex-1"></div>
+                                  <div class="bikesssssss">
+                                    {% assign productttttt = all_products['urtopia-carbon-e-bike'].variants | where: "title", "Carbon 1s · 350W · Shimano 7-Speed / M / Midnight in Paris" %}
+                                      <div class="by-model" href="{{ productttttt.first.url }}">
+                                          <img src="{{ productttttt.first.featured_image | image_url: width: 500 }}">
+                                          <div class="u20DemiBold_v2">Carbon 1s</div>
+                                          <div class="u14Light_v2">Lightweight and speedy</div>
+                                          <div class="flex-1"></div>
+                                          <span class="u17DemiBold_v2 emphasize" data-price="{{ productttttt.first.price | money_without_trailing_zeros }}">{{ productttttt.first.price | minus: settings.carbon1s_ebike_discount_price | money_without_trailing_zeros }}</span>
+                                      </div>
+                                      {% assign productttttt = all_products['urtopia-carbon-e-bike'].variants | where: "title", "Carbon 1 · 250W · Carbon Belt / L / Sirius" %}
+                                      <div class="by-model" href="{{ productttttt.first.url }}">
+                                          <img src="{{ productttttt.first.featured_image | image_url: width: 500 }}">
+                                          <div class="u20DemiBold_v2">Carbon 1</div>
+                                          <div class="u14Light_v2">Lightweight and less maintainance</div>
+                                          <div class="flex-1"></div>
+                                          <span class="u17DemiBold_v2 emphasize" {% unless settings.carbon_ebike_discount_price == "0" %}data-price="{{ productttttt.first.price | money_without_trailing_zeros }}"{% endunless %}>{{ productttttt.first.price | minus: settings.carbon_ebike_discount_price | money_without_trailing_zeros }}</span>
+                                      </div>
+                                      {% assign productttttt = all_products['urtopia-chord-ebike'].variants | where: "title", "High-Step / White" %}
+                                      <div class="by-model" href="{{ productttttt.first.url }}">
+                                          <img src="{{ productttttt.first.featured_image | image_url: width: 500 }}">
+                                          <div class="u20DemiBold_v2">Chord</div>
+                                          <div class="u14Light_v2">Comfort and elegance</div>
+                                          <div class="flex-1"></div>
+                                          <span class="u17DemiBold_v2 emphasize" data-price="{{ productttttt.first.price | money_without_trailing_zeros }}">{{ productttttt.first.price | minus: settings.chord_ebike_discount_price | money_without_trailing_zeros }}</span>
+                                      </div>
+                                      {% assign productttttt = all_products['urtopia-chord-ebike'].variants | where: "title", "Step-Through / White" %}
+                                      <div class="by-model" href="{{ productttttt.first.url }}">
+                                          <img src="{{ productttttt.first.featured_image | image_url: width: 500 }}">
+                                          <div class="u20DemiBold_v2">Chord X</div>
+                                          <div class="u14Light_v2">Easy on, easy off</div>
+                                          <div class="flex-1"></div>
+                                          <span class="u17DemiBold_v2 emphasize" data-price="{{ productttttt.first.price | money_without_trailing_zeros }}">{{ productttttt.first.price | minus: settings.chord_ebike_discount_price | money_without_trailing_zeros }}</span>
+                                      </div>
                                   </div>
                               </div>
-                              <div class="bikesssssss">
-                                {% assign productttttt = all_products['urtopia-carbon-e-bike'].variants | where: "title", "Carbon 1 · 250W · Carbon Belt / L / Sirius" %}
-                                  <div class="by-style" href="/pages/e-bike">
-                                      <img src="{{ productttttt.first.featured_image | image_url: width: 500 }}">
-                                      <div class="u20DemiBold_v2">Carbon 1/1s <span></span></div>
-                                      <div class="u14Light_v2">Lightweight and sporty</div>
-                                      <div class="flex-1"></div>
-                                      <a class="my-button my-button-white" href="{{ productttttt.first.url }}">Order now</a>
-                                  </div>
-                                  {% assign productttttt = all_products['urtopia-carbon-e-bike'].variants | where: "title", "Carbon 1 · 250W · Carbon Belt / L / Sirius" %}
-                                  <div class="by-model" href="/pages/e-bike">
-                                      <img src="{{ productttttt.first.featured_image | image_url: width: 500 }}">
-                                      <div class="u20DemiBold_v2">Carbon 1 <span></span></div>
-                                      <div class="u14Light_v2">Lightweight and less maintainance</div>
-                                      <div class="flex-1"></div>
-                                      <a class="my-button my-button-white" href="{{ productttttt.first.url }}">Order now</a>
-                                  </div>
-                                  {% assign productttttt = all_products['urtopia-carbon-e-bike'].variants | where: "title", "Carbon 1s · 350W · Shimano 7-Speed / M / Midnight in Paris" %}
-                                  <div class="by-model" href="/pages/e-bike">
-                                      <img src="{{ productttttt.first.featured_image | image_url: width: 500 }}">
-                                      <div class="u20DemiBold_v2">Carbon 1s <span></span></div>
-                                      <div class="u14Light_v2">Lightweight and speedy</div>
-                                      <div class="flex-1"></div>
-                                      <a class="my-button my-button-white" href="{{ productttttt.first.url }}">Order now</a>
-                                  </div>
-                                  {% assign productttttt = all_products['urtopia-chord-ebike'].variants | where: "title", "High-Step / White" %}
-                                  <div class="by-model" href="/pages/lightweight-commuter-ebike-urtopia-chord">
-                                      <img src="{{ productttttt.first.featured_image | image_url: width: 500 }}">
-                                      <div class="u20DemiBold_v2">Chord <span></span></div>
-                                      <div class="u14Light_v2">Comfort and elegance</div>
-                                      <div class="flex-1"></div>
-                                      <a class="my-button my-button-white" href="{{ productttttt.first.url }}">Order now</a>
-                                  </div>
-                                  {% assign productttttt = all_products['urtopia-chord-ebike'].variants | where: "title", "Step-Through / White" %}
-                                  <div class="by-model" href="/pages/lightweight-commuter-ebike-urtopia-chord">
-                                      <img src="{{ productttttt.first.featured_image | image_url: width: 500 }}">
-                                      <div class="u20DemiBold_v2">Chord X <span></span></div>
-                                      <div class="u14Light_v2">Easy on, easy off</div>
-                                      <div class="flex-1"></div>
-                                      <a class="my-button my-button-white" href="{{ productttttt.first.url }}">Order now</a>
-                                  </div>
-                                  {% assign productttttt = all_products['urtopia-chord-ebike'].variants | where: "title", "High-Step / White" %}
-                                  <div class="by-style" href="/pages/lightweight-commuter-ebike-urtopia-chord">
-                                      <img src="{{ productttttt.first.featured_image | image_url: width: 500 }}">
-                                      <div class="u20DemiBold_v2">Chord/Chord X <span></span></div>
-                                      <div class="u14Light_v2">Comfort and elegance</div>
-                                      <div class="flex-1"></div>
-                                      <a class="my-button my-button-white" href="{{ productttttt.first.url }}">Order now</a>
-                                  </div>
-                                  <div class="by-style"></div>
-                                  <div class="by-style"></div>
+                              <div class="sale-image">
+                                  <div class="u17DemiBold_v2">{{ settings.sale_name }}</div>
+                                  <div>Up to</div>
+                                  <div class="u36DemiBold_v2">{{ settings.carbon1s_ebike_discount_price | money_without_trailing_zeros }} OFF</div>
                               </div>
                           </div>
-                          <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23172_2x_3a541e48-e9d0-4fa5-9723-1ea11548e723.jpg?v=1697789876" alt="">
-                      </div>
                       </div>
                     </details>
                   </header-menu>
@@ -1277,30 +1291,6 @@ document.querySelector("img.header__heading-logo").src ="https://cdn.shopify.com
 }
 {% endschema %}
 <script>
-  $('.hedaer-secondary-menu .centreallllll .switchsssss > div').on('click', function () {
-    $(this).parent().find('.active').removeClass('active')
-    $('.hedaer-secondary-menu .centreallllll .bikesssssss > div').hide()
-    if ($(this).text().includes('Model')) {
-      $('.hedaer-secondary-menu .centreallllll .bikesssssss .by-model').show()
-    } else {
-      $('.hedaer-secondary-menu .centreallllll .bikesssssss .by-style').show()
-    }
-    setTimeout(() => {
-      $(this).addClass('active')
-    })
-  })
-  $('.hedaer-secondary-menu-mb .switchsssss > div').on('click', function () {
-    $(this).parent().find('.active').removeClass('active')
-    $('.hedaer-secondary-menu-mb .bikesssssss > div').hide()
-    if ($(this).text().includes('Model')) {
-      $('.hedaer-secondary-menu-mb .bikesssssss .by-model').show()
-    } else {
-      $('.hedaer-secondary-menu-mb .bikesssssss .by-style').show()
-    }
-    setTimeout(() => {
-      $(this).addClass('active')
-    })
-  })
   $('.hedaer-secondary-menu .centreallllll .bikesssssss > div').on('click',  function (e) {
     if ($(e.target).hasClass('my-button')) {
       return
@@ -1315,9 +1305,4 @@ document.querySelector("img.header__heading-logo").src ="https://cdn.shopify.com
     const div = $(e.target).closest('.by-style')[0] || $(e.target).closest('.by-model')[0]
     location.href= $(div).attr('href')
   })
-  
-  setTimeout(() => {
-    $('.hedaer-secondary-menu .centreallllll .switchsssss > div:first-child').click()
-    $('.hedaer-secondary-menu-mb .switchsssss > div:first-child').click()
-  }, 300);
 </script>
