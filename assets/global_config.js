@@ -237,14 +237,14 @@ const global_config = {
         // 每一种variant 的发货时间文案
         ebike_delivery_time: {
            // chord
-      43694976663800: 'Free shipping <span>within 5 business days</span>',
-      43694976696568: 'Free shipping <span>within 5 business days</span>',
-      // chord x
-          //white
-      43694976729336: 'Free shipping <span>within 5 business days</span>',
-      43694976762104: 'Pre-order items shipped from October 15 - 30, 2023',
+          43694976663800: 'Free shipping <span>within 5 business days</span>',
+          43694976696568: 'Free shipping <span>within 5 business days</span>',
+          // chord x
+              //white
+          43694976729336: 'Free shipping <span>within 5 business days</span>',
+          43694976762104: 'Pre-order items shipped from October 15 - 30, 2023',
           //gray
-          44047038447864:'Pre-order items shipped from October 15 - 30, 2023',
+          44047038447864:'Free shipping <span>within 5 business days</span>',
             
         }
     }

@@ -1163,7 +1163,7 @@ const testRides = [
     city: 'Boulder',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Boulder_Large_2223a94d-810c-44ad-a54a-5cf0b16e76e7.jpg?v=1697019539',
     stores: [
-      {
+      /*{
         name: "Michael Gehmeyr",
         phone: "303-324-6617",
         email: "michael_gehmeyr@hotmail.com",
@@ -1184,7 +1184,7 @@ const testRides = [
           "10:00-18:00",
         ],
         isPartner: true,
-      },
+      },*/
     ]
   },
   {
