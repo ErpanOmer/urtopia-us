@@ -6,7 +6,7 @@
         "type": "text",
         "id": "sale_name",
         "label": "活动名称",
-        "default": "Happy Halloween Sale"
+        "default": "Early Black Friday Deals"
       },
       {
         "type": "text",
@@ -42,7 +42,7 @@
         "type": "text",
         "id": "chord_sale_name",
         "label": "chord 活动名称",
-        "default": "Happy Halloween Sale"
+        "default": "Early Black Friday Deals"
       },
       {
         "type": "text",

@@ -130,7 +130,7 @@ const global_config = {
             //lb l
             43556896014584: 'Ships within <span>5 business days</span> from L.A. warehouse.',
             //pb s
-            43556899684600: 'Ships within <span>5 business days</span> from L.A. warehouse.',
+            43556899684600: 'Ships between <span>November 15-30, 2023 </span>from L.A. warehouse.',
             //pw s
             43556899750136: 'Ships between <span>November 15-30, 2023 </span>from L.A. warehouse.',
             //pw l
@@ -144,7 +144,7 @@ const global_config = {
             //pw m
             43556899815672: 'Ships within <span>5 business days</span> from L.A. warehouse.',
             //lb m
-            43556895981816: 'Ships within <span>5 business days</span> from L.A. warehouse.',
+            43556895981816: 'Ships between <span>November 15-30, 2023 </span>from L.A. warehouse.',
             43645495378168: 'Ships within <span>10 business days </span>from L.A. warehouse.',
             //sb l
             43556895949048: 'Ships between <span>November 15-30, 2023 </span>from L.A. warehouse.',

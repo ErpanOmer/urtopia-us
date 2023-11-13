@@ -424,7 +424,7 @@ const testRides = [
       },
       {
         name: "BikeFixNYC",
-        phone: "347-699-1935",
+        phone: "347 463 3876",
         email: "bikefixnyc@gmail.com",
         timezone: "Long Island City, Queens, NY, USA (GMT-4)",
         add: "334 E 6th St, New York, NY 10003",
@@ -612,7 +612,7 @@ const testRides = [
       {
         name: "FITNESS EXCHANGE CONSHOHOCKEN",
         phone: "610-551-9266",
-        email: "caroline@fitnessexchange.com",
+        email: "sales@fitnessexchange.com",
         timezone: "Pennsylvania, USA (GMT-4)",
         add: "1004 Ridge Pike Conshohocken, PA 19428",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/FITNESS_EXCHANGE_CONSHOHOCKEN.jpg?v=1696118203",
@@ -633,7 +633,7 @@ const testRides = [
       {
         name: "FITNESS EXCHANGE EMMAUS",
         phone: "610-965-6597",
-        email: "caroline@fitnessexchange.com",
+        email: "sales@fitnessexchange.com",
         timezone: "Pennsylvania, USA (GMT-4)",
         add: "693 State Ave I Emmaus, PA 18049 ",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/FITNESS_EXCHANGE_EMMAUS.webp?v=1696118202",
@@ -756,7 +756,7 @@ const testRides = [
     stores: [
       {
         name: "E-Cycle Adventures",
-        phone: "352-600-6422",
+        phone: "+1 727-819-0627",
         email: "ecycleadventures@gmail.com",
         timezone: "New Port Richey, FL, USA (GMT-4)",
         add: "9904 Little Rd, New Port Richey, FL 34654",
