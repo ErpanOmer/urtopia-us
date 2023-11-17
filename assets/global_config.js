@@ -232,6 +232,32 @@ const global_config = {
                 ]
             }
         },
+        product_media_images: [
+            {
+              text: `“The smoothest and cleanest look”`,
+              img: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18675_2x_75c49337-c9e2-4f36-8d62-bf676477342b.png?v=1699861700"
+            },
+            {
+              text: `“Battery integrated under the top tube like never before.”`,
+              img: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18931_2x_4bfe7a5e-d7f8-4241-b453-6f1269875cd7.png?v=1699861708"
+            },
+            {
+              text: `“A lifestyle piece incorporates cutting-edge technology”`,
+              img: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18927_2x_221c18ab-9822-4bfd-8434-e4da565bc9ac.png?v=1699861715"
+            },
+            {
+              text: `“The unusual smart e-bike is worth a look.”`,
+              img: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18928_2x_4fa3a41f-c723-4589-be3c-1b499e871a3f.png?v=1699861725"
+            },
+            {
+              text: `“This is a model destined to conquer the public.”`,
+              img: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18929_2x_ab7441d3-d6ca-49f1-839a-1e01e2712a97.png?v=1699861731"
+            },
+            {
+              text: `“one of the most beautiful and futuristic ebikes of 2023”`,
+              img: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18930_2x_9c4e218a-1697-41e3-a5da-5e771d4b7a79.png?v=1699861737"
+            }
+          ],
         // 默认的发货时间 文案
         ebike_default_delivery_time: 'Free shipping <span>within 5 business days</span>',
         // 每一种variant 的发货时间文案

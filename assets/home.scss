@@ -450,6 +450,47 @@ $product-tags-color: #FFE2D9;
         }
 
 
+        .friday {
+            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20231115-141415.jpg?v=1700028908');
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 17.5vh;
+            box-sizing: border-box;
+
+            & > img {
+                max-width: 25vw;
+            }
+
+            .u24Medium_v2 {
+                color: #000;
+            }
+
+            .my-button {
+                margin-top: 2vh;
+            }
+        }
+
+        .design {
+            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23217_2x_afee0495-3571-425f-a975-d43ba72a6f5b.jpg?v=1700030005');
+
+            .centeral-content {
+                & > div {
+                    align-items: flex-start;
+
+                    img {
+                        max-width: 280px;
+                    }
+
+                    .u24Medium_v2 {
+                        max-width: 490px;
+                        margin: 7vh 0 10vh;
+                    }
+                }
+            }
+        }
+
+
         .count-down {
             height: 300px;
             width: 400px;
@@ -805,6 +846,49 @@ $product-tags-color: #FFE2D9;
 
                         .buttons {
                             margin: 0;
+                        }
+                    }
+                }
+            }
+
+            .friday {
+                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23216_2x_6a4c0521-6517-4bb1-830b-ffd9953afc18.jpg?v=1700029294');
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                box-sizing: border-box;
+                padding: 12vw 10vw 18vw;
+
+                & > img {
+                    max-width: unset;
+                }
+
+                .u24Medium_v2 {
+                    color: #fff;
+                    font-size: 18px;
+                }
+            }
+
+            .design {
+                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/sdd_2x_1f45d407-8e35-4d91-8303-ffb4c38b1e86.jpg?v=1700030655');
+
+                .centeral-content {
+                    & > div {
+                        display: flex;
+                        flex-direction: column;
+                        height: 100%;
+                        align-items: center;
+                        text-align: center;
+                        padding: 10vw 0;
+
+                        img {
+                            max-width: 150px;
+                        }
+
+                        .u24Medium_v2 {
+                            margin-top: 10vw;
+                            font-size: 17px;
                         }
                     }
                 }

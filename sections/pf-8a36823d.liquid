@@ -2,6 +2,49 @@
 <link rel="preload" href="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/files/20230607-142007.jpg?v=1686118943" as="image">
 {{ 'testride.scss.css' | asset_url | stylesheet_tag }}
 
+<style>
+    .carousel {
+        margin-top: 40px;
+        margin-bottom: 120px;
+    }
+    .carousel .u36DemiBold_v2 {
+        margin-bottom: 25px;
+    }
+    .carousel .jdgm-carousel-wrapper {
+        width: 100%;
+        margin: unset;
+        background-color: #f7f8fa;
+    }
+    @media (max-width: 767px) {
+        .carousel {
+            padding: 0 4vw;
+            margin-top: 0;
+            margin-bottom: 60px;
+        }
+        .carousel .jdgm-carousel-wrapper {
+            padding: 10px 0;
+        }
+        
+        .carousel .jdgm-carousel__item-wrapper {
+            height: auto;
+        }
+        .carousel .jdgm-carousel__item-wrapper .jdgm-carousel-item__image-wrapper {
+            height: 40vw;
+        }
+        .carousel .jdgm-carousel__item-wrapper .jdgm-carousel-item__product-image {
+            object-fit: cover;
+        }
+        .carousel .u36DemiBold_v2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .carousel .jdgm-carousel--focused-theme .jdgm-carousel-item__review-rating {
+            text-align: center;
+        }
+    }
+</style>
+
 <div class="testride">
     <div class="test-ride-new-banner">
         <div class="swiper-wrapper">
@@ -66,6 +109,10 @@
             <div id="storepoint-container" data-tags="us,Test Ride" data-map-id="162f21804990ff"></div>
         </div>
     </div>
+    <div class="centeral-content carousel">
+        <div class="u36DemiBold_v2">Let customers speak for us</div>
+        {% include 'judgeme_widgets', widget_type: 'judgeme_featured_carousel', concierge_install: false, auto_install: false %}
+        </div>
     <div class="explained">
         <div class="centeral-content">
             <div class="u36DemiBold_v2">Test ride <br>options explained</div>

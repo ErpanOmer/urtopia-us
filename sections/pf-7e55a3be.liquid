@@ -22,19 +22,22 @@
 
 
   .sale-taggggggg {
-    background: var(--sale-order-page-sale-background);
+    background: #1F1511 url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18927_2x_50443ac3-5d7a-48af-940b-d135b84cf9ff.png?v=1700033456');
     color: #fff;
-    padding: 6px 0 6px 14px;
+    padding: 0 12.5% 0 15px;
     border-radius: 18px;
     width: fit-content;
-    max-height: 35px;
+    height: 35px;
+    line-height: 0;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-  }
-  .sale-taggggggg img {
-    max-width: 90px;
-    transform: translate(25%, -5%);
+    justify-content: center;
+    text-align: center;
+    text-transform: uppercase;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    overflow: hidden;
   }
 </style>
 
@@ -45,16 +48,16 @@
             <div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-25_ order-djs mb6">
                 <div class="pf-judme">{% render "judgeme_widgets", widget_type: "judgeme_preview_badge", jm_style: "", concierge_install: false, product: product %}</div>
             </div>
-            <div class="u14DemiBold_v2 mb6" style="color: var(--sale-order-page-text-color);">{{ settings.sale_name }}</div>
+            <div class="u14DemiBold_v2 mb6 sale-taggggggg" style="padding-right: 15%;">{{ settings.sale_name }}</div>
             <div class="product-price u30DemiBold_v2" style="margin: 0;" data-price="{{ product.price | money }}">{{ product.price | minus: settings.chord_ebike_discount_price | money }}</div>
             <div class="sale-tag mb6">
               <!--<div class="u17Medium_v2">{{ settings.chord_sale_name }}</div>-->
               <div class="u14Light_v2">Free shipping.</div>
             </div>
-            <div class="sale-big-text mb6">
+            <!--<div class="sale-big-text mb6">
               <div class="u20DemiBold_v2">LOWEST PRICE OF THE YEAR GUARANTEED!</div>
               <div class="u11Light_v2">For any order during Oct 1 - Dec 31 2023, if there is a price drop within this period on our website, you will get a refund for the difference.</div>
-            </div>
+            </div>-->
         </div>
         <div class="featured_image">
             <div class="swiper left-swiper mobileHide">
@@ -116,16 +119,16 @@
                 <div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-25_ order-djs mb6">
                     <div class="pf-judme">{% render "judgeme_widgets", widget_type: "judgeme_preview_badge", jm_style: "", concierge_install: false, product: product %}</div>
                 </div>
-               <div class="u17DemiBold_v2 mb6" style="color: var(--sale-order-page-text-color);">{{ settings.sale_name }}</div>
+               <div class="u17DemiBold_v2 mb6 sale-taggggggg">{{ settings.sale_name }}</div>
                 <div style="margin: 0" class="product-price u30DemiBold_v2" data-price="{{ product.price | money }}">{{ product.price | minus: settings.chord_ebike_discount_price | money }}</div>
                 <div class="sale-tag mb6">
                   <!--<div class="u17Medium_v2">{{ settings.chord_sale_name }}</div>-->
                   <div class="u14Light_v2" style="margin: 0">Free shipping.</div>
                 </div>
-                <div class="sale-big-text mb12">
+                <!--<div class="sale-big-text mb12">
                   <div class="u20DemiBold_v2">LOWEST PRICE OF THE YEAR GUARANTEED!</div>
                   <div class="u11Light_v2">For any order during Oct 1 - Dec 31 2023, if there is a price drop within this period on our website, you will get a refund for the difference.</div>
-                </div>
+                </div>-->
             </div>
             <div class="fenders pcHide">
                   <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230307-201732.jpg?v=1678191479" alt="">
@@ -259,346 +262,111 @@
         </form>
     </div>
 </div>
-
-<div id="freedom" class="freedom">
-        <div class="centeral-content">
-            <div>
-                <div class="u36Medium_v2">Chord / Chord X</div>
-                <div class="u17Medium_v2">A sleek and agile e-bike for every lifestyle. Lightweight, versatile, and
-                    powerful. Effortlessly power
-                    your daily commute, run errands swiftly, and explore new path freely.</div>
-                <div class="values">
-                    <div>
-                        <span class="u17Medium_v2">GPS Anti-theft</span>
-                        <span class="u17Medium_v2">Tracking</span>
-                    </div>
-                    <div>
-                        <span class="u17Medium_v2">* Aerospace-quality</span>
-                        <span class="u17Medium_v2">Forging Tech</span>
-                    </div>
-                    <div>
-                        <span class="u17Medium_v2">Turn-by-turn</span>
-                        <span class="u17Medium_v2">Navigation</span>
-                    </div>
-                    <div>
-                        <span class="u17Medium_v2">Chic Piano</span>
-                        <span class="u17Medium_v2">Aesthetics</span>
-                    </div>
-                    <div>
-                        <span class="u17Medium_v2">Upright Riding</span>
-                        <span class="u17Medium_v2">Comfort</span>
-                    </div>
-                    <div>
-                        <span class="u17Medium_v2">Concealed</span>
-                        <span class="u17Medium_v2">Top Tube Battery</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="gray-background-color artwork">
-        <div class="centeral-content">
-            <div class="u36DemiBold_v2">An Artwork of Exquisite Forging Craftsmanship</div>
-            <div class="images">
-                <img class="mobileHide lozad"
-                    data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DSCF1274_2x_4841aae7-3579-4549-a356-36781274104f.jpg?v=1697537474"
-                    alt="">
-                <img class="pcHide lozad"
-                    data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_22872_2x_91c22f0c-684a-4da7-88f0-62c20f19a0d7.png?v=1697593340"
-                    alt="">
-                <div class="u17Light_v2">
-                    <div class="u24Medium_v2">Stronger. Lighter. Superior.</div>
-                    <ul>
-                        <li>No unsightly welds</li>
-                        <li>Clean & smooth lines</li>
-                        <li>Weight reduction of 9 lbs</li>
-                    </ul>
-                    <div>*Liquid forging technique creates lighter, stronger and seamless bike frames with superior
-                        strength, enhancing overall performance.</div>
-                </div>
-            </div>
-            <div class="boxsssss">
-                <div class="u17Medium_v2 lozad" data-background-image="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/chord_-1_2x_6c5960e8-4344-4250-b473-e280699603a2.jpg?v=1697538362">
-                    <div>Elegant curves and fins added for timeless elegance.</div>
-                </div>
-                <div class="u17Medium_v2 lozad" data-background-image="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_22954_2x_594603f0-966f-4fdd-87e1-6e36dbc6be4d.jpg?v=1697539333">
-                    <div>Pearl white paint with a mirror like lustre and smoothness</div>
-                </div>
-                <div class="u17Medium_v2 lozad" data-background-image="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23076_2x_f618f8a2-3d19-478d-9d6b-6608fec2a2c7.jpg?v=1697539341">
-                    <div>The bow-shaped frame exudes power and sophistication.</div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="gray-background-color artwork artwork2">
-        <div class="centeral-content">
-            <div class="u36DemiBold_v2">A completely custom, artistically crafted smart e-bike.</div>
-            <div class="images">
-                <div class="u17Light_v2">
-                    <div class="u24Medium_v2">Unique. Stealthy. Practical.</div>
-                    <ul>
-                        <li>Elegantly Piano-Inspired</li>
-                        <li>Concealed Battery & Motor</li>
-                        <li>Upright Riding Comfort</li>
-                    </ul>
-                    <div>* An exceptional e-bike blending style, functionality, and performance. Never considered an e-bike?
-                        With its accessible price, comfortable ride, and versatile accessories, the Chord is your ultimate
-                        choice.</div>
-                </div>
-                <img class="mobileHide lozad"
-                    data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18884_2x_bf9dfa3f-14b1-41e9-b708-909655835fb0.jpg?v=1697539699"
-                    alt="">
-                <img class="pcHide lozad"
-                    data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18886_2x_ca44919b-8ddd-4a0d-ae99-bf474eaa1b48.png?v=1697594937"
-                    alt="">
-
-            </div>
-            <div class="boxsssss">
-                <div class="u17Medium_v2 lozad" data-background-image="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23079_2x_0737ada6-430d-4989-bd6e-c913ddc7d9af.jpg?v=1697539706">
-                    <div>Lively and lightweight, a breeze to lift</div>
-                </div>
-                <div class="u17Medium_v2 lozad" data-background-image="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23080_2x_3584fa9b-ff5e-4387-a412-2636ede748e0.jpg?v=1697539712">
-                    <div>Top tube battery echoes piano keys on white frame.</div>
-                </div>
-                <div class="u17Medium_v2 lozad" data-background-image="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23081_2x_09376c22-a30e-4764-ad34-c6dcaba71d00.jpg?v=1697539717">
-                    <div>Balanced riding position: Upright for ease, forward for speed.</div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="gray-background-color maksim">
-        <div class="centeral-content">
-            <img class="lozad"
-                data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18827_2x_03b206d3-1d21-4edd-98ab-828a812223f1.jpg?v=1696731248$width=640"
+<div class="maksim-big-banner lozad" data-background-image="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23286_2x_96bb433e-b8f4-4f93-a765-376f6baaffaf.jpg?v=1699928706">
+    <div class="centeral-content">
+        <div>
+            <div class="u36Medium_v2">Design Inspired <br>from Piano</div>
+            <div class="u17Light_v2">Chord, like a beautiful piano piece, bringing unprecedented smoothness and passion
+                to the realm of bike, has won broad applause such as the German Design Award.</div>
+            <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231114-233206_2x_b057955c-2082-4a23-a9ea-daed62b2f13e.png?v=1700012494&width=200"
                 alt="">
-            <div>
-                <div class="u36DemiBold_v2">Chord X Maksim</div>
-                <div class="u17Light_v2">A passionate prodigy, and one of the world’s <br> fastest pianists. Mr. Mrvica
-                    inspired
-                    the design <br> the philosophy of Chord, a crossover between <br> art and tech.</div>
-                <div class="my-button my-button-black"
-                    onclick="showVideoDialog('https://www.youtube.com/embed/gjYMDVGv_C4?autoplay=1&cc_load_policy=1')">Watch
-                    Video</div>
-            </div>
+        </div>
+        <div>
+            <div class="u24Medium_v2">Maksim Mrvica</div>
+            <div class="u17Light_v2">World’s fastest pianist from Croatia, who blends classical grace with vibrant
+                contemporary style. As the concept designer, he extends his aesthetic to the Chord, where elegance and
+                comfort interwine seamlessly.</div>
+            <div class="my-button my-button-ghost" onclick="showVideoDialog('https://www.youtube.com/embed/gjYMDVGv_C4?autoplay=1&cc_load_policy=1')">Watch video</div>
         </div>
     </div>
-    <div class="boxs gray-background-color">
-        <div class="centeral-content">
-            <div>
-                <div class="u36DemiBold_v2">Go up to 75 miles per charge</div>
-                <!-- <div class="u20Light_v2">Step-Through</div> -->
-                <div class="u17Light_v2">Breeze through the city, conquer hills, carry loads with ease. Its comfortable
-                    design, upright position, well-tuned transmission and powerful drive ensure a smooth and enjoyable
-                    journey.</div>
-            </div>
-            <img class="lozad"
-                data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DSCF0925_2x_5fa0a20b-06ca-4d61-9d89-506529d5aa7b.jpg?v=1697596253"
-                alt="">
-            <img class="lozad"
-                data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Screenshot_2023-10-13_at_11.23.16_AM_2x_c83f3f9d-7bda-4c9a-bc3f-6d5600458c4f.jpg?v=1697596260"
-                alt="">
-            <div>
-                <div class="u36DemiBold_v2">Versatile Accessory Integration</div>
-                <!-- <div class="u20Light_v2">Inspired from the Piano</div> -->
-                <div class="u17Light_v2">Grab groceries, commute, or touring - The Chord’s compatibility with various
-                    accessories offers endless possibilities. Gear it up to meet your needs.</div>
-                <a href="/collections/accessories" target="_blank" class="my-button my-button-black">Shop Accessories</a>
-            </div>
-        </div>
-    </div>
-    <div class="gray-background-color bigbike">
-        <div class="centeral-content">
-            <div class="u36DemiBold_v2">The Bike with a Mind</div>
-            <img class="pcHide lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18902_2x_6a676082-f6a8-4014-ae08-a43b35ed7114.png?v=1697600417" alt="">
-            <div class="big">
-                <div>
-                    <div>
-                        <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18101_2x_be6b0029-7c2c-45c7-b1d5-d928571b40c1.png?v=1697598871"
-                            alt="">
-                        <div class="u24DemiBold_v2">
-                            Built-in Navigation
-                            <div class="u17Light_v2">Goodbye phone, no more struggling to navigate with a tiny screen.</div>
-                        </div>
-                    </div>
-                    <div>
-                        <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18337_2x_68b33794-1ad5-4e7e-9147-1e40f74b69c3.png?v=1697600122"
-                            alt="">
-                        <div class="u24DemiBold_v2">
-                            Fingerprint Unlock
-                            <div class="u17Light_v2">Provides an efficient and intuitive option for riding without the hassle of carrying a key.</div>
-                        </div>
-                    </div>
-                    <div>
-                        <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18340_2x_836dbd74-963f-4c0a-b6fa-5a2743910b86.png?v=1697600127"
-                            alt="">
-                        <div class="u24DemiBold_v2">
-                            Bluetooth Music
-                            <div class="u17Light_v2">It’s like having a personal DJ accompanying you everywhere when you ride.</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex-1"></div>
-                <div>
-                    <div>
-                        <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18339_2x_523b0a4a-227a-4ac4-b9d5-4275c8cdc250.png?v=1697600134"
-                            alt="">
-                        <div class="u24DemiBold_v2">
-                            OTA Update
-                            <div class="u17Light_v2">It provide hassle-free access to the latest bike features and performance enhancements.</div>
-                        </div>
-                    </div>
-                    <div>
-                        <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18342_2x_2117a6c2-63b5-46ec-acfc-00a14f962fd8.png?v=1697600142"
-                            alt="">
-                        <div class="u24DemiBold_v2">
-                            Voice Control
-                            <div class="u17Light_v2">It offers customizable voice commands and horn beeps for fun interaction.</div>
-                        </div>
-                    </div>
-                    <div>
-                        <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18341_2x_5ff6c456-db85-48fd-8ae1-98d087f33d5b.png?v=1697600150"
-                            alt="">
-                        <div class="u24DemiBold_v2">
-                            GPS Anti-Theft
-                            <div class="u17Light_v2">GPS for security and navigation. No more phone distractions and find your bike easily.</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="gray-background-color mediaaaaa" style="--swiper-theme-color: #000;--swiper-pagination-color: #000;">
-        <div class="centeral-content">
+</div>
+<div class="gray-background-color swiperrrrr">
+    <div class="centeral-content">
+        <div>
             <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div class="u17DemiBold_v2">“The smoothest and cleanest look”</div>
-                    <div class="flex-1"></div>
-                    <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_20921_2x_361face6-eba5-4a46-b1b6-0f038089d90d.png?v=1682577775"
-                        alt="">
-                    <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18547_2x_125de9b4-019e-45e9-aa15-ae8622f4b5d0.png?v=1682587490"
-                        alt="">
-                </div>
-                <div class="swiper-slide">
-                    <div class="u17DemiBold_v2">“Battery integrated under the top tube like never before.”</div>
-                    <div class="flex-1"></div>
-                    <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_20921_2x_361face6-eba5-4a46-b1b6-0f038089d90d.png?v=1682577775"
-                        alt="">
-                    <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18548_2x_fcd811c3-0864-4391-bfdf-ab9d2ff14383.png?v=1682587585"
-                        alt="">
-                </div>
-                <div class="swiper-slide">
-                    <div class="u17DemiBold_v2">“A lifestyle piece incorporates cutting-edge technology”</div>
-                    <div class="flex-1"></div>
-                    <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_20921_2x_361face6-eba5-4a46-b1b6-0f038089d90d.png?v=1682577775"
-                        alt="">
-                    <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18549_2x_1574b613-b07b-4eb3-be66-1dd662cf5cd8.png?v=1682587573"
-                        alt="">
-                </div>
-                <div class="swiper-slide">
-                    <div class="u17DemiBold_v2">“The unusual smart e-bike is worth a look.”</div>
-                    <div class="flex-1"></div>
-                    <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_20921_2x_361face6-eba5-4a46-b1b6-0f038089d90d.png?v=1682577775"
-                        alt="">
-                    <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18550_2x_aba70dcd-adaf-4458-9cd7-743f426f353b.png?v=1682587561"
-                        alt="">
-                </div>
-                <div class="swiper-slide">
-                    <div class="u17DemiBold_v2">“This is a model destined to conquer the public.”</div>
-                    <div class="flex-1"></div>
-                    <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_20921_2x_361face6-eba5-4a46-b1b6-0f038089d90d.png?v=1682577775"
-                        alt="">
-                    <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18551_2x_f2956b2b-028f-44c0-a22a-99e34df986f3.png?v=1682587548"
-                        alt="">
-                </div>
-                <div class="swiper-slide">
-                    <div class="u17DemiBold_v2">“one of the most beautiful and futuristic ebikes of 2023”</div>
-                    <div class="flex-1"></div>
-                    <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_20921_2x_361face6-eba5-4a46-b1b6-0f038089d90d.png?v=1682577775"
-                        alt="">
-                    <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18552_2x_4194a229-bf02-45a5-ab4f-fcb997a040cd.png?v=1682587535"
-                        alt="">
-                </div>
+                <div class="swiper-slide" style="--bg-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23217_2x_fad69088-980d-4d97-be93-f78d1f4b74ed.jpg?v=1699950381');--bg-image-mb: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/chord_2x_8d52dbc8-959d-4da6-ab38-a067d7b0d171.jpg?v=1699960654&width=500');"></div>
+                <div class="swiper-slide" style="--bg-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23216_2x_eb135a16-9a6a-4835-9cb5-171cb27e6d83.jpg?v=1699950385');--bg-image-mb: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/chord_2x_cd81b463-1d38-48bc-abcf-7ad667556fa8.jpg?v=1699960659&width=500');"></div>
+                <div class="swiper-slide" style="--bg-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23215_2x_a626490b-314f-4f01-92bd-be79160fb110.jpg?v=1699950391');--bg-image-mb: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/chord_2x_9e9ca0c8-2127-4d35-b86f-9584415ad074.jpg?v=1699960665&width=500');"></div>
             </div>
         </div>
-        <div class="swiper-pagination"></div>
-    </div>
-    <div class="centeral-content smartest">
-        <div class="u42DemiBold_v2">Smartest E-Bike Ever</div>
-        <div class="boxss">
-            <div>
-                <img class="lozad"
-                    data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_22127_2x_0054733d-7211-4a90-8015-b42dc42dc886.jpg?v=1696737459"
-                    alt="">
-                <div class="u24DemiBold_v2">Anti-glare LED Display</div>
-                <div class="u17Light_v2">Urtopia’s smart core: Dot-matrix display, voice commands. Vital info and bike
-                    control, no smartphone required for your ride!</div>
+        <div class="swiper-button-prev mobileHide"></div>
+        <div class="swiper-button-next mobileHide"></div>
+        <div class="swiper-pagination pcHide"></div>
+        <div class="texts">
+            <div class="u24Medium_v2">Artisanal Grace from <br>Superior Craftsmanship</div>
+            <div class="u17Light_v2 active">
+                <span></span>
+                <span>No weld scar, Liquid Forging technology makes a seamless frame with perfect curve</span>
             </div>
-            <div>
-                <img class="lozad"
-                    data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_22125_2x_4ae748d1-1ad5-47fd-b05b-cab45d65377e.jpg?v=1696743871"
-                    alt="">
-                <div class="u24DemiBold_v2">Portable Battery</div>
-                <div class="u17Light_v2">A 352.8 Wh lithium-ion removable battery provide sample energy so a rider can
-                    travel up to 75 miles (31 miles min.) after a mere 3-hr charge.</div>
+            <div class="u17Light_v2">
+                <span></span>
+                <span>Water-based Multi-layer Paint shines quietly and touches as exquisite as a piano</span>
             </div>
-            <div>
-                <img class="lozad"
-                    data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_22126_2x_824cb3a5-4b55-4341-83fe-8d2b911062fb.jpg?v=1696743879"
-                    alt="">
-                <div class="u24DemiBold_v2">20 Lux HeadLight</div>
-                <div class="u17Light_v2">20 Lux Headlight with German road regulation-compliant design: a well-balanced
-                    combination of beauty and safety.</div>
-            </div>
-            <div>
-                <img class="lozad"
-                    data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_22130_2x_0d904ceb-205a-4450-a858-228909539c66.jpg?v=1696743892"
-                    alt="">
-                <div class="u24DemiBold_v2">Fenders & Kickstand</div>
-                <div class="u17Light_v2">Navigate rough terrains and any weather conditions with our pre-installed fenders
-                    and kickstand included in the package.</div>
-            </div>
-            <div>
-                <img class="lozad"
-                    data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_22128_2x_abb6496d-8f8f-48be-945a-b0bb08cdd8ce.jpg?v=1696743899"
-                    alt="">
-                <div class="u24DemiBold_v2">Tektro Hydraulic Disc Brake</div>
-                <div class="u17Light_v2">It provide reliable and consistent stopping power in any weather condition,
-                    ensuring a safe and smooth ride.</div>
-            </div>
-            <div>
-                <img class="lozad"
-                    data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_22129_2x_6c5b4cfe-d578-4394-a7d0-f5b41ac9532b.jpg?v=1696743907"
-                    alt="">
-                <div class="u24DemiBold_v2">8-Speed Shimano Gearing</div>
-                <div class="u17Light_v2">Experience seamless gear shifts and tackle different terrain with the versatile
-                    8-speed Shimano gearing system.</div>
-            </div>
-            <div>
-                <img class="lozad"
-                    data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_22131_2x_a8a7e189-e540-4ec8-a21e-f5b8b212c64c.jpg?v=1696743914"
-                    alt="">
-                <div class="u24DemiBold_v2">Customized Motor</div>
-                <div class="u17Light_v2">The 350W intelligent motor delivers a quiet and smooth ride while also being
-                    energy-efficient, allowing riders to travel further.</div>
-            </div>
-            <div>
-                <img class="lozad"
-                    data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_22132_2x_96c0d8ea-eb92-4361-a15c-5ac90b800d43.jpg?v=1696743920"
-                    alt="">
-                <div class="u24DemiBold_v2">Torque Sensor</div>
-                <div class="u17Light_v2">Unlike jerky cadence sensing, proprietary torque sensor enables super-fast speed
-                    adaption.</div>
-            </div>
-            <div>
-                <img class="lozad"
-                    data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_22133_2x_775a37f8-99de-4243-892f-86eccd1c0914.jpg?v=1696743926"
-                    alt="">
-                <div class="u24DemiBold_v2">Smart App</div>
-                <div class="u17Light_v2">Urtopia’s app maximizes e-bike potential: Real-time locating, route tracking,
-                    anti-theft alert, navigation, speaker, and more. Explore the possibilities!</div>
+            <div class="u17Light_v2">
+                <span></span>
+                <span>Removable Battery on the top tube completes the entire design like a piano key</span>
             </div>
         </div>
     </div>
+</div>
+<div class="gray-background-color boxs3645">
+    <div class="centeral-content">
+        <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18918_2x_1f5b481d-45bf-4f00-bdbf-860723102593.jpg?v=1699942828&width=800"
+            alt="">
+        <div>
+            <div class="u24Medium_v2">A Comfortable Cruiser <br>to Levitate Your Ride</div>
+            <div class="u17Light_v2">The upright riding position, with ergonomic handlebar and adjustable stem, ensures
+                ultimate comfort for the rider. The proprietary sensing and driving system gives intuitive power
+                assistance and makes every pedal as light as wind.</div>
+        </div>
+        <div>
+            <div class="u24Medium_v2">A Considerate Mate <br>to Meet Your Need</div>
+            <div class="u17Light_v2">With a superb 75 miles range, you can simply forget about battery anxiety. Abundant
+                accessories and reliable gears make the bike always practical, whether you are cruising in old towns,
+                navigating in modern cities or travelling through countryside. Chord is a perfect mate for a cozy and
+                loose lifestyle.</div>
+        </div>
+        <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DSCF1992_2x_470c2e19-f48a-4f2c-af82-ec35889cd5f2.jpg?v=1699942729&width=800"
+            alt="">
+    </div>
+</div>
+<div class="gray-background-color easy">
+    <div></div>
+    <div>
+        <div class="u36Medium_v2">Easy life , Smart fun</div>
+        <div class="u17Light_v2">
+            <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18337_2x_9eb33291-ec3e-4492-ba99-2562cc1eccae.png?v=1699944156&width=50"
+                alt="">
+            <span>Finger-print unlock and GPS anti-theft provide unparalleled security for a carefree ride </span>
+        </div>
+        <div class="u17Light_v2">
+            <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231115-093430.png?v=1700012088&width=50"
+                alt="">
+            <span>Daylight-bright screen and built-in navigation show routes clearly in all weather conditions. Put your
+                cell phone in your pocket and never worry about accidental drop or battery drain.</span>
+        </div>
+    </div>
+</div>
+<div class="yourself">
+    <div class="centeral-content">
+        <div>
+            <div class="u36Medium_v2">Be Yourself, Have Fun</div>
+            <div class="u17Light_v2">
+                <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18340_2x_c05ffbf0-9c05-4ef6-a375-ce54c68069df.png?v=1699946828&width=50"
+                    alt="">
+                <span>Smartbar plays your music like a musicbox. Let your rhythm resonate with Chord</span>
+            </div>
+            <div class="u17Light_v2">
+                <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18342_2x_5ccf7f37-a1b9-4fe7-949e-52c71f08b44c.png?v=1699946832&width=50"
+                    alt="">
+                <span>Smart App tracks your journey and health. Get on the bike and share your thrilling moments with
+                    your friends and family.</span>
+            </div>
+            <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231115-093417.png?v=1700012084&width=300"
+                alt="">
+        </div>
+    </div>
+</div>
     <div class="centeral-content services">
         <div class="u42DemiBold_v2">Peace of Mind Services</div>
         <div class="gray-background-color boxss">
@@ -759,9 +527,13 @@
             $('.product .right-swiper .swiper-wrapper').html(swiper_arr.map((s, i) => {
                 const index = i % 6
 
-                return  `<div class="swiper-slide">
-                            <img src="${s}">
-                        </div>`
+                return `<div class="swiper-slide">
+                            <img src="${s}&width=700"/>
+                            <div>
+                                <span class="u20DemiBold_v2">${global_config.chord_order_page_config.product_media_images[index].text}</span>
+                                <img src="${global_config.chord_order_page_config.product_media_images[index].img}&width=350">
+                            </div>
+                    </div>`
               }).join(''))
             $('.product .left-swiper .swiper-wrapper').html(swiper_arr.map(s => `<div class="swiper-slide"><img src="${s}"></div>`).join(''))
             
@@ -954,7 +726,7 @@
 
     let currnetScroolTop = 0
     $(document).on('scroll', throttle(e => {
-        const top1 = $('#freedom').offset().top
+        const top1 = $('.maksim-big-banner').offset().top
         const top3 = $('.product .addToCartBtn').offset().top
         const top2 = $(e.target).scrollTop()
 
@@ -1024,4 +796,32 @@
         $('.size-and-specs .switch .switch-radio input[type="radio"]')[0].click()
     }, 500);
 </script>
+
+<script>
+    const swiperrrrr = new Swiper('.swiperrrrr .centeral-content > div:first-child', {
+        loop: true,
+        speed: 1000,
+        direction: global_config.is_mobile ? 'vertical' : 'horizontal',
+        navigation: {
+            nextEl: '.swiperrrrr .centeral-content .swiper-button-next',
+            prevEl: '.swiperrrrr .centeral-content .swiper-button-prev',
+        },
+        on: {
+            slideChange: function () {
+                $('.swiperrrrr .texts .u17Light_v2').removeClass('active')
+                $($('.swiperrrrr .texts .u17Light_v2')[this.realIndex]).addClass('active')
+            },
+        },
+        pagination: {
+           el:'.swiperrrrr .centeral-content .swiper-pagination'
+         },
+    })
+    $('.swiperrrrr .texts .u17Light_v2').on('click', function (e) {
+        $(this).closest('.texts').find('.u17Light_v2').removeClass('active')
+        $(this).addClass('active')
+        // console.log('index', )
+        swiperrrrr.slideTo($(this).index())
+    })
+</script>
+
 <script src="https://cdn.storepoint.co/api/v1/js/162f21804990ff.js" defer></script>

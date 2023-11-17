@@ -37,19 +37,22 @@
 
 
   .sale-taggggggg {
-    background: var(--sale-order-page-sale-background);
+    background: #1F1511 url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18927_2x_50443ac3-5d7a-48af-940b-d135b84cf9ff.png?v=1700033456');
     color: #fff;
-    padding: 6px 0 6px 14px;
+    padding: 0 12.5% 0 15px;
     border-radius: 18px;
     width: fit-content;
-    max-height: 35px;
+    height: 35px;
+    line-height: 0;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-  }
-  .sale-taggggggg img {
-    max-width: 90px;
-    transform: translate(25%, -5%);
+    justify-content: center;
+    text-align: center;
+    text-transform: uppercase;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    overflow: hidden;
   }
 </style>
 
@@ -61,16 +64,16 @@
 				<div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-25_ order-djs mb6">
 					<div class="pf-judme">{% render "judgeme_widgets", widget_type: "judgeme_preview_badge", jm_style: "", concierge_install: false, product: product %}</div>
 				</div>
-      			<div class="u14DemiBold_v2 mb6" style="color: var(--sale-order-page-text-color);margin-bottom:6px;">{{ settings.sale_name }}</div>
+      			<div class="u14DemiBold_v2 mb6 sale-taggggggg" style="padding-right: 15%;">{{ settings.sale_name }}</div>
 				<div class="product-price u30DemiBold_v2" style="margin: 0;" data-price="{{ product.price | money }}">{{ product.price | minus: settings.carbon1s_ebike_discount_price | money }}</div>
         <div class="sale-tag mb6">
           <!--<div class="u17Medium_v2">{{ settings.sale_name }}</div>-->
           <div class="u14Light_v2 mb6" style="margin: 0;">Free shipping.</div>
         </div>
-        <div class="sale-big-text mb6">
+        <!--<div class="sale-big-text mb6">
           <div class="u20DemiBold_v2">LOWEST PRICE OF THE YEAR GUARANTEED!</div>
           <div class="u11Light_v2">For any order during Oct 1 - Dec 31 2023, if there is a price drop within this period on our website, you will get a refund for the difference.</div>
-        </div>
+        </div>-->
 			</div>
 			<div class="featured_image">
 				<div class="swiper left-swiper mobileHide">
@@ -126,16 +129,16 @@
 					<div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-25_ order-djs mb6">
 						<div class="pf-judme">{% render "judgeme_widgets", widget_type: "judgeme_preview_badge", jm_style: "", concierge_install: false, product: product %}</div>
 					</div>
-          <div class="u17DemiBold_v2 mb6" style="color: var(--sale-order-page-text-color);margin-bottom: 3px;">{{ settings.sale_name }}</div>
+          <div class="u17DemiBold_v2 mb6 sale-taggggggg">{{ settings.sale_name }}</div>
 					<div class="product-price u30DemiBold_v2" style="margin: 0;" data-price="{{ product.price | money }}">{{ product.price | minus: settings.carbon1s_ebike_discount_price | money }}</div>
           <div class="sale-tag mb6">
             <!--<div class="u17Medium_v2">{{ settings.sale_name }}</div>-->
             <div class="u14Light_v2" style="margin: 0;">Free shipping.</div>
           </div>
-          <div class="sale-big-text ">
+          <!--<div class="sale-big-text ">
             <div class="u20DemiBold_v2">LOWEST PRICE OF THE YEAR GUARANTEED!</div>
             <div class="u11Light_v2">For any order during Oct 1 - Dec 31 2023, if there is a price drop within this period on our website, you will get a refund for the difference.</div>
-          </div>
+          </div>-->
 				</div>
 				<!--<div class="sale_acc mb12 belt">
 					<div class="u14Light_v2" style="background-image: linear-gradient(-90deg,var(--sale-color3),var(--sale-color4));">And get <span style="font-weight: 600;"> {{ settings.carbon_ebike_free_accessories_price | money_without_trailing_zeros}} </span> Accessories for <span class="u20DemiBold_v2"> Free</span></div>
