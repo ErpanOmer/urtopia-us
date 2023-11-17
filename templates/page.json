@@ -22,6 +22,7 @@
         "1657212710e2c184de-0",
         "1657212710e2c184de-1"
       ],
+      "disabled": true,
       "settings": {
         "image": "shopify:\/\/shop_images\/20220619-untitled-9871.jpg",
         "image_overlay_opacity": 0,
@@ -38,6 +39,7 @@
     },
     "1657259341dfa77e5a": {
       "type": "custom-liquid",
+      "disabled": true,
       "settings": {
         "custom_liquid": "<div class=\"page-width\">\n<div id=\"storepoint-container\" data-map-id=\"162f21804990ff\"><\/div><script>(function(){var a=document.createElement(\"script\");a.type=\"text\/javascript\";a.async=!0;a.src=\"https:\/\/cdn.storepoint.co\/api\/v1\/js\/162f21804990ff.js\";var b=document.getElementsByTagName(\"script\")[0];b.parentNode.insertBefore(a,b);}());<\/script>",
         "color_scheme": "background-1",
@@ -75,6 +77,7 @@
         "16572168943735c795-0",
         "16572168943735c795-1"
       ],
+      "disabled": true,
       "settings": {
         "image": "shopify:\/\/shop_images\/20220620-untitled-2729.jpg",
         "height": "adapt",
@@ -119,6 +122,7 @@
         "1657212330d0c5091a-1",
         "1657212330d0c5091a-2"
       ],
+      "disabled": true,
       "settings": {
         "image": "shopify:\/\/shop_images\/20220708-123307.jpg",
         "height": "adapt",
@@ -163,6 +167,7 @@
         "165727567667310b21-1",
         "165727567667310b21-2"
       ],
+      "disabled": true,
       "settings": {
         "image": "shopify:\/\/shop_images\/E-Bike119.png",
         "height": "adapt",
@@ -179,11 +184,29 @@
     },
     "16600581042abdbe70": {
       "type": "custom-liquid",
+      "disabled": true,
       "settings": {
         "custom_liquid": "<link href=\"https:\/\/assets.calendly.com\/assets\/external\/widget.css\" rel=\"stylesheet\">\n<script src=\"https:\/\/assets.calendly.com\/assets\/external\/widget.js\" type=\"text\/javascript\" async><\/script>",
         "color_scheme": "background-1",
         "padding_top": 40,
         "padding_bottom": 52
+      }
+    },
+    "1699966049f4e4155b": {
+      "type": "apps",
+      "blocks": {
+        "042d457b-d35e-42c6-80b9-9c8877e00a14": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget_homepage\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "042d457b-d35e-42c6-80b9-9c8877e00a14"
+      ],
+      "settings": {
+        "include_margins": true
       }
     }
   },
@@ -194,6 +217,7 @@
     "16572168942d117b22",
     "1657212330e7f0de41",
     "16572756762ff1b2e9",
-    "16600581042abdbe70"
+    "16600581042abdbe70",
+    "1699966049f4e4155b"
   ]
 }

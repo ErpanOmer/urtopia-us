@@ -92,13 +92,14 @@ const testRides = [
       {
         name: 'Icar Lifestyle',
         phone: '310-926-6999',
-        email: 'royfang@icarlifestyle.com',
+        email: 'sales@icarlifestyle.com',
         timezone: "Newport Beach, CA, USA (GMT-8)",
         add: "414 Rolyn Pl, Arcadia, CA 91007, United States",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Icar_Lifestyle.jpg?v=1686878451",
         testrideSpot: "California",
         availableSizes: [
-          'Carbon 1 Size M/L',
+          'Carbon 1s Size M',
+          'Carbon 1 Size L',
         ],
         businessHours: [
           "",

@@ -4,27 +4,9 @@
       "type": "outlet-ebike-ad",
       "settings": {
       }
-    },
-    "1695788738629a2956": {
-      "type": "apps",
-      "blocks": {
-        "13a27af8-902d-4d25-8af6-cbe451e9f393": {
-          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/featured_carousel\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {
-            "maxwidth": 1280
-          }
-        }
-      },
-      "block_order": [
-        "13a27af8-902d-4d25-8af6-cbe451e9f393"
-      ],
-      "settings": {
-        "include_margins": true
-      }
     }
   },
   "order": [
-    "outlet-ebike-ad",
-    "1695788738629a2956"
+    "outlet-ebike-ad"
   ]
 }
