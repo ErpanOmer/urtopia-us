@@ -111,7 +111,7 @@ const global_config = {
             }
         ],
         // 默认的发货时间 文案
-        ebike_default_delivery_time: 'Free shipping <span>within 5 business days</span>',
+        ebike_default_delivery_time: 'Free shipping <span>within 5 business days</span> from L.A. warehouse.',
         // 发货时间映射表
         // key:    vairant_id
         // value:  发货时间文案
@@ -132,24 +132,24 @@ const global_config = {
             //pb s
             43556899684600: 'Ships between <span>November 15-30, 2023 </span>from L.A. warehouse.',
             //pw s
-            43556899750136: 'Ships between <span>November 15-30, 2023 </span>from L.A. warehouse.',
+            43556899750136: 'Ships within <span>5 business days</span> from L.A. warehouse.',
             //pw l
             43556899881208: 'Ships within <span>5 business days</span> from L.A. warehouse.',
             //sb m
             43556895916280: 'Ships within <span>5 business days</span> from L.A. warehouse.',
             //pb m
-            43556896047352: 'Ships within <span>November 15-30, 2023 </span> from L.A. warehouse.',
+            43556896047352: 'Ships within <span>5 business days</span> from L.A. warehouse.',
             43556899619064: 'Ships within <span>10 business days </span>from L.A. warehouse.',
             43645495345400: 'Ships within <span>10 business days </span>from L.A. warehouse.',
             //pw m
             43556899815672: 'Ships within <span>5 business days</span> from L.A. warehouse.',
             //lb m
-            43556895981816: 'Ships between <span>November 15-30, 2023 </span>from L.A. warehouse.',
+            43556895981816: 'Ships within <span>5 business days</span> from L.A. warehouse.',
             43645495378168: 'Ships within <span>10 business days </span>from L.A. warehouse.',
             //sb l
-            43556895949048: 'Ships between <span>November 15-30, 2023 </span>from L.A. warehouse.',
+            43556895949048: 'Ships within <span>5 business days</span> from L.A. warehouse.',
             //pb l
-            43556896080120: 'Ships between <span>November 15-30, 2023 </span>from L.A. warehouse.',
+            43556896080120: 'Ships within <span>5 business days</span> from L.A. warehouse.',
             43645495410936: 'Ships within <span>10 business days </span>from L.A. warehouse.',
             //日期写法： 'Ships between <span>July 10-20, 2023 </span>from L.A. warehouse.',
             // chord
@@ -232,7 +232,7 @@ const global_config = {
                 ]
             }
         },
-        product_media_images: [
+      product_media_images: [
             {
               text: `“The smoothest and cleanest look”`,
               img: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18675_2x_75c49337-c9e2-4f36-8d62-bf676477342b.png?v=1699861700"

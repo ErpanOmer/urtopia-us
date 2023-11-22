@@ -4,9 +4,28 @@
       "type": "pf-8a36823d",
       "settings": {
       }
+    },
+    "17002035041928dd35": {
+      "type": "apps",
+      "blocks": {
+        "01f84325-2d27-4107-9724-c04fe008e321": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/featured_carousel\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "maxwidth": 1080
+          }
+        }
+      },
+      "block_order": [
+        "01f84325-2d27-4107-9724-c04fe008e321"
+      ],
+      "disabled": true,
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
-    "pf-8a36823d"
+    "pf-8a36823d",
+    "17002035041928dd35"
   ]
 }
