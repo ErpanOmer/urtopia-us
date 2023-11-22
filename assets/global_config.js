@@ -159,7 +159,7 @@ const global_config = {
     // chrod order page 配置项
     chord_order_page_config: {
         // chord 车默认显示 variant_id, 只有 url 上的 variant 参数为空的时候生效
-        default_variant: 43694976663800,
+        default_variant: 43694976729336,
         // variant 为 available:false 的情况下 也要强制显示 
         ignore_variants_available_false: [],
         size_map: {
