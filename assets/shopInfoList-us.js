@@ -1,20 +1,162 @@
-//  禁用日期动态生成函数
-//  limit: 从今天开始 禁用几天
-//  ignore_date： 忽略日期
+const oneDay = 24 * 60 * 60 * 1000
+const now = +new Date()
 
-function createdisableDates(limit = 0, ignore_date = []) {
-  const temp = []
-  const one_day = 60 * 60 * 24 * 1000
+// 禁用日期 最大天数
+const disable_date_max_limit = 60
 
-  for (let index = 0; index < limit; index++) {
-    const time = new Date(+new Date() + (one_day * index))
-    const str = `${time.getFullYear()}-${time.getMonth() + 1}-${time.getDate()}`
-
-    if (ignore_date.includes(str)) {
-        continue
+const getData = (date = new Date()) => {
+  if (typeof date !== 'object') {
+    if (typeof date === 'string') {
+      date = date.replace(/-/g, '/')
     }
 
-    temp.push(str)
+    date = new Date(date)
+  }
+
+  date.setHours(0)
+  date.setMinutes(0)
+  date.setSeconds(0)
+
+  return date
+}
+
+const getDateString = function (date) {
+  return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`
+}
+
+// 查询日期偏移量
+const findOffset = ([nowWeek, vailableWeek]) => {
+  if (nowWeek === vailableWeek) {
+    return 0
+  }
+
+  return vailableWeek > nowWeek ? vailableWeek - nowWeek : 7 - (nowWeek - vailableWeek)
+}
+
+function getBikeAndSeries (availableSizes = []) {
+  return availableSizes.map(size => {
+      const [bike, series] = size.split(' ')
+
+      return `${bike}${series ? ' ' + series : ''}`
+  })
+}
+
+// 查找可预约到星期几
+const findAvailableWeek = (d, businessHours) => {
+  if (businessHours[d]) {
+    return d
+  }
+
+  for (let i = d; i < d + 7; i++) {
+
+    if (businessHours[i % 7]) {
+      return i % 7
+    }
+  }
+
+  return -1
+}
+
+// 查询禁用日期
+const findDisable = (str, index = 0, disableDate = []) => {
+  for (let i = index; i < disableDate.length; i++) {
+    if (disableDate[i] === str) {
+      return i
+    }
+  }
+}
+
+const dateToString = (time = new Date()) => {
+  time = time.toString().split(' ')
+  return `${time[2]}. ${time[1]}`
+}
+
+// 可用日期计算
+const findAvalibaleDate = store => {
+  let index = 0
+  let date = now
+
+  for (let i = 0; index < disable_date_max_limit; index++) {
+    const d = getData(date)
+    const str = getDateString(d)
+
+    // 保存上次 循环的index
+    index = findDisable(str, index, store.disableDate)
+
+    if (!isNaN(index)) {
+      date = Number(d) + oneDay
+      continue
+    }
+
+    const currentWeek = d.getDay()
+    const AvailableWeek = findAvailableWeek(currentWeek, store.businessHours)
+
+    if (AvailableWeek === -1) {
+      date = now
+      break
+    }
+
+    if (currentWeek === AvailableWeek) {
+      date = str
+      break
+    }
+
+    date = Number(d) + (oneDay * findOffset([currentWeek, AvailableWeek]))
+  }
+
+  return dateToString(getData(date))
+}
+
+//  禁用日期动态生成函数
+//  disable_limit:  禁用几天               格式:  365 或者区间 [['2023-9-10', '2023-10-10'], ['2023-10-22', '2023-11-10']]
+//  ignore_date：   跳过某些日期不禁用      格式:  ['2023-7-27', '2023-7-28', '2023-7-29']  
+//  start_time:     从什么时候开始禁用      格式： 2023-7-27 （默认今天)
+
+function createdisableDates(disable_limit = 0, ignore_date = [], start_time = new Date()) {
+  let temp = []
+
+  if (Array.isArray(disable_limit)) {
+    for (const iterator of disable_limit) {
+      if (typeof iterator === 'string') {
+        temp.push(getDateString(getData(iterator)))
+        continue
+      }
+
+      let start = getData(iterator[0])
+      let end = getData(iterator[1])
+
+      for (let index = 0; index < disable_date_max_limit; index++) {
+        if (Number(start) === Number(end)) {
+          break
+        }
+
+        temp.push(getDateString(start))
+
+        start = getData(oneDay + Number(start))
+      }
+
+
+      temp.push(getDateString(end))
+    }
+  } else {
+    let start = getData(start_time)
+
+    for (let index = 0; index < disable_limit; index++) {
+      temp.push(getDateString(start))
+      start = getData(oneDay + Number(start))
+    }
+  }
+
+  temp = temp.slice(0, Math.min(disable_date_max_limit, temp.length))
+
+  for (const iterator of ignore_date) {
+    const date = getDateString(getData(iterator))
+
+    const index = temp.findIndex(t => t === date)
+
+    if (index > -1) {
+      temp.splice(index, 1)
+    }
   }
 
   return temp
@@ -1262,3 +1404,58 @@ const testRides = [
     ]
   },
 ]
+
+
+const store_list = new Map()
+const bike_options = new Set()
+let city_options = new Set()
+
+for (const city of testRides) {
+  for (const store of city.stores) {
+    // 把所属国家也加上
+      store.country = city.country || 'Deutschland'
+      store.city = city.city
+      store.avalibaleDate = findAvalibaleDate(store)
+
+
+      for (const sizes of store.availableSizes) {
+        const [bike, series] = sizes.split(' ')
+        bike_options.add(`${bike}${series ? ' ' + series : ''}`)    
+      }
+
+      city_options.add(`${store.city}---${store.country}`)
+      
+
+      store.html = `
+          <div class="name">${store.name}<span>${store.isPartner ? ' - Ambassadors' : ' - Partner Store'}</span><i><svg class="icon" style="width: 1em;height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5533"><path d="M748.3 533.3c0.1-0.2 0.3-0.4 0.4-0.6 0.2-0.3 0.5-0.7 0.7-1 0.1-0.1 0.2-0.3 0.2-0.4 0.3-0.4 0.5-0.8 0.8-1.2l0.1-0.1c2.6-4.6 4.1-9.6 4.6-14.7v-0.2c0-0.5 0.1-0.9 0.1-1.4v-0.6-1-1-0.6c0-0.5-0.1-0.9-0.1-1.4v-0.2c-0.4-5.1-2-10.1-4.6-14.7l-0.1-0.1c-0.2-0.4-0.5-0.8-0.8-1.3-0.1-0.1-0.2-0.3-0.2-0.4-0.2-0.3-0.4-0.7-0.7-1-0.1-0.2-0.3-0.4-0.4-0.6-0.2-0.3-0.4-0.5-0.6-0.8-0.2-0.2-0.4-0.5-0.6-0.7-0.1-0.1-0.2-0.2-0.3-0.4-0.1-0.1-0.2-0.2-0.2-0.3-0.2-0.3-0.5-0.5-0.7-0.8-0.2-0.2-0.4-0.4-0.5-0.6l-0.7-0.7-0.6-0.6c-0.2-0.2-0.5-0.4-0.7-0.7l-0.6-0.6-0.3-0.3-414.6-347.6c-15.2-12.7-38-10.7-50.7 4.4-12.7 15.2-10.7 38 4.4 50.7L663.2 512 281.6 832.2c-15.2 12.7-17.2 35.6-4.4 50.7 12.7 15.2 35.6 17.2 50.7 4.4l414.4-347.7 0.3-0.3 0.6-0.6c0.2-0.2 0.5-0.4 0.7-0.7l0.6-0.6 0.7-0.7c0.2-0.2 0.4-0.4 0.5-0.6 0.2-0.3 0.5-0.5 0.7-0.8 0.1-0.1 0.2-0.2 0.2-0.3 0.1-0.1 0.2-0.2 0.3-0.4 0.2-0.2 0.4-0.5 0.6-0.7 0.4-0.1 0.6-0.4 0.8-0.6z" fill="#333333" p-id="5534"></path></svg></i></div>
+          <div class="address gray">${store.add}</div>
+          <div class="available">Available Model:</div>
+          <ul>
+              ${store.availableSizes ? store.availableSizes.map(i => `<li class="gray">${i}</li>`).join('') : `<li class="gray">Carbon One Size ${store.testRideSize}</li>`}
+          </ul>
+          ${!store.noBook ? `<div class="time gray"><img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/calendar_2x_af8d9192-1ff9-43f0-aba6-3547b1129854.jpg?v=1680938382"/> Earliest available time: &nbsp;<div>${store.avalibaleDate}</div></div>` : '' }
+      `
+
+      store_list.set(store.name.replace(/\s*/g, ""), store)
+  }
+}
+
+city_options = Array.from(city_options).sort((a, b) => a.localeCompare(b))
+const country_group = {}
+
+for (const option of city_options) {
+    const [city, country] = option.split('---')
+
+    if (country_group[country]) {
+      country_group[country].push(city) 
+      continue
+    }
+
+    country_group[country] = [city]
+}
+
+postMessage({
+  store_list,
+  country_group,
+  bike_options
+})
