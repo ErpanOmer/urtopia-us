@@ -1331,6 +1331,7 @@ const testRides = [
         add: "Washburn Ave, Lakewood, CO 80228",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/co.webp?v=1695291345",
         testrideSpot: "Colorado",
+        noBook: 'Contact Bill to schedule a time.',
         availableSizes: [
           'Carbon 1s Size M',
         ],
