@@ -841,6 +841,30 @@ const testRides = [
         ],
         isPartner: true,
       },
+      {
+        name: "E-Station Sarasota",
+        phone: "941-705-2528",
+        email: "ty@estationsrq.com",
+        timezone: "FL, USA (GMT-4)",
+        add: "4450 S. Tamiami Trail Sarasota, FL 34231",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/E-Station_Sarasota.png?v=1700672076",
+        testrideSpot: "Florida",
+        availableSizes: [
+          'Carbon 1 Size L',
+          'Carbon 1s Size M/L',
+          'Chord',
+          'Chord X',
+        ],
+        businessHours: [
+          "11:00-16:00",
+          "",
+          "9:00-18:00",
+          "9:00-18:00",
+          "",
+          "9:00-18:00",
+          "9:00-18:00",
+        ],
+      },
     ]
   },
   {
@@ -996,6 +1020,27 @@ const testRides = [
           "9:00-17:00",
           "9:00-17:00",
           "09:00-15:00",
+        ],
+      },
+      {
+        name: "Paradise Life E-bikes",
+        phone: "801-503-5542",
+        email: "angela.hill176@gmail.com",
+        timezone: "Utah, USA (GMT-7)",
+        add: "3269 East 3300 South, Millcreek, Utah 84109",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Paradise_Life_E-bikes.jpg?v=1700672077",
+        testrideSpot: "Utah",
+        availableSizes: [
+          'Carbon 1s Size M',
+        ],
+        businessHours: [
+          "10:00-15:00",
+          "10:00-18:00",
+          "",
+          "",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
         ],
       },
     ]
