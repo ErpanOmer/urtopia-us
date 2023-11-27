@@ -1,0 +1,82 @@
+<div class="gray-background-color product-card" {% unless product_variants.size != 0 %}style="display:none;"{% endunless %}>
+    <div class="u14DemiBold_v2 emphasize tags">
+        <span>{{ product_discount_price | money_without_trailing_zeros }} OFF</span>
+        {% if product_tags %}
+            {% assign tags = product_tags | split: "," %}
+            {% for tag in tags %}
+                {% if tag contains "</span>" %}
+                    {{ tag }}
+                {% else %}
+                    <span>{{tag}}</span>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    </div>
+    <img src="{{ product_variants.first.featured_image | image_url: width: 800 }}" class="variant-image" alt="">
+    <div class="dots">
+        {% if product_variant_options_find_sort %}
+                {% assign product_variant_options_find_sort = product_variant_options_find_sort | split: "," %}
+                {% assign already_insert = "" %}
+                {% assign size_index = 0 %}
+                {% assign style_index = 0 %}
+
+                {% for item in product_variants.first.options %}
+                    {% if product_variant_options_find_sort contains item %}
+                            {% assign size_index = forloop.index | minus: 1  %}
+                            {% if forloop.index == 2 %}
+                                {% assign style_index = 2 %}
+                            {% else %}
+                                {% assign style_index = 1 %}
+                            {% endif %}
+                        {% break %}
+                    {% endif %}
+                {% endfor %}
+                {% for option in product_variant_options_find_sort %}
+                        {% for variant in product_variants %}
+                            {% unless already_insert contains variant.options[style_index] %}
+                                {% if option == variant.options[size_index] %}
+                                    <div 
+                                        data-product-discount-price="{{ product_discount_price }}"
+                                        data-price="{{ variant.price }}"
+                                        data-compare-at-price="{{ variant.compare_at_price }}"
+                                        data-img="{{ variant.featured_image | image_url: width: 800 }}"
+                                        data-variant="{{ variant.id }}"
+                                        data-stye="{{ variant.options[style_index] }}"
+                                        {% if already_insert == "" %}class="active"{% endif %} 
+                                        >
+                                    </div>
+                                    {% assign already_insert = already_insert | append: variant.options[style_index]  %}
+                                    <link rel="preload" href="{{ variant.featured_image | image_url: width: 800 }}" as="image">
+                                {% endif %}
+                            {% endunless %}
+                        {% endfor %}
+                {% endfor %}
+        {% else %}
+            {% for variant in product_variants %}
+                <div 
+                    data-product-discount-price="{{ product_discount_price }}"
+                    data-price="{{ variant.price }}"
+                    data-compare-at-price="{{ variant.compare_at_price }}"
+                    data-img="{{ variant.featured_image | image_url: width: 800 }}"
+                    data-variant="{{ variant.id }}"
+                    data-stye="{{ variant.options.last }}"
+                    {% if forloop.index == 1 %}class="active"{% endif %}
+                    >
+                </div>
+                <link rel="preload" href="{{ variant.featured_image | image_url: width: 800 }}" as="image">
+            {% endfor %}
+        {% endif %}         
+    </div>
+    <div class="u20DemiBold_v2">{{ product_name }}</div>
+    <div class="stars">
+        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/star_2x_7e43ff57-6544-4236-93dc-44e2c2a966bd.png?v=1698738965" alt="">
+        <a class="u11Light_v2" href="{{ product_url }}?variant=43780147511544" target="_blank">{{ product_reviews_count }} Reviews</a>
+    </div>
+    <div class="u14Light_v2">{{ product_description }}</div>
+    <div class="flex-1 mobileHide"></div>
+    <div class="product_price">
+        <div class="u20DemiBold_v2 emphasize" data-price={{ product_variants.first.price | money_without_trailing_zeros }}>{{ product_variants.first.price | money_without_trailing_zeros }}</div>
+        <div class="u14Light_v2">Or &nbsp;<span>{{ product_variants.first.price | divided_by: 24 | money }}</span>/mo <img data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Image_70_2x_8fb8f4b7-8366-43bc-b526-28f1fe7c3dee.png?v=1695607020" alt="" class="lozad"></div>
+    </div>
+    <a href="{{ product_url }}?variant=43780147511544" target="_blank" class="my-button my-button-origin">Learn More</a>
+</div>

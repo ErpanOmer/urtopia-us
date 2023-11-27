@@ -490,6 +490,25 @@ $product-tags-color: #FFE2D9;
             }
         }
 
+      
+        .cyber {
+            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Untitled-4_2x_2b2f3457-ed07-4e92-bd6d-06f0fdfd7d72.jpg?v=1700879935');
+
+            .centeral-content {
+                & > div {
+                    align-items: flex-start;
+
+                    img {
+                        max-width: 300px;
+                    }
+
+                    .u24Medium_v2 {
+                        margin: 4vh 0 8vh;
+                    }
+                }
+            }
+        }
+
 
         .count-down {
             height: 300px;
@@ -889,6 +908,27 @@ $product-tags-color: #FFE2D9;
                         .u24Medium_v2 {
                             margin-top: 10vw;
                             font-size: 17px;
+                        }
+                    }
+                }
+            }
+
+           .cyber {
+                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/12a_s_d_2x_c5b0e263-079c-4543-8f09-5ba73d8b9e95.jpg?v=1700880888');
+
+                .centeral-content {
+                    & > div {
+                        align-items: center;
+                        text-align: center;
+                        padding-top: 8vw;
+
+                        img {
+                            max-width: 150px;
+                        }
+
+                        .u24Medium_v2 {
+                            margin: 10px 0 15px;
+                            font-size: 15px;
                         }
                     }
                 }

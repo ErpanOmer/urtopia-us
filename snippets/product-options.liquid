@@ -166,7 +166,7 @@
     current_variant = find
     current_variant_options = getOptionNamesFromValues(options)
     current_variant_id = find.id
-    history.replaceState(null, '', `${location.pathname}?variant=${current_variant_id}`)
+    replaceSearchValue('variant', current_variant_id)
     $('.product .product-panel input[name="id"]').val(current_variant_id)
 
     asyncFn(renderOptionsTree, options)

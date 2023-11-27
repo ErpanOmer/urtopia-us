@@ -156,6 +156,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       return search
     }
 
+
+    function replaceSearchValue (k, v) {
+        if (!k || !v) {
+            return
+        }
+    
+        const url = new URL(location.href)
+        url.searchParams.set(k, v)
+    
+        history.replaceState(null, '', url);
+    }
+
     // product price 格式化函数
     function getPriceFormat (value = 0, ignoreZero = false) {
       const instance =  new Intl.NumberFormat("en-US", {
