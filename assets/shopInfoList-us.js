@@ -362,28 +362,6 @@ const testRides = [
         ],
       },
       {
-        name: "Epic Power Bikes",
-        phone: "(949) 503-3525",
-        email: "epiccyclessc@gmail.com ",
-        timezone: "San Diego, CA, USA (GMT-7)",
-        add: "85 Via Pico Plaza, San Clemente, CA 92672, United States",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Epic_Power_Bikes2.jpg?v=1689228574",
-        testrideSpot: "California",
-        testRideSize: "M",
-        availableSizes: [
-          'Carbon 1 Size M',
-        ],
-        businessHours: [
-          "10:00-16:00",
-          "",
-          "10:00-18:00",
-          "10:00-18:00",
-          "10:00-18:00",
-          "10:00-18:00",
-          "10:00-16:00"
-        ],
-      },
-      {
         name: "Rebel Bikes Electric",
         phone: "(951) 894-2453",
         email: "shelliekay122@gmail.com",

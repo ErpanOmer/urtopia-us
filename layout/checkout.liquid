@@ -425,7 +425,7 @@ function closeMiniDialog() {
 </style>
 <script type="text/javascript"
   src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/additionalScript.js?v=1662350955" defer></script>
-<script>
+<!--<script>
   let $ = Checkout.$;
   var backIndexArr = String('{{ backIndexArr }}');
   var speedBikeIdArr = Array('{{ speedBikeIdArr }}');
@@ -458,9 +458,10 @@ function closeMiniDialog() {
       }, 2000)
     })
   })
-</script>
+</script>-->
 
       <script>
+  let $ = Checkout.$;
   var ecommerce = {
     'transaction_id': '{{checkout.order_number | json}}',
     'affiliation': {{shop.name | json}},
