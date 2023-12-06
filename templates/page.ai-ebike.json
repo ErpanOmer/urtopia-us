@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "ai-ebike": {
+      "type": "ai-ebike",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "ai-ebike"
+  ]
+}

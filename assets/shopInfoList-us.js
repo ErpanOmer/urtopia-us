@@ -210,7 +210,7 @@ const testRides = [
           "09:00-18:00"
         ],
       },*/
-      {
+      /*{
         name: 'Groove E-Bikes',
         phone: '949-274-7944',
         email: 'bob@grooveebikes.com',
@@ -230,7 +230,7 @@ const testRides = [
           "11:00-17:00",
           "11:00-17:00",
         ],
-      },
+      },*/
       {
         name: 'Icar Lifestyle',
         phone: '310-926-6999',
@@ -564,7 +564,7 @@ const testRides = [
           "13:00-19:00",
         ],
       },
-      {
+      /*{
         name: "Liberty Cycles",
         phone: "212-375-3360",
         email: "libertycycles846@gmail.com",
@@ -584,7 +584,7 @@ const testRides = [
           "10:00-19:00",
           "10:00-19:00",
         ],
-      },
+      },*/
       {
         name: "Richard Fine",
         phone: "914-523-3207",
@@ -667,7 +667,7 @@ const testRides = [
     city: 'Pennsylvania',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Buna_Bicycle_Works_Washington_dc.jpg?v=1665374977',
     stores: [
-      {
+      /*{
         name: "Bell's Bike Shop",
         phone: "215-857-5793",
         email: "steve@bellsbikeshop.com",
@@ -687,7 +687,7 @@ const testRides = [
           "10:00-18:00",
           "10:00-17:00",
         ],
-      },
+      },*/
       {
         name: "Drexel Hill Cyclery",
         phone: "610-626-4477",
@@ -829,7 +829,7 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Evolution_E-Bikes.jpg?v=1691635464",
         testrideSpot: "Massachusetts",
         availableSizes: [
-          'Carbon 1s Size M',
+          'Carbon 1s Size S',
         ],
         businessHours: [
           "12:00-17:00",
@@ -948,7 +948,8 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/shutterstock_469708088.jpg?v=1697188978",
         testrideSpot: "Florida",
         availableSizes: [
-          'Carbon 1s Size S',
+          'Carbon 1s Size M',
+          'Chord',
         ],
         businessHours: [
           "10:00-17:00",
@@ -1139,7 +1140,7 @@ const testRides = [
           "9:00-17:00",
           "9:00-17:00",
           "9:00-17:00",
-          "09:00-15:00",
+          "9:00-15:00",
         ],
       },
       {

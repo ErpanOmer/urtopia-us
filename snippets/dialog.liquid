@@ -618,6 +618,10 @@
 
 
     $(function () {
+        if (location.href.includes('/pages/ai-e-bike')) {
+          return
+        }
+      
         showSubscribeEmailDialog().then(showSubscribeEmailMessageBox).then(showExitSubscribeEmailDialog).then(showTestRideDialog)
     })
 </script>
