@@ -407,15 +407,14 @@
 
             .items {
                 display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                grid-column-gap: 40px;
+                grid-template-columns: repeat(4, 1fr);
+                grid-column-gap: 1.8%;
 
                 .item {
                     display: flex;
                     flex-direction: column;
-                    padding: 24px 60px;
                     background-color: #F7F8FA;
-                    padding: 6% 15%;
+                    padding: 8% 4%;
 
                     img {
                         max-width: 40px;
@@ -643,15 +642,12 @@
     }
 
     .map {
-        padding: 80px 0;
+        padding: 60px 0 80px;
 
         .centeral-content {
-            .u36DemiBold_v2 {
-                margin-bottom: 25px;
-            }
-
             #storepoint-container {
                 position: relative;
+                border: none;
 
                 #storepoint-tag-dropdown,
                 #storepoint-radius-dropdown,
@@ -668,24 +664,28 @@
                     top: 0;
                     height: 100%;
 
-                    .mapboxgl-canvas-container {
-                        height: 100%;
-                        min-height: 100%;
+                  .mapboxgl-canvas-container {
+                    height: 100%;
+                    min-height: 100%;
 
-                        .mapboxgl-canvas {
-                            height: 100% !important;
-                            min-height: 100% !important;
-                        }
+                    .mapboxgl-canvas {
+                      height: 100% !important;
+                      min-height: 100% !important;
                     }
+                  }
 
                     .map-popup {
                         background-color: #fff;
                         box-shadow: 0px 0px 10px #00000029;
                         padding: 20px;
-                        display: grid;
-                        grid-template-columns: 1fr 1fr;
-                        grid-column-gap: 18px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
                         pointer-events: auto;
+                        border-radius: 15px;
+                        max-width: 300px;
+                        width: 300px;
+                        overflow: hidden;
 
                         .infos {
                             display: flex;
@@ -772,8 +772,38 @@
                         }
 
                         & > img {
-                            height: 100%;
                             object-fit: cover;
+                            height: 150px;
+                            max-height: 150px;
+                            max-width: 100%;
+                        }
+
+                        .u17DemiBold_v2 {
+                            margin-top: 12px;
+                            line-height: 24px;
+                        }
+
+                        .tags {
+                            display: flex;
+                            align-items: center;
+                            flex-wrap: wrap;
+                            margin-top: 3px;
+
+                            & > span {
+                                color: #fff;
+                                border-radius: 5px;
+                                padding: 2px 6px;
+                                margin-right: 6px;
+                                margin-bottom: 3px;
+                            }
+
+                            .tag-gray {
+                                background-color: #555;
+                            }
+
+                            .tag-orange {
+                                background-color: #FD4B17;
+                            }
                         }
                     }
                 }
@@ -781,8 +811,10 @@
 
             #storepoint-search {
                 background-color: #fff !important;
-                padding: 10px !important;
+                padding: 0 10px 0 0!important;
                 width: calc(35% - 10px) !important;
+                border: none !important;
+                margin-bottom: 10px !important;
 
                 #storepoint-search-bar-container {
                     width: 100% !important;
@@ -843,7 +875,7 @@
                     }
 
                     select {
-                        margin-top: 6px;
+                        margin-top: 8px;
                     }
                     
                 
@@ -863,7 +895,9 @@
                     cursor: pointer;
 
                     .item {
-                        padding: 24px 10px;
+                        padding: 18px 10px;
+                        height: auto;
+                        box-sizing: border-box;
 
                         &+.item {
                             border-top: 1px solid #F7F7F7;
@@ -872,37 +906,54 @@
                         .name {
                             position: relative;
                             font-size: 17px;
-                            line-height: 20px;
+                            line-height: 24px;
                             font-weight: 600;
-
-                            & > span {
-                                color: #555;
-                            }
+                            padding-right: 30px;                            
 
                             & > i {
                                 position: absolute;
                                 right: 0;
+                                top: 0;
                             }
                         }
 
-                        .gray {
-                            font-size: 14px;
-                            line-height: 17px;
+                        .tags {
+                            display: flex;
+                            align-items: center;
+                            flex-wrap: wrap;
+                            margin-top: 3px;
+
+                            & > span {
+                                color: #fff;
+                                border-radius: 5px;
+                                padding: 2px 6px;
+                                margin-right: 6px;
+                                margin-bottom: 3px;
+                            }
+
+                            .tag-gray {
+                                background-color: #555;
+                            }
+
+                            .tag-orange {
+                                background-color: #FD4B17;
+                            }
+                        }
+
+                        & > .u14Light_v2 {
+                            margin-top: 6px;
                             color: #555;
                         }
 
-                        .address {
-                            margin: 6px 0 12px;
-                        }
-
-                        .available {
-                            font-weight: 600;
-                        }
-
-                        .time {
+                        & > .u17Light_v2 {
                             display: flex;
-                            align-items: flex-start;
+                            align-items: center;
                             height: 18px;
+                            line-height: 18px;
+                            overflow: hidden;
+                            margin-top: 12px;
+                            color: #555;
+                            font-size: 14px;
 
                             img {
                                 margin-right: 6px;
@@ -910,16 +961,21 @@
                             }
                         }
 
-                        ul {
-                            padding: 0;
-                            padding-left: 20px;
-                            margin: 0;
 
-                            li {
-                                margin: 6px 0;
-
-                                &::marker {
-                                    color: #fd4b17;
+                        .ulli {
+                            margin-top: 6px;
+                            ul {
+                                padding: 0;
+                                padding-left: 20px;
+                                margin: -3px 0 0;
+    
+                                li {
+                                    margin-top: 3px;
+                                    color: #555;
+    
+                                    &::marker {
+                                        color: #fd4b17;
+                                    }
                                 }
                             }
                         }
@@ -948,6 +1004,13 @@
                     }
                 }
             }
+
+
+            & > .u17Medium_v2 {
+                max-width: 500px;
+                margin: 2.5vh 0 6vh;
+            }
+
         }
     }
 }
@@ -1185,18 +1248,29 @@
             padding: 40px 0;
     
             .centeral-content {
-                padding: 0 4%;
+                padding: 0 4% 12.5vw;
+                position: relative;
+                overflow-x: hidden;
 
                 .u36DemiBold_v2 {
                     font-size: 24px;
-                    line-height: 28px;
-                    margin-bottom: 14px;
                 }
+
+                .u17Medium_v2 {
+                    font-size: 14px;
+                    margin: 2.5vw 0 8vw;
+                }
+
+                .swiper-pagination {
+                    bottom: 10px;
+                }
+
+
 
                 #storepoint-container {
                     #storepoint-map {
                         // position: relative !important;
-                        transform: translateY(140px);
+                        transform: translateY(130px);
 
                         .mapboxgl-popup {
                             max-width: 300px !important;
@@ -1205,15 +1279,26 @@
                         .map-popup {
                             grid-template-columns: 1fr;
                             padding: 12px;
+                            max-width: 70vw;
+
+                            .u17DemiBold_v2 {
+                                margin-top: 8px;
+                            }
+
                             & > img {
-                                display: none;
+                                height: 30vw;
+                                max-height: 30vw;
                             }
                         }
                     }
 
                     #storepoint-search {
                         width: 100% !important;
-                        padding: 10px 0 !important;
+                        padding: 0 !important;
+
+                        select {
+                            margin-top: 6px;
+                        }
                     }
 
                     #storepoint-panel {
@@ -1221,10 +1306,31 @@
                         // transform: translateY(350px);
 
                         .items {
-                            position: static;
+                            position: relative;
+                            flex-direction: unset;
+                            margin-top: 10px;
+                            overflow: unset;
 
                             .item {
-                                padding: 24px 0;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: flex-start;
+                                height: auto;
+                                padding: 12px;
+                                border-radius: 10px;
+                                border: 1px solid #dedede;
+                                box-sizing: border-box;
+
+                                .buttons {
+                                    display: flex;
+                                    flex-direction: column;
+                                    width: 100%;
+                                    
+                                    .my-button {
+                                        margin-top: 6px;
+                                        transition: none;
+                                    }
+                                }
                             }
                         }
 
@@ -1238,6 +1344,34 @@
                             top: -5px;
                         }
                     }
+                }
+
+                .swiper-button-prev,
+                .swiper-button-next {
+                    display: block;
+                    pointer-events: all;
+                    cursor: pointer;
+                    width: 40px;
+                    height: 40px;
+                    user-select: none;
+                    bottom: 0;
+                    top: auto;
+                    z-index: 1;
+                }
+
+                .swiper-button-next {
+                    right: 4vw;
+                    left: auto;
+                }
+
+                .swiper-button-prev {
+                    right: auto;
+                    left: 4vw;
+                    transform: rotate(180deg);
+                }
+
+                .swiper-button-disabled {
+                    opacity: 0.5;
                 }
             }
         }
@@ -1426,6 +1560,157 @@
                     }
                 }
             }
+        }
+    }
+}
+
+
+.item_detail {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 65%;
+    z-index: 1;
+    background: #fff;
+    visibility: hidden;
+    padding: 12px 48px 12px 12px;
+    color: #000;
+    overflow-x: hidden;
+    overflow-y: auto;
+    border: 1px solid #DEDEDE;
+    border-right: none;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+
+    .back {
+        display: flex;
+        height: 24px;
+        line-height: 24px;
+        align-items: center;
+        justify-content: flex-start;
+        cursor: pointer;
+
+        i {
+            transform: rotate(180deg);
+            margin-right: 4px;
+            height: 25px;
+            line-height: 25px;
+        }
+    }
+
+
+    .u17DemiBold_v2 {
+        margin-top: 8px;
+    }
+
+    .tags {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 3px;
+
+        & > span {
+            color: #fff;
+            border-radius: 5px;
+            padding: 2px 6px;
+            margin-right: 6px;
+            margin-bottom: 3px;
+        }
+
+        .tag-gray {
+            background-color: #555;
+        }
+
+        .tag-orange {
+            background-color: #FD4B17;
+        }
+    }
+
+    .infossssss {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 8px;
+
+        & > div {
+            display: grid;
+            grid-template-columns: 65px 1fr;
+            margin-top: 6px;
+        }
+    }
+
+    .buttons {
+        margin: 8px 0;
+        display: flex;
+        flex-wrap: wrap;
+
+        .my-button {
+            transition: none;
+            margin-bottom: 6px;
+        }
+    }
+
+    .ulli {
+        margin-top: 6px;
+        ul {
+            padding: 0;
+            padding-left: 20px;
+            margin: -3px 0 0;
+
+            li {
+                margin-top: 3px;
+                color: #555;
+
+                &::marker {
+                    color: #fd4b17;
+                }
+            }
+        }
+    }
+
+    .opening {
+        display: flex;
+        flex-direction: column;
+        margin-top: 12px;
+
+
+        & > div {
+            display: grid;
+            grid-template-columns: minmax(100px, 1fr) 2fr;
+            margin-top: 6px;
+            color: #555;
+        }
+    }
+
+    @media (max-width: 767px) {
+        position: fixed;
+        right: 0;
+        width: 92vw;
+        max-width: 92vw;
+        border-radius: 10px;
+        padding: 0 15px 24px;
+        visibility: visible;
+        border: none;
+
+        .back {
+            height: 48px;
+            line-height: 48px;
+            background-color: #fff;
+            position: sticky;
+            top: 0;
+        }
+
+        .buttons {
+            flex-direction: column;
+        }
+
+        & > img {
+            max-width: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 40vw;
+            max-height: 40vw;
+            object-fit: cover;
         }
     }
 }

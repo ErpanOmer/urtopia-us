@@ -339,7 +339,11 @@
     }
 
     function showDialog (dialog, callback) {
-        dialogPolyfill.forceRegisterDialog(dialog)
+        if (!dialog.isRegistered) {
+            dialogPolyfill.forceRegisterDialog(dialog)
+            dialog.isRegistered = true
+        }
+        
         dialog.showModal()
 
         return new Promise(resolve => {
