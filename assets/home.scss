@@ -1478,106 +1478,40 @@ $product-tags-color: #FFE2D9;
     margin: 120px 0;
 
     .centeral-content {
-        display: grid;
-        grid-column-gap: 7px;
-        grid-template-columns: 2fr 2fr 1fr;
-        background-color: #FAF7F6;
+        background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2x_6e7d15f5-6c40-40c6-b7e1-4de90dec49e1.jpg?v=1702351749') center center/cover no-repeat;
         background-clip: content-box;
 
         & > div {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
+            padding: 3.5vh 70px 18vh;
 
-            &:first-child {
-                padding: 22% 13%;
-
-                .my-button-origin {
-                    background-color: #C21C19;
-                }
-
-                .my-button-white {
-                    color: #C21C19;
-                    border-color: #C21C19;
-                    margin-top: 12px;
-                }
-
-                .my-button {
-                    width: 160px;
-                }
-
-                .u24DemiBold_v2 {
-                    margin: 12px 0 60px;
-                }
+            img {
+                max-width: 85px;
             }
 
-
-            &:not(:first-child):not(:last-child) {
-                background: transparent url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_23357_2x_4baeb439-16cc-4797-94f8-c160ec0c4e9f.png?v=1700638653') center center/cover no-repeat;
-                color: #fff;
-                padding: 24px 0 0 34%;
-            }
-
-            &:last-child {
-                display: flex;
-                flex-direction: column;
-
-                div {
-                    background: transparent center center/cover no-repeat;
-                    color: #C21C19;
-                    padding: 24px 0 0 4.5%;
-                    flex: 1;
-                    width: 100%;
-                    box-sizing: border-box;
-
-
-                    &:first-child {
-                        background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_23360_2x_9bcd0cc8-8eaa-4cf9-84fb-a37be35f5feb.jpg?v=1700638659');
-                    }
-
-                    &:last-child {
-                        background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23349_2x_ef97c3d9-5d47-435b-995f-598a6bc750c9.jpg?v=1700537288');
-                    }
-                }
+            .u24DemiBold_v2 {
+                margin: 2.5vh 0 4vh;
             }
         }
     }
 
     @media (max-width: 767px) {
         margin: 60px 0;
+        padding: 0 4vw;
 
         .centeral-content {
-            padding: 0 4vw;
-            grid-template-columns: 1fr;
+            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2x_ecb88b7e-27ec-4029-adaf-78720f610ddd.jpg?v=1702352236');
+            padding: 0;
+            height: 480px;
 
             & > div {
+                padding: 7vw 5vw;
 
-                &:not(:first-child):not(:last-child) {
-                    order: -1;
-                    background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_23358_2x_5289aa86-8f4e-49a1-b744-e1b9c5c7c5d7.jpg?v=1700638895');
-                    padding: 3vw 0 80% 3vw;
-
-                    .u24Medium_v2 {
-                        font-size: 20px;
-                    }
+                img {
+                    max-width: 55px;
                 }
 
-                &:first-child {
-                    order: 1;
-                    padding: 6vw 4vw 10vw;
-
-                    .u24DemiBold_v2 {
-                        margin-bottom: 10vw;
-                    }
-                }
-
-                &:last-child {
-                    margin-top: 1.5vw;
-                    flex-direction: row;
-
-                    & > div {
-                        padding: 3vw 0 40% 3vw;
-                    }
+                .u24DemiBold_v2 {
+                    margin: 12px 0 20px;
                 }
             }
         }
