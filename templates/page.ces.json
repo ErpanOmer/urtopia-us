@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "ces": {
+      "type": "ces",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "ces"
+  ]
+}

@@ -1016,13 +1016,16 @@ const testRides = [
       {
         name: "Oak Cliff Bike Synergy",
         phone: "469-456-1136",
-        email: "jorge.samano@hotmail.com",
+        email: "jorge@oakcliffbikesynergy.com",
         timezone: "Dallas, TX, USA (GMT-5)",
         add: "1300 S Polk St, Suite #152, Dallas, TX 75224",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Oak_Cliff_Bike_Synergy.jpg?v=1686878451",
         testrideSpot: "Texas",
         availableSizes: [
           'Carbon 1 Size M',
+          'Carbon 1s Size S/M/L',
+          'Chord',
+          'Chord X',
         ],
         businessHours: [
           "10:00-18:00",
@@ -1378,6 +1381,34 @@ const testRides = [
           "14:00-19:00",
           "14:00-19:00",
           "14:00-19:00",
+        ],
+        isPartner: true,
+      },
+    ]
+  },
+  {
+    city: 'Delaware',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Milton_Delaware.jpg?v=1702122567',
+    stores: [
+      {
+        name: "Gilberto Medina",
+        phone: "610-675-5108",
+        email: "gilbertmedina1@gmail.com",
+        timezone: "Delaware, USA (GMT-7)",
+        add: "Millstone Drive Milton, Delaware 19968",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Milton_Delaware.jpg?v=1702122567",
+        testrideSpot: "Delaware",
+        availableSizes: [
+          'Carbon 1s Size M',
+        ],
+        businessHours: [
+          "7:00-17:00",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "7:00-17:00",
         ],
         isPartner: true,
       },

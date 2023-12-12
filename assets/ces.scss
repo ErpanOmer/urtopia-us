@@ -1,0 +1,393 @@
+.u30Light_v2 {
+    font: normal normal 300 30px/1.4em urbane;
+}
+
+
+.u72Medium_v2 {
+    font: normal normal 400 72px/1.25em urbane;
+}
+
+
+.u17Light_v2 {
+    opacity: 0.8;
+
+    @media (max-width: 767px) {
+        font-size: 14px;
+    }
+}
+
+
+.emaillllllllllllll {
+    display: flex;
+    position: relative;
+
+    input {
+        border-bottom-left-radius: 30px;
+        border-top-left-radius: 30px;
+        border:2px solid #000;
+        width: 300px;
+        padding: 0 2.5% 0 5%;
+        background-color: transparent;
+
+        &::placeholder {
+            color: #444;
+        }
+    }
+
+    button {
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+        border: none;
+        padding: 14px 18px;
+    }
+
+    .u17DemiBold_v2 {
+        position: absolute;
+        bottom: 0;
+        transform: translate(12.5%, 150%);
+        display: none;
+    }
+
+    @media (max-width: 767px) {
+        input {
+            flex: 1;
+            width: 0;
+            font-size: 14px;
+            border-width: 1px;
+            padding-left: 5%;
+        }
+
+      button {
+        padding: 11px 14px;
+      }
+
+        .u17DemiBold_v2 {
+            font-size: 14px;
+            transform: translate(10%, 150%);
+        }
+    }
+}
+
+
+.banner {
+    color: #000;
+    background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20231211-185241.jpg?v=1702291976') center center/cover no-repeat;
+
+    .centeral-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        // justify-content: center;
+        height: calc(100vh - 106px);
+
+        & > .u17Light_v2 {
+            max-width: 450px;
+            margin: 4vh 0;
+        }
+
+        .u48DemiBold_v2 {
+            display: flex;
+            align-items: flex-end;
+
+            img {
+                max-width: 85px;
+                margin-left: 25px;
+            }
+        }
+
+        & > img {
+            max-width: 200px;
+            margin-bottom: 12px;
+            margin-top: 18vh;
+        }
+    }
+
+    @media (max-width: 767px) {
+        background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18985_2x_373638d5-021d-401b-a921-00082a5de5d2.jpg?v=1702281105');
+      
+        .centeral-content {
+            height: 540px;
+          
+            .u48DemiBold_v2 {
+                flex-direction: column;
+                align-items: flex-start;
+                font-size: 30px;
+
+                img {
+                    margin: 0;
+                    max-width: 44px;
+                    margin-top: 12px;
+                }
+            }
+
+
+
+            & > img {
+                max-width: 100px;
+                margin-top: 90px;
+            }
+
+            
+        }
+    }
+}
+
+
+.wow {
+    background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23415_2x_c87d48b6-2b8d-4378-aea9-32e8e316da28.jpg?v=1702274287') center center/cover no-repeat;
+    color: #fff;
+
+    .centeral-content {
+        height: calc(100vh - 106px);
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+
+        & > div {
+            max-width: 440px;
+
+            .u17Light_v2 {
+                margin: 4vh 0 2.5vh;
+            }
+
+            input {
+                border-color: #fff;
+                color: #fff;
+
+                &::placeholder {
+                    color: #aaa;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+        background: #07151C url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23417_2x_b234895a-cd13-4bf1-a8c5-30e6a031b57a.jpg?v=1702282200') center top/contain no-repeat;
+
+        .centeral-content {
+            height: 750px;
+            align-items: flex-end;
+            padding-bottom: 12vw;
+
+            .u30Light_v2 {
+                font-size: 20px;
+            }
+
+            .u48DemiBold_v2 {
+                font-size: 30px;
+            }
+        }
+    }
+}
+
+
+.fusion {
+    background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18982_2x_b66f3f30-1242-47aa-9c09-29e09936081d.jpg?v=1702275271');
+    .centeral-content {
+        justify-content: flex-start;
+
+        & > div {
+            .u48DemiBold_v2 {
+                min-width: 640px;
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+        background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18986_2x_64fafd6a-f1cd-488f-9217-8de01ab7e024.jpg?v=1702282921');
+
+        .centeral-content {
+            height: 850px;
+
+            & > div {
+                .u48DemiBold_v2 {
+                    min-width: unset;
+                }
+            }
+        }
+    }
+}
+
+.ring {
+    background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23411_2x_7e8d67bf-ead4-42fd-bc88-9d0970471827.jpg?v=1702275888');
+
+    @media (max-width: 767px) {
+        background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23420_2x_2b6f090f-e24d-4422-85bf-753bcdea0cf7.jpg?v=1702284398');
+    }
+}
+
+
+.feture {
+    background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20220619-untitled-1733_2x_3e396075-f95b-4e85-8d64-8101d07ae00a.jpg?v=1702276914') center center/cover no-repeat;
+
+    .centeral-content {
+        height: calc(100vh - 106px);
+        display: flex;
+        flex-direction: column;
+
+        .u48DemiBold_v2 {
+            margin: 12vh 0;
+            text-align: center;
+        }
+
+        .icons {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-row-gap: 3vh;
+
+            & > div {
+                display: flex;
+                align-items: center;
+                color: #646464;
+
+                img {
+                    max-width: 60px;
+                    margin-right: 24px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+        background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20220619-untitled-1733_2x_ef1e5263-9287-4300-9a80-6b169bc6142c.jpg?v=1702284672');
+
+        .centeral-content {
+            height: 600px;
+
+            .u48DemiBold_v2 {
+                font-size: 28px;
+                margin: 60px 0 45px;
+            }
+
+            .icons {
+                grid-template-columns: 1fr;
+
+                & > div {
+                      
+                    img {
+                        max-width: 30px;
+                    }
+
+                    .u30Medium_v2 {
+                        font-size: 16px;
+                    }
+
+                    &:nth-child(3n) {
+                        place-self: flex-end;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.your {
+    padding: 13vh 0 20vh;
+    background-color: #fff;
+
+    .centeral-content {
+        & > div {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+
+            & > div {
+                &:last-child {
+                    max-width: 440px;
+                    place-self: flex-end;
+    
+                    .u17Light_v2 {
+                        margin-bottom: 2.5vh;
+                    }
+                }
+            }
+        }
+
+        & > img {
+            margin-top: 12vh;
+        }
+    }
+
+    @media (max-width: 767px) {
+        padding: 80px 0 65px;
+
+        .centeral-content {
+            & > div {
+                grid-template-columns: 1fr;
+
+                .u72Medium_v2 {
+                    font-size: 30px;
+                }
+
+                img {
+                    margin: 10vw -8vw;
+                    width: 100vw;
+                }
+            }
+        }
+    }
+}
+
+.waiting {
+    background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20231211-190114.jpg?v=1702292492') center center/cover no-repeat;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 8vh;
+
+    .u24DemiBold_v2 {
+        margin-top: 2.5vh;
+    }
+
+    .u24Light_v2 {
+        margin: 1vh 0 2.5vh;
+    }
+
+    @media (max-width: 767px) {
+        background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18988_2x_7a80f651-b306-4891-80b0-354518f86a2a.jpg?v=1702285502');
+        padding: 16vw 8vw 0;
+        align-items: unset;
+        height: 540px;
+
+        .u48DemiBold_v2 {
+            font-size: 30px;
+        }
+
+        .u24DemiBold_v2 {
+            font-size: 20px;
+            margin-top: 24px;
+        }
+
+        .u24Light_v2 {
+            font-size: 20px;
+            margin: 6px 0 24px;
+        }
+    }
+}
+
+
+.unnnn {
+    background-color: #0C1824;
+    color: #fff;
+
+    .emaillllllllllllll {
+        padding: 6vw 0 10vw;
+
+        input {
+            border-color: #fff;
+            color: #fff;
+
+            &::placeholder {
+                color: #aaa;
+            }
+        }
+
+        .u17DemiBold_v2 {
+            transform: translate(10%, -60%);   
+        }
+    }
+}

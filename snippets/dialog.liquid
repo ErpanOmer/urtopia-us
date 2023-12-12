@@ -621,6 +621,10 @@
         if (location.href.includes('/pages/ai-e-bike')) {
           return
         }
+
+      if (location.href.includes('/pages/ces')) {
+          return
+      }
       
         showSubscribeEmailDialog().then(showSubscribeEmailMessageBox).then(showExitSubscribeEmailDialog).then(showTestRideDialog)
     })

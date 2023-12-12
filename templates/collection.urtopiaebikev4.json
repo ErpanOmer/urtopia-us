@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "urtopia-ebike-v4": {
+      "type": "urtopia-ebike-v4",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "urtopia-ebike-v4"
+  ]
+}
