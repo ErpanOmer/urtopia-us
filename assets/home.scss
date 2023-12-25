@@ -1478,7 +1478,7 @@ $product-tags-color: #FFE2D9;
     margin: 120px 0;
 
     .centeral-content {
-        background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2x_6e7d15f5-6c40-40c6-b7e1-4de90dec49e1.jpg?v=1702351749') center center/cover no-repeat;
+        background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/home2_88d428bb-b1f0-4baa-81f4-3d395892559e.jpg?v=1702388687') center center/cover no-repeat;
         background-clip: content-box;
 
         & > div {
@@ -1499,7 +1499,7 @@ $product-tags-color: #FFE2D9;
         padding: 0 4vw;
 
         .centeral-content {
-            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2x_ecb88b7e-27ec-4029-adaf-78720f610ddd.jpg?v=1702352236');
+            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23434.jpg?v=1702388909');
             padding: 0;
             height: 480px;
 
@@ -1512,6 +1512,50 @@ $product-tags-color: #FFE2D9;
 
                 .u24DemiBold_v2 {
                     margin: 12px 0 20px;
+                }
+            }
+        }
+    }
+}
+
+
+#chirstmas {
+    background-color: rgb(30, 34, 64);
+    background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23310_2x_bb54f94f-58b6-4a0a-9d35-e9dea6a68959.jpg?v=1703038555');
+
+    .centeral-content {
+        & > div {
+            align-items: flex-start;
+
+            img {
+                max-width: 360px;
+            }
+
+            .u24Medium_v2 {
+                margin: 8vh 0 4vh;
+            }
+        }
+    }
+
+
+    @media (max-width: 767px) {
+        background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18945_2x_a1097dca-d99a-4e0f-82aa-c9a16f54f64b.jpg?v=1703039371');
+
+        .centeral-content {
+            flex-direction: column-reverse;
+
+            & > div {
+                align-items: center;
+                text-align: center;
+                padding-bottom: 10vw;
+
+                img {
+                    max-width: 190px;
+                }
+
+                .u24Medium_v2 {
+                    font-size: 18px;
+                    margin: 20px 0;
                 }
             }
         }

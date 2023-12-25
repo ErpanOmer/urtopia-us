@@ -34,26 +34,6 @@
       font-size: 14px;
     }
   }
-
-
-  .sale-taggggggg {
-    background-image: linear-gradient(90deg, #0DA5C4, #0E4E5D);
-    color: #fff;
-    padding: 2% 5%;
-    border-radius: 18px;
-    width: fit-content;
-    height: 35px;
-    line-height: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    text-transform: uppercase;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: right;
-    overflow: hidden;
-  }
 </style>
 
   <div style="opacity:0" class="sc-bYoBSM hUVNGC __pf __pf_kIY6jB09" id="__pf"><div data-pf-type="Body" class="sc-hjGZqJ fNoOP pf-1_"><div data-pf-type="Layout" class="sc-htJRVC dNJAjO pf-2_"><div data-pf-type="ProductPreview" class="sc-cvlWTT btfkZr pf-3_"> </div>
@@ -70,6 +50,7 @@
           <!--<div class="u17Medium_v2">{{ settings.sale_name }}</div>-->
           <div class="u14Light_v2 mb6" style="margin: 0;">Free shipping.</div>
         </div>
+        <div class="adwarsssss"></div>
         <!--<div class="sale-big-text mb6">
           <div class="u20DemiBold_v2">LOWEST PRICE OF THE YEAR GUARANTEED!</div>
           <div class="u11Light_v2">For any order during Oct 1 - Dec 31 2023, if there is a price drop within this period on our website, you will get a refund for the difference.</div>
@@ -81,6 +62,7 @@
 					</div>
 				</div>
 				<div class="swiper right-swiper" style="--swiper-navigation-color: #fff;--swiper-theme-color: #000;--swiper-pagination-color: #000;">
+                    <div class="adwarsssss mobileHide"></div>
 					<div class="swiper-wrapper">
 						{% comment %} {% for image in product.images %}
 							<div class="swiper-slide">
@@ -909,10 +891,23 @@
 
 <script>
     // 默认隐藏
-    $('.bottom-fixed').hide()
-    $('.top-fixed').hide()
-    $('.toTop').hide()
-  $('.product .error-tip').hide()
+    $('.bottom-fixed').hide();
+    $('.top-fixed').hide();
+    $('.toTop').hide();
+  $('.product .error-tip').hide();
+
+  ((awards = []) => {
+        if (!awards.length) {
+          return $('.adwarsssss').hide()
+        }
+
+        $('.adwarsssss').html(awards.map(a => `<img src="${a}"/>`).join('')).css('height', global_config.is_mobile ? '30px' : '50px')
+
+        if (global_config.is_pc) {
+            $('.product .centeral-content .featured_image').css('grid-template-rows', '750px')
+        }
+
+    })(global_config.carbon_order_page_config.awards);
   
   const leftSwiper = new Swiper(".product .left-swiper", {
       direction: 'vertical',

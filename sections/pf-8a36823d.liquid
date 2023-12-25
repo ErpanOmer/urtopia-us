@@ -580,7 +580,7 @@
             }
             
             // 点击item 代理到真实的store
-            item.on('click', e => {
+            item.on('click', (e, extra) => {
                 if (global_config.is_mobile) {
                     e.preventDefault()
                     return false
@@ -594,7 +594,7 @@
                 }
 
 
-                locations.each((i, elemm) => {
+                !extra && locations.each((i, elemm) => {
                     const iterator = $(elemm)
                     iterator.removeClass('selected')
                     if (item.attr('name').replace(/\s*/g, "") === iterator.find('.storepoint-name').text().replace(/\s*/g, "")) {
@@ -775,6 +775,18 @@
             }).each((i, elem) => {
                 if ($(elem).attr('name').replace(/\s*/g, "") === store.name.replace(/\s*/g, "")) {
                     swiperrrrrrrrrrrrrrr.slideTo(i)
+                    return false
+                }
+            })
+        } else {
+            $('#storepoint-panel .items .item').each(function () {
+                if ($(this).attr('name').replace(/\s*/g, "") === store.name.replace(/\s*/g, "")) {
+                    $(this).trigger('click', 'xxxxxx')
+
+                    setTimeout(() => {
+                        $('#storepoint-panel .items').scrollTop($(this)[0].offsetTop)
+                    }, 300)
+
                     return false
                 }
             })

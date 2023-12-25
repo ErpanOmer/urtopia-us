@@ -2914,3 +2914,91 @@ margin-top:-20px!important;
     top: 30px !important;
 
 }
+
+
+
+
+
+
+.product .adwarsssss {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 6px;
+  max-height: 50px;
+  overflow: hidden;
+}
+
+.product .adwarsssss img {
+  height: 100%;
+  width: auto;
+  margin-right: 16px;
+}
+
+@media (max-width: 768px) {
+  .product .adwarsssss {
+    max-height: 30px;
+    margin-bottom: 6px;
+  }
+
+  .product .adwarsssss img {
+    margin-right: 8px;
+  }
+}
+
+
+
+.product .sale-taggggggg {
+  background-color: #1E223F;
+  background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18952_2x_7f4e048f-cc74-4429-ac07-ba360caadfc9.jpg?v=1703041817');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left;
+  color: #fff;
+  padding: 2% 0 2% 5%;
+  border-radius: 18px;
+  width: fit-content;
+  height: 35px;
+  line-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-style: italic;
+  margin-top: 9px;
+}
+
+.product .sale-taggggggg::after {
+  display: block;
+  content: "";
+  background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/1_2x_9113757f-976f-4de7-bee8-f247dc04311f.png?v=1703042009') center center/contain no-repeat;
+  width: 60px;
+  height: 55px;
+  background-position-y: -10px;
+}
+
+#MainContent .product-card {
+  padding-top: 17.5px;
+}
+
+#MainContent .product-card .tags span {
+  box-shadow: 0px 3px 6px #00000029;
+  background-color: #fff;
+  color: #EA2F16;
+  position: relative;
+}
+
+#MainContent .product-card .tags span:first-child::after {
+  position: absolute;
+  display: block;
+  content: "";
+  background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/1_2x_9d61a673-2c5f-4d0c-8399-9b4b3565dc46.png?v=1703044380') center center/cover no-repeat;
+  width: 65%;
+  height: 55px;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#MainContent .ebike-products .product-grid {
+  grid-row-gap: 40px;
+}

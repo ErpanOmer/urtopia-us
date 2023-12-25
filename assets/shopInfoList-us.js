@@ -494,6 +494,27 @@ const testRides = [
         ],
         isPartner: true,
       },
+      {
+        name: "Buy My Bikes",
+        phone: "949-493-5611",
+        email: "jim@buymybikes.com",
+        timezone: "California, USA (GMT-7)",
+        add: "32302 Camino Capistrano St 101, San Juan Capistrano, CA 92675",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Buy_My_Bikes.jpg?v=1702462014",
+        testrideSpot: "California",
+        availableSizes: [
+          'Carbon 1 Size M',
+        ],
+        businessHours: [
+          "10:00-16:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-16:00",
+        ],
+      },
     ]
   },
   {
@@ -564,6 +585,7 @@ const testRides = [
           "13:00-19:00",
         ],
       },
+      
       /*{
         name: "Liberty Cycles",
         phone: "212-375-3360",
@@ -843,7 +865,7 @@ const testRides = [
       },
     ]
   },
-  {
+  /*{
     city: 'Washington DC',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Buna_Bicycle_Works_Washington_dc.jpg?v=1665374977',
     stores: [
@@ -870,7 +892,7 @@ const testRides = [
         ],
       },
     ]
-  },
+  },*/
   {
     city: 'Florida',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/shutterstock_469708088.jpg?v=1697188978',
@@ -959,6 +981,28 @@ const testRides = [
           "10:00-17:00",
           "10:00-17:00",
           "10:00-17:00",
+        ],
+        isPartner: true,
+      },
+      {
+        name: "Robert Ryba",
+        phone: "443-994-9060",
+        email: "robert.ryba@yahoo.com",
+        timezone: "New Port Richey, FL, USA (GMT-4)",
+        add: "Joes Point Road Stuart Fl 34996",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/shutterstock_469708088.jpg?v=1697188978",
+        testrideSpot: "Florida",
+        availableSizes: [
+          'Carbon 1s Size M',
+        ],
+        businessHours: [
+          "9:00-19:00",
+          "9:00-19:00",
+          "9:00-19:00",
+          "9:00-19:00",
+          "9:00-19:00",
+          "9:00-19:00",
+          "9:00-19:00",
         ],
         isPartner: true,
       },
@@ -1328,6 +1372,27 @@ const testRides = [
         ],
         isPartner: true,
       },
+      {
+        name: "Electro Action Supply",
+        phone: "3035050905",
+        email: "Electroactionsupply@gmail.com ",
+        timezone: "Colorado, USA (GMT-7)",
+        add: "2140 s kalamath st, Denver CO 80223",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Electro_Action_Supply.jpg?v=1702462014",
+        testrideSpot: "Colorado",
+        availableSizes: [
+          'Carbon 1s Size M',
+        ],
+        businessHours: [
+          "8:00-16:00",
+          "14:00-18:00",
+          "",
+          "",
+          "14:00-18:00",
+          "14:00-18:00",
+          "8:00-16:00",
+        ],
+      },
     ]
   },
   {
@@ -1414,6 +1479,34 @@ const testRides = [
       },
     ]
   },
+  {
+    city: 'Ohio',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/OHIO.jpg?v=1702380729',
+    stores: [
+      {
+        name: "Bill Connelly",
+        phone: "513-703-7777",
+        email: "bill@wbconnelly.com",
+        timezone: "Ohio, USA (GMT-7)",
+        add: "1071 Celestial St.Cincinnati, OH 45202",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/OHIO.jpg?v=1702380729",
+        testrideSpot: "Ohio",
+        availableSizes: [
+          'Carbon 1s Size L',
+        ],
+        businessHours: [
+          "9:00-19:00",
+          "9:00-19:00",
+          "9:00-19:00",
+          "9:00-19:00",
+          "9:00-19:00",
+          "9:00-19:00",
+          "9:00-19:00",
+        ],
+        isPartner: true,
+      },
+    ]
+  },
 ]
 
 
@@ -1424,7 +1517,7 @@ let city_options = new Set()
 for (const city of testRides) {
   for (const store of city.stores) {
     // 把所属国家也加上
-      store.country = city.country || 'Deutschland'
+      store.country = city.country || 'USA'
       store.city = city.city
       store.avalibaleDate = findAvalibaleDate(store)
 

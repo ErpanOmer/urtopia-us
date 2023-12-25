@@ -36,6 +36,10 @@ const global_config = {
             M: `Fit for 5’7’’~6’1’’ Inseam 31’’`,
             L: `Fit for 5’11’’~6’5’’ Inseam 33’’`
         },
+      awards: [
+        'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231214-163215.png?v=1702542766',
+        'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231214-163208.png?v=1702542765'
+      ],
         // 产品系列图
         product_images: {
             "Carbon 1 · 250W · Carbon Belt": {
@@ -136,13 +140,13 @@ const global_config = {
             //pw l
             43556899881208: 'Ships within <span>5 business days</span> from L.A. warehouse.',
             //sb m
-            43556895916280: 'Ships within <span>5 business days</span> from L.A. warehouse.',
+            43556895916280: 'Ships between <span>January 1-15, 2023 </span>from L.A. warehouse.',
             //pb m
             43556896047352: 'Ships within <span>5 business days</span> from L.A. warehouse.',
             43556899619064: 'Ships within <span>10 business days </span>from L.A. warehouse.',
             43645495345400: 'Ships within <span>10 business days </span>from L.A. warehouse.',
             //pw m
-            43556899815672: 'Ships within <span>5 business days</span> from L.A. warehouse.',
+            43556899815672: 'Ships between <span>January 1-15, 2023 </span>from L.A. warehouse.',
             //lb m
             43556895981816: 'Ships within <span>5 business days</span> from L.A. warehouse.',
             43645495378168: 'Ships within <span>10 business days </span>from L.A. warehouse.',
@@ -166,6 +170,9 @@ const global_config = {
             'High-Step': `Fit for 5’7’’~6’5’’`,
             'Step-Through': `Fit for 5’3’’~6’1’’`
         },
+      awards: [
+        'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231214-163200.png?v=1702542765'
+      ],
         // 产品图
         product_images: {
             "High-Step": {
