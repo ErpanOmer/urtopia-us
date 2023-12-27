@@ -1,0 +1,957 @@
+<style>
+	.order-flex-row {
+	  display: flex;
+	  align-items: center;
+	}
+	.order-modal-layer {
+	  position: fixed;
+	  z-index: 999;
+	  top: 0;
+	  left: 0;
+	  height: 100vh;
+	  width: 100%;
+	  background-color: rgba(0, 0, 0, 0.5);
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  display: none;
+	}
+	.order-modal-layer .order-layer-box {
+	  opacity: 0;
+	  background-color: #fff;
+	  border-radius: 15px;
+	  width: 900px;
+	  box-shadow: 0 0 10px 10px rgb(0, 0, 0, 0.08);
+	}
+	.order-modal-layer .order-layer-header {
+	  padding: 12px 20px;
+	  justify-content: space-between;
+	  border-bottom: 1px solid #eee;
+	}
+	.order-modal-layer .order-layer-header h3 {
+	  font: normal normal 600 16px/19px urbane;
+	  margin: 0;
+	  margin-left: 20px;
+	}
+	.order-modal-layer .order-layer-header span {
+	  font-size: 24px;
+	  background-color: transparent;
+	  outline: none;
+	  border: none;
+	  cursor: pointer;
+	  color: #cfcfcf;
+	}
+	.order-modal-layer .sizefit-switch {
+	  background-color: #eff0f4;
+	  border-radius: 50px;
+	  width: 50%;
+	  margin: 20px auto;
+	  overflow: hidden;
+	}
+	.sizefit-switch .switch-radio {
+	  position: relative;
+	  width: 100%;
+	  overflow: hidden;
+	  cursor: pointer;
+	}
+	.order-modal-layer .sizefit-switch button {
+	  padding: 6px 20px;
+	  margin: 0;
+	  font: normal normal 600 16px/33px urbane;
+	  background-color: transparent;
+	  outline: none;
+	  border: none;
+	  cursor: pointer;
+	  overflow: hidden;
+	  width: 100%;
+	  border-radius: 50px;
+	  transition: all 0.1s;
+	  line-height: 22px;
+	}
+
+	.order-modal-layer .sizefit-switch button span {
+		font-size: 14px;
+    	font-weight: 300;
+	}
+
+	.order-modal-layer .sizefit-switch input[type="radio"] {
+	  position: absolute;
+	  width: 100%;
+	  height: 100%;
+	  left: 0;
+	  top: 0;
+	  margin: 0;
+	  opacity: 0;
+	}
+	#tab-s:checked ~ .btn,
+	#tab-m:checked ~ .btn,
+	#tab-l:checked ~ .btn {
+	  background: #000000;
+	  color: #fff;
+	}
+	.order-modal-layer .order-layer-body {
+	  padding: 0 40px 40px;
+	}
+	.sizefit-box {
+	  width: 35%;
+	}
+	.sizefit-item {
+	  justify-content: space-between;
+	}
+	.sizefit-item:not([data-last="yes"]) {
+	  margin-bottom: 25px;
+	}
+
+	.sizefit-item p {
+	  font: normal normal 600 12px/14px urbane;
+	  color: #2b2e34;
+	  margin: 0;
+	}
+	.sizefit-item span {
+	  font: normal normal 300 12px/14px urbane;
+	  color: #2b2e34;
+	}
+	.sizefit-bg {
+	  flex: 1;
+	  height: 340px;
+	  margin-left: 50px;
+	  background-image: url("https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231221-151050_2x_d883c889-6e52-477d-8672-a7dda6dbbbdd.png?v=1703577530") ;
+	  background-position: center;
+	  background-size: auto 100%;
+	  background-repeat: no-repeat;
+	}
+	.sizefitx-bg {
+	  background-image: url("https://cdn.shopify.com/s/files/1/0583/5810/4213/files/sizefitx.png?v=1677814083");
+	}
+	.dialog-open {
+	  animation-name: anim-open;
+	  animation-duration: 0.3s;
+	  animation-fill-mode: forwards;
+	}
+	.dialog-close {
+	  animation-name: anim-close;
+	  animation-duration: 0.3s;
+	  animation-fill-mode: forwards;
+	}
+
+	.dialog-close-out {
+	  animation-name: anim-close-out;
+	  animation-duration: 0.3s;
+	  animation-fill-mode: forwards;
+	}
+
+	/* modal2 */
+	.tec-spac-t {
+	  font: normal normal 600 20px/24px urbane;
+	  border-bottom: 2px solid #eee;
+	  padding-bottom: 4px;
+	  margin: 1rem 0;
+	}
+	.tec-spac-b {
+	  display: flex;
+	  flex-wrap: wrap;
+	  align-items: baseline;
+	  justify-content: space-between;
+	}
+	.tec-spac-b .tec-spac-item {
+	  display: flex;
+	  flex-direction: column;
+	  width: 30%;
+	  align-items: baseline;
+	  margin-bottom: 24px;
+	}
+	.tec-spac-item2 {
+	  justify-content: space-between;
+	}
+	.tec-spac-item2 p {
+	  font: normal normal 300 12px/17px urbane;
+	  margin: 0;
+	  margin-top: 12px;
+	  color: #161c1f;
+	  width: 30%;
+	}
+	.tec-spac-item2 img {
+	  width: 66%;
+	}
+	.tec-spac-b .tec-spac-item h4 {
+	  font: normal normal 600 16px/25px urbane;
+	  margin: 0;
+	  color: #4d4d4d;
+	}
+	.tec-spac-b .tec-spac-item p {
+	  font: normal normal 300 12px/17px urbane;
+	  margin: 0;
+	  margin-top: 12px;
+	  color: #161c1f;
+	}
+	@media screen and (max-width: 500px) {
+	  .order-modal-layer .order-layer-box {
+		width: 90vw;
+		min-width: auto;
+	  }
+	  #carbon-tab-s,
+	  #carbon-tab-m,
+	  #carbon-tab-l {
+		flex-direction: column-reverse;
+	  }
+	  .sizefit-box {
+		width: 100%;
+	  }
+	  .order-modal-layer .sizefit-switch {
+		width: calc(100% - 40px);
+		margin: 15px auto;
+	  }
+
+	  .order-modal-layer .sizefit-switch button span {
+		font-size: 12px;
+	  }
+
+	  .sizefit-bg {
+		flex: inherit;
+		height: 190px;
+		width: 100%;
+		margin-left: 0;
+		margin-bottom: 20px;
+	  }
+	  .tec-spac-b {
+		flex-direction: column;
+	  }
+	  .tec-spac-b .tec-spac-item {
+		width: 100%;
+	  }
+
+	  .tec-spac-item2 {
+		flex-direction: column;
+	  }
+	  .tec-spac-item2 p {
+		width: 100%;
+	  }
+	  .tec-spac-item2 img {
+		width: 100%;
+		margin-top: 30px;
+	  }
+	}
+	@keyframes anim-open {
+	  0% {
+		opacity: 0;
+		-webkit-transform: scale3d(1.1, 1.1, 1);
+		transform: scale3d(1.1, 1.1, 1);
+	  }
+	  100% {
+		opacity: 1;
+		-webkit-transform: scale3d(1, 1, 1);
+		transform: scale3d(1, 1, 1);
+	  }
+	}
+@keyframes anim-close-out {
+	  0% {
+		opacity: 1;
+	  }
+
+	  100% {
+		opacity: 0;
+	  }
+	}
+  </style>
+
+<style>
+.order-modal-layer-three .tec-spac-b .tec-spac-item {
+  width: 50%;
+  padding: 15px 175px 15px 0;
+  box-sizing: border-box;
+}
+
+
+.order-modal-layer-three .opacity {
+  opacity: 0.7;
+  margin-top: 15px;
+}
+
+.order-modal-layer-three .opacity p {
+  color: #000;
+}
+
+.order-modal-layer-three .tec-spac-item2 {
+  align-items: flex-start;
+}
+
+.order-modal-layer-three .tec-spac-item2 > div {
+  display: flex;
+  flex-direction: column;
+  padding:0 30px 60px 0;
+}
+
+.order-modal-layer-three .tec-spac-item2 > img {
+  width: 100%;
+  margin-top: 15px;
+}
+
+.order-modal-layer-three .tec-spac-item2 > div p {
+  width: auto;
+}
+
+.order-modal-layer-three .tec-spac-item2 > div p:last-child {
+  margin-top: 30px;
+}
+
+.order-modal-layer-three .opacity p:first-child {
+  font-weight: 600;
+}
+
+.order-modal-layer-three .tec-spac-b .tec-spac-item h4,
+.order-modal-layer-three .tec-spac-t {
+  color: #000;
+}
+
+
+@media screen and (max-width: 500px) {
+  .order-modal-layer-three .tec-spac-item2 {
+	  position: relative;
+	  padding-bottom: 100px;
+  }
+
+  .order-modal-layer-three .tec-spac-item2 a {
+	  position: absolute;
+	  bottom: 40px;
+  }
+
+  .order-modal-layer-three .tec-spac-b .tec-spac-item {
+	  width: auto;
+	  padding-right: 0;
+  }
+
+  .order-modal-layer-three .tec-spac-item2 > div {
+	  padding-right: 0;
+	  padding-bottom: 0;
+  }
+}
+
+</style>
+
+<style>
+.faq-navigation {
+	display: flex;
+	font: normal normal 600 24px / 34px Proxima Nova;
+	letter-spacing: 0;
+	color: #707070;
+	align-items: center;
+	justify-content: center;
+	margin-top: 30px;
+	display: none;
+}
+
+.faq-navigation .swiper-pagination {
+	position: static;
+	width: auto;
+}
+
+.faq-navigation .prev_btn,
+.faq-navigation .next_btn {
+	font-family: fontAwesome;
+	display: inline-block;
+	height: 51px;
+	width: 51px;
+	text-align: center;
+	line-height: 51px;
+	border-radius: 50%;
+	cursor: pointer;
+	font-weight: 650;
+	font-size: 30px;
+	color: #707070;
+	box-shadow: unset;
+}
+
+.faq-navigation .prev_btn:before {
+	content: '\f104';
+}
+
+.faq-navigation .next_btn:before {
+	content: '\f105';
+}
+
+#faq-list .faq-title {
+	/* width: 100%; */
+	height: auto;
+	display: block;
+	border-style: solid;
+	border-width: 0 0 1px;
+	border-color: #ebebeb;
+	text-align: left;
+	font: normal normal 600 16px/28px Urbane;
+	letter-spacing: 0;
+	padding: 19px 0px 12px 100px;
+	color: #000;
+	background: #fff;
+	position: relative;
+	cursor: pointer;
+}
+
+#faq-list .faq-title i {
+	position: absolute;
+	/* right: 20px; */
+	left: 30px;
+	display: inline-block;
+	font-size: 17px;
+	line-height: 1;
+	font-family: FontAwesome !important;
+	font-style: normal;
+	text-rendering: auto;
+	transition: transform 0.4s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+#faq-list .faq-content {
+	display: none;
+	padding: 12px 100px;
+	font: normal normal normal 14px/20px Urbane;
+	color: #000;
+	opacity: 0.7;
+}
+
+#faq-list .faq-content-plus {
+	transform: rotate(90deg);
+}
+
+#faq-list .faq-title .faq-content-plus:before {
+	content: '\f067';
+}
+
+#faq-list .faq-title i:before {
+	content: '\f068';
+}
+
+#faq .titlee {
+	font: normal normal 600 20px/24px Urbane;
+	color: #000;
+	border-bottom: 1px solid #ebebeb;
+	padding-bottom: 20px;
+}
+
+#faq .swiper {
+	max-height: 420px;
+	overflow: auto;
+}
+
+#faq .buttons {
+	padding-top: 20px;
+}
+
+#faq .buttons a + a {
+	margin-left: 10px;
+}
+
+@media screen and (max-width: 750px) {
+	#faq {
+		margin: 0 -25px -25px;
+	}
+
+	#faq .swiper {
+		padding-right: 10px;
+	}
+	
+	#faq .titlee {
+		margin-right: 10px;
+	}
+
+	#faq .swiper {
+		max-height: 50vh;
+		overflow: auto;
+	}
+
+	#faq-list .faq-title {
+		font-size: 14px;
+		line-height: 16px;
+		padding: 19px 0px 12px 35px;
+	}
+
+	#faq-list .faq-title i {
+		left: 10px;
+		top: 20px;
+	}
+
+	#faq-list .faq-content {
+		padding-left: 35px;
+		padding-right: 0;
+	}
+
+	.order-modal-four .order-modal-layer-four .order-layer-header {
+	  padding-left: 0;
+	}
+
+	.order-modal-layer .sizefit-switch button {
+		font-size: 13px;
+	}
+}</style>
+
+<div class="order-modal-layer order-modal-one">
+	<div class="order-layer-box order-modal-layer-one">
+	  <div class="order-layer-header order-flex-row">
+		<h3>Size & Fit</h3>
+		<span onclick="onCloseOrderLayer(this)">✕</span>
+	  </div>
+	  <div style="overflow-y: auto;max-height: 550px;">
+	  <div class="sizefit-switch order-flex-row">
+		{% unless hide_bala %}
+			<div class="switch-radio">
+				<input id="tab-s" name="Chord" type="radio" checked/>
+				<button class="btn">Small<br>5’3’’~5’9’’</button>
+			</div>
+			<div class="switch-radio">
+				<input id="tab-m" name="Chord" type="radio"/>
+				<button class="btn">Medium<br>5’7’’~6’1’’</button>
+			  </div>
+		{% endunless %}
+		<div class="switch-radio">
+		  <input id="tab-l" name="Chord" type="radio" {% if hide_bala %}checked{% endif %}/>
+		  <button class="btn">Large<br>5’11’’~6’5’’</button>
+		</div>
+	  </div>
+	  <div class="order-layer-body order-flex-row" style="min-height: 400px">
+		<!-- 内容 -->
+		<div id="carbon-tab-s" class="order-flex-row" style="width: 100%;{% if hide_bala %}display: none;{% endif %}">
+		  <div class="sizefit-box">
+			<div class="sizefit-item order-flex-row">
+			  <p>A. Standover height</p>
+			  <span>779 mm</span>
+			</div>
+			<div class="sizefit-item order-flex-row">
+			  <p>B. Adjustable seat range</p>
+			  <span>60 mm</span>
+			</div>
+			<div class="sizefit-item order-flex-row">
+			  <p>C. Handlebar grips height</p>
+			  <span>995-1025 mm</span>
+			</div>
+			<div class="sizefit-item order-flex-row">
+			  <p>D. Seat tube length</p>
+			  <span>421 mm</span>
+			</div>
+			<div class="sizefit-item order-flex-row">
+			  <p>E. Wheelbase</p>
+			  <span>1065 mm</span>
+			</div>
+			<div class="sizefit-item order-flex-row">
+			  <p>F. Overall length</p>
+			  <span>1766 mm</span>
+			</div>
+			<div class="sizefit-item order-flex-row">
+			  <p>G. Wheel diameter</p>
+			  <span>702 mm</span>
+			</div>
+			<div class="sizefit-item order-flex-row">
+			  <p>H. Top tube length (effective)</p>
+			  <span>594 mm</span>
+			</div>
+			<div class="sizefit-item order-flex-row">
+			  <p>I. Head tube length</p>
+			  <span>152 mm</span>
+			</div>
+			<div data-last="yes" class="sizefit-item order-flex-row">
+			  <p>J. Headset height</p>
+			  <span>90-120 mm</span>
+			</div>
+		  </div>
+		  <div class="sizefit-bg"></div>
+		</div>
+
+		<div id="carbon-tab-m" class="order-flex-row" style="width: 100%;display:none;">
+		  <div class="sizefit-box">
+			<div class="sizefit-item order-flex-row">
+			  <p>A. Standover height</p>
+			  <span>804 mm</span>
+			</div>
+			<div class="sizefit-item order-flex-row">
+			  <p>B. Adjustable seat range</p>
+			  <span>60 mm</span>
+			</div>
+			<div class="sizefit-item order-flex-row">
+			  <p>C. Handlebar grips height</p>
+			  <span>1011-1041 mm</span>
+			</div>
+			<div class="sizefit-item order-flex-row">
+			  <p>D. Seat tube length</p>
+			  <span>463 mm</span>
+			</div>
+			<div class="sizefit-item order-flex-row">
+			  <p>E. Wheelbase</p>
+			  <span>1093 mm</span>
+			</div>
+			<div class="sizefit-item order-flex-row">
+			  <p>F. Overall length</p>
+			  <span>1795 mm</span>
+			</div>
+			<div class="sizefit-item order-flex-row">
+			  <p>G. Wheel diameter</p>
+			  <span>702 mm</span>
+			</div>
+			<div class="sizefit-item order-flex-row">
+			  <p>H. Top tube length (effective)</p>
+			  <span>618 mm</span>
+			</div>
+			<div class="sizefit-item order-flex-row">
+			  <p>I. Head tube length</p>
+			  <span>170 mm</span>
+			</div>
+			<div data-last="yes" class="sizefit-item order-flex-row">
+			  <p>J. Headset height</p>
+			  <span>90-120 mm</span>
+			</div>
+		  </div>
+		  <div class="sizefit-bg"></div>
+		</div>
+
+		<div
+		  id="carbon-tab-l"
+		  class="order-flex-row"
+		  style="width: 100%;display:none;{% if hide_bala %}display: flex;{% endif %}""
+		>
+		  <div class="sizefit-box">
+			<div class="sizefit-item order-flex-row">
+				<p>A. Standover height</p>
+				<span>833 mm</span>
+			  </div>
+			  <div class="sizefit-item order-flex-row">
+				<p>B. Adjustable seat range</p>
+				<span>60 mm</span>
+			  </div>
+			  <div class="sizefit-item order-flex-row">
+				<p>C. Handlebar grips height</p>
+				<span>1023-1053 mm</span>
+			  </div>
+			  <div class="sizefit-item order-flex-row">
+				<p>D. Seat tube length</p>
+				<span>498 mm</span>
+			  </div>
+			  <div class="sizefit-item order-flex-row">
+				<p>E. Wheelbase</p>
+				<span>1122 mm</span>
+			  </div>
+			  <div class="sizefit-item order-flex-row">
+				<p>F. Overall length</p>
+				<span>1824 mm</span>
+			  </div>
+			  <div class="sizefit-item order-flex-row">
+				<p>G. Wheel diameter</p>
+				<span>702 mm</span>
+			  </div>
+			  <div class="sizefit-item order-flex-row">
+				<p>H. Top tube length (effective)</p>
+				<span>653 mm</span>
+			  </div>
+			  <div class="sizefit-item order-flex-row">
+				<p>I. Head tube length</p>
+				<span>180 mm</span>
+			  </div>
+			  <div data-last="yes" class="sizefit-item order-flex-row">
+				<p>J. Headset height</p>
+				<span>90-120 mm</span>
+			  </div>
+		  </div>
+		  <div class="sizefit-bg"></div>
+		</div>
+	  </div>
+				  
+	  </div>
+	</div>
+  </div>
+
+  <div class="order-modal-layer order-modal-two">
+	<div class="order-layer-box order-modal-layer-two">
+	  <div class="order-layer-header order-flex-row">
+		<h3>Technical Specifications</h3>
+		<span onclick="onCloseOrderLayer(this)">✕</span>
+	  </div>
+	  <div
+		class="order-layer-body tec-spac"
+		style="height: 500px; overflow-y: auto"
+	  >
+		<h3 class="tec-spac-t">Smart</h3>
+		<div class="tec-spac-b order-flex-row">
+		  <div class="tec-spac-item order-flex-row">
+			<h4>Smartbar features</h4>
+			<p>
+				Voice control, fingerprint start, LED dot - matrix display, haptic interaction, bluetooth music, built-in navigation, OTA upgrade
+			</p>
+		  </div>
+		  <div class="tec-spac-item order-flex-row">
+			<h4>Connectivity</h4>
+			<p>eSIM with 4G, Bluetooth, GPS</p>
+		  </div>
+		  <div class="tec-spac-item order-flex-row">
+			<h4>IoT sensors</h4>
+			<p>Accelerometer, gyroscope, torque sensor</p>
+		  </div>
+		  <div class="tec-spac-item order-flex-row">
+			<h4>App</h4>
+			<p>iOS & Android</p>
+		  </div>
+		  <div class="tec-spac-item order-flex-row">
+			<h4>Digital Service</h4>
+			<p>1 year included*</p>
+		  </div>
+		  <div style="width: 30%"></div>
+		</div>
+
+		<h3 class="tec-spac-t">Power</h3>
+		<div class="tec-spac-b order-flex-row">
+		  <div class="tec-spac-item order-flex-row">
+			<h4>Motor</h4>
+			<p>Customized rear hub, 36 V 350 W (rated), 42 N⋅m</p>
+		  </div>
+		  <div class="tec-spac-item order-flex-row">
+			<h4>Speed modes</h4>
+			<p>Pedal, Eco, Comfort, Sport, Turbo</p>
+		  </div>
+		  <div class="tec-spac-item order-flex-row">
+			<h4>Top speed (assisted)</h4>
+			<p>25mph</p>
+		  </div>
+		  <div class="tec-spac-item order-flex-row">
+			<h4>Range</h4>
+			<p>30~70 miles</p>
+		  </div>
+		  <div class="tec-spac-item order-flex-row">
+			<h4>Removable battery</h4>
+			<p>352.8Wh, Samsung Li-ion, removable battery, 2.5-hr quick charge</p>
+		  </div>
+		  <div style="width: 30%"></div>
+		</div>
+
+		<h3 class="tec-spac-t">General</h3>
+		<div class="tec-spac-b order-flex-row">
+		  <div class="tec-spac-item order-flex-row">
+			<h4>Weight</h4>
+			<p>17kg excl. accessories</p>
+		  </div>
+		  <div class="tec-spac-item order-flex-row">
+			<h4>Load-bearing capacity</h4>
+			<p>Max. 240 lbs. (110 kg)</p>
+		  </div>
+		  <div class="tec-spac-item order-flex-row">
+			<h4>Size</h4>
+			<p>Small, Medium, Large (see Size Guide)</p>
+		  </div>
+		  <div class="tec-spac-item order-flex-row">
+			<h4>Body material</h4>
+			<p>Carbon fiber (frame, fork)</p>
+		  </div>
+		  <div class="tec-spac-item order-flex-row">
+			<h4>Brakes</h4>
+			<p>Front & rear dual-piston hydraulic disc</p>
+		  </div>
+		  <div class="tec-spac-item order-flex-row">
+			<h4>Gearing</h4>
+			<p>Shimano 8-Speed Rear Drivetrain</p>
+		  </div>
+		  <div class="tec-spac-item order-flex-row">
+			<h4>Integrated lights</h4>
+			<p>StVZO headlight</p>
+		  </div>
+		  <div class="tec-spac-item order-flex-row">
+			<h4>Wheels</h4>
+			<p>700C (ISO 622 mm BSD), inner rim 19 mm</p>
+		  </div>
+		  <div class="tec-spac-item order-flex-row">
+			<h4>Tires</h4>
+			<p>700 x 40C</p>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </div>
+
+  <div class="order-modal-layer order-modal-three">
+	<div class="order-layer-box order-modal-layer-three">
+	  <div class="order-layer-header order-flex-row">
+		<h3>Urtopia Caring</h3>
+		<span onclick="onCloseOrderLayer(this)">✕</span>
+	  </div>
+	  <div
+		class="order-layer-body tec-spac"
+		style="height: 500px; overflow-y: auto"
+	  >
+		<h3 class="tec-spac-t">Customer-Centric</h3>
+		<div class="tec-spac-b order-flex-row">
+		  <div class="tec-spac-item order-flex-row">
+			<h4>2-Year Warranty</h4>
+			<p>
+			  All Urtopia bikes are covered under our 2-year Limited Warranty for the owner against all manufacturing defects.
+			</p>
+			<div class="opacity">
+			  <p>Easy to Claim Process</p>
+			  <p>Contact care@newurtopia.com for warranty claims</p>
+			</div>
+		  </div>
+		  <div class="tec-spac-item order-flex-row">
+			<h4>14-Day Free Return</h4>
+			<p style="height: 51px;">Free return of unused products within 14 days of delivery.</p>
+			<div class="opacity">
+			  <p>Favorable Shipping Fees</p>
+			  <p>Free shipping for defective-on-arrivals, and lower fees for returns/replacements.</p>
+			</div>
+		  </div>
+		</div>
+
+		<h3 class="tec-spac-t">Authorised Service Providers</h3>
+		<div class="tec-spac-item2 order-flex-row">
+		  <div>
+			  <p>
+			  We have over 60 authorized repair shops across major cities in USA to provide reliable after-sales service for our e-bikes. Our repair partners are experts in their field and have been carefully selected and trained to provide you with quality products and services. Simply visit one of our authorized repair shops for repairs or maintenance. We’re committed to ensuring that you have a positive experience with our e-bikes.
+			  </p>
+			  <p>
+				  <a class="my-button my-button-black" href="/pages/find-a-dealer">Find stores</a>
+			  </p>
+		  </div>
+		  <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20688.jpg?v=1678179893"/>
+		 
+		</div>
+
+		<h3 class="tec-spac-t">Urtopia Care</h3>
+		<div class="tec-spac-b order-flex-row">
+		  <div class="tec-spac-item order-flex-row">
+			<h4>Tutorials & FAQs</h4>
+			<p>
+			  Our comprehensive online resources include detailed instruction, troubleshooting videos with step-by-step teaching, and FAQ to address your concerns.
+			</p>
+		  </div>
+		  <div class="tec-spac-item order-flex-row">
+			<h4>Help with my bike</h4>
+			<p>
+			  Something not right with your bike? We’ll guide you step by step to resolve the issue.
+			</p>
+		  </div>
+		  <div class="tec-spac-item order-flex-row">
+			<h4>Talk to Us</h4>
+			<p>
+			  Our expert service representatives can effectively identify and solve uncommon issues to ensure your satisfaction.
+			</p>
+		  </div>
+		  <div class="tec-spac-item order-flex-row">
+			<h4>Video Calls</h4>
+			<p>
+			  Connect with our friendly technical team in real-time via Zoom for patient, expert guidance on any issue.
+			</p>
+		  </div>
+		  <a class="my-button my-button-black" href="/pages/care">Support info</a>
+		</div>
+	  </div>
+	</div>
+  </div>
+
+  <div class="order-modal-layer order-modal-four">
+	<div class="order-layer-box order-modal-layer-four">
+	  <div class="order-layer-header order-flex-row">
+		<h3>Reservation FAQs</h3>
+		<span onclick="onCloseOrderLayer(this)">✕</span>
+	  </div>
+	  <div class="order-layer-body tec-spac">
+		<div id="faq">
+			<div id="faq-list" class="swiper swiper-no-swiping">
+				<div class="swiper-wrapper" id="detailImgSwiper">
+					<div class="swiper-slide">
+
+						<div class="faq-item">
+							<div class="faq-title">
+								<span>What is a Reservation?</span>
+								<i class="faq-content-plus"></i>
+							</div>
+							<div class="faq-content">
+								Our ongoing reservation promotion enables customers to secure our newest products before their official launch for sale, coupled with an exclusive early bird discount. By reserving early, customers prioritize receiving the product upon its arrival at our local warehouse. Shipments will be fulfilled based on the order of reservations, ensuring that those who reserve early receive their desired products promptly. Don’t miss out on substantial discounts available through our reservation offer.
+							</div>
+						</div>
+
+						
+
+						<div class="faq-item">
+							<div class="faq-title">
+								<span>How and when to pay the final payment?</span>
+								<i class="faq-content-plus"></i>
+							</div>
+							<div class="faq-content">
+								The final payment process will commence as soon as the product is prepared for shipment from our local warehouse, tentatively scheduled for March 2024. <br><br>Upon readiness, you will receive an email containing the link for final payment. Upon completion of the final payment, a confirmation email will be dispatched, initiating the immediate shipment of your product to your specified destination.
+							</div>
+						</div>
+
+						<div class="faq-item">
+							<div class="faq-title">
+								<span>Is the reservation fee refundable?</span>
+								<i class="faq-content-plus"></i>
+							</div>
+							<div class="faq-content">
+								Yes, the reservation fee can be refunded anytime.
+							</div>
+						</div>
+
+						<div class="faq-item">
+							<div class="faq-title">
+								<span>When will I receive my reservation products?</span>
+								<i class="faq-content-plus"></i>
+							</div>
+							<div class="faq-content">
+								Once the e-bike is in stock, E-bikes will be sent out within 3-5 business days, follow by the reserve sequence. <br><br>If the items needs to be back ordered, please refer to the shipping time on the order page.
+							</div>
+						</div>
+
+						<div class="faq-item">
+							<div class="faq-title">
+								<span>How to change order details, size or styles?</span>
+								<i class="faq-content-plus"></i>
+							</div>
+							<div class="faq-content">
+								Please kindly contact: <a href="mailto:support@newurtopia.com" class="my-link">support@newurtopia.com</a>, we will help you to modify your order.
+						</div>
+					</div>
+
+					</div>
+				</div>
+				<div class="btnWraped faq-navigation">
+					<div class="prev_btn" onclick="faqSwiperPrev()"></div>
+					<div class="swiper-pagination"></div>
+					<div class="next_btn" onclick="faqSwiperNext()"></div>
+				</div>
+			</div>
+			<div class="buttons">
+				<a class="my-button my-button-black" href="https://newurtopiahelp.zendesk.com/hc/de">Read More</a>
+				<a class="my-button my-button-white" href="/pages/contactus">Contact Us</a>
+			</div>
+		</div>
+	</div>
+	</div>
+  </div>
+
+  <script>
+	$('.sizefit-switch .switch-radio input').on('change', e => {
+		const parent = $(e.target).closest('.order-modal-layer')
+
+		parent.find('.order-layer-body > div').hide()
+		parent.find(`.order-layer-body #carbon-${e.target.id}`).show()
+	})
+
+	function onCloseOrderLayer(target) {
+		const layer = $(target).closest('.order-modal-layer')
+
+		layer.addClass('dialog-close')
+		layer.addClass('dialog-close-out')
+		setTimeout(() => {
+			layer.removeClass('dialog-close')
+			layer.removeClass('dialog-close-out')
+			layer.hide()
+		}, 300);
+	  }
+  
+	  $('.faq-title').click(function () {
+		$(this)
+		  .siblings('.faq-content')
+		  .slideToggle()
+		  .parent()
+		  .siblings()
+		  .find('.faq-content')
+		  .slideUp();
+		$(this).children('i').toggleClass('faq-content-plus');
+		$(this)
+		  .parent()
+		  .siblings()
+		  .find('.faq-title')
+		  .children('i')
+		  .addClass('faq-content-plus');
+	  });
+  </script>

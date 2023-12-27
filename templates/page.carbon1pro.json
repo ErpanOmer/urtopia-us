@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "carbon1pro": {
+      "type": "carbon1pro",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "carbon1pro"
+  ]
+}

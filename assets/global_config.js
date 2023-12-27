@@ -280,5 +280,38 @@ const global_config = {
           44047038447864:'Free shipping <span>within 5 business days</span>',
             
         }
+    },
+    carbon1pro_order_page_config: {
+        // variant 为 available:false 的情况下 也要强制显示 
+        ignore_variants_available_false: [],
+        size_map: {
+            S: `Fit for 5’3’’~5’9’’ Inseam 30’’`,
+            M: `Fit for 5’7’’~6’1’’ Inseam 31’’`,
+            L: `Fit for 5’11’’~6’5’’ Inseam 33’’`
+        },
+        product_images: {
+            'Matte Black': [
+                'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_BL_1.png?v=1703570388',
+                'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_BL_2.png?v=1703570387',
+                'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_BL_3.png?v=1703570387',
+                'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_BL_4.png?v=1703570387',
+                'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_BL_5.png?v=1703570387',
+                'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_BL_6.png?v=1703570387'
+            ],
+            'Creme': [
+                'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_wh_1.png?v=1703570387',
+                'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_wh_2.png?v=1703570387',
+                'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_wh_3.png?v=1703570387',
+                'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_wh_4.png?v=1703570387',
+                'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_wh_5.png?v=1703570387',
+                'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_wh_6.png?v=1703570387'
+            ],
+            commonSwiper: [
+                'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231108-untitled-6089.jpg?v=1703570574',
+                'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231108-untitled-3370.jpg?v=1703570574',
+                'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231108-untitled-3668.jpg?v=1703570574',
+                'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSCF7217_1.jpg?v=1703570574'
+            ]
+        }
     }
 }
