@@ -281,7 +281,7 @@ const global_config = {
             
         }
     },
-    carbon1pro_order_page_config: {
+  carbon1pro_order_page_config: {
         // variant 为 available:false 的情况下 也要强制显示 
         ignore_variants_available_false: [],
         size_map: {

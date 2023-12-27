@@ -168,7 +168,7 @@ const testRides = [
     city: 'California',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/what-is-california-known-for-the-golden-gate-bridge-hero.webp?v=1697020664',
     stores: [
-      /*{
+      {
         name: 'Bicycle Garage Fremont',
         phone: '510-795-9622',
         email: 'bikeshoptina@gmail.com',
@@ -188,8 +188,8 @@ const testRides = [
           "10:00-19:00",
           "10:00-18:00"
         ],
-      },*/
-      /*{
+      },
+      {
         name: 'Velocipede Cyclery',
         phone: '415-796-3465',
         email: 'bikeshoptina@gmail.com',
@@ -209,7 +209,7 @@ const testRides = [
           "10:00-19:00",
           "09:00-18:00"
         ],
-      },*/
+      },
       /*{
         name: 'Groove E-Bikes',
         phone: '949-274-7944',
@@ -586,7 +586,7 @@ const testRides = [
         ],
       },
       
-      /*{
+      {
         name: "Liberty Cycles",
         phone: "212-375-3360",
         email: "libertycycles846@gmail.com",
@@ -606,7 +606,7 @@ const testRides = [
           "10:00-19:00",
           "10:00-19:00",
         ],
-      },*/
+      },
       {
         name: "Richard Fine",
         phone: "914-523-3207",
@@ -658,7 +658,7 @@ const testRides = [
       },
     ]
   },
-  /*{
+  {
     city: 'Georgia',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Buna_Bicycle_Works_Washington_dc.jpg?v=1665374977',
     stores: [
@@ -684,7 +684,7 @@ const testRides = [
         ],
       },
     ]
-  },*/
+  },
   {
     city: 'Pennsylvania',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Buna_Bicycle_Works_Washington_dc.jpg?v=1665374977',
@@ -821,7 +821,7 @@ const testRides = [
           "10:00-18:00",
         ],
       },*/
-      {
+      /*{
         name: "Dedham Bike",
         phone: "781-326-1531",
         email: "info@dedhambike.com, matt@dedhambike.com",
@@ -841,7 +841,7 @@ const testRides = [
           "10:00-18:00",
           "09:00-17:00",
         ],
-      },
+      },*/
       {
         name: "Evolution E-Bikes",
         phone: "888-545-2453",
@@ -854,13 +854,13 @@ const testRides = [
           'Carbon 1s Size S',
         ],
         businessHours: [
-          "12:00-17:00",
-          "12:00-17:00",
-          "12:00-17:00",
-          "12:00-17:00",
-          "12:00-17:00",
-          "12:00-17:00",
-          "10:00-16:00",
+          "",
+          "",
+          "14:00-17:00",
+          "14:00-17:00",
+          "14:00-17:00",
+          "14:00-17:00",
+          "10:00-11:00,14:00-16:00",
         ],
       },
     ]
