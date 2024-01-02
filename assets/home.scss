@@ -1561,3 +1561,44 @@ $product-tags-color: #FFE2D9;
         }
     }
 }
+
+
+#newyear {
+  background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23310_2x_b6682fea-df5f-403d-9928-73bd6ea17565.jpg?v=1703813238');
+
+            .centeral-content {
+                height: 42%;
+
+                & > div {
+                    text-align: center;
+                    justify-content: center;
+                    align-items: center;
+
+                    img {
+                        max-width: 290px;
+                    }
+
+                    .u24Medium_v2 {
+                        margin: 4vh 0 3vh;
+                    }
+                }
+            }
+
+  @media (max-width: 767px) {
+    background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/urtopiaebike_with_christmas_white_background_minimal-Recovered_2x_b11611d1-f21c-4c33-aef0-2c4b0e33aa96.jpg?v=1703813614');
+     .centeral-content {
+                    & > div {
+                      padding-top: 20vw;
+
+                        .u24Medium_v2 {
+                            margin: 20px 0;
+                            font-size: 17px;
+                        }
+
+                      img {
+                        max-width: 260px;
+                      }
+                    }
+                }
+  }
+}

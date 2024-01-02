@@ -86,20 +86,18 @@ h4 {
 
 
     @media (max-width: 767px) {
-        background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23485_2x_77959188-bd42-445a-826e-abf2053a7b3f.jpg?v=1703215894');
-        background-size: contain;
+        background-image: url(https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231227-174402.jpg?v=1703674338);
+        background-size: cover;
         background-position: top;
-        height: calc(100vh - 102px);
+        height: calc(100vh - 160px);
+        padding: 95vw 8vw 0;
+        justify-content: center;
         align-items: flex-start;
-        padding-top: 105vw;
+        background-position-y: -5vw;
 
         .u48Medium_v2 {
             font-size: 24px;
         }
-    }
-
-    @media (min-width: 560px) {
-        background-size: cover;
     }
 }
 
@@ -154,7 +152,7 @@ h4 {
 
         .centeral-content {
             grid-template-columns: 1fr;
-            padding: 8vw;
+            padding: 0 8vw 8vw;
             height: auto;
 
             &>div {
@@ -2506,6 +2504,50 @@ h4 {
 
             .u30DemiBold_v2 {
                 font-size: 24px;
+            }
+        }
+    }
+}
+
+
+
+.classic {
+    background: #000 url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23596_2x_505d7d43-5fc8-46b3-afe9-b42bfd4ade3e.jpg?v=1703730493') center center/cover no-repeat;
+    color: #fff;
+    padding: 9vh 30px;
+
+    & > div {
+        background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23597_2x_110475da-1977-422e-aa1d-09dc5413c39f.png?v=1703730382') center center/contain no-repeat;
+        max-width: 1000px;
+        aspect-ratio: 16 / 10;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin: auto;
+        cursor: pointer;
+        padding: 0 50px;
+
+        img {
+            max-width: 100px;
+            margin-top: 40px;
+        }
+    }
+
+    @media (max-width: 767px) {
+        padding: 0 4vw 30vw;
+        background-image: none;
+
+        .u24Medium_v2 {
+            text-align: center;
+        }
+
+
+        & > div {
+            img {
+                max-width: 50px;
+                margin: 0;
             }
         }
     }
