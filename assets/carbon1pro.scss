@@ -1293,8 +1293,7 @@ h4 {
             }
 
             .product-price {
-                // color: var(--sale-order-page-text-color);
-                color: #000;
+                color: var(--sale-order-page-text-color);
                 margin-top: 6px;
 
                 &[data-price]::after {
@@ -1398,11 +1397,11 @@ h4 {
             .count-down {
                 color: var(--sale-order-page-text-color);
                 overflow: hidden;
-                margin-top: 12px;
+                // margin-top: 12px;
 
                 img {
                     max-width: 70%;
-                    transform: translateY(15%);
+                    transform: translateY(13%);
                 }
             }
 
@@ -2303,7 +2302,7 @@ h4 {
 
 
 .test-ride {
-    padding-top: 100px;
+    padding-top: 80px;
     background-color: #fff;
 
     .centeral-content {
@@ -2359,7 +2358,7 @@ h4 {
     }
 
     @media (max-width: 767px) {
-        padding-top: 60px;
+        padding-top: 8vw;
 
         .centeral-content {
             padding: 0 4vw;

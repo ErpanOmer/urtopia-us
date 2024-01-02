@@ -9,7 +9,7 @@
         background-image: linear-gradient(90deg, #EE6426, #F4492A);
         color: #fff;
         border-radius: 50px;
-        padding: 2px 12px;
+        padding: 2px 32px;
         width: fit-content;
         margin-bottom: 3px;
     }
@@ -20,32 +20,35 @@
         <span class="u20DemiBold_v2">Urtopia Carbon 1 Pro</span>
         <span class="flex-1"></span>
         <div>
-            <span class="u17Light_v2"><span class="u20DemiBold_v2" style="font-weight: 600;">{{ 9900 |
-                    money_without_trailing_zeros }} to Reserve</span></span>
-            <span class="u14Light_v2">Get {{ 60000 | money_without_trailing_zeros }} Off Later(MSRP {{ 299900 |
-                money_without_trailing_zeros }})</span>
+            <span class="u17Light_v2"><span class="u20DemiBold_v2 emphasize"
+                    style="font-weight: 600;">{{ product.price | money }}</span>
+                    {% unless product.compare_at_price == product.price %}
+                        <span style="text-decoration: line-through;">{{ product.compare_at_price | money }}</span>
+                    {% endunless %}
+            </span>
+            <span class="u14Light_v2">or as low as {{ product.price | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
         </div>
-        <div href="/products/urtopia-chord-ebike" target="_blank" class="my-button my-button-origin"
-            action_type="Buynow_0">Reserve NOW</div>
+        <div href="/products/urtopia-chord-ebike" target="_blank" class="my-button my-button-origin" action_type="Buynow_0">Pre-order Now</div>
     </div>
 </div>
 <div class="bottom-fixed pcHide">
-    <div href="/products/urtopia-chord-ebike" target="_blank" class="my-button my-button-origin" action_type="Buynow_0">
-        Reserve NOW</div>
-    <div>
-        <span>
-            <span class="u17DemiBold_v2">{{ 9900 | money_without_trailing_zeros }} to Reserve</span></span>
-        </span>
-        <span class="u11Light_v2">Get {{ 60000 | money_without_trailing_zeros }} Off Later(MSRP {{ 299900 |
-            money_without_trailing_zeros }})</span>
-    </div>
+    <div href="/products/urtopia-chord-ebike" target="_blank" class="my-button my-button-origin" action_type="Buynow_0">Pre-order Now</div>
+        <div>
+            <span>
+                <span class="u17DemiBold_v2 emphasize">{{ product.price | money }}</span>
+                {% unless product.compare_at_price == product.price %}
+                    <span class="u11Light_v2" style="text-decoration: line-through;">{{ product.compare_at_price | money }}</span>
+                {% endunless %}
+            </span>
+            <span class="u11Light_v2">or as low as {{ product.price | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
+        </div>
 </div>
 <div class="banner">
     <h1 class="u48Medium_v2">The Ride <span style="color: #EB5A2D;">EVOLUTION: <br class="pcHide"></span>Beyond Limits
     </h1>
 </div>
 <div class="classic">
-    <h2 class="u24Medium_v2 pcHide">A True Reborn <br>from the Classic</h2>
+    <h2 class="u24Medium_v2 pcHide">A True Reborn from the Classic</h2>
     <div onclick="showVideoDialog('https://www.youtube.com/embed/Ed_i2rzti04?autoplay=1&cc_load_policy=1')">
         <h2 class="u48Medium_v2 mobileHide">A True Reborn from the Classic</h2>
         <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23598_2x_6dabdb22-8a88-4887-9669-1be46f903a0b.png?v=1703731306" alt="">
@@ -129,8 +132,7 @@
         <h2 class="u48Medium_v2">Lightweight Is the Way</h2>
         <p class="u17Light_v2">
             <span>
-                50% lighter than comparable models, easy to hang on the wall or on a car rack for hassle-free
-                transportation and carrying in-and-out, ideal for commuting in the city
+                50% lighter than comparable models, easy to hang on the wall or on a car rack for hassle-free transportation and carrying in-and-out, ideal for commuting in the city.
             </span>
         </p>
     </div>
@@ -195,8 +197,7 @@
             <div>
             <h2 class="u36Medium_v2">More Smooth</h2>
             <p class="u17Light_v2">
-                <span>Torque sensor and smart algorithm adapt to your pedaling, delivering the best acceleration and
-                    balance</span>
+                <span>Torque sensor and intelligent algorithm adapt to your pedaling style for the best acceleration and balance.</span>
             </p>
         </div>
         <div>
@@ -216,8 +217,7 @@
             <h2 class="u36Medium_v2">More Road to Conquer</h2>
             <p class="u17Light_v2">
                 <span>
-                    Wide tires for both GRAVEL and OFF-ROAD, ensuring comfort on various surfaces. Experience the
-                    freedom to ride anywhere
+                    Wide tires for both GRAVEL and OFF-ROAD, ensuring comfort on various surfaces. Experience the freedom to ride anywhere.
                 </span>
             </p>
         </div>
@@ -235,7 +235,7 @@
                 alt=""> Never lose it</h3>
         <div class="boxs">
             <div>
-                <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Screen_Shot_2023-07-26_at_3.37.41_PM_2x_0be9d730-5408-4415-9e32-8cc4b6ca7fa3.jpg?v=1697088992"
+                <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3-3_2x_5377b3f0-392f-4585-b0da-551ecc12d5e7.jpg?v=1704189341"
                     alt="">
                 <h4 class="u24Medium_v2">Movement alarm</h4>
                 <p class="u17Light_v2">
@@ -251,8 +251,7 @@
                 <h4 class="u24Medium_v2">GPS tracking and fence</h4>
                 <p class="u17Light_v2">
                     <span>
-                        Aided by a constant 4G connection, GPS tracking keeps you informed of the e-bike’s position,
-                        even in the worst scenario of theft.
+                        Aided by a constant 4G connection, GPS tracking keeps you informed of the e-bike’s location, even in the worst scenario of theft.
                     </span>
                 </p>
                 <div class="flex-1"></div>
@@ -312,8 +311,7 @@
                 <h3 class="u24Medium_v2">Bluetooth music</h3>
                 <p class="u17Light_v2">
                     <span>
-                        We know the importance of music, so we built a Bluetooth speaker. You can enjoy
-                        your favourite music while riding without having to carry an external speaker.
+                        We know the importance of music, so we built a Bluetooth speaker. You can enjoy your favorite music while riding without having to carry an external speaker.
                     </span>
                 </p>
             </div>
@@ -1058,9 +1056,9 @@
         <div class="product" data-pf-type="ProductBox">
 		<div class="centeral-content">
 			<div class="commonComponent pcHide">
-				<div class="u36DemiBold_v2">Urtopia Carbon 1 Pro</div>
-				<div class="product-price u30DemiBold_v2">{{ 299900 | money }}</div>
-                <div class="u14Medium_v2 onlllllllly">{{ 239900 | money_without_trailing_zeros }} only if reserved now</div>
+				<div class="u36DemiBold_v2 mb6">Urtopia Carbon 1 Pro</div>
+                <div class="u14Medium_v2 onlllllllly">Pre-order Promotion</div>
+				<div class="product-price u30DemiBold_v2 {% unless product.compare_at_price != product.price %}mb6{% endunless %}" {% unless product.compare_at_price != product.price %}style="color: #000;"{% endunless %} {% unless product.compare_at_price == product.price %} data-price="{{ product.compare_at_price | money }}"{% endunless %}>{{ product.price | money }}</div>
         <div class="sale-tag mb6">
           <!--<div class="u17Medium_v2">{{ settings.sale_name }}</div>-->
           <div class="u14Light_v2 mb6" style="margin: 0;">Free shipping.</div>
@@ -1128,9 +1126,9 @@
 				<input type="hidden" name="form_type" value="product">
 				<input type="hidden" name="utf8" value="✓">
 				<div class="commonComponent mobileHide" id="sale_acc">
-					<div class="u36DemiBold_v2">Urtopia Carbon 1 Pro</div>
-					<div class="product-price u30DemiBold_v2">{{ 299900  | money }}</div>
-                    <div class="u17Medium_v2 onlllllllly">{{ 239900 | money_without_trailing_zeros }} only if reserved now</div>
+					<div class="u36DemiBold_v2 mb6">Urtopia Carbon 1 Pro</div>
+                    <div class="u17Medium_v2 onlllllllly">Pre-order Promotion</div>
+					<div class="product-price u30DemiBold_v2 {% unless product.compare_at_price != product.price %}mb6{% endunless %}" {% unless product.compare_at_price != product.price %}style="color: #000;"{% endunless %} {% unless product.compare_at_price == product.price %} data-price="{{ product.compare_at_price | money }}"{% endunless %}>{{ product.price  | money }}</div>
                     <div class="sale-tag mb12">
                         <!--<div class="u17Medium_v2">{{ settings.sale_name }}</div>-->
                         <div class="u14Light_v2" style="margin: 0;">Free shipping.</div>
@@ -1168,6 +1166,12 @@
                         <div class="u17Light_v2">Free Fenders, Kickstand, <br>1-Year Connect Service Included</div>
                     </div>
                 </div>
+                {% unless true %}
+                    <div class="count-down mb12 mobileHide">
+                      <div class="u17Medium_v2">Promotion Ends in:</div>
+                      <img src="http://i.countdownmail.com/205dop.gif">
+                    </div>
+                  {% endunless %}
 				<div class="options">
                     {% for option in product.options_with_values %}
                         <div class="option" option={{option.name}} position="{{ option.position }}">
@@ -1191,6 +1195,12 @@
                         </div>
                     {% endfor %}
 				</div>
+                {% unless true %}
+                    <div class="count-down mb12 pcHide">
+                      <div class="u17Medium_v2">Promotion Ends in:</div>
+                      <img src="http://i.countdownmail.com/205dop.gif">
+                    </div>
+                  {% endunless %}
 				<div class="error-tip u14Medium_v2" style="color:red;">Your order quantity has reached our stock limit</div>    
 				<div class="buttons">
                                 <div
@@ -1199,11 +1209,10 @@
                                     onclick="addAllToCart('atc')"
                                     id="addToCart"
                                     >
-                                    <i class="fa fa-spinner fa-spin"></i><span data-pf-type="Text" class="addToCartText u17DemiBold_v2">Reserve NOW for {{ 9900 | money_without_trailing_zeros }}</span>
+                                    <i class="fa fa-spinner fa-spin"></i><span data-pf-type="Text" class="addToCartText u17DemiBold_v2">Pre-order Now</span>
                                 </div>
 				</div>
-				<div class="u14DemiBold_v2 delivery_time mb6">Free Shipping Start from March, 2024 <br>The early you pay, the early it ships.</div>
-                <div class="u14Light_v2 mb12">Pay $99 Now, Get $600 Off Later(Reservations for $99, balance $2399 = a final price $2498 and a total saving $501) $99 is refundable anytime.</div>
+				<div class="u14DemiBold_v2 delivery_time mb12">Free Shipping Start from March, 2024 <br>The early you pay, the early it ships.</div>
 				<div class="support mb12">
 					<a href="#boxs3">
 						<img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230621-005713.png?v=1687280264"/>
@@ -1239,13 +1248,6 @@
 			</form>
 		</div>
 	</div>
-    <div class="reserve">
-        <div class="centeral-content">
-            <div class="u36DemiBold_v2">Reserve today, be the first group of riders</div>
-            <img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/preorder_time-line_2x_cd30515a-de33-4910-b4b6-a57349bba8ac.png?v=1703578982" alt="">
-            <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231226-164909.png?v=1703580579" alt="">
-        </div>
-    </div>
     <div class="test-ride">
         <div class="centeral-content">
           <div>
@@ -1410,7 +1412,7 @@
       } else {
           setTimeout(()=>{
               $(".addToCartBtn i").toggleClass("showi");
-              document.querySelector(".addToCartBtn span").innerHTML = "Reserve NOW for {{ 9900 |  money_without_trailing_zeros }}";
+              document.querySelector(".addToCartBtn span").innerHTML = "Pre-order Now";
           }, 800)
       }
   }
