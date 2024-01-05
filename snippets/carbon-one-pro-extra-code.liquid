@@ -491,12 +491,12 @@
 	  <div style="overflow-y: auto;max-height: 550px;">
 	  <div class="sizefit-switch order-flex-row">
 		{% unless hide_bala %}
-			<div class="switch-radio">
+			<!--<div class="switch-radio">
 				<input id="tab-s" name="Chord" type="radio" checked/>
 				<button class="btn">Small<br>5’3’’~5’9’’</button>
-			</div>
+			</div>-->
 			<div class="switch-radio">
-				<input id="tab-m" name="Chord" type="radio"/>
+				<input id="tab-m" name="Chord" type="radio" checked/>
 				<button class="btn">Medium<br>5’7’’~6’1’’</button>
 			  </div>
 		{% endunless %}
@@ -507,7 +507,7 @@
 	  </div>
 	  <div class="order-layer-body order-flex-row" style="min-height: 400px">
 		<!-- 内容 -->
-		<div id="carbon-tab-s" class="order-flex-row" style="width: 100%;{% if hide_bala %}display: none;{% endif %}">
+		<div id="carbon-tab-s" class="order-flex-row" style="width: 100%;display: none;">
 		  <div class="sizefit-box">
 			<div class="sizefit-item order-flex-row">
 			  <p>A. Standover height</p>
@@ -553,7 +553,7 @@
 		  <div class="sizefit-bg"></div>
 		</div>
 
-		<div id="carbon-tab-m" class="order-flex-row" style="width: 100%;display:none;">
+		<div id="carbon-tab-m" class="order-flex-row" style="width: 100%;">
 		  <div class="sizefit-box">
 			<div class="sizefit-item order-flex-row">
 			  <p>A. Standover height</p>
@@ -602,7 +602,7 @@
 		<div
 		  id="carbon-tab-l"
 		  class="order-flex-row"
-		  style="width: 100%;display:none;{% if hide_bala %}display: flex;{% endif %}""
+		  style="width: 100%;display:none;"
 		>
 		  <div class="sizefit-box">
 			<div class="sizefit-item order-flex-row">
@@ -728,7 +728,7 @@
 		  </div>
 		  <div class="tec-spac-item order-flex-row">
 			<h4>Size</h4>
-			<p>Small, Medium, Large (see Size Guide)</p>
+			<p>Medium, Large (see Size Guide)</p>
 		  </div>
 		  <div class="tec-spac-item order-flex-row">
 			<h4>Body material</h4>
