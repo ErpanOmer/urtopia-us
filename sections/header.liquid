@@ -143,9 +143,10 @@
 
 
   .hedaer-secondary-menu {
-    padding: 0 5%;
+    padding-left: 5%;
     color: #000;
     display: flex;
+    overflow: hidden;
   }
 
   .hedaer-secondary-menu .links {
@@ -155,13 +156,13 @@
     place-self: flex-start;
   }
 
-  .hedaer-secondary-menu .sale-image {
-    max-width: 270px;
-    width: 20%;
-    background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23277_2x_dd8e661f-39e1-47fa-9368-83afd96869cd.jpg?v=1698377804') center center/cover no-repeat;
+  .hedaer-secondary-menu .centreallllll .bikesssssss .sale-image {
+    width: 270px;
+    background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_23674_2x_0ed1c470-c31b-402f-a866-ee21b1a5f3c9.jpg?v=1704447307') center center/cover no-repeat;
     color: #fff;
     border-radius: 10px;
-    padding: 15px 30px;
+    overflow: hidden;
+    place-self: normal;
   }
 
   .hedaer-secondary-menu .links .u14Medium_v2 {
@@ -179,6 +180,7 @@
     align-items: center;
     text-align: center;
     border-left: 1px solid #eee;
+    max-width: 1280px;
   }
 
   .hedaer-secondary-menu .centreallllll .switchsssss {
@@ -207,7 +209,7 @@
 
   .hedaer-secondary-menu .centreallllll .supportssssss {
     display: flex;
-    margin: 0 auto 40px;
+    margin: 0 auto 30px;
   }
 
 
@@ -225,26 +227,38 @@
 
   .hedaer-secondary-menu .centreallllll .bikesssssss {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
-    grid-gap: 5% 2%;
-    padding: 0 6%;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-gap: 5%;
+    padding: 0 5%; 
     width: 100%;
+    justify-items: center;
   }
 
   .hedaer-secondary-menu .centreallllll .bikesssssss > div {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 250px;
+    width: 180px;
     cursor: pointer;
+    position: relative;
+  }
+
+  .hedaer-secondary-menu .centreallllll .bikesssssss > div .tagggg {
+    background-color: #FFE2D9;
+    border-radius: 12px;
+    padding: 5px 8px;
+    color: #FD4B17;
+    position: absolute;
+    top: -12.5%;
+    font: normal normal 600 11px/1em Urbane;
   }
 
   .hedaer-secondary-menu .centreallllll .bikesssssss > div:hover img {
-    transform: scale(1.25);
+    transform: scale(1.15);
   }
 
   .hedaer-secondary-menu .centreallllll .bikesssssss > div img {
-    max-width: 90%;
+    max-width: 100%;
     margin-bottom: 6%;
     transition: all 0.6s;
   }
@@ -287,10 +301,36 @@
       margin-left: 5px;
   }
 
-
-  @media (max-width: 1500px) {
+  @media (max-width: 1435px) {
     .hedaer-secondary-menu .sale-image {
-      display: none;
+      display: none !important;
+    }
+  }
+
+
+  @media (max-width: 1600px) {
+    .hedaer-secondary-menu .centreallllll .bikesssssss {
+      padding: 0 3.5%;
+      grid-gap: 3.5%;
+    }
+  }
+
+  @media (max-width: 1165px) {
+    .hedaer-secondary-menu .centreallllll .bikesssssss {
+      padding: 0 2%;
+      grid-gap: 1%
+    }
+  }
+
+
+  @media (max-width: 1080px) {
+    .hedaer-secondary-menu {
+      padding-left: 1%;
+    }
+
+    .hedaer-secondary-menu .centreallllll .bikesssssss {
+      padding: 0 0.5%;
+      grid-gap: 0.5%;
     }
   }
 
@@ -307,6 +347,7 @@
   .hedaer-secondary-menu-mb .links {
     display: flex;
     flex-direction: column;
+    margin-bottom: 20vw;
   }
 
 
@@ -388,7 +429,18 @@
 
 .hedaer-secondary-menu-mb .bikesssssss > div .u14DemiBold_v2 {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  white-space: nowrap;
+}
+
+.hedaer-secondary-menu-mb .bikesssssss > div:first-child > div > .u14DemiBold_v2:not(.emphasize)::after {
+    content: "NEW";
+    background-color: #FFE2D9;
+    border-radius: 12px;
+    padding: 4px 6px;
+    color: #FD4B17;
+    font: normal normal 600 11px/1em Urbane;
+    margin-left: 8px;
 }
 
 .hedaer-secondary-menu-mb .bikesssssss > div .emphasize::after {
@@ -412,13 +464,6 @@
   margin-left: 5px;
 }
 
-
-.hedaer-secondary-menu-mb .sale-image {
-  background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23277_2x_dd8e661f-39e1-47fa-9368-83afd96869cd.jpg?v=1698377804') center center/cover no-repeat;
-  color: #fff;
-  border-radius: 10px;
-  padding: 4vw 4vw 52.25vw;
-}
 </style>
 
 {%- style -%}
@@ -516,21 +561,21 @@
                                       </div>
                                     </div>
                                     <div class="bikesssssss">
+                                      {% assign productttttt =  all_products["carbon-1-pro-reservation"].variants | where: "title", "M / Matte Black" %}
+                                        <div class="by-model" href="/pages/lightweight-ebike-urtopia-carbon-1-pro">
+                                              <div>
+                                                <div class="u14DemiBold_v2">Carbon 1 Pro</div>
+                                                <div class="u11Light_v2">Sporty and Lightweight</div>
+                                                <span class="u14DemiBold_v2 emphasize" {% unless productttttt.first.compare_at_price == productttttt.first.price %}data-price="{{ productttttt.first.compare_at_price | money_without_trailing_zeros }}"{% endunless %}>{{ productttttt.first.price | money_without_trailing_zeros }}</span>
+                                              </div>  
+                                            <img src="{{ productttttt.first.featured_image | image_url: width: 300 }}">
+                                        </div>
                                         {% assign productttttt = all_products['urtopia-carbon-e-bike'].variants | where: "title", "Carbon 1s · 350W · Shimano 7-Speed / M / Midnight in Paris" %}
                                         <div class="by-model" href="/pages/e-bike">
                                             <div>
                                               <div class="u14DemiBold_v2">Carbon 1s</div>
                                               <div class="u11Light_v2">Lightweight and speedy</div>
                                               <span class="u14DemiBold_v2 emphasize" data-price="{{ productttttt.first.price | money_without_trailing_zeros }}">{{ productttttt.first.price | minus: settings.carbon1s_ebike_discount_price | money_without_trailing_zeros }}</span>
-                                            </div>
-                                            <img src="{{ productttttt.first.featured_image | image_url: width: 300 }}">
-                                        </div>
-                                        {% assign productttttt = all_products['urtopia-carbon-e-bike'].variants | where: "title", "Carbon 1 · 250W · Carbon Belt / L / Sirius" %}
-                                        <div class="by-model" href="/pages/e-bike">
-                                            <div>
-                                              <div class="u14DemiBold_v2">Carbon 1</div>
-                                              <div class="u11Light_v2">Lightweight and less maintainance</div>
-                                              <span class="u14DemiBold_v2 emphasize" {% unless settings.carbon_ebike_discount_price == "0" %}data-price="{{ productttttt.first.price | money_without_trailing_zeros }}"{% endunless %}>{{ productttttt.first.price | minus: settings.carbon_ebike_discount_price | money_without_trailing_zeros }}</span>
                                             </div>
                                             <img src="{{ productttttt.first.featured_image | image_url: width: 300 }}">
                                         </div>
@@ -557,11 +602,6 @@
                                       {%- for childlink in link.links -%}
                                         <a class="u14Medium_v2" href="{{ childlink.url }}">{{ childlink.title }}</a>
                                       {% endfor %}
-                                    </div>
-                                    <div class="sale-image">
-                                        <div class="u17DemiBold_v2">{{ settings.sale_name }}</div>
-                                        <div>Up to</div>
-                                        <div class="u36DemiBold_v2">{{ settings.carbon1s_ebike_discount_price | money_without_trailing_zeros }} OFF</div>
                                     </div>
                                 </div>
                               </div>
@@ -861,6 +901,15 @@
                                   </div>
                                   <div class="flex-1"></div>
                                   <div class="bikesssssss">
+                                    {% assign productttttt =  all_products["carbon-1-pro-reservation"].variants | where: "title", "M / Matte Black" %}
+                                      <div class="by-model" href="/pages/lightweight-ebike-urtopia-carbon-1-pro">
+                                          <span class="tagggg">NEW</span>
+                                          <img src="{{ productttttt.first.featured_image | image_url: width: 500 }}">
+                                          <div class="u20DemiBold_v2">Carbon 1 Pro</div>
+                                          <div class="u14Light_v2">Sporty and Lightweight</div>
+                                          <div class="flex-1"></div>
+                                          <span class="u17DemiBold_v2 emphasize" {% unless productttttt.first.compare_at_price == productttttt.first.price %}data-price="{{ productttttt.first.compare_at_price | money_without_trailing_zeros }}"{% endunless %}>{{ productttttt.first.price | money_without_trailing_zeros }}</span>
+                                      </div>
                                     {% assign productttttt = all_products['urtopia-carbon-e-bike'].variants | where: "title", "Carbon 1s · 350W · Shimano 7-Speed / M / Midnight in Paris" %}
                                       <div class="by-model" href="/pages/e-bike">
                                           <img src="{{ productttttt.first.featured_image | image_url: width: 500 }}">
@@ -869,14 +918,7 @@
                                           <div class="flex-1"></div>
                                           <span class="u17DemiBold_v2 emphasize" data-price="{{ productttttt.first.price | money_without_trailing_zeros }}">{{ productttttt.first.price | minus: settings.carbon1s_ebike_discount_price | money_without_trailing_zeros }}</span>
                                       </div>
-                                      {% assign productttttt = all_products['urtopia-carbon-e-bike'].variants | where: "title", "Carbon 1 · 250W · Carbon Belt / L / Sirius" %}
-                                      <div class="by-model" href="/pages/e-bike">
-                                          <img src="{{ productttttt.first.featured_image | image_url: width: 500 }}">
-                                          <div class="u20DemiBold_v2">Carbon 1</div>
-                                          <div class="u14Light_v2">Lightweight and less maintainance</div>
-                                          <div class="flex-1"></div>
-                                          <span class="u17DemiBold_v2 emphasize" {% unless settings.carbon_ebike_discount_price == "0" %}data-price="{{ productttttt.first.price | money_without_trailing_zeros }}"{% endunless %}>{{ productttttt.first.price | minus: settings.carbon_ebike_discount_price | money_without_trailing_zeros }}</span>
-                                      </div>
+                                      
                                       {% assign productttttt = all_products['urtopia-chord-ebike'].variants | where: "title", "High-Step / White" %}
                                       <div class="by-model" href="/pages/lightweight-commuter-ebike-urtopia-chord">
                                           <img src="{{ productttttt.first.featured_image | image_url: width: 500 }}">
@@ -893,13 +935,10 @@
                                           <div class="flex-1"></div>
                                           <span class="u17DemiBold_v2 emphasize" data-price="{{ productttttt.first.price | money_without_trailing_zeros }}">{{ productttttt.first.price | minus: settings.chord_ebike_discount_price | money_without_trailing_zeros }}</span>
                                       </div>
+                                      <div class="sale-image"></div>
                                   </div>
                               </div>
-                              <div class="sale-image">
-                                  <div class="u17DemiBold_v2">{{ settings.sale_name }}</div>
-                                  <div>Up to</div>
-                                  <div class="u36DemiBold_v2">{{ settings.carbon1s_ebike_discount_price | money_without_trailing_zeros }} OFF</div>
-                              </div>
+                              
                           </div>
                       </div>
                     </details>

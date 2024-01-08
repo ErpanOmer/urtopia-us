@@ -245,12 +245,12 @@
 
 <dialog id="SubscribeEmailDialog">
     <div class="subscribe-container">
-       <img class="mobileHide" style="height: 100%;max-width: 100%;object-fit: cover;" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/urtopiaebike_with_christmas_white_background_minimal-Recovered_2x_f731d507-35de-46ad-ab70-692aa1fcedf2.jpg?v=1703813747" alt="">
-        <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/urtopiaebike_with_christmas_white_background_minimal-Recovered_2x_799147e7-2f53-4f2b-a5e5-6af505b5d547.jpg?v=1703813738" alt="">
+       <img class="mobileHide" style="height: 100%;max-width: 100%;object-fit: cover;" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240105-171954.jpg?v=1704446410" alt="">
+        <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240105-171948.jpg?v=1704446410" alt="">
         <div class="subscribe">
-            <span class="u20DemiBold_v2"><span style="color: #EA2F16;">January Savings</span></span>
-            <div class="u72DemiBold_v2" style="color: #EA2F16;">{{ settings.carbon1s_ebike_discount_price | money_without_trailing_zeros }}<span class="u30DemiBold_v2">OFF</span></div>
-            <div class="u24Medium_v2 mobileHide" style="color: #EA2F16;">On Carbon1s</div>
+            <span class="u20DemiBold_v2"><span style="color: #EA2F16;">Pre-order Promotion</span></span>
+            <div class="u72DemiBold_v2" style="color: #EA2F16;">{{ all_products["carbon-1-pro-reservation"].compare_at_price | minus: all_products["carbon-1-pro-reservation"].price | money_without_trailing_zeros }}<span class="u30DemiBold_v2">OFF</span></div>
+            <div class="u24Medium_v2 mobileHide" style="color: #EA2F16;">On Carbon 1 Pro</div>
             <span class="u17Light">Join Our Thriving Community of 200,000+ Enthusiasts! Unlock Urtopia’s Exclusive Offers, Be the First to Know About New Products, Receive Expert Riding Tips, and Dive into Captivating Customer Stories.</span>
             <form class="new-contact" action="/contact#ContactFooter" target="_blank" method="post" accept-charset="UTF-8">
             <div class="email">
@@ -268,7 +268,7 @@
 
 <dialog id="ExitSubscribeEmailDialog">
     <div class="subscribe-container">
-        <img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Artboard_5_copy_6_2x_02975b13-dd9f-4b13-8ce1-184b716a96aa.jpg?v=1698310315" alt="">
+        <img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_23593_2x_9b835809-477d-4620-9429-d6e3f59104c8.jpg?v=1704445485" alt="">
         <div class="subscribe">
             <div class="u17DemiBold_v2">Stay with us, Don’t Miss Out on</div>
             <div class="u30DemiBold_v2">Exclusive Offers!</div>
@@ -301,7 +301,7 @@
 
 <div class="message-box">
   <div class="u17DemiBold_v2">Don’t Miss Out on Exclusive Updates and Offers!</div>
-  <div class="u14DemiBold_v2 emphasize">UP TO <span class="u24DemiBold_v2">{{ settings.carbon1s_ebike_discount_price | money_without_trailing_zeros }}</span> OFF NOW</div>
+  <div class="u14DemiBold_v2 emphasize">UP TO <span class="u24DemiBold_v2">{{ all_products["carbon-1-pro-reservation"].compare_at_price | minus: all_products["carbon-1-pro-reservation"].price | money_without_trailing_zeros }}</span> OFF NOW</div>
   <div class="u11Light_v2">Limited-time offer with stock flying off the shelves. Subscribe now for the latest updates and instant notifications.</div>
   <form class="email" action="/" target="_blank" method="post" accept-charset="UTF-8">
       <input placeholder="Enter email here" type="email" name="contact[email]" required>

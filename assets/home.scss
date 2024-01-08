@@ -1,211 +1,342 @@
-$product-tags-color: #FFE2D9;
+.u17Light_v2 {
+    opacity: 0.78;
 
-@mixin dots {
+    @media (max-width: 767px) {
+        font-size: 14px;
+    }
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: inherit;
+    margin: 0;
+}
+
+
+.banner {
+    background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240108-101223.jpg?v=1704680001') center center/cover no-repeat;
+    height: calc(100vh - 106px);
+    color: #fff;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
-    margin: 6px 0;
+    text-align: center;
+    padding-top: 7vh;
 
-    &>div {
-        width: 34px;
-        height: 34px;
-        margin-right: 20px;
-        border-radius: 50%;
-        cursor: pointer;
-
-        &::after {
-            content: "";
-            display: inline-block;
-            height: 26px;
-            margin: 2px;
-            width: 26px;
-            border-radius: 100%;
-        }
-
-        &[data-stye="Sirius"] {
-            background-color: #FA812B;
-        }
-
-        &[data-stye="Lyra"] {
-            background-color: #747474;
-        }
-
-        &[data-stye="Vanilla"] {
-            background-color: #F0EEDF;
-        }
-
-        &[data-stye="Midnight in Paris"] {
-            background-color: #FFEC0B;
-            position: relative;
-        }
-
-        &[data-stye="White"] {
-            background-color: #ddd;
-        }
-
-        &[data-stye="Black"] {
-            background-color: #000;
-        }
-
-        &[data-stye="Gray"] {
-            border-color: #405364;
-            background-color: #405364;
-        }
-
-        &[data-stye="Midnight in Paris"]::before {
-            content: "";
-            display: inline-block;
-            background-color: #ff6c00;
-            position: absolute;
-            z-index: 1;
-            width: 100%;
-            height: 55%;
-            border-top-right-radius: 100px;
-            border-top-left-radius: 100px;
-        }
+    .u20Medium_v2 {
+        margin: 0.5vh 0 3vh;
     }
 
-    .active {
-        background-color: transparent !important;
-        border: 2px solid #666;
+    .u60Medium_v2 {
+        position: relative;
 
-        &[data-stye="Sirius"]::after {
-            background-color: #FA812B;
-        }
-
-        &[data-stye="Lyra"]::after {
-            background-color: #747474;
-        }
-
-        &[data-stye="Vanilla"]::after {
-            background-color: #F0EEDF;
-        }
-
-        &[data-stye="Midnight in Paris"]::after {
-            background-color: #FFEC0B;
-        }
-
-        &[data-stye="Midnight in Paris"]::before {
-            left: 2px;
-            top: 2px;
-            right: 2px;
-            height: 14px;
-            width: 26px;
-        }
-
-        &[data-stye="White"]::after {
-            background-color: #ddd;
-        }
-
-        &[data-stye="Black"]::after {
-            background-color: #000;
-        }
-
-        &[data-stye="Gray"]::after {
-            background-color: #405364;
+        &::after {
+            content: "NEW";
+            color: #FF7F4E;
+            font-size: 20px;
+            font-weight: 400;
+            position: absolute;
+            top: -25%;
+            word-break: normal;
         }
     }
 
     @media (max-width: 767px) {
-        & > div {
-            width: 28px;
-            height: 28px;
-            margin-right: 12px;
-            
+        background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/1221_2x_13c79827-30a2-4a0a-9634-678c164f6071.jpg?v=1704521585');
+        height: calc(100vh - 102px);
+
+        .u60Medium_v2 {
+            font-size: 36px;
+
             &::after {
-                width: 20px;
-                height: 20px;
+                font-size: 14px;
+                font-weight: 300;
             }
         }
 
-        .active {
-            &[data-stye="Midnight in Paris"]::before {
-                height: 12px;
-                width: 20px;
+        .u20Medium_v2 {
+            margin: 2.5vw 0 8vw;
+            font-size: 17px;
+        }
+    }
+
+
+    & + .banner {
+        margin-top: 2vh;
+        color: #000;
+        background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/122_2x_b4442996-82a1-461d-a18d-3a22ce2b9041.jpg?v=1704522831');
+
+        .u60Medium_v2 {
+            &::after {
+                content: "";
+            }
+        }
+
+        .my-button-white {
+            &:hover {
+                background-color: transparent;
+            }
+        }
+
+        @media (max-width: 767px) {
+            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/122_2x_c9b0f95b-68ad-4be9-9142-8fd9630df095.jpg?v=1704523026');
+            margin-top: 2.5vw;
+        }
+    }
+}
+
+
+.mind {
+    background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20117_2x_3e8162d5-ac80-4fdd-976e-870893377ca7.jpg?v=1704523319') center center/cover no-repeat;
+    height: 65vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 7vh;
+    margin: 0 20px;
+
+    .u17Light_v2 {
+        margin: 1.5vh 0 4vh;
+    }
+
+    .my-button-white {
+        &:hover {
+            background-color: transparent;
+        }
+    }
+
+    @media (max-width: 767px) {
+        background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23583_2x_cbe98887-526b-49ab-bb28-34774d6faf80.jpg?v=1704523978');
+        height: 120vw;
+        padding: 15vw 8vw;
+        margin: 0;
+
+        .u36Medium_v2 {
+            font-size: 24px;
+        }
+
+        .u17Light_v2 {
+            margin: 2.5vw 0 8vw;
+        }
+    }
+}
+
+.smart {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 10px;
+    margin: 20px;
+
+    & > div {
+        background: transparent center center/cover no-repeat;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 6% 0 40%;
+
+        .u17Light_v2 {
+            max-width: 350px;
+            margin: 1.5% 0 4%;
+        }
+
+        &:first-child {
+            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23663_2x_6702ea78-831e-48c6-a9c0-21fa3d8bcda5.jpg?v=1704524198');    
+        }
+
+        &:last-child {
+            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DSC9877_2x_2025795b-a6e2-46aa-9eda-22cdbbaee148.jpg?v=1704524193');
+        }
+    }
+
+    @media (max-width: 767px) {
+        grid-template-columns: 1fr;
+        margin: 10px 0 0 0;
+
+        & > div {
+            padding: 0;
+            height: 100vw;
+            padding-top: 15vw;
+
+            .u36Medium_v2 {
+                font-size: 24px;
+            }
+
+            &:first-child {
+                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23589_2x_d2d1cbf8-cbda-4809-abe8-272f2df96464.jpg?v=1704525377');
+            }
+
+            &:last-child {
+                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DSC9877_2x_c597ab91-8486-4378-b601-11baa58ebc1c.jpg?v=1704525385');
             }
         }
     }
 }
 
-@mixin product-card {
-    padding: 5%;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
+.test-ride {
+    margin: 16vh 0;
 
-    *,
-    ::after,
-    ::before {
-        box-sizing: border-box;
-    }
+    .centeral-content {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 1.5%;
 
-    .tags {
-        display: flex;
-        min-height: 28px;
-        flex-wrap: wrap;
-        flex: 1;
 
-        span {
-            background-color: $product-tags-color;
-            border-radius: 10px;
-            padding: 4px 10px;
-        }
+        & > div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            cursor: pointer;
 
-        span {
-            margin: 0 6px 6px 0;
-        }
-    }
+            img {
+                margin-bottom: 5%;
+            }
 
-    .variant-image {
-        cursor: pointer;
-    }
+            .u17Light_v2 {
+                margin: 2% 0 5%;
+            }
 
-    .dots {
-        @include dots;
-    }
-
-    .product_price {
-        display: flex;
-        align-items: center;
-        margin: 10px 0 6px;
-        flex-wrap: wrap;
-
-        img {
-            max-width: 40px;
-            margin-left: 6px;
-        }
-
-        .u24DemiBold_v2 {
-            margin-right: 5%;
-
-            &[data-price]::after {
-                content: attr(data-price);
-                display: inline-block;
-                color: #161c1f;
-                text-decoration: line-through;
-                margin-left: 6px;
-                font-size: 24px;
-                font-weight: 300;
-                opacity: 0.53;
+            a {
+                display: flex;
+                
+                &::after {
+                    content: ">";
+                    margin-left: 10px;
+                }
             }
         }
-
-        &>.u17Light_v2 {
-            display: flex;
-        }
-    }
-
-    .my-button {
-        width: fit-content;
     }
 
     @media (max-width: 767px) {
-        padding: 4vw;
+        margin: 16vw 0;
 
-        .product_price {
+        .centeral-content {
+            grid-template-columns: 1fr;
+            grid-row-gap: 8vw;
+
+            & > div {
+                .u36Medium_v2 {
+                    font-size: 24px;
+                }
+
+                .u17Light_v2 {
+                    margin: 10px 0 20px;
+                }
+
+                img {
+                    margin-bottom: 4vw;
+                }
+            }
+        }
+    }
+}
+
+.blogs {
+    padding: 14vh 0 22vh;
+    background-color: #000;
+    color: #fff;
+
+    .centeral-content {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 20px;
+        grid-row-gap: 10px;
+        position: relative;
+
+        & > div {
+            background-color: #313131;
+            display: flex;
             flex-direction: column;
-            align-items: flex-start;
-            margin-bottom: 12px;
+            align-items: center;
+            padding-bottom: 10%;
+            overflow: hidden;
+            cursor: pointer;
+
+            .u20Medium_v2 {
+                padding: 10% 7.5%;
+                text-align: center;
+            }
+
+            img {
+                max-height: 240px;
+                width: 100%;
+                object-fit: cover;
+                transition: all .5s ease-out;
+            }
+
+            a {
+                display: flex;
+                color: #fff;
+                
+                &::after {
+                    content: ">";
+                    margin-left: 10px;
+                }
+            }
+
+            &:hover {
+                & > img {
+                    transform: scale(1.05);
+                }
+            }
+        }
+
+
+        .gotooooooo {
+            position: absolute;
+            display: flex;
+            right: 30px;
+            bottom: -25%;
+            background-color: transparent;
+            left: 0;
+            padding: 0;
+            flex-direction: row;
+            justify-content: flex-end;
+            cursor: pointer;
+
+            .u20Medium_v2 {
+                padding: 0;
+            }
+
+            img {
+                max-width: 48px;
+                margin-left: 20px;
+            }
+
+            &:hover {
+                & > img {
+                    transform: scale(1);
+                }
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+        padding: 20vw 0 40vw;
+ 
+        .centeral-content {
+            grid-template-columns: 1fr;
+
+            & > div {
+                .u20Medium_v2 {
+                    font-size: 15px;
+                    padding-bottom: 5vw;
+                }
+            }
+
+            .gotooooooo {
+                bottom: -20vw;
+
+                img {
+                    max-width: 35px;
+                    margin-left: 4vw;
+                }
+            }
         }
     }
 }
@@ -244,386 +375,9 @@ $product-tags-color: #FFE2D9;
     }
 }
 
-.banner {
-    height: calc(100vh - 106px);
-    position: relative;
-    color: #fff;
-    overflow-x: hidden;
-    background-color: var(--sale-order-page-text-color);
-
-    .centeral-content {
-        display: flex;
-        height: 100%;
-        align-items: center;
-        justify-content: space-between;
-
-        &>div {
-            &:first-child {
-                flex: 1;
-            }
-
-            &:last-child {
-                display: flex;
-                flex-direction: column;
-                text-align: left;
-            }
-        }
-
-        .buttons {
-            &>a {
-                margin-right: 24px;
-            }
-
-            // & > a + a {
-            //     margin-top: 12px;
-            // }
-        }
-    }
-
-    .swiper-wrapper {
-        .swiper-slide {
-            background: center center/cover no-repeat;
-        }
-
-        .summer-sale {
-            background-image: var(--sale-banner-background-image-pc);
-            color: var(--sale-banner-text-color);
-
-            .centeral-content {
-                
-                &>div {
-                    & > img {
-                        max-width: var(--sale-banner-image-max-width);
-                    }
-
-                    .u36DemiBold_v2 {
-                        margin: 40px 0;
-                    }
-                }
-            }
-        }
-
-        .chord-sale {
-            background-image: var(--chord-sale-banner-background-image-pc);
-
-            .centeral-content {
-                &>div {
-
-                    & > img {
-                        max-width: var(--chord-sale-banner-image-max-width);
-                    }
-
-                    .u36DemiBold_v2 {
-                        // margin: 40px 0;
-                    }
-                }
-            }
-        }
-
-        .strava {
-            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21253_2x_945b0603-6617-4e75-8180-997dd03fc967.jpg?v=1689664830');
-
-            .centeral-content {
-                height: 42%;
-
-                & > div {
-                    text-align: center;
-                    justify-content: center;
-                    align-items: center;
-
-                    img {
-                        max-height: 54px;
-                        width: auto;
-                    }
-
-                    .u24Medium_v2 {
-                        margin: 32px 0 40px;
-                    }
-                }
-            }
-        }
-
-        .holiday {
-            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_19228_2x_530a3d76-7847-45ca-8e34-b08c73fdb91d.jpg?v=1695796443');
-
-            .centeral-content {
-                align-items: flex-end;
-
-                & > div {
-                    align-items: flex-start;
-                    height: 80%;
-                    padding-bottom: 8vh;
-
-                    img {
-                        max-width: 640px;
-                        margin-bottom: 40px;
-                    }
-
-                    .u14Light_v2 {
-                        max-width: 480px;
-                        opacity: 0.7;
-                    }
-
-                    .u17DemiBold_v2 {
-                        border-radius: 12px;
-                        padding: 2px 11px;
-                        background-image: linear-gradient(90deg, #EE6426, #F4492A);
-                        font-size: 16px;
-                        margin: 12px 0 24px;
-                    }
-
-                    &:first-child {
-                        display: none;
-                    }
-                }
-            }
-        }
-
-        .chord-sale {
-            background-image: var(--chord-sale-banner-background-image-pc);
-        }
-
-        .michaeal {
-            background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_22784_2x_c04d2cff-9be1-4956-8786-269eb56b260d.jpg?v=1693981525');
-
-            .centeral-content {
-                & > div {
-                    align-items: flex-start;
-    
-                    .u17Light_v2 {
-                        max-width: 450px;
-                        margin: 4.5vh 0 5vh;
-                        opacity: 0.78;
-                    }
-        
-                    img {
-                        &:nth-of-type(1) {
-                            max-width: 650px;
-                            margin-top: 2.5vh;
-                        }
-
-                        &:nth-of-type(2) {
-                            max-width: 440px;
-                            margin-top: 5vh;
-                            cursor: pointer;
-                        }
-                    }
-                }
-            }
-        }
-
-
-        .halloween {
-            background-color: rgb(248, 77, 0);
-            background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/sas_2x_b014f1ee-6501-418c-9864-48707111f68e.jpg?v=1698390414');
-
-            .centeral-content {
-                & > div {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: flex-start;
-
-                    .u17DemiBold_v2 {
-                        padding: 12px 20px;
-                        background-color: #000;
-                        color: #fff;
-                        border-radius: 22px;
-                    }
-
-                    .u36DemiBold_v2 {
-                        margin: 1.5vh 0;
-                    }
-
-                    .buttons {
-                        margin: 5vh 0;
-                    }
-
-                    .u17Light_v2 {
-                        max-width: 600px;
-                    }
-
-                    img {
-                        max-width: 320px;
-                    }
-               }
-            }
-        }
-
-
-        .friday {
-            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20231115-141415.jpg?v=1700028908');
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-top: 17.5vh;
-            box-sizing: border-box;
-
-            & > img {
-                max-width: 25vw;
-            }
-
-            .u24Medium_v2 {
-                color: #000;
-            }
-
-            .my-button {
-                margin-top: 2vh;
-            }
-        }
-
-        .design {
-            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23217_2x_afee0495-3571-425f-a975-d43ba72a6f5b.jpg?v=1700030005');
-
-            .centeral-content {
-                & > div {
-                    align-items: flex-start;
-
-                    img {
-                        max-width: 280px;
-                    }
-
-                    .u24Medium_v2 {
-                        max-width: 490px;
-                        margin: 7vh 0 10vh;
-                    }
-                }
-            }
-        }
-
-      
-        .cyber {
-            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Untitled-4_2x_2b2f3457-ed07-4e92-bd6d-06f0fdfd7d72.jpg?v=1700879935');
-
-            .centeral-content {
-                & > div {
-                    align-items: flex-start;
-
-                    img {
-                        max-width: 300px;
-                    }
-
-                    .u24Medium_v2 {
-                        margin: 4vh 0 8vh;
-                    }
-                }
-            }
-        }
-
-       .gift {
-            background-color: rgb(108, 153, 170);
-            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/urtopiaebike_with_winter_background_different_color_gifts_surro_2x_0e264c00-4844-4c45-9d3d-19a8aaf06d5f.jpg?v=1701325929');
-            display: flex;
-            flex-direction: column;
-            text-align: center;
-            align-items: center;
-            padding-top: 7vh;
-            box-sizing: border-box;
-
-            .u36DemiBold_v2 {
-                margin-bottom: 3.5vh;
-            }
-        }
-
-
-        .count-down {
-            height: 300px;
-            width: 400px;
-            transform: translateX(-35px);
-            overflow: hidden;
-            margin-top: -10px;
-        }
-
-      .count-down-gif {
-            max-width: 370px;
-            overflow: hidden;
-            margin-top: 20px;
-
-            img {
-                transform: translateY(15%);
-            }
-        }
-    }
-
-    .swiper-pagination {
-        z-index: 1;
-    }
-
-
-    .swiper-pagination-bullet {
-        height: 6px;
-        width: 6px;
-        background-color: #d5d5d5;
-        opacity: 0.5;
-    }
-
-    .swiper-pagination-bullet-active {
-        width: 30px;
-        height: 6px;
-        border-radius: 5px;
-        transition: all .3s;
-        opacity: 1;
-    }
-}
-
-.test-ride {
-    margin-bottom: 120px;
-
-    .centeral-content {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-
-        &>div {
-            padding-bottom: 100%;
-            position: relative;
-
-            &>div {
-                position: absolute;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                left: 0;
-                height: 100%;
-                width: 100%;
-                background-color: #F7F8FA;
-
-                &:first-child {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: flex-start;
-                    padding: 0 10%;
-
-                }
-
-                .u20DemiBold_v2 {
-                    margin: 24px 0 48px;
-                }
-            }
-
-            #storepoint-tag-dropdown,
-            #storepoint-search,
-            #storepoint-panel {
-                display: none !important;
-            }
-
-            #storepoint-map,
-            #storepoint-container,
-            #storepoint-map canvas {
-                width: 100% !important;
-                height: 100% !important;
-                max-height: 100% !important;
-                border: none;
-            }
-        }
-    }
-}
 
 .page-media {
-    background-color: #f7f8fa;
-
     .centeral-content {
-        background-color: #f7f8fa;
-
         .home-page-media {
             display: flex;
             height: 360px;
@@ -680,342 +434,15 @@ $product-tags-color: #FFE2D9;
             }
         }
     }
-}
 
 
-
-@media (max-width: 767px) {
-    .banner {
-        height: calc(100vh - 102px);
-
-        .centeral-content {
-            &>div {
-                &:last-child {
-                    height: 100%;
-                }
-            }
-
-            .buttons {
-                a {
-                     margin:0;
-                       width: 100%;
-                 }
-
-                & > a + a {
-                     margin-top: 12px;
-                 }
-             }
-        }
-
-
-        .swiper-wrapper {
-            .swiper-slide {
-                background-position-y: top;
-            }
-
-            .summer-sale {
-                background-image: var(--sale-banner-background-image-mb);
-    
-                    .centeral-content {
-                        height: 100%;
-                        align-items: unset;
-    
-                        &>div {
-                            padding: 6vw 0 8vw;
-                            align-items: center;
-                            text-align: center;
-                            display: flex;
-                            flex-direction: column;
-    
-                            & > img {
-                                max-width: var(--sale-banner-image-max-width-mb);
-                            }
-        
-                            .u36DemiBold_v2 {
-                                font-size: 20px;
-                                margin: 20px 0 0;
-                            }
-                        }
-                    }
-                }
-
-            .chord-sale {
-                background-image: var(--chord-sale-banner-background-image-mb);
-
-                .centeral-content {
-                    height: 100%;
-                    align-items: unset;
-
-                    &>div {
-                        padding: 6vw 0 8vw;
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        text-align: center;
-
-                        & > img {
-                            // max-width: var(--chord-sale-banner-image-max-width-mb);
-                        }
-
-                        .u36DemiBold_v2 {
-                            font-size: 20px;
-                            margin: 20px 0 0;
-                        }
-                    }
-                }
-            }
-
-
-            .strava {
-                .centeral-content {
-                    & > div {
-                        .u24Medium_v2 {
-                            margin: 30px 0;
-                        }
-
-                      img {
-                        width: 100%;
-                      }
-                    }
-                }
-            }
-
-            .holiday {
-                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_19460_2x_af860527-f616-40ef-9dce-9230fc26a56d.jpg?v=1695797764');
-                background-position-y: center;
-
-                .centeral-content {
-                    & > div {
-                        padding: 6vw 0 8vw;
-                        height: 100%;
-
-                        .u14Light_v2 {
-                            font-size: 12px;
-                        }
-
-                        img {
-                            // height: 52px;
-                            // width: auto;
-                            margin: auto;
-                        }
-
-                        .u36DemiBold_v2 {
-                            font-size: 20px;
-                            margin: auto;
-                            text-align: center;
-                        }
-
-                        .u17DemiBold_v2 {
-                            font-size: 13px;
-                            text-align: center;
-                            margin: 1vw auto;
-                        }
-
-                        .buttons {
-                            width: 100%;
-                            margin-bottom: 4vw;
-                        }
-                    }
-                }
-            }
-
-            .chord-sale {
-                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230927-172346.jpg?v=1695806668')
-            }
-
-            .michaeal {
-                background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18856_2x_d1ef15b4-07cb-462f-b5e8-a894722094d5.jpg?v=1693984442&width=500');
-
-                .centeral-content {
-                    & > div {
-                        padding: 10vw 0 8vw;
-
-                        .u24Light_v2,
-                        .u24DemiBold_v2 {
-                            font-size: 15px;
-                        }
-
-                        .u17Light_v2 {
-                            font-size: 14px;
-                            margin-top: 8vw;
-                        }
-
-                        img {
-                            &:nth-of-type(1) {
-                                margin-top: 3vw;
-                            }
-                        }
-
-                        .buttons {
-                            display: flex;
-                            flex-direction: column;
-                            width: 100%;
-                        }
-                    }
-                }
-            }
-
-            .halloween {
-                background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_23201_2x_2385fe0a-3b33-4e31-8051-a75fa60760ae.jpg?v=1698390477');
-
-                .centeral-content {
-                    & > div {
-                        align-items: center;
-                        text-align: center;
-                        height: 100%;
-                        padding: 2vw 0 8vw;
-
-                        img {
-                            max-width: 160px;
-                        }
-
-                        .u36DemiBold_v2 {
-                            font-size: 20px;
-                        }
-
-                        .u17DemiBold_v2 {
-                            font-size: 13px;
-                            padding: 10px;
-                        }
-
-                        .buttons {
-                            margin: 0;
-                        }
-                    }
-                }
-            }
-
-            .friday {
-                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23216_2x_6a4c0521-6517-4bb1-830b-ffd9953afc18.jpg?v=1700029294');
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-                box-sizing: border-box;
-                padding: 12vw 10vw 18vw;
-
-                & > img {
-                    max-width: unset;
-                }
-
-                .u24Medium_v2 {
-                    color: #fff;
-                    font-size: 18px;
-                }
-            }
-
-            .design {
-                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/sdd_2x_1f45d407-8e35-4d91-8303-ffb4c38b1e86.jpg?v=1700030655');
-
-                .centeral-content {
-                    & > div {
-                        display: flex;
-                        flex-direction: column;
-                        height: 100%;
-                        align-items: center;
-                        text-align: center;
-                        padding: 10vw 0;
-
-                        img {
-                            max-width: 150px;
-                        }
-
-                        .u24Medium_v2 {
-                            margin-top: 10vw;
-                            font-size: 17px;
-                        }
-                    }
-                }
-            }
-
-           .cyber {
-                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/12a_s_d_2x_c5b0e263-079c-4543-8f09-5ba73d8b9e95.jpg?v=1700880888');
-
-                .centeral-content {
-                    & > div {
-                        align-items: center;
-                        text-align: center;
-                        padding-top: 8vw;
-
-                        img {
-                            max-width: 150px;
-                        }
-
-                        .u24Medium_v2 {
-                            margin: 10px 0 15px;
-                            font-size: 15px;
-                        }
-                    }
-                }
-            }
-
-          .gift {
-                padding: 8vw;
-                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/urtopiaebike_with_winter_background_different_color_gifts_surro_2x_aafebd23-287f-4dbf-a9b2-f0cd6d1bcb5d.jpg?v=1701330106');
-
-                .u36DemiBold_v2 {
-                    font-size: 18px;
-                    margin: 2vw 0 8vw;
-                }
-            }
-
-
-            .count-down {
-                height: 150px;
-                width: 180px;
-                transform: translate(-17px);
-                margin-bottom: unset;
-                margin-top: -15px;
-            }
-
-          .count-down-gif {
-                max-width: 210px;
-                margin-top: 15px;
-            }
-
-        }
-    }
-
-
-    .test-ride {
-        margin-bottom: 60px;
-
-        .centeral-content {
-            grid-template-columns: 1fr;
-
-            &>div {
-
-                &>div {
-                    &:first-child {
-                        padding: 8vw 4vw;
-                    }
-                }
-
-                &:first-child {
-                    order: 1;
-                    padding-bottom: 60vw;
-
-                    .u36DemiBold_v2 {
-                        font-size: 24px;
-                    }
-
-                    .u20DemiBold_v2 {
-                        font-size: 16px;
-                        margin-top: 6px;
-                    }
-                }
-            }
-        }
-    }
-
-    .page-media {
+    @media (max-width: 767px) {
         .centeral-content {
             padding: 0;
             
             .home-page-media-mb {
-                padding-top: 65px;
-                padding-bottom: 65px;
-                background-color: #f7f8fa;
+                padding-top: 50px;
+                padding-bottom: 50px;
                 overflow: hidden;
             
                 .swiper-slide {
@@ -1034,7 +461,7 @@ $product-tags-color: #FFE2D9;
             
                     .u20Medium {
                         font-weight: 600;
-                        margin: 20px 0 40px;
+                        margin: 20px 0 30px;
                         font-size: 22px;
                         line-height: 26px;
                     }
@@ -1058,551 +485,4 @@ $product-tags-color: #FFE2D9;
             }
         }
     }
-
-}
-
-
-.greenest {
-    margin: 120px 0;
-
-    .centeral-content {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        background-clip: content-box;
-        align-items: center;
-
-        & > div {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: center;
-            padding: 0 10%;
-
-            .u17Light_v2 {
-                margin: 30px 0;
-            }
-        }
-    }
-
-    @media (max-width: 767px) {
-        margin: 60px 0;
-
-        .centeral-content {
-            grid-template-columns: 1fr;
-
-            & > div {
-                padding: 8vw 4vw;
-
-                .u36DemiBold_v2 {
-                    font-size: 24px
-                }
-
-                .u17Light_v2 {
-                    font-size: 14px;
-                    margin: 15px 0 30px;
-                }
-            }
-        }
-    }
-}
-
-
-@mixin home-page-ebike-banner {
-    background: transparent center center/cover no-repeat;
-    color: #fff;
-
-    .centeral-content {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-        height: 500px;
-
-        .u17Light_v2 {
-            margin: 2.5vh 0 8vh;
-        }
-    }
-
-    @media (max-width: 767px) {
-        .centeral-content {
-            height: 108vw;
-            align-items: center;
-            text-align: center;
-            justify-content: flex-end;
-            padding-bottom: 6vw;
-
-            .u42DemiBold_v2 {
-                font-size: 30px;
-            }
-
-            .u24Medium_v2 {
-                font-size: 17px;
-                margin: 1vw 0 8vw;
-            }
-
-            .u17Light_v2 {
-                font-size: 14px;
-                margin-bottom: 24px;
-            }
-        }
-    }
-}
-
-.home-page-ebike-banner {
-	@include home-page-ebike-banner;
-    background-image: url("https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_22136_2x_9f5b5344-d6f4-4434-a094-6f6863b7ee7a.jpg?v=1697163199");
-
-    @media (max-width: 767px) {
-        background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_22847_2x_82dafcfa-dabf-4918-a312-39e7d6cc57ee.jpg?v=1697175545');
-    }
-}
-
-.home-page-ebike-banner-chord {
-	@include home-page-ebike-banner;
-    background-image: url("https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_23012_2x_ba6a0d01-fe5c-486d-ad78-cd6db5eddae0.jpg?v=1697165184");
-
-    @media (max-width: 767px) {
-        background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_22848_2x_c75bff55-52fb-4fe5-a151-b64d749ccbad.jpg?v=1697175538');
-    }
-}
-
-.boxs {
-    padding: 120px 0;
-
-    .centeral-content {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 33.33%;
-        overflow: hidden;
-        //grid-template-rows: repeat(3, calc(100% / 3));
-
-        img[alt="app"] {
-            background-color: #161A22;
-            max-height: 600px;
-            object-fit: contain;
-            padding-top: 10%;
-        }
-
-        & > div {
-            display: flex;
-            align-items: flex-start;
-            flex-direction: column;
-            justify-content: center;
-            padding: 15%;
-            background-color: #fff;
-
-            .u17Light_v2 {
-                margin: 20px 0 40px;
-            }
-
-            .images {
-                display: flex;
-
-                a {
-                    display: block;
-                    margin-right: 16px;
-                    cursor: pointer;
-                }
-            }
-        }
-    }
-
-    @media (max-width: 767px) {
-        padding: 60px 0;
-
-        .centeral-content {
-            grid-template-columns: 1fr;
-            grid-template-rows: 92vw;
-            padding: 0 4vw;
-
-            & > div {
-                padding: 12vw 4vw;
-
-                .u48DemiBold_v2 {
-                    font-size: 24px;
-                }
-
-                .u17Light_v2 {
-                    margin: 10px 0 20px;
-                    font-size: 14px;
-                }
-
-                &:nth-of-type(2) {
-                    order: 1;
-                }
-
-                &:nth-of-type(1) {
-                    order: 2;
-                }
-
-                &:nth-of-type(3) {
-                    order: 4;
-                }
-
-                &:nth-of-type(4) {
-                    order: 6;
-                }
-            }
-
-            & > img {
-                &:nth-of-type(1) {
-                    order: 3;
-                    max-height: 80vw;
-                }
-
-                &:nth-of-type(2) {
-                    order: 5;
-                }
-            }
-
-            
-        }
-    }
-}
-
-
-.ambass {
-    padding-bottom: 60px;
-
-    .centeral-content {
-        .u20Medium_v2 {
-            margin-top: 20px;
-        }
-    }
-
-    @media (max-width: 767px) {
-        padding-bottom: 30px;
-
-        .centeral-content {
-            padding: 0 4vw;
-            .u48DemiBold_v2 {
-                font-size: 24px;
-            }
-
-            .u20Medium_v2,
-            .u20DemiBold_v2 {
-                font-size: 14px;
-            }
-
-            .u20Medium_v2 {
-                margin-top: 10px;
-            }
-        }
-    }
-}
-
-.nba {
-    padding-bottom: 120px;
-
-    @media (max-width: 767px) {
-        padding-bottom: 60px;
-
-        .centeral-content {
-            padding: 0 4vw;
-        }
-    }
-}
-
-
-.ebikes {
-    margin: 120px 0;
-
-    @media (max-width: 767px) {
-        margin: 60px 0;
-
-        .centeral-content {
-            padding: 0;
-        }
-    }
-}
-
-
-.greenest {
-    margin: 120px 0;
-
-    .centeral-content {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        background-clip: content-box;
-        align-items: center;
-
-        & > div {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: center;
-            padding: 0 10%;
-
-            .u17Light_v2 {
-                margin: 30px 0;
-            }
-        }
-    }
-
-    @media (max-width: 767px) {
-        margin: 60px 0;
-
-        .centeral-content {
-            grid-template-columns: 1fr;
-
-            & > div {
-                padding: 8vw 4vw;
-
-                .u36DemiBold_v2 {
-                    font-size: 24px
-                }
-
-                .u17Light_v2 {
-                    font-size: 14px;
-                    margin: 15px 0 30px;
-                }
-            }
-        }
-    }
-}
-
-
-.ebike-products {
-    margin: 120px auto 180px;
-
-    .product-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-gap: 22px;
-
-        .product-card {
-            @include product-card;
-        }
-
-        &>.lozad {
-            background-size: cover;
-            background-repeat: no-repeat;
-            border-radius: 10px;
-            overflow: hidden;
-            color: #fff;
-            display: flex;
-            align-items: flex-end;
-            padding: 20px 50% 20px 30px;
-        }
-    }
-
-    @media (max-width: 767px) {
-        margin: 40px auto;
-        padding: 0 4vw;
-
-        & > .u36DemiBold_v2 {
-            font-size: 30px;
-        }
-        
-        & > .u24Medium_v2 {
-            font-size: 17px;
-        }
-
-        .product-grid {
-            grid-template-columns: 1fr;
-            grid-row-gap: 12px;
-        }
-    }
-}
-
-.mind {
-    background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2122_2x_47750c26-bb56-4c4b-8c27-78d6d686798a.jpg?v=1697168118') center center/cover no-repeat;
-    height: 500px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    background-clip: content-box;
-    color: #fff;
-
-    .u42DemiBold_v2 {
-        margin: 7.5vh 0 1vh;
-    }
-
-    .my-button {
-        margin-bottom: 6vh;
-    }
-
-    @media (max-width: 767px) {
-        background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2122_2x_a919852b-20a8-477e-a4b0-1e948660d2c0.jpg?v=1697176334');
-        height: 108vw;
-        padding: 0 8vw;
-        margin: 0 4vw;
-        background-clip: unset;
-
-        .u42DemiBold_v2 {
-            font-size: 30px;
-            margin: 8vw 0 3vw;
-        }
-
-        .u17Light_v2 {
-            font-size: 15px;
-        }
-
-        .my-button {
-            margin-bottom: 8vw;
-        }
-    }
-}
-
-.greener {
-    background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_22945_2x_b935df70-70cd-47f5-abb5-eaa5fd2b733a.jpg?v=1697179240');
-    margin-top: 60px;
-    margin-bottom: 150px;
-
-    @media (max-width: 767px) {
-        background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_22947_2x_83b5f620-4bb4-4cd9-b9e2-3c9bd9a33baa.jpg?v=1697176342');
-        margin: 8vw 4vw;
-    }
-}
-
-
-#storepoint-tag-dropdown,
-#storepoint-search,
-#storepoint-panel {
-    display: none !important;
-}
-
-#storepoint-map,
-#storepoint-container,
-#storepoint-map canvas {
-    width: 100% !important;
-    height: 100% !important;
-    max-height: 100% !important;
-    border: none;
-}
-
-
-
-.season {
-    margin: 120px 0;
-
-    .centeral-content {
-        background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/home2_88d428bb-b1f0-4baa-81f4-3d395892559e.jpg?v=1702388687') center center/cover no-repeat;
-        background-clip: content-box;
-
-        & > div {
-            padding: 3.5vh 70px 18vh;
-
-            img {
-                max-width: 85px;
-            }
-
-            .u24DemiBold_v2 {
-                margin: 2.5vh 0 4vh;
-            }
-        }
-    }
-
-    @media (max-width: 767px) {
-        margin: 60px 0;
-        padding: 0 4vw;
-
-        .centeral-content {
-            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23434.jpg?v=1702388909');
-            padding: 0;
-            height: 480px;
-
-            & > div {
-                padding: 7vw 5vw;
-
-                img {
-                    max-width: 55px;
-                }
-
-                .u24DemiBold_v2 {
-                    margin: 12px 0 20px;
-                }
-            }
-        }
-    }
-}
-
-
-#chirstmas {
-    background-color: rgb(30, 34, 64);
-    background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23310_2x_bb54f94f-58b6-4a0a-9d35-e9dea6a68959.jpg?v=1703038555');
-
-    .centeral-content {
-        & > div {
-            align-items: flex-start;
-
-            img {
-                max-width: 360px;
-            }
-
-            .u24Medium_v2 {
-                margin: 8vh 0 4vh;
-            }
-        }
-    }
-
-
-    @media (max-width: 767px) {
-        background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18945_2x_a1097dca-d99a-4e0f-82aa-c9a16f54f64b.jpg?v=1703039371');
-
-        .centeral-content {
-            flex-direction: column-reverse;
-
-            & > div {
-                align-items: center;
-                text-align: center;
-                padding-bottom: 10vw;
-
-                img {
-                    max-width: 190px;
-                }
-
-                .u24Medium_v2 {
-                    font-size: 18px;
-                    margin: 20px 0;
-                }
-            }
-        }
-    }
-}
-
-
-#newyear {
-  background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23310_2x_b6682fea-df5f-403d-9928-73bd6ea17565.jpg?v=1703813238');
-
-            .centeral-content {
-                height: 42%;
-
-                & > div {
-                    text-align: center;
-                    justify-content: center;
-                    align-items: center;
-
-                    img {
-                        max-width: 290px;
-                    }
-
-                    .u24Medium_v2 {
-                        margin: 4vh 0 3vh;
-                    }
-                }
-            }
-
-  @media (max-width: 767px) {
-    background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/urtopiaebike_with_christmas_white_background_minimal-Recovered_2x_b11611d1-f21c-4c33-aef0-2c4b0e33aa96.jpg?v=1703813614');
-     .centeral-content {
-                    & > div {
-                      padding-top: 20vw;
-
-                        .u24Medium_v2 {
-                            margin: 20px 0;
-                            font-size: 17px;
-                        }
-
-                      .u60Medium_v2 {
-                        font-size: 36px;
-                      }
-
-                      img {
-                        max-width: 260px;
-                      }
-                    }
-                }
-  }
 }

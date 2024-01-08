@@ -419,7 +419,7 @@
                           </div>
 
                           <div class="cart-item__price-wrapper">
-                            {%- if item.original_line_price != item.final_line_price -%}
+                            {%- if item.original_line_price != item.final_line_price-%}
                               <div class="cart-item__discounted-prices">
                                 <span class="visually-hidden">
                                   {{ 'products.product.price.regular_price' | t }}
@@ -432,6 +432,23 @@
                                 </span>
                                 <span class="price price--end u14Medium_v2 emphasize" style="color: #EB5A2D;">
                                   {{ item.final_line_price | money }}
+                                </span>
+                              </div>
+                            {% elsif item.product.price != item.product.compare_at_price %}
+                                {% assign product_price = item.quantity | times: item.product.price | money %}
+                                {% assign product_compare_at_price = item.quantity | times: item.product.compare_at_price | money %}
+                                <div class="cart-item__discounted-prices">
+                                <span class="visually-hidden">
+                                  {{ 'products.product.price.regular_price' | t }}
+                                </span>
+                                <s class="cart-item__old-price price price--end u14Medium_v2">
+                                  {{ product_compare_at_price }}
+                                </s>
+                                <span class="visually-hidden">
+                                  {{ 'products.product.price.sale_price' | t }}
+                                </span>
+                                <span class="price price--end u14Medium_v2 emphasize" style="color: #EB5A2D;">
+                                  {{ product_price }}
                                 </span>
                               </div>
                             {%- else -%}

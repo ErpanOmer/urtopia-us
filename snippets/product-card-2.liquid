@@ -68,7 +68,7 @@
         {% endif %}         
     </div>
     <div class="u20DemiBold_v2">{{ product_name }}</div>
-    <div class="stars">
+    <div class="stars" {% if product_reviews_count == 0 %}style="opacity: 0;"{% endif %}>
         <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/star_2x_7e43ff57-6544-4236-93dc-44e2c2a966bd.png?v=1698738965" alt="">
         <a class="u11Light_v2" href="{{ product_url }}?variant=43780147511544" target="_blank">{{ product_reviews_count }} Reviews</a>
     </div>

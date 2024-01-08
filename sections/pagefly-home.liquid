@@ -1,430 +1,123 @@
-{{ 'home.scss.css' | asset_url | stylesheet_tag }}
+{{ 'home.scss.css' | asset_url | stylesheet_tag: preload: true }}
 
 <div class="banner">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide" id="newyear">
-                <div class="centeral-content">
-                  <div>
-                    <div class="u60Medium_v2">January Savings</div>
-                    <div class="u24Medium_v2">Up to {{ settings.carbon1s_ebike_discount_price | money_without_trailing_zeros }} Off on E-Bikes</div>
-                    <a class="my-button" href="/products/urtopia-carbon-e-bike">Order now</a>
-                  </div>
-                </div>
-              </div>
-        <div class="swiper-slide design">
-            <div class="centeral-content">
-                <div>
-                    <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Image_248_2x_ea016ad5-8394-43d7-bd4e-e5ab0408184d.png?v=1700030010" alt="">
-                    <div class="u24Medium_v2">Urtopia Chord Achieves Prestigious Recognition as German Design Award Winner 2024</div>
-                    <div class="flex-1 pcHide"></div>
-                    <div class="buttons">
-                        <a class="my-button" href="/products/urtopia-chord-ebike">Order now</a>
-                        <a class="my-button" href="/pages/lightweight-commuter-ebike-urtopia-chord">Meet Chord/Chord x</a>
-                    </div>
-                </div>
-                <div></div>
+        <h1 class="u60Medium_v2">Carbon 1 Pro</h1>
+        <h3 class="u20Medium_v2">Sporty and Lightweight</h3>
+        <a class="my-button my-button-ghost" href="/pages/lightweight-ebike-urtopia-carbon-1-pro" target="_blank">Learn More</a>
+    </div>
+    <div class="banner">
+        <h1 class="u60Medium_v2">Chord</h1>
+        <h3 class="u20Medium_v2">Comfort and Elegance</h3>
+        <a class="my-button my-button-white" href="/pages/lightweight-commuter-ebike-urtopia-chord" target="_blank">Learn More</a>
+    </div>
+    {% render 'home-page-media' %}
+    <div class="mind">
+        <h3 class="u36Medium_v2">The Bike with a Mind</h3>
+        <p class="u17Light_v2">
+            <span>
+                An AI-Driven Smartebike, offering you more than riding.
+            </span>
+        </p>
+        <a class="my-button my-button-white" href="/pages/pages-smartest-ebike" target="_blank">Learn More</a>
+    </div>
+    <div class="smart">
+        <div>
+            <h3 class="u36Medium_v2">Smart App</h3>
+            <p class="u17Light_v2">
+                <span>
+                    Connect, track, share, achieve - Urtopia app: Your perfect cycling companion!
+                </span>
+            </p>
+        </div>
+        <div>
+            <h3 class="u36Medium_v2">Sustainability</h3>
+            <p class="u17Light_v2">
+                <span>
+                    Sustainability at the Heart of Urtopia
+                </span>
+            </p>
+            <a class="my-button my-button-white" href="/pages/sustainability-carbon-credit" target="_blank">Learn More</a>
+        </div>
+    </div>
+    <div class="test-ride">
+        <div class="centeral-content">
+            <div href="/pages/test-ride">
+                <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Screenshot_2024-01-03_at_5.18.46_PM_2x_d12d7e8b-a5a6-4e2a-af50-54934fc52cee.jpg?v=1704525928"
+                    alt="" class="mobileHide">
+                <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Screenshot_2024-01-03_at_5.18.46_PM_2x_39df59a9-0e10-440f-b9e4-032438fc14ef.jpg?v=1704527270"  class="pcHide" alt="">
+                <h2 class="u36Medium_v2">
+                    Test Ride Spots
+                </h2>
+                <div class="flex-1"></div>
+                <p class="u17Light_v2">
+                    <span>
+                        Experience the bike in real
+                    </span>
+                </p>
+                <a href="/pages/test-ride" target="_blank">Learn more</a>
+            </div>
+            <div href="/pages/care">
+                <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230520-untitled-8826_2x_7e43ad38-e398-4728-9ad2-d3ae2d91333d.jpg?v=1704525890"
+                    alt="" class="mobileHide">
+                    <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230520-untitled-8826_2x_f8ac700e-c86e-4d2f-b37d-177624cf29a9.jpg?v=1704527262" class="pcHide" alt="">
+                <h2 class="u36Medium_v2">
+                    Peace of Mind
+                </h2>
+                <div class="flex-1"></div>
+                <p class="u17Light_v2">
+                    <span>
+                        24/7 Support, Full After-Sales
+                    </span>
+                </p>
+                <a href="/pages/care" target="_blank">Learn more</a>
+            </div>
+            <div href="/pages/aboutus">
+                <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221005-untitled-8655_2x_45235a17-d68a-415e-9b0d-37bd9c86086b.jpg?v=1704525896"
+                    alt="" class="mobileHide">
+                <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221005-untitled-8655_2x_27950ad5-b865-40ee-aced-4e65f9942de7.jpg?v=1704527258" class="pcHide" alt="">
+                <h2 class="u36Medium_v2">
+                    About Us
+                </h2>
+                <div class="flex-1"></div>
+                <p class="u17Light_v2">
+                    <span>
+                        Ride Smart, Ride Green
+                    </span>
+                </p>
+                <a target="_blank" href="/pages/aboutus">Learn more</a>
             </div>
         </div>
-
-                  <div class="swiper-slide michaeal">
-                    <div class="centeral-content">
-                      <div style="display: none;"></div>
-                      <div>
-                        <div class="u24Light_v2">Ambassador’s Story: <span class="u24DemiBold_v2">Michael J. Coles</span></div>
-                        <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230906-172118.png?v=1693992114&" alt="">
-                        <div class="u17Light_v2">A rock almost took his life. Doctors said he would never walk again. Yet, five years later, he set a world record for cycling across continents. He is a Urtopian, a billionaire entrepreneur, a soldier. This is his story.</div>
-                        <div class="flex-1 pcHide"></div>
-                        <div class="buttons">
-                          <a href="https://newurtopia.com/blogs/blog/ambassador-s-story-michael-j-coles-over-that-rock" target="_blank" class="my-button">Read his story</a>
-                          <a onclick="showVideoDialog('https://www.youtube.com/embed/kw2bKnKxLtY?autoplay=1&cc_load_policy=1')" class="my-button my-button-ghost pcHide">Watch the video</a>
-                        </div>
-                        <img class="mobileHide" onclick="showVideoDialog('https://www.youtube.com/embed/kw2bKnKxLtY?autoplay=1&cc_load_policy=1')" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_22785_2x_7ec81132-dba8-4553-b0c4-2407b943a62f.png?v=1693982796&width=440" alt="">
-                      </div>
-                    </div>
-                  </div>
-                  
-              <div class="swiper-slide strava">
-                <div class="centeral-content">
-                  <div>
-                    <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21258_2x_b6eefd8c-d9c9-4a58-ae7b-284408aad2af.png?v=1689664928" alt="">
-                    <div class="u24Medium_v2">World’s First E-bike Integrated with Strava</div>
-                    <a class="my-button" target="_blank" href="/blogs/blog/urtopia-x-strava">Read the blog</a>
-                  </div>
-                </div>
+    </div>
+    <div class="blogs">
+        <div class="centeral-content">
+          {% assign home_page_blogs = settings.home_page_blogs | split: ',' %}
+          {% for article in blogs.blog.articles %}
+            {% if settings.home_page_blogs contains article.handle %}
+              <div href="{{ article.url }}">
+                  <img class="lozad" data-src="{{ article.image.src | image_url: width: 400 }}" alt="">
+                  <h3 class="u20Medium_v2">{{ article.title }}</h3>
+                  <div class="flex-1"></div>
+                  <a target="_blank" href="{{ article.url }}">Read more</a>
               </div>
+            {% endif %}
+          {% endfor %}
+            <div class="gotooooooo">
+                <span class="u20Medium_v2">To The Blog</span>
+                <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23561_2x_128577ad-cda4-49f4-9ce6-16f8947341fb.png?v=1704528452" alt="">
             </div>
-            <div class="swiper-pagination"></div>
         </div>
-
-
-<div class="season">
-  <div class="centeral-content">
-    <div>
-      <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20231209-133038_2x_def54c1d-6cc8-40bc-9209-4bc8b07ee538.png?v=1702265190" alt="">
-      <div class="u24DemiBold_v2">CES 2024 <br>Welcome to the era of AI E-BIke</div>
-      <a href="/pages/ces" class="my-button my-button-black" target="_blank">Learn More</a>
     </div>
-  </div>
-</div>
 
+    <script>
+      $('.gotooooooo').click(() => {
+        window.open('/blogs/blog')
+      })
 
-{% render 'home-page-media' %}
-<div class="home-page-ebike-banner">
-  <div class="centeral-content ">
-    <div class="flex-1 pcHide"></div>
-    <div class="u42DemiBold_v2">Carbon 1</div>
-    <div class="u24Medium_v2">Sporty and Lightweight</div>
-    <div class="u17Light_v2 mobileHide">Achieve your fitness goals while enjoying a<br class="mobileHide"> fast and sporty ride in style.</div>
-    <a class="my-button" href="/pages/e-bike">Learn more</a>
-  </div>
-</div>
+      $('.blogs .centeral-content > div[href]').on('click', function () {
+        window.open($(this).attr('href'))
+      })
 
-<div class="centeral-content ebike-products">
-  <div class="product-grid">
-      {% assign product = all_products["urtopia-carbon-e-bike"] %}
-      {% assign product_tags = settings.carbon_ebike_free_accessories_count | append: ' Freebies'   %}
-      {% assign product_variants = product.variants | where: "option1", "Carbon 1s · 350W · Shimano 7-Speed" | where: "available" %}
-      {% render 'product-card',
-          product_variants: product_variants,
-          product_variant_options_find_sort: "M,L,S",
-          product_name: 'Carbon 1s',
-          product_description: 'Powerful drive system ensures minimal effort and maximum fun',
-          product_discount_price: settings.carbon1s_ebike_discount_price,
-          product_url: product.url,
-      %}
-      {% assign product_variants = product.variants | where: "option1", "Carbon 1 · 250W · Carbon Belt" | where: "available" %}
-      {% render 'product-card',
-          product_variants: product_variants,
-          product_variant_options_find_sort: "M,L",
-          product_name: 'Carbon 1',
-          product_description: 'Sporty, light and nimble e-bike for everyday transport, fitness and fun.',
-          product_discount_price: settings.carbon_ebike_discount_price,
-          product_url: product.url,
-      %}
-  </div>
-</div>
-
-<div class="home-page-ebike-banner home-page-ebike-banner-chord">
-  <div class="centeral-content ">
-    <div class="flex-1 pcHide"></div>
-    <div class="u42DemiBold_v2">Chord</div>
-    <div class="u24Medium_v2">Comfort and Elegance</div>
-    <div class="u17Light_v2 mobileHide">Discover the ease of cycling with the Chord Cruiser's <br class="mobileHide">upright position and ergonomic design.</div>
-    <a class="my-button" href="/products/urtopia-chord-ebike">Learn more</a>
-  </div>
-</div>
-
-<div class="centeral-content ebike-products">
-  <div class="product-grid">
-    {% assign product = all_products["urtopia-chord-ebike"] %}
-    {% assign product_variants = product.variants | where: "option1", "High-Step" | where: "available" %}
-    {% render 'product-card',
-        product_variants: product_variants,
-        product_name: 'Chord',
-        product_description: 'Elegantly zip around town for meet-ups, errands, or Sunday fun.',
-        product_discount_price: settings.chord_ebike_discount_price,
-        product_url: product.url,
-    %}
-    {% assign product_variants = product.variants | where: "option1", "Step-Through" | where: "available" %}
-    {% render 'product-card',
-        product_variants: product_variants,
-        product_name: 'Chord X',
-        product_description: 'Easily kickstart your ride for workouts, city cruising, and pure enjoyment.',
-        product_discount_price: settings.chord_ebike_discount_price,
-        product_url: product.url,
-    %}
-  </div>
-</div>
-
-<div class="centeral-content mind">
-  <div class="u42DemiBold_v2">The Bike with a Mind</div>
-  <div class="u17Light_v2">An AI-Driven Smartebike, offering you more than riding.</div>
-  <div class="flex-1"></div>
-  <a class="my-button" href="/pages/pages-smartest-ebike" target="_blank">Learn more</a>
-</div>
-
-<div class="centeral-content mind greener">
-  <div class="u42DemiBold_v2">Sustainability: Ride Greener</div>
-  <div class="u17Light_v2">Sustainability at the Heart of Urtopia</div>
-  <div class="flex-1"></div>
-  <a class="my-button" href="/pages/sustainability-carbon-credit" target="_blank">Learn more</a>
-</div>
-
-<div class="boxs gray-background-color">
-  <div class="centeral-content">
-    <div>
-      <div class="u48DemiBold_v2">Test ride spots near you</div>
-      <div class="u17Light_v2">Experience the bike in real</div>
-      <a class="my-button my-button-black" href="/pages/test-ride">Book a Free Test Ride</a>
-    </div>
-    <div id="storepoint-container" data-tags="us" data-map-id="162f21804990ff"></div>
-    <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18294_2x_849210ff-f5fe-4be8-a248-3afbe6674080.png?v=1677557363" alt="app">
-    <div>
-      <div class="u48DemiBold_v2">Smart App</div>
-      <div class="u17Light_v2">Connect, track, share, achieve - Urtopia app: Your perfect cycling companion!</div>
-      <div class="images">
-          <a target="_blank" href="https://apps.apple.com/de/app/urtopia/id1592975789"><img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/321.jpg?v=1680155095" alt=""></a>
-          <a target="_blank" href="https://play.google.com/store/apps/details?id=com.newurtopia"><img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/get-it-on-google-play-badge-1.jpg?v=1680154868" alt=""></a>
-      </div>
-    </div>
-    <div>
-      <div class="u48DemiBold_v2">Peace of Mind</div>
-      <div class="u17Light_v2">Enjoy complete peace of mind with our 2-year warranty and 24/7 support, plus full after-sales service.</div>
-      <a class="my-button my-button-black" href="/pages/care">Learn more</a>
-    </div>
-    <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230306-114106.jpg?v=1678074104" alt="">
-    
-  </div>
-</div>
-
-<div class="ambass gray-background-color">
-  <div class="centeral-content">
-    <div class="u48DemiBold_v2">Ambass Reviews</div>
-    <div class="u20Medium_v2">Feel the Love From Celebrities and Athletes <br><a class="my-link u20DemiBold_v2" href="/pages/community">Learn more<a></a></div>
-  </div>
-</div>
-
-<style>
-#section7 {
-      max-width: 1280px;
-      margin: auto;
-      --swiper-theme-color: #ff6600;/* 设置Swiper风格 */
-      --swiper-navigation-color: #fff;/* 单独设置按钮颜色 */
-      --swiper-navigation-size: 30px;/* 设置按钮大小 */
-      position: relative;
-      overflow: hidden;
-      cursor: auto;
-    }
-    
-    #section7 img {
-      width: 100%;
-      height: auto;
-    }
-
-    #section7 .swiper-button-prev {
-      left: 25px;
-      top: calc(50% - 35px);
-    }
-
-    #section7 .swiper-button-next {
-      right: 15px;
-      top: calc(50% - 35px);
-    }
-
-    #section7 .swiper-slide .text {
-      position: relative;
-      left: 10px;
-      text-align: left;
-      font-size: 16px;
-    }
-  
-  #section7 .swiper-slide .u24Medium {
-	    font-weight: 700;
-  }
-  
-  #section7 .swiper-slide .u17Light {
-	    margin-top: 20px;
-  }
-  
-  @media (max-width: 767px) {
-    #section7 .swiper-button-prev,
-    #section7 .swiper-button-next {
-        display: none;
-    }
-
-    #section7 .swiper-scrollbar {
-        height: 2px;
-        position: static;
-        margin: 75px auto 0;
-        width: calc(100vw - 100px);
-    }
-
-    #section7 .swiper-slide .text {
-      left: 0;
-    }
-
-    #section7 .swiper-slide .text .u17Light {
-      font-size: 14px;
-      font-weight: 400;
-      margin-bottom: 15px;
-    }
-
-    #section7 .swiper-slide .text .u24Medium {
-      font-size: 20px;
-    }
-}
-
-
-@media (min-width: 768px) {
-    #section7 .swiper-scrollbar {
-        display: none;
-    }
-}
-</style>
-
-<div class="nba gray-background-color">
-  <div class="centeral-content">
-    <div id="section7">
-      <div class="swiper-wrapper">
-          <div class="swiper-slide">
-              <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20221031-150959_2x_73aee806-ce30-4b48-a6d0-ccf7d7ad2846.png?v=1677570084" alt="">
-              <div class="text">
-                <div class="u17Light">NBA Hall of Fame</div>
-                <div class="u24Medium">Tracy Mcgrady</div>
-              </div>
-          </div>
-		 <div class="swiper-slide">
-              <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18449.jpg?v=1678259406" alt="">
-              <div class="text">
-                <div class="u17Light">Classical Crossover Pianist</div>
-                <div class="u24Medium">Maksim Mrvica</div>
-              </div>
-          </div>
-		<div class="swiper-slide">
-              <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230228-170547.jpg?v=1677575166" alt="">
-              <div class="text">
-                <div class="u17Light">2021 Canoeing Olympic Champion</div>
-                <div class="u24Medium">Max Lemke</div>
-              </div>
-          </div>
-          <div class="swiper-slide">
-              <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_17920_2x_497e7daa-cce5-4377-bd70-b87b4741b84a.png?v=1677570061" alt="">
-              <div class="text">
-                <div class="u17Light">5x German champion triathlete</div>
-                <div class="u24Medium">Franz Loeschke</div>
-              </div>
-          </div>
-			 
-			  <div class="swiper-slide">
-              <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18384_2x_a1e993bf-6c59-495e-9144-249560a9464f.png?v=1677571548" alt="">
-              <div class="text">
-                <div class="u17Light">Best Jewelers in the World</div>
-                <div class="u24Medium">Ben Baller</div>
-              </div>
-          </div>
-          <div class="swiper-slide">
-              <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18385_2x_be0fdf1b-aa6c-4876-b59d-b4726fbe85f4.png?v=1677570039" alt="">
-              <div class="text">
-                <div class="u17Light">Choice Award for Favorite Band</div>
-                <div class="u24Medium">Smash Mouth</div>
-              </div>
-          </div>
-				
-          <div class="swiper-slide">
-              <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/URTOPIA_PISA-2_1_2x_661af923-52ce-4264-8f33-57e2ad655b9c.png?v=1677571232" alt="">
-              <div class="text">
-                <div class="u17Light">3x Italian BMX Champion</div>
-                <div class="u24Medium">Alessandro Barbero</div>
-              </div>
-          </div>
-          <div class="swiper-slide">
-              <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18386_2x_3ed11b52-b136-4263-8a1b-568fb7e95e69.png?v=1677571199" alt="">
-              <div class="text">
-                <div class="u17Light">Vice World Champion</div>
-                <div class="u24Medium">Philip Heintz</div>
-              </div>
-          </div>
-      </div>
-      <div class="swiper-button-prev"></div><!--左箭头。如果放置在swiper外面，需要自定义样式。-->
-     <div class="swiper-button-next"></div><!--右箭头。如果放置在swiper外面，需要自定义样式。-->
-     <div class="swiper-scrollbar"></div>
-  </div>
-  </div>
-</div>
-
-
-<script>
-  new Swiper('#section7', {    
-          spaceBetween: 15,
-          slidesPerView: global_config.is_mobile ? 1.5 : 3.5,
-          freeMode: global_config.is_mobile ? true : false,
-          navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        scrollbar: {
-              el: '.swiper-scrollbar',
-        },
-    })
-</script>
-<script>
-    $('.product-card .dots > div').on('click', e => {
-        const target = $(e.target)
-        const product_card = target.closest('.product-card')
-
-        // 先取消 其它兄弟元素的active, 再设置active
-        target.siblings().removeClass('active')
-        target.addClass('active')
-
-        const price = Number(target.attr('data-price'))
-        const compare_at_price = Number(target.attr('data-compare-at-price'))
-        const discount_price = Number(target.attr('data-product-discount-price'))
-        const variant_id = target.attr('data-variant')
-        const variant_image = target.attr('data-img')
-
-        // outlet 车型
-        if (discount_price === 0) {
-            product_card.find('.product_price .u24DemiBold_v2').text(getPriceFormat(price, true)).attr('data-price', getPriceFormat(compare_at_price, true))
-            product_card.find('.tags > span:first-child').text(`${getPriceFormat(compare_at_price - price, true)} OFF`)
-
-            console.log(price, compare_at_price)
-
-            if (price === compare_at_price) {
-                product_card.find('.product_price .u24DemiBold_v2').attr('data-price', '')
-                product_card.find('.tags > span:first-child').hide()
-            }
-        } else {
-            product_card.find('.product_price .u24DemiBold_v2').text(getPriceFormat(price - discount_price, true)).attr('data-price', getPriceFormat(price, true))
-            product_card.find('.product_price .u17Light_v2 > span').text(getPriceFormat((price - discount_price) / 24))
-            product_card.find('.tags > span:first-child').text(`${getPriceFormat(discount_price, true)} OFF`)
-        }
-
-        product_card.find('.variant-image').attr('src', variant_image)
-        product_card.find('.my-button').attr('href', `${product_card.find('.my-button').attr('href').split('?').shift()}?variant=${variant_id}`)
-    })
-
-    setTimeout(() => {
-        $('.product-card .dots > div:first-child').click()
-
-        $('.product-card .variant-image').on('click', e => {
-            const button = $(e.target).closest('.product-card').find('.my-button')
-
-            if (button.length) {
-                button[0].click()
-            }
-        })
-
-        $('.ebike-products .product-grid .product-card .my-button').removeClass('my-button-origin').addClass('my-button-black')
-    }, 30)
-</script>
-<script src="https://cdn.storepoint.co/api/v1/js/162f21804990ff.js" defer></script>
-
-
-    <script>    
-    // 是否有多个banner, 如果有 开启swiper
-    const isMultipartBanner = document.querySelectorAll('.banner .swiper-slide')
-    
-    isMultipartBanner.length > 1 && new Swiper('.banner', {
-        autoplay: {
-            disableOnInteraction: false,
-            pauseOnMouseEnter: false,
-            delay: 10000,
-        },
-        loop: true,
-        speed: 1000,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true
-        }
-    })
-
-
-      $('.banner a').on('click', e => {
-          const t = $(e.target)
-          const slide = t.closest('.swiper-slide')
-      
-          fetchBuried('websiteclick', 'homepage-banner', {
-              button: slide.hasClass('bluetti') ? (t.hasClass('my-button-ghost') ? 'learn_more' : 'order_now_buletti') : (t.hasClass('my-button-black') ? 'order_now' : 'meet_carbon')
-          }, true)
-       })
+      $('.test-ride .centeral-content > div[href]').on('click', function () {
+        window.open($(this).attr('href'))
+      })
     </script>

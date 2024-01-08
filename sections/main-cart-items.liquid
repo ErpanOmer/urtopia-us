@@ -266,6 +266,25 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
               {{ item.final_line_price | money }}
             </dd>
           </dl>
+          {% elsif item.product.price != item.product.compare_at_price %}
+            {% assign product_price = item.quantity | times: item.product.price | money %}
+            {% assign product_compare_at_price = item.quantity | times: item.product.compare_at_price | money %}
+            <dl class="cart-item__discounted-prices">
+              <dt class="visually-hidden">
+                {{ 'products.product.price.regular_price' | t }}
+              </dt>
+              <dd>
+                <s class="cart-item__old-price price price--end">
+                  {{ product_compare_at_price }}
+                </s>
+              </dd>
+              <dt class="visually-hidden">
+                {{ 'products.product.price.sale_price' | t }}
+              </dt>
+              <dd class="price price--end">
+                {{ product_price }}
+              </dd>
+            </dl>
           {%- else -%}
           <span class="price price--end">
             {{ item.original_line_price | money }}
@@ -368,6 +387,25 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
               {{ item.final_line_price | money }}
             </dd>
           </dl>
+          {% elsif item.product.price != item.product.compare_at_price %}
+            {% assign product_price = item.quantity | times: item.product.price | money %}
+            {% assign product_compare_at_price = item.quantity | times: item.product.compare_at_price | money %}
+            <dl class="cart-item__discounted-prices">
+              <dt class="visually-hidden">
+                {{ 'products.product.price.regular_price' | t }}
+              </dt>
+              <dd>
+                <s class="cart-item__old-price price price--end">
+                  {{ product_compare_at_price }}
+                </s>
+              </dd>
+              <dt class="visually-hidden">
+                {{ 'products.product.price.sale_price' | t }}
+              </dt>
+              <dd class="price price--end">
+                {{ product_price }}
+              </dd>
+            </dl>
           {%- else -%}
           <span class="price price--end">
             {{ item.original_line_price | money }}

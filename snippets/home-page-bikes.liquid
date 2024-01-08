@@ -270,31 +270,30 @@
 
 <link rel="preload" href="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/chordXgreycollection.png?v=1696840938" as="image">
 <link rel="preload" href="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3_1_2x_c75e6ef5-a3ac-49af-bb2f-c19dd565cfad.jpg?v=1689154308" as="image">
+<link rel="preload" href="https://newurtopia.com/cdn/shop/products/collectionwhite.png?v=1703557822&width=1000" as="image">
 
 
 <div id="bike">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <div class="name">Carbon 1s</div>
-            <div class="info">Shimano 7-Speed</div>
-              <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230922-181515.png?v=1695377746&width=1000" alt="">
+            <div class="name">Carbon 1 Pro</div>
+            <div class="info">Shimano 8-Speed</div>
+              <img src="https://newurtopia.com/cdn/shop/products/collectionblack.png?v=1703557822&width=1000" alt="">
               <div class="dots-and-price-and-size">
                 <div class="dots-and-price">
                   <div class="dots">
-                    <div onclick="changeBike('/products/urtopia-carbon-e-bike?variant=43556895916280','https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230922-181515.png?v=1695377746&width=1000', this)" orange class="active"></div>
-                    <div onclick="changeBike('/products/urtopia-carbon-e-bike?variant=43556896047352', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18151_2x_702ec45e-0fe8-49ed-865a-df341d3033d7.png?v=1677640124', this)" yellow></div>
-                    <div onclick="changeBike('/products/urtopia-carbon-e-bike?variant=43556895981816', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18138_2x_de02f431-3e7d-48c0-b887-85eda46c2421.png?v=1677640174', this)" gray></div>
-                    <div onclick="changeBike('/products/urtopia-carbon-e-bike?variant=43556899815672', 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230428-104445.png?v=1682649982', this)" peach></div>
+                    <div onclick="changeBike('/pages/lightweight-ebike-urtopia-carbon-1-pro?variant=44288621281528','https://newurtopia.com/cdn/shop/products/collectionblack.png?v=1703557822&width=1000', this)" black class="active"></div>
+                    <div onclick="changeBike('/pages/lightweight-ebike-urtopia-carbon-1-pro?variant=44288621347064', 'https://newurtopia.com/cdn/shop/products/collectionwhite.png?v=1703557822&width=1000', this)" white></div>
                   </div>
-                  <div class="u24DemiBold_v2" {% if settings.carbon1s_ebike_discount_price != "0" %} data-price="{{all_products['urtopia-carbon-e-bike'].price | money_without_trailing_zeros }}"{% endif %}>
-                    {{ all_products['urtopia-carbon-e-bike'].price | minus: settings.carbon1s_ebike_discount_price | money_without_trailing_zeros }}
+                  <div class="u24DemiBold_v2" {% if all_products['carbon-1-pro-reservation'].compare_at_price != all_products['carbon-1-pro-reservation'].price %}data-price="{{ all_products['carbon-1-pro-reservation'].compare_at_price | money_without_trailing_zeros }}"{% endif %}>
+                    {{ all_products['carbon-1-pro-reservation'].price | money_without_trailing_zeros }}
                   </div>
                 </div>
-                <div class="size">Fit for 5’3’’~6’5’’</div>
+                <div class="size">Fit for 5’7’’~6’5’’</div>
               </div> 
-              <a class="my-button my-button-white" href="/products/urtopia-carbon-e-bike?variant=43556895916280">Order now</a>
-              <div class="my-button my-button-black new" style="background-image: var(--sale-bike-tags1);">{{ settings.carbon1s_ebike_discount_price | money_without_trailing_zeros}} off</div>
-              <div class="my-button my-button-black new" style="transform: translateY(120%);background-image: var(--sale-bike-tags2);">{{ settings.carbon_ebike_free_accessories_count }} Freebies</div>
+              <a class="my-button my-button-white" href="/pages/lightweight-ebike-urtopia-carbon-1-pro?variant=44288621281528">Order now</a>
+              <div class="my-button my-button-black new" style="background-image: var(--sale-bike-tags1);">{{ all_products['carbon-1-pro-reservation'].compare_at_price |  minus: all_products['carbon-1-pro-reservation'].price | money_without_trailing_zeros}} off</div>
+              <!--<div class="my-button my-button-black new" style="transform: translateY(120%);background-image: var(--sale-bike-tags2);">{{ settings.carbon_ebike_free_accessories_count }} Freebies</div>-->
           </div>
           <div class="swiper-slide">
             <div class="name">Chord X</div>
