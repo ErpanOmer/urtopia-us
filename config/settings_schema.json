@@ -18,7 +18,7 @@
         "type": "text",
         "id": "carbon1s_ebike_discount_price",
         "label": "carbon车折扣价",
-        "default": "80000"
+        "default": "50000"
       },
       {
         "type": "text",
@@ -65,7 +65,7 @@
       {
         "type": "checkbox",
         "id": "hide_sale_countdown",
-        "default": false,
+        "default": true,
         "label": "活动倒计时显示和隐藏"
       },
       {
@@ -78,7 +78,7 @@
         "type": "text",
         "id": "home_page_blogs",
         "label": "首页blog展示",
-        "default": "blog/every-day-means-a-riding-day,blog/tom,blog/uwe-zapf"
+        "default": "blog\/every-day-means-a-riding-day,blog\/tom,blog\/uwe-zapf"
       }
     ]
   },

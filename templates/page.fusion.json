@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "fusion": {
+      "type": "fusion",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "fusion"
+  ]
+}
