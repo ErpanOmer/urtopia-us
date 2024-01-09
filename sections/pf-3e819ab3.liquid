@@ -97,8 +97,8 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
             product_url: product.url,
         %}
         
-        <div class="gray-background-color u30DemiBold_v2 lozad mobileHide" data-background-image="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_22829_2x_82531e4b-8b9c-40c7-822f-c58f9db7d477.jpg?v=1695625176">Full Carbon Lightweight Sporty</div>
-        <div class="gray-background-color u30DemiBold_v2 lozad mobileHide" data-background-image="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_22830_2x_8c178fff-ea2f-4b60-99c8-a44937213f1f.jpg?v=1695625131">Casual Comfortable Elegant</div>
+        {% comment %} <div class="gray-background-color u30DemiBold_v2 lozad mobileHide" data-background-image="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_22829_2x_82531e4b-8b9c-40c7-822f-c58f9db7d477.jpg?v=1695625176">Full Carbon Lightweight Sporty</div>
+        <div class="gray-background-color u30DemiBold_v2 lozad mobileHide" data-background-image="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_22830_2x_8c178fff-ea2f-4b60-99c8-a44937213f1f.jpg?v=1695625131">Casual Comfortable Elegant</div> {% endcomment %}
         {% assign product = all_products["urtopia-chord-ebike"] %}
         {% assign product_variants = product.variants | where: "option1", "High-Step" | where: "available" %}
         {% assign product_reviews_count = 112 %}

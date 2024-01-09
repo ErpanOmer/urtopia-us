@@ -65,25 +65,46 @@ h4 {
 
     & + .banner {
         margin-top: 2vh;
-        color: #000;
-        background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/122_2x_b4442996-82a1-461d-a18d-3a22ce2b9041.jpg?v=1704522831');
-
-        .u60Medium_v2 {
-            &::after {
-                content: "";
-            }
-        }
-
-        .my-button-white {
-            &:hover {
-                background-color: transparent;
-            }
-        }
 
         @media (max-width: 767px) {
-            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/122_2x_c9b0f95b-68ad-4be9-9142-8fd9630df095.jpg?v=1704523026');
             margin-top: 2.5vw;
         }
+    }
+}
+
+.chord {
+    color: #000;
+    background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/122_2x_b4442996-82a1-461d-a18d-3a22ce2b9041.jpg?v=1704522831');
+
+    .u60Medium_v2 {
+        &::after {
+            content: "";
+        }
+    }
+
+    .my-button-white {
+        &:hover {
+            background-color: transparent;
+        }
+    }
+
+    @media (max-width: 767px) {
+        background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/122_2x_c9b0f95b-68ad-4be9-9142-8fd9630df095.jpg?v=1704523026');
+    }
+}
+
+
+.fusion {
+    background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2x.jpg?v=1704792522');
+
+    .u60Medium_v2 {
+        &::after {
+            color: #D1A73E;
+        }
+    }
+
+    @media (max-width: 767px) {
+        background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240109-183928.jpg?v=1704796786');
     }
 }
 
@@ -380,7 +401,7 @@ h4 {
     .centeral-content {
         .home-page-media {
             display: flex;
-            height: 360px;
+            height: 340px;
             width: 100%;
             flex-direction: column;
             align-items: center;
@@ -395,7 +416,7 @@ h4 {
                 flex-direction: column;
                 text-align: center;
         
-                div {
+                h2 {
                     animation-duration: 0.5s;
                     animation-timing-function: ease-out;
                 }

@@ -68,6 +68,19 @@
 </div>
 <div class="centeral-content ebike-products">
     <div class="product-grid">
+        {% assign product = all_products["carbon-1-pro-reservation"] %}
+        {% assign product_variants = product.variants | where: "available" %}
+        {% assign product_reviews_count = 0 %}
+        {% render 'product-card-2',
+            product_variants: product_variants,
+            product_variant_options_find_sort: "M,L,S",
+            product_name: 'Carbon 1 Pro',
+            product_tags: "<span>New</span>",
+            product_description: 'Sporty, light and nimble e-bike for everyday transport, fitness and fun.',
+            product_discount_price: settings.carbon1_ebike_discount_price,
+            product_reviews_count: product_reviews_count,
+            product_url: "/pages/lightweight-ebike-urtopia-carbon-1-pro",
+        %}
         {% assign product = all_products["urtopia-chord-ebike"] %}
         {% assign product_variants = product.variants | where: "option1", "High-Step" | where: "available" %}
         {% assign product_reviews_count = 112 %}
@@ -89,21 +102,9 @@
             product_reviews_count: product_reviews_count,
             product_url: product.url,
         %}
-        <div class="gray-background-color u30DemiBold_v2 lozad mobileHide" data-background-image="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_22830_2x_8c178fff-ea2f-4b60-99c8-a44937213f1f.jpg?v=1695625131">Casual Comfortable Elegant</div>
-        <div class="gray-background-color u30DemiBold_v2 lozad mobileHide" data-background-image="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_22829_2x_82531e4b-8b9c-40c7-822f-c58f9db7d477.jpg?v=1695625176">Full Carbon Lightweight Sporty</div>
-        {% assign product = all_products["carbon-1-pro-reservation"] %}
-        {% assign product_variants = product.variants | where: "available" %}
-        {% assign product_reviews_count = 0 %}
-        {% render 'product-card-2',
-            product_variants: product_variants,
-            product_variant_options_find_sort: "M,L,S",
-            product_name: 'Carbon 1 Pro',
-            product_tags: "<span>New</span>",
-            product_description: 'Sporty, light and nimble e-bike for everyday transport, fitness and fun.',
-            product_discount_price: settings.carbon1_ebike_discount_price,
-            product_reviews_count: product_reviews_count,
-            product_url: "/pages/lightweight-ebike-urtopia-carbon-1-pro",
-        %}
+        {% comment %} <div class="gray-background-color u30DemiBold_v2 lozad mobileHide" data-background-image="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_22830_2x_8c178fff-ea2f-4b60-99c8-a44937213f1f.jpg?v=1695625131">Casual Comfortable Elegant</div>
+        <div class="gray-background-color u30DemiBold_v2 lozad mobileHide" data-background-image="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_22829_2x_82531e4b-8b9c-40c7-822f-c58f9db7d477.jpg?v=1695625176">Full Carbon Lightweight Sporty</div> {% endcomment %}
+        
         {% assign product = all_products["urtopia-carbon-e-bike"] %}
         {% assign product_variants = product.variants | where: "option1", "Carbon 1s · 350W · Shimano 7-Speed" | where: "available" %}
         {% assign product_tags = settings.carbon_ebike_free_accessories_count | append: ' Freebies'   %}
@@ -117,71 +118,6 @@
             product_reviews_count: product_reviews_count,
             product_url: product.url,
         %}
-    </div>
-</div>
-
-<div class="gray-background-color top-area">
-    <div class="centeral-content">
-        <div class="u72DemiBold_v2">OUTLET</div>
-        <div class="u24Medium_v2">The Urtopia Outlet includes demo e-bikes with the same quality and performance as new ones. The e-bikes are tested by our engineers for our customers. Also, meticulous quality control measures are implemented prior to offering them for sale.</div>
-        <div class="product item">
-            <div>
-                <div class="u36DemiBold_v2">Outlet Carbon 1s</div>
-                <!--<div class="u20Light_v2">Fit for 175 - 195 cm</div>-->
-                <div class="u30DemiBold_v2 emphasize" data-price={{ carbon.compare_at_price | money_without_trailing_zeros }}>{{ carbon.price | money_without_trailing_zeros }}</div>
-                <div class="dots">
-                    <div data-img="{{ carbon1_Sirius }}" data-variant="43780147511544" orange class="active"></div>
-                    <!--<div data-img="{{ carbon1_Paris }}" data-variant="43935607324888" yellow></div>-->
-                    <div data-img="{{ carbon1_Lyra }}" data-variant="43987465371896" gray></div>
-                    <div data-img="{{ carbon1_Vanilla }}" data-variant="43987465175288" peach></div>
-                </div>
-                <a href="/products/outlet-carbon-1-1s?variant=43780147511544" class="my-button my-button-origin">Order now</a>
-            </div>
-            <div style="flex: 1.5;">
-                <img src="{{carbon1_Sirius}}" alt="">
-                <div class="u48DemiBold_v2 off">{{ carbon.compare_at_price | minus: carbon.price | money_without_trailing_zeros }} OFF</div>
-            </div>
-        </div>
-        <!--<div class="product-chord">
-            <div class="item">
-                <div class="u36DemiBold_v2 mobileHide">Outlet Chord</div>
-                <div class="u24DemiBold_v2 mobileHide">{{ chord.compare_at_price | minus: chord.price | money_without_trailing_zeros }} OFF</div>
-                <div style="position: relative;">
-                    <img src="{{ chord_white }}" alt="">
-                    <div class="u48DemiBold_v2 off pcHide">{{ chord.compare_at_price | minus: chord.price | money_without_trailing_zeros }} OFF</div>
-                </div>
-                <div class="u36DemiBold_v2 pcHide">Outlet Chord</div>
-                <div class="u20Light_v2 pcHide">Fit for 170cm - 195cm</div>
-                <div class="price">
-                    <div class="dots">
-                        <div data-img="{{ chord_white }}" data-variant="43950919024856" white class="active"></div>
-                        <div data-img="{{ chord_black }}" data-variant="43950919057624" black></div>
-                    </div>
-                    <div class="u24DemiBold_v2 emphasize" data-price={{ chord.compare_at_price | money_without_trailing_zeros }}>{{ chord.price | money_without_trailing_zeros }}</div>
-                </div>
-                <div class="u20Light_v2 mobileHide">Fit for 170cm - 195cm</div>
-                <a href="/products/outlet-urtopia-chord?variant=43950919024856" class="my-button my-button-origin">Order now</a>
-            </div>
-            <div class="item">
-                <div class="u36DemiBold_v2 mobileHide">Outlet Chord X</div>
-                <div class="u24DemiBold_v2 mobileHide">{{ chord.compare_at_price | minus: chord.price | money_without_trailing_zeros }} OFF</div>
-                <div style="position: relative;">
-                    <img src="{{ chordx_white }}" alt="">
-                    <div class="u48DemiBold_v2 off pcHide">{{ chord.compare_at_price | minus: chord.price | money_without_trailing_zeros }} OFF</div>
-                </div>
-                <div class="u36DemiBold_v2 pcHide">Outlet Chord X</div>
-                <div class="u20Light_v2 pcHide">Fit for 160cm - 185cm</div>
-                <div class="price">
-                    <div class="dots">
-                        <div data-img="{{ chordx_white }}" data-variant="43950919090392" white class="active"></div>
-                        <div data-img="{{ chordx_black }}" data-variant="43950919123160" black></div>
-                    </div>
-                    <div class="u24DemiBold_v2 emphasize" data-price={{ chord.compare_at_price | money_without_trailing_zeros }}>{{ chord.price | money_without_trailing_zeros }}</div>
-                </div>
-                <div class="u20Light_v2 mobileHide">Fit for 160cm - 185cm</div>
-                <a href="/products/outlet-urtopia-chord?variant=43950919090392" class="my-button my-button-origin">Order now</a>
-            </div>
-        </div>-->
     </div>
 </div>
 

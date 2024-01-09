@@ -9,7 +9,7 @@
   margin: 0;
 }
 
-.totals > h2 {
+.totals > h4 {
   font-size: calc(var(--font-heading-scale) * 2.2rem);
   font-weight:600;
 }

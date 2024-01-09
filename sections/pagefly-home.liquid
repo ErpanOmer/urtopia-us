@@ -1,41 +1,35 @@
 {{ 'home.scss.css' | asset_url | stylesheet_tag: preload: true }}
 
+<h1 class="visuallyhidden">Urtopia Ebike - Sleek, Full Carbon, Lightweight, Smart</h1>
 <div class="banner">
-        <h1 class="u60Medium_v2">Carbon 1 Pro</h1>
+        <h2 class="u60Medium_v2">Carbon 1 Pro</h2>
         <h3 class="u20Medium_v2">Sporty and Lightweight</h3>
         <a class="my-button my-button-ghost" href="/pages/lightweight-ebike-urtopia-carbon-1-pro" target="_blank">Learn More</a>
     </div>
-    <div class="banner">
-        <h1 class="u60Medium_v2">Chord</h1>
+    <div class="banner chord">
+        <h2 class="u60Medium_v2">Chord</h2>
         <h3 class="u20Medium_v2">Comfort and Elegance</h3>
         <a class="my-button my-button-white" href="/pages/lightweight-commuter-ebike-urtopia-chord" target="_blank">Learn More</a>
     </div>
+    <div class="banner fusion">
+        <h2 class="u60Medium_v2">Fusion</h2>
+        <h3 class="u20Medium_v2">Form Follows Function</h3>
+        <a class="my-button my-button-ghost" href="/pages/lightweight-commuter-ebike-urtopia-chord" target="_blank">Learn More</a>
+    </div>
     {% render 'home-page-media' %}
     <div class="mind">
-        <h3 class="u36Medium_v2">The Bike with a Mind</h3>
-        <p class="u17Light_v2">
-            <span>
-                An AI-Driven Smartebike, offering you more than riding.
-            </span>
-        </p>
+        <h2 class="u36Medium_v2">The Bike with a Mind</h2>
+        <h3 class="u17Light_v2">An AI-Driven Smartebike, offering you more than riding.</h3>
         <a class="my-button my-button-white" href="/pages/pages-smartest-ebike" target="_blank">Learn More</a>
     </div>
     <div class="smart">
         <div>
-            <h3 class="u36Medium_v2">Smart App</h3>
-            <p class="u17Light_v2">
-                <span>
-                    Connect, track, share, achieve - Urtopia app: Your perfect cycling companion!
-                </span>
-            </p>
+            <h2 class="u36Medium_v2">Smart App</h2>
+            <h3 class="u17Light_v2">Connect, track, share, achieve - Urtopia app: Your perfect cycling companion!</h3>
         </div>
         <div>
-            <h3 class="u36Medium_v2">Sustainability</h3>
-            <p class="u17Light_v2">
-                <span>
-                    Sustainability at the Heart of Urtopia
-                </span>
-            </p>
+            <h2 class="u36Medium_v2">Sustainability</h2>
+            <h3 class="u17Light_v2">Sustainability at the Heart of Urtopia</h3>
             <a class="my-button my-button-white" href="/pages/sustainability-carbon-credit" target="_blank">Learn More</a>
         </div>
     </div>
@@ -49,11 +43,7 @@
                     Test Ride Spots
                 </h2>
                 <div class="flex-1"></div>
-                <p class="u17Light_v2">
-                    <span>
-                        Experience the bike in real
-                    </span>
-                </p>
+                <h3 class="u17Light_v2">Experience the bike in real</h3>
                 <a href="/pages/test-ride" target="_blank">Learn more</a>
             </div>
             <div href="/pages/care">
@@ -64,11 +54,7 @@
                     Peace of Mind
                 </h2>
                 <div class="flex-1"></div>
-                <p class="u17Light_v2">
-                    <span>
-                        24/7 Support, Full After-Sales
-                    </span>
-                </p>
+                <h3 class="u17Light_v2">24/7 Support, Full After-Sales</h3>
                 <a href="/pages/care" target="_blank">Learn more</a>
             </div>
             <div href="/pages/aboutus">
@@ -79,11 +65,7 @@
                     About Us
                 </h2>
                 <div class="flex-1"></div>
-                <p class="u17Light_v2">
-                    <span>
-                        Ride Smart, Ride Green
-                    </span>
-                </p>
+                <h3 class="u17Light_v2">Ride Smart, Ride Green</h3>
                 <a target="_blank" href="/pages/aboutus">Learn more</a>
             </div>
         </div>
@@ -95,7 +77,7 @@
             {% if settings.home_page_blogs contains article.handle %}
               <div href="{{ article.url }}">
                   <img class="lozad" data-src="{{ article.image.src | image_url: width: 400 }}" alt="">
-                  <h3 class="u20Medium_v2">{{ article.title }}</h3>
+                  <h2 class="u20Medium_v2">{{ article.title }}</h2>
                   <div class="flex-1"></div>
                   <a target="_blank" href="{{ article.url }}">Read more</a>
               </div>

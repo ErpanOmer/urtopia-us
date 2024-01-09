@@ -29,7 +29,7 @@
     </div>
     <div class="hartmut">
         <div class="centeral-content">
-            <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23602_2x_bcb4260d-41d8-4ffc-a6e8-b2bdab86d8f1.jpg?v=1704769110"
+            <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240109-161511.jpg?v=1704788133&width=700"
                 alt="">
             <div>
                 <h2 class="u48Medium_v2">Hartmut Esslinger</h2>
@@ -71,8 +71,7 @@
                 </div>
             </div>
         </div>
-        <img class="pcHide"
-            src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23721_2x_3e9f2e20-9fdb-4747-a4d2-27fa03a2b242.jpg?v=1704772099"
+        <img class="pcHide lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23721_2x_3e9f2e20-9fdb-4747-a4d2-27fa03a2b242.jpg?v=1704772099"
             alt="">
     </div>
     <div class="premium">
@@ -94,8 +93,7 @@
                 </form>
             </div>
         </div>
-        <img class="pcHide"
-            src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/45_2x_a2162152-da79-4615-9ff5-85aa18bc7524.jpg?v=1704779996"
+        <img class="pcHide lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/45_2x_a2162152-da79-4615-9ff5-85aa18bc7524.jpg?v=1704779996"
             alt="">
     </div>
     <div class="world machine">
@@ -143,8 +141,7 @@
                 </div>
             </div>
         </div>
-        <img class="pcHide"
-            src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2_2x_7d072b39-10ec-4c8d-9c39-50017b8d1cc7.jpg?v=1704781203"
+        <img class="pcHide lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2_2x_7d072b39-10ec-4c8d-9c39-50017b8d1cc7.jpg?v=1704781203"
             alt="">
     </div>
     <div class="premium smooth">
@@ -180,8 +177,7 @@
                 </form>
             </div>
         </div>
-        <img class="pcHide"
-            src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23708_2x_7c355398-436c-4edf-a623-2efb6be493b0.jpg?v=1704782783"
+        <img class="pcHide lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23708_2x_7c355398-436c-4edf-a623-2efb6be493b0.jpg?v=1704782783"
             alt="">
     </div>
     <div class="world safety">
@@ -199,7 +195,17 @@
                 <h3 class="u30Medium_v2">Projection Light</h3>
             </div>
         </div>
-        <img class="pcHide"
-            src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/45_2x_9602aad8-3800-4cf0-a0f6-80721b417eef.jpg?v=1704783731"
+        <img class="pcHide lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/45_2x_9602aad8-3800-4cf0-a0f6-80721b417eef.jpg?v=1704783731"
             alt="">
     </div>
+
+
+<script>
+  $('.emaillllllllllllll').on('submit', function (event) {
+        $(this).find('.u17DemiBold_v2').hide()
+        fetchBuried('emailpop', 'submit', { email: $(this).find('input').val(), tag: `DE,POPUP,FUSIONUS` }).finally(() => $(this).find('.u17DemiBold_v2').show())
+
+        event.preventDefault();
+        return false;
+    })
+</script>

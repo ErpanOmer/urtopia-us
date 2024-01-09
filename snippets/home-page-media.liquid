@@ -37,8 +37,8 @@
   <div class="centeral-content">
       <div class="home-page-media mobileHide">
         <div class="texts">
-          <div>{{text_1}}</div>
-          <div></div>
+          <h2 class="u24DemiBold_v2">{{text_1}}</h2>
+          <h2 class="u24DemiBold_v2"></h2>
         </div>
         <div class="logos">
           <img active src="{{ img_1 }}" onclick="moveTop(`{{text_1}}`, this)"/>
@@ -53,23 +53,23 @@
         <div class="swiper-wrapper swiper-container-horizontal swiper-container-fade">
           <div class="swiper-slide">
             <img src="{{img_1}}"/>
-            <div class="u20Medium">{{text_1}}</div>
+            <h2 class="u20Medium">{{text_1}}</h2>
           </div>
           <div class="swiper-slide">
             <img src="{{img_2}}"/>
-            <div class="u20Medium">{{text_2}}</div>
+            <h2 class="u20Medium">{{text_2}}</h2>
           </div>
           <div class="swiper-slide">
             <img src="{{img_3}}"/>
-            <div class="u20Medium">{{text_3}}</div>
+            <h2 class="u20Medium">{{text_3}}</h2>
           </div>
           <div class="swiper-slide">
             <img src="{{img_4}}"/>
-            <div class="u20Medium">{{text_4}}</div>
+            <h2 class="u20Medium">{{text_4}}</h2>
           </div>
           <div class="swiper-slide">
             <img src="{{img_5}}"/>
-            <div class="u20Medium">{{text_5}}</div>
+            <h2 class="u20Medium">{{text_5}}</h2>
           </div>
         </div>
         <div class="swiper-pagination"></div>
@@ -95,8 +95,8 @@
 
       const texts = document.querySelector('.home-page-media .texts')
       texts.innerHTML = `
-                          <div class="toBottom">${temp}</div>
-                          <div class="toTop">${text}</div>
+                          <h2 class="toBottom u24DemiBold_v2">${temp}</h2>
+                          <h2 class="toTop u24DemiBold_v2">${text}</h2>
                         `
 
       temp = text
