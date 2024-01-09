@@ -227,7 +227,7 @@
 
   .hedaer-secondary-menu .centreallllll .bikesssssss {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     grid-gap: 5%;
     padding: 0 5%; 
     width: 100%;
@@ -570,15 +570,6 @@
                                               </div>  
                                             <img src="{{ productttttt.first.featured_image | image_url: width: 300 }}">
                                         </div>
-                                        {% assign productttttt = all_products['urtopia-carbon-e-bike'].variants | where: "title", "Carbon 1s · 350W · Shimano 7-Speed / M / Midnight in Paris" %}
-                                        <div class="by-model" href="/pages/e-bike">
-                                            <div>
-                                              <div class="u14DemiBold_v2">Carbon 1s</div>
-                                              <div class="u11Light_v2">Lightweight and speedy</div>
-                                              <span class="u14DemiBold_v2 emphasize" data-price="{{ productttttt.first.price | money_without_trailing_zeros }}">{{ productttttt.first.price | minus: settings.carbon1s_ebike_discount_price | money_without_trailing_zeros }}</span>
-                                            </div>
-                                            <img src="{{ productttttt.first.featured_image | image_url: width: 300 }}">
-                                        </div>
                                         {% assign productttttt = all_products['urtopia-chord-ebike'].variants | where: "title", "High-Step / White" %}
                                         <div class="by-model" href="/pages/lightweight-commuter-ebike-urtopia-chord">
                                             <div>
@@ -909,14 +900,6 @@
                                           <div class="u14Light_v2">Sporty and Lightweight</div>
                                           <div class="flex-1"></div>
                                           <span class="u17DemiBold_v2 emphasize" {% unless productttttt.first.compare_at_price == productttttt.first.price %}data-price="{{ productttttt.first.compare_at_price | money_without_trailing_zeros }}"{% endunless %}>{{ productttttt.first.price | money_without_trailing_zeros }}</span>
-                                      </div>
-                                    {% assign productttttt = all_products['urtopia-carbon-e-bike'].variants | where: "title", "Carbon 1s · 350W · Shimano 7-Speed / M / Midnight in Paris" %}
-                                      <div class="by-model" href="/pages/e-bike">
-                                          <img src="{{ productttttt.first.featured_image | image_url: width: 500 }}">
-                                          <div class="u20DemiBold_v2">Carbon 1s</div>
-                                          <div class="u14Light_v2">Lightweight and speedy</div>
-                                          <div class="flex-1"></div>
-                                          <span class="u17DemiBold_v2 emphasize" data-price="{{ productttttt.first.price | money_without_trailing_zeros }}">{{ productttttt.first.price | minus: settings.carbon1s_ebike_discount_price | money_without_trailing_zeros }}</span>
                                       </div>
                                       
                                       {% assign productttttt = all_products['urtopia-chord-ebike'].variants | where: "title", "High-Step / White" %}
