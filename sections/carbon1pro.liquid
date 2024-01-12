@@ -1128,7 +1128,7 @@
 					<div class="u36DemiBold_v2 mb6">Urtopia Carbon 1 Pro</div>
                     <div class="u17Medium_v2 onlllllllly">Pre-order Promotion</div>
 					<div class="product-price u30DemiBold_v2 {% unless product.compare_at_price != product.price %}mb6{% endunless %}" {% unless product.compare_at_price != product.price %}style="color: #000;"{% endunless %} {% unless product.compare_at_price == product.price %} data-price="{{ product.compare_at_price | money }}"{% endunless %}>{{ product.price  | money }}</div>
-                    <div class="sale-tag mb12">
+                    <div class="sale-tag mb6">
                         <!--<div class="u17Medium_v2">{{ settings.sale_name }}</div>-->
                         <div class="u14Light_v2" style="margin: 0;">Free shipping.</div>
                     </div>
@@ -1165,7 +1165,7 @@
                         <div class="u17Light_v2">Free Fenders, Kickstand, <br>1-Year Connect Service Included</div>
                     </div>
                 </div>
-                {% unless true %}
+                {% unless settings.hide_sale_countdown %}
                     <div class="count-down mb12 mobileHide">
                       <div class="u17Medium_v2">Promotion Ends in:</div>
                       <img src="http://i.countdownmail.com/205dop.gif">
@@ -1194,7 +1194,7 @@
                         </div>
                     {% endfor %}
 				</div>
-                {% unless true %}
+                {% unless settings.hide_sale_countdown %}
                     <div class="count-down mb12 pcHide">
                       <div class="u17Medium_v2">Promotion Ends in:</div>
                       <img src="http://i.countdownmail.com/205dop.gif">
