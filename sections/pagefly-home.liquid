@@ -73,16 +73,20 @@
     <div class="blogs">
         <div class="centeral-content">
           {% assign home_page_blogs = settings.home_page_blogs | split: ',' %}
-          {% for article in blogs.blog.articles %}
-            {% if settings.home_page_blogs contains article.handle %}
-              <div href="{{ article.url }}">
-                  <img class="lozad" data-src="{{ article.image.src | image_url: width: 400 }}" alt="">
-                  <h2 class="u20Medium_v2">{{ article.title }}</h2>
-                  <div class="flex-1"></div>
-                  <a target="_blank" href="{{ article.url }}">Read more</a>
-              </div>
-            {% endif %}
+          {% for blog in home_page_blogs %}
+            {% for article in blogs.blog.articles %}
+                {% if blog == article.handle %}
+                  <div href="{{ article.url }}">
+                      <img class="lozad" data-src="{{ article.image.src | image_url: width: 400 }}" alt="">
+                      <h2 class="u20Medium_v2">{{ article.title }}</h2>
+                      <div class="flex-1"></div>
+                      <a target="_blank" href="{{ article.url }}">Read more</a>
+                  </div>
+                {% endif %}
+              {% endfor %}
           {% endfor %}
+
+          
             <div class="gotooooooo">
                 <span class="u20Medium_v2">To The Blog</span>
                 <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23561_2x_128577ad-cda4-49f4-9ce6-16f8947341fb.png?v=1704528452" alt="">

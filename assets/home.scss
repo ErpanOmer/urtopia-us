@@ -266,7 +266,7 @@ h4 {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-column-gap: 20px;
-        grid-row-gap: 10px;
+        grid-row-gap: 8vw;
         position: relative;
 
         & > div {
@@ -274,18 +274,17 @@ h4 {
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding-bottom: 10%;
+            padding-bottom: 7.5%;
             overflow: hidden;
             cursor: pointer;
 
             .u20Medium_v2 {
-                padding: 10% 7.5%;
+                padding: 7.5%;
                 text-align: center;
             }
 
             img {
-                max-height: 240px;
-                width: 100%;
+                aspect-ratio: 1.325;
                 object-fit: cover;
                 transition: all .5s ease-out;
             }
@@ -327,6 +326,7 @@ h4 {
             img {
                 max-width: 48px;
                 margin-left: 20px;
+                aspect-ratio: 1;
             }
 
             &:hover {

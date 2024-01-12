@@ -78,7 +78,7 @@
         "type": "text",
         "id": "home_page_blogs",
         "label": "首页blog展示",
-        "default": "blog\/every-day-means-a-riding-day,blog\/tom,blog\/uwe-zapf"
+        "default": "blog\/smart-e-bike-with-chatgpt-urtopia-eurobike2023,blog\/ambassador-s-story-michael-j-coles-over-that-rock,blog\/smart-is-more-than-internet-connection"
       }
     ]
   },
