@@ -2458,7 +2458,7 @@ h4 {
     }
 
     @media (max-width: 767px) {
-        padding-bottom: 120px;
+        padding-bottom: 16vw;
 
         .centeral-content {
             grid-template-columns: 1fr;
@@ -2550,4 +2550,26 @@ h4 {
             }
         }
     }
+}
+
+
+.judmeeeeeeeee {
+    background-color: #fff;
+    padding-bottom: 12vh;
+
+    @media (max-width: 767px) {
+        padding-bottom: 24vw;
+
+        .centeral-content {
+            padding: 0 4vw;
+        }
+    }
+}
+
+body .jm-mfp-bg {
+    z-index: 11042;
+}
+
+body .jm-mfp-wrap {
+    z-index: 110043;
 }

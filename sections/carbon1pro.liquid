@@ -1055,7 +1055,10 @@
         <div class="product" data-pf-type="ProductBox">
 		<div class="centeral-content">
 			<div class="commonComponent pcHide">
-				<div class="u36DemiBold_v2 mb6">{{  product.title }}</div>
+				<div class="u36DemiBold_v2">{{  product.title }}</div>
+                <div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-25_ order-djs mb6">
+					<div class="pf-judme">{% render "judgeme_widgets", widget_type: "judgeme_preview_badge", jm_style: "", concierge_install: false, product: product %}</div>
+				</div>
                 <div class="u14Medium_v2 onlllllllly">Pre-order Promotion</div>
 				<div class="product-price u30DemiBold_v2 {% unless product.compare_at_price != product.price %}mb6{% endunless %}" {% unless product.compare_at_price != product.price %}style="color: #000;"{% endunless %} {% unless product.compare_at_price == product.price %} data-price="{{ product.compare_at_price | money }}"{% endunless %}>{{ product.price | money }}</div>
         <div class="sale-tag mb6">
@@ -1125,7 +1128,8 @@
 				<input type="hidden" name="form_type" value="product">
 				<input type="hidden" name="utf8" value="✓">
 				<div class="commonComponent mobileHide" id="sale_acc">
-					<div class="u36DemiBold_v2 mb6">Urtopia Carbon 1 Pro</div>
+					<div class="u36DemiBold_v2">{{ product.title }}</div>
+                    <div class="mb6">{% render "judgeme_widgets", widget_type: "judgeme_preview_badge", jm_style: "", concierge_install: false, product: product %}</div>
                     <div class="u17Medium_v2 onlllllllly">Pre-order Promotion</div>
 					<div class="product-price u30DemiBold_v2 {% unless product.compare_at_price != product.price %}mb6{% endunless %}" {% unless product.compare_at_price != product.price %}style="color: #000;"{% endunless %} {% unless product.compare_at_price == product.price %} data-price="{{ product.compare_at_price | money }}"{% endunless %}>{{ product.price  | money }}</div>
                     <div class="sale-tag mb6">
@@ -1274,41 +1278,44 @@
         </div>
       </div>
       <div class="boxs3" id="boxs3">
-  <div class="centeral-content">
-    <div></div>
-    <div>
-      <div class="u30DemiBold_v2">Local care all the time</div>
-      <div class="u17Light_v2">
-        <div><img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/shopping-mall_2x_44d99fcd-f0f4-443b-927e-b68e48af010f.png?v=1687259496">60+ service partners</div>
-        <div><img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24-hours_2x_d6a8eeb2-4564-4351-8cb9-096dbb778479.png?v=1687259501">24hrs service response, App build-in portal</div>
-        <div><img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/box_2x_2b3b7c15-f5ae-4305-956f-7543b63b2dda.png?v=1687259506"><span>Spare parts available locally, ships in 3 days.</span>
+        <div class="centeral-content">
+            <div></div>
+            <div>
+            <div class="u30DemiBold_v2">Local care all the time</div>
+            <div class="u17Light_v2">
+                <div><img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/shopping-mall_2x_44d99fcd-f0f4-443b-927e-b68e48af010f.png?v=1687259496">60+ service partners</div>
+                <div><img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24-hours_2x_d6a8eeb2-4564-4351-8cb9-096dbb778479.png?v=1687259501">24hrs service response, App build-in portal</div>
+                <div><img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/box_2x_2b3b7c15-f5ae-4305-956f-7543b63b2dda.png?v=1687259506"><span>Spare parts available locally, ships in 3 days.</span>
+                </div>
+                <div><img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/customer-satisfaction_2x_c7081e3a-1864-43b6-8ed2-f77895eafa6a.png?v=1687259512">10+ technical experts, 99% satisfaction rate.</div>
+            </div>
+            <a class="my-button my-button-black" href="/pages/care" target="_blank">Learn more</a>
+            </div>
+            <!--<div>
+            <div class="u30DemiBold_v2">Leasing Partners at Your Choice</div>
+            <div class="u17Light_v2">We offer you the opportunity to get your dream bike at low monthly leasing rates through various leasing providers.</div>
+            <div class="logos">
+                <div>
+                <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/JR-Logo_-RGB-schwarz-large-4x_2x_90eff7ba-f64b-45ef-8e7e-65490e740385.png?v=1687260470">
+                </div>
+                <div>
+                <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18616_2x_d0fb1804-0a96-4524-9463-6cd30673cf6d.png?v=1687260793">
+                </div>
+            <div>
+                <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18617_2x_6706fd9c-d8f3-434b-b77f-6e35eb007eb3.png?v=1687260762">
+            </div>
+                <div>
+                <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/logo_meinstdienstrad_2021_2x_d5a1936d-fc18-418a-bb45-b9bb73e6c96a.png?v=1687260731">
+                </div>
+            </div>
+            <a class="my-button my-button-black" href="/pages/ebike-leasing" target="_blank">Lease Now</a>
+            </div>
+            <div></div>-->
         </div>
-        <div><img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/customer-satisfaction_2x_c7081e3a-1864-43b6-8ed2-f77895eafa6a.png?v=1687259512">10+ technical experts, 99% satisfaction rate.</div>
-      </div>
-      <a class="my-button my-button-black" href="/pages/care" target="_blank">Learn more</a>
-    </div>
-    <!--<div>
-      <div class="u30DemiBold_v2">Leasing Partners at Your Choice</div>
-      <div class="u17Light_v2">We offer you the opportunity to get your dream bike at low monthly leasing rates through various leasing providers.</div>
-      <div class="logos">
-        <div>
-          <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/JR-Logo_-RGB-schwarz-large-4x_2x_90eff7ba-f64b-45ef-8e7e-65490e740385.png?v=1687260470">
         </div>
-        <div>
-          <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18616_2x_d0fb1804-0a96-4524-9463-6cd30673cf6d.png?v=1687260793">
+        <div class="judmeeeeeeeee">
+            <div class="centeral-content">{% include "judgeme_widgets", widget_type: "judgeme_review_widget", concierge_install: false %}</div>
         </div>
-       <div>
-          <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18617_2x_6706fd9c-d8f3-434b-b77f-6e35eb007eb3.png?v=1687260762">
-       </div>
-        <div>
-          <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/logo_meinstdienstrad_2021_2x_d5a1936d-fc18-418a-bb45-b9bb73e6c96a.png?v=1687260731">
-        </div>
-      </div>
-      <a class="my-button my-button-black" href="/pages/ebike-leasing" target="_blank">Lease Now</a>
-    </div>
-    <div></div>-->
-  </div>
-</div>
     </div>
 </div>
 
@@ -1618,6 +1625,17 @@ if (!global_config.is_mobile && global_config.is_pc) {
         });
     })
 </script>
+
+<script>
+    setTimeout(() => {
+        $('.product .commonComponent div[data-id="{{ product.id }}"]').on('click', () => {
+            $('.carbon1propopup .scrolllllssss').animate({}, 300, function () {
+                $('.carbon1propopup .scrolllllssss').scrollTop($('#judgeme_product_reviews')[0].offsetTop - (global_config.is_mobile ? 75 : 150))
+            });
+        })
+    }, 300)
+</script>
+
 <script src="https://cdn.storepoint.co/api/v1/js/162f21804990ff.js" defer></script>
 {% render 'carbon-one-pro-extra-code' %}
 
