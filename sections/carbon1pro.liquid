@@ -123,6 +123,44 @@
         </p>
     </div>
 </div>
+<div class="mediaaaaa gray-background-color" style="--swiper-theme-color: #fff;--swiper-pagination-color: #fff;">
+  <div class="centeral-content">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+      <h2 class="u20DemiBold_v2">“Visually stunning and lightweight bikes”</h2>
+      <div class="flex-1"></div>
+      <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18075_2x_d5d18fb9-7706-444c-8b80-95e445f83e79.png?v=1705480131" alt="">
+      </div>
+    <div class="swiper-slide">
+      <h2 class="u20DemiBold_v2">“The best electric bikes of 2024”</h2>
+      <div class="flex-1"></div>
+      <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19062_2x_cb69e0cb-01f3-455a-bd4f-2ad8d83f573f.png?v=1705480136" alt="">
+    </div>
+    <div class="swiper-slide">
+      <h2 class="u20DemiBold_v2">“Pack with copious use of technology”</h2>
+      <div class="flex-1"></div>
+      <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18368_2x_13c2d2de-1d31-4640-8bb2-08a3cfc9c8c7.png?v=1705480141" alt="">
+    </div>
+    <div class="swiper-slide">
+      <h2 class="u20DemiBold_v2">“Pack with copious use of technology”</h2>
+      <div class="flex-1"></div>
+      <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19063_2x_1ca9eef4-a58c-4038-b75c-752bbb81cdb1.png?v=1705480146" alt="">
+    </div>
+    <div class="swiper-slide">
+      <h2 class="u20DemiBold_v2">“The epitome of raw power”</h2>
+      <div class="flex-1"></div>
+      <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19064_2x_a8b72a12-cf4f-49e6-81e6-87d380a36847.png?v=1705480151" alt="">
+    </div>
+    <div class="swiper-slide">
+      <h2 class="u20DemiBold_v2">“Interesting innovation or tech for tech’s sake”</h2>
+      <div class="flex-1"></div>
+      <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19067_2x_fd0299aa-c2e2-4a55-975a-bf51e6a4ed2d.png?v=1705480156" alt="">
+    </div>
+    </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+
 <div class="choose">
     <h2 class="u60Medium_v2">It doesn’t have to choose, <br class="mobileHide">it has everything.</h2>
 </div>
@@ -1078,13 +1116,7 @@
 				</div>
 				<div class="swiper right-swiper" style="--swiper-navigation-color: #fff;--swiper-theme-color: #000;--swiper-pagination-color: #000;">
                     <div class="adwarsssss mobileHide"></div>
-					<div class="swiper-wrapper">
-						{% comment %} {% for image in product.images %}
-							<div class="swiper-slide">
-								{{ image | image_url: width: 1000 | image_tag }}
-							</div>
-						{% endfor %} {% endcomment %}
-					</div>
+					<div class="swiper-wrapper"></div>
 					<div class="swiper-button-prev mobileHide"></div><!--左箭头。如果放置在swiper外面，需要自定义样式。-->
 					<div class="swiper-button-next mobileHide"></div><!--右箭头。如果放置在swiper外面，需要自定义样式。-->
 					<div class="swiper-pagination pcHide"></div>
@@ -1360,10 +1392,14 @@
             swiper_arr = swiper_arr.concat(global_config.carbon1pro_order_page_config.product_images[e.value], global_config.carbon1pro_order_page_config.product_images['commonSwiper'])
 
             $('.product .right-swiper .swiper-wrapper').html(swiper_arr.map((s, i) => {
-                const index = i % 5
+                const index = i % global_config.carbon1pro_order_page_config.product_media_images.length
 
-                return  `<div class="swiper-slide">
-                            <img src="${s}">
+                return `<div class="swiper-slide">
+                                <img src="${s}"/>
+                                <div>
+                                    <span class="u20DemiBold_v2">${global_config.carbon1pro_order_page_config.product_media_images[index].text}</span>
+                                    <img src="${global_config.carbon1pro_order_page_config.product_media_images[index].img}&width=300">
+                                </div>
                         </div>`
             }).join(''))
             $('.product .left-swiper .swiper-wrapper').html(swiper_arr.map(s => `<div class="swiper-slide"><img src="${s}"></div>`).join(''))
@@ -1634,6 +1670,22 @@ if (!global_config.is_mobile && global_config.is_pc) {
             });
         })
     }, 300)
+</script>
+<script>
+  global_config.is_mobile && new Swiper('.mediaaaaa .centeral-content', {
+        autoplay: {
+            disableOnInteraction: false,
+            pauseOnMouseEnter: false,
+            delay: 5000,
+        },
+        loop: true,
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true
+        },
+        pagination: { el: '.mediaaaaa .swiper-pagination' },
+        speed: 300
+    })
 </script>
 
 <script src="https://cdn.storepoint.co/api/v1/js/162f21804990ff.js" defer></script>

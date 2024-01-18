@@ -600,7 +600,7 @@ h4 {
         margin: 20px 0 80px;
 
         .centeral-content {
-            & > div {
+            &>div {
                 grid-template-columns: 1fr;
                 grid-row-gap: 20px;
 
@@ -634,7 +634,7 @@ h4 {
     overflow-x: hidden;
 
     .centeral-content {
-        & > div {
+        &>div {
             background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_23476_2x_c684af40-e07c-483c-b109-2af62f65c082.jpg?v=1703472670') center center/cover no-repeat;
             border-radius: 20px;
             display: grid;
@@ -662,7 +662,7 @@ h4 {
         .centeral-content {
             padding: 0;
 
-            & > div {
+            &>div {
                 grid-template-columns: 1fr;
                 display: flex;
                 flex-direction: column;
@@ -1884,7 +1884,7 @@ h4 {
         .featured_image {
             display: grid;
             grid-template-columns: 64px 1fr;
-            grid-template-rows: 575px;
+            grid-template-rows: 705px;
             grid-column-gap: 40px;
 
 
@@ -1894,7 +1894,7 @@ h4 {
                 height: 100%;
                 overflow: hidden;
                 position: sticky;
-                top: 90px;
+                // top: 90px;
             }
 
             .left-swiper {
@@ -2162,11 +2162,13 @@ h4 {
 
             .featured_image {
                 grid-template-columns: 1fr;
-                grid-template-rows: 62.5vw;
+                grid-template-rows: unset;
+                margin-bottom: 6px;
 
                 .swiper-pagination {
-                    // position: static;
-                    bottom: 5px;
+                    position: static;
+                    // bottom: 5px;
+                    transform: translateY(-6px);
                 }
 
                 .swiper-pagination-bullet {
@@ -2185,7 +2187,8 @@ h4 {
                     .swiper-wrapper {
                         .swiper-slide {
                             &>div {
-                                margin: 20px 0;
+                                margin: 4vw 0 0;
+                                height: 80px;
 
                                 .u20DemiBold_v2 {
                                     font-size: 14px;
@@ -2515,7 +2518,7 @@ h4 {
     color: #fff;
     padding: 9vh 30px;
 
-    & > div {
+    &>div {
         background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23597_2x_110475da-1977-422e-aa1d-09dc5413c39f.png?v=1703730382') center center/contain no-repeat;
         max-width: 1000px;
         aspect-ratio: 16 / 10;
@@ -2543,7 +2546,7 @@ h4 {
         }
 
 
-        & > div {
+        &>div {
             img {
                 max-width: 50px;
                 margin: 0;
@@ -2573,4 +2576,75 @@ body .jm-mfp-bg {
 
 body .jm-mfp-wrap {
     z-index: 110043;
+}
+
+
+
+.mediaaaaa {
+    padding: 80px 0;
+    background-color: #242424;
+    color: #fff;
+
+    .swiper-wrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-gap: 10vh 13%;
+        justify-content: space-between;
+
+
+        &>div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            // justify-content: center;
+            text-align: center;
+
+            img {
+                margin: 15px 0;
+                height: 50px;
+                width: auto;
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+        position: relative;
+        padding: 16vw 0;
+
+        .centeral-content {
+            .swiper-wrapper {
+                display: flex;
+                justify-content: unset;
+                overflow: hidden;
+                box-sizing: content-box;
+                padding: unset;
+                grid-gap: unset;
+
+                & > div {
+                    height: auto;
+                }
+            }
+        }
+
+        .swiper-pagination {
+            position: static;
+            margin-top: 30px;
+
+
+            .swiper-pagination-bullet {
+                height: 6px;
+                width: 6px;
+                opacity: 1;
+                background-color: #888;
+            }
+
+            .swiper-pagination-bullet-active {
+                width: 30px;
+                height: 6px;
+                border-radius: 5px;
+                transition: all .3s;
+                background-color: #fff;
+            }
+        }
+    }
 }

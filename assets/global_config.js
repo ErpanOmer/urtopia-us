@@ -307,11 +307,59 @@ const global_config = {
                 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_wh_6.png?v=1703570387'
             ],
             commonSwiper: [
+                'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240117-180528.png?v=1705485964',
                 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231108-untitled-6089.jpg?v=1703570574',
                 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231108-untitled-3370.jpg?v=1703570574',
                 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231108-untitled-3668.jpg?v=1703570574',
                 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSCF7217_1.jpg?v=1703570574'
             ]
-        }
+        },
+        // 产品图下面的media模块, 根据产品图 循环轮播 
+        product_media_images: [
+            {
+                text: `“Visually stunning and lightweight bikes”`,
+                img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19051_2x_3c234be0-e1cb-4ab0-b83c-02282fd42cb4.png?v=1705485418"
+            },
+            {
+                text: `“The best electric bikes of 2024”`,
+                img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19052_2x_83b17023-7ff5-413b-9a87-571e8e6928ee.png?v=1705485424"
+            },
+            {
+                text: `“Pack with copious use of technology”`,
+                img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19053_2x_2b4e11dc-d27b-47ad-9478-92c696e1fac7.png?v=1705485431"
+            },
+            {
+                text: `“Pack with copious use of technology”`,
+                img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19054_2x_7feff357-8d1b-48a0-b9af-662442dc41f6.png?v=1705485437"
+            },
+            {
+                text: `“The epitome of raw power”`,
+                img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19055_2x_612a45c4-04fe-4477-a252-302e8d11c40e.png?v=1705485444"
+            },
+            {
+                text: `“Carbon 1 Pro as ‘a bike with spirit”`,
+                img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19056_2x_b61e963a-f2b3-49f3-8bc2-4aee5f8f2a4c.png?v=1705485451"
+            },
+            {
+                text: `“Standout feature lies in its integration with advanced technology. ”`,
+                img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19057_2x_0eabb26b-a2fe-48e8-b00e-209ef2b986e0.png?v=1705485460"
+            },
+            {
+                text: `“Interesting innovation or tech for tech’s sake”`,
+                img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19058_2x_b0454fa5-9c44-462e-8f04-5646db60456a.png?v=1705485466"
+            },
+            {
+                text: `“Completely crazy: This e-bike talks to the rider”`,
+                img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19059_2x_14b271ba-3eae-41ea-8882-e6896e9f9948.png?v=1705485473"
+            },
+            {
+                text: `“The iPhone among e-bikes”`,
+                img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19060_2x_e094650e-c53d-4e29-b805-7e89d127643d.png?v=1705485481"
+            },
+            {
+                text: `“Thanks to its full carbon frame, the Urtopia e-bikes is light”`,
+                img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19061_2x_a24c29c4-0fff-421f-9977-25989e38b7e9.png?v=1705485487"
+            }
+        ],
     }
 }
