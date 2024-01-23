@@ -168,7 +168,7 @@ const testRides = [
     city: 'California',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/what-is-california-known-for-the-golden-gate-bridge-hero.webp?v=1697020664',
     stores: [
-      {
+      /*{
         name: 'Bicycle Garage Fremont',
         phone: '510-795-9622',
         email: 'bikeshoptina@gmail.com',
@@ -188,8 +188,8 @@ const testRides = [
           "10:00-19:00",
           "10:00-18:00"
         ],
-      },
-      {
+      },*/
+      /*{
         name: 'Velocipede Cyclery',
         phone: '415-796-3465',
         email: 'bikeshoptina@gmail.com',
@@ -209,7 +209,7 @@ const testRides = [
           "10:00-19:00",
           "09:00-18:00"
         ],
-      },
+      },*/
       /*{
         name: 'Groove E-Bikes',
         phone: '949-274-7944',
@@ -662,7 +662,7 @@ const testRides = [
     city: 'Georgia',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Buna_Bicycle_Works_Washington_dc.jpg?v=1665374977',
     stores: [
-      {
+      /*{
         name: "Aztec Cycles",
         phone: "678-636-9043",
         email: "aztec718@gmail.com",
@@ -682,7 +682,7 @@ const testRides = [
           "10:00-18:00",
           "10:00-17:00",
         ],
-      },
+      },*/
     ]
   },
   {

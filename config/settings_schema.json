@@ -6,7 +6,7 @@
         "type": "text",
         "id": "sale_name",
         "label": "活动名称",
-        "default": "January Savings"
+        "default": "New Steals"
       },
       {
         "type": "text",
