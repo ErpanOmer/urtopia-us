@@ -1525,6 +1525,28 @@ function testRideTrace(type = '', target) {
     return addAllToCart("atc", true)
   }
 }
+
+$('.product .product-panel .accessories .navigate > div').on('click', e => {
+      const items = $('.product .product-panel .accessories .items')
+
+      items.animate({
+          scrollLeft: $('.product .product-panel .accessories .items').scrollLeft() + ($(e.target).hasClass('next') ? 180 : -180)
+      }, 300)
+  })
+
+  $('.product .product-panel .accessories .items .item').on('click', e => {
+      const item = $(e.target).closest('.item')
+      const icon = item.find('.u11Light_v2')
+
+      if (item.hasClass('active')) {
+          item.removeClass('active')
+          icon.html('<i class="fa-solid fa-plus"></i>')
+          
+      } else {
+          item.addClass('active')
+          icon.html('<i class="fa-solid fa-check"></i>')
+      }
+  })
 </script>
 
 <script>
