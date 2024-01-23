@@ -1460,6 +1460,14 @@ function addAllToCart(parse, show = false) {
       cartList.sections = sections.join(",");
     }
 
+    // 新增普通配件
+    $('.product .accessories .items .active').each((i, item) => {
+      cartList.items.push({ 
+        id: $(item).attr('variant-id'), 
+        quantity: 1
+      })
+    })
+
     
     fetch("/cart/add.js", {
       method: "POST",
