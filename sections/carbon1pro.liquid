@@ -1185,6 +1185,32 @@
                       <img src="http://i.countdownmail.com/205dop.gif">
                     </div>
                   {% endunless %}
+                  <div class="accessories">
+					<div class="u17DemiBold_v2 mb12">Accessories</div>
+					<div class="navigate">
+						<div class="prev"></div>
+						<div class="next"></div>
+					</div>
+					<div class="items mb12">
+						{% for prod in collections['carbon-1-pro-acc'].products %}
+							{% if prod.available %}
+								{% assign variant = prod.variants | first %}
+								<div class="item" variant-id="{{ variant.id }}">
+								  <div class="u11Medium_v2">{{ prod.title }}</div>
+								  <div>
+									<div>
+									  <span class="u17DemiBold_v2">{{ prod.price | money }}</span>
+									  <span class=u11Light_v2>
+										<i class="fa-solid fa-plus"></i>
+									  </span>
+									</div>
+									{{ prod.featured_image | image_url: width: 400 | image_tag }}
+								  </div>
+								</div>
+							{% endif %}
+						{% endfor %}
+					</div>
+				</div>
 				<div class="error-tip u14Medium_v2" style="color:red;">Your order quantity has reached our stock limit</div>    
 				<div class="buttons">
                                 <div
@@ -1434,6 +1460,14 @@ function addAllToCart(parse, show = false) {
       cartList.sections = sections.join(",");
     }
 
+    // 新增普通配件
+    $('.product .accessories .items .active').each((i, item) => {
+      cartList.items.push({ 
+        id: $(item).attr('variant-id'), 
+        quantity: 1
+      })
+    })
+
     
     fetch("/cart/add.js", {
       method: "POST",
@@ -1499,6 +1533,28 @@ function testRideTrace(type = '', target) {
     return addAllToCart("atc", true)
   }
 }
+
+$('.product .product-panel .accessories .navigate > div').on('click', e => {
+      const items = $('.product .product-panel .accessories .items')
+
+      items.animate({
+          scrollLeft: $('.product .product-panel .accessories .items').scrollLeft() + ($(e.target).hasClass('next') ? 180 : -180)
+      }, 300)
+  })
+
+  $('.product .product-panel .accessories .items .item').on('click', e => {
+      const item = $(e.target).closest('.item')
+      const icon = item.find('.u11Light_v2')
+
+      if (item.hasClass('active')) {
+          item.removeClass('active')
+          icon.html('<i class="fa-solid fa-plus"></i>')
+          
+      } else {
+          item.addClass('active')
+          icon.html('<i class="fa-solid fa-check"></i>')
+      }
+  })
 </script>
 
 <script>
