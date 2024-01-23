@@ -1185,6 +1185,32 @@
                       <img src="http://i.countdownmail.com/205dop.gif">
                     </div>
                   {% endunless %}
+                  <div class="accessories">
+					<div class="u17DemiBold_v2 mb12">Accessories</div>
+					<div class="navigate">
+						<div class="prev"></div>
+						<div class="next"></div>
+					</div>
+					<div class="items mb12">
+						{% for prod in collections['on-page'].products %}
+							{% if prod.available %}
+								{% assign variant = prod.variants | first %}
+								<div class="item" variant-id="{{ variant.id }}">
+								  <div class="u11Medium_v2">{{ prod.title }}</div>
+								  <div>
+									<div>
+									  <span class="u17DemiBold_v2">{{ prod.price | money }}</span>
+									  <span class=u11Light_v2>
+										<i class="fa-solid fa-plus"></i>
+									  </span>
+									</div>
+									{{ prod.featured_image | image_url: width: 400 | image_tag }}
+								  </div>
+								</div>
+							{% endif %}
+						{% endfor %}
+					</div>
+				</div>
 				<div class="error-tip u14Medium_v2" style="color:red;">Your order quantity has reached our stock limit</div>    
 				<div class="buttons">
                                 <div
