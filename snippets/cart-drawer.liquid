@@ -264,7 +264,7 @@
         </div>
       {%- endif -%}
       <div class="drawer__header">
-        <h4 class="drawer__heading u36DemiBold_v2">{{ 'sections.cart.title' | t }}</h4>
+        <div class="drawer__heading u36DemiBold_v2">{{ 'sections.cart.title' | t }}</div>
         <button class="drawer__close" type="button" onclick="this.closest('cart-drawer').close()" aria-label="{{ 'accessibility.close' | t }}">{% render 'icon-close' %}</button>
       </div>
       <cart-drawer-items {% if cart == empty %}class=" is-empty"{% endif %} class="cart-drawer-items">
@@ -604,7 +604,7 @@
 
         <div class="cart-drawer__footer" {{ block.shopify_attributes }}>
           <div class="totals" role="status">
-            <h4 class="totals__subtotal">{{ 'sections.cart.subtotal' | t }}</h4>
+            <div class="totals__subtotal">{{ 'sections.cart.subtotal' | t }}</div>
             <p class="totals__subtotal-value">{{ cart.total_price | money_with_currency }}</p>
           </div>
 
