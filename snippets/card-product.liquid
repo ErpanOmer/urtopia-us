@@ -15,9 +15,7 @@
     Usage:
     {% render 'card-product', show_vendor: section.settings.show_vendor %}
 {% endcomment %}
-
 {{ 'component-rating.css' | asset_url | stylesheet_tag }}
-
 {%- if card_product and card_product != empty -%}
   {%- liquid
     assign ratio = 1
@@ -40,6 +38,15 @@
       style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
     >
       <div class="card__inner {% if settings.card_style == 'standard' %}color-{{ settings.card_color_scheme }} gradient{% endif %}{% if card_product.featured_media or settings.card_style == 'standard' %} ratio{% endif %}" style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;">
+        {% if product_show %}
+          <span style="    position: absolute;
+          left: 4%;
+          top: 4%;
+          background-color: #FFE2D9;
+          border-radius: 10px;
+          color: #FD4B17;
+          padding: 4px 6px;" class="u14DemiBold_v2">NEW</span>
+        {% endif %}
         {%- if card_product.featured_media -%}
           <div class="card__media">
             <div class="media media--transparent media--hover-effect">
@@ -107,6 +114,14 @@
               {{ card_product.title | escape }}
             </a>
           </h3>
+          {% if product_tags %}
+            <p class="u11Light_v2">
+              <span>Compatibility:</span><br>
+              {% for product_tag in product_tags %}
+                  <span>{% if forloop.index != 1 %}, {% endif %}{{ product_tag }}</span>
+              {% endfor %}
+            </p>
+          {% endif %}
           <div class="card-information">
             {%- if show_vendor -%}
               <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
