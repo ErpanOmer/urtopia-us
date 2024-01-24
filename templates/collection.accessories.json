@@ -3,7 +3,7 @@
     "product-grid": {
       "type": "collection-new",
       "settings": {
-        "products_per_page": 24,
+        "products_per_page": 9,
         "columns_desktop": 4,
         "image_ratio": "square",
         "show_secondary_image": true,
