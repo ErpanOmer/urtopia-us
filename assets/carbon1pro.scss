@@ -108,7 +108,7 @@ h4 {
     .centeral-content {
         height: 780px;
         padding-top: 8vh;
-        padding-bottom: 8vh;
+        padding-bottom: 4vh;
         display: grid;
         grid-template-columns: 1fr 1fr;
 
@@ -124,13 +124,34 @@ h4 {
                 justify-content: flex-end;
 
                 .u20Medium_v2 {
-                    margin-top: 10px;
+                    margin: 1.5vh 0 2.5vh;
                 }
             }
 
             .u17Light_v2 {
                 margin: 5vh 0;
                 max-width: 440px;
+            }
+
+            .bakkkkkk {
+                width: 361px;
+                height: 203px;
+                background: url(/cdn/shop/files/Group_23897_2x_4be09c8c-6347-4610-b6d3-c9e0bc555711.jpg?v=1706261412) center center/cover no-repeat;
+                /* padding-bottom: 56.232687%; */
+                border-radius: 15px;
+                position: relative;
+                overflow: hidden;
+                cursor: pointer;
+
+                &::after {
+                    content: "";
+                    background: url(/cdn/shop/files/Group_23896_2x_bc074664-07c1-441e-ba5e-6174d604f5c5.png?v=1706261734) center center/cover no-repeat;
+                    display: flex;
+                    margin: auto;
+                    width: 50px;
+                    height: 50px;
+                    transform: translateY(50%);
+                }
             }
 
             &>div {
@@ -159,7 +180,7 @@ h4 {
                 justify-content: flex-start;
 
                 &:first-child {
-                    height: 400px;
+                    height: 115vw;
                     justify-content: flex-start;
 
                     .u24DemiBold_v2 {
@@ -169,6 +190,12 @@ h4 {
                     .u20Medium_v2 {
                         font-size: 17px;
                     }
+                }
+
+                .bakkkkkk {
+                    width: 84vw;
+                    height: 47.2vw;
+                    margin-top: 8vw;
                 }
 
                 .u48Medium_v2 {
