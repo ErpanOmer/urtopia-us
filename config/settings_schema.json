@@ -65,7 +65,7 @@
       {
         "type": "checkbox",
         "id": "hide_sale_countdown",
-        "default": true,
+        "default": false,
         "label": "活动倒计时显示和隐藏"
       },
       {
@@ -78,7 +78,7 @@
         "type": "text",
         "id": "home_page_blogs",
         "label": "首页blog展示",
-        "default": "blog\/smart-e-bike-with-chatgpt-urtopia-eurobike2023,blog\/ambassador-s-story-michael-j-coles-over-that-rock,blog\/smart-is-more-than-internet-connection"
+        "default": "blog\/carbon-1-1s-vs-carbon-1-pro,blog\/ambassador-s-story-michael-j-coles-over-that-rock,blog\/smart-is-more-than-internet-connection"
       },
       {
         "type": "text",
