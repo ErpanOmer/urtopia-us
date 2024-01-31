@@ -294,7 +294,7 @@ const global_config = {
                 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_BL_1.png?v=1703570388',
                 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_BL_2.png?v=1703570387',
                 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_BL_3.png?v=1703570387',
-                'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_BL_4.png?v=1703570387',
+                'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240131-094114.jpg?v=1706665340',
                 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_BL_5.png?v=1703570387',
                 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_BL_6.png?v=1703570387'
             ],
@@ -302,11 +302,12 @@ const global_config = {
                 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_wh_1.png?v=1703570387',
                 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_wh_2.png?v=1703570387',
                 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_wh_3.png?v=1703570387',
-                'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_wh_4.png?v=1703570387',
+                'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240131-094123.jpg?v=1706665341',
                 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_wh_5.png?v=1703570387',
                 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_wh_6.png?v=1703570387'
             ],
             commonSwiper: [
+                'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240131-094148.jpg?v=1706665341',
                 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240117-180528.png?v=1705485964',
                 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231108-untitled-6089.jpg?v=1703570574',
                 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231108-untitled-3370.jpg?v=1703570574',
@@ -361,5 +362,91 @@ const global_config = {
                 img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19061_2x_a24c29c4-0fff-421f-9977-25989e38b7e9.png?v=1705485487"
             }
         ],
+        sizes_and_specs: {
+            sizes: {
+                image: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231221-151050_2x_d883c889-6e52-477d-8672-a7dda6dbbbdd.png?v=1703577530',
+                parameters: [
+                    [
+                        '<span style="color: #fff;">xxxx</span>',
+                        'Recomm. rider height',
+                        'A. Standover height',
+                        'B. Adjustable seat range',
+                        'C. Handlebar grips height',
+                        'D. Seat tube length',
+                        'E. Wheelbase',
+                        'F. Overall length',
+                        'G. Wheel diameter',
+                        'H. Top tube length (effective)',
+                        'I. Head tube length',
+                        'J. Headset height'
+                    ],
+                    [
+                        '<span class="u17DemiBold_v2">Medium</span>',
+                        '5’7’’~6’1’’',
+                        '804 mm',
+                        '60 mm',
+                        '1011-1041 mm',
+                        '463 mm',
+                        '1093 mm',
+                        '1795 mm',
+                        '702 mm',
+                        '618 mm',
+                        '170 mm',
+                        '90-120 mm'
+                    ],
+                    [
+                        '<span class="u17DemiBold_v2">Large</span>',
+                        '5’11’’~6’5’’',
+                        '833 mm',
+                        '60 mm',
+                        '1023-1053 mm',
+                        '498 mm',
+                        '1122 mm',
+                        '1824 mm',
+                        '702 mm',
+                        '653 mm',
+                        '180 mm',
+                        '90-120 mm'
+                    ],
+                ]
+            },
+            specs: [
+                {
+                    title: 'Smart',
+                    parameters: [
+                        ["Smartbar features", "Voice control, fingerprint start, LED dot - matrix display, haptic interaction, bluetooth music, built-in navigation, OTA upgrade"],
+                        ["Connectivity", "eSIM with 4G, Bluetooth, GPS"],
+                        ["IoT sensors", "Accelerometer, gyroscope, torque sensor"],
+                        ["App", "iOS & Android"],
+                        ["Connect Service", "1 year included*"]
+                    ]
+                },
+                {
+                    title: 'Power',
+                    parameters: [
+                        ["Motor", "Customized rear hub, 36 V 350 W (rated), 42 N⋅m"],
+                        ["Speed modes", "Pedal, Eco, Comfort, Sport, Turbo"],
+                        ["Top speed (assisted)", "25mph"],
+                        ["Range", "Up to 80 miles"],
+                        ["Removable battery", "352.8Wh, Samsung Li-ion, removable battery, 2.5-hr quick charge, certified to UL-2271"]
+                    ]
+                },
+                {
+                    title: 'General',
+                    parameters: [
+                        ["Weight", "37 lbs excl. accessories"],
+                        ["Load-bearing capacity", "Max. 240 lbs. (110 kg)"],
+                        ["Sizes", "Medium, Large (see Size Guide)"],
+                        ["Body material", "Carbon fiber (frame, fork)"],
+                        ["Brakes", "Front & rear dual-piston hydraulic disc"],
+                        ["Tires", "700 x 40C"],
+                        ["Integrated lights", "StVZO headlight"],
+                        ["Wheels", "700C (ISO 622 mm BSD), inner rim 19 mm"],
+                        ["Transmission", "Shimano 8-Speed Rear Drivetrain"],
+                        
+                    ]
+                },
+            ] 
+          }
     }
 }

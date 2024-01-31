@@ -1,6 +1,923 @@
-{% schema %}
-  {
-    "name": "Section name",
-    "settings": []
+{{ 'carbon1pro-product.scss.css' | asset_url | stylesheet_tag: preload: true }}
+
+<h1 class="visuallyhidden">Urtopia Carbon 1 Pro Ebike - Sleek, Full Carbon, Lightweight, Smart</h1>
+<div class="product" data-pf-type="ProductBox">
+  <div class="centeral-content">
+    <div class="commonComponent pcHide">
+      <div class="u36DemiBold_v2">{{ product.title }}</div>
+      <div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-25_ order-djs mb6">
+        <div class="pf-judme">
+          {% render 'judgeme_widgets',
+            widget_type: 'judgeme_preview_badge',
+            jm_style: '',
+            concierge_install: false,
+            product: product
+          %}
+        </div>
+      </div>
+      <div class="u14Medium_v2 onlllllllly">Pre-order Promotion</div>
+      <div
+        class="product-price u30DemiBold_v2 {% unless product.compare_at_price != product.price %}mb6{% endunless %}"
+        {% unless product.compare_at_price != product.price %}
+          style="color: #000;"
+        {% endunless %}
+        {% unless product.compare_at_price == product.price %}
+          data-price="{{ product.compare_at_price | money }}"
+        {% endunless %}
+      >
+        {{ product.price | money }}
+      </div>
+      <div class="sale-tag mb6">
+        <!-- <div class="u17Medium_v2">{{ settings.sale_name }}</div> -->
+        <div class="u14Light_v2 mb6" style="margin: 0;">Free shipping.</div>
+      </div>
+      <div class="adwarsssss"></div>
+      <!--
+        <div class="sale-big-text mb6">
+          <div class="u20DemiBold_v2">LOWEST PRICE OF THE YEAR GUARANTEED!</div>
+          <div class="u11Light_v2">For any order during Oct 1 - Dec 31 2023, if there is a price drop within this period on our website, you will get a refund for the difference.</div>
+        </div>
+      -->
+    </div>
+    <div class="featured_image">
+      <div class="swiper left-swiper mobileHide">
+        <div class="swiper-wrapper"></div>
+      </div>
+      <div
+        class="swiper right-swiper"
+        style="--swiper-navigation-color: #fff;--swiper-theme-color: #000;--swiper-pagination-color: #000;"
+      >
+        <div class="adwarsssss mobileHide"></div>
+        <div class="swiper-wrapper"></div>
+        <div class="swiper-button-prev mobileHide"></div>
+        <!-- 左箭头。如果放置在swiper外面，需要自定义样式。 -->
+        <div class="swiper-button-next mobileHide"></div>
+        <!-- 右箭头。如果放置在swiper外面，需要自定义样式。 -->
+        <div class="swiper-pagination pcHide"></div>
+        <div class="flex-1 mobileHide"></div>
+        <div class="fenders mobileHide">
+          <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231226-195048.jpg?v=1703591462" alt="">
+          <span class="u17DemiBold_v2"
+            >Free Fenders, Kickstand, <br>
+            1-Year Connect Service Included</span
+          >
+          <span class="u17Light_v2" style="text-decoration: line-through;">$167.00</span>
+          <span class="u17DemiBold_v2">FREE</span>
+        </div>
+          <div class="parameters mobileHide">
+          	<div>
+          		<img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18448_2x_833c8995-fa19-4297-af29-678ac4064d0c.png?v=1687176385"/>
+          		<span><span class="u14Light_v2">Lightweight</span><span class="u17DemiBold_v2">Toray Carbon <br>Fiber</span></span>
+          	</div>
+          	<div>
+          		<img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_23674_2x_5c13e377-93c4-4455-9e64-530dd0f33b3c.png?v=1706609883"/>
+          		<span><span class="u14Light_v2">Safety</span><span class="u17DemiBold_v2">UL Certified</span></span>
+          	</div>
+          	<div>
+          		<img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18445_2x_2e6c6230-7ed1-4c3d-99ad-54ba48fa57b4.png?v=1687177370"/>
+          		<span><span class="u14Light_v2">Adaptive</span><span class="u17DemiBold_v2">Torque Sensor</span></span>
+          	</div>
+          	<div>
+          		<img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18447_2x_c102facd-9087-4028-8f97-34a7af31b1f6.png?v=1687177414"/>
+          		<span><span class="u14Light_v2">Range</span><span class="u17DemiBold_v2">80 miles</span></span>
+          	</div>
+          	<div>
+          		<img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18450_2x_50383af6-61df-4632-9cbc-531630580f61.png?v=1687177242"/>
+          		<span><span class="u14Light_v2">Phone App</span><span class="u17DemiBold_v2">iOS, Android</span></span>
+          	</div>
+          	<div>
+          		<img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18446_2x_791e060a-ed39-42c5-9cf0-965d7e5110bb.png?v=1687177232"/>
+          		<span><span class="u14Light_v2">Anti-theft</span><span class="u17DemiBold_v2">GPS Tracking</span></span>
+          	</div>
+          </div>
+        
+      </div>
+    </div>
+    <form
+      method="post"
+      accept-charset="UTF-8"
+      action="/cart/add"
+      class="product-panel pf-product-form"
+      data-productid="{{ product.id }}"
+      id="product_form_{{ product.id }}"
+      enctype="multipart/form-data"
+    >
+      <input
+        type="hidden"
+        name="id"
+        data-product-id="{{product.id}}"
+        value="{{ product.selected_or_first_available_variant.id }}"
+      >
+      <input type="hidden" name="form_type" value="product">
+      <input type="hidden" name="utf8" value="✓">
+      <div class="commonComponent mobileHide" id="sale_acc">
+        <div class="u36DemiBold_v2">{{ product.title }}</div>
+        <div class="mb6">
+          {% render 'judgeme_widgets',
+            widget_type: 'judgeme_preview_badge',
+            jm_style: '',
+            concierge_install: false,
+            product: product
+          %}
+        </div>
+        <div class="u17Medium_v2 onlllllllly">Pre-order Promotion</div>
+        <div
+          class="product-price u30DemiBold_v2 {% unless product.compare_at_price != product.price %}mb6{% endunless %}"
+          {% unless product.compare_at_price != product.price %}
+            style="color: #000;"
+          {% endunless %}
+          {% unless product.compare_at_price == product.price %}
+            data-price="{{ product.compare_at_price | money }}"
+          {% endunless %}
+        >
+          {{ product.price | money }}
+        </div>
+        <div class="sale-tag mb6">
+          <!-- <div class="u17Medium_v2">{{ settings.sale_name }}</div> -->
+          <div class="u14Light_v2" style="margin: 0;">Free shipping.</div>
+        </div>
+        <!--
+          <div class="sale-big-text ">
+              <div class="u20DemiBold_v2">LOWEST PRICE OF THE YEAR GUARANTEED!</div>
+              <div class="u11Light_v2">For any order during Oct 1 - Dec 31 2023, if there is a price drop within this period on our website, you will get a refund for the difference.</div>
+          </div>
+        -->
+      </div>
+      <!--
+        <div class="sale_acc mb12 belt">
+        	<div class="u14Light_v2" style="background-image: linear-gradient(-90deg,var(--sale-color3),var(--sale-color4));">And get <span style="font-weight: 600;"> {{ settings.carbon_ebike_free_accessories_price | money_without_trailing_zeros}} </span> Accessories for <span class="u20DemiBold_v2"> Free</span></div>
+        	{% assign accessories_map = "7523826008312,7883128406264,7523827613944" | split: ',' %}
+        	<div class="accs">
+        		{% for acc in accessories_map %}
+        			{% for prod in collections["accessories"].products %}
+        				{% if acc contains prod.id %}
+        					<div class="acc">
+        						{{ prod.featured_image | image_url: width: 400 | image_tag }}
+        						{% if acc == "7883128406264" %}
+        							<span class="u11Medium_v2">{{ prod.title | truncatewords: 1, "" | replace: "-", "" }}</span>
+        						{% else %}
+        							<span class="u11Medium_v2">{{ prod.title }}</span>
+        						{% endif %}
+        					</div>
+        				{% endif %}
+        			{% endfor %}
+        		{% endfor %}
+        	</div>
+        </div>
+      -->
+      <div class="fenders pcHide">
+        <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231226-195048.jpg?v=1703591462" alt="">
+        <div>
+          <span
+            class="u17DemiBold_v2"
+            style="background-color: #263B55; color: #fff;border-radius: 7px;padding: 3px 12px;"
+            >FREE</span
+          >
+          <span class="u17DemiBold_v2" style="text-decoration: line-through;">$167.00</span>
+          <div class="u17Light_v2">
+            Free Fenders, Kickstand, <br>
+            1-Year Connect Service Included
+          </div>
+        </div>
+      </div>
+      {% unless settings.hide_sale_countdown %}
+        <div class="count-down mb12 mobileHide">
+          <div class="u17Medium_v2">Promotion Ends in:</div>
+          <img src="http://i.countdownmail.com/205dop.gif">
+        </div>
+      {% endunless %}
+      <div class="options">
+        {% for option in product.options_with_values %}
+          <div class="option" option="{{option.name}}" position="{{ option.position }}">
+            <div class="u17DemiBold_v2 mb12">{{ option.name }} - <span class="u17Light_v2"></span></div>
+            <div class="{{ option.name }} mb12">
+              {% for value in option.values %}
+                {% case option.name %}
+                  {% when 'Model' %}
+                    <div attribute="{{ value }}" class="{{ value }}">
+                      {% assign values = value | split: ' · ' %}
+                      {% for value in values %}
+                        <span>{{ value }}</span>
+                      {% endfor %}
+                    </div>
+                  {% when 'Color' %}
+                    <div attribute="{{ value }}" class="{{ value }}"></div>
+                  {% else %}
+                    <div attribute="{{ value }}" class="{{ value }}">{{ value }}</div>
+                {% endcase %}
+              {% endfor %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      {% unless settings.hide_sale_countdown %}
+        <div class="count-down mb12 pcHide">
+          <div class="u17Medium_v2">Promotion Ends in:</div>
+          <img src="http://i.countdownmail.com/205dop.gif">
+        </div>
+      {% endunless %}
+      <div class="accessories">
+        <div class="u17DemiBold_v2 mb12">Accessories</div>
+        <div class="navigate">
+          <div class="prev"></div>
+          <div class="next"></div>
+        </div>
+        <div class="items mb12">
+          {% for prod in collections['carbon-1-pro-acc'].products %}
+            {% if prod.available %}
+              {% assign variant = prod.variants | first %}
+              <div class="item" variant-id="{{ variant.id }}">
+                <div class="u11Medium_v2">{{ prod.title }}</div>
+                <div>
+                  <div>
+                    <span class="u17DemiBold_v2">{{ prod.price | money }}</span>
+                    <span class="u11Light_v2">
+                      <i class="fa-solid fa-plus"></i>
+                    </span>
+                  </div>
+                  {{ prod.featured_image | image_url: width: 400 | image_tag }}
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+      <div class="error-tip u14Medium_v2" style="color:red;">Your order quantity has reached our stock limit</div>
+      <div class="buttons">
+        <div
+          data-product-id="{{ product.id }}"
+          class="my-button my-button-origin addToCartBtn"
+          onclick="addAllToCart('atc')"
+          id="addToCart"
+        >
+          <i class="fa fa-spinner fa-spin"></i
+          ><span data-pf-type="Text" class="addToCartText u17DemiBold_v2">Pre-order Now</span>
+        </div>
+        <div onclick="testRideTrace('klarna_check_out', this)" class="orderTestRideBtn">
+          <img
+            class="twoooo"
+            src="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/files/20230530-121400.png?v=1685420054"
+          >
+          <span
+            ><span class="u17DemiBold_v2">0% APR</span
+            ><span
+              >24 months,
+              <span class="stages">{{ product.price | divided_by: 24 | money_without_trailing_zeros }}</span
+              >/month</span
+            ></span
+          >
+        </div>
+      </div>
+      <div class="u14DemiBold_v2 delivery_time mb12">
+        Free Shipping Start from March, 2024 <br>
+        The early you pay, the early it ships.
+      </div>
+      <div class="support mb12">
+        <a href="#boxs3">
+          <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230621-005713.png?v=1687280264">
+          <span class="u11Medium_v2"
+            >60+ Spots<br>
+            of Service</span
+          >
+        </a>
+        <a href="/pages/shipping-and-return" target="_blank">
+          <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_17959_2x_cff00041-4dce-479b-b87d-55b1cb89cd7a.png?v=1687161086">
+          <span class="u11Medium_v2"
+            >14-Day<br>
+            Returns</span
+          >
+        </a>
+        <a href="/pages/warranty" target="_blank">
+          <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_17958_2x_1e776f09-0686-4672-a22f-b29d2df3898d.png?v=1687161098">
+          <span class="u11Medium_v2"
+            >2-Year<br>
+            Warranty</span
+          >
+        </a>
+      </div>
+      <div class="dialogs">
+        <div class="u17Medium_v2" onclick="showSizesAndSpecs('SizesDialog')">
+          <span>Size & Fit</span>
+          <span>&gt;</span>
+        </div>
+        <div class="u17Medium_v2" onclick="showSizesAndSpecs('SpecsDialog')">
+          <span>Technical Specifications</span>
+          <span>&gt;</span>
+        </div>
+        <!--
+          <div class="u17Medium_v2">
+          	<span>Support & Service</span>
+          	<span>&gt;</span>
+          </div>
+        -->
+        <div class="u17Medium_v2">
+          <span>Pre-order FAQs</span>
+          <span>&gt;</span>
+        </div>
+      </div>
+      <div class="parameters pcHide">
+          	<div>
+          		<img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18448_2x_833c8995-fa19-4297-af29-678ac4064d0c.png?v=1687176385"/>
+          		<span><span class="u14Light_v2">Lightweight</span><span class="u17DemiBold_v2">Toray Carbon <br>Fiber</span></span>
+          	</div>
+          	<div>
+          		<img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_23674_2x_5c13e377-93c4-4455-9e64-530dd0f33b3c.png?v=1706609883"/>
+          		<span><span class="u14Light_v2">Safety</span><span class="u17DemiBold_v2">UL Certified</span></span>
+          	</div>
+          	<div>
+          		<img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18445_2x_2e6c6230-7ed1-4c3d-99ad-54ba48fa57b4.png?v=1687177370"/>
+          		<span><span class="u14Light_v2">Adaptive</span><span class="u17DemiBold_v2">Torque Sensor</span></span>
+          	</div>
+          	<div>
+          		<img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18447_2x_c102facd-9087-4028-8f97-34a7af31b1f6.png?v=1687177414"/>
+          		<span><span class="u14Light_v2">Range</span><span class="u17DemiBold_v2">80 miles</span></span>
+          	</div>
+          	<div>
+          		<img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18450_2x_50383af6-61df-4632-9cbc-531630580f61.png?v=1687177242"/>
+          		<span><span class="u14Light_v2">Phone App</span><span class="u17DemiBold_v2">iOS, Android</span></span>
+          	</div>
+          	<div>
+          		<img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18446_2x_791e060a-ed39-42c5-9cf0-965d7e5110bb.png?v=1687177232"/>
+          		<span><span class="u14Light_v2">Anti-theft</span><span class="u17DemiBold_v2">GPS Tracking</span></span>
+          	</div>
+          </div>
+    </form>
+  </div>
+</div>
+
+<div class="professional"> 
+  <div class="centeral-content">
+    <h2 class="u36Medium_v2">Professional Reviews</h2>
+    <div class="videos">
+      <div class="u24Medium_v2 lozad" data-background-image="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_23915_2x_309375be-ee93-413e-9102-1f3a17aa2607.jpg?v=1706593422" onclick="showVideoDialog('https://www.youtube.com/embed/OdzjlfHdd8A?autoplay=1&cc_load_policy=1')">Emmy-winning journalist Jennifer Jolly reviewed and loved Carbon 1 Pro.</div>
+      <div class="u24Medium_v2 lozad" data-background-image="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_23916_2x_26323d18-7570-4455-a037-b0fad1e16427.jpg?v=1706593427" onclick="showVideoDialog('https://www.youtube.com/embed/n6KJzVYgqbs?autoplay=1&cc_load_policy=1')">Renowned tech review channel Linus Tech Tips was impressed by Carbon 1 Pro.</div>
+      <div class="u24Medium_v2 lozad" data-background-image="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_23917_2x_082d9995-ab0c-4c98-b88a-d9a7cb0cf4e9.jpg?v=1706593432" onclick="showVideoDialog('https://www.youtube.com/embed/s9PMQ-ZT1Vo?autoplay=1&cc_load_policy=1')">Carbon 1 Pro received widespread praise from top media upon its release at CES 2024.</div>
+    </div>
+  </div>
+</div>
+
+<div class="sleek">
+  <video muted playsinline autoplay loop
+          class="lozad mobileHide" data-src="https://player.vimeo.com/progressive_redirect/playback/907415400/rendition/1080p/file.mp4?loc=external&signature=796622305d603d0b7dba0ea9d0a973bd879902453dcf2e79908d7374c11031d0"
+            poster="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_23942_2x_0b3e2f68-3edf-423c-840c-93acaf520220.jpg?v=1706595699">
+  </video>
+  <video muted playsinline autoplay loop
+          class="lozad pcHide" data-src="https://player.vimeo.com/progressive_redirect/playback/907415420/rendition/540p/file.mp4?loc=external&signature=dd44e007d5fc0b2e3e34a8d06c7fe594bac0234cf6170de49d37ab5128a1369d"
+            poster="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_23942_2x_0b3e2f68-3edf-423c-840c-93acaf520220.jpg?v=1706595699">
+  </video>
+  <div>
+    <h2 class="u48Medium_v2">Sleek Design, <br>Hidden Power</h2>
+    <p class="u17Light_v2">
+      <span>Designed by former BMW maestro Mr. Heller, Carbon 1 Pro’s unibody design hides its e-bike identity. A top choice for minimalists and design enthusiasts seeking the best-designed e-bike.</span>
+      <div class="my-button" onclick="showVideoDialog('https://www.youtube.com/embed/V_YWOzAZdBg?autoplay=1&cc_load_policy=1')">
+        Watch Video
+        <img class="lozad mobileHide" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/screenshot-20231012-164642.png?v=1697100422" alt="">
+        <img class="lozad pcHide" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/screenshot-20231012-165647.png?v=1697101021" alt="">
+      </div>
+    </p>
+  </div>
+</div>
+<div class="premium">
+  <div class="centeral-content">
+    <div>
+      <h2 class="u48Medium_v2">Premium Build, <br>Peak Performance</h2>
+    <p class="u17Light_v2">
+      <span>
+        Crafted with Torayca® Carbon Fiber, known for its use in Formula 1 and leading bicycle manufacturers, Carbon 1 Pro sets the bar for high-performance cycling. Experience its lightweight, stiffness, and stability firsthand with Carbon 1 Pro.
+      </span>
+    </p>
+    </div>
+  </div>
+</div>
+
+<div class="boxs">
+  <div class="centeral-content">
+          <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSCF7172_1_2x_9e69fcf5-f8d5-4003-9046-1bc3722fe7eb.jpg?v=1706600943" alt="">
+          <div>
+            <h2 class="u30Medium_v2">Your Lightweight, <br>Everyday E-bike</h2>
+            <p class="u17Light_v2">
+              <span>A joy to pedal even without electric assist! Ride like a regular bike while easily covering more miles. For urban ease, Carbon 1 Pro prioritizes a detachable battery — a rarity among lightweight e-bikes, making it the optimal choice for city dwellers.</span>
+            </p>
+            <h3 class="u48Medium_v2">50% <span class="u24Medium_v2">Lighter</span></h3>
+          </div>
+          <div>
+            <h2 class="u30Medium_v2">Your Long-range, <br>Touring E-bike</h2>
+            <p class="u17Light_v2">
+              <span>
+                The synergy of the customized motor and torque sensor ensures optimal efficiency, enabling an impressive 80-mile range on a single charge. Enhanced by the Shimano 8-speed gear shift system, it tackles diverse terrains with ease. Start an ebike tour now!
+              </span>
+            </p>
+            <h3 class="u48Medium_v2"><span class="u24Medium_v2">Up to </span>80<span class="u24Medium_v2"> Miles</span></h3>
+          </div>
+          <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/ccc_2x_52e3b5e8-e0af-4639-9235-e739f529e631.jpg?v=1706600937" alt="">
+  </div>
+</div>
+
+<div class="conquer">
+    <div class="centeral-content">
+        <div>
+            <div class="mobileHide">
+            <h2 class="u36Medium_v2">Your comfortable, <br>adventure E-bike</h2>
+            <p class="u17Light_v2">
+                <span>
+                  Adjustable handlebars and seat post ensure a comfortable riding position for both sport and leisure. Versatile accessory mounting points maximize carrying capacity. Load up and ride into adventure!
+                </span>
+            </p>
+        </div>
+        <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_23473_2x_04793898-eb69-4b45-9cac-4bcfbaa7b28f.png?v=1703472656" alt="">
+        </div>
+        <div class="pcHide">
+          <h2 class="u24Medium_v2">Your comfortable, <br>adventure E-bike</h2>
+          <p class="u17Light_v2">
+                <span>
+                  Adjustable handlebars and seat post ensure a comfortable riding position for both sport and leisure. Versatile accessory mounting points maximize carrying capacity. Load up and ride into adventure!
+                </span>
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="vssssssss">
+  <div class="centeral-content">
+    <div>
+      <h2 class="u30Medium_v2">Carbon 1 Pro <br class="pcHide">vs Carbon 1/1s</h2>
+      <p class="u17Light_v2">
+        <span>
+          Discover the enhancements in Carbon 1 Pro over Carbon 1/1s and the essence of ‘Pro’ for Carbon 1 in this detailed comparison blog
+        </span>
+      </p>
+      <a href="/blogs/blog/carbon-1-1s-vs-carbon-1-pro" target="_blank" rel="noopener noreferrer" class="my-button my-button-white">Read the blog</a>
+    </div>
+    <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-4_2x_34d60111-a97d-4cc1-8d88-5335e1abf30e.jpg?v=1706603464" alt="">
+  </div>
+</div>
+
+<div class="test-ride">
+        <div class="centeral-content">
+          <div>
+            <div>
+              <h2 class="u30Medium_v2">Test ride spots <br>near you</h2>
+              <p class="u17Light_v2">
+                <span>
+                  Experience the bike in real
+                </span>
+              </p>
+              <a
+                class="my-button my-button-origin"
+                href="/pages/test-ride"
+                target="_blank">Book a Free Test Ride</a>
+            </div>
+          </div>
+          <div>
+            <div style="padding: 0;">
+              <div
+                id="storepoint-container"
+                data-tags="us"
+                data-map-id="162f21804990ff"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="boxs3" id="boxs3">
+        <div class="centeral-content">
+            <div></div>
+            <div>
+            <h2 class="u30Medium_v2">Local care all the time</h2>
+            <div class="u17Light_v2">
+                <div><img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/shopping-mall_2x_44d99fcd-f0f4-443b-927e-b68e48af010f.png?v=1687259496">60+ service partners</div>
+                <div><img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24-hours_2x_d6a8eeb2-4564-4351-8cb9-096dbb778479.png?v=1687259501">24hrs service response, App build-in portal</div>
+                <div><img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/box_2x_2b3b7c15-f5ae-4305-956f-7543b63b2dda.png?v=1687259506"><span>Spare parts available locally, ships in 3 days.</span>
+                </div>
+                <div><img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/customer-satisfaction_2x_c7081e3a-1864-43b6-8ed2-f77895eafa6a.png?v=1687259512">10+ technical experts, 99% satisfaction rate.</div>
+            </div>
+            <a class="my-button my-button-black" href="/pages/care" target="_blank">Learn more</a>
+            </div>
+            <!--<div>
+            <div class="u30DemiBold_v2">Leasing Partners at Your Choice</div>
+            <div class="u17Light_v2">We offer you the opportunity to get your dream bike at low monthly leasing rates through various leasing providers.</div>
+            <div class="logos">
+                <div>
+                <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/JR-Logo_-RGB-schwarz-large-4x_2x_90eff7ba-f64b-45ef-8e7e-65490e740385.png?v=1687260470">
+                </div>
+                <div>
+                <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18616_2x_d0fb1804-0a96-4524-9463-6cd30673cf6d.png?v=1687260793">
+                </div>
+            <div>
+                <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18617_2x_6706fd9c-d8f3-434b-b77f-6e35eb007eb3.png?v=1687260762">
+            </div>
+                <div>
+                <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/logo_meinstdienstrad_2021_2x_d5a1936d-fc18-418a-bb45-b9bb73e6c96a.png?v=1687260731">
+                </div>
+            </div>
+            <a class="my-button my-button-black" href="/pages/ebike-leasing" target="_blank">Lease Now</a>
+            </div>
+            <div></div>-->
+        </div>
+        </div>
+
+        <div class="never">
+          <div class="centeral-content">
+              <h2 class="u60Medium_v2">Smart <span style="color: #EB5A2D;">EVOLUTION,</span><br>Unleashing Intelligent Charm
+              </h2>
+              <h3 class="u48Medium_v2"><img
+                      src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/screenshot-20231012-172647.png?v=1697102822"
+                      alt=""> Never lose it</h3>
+              <div class="boxsxzczxc">
+                  <div>
+                      <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3-3_2x_5377b3f0-392f-4585-b0da-551ecc12d5e7.jpg?v=1704189341"
+                          alt="">
+                      <h4 class="u24Medium_v2">Movement alarm</h4>
+                      <p class="u17Light_v2">
+                          <span>
+                              Once locked, the onboard alarm monitors movements and alerts you against unauthorized ones.
+                          </span>
+                      </p>
+                      <div class="flex-1"></div>
+                  </div>
+                  <div>
+                      <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18878_2x_5608f5b0-4079-4221-ae70-8d74217c87d7.jpg?v=1697088999"
+                          alt="">
+                      <h4 class="u24Medium_v2">GPS tracking and fence</h4>
+                      <p class="u17Light_v2">
+                          <span>
+                              Aided by a constant 4G connection, GPS tracking keeps you informed of the e-bike’s location, even in the worst scenario of theft.
+                          </span>
+                      </p>
+                      <div class="flex-1"></div>
+                  </div>
+                  <div class="mobileHide"></div>
+                  <div class="mobileHide"></div>
+                  <div>
+                      <h4 class="u24Medium_v2">Find my bike story</h4>
+                      <p class="u17Light_v2">
+                          <span>
+                              This is the story of how David’s Urtopia e-bike was stolen during his trip and then recovered,
+                              leaving the Las Vegas police officer who assisted him in shock saying, ‘’In all my 20 years on
+                              the job, I’ve never seen a bike recovered like that.’’
+                          </span>
+                      </p>
+                  </div>
+                  <div>
+                      <div class="my-button my-button-black"
+                          onclick="showVideoDialog('https://www.youtube.com/embed/W3N0OuaXj5M?autoplay=1&amp;cc_load_policy=1')">
+                          Watch Video <img
+                              src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/screenshot-20231012-165647.png?v=1697101021"
+                              alt=""></div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="everything">
+        <div class="centeral-content">
+            <div class="boxqwewqeqs">
+                <div>
+                    <h3 class="u24Medium_v2">Fingerprint unlock</h3>
+                    <p class="u17Light_v2">
+                        <span>
+                            No more worrying about losing another key.
+                        </span>
+                    </p>
+                </div>
+                <div>
+                    <h3 class="u24Medium_v2">Navigation without cellphone</h3>
+                    <p class="u17Light_v2">
+                        <span>
+                            No more ugly phone holders, the bright screen shows navigation clearly in
+                            daylight.
+                        </span>
+                    </p>
+                </div>
+                <div>
+                    <h3 class="u24Medium_v2">Track your route</h3>
+                    <p class="u17Light_v2">
+                        <span>
+                            The smart app tracks your trips and your health. Get on your bike and share
+                            your exciting moments with friends and family.
+                        </span>
+                    </p>
+                </div>
+                <div>
+                    <h3 class="u24Medium_v2">Bluetooth music</h3>
+                    <p class="u17Light_v2">
+                        <span>
+                            We know the importance of music, so we built a Bluetooth speaker. You can enjoy your favorite music while riding without having to carry an external speaker.
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+
+
+{% render 'size-guide-and-specs-template', config: 'carbon1pro_order_page_config' %}
+
+<div class="judmeeeeeeeee">
+            <div class="centeral-content">{% include "judgeme_widgets", widget_type: "judgeme_review_widget", concierge_install: false %}</div>
+</div>
+
+<img class="toTop" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21049.svg?v=1687267470">
+	
+<div class="top-fixed mobileHide">
+  <div class="centeral-content">
+    <span class="u20DemiBold_v2">{{ product.title }}</span>
+    <span class="flex-1"></span>
+    <div>
+      <span class="u17Light_v2"><span class="u20DemiBold_v2 emphasize" style="font-weight: 600;">{{ product.price | money }}</span> {% unless product.compare_at_price == product.price %}
+        <span style="text-decoration: line-through;">{{ product.compare_at_price | money }}</span>
+    {% endunless %}</span>
+      <span class="u14Light_v2">or as low as {{ product.price | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
+    </div>
+    <a href="#product_form_{{ product.id }}" class="my-button my-button-origin">Order Now</a>
+  </div>
+</div>
+
+<div class="bottom-fixed pcHide">
+  <a href="#product_form_{{ product.id }}" class="my-button my-button-origin">Order Now</a>
+  <div>
+    <span class="u14Light_v2"><span class="emphasize" style="font-weight: 600;">{{ product.price | money }}</span> {% unless product.compare_at_price == product.price %}
+      <span style="text-decoration: line-through;">{{ product.compare_at_price | money }}</span>
+  {% endunless %}</span>
+    <span class="u14Light_v2">or as low as {{ product.price | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
+  </div>
+</div>
+
+{% render 'product-options', config_name: 'carbon1pro_order_page_config' %}
+
+<script>
+    // 默认隐藏
+    $('.product .error-tip').hide();
+    // 默认隐藏
+    $('.bottom-fixed').hide();
+    $('.top-fixed').hide();
+    $('.toTop').hide();
+
+    const leftSwiper = new Swiper(".product .left-swiper", {
+      direction: 'vertical',
+      spaceBetween: 8,
+      slidesPerView: 8,
+      freeMode: true,
+      watchSlidesProgress: true,
+    })
+
+    const rightSwiper = new Swiper(".product .right-swiper", {
+      autoHeight: true,
+      navigation: {
+        nextEl: ".product .right-swiper .swiper-button-next",
+        prevEl: ".product .right-swiper .swiper-button-prev",
+      },
+      pagination: {el:'.swiper-pagination'},
+      effect: 'fade',
+      fadeEffect:{
+          crossFade: true
+      },
+      thumbs: {
+        swiper: leftSwiper,
+      },
+    });
+
+    document.addEventListener('onChangeSize', e => {
+          $(`.product .product-panel .options > div[option="Size"] .u17DemiBold_v2 .u17Light_v2`).text(global_config.carbon_order_page_config.size_map[e.value])
+    })
+
+    document.addEventListener('onChangeColor', e => {
+          $(`.product .product-panel .options > div[option="Color"] .u17DemiBold_v2 .u17Light_v2`).text(e.value)
+
+            let swiper_arr = []
+            swiper_arr = swiper_arr.concat(global_config.carbon1pro_order_page_config.product_images[e.value], global_config.carbon1pro_order_page_config.product_images['commonSwiper'])
+
+            $('.product .right-swiper .swiper-wrapper').html(swiper_arr.map((s, i) => {
+                const index = i % global_config.carbon1pro_order_page_config.product_media_images.length
+
+                return `<div class="swiper-slide">
+                                <img src="${s}"/>
+                                <div>
+                                    <span class="u20DemiBold_v2">${global_config.carbon1pro_order_page_config.product_media_images[index].text}</span>
+                                    <img src="${global_config.carbon1pro_order_page_config.product_media_images[index].img}&width=300">
+                                </div>
+                        </div>`
+            }).join(''))
+            $('.product .left-swiper .swiper-wrapper').html(swiper_arr.map(s => `<div class="swiper-slide"><img src="${s}"></div>`).join(''))
+            
+            // update
+            setTimeout(() => {
+                rightSwiper.update()
+                rightSwiper.slideTo(0, 0)
+                
+                leftSwiper.update()
+                leftSwiper.slideTo(0, 0)
+            }, 0)
+    })
+
+
+    document.addEventListener('onChangeOptions', e => {
+        // console.log(e)
+        
+    })
+
+
+    $('.product .product-panel').on("submit", function (event) {
+
+      // 阻止默认行为
+      event.preventDefault();
+      return false;
+  })
+
+  $('.product .dialogs > div').on('click', function(e) {
+      const m = {
+          0: 'one',
+          1: 'two',
+          2: 'three',
+          3: 'four'
+      }
+
+      if ($(this).attr('onclick')) {
+          return
+      }
+
+      $('.product .dialogs > div').each((i, t) => {
+          if ($(e.target).closest('.u17Medium_v2')[0] === t) {
+              i = i > 1 ? 3 : i
+
+              setTimeout(() => {
+                const layer = document.querySelector(`.order-modal-${m[i]}`);
+                const laybox = document.querySelector(`.order-modal-layer-${m[i]}`);
+                layer.style.display = "flex";
+                layer.style.zIndex = '99999'
+                laybox.className += " dialog-open";
+              }, 100)
+          }
+      })
+  })
+
+  function changeAddToCartText (parse, step = 0) {
+      if (step) {
+          $(".addToCartBtn i").toggleClass("showi");
+          document.querySelector(".addToCartBtn span").innerHTML = "Adding...";
+      } else {
+          setTimeout(()=>{
+              $(".addToCartBtn i").toggleClass("showi");
+              document.querySelector(".addToCartBtn span").innerHTML = "Pre-order Now";
+          }, 800)
+      }
   }
-{% endschema %}
+
+
+let id = 0;
+let adding = false;
+let cart1 = document.querySelector("cart-notification") || document.querySelector("cart-drawer");
+
+function addAllToCart(parse, show = false) {
+    // 如果 B test 需要显示 klarna checkout
+  window.show_notification_checkout_button = show
+  const cartList = { items: [] }
+  $('.product .error-tip').hide()
+
+  if (adding == false) {
+    !show && changeAddToCartText(parse,1);
+    adding = true;
+
+    cartList.items.push({ id: current_variant_id, quantity: 1 });
+
+    if(cart1){
+      var sections = cart1.getSectionsToRender().map((section) => section.id);
+      cartList.sections = sections.join(",");
+    }
+
+    // 新增普通配件
+    $('.product .accessories .items .active').each((i, item) => {
+      cartList.items.push({ 
+        id: $(item).attr('variant-id'), 
+        quantity: 1
+      })
+    })
+
+    
+    fetch("/cart/add.js", {
+      method: "POST",
+      body: JSON.stringify(cartList),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+    .then((res) => res.json())
+    .then((res1) => {
+      res1.key = "";
+
+      cart1.classList.contains('is-empty') && cart1.classList.remove('is-empty');
+
+      if (!(res1.message && res1.status)) {
+        cart1.renderContents(res1);
+      } else {
+        $('.product .error-tip').show()
+      }
+
+      !show && changeAddToCartText(parse, 0);
+    })
+    .catch((err) => {
+      !show && changeAddToCartText(parse, 0);
+      // cartList.items.splice(-1, 1);
+      console.log('err==',err)
+      $('.product .error-tip').show()
+    }).finally(() => {
+      adding = false
+      !show && fetchBuried('websiteclick', `carbon-1p-reserve-page`, { button: 'ATC' })
+
+      setTimeout(() => $('.product .error-tip').hide(), 10000)
+    })
+  }
+}
+
+
+function testRideTrace(type = '', target) {
+  // 如果已经有按钮 loading ,直接退出来
+  if (!type || $('.orderTestRideBtn').hasClass('loading')) {
+    return
+  }
+
+  const t = $(target)
+
+  t.addClass('loading')
+  // 原本的html 存起来
+  const text = t.find('span').html()
+  const loading = '<i class="fa fa-spinner fa-spin"></i>Processing...'
+
+  // loading
+  t.find('span').html(loading)
+
+  fetchBuried('websiteclick', `carbon-1p-reserve-page`, { button: type }, true)
+  window.sessionStorage.clicked_klarna_checkout_button = 'clicked_klarna_checkout_button'
+
+  if (sessionStorage.carbon_one_a_b_test_flag === 'B') {
+    setTimeout(() => {
+      t.removeClass('loading')
+      t.find('span').html(text)
+    }, 2000)
+  
+    return addAllToCart("atc", true)
+  }
+}
+
+$('.product .product-panel .accessories .navigate > div').on('click', e => {
+      const items = $('.product .product-panel .accessories .items')
+
+      items.animate({
+          scrollLeft: $('.product .product-panel .accessories .items').scrollLeft() + ($(e.target).hasClass('next') ? 180 : -180)
+      }, 300)
+  })
+
+  $('.product .product-panel .accessories .items .item').on('click', e => {
+      const item = $(e.target).closest('.item')
+      const icon = item.find('.u11Light_v2')
+
+      if (item.hasClass('active')) {
+          item.removeClass('active')
+          icon.html('<i class="fa-solid fa-plus"></i>')
+          
+      } else {
+          item.addClass('active')
+          icon.html('<i class="fa-solid fa-check"></i>')
+      }
+  })
+
+  $('.toTop').on('click', e => {
+      $('html').animate({
+          scrollTop: 0
+      }, 300)
+  })
+
+  let currnetScroolTop = 0
+  $(document).on('scroll', throttle(e => {
+      const top1 = $('.professional').offset().top
+      const top3 = $('.product .addToCartBtn').offset().top
+      const top2 = $(e.target).scrollTop()
+
+      const h = window.screen.height
+
+      if (global_config.is_mobile) {
+          if (top2 > top3) {
+              $('.bottom-fixed').show()
+          } else {
+              $('.bottom-fixed').hide()
+          }
+      } else {
+          if (top2 > top1) {
+              $('.top-fixed').show()
+          } else {
+              $('.top-fixed').hide()
+          }
+
+          if (currnetScroolTop > top2) {
+              $('.top-fixed').hide()
+          }
+
+          currnetScroolTop = top2
+      }
+
+      top2 > (h * 2) ? $('.toTop').show() : $('.toTop').hide()
+
+  }, 300, 100))
+</script>
+<script src="https://cdn.storepoint.co/api/v1/js/162f21804990ff.js" defer></script>
+{% render 'carbon-one-pro-extra-code' %}

@@ -1,0 +1,409 @@
+.size-guide-and-specs-template {
+    margin: 12vh auto;
+}
+
+.size-guide-and-specs-template h3,
+.size-guide-and-specs-template h4,
+.size-guide-and-specs-template h5,
+.size-guide-and-specs-template h6 {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    color: inherit;
+    font-family: inherit;
+}
+
+#SpecsDialog .u14Light_v2,
+.size-guide-and-specs-template .u17Light_v2 {
+    opacity: 0.77;
+}
+
+.size-guide-and-specs-template h3 {
+    cursor: pointer;
+    display: flex;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.size-guide-and-specs-template h3 > div {
+    font-weight: 300;
+    margin-right: 10px;
+    transform: rotate(0deg);
+    transition: all .3s ease-out;
+}
+
+.size-guide-and-specs-template h3 > .dowwwwn {
+    transform: rotate(90deg);
+}
+
+.size-guide-and-specs-template h3 > .upppppppppppp {
+    transform: rotate(0deg);
+}
+
+.size-guide-and-specs-template .content {
+    display: none;
+}
+
+.size-guide-and-specs-template .specs .content .icons {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.size-guide-and-specs-template .specs .content .icons > img {
+    max-width: 40px;
+}
+
+.size-guide-and-specs-template .specs .content .icons > img + img {
+    margin-left: 20px;
+}
+
+.size-guide-and-specs-template .specs .content .parameters {
+    margin-bottom: 30px;
+}
+
+.size-guide-and-specs-template .specs .content .parameters .u30DemiBold_v2 {
+    padding: 6px 24px;
+    background-color: #f3f3f3;
+}
+
+.size-guide-and-specs-template .specs .content .parameters .boxsss {
+    padding: 30px 24px 30px 48px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10% 10%;
+}
+
+.size-guide-and-specs-template .specs .content .parameters .boxsss > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.size-guide-and-specs-template .specs .content .parameters .boxsss .u24DemiBold_v2 {
+    margin-bottom: 10px;
+}
+
+.size-guide-and-specs-template .specs .content .u11Light_v2{
+    opacity: 0.5;
+    padding: 48px;
+}
+
+
+.size-guide-and-specs-template .size-guide .content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 50px;
+    align-items: center;
+    padding: 30px 0px;
+}
+
+.size-guide-and-specs-template .size-guide .content .texts {
+    display: flex;
+    justify-content: space-between;
+}
+
+.size-guide-and-specs-template .size-guide .content .texts .text {
+    display: flex;
+    flex-direction: column;
+}
+
+.size-guide-and-specs-template .size-guide .content .texts .text+.text {
+    align-items: center;
+}
+
+.size-guide-and-specs-template .size-guide .content .texts .text div + div {
+    margin-top: 20px;
+}
+
+
+#SpecsDialog > div,
+#SizesDialog > div {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    width: 900px;
+    box-shadow: 0 0 10px 10px rgb(0, 0, 0, 0.08);
+}
+
+#SpecsDialog > div .headerrrr,
+#SizesDialog > div .headerrrr {
+    display: flex;
+    height: 60px;
+    padding: 0 30px;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+    align-items: center;
+}
+
+#SpecsDialog > div .headerrrr .close,
+#SizesDialog > div .headerrrr .close {
+    position: static;
+    width: auto;
+    height: auto;
+    font-size: 24px;
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+#SizesDialog > div .bodyyyyyy {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 30px 50px;
+}
+
+#SizesDialog > div .bodyyyyyy .switchhhhh {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    background-color: #eff0f4;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+#SizesDialog > div .bodyyyyyy .switchhhhh > div {
+    display: flex;
+    flex-direction: column;
+    padding: 6px 40px;
+    cursor: pointer;
+    transition: all 0.2s;
+    border-radius: 50px;
+}
+
+#SizesDialog > div .bodyyyyyy .switchhhhh .active {
+    background-color: #000;
+    color: #fff;
+}
+
+#SizesDialog > div .bodyyyyyy .content {
+    display: grid;
+    grid-template-columns: 1.25fr 2fr;
+    margin-top: 40px;
+    grid-column-gap: 5%;
+    align-items: center;
+}
+
+#SizesDialog > div .bodyyyyyy .content .parameters {
+    display: flex;
+    flex-direction: column;
+}
+
+#SizesDialog > div .bodyyyyyy .content .parameters > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#SizesDialog > div .bodyyyyyy .content .parameters > div + div {
+    margin-top: 20px;
+}
+
+#SpecsDialog > div {
+    padding-bottom: 30px;
+}
+
+#SpecsDialog > div .bodyyyyyy {
+    padding: 15px 30px 0;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+#SpecsDialog > div .bodyyyyyy .parameters + .parameters {
+    margin-top: 25px;
+}
+
+#SpecsDialog > div .bodyyyyyy .parameters h4,
+#SpecsDialog > div .bodyyyyyy .parameters h5,
+#SpecsDialog > div .bodyyyyyy .parameters h6 {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    color: inherit;
+    font-family: inherit;
+}
+
+#SpecsDialog > div .bodyyyyyy .parameters .boxsss {
+    padding: 15px 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 24px 8%;
+}
+
+#SpecsDialog > div .bodyyyyyy .parameters .u20DemiBold_v2 {
+    border-bottom: 1px solid #e7e7e7;
+    padding-bottom: 4px;
+}
+
+#SpecsDialog > div .bodyyyyyy .parameters .u17DemiBold_v2 {
+    margin-bottom: 10px;
+    color: #4d4d4d;
+}
+
+#SpecsDialog > div .bodyyyyyy > .u11Light_v2 {
+    opacity: 0.5;
+    margin-top: 25px;
+}
+
+
+@media (max-width: 767px) {
+    .size-guide-and-specs-template {
+        padding: 0 4vw;
+        margin: 20vw auto;
+    }
+
+    .size-guide-and-specs-template .u17Light_v2 {
+        font-size: 14px;
+    }
+
+    .size-guide-and-specs-template .u36DemiBold_v2 {
+        font-size: 24px;
+    }
+
+    .size-guide-and-specs-template .size-guide .content {
+        grid-template-columns: 1fr;
+        padding: 4vw 0;
+    }
+
+    .size-guide-and-specs-template .size-guide .content .texts {
+        order: 1;
+        font-size: 12px;
+    }
+
+    .size-guide-and-specs-template .size-guide .content .texts .text div + div {
+        margin-top: 10px;
+    }
+
+    .size-guide-and-specs-template .size-guide .content .texts .text .u17DemiBold_v2 {
+        font-size: 13px;
+    }
+
+    .size-guide-and-specs-template .specs .content .icons {
+        margin: 3vw 0;
+    }
+
+    .size-guide-and-specs-template .specs .content .icons > img {
+        max-width: 25px;
+    }
+
+    .size-guide-and-specs-template .specs .content .icons > img + img {
+        margin-left: 3.5vw;
+    }
+
+    .size-guide-and-specs-template .specs .content .parameters {
+        margin: 0;
+    }
+
+    .size-guide-and-specs-template .specs .content .parameters .u30DemiBold_v2 {
+        padding: 2vw 4vw;
+        font-size: 20px;
+    }
+
+    .size-guide-and-specs-template .specs .content .parameters .boxsss {
+        padding: 4vw 6vw 6vw;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .size-guide-and-specs-template .specs .content .parameters .boxsss div + div {
+        margin-top: 6vw;
+    }
+
+    .size-guide-and-specs-template .specs .content .parameters .boxsss .u24DemiBold_v2 {
+        font-size: 17px;
+        margin-bottom: 1vw;
+    }
+
+    .size-guide-and-specs-template .specs .content .u11Light_v2 {
+        padding: 0 6vw;
+    }
+
+
+    #SpecsDialog > div,
+    #SizesDialog > div {
+        max-width: 100%;
+        overflow: hidden;
+        padding-bottom: 20px;
+    }
+
+    #SpecsDialog > div .headerrrr,
+    #SizesDialog > div .headerrrr {
+        padding: 0 5vw;
+        height: 50px;
+    }
+
+    #SpecsDialog > div .bodyyyyyy,
+    #SizesDialog > div .bodyyyyyy {
+        padding: 4vw 5vw 0;
+        max-height: calc(80vh - 50px);
+        overflow-y: auto;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    #SizesDialog > div .bodyyyyyy .switchhhhh {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(33%, 1fr));
+        margin: 0;
+    }
+
+    #SizesDialog > div .bodyyyyyy .switchhhhh > div {
+        padding: 6px 4vw;
+    }
+
+    #SizesDialog > div .bodyyyyyy .switchhhhh > div .u17DemiBold_v2 {
+        /* font-size: 14px; */
+    }
+
+    #SizesDialog > div .bodyyyyyy .switchhhhh > div .u14Light_v2 {
+        font-size: 12px;
+    }
+
+    #SizesDialog > div .bodyyyyyy .content {
+        grid-template-columns: 1fr;
+        margin-top: 4vw;
+    }
+
+    #SizesDialog > div .bodyyyyyy .content .parameters {
+        order: 1;
+        margin-top: 4vw;
+    }
+
+    #SizesDialog > div .bodyyyyyy .content .parameters .u14DemiBold_v2 {
+        font-size: 12px;
+    }
+
+    #SizesDialog > div .bodyyyyyy .content .parameters .u14Light_v2 {
+        font-size: 12px;
+    }
+
+    #SizesDialog > div .bodyyyyyy .content .parameters > div + div {
+        margin-top: 4vw;
+    }
+
+    #SpecsDialog > div .bodyyyyyy {
+        padding-top: 2vw;
+    }
+
+    #SpecsDialog > div .bodyyyyyy .parameters + .parameters {
+        margin-top: 6vw;
+    }
+
+    #SpecsDialog > div .bodyyyyyy .parameters .boxsss {
+        grid-template-columns: 1fr;
+        grid-row-gap: 6vw;
+        padding: 2.5vw 0;
+    }
+
+    #SpecsDialog > div .bodyyyyyy .parameters .u17DemiBold_v2 {
+        margin-bottom: 1vw;
+        font-size: 15px;
+    }
+
+    #SpecsDialog > div .bodyyyyyy .parameters .u14Light_v2 {
+        font-size: 12px;
+    }
+    
+}

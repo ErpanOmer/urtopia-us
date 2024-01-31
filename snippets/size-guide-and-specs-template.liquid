@@ -1,0 +1,97 @@
+{{ 'size-guide-and-specs-template.css' | asset_url | stylesheet_tag: preload: true }}
+
+<div class="centeral-content size-guide-and-specs-template">
+    <div class="size-guide">
+        <h3 class="u36DemiBold_v2"><div class="dowwwwn">></div>Size Guide</h3>
+        <div class="content">
+            <div class="texts"></div>
+            <img class="lozad" data-src="" alt="sizes">
+        </div>
+    </div>
+    <div class="specs">
+        <h3 class="u36DemiBold_v2"><div>></div>Specs</h3>
+        <div class="content">
+            <div class="icons">
+                <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/icon2-1649931441565.png?v=1649931443" alt="">
+                <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/cpsc_logo-1662445677565.svg?v=1662445680" alt="">
+                <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/icon1png-1649931441566.png?v=1649931446" alt="">
+            </div>
+            <div class="u11Light_v2">*This service will be automatically activated once the bike is activated and bound to your account. We provide free access in the first year, with the following terms to be renewed by subscription to this service. A code will be sent to your email which can be used to renew the service in our App.</div>
+        </div>
+    </div>
+</div>
+
+<dialog id="SizesDialog">
+    <div>
+        <div class="headerrrr"><span class="u17DemiBold_v2">Size & Fit</span><span class="close">✕</span></div>
+        <div class="bodyyyyyy">
+            <div class="switchhhhh"></div>
+            <div class="content">
+                <div class="parameters"></div>
+                <img alt="size">
+            </div>
+        </div>
+    </div>
+</dialog>
+
+<dialog id="SpecsDialog">
+    <div>
+        <div class="headerrrr"><span class="u17DemiBold_v2">Technical Specifications</span><span class="close">✕</span></div>
+        <div class="bodyyyyyy">
+            <div class="u11Light_v2">*This service will be automatically activated once the bike is activated and bound to your account. We provide free access in the first year, with the following terms to be renewed by subscription to this service. A code will be sent to your email which can be used to renew the service in our App.</div>
+        </div>
+    </div>
+</dialog>
+
+
+<script>
+  $('.size-guide-and-specs-template h3').click(function () {
+        $(this).siblings('.size-guide-and-specs-template .content').slideToggle().parent().siblings().find('.size-guide-and-specs-template .content').slideUp();
+        $(this).children('div').toggleClass('dowwwwn')
+  })
+
+  const sizes_and_specs = global_config.{{ config }}.sizes_and_specs
+
+  for (const spec of sizes_and_specs.specs) {
+    $('.size-guide-and-specs-template .specs .content .u11Light_v2').before(`<div class="parameters"><h4 class="u30DemiBold_v2">${spec.title}</h4><div class="boxsss">
+        ${spec.parameters.map(([h5, h6]) => `<div><h5 class="u24DemiBold_v2">${h5}</h5><h6 class="u17Light_v2">${h6}</h6></div>`).join('')}
+    </div></div>`)
+
+    $('#SpecsDialog > div .bodyyyyyy .u11Light_v2').before(`<div class="parameters"><h4 class="u20DemiBold_v2">${spec.title}</h4><div class="boxsss">
+        ${spec.parameters.map(([h5, h6]) => `<div><h5 class="u17DemiBold_v2">${h5}</h5><h6 class="u14Light_v2">${h6}</h6></div>`).join('')}
+    </div></div>`)
+  }
+
+  $('.size-guide-and-specs-template .size-guide .content img').attr('data-src', sizes_and_specs.sizes.image)
+
+
+  for (let i = 0; i < sizes_and_specs.sizes.parameters.length; i++) {
+    $('.size-guide-and-specs-template .size-guide .content .texts').append(`<div class="text">${sizes_and_specs.sizes.parameters[i].map(p => `<div>${p}</div>`).join('')}</div>`)
+
+    if (i !== 0) {
+        $('#SizesDialog .bodyyyyyy .switchhhhh').append(`<div ${i === 1 ? 'class="active"' : ''}>${sizes_and_specs.sizes.parameters[i][0]}<span class="u14Light_v2">Fit for ${sizes_and_specs.sizes.parameters[i][1]}</span></div>`)
+    }
+
+    if (i === 1) {
+        $('#SizesDialog .bodyyyyyy .content .parameters').html(sizes_and_specs.sizes.parameters[i].map((p, i) => i > 1 ? `<div><span class="u14DemiBold_v2">${sizes_and_specs.sizes.parameters[0][i]}</span><span class="u14Light_v2">${p}</span></div>` : '').join(''));
+        $('#SizesDialog .bodyyyyyy .content img').attr('src', typeof sizes_and_specs.sizes.image === 'string' ? sizes_and_specs.sizes.image : sizes_and_specs.sizes.image[i - 1])
+    }
+  }
+
+  setTimeout(() => {
+    $('#SizesDialog .bodyyyyyy .switchhhhh > div').on('click', function() {
+            $(this).addClass('active').siblings().removeClass('active')
+            $('#SizesDialog .bodyyyyyy .content .parameters').html(sizes_and_specs.sizes.parameters[$(this).index() + 1].map((p, i) => i > 1 ? `<div><span class="u14DemiBold_v2">${sizes_and_specs.sizes.parameters[0][i]}</span><span class="u14Light_v2">${p}</span></div>` : '').join(''))
+            $('#SizesDialog .bodyyyyyy .content img').attr('src', Array.isArray(sizes_and_specs.sizes.image) ? sizes_and_specs.sizes.image[$(this).index()] : sizes_and_specs.sizes.image)
+    })
+  }, 300)
+
+
+  function showSizesAndSpecs (id = '') {
+        if (!id) {
+            return
+        }
+
+        showDialog(document.getElementById(id))
+  }
+</script>
