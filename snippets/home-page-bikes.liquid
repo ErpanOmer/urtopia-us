@@ -282,8 +282,8 @@
               <div class="dots-and-price-and-size">
                 <div class="dots-and-price">
                   <div class="dots">
-                    <div onclick="changeBike('/pages/lightweight-ebike-urtopia-carbon-1-pro?variant=44288621281528','https://newurtopia.com/cdn/shop/products/collectionblack.png?v=1703557822&width=1000', this)" black class="active"></div>
-                    <div onclick="changeBike('/pages/lightweight-ebike-urtopia-carbon-1-pro?variant=44288621347064', 'https://newurtopia.com/cdn/shop/products/collectionwhite.png?v=1703557822&width=1000', this)" white></div>
+                    <div onclick="changeBike('/products/urtopia-carbon-1-pro-ebike?variant=44288621281528','https://newurtopia.com/cdn/shop/products/collectionblack.png?v=1703557822&width=1000', this)" black class="active"></div>
+                    <div onclick="changeBike('/products/urtopia-carbon-1-pro-ebike?variant=44288621347064', 'https://newurtopia.com/cdn/shop/products/collectionwhite.png?v=1703557822&width=1000', this)" white></div>
                   </div>
                   <div class="u24DemiBold_v2" {% if all_products['urtopia-carbon-1-pro-ebike'].compare_at_price != all_products['urtopia-carbon-1-pro-ebike'].price %}data-price="{{ all_products['urtopia-carbon-1-pro-ebike'].compare_at_price | money_without_trailing_zeros }}"{% endif %}>
                     {{ all_products['urtopia-carbon-1-pro-ebike'].price | money_without_trailing_zeros }}
@@ -291,7 +291,7 @@
                 </div>
                 <div class="size">Fit for 5’7’’~6’5’’</div>
               </div> 
-              <a class="my-button my-button-white" href="/pages/lightweight-ebike-urtopia-carbon-1-pro?variant=44288621281528">Order now</a>
+              <a class="my-button my-button-white" href="/products/urtopia-carbon-1-pro-ebike?variant=44288621281528">Order now</a>
               <div class="my-button my-button-black new" style="background-image: var(--sale-bike-tags1);">{{ all_products['urtopia-carbon-1-pro-ebike'].compare_at_price |  minus: all_products['urtopia-carbon-1-pro-ebike'].price | money_without_trailing_zeros}} off</div>
               <!--<div class="my-button my-button-black new" style="transform: translateY(120%);background-image: var(--sale-bike-tags2);">{{ settings.carbon_ebike_free_accessories_count }} Freebies</div>-->
           </div>
