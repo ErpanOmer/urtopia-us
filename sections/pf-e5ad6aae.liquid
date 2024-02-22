@@ -276,7 +276,7 @@
 				<div class="support mb12">
 					<a href="#boxs3">
 						<img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230621-005713.png?v=1687280264"/>
-						<span class="u11Medium_v2">30+ Spots<br>of Service</span>
+						<span class="u11Medium_v2">60+ Spots<br>of Service</span>
 					</a>
 					<!--<a href="/pages/shipping-and-return" target="_blank">
 						<img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_17959_2x_cff00041-4dce-479b-b87d-55b1cb89cd7a.png?v=1687161086"/>
@@ -601,9 +601,9 @@
     <div>
       <div class="u30DemiBold_v2">Local care all the time</div>
       <div class="u17Light_v2">
-        <div><img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/shopping-mall_2x_44d99fcd-f0f4-443b-927e-b68e48af010f.png?v=1687259496">30+ service partners</div>
+        <div><img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/shopping-mall_2x_44d99fcd-f0f4-443b-927e-b68e48af010f.png?v=1687259496">60+ service partners</div>
         <div><img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24-hours_2x_d6a8eeb2-4564-4351-8cb9-096dbb778479.png?v=1687259501">24hrs service response, App build-in portal</div>
-        <div><img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/box_2x_2b3b7c15-f5ae-4305-956f-7543b63b2dda.png?v=1687259506"><span>Spare parts available locally, ships in 3 days.1 service center, 30+ service partners</span>
+        <div><img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/box_2x_2b3b7c15-f5ae-4305-956f-7543b63b2dda.png?v=1687259506"><span>Spare parts available locally, ships in 3 days.</span>
         </div>
         <div><img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/customer-satisfaction_2x_c7081e3a-1864-43b6-8ed2-f77895eafa6a.png?v=1687259512">10+ technical experts, 99% satisfaction rate.</div>
       </div>
@@ -826,12 +826,12 @@
       <span class="u17Light_v2"><span class="u20DemiBold_v2 emphasize" style="font-weight: 600;">{{ product.price | minus: 0 | money }}</span> <span style="text-decoration: line-through;">{{ product.compare_at_price | money }}</span></span>
       <span class="u14Light_v2">or as low as <span class="stages">{{ product.price | minus: 0 | divided_by: 24 | money_without_trailing_zeros }}</span>/Month</span>
     </div>
-    <a href="#sale_acc" class="my-button my-button-origin">Order Now</a>
+    <a href="#product_form_{{ product.id }}" class="my-button my-button-origin">Order Now</a>
   </div>
 </div>
 
 <div class="bottom-fixed pcHide">
-  <a href="#sale_accmb" class="my-button my-button-origin">Order Now</a>
+  <a href="#product_form_{{ product.id }}" class="my-button my-button-origin">Order Now</a>
   <div>
     <span class="u14Light_v2"><span class="emphasize" style="font-weight: 600;">{{ product.price | minus: 0 | money }}</span> <span style="text-decoration: line-through;">{{ product.compare_at_price | money }}</span></span>
     <span class="u14Light_v2">or as low as <span class="stages">{{ product.price | minus: 0 | divided_by: 24 | money_without_trailing_zeros }}</span>/Month</span>

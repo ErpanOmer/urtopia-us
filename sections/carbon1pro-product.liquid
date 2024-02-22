@@ -15,7 +15,7 @@
           %}
         </div>
       </div>
-      <div class="u14Medium_v2 onlllllllly">Pre-order Promotion</div>
+      <div class="u14Medium_v2 onlllllllly">February Madness Sale</div>
       <div
         class="product-price u30DemiBold_v2 {% unless product.compare_at_price != product.price %}mb6{% endunless %}"
         {% unless product.compare_at_price != product.price %}
@@ -120,7 +120,7 @@
             product: product
           %}
         </div>
-        <div class="u17Medium_v2 onlllllllly">Pre-order Promotion</div>
+        <div class="u17Medium_v2 onlllllllly">February Madness Sale</div>
         <div
           class="product-price u30DemiBold_v2 {% unless product.compare_at_price != product.price %}mb6{% endunless %}"
           {% unless product.compare_at_price != product.price %}
@@ -251,7 +251,7 @@
           id="addToCart"
         >
           <i class="fa fa-spinner fa-spin"></i
-          ><span data-pf-type="Text" class="addToCartText u17DemiBold_v2">Pre-order Now</span>
+          ><span data-pf-type="Text" class="addToCartText u17DemiBold_v2">Add to Cart</span>
         </div>
         <div onclick="testRideTrace('klarna_check_out', this)" class="orderTestRideBtn">
           <img
@@ -269,8 +269,9 @@
         </div>
       </div>
       <div class="u14DemiBold_v2 delivery_time mb12">
-        Free Shipping Start from March, 2024 <br>
-        The early you pay, the early it ships.
+        Ships between <span>March 1-10, 2024 </span>from L.A. warehouse.
+        <!--Free Shipping Start from March, 2024 <br>
+        The early you pay, the early it ships.-->
       </div>
       <div class="support mb12">
         <a href="#boxs3">
@@ -309,11 +310,12 @@
           	<span>Support & Service</span>
           	<span>&gt;</span>
           </div>
-        -->
+        
         <div class="u17Medium_v2">
           <span>Pre-order FAQs</span>
           <span>&gt;</span>
         </div>
+        -->
       </div>
       <div class="parameters pcHide">
           	<div>
@@ -691,7 +693,7 @@
                 const index = i % global_config.carbon1pro_order_page_config.product_media_images.length
 
                 return `<div class="swiper-slide">
-                                <img src="${s}"/>
+                                <img src="${s}${global_config.is_mobile ? '&width=700' : ''}"/>
                                 <div>
                                     <span class="u20DemiBold_v2">${global_config.carbon1pro_order_page_config.product_media_images[index].text}</span>
                                     <img src="${global_config.carbon1pro_order_page_config.product_media_images[index].img}&width=300">
@@ -758,7 +760,7 @@
       } else {
           setTimeout(()=>{
               $(".addToCartBtn i").toggleClass("showi");
-              document.querySelector(".addToCartBtn span").innerHTML = "Pre-order Now";
+              document.querySelector(".addToCartBtn span").innerHTML = "Add to Cart";
           }, 800)
       }
   }

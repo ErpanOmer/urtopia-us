@@ -321,7 +321,7 @@ const testRides = [
         phone: "619-786-7161",
         email: "sales@ezeryders.com",
         timezone: "San Diego, CA, USA (GMT-7)",
-        add: "4051 Voltaire St Ste C, San Diego, CA 92107",
+        add: "1926 Bacon St, San Diego, CA 92107",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Eze_Ryders_Electric_Bikes_san_dieago.jpg?v=1686878451",
         testrideSpot: "California",
         testRideSize: "M/L",
@@ -775,7 +775,7 @@ const testRides = [
       },
       {
         name: "FITNESS EXCHANGE EMMAUS",
-        phone: "610-965-6597",
+        phone: "610-551-9266",
         email: "sales@fitnessexchange.com",
         timezone: "Pennsylvania, USA (GMT-4)",
         add: "693 State Ave I Emmaus, PA 18049 ",

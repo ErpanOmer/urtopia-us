@@ -918,7 +918,7 @@
                                           <div class="flex-1"></div>
                                           <span class="u17DemiBold_v2 emphasize" data-price="{{ productttttt.first.price | money_without_trailing_zeros }}">{{ productttttt.first.price | minus: settings.chord_ebike_discount_price | money_without_trailing_zeros }}</span>
                                       </div>
-                                      <div class="sale-image" href="/pages/lightweight-ebike-urtopia-carbon-1-pro"></div>
+                                      <div class="sale-image" href="/products/urtopia-carbon-1-pro-ebike"></div>
                                   </div>
                               </div>
                               
@@ -1351,17 +1351,10 @@ document.querySelector("img.header__heading-logo").src ="https://cdn.shopify.com
 {% endschema %}
 <script>
   $('.hedaer-secondary-menu .centreallllll .bikesssssss > div').on('click',  function (e) {
-    if ($(e.target).hasClass('my-button')) {
-      return
-    }
-    const div = $(e.target).closest('.by-style')[0] || $(e.target).closest('.by-model')[0]
-    location.href= $(div).attr('href')
+    location.href= $(this).attr('href')
   })
   $('.hedaer-secondary-menu-mb .bikesssssss > div').on('click',  function (e) {
-    if ($(e.target).hasClass('my-button')) {
-      return
-    }
-    const div = $(e.target).closest('.by-style')[0] || $(e.target).closest('.by-model')[0]
-    location.href= $(div).attr('href')
+    location.href= $(this).attr('href')
+    
   })
 </script>

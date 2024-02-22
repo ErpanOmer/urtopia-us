@@ -28,7 +28,7 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
 <cart-items class="page-width{% if cart == empty %} is-empty{% else %} section-{{ section.id }}-padding{% endif %}">
   <div class="title-wrapper-with-link">
     <h1 class="title title--primary">{{ 'sections.cart.title' | t }}</h1>
-    <a href="{{ routes.all_products_collection_url }}" class="underlined-link">{{ 'general.continue_shopping' | t }}</a>
+    <!-- <a href="{{ routes.all_products_collection_url }}" class="underlined-link">{{ 'general.continue_shopping' | t }}</a> -->
   </div>
 
   <div class="cart__warnings">
@@ -266,9 +266,10 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
               {{ item.final_line_price | money }}
             </dd>
           </dl>
-          {% elsif item.product.price != item.product.compare_at_price %}
+          {% elsif item.product.price < item.product.compare_at_price %}
             {% assign product_price = item.quantity | times: item.product.price | money %}
             {% assign product_compare_at_price = item.quantity | times: item.product.compare_at_price | money %}
+            
             <dl class="cart-item__discounted-prices">
               <dt class="visually-hidden">
                 {{ 'products.product.price.regular_price' | t }}
@@ -387,7 +388,7 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
               {{ item.final_line_price | money }}
             </dd>
           </dl>
-          {% elsif item.product.price != item.product.compare_at_price %}
+          {% elsif item.product.price < item.product.compare_at_price %}
             {% assign product_price = item.quantity | times: item.product.price | money %}
             {% assign product_compare_at_price = item.quantity | times: item.product.compare_at_price | money %}
             <dl class="cart-item__discounted-prices">

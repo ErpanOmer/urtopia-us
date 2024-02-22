@@ -1,11 +1,29 @@
 {{ 'home.scss.css' | asset_url | stylesheet_tag: preload: true }}
 
 <h1 class="visuallyhidden">Urtopia Ebike - Sleek, Full Carbon, Lightweight, Smart</h1>
-<div class="banner">
+
+<div class="bannerrrr">
+            <div class="swiper-wrapper">
+                  <div class="swiper-slide first">
+                    <div class="centeral-content">
+                      <div style="display: none;"></div>
+                      <div class="banner">
+                          <h2 class="u60Medium_v2">Carbon 1 Pro</h2>
+                          <h3 class="u20Medium_v2">Sporty and Lightweight</h3>
+                          <a class="my-button my-button-ghost" href="/pages/lightweight-ebike-urtopia-carbon-1-pro" target="_blank">Learn More</a>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+
+<!--<div class="banner">
         <h2 class="u60Medium_v2">Carbon 1 Pro</h2>
         <h3 class="u20Medium_v2">Sporty and Lightweight</h3>
         <a class="my-button my-button-ghost" href="/pages/lightweight-ebike-urtopia-carbon-1-pro" target="_blank">Learn More</a>
-    </div>
+    </div>-->
+    
     <div class="banner chord">
         <h2 class="u60Medium_v2">Chord</h2>
         <h3 class="u20Medium_v2">Comfort and Elegance</h3>
@@ -106,4 +124,23 @@
       $('.test-ride .centeral-content > div[href]').on('click', function () {
         window.open($(this).attr('href'))
       })
+    </script>
+
+        <script>    
+    // 是否有多个banner, 如果有 开启swiper
+    const isMultipartBanner = document.querySelectorAll('.bannerrrr .swiper-slide')
+    
+    isMultipartBanner.length > 1 && new Swiper('.bannerrrr', {
+        autoplay: {
+            disableOnInteraction: false,
+            pauseOnMouseEnter: false,
+            delay: 10000,
+        },
+        loop: true,
+        speed: 1000,
+        pagination: {
+            el: '.bannerrrr .swiper-pagination',
+            clickable: true
+        }
+    })
     </script>
