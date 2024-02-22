@@ -447,6 +447,14 @@ const global_config = {
                     ]
                 },
             ] 
-          }
+          },
+          // 默认的发货时间 文案
+        ebike_default_delivery_time: 'Ships between March 1-10, 2024 from L.A. warehouse.',
+        // 发货时间映射表
+        // key:    vairant_id
+        // value:  发货时间文案
+        ebike_delivery_time: {
+            xxxx: 'xxxx'
+        }
     }
 }

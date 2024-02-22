@@ -714,7 +714,7 @@
 
 
     document.addEventListener('onChangeOptions', e => {
-        // console.log(e)
+        $('.product .delivery_time').html(global_config.carbon1pro_order_page_config.ebike_delivery_time[e.value.id] || global_config.carbon1pro_order_page_config.ebike_default_delivery_time)
         
     })
 
