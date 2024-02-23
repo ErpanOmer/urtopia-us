@@ -1308,22 +1308,27 @@ h4 {
 
     .centeral-content {
         &>div {
-            background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_23476_2x_c684af40-e07c-483c-b109-2af62f65c082.jpg?v=1703472670') center center/cover no-repeat;
+            background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231108-untitled-2778_2x_75efbeec-1aba-4e6f-9f09-716ea4557589.jpg?v=1708669488') center top/cover no-repeat;
             // border-radius: 20px;
             display: grid;
-            grid-template-columns: 1fr 2fr;
+            grid-template-columns: 1fr 1fr;
             align-items: center;
-            padding: 20% 30px 5% 60px;
+            justify-items: center;
+            padding: 20% 0 5% 0;
+
+            & > div {
+                padding: 0 5%;
+            }
 
 
             img {
-                height: 380px;
-                width: auto;
-                transform: translateX(20%);
+                width: 105%;
+                place-self: self-end;
             }
 
             .u17Light_v2 {
                 margin-top: 20px;
+                max-width: 450px;
             }
         }
     }
