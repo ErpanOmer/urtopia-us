@@ -149,17 +149,18 @@
       margin: 12% 0 0;
       font-size: 15px;
     }
-    .subscribe-container .subscribe .new-contact {
-      margin: 3% 0 12%;
-    }
     
     @media (max-width: 767px) {
         .subscribe-container {
             grid-template-columns: 1fr;
         }
+
+        .subscribe-container .subscribe .u42DemiBold_v2 {
+            font-size: 30px;
+        }
     
         .subscribe-container .subscribe {
-            padding: 8%;
+            padding: 15% 6vw;
         }
     
         .subscribe-container .subscribe img {
@@ -245,22 +246,20 @@
 
 <dialog id="SubscribeEmailDialog">
     <div class="subscribe-container">
-       <img class="mobileHide" style="height: 100%;max-width: 100%;object-fit: cover;" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_23669.jpg?v=1706585436" alt="">
-        <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_23682.jpg?v=1706585435" alt="">
+       <img class="mobileHide" style="height: 100%;max-width: 100%;object-fit: cover;" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_2x_0229aec2-ef52-45e5-9a09-2521440d5f59.jpg?v=1709003096" alt="">
+        <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_2x_c8198edc-a8fe-434f-9032-cc2c9af26e95.jpg?v=1709003071" alt="">
         <div class="subscribe">
-            <span class="u20DemiBold_v2"><span style="color: #FD4B17;">Early Spring Sale</span></span>
-            <div class="u72DemiBold_v2" style="color: #FD4B17;">{{ all_products["urtopia-carbon-1-pro-ebike"].compare_at_price | minus: all_products["urtopia-carbon-1-pro-ebike"].price | money_without_trailing_zeros }}<span class="u30DemiBold_v2">OFF</span></div>
-            <div class="u24Medium_v2 mobileHide" style="color: #FD4B17;">On Carbon 1 Pro</div>
-            <span class="u17Light">Join Our Thriving Community of 200,000+ Enthusiasts! Unlock Urtopia’s Exclusive Offers, Be the First to Know About New Products, Receive Expert Riding Tips, and Dive into Captivating Customer Stories.</span>
+            <div class="u42DemiBold_v2">Take {{ all_products['urtopia-carbon-1-pro-ebike'].compare_at_price |  minus: all_products['urtopia-carbon-1-pro-ebike'].price | money_without_trailing_zeros }} off<br>On Carbon 1 Pro</div>
+            <div class="u17Light_v2">With Free Shipping and 2-year warranty</div>
             <form class="new-contact" action="/contact#ContactFooter" target="_blank" method="post" accept-charset="UTF-8">
-            <div class="email">
-                <input type="hidden" name="form_type" value="customer">
-                <input type="hidden" name="utf8" value="✓">
-                <input type="hidden" name="contact[tags]" value="newsletter">
-                <input placeholder="Enter email here" type="email" name="contact[email]" required>
-                <button class="my-button my-button-black" type="submit">Subscribe</button>
-            </div>
-        </form>
+                <div class="email">
+                    <input type="hidden" name="form_type" value="customer">
+                    <input type="hidden" name="utf8" value="✓">
+                    <input type="hidden" name="contact[tags]" value="newsletter">
+                    <input placeholder="Enter email here" type="email" name="contact[email]" required>
+                    <button class="my-button my-button-black" type="submit">Enjoy {{ all_products['urtopia-carbon-1-pro-ebike'].compare_at_price |  minus: all_products['urtopia-carbon-1-pro-ebike'].price | money_without_trailing_zeros }} Off</button>
+                </div>
+            </form>
         </div>
         <span class="close">×</span>
     </div>
