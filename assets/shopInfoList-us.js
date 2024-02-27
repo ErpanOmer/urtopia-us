@@ -1372,27 +1372,6 @@ const testRides = [
         ],
         isPartner: true,
       },
-      {
-        name: "Electro Action Supply",
-        phone: "3035050905",
-        email: "Electroactionsupply@gmail.com ",
-        timezone: "Colorado, USA (GMT-7)",
-        add: "2140 s kalamath st, Denver CO 80223",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Electro_Action_Supply.jpg?v=1702462014",
-        testrideSpot: "Colorado",
-        availableSizes: [
-          'Carbon 1s Size M',
-        ],
-        businessHours: [
-          "8:00-16:00",
-          "14:00-18:00",
-          "",
-          "",
-          "14:00-18:00",
-          "14:00-18:00",
-          "8:00-16:00",
-        ],
-      },
     ]
   },
   {
