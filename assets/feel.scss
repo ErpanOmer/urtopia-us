@@ -1,3 +1,13 @@
+
+h1,
+h2,
+h3,
+h4 {
+    color: inherit;
+    margin: 0;
+}
+
+
 .u30Light_v2 {
     font: normal normal 300 30px/1.25em urbane;
 }
@@ -71,6 +81,11 @@
                     .u17DemiBold_v2 {
                         margin: 24px 0 12px;
                     }
+
+                    .my-link {
+                        color: #000;
+                        opacity: 0.66;
+                    }
                 }
             }
         }
@@ -85,6 +100,7 @@
             width: 50px;
             height: 50px;
             right: 0;
+            z-index: 1;
         }
 
         .swiper-button-prev {
@@ -152,7 +168,7 @@
             display: grid;
             grid-template-columns: 1fr 2fr;
             height: 425px;
-            display: none;
+            display: none; 
 
             & > div {
                 &:first-child {
@@ -207,13 +223,15 @@
                 background: transparent center center/cover no-repeat;
                 display: flex;
                 align-items: center;
-                justify-content: center;
+                justify-content: flex-start;
                 flex-direction: column;
                 text-align: center;
                 cursor: pointer;
                 background-image: var(--bgbgbg);
                 color: #fff;
-                aspect-ratio: 1 / 1.75;
+                // aspect-ratio: 1 / 1.15;
+                box-sizing: border-box;
+                height: auto;
             }
         }
     }
@@ -277,6 +295,10 @@
 }
 
 .successsssc {
+    .u30Light_v2 {
+        max-width: 640px;
+    }
+
     .swiper-button-prev,
     .swiper-button-next {
         transform: translateX(-30px) rotate(0);
@@ -287,11 +309,14 @@
     }
 
     .swiper-wrapper {
+        max-width: 100%;
+
         .swiper-slide {
-            padding: 4% 3%;
+            padding: 15% 1.5% 1.5%;
 
             img {
                 max-width: 80px;
+                margin-bottom: 67.5%;
             }
         }
     }
@@ -306,12 +331,14 @@
                 flex-direction: column;
 
                 .swiper-slide {
-                    aspect-ratio: 1 / 0.8;
-                    padding: 4vw;
+                    height: 72vw;
+                    padding: 27.5vw 4vw 0;
+                    background-image: var(--bgu);
                     display: none;
 
                     img {
                         max-width: 55px;
+                        margin: 0 0 4vw;
                     }
 
                     .u30DemiBold_v2 {
@@ -323,6 +350,28 @@
                     margin-top: 4vw;
                 }
             }
+        }
+    }
+}
+
+
+.judmeeeeeeeee {
+    margin-top: 26vh;
+
+    .u48Medium_v2 {
+        margin-bottom: 80px;
+    }
+
+    @media (max-width: 767px) {
+        margin-top: 16vw;
+
+        .u48Medium_v2 {
+            font-size: 24px;
+            margin-bottom: 10vw;
+        }
+
+        .jdgm-widget {
+            margin: 0 -4vw;
         }
     }
 }
