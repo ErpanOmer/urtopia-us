@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "review": {
+      "type": "review",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "review"
+  ]
+}
