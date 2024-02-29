@@ -1052,6 +1052,28 @@ const testRides = [
           "9:00-18:00",
         ],
       },
+      {
+        name: "E-Bikes and Cycles",
+        phone: "(941) 531-2453",
+        email: "russ@ebikesandcycles.com",
+        timezone: "FL, USA (GMT-4)",
+        add: "7941 Pinehurst St, Sarasota, FL 34243",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/E-Bikes_and_Cycles.jpg?v=1709124879",
+        testrideSpot: "Florida",
+        availableSizes: [
+          'Chord',
+          'Chord X',
+        ],
+        businessHours: [
+          "",
+          "",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+        ],
+      },
     ]
   },
   {
@@ -1449,6 +1471,28 @@ const testRides = [
           "14:00-19:00",
         ],
         isPartner: true,
+      },
+      {
+        name: "Asheville Custom E-Bikes",
+        phone: "828-595-4295",
+        email: "admin@theacebikes.com",
+        timezone: "North Carolina, USA (GMT-7)",
+        add: "732 Haywood Rd, Asheville, NC 28806",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Asheville_Custom_E-Bikes.jpg?v=1709124879",
+        testrideSpot: "North Carolina",
+        availableSizes: [
+          'Chord',
+          'Chord X',
+        ],
+        businessHours: [
+          "",
+          "",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+        ],
       },
     ]
   },
