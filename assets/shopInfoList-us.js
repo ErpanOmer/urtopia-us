@@ -1552,6 +1552,34 @@ const testRides = [
       },
     ]
   },
+  {
+    city: 'Virginia',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Strictly_Ebikes.jpg?v=1709208572',
+    stores: [
+      {
+        name: "Strictly Ebikes",
+        phone: "571-312-5505",
+        email: "info@strictly-ebikes.com",
+        timezone: "Virginia, USA (GMT-7)",
+        add: "683 N Washington St, Alexandria, VA 22314",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Strictly_Ebikes.jpg?v=1709208572",
+        testrideSpot: "Virginia",
+        availableSizes: [
+          'Carbon 1s Size M',
+          'Chord',
+        ],
+        businessHours: [
+          "10:00-18:00",
+          "",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+        ],
+      },
+    ]
+  },
 ]
 
 
