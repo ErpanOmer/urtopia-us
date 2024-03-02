@@ -37,3 +37,19 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ og_title | escape }}">
 <meta name="twitter:description" content="{{ og_description | escape }}">
+
+
+{% comment %} 这些集中权重 {% endcomment %}
+{% if template == "collection.urtopiaebikev4" %}
+    <link rel="canonical" href="{{ request.origin }}{{ collections['e-bikes'].url }}">
+{% elsif template == "collection.accessories" or request.path contains "chord-accessories" or request.path contains "carbon-1-1s-accessories" or request.path contains "carbon-1-pro-acc" or request.path contains "carbon-1-leasing-acc" or request.path contains "on-page" or request.path contains "chord-in-cart" or request.path contains "carbon-in-cart" %}
+    <link rel="canonical" href="{{ request.origin }}{{ collections['accessories'].url }}">
+{% elsif template == "page.testestest" %}
+    <link rel="canonical" href="{{ request.origin }}">
+{% elsif template == "page.ai-ebike" %}
+    <link rel="canonical" href="{{ request.origin }}/pages/pages-smartest-ebike">
+{% elsif request.path contains "review-review-review-review" %}
+    <link rel="canonical" href="{{ request.origin }}/pages/urtopia-e-bike-review">
+{% else %}
+    <link rel="canonical" href="{{ canonical_url }}">
+{% endif %}
