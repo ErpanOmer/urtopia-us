@@ -1258,34 +1258,6 @@ const testRides = [
     ]
   },
   {
-    city: 'New Mexico',
-    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/istockphoto-1160412954-612x612.jpg?v=1691482552',
-    stores: [
-      {
-        name: "E-BIKES OF SOUTHERN NEW MEXICO",
-        phone: "575-635-9961",
-        email: "ebikesnewmexico.com",
-        timezone: "New Mexico, USA (GMT-7)",
-        add: "1230 Osage Ct  Las Cruces NM 88005",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/166556405_938400133573480_4023440075912235609_n.jpg?v=1691482553",
-        testrideSpot: "New Mexico",
-        availableSizes: [
-          'Carbon 1 Size M/L',
-          'Carbon 1s Size M',
-        ],
-        businessHours: [
-          "",
-          "9:00-17:00",
-          "9:00-17:00",
-          "9:00-17:00",
-          "9:00-17:00",
-          "9:00-17:00",
-          "9:00-17:00",
-        ],
-      },
-    ]
-  },
-  {
     city: 'Oklahoma',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/OP7039_oklahoma-city.jpg?v=1692092307',
     stores: [
@@ -1403,15 +1375,15 @@ const testRides = [
         testrideSpot: "Colorado",
         noBook: 'Contact Bill to schedule a time.',
         availableSizes: [
-          'Carbon 1s Size M',
+          'Carbon 1 Pro Size M',
         ],
         businessHours: [
           "",
-          "13:00-16:00",
-          "13:00-16:00",
-          "13:00-16:00",
-          "13:00-16:00",
-          "13:00-16:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
           "",
         ],
         isPartner: true,

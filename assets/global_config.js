@@ -440,21 +440,25 @@ const global_config = {
                         ["Body material", "Carbon fiber (frame, fork)"],
                         ["Brakes", "Front & rear dual-piston hydraulic disc"],
                         ["Tires", "700 x 40C"],
-                        ["Integrated lights", "StVZO headlight"],
+                        ["Lights", "Front: Integrated StVZO headlight<br>Rear: StVZO Rear Light （Not ARES Lights）"],
                         ["Wheels", "700C (ISO 622 mm BSD), inner rim 19 mm"],
                         ["Transmission", "Shimano 8-Speed Rear Drivetrain"],
-                        
+                        ["Included Accessories", "Kickstand, Fenders<br>StVZO Rear Light （Not ARES Lights）<br><br>"],
                     ]
                 },
             ] 
           },
           // 默认的发货时间 文案
-        ebike_default_delivery_time: 'Free shipping <span>within 7 business days</span> from L.A. warehouse.',
+        ebike_default_delivery_time: 'Free shipping <span>within 5 business days</span> from L.A. warehouse.',
         // 发货时间映射表
         // key:    vairant_id
         // value:  发货时间文案
         ebike_delivery_time: {
-            xxxx: 'xxxx'
+            xxxx: 'xxxx',
+          //白 M
+          44288621347064:'Ships between <span>May 15-31, 2024 </span>from L.A. warehouse.',
+          //白 L
+          44288621379832:'Ships between <span>May 15-31, 2024 </span>from L.A. warehouse.',
         }
     }
 }
