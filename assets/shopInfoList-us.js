@@ -1061,6 +1061,7 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/E-Bikes_and_Cycles.jpg?v=1709124879",
         testrideSpot: "Florida",
         availableSizes: [
+          'Carbon 1 Pro Size M/L',
           'Chord',
           'Chord X',
         ],
@@ -1283,6 +1284,29 @@ const testRides = [
         ],
         isPartner: true,
       },
+      {
+        name: "Bixby Bicycles",
+        phone: "918-943-6700",
+        email: "info@bixbybicycles.com",
+        timezone: "Oklahoma, USA (GMT-7)",
+        add: "8315 E. 111th St S, Unit C, Bixby, Oklahoma 74008",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Bixby_Bicycles.jpg?v=1710818582",
+        testrideSpot: "Oklahoma",
+        availableSizes: [
+          'Carbon 1 Pro Size M/L',
+          'Chord',
+          'Chord X',
+        ],
+        businessHours: [
+          "",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-17:00",
+        ],
+      },
     ]
   },
   {
@@ -1378,13 +1402,13 @@ const testRides = [
           'Carbon 1 Pro Size M',
         ],
         businessHours: [
-          "",
           "10:00-17:00",
           "10:00-17:00",
           "10:00-17:00",
           "10:00-17:00",
           "10:00-17:00",
-          "",
+          "10:00-17:00",
+          "10:00-17:00",
         ],
         isPartner: true,
       },
@@ -1431,7 +1455,7 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/North-Carolina.jpg?v=1697188784",
         testrideSpot: "North Carolina",
         availableSizes: [
-          'Carbon 1s Size L',
+          'Carbon 1s Size M/L',
         ],
         businessHours: [
           "11:00-19:00",
@@ -1453,6 +1477,7 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Asheville_Custom_E-Bikes.jpg?v=1709124879",
         testrideSpot: "North Carolina",
         availableSizes: [
+          'Carbon 1 Pro Size M/L',
           'Chord',
           'Chord X',
         ],
@@ -1506,7 +1531,7 @@ const testRides = [
         email: "bill@wbconnelly.com",
         timezone: "Ohio, USA (GMT-7)",
         add: "1071 Celestial St.Cincinnati, OH 45202",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/OHIO.jpg?v=1702380729",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Bill_Connelly.jpg?v=1710809963",
         testrideSpot: "Ohio",
         availableSizes: [
           'Carbon 1s Size L',
@@ -1537,6 +1562,7 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Strictly_Ebikes.jpg?v=1709208572",
         testrideSpot: "Virginia",
         availableSizes: [
+          'Carbon 1 Pro Size M/L',
           'Carbon 1s Size M',
           'Chord',
         ],
@@ -1548,6 +1574,89 @@ const testRides = [
           "10:00-18:00",
           "10:00-18:00",
           "10:00-18:00",
+        ],
+      },
+    ]
+  },
+  {
+    city: 'Minnesota',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Power_Pedal_Center.png?v=1710818584',
+    stores: [
+      {
+        name: "Power Pedal Center",
+        phone: "612-210-8714",
+        email: "saadarzoo@gmail.com",
+        timezone: "Minnesota, USA (GMT-7)",
+        add: "821 3rd Street, Suite 140, Farmington, Minnesota 55024",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Power_Pedal_Center.png?v=1710818584",
+        testrideSpot: "Minnesota",
+        availableSizes: [
+          'Carbon 1 Pro Size M/L',
+          'Chord X',
+        ],
+        businessHours: [
+          "",
+          "9:00-18:00",
+          "9:00-18:00",
+          "9:00-18:00",
+          "9:00-18:00",
+          "9:00-18:00",
+          "9:00-15:00",
+        ],
+      },
+    ]
+  },
+  {
+    city: 'Michigan',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/West_Michigan_eBikes.jpg?v=1710818582',
+    stores: [
+      {
+        name: "West Michigan eBikes",
+        phone: "616-826-3574",
+        email: "william@greenprojectsgroup.com",
+        timezone: "Michigan, USA (GMT-7)",
+        add: "2651 Brooklane Ave SE, Grand Rapids, MI 49507",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/West_Michigan_eBikes.jpg?v=1710818582",
+        testrideSpot: "Michigan",
+        availableSizes: [
+          'Carbon 1 Pro Size M/L',
+          'Chord X',
+        ],
+        businessHours: [
+          "",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+        ],
+      },
+    ]
+  },
+  {
+    city: 'Arizona',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Urban_Electrica.jpg?v=1710818582',
+    stores: [
+      {
+        name: "Urban Electrica",
+        phone: "(602) 856-4566",
+        email: "info@urbanelectrica.com",
+        timezone: "Arizona, USA (GMT-7)",
+        add: "7101 E Stetson Drive, Scottsdale, AZ 85251",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Urban_Electrica.jpg?v=1710818582",
+        testrideSpot: "Arizona",
+        availableSizes: [
+          'Carbon 1 Pro Size M/L',
+        ],
+        businessHours: [
+          "11:00-19:00",
+          "11:00-19:00",
+          "11:00-19:00",
+          "11:00-19:00",
+          "11:00-19:00",
+          "11:00-19:00",
+          "11:00-19:00",
         ],
       },
     ]
@@ -1568,8 +1677,13 @@ for (const city of testRides) {
 
 
       for (const sizes of store.availableSizes) {
-        const [bike, series] = sizes.split(' ')
-        bike_options.add(`${bike}${series ? ' ' + series : ''}`)    
+        const [bike, series, ttt] = sizes.split(' ')
+
+        if (ttt === "Pro") {
+          bike_options.add(`${bike}${series ? ' ' + series : ''} ${ttt}`) 
+        } else {
+          bike_options.add(`${bike}${series ? ' ' + series : ''}`)
+        }
       }
 
       city_options.add(`${store.city}---${store.country}`)

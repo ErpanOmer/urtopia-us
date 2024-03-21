@@ -61,6 +61,20 @@ const bike_sizes = [
     fit: 'Fit for 5’3’’~6’1’’',
     size: 'Step-Through',
     img: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/chordX_2x_fe86f1a1-6d47-4dd4-b1b9-80ee149da0fe.jpg?v=1689154670&width=430'
+  },
+  {
+    id: 8,
+    name: 'Carbon 1 Pro',
+    fit: ' Fit for 5’7’’~6’1’’',
+    size: 'M',
+    img: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_BL_1.png?v=1703570388&width=430'
+  },
+  {
+    id: 9,
+    name: 'Carbon 1 Pro',
+    fit: 'Fit for 5’11’’~6’5’’',
+    size: 'L',
+    img: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_BL_1.png?v=1703570388&width=430'
   }
 ]
 
@@ -3367,12 +3381,22 @@ function splitTimeFormat(item = '') {
                 choose.push(bike_sizes.find(b => b.name === 'Chord'))
               }
             } else {
-              choose = choose.concat(s.map(i => {
-                const find = bike_sizes.find(b => b.name === 'Carbon 1' && b.size === i)
-    
-                return find
-    
-              }).filter(Boolean))
+              if (size.includes('Pro')) {
+                choose = choose.concat(s.map(i => {
+                  const find = bike_sizes.find(b => b.name === 'Carbon 1 Pro' && b.size === i)
+      
+                  return find
+      
+                }).filter(Boolean))
+
+              } else {
+                    choose = choose.concat(s.map(i => {
+                      const find = bike_sizes.find(b => b.name === 'Carbon 1' && b.size === i)
+          
+                      return find
+          
+                    }).filter(Boolean))
+              }
             }
          }
       }
