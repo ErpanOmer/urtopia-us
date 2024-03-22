@@ -11,9 +11,31 @@
 {{ 'outlet_v4.scss.css' | asset_url | stylesheet_tag: preload: true }}
 {% assign carbon = all_products["outlet-carbon-1-1s"] %}
 
+{% if settings.show_easter_sale %}
+    <style>
+        .banner {
+            background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_23816_2x_0b4e748c-74e9-48ce-9ccb-fc102f2c7124.jpg?v=1711008777');
+        }
+
+        @media (max-width: 767px) {
+            .banner {
+                background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_23820_2x_0994f5db-3062-4868-b32f-53746867dd22.jpg?v=1711009012');
+            }
+
+            .banner .centeral-content {
+                justify-content: flex-start;
+            }
+        }
+    </style>
+{% endif %}
+
 <div class="banner">
     <div class="centeral-content">
-        <div class="u48DemiBold_v2">Smartest E-Bike Ever</div>
+        {% if settings.show_easter_sale %}
+            <div class="u48DemiBold_v2">Enjoy Easter, <br class="pcHide">Enjoy Spring</div>
+        {% else %}
+            <div class="u48DemiBold_v2">Smartest E-Bike Ever</div>
+        {% endif %}
         <div class="xxxxxxxx">
             <!--<div class="u17Medium_v2">
                 <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/vat_2x_73621f8d-ae55-4d81-ab06-78f559ac1d5e.png?v=1698736324" alt="">

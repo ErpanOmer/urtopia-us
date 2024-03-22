@@ -6,7 +6,7 @@
         "type": "text",
         "id": "sale_name",
         "label": "活动名称",
-        "default": "March into Savings"
+        "default": "March Sale"
       },
       {
         "type": "text",
@@ -85,6 +85,12 @@
         "id": "accessories_show_new",
         "label": "accessories配件显示new列表",
         "default": "8250240860408,8250240860408"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_easter_sale",
+        "default": false,
+        "label": "显示隐藏复活节活动"
       }
     ]
   },

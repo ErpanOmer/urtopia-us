@@ -2,6 +2,60 @@
 
 <h1 class="visuallyhidden">Urtopia Ebike - Sleek, Full Carbon, Lightweight, Smart</h1>
 
+{% if settings.show_easter_sale %}
+    <style>
+        .esssst {
+            height: calc(100vh - 106px);
+            position: relative;
+            overflow-x: hidden;
+            background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240316-untitled-7247_2x_e9287892-2ee3-4550-9fb9-43b775accf7b.jpg?v=1711006898') center center/cover no-repeat;
+            margin-bottom: 2vh;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-direction: column;
+            padding-top: 8vh;
+        }
+
+        .esssst .my-button {
+            margin-top: 5vh;
+        }
+
+        .esssst .u24Medium_v2 {
+            margin-bottom: 1vh;
+        }
+
+        @media (max-width: 767px) {
+            .esssst {
+                height: calc(100vh - 102px);
+                background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240316-untitled-7247_2x_3128da50-317b-472c-bb8a-7f7406c2ec72.jpg?v=1711007434');
+                padding-top: 13vw;
+                margin-bottom: 2.5vw;
+            }
+
+            .esssst .u24Medium_v2 {
+                font-size: 17px;
+                font-weight: 400;
+            }
+
+            .esssst .u48Medium_v2 {
+                font-size: 30px;
+            }
+
+            .esssst .my-button {
+                margin-top: 8vw;
+            }
+        }
+    </style>
+
+    <div class="esssst">
+        <h3 class="u24Medium_v2">Urtopia Artist Project</h3>
+        <h2 class="u48Medium_v2">Enjoy Easter</h2>
+        <h2 class="u48Medium_v2">Enjoy Spring</h2>
+        <div href="" class="my-button my-button-black" onclick="showVideoDialog('https://www.youtube.com/embed/07kIavzcIoE?autoplay=1&cc_load_policy=1')">Learn more</div>
+    </div>
+{% endif %}
+
 <div class="bannerrrr">
             <div class="swiper-wrapper">
                   <div class="swiper-slide first">

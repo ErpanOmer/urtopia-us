@@ -1,5 +1,28 @@
 {{ 'carbon1pro-product.scss.css' | asset_url | stylesheet_tag: preload: true }}
 
+{% if settings.show_easter_sale %}
+    <script>
+      global_config.carbon1pro_order_page_config.product_images['Matte Black'][0] = 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240321-172508.png?v=1711013256'
+    </script>
+    <style>
+      .product .sale-taggggggg {
+        background: rgb(254, 110, 131) url(https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_23806_2x_437f5712-bd9f-411a-ab7a-eccb83daaca5.png?v=1711072949) bottom right/contain no-repeat;
+        padding: 2% 13.5% 2% 4%;
+      }
+
+      .product .sale-taggggggg::after {
+        display: none;
+      }
+
+
+      @media (max-width: 767px) {
+        .product .sale-taggggggg {
+          padding-right: 15vw;
+        }
+      }
+    </style>
+{% endif %}
+
 <h1 class="visuallyhidden">Urtopia Carbon 1 Pro Ebike - Sleek, Full Carbon, Lightweight, Smart</h1>
 <div class="product" data-pf-type="ProductBox">
   <div class="centeral-content">
@@ -15,7 +38,11 @@
           %}
         </div>
       </div>
-      <div class="u14Medium_v2 onlllllllly">March into Savings</div>
+      {% if settings.show_easter_sale %}
+        <div class="u14DemiBold_v2 mb6 sale-taggggggg">{{ settings.sale_name }}</div>
+      {% else %}
+        <div class="u14Medium_v2 onlllllllly">{{ settings.sale_name }}</div>
+      {% endif %}
       <div
         class="product-price u30DemiBold_v2 {% unless product.compare_at_price != product.price %}mb6{% endunless %}"
         {% unless product.compare_at_price != product.price %}
@@ -120,7 +147,12 @@
             product: product
           %}
         </div>
-        <div class="u17Medium_v2 onlllllllly">March into Savings</div>
+        {% if settings.show_easter_sale %}
+          <div class="u14DemiBold_v2 mb6 sale-taggggggg">{{ settings.sale_name }}</div>
+        {% else %}
+          <div class="u17Medium_v2 onlllllllly">{{ settings.sale_name }}</div>
+        {% endif %}
+        
         <div
           class="product-price u30DemiBold_v2 {% unless product.compare_at_price != product.price %}mb6{% endunless %}"
           {% unless product.compare_at_price != product.price %}
@@ -689,6 +721,8 @@
 
             let swiper_arr = []
             swiper_arr = swiper_arr.concat(global_config.carbon1pro_order_page_config.product_images[e.value], global_config.carbon1pro_order_page_config.product_images['commonSwiper'])
+
+            console.log(swiper_arr)
 
             $('.product .right-swiper .swiper-wrapper').html(swiper_arr.map((s, i) => {
                 const index = i % global_config.carbon1pro_order_page_config.product_media_images.length

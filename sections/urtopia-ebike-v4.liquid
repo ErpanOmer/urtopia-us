@@ -29,9 +29,66 @@
     }
 </style>
 
+{% if settings.show_easter_sale %}
+    <style>
+        .banner {
+            background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_23816_2x_0b4e748c-74e9-48ce-9ccb-fc102f2c7124.jpg?v=1711008777');
+        }
+
+        @media (max-width: 767px) {
+            .banner {
+                background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_23820_2x_0994f5db-3062-4868-b32f-53746867dd22.jpg?v=1711009012');
+            }
+
+            .banner .centeral-content {
+                justify-content: flex-start;
+                color: #fff;
+            }
+        }
+    </style>
+{% endif %}
+
 <div class="banner">
     <div class="centeral-content">
-        <div class="u48DemiBold_v2">Smartest E-Bike Ever</div>
+        {% if settings.show_easter_sale %}
+            <div class="u48DemiBold_v2">Enjoy Easter, <br class="pcHide">Enjoy Spring</div>
+        {% else %}
+            <div class="u48DemiBold_v2">Smartest E-Bike Ever</div>
+        {% endif %}
+        {% if settings.show_easter_sale %}
+            <div class="xxxxxxxx">
+            <!--<div class="u17Medium_v2">
+                <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/vat_2x_73621f8d-ae55-4d81-ab06-78f559ac1d5e.png?v=1698736324" alt="">
+                <span>VAT</span>
+                <span>Included</span>
+            </div>-->
+            <div class="u17Medium_v2">
+                <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_17959_2x_c8719cb1-7053-4b89-81b2-7a6de481016c.png?v=1698736330" alt="">
+                <span>14-Day</span>
+                <span>Returns</span>
+            </div>
+            <div class="u17Medium_v2">
+                <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_17958_2x_e50155e3-9acf-40a8-a806-438b266bfc57.png?v=1698736335" alt="">
+                <span>2-Year</span>
+                <span>Warranty</span>
+            </div>
+            <div class="u17Medium_v2">
+                <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18916_2x_30f00db4-223f-411c-8523-7ced3de1c1dd.png?v=1698736341" alt="">
+                <span>Free</span>
+                <span>Shipping</span>
+            </div>
+            <div class="u17Medium_v2">
+                <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/credit-card_2x_5e83a5a5-e4a7-45b9-8370-7ff18aa7619d.png?v=1698736348" alt="">
+                <span>Flexible</span>
+                <span>Payment</span>
+            </div>
+            <div class="u17Medium_v2">
+                <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/placeholder_2x_720784c2-b144-4dfc-aa61-607f5ac06385.png?v=1698736357" alt="">
+                <span>Local</span>
+                <span>Service</span>
+            </div>
+        </div>
+        {% else %}
         <div class="xxxxxxxx">
             <div class="u17Medium_v2">
                 <img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_17959_2x_c8719cb1-7053-4b89-81b2-7a6de481016c.png?v=1698736330" alt="">
@@ -64,6 +121,8 @@
                 <span>Service</span>
             </div>
         </div>
+        {% endif %}
+        
     </div>
 </div>
 <div class="centeral-content ebike-products">
