@@ -6,7 +6,7 @@
         "type": "text",
         "id": "sale_name",
         "label": "活动名称",
-        "default": "March into Savings"
+        "default": "Easter Sale"
       },
       {
         "type": "text",
@@ -65,7 +65,7 @@
       {
         "type": "checkbox",
         "id": "hide_sale_countdown",
-        "default": false,
+        "default": true,
         "label": "活动倒计时显示和隐藏"
       },
       {
@@ -89,7 +89,7 @@
       {
         "type": "checkbox",
         "id": "show_easter_sale",
-        "default": false,
+        "default": true,
         "label": "显示隐藏复活节活动"
       }
     ]

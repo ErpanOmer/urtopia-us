@@ -284,6 +284,7 @@ const global_config = {
   carbon1pro_order_page_config: {
         // variant 为 available:false 的情况下 也要强制显示 
         ignore_variants_available_false: [],
+        default_variant: 44288621314296,
         size_map: {
             S: `Fit for 5’3’’~5’9’’ Inseam 30’’`,
             M: `Fit for 5’7’’~6’1’’ Inseam 31’’`,
@@ -459,6 +460,8 @@ const global_config = {
           44288621347064:'Ships between <span>May 15-31, 2024 </span>from L.A. warehouse.',
           //白 L
           44288621379832:'Ships between <span>May 15-31, 2024 </span>from L.A. warehouse.',
+          //黑色 M
+          44288621281528:'Ships between <span>May 15-31, 2024 </span>from L.A. warehouse.',
         }
     }
 }
