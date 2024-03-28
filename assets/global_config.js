@@ -382,6 +382,20 @@ const global_config = {
                         'J. Headset height'
                     ],
                     [
+                        '<span class="u17DemiBold_v2">Small</span>',
+                        '5’3’’~5’9’’',
+                        '779 mm',
+                        '60 mm',
+                        '995-1025 mm',
+                        '421 mm',
+                        '1065 mm',
+                        '1766 mm',
+                        '702 mm',
+                        '594 mm',
+                        '152 mm',
+                        '90-120 mm'
+                    ],
+                    [
                         '<span class="u17DemiBold_v2">Medium</span>',
                         '5’7’’~6’1’’',
                         '804 mm',
@@ -437,7 +451,7 @@ const global_config = {
                     parameters: [
                         ["Weight", "37 lbs excl. accessories"],
                         ["Load-bearing capacity", "Max. 240 lbs. (110 kg)"],
-                        ["Sizes", "Medium, Large (see Size Guide)"],
+                        ["Sizes", "Small, Medium, Large (see Size Guide)"],
                         ["Body material", "Carbon fiber (frame, fork)"],
                         ["Brakes", "Front & rear dual-piston hydraulic disc"],
                         ["Tires", "700 x 40C"],
@@ -462,6 +476,10 @@ const global_config = {
           44288621379832:'Ships between <span>May 15-31, 2024 </span>from L.A. warehouse.',
           //黑色 M
           44288621281528:'Ships between <span>May 15-31, 2024 </span>from L.A. warehouse.',
+          //白s
+          44288609583352:'Ships between <span>May 15-31, 2024 </span>from L.A. warehouse.',
+          //黑s
+          44288609550584:'Ships between <span>May 15-31, 2024 </span>from L.A. warehouse.',
         }
     }
 }

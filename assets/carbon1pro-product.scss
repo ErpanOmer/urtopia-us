@@ -1302,7 +1302,7 @@ h4 {
 
 .conquer {
     color: #fff;
-    padding-bottom: 12vh;
+    padding-bottom: 7vh;
     overflow-x: hidden;
     background-color: #F7F8FA;
 
@@ -1377,7 +1377,7 @@ h4 {
 
 .vssssssss {
     background-color: #F7F8FA;
-    padding-bottom: 14vh;
+    padding: 7vh 0 14vh;
 
     .centeral-content {
         background-color: #fff;
@@ -1582,6 +1582,21 @@ h4 {
                     width: auto;
                 }
             }
+
+            .texts {
+                div {
+                    display: flex;
+                    align-items: center;
+                    margin-top: 10%;
+
+                    span {
+                        &:first-child {
+                            max-width: 180px;
+                            margin-right: 16px;
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -1606,7 +1621,7 @@ h4 {
 
                 &:nth-child(3) {
                     padding: 8vw 4vw;
-                    order: 4;
+                    order: 5;
                 }
 
                 &:nth-child(4) {
@@ -1627,6 +1642,25 @@ h4 {
                         width: 100%;
                     }
                 }
+
+                .texts {
+                    & > div {
+                        flex-direction: column;
+                        align-items: flex-start;
+
+                        span {
+                            &:first-child {
+                                max-width: unset;
+                                margin-right: unset;
+                                font-size: 13px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            & > img {
+                order: 4;
             }
 
             .u30Medium_v2 {
@@ -1986,6 +2020,56 @@ h4 {
 
         .my-button-origin {
             margin-left: 15px;
+        }
+    }
+}
+
+
+.trekking {
+    background-color: #f7f8fa;
+
+    .centeral-content {
+        background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240309-untitled-6794_2x_57f1eadd-8c3b-479a-9fbd-ce23589f6b5b.jpg?v=1711518828') center center/cover no-repeat;
+        background-clip: content-box;
+        color: #fff;
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+
+        .u17Light_v2 {
+            max-width: 450px;
+            padding-left: 6%;
+            margin-top: 3vh;
+        }
+
+        .u30Medium_v2 {
+            padding-left: 6%;
+        }
+    }
+
+    @media (max-width: 767px) {
+        padding: 0 4vw;
+
+        .centeral-content {
+            padding: 92vw 4vw 0;
+            color: #000;
+            background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240309-untitled-6794_2x_40ba6133-4fa9-427d-8b51-6fbc2e5d377a.jpg?v=1711521912');
+            background-size: contain;
+            background-position-y: top;
+            background-clip: border-box;
+            height: auto;
+
+            .u17Light_v2 {
+                padding: 0;
+                margin-top: 30px;
+            }
+
+            .u30Medium_v2 {
+                padding: 0;
+                font-size: 24px;
+            }
         }
     }
 }
