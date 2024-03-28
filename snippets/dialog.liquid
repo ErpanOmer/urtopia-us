@@ -242,6 +242,63 @@
         line-height: 30px;
         border-radius: 50%;
       }
+
+.message-box-cookie {
+    position: fixed;
+    bottom: 0;
+    background-color: #fff;
+    width: 100%;
+    z-index: 9999;
+    box-shadow: 0 3px 6px #00000014;
+    transition: top .4s ease, transform .4s ease, box-shadow .4s ease, -webkit-transform .4s ease, -webkit-box-shadow .4s ease;
+    border-top: 1px solid #ddd;
+    transform: translateY(100%);
+}
+
+.message-box-cookie .centeral-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    padding-top: 3vh;
+    padding-bottom: 6vh;
+    position: relative;
+}
+
+.message-box-cookie .centeral-content > div:last-child {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.message-box-cookie .u17Light_v2 {
+    margin-top: 2.5vh;
+}
+
+.message-box-cookie .close {
+    cursor: pointer;
+}
+
+@media (max-width: 767px) {
+    .message-box-cookie .centeral-content {
+        padding: 4vw 4vw 6vw;
+        grid-template-columns: 1fr;
+    }
+
+    .message-box-cookie .centeral-content > div:last-child {
+        align-items: flex-start;
+    }
+
+    .message-box-cookie .close {
+        position: absolute;
+        right: 4vw;
+        top: 4vw;
+    }
+    .message-box-cookie .u17Light_v2 {
+        margin: 6px 0 24px;
+        font-size: 14px;
+    }
+}
+
 </style>
 
 <dialog id="SubscribeEmailDialog">
@@ -315,6 +372,19 @@
       <button class="my-button my-button-black" id="global_email_submit_button" type="submit">Subscribe</button>
   </form>
   <span class="close">×</span>
+</div>
+
+<div class="message-box-cookie">
+    <div class="centeral-content">
+        <div>
+            <div class="u20DemiBold_v2">We value your privacy</div>
+            <div class="u17Light_v2">We and our partners use cookies and other technologies to improve your experience, measure performance, and tailor marketing. Details in our <a class="my-link" style="color: inherit;" target="_blank" href="/pages/privacy-policy">Privacy Policy.</a></div>
+        </div>
+        <div>
+            <div class="close">×</div>
+            <div class="my-button my-button-white">Accept</div>
+        </div>
+    </div>
 </div>
 
 {{ 'dialog-polyfill.js' | asset_url | script_tag }}
@@ -627,6 +697,54 @@
         })
     }
 
+    function showCookieDialog () {
+        const cookie_dialog_expires_time = 'cookie_dialog_expires_time'
+
+        if (storage.get(cookie_dialog_expires_time)) {
+            return Promise.resolve()
+        }
+
+        return new Promise(resolve => {
+            const close = () => {
+                $('.message-box-cookie').animate({}, 300, function () {
+                    //第一个花括号里面是动画内容，可以为空，但不能省去中括号
+                    $('.message-box-cookie').css({ transform: 'translateY(100%)' }); //在回调函数里面改变css属性来实现transform中的动画变换
+                });
+
+                setTimeout(resolve, 15 * 1000)
+            }
+
+
+            $('.message-box-cookie').animate({}, 300, function () {
+                //第一个花括号里面是动画内容，可以为空，但不能省去中括号
+                $('.message-box-cookie').css({ transform: 'translateY(0)' }); //在回调函数里面改变css属性来实现transform中的动画变换
+            });
+
+            $('.message-box-cookie .close').on('click', () => {
+                // storage.set(cookie_dialog_expires_time)
+
+                close()
+
+                fetchBuried('websiteclick', 'cookies-banner', { button: 'close' })
+            })
+
+            $('.message-box-cookie .my-button').on('click', () => {
+                storage.set(cookie_dialog_expires_time, 30)
+                close()
+                fetchBuried('websiteclick', 'cookies-banner', { button: 'accept' })
+            })
+
+            $('.message-box-cookie .my-link').on('click', debounce(e => {
+                fetchBuried('websiteclick', 'cookies-banner', { button: 'privacy policy' })
+
+                window.open('/pages/privacy-policy')
+
+                e.preventDefault()
+                return false
+            }), 300)
+        })
+    }
+
 
     $(function () {
         if (location.href.includes('/pages/ai-e-bike')) {
@@ -637,6 +755,6 @@
           return
       }
       
-        showSubscribeEmailDialog().then(showSubscribeEmailMessageBox).then(showExitSubscribeEmailDialog).then(showTestRideDialog)
+      showCookieDialog().then(showSubscribeEmailDialog).then(showSubscribeEmailMessageBox).then(showExitSubscribeEmailDialog).then(showTestRideDialog)
     })
 </script>
