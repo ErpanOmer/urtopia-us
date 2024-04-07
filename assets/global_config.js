@@ -476,6 +476,8 @@ const global_config = {
           44288621379832:'Ships between <span>May 15-31, 2024 </span>from L.A. warehouse.',
           //黑色 M
           44288621281528:'Ships between <span>May 15-31, 2024 </span>from L.A. warehouse.',
+          //黑色 L
+          44288621314296:'Ships between <span>May 15-31, 2024 </span>from L.A. warehouse.',
           //白s
           44288609583352:'Ships between <span>May 15-31, 2024 </span>from L.A. warehouse.',
           //黑s

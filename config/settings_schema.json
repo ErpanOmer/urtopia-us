@@ -6,7 +6,7 @@
         "type": "text",
         "id": "sale_name",
         "label": "活动名称",
-        "default": "Easter Sale"
+        "default": "April Adventure Sale"
       },
       {
         "type": "text",
@@ -42,7 +42,7 @@
         "type": "text",
         "id": "chord_sale_name",
         "label": "chord 活动名称",
-        "default": "March into Savings"
+        "default": "April Adventure Sale"
       },
       {
         "type": "text",
@@ -89,7 +89,7 @@
       {
         "type": "checkbox",
         "id": "show_easter_sale",
-        "default": true,
+        "default": false,
         "label": "显示隐藏复活节活动"
       }
     ]
