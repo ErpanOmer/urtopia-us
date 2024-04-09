@@ -118,6 +118,99 @@
         }
 </style>
 
+<style>
+   .updatesss {
+    margin-top: 100px;
+    background-color: #f5f5f5;
+    padding: 80px 0;
+  }
+
+  .updatesss .centeral-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .updatesss .centeral-content .u17Light_v2 {
+    margin: 24px 0 40px;
+  }
+
+
+  .updatesss .emaillllllllllllll {
+      display: flex;
+      position: relative;
+      max-width: 360px;
+      width: 100%;
+      margin-top: 24px;
+  }
+
+  .updatesss .emaillllllllllllll input {
+        border-bottom-left-radius: 30px;
+        border-top-left-radius: 30px;
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+        border:2px solid #fd4b17;
+        border-right: none;
+        flex: 1;
+        padding: 0 2.5% 0 5%;
+        background-color: transparent;
+        color: #000;
+  }
+
+  .updatesss .emaillllllllllllll input::placeholder {
+    color: #b8b8b8;
+  }
+
+
+  .updatesss .emaillllllllllllll button {
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+        border: none;
+        padding: 14px 30px;
+    }
+
+    .updatesss .emaillllllllllllll .u17DemiBold_v2 {
+        position: absolute;
+        bottom: 0;
+        transform: translate(12.5%, 150%);
+        display: none;
+    }
+
+    @media (max-width: 767px) {
+      .updatesss {
+        padding: 12vw 0;
+        margin-top: 60px;
+      }
+
+      .updatesss .u24DemiBold_v2 {
+        font-size: 20px;
+      }
+
+      .updatesss .u17Light_v2 {
+        font-size: 15px;
+      }
+
+        .updatesss .emaillllllllllllll input {
+            flex: 1;
+            width: 0;
+            font-size: 14px;
+            border-width: 1px;
+            padding-left: 5%;
+        }
+
+        .updatesss .emaillllllllllllll button {
+        padding: 3vw 6vw;
+      }
+
+      .updatesss .emaillllllllllllll .u17DemiBold_v2 {
+            font-size: 14px;
+            transform: translate(10%, 150%);
+        }
+    }
+</style>
+
   <div style="opacity:0" class="sc-bYoBSM hUVNGC __pf __pf_kIY6jB09" id="__pf"><div data-pf-type="Body" class="sc-hjGZqJ fNoOP pf-1_"><div data-pf-type="Layout" class="sc-htJRVC dNJAjO pf-2_"><div data-pf-type="ProductPreview" class="sc-cvlWTT btfkZr pf-3_"> </div>
 	<div class="product" data-pf-type="ProductBox">
 		<div class="centeral-content">
@@ -501,7 +594,6 @@
     </div>
   </div>
 </div>
-
 
 <div class="boxs2">
   <div class="centeral-content">
@@ -1345,3 +1437,13 @@ function addAllToCart(parse, show = false) {
 </script>
 
 {% render 'carbon-one-extra-code' %}
+
+<script>
+  $('.emaillllllllllllll').on('submit', function (event) {
+        $(this).find('.u17DemiBold_v2').hide()
+        fetchBuried('emailpop', 'submit', { email: $(this).find('input').val(), tag: `US,outlet-order-page` }).finally(() => $(this).find('.u17DemiBold_v2').show())
+
+        event.preventDefault();
+        return false;
+    })
+</script>

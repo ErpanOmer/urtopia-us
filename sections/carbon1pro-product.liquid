@@ -23,6 +23,97 @@
     </style>
 {% endif %}
 
+<style>
+   .updatesss {
+    background-color: #f7f8fa;
+    padding: 140px 0 40px;
+  }
+
+  .updatesss .centeral-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .updatesss .centeral-content .u17Light_v2 {
+    margin: 24px 0 40px;
+  }
+
+
+  .updatesss .emaillllllllllllll {
+      display: flex;
+      position: relative;
+      max-width: 360px;
+      width: 100%;
+      margin-top: 36px;
+  }
+
+  .updatesss .emaillllllllllllll input {
+        border-bottom-left-radius: 30px;
+        border-top-left-radius: 30px;
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+        border:2px solid #fd4b17;
+        border-right: none;
+        flex: 1;
+        padding: 0 2.5% 0 5%;
+        background-color: transparent;
+        color: #000;
+  }
+
+  .updatesss .emaillllllllllllll input::placeholder {
+    color: #b8b8b8;
+  }
+
+
+  .updatesss .emaillllllllllllll button {
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+        border: none;
+        padding: 14px 30px;
+    }
+
+    .updatesss .emaillllllllllllll .u17DemiBold_v2 {
+        position: absolute;
+        bottom: 0;
+        transform: translate(12.5%, 150%);
+        display: none;
+    }
+
+    @media (max-width: 767px) {
+      .updatesss {
+        padding: 12vw 0 24vw;
+      }
+
+      .updatesss .u24DemiBold_v2 {
+        font-size: 20px;
+      }
+
+      .updatesss .u17Light_v2 {
+        font-size: 15px;
+      }
+
+        .updatesss .emaillllllllllllll input {
+            flex: 1;
+            width: 0;
+            font-size: 14px;
+            border-width: 1px;
+            padding-left: 5%;
+        }
+
+        .updatesss .emaillllllllllllll button {
+        padding: 3vw 6vw;
+      }
+
+      .updatesss .emaillllllllllllll .u17DemiBold_v2 {
+            font-size: 14px;
+            transform: translate(10%, 150%);
+        }
+    }
+</style>
+
 <h1 class="visuallyhidden">Urtopia Carbon 1 Pro Ebike - Sleek, Full Carbon, Lightweight, Smart</h1>
 <div class="product" data-pf-type="ProductBox">
   <div class="centeral-content">
@@ -421,6 +512,17 @@
       </span>
     </p>
     </div>
+  </div>
+</div>
+
+<div class="updatesss">
+  <div class="centeral-content">
+    <h2 class="u24DemiBold_v2">Be the first to uncover exciting Urtopia eBike deals and events! </h2>
+    <form class="emaillllllllllllll" accept-charset="UTF-8">
+          <input class="u17Medium_v2" placeholder="Enter email here" type="email" name="email" required>
+          <button class="my-button my-button-origin" type="submit">Sign up</button>
+          <span class="u17DemiBold_v2">Thanks for subscribing!</span>
+      </form>
   </div>
 </div>
 
@@ -988,3 +1090,13 @@ $('.product .product-panel .accessories .navigate > div').on('click', e => {
 </script>
 <script src="https://cdn.storepoint.co/api/v1/js/162f21804990ff.js" defer></script>
 {% render 'carbon-one-pro-extra-code' %}
+
+<script>
+  $('.emaillllllllllllll').on('submit', function (event) {
+        $(this).find('.u17DemiBold_v2').hide()
+        fetchBuried('emailpop', 'submit', { email: $(this).find('input').val(), tag: `US,outlet-order-page` }).finally(() => $(this).find('.u17DemiBold_v2').show())
+
+        event.preventDefault();
+        return false;
+    })
+</script>
