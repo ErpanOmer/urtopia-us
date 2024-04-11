@@ -327,7 +327,7 @@ const testRides = [
         testRideSize: "M/L",
         availableSizes: [
           'Carbon 1 Size M',
-          'Carbon 1s Size M'
+          'Carbon 1 Pro Size M'
         ],
         businessHours: [
           "10:00-17:00",
@@ -513,6 +513,50 @@ const testRides = [
           "10:00-18:00",
           "10:00-18:00",
           "10:00-16:00",
+        ],
+      },
+      {
+        name: "Cycling World",
+        phone: "(626) 775-4141",
+        email: "contact@cyclingworldusa.com",
+        timezone: "California, USA (GMT-7)",
+        add: "503 W. Duarte Road, Monrovia, CA 91016",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_701250bb-5882-4a90-9d1c-e44d230dc75a.jpg?v=1712713565",
+        testrideSpot: "Monrovia",
+        availableSizes: [
+          'Carbon 1 Pro Size M',
+          'Chord',
+          'Chord X'
+        ],
+        businessHours: [
+          "10:00-16:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "",
+        ],
+      },
+      {
+        name: "Hero Boy Bike Shop",
+        phone: "(310) 686-6902",
+        email: "eltohamyaly@gmail.com",
+        timezone: "California, USA (GMT-7)",
+        add: "12848 Hawthorne Blvd, Hawthorne, CA 90250",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_1.jpg?v=1712713664",
+        testrideSpot: "Hawthorne",
+        availableSizes: [
+          'Carbon 1 Pro Size M',
+        ],
+        businessHours: [
+          "",
+          "11:00-19:00",
+          "11:00-19:00",
+          "11:00-19:00",
+          "11:00-19:00",
+          "11:00-19:00",
+          "11:00-19:00",
         ],
       },
     ]
@@ -1584,8 +1628,8 @@ const testRides = [
     stores: [
       {
         name: "Power Pedal Center",
-        phone: "612-210-8714",
-        email: "saadarzoo@gmail.com",
+        phone: "612-564-9207",
+        email: "michael@appliancerenew.com",
         timezone: "Minnesota, USA (GMT-7)",
         add: "821 3rd Street, Suite 140, Farmington, Minnesota 55024",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Power_Pedal_Center.png?v=1710818584",
@@ -1657,6 +1701,34 @@ const testRides = [
           "11:00-19:00",
           "11:00-19:00",
           "11:00-19:00",
+        ],
+      },
+    ]
+  },
+  {
+    city: 'Ontario',
+    country: 'Canada',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Urban_Electrica.jpg?v=1710818582',
+    stores: [
+      {
+        name: "iCycle Electric Bike Co",
+        phone: "613-532-0426",
+        email: "info@icycleebikes.com",
+        timezone: "Arizona, USA (GMT-7)",
+        add: "25 Fort Henry Drive, Kingston, ON, Canada K7K 5G8",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Kingston_Ontario_Canada_-_Laslovarga__28.jpg?v=1712714811",
+        testrideSpot: "Kingston",
+        availableSizes: [
+          'Carbon 1 Pro Size M',
+        ],
+        businessHours: [
+          "10:00-17:00",
+          "",
+          "",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
         ],
       },
     ]
