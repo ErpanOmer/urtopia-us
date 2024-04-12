@@ -345,11 +345,12 @@ const testRides = [
         email: "info@burntheshipselectrics.com ",
         timezone: "San Diego, CA, USA (GMT-7)",
         add: "1012 S Pacific Coast Hwy Suite B, Redondo Beach, CA 90277",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Burn_The_Ships_Electrics.png?v=1687327236",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output.png?v=1712745720",
         testrideSpot: "California",
         testRideSize: "M",
         availableSizes: [
           'Carbon 1s Size M',
+          'Carbon 1 Pro Size M',
         ],
         businessHours: [
           "12:00-17:00",
