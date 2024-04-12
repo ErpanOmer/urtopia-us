@@ -16,7 +16,7 @@ h4 {
 
 
 .banner {
-    background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/urtopiaebike_an_image_of_an_upcoming_crossover_suv_in_the_style_2x_4c2218f1-71d2-41ac-a178-43f4e53b8c55.jpg?v=1710141041') center center/cover no-repeat;
+    background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/ggb_2x_be964127-9b3f-4948-8e94-4db1e1a82919.jpg?v=1712914363') center center/cover no-repeat;
     height: calc(100vh - 106px);
     color: #fff;
     display: flex;
@@ -823,4 +823,87 @@ h4 {
              }
            }
   }
+}
+
+.emaillllllllllllll {
+    display: flex;
+    position: relative;
+    max-width: 360px;
+    width: 100%;
+    margin-top: 1.5vh;
+
+    input {
+        border-bottom-left-radius: 30px;
+        border-top-left-radius: 30px;
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+        border:2px solid #fff;
+        border-right: none;
+        flex: 1;
+        padding: 0 2.5% 0 5%;
+        background-color: transparent;
+        color: #fff;
+
+        &::placeholder {
+            color: #fff;
+        }
+    }
+
+    button {
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+        border: none;
+        padding: 14px 30px;
+    }
+
+    .u17DemiBold_v2 {
+        position: absolute;
+        bottom: 0;
+        transform: translate(12.5%, 150%);
+        display: none;
+    }
+
+    @media (max-width: 767px) {
+        input {
+            flex: 1;
+            width: 0;
+            font-size: 14px;
+            border-width: 1px;
+            padding-left: 5%;
+        }
+
+      button {
+        padding: 3vw 6vw;
+      }
+
+        .u17DemiBold_v2 {
+            font-size: 14px;
+            transform: translate(10%, 150%);
+        }
+    }
+}
+
+.spring {
+    margin-top: 2vh;
+    padding-top: 6vh;
+    height: 900px;
+
+    .u20Medium_v2 {
+        margin: 2vh 0 4vh;
+    }
+
+    @media (max-width: 767px) {
+        background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/ssssd_2x_6505054a-c6e4-4910-a60d-d2cf47c2cf0a.jpg?v=1712915341');
+        padding: 15vw 6vw;
+        margin-top: 2.5vw;
+        height: calc(100vh - 102px);
+
+        .u48Medium_v2 {
+            font-size: 24px;
+        }
+
+        .u20Medium_v2 {
+            font-size: 15px;
+        }
+    }
 }
