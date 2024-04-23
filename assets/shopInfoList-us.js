@@ -861,6 +861,27 @@ const testRides = [
           "10:00-18:00",
         ],
       },
+      {
+        name: "Marty's Bicycle Shop",
+        phone: "(570) 546-3142",
+        email: "Marty@martysbicycles.com",
+        timezone: "Pennsylvania, USA (GMT-4)",
+        add: "160 E Water St, Muncy, PA 17756",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Muncy_Ritz.jpg?v=1713857360",
+        testrideSpot: "Muncy",
+        availableSizes: [
+          'Carbon 1 Pro Size M',
+        ],
+        businessHours: [
+          "",
+          "10:00-19:00",
+          "10:00-19:00",
+          "",
+          "10:00-19:00",
+          "10:00-19:00",
+          "09:00-15:00",
+        ],
+      },
     ]
   },
   {
@@ -1781,7 +1802,7 @@ for (const city of testRides) {
         </div>
       `
 
-      store_list.set(store.name.replace(/\s*/g, ""), store)
+      store_list.set(store.name.replace(/\s*/g, "").replace(/\'/g, ""), store)
   }
 }
 

@@ -243,7 +243,7 @@
     let store_list_render_total_time = 0
     
     
-    const findStore = name => testRides.get(name.replace(/\s*/g, ""))
+    const findStore = name => testRides.get(name.replace(/\s*/g, "").replace(/\'/g, ""))
     
       function CalendarOpen(shopPoint, shop, isSpecDay = false, timetp = 0) {
         console.log(arguments)
@@ -362,7 +362,7 @@
                 </div>
                 ${info.noBook ? `<div class="u14DemiBold_v2">${noBook}</div>` : ''}
                 <div class="buttons">
-                    ${!info.noBook ? `<a class="close my-button my-button-black" onclick="booknow('${info.name}')">Book Now</a>` : ''}
+                    ${!info.noBook ? `<a class="close my-button my-button-black" onclick="booknow('${info.name.replace(/\'/g, "")}')">Book Now</a>` : ''}
                     <a class="my-button my-button-white" style="margin-left: 6px;" target="_blank" href="${href}">Direction</a>
                 </div>
                 ${info.tagsText.length ? `<div class="ulli">
@@ -597,7 +597,7 @@
                 !extra && locations.each((i, elemm) => {
                     const iterator = $(elemm)
                     iterator.removeClass('selected')
-                    if (item.attr('name').replace(/\s*/g, "") === iterator.find('.storepoint-name').text().replace(/\s*/g, "")) {
+                    if (item.attr('name').replace(/\s*/g, "").replace(/\'/g, "") === iterator.find('.storepoint-name').text().replace(/\s*/g, "").replace(/\'/g, "")) {
                         iterator.addClass('selected')
                         iterator[0].click()
 
@@ -689,7 +689,7 @@
                                         locations.each((i, elemm) => {
                                             const iterator = $(elemm)
                                             iterator.removeClass('selected')
-                                            if ($(elem).attr('name').replace(/\s*/g, "") === iterator.find('.storepoint-name').text().replace(/\s*/g, "")) {
+                                            if ($(elem).attr('name').replace(/\s*/g, "").replace(/\'/g, "") === iterator.find('.storepoint-name').text().replace(/\s*/g, "").replace(/\'/g, "")) {
                                                 iterator.addClass('selected')
                                                 iterator[0].click()
                                                 $('html').scrollTop(t)
@@ -732,7 +732,7 @@
                 const name1 = result.find('.storepoint-name').text() || ''
                 const name2 = iterator.attr('name') || ''
 
-                if (name1.replace(/\s*/g, "") === name2.replace(/\s*/g, "")) {
+                if (name1.replace(/\s*/g, "").replace(/\'/g, "") === name2.replace(/\s*/g, "").replace(/\'/g, "")) {
                     iterator.show()
                     return false
                 }
@@ -773,14 +773,14 @@
             $('#storepoint-panel .items .item').filter(function (params) {
                 return $(this).css('display') !== 'none'
             }).each((i, elem) => {
-                if ($(elem).attr('name').replace(/\s*/g, "") === store.name.replace(/\s*/g, "")) {
+                if ($(elem).attr('name').replace(/\s*/g, "").replace(/\'/g, "") === store.name.replace(/\s*/g, "").replace(/\'/g, "")) {
                     swiperrrrrrrrrrrrrrr.slideTo(i)
                     return false
                 }
             })
         } else {
             $('#storepoint-panel .items .item').each(function () {
-                if ($(this).attr('name').replace(/\s*/g, "") === store.name.replace(/\s*/g, "")) {
+                if ($(this).attr('name').replace(/\s*/g, "").replace(/\'/g, "") === store.name.replace(/\s*/g, "").replace(/\'/g, "")) {
                     $(this).trigger('click', 'xxxxxx')
 
                     setTimeout(() => {
@@ -843,7 +843,7 @@
                         </ul>
                         <div class="time gray"><img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/calendar_2x_af8d9192-1ff9-43f0-aba6-3547b1129854.jpg?v=1680938382"/> Earliest available time: <div>&nbsp;${store.avalibaleDate}</div></div>
                         <div class="buttons">
-                            <a class="my-button my-button-black" onclick="booknow('${store.name}')">Book Now</a>
+                            <a class="my-button my-button-black" onclick="booknow('${store.name.replace(/\'/g, "")}')">Book Now</a>
                             <a class="my-button my-button-white" style="margin-left: 6px;" target="_blank" href="${href}">Direction</a>
                         </div>
                     </div>
