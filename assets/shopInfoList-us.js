@@ -1249,17 +1249,17 @@ const testRides = [
     ]
   },
    {
-    city: 'Lowa',
+    city: 'Iowa',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Ebike_Iowa.png?v=1687327236',
     stores: [
       {
         name: "Ebike Iowa",
         phone: "(515) 400-3970",
         email: "john.burdine@gmail.com",
-        timezone: "Lowa, USA (GMT-5)",
-        add: "1900 E Lincoln Way, Suite B, Ames, Lowa 50010",
+        timezone: "Iowa, USA (GMT-5)",
+        add: "1900 E Lincoln Way, Suite B, Ames, Iowa 50010",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Ebike_Iowa.png?v=1687327236",
-        testrideSpot: "Lowa",
+        testrideSpot: "Iowa",
         availableSizes: [
           'Carbon 1 Size M',
         ],
