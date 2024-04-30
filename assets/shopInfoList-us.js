@@ -275,6 +275,27 @@ const testRides = [
         ],
       },
       {
+        name: "Bike Attack Santa Monica",
+        phone: "(424) 744-8148",
+        email: "info@BikeAttack.com",
+        timezone: "Los Angeles, CA, USA (GMT-7)",
+        add: "2904 Main St, Santa Monica, CA 90405",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-BikeAttackPlayaVista.jpg?v=1665374977",
+        testrideSpot: "Santa Monica",
+        availableSizes: [
+          'Carbon 1 Pro Size M'
+        ],
+        businessHours: [
+          "10:00-17:30",
+          "10:00-17:30",
+          "10:00-17:30",
+          "10:00-17:30",
+          "10:00-17:30",
+          "10:00-17:30",
+          "10:00-17:30",
+        ],
+      },
+      {
         name: "DTLA Bikes",
         phone: "213-533-8000",
         email: "rodney@dtlabikes.com",
@@ -330,13 +351,13 @@ const testRides = [
           'Carbon 1 Pro Size M'
         ],
         businessHours: [
-          "10:00-17:00",
-          "",
-          "12:00-17:00",
-          "12:00-17:00",
-          "12:00-17:00",
-          "12:00-17:00",
-          "10:00-17:00"
+          "11:00-18:00",
+          "11:00-17:00",
+          "11:00-17:00",
+          "11:00-17:00",
+          "11:00-17:00",
+          "10:00-18:00",
+          "10:00-18:00",
         ],
       },
        {
@@ -1585,6 +1606,29 @@ const testRides = [
         ],
         isPartner: true,
       },
+      {
+        name: "Seaside Eco Bikes",
+        phone: "302-329-8088",
+        email: "Gilberto.medina@seasideecobikes.com",
+        timezone: "Delaware, USA (GMT-7)",
+        add: "16846 Millstone Dr, Milton, DE 19968",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Milton_Delaware.jpg?v=1702122567",
+        testrideSpot: "Milton",
+        availableSizes: [
+          'Carbon 1 Pro Size M',
+          'Chord'
+        ],
+        businessHours: [
+          "10:00-18:00",
+          "11:00-17:00",
+          "11:00-17:00",
+          "11:00-17:00",
+          "11:00-17:00",
+          "10:00-18:00",
+          "10:00-18:00",
+        ],
+        isPartner: true,
+      },
     ]
   },
   {
@@ -1668,6 +1712,27 @@ const testRides = [
           "9:00-18:00",
           "9:00-18:00",
           "9:00-15:00",
+        ],
+      },
+      {
+        name: "MINN Ebikes",
+        phone: "507-382-4404",
+        email: "john@northsole.co",
+        timezone: "Minnesota, USA (GMT-7)",
+        add: "13000 Maywood Ln, Minnetonka, MN 55343",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Power_Pedal_Center.png?v=1710818584",
+        testrideSpot: "Minnetonka",
+        availableSizes: [
+          'Carbon 1 Pro Size M',
+        ],
+        businessHours: [
+          "",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-17:00",
         ],
       },
     ]

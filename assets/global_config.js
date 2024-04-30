@@ -439,7 +439,7 @@ const global_config = {
                 {
                     title: 'Power',
                     parameters: [
-                        ["Motor", "Customized rear hub, 36 V 350 W (rated), 42 N⋅m"],
+                        ["Motor", "Customized rear hub, 36 V 350 W (rated), 45 N⋅m"],
                         ["Speed modes", "Pedal, Eco, Comfort, Sport, Turbo"],
                         ["Top speed (assisted)", "25mph"],
                         ["Range", "Up to 80 miles"],
