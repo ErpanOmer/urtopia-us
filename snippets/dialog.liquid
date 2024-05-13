@@ -698,6 +698,8 @@
     }
 
     function showCookieDialog () {
+        return Promise.resolve()
+      
         const cookie_dialog_expires_time = 'cookie_dialog_expires_time'
 
         if (storage.get(cookie_dialog_expires_time)) {

@@ -2947,9 +2947,9 @@ margin-top:-20px!important;
 
 
 .product .sale-taggggggg {
-  background-color: #BB2329;
+  background-color: var(--sale-color2);
   color: #fff;
-  padding: 2% 0 2% 5%;
+  padding: 2% 5% 2% 5%;
   border-radius: 18px;
   width: fit-content;
   height: 35px;
@@ -2961,13 +2961,13 @@ margin-top:-20px!important;
   margin-top: 9px;
 }
 
-.product .sale-taggggggg::after {
+/* .product .sale-taggggggg::after {
   display: block;
   content: "";
   background: url('https://newurtopia.de/cdn/shop/files/Mask_Group_18957_2x_7f38301a-c58d-4b30-95a6-64c51efdec3f.png?v=1703815709') center right/cover no-repeat;
   width: 65px;
   height: 35px;
-}
+} */
 
 
 .visuallyhidden {

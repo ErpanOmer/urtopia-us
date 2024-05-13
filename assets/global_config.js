@@ -308,13 +308,16 @@ const global_config = {
                 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_wh_6.png?v=1703570387'
             ],
             commonSwiper: [
-                'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240131-094148.jpg?v=1706665341',
-                'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240117-180528.png?v=1705485964',
-                'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231108-untitled-6089.jpg?v=1703570574',
-                'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231108-untitled-3370.jpg?v=1703570574',
-                'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231108-untitled-3668.jpg?v=1703570574',
-                'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSCF7217_1.jpg?v=1703570574'
-            ]
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240131-094148.jpg?v=1706665341',
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240117-180528.png?v=1705485964',
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231108-untitled-6089.jpg?v=1703570574',
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231108-untitled-3370.jpg?v=1703570574',
+            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/aaa_2x_9b257387-ce8a-4eb6-a2e9-913573233f93.jpg?v=1714984318',
+            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DSCF7217_1_2x_ec4657b0-b04a-494f-82ad-9a6553394400.jpg?v=1714984325',
+            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20231108-untitled-2785_2x_ab30be84-117b-44b4-8c61-0c6a5936faa2.jpg?v=1714984330',
+            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20231108-untitled-2778_2x_ccaa8af6-df16-4870-8b8d-e8b21c69d4c4.jpg?v=1714984337',
+            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DSCF6952_1_2x_0bc14670-71dc-49a2-8837-9d0bb276e6e6.jpg?v=1714984341'
+        ]
         },
         // 产品图下面的media模块, 根据产品图 循环轮播 
         product_media_images: [
