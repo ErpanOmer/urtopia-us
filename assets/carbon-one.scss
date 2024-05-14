@@ -2688,6 +2688,14 @@ $product-tags-color: #FFE2D9;
             background-color: #FA812B;
         }
 
+        &[data-stye="Creme"] {
+            background-color: #edece7;
+        }
+
+      &[data-stye="Matte Black"] {
+            background-color: #000;
+        }
+
         &[data-stye="Lyra"] {
             background-color: #747474;
         }
@@ -2733,6 +2741,14 @@ $product-tags-color: #FFE2D9;
 
         &[data-stye="Sirius"]::after {
             background-color: #FA812B;
+        }
+
+        &[data-stye="Creme"]::after {
+            background-color: #edece7;
+        }
+
+        &[data-stye="Matte Black"]::after {
+            background-color: #000;
         }
 
         &[data-stye="Lyra"]::after {
