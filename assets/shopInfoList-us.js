@@ -1185,6 +1185,7 @@ const testRides = [
         add: "Joes Point Road Stuart Fl 34996",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/shutterstock_469708088.jpg?v=1697188978",
         testrideSpot: "Florida",
+        noBook: 'Must call for an appoitment.  ---Robert Ryba',
         availableSizes: [
           'Carbon 1s Size M',
         ],
@@ -1519,16 +1520,15 @@ const testRides = [
         add: "1542 King Drive Berkeley, ILL 60163",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Jason_Mathews.jpg?v=1692617852",
         testrideSpot: "Illinois",
-        noBook: 'Must call for an appoitment.  ---Robert Ryba',
         availableSizes: [
           'Carbon 1s Size M',
         ],
         businessHours: [
-          "10:00-14:00",
+          "",
           "10:00-17:00",
-          "10:00-14:00",
-          "10:00-14:00",
-          "10:00-14:00",
+          "",
+          "",
+          "",
           "10:00-17:00",
           "10:00-17:00",
         ],
@@ -1696,9 +1696,9 @@ const testRides = [
         phone: "302-329-8088",
         email: "Gilberto.medina@seasideecobikes.com",
         timezone: "Delaware, USA (GMT-7)",
-        add: "16846 Millstone Dr, Milton, DE 19968",
+        add: "16779 Coastal Highway unit 1, Lewes DE 19958",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Milton_Delaware.jpg?v=1702122567",
-        testrideSpot: "Milton",
+        testrideSpot: "Lewes",
         availableSizes: [
           'Carbon 1 Pro Size M',
           'Chord'

@@ -171,6 +171,13 @@
                 {% endif %}
               {% endfor %}
           {% endfor %}
+          {% assign article = articles['blog/the-smartest-e-bike-youll-never-lose'] %}
+          <div href="{{ article.url }}">
+                      <img class="lozad" data-src="{{ article.image.src | image_url: width: 400 }}" alt="">
+                      <h2 class="u20Medium_v2">{{ article.title }}</h2>
+                      <div class="flex-1"></div>
+                      <a target="_blank" href="{{ article.url }}">Read more</a>
+          </div>
 
           
             <div class="gotooooooo">
@@ -181,6 +188,8 @@
     </div>
 
     <script>
+      console.log(JSON.parse(JSON.stringify({{ blogs.blog.articles | json }})))
+      
       $('.gotooooooo').click(() => {
         window.open('/blogs/blog')
       })

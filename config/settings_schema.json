@@ -78,7 +78,7 @@
         "type": "text",
         "id": "home_page_blogs",
         "label": "首页blog展示",
-        "default": "blog\/carbon-1-1s-vs-carbon-1-pro,blog\/ambassador-s-story-michael-j-coles-over-that-rock,blog\/smart-is-more-than-internet-connection"
+        "default": "blog\/smart-e-bike-with-chatgpt-urtopia-eurobike2023,blog\/the-smartest-e-bike-youll-never-lose,blog\/design-story-one-and-only"
       },
       {
         "type": "text",
