@@ -66,7 +66,7 @@
         "type": "checkbox",
         "id": "hide_sale_countdown",
         "default": true,
-        "label": "活动倒计时显示和隐藏"
+        "label": "是否隐藏活动倒计时"
       },
       {
         "type": "checkbox",

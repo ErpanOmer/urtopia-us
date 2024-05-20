@@ -467,24 +467,24 @@ const global_config = {
             ] 
           },
           // 默认的发货时间 文案
-        ebike_default_delivery_time: 'Free shipping <span>within 5 business days</span> from L.A. warehouse.',
+        ebike_default_delivery_time: 'Ships between <span>June 1-10, 2024 </span>from L.A. warehouse.',
         // 发货时间映射表
         // key:    vairant_id
         // value:  发货时间文案
         ebike_delivery_time: {
             xxxx: 'xxxx',
           //白 M
-          44288621347064:'Ships between <span>May 15-31, 2024 </span>from L.A. warehouse.',
+          44288621347064:'Ships between <span>June 1-10, 2024 </span>from L.A. warehouse.',
           //白 L
-          44288621379832:'Ships between <span>May 15-31, 2024 </span>from L.A. warehouse.',
+          44288621379832:'Ships between <span>June 1-10, 2024 </span>from L.A. warehouse.',
           //黑色 M
-          44288621281528:'Ships between <span>May 15-31, 2024 </span>from L.A. warehouse.',
+          44288621281528:'Ships between <span>June 1-10, 2024 </span>from L.A. warehouse.',
           //黑色 L
-          44288621314296:'Ships between <span>May 15-31, 2024 </span>from L.A. warehouse.',
+          44288621314296:'Ships between <span>June 1-10, 2024 </span>from L.A. warehouse.',
           //白s
-          44288609583352:'Ships between <span>May 15-31, 2024 </span>from L.A. warehouse.',
+          44288609583352:'Ships between <span>June 1-10, 2024 </span>from L.A. warehouse.',
           //黑s
-          44288609550584:'Ships between <span>May 15-31, 2024 </span>from L.A. warehouse.',
+          44288609550584:'Ships between <span>June 1-10, 2024 </span>from L.A. warehouse.',
         }
     }
 }

@@ -1,5 +1,8 @@
 {
   "current": {
+    "sale_name": "May Marvel Sales",
+    "chord_sale_name": "May Marvel Sales",
+    "hide_sale_countdown": false,
     "colors_solid_button_labels": "#ffffff",
     "colors_accent_1": "#fd4b17",
     "gradient_accent_1": "",
