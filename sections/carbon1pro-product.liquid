@@ -1,28 +1,5 @@
 {{ 'carbon1pro-product.scss.css' | asset_url | stylesheet_tag: preload: true }}
 
-{% if settings.show_easter_sale %}
-    <script>
-      global_config.carbon1pro_order_page_config.product_images['Matte Black'][0] = 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240321-172508.png?v=1711013256'
-    </script>
-    <style>
-      .product .sale-taggggggg {
-        background: rgb(254, 110, 131) url(https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_23806_2x_437f5712-bd9f-411a-ab7a-eccb83daaca5.png?v=1711072949) bottom right/contain no-repeat;
-        padding: 2% 13.5% 2% 4%;
-      }
-
-      .product .sale-taggggggg::after {
-        display: none;
-      }
-
-
-      @media (max-width: 767px) {
-        .product .sale-taggggggg {
-          padding-right: 15vw;
-        }
-      }
-    </style>
-{% endif %}
-
 <style>
    .updatesss {
     background-color: #f7f8fa;
