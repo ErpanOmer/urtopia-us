@@ -8,7 +8,8 @@
     "dev": "shopify theme dev -s urtopia.myshopify.com -t 136550744312 --port 9000",
     "pull": "shopify theme pull -s urtopia.myshopify.com --live",
     "list": "shopify theme list -s urtopia.myshopify.com",
-    "backup": "node backup.js"
+    "backup": "node backup.js",
+    "shopify": "shopify"
   },
   "repository": {
     "type": "git",
