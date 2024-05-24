@@ -303,17 +303,10 @@
 
 <dialog id="SubscribeEmailDialog">
     <div class="subscribe-container">
-        {% if settings.show_easter_sale %}
-            <img class="mobileHide" style="height: 100%;max-width: 100%;object-fit: cover;" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_23823_2x_88366012-c904-45b1-9017-1e8857f01dbb.jpg?v=1711079297" alt="">
-            <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_23835_2x_2497df24-5862-421c-a4db-e0529fb38e2b.jpg?v=1711008485" alt="">
-        {% else %}
-            <img class="mobileHide" style="height: 100%;max-width: 100%;object-fit: cover;" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_2x_0229aec2-ef52-45e5-9a09-2521440d5f59.jpg?v=1709003096" alt="">
-            <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_2x_c8198edc-a8fe-434f-9032-cc2c9af26e95.jpg?v=1709003071" alt="">
-        {% endif %}
+        <img class="mobileHide" style="height: 100%;max-width: 100%;object-fit: cover;" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DD_2x_37066012-4201-4ddf-91c6-aa9c8a391f33.jpg?v=1716517191" alt="">
+        <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DD_2x_24856ca2-90af-439a-9da8-57d2673b63f6.jpg?v=1716517168" alt="">
         <div class="subscribe">
-            {% if settings.show_easter_sale %}
-                <span style="color: #FF6F7E;" class="u17DemiBold_v2">Easter Sale</span>
-            {% endif %}
+            <span style="color: #C33320;    margin-bottom: 2%;" class="u17DemiBold_v2">{{ settings.sale_name }}</span>
             <div class="u42DemiBold_v2">Take {{ all_products['urtopia-carbon-1-pro-ebike'].compare_at_price |  minus: all_products['urtopia-carbon-1-pro-ebike'].price | money_without_trailing_zeros }} off<br>On Carbon 1 Pro</div>
             <div class="u17Light_v2">With Free Shipping and 2-year warranty</div>
             <form class="new-contact" action="/contact#ContactFooter" target="_blank" method="post" accept-charset="UTF-8">
