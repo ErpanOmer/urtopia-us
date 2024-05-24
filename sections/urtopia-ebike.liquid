@@ -11,23 +11,22 @@
 {{ 'outlet_v4.scss.css' | asset_url | stylesheet_tag: preload: true }}
 {% assign carbon = all_products["outlet-carbon-1-1s"] %}
 
-{% if settings.show_easter_sale %}
-    <style>
+<style>
+  .banner {
+        background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23858_2x_334fe6d1-dd56-413b-bcd8-3b7329881aee.jpg?v=1716518422');
+  }
+
+      @media (max-width: 767px) {
         .banner {
-            background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_23816_2x_0b4e748c-74e9-48ce-9ccb-fc102f2c7124.jpg?v=1711008777');
+            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/fada_2x_5adf04ce-98f1-42c5-aed1-8121d567e861.jpg?v=1716518415');
         }
 
-        @media (max-width: 767px) {
-            .banner {
-                background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_23820_2x_0994f5db-3062-4868-b32f-53746867dd22.jpg?v=1711009012');
-            }
-
-            .banner .centeral-content {
-                justify-content: flex-start;
-            }
+        .banner .centeral-content {
+            justify-content: flex-start;
+            padding-top: 20px;
         }
-    </style>
-{% endif %}
+    }
+</style>
 
 <div class="banner">
     <div class="centeral-content">
