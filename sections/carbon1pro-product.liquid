@@ -211,11 +211,7 @@
             product: product
           %}
         </div>
-        {% if settings.show_easter_sale %}
-          <div class="u14DemiBold_v2 mb6 sale-taggggggg">{{ settings.sale_name }}</div>
-        {% else %}
-          <div class="u17Medium_v2 onlllllllly">{{ settings.sale_name }}</div>
-        {% endif %}
+        <div class="u14DemiBold_v2 mb6 sale-taggggggg">{{ settings.sale_name }}</div>
         
         <div
           class="product-price u30DemiBold_v2 {% unless product.compare_at_price != product.price %}mb6{% endunless %}"
