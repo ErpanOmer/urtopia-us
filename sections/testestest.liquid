@@ -1,13 +1,26 @@
 {{ 'blog.scss.css' | asset_url | stylesheet_tag: preload: true }}
 
 <article>
-  <header style="--background-image-pc: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_8bcad7e5-b4b4-47e2-ad1c-10294b8a019e.png?v=1716519285');">
+  <header style="--background-image-pc: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1280X1280_7fbd6f97-9b62-4a64-b7c3-be9044656412.jpg?v=1714102170');">
     <div class="background-blur"></div>
     <section class="flex flex-center flex-column text-center height-600 mb-height-420">
-      <h1 class="color-white mb-font-size-24">Ride on to anywhere you want to </h1>
+      <h1 class="color-white mb-font-size-24">Löbauer Spring | A Creative DIY Wonderland</h1>
     </section>
   </header>
   <section class="margin-top-60 margin-bottom-60 max-width-720 mb-margin-top-40 mb-margin-bottom-40">
+    <div class="video margin-top-60">
+      <iframe
+        title="YouTube video player"
+        src="https://www.youtube.com/embed/T1aUscy73S4?start=0&amp;autoplay=0&amp;loop=0&amp;mute=0&amp;controls=0&amp;enablejsapi=1"
+        height="100%"
+        width="100%"
+        allowfullscreen=""
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        frameborder="0"
+      >
+      </iframe>
+    </div>
+
     <p class="margin-bottom-40">
       <span>
         When spring blooms, where should you head for an unforgettable experience? Look no further than a DIY outdoor
@@ -154,7 +167,6 @@
     </div>
   </section>
 </article>
-
 
 <script>
   window.addEventListener("scroll", throttle(() => {
