@@ -2947,9 +2947,9 @@ margin-top:-20px!important;
 
 
 .product .sale-taggggggg {
-  background-color: rgb(196, 50, 32);
+  background-color: var(--sale-color3);
   color: #fff;
-  padding: 2% 0 2% 5%;
+  padding: 2% 5% 2% 5%;
   border-radius: 18px;
   width: fit-content;
   height: 35px;
@@ -2961,13 +2961,13 @@ margin-top:-20px!important;
   margin-top: 9px;
 }
 
-.product .sale-taggggggg::after {
+/* .product .sale-taggggggg::after {
   display: block;
   content: "";
   background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23860_2x_70928209-5197-4d6d-8871-8709b2eb5aee.png?v=1716517488') center right/cover no-repeat;
   width: 60px;
   height: 35px;
-}
+} */
 
 
 .visuallyhidden {
