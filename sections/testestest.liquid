@@ -1,193 +1,203 @@
-{{ 'blog.scss.css' | asset_url | stylesheet_tag: preload: true }}
+{{ 'accessories-default-template.scss.css' | asset_url | stylesheet_tag: preload: true }}
 
-<article>
-  <header style="--background-image-pc: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_8bcad7e5-b4b4-47e2-ad1c-10294b8a019e.png?v=1716519285');">
-    <div class="background-blur"></div>
-    <section style="transform: translateY(-25%);" class="flex flex-center flex-column text-center height-600 mb-height-420">
-      <h1 class="color-white mb-font-size-24">Ride on to anywhere you want to</h1>
-    </section>
-  </header>
-  <section class="margin-top-60 margin-bottom-60 max-width-720 mb-margin-top-40 mb-margin-bottom-40">
-    <div class="video margin-bottom-60 mb-margin-bottom-40">
-      <iframe
-        title="YouTube video player"
-        src="https://www.youtube.com/embed/T1aUscy73S4?start=0&amp;autoplay=0&amp;loop=0&amp;mute=0&amp;controls=0&amp;enablejsapi=1"
-        height="100%"
-        width="100%"
-        allowfullscreen=""
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        frameborder="0"
-      >
-      </iframe>
+<div class="centeral-content product">
+  <div
+    class="fuckyou"
+    style="--swiper-navigation-color: #fff;--swiper-theme-color: #000;--swiper-pagination-color: #000;"
+  >
+    <div class="swiperrrr">
+      <div class="swiper-wrapper">
+        {% for image in product.images %}
+          <div class="swiper-slide">
+            {{ image | image_url: width: 750 | image_tag }}
+          </div>
+        {% endfor %}
+      </div>
     </div>
-
-    <p class="margin-bottom-40 font-weight-600 mb-margin-bottom-20">
-      <i>"Ride on, ride on, ride on~ Ride on to anywhere you want to~"</i><br>
-      <i>- Ride On lyrics</i>
-    </p>
-
-    <p class="margin-bottom-40">
-      <span>
-        If you're wondering which song to listen to while riding Urtopia, Smash Mouth's latest single "Ride On" should
-        definitely be on your playlist. As Memorial Day approaches, Urtopia teamed up with the rock band Smash Mouth to
-        create a new rock-disco song called "Ride On". Released during Memorial Day, this song serves not only to honor
-        veterans but also to commemorate the recent passing of another former lead singer of the Smash Mouth Steve
-        Harvell. Additionally, it celebrates Smash Mouth's 30-year journey since its formation in 1994. With its sunny
-        California vibe, "Ride On" ignites the motivation for your summer Urtopia rides.
-      </span>
-    </p>
-    <img
-      alt=""
-      src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/1280X1280_2099a623-2038-47df-b1eb-2df3179beea7.jpg?v=1716520298"
-      class="fade margin-bottom-40"
-    >
-    <p class="margin-bottom-40">
-      <span>
-        Smash Mouth, a legendary OG rock band with a 30-year history, has created numerous hits in the music world.
-        Their most popular song to date, "All Star", has garnered over 480 million views on YouTube, and they have over
-        1 million followers on the platform. Their music blends rock, pop, and country elements, infused with the sunny
-        California style. "Ride On" perfectly embodies this fusion.
-      </span>
-    </p>
-    <div class="video margin-bottom-60">
-      <iframe
-        title="YouTube video player"
-        src="https://www.youtube.com/embed/6zpCcQTdhUU?start=0&amp;autoplay=0&amp;loop=0&amp;mute=0&amp;controls=0&amp;enablejsapi=1"
-        height="100%"
-        width="100%"
-        allowfullscreen=""
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        frameborder="0"
-      >
-      </iframe>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+  <div class="product-panel" variaint-id="{{ product.variants.first.id }}">
+    <h1 class="u30DemiBold_v2 mb12">{{ product.title }}</h1>
+    <div class="u24DemiBold_v2 mb12">{{ product.price | money }}</div>
+    <div class="u17Light_v2 mb12">{{ product.content }}</div>
+    <div class="options mb12">
+          {% for option in product.options_with_values %}
+              <div class="option" option={{option.name}} position="{{ option.position }}">
+                <div class="u17DemiBold_v2 mb12">{{ option.name }} - <span class="u17Light_v2">{{ product.variants.first.title }}</span></div>
+                <div class="{{ option.name }} mb12">
+                  {% for value in option.values %}
+                    <div attribute="{{ value }}" class="{{ value }}"></div>                     
+                  {% endfor %}
+                </div>
+              </div>
+          {% endfor %}
+				</div>
+    <div class="quantity">
+      <div class="quantity-button quantity-down">-</div>
+      <input type="number" value="1" pattern="\d*" name="quantity" min="1" max="10"/>
+      <div class="quantity-button quantity-up">+</div>
     </div>
-  </section>
-  <section class="margin-top-80 margin-bottom-80 max-width-720 mb-margin-top-60 mb-margin-bottom-60">
-    <h2 class="font-size-28 margin-bottom-40 mb-font-size-20 mb-margin-bottom-28">The Story of Urtopia X Smash Mouth</h2>
-    <p class="margin-bottom-40 font-weight-600 mb-margin-bottom-28">
-      <i>“This is the best bike creation EVER!”</i><br>
-      <i>“It's opened a whole new world for me.”</i><br>
-      <i>“This thing zooms and is smooth as silk!”</i><br>
-    </p>
-    <p class="margin-bottom-40">
-      <span>
-        The members of Smash Mouth were thrilled with the experience of riding Urtopia ebikes, praising its
-        unprecedented smart features. Especially for the tech-savvy lead singer Zack and the band's founder and bassist
-        Paul, the Carbon series garnered particular praise. Zack was amazed that the smart feature-packed Urtopia ebike
-        weighs only around 33 lbs, making it effortlessly portable. But what really caught Zack's attention was the
-        Bluetooth music feature! As a musician, having music accompany him on his commutes or outings is essential, and
-        Urtopia eliminates the need for an extra speaker—your ebike plays the tunes for you! Imagine riding along the
-        California coast with Urtopia playing music in the background—pure bliss.
-      </span>
-    </p>
-    <img
-      alt=""
-      src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_1_aa8e029e-30d0-4583-8713-b476f2d4fccb.png?v=1716520724"
-      class="fade margin-bottom-60 mb-margin-bottom-40"
-    >
-    <p class="margin-bottom-40 font-weight-700 mb-margin-bottom-28">
-      <i>“Sporty, cool, and futuristic. We can't believe how amazing these bikes are.”</i>
-    </p>
-
-    <p class="margin-bottom-40">
-      <span>
-        Paul, the OG member who has been with Smash Mouth for 30 years, couldn't get enough of the Urtopia ebike. He
-        could sense Urtopia's attitude among young brands: "Differentiated innovation, the best user experience." This
-        spirit, akin to the rock version, even moved him. Beyond the smart features, Paul loved the super lightweight
-        and electric boost that the ebike offers. For someone not as young as he used to be, the "E" in ebike is like a
-        key to rejuvenation, reigniting his passion for cycling in California.
-      </span>
-    </p>
-
-    <p class="margin-bottom-40 mb-margin-bottom-28">
-      <span>
-        So, the collaboration between Urtopia and Smash Mouth was a perfect match. The five members have slowly
-        integrated Urtopia ebikes into their lives and believe that Urtopia's innovation and team capabilities align
-        well with Smash Mouth's rock spirit. Freedom, passion, and authenticity are what they aim to showcase.
-      </span>
-    </p>
-
-    <p class="margin-bottom-40 font-weight-700 mb-margin-bottom-28"><i>“Urtopia, the official ebike for Smash Mouth.”</i></p>
-
-    <p class="margin-bottom-40 mb-margin-bottom-28">
-      <span>
-        Smash Mouth's lead singer Zack, with his sultry voice, introduces it to everyone, and they're even planning to
-        take Urtopia ebikes on all their tours across the USA.
-      </span>
-    </p>
-  </section>
-  <section class="margin-top-80 margin-bottom-80 max-width-720 mb-margin-top-60 mb-margin-bottom-60">
-    <h2 class="font-size-28 margin-bottom-40 mb-font-size-20 mb-margin-bottom-28">The Birth of "Ride On"</h2>
-    <p class="margin-bottom-40 font-weight-600 mb-margin-bottom-28">
-      <i>“We got the wheels, we got the weather</i><br>
-      <i>We got the right of way together</i><br>
-      <i>Don't let the walls start closing in on</i><br>
-      <i>Gotta get our road dog trip on～”</i><br><br>
-      <i>- Ride On lyrics</i><br>
-    </p>
-    <p class="margin-bottom-40">
-      <span>
-        The inspiration for this song came about six years ago when they envisioned a song that gives you a feeling of
-        facing the ocean with good vibes. Throughout the year of riding Urtopia, this Carbon ebike continuously inspired
-        them, fueling their creative desires. Last September, tragedy struck with the sudden passing of Smash Mouth's
-        legendary former lead singer, Steve Harvell. The band decided to create a song in his honor, but not a sad
-        one—Smash Mouth has always been about releasing positive energy to everyone. And this song is no exception!
-        Countless people have been moved by their energetic rock spirit! "It's time to make this song," a new beginning,
-        a new journey, and thus "Ride On" was born.
-      </span>
-    </p>
-    <img
-      alt=""
-      src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/0dec7aee-c366-4c85-8521-595f95c40557.png?v=1716521204"
-      class="fade margin-bottom-60 mb-margin-bottom-32"
-    >
-
-    <p class="margin-bottom-40 font-weight-600 mb-margin-bottom-28">
-      <i>“From the mountain, to the ocean</i><br>
-      <i>Through the valley, locomotion</i><br>
-      <i>Through the desert, past the beaches</i><br>
-      <i>On our way to outer reaches</i>
-      
-      <br>
-      <br>
-
-      <i>Ride on, ride on, ride on</i><br>
-      <i>Ride on to anywhere you want to”</i><br><br>
-
-      <i>- Ride On lyrics</i><br>
-    </p>
-
-    <p class="margin-bottom-40">
-      <span>
-        Bassist Paul Gerald DeLisle described "Ride On" as a continuation of the band's 2001 feel-good hit "Pacific Coast Party," stating, "We wrote it as a continuation of our 2001 hit single, 'Pacific Coast Party,' with a similar good-vibe feel. It's a very Smash Mouth-California style of rock/disco custom song made just for summer, a respectful and loving homage to Pablo Cruise." Smash Mouth also shared a sample with us right away, and we all loved it. This adventurous rock song is perfect for Urtopia ebike. Ride Urtopia, ride on to anywhere you want to!
-      </span>
-    </p>
-
-    <p class="margin-bottom-40">
-      <span>
-        Does this summer riding song touch you and make you want to add it to your playlist? Do you want to rediscover the joy of riding? Urtopia is also preparing a BIG Sale for Memorial Day. Urtopia's flagship Carbon 1 Pro will enjoy a $500 discount for a limited time. This lightweight gravel e-bike delivers exceptional performance and style, bringing back the joy of riding for you this summer. And don't forget, Urtopia ebikes will appear in the music video for "Ride On" as Smash Mouth's official ebike, so stay tuned!
-      </span>
-    </p>
-    <div class="flex flex-center margin-top-40 margin-bottom-60">
-      <a class="my-button my-button-origin" href="/products/urtopia-carbon-1-pro-ebike" target="_blank">Order Now</a>
-    </div>
-  </section>
-</article>
+    <div class="my-button my-button-origin {% unless product.available %}disabled{% endunless %}">Add To Cart</div>
+  </div>
+</div>
 
 <script>
-  window.addEventListener("scroll", throttle(() => {
-    $('article .fade').each((i, item) => {
-      let { top } = item.getBoundingClientRect();
-        let s = window.innerHeight - top;
-        if (s > 0) {
-          item.classList.add("fade-in-show")
+  console.log(JSON.parse(JSON.stringify({{ all_products["battery-carbon-1-pro"] | json }})))
+
+  new Swiper(".product .fuckyou .swiperrrr", {
+      navigation: {
+        nextEl: ".product .fuckyou .swiper-button-next",
+        prevEl: ".product .fuckyou .swiper-button-prev",
+      },
+      pagination: {el:'.product .fuckyou .swiper-pagination'},
+    });
+</script>
+
+<script>
+  let adding = false
+  $('.product-panel .my-button:not(.disabled)').on('click', () => {
+    !adding && (async () => {
+
+      adding = true
+      const cart = document.querySelector("cart-notification") || document.querySelector("cart-drawer")
+      $('.product-panel .my-button').text('Adding...')
+      const quantity = Number($('.product input[type=number]').val()) || 1
+
+      try {
+              const result = await fetch("/cart/add.js", {
+                method: "POST",
+                body: JSON.stringify({
+                  items: [
+                    { 
+                      id: $('.product-panel').attr('variaint-id'),
+                      quantity: Math.max(1, Math.min(10, quantity))
+                    }
+                  ],
+                  sections: cart.getSectionsToRender().map((section) => section.id).join(",")
+                }),
+                headers: {
+                  "Content-Type": "application/json",
+                },
+              }).then((res) => res.json())
+
+              result.key = ""
+              cart.classList.contains('is-empty') && cart.classList.remove('is-empty');
+              cart.renderContents(result)
+
+
+            console.log(result)
+
+      } catch (error) {
+
+      } finally {
+        adding = false
+        $('.product-panel .my-button').text('Add To Cart')
+      }
+
+
+    })()
+  })
+
+    jQuery('.quantity').each(function() {
+      var spinner = jQuery(this),
+        input = spinner.find('input[type="number"]'),
+        btnUp = spinner.find('.quantity-up'),
+        btnDown = spinner.find('.quantity-down'),
+        min = input.attr('min'),
+        max = input.attr('max');
+
+      btnUp.click(function() {
+        var oldValue = parseFloat(input.val());
+        if (oldValue >= max) {
+          var newVal = oldValue;
+        } else {
+          var newVal = oldValue + 1;
         }
-    })
-  }, 50))
-  $('article').append(`{% render 'blog-common-footer' %}`)
-  {% for article in blogs.blog.articles %}
-    {% if forloop.index <= 3 %}
-        console.log(JSON.parse(JSON.stringify({{ article | json }})))
-    {% endif %}
-  {% endfor %}
+        spinner.find("input").val(newVal);
+        spinner.find("input").trigger("change");
+      });
+
+      btnDown.click(function() {
+        var oldValue = parseFloat(input.val());
+        if (oldValue <= min) {
+          var newVal = oldValue;
+        } else {
+          var newVal = oldValue - 1;
+        }
+        spinner.find("input").val(newVal);
+        spinner.find("input").trigger("change");
+      });
+
+    });
+</script>
+
+<script>
+  // vairiants 
+  const variants = []
+  // options 树状结构
+  const options_tree = []
+  let current_variant = {}
+
+  
+  {% for variant in product.variants %}
+        if ({{ variant.available }}) {
+          temp = options_tree
+          {% for option in variant.options %}
+            if (!temp['{{ option }}']) {
+              temp['{{ option }}'] = {}
+            }
+        
+            temp = temp['{{ option }}']
+          {% endfor %}
+                
+          Object.assign(temp, {
+            id: '{{ variant.id }}',
+            title: '{{ variant.title }}',
+            price: '{{ variant.price }}',
+            compare_at_price: '{{ variant.compare_at_price }}',
+            inventory_quantity: '{{ variant.inventory_quantity }}',
+            available: {{ variant.available }}
+          })
+  
+          variants.push(temp)
+        }
+   {% endfor %}
+
+   function changeOption (variant) {
+        const find = variants.find(v => v.title === variant.title)
+
+        if (!find || !find.available) {
+            return
+        }
+
+        console.log('variant', variant)
+
+        $('.product-panel .options .option >div:not(.u17DemiBold_v2) > div').removeClass('active')
+        $(`.product-panel .options .option div[attribute="${find.title}"]`).addClass('active')
+        $('.product .product-panel').attr('variaint-id', variant.id)
+        $(`.product-panel .options .option .u17DemiBold_v2 .u17Light_v2`).text(variant.title)
+   };
+
+   $('.product-panel .options .option >div:not(.u17DemiBold_v2) > div').on('click', function () {
+        changeOption(variants.find(f => f.title === ($(this).attr('attribute'))))
+   });
+
+   (() => {
+        if (!variants.length) {
+            $('.product-panel .options').hide()
+            $('.product-panel .my-button').addClass('.disabled')
+
+            return
+        }
+
+        $('.product-panel .options .option > div:not(.u17DemiBold_v2) > div').each(function () {
+            if (!variants.find(f => f.title === ($(this).attr('attribute')))) {
+              $(this).hide()
+            }
+        })
+
+        changeOption(variants[0])
+   })();
 </script>

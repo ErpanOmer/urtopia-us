@@ -1,12 +1,12 @@
 {
   "sections": {
-    "testestest": {
-      "type": "testestest",
+    "1pro-battery": {
+      "type": "1pro-battery",
       "settings": {
       }
     }
   },
   "order": [
-    "testestest"
+    "1pro-battery"
   ]
 }
