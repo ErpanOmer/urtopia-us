@@ -1,203 +1,53 @@
-{{ 'accessories-default-template.scss.css' | asset_url | stylesheet_tag: preload: true }}
+{% render 'accessories-default-template' %}
 
-<div class="centeral-content product">
-  <div
-    class="fuckyou"
-    style="--swiper-navigation-color: #fff;--swiper-theme-color: #000;--swiper-pagination-color: #000;"
-  >
-    <div class="swiperrrr">
-      <div class="swiper-wrapper">
-        {% for image in product.images %}
-          <div class="swiper-slide">
-            {{ image | image_url: width: 750 | image_tag }}
-          </div>
-        {% endfor %}
+<div class="centeral-content details" style="--swiper-navigation-color: #fff;--swiper-theme-color: #000;--swiper-pagination-color: #000;">
+  <h2 class="u36Medium_v2">Details</h2>
+  <div class="content">
+    <div class="fuckyou">
+      <div class="details-swiperrrr">
+        <div class="swiper-wrapper">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/20211228untitled9592-1642486500396.jpg?v=1642486502"
+            class="swiper-slide"
+            alt=""
+          >
+          <img
+            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/20211228untitled9571-1642486542213.jpg?v=1642486546"
+            class="swiper-slide"
+            alt=""
+          >
+          <img
+            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/20210905urtopia0942-1642478387895.jpg?v=1642478389"
+            class="swiper-slide"
+            alt=""
+          >
+        </div>
       </div>
+      <div class="swiper-button-prev mobileHide"></div>
+      <div class="swiper-button-next mobileHide"></div>
+      <div class="swiper-pagination"></div>
     </div>
-    <div class="swiper-button-prev mobileHide"></div>
-    <div class="swiper-button-next mobileHide"></div>
-    <div class="swiper-pagination"></div>
-  </div>
-  <div class="product-panel" variaint-id="{{ product.variants.first.id }}">
-    <h1 class="u30DemiBold_v2 mb12">{{ product.title }}</h1>
-    <div class="u24DemiBold_v2 mb12">{{ product.price | money }}</div>
-    <div class="u17Light_v2 mb12">{{ product.content }}</div>
-    <div class="options mb12">
-          {% for option in product.options_with_values %}
-              <div class="option" option={{option.name}} position="{{ option.position }}">
-                <div class="u17DemiBold_v2 mb12">{{ option.name }} - <span class="u17Light_v2">{{ product.variants.first.title }}</span></div>
-                <div class="{{ option.name }} mb12">
-                  {% for value in option.values %}
-                    <div attribute="{{ value }}" class="{{ value }}"></div>                     
-                  {% endfor %}
-                </div>
-              </div>
-          {% endfor %}
-				</div>
-    <div class="quantity">
-      <div class="quantity-button quantity-down">-</div>
-      <input type="number" value="1" pattern="\d*" name="quantity" min="1" max="10"/>
-      <div class="quantity-button quantity-up">+</div>
-    </div>
-    <div class="my-button my-button-origin {% unless product.available %}disabled{% endunless %}">Add To Cart</div>
+    <ul class="u17Light_v2">
+      <li>360 Wh Samsung Li-ion removable</li>
+      <li>2.5-hr quick charge</li>
+      <li>Range: 25-62 miles (40–100 km)</li>
+      <li>Weight: 2.8 kg</li>
+      <li>Down tube battery replacement</li>
+      <li>2-year warranty</li>
+    </ul>
   </div>
 </div>
-
 <script>
-  console.log(JSON.parse(JSON.stringify({{ all_products["battery-carbon-1-pro"] | json }})))
-
-  new Swiper(".product .fuckyou .swiperrrr", {
-      navigation: {
-        nextEl: ".product .fuckyou .swiper-button-next",
-        prevEl: ".product .fuckyou .swiper-button-prev",
-      },
-      pagination: {el:'.product .fuckyou .swiper-pagination'},
-    });
-</script>
-
-<script>
-  let adding = false
-  $('.product-panel .my-button:not(.disabled)').on('click', () => {
-    !adding && (async () => {
-
-      adding = true
-      const cart = document.querySelector("cart-notification") || document.querySelector("cart-drawer")
-      $('.product-panel .my-button').text('Adding...')
-      const quantity = Number($('.product input[type=number]').val()) || 1
-
-      try {
-              const result = await fetch("/cart/add.js", {
-                method: "POST",
-                body: JSON.stringify({
-                  items: [
-                    { 
-                      id: $('.product-panel').attr('variaint-id'),
-                      quantity: Math.max(1, Math.min(10, quantity))
-                    }
-                  ],
-                  sections: cart.getSectionsToRender().map((section) => section.id).join(",")
-                }),
-                headers: {
-                  "Content-Type": "application/json",
-                },
-              }).then((res) => res.json())
-
-              result.key = ""
-              cart.classList.contains('is-empty') && cart.classList.remove('is-empty');
-              cart.renderContents(result)
+  new Swiper('.details .fuckyou .details-swiperrrr', {
+    navigation: {
+      nextEl: '.details .fuckyou .swiper-button-next',
+      prevEl: '.details .fuckyou .swiper-button-prev',
+    },
+    pagination: { el: '.details .fuckyou .swiper-pagination' },
+  });
 
 
-            console.log(result)
-
-      } catch (error) {
-
-      } finally {
-        adding = false
-        $('.product-panel .my-button').text('Add To Cart')
-      }
-
-
-    })()
+  document.addEventListener('onChangeOptions', e => {
+    window.fuckyou.slideTo(e.value.title === 'Matte Black' ? 4 : 5)
   })
-
-    jQuery('.quantity').each(function() {
-      var spinner = jQuery(this),
-        input = spinner.find('input[type="number"]'),
-        btnUp = spinner.find('.quantity-up'),
-        btnDown = spinner.find('.quantity-down'),
-        min = input.attr('min'),
-        max = input.attr('max');
-
-      btnUp.click(function() {
-        var oldValue = parseFloat(input.val());
-        if (oldValue >= max) {
-          var newVal = oldValue;
-        } else {
-          var newVal = oldValue + 1;
-        }
-        spinner.find("input").val(newVal);
-        spinner.find("input").trigger("change");
-      });
-
-      btnDown.click(function() {
-        var oldValue = parseFloat(input.val());
-        if (oldValue <= min) {
-          var newVal = oldValue;
-        } else {
-          var newVal = oldValue - 1;
-        }
-        spinner.find("input").val(newVal);
-        spinner.find("input").trigger("change");
-      });
-
-    });
-</script>
-
-<script>
-  // vairiants 
-  const variants = []
-  // options 树状结构
-  const options_tree = []
-  let current_variant = {}
-
-  
-  {% for variant in product.variants %}
-        if ({{ variant.available }}) {
-          temp = options_tree
-          {% for option in variant.options %}
-            if (!temp['{{ option }}']) {
-              temp['{{ option }}'] = {}
-            }
-        
-            temp = temp['{{ option }}']
-          {% endfor %}
-                
-          Object.assign(temp, {
-            id: '{{ variant.id }}',
-            title: '{{ variant.title }}',
-            price: '{{ variant.price }}',
-            compare_at_price: '{{ variant.compare_at_price }}',
-            inventory_quantity: '{{ variant.inventory_quantity }}',
-            available: {{ variant.available }}
-          })
-  
-          variants.push(temp)
-        }
-   {% endfor %}
-
-   function changeOption (variant) {
-        const find = variants.find(v => v.title === variant.title)
-
-        if (!find || !find.available) {
-            return
-        }
-
-        console.log('variant', variant)
-
-        $('.product-panel .options .option >div:not(.u17DemiBold_v2) > div').removeClass('active')
-        $(`.product-panel .options .option div[attribute="${find.title}"]`).addClass('active')
-        $('.product .product-panel').attr('variaint-id', variant.id)
-        $(`.product-panel .options .option .u17DemiBold_v2 .u17Light_v2`).text(variant.title)
-   };
-
-   $('.product-panel .options .option >div:not(.u17DemiBold_v2) > div').on('click', function () {
-        changeOption(variants.find(f => f.title === ($(this).attr('attribute'))))
-   });
-
-   (() => {
-        if (!variants.length) {
-            $('.product-panel .options').hide()
-            $('.product-panel .my-button').addClass('.disabled')
-
-            return
-        }
-
-        $('.product-panel .options .option > div:not(.u17DemiBold_v2) > div').each(function () {
-            if (!variants.find(f => f.title === ($(this).attr('attribute')))) {
-              $(this).hide()
-            }
-        })
-
-        changeOption(variants[0])
-   })();
 </script>
