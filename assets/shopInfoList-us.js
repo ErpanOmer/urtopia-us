@@ -1016,34 +1016,63 @@ const testRides = [
       },
     ]
   },
-  /*{
-    city: 'Washington DC',
+  {
+    city: 'Washington',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Buna_Bicycle_Works_Washington_dc.jpg?v=1665374977',
     stores: [
       {
-        name: "Buna Bicycle Works",
-        phone: "202-209-8563",
-        email: "guy@bunabicycleworks.com",
+        name: "Baby-Boomer Bikes",
+        phone: "564-233-5898",
+        email: "chazz@babyboomerbikes.com",
         timezone: "Washington, DC, USA (GMT-4)",
-        add: "4828 MacArthur Blvd NW, Washington, DC 20007",
+        add: "8300 28th Ct NE #500, Lacey, WA 98516",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Buna_Bicycle_Works_Washington_dc.jpg?v=1665374977",
-        testrideSpot: "Washington DC",
+        testrideSpot: "Lacey",
         testRideSize: "M/L",
         availableSizes: [
-          'Carbon 1 Size M/L',
+          'Carbon 1 Pro Size M',
+          'Chord X'
         ],
         businessHours: [
-          "08:00-15:00",
-          "08:00-18:00",
-          "08:00-18:00",
-          "08:00-18:00",
-          "08:00-18:00",
-          "08:00-18:00",
-          "08:00-15:00",
+          "",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "09:00-17:00",
         ],
       },
     ]
-  },*/
+  },
+  {
+    city: 'Maryland',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Buna_Bicycle_Works_Washington_dc.jpg?v=1665374977',
+    stores: [
+      {
+        name: "The Bicycle Place",
+        phone: "301-588-6160",
+        email: "thebicycleplace1@gmail.com",
+        timezone: "Washington, DC, USA (GMT-4)",
+        add: "11770 Parklawn Drive, Rockville, MD 20852",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Buna_Bicycle_Works_Washington_dc.jpg?v=1665374977",
+        testrideSpot: "Rockville",
+        testRideSize: "M/L",
+        availableSizes: [
+          'Carbon 1 Pro Size M',
+        ],
+        businessHours: [
+          "",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "12:00-17:00",
+        ],
+      },
+    ]
+  },
   {
     city: 'Florida',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/shutterstock_469708088.jpg?v=1697188978',
