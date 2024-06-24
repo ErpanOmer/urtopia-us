@@ -7,64 +7,88 @@
             height: calc(100vh - 106px);
             position: relative;
             overflow-x: hidden;
-            background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23857_2x_3fb8ddcc-a884-433a-b6e7-e1db79fd4d74.jpg?v=1716513926') center center/cover no-repeat;
+            background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240611-184745_2x_43ce7663-af2c-4b0d-8dc7-d18de6017e74.jpg?v=1718363258') center center/cover no-repeat;
             margin-bottom: 2vh;
             display: flex;
             align-items: center;
             justify-content: flex-start;
             flex-direction: column;
             padding-top: 8vh;
-            color: #fff;
+            color: #000;
         }
 
-      .esssst img {
-        height: 9vh;
-        width: auto;
+      .esssst .u48Medium_v2 {
+          margin: 1vh 0 2vh;
       }
 
-      .esssst .u17Light_v2 {
-        margin: 2.5vh 0 4vh;
-                opacity: 1;
-      }
-
-      .esssst .u30Light_v2 {
-        font-weight: 300;
-            font-size: 30px;
+      .esssst .u20Light_v2 {
+         margin-bottom: 3.5vh;
       }
 
         @media (max-width: 767px) {
             .esssst {
                 height: calc(100vh - 102px);
-                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_19074_2x_58e0b261-29d9-407c-aff0-ef442f0fe21c.jpg?v=1716514944');
+                background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240611-184745_2x_eb05cbec-9173-420c-9d4b-5e8fa6a4a0db.jpg?v=1718363465');
                 text-align: center;
                 padding: 12vw 8vw;
                 margin-bottom: 2.5vw;
             }
 
-          .esssst img {
-              height: auto;
-              max-width: 100%;
+          .esssst .u48Medium_v2 {
+                margin: 10px 0 15px;
+                  font-size: 24px;
             }
 
-        .esssst .u30Light_v2 {
-            font-size: 18px;
-                line-height: 1.25em;
-            margin-bottom: 1.5vw;
+           .esssst .u20Light_v2 {
+             margin-bottom: 8vw;
+             font-size: 15px;
           }
 
-          .esssst .u17Light_v2 {
-            margin: 6vw 0 10vw;
+          .esssst .u24Light_v2 {
+             font-size: 18px;
           }
         }
     </style>
+{% if settings.show_banner %}
+  <style>
+  .esssst {
+    background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_24126_2x_f4dc142d-efb1-4a73-ad8d-da321ecdc7a1.jpg?v=1718645506');
+        text-align: center;
+  }
 
-    <!-- <div class="esssst">
-        <h3 class="u30Light_v2">Memorial Day Special Song</h3>
-        <img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240524-093431.png?v=1716514486"/>
-      <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240524-093423.png?v=1716514486"/>
-        <h2 class="u17Light_v2">Listen up, Smash Mouth rocks out with ‘Ride On’ for Urtopia!</h2>
-        <a href="/blogs/blog/ride-on-to-anywhere-you-want-to" target="_blank" class="my-button">Learn more</a>
-    </div> -->
+  .esssst .u48Medium_v2 {
+      margin: 0 0 3vh 0;
+    }
+
+  @media (max-width: 767px) {
+    .esssst {
+      background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_24127_2x_a002137d-4783-4886-89cd-6b72fc9b4933.jpg?v=1718646205');
+      padding-top: 10vw;
+    }
+
+    .esssst .u48Medium_v2 {
+      font-size: 22px;
+      margin: 0 0 6vw 0;
+    }
+  }
+</style>
+
+<div class="esssst">
+  <h2 class="u48Medium_v2">Legendary artist<br> Meets Urtopia Innovation</h2>
+  <a class="my-button my-button-black" target="_blank" href="/blogs/blog/legendary-artist-meets-urtopia-innovation">Learn More</a>
+</div>
+  {% else %}
+  <div class="esssst">
+        <h3 class="u24Light_v2">Father’s Day Sale</h3>
+         <h2 class="u48Medium_v2">Motor start, Pure Magic!</h2>
+         <h3 class="u20Light_v2">Like Dad’s gentle push when you learned to ride a bike</h3>
+        <a href="/products/urtopia-carbon-1-pro-ebike" target="_blank" class="my-button my-button-black">Order Now</a>
+    </div>
+  
+  {% endif %}
+    
+
+    
 
 <div class="bannerrrr">
             <div class="swiper-wrapper">

@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "eurobike": {
+      "type": "eurobike",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "eurobike"
+  ]
+}

@@ -291,23 +291,23 @@ const global_config = {
             L: `Fit for 5’11’’~6’5’’ Inseam 33’’`
         },
         product_images: {
-            'Matte Black': [
-                'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_BL_1.png?v=1703570388',
-                'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_BL_2.png?v=1703570387',
-                'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_BL_3.png?v=1703570387',
-                'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240131-094114.jpg?v=1706665340',
-                'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_BL_5.png?v=1703570387',
-                'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_BL_6.png?v=1703570387'
-            ],
-            'Creme': [
-                'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_wh_1.png?v=1703570387',
-                'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_wh_2.png?v=1703570387',
-                'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_wh_3.png?v=1703570387',
-                'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240131-094123.jpg?v=1706665341',
-                'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_wh_5.png?v=1703570387',
-                'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_wh_6.png?v=1703570387'
-            ],
-            commonSwiper: [
+          'Matte Black': [
+            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18877.jpg?v=1718438830',
+            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18873.jpg?v=1718438829',
+            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18869.jpg?v=1718438828',
+            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18861.jpg?v=1718439689',
+            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18857.jpg?v=1718439689',
+            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18859.jpg?v=1718439689'
+          ],
+          'Creme': [
+            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18878.jpg?v=1718438828',
+            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18874.jpg?v=1718438829',
+            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18870.jpg?v=1718438829',
+            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18862.jpg?v=1718439689',
+            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18858.jpg?v=1718439690',
+            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18862.jpg?v=1718439689'
+           ],
+          commonSwiper: [
             'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240131-094148.jpg?v=1706665341',
             'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240117-180528.png?v=1705485964',
             'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231108-untitled-6089.jpg?v=1703570574',
@@ -472,18 +472,6 @@ const global_config = {
         // key:    vairant_id
         // value:  发货时间文案
         ebike_delivery_time: {
-          //白 M
-          44288621347064:'Free shipping within 5 business days',
-          //白 L
-          44288621379832:'Free shipping within 5 business days',
-          //黑色 M
-          44288621281528:'Free shipping within 5 business days',
-          //黑色 L
-          44288621314296:'Free shipping within 5 business days',
-          //白s
-          44288609583352:'Ships between <span>June 20-30, 2024 </span>from L.A. warehouse.',
-          //黑s
-          44288609550584:'Ships between <span>June 20-30, 2024 </span>from L.A. warehouse.',
         }
     }
 }

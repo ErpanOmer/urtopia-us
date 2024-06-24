@@ -254,6 +254,27 @@ const testRides = [
         ],
       },
       {
+        name: 'InnoStudio',
+        phone: '857-320-5186',
+        email: 'baronwang@longhamtec.com',
+        timezone: "Newport Beach, CA, USA (GMT-8)",
+        add: "9621 Brighton Way Beverly Hills CA, 90210",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Icar_Lifestyle.jpg?v=1686878451",
+        testrideSpot: "Beverly Hills",
+        availableSizes: [
+          'Carbon 1 Pro Size M',
+        ],
+        businessHours: [
+          "",
+          "11:00-17:00",
+          "11:00-17:00",
+          "11:00-17:00",
+          "11:00-17:00",
+          "11:00-17:00",
+          "",
+        ],
+      },
+      {
         name: 'E-bike Premier',
         phone: '818-478-5262',
         email: 'ebikes@boostmore.com',
@@ -723,27 +744,6 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Buna_Bicycle_Works_Washington_dc.jpg?v=1665374977',
     stores: [
       {
-        name: "Jersey City Bicycle Co.",
-        phone: "551-229-7894",
-        email: "jcbcscorp@gmail.com",
-        timezone: "New Jersey, USA (GMT-4)",
-        add: "231 Pavonia Ave, Jersey City, NJ 07302",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Jersey_City_Bicycles_Co.jpg?v=1686878451",
-        testrideSpot: "New Jersey",
-        availableSizes: [
-          'Carbon 1 Size M',
-        ],
-        businessHours: [
-          "",
-          "",
-          "12:00-15:00",
-          "12:00-15:00",
-          "12:00-15:00",
-          "12:00-15:00",
-          "",
-        ],
-      },
-      {
         name: "Tailor Fit Cycles",
         phone: "(800) 401-0693",
         email: "info@tailorfitcycles.com",
@@ -1018,7 +1018,7 @@ const testRides = [
   },
   {
     city: 'Washington',
-    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Buna_Bicycle_Works_Washington_dc.jpg?v=1665374977',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_3_c6001537-5c6a-4915-8ed1-9f21dfc55d76.png?v=1718085498',
     stores: [
       {
         name: "Baby-Boomer Bikes",
@@ -1026,7 +1026,7 @@ const testRides = [
         email: "chazz@babyboomerbikes.com",
         timezone: "Washington, DC, USA (GMT-4)",
         add: "8300 28th Ct NE #500, Lacey, WA 98516",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Buna_Bicycle_Works_Washington_dc.jpg?v=1665374977",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_3_c6001537-5c6a-4915-8ed1-9f21dfc55d76.png?v=1718085498",
         testrideSpot: "Lacey",
         testRideSize: "M/L",
         availableSizes: [
@@ -1047,7 +1047,7 @@ const testRides = [
   },
   {
     city: 'Maryland',
-    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Buna_Bicycle_Works_Washington_dc.jpg?v=1665374977',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_4_0d6b1e4d-def2-4565-9aba-0d2241618ead.png?v=1718085649',
     stores: [
       {
         name: "The Bicycle Place",
@@ -1055,7 +1055,7 @@ const testRides = [
         email: "thebicycleplace1@gmail.com",
         timezone: "Washington, DC, USA (GMT-4)",
         add: "11770 Parklawn Drive, Rockville, MD 20852",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Buna_Bicycle_Works_Washington_dc.jpg?v=1665374977",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_4_0d6b1e4d-def2-4565-9aba-0d2241618ead.png?v=1718085649",
         testrideSpot: "Rockville",
         testRideSize: "M/L",
         availableSizes: [
@@ -1121,11 +1121,11 @@ const testRides = [
       },
       {
         name: "ELECRUISER ELECTRIC BIKES",
-        phone: "954-744-0067",
+        phone: "561-680-2454",
         email: "info@elecruiser.com",
         timezone: "New Port Richey, FL, USA (GMT-4)",
         add: "1954 NE 5th Avenue 5th Avenue Shops, Boca Raton, Florida 33431",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-E-Cycle_Adventures_fl.jpg?v=1665374977",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_6_13c365c1-87a3-41d3-8879-b6dd7d62a503.png?v=1718329085",
         testrideSpot: "Boca Raton",
         availableSizes: [
           'Carbon 1 Pro Size M/L',
@@ -1436,27 +1436,6 @@ const testRides = [
           "9:00-15:00",
         ],
       },
-      {
-        name: "Paradise Life E-bikes",
-        phone: "801-503-5542",
-        email: "angela.hill176@gmail.com",
-        timezone: "Utah, USA (GMT-7)",
-        add: "3269 East 3300 South, Millcreek, Utah 84109",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Paradise_Life_E-bikes.jpg?v=1700672077",
-        testrideSpot: "Utah",
-        availableSizes: [
-          'Carbon 1s Size M',
-        ],
-        businessHours: [
-          "10:00-15:00",
-          "10:00-18:00",
-          "",
-          "",
-          "10:00-18:00",
-          "10:00-18:00",
-          "10:00-18:00",
-        ],
-      },
     ]
   },
   {
@@ -1613,6 +1592,27 @@ const testRides = [
         ],
         isPartner: true,
       },
+      {
+        name: "EForce Bikes",
+        phone: "(720) 724-9777",
+        email: "info@eforcebikes.com",
+        timezone: "Colorado, USA (GMT-7)",
+        add: "3871 Tennyson St, Denver, CO 80212",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/co.webp?v=1695291345",
+        testrideSpot: "Denver",
+        availableSizes: [
+          'Carbon 1 Pro Size M/L',
+        ],
+        businessHours: [
+          "13:00-17:00",
+          "",
+          "12:00-17:00",
+          "11:00-17:00",
+          "11:00-17:00",
+          "11:00-17:00",
+          "11:00-17:00",
+        ],
+      },
     ]
   },
   {
@@ -1726,7 +1726,7 @@ const testRides = [
         email: "Gilberto.medina@seasideecobikes.com",
         timezone: "Delaware, USA (GMT-7)",
         add: "16779 Coastal Highway unit 1, Lewes DE 19958",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Milton_Delaware.jpg?v=1702122567",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_5_8de340fe-da72-48e6-a73c-772a830b0a27.png?v=1718328789",
         testrideSpot: "Lewes",
         availableSizes: [
           'Carbon 1 Pro Size M',

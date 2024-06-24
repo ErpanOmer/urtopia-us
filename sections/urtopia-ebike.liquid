@@ -13,17 +13,19 @@
 
 <style>
   .banner {
-        background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23858_2x_334fe6d1-dd56-413b-bcd8-3b7329881aee.jpg?v=1716518422');
+        background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2_2x_68558c1b-68d6-4367-8284-65db94252399.jpg?v=1718364178');
   }
 
       @media (max-width: 767px) {
-        .banner {
-            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/fada_2x_5adf04ce-98f1-42c5-aed1-8121d567e861.jpg?v=1716518415');
+         .banner {
+            background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240611-184745_2x_c49b5a80-1a2f-4bef-8457-4f612d676d76.jpg?v=1718364267');
+
         }
 
         .banner .centeral-content {
             justify-content: flex-start;
             padding-top: 20px;
+                    color: #000;
         }
     }
 </style>
@@ -31,7 +33,8 @@
 <div class="banner">
     <div class="centeral-content">
         <div class="u48DemiBold_v2">{{ settings.sale_name }}</div>
-        <div class="xxxxxxxx">
+        {% if false %}
+            <div class="xxxxxxxx">
             <!--<div class="u17Medium_v2">
                 <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/vat_2x_73621f8d-ae55-4d81-ab06-78f559ac1d5e.png?v=1698736324" alt="">
                 <span>VAT</span>
@@ -63,6 +66,41 @@
                 <span>Service</span>
             </div>
         </div>
+        {% else %}
+        <div class="xxxxxxxx">
+            <div class="u17Medium_v2">
+                <img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_17959_2x_c8719cb1-7053-4b89-81b2-7a6de481016c.png?v=1698736330" alt="">
+                <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18914_2x_7f2b9aff-6657-43b2-86a1-72de18ae1886.png?v=1698837287" alt="">
+                <span>14-Day</span>
+                <span>Returns</span>
+            </div>
+            <div class="u17Medium_v2">
+                <img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_17958_2x_e50155e3-9acf-40a8-a806-438b266bfc57.png?v=1698736335" alt="">
+                <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18915_2x_f1484da6-2909-4ba3-8c93-6a991c07d6fe.png?v=1698837294" alt="">
+                <span>2-Year</span>
+                <span>Warranty</span>
+            </div>
+            <div class="u17Medium_v2">
+                <img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18916_2x_30f00db4-223f-411c-8523-7ced3de1c1dd.png?v=1698736341" alt="">
+                <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18917_2x_aac5e357-f5cd-46c7-9943-f45c0cc9a227.png?v=1698837301" alt="">
+                <span>Free</span>
+                <span>Shipping</span>
+            </div>
+            <div class="u17Medium_v2">
+                <img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/credit-card_2x_5e83a5a5-e4a7-45b9-8370-7ff18aa7619d.png?v=1698736348" alt="">
+                <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/credit-card_2x_525d2b3e-d6a9-49e6-aa6f-9c916854cce2.png?v=1698837308" alt="">
+                <span>Flexible</span>
+                <span>Payment</span>
+            </div>
+            <div class="u17Medium_v2">
+                <img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/placeholder_2x_720784c2-b144-4dfc-aa61-607f5ac06385.png?v=1698736357" alt="">
+                <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/placeholder_2x_2da9c5cc-c953-470b-9522-245afe75532b.png?v=1698837314" alt="">
+                <span>Local</span>
+                <span>Service</span>
+            </div>
+        </div>
+        {% endif %}
+        
     </div>
 </div>
 <div class="centeral-content ebike-products">

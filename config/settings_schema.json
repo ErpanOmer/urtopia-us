@@ -88,9 +88,9 @@
       },
       {
         "type": "checkbox",
-        "id": "show_easter_sale",
-        "default": false,
-        "label": "显示隐藏复活节活动"
+        "id": "show_banner",
+        "default": true,
+        "label": "显示隐藏艺术家banner"
       }
     ]
   },
