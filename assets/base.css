@@ -2947,9 +2947,9 @@ margin-top:-20px!important;
 
 
 .product .sale-taggggggg {
-  background-color: var(--sale-color3);
+  background-color: #00548F;
   color: #fff;
-  padding: 2% 5% 2% 5%;
+  padding: 2% 0 2% 5%;
   border-radius: 18px;
   width: fit-content;
   height: 35px;
@@ -2961,13 +2961,13 @@ margin-top:-20px!important;
   margin-top: 9px;
 }
 
-/* .product .sale-taggggggg::after {
+.product .sale-taggggggg::after {
   display: block;
   content: "";
-  background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_23886_2x_02318e7e-cffd-40f6-a8ee-f92eec9de2da.png?v=1718363744') center right/cover no-repeat;
-  width: 60px;
+  background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_24132_2x_5e3d7a21-258b-4b1c-95a3-93afaa428530.png?v=1719212938') center right/cover no-repeat;
+  width: 75px;
   height: 35px;
-} */
+}
 
 
 .visuallyhidden {
