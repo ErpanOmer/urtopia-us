@@ -210,27 +210,27 @@ const testRides = [
           "09:00-18:00"
         ],
       },*/
-      /*{
-        name: 'Groove E-Bikes',
-        phone: '949-274-7944',
-        email: 'bob@grooveebikes.com',
+      {
+        name: 'The Electric Bike Shop',
+        phone: '(916) 594-7945',
+        email: 'mike@theelectricbikeshop.org',
         timezone: "Newport Beach, CA, USA (GMT-8)",
-        add: "3740 Campus Drive, Suite A, Newport Beach, 92660",
+        add: "5704 Broadway, Sacramento, CA 95820",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Groove_E-Bikes_3.jpg?v=1686878451",
-        testrideSpot: "California",
+        testrideSpot: "Sacramento",
         availableSizes: [
-          'Carbon 1 Size M',
+          'Carbon 1 Pro Size M',
         ],
         businessHours: [
           "",
-          "",
-          "11:00-17:00",
-          "11:00-17:00",
-          "11:00-17:00",
-          "11:00-17:00",
-          "11:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-18:00",
         ],
-      },*/
+      },
       {
         name: 'Icar Lifestyle',
         phone: '310-926-6999',
@@ -819,27 +819,27 @@ const testRides = [
     city: 'Pennsylvania',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Buna_Bicycle_Works_Washington_dc.jpg?v=1665374977',
     stores: [
-      /*{
-        name: "Bell's Bike Shop",
-        phone: "215-857-5793",
-        email: "steve@bellsbikeshop.com",
+      {
+        name: "AST Bikes",
+        phone: "570-994-6431",
+        email: "alarmsecurtec@gmail.com",
         timezone: "Pennsylvania, USA (GMT-4)",
-        add: "1320 E Passyunk Ave, Philadelphia, PA 19147",
+        add: "5224 Milford Road, East Stroudsburg, Pennsylvania 18302",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Bell_s_Bike_Shop.jpg?v=1686878451",
-        testrideSpot: "Pennsylvania",
+        testrideSpot: "East Stroudsburg",
         availableSizes: [
-          'Carbon 1 Size M',
+          'Carbon 1 Pro Size M',
         ],
         businessHours: [
-          "",
-          "",
-          "10:00-17:00",
-          "10:00-17:00",
-          "10:00-17:00",
           "10:00-18:00",
-          "10:00-17:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
         ],
-      },*/
+      },
       {
         name: "Drexel Hill Cyclery",
         phone: "610-626-4477",
@@ -1041,6 +1041,35 @@ const testRides = [
           "10:00-18:00",
           "10:00-18:00",
           "09:00-17:00",
+        ],
+      },
+    ]
+  },
+  {
+    city: 'Louisiana',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_4_0d6b1e4d-def2-4565-9aba-0d2241618ead.png?v=1718085649',
+    stores: [
+      {
+        name: "EZ-e-Bikes",
+        phone: "337-385-2146",
+        email: "contact@ez-e-bikes.com",
+        timezone: "Washington, DC, USA (GMT-4)",
+        add: "1506 Veterans Memorial Dr, Abbeville, Louisiana 70510",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_4_0d6b1e4d-def2-4565-9aba-0d2241618ead.png?v=1718085649",
+        testrideSpot: "Louisiana",
+        testRideSize: "M/L",
+        availableSizes: [
+          'Carbon 1 Pro Size M',
+          'Chord X'
+        ],
+        businessHours: [
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
         ],
       },
     ]
@@ -1521,6 +1550,29 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Jason_Mathews.jpg?v=1692617852',
     stores: [
       {
+        name: "Windy City Wheelers",
+        phone: "954-242-7461",
+        email: "info@windycitywheelers.com",
+        timezone: "Illinois, USA (GMT-7)",
+        add: "4242 N Ridge Ave, Arlington Heights, IL 60004",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Jason_Mathews.jpg?v=1692617852",
+        testrideSpot: "Chicago",
+        availableSizes: [
+          'Carbon 1 Pro Size M',
+          'Chord X'
+        ],
+        noBook: 'Call to setup an appointment',
+        businessHours: [
+          "",
+          "10:00-17:00",
+          "",
+          "",
+          "",
+          "10:00-17:00",
+          "10:00-17:00",
+        ],
+      },
+      {
         name: "Jason Mathews",
         phone: "708-493-4896",
         email: "akafenoy@gmail.com",
@@ -1548,6 +1600,27 @@ const testRides = [
     city: 'Colorado',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/co.webp?v=1695291345',
     stores: [
+      {
+        name: "Colorado EBikes of Glenwood Springs",
+        phone: "(970) 948-1292",
+        email: "coebikesgws@gmail.com",
+        timezone: "Colorado, USA (GMT-7)",
+        add: "1301 Grand Ave Ste A, Glenwood Springs, Colorado 81601",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/E-Bike_Sales_and_Rental.png?v=1695291344",
+        testrideSpot: "Glenwood",
+        availableSizes: [
+          'Carbon 1 Pro Size M/L',
+        ],
+        businessHours: [
+          "",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "",
+        ],
+      },
       {
         name: "Ebike Tours & Rental",
         phone: "719-246-2675",
