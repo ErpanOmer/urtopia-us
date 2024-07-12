@@ -42,6 +42,25 @@
         .carousel .jdgm-carousel--focused-theme .jdgm-carousel-item__review-rating {
             text-align: center;
         }
+
+      #MainContent .jdgm-carousel--focused-theme .jdgm-carousel-item__left-column {
+        padding: 0 12px ;
+        width: 100%;
+        display: block;
+        margin-bottom: 8px;
+    }
+      
+          #MainContent .jdgm-carousel--focused-theme .jdgm-carousel-item__review-wrapper,
+          #MainContent .jdgm-carousel--focused-theme .jdgm-carousel-item__image-wrapper {
+                height: 40vw;
+        width: 100%;
+        display: block;
+    }
+
+          #MainContent .jdgm-carousel--focused-theme .jdgm-carousel-item__product-image {
+        height: 100%;
+        width: auto;
+    }
     }
 </style>
 
@@ -713,6 +732,10 @@
             userAgent: navigator.userAgent,
             userAgentData: navigator.userAgentData,
         })
+
+      setTimeout(() => {
+         window.STOREPOINT.resize()
+      }, 100)
     }
 
     function observerItems(mutationsList) {

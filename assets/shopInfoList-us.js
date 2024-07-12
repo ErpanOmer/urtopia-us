@@ -189,27 +189,27 @@ const testRides = [
           "10:00-18:00"
         ],
       },*/
-      /*{
-        name: 'Velocipede Cyclery',
-        phone: '415-796-3465',
-        email: 'bikeshoptina@gmail.com',
+      {
+        name: 'California Computer',
+        phone: '323-233-5300',
+        email: 'sales@CaliforniaComputer.com',
         timezone: "Fremont, California, USA (GMT-7)",
-        add: "2405 3rd street San Francisco, CA 94107",
+        add: "9006 W. Pico Blvd, Los Angeles, CA 90035",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Velocipede_Cyclery.jpg?v=1686878451",
         testrideSpot: "California",
         availableSizes: [
-          'Carbon 1 Size M'
+          'Carbon 1 Pro Size M'
         ],
         businessHours: [
-          "10:00-17:00",
-          "10:00-19:00",
-          "10:00-19:00",
-          "10:00-19:00",
+          "10:00-14:00",
           "",
-          "10:00-19:00",
-          "09:00-18:00"
+          "09:00-17:00",
+          "09:00-17:00",
+          "09:00-17:00",
+          "",
+          "09:00-14:00",
         ],
-      },*/
+      },
       {
         name: 'The Electric Bike Shop',
         phone: '(916) 594-7945',
@@ -568,6 +568,7 @@ const testRides = [
         testrideSpot: "California",
         availableSizes: [
           'Carbon 1 Size M',
+          'Carbon 1 Pro Size M',
         ],
         businessHours: [
           "10:00-16:00",
@@ -820,6 +821,27 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Buna_Bicycle_Works_Washington_dc.jpg?v=1665374977',
     stores: [
       {
+        name: `Bell's Bike Shop`,
+        phone: "215-857-5793",
+        email: "steve@bellsbikeshop.com",
+        timezone: "Pennsylvania, USA (GMT-4)",
+        add: "1320 E Passyunk Ave, Philadelphia, PA 19147",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Bell_s_Bike_Shop.jpg?v=1686878451",
+        testrideSpot: "Philadelphia",
+        availableSizes: [
+          'Carbon 1 Pro Size M',
+        ],
+        businessHours: [
+          "",
+          "",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-18:00",
+          "10:00-18:00",
+        ],
+      },
+      {
         name: "AST Bikes",
         phone: "570-994-6431",
         email: "alarmsecurtec@gmail.com",
@@ -850,6 +872,8 @@ const testRides = [
         testrideSpot: "Pennsylvania",
         availableSizes: [
           'Carbon 1 Size M',
+          'Carbon 1 Pro Size M',
+          'Chord X'
         ],
         businessHours: [
           "",
@@ -933,7 +957,9 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Muncy_Ritz.jpg?v=1713857360",
         testrideSpot: "Muncy",
         availableSizes: [
-          'Carbon 1 Pro Size M',
+          'Carbon 1 Pro Size M/L',
+          'Chord',
+          'Chord X'
         ],
         businessHours: [
           "",
@@ -1106,6 +1132,27 @@ const testRides = [
     city: 'Florida',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/shutterstock_469708088.jpg?v=1697188978',
     stores: [
+      {
+        name: "Bedir Bikes",
+        phone: "+1 727-819-0627",
+        email: "bediruna@gmail.com",
+        timezone: "New Port Richey, FL, USA (GMT-4)",
+        add: "223 Pelican Ct, Kissimmee, FL 34743",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-E-Cycle_Adventures_fl.jpg?v=1665374977",
+        testrideSpot: "Kissimmee",
+        availableSizes: [
+          'Chord',
+        ],
+        businessHours: [
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+        ],
+      },
       {
         name: "E-Cycle Adventures",
         phone: "+1 727-819-0627",
@@ -1311,6 +1358,27 @@ const testRides = [
     city: 'Texas',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Playtri_dallas.jpg?v=1665374977',
     stores: [
+      {
+        name: "Bike Mart",
+        phone: "972-231-3993",
+        email: "Mhinton@bikemart.com",
+        timezone: "Dallas, TX, USA (GMT-5)",
+        add: "1451 W Campbell Rd, Richardson, TX 75080, USA",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Bay_Area_Cycling_tx.jpg?v=1686878451",
+        testrideSpot: "Texas",
+        availableSizes: [
+          'Carbon 1 Pro Size S',
+        ],
+        businessHours: [
+          "12:00-17:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "09:00-17:00",
+        ],
+      },
       {
         name: "Bay Area Cycling",
         phone: "713-472-6651",
@@ -1601,6 +1669,27 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/co.webp?v=1695291345',
     stores: [
       {
+        name: "Boost Ebikes",
+        phone: "(303) 503-4748",
+        email: "Info@boostebikes.com",
+        timezone: "Colorado, USA (GMT-7)",
+        add: "1500 W Littleton Blvd #110-E, Littleton, CO 80120",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/E-Bike_Sales_and_Rental.png?v=1695291344",
+        testrideSpot: "Littleton",
+        availableSizes: [
+          'Carbon 1 Pro Size S/M/L',
+        ],
+        businessHours: [
+          "",
+          "",
+          "10:00-16:00",
+          "10:00-16:00",
+          "10:00-16:00",
+          "10:00-16:00",
+          "10:00-16:00",
+        ],
+      },
+      {
         name: "Colorado EBikes of Glenwood Springs",
         phone: "(970) 948-1292",
         email: "coebikesgws@gmail.com",
@@ -1813,8 +1902,7 @@ const testRides = [
           "11:00-17:00",
           "10:00-18:00",
           "10:00-18:00",
-        ],
-        isPartner: true,
+        ]
       },
     ]
   },
@@ -1859,8 +1947,7 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Strictly_Ebikes.jpg?v=1709208572",
         testrideSpot: "Virginia",
         availableSizes: [
-          'Carbon 1 Pro Size M/L',
-          'Carbon 1s Size M',
+          'Carbon 1 Pro Size S/M/L',
           'Chord',
         ],
         businessHours: [
@@ -1993,7 +2080,7 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Kingston_Ontario_Canada_-_Laslovarga__28.jpg?v=1712714811",
         testrideSpot: "Kingston",
         availableSizes: [
-          'Carbon 1 Pro Size M',
+          'Carbon 1 Pro Size S/M/L',
         ],
         businessHours: [
           "10:00-17:00",
@@ -2003,6 +2090,33 @@ const testRides = [
           "10:00-17:00",
           "10:00-17:00",
           "10:00-17:00",
+        ],
+      },
+    ]
+  },
+  {
+    city: 'Tennessee',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Urban_Electrica.jpg?v=1710818582',
+    stores: [
+      {
+        name: "River Bend Cycles",
+        phone: "615-715-2392",
+        email: "riverbendrenewalllc@gmail.com",
+        timezone: "Tennessee, USA (GMT-7)",
+        add: "576 us 70, Pegram, TN 37143",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Kingston_Ontario_Canada_-_Laslovarga__28.jpg?v=1712714811",
+        testrideSpot: "Pegram",
+        availableSizes: [
+          'Carbon 1 Pro Size M',
+        ],
+        businessHours: [
+          "",
+          "09:00-18:00",
+          "09:00-18:00",
+          "09:00-18:00",
+          "09:00-18:00",
+          "09:00-18:00",
+          "09:00-18:00",
         ],
       },
     ]

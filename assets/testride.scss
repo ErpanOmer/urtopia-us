@@ -667,11 +667,6 @@
                   .mapboxgl-canvas-container {
                     height: 100%;
                     min-height: 100%;
-
-                    .mapboxgl-canvas {
-                      height: 100% !important;
-                      min-height: 100% !important;
-                    }
                   }
 
                     .map-popup {
@@ -1715,3 +1710,4 @@
         }
     }
 }
+
