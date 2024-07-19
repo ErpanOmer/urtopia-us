@@ -75,7 +75,14 @@ const bike_sizes = [
     fit: 'Fit for 5’11’’~6’5’’',
     size: 'L',
     img: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_BL_1.png?v=1703570388&width=430'
-  }
+  },
+  {
+    id: 10,
+    name: 'Carbon 1 Pro',
+    fit: ` Fit for 5’3’’~5’9’’`,
+    size: 'S',
+    img: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_BL_1.png?v=1703570388&width=430'
+  },
 ]
 
 function splitTimeFormat(item = '') {

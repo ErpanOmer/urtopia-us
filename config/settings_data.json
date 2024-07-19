@@ -1,16 +1,7 @@
-/*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
 {
   "current": {
-    "sale_name": "Prime Day Sale",
-    "chord_sale_name": "Prime Day Sale",
+    "sale_name": "Extended Prime Day Sale",
+    "chord_sale_name": "Extended Prime Day Sale",
     "hide_sale_countdown": false,
     "show_choose_different_size": false,
     "colors_solid_button_labels": "#ffffff",

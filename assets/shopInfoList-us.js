@@ -168,27 +168,92 @@ const testRides = [
     city: 'California',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/what-is-california-known-for-the-golden-gate-bridge-hero.webp?v=1697020664',
     stores: [
-      /*{
-        name: 'Bicycle Garage Fremont',
-        phone: '510-795-9622',
-        email: 'bikeshoptina@gmail.com',
+      {
+        name: 'American Canyon Bike Shop',
+        phone: '707-334-8122',
+        email: 'AmericanCanyonBikeShop@gmail.com',
         timezone: "Fremont, California, USA (GMT-7)",
-        add: "5006 Mowry Avenue, Fremont, CA 94538",
+        add: "115 Klamath Ct, American Canyon, CA 94503",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Bicycle_Garage_Fremont_ca_fremont.jpg?v=1686878451",
+        testrideSpot: "California",
+        noBook: true,
+        availableSizes: [
+          'Carbon 1 Pro Size M'
+        ],
+        businessHours: [
+           "10:00-16:00",
+           "10:00-16:00",
+           "10:00-16:00",
+            "",
+            "",
+            "",
+             "13:00-16:00",
+        ],
+      },
+      {
+        name: 'Davis Cyclery',
+        phone: '(530) 746-2380',
+        email: 'admin@562ebikes.com',
+        timezone: "Fremont, California, USA (GMT-7)",
+        add: "247 F St, Davis, CA 95616",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Bicycle_Garage_Fremont_ca_fremont.jpg?v=1686878451",
+        testrideSpot: "California",
+        noBook: true,
+        availableSizes: [
+          'Carbon 1 Pro Size M'
+        ],
+        businessHours: [
+           "",
+           "09:00-18:00",
+           "09:00-18:00",
+            "09:00-18:00",
+            "09:00-18:00",
+            "09:00-18:00",
+            "09:00-17:00",
+        ],
+      },
+      {
+        name: '562 Ebikes Electric Bicycle',
+        phone: '+1 562-784-4370',
+        email: 'admin@562ebikes.com',
+        timezone: "Fremont, California, USA (GMT-7)",
+        add: "9345 Alondra Boulevard Bellflower, CA 90706",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Bicycle_Garage_Fremont_ca_fremont.jpg?v=1686878451",
         testrideSpot: "California",
         availableSizes: [
-          'Carbon 1 Size M'
+          'Carbon 1 Pro Size M'
         ],
         businessHours: [
-          "11:00-17:00",
-          "10:00-19:00",
-          "",
-          "10:00-19:00",
-          "10:00-19:00",
-          "10:00-19:00",
-          "10:00-18:00"
+           "10:00-17:00",
+           "10:00-18:00",
+          "10:00-18:00",
+           "10:00-18:00",
+           "10:00-18:00",
+           "10:00-18:00",
+           "10:00-17:00",
         ],
-      },*/
+      },
+      {
+        name: 'Fisher E Bikes',
+        phone: '805-481-1959',
+        email: 'Fisherrealtors@gmail.com',
+        timezone: "Fremont, California, USA (GMT-7)",
+        add: "1758 W Grand Ave Grover Beach CA, 93433 United States ",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Bicycle_Garage_Fremont_ca_fremont.jpg?v=1686878451",
+        testrideSpot: "California",
+        availableSizes: [
+          'Carbon 1 Pro Size M'
+        ],
+        businessHours: [
+          "",
+          "",
+          "10:00-16:00",
+          "10:00-16:00",
+          "10:00-16:00",
+          "10:00-16:00",
+          ""
+        ],
+      },
       {
         name: 'California Computer',
         phone: '323-233-5300',
@@ -229,28 +294,6 @@ const testRides = [
           "10:00-17:00",
           "10:00-17:00",
           "10:00-18:00",
-        ],
-      },
-      {
-        name: 'Icar Lifestyle',
-        phone: '310-926-6999',
-        email: 'sales@icarlifestyle.com',
-        timezone: "Newport Beach, CA, USA (GMT-8)",
-        add: "414 Rolyn Pl, Arcadia, CA 91007, United States",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Icar_Lifestyle.jpg?v=1686878451",
-        testrideSpot: "California",
-        availableSizes: [
-          'Carbon 1s Size M',
-          'Carbon 1 Size L',
-        ],
-        businessHours: [
-          "",
-          "11:00-19:00",
-          "11:00-19:00",
-          "11:00-19:00",
-          "11:00-19:00",
-          "11:00-19:00",
-          "",
         ],
       },
       {
@@ -631,6 +674,27 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/New_york_times_square-terabass.jpg?v=1696759734',
     stores: [
       {
+        name: "Julio Bicycles",
+        phone: "914-239-1312",
+        email: "Bicyclejulio@gmail.com",
+        timezone: "Long Island City, Queens, NY, USA (GMT-4)",
+        add: "45 S. Bedford Rd, Chappaqua, NY 10514",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Spokesman_Cycles_LIC_ny.jpg?v=1665374977",
+        testrideSpot: "Chappaqua",
+        availableSizes: [
+          'Carbon 1 Pro Size L',
+        ],
+        businessHours: [
+          "",
+          "10:00-17:00",
+          "10:00-18:00",
+         "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+         "10:00-18:00",
+        ],
+      },
+      {
         name: "Spokesman Cycles (LIC)",
         phone: "718-433-0450",
         email: "bikesnyc@gmail.com",
@@ -829,7 +893,7 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Bell_s_Bike_Shop.jpg?v=1686878451",
         testrideSpot: "Philadelphia",
         availableSizes: [
-          'Carbon 1 Pro Size M',
+          'Carbon 1 Pro Size M/L',
         ],
         businessHours: [
           "",
@@ -954,7 +1018,7 @@ const testRides = [
         email: "Marty@martysbicycles.com",
         timezone: "Pennsylvania, USA (GMT-4)",
         add: "160 E Water St, Muncy, PA 17756",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Muncy_Ritz.jpg?v=1713857360",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_1_ffe05ab3-9c6f-4ee8-a8b3-427b76a65427.png?v=1721377450",
         testrideSpot: "Muncy",
         availableSizes: [
           'Carbon 1 Pro Size M/L',
@@ -1217,28 +1281,6 @@ const testRides = [
         ],
       },
       {
-        name: "Wheel Works E-Bikes",
-        phone: "407-614-4539",
-        email: "dennis@wgwheelworks.com, shanna@wgwheelworks.com",
-        timezone: "Orlando, FL (GMT-4)",
-        add: "855 E Plant St Suite 600, Winter Garden, FL 34787",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Wheel_Works_E-Bikes.jpg?v=1667368641",
-        testrideSpot: "Florida",
-        availableSizes: [
-          'Carbon 1 Size M',
-          'Carbon 1s Size M'
-        ],
-        businessHours: [
-          "11:00-17:00",
-          "10:00-18:00",
-          "10:00-18:00",
-          "10:00-18:00",
-          "10:00-18:00",
-          "10:00-18:00",
-          "09:00-17:00",
-        ],
-      },
-      {
         name: "Espresso Bicycle Repairs",
         phone: "941-893-5209",
         email: "espressobicyclerepairs@gmail.com",
@@ -1493,7 +1535,7 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Ebike_Iowa.png?v=1687327236",
         testrideSpot: "Iowa",
         availableSizes: [
-          'Carbon 1 Size M',
+          'Carbon 1 Pro Size M',
         ],
         businessHours: [
           "",
@@ -1617,6 +1659,48 @@ const testRides = [
     city: 'Illinois',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Jason_Mathews.jpg?v=1692617852',
     stores: [
+      {
+        name: "Spokes Bikes - Wheaton",
+        phone: "630-690-2050",
+        email: "spokes@spokesbikes.com",
+        timezone: "Illinois, USA (GMT-7)",
+        add: "229 Rice Lake Square, Wheaton, IL 60187",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Jason_Mathews.jpg?v=1692617852",
+        testrideSpot: "Naperville",
+        availableSizes: [
+          'Carbon 1 Pro Size S/M/L',
+        ],
+        businessHours: [
+          "12:00-16:00",
+          "11:00-19:00",
+          "11:00-19:00",
+          "11:00-19:00",
+          "11:00-19:00",
+          "11:00-17:00",
+          "10:00-17:00",
+        ],
+      },
+      {
+        name: "Spokes Bikes - Napervill",
+        phone: "630-961-8222",
+        email: "spokes@spokesbikes.com",
+        timezone: "Illinois, USA (GMT-7)",
+        add: "1807 S. Washington St Suite 112, Naperville, IL 60565",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Jason_Mathews.jpg?v=1692617852",
+        testrideSpot: "Naperville",
+        availableSizes: [
+          'Carbon 1 Pro Size S/M/L',
+        ],
+        businessHours: [
+          "12:00-17:00",
+          "11:00-18:00",
+          "11:00-18:00",
+          "11:00-18:00",
+          "11:00-18:00",
+          "11:00-18:00",
+          "11:00-17:00",
+        ],
+      },
       {
         name: "Windy City Wheelers",
         phone: "954-242-7461",
@@ -1763,7 +1847,7 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/co.webp?v=1695291345",
         testrideSpot: "Denver",
         availableSizes: [
-          'Carbon 1 Pro Size M/L',
+          'Carbon 1 Pro Size S/M/L',
         ],
         businessHours: [
           "13:00-17:00",
