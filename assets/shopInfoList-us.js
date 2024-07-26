@@ -169,6 +169,69 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/what-is-california-known-for-the-golden-gate-bridge-hero.webp?v=1697020664',
     stores: [
       {
+        name: 'Temple City Bike Shop',
+        phone: '626-287-6936',
+        email: 'james@gotbikes.com',
+        timezone: "Fremont, California, USA (GMT-7)",
+        add: "9628 Las Tunas Dr Temple City, CA 91780",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Bicycle_Garage_Fremont_ca_fremont.jpg?v=1686878451",
+        testrideSpot: "Temple City",
+        availableSizes: [
+          'Carbon 1 Pro Size S/M'
+        ],
+        businessHours: [
+           "12:00-16:00",
+          "09:00-18:00",
+           "09:00-18:00",
+           "09:00-18:00",
+            "09:00-18:00",
+            "09:00-18:00",
+            "09:00-18:00",
+        ],
+      },
+      {
+        name: 'Got Bikes?',
+        phone: '408) 455-8074',
+        email: 'james@gotbikes.com',
+        timezone: "Fremont, California, USA (GMT-7)",
+        add: "5859 Winfield Blvd, San Jose, CA 95123",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Bicycle_Garage_Fremont_ca_fremont.jpg?v=1686878451",
+        testrideSpot: "San Jose",
+        availableSizes: [
+          'Carbon 1 Pro Size M'
+        ],
+        businessHours: [
+           "",
+           "",
+           "10:00-18:00",
+            "10:00-18:00",
+            "10:00-18:00",
+            "10:00-18:00",
+            "9:00-15:00",
+        ],
+      },
+      {
+        name: 'Woodside bike shop',
+        phone: '+1 (650) 299-1071',
+        email: 'gregdt1@yahoo.com',
+        timezone: "Fremont, California, USA (GMT-7)",
+        add: "1800 El Camino Real, Suite C Menlo Park, CA 94061",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Bicycle_Garage_Fremont_ca_fremont.jpg?v=1686878451",
+        testrideSpot: "Menlo Park",
+        availableSizes: [
+          'Carbon 1 Pro Size M'
+        ],
+        businessHours: [
+           "",
+           "10:00-17:00",
+           "10:00-17:00",
+            "10:00-17:00",
+            "10:00-17:00",
+            "10:00-17:00",
+            "10:00-17:00",
+        ],
+      },
+      {
         name: 'American Canyon Bike Shop',
         phone: '707-334-8122',
         email: 'AmericanCanyonBikeShop@gmail.com',
@@ -1033,75 +1096,6 @@ const testRides = [
           "10:00-19:00",
           "10:00-19:00",
           "09:00-15:00",
-        ],
-      },
-    ]
-  },
-  {
-    city: 'Massachusetts',
-    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Buna_Bicycle_Works_Washington_dc.jpg?v=1665374977',
-    stores: [
-      /*{
-        name: "Battle Road Bikes",
-        phone: "781-734-6464",
-        email: "jimc@battleroadbikes.com",
-        timezone: "Washington, DC, USA (GMT-4)",
-        add: "145 Massachusetts Ave, Lexington, MA 02420",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Battle_Road_Bikes.jpg?v=1686878451",
-        testrideSpot: "Massachusetts",
-        availableSizes: [
-          'Carbon 1 Size M',
-        ],
-        businessHours: [
-          "11:00-17:00",
-          "10:00-18:00",
-          "10:00-18:00",
-          "10:00-18:00",
-          "10:00-18:00",
-          "10:00-18:00",
-          "10:00-18:00",
-        ],
-      },*/
-      /*{
-        name: "Dedham Bike",
-        phone: "781-326-1531",
-        email: "info@dedhambike.com, matt@dedhambike.com",
-        timezone: "Washington, DC, USA (GMT-4)",
-        add: "403 Washington St, Dedham, MA 02026",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Dedham_Bike.jpg?v=1686878451",
-        testrideSpot: "Massachusetts",
-        availableSizes: [
-          'Carbon 1 Size M',
-        ],
-        businessHours: [
-          "12:00-16:00",
-          "",
-          "10:00-18:00",
-          "10:00-18:00",
-          "10:00-18:00",
-          "10:00-18:00",
-          "09:00-17:00",
-        ],
-      },*/
-      {
-        name: "Evolution E-Bikes",
-        phone: "888-545-2453",
-        email: "David@EvolutionE-Bikes.com",
-        timezone: "Washington, DC, USA (GMT-4)",
-        add: "25 Accord Park Dr.  Unit 3 Rockland, MA 02341",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Evolution_E-Bikes.jpg?v=1691635464",
-        testrideSpot: "Massachusetts",
-        availableSizes: [
-          'Carbon 1s Size S',
-        ],
-        businessHours: [
-          "",
-          "",
-          "14:00-17:00",
-          "14:00-17:00",
-          "14:00-17:00",
-          "14:00-17:00",
-          "10:00-11:00,14:00-16:00",
         ],
       },
     ]

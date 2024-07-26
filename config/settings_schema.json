@@ -12,7 +12,7 @@
         "type": "text",
         "id": "sale_end_time",
         "label": "活动结束文案",
-        "default": "2024-7-26"
+        "default": "2024-7-29"
       },
       {
         "type": "text",

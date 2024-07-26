@@ -32,6 +32,7 @@ h4 {
 }
 
 
+
 @mixin scrool-bar {
     &::-webkit-scrollbar {
         height: 4px;
@@ -143,8 +144,8 @@ h4 {
                 user-select: none;
 
                 .u14DemiBold_v2 {
-                    // background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1_2x_8dc34a6a-e7dc-49ad-8248-246930fe2c2a.jpg?v=1721873500');
-                    background-color: #FD4B17;
+                    background: #FD4B17 url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19266.svg?v=1721983999') left center/contain no-repeat;
+                    background-position-x: 5px;
                     color: #fff;
                     padding: 7.5px 42px;
                 }
@@ -206,8 +207,6 @@ h4 {
         .left-swiper {
             position: sticky;
             top: 125px;
-            height: 512px;
-            max-height: 512px;
             overflow: hidden;
 
 
@@ -1113,6 +1112,7 @@ h4 {
                     position: static;
                     // bottom: 5px;
                     transform: translateY(-5px);
+                  z-index: 1;
                 }
 
                 .swiper-pagination-bullet {
