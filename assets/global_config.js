@@ -292,35 +292,36 @@ const global_config = {
         },
         product_images: {
           'Matte Black': [
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18877.jpg?v=1718438830',
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18873.jpg?v=1718438829',
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18869.jpg?v=1718438828',
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18861.jpg?v=1718439689',
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18857.jpg?v=1718439689',
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18859.jpg?v=1718439689'
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3-1_2x_3f08e8fe-d894-43a9-9a03-7ec327056bb3.jpg?v=1721977712',
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231108-untitled-3641_2x_8e945f5c-ce2c-4d93-89ec-211e70c2b7e2.jpg?v=1721977717',
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231108-untitled-2778_2x_dc09eb12-516a-4242-8ad9-4976d30865af.jpg?v=1721977722',
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231108-untitled-3635_2x_ca863040-f526-4b2b-b54f-7202384fe41d.jpg?v=1721977727',
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1pro-_-_c_2x_59857988-2ad6-42c3-ba78-b239cc591367.jpg?v=1721977733',
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1pro-_-_c__1_1_2x_1b9d5dea-a84a-442b-80ec-3fa18757aabd.jpg?v=1721977738',
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1pro-_c__1_1_2x_32902c98-96dd-440f-93af-aa7b61ce8f28.jpg?v=1721977745',
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1pro-_c_2x_4d3389e3-6c89-4584-a35d-a7586f6f0dec.jpg?v=1721977750',
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_24397_2x_62b27614-70ba-4cf7-824f-52220f5ad0c8.jpg?v=1721977756'
           ],
           'Creme': [
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18878.jpg?v=1718438828',
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18874.jpg?v=1718438829',
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18870.jpg?v=1718438829',
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18862.jpg?v=1718439689',
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18858.jpg?v=1718439690',
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18862.jpg?v=1718439689'
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18878_2x_e7076d90-28e3-43c7-a80a-70575c611ec2.jpg?v=1721977996',
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240308-untitled-6217_2x_a6e3c5dc-f999-4d40-a35b-2539a59f0a2d.jpg?v=1721978001',
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Urtopia-20_2x_52856018-18f0-468f-a942-3757c0cdb7bb.jpg?v=1721978006',
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Urtopia-11_2x_83884551-7629-409e-aa83-9002d64aca57.jpg?v=1721978011',
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18874_2x_56f9784a-d90f-49f8-8d9a-dcbe7e72b4bf.jpg?v=1721978017',
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18870_2x_b1189295-3eda-413b-8a97-94a7af0d0b16.jpg?v=1721978022',
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18862_2x_ac10622f-3295-40a2-8ca4-d5e7f21dec78.jpg?v=1721978027',
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18858_2x_80fe0f49-40d9-4c91-900d-e24498c70c48.jpg?v=1721978033',
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_24398_2x_3433ea34-4a63-472a-8bfa-8eab3ba7495b.jpg?v=1721978038'
            ],
           commonSwiper: [
-            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240131-094148.jpg?v=1706665341',
-            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240117-180528.png?v=1705485964',
-            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231108-untitled-6089.jpg?v=1703570574',
-            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231108-untitled-3370.jpg?v=1703570574',
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/aaa_2x_9b257387-ce8a-4eb6-a2e9-913573233f93.jpg?v=1714984318',
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DSCF7217_1_2x_ec4657b0-b04a-494f-82ad-9a6553394400.jpg?v=1714984325',
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20231108-untitled-2785_2x_ab30be84-117b-44b4-8c61-0c6a5936faa2.jpg?v=1714984330',
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20231108-untitled-2778_2x_ccaa8af6-df16-4870-8b8d-e8b21c69d4c4.jpg?v=1714984337',
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DSCF6952_1_2x_0bc14670-71dc-49a2-8837-9d0bb276e6e6.jpg?v=1714984341'
         ]
         },
         // 产品图下面的media模块, 根据产品图 循环轮播 
         product_media_images: [
+            {
+                text: 'Carbon Fiber Expert',
+                img: "https://newurtopia.com/cdn/shop/files/logo_0707__1.png?v=1684310857"
+            },
             {
                 text: `“Visually stunning and lightweight bikes”`,
                 img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19051_2x_3c234be0-e1cb-4ab0-b83c-02282fd42cb4.png?v=1705485418"

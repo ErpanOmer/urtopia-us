@@ -1,0 +1,83 @@
+{% unless settings.hide_sale_countdown %}
+  <div class="sale" data-sale-end-time="{{ settings.sale_end_time }}">
+    <div class="u14DemiBold_v2">{{ settings.sale_name }}</div>
+    <div>
+      <div>
+        <span class="u36DemiBold_v2">00</span>
+        <span>Days</span>
+      </div>
+      <div>
+        <span class="u36DemiBold_v2">00</span>
+        <span>Hours</span>
+      </div>
+      <div>
+        <span class="u36DemiBold_v2">00</span>
+        <span>Minutes</span>
+      </div>
+      <div>
+        <span class="u36DemiBold_v2">00</span>
+        <span>Seconds</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    window.loaded_sale = false;
+
+    (() => {
+      if (window.loaded_sale) {
+        return
+      }
+
+      window.loaded_sale = true
+
+      const timezoneoffset = (Shopify.shop === 'urtopia.myshopify.com' ? 420 : -120) * 60000;
+
+      function getUTCTime(now = new Date()) {
+        return now.getTime() + now.getTimezoneOffset() * 60000 + timezoneoffset;
+      }
+
+      const [y, m, d] = $('.sale').attr('data-sale-end-time').split('-').map(Number);
+      const endtime = getUTCTime(new Date(Date.UTC(y, m - 1, d, 0, 0, 0, 0) + timezoneoffset));
+
+      const difference = [1000 * 60 * 60 * 24, 1000 * 60 * 60, 1000 * 60, 1000];
+      const cache = ['00', '00', '00', '00'];
+
+      function updateTimer() {
+        let timeDifference = endtime - getUTCTime();
+
+        if (timeDifference <= 0) {
+          $('.sale').hide();
+
+          return console.log('Countdown Ended!');
+        } else {
+          const values = [];
+
+          for (let i = 0; i < difference.length; i++) {
+            values[i] = String(Math.floor(timeDifference / difference[i])).padStart(2, '0');
+            timeDifference = timeDifference % difference[i];
+          }
+
+          const diff = {};
+
+          for (let i = 0; i < values.length; i++) {
+            if (cache[i] !== values[i]) {
+              diff[i] = values[i];
+              cache[i] = values[i];
+            }
+          }
+
+          for (const k in diff) {
+            $(`.sale > div:not(.u14DemiBold_v2) > div:nth-child(${Number(k) + 1})`)
+              .find('.u36DemiBold_v2')
+              .text(diff[k]);
+          }
+        }
+
+        setTimeout(updateTimer, 1000);
+      }
+
+      updateTimer();
+    })();
+  </script>
+{% endunless %}
