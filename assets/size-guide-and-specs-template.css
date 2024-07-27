@@ -337,7 +337,6 @@
     #SpecsDialog > div .bodyyyyyy,
     #SizesDialog > div .bodyyyyyy {
         padding: 4vw 5vw 0;
-        max-height: calc(80vh - 50px);
         overflow-y: auto;
         display: grid;
         grid-template-columns: 1fr;

@@ -1223,7 +1223,7 @@ h4 {
 
 .build {
     background: $backround-color url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240716-171008.jpg?v=1722073622') center center/cover no-repeat;
-    height: 750px;
+  height: 750px;
     color: #fff;
     display: flex;
     align-items: center;
@@ -1532,7 +1532,6 @@ h4 {
 .city {
     background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/dddd_266c34f6-4b11-4171-a6d1-b54e0d5d44c4.jpg?v=1722073622');
     color: #000;
-    height: 750px;
     transform: translateY(-2px);
 
     .centeral-content {
@@ -2171,6 +2170,10 @@ h4 {
                     &>div {
                         flex-direction: column;
                         align-items: flex-start;
+
+                      &:first-child {
+                        margin-top: 4vw;
+                      }
 
                         span {
                             &:first-child {

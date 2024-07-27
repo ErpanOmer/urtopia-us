@@ -1329,4 +1329,21 @@
 </script>
 
 <script src="https://cdn.storepoint.co/api/v1/js/162f21804990ff.js" defer></script>
-{% render 'carbon-one-pro-extra-code' %}
+
+<script>
+    const allvideo = document.querySelectorAll('.comfort video');
+    const video = global_config.is_mobile ? allvideo[1] : allvideo[0];
+    const observerwww = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          video.currentTime = 0; // 重置播放位置
+          video.play();
+        } else {
+          video.pause();
+          video.currentTime = 0;
+        }
+      });
+    });
+
+    observerwww.observe(video);
+</script>
