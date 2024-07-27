@@ -104,11 +104,11 @@ h4 {
             grid-template-columns: repeat(3, 1fr);
             grid-gap: 30px;
 
-            & > div {
+            &>div {
                 display: flex;
                 align-items: center;
 
-                & > div {
+                &>div {
                     margin-left: 8px;
                     flex: 1;
                     display: flex;
@@ -150,13 +150,13 @@ h4 {
                     padding: 7.5px 42px;
                 }
 
-                & > div:not(.u14DemiBold_v2) {
+                &>div:not(.u14DemiBold_v2) {
                     color: #FD4B17;
                     display: grid;
                     grid-template-columns: repeat(4, 1fr);
                     padding: 12px 0;
 
-                    & > div {
+                    &>div {
                         display: flex;
                         align-items: center;
                         justify-content: center;
@@ -172,8 +172,8 @@ h4 {
                         }
                     }
 
-                    div + div {
-                        border-left: 1px solid rgba(99, 99 , 99, 0.1);
+                    div+div {
+                        border-left: 1px solid rgba(99, 99, 99, 0.1);
                     }
                 }
 
@@ -233,6 +233,7 @@ h4 {
             flex-direction: column;
             min-width: 400px;
             width: 400px;
+            padding-bottom: 20px;
 
             .sale_acc {
                 border-radius: 10px;
@@ -326,6 +327,7 @@ h4 {
                         border-radius: 50%;
                         cursor: pointer;
                         position: relative;
+                        border: 2px solid transparent;
 
                         &::after {
                             content: "";
@@ -334,14 +336,23 @@ h4 {
                             margin: 2px;
                             width: 26px;
                             border-radius: 100%;
+                            
                         }
 
                         &[attribute="Creme"] {
-                            background-color: #EDECE7;
+                            // background-color: #EDECE7;
+
+                            &::after {
+                                background-color: #EDECE7;
+                            }
                         }
 
                         &[attribute="Matte Black"] {
-                            background-color: #000;
+                            // background-color: #000;
+
+                            &::after {
+                                background-color: #000;
+                            }
                         }
 
                         &[attribute="Gray"] {
@@ -352,7 +363,8 @@ h4 {
 
                         .tooltip {
                             position: absolute;
-                            bottom: 150%; /* Position the tooltip above the element */
+                            bottom: 150%;
+                            /* Position the tooltip above the element */
                             left: 50%;
                             transform: translateX(-50%);
                             background-color: #000;
@@ -365,7 +377,8 @@ h4 {
                             transition: opacity 0.3s, visibility 0.3s;
                             font-size: 14px;
                             font-weight: 500;
-                            z-index: 10; /* Ensure tooltip is above other content */
+                            z-index: 10;
+                            /* Ensure tooltip is above other content */
 
                             &::before {
                                 content: "";
@@ -377,22 +390,22 @@ h4 {
                                 border-style: solid;
                                 border-color: #000 transparent transparent transparent;
                                 z-index: 9;
-                              }
-                          }
+                            }
+                        }
 
-                          &:hover {
+                        &:hover {
                             .tooltip {
                                 opacity: 1;
                                 visibility: visible;
-                              }
-                          }
+                            }
+                        }
 
 
-                          &:not(.active):hover {
+                        &:not(.active):hover {
 
-                              background-color: transparent !important;
+                            background-color: transparent !important;
 
-                              &[attribute="Matte Black"] {
+                            &[attribute="Matte Black"] {
                                 border: 2px solid #DBDBDB;
 
                                 &::after {
@@ -408,8 +421,8 @@ h4 {
                                 }
                             }
 
-                        
-                          }
+
+                        }
                     }
 
                     .active {
@@ -721,7 +734,7 @@ h4 {
                     transform: rotate(135deg) translateY(100%);
                 }
 
-                & > .u17DemiBold_v2 {
+                &>.u17DemiBold_v2 {
                     margin-left: -15px;
                 }
             }
@@ -870,19 +883,22 @@ h4 {
 
             .right-swiper {
                 overflow: hidden;
-                max-width: 100%;
-                width: 100%;
+                position: relative;
                 border-radius: 10px;
 
                 .swiper-wrapper {
-                    
-
                     .swiper-slide {
                         display: flex;
                         flex-direction: column;
                         align-items: center;
-                        max-width: 100%;
                         justify-content: center;
+                        width: 100% !important;
+                        user-select: none;
+                        // padding: 0 3px;
+
+                        img {
+                            border-radius: 10px;
+                        }
                     }
                 }
             }
@@ -891,10 +907,11 @@ h4 {
             .swiper-button-prev {
                 color: #000;
                 transition: all .3s;
-                top: 25%;
+                top: 50%;
+                transform: translateY(-50%);
                 background: rgba(255, 255, 255, 0.5);
                 border-radius: 5px;
-                 
+
                 &:hover {
                     color: rgba(0, 0, 0, 0.5);
                 }
@@ -976,7 +993,7 @@ h4 {
 
 
                         .Color {
-                            & > div {
+                            &>div {
                                 .tooltip {
                                     display: none;
                                     opacity: 0;
@@ -1084,7 +1101,7 @@ h4 {
                 }
 
                 .support {
-                    & > a {
+                    &>a {
                         img {
                             max-width: 24px;
                         }
@@ -1112,7 +1129,7 @@ h4 {
                     position: static;
                     // bottom: 5px;
                     transform: translateY(-5px);
-                  z-index: 1;
+                    z-index: 1;
                 }
 
                 .swiper-pagination-bullet {
@@ -1178,27 +1195,26 @@ h4 {
 
             .videos {
                 display: flex;
-                flex-direction: row;
                 grid-column-gap: 0;
-                overflow-x: auto;
-                width: 92vw;
-                padding-bottom: 10vw;
-                padding-right: 6vw;
-
-                @include scrool-bar;
 
                 &>div {
-                    min-width: 75vw;
-                    width: 75vw;
-                    scroll-snap-align: start;
 
                     .u17Light_v2 {
                         font-size: 15px;
                     }
                 }
+            }
 
-                &>div+div {
-                    margin-left: 6vw;
+
+            .swiper-scrollbar {
+                position: static;
+                margin-top: 10vw;
+                width: 100%;
+                background-color: #DEDEDE;
+                z-index: unset;
+                
+                .swiper-scrollbar-drag {
+                    background-color: #FD4B17;
                 }
             }
         }
@@ -1206,8 +1222,8 @@ h4 {
 }
 
 .build {
-    background: $backround-color url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240716-171008_2x_a8d276e3-7030-4aa2-98e1-3aeec9342d0c.jpg?v=1721641256') center center/cover no-repeat;
-    height: $pc-full-height;
+    background: $backround-color url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240716-171008.jpg?v=1722073622') center center/cover no-repeat;
+    height: 750px;
     color: #fff;
     display: flex;
     align-items: center;
@@ -1310,25 +1326,19 @@ h4 {
     padding-bottom: 12vh;
 
     .centeral-content {
+        overflow: hidden;
+        position: relative;
+
+        .u36Medium_v2 {
+            margin-bottom: 4vh;
+        }
 
         .items {
-            display: flex;
-            margin-top: 3vh;
-            overflow-x: auto;
-            gap: 30px;
-            border-radius: 5px;
-
-            @include scrool-bar;
-            padding-bottom: 6vh;
-            // scroll-behavior: smooth;
-
-
             &>div {
-                flex: 0 0 calc(33.33% - 20px);
                 display: flex;
                 flex-direction: column;
+                cursor: grab;
                 user-select: none;
-                pointer-events: none;
 
                 img {
                     border-radius: 5px;
@@ -1340,6 +1350,41 @@ h4 {
                 }
             }
         }
+
+        .buttons {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 5vh;
+
+            .swiper-button-prev,
+            .swiper-button-next {
+                position: static;
+                color: #fff;
+                background-color: #000;
+                border-radius: 50%;
+                width: 35px;
+                height: 35px;
+                margin-left: 15px;
+                z-index: unset;
+                
+
+                &::after {
+                    font-size: 18px;
+                }
+            }
+        }
+
+        .swiper-scrollbar {
+            position: static;
+            margin-top: 6vh;
+            width: 100%;
+            background-color: #DEDEDE;
+            z-index: unset;
+            
+            .swiper-scrollbar-drag {
+                background-color: #FD4B17;
+            }
+        }
     }
 
     @media (max-width: 767px) {
@@ -1349,16 +1394,12 @@ h4 {
 
             .u36Medium_v2 {
                 font-size: 24px;
+                margin-bottom: 6vw;
             }
 
             .items {
-                width: 92vw;
-                gap: 6vw;
-                padding-bottom: 8vw;
-                padding-right: 6vw;
 
                 &>div {
-                    flex: 0 0 calc(100vw * (2 / 3));
 
                     .u20Medium_v2 {
                         font-size: 15px;
@@ -1369,6 +1410,10 @@ h4 {
                         font-size: 12px;
                     }
                 }
+            }
+
+            .swiper-scrollbar {
+                margin-top: 8vw;
             }
         }
     }
@@ -1385,7 +1430,7 @@ h4 {
 
     &>div {
         position: absolute;
-        left: 50%;
+        left: 54%;
         color: #fff;
         top: 50%;
         transform: translateY(-50%);
@@ -1460,9 +1505,15 @@ h4 {
 
 
 .comfort {
+    transform: translateY(-1px);
+
     &>div {
         color: #000;
-        left: calc((100vw - 1280px) / 2);
+        max-width: 1280px;
+        margin: auto;
+        left: 0;
+        right: 0;
+        padding: 0 30px;
 
         .u17Light_v2 {
             span {
@@ -1470,12 +1521,19 @@ h4 {
             }
         }
     }
+
+    @media (max-width: 767px) {
+        & > div {
+            padding: 8vw 8vw 13.5vw;
+        }
+    }
 }
 
 .city {
-    background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/dddd_2x_b1416c1e-11e2-425f-8894-3c74256925e8.jpg?v=1721721286');
+    background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/dddd_266c34f6-4b11-4171-a6d1-b54e0d5d44c4.jpg?v=1722073622');
     color: #000;
-    height: calc(#{$pc-full-height} - 10vh);
+    height: 750px;
+    transform: translateY(-2px);
 
     .centeral-content {
         overflow: hidden;
@@ -1600,14 +1658,14 @@ h4 {
         }
 
         .sipwers {
+
             .swiper-wrapper {
                 transition-timing-function: linear;
 
                 .swiper-slide {
-                    flex: 0 0 25%;
                     display: flex;
                     flex-direction: column;
-                    padding-right: 30px;
+                    cursor: grab;
 
                     .u17Light_v2 {
                         display: flex;
@@ -1635,19 +1693,8 @@ h4 {
             }
 
             .sipwers {
-                width: 100vw;
-                margin-left: -8vw;
-                padding-left: 4vw;
-
                 .swiper-wrapper {
-                    overflow-x: auto;
-                    padding-bottom: 8vw;
-
-                    @include scrool-bar;
-
                     .swiper-slide {
-                        flex: 0 0 70%;
-                        padding-right: 5vw;
 
                         .u17Light_v2 {
                             margin-top: 5vw;

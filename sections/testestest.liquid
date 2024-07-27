@@ -1,6 +1,9 @@
+{% assign prelo = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3-1.jpg?v=1722064932" %}
+
+
 {{ 'carbon1pro-new.scss.css' | asset_url | stylesheet_tag: preload: true }}
-<link rel="preload" as="image" href="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3-1_2x_3f08e8fe-d894-43a9-9a03-7ec327056bb3.jpg?v=1721977712">
-<link rel="preload" as="image" href="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18878_2x_e7076d90-28e3-43c7-a80a-70575c611ec2.jpg?v=1721977996">
+<link rel="preload" as="image" href="{{ prelo }}">
+<link rel="preload" as="image" href="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18878.jpg?v=1722064932">
 {% assign product = all_products['urtopia-carbon-1-pro-ebike'] %}
 
 <h1 class="visuallyhidden">Urtopia Carbon 1 Pro Ebike - Sleek, Full Carbon, Lightweight, Smart</h1>
@@ -32,15 +35,19 @@
         {% render "sale" %}
       </div>
     <div class="left-swiper mobileHide">
-      <div class="swiper-wrapper"></div>
+      <div class="swiper-wrapper">
+        <img class="swiper-slide" alt="Urtopia Carbon 1 Pro" src="{{prelo}}"/>
+      </div>
     </div>
     <span></span>
     <div class="featured_image mb16" style="--swiper-navigation-color: #000;--swiper-theme-color: #000;--swiper-pagination-color: #000;">
       <div class="right-swiper">
-        <div class="swiper-wrapper"></div>
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img alt="Urtopia Carbon 1 Pro" src="{{prelo}}"/></div>
+        </div>
+        <div class="arrow swiper-button-prev mobileHide"></div>
+        <div class="arrow swiper-button-next mobileHide"></div>
       </div>
-      <div class="arrow swiper-button-prev mobileHide"></div>
-      <div class="arrow swiper-button-next mobileHide"></div>
       <div class="medias">
          <i class="u17DemiBold_v2">Carbon Fiber Expert</i>
          <img src="https://newurtopia.com/cdn/shop/files/logo_0707__1.png?v=1684310857" alt="">
@@ -276,22 +283,22 @@
 <div class="professional">
   <div class="centeral-content">
     <h2 class="u36Medium_v2">Professional Reviews</h2>
-    <div class="videos">
-      <div onclick="showVideoDialog('https://www.youtube.com/embed/T-0A-EUwUfM?autoplay=1&cc_load_policy=1')">
+    <div class="videos swiper-wrapper">
+      <div class="swiper-slide" onclick="showVideoDialog('https://www.youtube.com/embed/T-0A-EUwUfM?autoplay=1&cc_load_policy=1')">
         <img
         class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_24387_2x_36eb73ab-cab9-4cef-a982-55ee3a44b2fa.jpg?v=1721643890"
           alt=""
         >
         <span class="u17Light_v2">A super light and responsive e-bike achieves faster speeds than the metro.</span>
       </div>
-      <div onclick="showVideoDialog('https://www.youtube.com/embed/r9TD6cPYCxc?autoplay=1&cc_load_policy=1')">
+      <div class="swiper-slide" onclick="showVideoDialog('https://www.youtube.com/embed/r9TD6cPYCxc?autoplay=1&cc_load_policy=1')">
         <img
         class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_24388_2x_cf9b2444-02e2-4caa-9a59-642dc5ec0b55.jpg?v=1721643896"
           alt=""
         >
         <span class="u17Light_v2">Tested at 748W, the power of 1 Pro is higher than most all-terrain e-bikes.</span>
       </div>
-      <div onclick="showVideoDialog('https://www.youtube.com/embed/5JI2U6EpAHA?autoplay=1&cc_load_policy=1')">
+      <div class="swiper-slide" onclick="showVideoDialog('https://www.youtube.com/embed/5JI2U6EpAHA?autoplay=1&cc_load_policy=1')">
         <img
         class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_24389_2x_b9ff420c-4577-4ef8-98e5-c9085b0915ba.jpg?v=1721643884"
           alt=""
@@ -301,6 +308,7 @@
         >
       </div>
     </div>
+    <div class="swiper-scrollbar"></div>
   </div>
 </div>
 <div class="build">
@@ -361,8 +369,8 @@
 <div class="quality">
   <div class="centeral-content">
     <h3 class="u36Medium_v2">Quality in details</h3>
-    <div class="items">
-      <div>
+    <div class="items swiper-wrapper">
+      <div class="swiper-slide">
         <img
          class="lozad"
           data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240715-150401_2x_849335f3-f868-4cd2-95f2-3938874802f9.jpg?v=1721703139"
@@ -375,7 +383,7 @@
           frame, crafted to the same high standards as best race bikes in the world.</span
         >
       </div>
-      <div>
+      <div class="swiper-slide">
         <img
         class="lozad"
         data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/c_2x_a76f0c74-93ae-4efa-b971-c568eaecd076.jpg?v=1721714682"
@@ -388,7 +396,7 @@
           optimal battery efficiency and control in various conditions.</span
         >
       </div>
-      <div>
+      <div class="swiper-slide">
         <img
         class="lozad"
         data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240712-182556_2x_7b88c6c3-261c-4f6a-94e0-4f279e97c471.jpg?v=1721714687"
@@ -401,7 +409,7 @@
           it’s power and convenient for urban and light off-road riding.</span
         >
       </div>
-      <div>
+      <div class="swiper-slide">
         <img
         class="lozad"
         data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2x_78ede538-edb5-41fb-a18c-d57595204e2d.jpg?v=1721714693"
@@ -414,7 +422,7 @@
           80 miles on a single charge.</span
         >
       </div>
-      <div>
+      <div class="swiper-slide">
         <img
         class="lozad"
         data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/ccc_2x_8faccdc0-333e-4aab-acdd-73639339de4e.jpg?v=1721714699"
@@ -427,7 +435,7 @@
           eliminates long waits, and at 2.3 kg, it’s an ideal backup battery for long rides.</span
         >
       </div>
-      <div>
+      <div class="swiper-slide">
         <img
         class="lozad"
         data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240716-095036_2x_7acbb696-f43a-4fda-b143-74be30f582b5.jpg?v=1721714705"
@@ -440,7 +448,7 @@
           navigation and real-time riding data on a big display to streamline your cycling experience.</span
         >
       </div>
-      <div>
+      <div class="swiper-slide">
         <img
           class="lozad"
         data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2x_ee466589-87fe-493f-9a63-4d99432e2af3.jpg?v=1721714675"
@@ -453,6 +461,11 @@
           and city streets, and compatible with tire widths up to 45C.</span
         >
       </div>
+    </div>
+    <div class="swiper-scrollbar"></div>
+    <div class="buttons mobileHide">
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
     </div>
   </div>
 </div>
@@ -473,7 +486,7 @@
     loop
     class="lozad pcHide"
     data-src="https://player.vimeo.com/progressive_redirect/playback/907415420/rendition/540p/file.mp4?loc=external&signature=dd44e007d5fc0b2e3e34a8d06c7fe594bac0234cf6170de49d37ab5128a1369d"
-    poster="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_23942_2x_0b3e2f68-3edf-423c-840c-93acaf520220.jpg?v=1706595699"
+    poster="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240727-150110.jpg?v=1722063688"
   ></video>
   <div>
     <h2 class="u36Medium_v2">
@@ -508,7 +521,6 @@
   <video
     muted
     playsinline
-    autoplay
     loop
     class="lozad mobileHide"
     data-src="https://cdn.shopify.com/videos/c/o/v/e11dca7d00d64d9db4454a4b08b8a589.mp4"
@@ -517,7 +529,6 @@
   <video
     muted
     playsinline
-    autoplay
     loop
     class="lozad pcHide"
     data-src="https://cdn.shopify.com/videos/c/o/v/fbce42f6c3e242fda0053cf6df0de478.mp4"
@@ -557,7 +568,7 @@
   <div class="centeral-content">
     <h3 class="u36Medium_v2">FAQs</h3>
     <div class="items">
-      <div class="item active">
+      <div class="item">
         <div class="u24Medium_v2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -576,7 +587,7 @@
           </svg>
           1. How durable is the carbon frame of the Carbon 1 Pro?
         </div>
-        <p class="u17Light_v2" style="display: block;">
+        <p class="u17Light_v2">
           <span>
             The Carbon 1 Pro uses high-quality Toray T700/T800 carbon fibers and EPS molding technology. This creates a
             lightweight, strong, and impact-resistant frame with a seamless interior, eliminating stress points and
@@ -999,10 +1010,12 @@
       nextEl: '.product .featured_image .swiper-button-next',
       prevEl: '.product .featured_image .swiper-button-prev',
     },
+    spaceBetween: 10,
     pagination: { el: '.swiper-pagination' },
     thumbs: {
       swiper: leftSwiper,
     },
+    roundLengths : true,
     on:{
         slideChange: function() {
             const index = this.activeIndex % global_config.carbon1pro_order_page_config.product_media_images.length;
@@ -1036,26 +1049,13 @@
     );
 
     console.log(swiper_arr);
+    rightSwiper.removeAllSlides()
+    leftSwiper.removeAllSlides()
 
-    $('.product .right-swiper .swiper-wrapper').html(
-      swiper_arr
-        .map((s, i) => {
-          return `<img class="swiper-slide" alt="Urtopia Carbon 1 Pro" src="${s}"/>`;
-        })
-        .join('')
-    );
-    $('.product .left-swiper .swiper-wrapper').html(
-      swiper_arr.map((s) => `<img class="swiper-slide" alt="Urtopia Carbon 1 Pro" src="${s}"/>`).join('')
-    );
-
-    // update
-    setTimeout(() => {
-      rightSwiper.update();
-      rightSwiper.slideTo(0, 0);
-
-      leftSwiper.update();
-      leftSwiper.slideTo(0, 0);
-    }, 0);
+    for (let i = 0; i < swiper_arr.length; i++) {
+      rightSwiper.appendSlide(`<div class="swiper-slide"><img alt="Urtopia Carbon 1 Pro" src="${swiper_arr[i]}"/></div>`)
+      leftSwiper.appendSlide( `<img class="swiper-slide" alt="Urtopia Carbon 1 Pro" src="${swiper_arr[i]}"/>`)
+    }
   });
 
   document.addEventListener('onChangeOptions', (e) => {
@@ -1277,47 +1277,7 @@
   );
 </script>
 <script>
-  document.body.clientWidth > 768 &&
-    (() => {
-      let isDown = false;
-      let startX;
-      let scrollLeft;
-
-      $('.quality .items').on('pointerdown', function (e) {
-        isDown = true;
-        startX = e.originalEvent.pageX - $(this).offset().left;
-        scrollLeft = $(this).scrollLeft();
-      });
-
-      $('.quality .items').on('pointerup', (e) => {
-        isDown = false;
-      });
-
-      $('.quality .items').on('pointermove', function (e) {
-        if (!isDown) {
-          return false;
-        }
-
-        e.preventDefault();
-
-        requestAnimationFrame(() => {
-          const x = e.originalEvent.pageX - $(this).offset().left;
-          const walk = (x - startX) * 1.5; // 3 是滚动速度
-          $(this).scrollLeft(scrollLeft - walk);
-        });
-      });
-
-      let isScrolling = false;
-      $('.quality .items').on('wheel', function (e) {
-        e.preventDefault(); // 防止页面滚动
-
-        requestAnimationFrame(() => {
-          let delta = Math.floor(e.originalEvent.deltaY / 2);
-          this.scrollLeft += delta;
-        });
-      });
-
-      new Swiper('.users .sipwers', {
+    new Swiper('.users .sipwers', {
         loop: true, // 启用循环模式
         autoplay: {
           delay: 0, // 设置为0以便无停顿地切换
@@ -1325,10 +1285,35 @@
           pauseOnMouseEnter: true,
         },
         speed: 6000, // 切换速度设置为和幻灯片显示时间一样，使其匀速播放
-        slidesPerView: 'auto', // 自动根据内容设置滑动宽度
-        spaceBetween: 0, // 幻灯片之间没有间距
+        slidesPerView: global_config.is_mobile ? 1.25 : 4, // 自动根据内容设置滑动宽度
+        spaceBetween: global_config.is_mobile ? 16 : 32, // 幻灯片之间没有间距
       });
-    })();
+
+
+    new Swiper('.quality .centeral-content', {
+        slidesPerView: global_config.is_mobile ? 1.25 : 3,
+        spaceBetween: global_config.is_mobile ? 16 : 32,
+        navigation: {
+          nextEl: '.quality .centeral-content .swiper-button-next',
+          prevEl: '.quality .centeral-content .swiper-button-prev',
+        },
+        scrollbar: {
+          el: '.quality .centeral-content .swiper-scrollbar',
+          draggable: true
+        },
+      });
+
+      if (global_config.is_mobile) {
+        new Swiper('.professional .centeral-content', {
+          slidesPerView: 1.25,
+          spaceBetween: 20,
+          scrollbar: {
+            el: '.professional .centeral-content .swiper-scrollbar',
+          },
+        });
+      }
+  
+
 
   $('.faq .items .item .u24Medium_v2').click(function () {
     $(this).siblings('.u17Light_v2').slideToggle().parent().siblings().find('.u17Light_v2').slideUp();

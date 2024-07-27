@@ -292,8 +292,8 @@ const global_config = {
         },
         product_images: {
           'Matte Black': [
-            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3-1_2x_3f08e8fe-d894-43a9-9a03-7ec327056bb3.jpg?v=1721977712',
-            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231108-untitled-3641_2x_8e945f5c-ce2c-4d93-89ec-211e70c2b7e2.jpg?v=1721977717',
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3-1.jpg?v=1722064932',
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231108-untitled-3641.jpg?v=1722064933',
             'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231108-untitled-2778_2x_dc09eb12-516a-4242-8ad9-4976d30865af.jpg?v=1721977722',
             'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231108-untitled-3635_2x_ca863040-f526-4b2b-b54f-7202384fe41d.jpg?v=1721977727',
             'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1pro-_-_c_2x_59857988-2ad6-42c3-ba78-b239cc591367.jpg?v=1721977733',
@@ -303,15 +303,15 @@ const global_config = {
             'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_24397_2x_62b27614-70ba-4cf7-824f-52220f5ad0c8.jpg?v=1721977756'
           ],
           'Creme': [
-            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18878_2x_e7076d90-28e3-43c7-a80a-70575c611ec2.jpg?v=1721977996',
-            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240308-untitled-6217_2x_a6e3c5dc-f999-4d40-a35b-2539a59f0a2d.jpg?v=1721978001',
-            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Urtopia-20_2x_52856018-18f0-468f-a942-3757c0cdb7bb.jpg?v=1721978006',
-            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Urtopia-11_2x_83884551-7629-409e-aa83-9002d64aca57.jpg?v=1721978011',
-            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18874_2x_56f9784a-d90f-49f8-8d9a-dcbe7e72b4bf.jpg?v=1721978017',
-            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18870_2x_b1189295-3eda-413b-8a97-94a7af0d0b16.jpg?v=1721978022',
-            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18862_2x_ac10622f-3295-40a2-8ca4-d5e7f21dec78.jpg?v=1721978027',
-            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18858_2x_80fe0f49-40d9-4c91-900d-e24498c70c48.jpg?v=1721978033',
-            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_24398_2x_3433ea34-4a63-472a-8bfa-8eab3ba7495b.jpg?v=1721978038'
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18878.jpg?v=1722064932',
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240308-untitled-6217.jpg?v=1722064934',
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231108-untitled-2778.jpg?v=1722064933',
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231108-untitled-3635.jpg?v=1722064933',
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18874.jpg?v=1722064932',
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1pro-_-_c_1_1.jpg?v=1722064932',
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1pro-_1_1.jpg?v=1722064932',
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18858.jpg?v=1722064933',
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_24397.jpg?v=1722064933'
            ],
           commonSwiper: [
         ]
