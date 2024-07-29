@@ -135,59 +135,6 @@ h4 {
 
 
         .commonComponent {
-            .sale {
-
-                border-radius: 7px;
-                background-color: $backround-color;
-                overflow: hidden;
-                margin-bottom: 24px;
-                user-select: none;
-
-                .u14DemiBold_v2 {
-                    background: #FD4B17 url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19266.svg?v=1721983999') left center/contain no-repeat;
-                    background-position-x: 5px;
-                    color: #fff;
-                    padding: 7.5px 42px;
-                }
-
-                &>div:not(.u14DemiBold_v2) {
-                    color: #FD4B17;
-                    display: grid;
-                    grid-template-columns: repeat(4, 1fr);
-                    padding: 12px 0;
-
-                    &>div {
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        text-align: center;
-                        flex-direction: column;
-
-                        span {
-                            &:last-child {
-                                opacity: 0.5;
-                                font-size: 10px;
-                                font-weight: 500;
-                            }
-                        }
-                    }
-
-                    div+div {
-                        border-left: 1px solid rgba(99, 99, 99, 0.1);
-                    }
-                }
-
-                @media (max-width: 767px) {
-                    .u14DemiBold_v2 {
-                        font-size: 12px;
-                    }
-
-                    .u36DemiBold_v2 {
-                        font-size: 30px;
-                    }
-                }
-            }
-
             .product-price {
                 color: var(--sale-order-page-text-color);
                 margin-top: 6px;
@@ -885,6 +832,7 @@ h4 {
                 overflow: hidden;
                 position: relative;
                 border-radius: 10px;
+                aspect-ratio: 23 / 15;
 
                 .swiper-wrapper {
                     .swiper-slide {
@@ -1223,7 +1171,7 @@ h4 {
 
 .build {
     background: $backround-color url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240716-171008.jpg?v=1722073622') center center/cover no-repeat;
-  height: 750px;
+    aspect-ratio: 1920 / 750;
     color: #fff;
     display: flex;
     align-items: center;
@@ -1244,6 +1192,7 @@ h4 {
         color: #000;
         height: auto;
         padding-top: 88vw;
+        aspect-ratio: unset;
 
         .centeral-content {
             .u17Light_v2 {
@@ -2197,6 +2146,127 @@ h4 {
             .u17Light_v2 {
                 margin: 8vw 0;
             }
+        }
+    }
+}
+
+
+
+.judmeeeeeeeee {
+    @media (max-width: 767px) {
+        .centeral-content {
+            padding: 0 4vw;
+        }
+    }
+}
+
+
+
+.toTop {
+    position: fixed;
+    right: 25px;
+    bottom: 135px;
+    border-radius: 24px;
+    background-color: #fff;
+    z-index: 999998;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 48px;
+    width: 48px;
+    box-shadow: 0 3px 6px #00000014;
+
+
+    img {
+        max-width: 22px;
+        margin-right: 4px;
+    }
+
+    @media (max-width: 767px) {
+        flex-direction: column;
+        border-radius: 50%;
+
+        img {
+            max-width: 18px;
+            margin: 0;
+        }
+
+        .u14Medium_v2 {
+            line-height: 12px;
+        }
+    }
+}
+
+#launcher {
+    bottom: 65px !important;
+}
+
+.bottom-fixed {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4vw;
+    z-index: 999998;
+    background-color: #fff;
+    box-shadow: 0px 3px 6px #00000014;
+    border-top: 1px solid rgba(0, 0, 0, 0.16);
+    transition: top .4s ease, transform .4s ease, box-shadow .4s ease, -webkit-transform .4s ease, -webkit-box-shadow .4s ease;
+
+    &>div {
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+
+        .u14Light_v2 {
+            span {
+                &:last-child {
+                    margin-left: 3px;
+                }
+            }
+        }
+    }
+}
+
+.top-fixed {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 999998;
+    background-color: #fff;
+    box-shadow: 0px 3px 6px #00000014;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+    transition: top .4s ease, transform .4s ease, box-shadow .4s ease, -webkit-transform .4s ease, -webkit-box-shadow .4s ease;
+
+    .centeral-content {
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &>div {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+
+            .u17Light_v2 {
+                span {
+                    &:last-child {
+                        margin-left: 6px;
+                    }
+                }
+            }
+        }
+
+        .my-button-origin {
+            margin-left: 15px;
         }
     }
 }

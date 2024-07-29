@@ -986,6 +986,32 @@
   </div>
 </div>
 
+                  <img class="toTop" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21049.svg?v=1687267470">
+	
+<div class="top-fixed mobileHide">
+  <div class="centeral-content">
+    <span class="u20DemiBold_v2">{{ product.title }}</span>
+    <span class="flex-1"></span>
+    <div>
+      <span class="u17Light_v2"><span class="u20DemiBold_v2 emphasize" style="font-weight: 600;">{{ product.price | money }}</span> {% unless product.compare_at_price == product.price %}
+        <span style="text-decoration: line-through;">{{ product.compare_at_price | money }}</span>
+    {% endunless %}</span>
+      <span class="u14Light_v2">or as low as {{ product.price | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
+    </div>
+    <a href="#product_form_{{ product.id }}" class="my-button my-button-origin">Order Now</a>
+  </div>
+</div>
+
+<div class="bottom-fixed pcHide">
+  <a href="#product_form_{{ product.id }}" class="my-button my-button-origin">Order Now</a>
+  <div>
+    <span class="u14Light_v2"><span class="emphasize" style="font-weight: 600;">{{ product.price | money }}</span> {% unless product.compare_at_price == product.price %}
+      <span style="text-decoration: line-through;">{{ product.compare_at_price | money }}</span>
+  {% endunless %}</span>
+    <span class="u14Light_v2">or as low as {{ product.price | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
+  </div>
+</div>
+
 {% render 'product-options', config_name: 'carbon1pro_order_page_config', product: product %}
 
 <script>
