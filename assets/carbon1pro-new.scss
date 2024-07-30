@@ -793,13 +793,9 @@ h4 {
                     justify-content: flex-start;
                     cursor: pointer;
 
-                    img {
-                        max-width: 30px;
-                        margin-right: 6px;
-                    }
-
                     .u11Medium_v2 {
                         word-break: break-all;
+                          margin-left: 6px;
                     }
                 }
             }
@@ -2002,7 +1998,7 @@ h4 {
             align-items: flex-start;
 
             &:nth-child(1) {
-                background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230802-150015_2x_90400ae7-f025-4661-88a0-0ace1e48b675.jpg?v=1721803593') center center/cover no-repeat;
+                background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230802-150015_2x_90400ae7-f025-4661-88a0-0ace1e48b675.jpg?v=1721803593&width=700') center center/cover no-repeat;
                 padding-bottom: 78.125%;
             }
 
