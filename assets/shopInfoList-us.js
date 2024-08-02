@@ -169,6 +169,50 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/what-is-california-known-for-the-golden-gate-bridge-hero.webp?v=1697020664',
     stores: [
       {
+        name: 'EBike A-Go-Go',
+        phone: '+17608778250',
+        email: 'info@e-bikeagogo.com',
+        timezone: "Fremont, California, USA (GMT-7)",
+        add: "211 N Main Ave, Fallbrook, CA 92028",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Bicycle_Garage_Fremont_ca_fremont.jpg?v=1686878451",
+        testrideSpot: "Fallbrook",
+        noBook: true,
+        availableSizes: [
+          'Carbon 1 Pro Size M'
+        ],
+        businessHours: [
+           "10:00-17:00",
+           "10:00-17:00",
+            "10:00-17:00",
+           "10:00-17:00",
+             "10:00-17:00",
+            "10:00-17:00",
+             "10:00-17:00",
+        ],
+      },
+      {
+        name: 'ATB Bike LLC',
+        phone: '626-287-6936',
+        email: '+1(714) 884-4342',
+        timezone: "Fremont, California, USA (GMT-7)",
+        add: "13842 Newport Ave #D-1, Tustin, CA 92780",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Bicycle_Garage_Fremont_ca_fremont.jpg?v=1686878451",
+        testrideSpot: "Tustin",
+        noBook: true,
+        availableSizes: [
+          'Carbon 1 Pro Size S/M/L'
+        ],
+        businessHours: [
+           "10:00-18:00",
+           "10:00-18:00",
+            "10:00-18:00",
+           "10:00-18:00",
+             "10:00-18:00",
+            "10:00-18:00",
+             "10:00-18:00",
+        ],
+      },
+      {
         name: 'Temple City Bike Shop',
         phone: '626-287-6936',
         email: 'james@gotbikes.com',

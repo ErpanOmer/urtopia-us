@@ -467,7 +467,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         document.documentElement.classList.add('shopify-design-mode');
       }
     </script>
-  {% include 'dataLayer-allPages' %}
+       {% include 'dataLayer-allPages' %}
   {{ 'global_config.js' | asset_url | script_tag }}
   
 
@@ -855,6 +855,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }); // lazy loads elements with default selector as '.lozad'
     observer.observe('.lozad');
   </script>
+
 <!-- CRITEO START -->
 {% render 'criteo-tracking' %}
 <!-- CRITEO END -->
