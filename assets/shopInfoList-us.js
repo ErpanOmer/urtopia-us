@@ -174,7 +174,7 @@ const testRides = [
         email: 'info@e-bikeagogo.com',
         timezone: "Fremont, California, USA (GMT-7)",
         add: "211 N Main Ave, Fallbrook, CA 92028",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Bicycle_Garage_Fremont_ca_fremont.jpg?v=1686878451",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_8.png?v=1722853161",
         testrideSpot: "Fallbrook",
         noBook: true,
         availableSizes: [
@@ -196,7 +196,7 @@ const testRides = [
         email: '+1(714) 884-4342',
         timezone: "Fremont, California, USA (GMT-7)",
         add: "13842 Newport Ave #D-1, Tustin, CA 92780",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Bicycle_Garage_Fremont_ca_fremont.jpg?v=1686878451",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_7_1044ac78-4b6d-4259-aa06-8d49e892ce4f.png?v=1722853161",
         testrideSpot: "Tustin",
         noBook: true,
         availableSizes: [
