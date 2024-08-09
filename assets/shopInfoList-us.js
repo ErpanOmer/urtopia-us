@@ -169,6 +169,27 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/what-is-california-known-for-the-golden-gate-bridge-hero.webp?v=1697020664',
     stores: [
       {
+        name: 'E-Motion Sports Newport Beach',
+        phone: '949-584-2544',
+        email: 'info@e-bikeagogo.com',
+        timezone: "Fremont, California, USA (GMT-7)",
+        add: "2815 Newport Blvd Newport Beach, CA 92663",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_8.png?v=1722853161",
+        testrideSpot: "Newport Beach",
+        availableSizes: [
+          'Carbon 1 Pro Size S/M/L'
+        ],
+        businessHours: [
+           "10:00-18:00",
+           "11:00-18:00",
+            "10:00-18:00",
+           "10:00-18:00",
+             "10:00-18:00",
+            "10:00-18:00",
+             "10:00-18:00",
+        ],
+      },
+      {
         name: 'EBike A-Go-Go',
         phone: '+17608778250',
         email: 'info@e-bikeagogo.com',
@@ -239,7 +260,7 @@ const testRides = [
         email: 'james@gotbikes.com',
         timezone: "Fremont, California, USA (GMT-7)",
         add: "5859 Winfield Blvd, San Jose, CA 95123",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Bicycle_Garage_Fremont_ca_fremont.jpg?v=1686878451",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_9.png?v=1723170885",
         testrideSpot: "San Jose",
         availableSizes: [
           'Carbon 1 Pro Size M'
@@ -454,7 +475,8 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-BikeAttackPlayaVista.jpg?v=1665374977",
         testrideSpot: "California",
         availableSizes: [
-          'Carbon 1 Size L'
+          'Carbon 1 Size L',
+          'Carbon 1 Pro Size S/M/L',
         ],
         businessHours: [
           "10:00-18:00",
@@ -797,28 +819,6 @@ const testRides = [
           "13:00-19:00",
         ],
       },
-      
-      {
-        name: "Liberty Cycles",
-        phone: "212-375-3360",
-        email: "libertycycles846@gmail.com",
-        timezone: "Long Island City, Queens, NY, USA (GMT-4)",
-        add: "846 9th Ave, New York, NY 10019",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Liberty_Cycles.jpg?v=1686878451",
-        testrideSpot: "New York",
-        availableSizes: [
-          'Carbon 1 Size M',
-        ],
-        businessHours: [
-          "10:00-18:00",
-          "10:00-19:00",
-          "10:00-19:00",
-          "10:00-19:00",
-          "10:00-19:00",
-          "10:00-19:00",
-          "10:00-19:00",
-        ],
-      },
     ]
   },
   {
@@ -868,6 +868,54 @@ const testRides = [
           "12:00-18:00",
         ],
       },
+    ]
+  },
+  {
+    city: 'Oregon',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Buna_Bicycle_Works_Washington_dc.jpg?v=1665374977',
+    stores: [
+      {
+        name: "Aztec Cycles",
+        phone: "541-653-8185",
+        email: "asestore23@gmail.com",
+        timezone: "Washington, DC, USA (GMT-4)",
+        add: "2862 Willamette St. STE A Eugene, OR 97405",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Aztec_Cycles.jpg?v=1686878451",
+        testrideSpot: "Eugene",
+        availableSizes: [
+          'Carbon 1 Pro Size S/M/L',
+        ],
+        businessHours: [
+          "",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+        ],
+      },
+      {
+        name: `Landspeed's Bike Shop`,
+        phone: "541-650-2666",
+        email: "business@golandspeed.com",
+        timezone: "Washington, DC, USA (GMT-4)",
+        add: "630 E 13th Ave, Eugene, OR 97401",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Aztec_Cycles.jpg?v=1686878451",
+        testrideSpot: "Eugene",
+        availableSizes: [
+          'Carbon 1 Pro Size S/M/L',
+        ],
+        businessHours: [
+          "",
+          "",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+        ],
+      }
     ]
   },
   {
@@ -1097,7 +1145,7 @@ const testRides = [
         testrideSpot: "Louisiana",
         testRideSize: "M/L",
         availableSizes: [
-          'Carbon 1 Pro Size M',
+          'Carbon 1 Pro Size S/M/L',
           'Chord X'
         ],
         businessHours: [
