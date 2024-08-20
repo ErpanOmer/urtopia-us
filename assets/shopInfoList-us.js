@@ -169,6 +169,70 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/what-is-california-known-for-the-golden-gate-bridge-hero.webp?v=1697020664',
     stores: [
       {
+        name: 'Bike Craze Electric Bikes',
+        phone: '714 744-0266',
+        email: 'customerservice@bikecraze.com',
+        timezone: "Fremont, California, USA (GMT-7)",
+        add: "1171 N. Kraemer Blvd Anaheim, Ca 92806",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_13.png?v=1724034334",
+        testrideSpot: "Bell",
+        availableSizes: [
+          'Carbon 1 Pro Size M/L'
+        ],
+        businessHours: [
+           "",
+           "10:00-16:00",
+            "10:00-16:00",
+         "10:00-16:00",
+            "10:00-16:00",
+            "10:00-16:00",
+             "",
+        ],
+      },
+      {
+        name: 'SELA Bicycle Center',
+        phone: '(213) 410-7043',
+        email: 'Info@SelaBicycleCenter.com',
+        timezone: "Fremont, California, USA (GMT-7)",
+        add: "6239 Atlantic Ave, Bell, CA 90201",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_12.png?v=1724034147",
+        testrideSpot: "Bell",
+        availableSizes: [
+          'Carbon 1 Pro Size S/M/L'
+        ],
+        businessHours: [
+           "11:00-16:00",
+           "10:00-18:00",
+            "10:00-18:00",
+          "10:00-18:00",
+             "10:00-18:00",
+            "10:00-18:00",
+             "10:00-18:00",
+        ],
+      },
+      {
+        name: 'Electric Bikes of Santa Barbara',
+        phone: '805-963-8885',
+        email: 'info@e-bikeagogo.com',
+        timezone: "Fremont, California, USA (GMT-7)",
+        add: "1345 State St,Santa Barbara, CA 93101",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_11.png?v=1724033895",
+        testrideSpot: "Santa Barbara",
+        noBook: true,
+        availableSizes: [
+          'Carbon 1 Pro Size M'
+        ],
+        businessHours: [
+           "",
+           "12:00-17:00",
+            "12:00-17:00",
+           "12:00-17:00",
+             "12:00-17:00",
+            "12:00-17:00",
+             "",
+        ],
+      },
+      {
         name: 'E-Motion Sports Newport Beach',
         phone: '949-584-2544',
         email: 'info@e-bikeagogo.com',
@@ -239,7 +303,7 @@ const testRides = [
         email: 'james@gotbikes.com',
         timezone: "Fremont, California, USA (GMT-7)",
         add: "9628 Las Tunas Dr Temple City, CA 91780",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Bicycle_Garage_Fremont_ca_fremont.jpg?v=1686878451",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_10.png?v=1724033342",
         testrideSpot: "Temple City",
         availableSizes: [
           'Carbon 1 Pro Size S/M'
@@ -743,7 +807,7 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Spokesman_Cycles_LIC_ny.jpg?v=1665374977",
         testrideSpot: "Chappaqua",
         availableSizes: [
-          'Carbon 1 Pro Size L',
+          'Carbon 1 Pro Size M/L',
         ],
         businessHours: [
           "",
@@ -817,6 +881,27 @@ const testRides = [
           "13:00-19:00",
           "13:00-19:00",
           "13:00-19:00",
+        ],
+      },
+      {
+        name: "BK Wheels",
+        phone: "347-240-7787",
+        email: "admin@bkwheels.com",
+        timezone: "Long Island City, Queens, NY, USA (GMT-4)",
+        add: "9722 Seaview Ave, Brooklyn, NY 11236",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/BikeFixNYC.jpg?v=1686878451",
+        testrideSpot: "Brooklyn",
+        availableSizes: [
+          'Carbon 1 Pro Size M',
+        ],
+        businessHours: [
+          "",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
         ],
       },
     ]
@@ -919,30 +1004,57 @@ const testRides = [
     ]
   },
   {
-    city: 'Georgia',
+    city: 'Indiana',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Buna_Bicycle_Works_Washington_dc.jpg?v=1665374977',
     stores: [
-      /*{
-        name: "Aztec Cycles",
-        phone: "678-636-9043",
-        email: "aztec718@gmail.com",
+      {
+        name: "Bicycle Outfitters Indy",
+        phone: "(317) 879-5031",
+        email: "bicycleoutfitters@gmail.com",
         timezone: "Washington, DC, USA (GMT-4)",
-        add: "901 Main Street, Stone Mountain, GA 30083",
+        add: "1309 S. High School Road, Indianapolis, IN 46241",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Aztec_Cycles.jpg?v=1686878451",
-        testrideSpot: "Georgia",
+        testrideSpot: "Indianapolis",
         availableSizes: [
-          'Carbon 1 Size M',
+          'Carbon 1 Pro Size S/M/L',
         ],
         businessHours: [
           "",
-          "",
-          "10:00-18:00",
-          "10:00-18:00",
-          "10:00-18:00",
-          "10:00-18:00",
           "10:00-17:00",
+           "10:00-17:00",
+           "10:00-17:00",
+           "10:00-17:00",
+           "10:00-17:00",
+          "",
         ],
-      },*/
+      },
+    ]
+  },
+  {
+    city: 'Idaho',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Buna_Bicycle_Works_Washington_dc.jpg?v=1665374977',
+    stores: [
+      {
+        name: "I Get Around",
+        phone: "208-807-4957",
+        email: "ben@igaboise.com",
+        timezone: "Washington, DC, USA (GMT-4)",
+        add: "609 N Orchard St, Boise, ID 83706",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Aztec_Cycles.jpg?v=1686878451",
+        testrideSpot: "Boise",
+        availableSizes: [
+          'Carbon 1 Pro Size M/L',
+        ],
+        businessHours: [
+          "",
+          "11:00-20:00",
+          "11:00-20:00",
+           "11:00-20:00",
+           "11:00-20:00",
+          "11:00-20:00",
+          "11:00-20:00",
+        ],
+      },
     ]
   },
   {
@@ -1184,6 +1296,28 @@ const testRides = [
           "10:00-18:00",
           "10:00-18:00",
           "12:00-17:00",
+        ],
+      },
+      {
+        name: "Mile Marker 99 Bicycle Shop",
+        phone: "240-707-8027",
+        email: "milemarker99@outlook.com",
+        timezone: "Washington, DC, USA (GMT-4)",
+        add: "22 N Conococheague St, Williamsport, MD 21795",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_4_0d6b1e4d-def2-4565-9aba-0d2241618ead.png?v=1718085649",
+        testrideSpot: "Williamsport",
+        testRideSize: "M/L",
+        availableSizes: [
+          'Carbon 1 Pro Size M',
+        ],
+        businessHours: [
+          "12:00-16:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "08:00-16:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
         ],
       },
     ]
@@ -2012,6 +2146,33 @@ const testRides = [
           "09:00-18:00",
           "09:00-18:00",
           "09:00-18:00",
+        ],
+      },
+    ]
+  },
+  {
+    city: 'Connecticut',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Urban_Electrica.jpg?v=1710818582',
+    stores: [
+      {
+        name: "River Bicycles",
+        phone: "203-532-1718",
+        email: "Riverbicycles@yahoo.com",
+        timezone: "Tennessee, USA (GMT-7)",
+        add: "138 Hamilton Avenue, Greenwich, CT 6830",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Kingston_Ontario_Canada_-_Laslovarga__28.jpg?v=1712714811",
+        testrideSpot: "Greenwich",
+        availableSizes: [
+          'Carbon 1 Pro Size S/M/L',
+        ],
+        businessHours: [
+          "",
+          "10:00-18:00",
+         "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-16:00",
         ],
       },
     ]

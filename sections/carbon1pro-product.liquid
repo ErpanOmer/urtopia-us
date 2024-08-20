@@ -753,6 +753,19 @@
     </div>
   </div>
 </div>
+          <div class="build range">
+  <div class="centeral-content">
+    <h3 class="u36Medium_v2">
+      Prioritize Power or Range?<br>
+      Customize anytime.
+    </h3>
+    <p class="u17Light_v2">
+      <span>
+        Tune assist modes to prioritize powerful support for tackling tough hills or opt for energy-saving settings to extend your range on longer rides. Adapt your ride to suit any journey, ensuring you get the most out of every trip.
+      </span>
+    </p>
+  </div>
+</div>
 <div class="faq">
   <div class="centeral-content">
     <h3 class="u36Medium_v2">FAQs</h3>
@@ -1167,6 +1180,16 @@
     </div>
   </div>
 </div>
+<div class="app">
+<div class="centeral-content">
+   <div>
+     <span class="u48Medium_v2">Your All in One <br>Health Coach</span>
+     <span class="u17Light_v2">Your rides and daily activities offer personalized insights. Our AI companion tailors accurate recommendations exclusively for you—no more generic advice.</span>
+   </div>
+  <img class="lozad mobileHide" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_1171275468_2x_c4e2a5ad-6173-4b69-91be-96007790d93d.png?v=1723798829"/>
+  <img class="lozad pcHide" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24503_2x_e97738c9-2a66-4ca5-a108-f75bac84bafa.jpg?v=1723799497"/>
+</div>
+</div>
 
 {% render 'size-guide-and-specs-template', config: 'carbon1pro_order_page_config' %}
 
@@ -1399,7 +1422,7 @@
         })
         .finally(() => {
           adding = false;
-          !show && fetchBuried('websiteclick', `carbon-1p-reserve-page`, { button: 'ATC' });
+          !show && fetchBuried('websiteclick', `carbon1pro-order-page`, { button: 'ATC' });
 
           setTimeout(() => $('.product .error-tip').hide(), 10000);
         });
@@ -1422,7 +1445,7 @@
     // loading
     t.find('span').html(loading);
 
-    fetchBuried('websiteclick', `carbon-1p-reserve-page`, { button: type }, true);
+    fetchBuried('websiteclick', `carbon1pro-order-page`, { button: type }, true);
     window.sessionStorage.clicked_klarna_checkout_button = 'clicked_klarna_checkout_button';
 
     if (sessionStorage.carbon_one_a_b_test_flag === 'B') {
@@ -1577,4 +1600,8 @@
     });
 
     observerwww.observe(video);
+  fetchBuried('website', `carbon1pro-order-page`, { button: type }, true);
 </script>
+
+
+          
