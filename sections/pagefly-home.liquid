@@ -7,14 +7,14 @@
             height: calc(100vh - 106px);
             position: relative;
             overflow-x: hidden;
-            background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2x_630d3e5d-97f7-480a-a6d2-fb3a9b04b1e4.jpg?v=1724062675') center center/cover no-repeat;
+            background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/us_2x_101b356e-792d-4090-a83d-98a402880fb1.jpg?v=1724479560') center center/cover no-repeat;
             margin-bottom: 2vh;
             display: flex;
             align-items: center;
             justify-content: flex-start;
             flex-direction: column;
             padding-top: 10vh;
-            color: #000454;
+            color: #fff;
             text-align: center;
         }
 
@@ -23,21 +23,21 @@
       }
 
         .esssst a {
-            background-color: rgb(8, 32, 52);
-            color: #fff;
+            background-color: #DFD9D9;
+            color: #000;
           margin-right: 25px;
         }
 
         .esssst a:hover {
-            background-color: rgb(8, 32, 52);
+            background-color: #DFD9D9;
         }
 
         @media (max-width: 767px) {
             .esssst {
                 height: unset;
-                background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24481_2x_39db2132-3b6b-42a4-97ff-2b69bfba6cd4.jpg?v=1724063291');
+                background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/us_2x_18f6755b-5a27-4a6f-90fa-d1d23ce36553.jpg?v=1724479566');
                 text-align: center;
-                padding: 6vw 4vw 0;
+                padding: 13.5vw 4vw 0;
                 margin-bottom: 2.5vw;
                 aspect-ratio: 375 / 543;
                 background-position: bottom;
@@ -45,7 +45,14 @@
 
           .esssst > div {
         margin-top: 4vw;
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
       }
+
+           .esssst > div a {
+             margin: 0;
+           }
 
             .esssst .u48Medium_v2 {
                 font-size: 20px;
@@ -54,10 +61,10 @@
         }
     </style>
  <div class="esssst">
-     <h2 class="u48Medium_v2">Powering Health Management <br>with Urtopia Technology</h2>
+     <h2 class="u48Medium_v2">Creating a unique Labor Day<br>Enjoy {{ all_products['urtopia-carbon-1-pro-ebike'].compare_at_price |  minus: all_products['urtopia-carbon-1-pro-ebike'].price |  money_without_trailing_zeros }} off</h2>
     <div>
-      <a href="/products/urtopia-carbon-1-pro-ebike?variant=44288621314296" target="_blank" class="my-button">Learn More</a>
-      <div target="_blank" onclick="showVideoDialog('https://www.youtube.com/embed/GBOYUqeNIGw?autoplay=1&cc_load_policy=1')" class="my-button my-button-white">Watch Video</div>
+      <a href="/products/urtopia-carbon-1-pro-ebike?variant=44288621314296" target="_blank" class="my-button">Meet Carbon 1 Pro</a>
+      <a href="/blogs/blog/when-mythology-meets-urtopia" target="_blank" class="my-button">Learn more</a>
     </div>
   </div>
     
