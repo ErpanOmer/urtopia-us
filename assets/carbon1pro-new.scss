@@ -141,6 +141,9 @@ h4 {
                 margin-top: 6px;
                 display: flex;
                 align-items: center;
+                max-width: fit-content;
+                flex-wrap: wrap;
+                max-width: 340px;
 
                 .u17Medium_v2 {
                     margin: 0 16px 0 8px;
@@ -154,6 +157,17 @@ h4 {
                     border-radius: 18px;
                     background-color: #ffe2d9;
                     color: #FF0000;
+                }
+
+                .sale {
+                    width: 100%;
+                    margin-top: 12px;
+                    margin-bottom: 0;
+
+                    .u14DemiBold_v2 {
+                        background-size: auto;
+                        padding: 7px 20px 7px 40px;
+                    }
                 }
             }
         }
