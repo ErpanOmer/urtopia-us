@@ -276,16 +276,10 @@
           %}
         </div>
 
-        <div
-          class="product-price u30DemiBold_v2 mb12"
-          {% unless product.compare_at_price != product.price %}
-            style="color: #000;"
-          {% endunless %}
-          {% unless product.compare_at_price == product.price %}
-            data-price="{{ product.compare_at_price | money }}"
-          {% endunless %}
-        >
-          {{ product.price | money }}
+        <div class="product-price u30DemiBold_v2 mb12">
+          {{ product.price |  money_without_trailing_zeros  }}
+          <span class="u17Medium_v2">{{ product.compare_at_price | money }}</span>
+          <span class="u14Medium_v2">-{{ product.compare_at_price |  minus: product.price |  money_without_trailing_zeros }}</span>
         </div>
         {% render "sale" %}
       </div>
