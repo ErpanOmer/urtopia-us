@@ -1,17 +1,8 @@
-/*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
 {
   "current": {
-    "sale_name": "Mid-Year Mega Sale",
-    "sale_end_time": "2024-8-28",
-    "chord_sale_name": "Mid-Year Mega Sale",
+    "sale_name": "Labor Day Sale",
+    "sale_end_time": "2024-8-30",
+    "chord_sale_name": "Labor Day Sale",
     "hide_sale_countdown": false,
     "show_choose_different_size": false,
     "colors_solid_button_labels": "#ffffff",

@@ -1,159 +1,1349 @@
-{{ 'blog.scss.css' | asset_url | stylesheet_tag: preload: true }}
+{% assign prelo = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3-1.jpg?v=1722064932" %}
 
-<article>
-  <header style="--background-image-pc: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1280X1280_c0109ba5-b5ad-47f3-9738-48474b4dc791.png?v=1724399410');">
-    <div class="background-blur"></div>
-    <section class="flex flex-center flex-column text-center height-600 mb-height-420">
-      <h1 class="color-white mb-font-size-24">When Mythology Meets Urtopia</h1>
-    </section>
-  </header>
-  <section class="margin-top-60 margin-bottom-60 max-width-720 mb-margin-top-40 mb-margin-bottom-40">
-    <p class="margin-bottom-40">
+
+{{ 'carbon1pro-new.scss.css' | asset_url | stylesheet_tag: preload: true }}
+<link rel="preload" as="image" href="{{ prelo }}">
+<link rel="preload" as="image" href="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18878.jpg?v=1722064932">
+{% assign product = all_products['urtopia-carbon-1-pro-ebike'] %}
+
+<h1 class="visuallyhidden">Urtopia Carbon 1 Pro Ebike - Sleek, Full Carbon, Lightweight, Smart</h1>
+<div class="product" data-pf-type="ProductBox">
+  <div class="centeral-content">
+      <div class="commonComponent pcHide">
+        <div class="u20DemiBold_v2">{{ product.title }}</div>
+        <div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-25_ order-djs mb16">
+          <div class="pf-judme">
+            {% render 'judgeme_widgets', 
+              widget_type: 'judgeme_preview_badge',
+              jm_style: '',
+              concierge_install: false,
+              product: product
+            %}
+          </div>
+        </div>
+        <div
+          class="product-price u24DemiBold_v2 mb12"
+          {% unless product.compare_at_price != product.price %}
+            style="color: #000;"
+          {% endunless %}
+          {% unless product.compare_at_price == product.price %}
+            data-price="{{ product.compare_at_price | money }}"
+          {% endunless %}
+        >
+          {{ product.price | money }}
+        </div>
+        {% render "sale" %}
+      </div>
+    <div class="left-swiper mobileHide">
+      <div class="swiper-wrapper">
+        <img class="swiper-slide" alt="Urtopia Carbon 1 Pro" src="{{prelo}}"/>
+      </div>
+    </div>
+    <span></span>
+    <div class="featured_image mb16" style="--swiper-navigation-color: #000;--swiper-theme-color: #000;--swiper-pagination-color: #000;">
+      <div class="right-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img alt="Urtopia Carbon 1 Pro" src="{{prelo}}"/></div>
+        </div>
+        <div class="arrow swiper-button-prev mobileHide"></div>
+        <div class="arrow swiper-button-next mobileHide"></div>
+      </div>
+      <div class="medias">
+         <i class="u17DemiBold_v2">Carbon Fiber Expert</i>
+         <img src="https://newurtopia.com/cdn/shop/files/logo_0707__1.png?v=1684310857" alt="">
+      </div>
+      <div class="swiper-pagination pcHide"></div>
+      <div class="free mobileHide">
+        <span class="u14Medium_v2">Free Fenders, Kickstand, 1-Year eSIM Service Included</span>
+        <span class="flex-1"></span>
+        <del class="u14Light_v2">{{ 15700 | money }}</del>
+        <span class="u17Medium_v2">Free</span>
+      </div>
+      <div class="icons mobileHide">
+        <div>
+          <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19076_2x_d6c4ef34-1322-476c-a938-e07aafc231d2.png?v=1721975533" alt="">
+          <div>
+            <span class="u14Light_v2">37 lbs Lightweight</span>
+            <span class="u14Medium_v2">Toray® Carbon Fiber</span>
+          </div>
+        </div>
+        <div>
+          <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19077_2x_8fdc25a7-2677-4d3c-bc84-1006ee69fd75.png?v=1721815803" alt="">
+          <div>
+            <span class="u14Light_v2">Long Range</span>
+            <span class="u14Medium_v2">Up to 80 miles</span>
+          </div>
+        </div>
+        <div>
+          <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19079_2x_1b15b5f2-4388-443e-8307-493c97ad2e09.png?v=1721815835" alt="">
+          <div>
+            <span class="u14Light_v2">Motor Power</span>
+            <span class="u14Medium_v2">Peak 750W</span>
+          </div>
+        </div>
+        <div>
+            <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19078.svg?v=1721815376" alt="">
+          
+          <div>
+            <span class="u14Light_v2">Torque Sensor</span>
+            <span class="u14Medium_v2">0 Response Latency</span>
+          </div>
+        </div>
+        <div>
+            <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19197.svg?v=1721815376" alt="">
+          
+          <div>
+            <span class="u14Light_v2">Portable Battery</span>
+            <span class="u14Medium_v2">Samsung Li-ion</span>
+          </div>
+        </div>
+        <div>
+            <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19196.svg?v=1721815376" alt="">
+          <div>
+            <span class="u14Light_v2">Safety Certified</span>
+            <span class="u14Medium_v2">UL 2849</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <span></span>
+    <form
+      method="post"
+      accept-charset="UTF-8"
+      action="/cart/add"
+      class="product-panel pf-product-form"
+      data-productid="{{ product.id }}"
+      id="product_form_{{ product.id }}"
+      enctype="multipart/form-data"
+    >
+      <input
+        type="hidden"
+        name="id"
+        data-product-id="{{product.id}}"
+        value="{{ product.selected_or_first_available_variant.id }}"
+      >
+      <input type="hidden" name="form_type" value="product">
+      <input type="hidden" name="utf8" value="✓">
+      <div class="commonComponent mobileHide" id="sale_acc">
+        <div class="u24DemiBold_v2">{{ product.title }}</div>
+        <div class="mb16">
+          {% render 'judgeme_widgets',
+            widget_type: 'judgeme_preview_badge',
+            jm_style: '',
+            concierge_install: false,
+            product: product
+          %}
+        </div>
+
+        <div
+          class="product-price u30DemiBold_v2 mb12"
+          {% unless product.compare_at_price != product.price %}
+            style="color: #000;"
+          {% endunless %}
+          {% unless product.compare_at_price == product.price %}
+            data-price="{{ product.compare_at_price | money }}"
+          {% endunless %}
+        >
+          {{ product.price | money }}
+        </div>
+        {% render "sale" %}
+      </div>
+      <div class="options">
+        {% for option in product.options_with_values %}
+          <div class="option mb24" option="{{option.name}}" position="{{ option.position }}">
+            <div class="u17DemiBold_v2 mb16">{{ option.name }} - <span class="u17Light_v2"></span></div>
+            <div class="{{ option.name }}">
+              {% for value in option.values %}
+                {% case option.name %}
+                  {% when 'Model' %}
+                    <div attribute="{{ value }}" class="{{ value }}">
+                      {% assign values = value | split: ' · ' %}
+                      {% for value in values %}
+                        <span>{{ value }}</span>
+                      {% endfor %}
+                    </div>
+                  {% when 'Color' %}
+                    <div attribute="{{ value }}" class="{{ value }}"><span class="tooltip">{{ value }}</span></div>
+                  {% else %}
+                    <div attribute="{{ value }}" class="{{ value }}">{{ value }}</div>
+                {% endcase %}
+              {% endfor %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="accessories mb12">
+        <div class="u17DemiBold_v2 mb12">Accessories</div>
+        <div class="prev"></div>
+        <div class="next"></div>
+        <div class="items mb12">
+          {% for prod in collections['carbon-1-pro-acc'].products %}
+            {% if prod.available %}
+              {% assign variant = prod.variants | first %}
+              <div class="item" variant-id="{{ variant.id }}">
+                <div class="u11Medium_v2">{{ prod.title }}</div>
+                <div>
+                  <div>
+                    <span class="u17DemiBold_v2">{{ prod.price | money }}</span>
+                    <span class="u11Light_v2">
+                      <i class="fa-solid fa-plus"></i>
+                    </span>
+                  </div>
+                  {{ prod.featured_image | image_url: width: 400 | image_tag }}
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+      <div class="free pcHide">
+        <span class="u14Medium_v2">Free</span>
+        <span class="u11Light_v2">Fenders, Kickstand, 1-Year eSIM Service</span>
+      </div>
+      <div class="error-tip u14Medium_v2 mb12" style="color:red;">Your order quantity has reached our stock limit</div>
+      <div class="buttons mb24">
+        <div
+          data-product-id="{{ product.id }}"
+          class="my-button my-button-origin addToCartBtn mb12"
+          onclick="addAllToCart('atc')"
+          id="addToCart"
+        >
+          <i class="fa fa-spinner fa-spin"></i
+          ><span data-pf-type="Text" class="addToCartText u17DemiBold_v2">Add to Cart</span>
+        </div>
+        <div onclick="testRideTrace('klarna_check_out', this)" class="orderTestRideBtn">
+          <img
+            class="twoooo"
+            src="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/files/20230530-121400.png?v=1685420054"
+          >
+          <span><span class="u14DemiBold_v2">0 APR Financing</span
+            ><span class="u14Medium_v2"
+              >24 months,
+              <span class="stages">{{ product.price | divided_by: 24 | money_without_trailing_zeros }}</span
+              >/month</span
+            ></span
+          >
+        </div>
+      </div>
+      <div class="contact mb12">
+        <span class="delivery_time u14Medium_v2">Free shipping within 5 business days</span><br>
+        <span class="u14Light_v2">
+            Need advice from our experts? Contact us at
+            <a class="my-link" href="tel:+1 (844) 936-2868">+1 (844) 936-2868</a> or
+            <a href="mailto:support@newurtopia.com" class="my-link">support@newurtopia.com</a>
+        </span>
+      </div>
+      <div class="dialogs mb24">
+        <div class="u17Medium_v2" onclick="showSizesAndSpecs('SizesDialog')">
+          <span>Size & Fit</span>
+          <span>&gt;</span>
+        </div>
+        <div class="u17Medium_v2" onclick="showSizesAndSpecs('SpecsDialog')">
+          <span>Technical Specifications</span>
+          <span>&gt;</span>
+        </div>
+        <!--
+          <div class="u17Medium_v2">
+            	<span>Support & Service</span>
+            	<span>&gt;</span>
+            </div>
+
+          <div class="u17Medium_v2">
+            <span>Pre-order FAQs</span>
+            <span>&gt;</span>
+          </div>
+        -->
+      </div>
+      <div class="support">
+        <a href="#boxs3">
+          <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19265.svg?v=1721983998">
+          <span class="u11Medium_v2"
+            >150+<br>
+            Bike Shops</span
+          >
+        </a>
+        <a href="/pages/shipping-and-return" target="_blank">
+          <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_17959_2x_cff00041-4dce-479b-b87d-55b1cb89cd7a.png?v=1687161086">
+          <span class="u11Medium_v2"
+            >14-Day<br>Trial</span
+          >
+        </a>
+        <a href="/pages/warranty" target="_blank">
+          <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_17958_2x_1e776f09-0686-4672-a22f-b29d2df3898d.png?v=1687161098">
+          <span class="u11Medium_v2"
+            >2-Year<br>
+            Warranty</span
+          >
+        </a>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="professional">
+  <div class="centeral-content">
+    <h2 class="u36Medium_v2">Professional Reviews</h2>
+    <div class="videos swiper-wrapper">
+      <div class="swiper-slide" onclick="showVideoDialog('https://www.youtube.com/embed/T-0A-EUwUfM?autoplay=1&cc_load_policy=1')">
+        <img
+        class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_24387_2x_36eb73ab-cab9-4cef-a982-55ee3a44b2fa.jpg?v=1721643890"
+          alt=""
+        >
+        <span class="u17Light_v2">A super light and responsive e-bike achieves faster speeds than the metro.</span>
+      </div>
+      <div class="swiper-slide" onclick="showVideoDialog('https://www.youtube.com/embed/r9TD6cPYCxc?autoplay=1&cc_load_policy=1')">
+        <img
+        class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_24388_2x_cf9b2444-02e2-4caa-9a59-642dc5ec0b55.jpg?v=1721643896"
+          alt=""
+        >
+        <span class="u17Light_v2">Tested at 748W, the power of 1 Pro is higher than most all-terrain e-bikes.</span>
+      </div>
+      <div class="swiper-slide" onclick="showVideoDialog('https://www.youtube.com/embed/5JI2U6EpAHA?autoplay=1&cc_load_policy=1')">
+        <img
+        class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_24389_2x_b9ff420c-4577-4ef8-98e5-c9085b0915ba.jpg?v=1721643884"
+          alt=""
+        >
+        <span class="u17Light_v2"
+          >A stealthy and sleek ebike, so capable and the riding experience is what I dreamed of.</span
+        >
+      </div>
+    </div>
+    <div class="swiper-scrollbar"></div>
+  </div>
+</div>
+<div class="build">
+  <div class="centeral-content">
+    <h3 class="u36Medium_v2">
+      Premium Build, <br>
+      Peak Performance
+    </h3>
+    <p class="u17Light_v2">
       <span>
-        We were blown away when we first laid eyes on it. Who would’ve thought that the timeless art of Mythology could
-        blend so perfectly with the sleek frame of the Urtopia Carbon 1 Pro? This incredible creation, named Urban
-        Bestiary, comes from the talented hands of award-winning contemporary artist Anna.
+        Crafted with Torayca® Carbon Fiber, known for its use in Formula 1 and leading bicycle manufacturers, Carbon 1
+        Pro sets the bar for high-performance cycling. Experience its lightweight, stiffness, and stability firsthand
+        with Carbon 1 Pro.
       </span>
     </p>
+  </div>
+</div>
+<div class="boxs">
+  <div class="centeral-content">
     <img
-      class="fade"
-      src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1280X1280_2_6160eeb4-4c83-442c-bdff-42970dd59eba.jpg?v=1724399471"
-      alt=""
+      class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSCF7172_1_2x_9e69fcf5-f8d5-4003-9046-1bc3722fe7eb.jpg?v=1706600943"
+      alt="Urtopia Carbon 1 Pro Ebike - Sleek, Full Carbon, Lightweight, Smart"
     >
-  </section>
-  <section class="margin-top-80 margin-bottom-80 max-width-720 mb-margin-top-60 mb-margin-bottom-60">
-    <h2 class="font-size-28 margin-bottom-40 mb-font-size-20 mb-margin-bottom-28">
-      Meet Anna: Europe’s High-End Artist
+    <div>
+      <h2 class="u30Medium_v2">
+        Your Lightweight, <br>
+        Everyday E-bike
+      </h2>
+      <p class="u17Light_v2">
+        <span
+          >A joy to pedal even without electric assist! Ride like a regular bike while easily covering more miles. For
+          urban ease, Carbon 1 Pro prioritizes a detachable battery — a rarity among lightweight e-bikes, making it the
+          optimal choice for city dwellers.</span
+        >
+      </p>
+      <h3 class="u48Medium_v2">50% <span class="u24Medium_v2">Lighter</span></h3>
+    </div>
+    <div>
+      <h2 class="u30Medium_v2">
+        Your Long-range, <br>
+        Touring E-bike
+      </h2>
+      <p class="u17Light_v2">
+        <span>
+          The synergy of the customized motor and torque sensor ensures optimal efficiency, enabling an impressive
+          80-mile range on a single charge. Enhanced by the Shimano 8-speed gear shift system, it tackles diverse
+          terrains with ease. Start an ebike tour now!
+        </span>
+      </p>
+      <h3 class="u48Medium_v2"><span class="u24Medium_v2">Up to </span>80<span class="u24Medium_v2"> Miles</span></h3>
+    </div>
+    <img
+      class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/ccc_2x_52e3b5e8-e0af-4639-9235-e739f529e631.jpg?v=1706600937"
+      alt="Urtopia Carbon 1 Pro Ebike - Sleek, Full Carbon, Lightweight, Smart"
+    >
+  </div>
+</div>
+<div class="quality">
+  <div class="centeral-content">
+    <h3 class="u36Medium_v2">Quality in details</h3>
+    <div class="items swiper-wrapper">
+      <div class="swiper-slide">
+        <img
+         class="lozad"
+          data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240715-150401_2x_849335f3-f868-4cd2-95f2-3938874802f9.jpg?v=1721703139"
+          alt=""
+        >
+        <span class="u20Medium_v2">Superior Frame Craftsmanship</span>
+        <span class="u14Light_v2"
+          >Using EPS molding technology, the carbon fiber frame achieves a smooth, seamless interior, eliminating stress
+          points and enhancing strength. The result is a lighter, stronger, more reliable, and precisely constructed
+          frame, crafted to the same high standards as best race bikes in the world.</span
+        >
+      </div>
+      <div class="swiper-slide">
+        <img
+        class="lozad"
+        data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/c_2x_a76f0c74-93ae-4efa-b971-c568eaecd076.jpg?v=1721714682"
+          alt=""
+        >
+        <span class="u20Medium_v2">Customizable Smart Assist</span>
+        <span class="u14Light_v2"
+          >With a torque sensor and app-customizable assist ratios, this eBike offers a personalized, natural ride. The
+          torque sensor provides smooth, responsive power based on pedaling effort, while the app fine-tunes assist for
+          optimal battery efficiency and control in various conditions.</span
+        >
+      </div>
+      <div class="swiper-slide">
+        <img
+        class="lozad"
+        data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240712-182556_2x_7b88c6c3-261c-4f6a-94e0-4f279e97c471.jpg?v=1721714687"
+          alt=""
+        >
+        <span class="u20Medium_v2">High-Performance Motor</span>
+        <span class="u14Light_v2"
+          >Featuring a 750-watt peak power and 45 Nm rear hub motor, the 1 Pro delivers responsive performance
+          equivalent to a 65 Nm mid-drive motor. Lightweight, quiet, and quick to respond with low maintenance costs,
+          it’s power and convenient for urban and light off-road riding.</span
+        >
+      </div>
+      <div class="swiper-slide">
+        <img
+        class="lozad"
+        data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2x_78ede538-edb5-41fb-a18c-d57595204e2d.jpg?v=1721714693"
+          alt=""
+        >
+        <span class="u20Medium_v2">Gear-Optimized Extended Range</span>
+        <span class="u14Light_v2"
+          >By finely tuning the 4 levels of pedal assist and the Shimano 8-speed rear derailleur, we optimize power
+          output and leverage the wide gear ratios to enhance battery efficiency and extend the range to an impressive
+          80 miles on a single charge.</span
+        >
+      </div>
+      <div class="swiper-slide">
+        <img
+        class="lozad"
+        data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/ccc_2x_8faccdc0-333e-4aab-acdd-73639339de4e.jpg?v=1721714699"
+          alt=""
+        >
+        <span class="u20Medium_v2">Removable Battery</span>
+        <span class="u14Light_v2"
+          >Concealed in the frame, 1 Pro features a quick-detachable battery for easy carrying and charging. The 352.8
+          Wh Samsung Li-ion battery is UL-2271 and IP65 certified for safety and reliability. Fast 2.5-hour charging
+          eliminates long waits, and at 2.3 kg, it’s an ideal backup battery for long rides.</span
+        >
+      </div>
+      <div class="swiper-slide">
+        <img
+        class="lozad"
+        data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240716-095036_2x_7acbb696-f43a-4fda-b143-74be30f582b5.jpg?v=1721714705"
+          alt=""
+        >
+        <span class="u20Medium_v2">All-in-one Smartbar</span>
+        <span class="u14Light_v2"
+          >Innovative smartbar featuring a smartbox, integrated headlight, left-side control buttons, and a right-side
+          shifter. The stem can be raised by 30mm for a more comfortable upright riding position. Experience onboard
+          navigation and real-time riding data on a big display to streamline your cycling experience.</span
+        >
+      </div>
+      <div class="swiper-slide">
+        <img
+          class="lozad"
+        data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2x_ee466589-87fe-493f-9a63-4d99432e2af3.jpg?v=1721714675"
+          alt=""
+        >
+        <span class="u20Medium_v2">Versatile Tires</span>
+        <span class="u14Light_v2"
+          >Featuring 700x40C large-diameter tires for easier and faster riding. Wider tire surface provides enhanced
+          stability and comfort, improving grip and handling. Ideal for various terrains, including gravel, muddy paths,
+          and city streets, and compatible with tire widths up to 45C.</span
+        >
+      </div>
+    </div>
+    <div class="swiper-scrollbar"></div>
+    <div class="buttons mobileHide">
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </div>
+</div>
+<div class="sleek">
+  <video
+    muted
+    playsinline
+    autoplay
+    loop
+    class="lozad mobileHide"
+    data-src="https://player.vimeo.com/progressive_redirect/playback/907415400/rendition/1080p/file.mp4?loc=external&signature=796622305d603d0b7dba0ea9d0a973bd879902453dcf2e79908d7374c11031d0"
+    poster="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_23942_2x_0b3e2f68-3edf-423c-840c-93acaf520220.jpg?v=1706595699"
+  ></video>
+  <video
+    muted
+    playsinline
+    autoplay
+    loop
+    class="lozad pcHide"
+    data-src="https://player.vimeo.com/progressive_redirect/playback/907415420/rendition/540p/file.mp4?loc=external&signature=dd44e007d5fc0b2e3e34a8d06c7fe594bac0234cf6170de49d37ab5128a1369d"
+    poster="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240727-150110.jpg?v=1722063688"
+  ></video>
+  <div>
+    <h2 class="u36Medium_v2">
+      Sleek Design, <br>
+      Hidden Power
     </h2>
-    <p class="margin-bottom-40">
-      <span>
-        Anna is a celebrated European artist with a list of accolades as impressive as her work. Her pieces have been
-        showcased in major cities like New York, Berlin, and Los Angeles, and she’s a favorite among top luxury brands
-        like Maison Margiela and Netflix. Anna’s art is all about mixing traditional and modern techniques, creating
-        pieces that are intricate, layered, and oozing with a sense of luxury and storytelling.
-      </span>
+    <p class="u17Light_v2">
+      <span
+        >Designed by former BMW maestro Mr. Heller, Carbon 1 Pro’s unibody design hides its e-bike identity. A top
+        choice for minimalists and design enthusiasts seeking the best-designed e-bike.</span
+      >
+      <div
+        class="my-button"
+        onclick="showVideoDialog('https://www.youtube.com/embed/V_YWOzAZdBg?autoplay=1&cc_load_policy=1')"
+      >
+        Watch Video
+        <img
+          class="lozad mobileHide"
+          data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/screenshot-20231012-164642.png?v=1697100422"
+          alt="Urtopia Carbon 1 Pro Ebike - Sleek, Full Carbon, Lightweight, Smart"
+        >
+        <img
+          class="lozad pcHide"
+          data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/screenshot-20231012-165647.png?v=1697101021"
+          alt="Urtopia Carbon 1 Pro Ebike - Sleek, Full Carbon, Lightweight, Smart"
+        >
+      </div>
     </p>
+  </div>
+</div>
+<div class="sleek comfort">
+  <video
+    muted
+    playsinline
+    loop
+    class="lozad mobileHide"
+    data-src="https://cdn.shopify.com/videos/c/o/v/e11dca7d00d64d9db4454a4b08b8a589.mp4"
+    poster="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1_-_1_PosterImage.jpg?v=1721719179"
+  ></video>
+  <video
+    muted
+    playsinline
+    loop
+    class="lozad pcHide"
+    data-src="https://cdn.shopify.com/videos/c/o/v/fbce42f6c3e242fda0053cf6df0de478.mp4"
+    poster="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_19270_2x_776373bf-33bf-40d7-8165-b8714a295e1d.jpg?v=1721722315"
+  ></video>
+  <div>
+    <h2 class="u36Medium_v2">
+      Comfort or Cargo? <br>
+      Customize Your Ride!
+    </h2>
+    <p class="u17Light_v2">
+      <span
+        >Adjustable handlebars and seat post ensure a comfortable riding position for both sport and leisure. Versatile
+        accessory mounting points maximize carrying capacity. Load up and ride into adventure!</span
+      >
+    </p>
+  </div>
+</div>
+<div class="build city">
+  <div class="centeral-content">
+    <div>
+      <h3 class="u36Medium_v2">
+        Trekking or City ride? <br>
+        It’s up to you.
+      </h3>
+      <p class="u17Light_v2">
+        <span>
+          The Carbon 1 Pro is a highly versatile gravel e-bike that can support front suspension, larger tires, and a
+          rack, offering exceptional DIY possibilities. With these features, you can transform it into an all-terrain
+          beast.
+        </span>
+      </p>
+    </div>
+  </div>
+</div>
+<div class="faq">
+  <div class="centeral-content">
+    <h3 class="u36Medium_v2">FAQs</h3>
+    <div class="items">
+      <div class="item">
+        <div class="u24Medium_v2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="29.243"
+            height="16.742"
+            viewBox="0 0 29.243 16.742"
+          >
+            <g id="Group_20413" data-name="Group 20413" transform="translate(27.121 2.121) rotate(90)">
+                <line id="Line_831" data-name="Line 831" x2="12.5" y2="12.448"
+                    transform="translate(0 0)" fill="none" stroke="#898989" stroke-linecap="round"
+                    stroke-width="3" />
+                <line id="Line_832" data-name="Line 832" y1="12.448" x2="12.5"
+                    transform="translate(0 12.552)" fill="none" stroke="#898989" stroke-linecap="round"
+                    stroke-width="3" />
+            </g>
+          </svg>
+          1. How durable is the carbon frame of the Carbon 1 Pro?
+        </div>
+        <p class="u17Light_v2">
+          <span>
+            The Carbon 1 Pro uses high-quality Toray T700/T800 carbon fibers and EPS molding technology. This creates a
+            lightweight, strong, and impact-resistant frame with a seamless interior, eliminating stress points and
+            enhancing durability. The result is a precisely constructed frame, as reliable as the best race bikes.
+          </span>
+        </p>
+      </div>
+      <div class="item">
+        <div class="u24Medium_v2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="29.243"
+            height="16.742"
+            viewBox="0 0 29.243 16.742"
+          >
+            <g id="Group_20413" data-name="Group 20413" transform="translate(27.121 2.121) rotate(90)">
+                <line id="Line_831" data-name="Line 831" x2="12.5" y2="12.448"
+                    transform="translate(0 0)" fill="none" stroke="#898989" stroke-linecap="round"
+                    stroke-width="3" />
+                <line id="Line_832" data-name="Line 832" y1="12.448" x2="12.5"
+                    transform="translate(0 12.552)" fill="none" stroke="#898989" stroke-linecap="round"
+                    stroke-width="3" />
+            </g>
+          </svg>
+          2. Why does the Carbon 1 Pro use a hub motor instead of a mid-drive motor?
+        </div>
+        <p class="u17Light_v2">
+          <span>
+            Hub motors are lighter, smoother, and more responsive, making them ideal for city and gravel roads.
+            Mid-drive motors, while better for steep climbs, tend to be heavier, noisier, and more complex. The Carbon 1
+            Pro, designed for urban and gravel environments, features a hub motor for agile riding experience. For those
+            looking to conquer steep climbs, our Fusion model is available.
+          </span>
+        </p>
+      </div>
+      <div class="item">
+        <div class="u24Medium_v2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="29.243"
+            height="16.742"
+            viewBox="0 0 29.243 16.742"
+          >
+            <g id="Group_20413" data-name="Group 20413" transform="translate(27.121 2.121) rotate(90)">
+                <line id="Line_831" data-name="Line 831" x2="12.5" y2="12.448"
+                    transform="translate(0 0)" fill="none" stroke="#898989" stroke-linecap="round"
+                    stroke-width="3" />
+                <line id="Line_832" data-name="Line 832" y1="12.448" x2="12.5"
+                    transform="translate(0 12.552)" fill="none" stroke="#898989" stroke-linecap="round"
+                    stroke-width="3" />
+            </g>
+          </svg>
+          3. What components are used in the Carbon 1 Pro?
+        </div>
+        <p class="u17Light_v2">
+          <span>
+            The Carbon 1 Pro is equipped with high-quality brand components, including Shimano gears, Tektro brakes, a
+            Samsung battery, and Toray carbon fibers. The motor is produced by a German manufacturer Mahle and branded
+            under our name.
+          </span>
+        </p>
+      </div>
+      <div class="item">
+        <div class="u24Medium_v2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="29.243"
+            height="16.742"
+            viewBox="0 0 29.243 16.742"
+          >
+            <g id="Group_20413" data-name="Group 20413" transform="translate(27.121 2.121) rotate(90)">
+                <line id="Line_831" data-name="Line 831" x2="12.5" y2="12.448"
+                    transform="translate(0 0)" fill="none" stroke="#898989" stroke-linecap="round"
+                    stroke-width="3" />
+                <line id="Line_832" data-name="Line 832" y1="12.448" x2="12.5"
+                    transform="translate(0 12.552)" fill="none" stroke="#898989" stroke-linecap="round"
+                    stroke-width="3" />
+            </g>
+          </svg>
+          4. What safety features does the Carbon 1 Pro offer?
+        </div>
+        <p class="u17Light_v2">
+          <span>
+            The Carbon 1 Pro offers comprehensive safety features, including GPS tracking and anti-theft protection. It
+            has Tektro hydraulic disc brakes for reliable stopping power. Built-in navigation and speakers reduce the
+            risk of distractions, while the light-sensing front light automatically activates in low-light conditions
+            for enhanced visibility.
+          </span>
+        </p>
+      </div>
+      <div class="item">
+        <div class="u24Medium_v2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="29.243"
+            height="16.742"
+            viewBox="0 0 29.243 16.742"
+          >
+            <g id="Group_20413" data-name="Group 20413" transform="translate(27.121 2.121) rotate(90)">
+                <line id="Line_831" data-name="Line 831" x2="12.5" y2="12.448"
+                    transform="translate(0 0)" fill="none" stroke="#898989" stroke-linecap="round"
+                    stroke-width="3" />
+                <line id="Line_832" data-name="Line 832" y1="12.448" x2="12.5"
+                    transform="translate(0 12.552)" fill="none" stroke="#898989" stroke-linecap="round"
+                    stroke-width="3" />
+            </g>
+          </svg>
+          5. Is the Carbon 1 Pro suitable for different weather conditions?
+        </div>
+        <p class="u17Light_v2">
+          <span>
+            Yes, the Carbon 1 Pro is designed to perform well in various weather conditions. It is IP65 rated for dust
+            and water resistance, ensuring protection against rain and splashes. Additionally, it can accommodate tires
+            up to 45c in width, providing excellent stability and traction on wet or uneven surfaces. Whether you're
+            riding in rain, dust, or on rough terrain, the Carbon 1 Pro is built to handle it all.
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="test-ride">
+  <div class="centeral-content">
+    <div>
+      <div>
+        <h2 class="u30Medium_v2">It’s time to give it a spin!</h2>
+        <p class="u17Light_v2">
+          <span>Experience the bike in real</span>
+        </p>
+        <a
+          class="my-button my-button-white"
+          href="/pages/test-ride"
+          target="_blank"
+          >Book a Free Test Ride</a
+        >
+      </div>
+    </div>
+    <div>
+      <div style="padding: 0;">
+        <div
+          id="storepoint-container"
+          data-tags="us"
+          data-map-id="162f21804990ff"
+        ></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="boxs3" id="boxs3">
+  <div class="centeral-content">
+    <div></div>
+    <div>
+      <h2 class="u30Medium_v2">Local care all the time</h2>
+      <div class="u17Light_v2">
+        <div>
+          <img
+            class="lozad"
+            data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/shopping-mall_2x_44d99fcd-f0f4-443b-927e-b68e48af010f.png?v=1687259496"
+
+          >150+ service partners
+        </div>
+        <div>
+          <img
+            class="lozad"
+            data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24-hours_2x_d6a8eeb2-4564-4351-8cb9-096dbb778479.png?v=1687259501"
+
+          >24hrs service response, App build-in portal
+        </div>
+        <div>
+          <img
+            class="lozad"
+            data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/box_2x_2b3b7c15-f5ae-4305-956f-7543b63b2dda.png?v=1687259506"
+
+          ><span>Spare parts available locally, ships in 3 days.</span>
+        </div>
+        <div>
+          <img
+            class="lozad"
+            data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/customer-satisfaction_2x_c7081e3a-1864-43b6-8ed2-f77895eafa6a.png?v=1687259512"
+
+          >20+ technical experts, 99% satisfaction rate.
+        </div>
+      </div>
+      <a class="my-button my-button-white" href="/pages/care" target="_blank">Learn more</a>
+    </div>
+    <div>
+      <div class="u30Medium_v2">Urtopians worldwide</div>
+      <div class="u17Light_v2">
+        Over 200,000 Urtopians worldwide are passionate about green riding with Urtopia ebikes, and their total ride
+        data is impressive, equivalent to planting a total of 131,300+ trees.
+      </div>
+      <div class="texts">
+        <div>
+          <span class="u14Light_v2">The Urtopians rode a total distance of</span>
+          <span class="u30DemiBold_v2">432,000,000+ <span class="u20Medium_v2">km</span></span>
+        </div>
+        <div>
+          <span class="u14Light_v2">The reduction in CO2 emissions amounted to</span>
+          <span class="u30DemiBold_v2">530,000+ <span class="u20Medium_v2">kg</span></span>
+        </div>
+        <div>
+          <span class="u14Light_v2">Urtopian’s joint effort is equivalent to planting</span>
+          <span class="u30DemiBold_v2">131,500+ <span class="u20Medium_v2">trees</span></span>
+        </div>
+      </div>
+    </div>
     <img
-      class="fade margin-bottom-40"
-      src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1280X1280_3_fd69af1f-bec3-4076-a095-9e23a4722c66.jpg?v=1724399629"
+    class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/IMG_7844_2x_b321b04d-1924-4c56-a4ee-db9cb945802b.jpg?v=1721803578"
       alt=""
     >
-
-    <p class="margin-bottom-24">
-      <span> A Few of Anna’s Awards and Honors: </span>
-    </p>
-    <ul class="font-weight-600 mb-font-size-16 padding-left-20 margin-bottom-60 mb-margin-bottom-32">
-      <li class="margin-top-20 mb-margin-top-4">Exhibitions in New York, Berlin, Los Angeles, and more.</li>
-      <li class="margin-top-20 mb-margin-top-4">Features in renowned media outlets.</li>
-      <li class="margin-top-20 mb-margin-top-4">
-        3x3 International Illustration Show (Merit Award, Honorable Mention).
-      </li>
-      <li class="margin-top-20 mb-margin-top-4">AOI World Illustration Awards (First Place).</li>
-      
-      <li class="margin-top-20 mb-margin-top-4">ABT Pastel Colors (First Place).</li>
-      <li class="margin-top-20 mb-margin-top-4">ABT Primary (First Place).</li>
-      <li class="margin-top-20 mb-margin-top-4">The ForeWork Initiative (First Place).</li>
-      <li class="margin-top-20 mb-margin-top-4">Society of Illustrators 64th Annual Exhibition (Silver Medal).</li>
-      <li class="margin-top-20 mb-margin-top-4">Finalist in Hiii International Competition.</li>
-    </ul>
-
-
-    <div class="grid-box grid-columns-2 grid-column-gap-16 mb-grid-columns-1 mb-grid-row-gap-16 margin-bottom-40">
-      <img
-        class="fade"
-        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3a0a5284-45de-4dd0-bc66-e3acfe9c962d.jpg?v=1724399946"
-        alt=""
-      >
-      <img
-        class="fade"
-        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1b105f7b-c012-4e89-b66d-4776ee9ba32c.jpg?v=1724399947"
-        alt=""
-      >
+  </div>
+</div>
+<div class="users">
+  <div class="centeral-content">
+    <h3 class="u36Medium_v2">Users Like You, Worldwide</h3>
+    <div class="sipwers">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img
+          class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/aaa_2x_b7d8a82c-0123-4464-8e05-a61068384a8c.jpg?v=1721728097"
+            alt=""
+          >
+          <span class="u17Light_v2">
+            <i><b>Michael S. </b>“Lightweight is the magic.”</i>
+          </span>
+        </div>
+        <div class="swiper-slide">
+          <img
+          class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/363831887_269493272386733_7002402243999728624_n_2x_b09751de-04ae-430d-bba8-23ea7007dcfc.jpg?v=1721731773"
+            alt=""
+          >
+          <span class="u17Light_v2">
+            <i
+              ><b>Andre. </b>“April 16 was the anniversary of my birth. On that morning my wife sent me to the garage to
+              get her things in the car and what to my surprise was sitting in the garage covered in wrapping paper?
+              Best Birthday gift ever. I’ve already put like 360 miles on it and I am loving it.”</i
+            >
+          </span>
+        </div>
+        <div class="swiper-slide">
+          <img
+          class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_19247_2x_35a52f03-6a80-490b-8c5b-4cf3477aa0f3.jpg?v=1721731777"
+            alt=""
+          >
+          <span class="u17Light_v2">
+            <i><b>Brice. </b>“Did I mention how lightweight the Carbon 1 Pro is?“</i>
+          </span>
+        </div>
+        <div class="swiper-slide">
+          <img
+          class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/d_2x_b874acee-2fd3-4a71-af6d-726e10bf80eb.jpg?v=1721731783"
+            alt=""
+          >
+          <span class="u17Light_v2">
+            <i><b>Elnaz. </b>“Great day in Everglades“</i>
+          </span>
+        </div>
+        <div class="swiper-slide">
+          <img
+          class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/424810598_10220326036215939_1573558836814671753_n_2x_777345e7-b5a8-430b-a050-814a8a720f82.jpg?v=1721731788"
+            alt=""
+          >
+          <span class="u17Light_v2">
+            <i><b>Chris. </b>“Outstanding performance. I love this bike.”</i>
+          </span>
+        </div>
+        <div class="swiper-slide">
+          <img
+          class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_19246_2x_c403a2bb-853b-4ff8-af39-9e2f399b54a8.jpg?v=1721731794"
+            alt=""
+          >
+          <span class="u17Light_v2">
+            <i
+              ><b>Matthew Ho. </b>“Can’t believe they have used a Toray Carbon fiber on this bike, this is worth the
+              price.“</i
+            >
+          </span>
+        </div>
+        <div class="swiper-slide">
+          <img
+          class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/449698987_7732111710198519_5623758882367572858_n_2x_d33ecf39-6726-4369-ad2b-6bf651e6e469.jpg?v=1721731799"
+            alt=""
+          >
+          <span class="u17Light_v2">
+            <i
+              ><b>Rolf Thomas. </b>“Big praise and keep up the good work to the Urtopia team …this makes e-biking even
+              more fun 👏☀️😎“</i
+            >
+          </span>
+        </div>
+        <div class="swiper-slide">
+          <img
+          class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_19248_2x_fa7260e5-5c80-4b85-b835-b8240e81d096.jpg?v=1721731804"
+            alt=""
+          >
+          <span class="u17Light_v2">
+            <i
+              ><b>Maria. </b>“This past weekend, I completed the STP 2024, a 206-mile ride from Seattle to Portland,
+              riding my Urtopia Carbon 1 Pro.“</i
+            >
+          </span>
+        </div>
+      </div>
     </div>
-  </section>
-  <section class="margin-top-80 margin-bottom-80 max-width-720 mb-margin-top-60 mb-margin-bottom-60">
-    <h2 class="font-size-28 margin-bottom-40 mb-font-size-20 mb-margin-bottom-28">A Collaboration Born Out of Passion for Design</h2>
-    <p class="margin-bottom-40">
-      <span>
-        This collaboration with Anna happened naturally, as both sides share a deep passion for design excellence. Anna, who’s a member of the NYC Society of Illustrators, often works with international and local professionals on unique projects. Having already worked with several luxury brands, she sees something special in Urtopia.
-      </span>
-    </p>
-    <p class="margin-bottom-40">
-      <b><i>"Urtopia has the potential of a top-tier brand, with an extraordinary commitment to design and confidence in their vision," </i></b><span>&nbsp;says Anna.</span></b>
-    </p>
-    <img
-        class="fade margin-bottom-40"
-        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/eb675266-5da2-41a5-b676-928f03958b5f.jpg?v=1724400275"
-        alt=""
-      >
-      <p class="margin-bottom-40">
-      <span>With that shared vision, we set out to infuse her sophisticated style into the Carbon 1 Pro. The bike’s frame became her canvas, and Anna’s artistry added a new level of vibrancy to its smooth, flowing curves.</span>
-    </p>
-  </section>
-  <section class="margin-top-80 margin-bottom-80 max-width-720 mb-margin-top-60 mb-margin-bottom-60">
-    <h2 class="font-size-28 margin-bottom-40 mb-font-size-20 mb-margin-bottom-28">Urban Bestiary: Where Myth Meets Modern</h2>
-    <p class="margin-bottom-40">
-      <span>
-        The piece is called Urban Bestiary, inspired by mythology and urban legends. In her signature modern Delft blue style, Anna brought mythological creatures to life—symbols of speed, strength, and courage. Winged lions, griffins, and other beasts are seamlessly integrated with the bike’s design, creating a striking visual contrast. The artwork’s idyllic scenes, tinged with a subtle dark edge, invite you to take a closer look and discover more. Anna’s style, with its mix of beauty and a touch of mystery, shines through in this project for Urtopia.
-      </span>
-    </p>
-    <div class="grid-box grid-columns-2 grid-column-gap-16 margin-bottom-16 mb-grid-columns-1 mb-grid-row-gap-16">
-      <img
-        class="fade"
-        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3b7e0d9d-34a1-49f4-819e-3b7d9e4081c4.jpg?v=1724400421"
-        alt=""
-      >
-      <img
-        class="fade"
-        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2733dcf2-209e-4381-b001-527cc35c648f.jpg?v=1724400421"
-        alt=""
-      >
+  </div>
+</div>
+<div class="never">
+  <div class="centeral-content">
+    <h2 class="u60Medium_v2">
+      Smart <span style="color: #EB5A2D;">EVOLUTION,</span><br>
+      Unleashing Intelligent Charm
+    </h2>
+    <div class="boxsxzczxc">
+      <div>
+        <img
+          class="mobileHide lozad"
+          data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240628-092925_2x_0a1659dd-0ff1-4009-8aca-d9be62dd64c7.jpg?v=1721789383"
+          alt="Urtopia Carbon 1 Pro Ebike - Sleek, Full Carbon, Lightweight, Smart"
+        >
+        <img
+          class="pcHide lozad"
+          data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240628-092925_2x_e765192a-8d1a-4284-bbe4-17a4ca22e3ce.jpg?v=1721790403"
+          alt=""
+        >
+        <h4 class="u30Medium_v2">Movement alarm</h4>
+        <p class="u17Light_v2">
+          <span> Once locked, the onboard alarm monitors movements and alerts you against unauthorized ones. </span>
+        </p>
+        <div class="flex-1"></div>
+      </div>
+      <div>
+        <img
+          class="mobileHide lozad"
+          data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18878_2x_a35bafec-b477-41aa-b2a9-21ee56829db9.jpg?v=1721789377"
+          alt="Urtopia Carbon 1 Pro Ebike - Sleek, Full Carbon, Lightweight, Smart"
+        >
+        <img
+          class="pcHide lozad"
+          data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_19273_2x_a0fe01d4-26cf-47b3-bf74-5f9dd38c2669.jpg?v=1721790465"
+          alt=""
+        >
+        <h4 class="u30Medium_v2">GPS tracking and fence</h4>
+        <p class="u17Light_v2">
+          <span>
+            Aided by a constant 4G connection, GPS tracking keeps you informed of the e-bike’s location, even in the
+            worst scenario of theft.
+          </span>
+        </p>
+        <div class="flex-1"></div>
+      </div>
     </div>
-    <img
-        class="fade margin-bottom-40"
-        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/c9cd63bb-2630-4ad3-8fef-dcf93228ef7a.jpg?v=1724400522"
-        alt=""
-      >
-      <p class="margin-bottom-40">
-      <span>
-        And now, we proudly present this stunning piece of art. In my honest opinion, It’s not just a bike—it’s a masterpiece.
-      </span>
-    </p>
-    <p class="margin-bottom-40">
-      <span>
-        Thank you, Anna, for bringing your artistic magic to Urtopia.
-      </span>
-    </p>
-    <img
-    class="fade margin-bottom-40"
-    src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/5c850bf7-4140-4b2e-ab76-2eca0ccbeb55.jpg?v=1724400590"
-    alt=""
-  >
-    <p class="margin-bottom-60">
-      <span>
-        We’re thrilled by this passionate blend of creativity and design. If you’re an artist who loves Urtopia e-bikes as much as we do, we’d love to see more international artists join the Urtopia family and create even more amazing works.
-      </span>
-    </p>
-    <div class="flex flex-center margin-top-40 margin-bottom-60">
-      <a class="my-button my-button-origin" href="/products/urtopia-carbon-1-pro-ebike" target="_blank">Order Now</a>
+  </div>
+</div>
+
+<div class="everything">
+  <div class="centeral-content">
+    <div class="boxqwewqeqs">
+      <div>
+        <h3 class="u30Medium_v2">Fingerprint unlock</h3>
+        <p class="u17Light_v2">
+          <span> No more hassle worrying about losing another key. </span>
+        </p>
+      </div>
+      <div>
+        <h3 class="u30Medium_v2">Navigation without cellphone</h3>
+        <p class="u17Light_v2">
+          <span> Bright screen shows navigation clearly under daylight, no more ugly phone holder. </span>
+        </p>
+      </div>
+      <div>
+        <h3 class="u30Medium_v2">Track your route</h3>
+        <p class="u17Light_v2">
+          <span>
+            Smart App tracks your journey and health. Get on the bike and share your thrilling moments with your friends
+            and family.
+          </span>
+        </p>
+      </div>
+      <div>
+        <h3 class="u30Medium_v2">Bluetooth music</h3>
+        <p class="u17Light_v2">
+          <span>
+            We know the importance of music, so we build in a bluetooth speaker, you can enjoy your favourite music when
+            riding without carrying an external speaker.
+          </span>
+        </p>
+      </div>
     </div>
-  </section>
-</article>
+  </div>
+</div>
+
+{% render 'size-guide-and-specs-template', config: 'carbon1pro_order_page_config' %}
+
+<div class="judmeeeeeeeee">
+  <div class="centeral-content">
+    {% include 'judgeme_widgets', widget_type: 'judgeme_review_widget', concierge_install: false %}
+  </div>
+</div>
+
+{% render 'product-options', config_name: 'carbon1pro_order_page_config', product: product %}
 
 <script>
-  window.addEventListener("scroll", throttle(() => {
-    $('article .fade').each((i, item) => {
-      let { top } = item.getBoundingClientRect();
-        let s = window.innerHeight - top;
-        if (s > 0) {
-          item.classList.add("fade-in-show")
+  // 默认隐藏
+  $('.product .error-tip').hide();
+  // 默认隐藏
+  $('.bottom-fixed').hide();
+  $('.top-fixed').hide();
+  $('.toTop').hide();
+
+  const leftSwiper = new Swiper('.product .left-swiper', {
+    direction: 'vertical',
+    spaceBetween: 15,
+    slidesPerView: 9,
+    watchSlidesProgress: true,
+    // height: 360,
+  });
+
+  const rightSwiper = new Swiper('.product .right-swiper', {
+    navigation: {
+      nextEl: '.product .featured_image .swiper-button-next',
+      prevEl: '.product .featured_image .swiper-button-prev',
+    },
+    spaceBetween: 10,
+    pagination: { el: '.swiper-pagination' },
+    thumbs: {
+      swiper: leftSwiper,
+    },
+    roundLengths : true,
+    on:{
+        slideChange: function() {
+            const index = this.activeIndex % global_config.carbon1pro_order_page_config.product_media_images.length;
+            $('.product .medias').find('.u17DemiBold_v2').text(global_config.carbon1pro_order_page_config.product_media_images[index].text)
+            $('.product .medias').find('img').attr('src', global_config.carbon1pro_order_page_config.product_media_images[index].img)
+
+            if (global_config.carbon1pro_order_page_config.product_media_images[index + 1]) {
+                (new Image()).src = global_config.carbon1pro_order_page_config.product_media_images[index + 1].img
+            }
+
+            if (global_config.carbon1pro_order_page_config.product_media_images[index + 2]) {
+                (new Image()).src = global_config.carbon1pro_order_page_config.product_media_images[index + 2].img
+            }            
+        },
+    },
+  });
+
+  document.addEventListener('onChangeSize', (e) => {
+    $(`.product .product-panel .options > div[option="Size"] .u17DemiBold_v2 .u17Light_v2`).text(
+      global_config.carbon_order_page_config.size_map[e.value]
+    );
+  });
+
+  document.addEventListener('onChangeColor', (e) => {
+    $(`.product .product-panel .options > div[option="Color"] .u17DemiBold_v2 .u17Light_v2`).text(e.value);
+
+    let swiper_arr = [];
+    swiper_arr = swiper_arr.concat(
+      global_config.carbon1pro_order_page_config.product_images[e.value],
+      global_config.carbon1pro_order_page_config.product_images['commonSwiper']
+    );
+
+    console.log(swiper_arr);
+    rightSwiper.removeAllSlides()
+    leftSwiper.removeAllSlides()
+
+    for (let i = 0; i < swiper_arr.length; i++) {
+      rightSwiper.appendSlide(`<div class="swiper-slide"><img alt="Urtopia Carbon 1 Pro" src="${swiper_arr[i]}"/></div>`)
+      leftSwiper.appendSlide( `<img class="swiper-slide" alt="Urtopia Carbon 1 Pro" src="${swiper_arr[i]}"/>`)
+    }
+  });
+
+  document.addEventListener('onChangeOptions', (e) => {
+    $('.product .delivery_time').html(
+      global_config.carbon1pro_order_page_config.ebike_delivery_time[e.value.id] ||
+        global_config.carbon1pro_order_page_config.ebike_default_delivery_time
+    );
+  });
+
+  $('.product .product-panel').on('submit', function (event) {
+    // 阻止默认行为
+    event.preventDefault();
+    return false;
+  });
+
+  $('.product .dialogs > div').on('click', function (e) {
+    const m = {
+      0: 'one',
+      1: 'two',
+      2: 'three',
+      3: 'four',
+    };
+
+    if ($(this).attr('onclick')) {
+      return;
+    }
+
+    $('.product .dialogs > div').each((i, t) => {
+      if ($(e.target).closest('.u17Medium_v2')[0] === t) {
+        i = i > 1 ? 3 : i;
+
+        setTimeout(() => {
+          const layer = document.querySelector(`.order-modal-${m[i]}`);
+          const laybox = document.querySelector(`.order-modal-layer-${m[i]}`);
+          layer.style.display = 'flex';
+          layer.style.zIndex = '99999';
+          laybox.className += ' dialog-open';
+        }, 100);
+      }
+    });
+  });
+
+  function changeAddToCartText(parse, step = 0) {
+    if (step) {
+      $('.addToCartBtn i').toggleClass('showi');
+      document.querySelector('.addToCartBtn span').innerHTML = 'Adding...';
+    } else {
+      setTimeout(() => {
+        $('.addToCartBtn i').toggleClass('showi');
+        document.querySelector('.addToCartBtn span').innerHTML = 'Add to Cart';
+      }, 800);
+    }
+  }
+
+  let id = 0;
+  let adding = false;
+  let cart1 = document.querySelector('cart-notification') || document.querySelector('cart-drawer');
+
+  function addAllToCart(parse, show = false) {
+    // 如果 B test 需要显示 klarna checkout
+    window.show_notification_checkout_button = show;
+    const cartList = { items: [] };
+    $('.product .error-tip').hide();
+
+    if (adding == false) {
+      !show && changeAddToCartText(parse, 1);
+      adding = true;
+
+      cartList.items.push({ id: current_variant_id, quantity: 1 });
+
+      if (cart1) {
+        var sections = cart1.getSectionsToRender().map((section) => section.id);
+        cartList.sections = sections.join(',');
+      }
+
+      // 新增普通配件
+      $('.product .accessories .items .active').each((i, item) => {
+        cartList.items.push({
+          id: $(item).attr('variant-id'),
+          quantity: 1,
+        });
+      });
+
+      fetch('/cart/add.js', {
+        method: 'POST',
+        body: JSON.stringify(cartList),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+        .then((res) => res.json())
+        .then((res1) => {
+          res1.key = '';
+
+          cart1.classList.contains('is-empty') && cart1.classList.remove('is-empty');
+
+          if (!(res1.message && res1.status)) {
+            cart1.renderContents(res1);
+          } else {
+            $('.product .error-tip').show();
+          }
+
+          !show && changeAddToCartText(parse, 0);
+        })
+        .catch((err) => {
+          !show && changeAddToCartText(parse, 0);
+          // cartList.items.splice(-1, 1);
+          console.log('err==', err);
+          $('.product .error-tip').show();
+        })
+        .finally(() => {
+          adding = false;
+          !show && fetchBuried('websiteclick', `carbon-1p-reserve-page`, { button: 'ATC' });
+
+          setTimeout(() => $('.product .error-tip').hide(), 10000);
+        });
+    }
+  }
+
+  function testRideTrace(type = '', target) {
+    // 如果已经有按钮 loading ,直接退出来
+    if (!type || $('.orderTestRideBtn').hasClass('loading')) {
+      return;
+    }
+
+    const t = $(target);
+
+    t.addClass('loading');
+    // 原本的html 存起来
+    const text = t.find('span').html();
+    const loading = '<i class="fa fa-spinner fa-spin"></i>Processing...';
+
+    // loading
+    t.find('span').html(loading);
+
+    fetchBuried('websiteclick', `carbon-1p-reserve-page`, { button: type }, true);
+    window.sessionStorage.clicked_klarna_checkout_button = 'clicked_klarna_checkout_button';
+
+    if (sessionStorage.carbon_one_a_b_test_flag === 'B') {
+      setTimeout(() => {
+        t.removeClass('loading');
+        t.find('span').html(text);
+      }, 2000);
+
+      return addAllToCart('atc', true);
+    }
+  }
+
+  $('.product .product-panel .accessories > div:not(.u17DemiBold_v2):not(.items)').on('click', (e) => {
+    const items = $('.product .product-panel .accessories .items');
+
+    items.animate(
+      {
+        scrollLeft:
+          $('.product .product-panel .accessories .items').scrollLeft() + ($(e.target).hasClass('next') ? 160 : -160),
+      },
+      300
+    );
+  });
+
+  $('.product .product-panel .accessories .items .item').on('click', (e) => {
+    const item = $(e.target).closest('.item');
+    const icon = item.find('.u11Light_v2');
+
+    if (item.hasClass('active')) {
+      item.removeClass('active');
+      icon.html('<i class="fa-solid fa-plus"></i>');
+    } else {
+      item.addClass('active');
+      icon.html('<i class="fa-solid fa-check"></i>');
+    }
+  });
+
+  $('.toTop').on('click', (e) => {
+    $('html').animate(
+      {
+        scrollTop: 0,
+      },
+      300
+    );
+  });
+
+  let currnetScroolTop = 0;
+  $(document).on(
+    'scroll',
+    throttle(
+      (e) => {
+        const top1 = $('.professional').offset().top;
+        const top3 = $('.product .addToCartBtn').offset().top;
+        const top2 = $(e.target).scrollTop();
+
+        const h = window.screen.height;
+
+        if (global_config.is_mobile) {
+          if (top2 > top3) {
+            $('.bottom-fixed').show();
+          } else {
+            $('.bottom-fixed').hide();
+          }
+        } else {
+          if (top2 > top1) {
+            $('.top-fixed').show();
+          } else {
+            $('.top-fixed').hide();
+          }
+
+          if (currnetScroolTop > top2) {
+            $('.top-fixed').hide();
+          }
+
+          currnetScroolTop = top2;
         }
-    })
-  }, 50))
-  $('article').append(`{% render 'blog-common-footer' %}`)
-  {% for article in blogs.blog.articles %}
-    {% if forloop.index <= 3 %}
-        console.log(JSON.parse(JSON.stringify({{ article | json }})))
-    {% endif %}
-  {% endfor %}
+
+        top2 > h * 2 ? $('.toTop').show() : $('.toTop').hide();
+      },
+      300,
+      100
+    )
+  );
+</script>
+<script>
+    new Swiper('.users .sipwers', {
+        loop: true, // 启用循环模式
+        autoplay: {
+          delay: 0, // 设置为0以便无停顿地切换
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        },
+        speed: 6000, // 切换速度设置为和幻灯片显示时间一样，使其匀速播放
+        slidesPerView: global_config.is_mobile ? 1.25 : 4, // 自动根据内容设置滑动宽度
+        spaceBetween: global_config.is_mobile ? 16 : 32, // 幻灯片之间没有间距
+      });
+
+
+    new Swiper('.quality .centeral-content', {
+        slidesPerView: global_config.is_mobile ? 1.25 : 3,
+        spaceBetween: global_config.is_mobile ? 16 : 32,
+        navigation: {
+          nextEl: '.quality .centeral-content .swiper-button-next',
+          prevEl: '.quality .centeral-content .swiper-button-prev',
+        },
+        scrollbar: {
+          el: '.quality .centeral-content .swiper-scrollbar',
+          draggable: true
+        },
+      });
+
+      if (global_config.is_mobile) {
+        new Swiper('.professional .centeral-content', {
+          slidesPerView: 1.25,
+          spaceBetween: 20,
+          scrollbar: {
+            el: '.professional .centeral-content .swiper-scrollbar',
+          },
+        });
+      }
+  
+
+
+  $('.faq .items .item .u24Medium_v2').click(function () {
+    $(this).siblings('.u17Light_v2').slideToggle().parent().siblings().find('.u17Light_v2').slideUp();
+
+    if ($(this).parent().hasClass('active')) {
+      $(this).parent().removeClass('active');
+    } else {
+      $(this).parent().addClass('active');
+    }
+
+    $(this).parent().siblings().removeClass('active');
+  });
+</script>
+
+<script src="https://cdn.storepoint.co/api/v1/js/162f21804990ff.js" defer></script>
+
+<script>
+    const allvideo = document.querySelectorAll('.comfort video');
+    const video = global_config.is_mobile ? allvideo[1] : allvideo[0];
+    const observerwww = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          video.currentTime = 0; // 重置播放位置
+          video.play();
+        } else {
+          video.pause();
+          video.currentTime = 0;
+        }
+      });
+    });
+
+    observerwww.observe(video);
 </script>
