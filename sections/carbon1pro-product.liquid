@@ -25,8 +25,8 @@
           {{ product.price |  money_without_trailing_zeros  }}
           <span class="u17Medium_v2" style="font-size: 15px;">{{ product.compare_at_price | money }}</span>
           <span class="u14Medium_v2" style="font-size: 13px;">-{{ product.compare_at_price |  minus: product.price |  money_without_trailing_zeros }}</span>
-          {% render "sale" %}
         </div>
+        {% render "sale" %}
       </div>
     <div class="left-swiper mobileHide">
       <div class="swiper-wrapper">
@@ -275,8 +275,8 @@
           {{ product.price |  money  }}
           <span class="u17Medium_v2">{{ product.compare_at_price | money }}</span>
           <span class="u14Medium_v2">-{{ product.compare_at_price |  minus: product.price |  money_without_trailing_zeros }}</span>
-          {% render "sale" %}
         </div>
+        {% render "sale" %}
       </div>
       <div class="options">
         {% for option in product.options_with_values %}

@@ -1,0 +1,42 @@
+{% render 'accessories-default-template' %}
+
+<div class="centeral-content details" style="--swiper-navigation-color: #fff;--swiper-theme-color: #000;--swiper-pagination-color: #000;">
+  <h2 class="u36Medium_v2">Details</h2>
+  <div class="content">
+    <div class="fuckyou">
+      <div class="details-swiperrrr">
+        <div class="swiper-wrapper">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240826-191323_2x_5726752d-d781-44ea-ab86-5ce008724a21.jpg?v=1725351792"
+            class="swiper-slide"
+            alt=""
+          >
+        </div>
+      </div>
+      <div class="swiper-button-prev mobileHide"></div>
+      <div class="swiper-button-next mobileHide"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+    <ul class="u17Light_v2">
+      <li>Compact size and easy to carry</li>
+      <li>Bicycle type inflatior pump</li>
+      <li>Suitable for a wide range of bikes</li>
+      <li>Built-in high-precision air pressure sensor</li>
+      <li>Type-c connector fast charging</li>
+    </ul>
+  </div>
+</div>
+<script>
+  new Swiper('.details .fuckyou .details-swiperrrr', {
+    navigation: {
+      nextEl: '.details .fuckyou .swiper-button-next',
+      prevEl: '.details .fuckyou .swiper-button-prev',
+    },
+    pagination: { el: '.details .fuckyou .swiper-pagination' },
+  });
+
+
+  document.addEventListener('onChangeOptions', e => {
+    window.fuckyou.slideTo(e.value.title === 'Matte Black' ? 4 : 5)
+  })
+</script>

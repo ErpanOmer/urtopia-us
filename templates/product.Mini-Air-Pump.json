@@ -1,12 +1,12 @@
 {
   "sections": {
-    "testestest": {
-      "type": "testestest",
+    "Mini-Air-Pump": {
+      "type": "Mini-Air-Pump",
       "settings": {
       }
     }
   },
   "order": [
-    "testestest"
+    "Mini-Air-Pump"
   ]
 }

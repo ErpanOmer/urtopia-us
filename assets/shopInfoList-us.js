@@ -240,6 +240,7 @@ const testRides = [
         add: "2815 Newport Blvd Newport Beach, CA 92663",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_8.png?v=1722853161",
         testrideSpot: "Newport Beach",
+        noBook: true,
         availableSizes: [
           'Carbon 1 Pro Size S/M/L'
         ],
@@ -1197,6 +1198,28 @@ const testRides = [
     city: 'Washington',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_3_c6001537-5c6a-4915-8ed1-9f21dfc55d76.png?v=1718085498',
     stores: [
+      {
+        name: "King Electric Bike",
+        phone: "(202) 455-4823",
+        email: "chazz@babyboomerbikes.com",
+        timezone: "Washington, DC, USA (GMT-4)",
+        add: "502 23RD ST NW, WASHINGTON, DC 20037",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_3_c6001537-5c6a-4915-8ed1-9f21dfc55d76.png?v=1718085498",
+        testrideSpot: "Lacey",
+        testRideSize: "M/L",
+        availableSizes: [
+          'Carbon 1 Pro Size M/L',
+        ],
+        businessHours: [
+          "10:00-18:00",
+          "",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+        ],
+      },
       {
         name: "Baby-Boomer Bikes",
         phone: "564-233-5898",
