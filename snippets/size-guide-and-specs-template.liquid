@@ -36,7 +36,7 @@
 
 <dialog id="SpecsDialog">
     <div>
-        <div class="headerrrr"><span class="u17DemiBold_v2">Technical Specifications</span><span class="close">✕</span></div>
+        <div class="headerrrr"><span class="u17DemiBold_v2">Technical Specs</span><span class="close">✕</span></div>
         <div class="bodyyyyyy">
             <div class="u11Light_v2">*This service will be automatically activated once the bike is activated and bound to your account. We provide free access in the first year, with the following terms to be renewed by subscription to this service. A code will be sent to your email which can be used to renew the service in our App.</div>
         </div>
@@ -58,7 +58,7 @@
     </div></div>`)
 
     $('#SpecsDialog > div .bodyyyyyy .u11Light_v2').before(`<div class="parameters"><h4 class="u20DemiBold_v2">${spec.title}</h4><div class="boxsss">
-        ${spec.parameters.map(([h5, h6]) => `<div><h5 class="u17DemiBold_v2">${h5}</h5><h6 class="u14Light_v2">${h6}</h6></div>`).join('')}
+        ${spec.parameters.map(([h5, h6]) => `<div><h5 class="u14DemiBold_v2">${h5}</h5><h6 class="u14Light_v2">${h6}</h6></div>`).join('')}
     </div></div>`)
   }
 

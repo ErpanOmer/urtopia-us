@@ -123,7 +123,7 @@
     display: flex;
     flex-direction: column;
     border-radius: 15px;
-    width: 900px;
+    width: 1000px;
     box-shadow: 0 0 10px 10px rgb(0, 0, 0, 0.08);
 }
 
@@ -226,20 +226,30 @@
 }
 
 #SpecsDialog > div .bodyyyyyy .parameters .boxsss {
-    padding: 15px 0;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 24px 8%;
+    grid-template-columns: 1fr 1fr;
 }
 
-#SpecsDialog > div .bodyyyyyy .parameters .u20DemiBold_v2 {
-    border-bottom: 1px solid #e7e7e7;
-    padding-bottom: 4px;
+#SpecsDialog > div .bodyyyyyy .parameters .boxsss > div {
+    display: flex;
+    padding: 20px 0;
+    border-top: 1px solid #ddd;
 }
 
-#SpecsDialog > div .bodyyyyyy .parameters .u17DemiBold_v2 {
-    margin-bottom: 10px;
-    color: #4d4d4d;
+#SpecsDialog > div .bodyyyyyy .parameters .u20DemiBold_v2 { 
+    margin-bottom: 20px;
+}
+
+#SpecsDialog > div .bodyyyyyy .parameters .u14DemiBold_v2 {
+    min-width: 150px;
+    width: 150px;
+    color: #4D4D4D;
+}
+
+#SpecsDialog > div .bodyyyyyy .parameters .u14Light_v2 {
+    flex: 1;
+    padding: 0 40px 0 25px;
+    font-size: 13px;
 }
 
 #SpecsDialog > div .bodyyyyyy > .u11Light_v2 {
@@ -387,13 +397,15 @@
     }
 
     #SpecsDialog > div .bodyyyyyy .parameters + .parameters {
-        margin-top: 6vw;
+        margin-top: 0;
+    }
+
+    #SpecsDialog > div .bodyyyyyy .parameters {
+        margin-top: 3vw;
     }
 
     #SpecsDialog > div .bodyyyyyy .parameters .boxsss {
         grid-template-columns: 1fr;
-        grid-row-gap: 6vw;
-        padding: 2.5vw 0;
     }
 
     #SpecsDialog > div .bodyyyyyy .parameters .u17DemiBold_v2 {
@@ -402,7 +414,23 @@
     }
 
     #SpecsDialog > div .bodyyyyyy .parameters .u14Light_v2 {
+        font-size: 11px;
+        padding: 0;
+    }
+
+    #SpecsDialog > div .bodyyyyyy .parameters .u20DemiBold_v2 {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+
+    #SpecsDialog > div .bodyyyyyy .parameters .u14DemiBold_v2 {
         font-size: 12px;
+        min-width: 120px;
+        width: 120px;
+    }
+
+    #SpecsDialog > div .bodyyyyyy .parameters .boxsss > div {
+        padding: 12px 0;
     }
     
 }

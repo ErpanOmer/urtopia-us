@@ -431,38 +431,64 @@ const global_config = {
             },
             specs: [
                 {
-                    title: 'Smart',
+                    title: 'General Info',
                     parameters: [
-                        ["Smartbar features", "Voice control, fingerprint start, LED dot - matrix display, haptic interaction, bluetooth music, built-in navigation, OTA upgrade"],
-                        ["Connectivity", "eSIM with 4G, Bluetooth, GPS"],
-                        ["IoT sensors", "Accelerometer, gyroscope, torque sensor"],
-                        ["App", "iOS & Android"],
-                        ["Connect Service", "1 year included*"]
-                    ]
-                },
-                {
-                    title: 'Power',
-                    parameters: [
-                        ["Motor", "Customized rear hub, 36 V 350 W (rated), 45 N⋅m"],
-                        ["Speed modes", "Pedal, Eco, Comfort, Sport, Turbo"],
-                        ["Top speed (assisted)", "25mph"],
+                        ["Model", "Carbon 1 Pro Lightweight E-bike"],
+                        ["Weight", "37 lbs w/o acc."],
+                        ["Material", "Carbon fiber (frame, fork)"],
                         ["Range", "Up to 80 miles"],
-                        ["Removable battery", "352.8Wh, Samsung Li-ion, removable battery, 2.5-hr quick charge, certified to UL-2271"]
+                        ["Top Speed", "25 mph"],
+                        ["Total Weight Limit", "240 lbs"],
+                        ["Rider Height", "5’3” - 6’5”"],
+                        ["Brakes", "Dual-piston hydraulic disc brakes"],
+                        ["Wheels", "27.5 x1.6”, puncture-proof tire"],
+                        ["", ""],
                     ]
                 },
                 {
-                    title: 'General',
+                    title: 'Ebike System',
                     parameters: [
-                        ["Weight", "37 lbs excl. accessories"],
-                        ["Load-bearing capacity", "Max. 240 lbs. (110 kg)"],
-                        ["Sizes", "Small, Medium, Large (see Size Guide)"],
-                        ["Body material", "Carbon fiber (frame, fork)"],
-                        ["Brakes", "Front & rear dual-piston hydraulic disc"],
-                        ["Tires", "700 x 40C"],
-                        ["Lights", "Front: Integrated StVZO headlight<br>Rear: StVZO Rear Light （Not ARES Lights）"],
-                        ["Wheels", "700C (ISO 622 mm BSD), inner rim 19 mm"],
-                        ["Transmission", "Shimano 8-Speed Rear Drivetrain"],
-                        ["Included Accessories", "Kickstand, Fenders<br>StVZO Rear Light （Not ARES Lights）<br><br>"],
+                        ["Motor", "36V 350W (sustained), 750W (peak), rear hub"],
+                        ["Battery", "36V 9.8Ah (352.8Wh), Samsung Li-ion, certified to UL-2271"],
+                        ["Pedal Assist", "4 levels"],
+                        ["Charger", "2.5H fast charger, 36V 4Amp"],
+                        ["Display", "LED dot-matrix (Anti-glare)"],
+                        ["Sensors", "Torque sensor, accelerometer, gyroscope"],
+                        ["Lights", "Front: Integrated StVZO headlight Rear: StVZO rear light (Not ARES lights)"],
+                        ["", ""],
+                    ]
+                },
+                {
+                    title: 'Drivetrain',
+                    parameters: [
+                        ["Chainrings", "44T"],
+                        ["Crankset", "Aluminum alloy, 170mm"],
+                        ["Cassette", "11-40T, 8 Speed"],
+                        ["Chain", "Shimano 8 speed"],
+                        ["Rear Derailleur", "Shimano 8 speed"],
+                        ["Shift Lever", "8 Speed Trigger"],
+                        ["Pedals", "9/16” Alloy Platform"],
+                        ["", ""],
+                    ]
+                },
+                {
+                    title: 'Cockpit',
+                    parameters: [
+                        ["Urtopia Smartbar", "Aluminum alloy, Φ28.6mm, 720mm width, adjustable height 0/15/30mm, haptic interaction"],
+                        ["Grips", "Durable ergonomic Grips, lockable"],
+                        ["Seat Post", "Aluminum Alloy, φ31.6mm, 100mm (size M&L), 80mm (size S)"],
+                        ["", ""],
+                    ]
+                },
+                {
+                    title: 'Smartbar',
+                    parameters: [
+                        ["Smartbox", "On-board navigation, fingerprint unlock, AI assistant, voice control, bluetooth speaker, OTA update (wireless firmware update)"],
+                        ["Theft Defenses", "Movement alarm, Electronic Fence, Find My Bike (live GPS tracking), Beep"],
+                        ["Connectivity", "eSIM with 4G, GPS, Bluetooth"],
+                        ["eSIM/Connect Service", "Renewal via App (Urtopia)"],
+                        ["App", "Urtopia (iOS & Android)"],
+                        ["", ""],
                     ]
                 },
             ] 

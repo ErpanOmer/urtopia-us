@@ -57,7 +57,7 @@ h4 {
 
 
 .product {
-    padding: 40px 0;
+    padding: 40px 0 16vh;
     background-color: #fff;
 
     img,
@@ -1116,17 +1116,20 @@ h4 {
 
 .professional {
     background-color: $backround-color;
-    padding: 10vh 0;
+    padding-top: 8vh;
 
     .centeral-content {
         .u36Medium_v2 {
-            margin-bottom: 3.5vh;
+            margin-bottom: 6vh;
+            text-align: center;
         }
 
         .videos {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             grid-column-gap: 30px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10vh;
 
             &>div {
                 display: flex;
@@ -1149,18 +1152,21 @@ h4 {
 
 
     @media (max-width: 767px) {
-        padding: 8vw 0 13.5vw;
+        padding: 8vw 0 0;
         overflow: hidden;
 
         .centeral-content {
 
             .u36Medium_v2 {
                 font-size: 24px;
+                margin-bottom: 8vw;
             }
 
             .videos {
                 display: flex;
                 grid-column-gap: 0;
+                padding: 0;
+                border: none;
 
                 &>div {
 
@@ -1186,10 +1192,49 @@ h4 {
     }
 }
 
+.makes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: $backround-color;
+    padding: 11vh 0 15vh;
+
+    .u36Medium_v2 {
+        margin-bottom: 6vh;
+    }
+
+    img {
+        max-width: 950px;
+    }
+
+    img + img {
+        margin-top: 15vh;
+    }
+
+    @media (max-width: 767px) {
+        padding: 20vw 0 16vw;
+
+        .centeral-content {
+            padding: 0 4vw;
+
+            .u36Medium_v2 {
+                font-size: 24px;
+                margin-bottom: 10vw;
+            }
+
+            img + img {
+                margin-top: 0;
+            }
+        }
+    }
+}
+
 .build {
-    background: $backround-color url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240716-171008.jpg?v=1722073622') center center/cover no-repeat;
+    background: $backround-color url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240904-101642.jpg?v=1725416243') center center/cover no-repeat;
     aspect-ratio: 1920 / 750;
-    color: #fff;
+    color: #000;
     display: flex;
     align-items: center;
 
@@ -1203,7 +1248,7 @@ h4 {
     }
 
     @media (max-width: 767px) {
-        background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240716-171008_2x_905ed734-67ca-42a9-acc2-5e1d40f2cab6.jpg?v=1721701492');
+        background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240902-171633_2x_9b6ebad8-391b-403c-b59a-0db593678d0e.jpg?v=1725418305');
         background-size: contain;
         background-position-y: top;
         color: #000;
