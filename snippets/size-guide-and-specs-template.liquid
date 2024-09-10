@@ -54,7 +54,7 @@
 
   for (const spec of sizes_and_specs.specs) {
     $('.size-guide-and-specs-template .specs .content .u11Light_v2').before(`<div class="parameters"><h4 class="u30DemiBold_v2">${spec.title}</h4><div class="boxsss">
-        ${spec.parameters.map(([h5, h6]) => `<div><h5 class="u24DemiBold_v2">${h5}</h5><h6 class="u17Light_v2">${h6}</h6></div>`).join('')}
+        ${spec.parameters.map(([h5, h6]) => `<div ${h5 || 'style="margin:0;"'}><h5 class="u24DemiBold_v2">${h5}</h5><h6 class="u17Light_v2">${h6}</h6></div>`).join('')}
     </div></div>`)
 
     $('#SpecsDialog > div .bodyyyyyy .u11Light_v2').before(`<div class="parameters"><h4 class="u20DemiBold_v2">${spec.title}</h4><div class="boxsss">

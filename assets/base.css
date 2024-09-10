@@ -3650,3 +3650,7 @@ button.swiper-pagination-bullet {
     overflow: hidden
 }
 
+.jdgm-histogram__row:not(.jdgm-histogram__clear-filter) {
+  pointer-events: none;
+}
+

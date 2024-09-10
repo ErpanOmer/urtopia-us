@@ -1824,7 +1824,7 @@ function splitTimeFormat(item = '') {
         lay(divShopName).html(options.shopList[item].name);
         let divShopImg = lay.elem("img", {
           class: "shop-img",
-          src: options.shopList[item].imgUrl,
+          src: `${options.shopList[item].imgUrl}&width=500`,
           alt: options.shopList[item].name,
         });
         let divShopDetail = lay.elem("div", {
@@ -2055,7 +2055,7 @@ function splitTimeFormat(item = '') {
     lay(divShopName).html('Book a Test Ride');
     var divShopImg = lay.elem("img", {
       class: "shop-img",
-      src: options.shopInfo.imgUrl,
+      src: `${options.shopInfo.imgUrl}&width=500`,
       alt: options.shopInfo.name,
     });
     var divShopDetail = lay.elem("div", {
@@ -3112,7 +3112,7 @@ function splitTimeFormat(item = '') {
       lay(".booking-shop-content .shop-name").html('Book a Test Ride');
       lay(".booking-shop-content .shop-img").attr(
         "src",
-        options.shopInfo.imgUrl
+        `${options.shopInfo.imgUrl}&width=500`
       );
       lay(".booking-shop-content .shop-img").attr("alt", options.shopInfo.name);
       lay(
@@ -3482,7 +3482,7 @@ function splitTimeFormat(item = '') {
         "Thank you for your booking!<br>Check your email for confirmation."
       );
       
-      lay(divBookingSusscessContent).append(`<div class="shop-detail">${$('.shop-detail').html()}</div><img src="${that.config.shopInfo.imgUrl}"/>`)
+      lay(divBookingSusscessContent).append(`<div class="shop-detail">${$('.shop-detail').html()}</div><img src="${that.config.shopInfo.imgUrl}&width=500"/>`)
 
       lay(divBookingSusscessButton).html(
         (function () {

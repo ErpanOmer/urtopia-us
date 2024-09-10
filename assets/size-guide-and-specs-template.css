@@ -58,10 +58,6 @@
     margin-left: 20px;
 }
 
-.size-guide-and-specs-template .specs .content .parameters {
-    margin-bottom: 30px;
-}
-
 .size-guide-and-specs-template .specs .content .parameters .u30DemiBold_v2 {
     padding: 6px 24px;
     background-color: #f3f3f3;
@@ -71,13 +67,15 @@
     padding: 30px 24px 30px 48px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10% 10%;
 }
 
 .size-guide-and-specs-template .specs .content .parameters .boxsss > div {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    min-height: 100%;
+    margin-bottom: 30px;
+    padding-right: 15%;
 }
 
 .size-guide-and-specs-template .specs .content .parameters .boxsss .u24DemiBold_v2 {
@@ -329,6 +327,10 @@
     .size-guide-and-specs-template .specs .content .u11Light_v2 {
         padding: 0 6vw;
     }
+
+  .size-guide-and-specs-template .specs .content .parameters .boxsss>div {
+    margin: 0;
+  }
 
 
     #SpecsDialog > div,

@@ -234,7 +234,7 @@ const testRides = [
       },
       {
         name: 'E-Motion Sports Newport Beach',
-        phone: '949-584-2544',
+        phone: '(949) 791-2010',
         email: 'info@e-bikeagogo.com',
         timezone: "Fremont, California, USA (GMT-7)",
         add: "2815 Newport Blvd Newport Beach, CA 92663",
@@ -1306,7 +1306,7 @@ const testRides = [
         email: "info@bike123.com",
         timezone: "Washington, DC, USA (GMT-4)",
         add: "4540 Old National Pike (Rt. 144) Mount Airy, MD 21771",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_4_0d6b1e4d-def2-4565-9aba-0d2241618ead.png?v=1718085649",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/img_v3_00ee_2ca3c1e2-d430-4790-a727-d4a1d91abefg.jpg?v=1725519590",
         testrideSpot: "Mount Airy",
         testRideSize: "M/L",
         availableSizes: [

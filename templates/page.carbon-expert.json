@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "carbon-expert": {
+      "type": "carbon-expert",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "carbon-expert"
+  ]
+}
