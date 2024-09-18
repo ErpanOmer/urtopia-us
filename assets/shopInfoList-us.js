@@ -169,6 +169,27 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/what-is-california-known-for-the-golden-gate-bridge-hero.webp?v=1697020664',
     stores: [
       {
+        name: 'Irvine Bicycles',
+        phone: '949-453-9999',
+        email: 'sales@irvinebicycles.com',
+        timezone: "Fremont, California, USA (GMT-7)",
+        add: "6604 Irvine Center Drive, Irvine, CA 92618",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_13.png?v=1724034334",
+        testrideSpot: "Bell",
+        availableSizes: [
+          'Carbon 1 Pro Size M'
+        ],
+        businessHours: [
+           "",
+           "11:00-19:00",
+            "11:00-19:00",
+         "11:00-19:00",
+            "11:00-19:00",
+            "11:00-19:00",
+             "10:00-18:00",
+        ],
+      },
+      {
         name: 'Bike Craze Electric Bikes',
         phone: '714 744-0266',
         email: 'customerservice@bikecraze.com',
@@ -2219,6 +2240,33 @@ const testRides = [
           "10:00-18:00",
           "10:00-18:00",
           "10:00-16:00",
+        ],
+      },
+    ]
+  },
+  {
+    city: 'Massachusetts',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Urban_Electrica.jpg?v=1710818582',
+    stores: [
+      {
+        name: "Berkshire Bike and Board Great Barrington",
+        phone: "413-528-5555",
+        email: "saleseast@berkshirebikeandboard.com",
+        timezone: "Tennessee, USA (GMT-7)",
+        add: "29 State Rd, Great Barrington, MA 01230",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Kingston_Ontario_Canada_-_Laslovarga__28.jpg?v=1712714811",
+        testrideSpot: "Great Barrington",
+        availableSizes: [
+          'Carbon 1 Pro Size M',
+        ],
+        businessHours: [
+          "",
+          "10:00-18:00",
+         "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-17:00",
         ],
       },
     ]

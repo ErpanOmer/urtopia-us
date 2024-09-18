@@ -1,4 +1,26 @@
 const global_config = {
+  sale_end_times: [
+    {
+      sale_name: 'September Steals',
+      sale_end_time: '2024-9-16'
+    },
+    {
+      sale_name: 'Fall Frenzy Sale',
+      sale_end_time: '2024-9-20'
+    },
+    {
+      sale_name: 'Seasonal Savings',
+      sale_end_time: '2024-9-23'
+    },
+    {
+      sale_name: 'Golden Deals',
+      sale_end_time: '2024-9-27'
+    },
+    {
+      sale_name: 'Harvest Sale',
+      sale_end_time: '2024-9-30'
+    }
+  ],
     // 活动产品id
     event_bike_product_id: '7902779474168',
     // 活动送配件 variant_id
