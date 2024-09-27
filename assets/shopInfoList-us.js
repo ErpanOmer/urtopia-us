@@ -169,6 +169,72 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/what-is-california-known-for-the-golden-gate-bridge-hero.webp?v=1697020664',
     stores: [
       {
+        name: 'Bicycle Discovery',
+        phone: '858-272-1274',
+        email: 'sales@irvinebicycles.com',
+        timezone: "Fremont, California, USA (GMT-7)",
+        add: "742 Felspar St. San Diego, CA 92109",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_2_0b0d2a8b-9804-43ea-97c1-8d2db5f727f6.png?v=1727057227",
+        testrideSpot: "San Diego",
+        noBook: true,
+        availableSizes: [
+          'Carbon 1 Pro Size M'
+        ],
+        businessHours: [
+           "10:00-17:00",
+           "10:00-19:00",
+           "10:00-19:00",
+           "10:00-19:00",
+           "10:00-19:00",
+           "10:00-19:00",
+           "10:00-19:00",
+        ],
+      },
+      {
+        name: 'Two Wheels One Planet',
+        phone: '949-646-7706',
+        email: 'sales@irvinebicycles.com',
+        timezone: "Fremont, California, USA (GMT-7)",
+        add: "420 E 17th St Costa Mesa, CA 92627",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_2_0b0d2a8b-9804-43ea-97c1-8d2db5f727f6.png?v=1727057227",
+        testrideSpot: "Costa Mesa",
+        noBook: true,
+        availableSizes: [
+          'Carbon 1 Pro Size M'
+        ],
+        businessHours: [
+           "",
+           "10:00-18:00",
+           "10:00-18:00",
+           "10:00-18:00",
+           "10:00-18:00",
+           "10:00-17:00",
+           "10:00-17:00",
+        ],
+      },
+      {
+        name: 'E-bike Cyclery',
+        phone: '626-664-1064',
+        email: 'sales@irvinebicycles.com',
+        timezone: "Fremont, California, USA (GMT-7)",
+        add: "601 W Huntington Dr Monrovia, CA 91016",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_2_0b0d2a8b-9804-43ea-97c1-8d2db5f727f6.png?v=1727057227",
+        testrideSpot: "Monrovia",
+        noBook: true,
+        availableSizes: [
+          'Carbon 1 Pro Size M'
+        ],
+        businessHours: [
+           "",
+           "10:00-18:00",
+           "10:00-18:00",
+           "10:00-18:00",
+           "10:00-18:00",
+           "10:00-18:00",
+           "",
+        ],
+      },
+      {
         name: 'Irvine Bicycles',
         phone: '949-453-9999',
         email: 'sales@irvinebicycles.com',
@@ -322,11 +388,12 @@ const testRides = [
       {
         name: 'Temple City Bike Shop',
         phone: '626-287-6936',
-        email: 'james@gotbikes.com',
+        email: '',
         timezone: "Fremont, California, USA (GMT-7)",
         add: "9628 Las Tunas Dr Temple City, CA 91780",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_10.png?v=1724033342",
         testrideSpot: "Temple City",
+        noBook: true,
         availableSizes: [
           'Carbon 1 Pro Size S/M'
         ],
@@ -1222,12 +1289,13 @@ const testRides = [
       {
         name: "King Electric Bike",
         phone: "(202) 455-4823",
-        email: "chazz@babyboomerbikes.com",
+        email: "",
         timezone: "Washington, DC, USA (GMT-4)",
         add: "502 23RD ST NW, WASHINGTON, DC 20037",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_3_c6001537-5c6a-4915-8ed1-9f21dfc55d76.png?v=1718085498",
         testrideSpot: "Lacey",
         testRideSize: "M/L",
+        noBook: true,
         availableSizes: [
           'Carbon 1 Pro Size M/L',
         ],
@@ -1299,6 +1367,28 @@ const testRides = [
     city: 'Maryland',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_4_0d6b1e4d-def2-4565-9aba-0d2241618ead.png?v=1718085649',
     stores: [
+      {
+        name: "Bike Doctor_Arnold",
+        phone: "(410) 544-3532",
+        email: "sruck@bikedoctor.com",
+        timezone: "Washington, DC, USA (GMT-4)",
+        add: "953 Ritchie Hwy, Arnold, MD 21012",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_2_0b0d2a8b-9804-43ea-97c1-8d2db5f727f6.png?v=1727057227",
+        testrideSpot: "Arnold",
+        testRideSize: "M/L",
+        availableSizes: [
+          'Carbon 1 Pro Size S/M/L',
+        ],
+        businessHours: [
+          "11:00-17:00",
+          "11:00-18:00",
+          "11:00-18:00",
+          "11:00-18:00",
+          "11:00-18:00",
+          "11:00-18:00",
+          "10:00-18:00",
+        ],
+      },
       {
         name: "College Park Bicycles",
         phone: "(301) 864-2211",
@@ -2251,7 +2341,7 @@ const testRides = [
       {
         name: "Berkshire Bike and Board Great Barrington",
         phone: "413-528-5555",
-        email: "saleseast@berkshirebikeandboard.com",
+        email: "salessouth@berkshirebikeandboard.com",
         timezone: "Tennessee, USA (GMT-7)",
         add: "29 State Rd, Great Barrington, MA 01230",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Kingston_Ontario_Canada_-_Laslovarga__28.jpg?v=1712714811",

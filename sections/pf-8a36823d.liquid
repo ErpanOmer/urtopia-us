@@ -358,7 +358,7 @@
 
     function storeInfoHtml (info) {
         const tags = info.tags || [{ color: 'gray', text: info.isPartner ? 'Ambassadors' : 'Partner Store' }]
-        const noBook = typeof info.noBook === "string" ? info.noBook : 'Please contact the Ambassadors directly to arrange test ride'
+        const noBook = typeof info.noBook === "string" ? info.noBook : 'Please contact the Shop directly to arrange test ride'
         const href = $('#storepoint-map .storepoint-location-popup .storepoint-popup-directions').attr('href') || `https://www.google.com/maps/dir/${info.add}`
         const weeks = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 
@@ -793,7 +793,7 @@
 
         const href = $('#storepoint-map .storepoint-location-popup .storepoint-popup-directions').attr('href')
 
-        const noBook = typeof store.noBook === "string" ? store.noBook : 'Please contact the Ambassadors directly to arrange test ride'
+        const noBook = typeof store.noBook === "string" ? store.noBook : 'Please contact the Shop directly to arrange test ride'
 
         const tags = store.tags || [{ color: 'gray', text: store.isPartner ? 'Ambassadors' : 'Partner Store' }]
         if (swiperrrrrrrrrrrrrrr) {

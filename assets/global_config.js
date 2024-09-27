@@ -335,6 +335,17 @@ const global_config = {
             'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18862.jpg?v=1722064932',
             'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18858.jpg?v=1722064933',
            ],
+          'Blu': [
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240924-191502.jpg?v=1727176530',
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_24398.jpg?v=1722064933&width=800',
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240308-untitled-6217.jpg?v=1722064934&width=800',
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Urtopia-20.jpg?v=1722064933&width=800',
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Urtopia-11.jpg?v=1722064933&width=800',
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240924-192253.jpg?v=1727176998&width=800',
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240924-192241.jpg?v=1727176998&width=800',
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240924-192257.jpg?v=1727176997',
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240924-192248.jpg?v=1727176998',
+           ],
           commonSwiper: [
         ]
         },
@@ -521,6 +532,9 @@ const global_config = {
         // key:    vairant_id
         // value:  发货时间文案
         ebike_delivery_time: {
+          45756425994488: 'Shipping starts by late October',
+          45756426027256: 'Shipping starts by late October',
+          45756426060024: 'Shipping starts by late October',
         }
     }
 }
