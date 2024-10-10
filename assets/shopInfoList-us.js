@@ -169,9 +169,115 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/what-is-california-known-for-the-golden-gate-bridge-hero.webp?v=1697020664',
     stores: [
       {
+        name: `Bikehouse`,
+        phone: '949-316-4216',
+        email: 'info@bikehouseca.com',
+        timezone: "Fremont, California, USA (GMT-7)",
+        add: "1000 Bristol St. N #26 Newport Beach, CA 92660",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_6_c6a0eaf2-cad7-4ce9-b23e-1dfa5ec46a0d.png?v=1727431908",
+        testrideSpot: "Newport Beach",
+        availableSizes: [
+          'Carbon 1 Pro Size M'
+        ],
+        businessHours: [
+           "",
+           "10:00-17:00",
+           "10:00-17:00",
+           "10:00-17:00",
+           "10:00-17:00",
+           "10:00-17:00",
+           "10:00-17:00",
+        ],
+      },
+      {
+        name: `Don's Bicycles - Redlands`,
+        phone: '909-792-3399',
+        email: 'donsbikes@att.net',
+        timezone: "Fremont, California, USA (GMT-7)",
+        add: "740 E Redlands Blvd Ste B1 Redlands, CA 92373",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_6_c6a0eaf2-cad7-4ce9-b23e-1dfa5ec46a0d.png?v=1727431908",
+        testrideSpot: "Redlands",
+        availableSizes: [
+          'Carbon 1 Pro Size S'
+        ],
+        businessHours: [
+           "11:00-16:00",
+           "10:00-18:00",
+           "10:00-18:00",
+           "10:00-18:00",
+           "10:00-18:00",
+           "10:00-18:00",
+           "10:00-18:00",
+        ],
+      },
+      {
+        name: `Don's Bicycles - Redlands`,
+        phone: '909-875-7310',
+        email: 'donsbikes@att.net',
+        timezone: "Fremont, California, USA (GMT-7)",
+        add: "384 S Riverside Ave. Rialto, CA. 92376",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_6_c6a0eaf2-cad7-4ce9-b23e-1dfa5ec46a0d.png?v=1727431908",
+        testrideSpot: "Rialto",
+        availableSizes: [
+          'Carbon 1 Pro Size M'
+        ],
+        businessHours: [
+           "11:00-16:00",
+           "10:00-18:00",
+           "10:00-18:00",
+           "10:00-18:00",
+           "10:00-18:00",
+           "10:00-18:00",
+           "10:00-18:00",
+        ],
+      },
+      {
+        name: 'Groove E-Bikes',
+        phone: '949-274-7944',
+        email: 'bob@grooveebikes.com',
+        timezone: "Fremont, California, USA (GMT-7)",
+        add: "3740 Campus Drive, Suite A, Newport Beach, CA 92660",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_5_14ed8ff7-efb2-4dfc-b876-8cddbb525710.png?v=1727431478",
+        testrideSpot: "Newport Beach",
+        availableSizes: [
+          'Carbon 1 Pro Size M'
+        ],
+        businessHours: [
+           "",
+           "",
+           "11:00-17:00",
+           "11:00-17:00",
+           "11:00-17:00",
+           "11:00-17:00",
+           "",
+        ],
+      },
+      {
+        name: 'Krakatoa Bikes',
+        phone: '+1 415-453-0333',
+        email: '',
+        timezone: "Fremont, California, USA (GMT-7)",
+        add: "42 Bolinas Road Fairfax California, 94930 United States",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_6_c6a0eaf2-cad7-4ce9-b23e-1dfa5ec46a0d.png?v=1727431908",
+        testrideSpot: "San Diego",
+        noBook: true,
+        availableSizes: [
+          'Carbon 1 Pro Size M'
+        ],
+        businessHours: [
+           "09:00-17:00",
+           "",
+          "09:00-18:00",
+          "09:00-18:00",
+          "09:00-18:00",
+           "09:00-18:00",
+           "09:00-17:00",
+        ],
+      },
+      {
         name: 'Bicycle Discovery',
         phone: '858-272-1274',
-        email: 'sales@irvinebicycles.com',
+        email: '',
         timezone: "Fremont, California, USA (GMT-7)",
         add: "742 Felspar St. San Diego, CA 92109",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_2_0b0d2a8b-9804-43ea-97c1-8d2db5f727f6.png?v=1727057227",
@@ -193,7 +299,7 @@ const testRides = [
       {
         name: 'Two Wheels One Planet',
         phone: '949-646-7706',
-        email: 'sales@irvinebicycles.com',
+        email: '',
         timezone: "Fremont, California, USA (GMT-7)",
         add: "420 E 17th St Costa Mesa, CA 92627",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_2_0b0d2a8b-9804-43ea-97c1-8d2db5f727f6.png?v=1727057227",
@@ -215,7 +321,7 @@ const testRides = [
       {
         name: 'E-bike Cyclery',
         phone: '626-664-1064',
-        email: 'sales@irvinebicycles.com',
+        email: '',
         timezone: "Fremont, California, USA (GMT-7)",
         add: "601 W Huntington Dr Monrovia, CA 91016",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_2_0b0d2a8b-9804-43ea-97c1-8d2db5f727f6.png?v=1727057227",
@@ -300,7 +406,7 @@ const testRides = [
       {
         name: 'Electric Bikes of Santa Barbara',
         phone: '805-963-8885',
-        email: 'info@e-bikeagogo.com',
+        email: '',
         timezone: "Fremont, California, USA (GMT-7)",
         add: "1345 State St,Santa Barbara, CA 93101",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_11.png?v=1724033895",
@@ -322,7 +428,7 @@ const testRides = [
       {
         name: 'E-Motion Sports Newport Beach',
         phone: '(949) 791-2010',
-        email: 'info@e-bikeagogo.com',
+        email: '',
         timezone: "Fremont, California, USA (GMT-7)",
         add: "2815 Newport Blvd Newport Beach, CA 92663",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_8.png?v=1722853161",
@@ -342,31 +448,9 @@ const testRides = [
         ],
       },
       {
-        name: 'EBike A-Go-Go',
-        phone: '+17608778250',
-        email: 'info@e-bikeagogo.com',
-        timezone: "Fremont, California, USA (GMT-7)",
-        add: "211 N Main Ave, Fallbrook, CA 92028",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_8.png?v=1722853161",
-        testrideSpot: "Fallbrook",
-        noBook: true,
-        availableSizes: [
-          'Carbon 1 Pro Size M'
-        ],
-        businessHours: [
-           "10:00-17:00",
-           "10:00-17:00",
-            "10:00-17:00",
-           "10:00-17:00",
-             "10:00-17:00",
-            "10:00-17:00",
-             "10:00-17:00",
-        ],
-      },
-      {
         name: 'ATB Bike LLC',
         phone: '626-287-6936',
-        email: '+1(714) 884-4342',
+        email: '',
         timezone: "Fremont, California, USA (GMT-7)",
         add: "13842 Newport Ave #D-1, Tustin, CA 92780",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_7_1044ac78-4b6d-4259-aa06-8d49e892ce4f.png?v=1722853161",
@@ -474,7 +558,7 @@ const testRides = [
       {
         name: 'Davis Cyclery',
         phone: '(530) 746-2380',
-        email: 'admin@562ebikes.com',
+        email: '',
         timezone: "Fremont, California, USA (GMT-7)",
         add: "247 F St, Davis, CA 95616",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Bicycle_Garage_Fremont_ca_fremont.jpg?v=1686878451",
@@ -1377,16 +1461,16 @@ const testRides = [
         testrideSpot: "Arnold",
         testRideSize: "M/L",
         availableSizes: [
-          'Carbon 1 Pro Size S/M/L',
+          'Carbon 1 Pro Size S/M',
         ],
         businessHours: [
-          "11:00-17:00",
+          "10:00-17:00",
           "11:00-18:00",
           "11:00-18:00",
           "11:00-18:00",
           "11:00-18:00",
           "11:00-18:00",
-          "10:00-18:00",
+          "10:00-17:00",
         ],
       },
       {

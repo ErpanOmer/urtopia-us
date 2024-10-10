@@ -19,6 +19,18 @@ const global_config = {
     {
       sale_name: 'Harvest Sale',
       sale_end_time: '2024-9-30'
+    },
+    {
+      sale_name: 'Harvest Time Deals',
+      sale_end_time: '2024-10-4'
+    },
+    {
+      sale_name: 'Fall Flash Sale',
+      sale_end_time: '2024-10-7'
+    },
+    {
+      sale_name: 'Golden Fall Deals',
+      sale_end_time: '2024-10-11'
     }
   ],
     // 活动产品id

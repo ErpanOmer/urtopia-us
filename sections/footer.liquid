@@ -135,7 +135,9 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
           {%- endform -%}
 
           {%- if section.settings.show_social -%}
-          <h2 class="footer-block__heading follow-us">Follow us</h2>
+          <h2 class="footer-block__heading follow-us" style="    font-size: 15px;
+    font-weight: 300;
+    color: #cbcbcb !important;">support@newurtopia.com </h2>
           <ul class="footer__list-social list-unstyled list-social" role="list">
             {%- if settings.social_twitter_link != blank -%}
             <li class="list-social__item">
@@ -328,9 +330,11 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
         {%- endcase -%}
       </div>
       {%- endfor -%}
-      <!--     Follow us       -->
+      <!--     support@newurtopia.com        -->
       {%- if section.settings.show_social -%}
-      <h2 class="footer-block__heading footer-block__heading_none follow-us">Follow us</h2>
+      <h2 class="footer-block__heading footer-block__heading_none follow-us" style="    font-size: 15px;
+    font-weight: 300;
+    color: #cbcbcb !important;">support@newurtopia.com </h2>
       <ul class="footer__list-social list-unstyled list-social" role="list">
         {%- if settings.social_twitter_link != blank -%}
         <li class="list-social__item">
