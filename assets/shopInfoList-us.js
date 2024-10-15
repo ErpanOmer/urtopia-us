@@ -1726,6 +1726,27 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Playtri_dallas.jpg?v=1665374977',
     stores: [
       {
+        name: "Cadence Cyclery of McKinney",
+        phone: "(972) 548-7400",
+        email: "info@cadencecyclery.com",
+        timezone: "Dallas, TX, USA (GMT-5)",
+        add: "119 Tennessee St, McKinney, TX 75069",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Bay_Area_Cycling_tx.jpg?v=1686878451",
+        testrideSpot: "McKinney",
+        availableSizes: [
+          'Carbon 1 Pro Size S/M/L',
+        ],
+        businessHours: [
+          "12:00-17:00",
+          "12:00-18:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-19:00",
+          "10:00-18:00",
+        ],
+      },
+      {
         name: "Bike Mart",
         phone: "972-231-3993",
         email: "Mhinton@bikemart.com",
@@ -1965,7 +1986,7 @@ const testRides = [
       {
         name: "Spokes Bikes - Wheaton",
         phone: "630-690-2050",
-        email: "spokes@spokesbikes.com",
+        email: "spokesnaperville@gmail.com",
         timezone: "Illinois, USA (GMT-7)",
         add: "229 Rice Lake Square, Wheaton, IL 60187",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Jason_Mathews.jpg?v=1692617852",
@@ -1986,7 +2007,7 @@ const testRides = [
       {
         name: "Spokes Bikes - Napervill",
         phone: "630-961-8222",
-        email: "spokes@spokesbikes.com",
+        email: "spokesnaperville@gmail.com",
         timezone: "Illinois, USA (GMT-7)",
         add: "1807 S. Washington St Suite 112, Naperville, IL 60565",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Jason_Mathews.jpg?v=1692617852",

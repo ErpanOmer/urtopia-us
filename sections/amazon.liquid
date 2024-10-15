@@ -1,0 +1,333 @@
+{{ 'amazon.scss.css' | asset_url | stylesheet_tag: preload: true }}
+
+<div class="top">
+        <h2 class="u36DemiBold_v2">Welcome to Urtopia Family!</h2>
+    </div>
+    <div class="step step1">
+        <form action="" method="post" class="centeral-content">
+            <i><img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2.svg?v=1728629250" alt=""></i>
+            <h3 class="u17Medium_v2">Please provide the following information to register your warranty:</h3>
+            <div class="item">
+                <div class="mini-item">
+                    <div>
+                        <div class="u24Medium">First name<i>*</i></div>
+                        <input type="text" name="first_name" required>
+                    </div>
+                    <div>
+                        <div class="u24Medium">Last name<i>*</i></div>
+                        <input type="text" name="last_name" required>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="u24Medium">Email<i>*</i></div>
+                <input type="email" name="email" required>
+            </div>
+            <div class="item">
+                <div class="u24Medium">Phone number<i>*</i></div>
+                <input type="tel" name="phone" required>
+            </div>
+            <div class="item">
+                <div class="u24Medium">Delivery address<i>*</i></div>
+                <input type="text" name="address" autocomplete="address-line1" required>
+                <span class="clear">×</span>
+            </div>
+            <div class="item">
+                <div class="mini-item">
+                    <div>
+                        <div class="u24Medium">Postal code<i>*</i></div>
+                        <input type="text" name="postal_code" autocomplete="postal-code" required>
+                    </div>
+                    <div>
+                        <div class="u24Medium">City<i>*</i></div>
+                        <input type="text" name="city" autocomplete="address-level2" required>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="u24Medium">Bike Model<i>*</i></div>
+                <select name="bike_model" value="carbon1pro" required disabled>
+                    <option value="carbon1pro">Carbon 1 Pro</option>
+                    <option value="carbon1">Carbon 1</option>
+                    <option value="fusion">Fusion</option>
+                    <option value="chord">Chord</option>
+                </select>
+                <span class="tips u14Light_v2"></span>
+            </div>
+            <div class="item">
+                <div class="u24Medium">Bike Frame Number<i>*</i></div>
+                <input type="text" name="frame_number" required>
+            </div>
+            <div class="item frame_number">
+                <span class="u14Medium_v2">How to find your bike frame number?</span>
+                <span class="u14Light_v2">You can find the frame number of your Urtopia e-bike on the underside of the
+                    bottom bracket.</span>
+                <div>
+                    <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24545_2x_bc336f31-0435-4773-87f1-57975051e755.jpg?v=1728631363"
+                        alt="">
+                    <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19345_2x_963d6e25-4cdf-4ee3-b6e8-7ff8d1ffbe86.jpg?v=1728631369"
+                        alt="">
+                </div>
+            </div>
+            <div class="item">
+                <div class="u24Medium">Place of purchase<i>*</i></div>
+                <input type="text" name="purchase" value="Amazon" required disabled>
+            </div>
+            <div class="item">
+                <button class="my-button my-button-black" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+    <div class="step step2">
+        <div class="centeral-content">
+            <i><img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Notes_about_warranty.svg?v=1728632163"
+                    alt=""></i>
+            <p class="u17Medium_v2">
+                <span>
+                    Congratulations! Your warranty will be valid from <span
+                        style="color: #005CF0;">[MM][DD][YYYY]</span> to <span
+                        style="color: #005CF0;">[MM][DD][YYYY]</span>. You can print
+                    this page and save for future claims. <br><br>We would love to hear your opinions. You can give a
+                    review on
+                    your new bike and <span style="color: #005CF0;">earn 1-year extended warranty and free
+                        accessories.</span> It takes only 5 mins. Do you
+                    want to continue?
+                </span>
+            </p>
+            <div class="buttons">
+                <div style="background-color: #005CF0;color: #fff;border-color: transparent;margin-right: 15px;"
+                    class="my-button my-button-white" onclick="gotoStep(3)">Continue</div>
+                <div class="my-button my-button-white" onclick="gotoStep(5)">Later</div>
+            </div>
+        </div>
+    </div>
+    <div class="step step3">
+        <div class="centeral-content">
+            <i><img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/amazon-circle-fill.svg?v=1728633482"
+                    alt=""></i>
+            <h3 class="u20DemiBold_v2">How to give a review on Amazon</h3>
+            <div>
+                <p class="u17Medium_v2">
+                    <span>
+                        Step 1: Open the Amazon App
+                    </span>
+                </p>
+                <p class="u14Light_v2">
+                    <span>
+                        Open the Amazon App on your mobile device and "Sign In".
+                    </span>
+                </p>
+                <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/image_4.png?v=1728642013"
+                    alt="">
+            </div>
+            <div>
+                <p class="u17Medium_v2">
+                    <span>
+                        Step 2: Access Your Orders
+                    </span>
+                </p>
+                <p class="u14Light_v2">
+                    <span>
+                        1. Tap on the "Accounts & Lists" icon (three horizontal lines) in the bottom-right corner. <br><br>
+                        2. Scroll down and tap on "Your Orders".
+                    </span>
+                </p>
+                <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/image_5.png?v=1728642013"
+                    alt="">
+            </div>
+            <div>
+                <p class="u17Medium_v2">
+                    <span>
+                        Step 3: Find the Specific Order
+                    </span>
+                </p>
+                <p class="u14Light_v2">
+                    <span>
+                        Locate the order you want to review by scrolling through your recent orders and click it.
+                    </span>
+                </p>
+                <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241011-172417.jpg?v=1728642013"
+                    alt="">
+            </div>
+            <div>
+                <p class="u17Medium_v2">
+                    <span>
+                        Step 4: Write a Product Review
+                    </span>
+                </p>
+                <p class="u14Light_v2">
+                    <span>
+                        Scroll down until you see the "Write a product review" section and click it.
+                    </span>
+                </p>
+                <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/img_v3_02fi_410fc172-548b-4088-9673-81a0aec2bb3g.jpg?v=1728642013"
+                    alt="">
+            </div>
+            <div>
+                <p class="u17Medium_v2">
+                    <span>
+                        Step 5: Rate and Review the Product
+                    </span>
+                </p>
+                <p class="u14Light_v2">
+                    <span>
+                        1. Select a star rating (5 stars) by tapping on the stars.
+                        <br><br>2. Tap on the "Write your review" text box to start writing your review.
+                      <br><br>3. Optional: Tap on "+ Add photos or videos" to upload a photo or video of the product.
+                    </span>
+                </p>
+                <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/image_6.png?v=1728642013"
+                    alt="">
+            </div>
+          <div>
+                <p class="u17Medium_v2">
+                    <span>
+                        Step 6: Take a Screenshot
+                    </span>
+                </p>
+                <p class="u14Light_v2">
+                    <span>
+                        Save the screenshot and upload later.
+                    </span>
+                </p>
+                <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/img_v3_02fi_1e44c6a1-9a21-46c9-b5fe-773f48eb6b5g.jpg?v=1728642013"
+                    alt="">
+            </div>
+            <div>
+                <p class="u17Medium_v2">
+                    <span>
+                        Upload your screenshot here
+                    </span>
+                </p>
+                <div>
+                    <input type="file">
+                </div>
+            </div>
+            <div style="background-color: #005CF0;color: #fff;border-color: transparent;margin-right: 15px;"
+                class="my-button my-button-white" onclick="IHavefinished()">I Have finished</div>
+        </div>
+    </div>
+    <div class="step step4">
+        <div class="centeral-content">
+            <i><img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1_0fecafb3-5773-4994-a598-b8b30b1914cd.svg?v=1728639208" alt=""></i>
+            <p class="u17Medium_v2">
+                <span>
+                    Congratulations! Your experience is invaluable to our community. Here are the rewards you get:
+                </span>
+            </p>
+            <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/screenshot-20241011-171859.png?v=1728638352"/>
+            <p class="u17Medium_v2">
+                <span>
+                    Once verified, the rewards will be automatically sent to your address.
+                </span>
+            </p>
+            
+            <div style="background-color: #005CF0;color: #fff;border-color: transparent;margin-right: 15px;"
+                class="my-button my-button-white" onclick="gotoStep(6)">Verified</div>
+        </div>
+    </div>
+    <div class="step step5">
+        <div class="centeral-content">
+            <i><img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/right.svg?v=1728632798" alt=""></i>
+            <p class="u17Medium_v2">
+                <span>
+                    Thanks for choosing Urtopia. Enjoy your ride. Come back to give your review any time!
+                </span>
+            </p>
+            <a href="/" style="background-color: #005CF0;color: #fff;border-color: transparent;margin-right: 15px;"
+                class="my-button my-button-white">Go to Home</a>
+        </div>
+    </div>
+    <div class="step step6">
+        <div class="centeral-content">
+            <i><img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1_0fecafb3-5773-4994-a598-b8b30b1914cd.svg?v=1728639208" alt=""></i>
+            <p class="u17Medium_v2">
+                <span>
+                    You have now completed all requested moves! Please wait for your gifts to arrive!
+                </span>
+            </p>
+            <a href="/" style="background-color: #005CF0;color: #fff;border-color: transparent;margin-right: 15px;"
+                class="my-button my-button-white">Go to Home</a>
+        </div>
+    </div>
+
+
+    <script>
+  let currentStep = 1
+  const values = {}
+
+  function IHavefinished() {
+    if (!values.image) {
+      // return $(".step input[type=file]").click()
+      return
+    }
+
+    gotoStep(4)
+  }
+
+
+  function gotoStep(step = 1) {
+    currentStep = step
+    $('.step').hide()
+    $(`.step${currentStep}`).show()
+
+    if (step > 1) {
+      setTimeout(() => {
+            $('html').animate({
+                 scrollTop: $('.top').height()
+            }, 300)
+        }, 100)
+    }
+
+
+    // 第四步以后 就提交
+    if (step > 4) {
+      fetchBuried('websiteclick', 'amazon-commit', values)
+    }
+  };
+
+  $(function () {
+    $('.step1 form').on("submit", function (event) {
+      $('.step1 :input').each((index, target) => {
+        $(target).attr('name') && (values[$(target).attr('name')] = $(target).val())
+      })
+
+      console.log(values)
+      gotoStep(2)
+
+      event.preventDefault();
+      return false;
+    })
+
+
+    $(".step input[type=file]").on("change", function (e) {
+      let file = this.files[0];
+      // 判断是否是图片
+      if (file && file.type.startsWith("image/")) {
+        let reader = new FileReader();
+
+        // 当文件加载时显示图片
+        reader.onload = function (e) {
+          $('.step3 .centeral-content > div > div').css('background-image', `url(${e.target.result})`)
+        };
+
+        reader.readAsDataURL(file); // 读取图片并触发 onload
+
+
+        let formData = new FormData();
+        formData.append("upload_file", file);
+
+        fetch('https://api.newurtopia.com/third_part/file_upload', {
+          method: "POST",
+          body: formData,
+        }).then(response => response.json()).then(data => {
+          values.image = data.data.url
+        }).catch(console.error)
+      }
+
+    })
+
+
+    gotoStep(1)
+  })
+</script>

@@ -124,6 +124,10 @@
                         background-color: #EDECE7;
                     }
 
+                  &[attribute="Blu"] {
+                        background-color: #9EC0D1;
+                    }
+
                     &[attribute="Matte Black"] {
                         background-color: #000;
                     }
@@ -145,6 +149,10 @@
 
                     &[attribute="Matte Black"]::after {
                         background-color: #000;
+                    }
+
+                  &[attribute="Blu"]::after {
+                        background-color: #9EC0D1;
                     }
 
                     &[attribute="Gray"]::after {

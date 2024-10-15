@@ -1,37 +1,25 @@
 const global_config = {
   sale_end_times: [
     {
-      sale_name: 'September Steals',
-      sale_end_time: '2024-9-16'
+      sale_name: 'Autumn Adventure Sale',
+      sale_end_time: '2024-10-14'
     },
     {
-      sale_name: 'Fall Frenzy Sale',
-      sale_end_time: '2024-9-20'
+      sale_name: 'October Price Slash',
+      sale_end_time: '2024-10-18'
     },
     {
-      sale_name: 'Seasonal Savings',
-      sale_end_time: '2024-9-23'
+      sale_name: 'Harvest Deals',
+      sale_end_time: '2024-10-21'
     },
     {
-      sale_name: 'Golden Deals',
-      sale_end_time: '2024-9-27'
+      sale_name: 'Pumpkin Price Drop',
+      sale_end_time: '2024-10-25'
     },
     {
-      sale_name: 'Harvest Sale',
-      sale_end_time: '2024-9-30'
+      sale_name: 'Mystery Markdown',
+      sale_end_time: '2024-10-28'
     },
-    {
-      sale_name: 'Harvest Time Deals',
-      sale_end_time: '2024-10-4'
-    },
-    {
-      sale_name: 'Fall Flash Sale',
-      sale_end_time: '2024-10-7'
-    },
-    {
-      sale_name: 'Golden Fall Deals',
-      sale_end_time: '2024-10-11'
-    }
   ],
     // 活动产品id
     event_bike_product_id: '7902779474168',

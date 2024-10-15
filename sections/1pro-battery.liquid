@@ -43,7 +43,14 @@
   });
 
 
+  const indexs = {
+    'Matte Black': 4,
+    'Creme': 5,
+    'Blu': 6
+  }
+
+
   document.addEventListener('onChangeOptions', e => {
-    window.fuckyou.slideTo(e.value.title === 'Matte Black' ? 4 : 5)
+    window.fuckyou.slideTo(indexs[e.value.title])
   })
 </script>
