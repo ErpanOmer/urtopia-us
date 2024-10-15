@@ -80,11 +80,17 @@ h4 {
 
         .free {
             display: flex;
-            padding: 12px 24px;
+            padding: 6px 16px 6px 6px;
             background-color: $backround-color;
             border-radius: 8px;
             align-items: center;
             margin: 12px 0 24px;
+
+
+            img {
+                max-width: 80px;
+                margin-right: 12px;
+            }
 
             .u17Medium_v2 {
                 background-color: #FD4B17;
@@ -1027,14 +1033,14 @@ h4 {
 
                 .free {
                     margin: 20px 0;
-                    padding: 8px;
+                    padding: 8px 8px 8px 0;
 
                     .u14Medium_v2 {
                         padding: 2px 8px;
                         color: #fff;
                         border-radius: 5px;
                         background-color: #FD4B17;
-                        margin-right: 12px;
+                        margin-right: 4px;
                     }
 
                     .u11Light_v2 {

@@ -48,9 +48,10 @@
       </div>
       <div class="swiper-pagination pcHide"></div>
       <div class="free mobileHide">
+        <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3-1_2x_b9ab0988-f835-49ec-8cd0-ef93bd2d9e91.png?v=1728959307" alt="">
         <span class="u14Medium_v2"><span style="color:#fd4b17;">Limited offer:</span> Fenders, kickstand, 1-year eSIM service</span>
         <span class="flex-1"></span>
-        <del class="u14Light_v2">{{ 16700 | money }}</del>
+        <del class="u14Light_v2">{{ 16700 |  money_without_trailing_zeros }}</del>
         <span class="u17Medium_v2">Free</span>
       </div>
       <div class="icons mobileHide">
@@ -327,8 +328,14 @@
         </div>
       </div>
       <div class="free pcHide">
-        <span class="u14Medium_v2">Free</span>
-        <span class="u11Light_v2"><span style="color:#fd4b17;">Limited offer:</span> Fenders, kickstand, 1-year eSIM service</span>
+        <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3-1_2x_b9ab0988-f835-49ec-8cd0-ef93bd2d9e91.png?v=1728959307" alt=""/>
+        <div>
+          <div>
+            <span class="u14Medium_v2">Free</span>
+            <span class="u11Light_v2">{{ 16700 | money }}</span>
+          </div>
+          <span class="u11Medium_v2">Fenders, kickstand, 1-year eSIM service</span>
+        </div>
       </div>
       <div class="error-tip u14Medium_v2 mb12" style="color:red;">Your order quantity has reached our stock limit</div>
       <div class="buttons mb24">
