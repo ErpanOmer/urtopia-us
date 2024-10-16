@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "carbon-fold": {
+      "type": "carbon-fold",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "carbon-fold"
+  ]
+}
