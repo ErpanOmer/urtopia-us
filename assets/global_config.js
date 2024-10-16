@@ -317,7 +317,7 @@ const global_config = {
             'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3-1.jpg?v=1722064932',
             'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_24397.jpg?v=1722064933&width=800',
             'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231108-untitled-3641.jpg?v=1722064933&width=800',
-            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240910-184652.jpg?v=1725965247&width=800',
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241015-153933.jpg?v=1728977983&width=800',
               'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240910-184640.jpg?v=1725965247&width=800',
             'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1pro-_-_c_2x_59857988-2ad6-42c3-ba78-b239cc591367.jpg?v=1721977733',
             'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1pro-_-_c__1_1_2x_1b9d5dea-a84a-442b-80ec-3fa18757aabd.jpg?v=1721977738',

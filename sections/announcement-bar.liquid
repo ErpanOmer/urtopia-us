@@ -50,7 +50,7 @@
 
   <div id="announcement-bar" class="announcement-bar-common" dir="rtl">
     <div class="swiper-wrapper">
-      <div class="swiper-slide"><p><span style="color:#FD4B17;">{{ settings.carbon1s_ebike_discount_price | money_without_trailing_zeros }} off</span> on Carbon 1 Pro. <a href="/products/urtopia-carbon-1-pro-ebike">Get yours Now</a></p></div>
+      <div class="swiper-slide"><p><span style="color:#FD4B17;">{{ all_products['urtopia-carbon-1-pro-ebike'].compare_at_price | minus: all_products['urtopia-carbon-1-pro-ebike'].price | money_without_trailing_zeros }} off</span> on Carbon 1 Pro. <a href="/products/urtopia-carbon-1-pro-ebike">Get yours Now</a></p></div>
       <div class="swiper-slide"><p>Financing with 24 months, 0% APR. <a href="/products/urtopia-carbon-1-pro-ebike">Get yours Now</a></p><img style="width:45px;margin-right:10px;" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Image_154_2x_a6f60481-bf07-4fd4-93c7-8b9964570bbd.png?v=1685605445"/></div>
       <div class="swiper-slide"><p>Try Urtopia E-Bikes for Free <br class="pcHide"> <a href="/pages/test-ride">Book a test ride now</a></p></div>
     </div>
