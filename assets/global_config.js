@@ -47,7 +47,7 @@ const global_config = {
           show_delay_time: 15
         }
       },
-    // carbon 产品页面配置
+      // carbon 产品页面配置
     carbon_order_page_config: {
         // carbon 车默认显示 variant_id, 只有 url 上的 variant 参数为空的时候生效
         default_variant: 43556895916280,
@@ -181,6 +181,179 @@ const global_config = {
             // chord
             // chord x
         },
+    },
+    // carbon 产品页面配置
+    carbon_fold_order_page_config: {
+        // carbon 车默认显示 variant_id, 只有 url 上的 variant 参数为空的时候生效
+        default_variant: 45838852129016,
+        // variant 为 available:false 的情况下 也要强制显示 
+        ignore_variants_available_false: [],
+        size_map: {
+            'One Size': `Fit for 5’1’’~6’1’’`,
+        },
+        // 产品系列图
+        product_images: {
+            'Yellow': [
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3-1.jpg?v=1722064932',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_24397.jpg?v=1722064933&width=800',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231108-untitled-3641.jpg?v=1722064933&width=800',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241015-153933.jpg?v=1728977983&width=800',
+                'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240910-184640.jpg?v=1725965247&width=800',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1pro-_-_c_2x_59857988-2ad6-42c3-ba78-b239cc591367.jpg?v=1721977733',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1pro-_-_c__1_1_2x_1b9d5dea-a84a-442b-80ec-3fa18757aabd.jpg?v=1721977738',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1pro-_1_1.jpg?v=1722064932',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1pro-_c_2x_4d3389e3-6c89-4584-a35d-a7586f6f0dec.jpg?v=1721977750',
+            ],
+            'Blue': [
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18878.jpg?v=1722064932',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_24398.jpg?v=1722064933&width=800',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240308-untitled-6217.jpg?v=1722064934&width=800',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Urtopia-20.jpg?v=1722064933&width=800',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Urtopia-11.jpg?v=1722064933&width=800',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18874.jpg?v=1722064932&width=800',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18870.jpg?v=1722064932&width=800',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18862.jpg?v=1722064932',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18858.jpg?v=1722064933',
+             ],
+            commonSwiper: [
+          ]
+          },
+          // 产品图下面的media模块, 根据产品图 循环轮播 
+          product_media_images: [
+              {
+                  text: 'Carbon Fiber Expert',
+                  img: "https://newurtopia.com/cdn/shop/files/logo_0707__1.png?v=1684310857"
+              },
+              {
+                  text: `“Visually stunning and lightweight bikes”`,
+                  img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19051_2x_3c234be0-e1cb-4ab0-b83c-02282fd42cb4.png?v=1705485418"
+              },
+              {
+                  text: `“The best electric bikes of 2024”`,
+                  img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19052_2x_83b17023-7ff5-413b-9a87-571e8e6928ee.png?v=1705485424"
+              },
+              {
+                  text: `“Pack with copious use of technology”`,
+                  img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19053_2x_2b4e11dc-d27b-47ad-9478-92c696e1fac7.png?v=1705485431"
+              },
+              {
+                  text: `“Pack with copious use of technology”`,
+                  img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19054_2x_7feff357-8d1b-48a0-b9af-662442dc41f6.png?v=1705485437"
+              },
+              {
+                  text: `“The epitome of raw power”`,
+                  img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19055_2x_612a45c4-04fe-4477-a252-302e8d11c40e.png?v=1705485444"
+              },
+              {
+                  text: `“Carbon 1 Pro as ‘a bike with spirit”`,
+                  img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19056_2x_b61e963a-f2b3-49f3-8bc2-4aee5f8f2a4c.png?v=1705485451"
+              },
+              {
+                  text: `“Standout feature lies in its integration with advanced technology. ”`,
+                  img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19057_2x_0eabb26b-a2fe-48e8-b00e-209ef2b986e0.png?v=1705485460"
+              },
+              {
+                  text: `“Interesting innovation or tech for tech’s sake”`,
+                  img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19058_2x_b0454fa5-9c44-462e-8f04-5646db60456a.png?v=1705485466"
+              },
+              {
+                  text: `“Completely crazy: This e-bike talks to the rider”`,
+                  img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19059_2x_14b271ba-3eae-41ea-8882-e6896e9f9948.png?v=1705485473"
+              },
+              {
+                  text: `“The iPhone among e-bikes”`,
+                  img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19060_2x_e094650e-c53d-4e29-b805-7e89d127643d.png?v=1705485481"
+              },
+              {
+                  text: `“Thanks to its full carbon frame, the Urtopia e-bikes is light”`,
+                  img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19061_2x_a24c29c4-0fff-421f-9977-25989e38b7e9.png?v=1705485487"
+              }
+          ],
+        // 默认的发货时间 文案
+        ebike_default_delivery_time: 'Free shipping <span>within 5 business days</span> from L.A. warehouse.',
+        // 发货时间映射表
+        // key:    vairant_id
+        // value:  发货时间文案
+        ebike_delivery_time: {
+        },
+        sizes_and_specs: {
+            sizes: {
+                image: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231221-151050_2x_d883c889-6e52-477d-8672-a7dda6dbbbdd.png?v=1703577530',
+                parameters: [
+                    [
+                        '<span style="color: #fff;">xxxx</span>',
+                        'Recomm. rider height',
+                        'A. Standover height',
+                        'B. Adjustable seat range',
+                        'C. Handlebar grips height',
+                        'D. Seat tube length',
+                        'E. Wheelbase',
+                        'F. Overall length',
+                        'G. Wheel diameter',
+                        'H. Top tube length (effective)',
+                        'I. Head tube length',
+                        'J. Headset height'
+                    ],
+                    [
+                        '<span class="u17DemiBold_v2">One Size</span>',
+                        '5’1’’~6’1’’',
+                        '779 mm',
+                        '60 mm',
+                        '995-1025 mm',
+                        '421 mm',
+                        '1065 mm',
+                        '1766 mm',
+                        '702 mm',
+                        '594 mm',
+                        '152 mm',
+                        '90-120 mm'
+                    ],
+                ]
+            },
+            specs: [
+                {
+                    title: 'General Info',
+                    parameters: [
+                        ["Model", "Carbon Folding E-Bike"],
+                        ["Weight", "29 lbs"],
+                        ["Material", "Carbon fiber (frame, fork)"],
+                        ["Range", "Up to 37 miles"],
+                        ["Top Speed", "16mph by default 20mph upon unlock"],
+                        ["Total Weight Limit", "220 lbs"],
+                        ["Rider Height", "155cm-185cm"],
+                        ["Brakes", "TEKTRO hydraulic disc brakes"],
+                        ["Wheels", `INNOVA 18" x 2.0`],
+                        ["", ``],
+                    ]
+                },
+                {
+                    title: 'Ebike System',
+                    parameters: [
+                        ["Motor", "500 Peak power, 36V 250W (sustained) rear drive hub motors, 42Nm"],
+                        ["Battery", "36V 7Ah (529.2 Wh) seat post battery"],
+                        ["Pedal Assist", "5 levels"],
+                        ["Trottle", "Yes (up to 20mph)"],
+                        ["Charger", "3H fast charger, 42V 2Amp"],
+                        ["Display", "Color display"],
+                        ["Sensors", "Torque sensor"],
+                        ["Headlights", "External headlights 160LM"],
+                        ["Rearlights", "Integrated rear lights"],
+                        ["", ``],
+                    ]
+                },
+                {
+                    title: 'Drivetrain',
+                    parameters: [
+                        ["Chainrings", "11-32T"],
+                        ["Cassette", "11-32T, 8 Speed"],
+                        ["Chain", "Chain KMC Z7"],
+                        ["Rear Derailleur", "Shimano Altus 8-Speed"],
+                        ["Shift Lever", "8 Speed Trigger"],
+                        ["", ``],
+                    ]
+                }
+            ] 
+          },
     },
     // chrod order page 配置项
     chord_order_page_config: {
