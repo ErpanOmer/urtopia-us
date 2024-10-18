@@ -4,13 +4,13 @@
 <div class="banner">
         <div class="centeral-content">
             <h3 class="u24Medium_v2">{{ settings.sale_name }}</h3>
-            <h2 class="u48DemiBold_v2">Up to {{ all_products["urtopia-carbon-1-pro-ebike"].compare_at_price |  minus: all_products["urtopia-carbon-1-pro-ebike"].price | money_without_trailing_zeros }} OFF</h2>
+            <h2 class="u48DemiBold_v2">Up to {{ all_products["urtopia-carbon-fusion-gt"].compare_at_price |  minus: all_products["urtopia-carbon-fusion-gt"].price | money_without_trailing_zeros }} OFF</h2>
             {% render 'sale' %}
         </div>
     </div>
     <div class="centeral-content ebike-products">
     <div class="product-grid">
-        {% assign product = all_products["urtopia-carbon-fold"] %}
+        {% assign product = all_products["urtopia-carbon-fusion-gt"] %}
         {% assign product_variants = product.variants | where: "available" %}
         {% assign product_uhmaya = "1500W<br>power, Carbon fiber<br>frame, 240 km<br>range" | split: ", " %}
         {% render 'product-card-2',
