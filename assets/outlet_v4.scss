@@ -489,6 +489,31 @@ $product-tags-color: #DEEDFF;
             }
         }
 
+        &[data-stye="Creme"] {
+            &::after {
+                background-color: #dbdbdb;
+            }
+        }
+
+        &[data-stye="Yellow"] {
+            &::after {
+                background-color: #ffb100;
+            }
+        }
+
+        &[data-stye="Blue"] {
+            &::after {
+                background-color: #365d8e;
+            }
+        }
+
+        &[data-stye="Blu"] {
+            &::after {
+                background-color: #9ec0d1;
+            }
+        }
+        
+
         &[data-stye="Sirius"] {
             &::after {
                 background-color: #FA812B;
@@ -569,12 +594,45 @@ $product-tags-color: #DEEDFF;
                 background-color: #000;
             }
         }
-
+        
         &[data-stye="Gray"] {
             border-color: #405364;
 
             &::after {
                 background-color: #405364;
+            }
+        }
+
+        &[data-stye="Blu"] {
+            border-color: #9ec0d1;
+
+            &::after {
+                background-color: #9ec0d1;
+            }
+        }
+
+        &[data-stye="Creme"] {
+            border-color: #dbdbdb;
+
+            &::after {
+                background-color: #dbdbdb;
+            }
+        }
+
+
+        &[data-stye="Blue"] {
+            border-color: #365d8e;
+
+            &::after {
+                background-color: #365d8e;
+            }
+        }
+
+        &[data-stye="Yellow"] {
+            border-color: #ffb100;
+
+            &::after {
+                background-color: #ffb100;
             }
         }
     }
@@ -639,6 +697,8 @@ $product-tags-color: #DEEDFF;
 
     .variant-image {
         cursor: pointer;
+        aspect-ratio: 371/232;
+        object-fit: cover;
     }
 
     .dots {
