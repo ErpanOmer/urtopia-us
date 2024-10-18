@@ -194,26 +194,18 @@ const global_config = {
         // 产品系列图
         product_images: {
             'Yellow': [
-              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3-1.jpg?v=1722064932',
-              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_24397.jpg?v=1722064933&width=800',
-              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231108-untitled-3641.jpg?v=1722064933&width=800',
-              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241015-153933.jpg?v=1728977983&width=800',
-                'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240910-184640.jpg?v=1725965247&width=800',
-              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1pro-_-_c_2x_59857988-2ad6-42c3-ba78-b239cc591367.jpg?v=1721977733',
-              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1pro-_-_c__1_1_2x_1b9d5dea-a84a-442b-80ec-3fa18757aabd.jpg?v=1721977738',
-              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1pro-_1_1.jpg?v=1722064932',
-              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1pro-_c_2x_4d3389e3-6c89-4584-a35d-a7586f6f0dec.jpg?v=1721977750',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241017-185158.jpg?v=1729162376',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241017-185203.jpg?v=1729162376',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241017-185140.jpg?v=1729162376',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241017-185210.jpg?v=1729162376',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241017-185150.jpg?v=1729162376',
             ],
             'Blue': [
-              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18878.jpg?v=1722064932',
-              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_24398.jpg?v=1722064933&width=800',
-              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240308-untitled-6217.jpg?v=1722064934&width=800',
-              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Urtopia-20.jpg?v=1722064933&width=800',
-              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Urtopia-11.jpg?v=1722064933&width=800',
-              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18874.jpg?v=1722064932&width=800',
-              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18870.jpg?v=1722064932&width=800',
-              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18862.jpg?v=1722064932',
-              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18858.jpg?v=1722064933',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241017-185454.jpg?v=1729162539',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241017-185449.jpg?v=1729162539',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241017-185513.jpg?v=1729162539',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241017-185459.jpg?v=1729162539',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241017-185504.jpg?v=1729162539'
              ],
             commonSwiper: [
           ]
@@ -278,35 +270,27 @@ const global_config = {
         },
         sizes_and_specs: {
             sizes: {
-                image: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231221-151050_2x_d883c889-6e52-477d-8672-a7dda6dbbbdd.png?v=1703577530',
+                image: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19556_2x_ea5e3f39-95bd-4a6c-926b-5de332bff46e.png?v=1729162648',
                 parameters: [
                     [
                         '<span style="color: #fff;">xxxx</span>',
                         'Recomm. rider height',
-                        'A. Standover height',
-                        'B. Adjustable seat range',
-                        'C. Handlebar grips height',
-                        'D. Seat tube length',
-                        'E. Wheelbase',
-                        'F. Overall length',
-                        'G. Wheel diameter',
-                        'H. Top tube length (effective)',
-                        'I. Head tube length',
-                        'J. Headset height'
+                        'A. Adjustable seat range',
+                        'B. Seat length',
+                        'C. Overall length',
+                        'D. Handlebar grips height',
+                        'E. Height after folding',
+                        'F. Overall length after folding'
                     ],
                     [
                         '<span class="u17DemiBold_v2">One Size</span>',
                         '5’1’’~6’1’’',
-                        '779 mm',
-                        '60 mm',
-                        '995-1025 mm',
-                        '421 mm',
-                        '1065 mm',
-                        '1766 mm',
-                        '702 mm',
-                        '594 mm',
-                        '152 mm',
-                        '90-120 mm'
+                        '160 mm',
+                        '1000 mm',
+                        '1460 mm',
+                        '1100 mm',
+                        '680 mm',
+                        '780 mm'
                     ],
                 ]
             },
