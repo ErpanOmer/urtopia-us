@@ -54,7 +54,7 @@
         "type": "text",
         "id": "chord_ebike_discount_price",
         "label": "chord 车折扣价",
-        "default": "50000"
+        "default": "0"
       },
       {
         "type": "text",

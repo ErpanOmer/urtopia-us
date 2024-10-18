@@ -103,7 +103,7 @@
                     <div class="pf-judme">{% render "judgeme_widgets", widget_type: "judgeme_preview_badge", jm_style: "", concierge_install: false, product: product %}</div>
                 </div>
                <div class="u17DemiBold_v2 mb6 sale-taggggggg">{{ settings.sale_name }}</div>
-                <div style="margin: 0" class="product-price u30DemiBold_v2" data-price="{{ product.price | money }}">{{ product.price | minus: settings.chord_ebike_discount_price | money }}</div>
+                <div style="margin: 0" class="product-price u30DemiBold_v2" data-price="{{ product.compare_at_price | money }}">{{ product.price | money }}</div>
                 <div class="sale-tag mb6">
                   <!--<div class="u17Medium_v2">{{ settings.chord_sale_name }}</div>-->
                   <div class="u14Light_v2" style="margin: 0">Free shipping.</div>
