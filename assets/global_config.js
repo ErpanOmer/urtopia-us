@@ -693,5 +693,168 @@ const global_config = {
           45756426027256: 'Shipping starts by late October',
           45756426060024: 'Shipping starts by late October',
         }
-    }
+    },
+    fusion_order_page_config: {
+        // chord 车默认显示 variant_id, 只有 url 上的 variant 参数为空的时候生效
+        default_variant: 44758960210136,
+        ignore_variants_available_false: [],
+        size_map: {
+          'One Size': 'Fit for 160cm-190cm'
+        },
+        product_media_images: [
+          {
+              text: 'Carbon Fiber Expert',
+              img: "https://newurtopia.com/cdn/shop/files/logo_0707__1.png?v=1684310857"
+          },
+          {
+              text: 'Lightest mid-drive eSUV',
+              img: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19446_2x_6b79974f-ad63-4300-8509-26515572c1dc.png?v=1726220917"
+          },
+          {
+              text: 'Effortlessly conquers steep hills',
+              img: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19447_2x_60b10b4a-5ff7-4357-adc0-f31752890bd9.png?v=1726220922"
+          },
+          {
+              text: 'First eBike with ChatGPT',
+              img: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19448_2x_668271f6-6ac8-4d8f-a29e-710638543268.png?v=1726220928"
+          },
+          {
+              text: 'Excels off-road',
+              img: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19450_2x_ffca6459-4596-4e24-bc71-225c7efdefc7.png?v=1726220933"
+          },
+          {
+              text: 'AI-Enhanced electric performance',
+              img: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19451_2x_aa6ca012-04b8-4b6c-a71f-9d6e748e58e7.png?v=1726220895"
+          },
+        ],
+        product_images: {
+          'Elegant Grey': [
+              'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240914-100118.jpg?v=1726279298&width=1000',
+              'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19398_2x_2f9d7f41-0453-47fd-9945-85218577ba05.jpg?v=1726126593&width=1000',
+              'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19404_2x_c158f72e-fb31-4da4-8202-c80ea6eb9348.jpg?v=1726126604&width=1000',
+              'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DSCF8066.jpg?v=1726126744',
+              'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24613_2x_0da3a3e7-be41-432a-8b92-042ab9a805ca.jpg?v=1726127519',
+              'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2x_e7ed9f67-2e5e-4f9e-ab95-70c64e56ed61.jpg?v=1726127514',
+              'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2x_c511bbc0-00fb-47ea-85b5-ba0bbdd3d857.jpg?v=1726127507',
+              'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2x_1b49e807-7f18-433b-a754-d352a0154ac9.jpg?v=1726127500',
+              'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2x_2880e256-371a-4202-84f1-6c84d4bfbc23.jpg?v=1726127494',
+              'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240924-164942.jpg?v=1727167799'
+            ],
+            'Blazing Black': [
+              'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240914-100102.jpg?v=1726279297si&width=1000',
+              'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19398_2x_2f9d7f41-0453-47fd-9945-85218577ba05.jpg?v=172612659&width=1000',
+              'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19404_2x_c158f72e-fb31-4da4-8202-c80ea6eb9348.jpg?v=1726126604&width=1000',
+              'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DSCF8066.jpg?v=1726126744',
+              'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24397_2x_7575ba25-8f88-4d54-93b3-7c06f7ed6181.jpg?v=1726126832',
+              'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2x_c01dea8f-6eb4-43c5-a3ec-40339d924263.jpg?v=1726127019',
+              'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2x_367b9cdb-4e38-421e-9ebc-13f72d169e63.jpg?v=1726127025',
+              'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2x_b23227fc-e6e8-4550-8d50-a8c1c24a0fa2.jpg?v=1726127013',
+              'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2x_195b795e-d831-46a1-a56f-69bb13feffbb.jpg?v=1726127033',
+              'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240924-164942.jpg?v=1727167799'
+            ],
+            'Vital Orange': [
+              'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18879.png?v=1713323995&width=1000',
+              'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19398_2x_2f9d7f41-0453-47fd-9945-85218577ba05.jpg?v=1726126593&width=1000',
+              'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19404_2x_c158f72e-fb31-4da4-8202-c80ea6eb9348.jpg?v=1726126604&width=1000',
+              'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DSCF8066.jpg?v=1726126744',
+              'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24612_2x_75b439ef-1cdb-4974-823a-f984fb38d381.jpg?v=1726127267',
+              'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2x_d8f0e61f-9369-4efa-866b-db1fb1c8b9e6.jpg?v=1726127272',
+              'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2x_9d13e439-9a0d-4373-aa2a-da6347dcd412.jpg?v=1726127277',
+              'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2x_11082a95-04f4-4320-9d71-e1f2d030ae25.jpg?v=1726127255',
+              'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2x_f7d5899a-829c-416f-b04d-7962897b9baf.jpg?v=1726127261'
+            ],
+            commonSwiper: []
+        },
+        // 默认的发货时间 文案
+        ebike_default_delivery_time: 'Delivery from 15.09.2024',
+        // 每一种variant 的发货时间文案
+        ebike_delivery_time: {},
+        sizes_and_specs: {
+          sizes: {
+            image: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240108-181634.png?v=1704709013',
+            parameters: [
+              [
+                '<span style="color: #fff;">xxxx</span>',
+                'Recomm. rider height',
+                'A. Adjustable seat range',
+                'B. Handlebar grips height',
+                'C. Seat tube length',
+                'D. Wheelbase',
+                'E. Overall length',
+                'F. Wheel diameter',
+                'G. Top tube length (effective)',
+                'H. Head tube length',
+                'I. Headset height'
+              ],
+              [
+                '<span style="color: #fff;">One Size</span>',
+                '160-190 cm',
+                '140 mm',
+                '1085-1115 mm',
+                '485 mm',
+                '1205 mm',
+                '1935 mm',
+                '730 mm',
+                '633 mm',
+                '144 mm',
+                '90-120 mm'
+              ],
+              // [
+              //   '<span class="u17DemiBold_v2">Large</span>',
+              //   '175-195 cm',
+              //   '833 mm',
+              //   '60 mm',
+              //   '1023-1053 mm',
+              //   '498 mm',
+              //   '1122 mm',
+              //   '1824 mm',
+              //   '702 mm',
+              //   '653 mm',
+              //   '180 mm',
+              //   '90-120 mm'
+              // ]
+            ]
+          },
+          specs: [
+            {
+              title: 'Smart',
+              parameters: [
+                ["Smartbar features", "Voice control, fingerprint start, LED dot - matrix display, haptic interaction, bluetooth music, built-in navigation, OTA upgrade"],
+                ["Connectivity", "eSIM with 4G, Bluetooth, GPS"],
+                ["IoT sensors", "Accelerometer, gyroscope, torque sensor"],
+                ["App", "iOS & Android"],
+                ["Connect Service", "1 year included*"]
+              ]
+            },
+            {
+              title: 'Power',
+              parameters: [
+                ["Motor", "Mid-Drive Motor (Bafang), 36V 250W, 80Nm"],
+                ["Speed modes", "Pedal, Eco, Comfort, Sport"],
+                ["Top speed (assisted)", "25 km/h"],
+                ["Range", "Up to 140 km <br>Extended to 240 km(Dual baterry)"],
+                ["Removable battery", "529.2 Wh, 21700 Samsung Li-ion"]
+              ]
+            },
+            {
+              title: 'General',
+              parameters: [
+                ["Weight", "From 23 kg"],
+                ["Payload capacity", "Max. 150 kg"],
+                ["Sizes", "One size, suitable for 160-190 cm"],
+                ["Body material", "Carbon fiber (frame)"],
+                ["Fork", "SR Suntour suspension fork with 100 mm travel"],
+                ["Seat Post", "Aluminum seat post"],
+                ["Transmission", "Shimano CUES U6000 1X10 Speed"],
+                ["Drivetrain", "KMC e10 Turbo"],
+                ["Brakes", "TEKTRO dual-piston hydraulic disc brakes (HD-M280)"],
+                ["Lights", "Front: Integrated StVZO headlight<br>Rear: StVZO Rear Light (Not ARES Lights)"],
+                ["Wheels", "28 Inch"],
+                ["Tires", "Schwalbe Big Apple 55-622(28X2.15)"],
+                ["Included Accessories", "Kickstand, Fenders<br>StVZO Rear Light (Not ARES Lights)"]
+              ]
+            },
+          ]
+        }
+      }
 }
