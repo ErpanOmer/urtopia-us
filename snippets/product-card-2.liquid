@@ -1,5 +1,5 @@
 <div class="gray-background-color product-card" {% unless product_variants.size != 0 %}style="display:none;"{% endunless %}>
-    <div class="u14DemiBold_v2 emphasize tags">
+    <div class="u14DemiBold_v2 tags">
         <span>{{ product_discount_price | money_without_trailing_zeros }} OFF</span>
         {% if product_tags %}
             {% assign tags = product_tags | split: "," %}
@@ -67,16 +67,24 @@
             {% endfor %}
         {% endif %}         
     </div>
-    <div class="u20DemiBold_v2">{{ product_name }}</div>
-    <div class="stars" {% if product_reviews_count == 0 %}style="opacity: 0;"{% endif %}>
+    <div class="u24DemiBold_v2">{{ product_name }}</div>
+    {% comment %} <div class="stars">
         <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/star_2x_7e43ff57-6544-4236-93dc-44e2c2a966bd.png?v=1698738965" alt="">
         <a class="u11Light_v2" href="{{ product_url }}?variant=43780147511544" target="_blank">{{ product_reviews_count }} Reviews</a>
-    </div>
+    </div> {% endcomment %}
     <div class="u14Light_v2">{{ product_description }}</div>
     <div class="flex-1 mobileHide"></div>
+    <div class="u14Light_v2 sssss">
+        {% for uhmaya in product_uhmaya %}
+            <span>{{ uhmaya }}</span>
+            {% if forloop.index < 3 %}
+                <i></i>
+            {% endif %}
+        {% endfor %}
+    </div>
     <div class="product_price">
-        <div class="u20DemiBold_v2 emphasize" data-price={{ product_variants.first.price | money_without_trailing_zeros }}>{{ product_variants.first.price | money_without_trailing_zeros }}</div>
+        <div class="u24DemiBold_v2" data-price={{ product_variants.first.price | money_without_trailing_zeros }}>{{ product_variants.first.price | money_without_trailing_zeros }}</div>
         <div class="u14Light_v2">Or &nbsp;<span>{{ product_variants.first.price | divided_by: 24 | money }}</span>/mo <img data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Image_70_2x_8fb8f4b7-8366-43bc-b526-28f1fe7c3dee.png?v=1695607020" alt="" class="lozad"></div>
     </div>
-    <a href="{{ product_url }}?variant=43780147511544" target="_blank" class="my-button my-button-origin">Learn More</a>
+    <a href="{{ product_url }}?variant=43780147511544" target="_blank" class="my-button my-button-black">Shop now</a>
 </div>

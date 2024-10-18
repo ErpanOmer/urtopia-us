@@ -136,7 +136,7 @@
             margin-top: 40px;
             grid-gap: 25px 50px;
 
-             & > div {
+            &>div {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -146,13 +146,14 @@
                 img {
                     max-width: 40px;
                     margin-bottom: 6px;
-                 }
-             }
+                }
+            }
         }
     }
 
     @media (max-width: 767px) {
-         background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23283_2x_2710f446-9aac-4b7a-bc0e-474c975f8cac.png?v=1698737696');
+        background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23283_2x_2710f446-9aac-4b7a-bc0e-474c975f8cac.png?v=1698737696');
+
 
         .centeral-content {
             align-items: center;
@@ -165,27 +166,13 @@
             }
 
             .xxxxxxxx {
-                grid-template-columns: repeat(6, 1fr);
+                grid-template-columns: repeat(3, 1fr);
                 margin-top: 6vw;
                 width: 100%;
                 grid-gap: 4vw 8vw;
 
-                & > div {
+                &>div {
                     font-size: 11px;
-                    grid-column-start: span 2;
-
-                  &:nth-child(4),
-                  &:nth-child(5){
-                        grid-column-start: span 3;
-                  }
-
-                  &:nth-child(4) {
-                        transform: translateX(20%);
-                  }
-
-                  &:nth-child(5) {
-                        transform: translateX(-20%);
-                  }
 
                     img {
                         max-width: 30px;
@@ -243,7 +230,7 @@
                 .emphasize {
                     margin-top: 40px;
 
-                   @include data-price;
+                    @include data-price;
                 }
 
                 @include dots;
@@ -254,7 +241,7 @@
                     margin-top: 12px;
                 }
 
-                
+
             }
         }
 
@@ -264,7 +251,7 @@
             grid-column-gap: 30px;
             margin-top: 30px;
 
-            & > div {
+            &>div {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -272,7 +259,7 @@
                 border-radius: 15px;
                 padding: 8% 10%;
 
-                & > .u24DemiBold_v2 {
+                &>.u24DemiBold_v2 {
                     padding: 4px 16px;
                     background-image: linear-gradient(-90deg, #EE6426, #F4492A);
                     color: #fff;
@@ -368,14 +355,14 @@
                 grid-row-gap: 6vw;
                 margin-top: 6vw;
 
-                & > div {
+                &>div {
                     padding: 6vw 0;
 
                     .price {
                         flex-direction: column-reverse;
                         margin: 8vw 0 2vw;
 
-                        & > .u24DemiBold_v2 {
+                        &>.u24DemiBold_v2 {
                             font-size: 28px;
                             line-height: 38px;
 
@@ -459,14 +446,14 @@
                 }
             }
 
-            .swiper-slide + .swiper-slide {
+            .swiper-slide+.swiper-slide {
                 margin-top: 16vw;
             }
         }
     }
 }
 
-$product-tags-color: #FFE2D9;
+$product-tags-color: #DEEDFF;
 
 @mixin dotssss {
     display: flex;
@@ -475,59 +462,57 @@ $product-tags-color: #FFE2D9;
     margin-bottom: 5%;
 
     &>div {
-        width: 20px;
-        height: 20px;
+        width: 30px;
+        height: 30px;
         margin-right: 12px;
         border-radius: 50%;
         cursor: pointer;
         display: flex;
         align-items: center;
         justify-content: center;
+        border: 2px solid transparent;
+        background-color: transparent;
 
         &::after {
             content: "";
             display: inline-block;
-            height: 16px;
-            width: 16px;
+            height: 22px;
+            width: 22px;
             border-radius: 100%;
         }
 
+        &[data-stye="Black"],
+        &[data-stye="Matte Black"],
+        &[data-stye="Blazing Black"] {
+            &::after {
+                background-color: #000;
+            }
+        }
+
         &[data-stye="Sirius"] {
-            background-color: #FA812B;
-        }
-
-        &[data-stye="Lyra"] {
-            background-color: #747474;
-        }
-
-        &[data-stye="Vanilla"] {
-            background-color: #F0EEDF;
+            &::after {
+                background-color: #FA812B;
+            }
         }
 
         &[data-stye="Midnight in Paris"] {
-            background-color: #FFEC0B;
             position: relative;
+
+            &::after {
+                background-color: #FFEC0B;
+            }
         }
 
+        &[data-stye="Elegant Grey"],
         &[data-stye="White"] {
-            background-color: #ddd;
-        }
-
-        &[data-stye="Black"] {
-            background-color: #000;
+            &::after {
+                background-color: #ddd;
+            }
         }
 
         &[data-stye="Gray"] {
             border-color: #405364;
             background-color: #405364;
-        }
-
-        &[data-stye="Creme"] {
-            background-color: #EDECE7;
-        }
-
-        &[data-stye="Matte Black"] {
-            background-color: #000;
         }
 
         &[data-stye="Midnight in Paris"]::before {
@@ -536,73 +521,72 @@ $product-tags-color: #FFE2D9;
             background-color: #ff6c00;
             position: absolute;
             z-index: 1;
-            width: 100%;
-            height: 55%;
+            width: 20px;
+            height: 42.5%;
             border-top-right-radius: 100px;
             border-top-left-radius: 100px;
-            top: 0;
+            top: 2px;
         }
     }
 
     .active {
-        background-color: transparent !important;
-        border: 1px solid #666;
+        &[data-stye="Sirius"] {
+            border-color: #FA812B;
 
-        &[data-stye="Sirius"]::after {
-            background-color: #FA812B;
-        }
-
-        &[data-stye="Lyra"]::after {
-            background-color: #747474;
-        }
-
-        &[data-stye="Vanilla"]::after {
-            background-color: #F0EEDF;
-        }
-
-        &[data-stye="Midnight in Paris"]::after {
-            background-color: #FFEC0B;
+            &::after {
+                background-color: #FA812B;
+            }
         }
 
         &[data-stye="Midnight in Paris"] {
             text-align: center;
         }
 
-        &[data-stye="Midnight in Paris"]::before {
-            top: 1px;
-            height: 9px;
-            width: 16px;
+        &[data-stye="Midnight in Paris"] {
+            border-color: #ff6c00;
         }
 
-        &[data-stye="White"]::after {
-            background-color: #ddd;
+        &[data-stye="Elegant Grey"],
+        &[data-stye="White"] {
+            border-color: #ddd;
+
+            &::after {
+                background-color: #ddd;
+            }
         }
 
         &[data-stye="Black"]::after {
             background-color: #000;
         }
 
-        &[data-stye="Gray"]::after {
-            background-color: #405364;
+
+        &[data-stye="Black"],
+        &[data-stye="Matte Black"],
+        &[data-stye="Blazing Black"] {
+            border-color: #000;
+
+            &::after {
+                background-color: #000;
+            }
         }
 
-        &[data-stye="Creme"]::after {
-            background-color: #EDECE7;
-        }
+        &[data-stye="Gray"] {
+            border-color: #405364;
 
-        &[data-stye="Matte Black"]::after {
-            background-color: #000;
+            &::after {
+                background-color: #405364;
+            }
         }
     }
 
     @media (max-width: 767px) {
         margin-bottom: 2.5vw;
 
-        & > div {
+        &>div {
             width: 28px;
             height: 28px;
             margin-right: 12px;
-            
+
             &::after {
                 width: 20px;
                 height: 20px;
@@ -645,6 +629,7 @@ $product-tags-color: #FFE2D9;
             background-color: $product-tags-color;
             border-radius: 10px;
             padding: 4px 10px;
+            color: #315F9A;
         }
 
         span {
@@ -674,6 +659,7 @@ $product-tags-color: #FFE2D9;
 
         a {
             text-decoration: underline;
+
             &:hover {
                 opacity: 0.78;
             }
@@ -683,7 +669,7 @@ $product-tags-color: #FFE2D9;
     .product_price {
         display: flex;
         align-items: center;
-        margin: 6px 0;
+        margin-bottom: 12px;
         flex-wrap: wrap;
 
         img {
@@ -691,7 +677,7 @@ $product-tags-color: #FFE2D9;
             margin-left: 6px;
         }
 
-        .u20DemiBold_v2 {
+        .u24DemiBold_v2 {
             margin-right: 5%;
 
             &[data-price]::after {
@@ -714,10 +700,21 @@ $product-tags-color: #FFE2D9;
 
     .my-button {
         width: fit-content;
-        padding: 8px 16px;
-        font-size: 14px;
-        font-weight: 600;
-        line-height: 17px;
+    }
+
+    .sssss {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 85%;
+        margin: 16px 0;
+
+        i {
+            display: block;
+            width: 1px;
+            height: 35px;
+            background-color: #ddd;
+        }
     }
 
     @media (max-width: 767px) {
@@ -742,8 +739,13 @@ $product-tags-color: #FFE2D9;
             }
         }
 
-        & > .u20DemiBold_v2 {
+        &>.u20DemiBold_v2 {
             font-size: 16px;
+        }
+
+
+        .sssss {
+            max-width: none;
         }
     }
 }
@@ -772,7 +774,7 @@ $product-tags-color: #FFE2D9;
             overflow: hidden;
             color: #fff;
             display: flex;
-            align-items: flex-end;
+            align-items: flex-start;
             padding: 20px 50% 20px 30px;
         }
     }
@@ -781,12 +783,12 @@ $product-tags-color: #FFE2D9;
         margin: 40px auto;
         padding: 0 4vw;
 
-        & > .u36DemiBold_v2 {
+        &>.u36DemiBold_v2 {
             text-align: center;
             font-size: 30px;
         }
-        
-        & > .u24Medium_v2 {
+
+        &>.u24Medium_v2 {
             font-size: 17px;
             text-align: center;
             margin-bottom: 10vw;
@@ -795,6 +797,12 @@ $product-tags-color: #FFE2D9;
         .product-grid {
             grid-template-columns: 1fr;
             grid-row-gap: 12px;
+
+
+            &>.lozad {
+                font-size: 24px;
+                height: 75vw;
+            }
         }
     }
 }

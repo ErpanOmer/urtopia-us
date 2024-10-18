@@ -1,6 +1,168 @@
-.compared {
+h1,
+h2,
+h3,
+h4 {
+    color: inherit;
+    margin: 0;
+}
+
+.u17Light_v2 {
+    @media (max-width: 767px) {
+        font-size: 15px;
+    }
+}
+
+
+.banner {
+    background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24797_2x_8d83bf4d-226d-4ddb-9daa-0fe1d2b92f8a.jpg?v=1728892989') center center/cover no-repeat;
+    color: #fff;
+
+    .centeral-content {
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+
+        .u48DemiBold_v2 {
+            margin: 12px 0 7vh;
+        }
+    }
+
+
+    @media (max-width: 767px) {
+        background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24866_2x_da7af6c3-c27e-470c-95ca-f06768883fe3.jpg?v=1728893854');
+
+        .centeral-content {
+            align-items: center;
+            text-align: center;
+            justify-content: flex-start;
+
+            .u24Medium_v2 {
+                font-size: 15px;
+            }
+
+            .u48DemiBold_v2 {
+                font-size: 30px;
+                margin: 6px 0 22px;
+            }
+        }
+    }
+}
+
+
+.careeeee {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     background-color: #F7F8FA;
-    padding-bottom: 80px;
+    background-clip: content-box;
+    margin-bottom: 20vh;
+
+
+    &>div {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding-left: 11%;
+
+
+        .u17Light_v2 {
+            margin: 30px 0 50px;
+            max-width: 484px;
+        }
+    }
+
+    @media (max-width: 767px) {
+        grid-template-columns: 1fr;
+        padding: 0 4vw;
+
+        &>div {
+            padding: 40px 15px 60px;
+            order: var(--order);
+
+
+            .u30Medium_v2 {
+                font-size: 24px;
+            }
+
+            .u17Light_v2 {
+                margin: 20px 0;
+            }
+        }
+
+        &>img {
+            order: var(--order);
+        }
+    }
+}
+
+
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 24px;
+    color: #fff;
+
+    &>div {
+        background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19398_2x_3d59a90b-d781-43e7-bb8a-af0766a7c08c.jpg?v=1727260437') center center/cover no-repeat;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-end;
+        aspect-ratio: 103 / 140;
+        padding: 30px;
+      border-radius: 15px;
+          box-sizing: border-box;
+
+
+        .u24DemiBold_v2 {
+            margin-bottom: 24px;
+        }
+
+
+        &:nth-child(2) {
+            background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/IMG_7844_2x_b3ae3bda-3842-4c14-9efa-5e3343c7d9a2.jpg?v=1727260918');
+        }
+
+        &:nth-child(3) {
+            background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/12333321_2x_c49a5439-1e36-4d61-a381-75fe10832383.jpg?v=1727260932');
+        }
+    }
+
+
+    @media (max-width: 767px) {
+        grid-template-columns: 1fr;
+        grid-row-gap: 20px;
+        padding: 0 4vw;
+
+
+        &>div {
+            .u24DemiBold_v2 {
+                font-size: 16px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+
+.Choose {
+    margin-bottom: 40px;
+
+    @media (max-width: 767px) {
+        font-size: 24px;
+        margin-bottom: 24px;
+        padding: 0 4vw;
+    }
+}
+
+
+.compared {
+    // background-color: #F7F8FA;
+    padding: 120px 0;
+
     .centeral-content {
         .items {
             display: flex;
@@ -9,8 +171,8 @@
             .item {
                 display: flex;
                 padding: 40px 0;
-                
-                & + .item {
+
+                &+.item {
                     border-top: 1px solid #0006;
                 }
 
@@ -49,6 +211,7 @@
                             border: 2px solid #fff;
                             transition: all .3s;
                             overflow: hidden;
+                            box-sizing: border-box;
 
                             select {
                                 width: 100%;
@@ -56,7 +219,7 @@
                                 font: normal normal 600 20px/1.4em urbane;
                                 border: none;
 
-                                
+
 
                                 &:focus-visible {
                                     outline-offset: unset;
@@ -87,7 +250,7 @@
                             flex-direction: column;
                             margin-top: 36px;
 
-                            & > div {
+                            &>div {
                                 display: flex;
                                 flex-direction: row;
                                 justify-content: space-between;
@@ -98,19 +261,19 @@
                                     }
                                 }
 
-                                & + div {
+                                &+div {
                                     margin-top: 12px;
 
-                                    
+
                                 }
                             }
 
                         }
 
-                        
+
                     }
 
-                    .param + .param {
+                    .param+.param {
                         margin-left: 16px;
                     }
 
@@ -131,14 +294,13 @@
             }
         }
     }
-}
 
+    @media (max-width: 767px) {
+        padding: 40px 0;
 
-@media (max-width: 767px) {
-    .compared {
-        padding: 0 0 40px;
         .centeral-content {
             padding: 0 4%;
+
             .items {
                 .item {
                     flex-direction: column;
@@ -169,13 +331,13 @@
                             .select {
                                 height: 45px;
                                 padding: 0 15px;
-                                
+
                                 select {
                                     font-size: 12px;
                                 }
                             }
 
-                            
+
                         }
 
                         .u17Medium_v2 {
@@ -201,7 +363,7 @@
                             }
                         }
 
-                        .param + .param {
+                        .param+.param {
                             margin-left: 0;
                             margin-bottom: 0;
                         }
@@ -218,337 +380,117 @@
 }
 
 
+.professional {
+    padding: 120px 0 0;
 
-$product-tags-color: #FFE2D9;
+    .centeral-content {
+        overflow: hidden;
 
-@mixin dotssss {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    margin-bottom: 5%;
-
-    &>div {
-        width: 20px;
-        height: 20px;
-        margin-right: 12px;
-        border-radius: 50%;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        &::after {
-            content: "";
-            display: inline-block;
-            height: 16px;
-            width: 16px;
-            border-radius: 100%;
+        .u36DemiBold_v2 {
+                margin-bottom: 40px;
+                text-align: left;
         }
 
-        &[data-stye="Sirius"] {
-            background-color: #FA812B;
-        }
+        .videos {
+            // display: grid;
+            // grid-template-columns: repeat(3, 1fr);
+            // grid-column-gap: 30px;
 
-        &[data-stye="Lyra"] {
-            background-color: #747474;
-        }
+            &>div {
+                display: flex;
+                flex-direction: column;
+                cursor: pointer;
+                height: auto;
 
-        &[data-stye="Vanilla"] {
-            background-color: #F0EEDF;
-        }
-
-        &[data-stye="Midnight in Paris"] {
-            background-color: #FFEC0B;
-            position: relative;
-        }
-
-        &[data-stye="White"] {
-            background-color: #ddd;
-        }
-
-        &[data-stye="Black"] {
-            background-color: #000;
-        }
-
-        &[data-stye="Gray"] {
-            border-color: #405364;
-            background-color: #405364;
-        }
-
-        &[data-stye="Creme"] {
-            background-color: #EDECE7;
-        }
-
-        &[data-stye="Matte Black"] {
-            background-color: #000;
-        }
-
-        &[data-stye="Midnight in Paris"]::before {
-            content: "";
-            display: inline-block;
-            background-color: #ff6c00;
-            position: absolute;
-            z-index: 1;
-            width: 100%;
-            height: 55%;
-            border-top-right-radius: 100px;
-            border-top-left-radius: 100px;
-            top: 0;
-        }
-    }
-
-    .active {
-        background-color: transparent !important;
-        border: 1px solid #666;
-
-        &[data-stye="Sirius"]::after {
-            background-color: #FA812B;
-        }
-
-        &[data-stye="Lyra"]::after {
-            background-color: #747474;
-        }
-
-        &[data-stye="Vanilla"]::after {
-            background-color: #F0EEDF;
-        }
-
-        &[data-stye="Midnight in Paris"]::after {
-            background-color: #FFEC0B;
-        }
-
-        &[data-stye="Midnight in Paris"] {
-            text-align: center;
-        }
-
-        &[data-stye="Midnight in Paris"]::before {
-            top: 1px;
-            height: 9px;
-            width: 16px;
-        }
-
-        &[data-stye="White"]::after {
-            background-color: #ddd;
-        }
-
-        &[data-stye="Black"]::after {
-            background-color: #000;
-        }
-
-        &[data-stye="Gray"]::after {
-            background-color: #405364;
-        }
-
-        &[data-stye="Creme"]::after {
-            background-color: #EDECE7;
-        }
-
-        &[data-stye="Matte Black"]::after {
-            background-color: #000;
-        }
-    }
-
-    @media (max-width: 767px) {
-        margin-bottom: 2.5vw;
-
-        & > div {
-            width: 28px;
-            height: 28px;
-            margin-right: 12px;
-            
-            &::after {
-                width: 20px;
-                height: 20px;
-                margin: 2px;
-                transform: unset;
-            }
-        }
-
-        .active {
-            border-width: 2px;
-
-            &[data-stye="Midnight in Paris"]::before {
-                height: 11.5px;
-                width: 20px;
-                top: 2px;
-                left: 2px;
-            }
-        }
-    }
-}
-
-@mixin product-card {
-    padding: 5%;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    background-color: #fff;
-
-    *,
-    ::after,
-    ::before {
-        box-sizing: border-box;
-    }
-
-    .tags {
-        display: flex;
-        flex-wrap: wrap;
-        flex: 1;
-
-        span {
-            background-color: $product-tags-color;
-            border-radius: 10px;
-            padding: 4px 10px;
-        }
-
-        span {
-            margin-right: 6px;
-        }
-    }
-
-    .variant-image {
-        cursor: pointer;
-    }
-
-    .dots {
-        @include dotssss;
-    }
+                img {
+                    cursor: pointer;
+                }
 
 
-    .stars {
-        display: flex;
-        align-items: self-start;
-        justify-content: flex-start;
-        margin: 6px 0;
+                .u17Light_v2 {
+                    margin: 12px 0 30px;
+                }
 
-        img {
-            max-width: 86px;
-            margin-right: 6px;
-        }
+                .u17Medium_v2 {
+                    display: flex;
+                    align-items: center;
 
-        a {
-            text-decoration: underline;
-            &:hover {
-                opacity: 0.78;
-            }
-        }
-    }
-
-    .product_price {
-        display: flex;
-        align-items: center;
-        margin: 6px 0;
-        flex-wrap: wrap;
-
-        img {
-            max-width: 40px;
-            margin-left: 6px;
-        }
-
-        .u20DemiBold_v2 {
-            margin-right: 5%;
-
-            &[data-price]::after {
-                content: attr(data-price);
-                display: inline-block;
-                color: #161c1f;
-                text-decoration: line-through;
-                margin-left: 6px;
-                font-size: 20px;
-                font-weight: 300;
-                opacity: 0.53;
-            }
-        }
-
-        &>.u14Light_v2 {
-            display: flex;
-            align-items: self-end;
-        }
-    }
-
-    .my-button {
-        width: fit-content;
-        padding: 8px 16px;
-        font-size: 14px;
-        font-weight: 600;
-        line-height: 17px;
-    }
-
-    @media (max-width: 767px) {
-        padding: 4vw;
-
-        .product_price {
-            flex-direction: column;
-            align-items: flex-start;
-            margin-bottom: 6px;
-
-            .u20DemiBold_v2 {
-                margin-bottom: 6px;
-
-                &::after {
-                    font-size: 16px !important;
-                    transform: translateY(-3px) !important;
+                    img {
+                        max-width: 28px;
+                        width: 28px;
+                        margin-right: 10px;
+                        border-radius: 50%;
+                    }
                 }
             }
 
-            img {
-                max-width: 34px;
+
+        }
+
+
+        .swiper-scrollbar {
+            position: static;
+            margin-top: 5vh;
+            width: 100%;
+            background-color: #DEDEDE;
+            z-index: unset;
+            
+            .swiper-scrollbar-drag {
+                background-color: #FD4B17;
             }
         }
 
-        & > .u20DemiBold_v2 {
-            font-size: 16px;
-        }
-    }
-}
 
-.ebike-products {
-    margin: 0 auto 120px;
 
-    .u24Medium_v2 {
-        margin: 2.5vh 0 8vh;
-        max-width: 530px;
-    }
-
-    .product-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-gap: 22px;
-
-        .product-card {
-            @include product-card;
-        }
-
-        &>.lozad {
-            background-size: cover;
-            background-repeat: no-repeat;
-            border-radius: 10px;
-            overflow: hidden;
-            color: #fff;
+        .buttons {
             display: flex;
-            align-items: flex-end;
-            padding: 20px 50% 20px 30px;
+            justify-content: flex-end;
+            margin-top: 5vh;
+
+            .swiper-button-prev,
+            .swiper-button-next {
+                position: static;
+                color: #fff;
+                background-color: #000;
+                border-radius: 50%;
+                width: 35px;
+                height: 35px;
+                margin-left: 15px;
+                z-index: unset;
+                
+
+                &::after {
+                    font-size: 18px;
+                }
+            }
         }
     }
+
 
     @media (max-width: 767px) {
-        margin: 0 auto 40px;
-        padding: 0 4vw;
+        padding: 16vw 0 0;
 
-        & > .u36DemiBold_v2 {
-            text-align: center;
-            font-size: 30px;
-        }
-        
-        & > .u24Medium_v2 {
-            font-size: 17px;
-            text-align: center;
-            margin-bottom: 10vw;
-        }
+        .centeral-content {
+            padding: 0 4vw;
 
-        .product-grid {
-            grid-template-columns: 1fr;
-            grid-row-gap: 12px;
+            .u36DemiBold_v2 {
+                font-size: 24px;
+                text-align: left;
+                margin-bottom: 24px;
+            }
+
+            .videos {
+                display: flex;
+                grid-column-gap: 0;
+
+                &>div {
+
+                    .u17Light_v2 {
+                        font-size: 14px;
+                        margin-bottom: 4vw;
+                    }
+                }
+            }
         }
     }
 }
