@@ -575,7 +575,7 @@
                                             <div>
                                               <div class="u14DemiBold_v2">Chord</div>
                                               <div class="u11Light_v2">Comfort and elegance</div>
-                                              <span class="u14DemiBold_v2 emphasize" data-price="{{ productttttt.first.price | money_without_trailing_zeros }}">{{ productttttt.first.price | minus: settings.chord_ebike_discount_price | money_without_trailing_zeros }}</span>
+                                              <span class="u14DemiBold_v2 emphasize" {% unless productttttt.first.compare_at_price == productttttt.first.price %}data-price="{{ productttttt.first.compare_at_price | money_without_trailing_zeros }}"{% endunless %}>{{ productttttt.first.price | money_without_trailing_zeros }}</span>
                                             </div>
                                             <img src="{{ productttttt.first.featured_image | image_url: width: 300 }}">
                                         </div>
@@ -584,7 +584,7 @@
                                             <div>
                                               <div class="u14DemiBold_v2">Chord X</div>
                                               <div class="u11Light_v2">Easy on, easy off</div>
-                                              <span class="u14DemiBold_v2 emphasize" data-price="{{ productttttt.first.price | money_without_trailing_zeros }}">{{ productttttt.first.price | minus: settings.chord_ebike_discount_price | money_without_trailing_zeros }}</span>
+                                              <span class="u14DemiBold_v2 emphasize" {% unless productttttt.first.compare_at_price == productttttt.first.price %}data-price="{{ productttttt.first.compare_at_price | money_without_trailing_zeros }}"{% endunless %}>{{ productttttt.first.price | money_without_trailing_zeros }}</span>
                                             </div>
                                             <img src="{{ productttttt.first.featured_image | image_url: width: 300 }}">
                                         </div>
@@ -908,7 +908,7 @@
                                           <div class="u20DemiBold_v2">Chord</div>
                                           <div class="u14Light_v2">Comfort and elegance</div>
                                           <div class="flex-1"></div>
-                                          <span class="u17DemiBold_v2 emphasize" data-price="{{ productttttt.first.price | money_without_trailing_zeros }}">{{ productttttt.first.price | minus: settings.chord_ebike_discount_price | money_without_trailing_zeros }}</span>
+                                          <span class="u17DemiBold_v2 emphasize" {% unless productttttt.first.compare_at_price == productttttt.first.price %}data-price="{{ productttttt.first.compare_at_price | money_without_trailing_zeros }}"{% endunless %}>{{ productttttt.first.price | money_without_trailing_zeros }}</span>
                                       </div>
                                       {% assign productttttt = all_products['urtopia-chord-ebike'].variants | where: "title", "Step-Through / White" %}
                                       <div class="by-model" href="/pages/lightweight-commuter-ebike-urtopia-chord">
@@ -916,7 +916,7 @@
                                           <div class="u20DemiBold_v2">Chord X</div>
                                           <div class="u14Light_v2">Easy on, easy off</div>
                                           <div class="flex-1"></div>
-                                          <span class="u17DemiBold_v2 emphasize" data-price="{{ productttttt.first.price | money_without_trailing_zeros }}">{{ productttttt.first.price | minus: settings.chord_ebike_discount_price | money_without_trailing_zeros }}</span>
+                                        <span class="u17DemiBold_v2 emphasize" {% unless productttttt.first.compare_at_price == productttttt.first.price %}data-price="{{ productttttt.first.compare_at_price | money_without_trailing_zeros }}"{% endunless %}>{{ productttttt.first.price | money_without_trailing_zeros }}</span>
                                       </div>
                                       <div class="sale-image" href="/products/urtopia-carbon-1-pro-ebike"></div>
                                   </div>

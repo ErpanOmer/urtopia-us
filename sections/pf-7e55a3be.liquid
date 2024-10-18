@@ -30,7 +30,7 @@
                 <div class="pf-judme">{% render "judgeme_widgets", widget_type: "judgeme_preview_badge", jm_style: "", concierge_install: false, product: product %}</div>
             </div>
             <div class="u14DemiBold_v2 mb6 sale-taggggggg">{{ settings.sale_name }}</div>
-            <div class="product-price u30DemiBold_v2" style="margin: 0;" data-price="{{ product.price | money }}">{{ product.price | minus: settings.chord_ebike_discount_price | money }}</div>
+            <div class="product-price u30DemiBold_v2" style="margin: 0;" data-price="{{ product.compare_at_price | money }}">{{ product.price | money }}</div>
             <div class="sale-tag mb6">
               <!--<div class="u17Medium_v2">{{ settings.chord_sale_name }}</div>-->
               <div class="u14Light_v2">Free shipping.</div>
@@ -206,7 +206,7 @@
                 </div>
                 <div onclick="testRideTrace('klarna_check_out', this)" class="orderTestRideBtn">
                   <img class="twoooo"src="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/files/20230530-121400.png?v=1685420054"/>
-                  <span><span class="u17DemiBold_v2">0% APR</span><span>24 months, <span class="stages">{{ product.price | minus: settings.chord_ebike_discount_price | divided_by: 24 | money_without_trailing_zeros }}</span>/month</span></span>
+                  <span><span class="u17DemiBold_v2">0% APR</span><span>24 months, <span class="stages">{{ product.price | divided_by: 24 | money_without_trailing_zeros }}</span>/month</span></span>
                 </div>
             </div>
             <div class="delivery_time mb12">Free shipping <span>within 5 days</span></div>
@@ -381,25 +381,28 @@
 
 
 <img class="toTop" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21049.svg?v=1687267470">
-
 <div class="top-fixed mobileHide">
-    <div class="centeral-content">
-        <span class="u20DemiBold_v2">{{ product.title }}</span>
-        <span class="flex-1"></span>
-        <div>
-            <span class="u17Light_v2"><span class="u20DemiBold_v2 emphasize" style="font-weight: 600;">{{ product.price | minus: settings.chord_ebike_discount_price | money }}</span><span style="text-decoration: line-through;">{{ product.price | money }}</span></span>
-            <span class="u14Light_v2">or as low as {{ product.price | minus: settings.chord_ebike_discount_price | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
-        </div>
-        <a href="#product_form_{{ product.id }}" class="my-button my-button-origin">Order Now</a>
+  <div class="centeral-content">
+    <span class="u20DemiBold_v2">{{ product.title }}</span>
+    <span class="flex-1"></span>
+    <div>
+      <span class="u17Light_v2"><span class="u20DemiBold_v2 emphasize" style="font-weight: 600;">{{ product.price | money }}</span> {% unless product.compare_at_price == product.price %}
+        <span style="text-decoration: line-through;">{{ product.compare_at_price | money }}</span>
+    {% endunless %}</span>
+      <span class="u14Light_v2">or as low as {{ product.price | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
     </div>
+    <a href="#product_form_{{ product.id }}" class="my-button my-button-origin">Order Now</a>
+  </div>
 </div>
 
 <div class="bottom-fixed pcHide">
-    <a href="#product_form_{{ product.id }}" class="my-button my-button-origin">Order Now</a>
-    <div>
-        <span class="u14Light_v2"><span class="u17DemiBold_v2 emphasize" style="font-weight: 600;">{{ product.price | minus: settings.chord_ebike_discount_price | money }}</span><span style="text-decoration: line-through;">{{ product.price | money }}</span></span>
-        <span class="u14Light_v2">or as low as {{ product.price | minus: settings.chord_ebike_discount_price | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
-    </div>
+  <a href="#product_form_{{ product.id }}" class="my-button my-button-origin">Order Now</a>
+  <div>
+    <span class="u14Light_v2"><span class="emphasize" style="font-weight: 600;">{{ product.price | money }}</span> {% unless product.compare_at_price == product.price %}
+      <span style="text-decoration: line-through;">{{ product.compare_at_price | money }}</span>
+  {% endunless %}</span>
+    <span class="u14Light_v2">or as low as {{ product.price | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
+  </div>
 </div>
 
 
@@ -453,58 +456,11 @@
               $(`.product .product-panel .accessories .chord-accessories`).show()
               $(`.product .product-panel .accessories .chord-accessories-1`).hide()
               $(`.product .product-panel .options > div[option="Frame"] .u17DemiBold_v2 .u17Light_v2`).text(`Chord - ${global_config.chord_order_page_config.size_map[e.value]}`)
-
-              /*
-              $(`.product .product-panel .sale`).show()
-              $(`.product .product-panel .count-down`).show()
-              $(`.product .product-panel .orderTestRideBtn .stages`).text('{{ product.price | minus: settings.chord_ebike_discount_price | divided_by: 24 | money_without_trailing_zeros }}')
-              $('.top-fixed .centeral-content > div').html(`
-                <span class="u17Light_v2"><span class="u20DemiBold_v2 emphasize" style="font-weight: 600;">{{ product.price | minus: settings.chord_ebike_discount_price | money }}</span><span style="text-decoration: line-through;">{{ product.price | money }}</span></span>
-                <span class="u14Light_v2">or as low as {{ product.price | minus: settings.chord_ebike_discount_price | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
-              `)
-
-              $('.bottom-fixed > div').html(`
-                <span class="u14Light_v2"><span class="u17DemiBold_v2 emphasize" style="font-weight: 600;">{{ product.price | minus: settings.chord_ebike_discount_price | money }}</span><span style="text-decoration: line-through;">{{ product.price | money }}</span></span>
-                <span class="u14Light_v2">or as low as {{ product.price | minus: settings.chord_ebike_discount_price | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
-              `)
-
-
-              $('.product .sale-tag').show()
-              $('.product .product-price').attr('data-price', "{{ product.price | money }}")
-              $('.product .product-price').text('{{ product.price | minus: settings.chord_ebike_discount_price | money }}')
-              $('.product .product-price').css({
-                margin: '12px 0 0',
-                color: 'var(--sale-order-page-text-color)'
-              })
-              */
       } else {
             $(`.product .product-panel .accessories .chord-accessories .active`).click()
             $(`.product .product-panel .accessories .chord-accessories`).hide()
             $(`.product .product-panel .accessories .chord-accessories-1`).show()
             $(`.product .product-panel .options > div[option="Frame"] .u17DemiBold_v2 .u17Light_v2`).text(`Chord X - ${global_config.chord_order_page_config.size_map[e.value]}`)
-
-            /*
-            $(`.product .product-panel .sale`).hide()
-            $(`.product .product-panel .count-down`).hide()
-            $(`.product .product-panel .orderTestRideBtn .stages`).text('{{ product.price | divided_by: 24 | money_without_trailing_zeros }}')
-            $('.top-fixed .centeral-content > div').html(`
-              <span class="u17Light_v2"><span class="u20DemiBold_v2 emphasize" style="font-weight: 600;">{{ product.price | money }}</span></span>
-              <span class="u14Light_v2">or as low as {{ product.price | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
-            `)
-            $('.bottom-fixed > div').html(`
-              <span class="u14Light_v2"><span class="u17DemiBold_v2 emphasize" style="font-weight: 600;">{{ product.price | money }}</span></span>
-              <span class="u14Light_v2">or as low as {{ product.price | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
-            `)
-
-            $('.product .sale-tag').hide()
-            $('.product .product-price').attr('data-price', "")
-            $('.product .product-price').text('{{ product.price | money }}')
-            $('.product .product-price').css({
-              margin: '0 0 6px',
-              color: '#000'
-            })
-
-            */
       }
 
             $(`.product .product-panel .accessories .items`).animate({

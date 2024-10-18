@@ -72,14 +72,12 @@
             product_variants: product_variants,
             product_name: 'Chord',
             product_description: 'Elegantly zip around town for meet-ups, errands, or Sunday fun.',
-            product_discount_price: settings.chord_ebike_discount_price,
             product_url: product.url,
         %}
         {% assign product_variants = product.variants | where: "option1", "Step-Through" | where: "available" %}
         {% render 'product-card',
             product_variants: product_variants,
             product_name: 'Chord X',
-            product_discount_price: settings.chord_ebike_discount_price,
             product_description: 'Easily kickstart your ride for workouts, city cruising, and pure enjoyment.',
             product_url: product.url,
         %}
