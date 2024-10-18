@@ -435,8 +435,10 @@
                                 </span>
                               </div>
                             {% elsif item.product.price < item.product.compare_at_price %}
+                                
                                 {% assign product_price = item.quantity | times: item.product.price | money %}
                                 {% assign product_compare_at_price = item.quantity | times: item.product.compare_at_price | money %}
+                              
                                 <div class="cart-item__discounted-prices">
                                 <span class="visually-hidden">
                                   {{ 'products.product.price.regular_price' | t }}
