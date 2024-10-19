@@ -304,7 +304,7 @@ const global_config = {
                         ["Range", "Up to 37 miles"],
                         ["Top Speed", "16mph by default 20mph upon unlock"],
                         ["Total Weight Limit", "220 lbs"],
-                        ["Rider Height", "155cm-185cm"],
+                        ["Rider Height", `5’1’’ - 6’1’’`],
                         ["Brakes", "TEKTRO hydraulic disc brakes"],
                         ["Wheels", `INNOVA 18" x 2.0`],
                         ["", ``],
@@ -316,13 +316,11 @@ const global_config = {
                         ["Motor", "500 Peak power, 36V 250W (sustained) rear drive hub motors, 42Nm"],
                         ["Battery", "36V 7Ah (529.2 Wh) seat post battery"],
                         ["Pedal Assist", "5 levels"],
-                        ["Trottle", "Yes (up to 20mph)"],
                         ["Charger", "3H fast charger, 42V 2Amp"],
                         ["Display", "Color display"],
                         ["Sensors", "Torque sensor"],
                         ["Headlights", "External headlights 160LM"],
                         ["Rearlights", "Integrated rear lights"],
-                        ["", ``],
                     ]
                 },
                 {
