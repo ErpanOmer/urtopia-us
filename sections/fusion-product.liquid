@@ -526,9 +526,95 @@
             alt="">
     </div>
 
+    <div class="beast">
+      <div class="centeral-content">
+        <div></div>
+        <div>
+          <h3 class="u36Medium_v2">Ultimate Machine Beast</h3>
+          <p class="u17Light_v2">
+            <span>
+              Urtopia Fusion offers four dynamic drive modes catering to your every whim, empowering you to conquer any road challenge. Whether cruising through the city or braving a polar vortex, find your perfect mode and dominate every adventure.
+            </span>
+          </p>
+          <div class="icons">
+            <div>
+              <img class="mobileHide lozad" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19557_2x_bfaabb1e-1a0f-42b2-9783-9305ae6d23ff.png?v=1729333036" alt="">
+              <img class="pcHide lozad" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19559_2x_9b1d4787-b93e-4656-b13f-4a6f97eef4fc.png?v=1729333868" alt="">
+              <span class="u14Medium_v2" style="text-align: center;margin-top: 15px;">Dual Drive Mode</span>
+              <div class="progress">
+                <div></div>
+              </div>
+              <span class="u14Medium_v2">Dual motor 700 W, more powerful and stable</span>
+            </div>
+            <div>
+              <img class="mobileHide lozad" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19558_2x_f6badc0f-4ed5-41b9-9e0e-f5d02863795e.png?v=1729333040" alt="">
+              <img class="pcHide lozad" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19044_2x_cb2cddcb-bd29-4245-a39b-a94576332aea.png?v=1729333873" alt="">
+              <span class="u14Medium_v2" style="text-align: center;margin-top: 15px;">Rear Drive Mode</span>
+              <div class="progress">
+                <div></div>
+              </div>
+              <span class="u14Medium_v2">Single motor 350W, energy efficient & more range</span>
+            </div>
+            <div>
+              <img class="mobileHide lozad" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19045_2x_ce63eedb-6e5d-48ae-8a18-54c2a05f1c09.png?v=1729333045" alt="">
+              <img class="pcHide lozad" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19045_2x_e970e97a-4110-43b4-bdd9-361cd33da888.png?v=1729333864" alt="">
+              <span class="u14Medium_v2" style="text-align: center;margin-top: 15px;">Throttle Mode</span>
+              <div class="progress">
+                <div></div>
+              </div>
+              <span class="u14Medium_v2">Full output up to 1500 W, powerful and speedy</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let current_index = 1
+
+      function customSetInterval(callback, interval) {
+          let lastTime = performance.now(); // 记录当前时间
+          let stop = false; // 停止标志
+
+          function tick(currentTime) {
+            if (stop) return; // 如果停止，则退出
+            if (currentTime - lastTime >= interval) {
+              // 如果经过的时间大于等于设定的间隔时间
+              callback(); // 执行回调
+              lastTime = currentTime; // 更新上次调用的时间
+            }
+            requestAnimationFrame(tick); // 下一帧继续调用
+          }
+
+          requestAnimationFrame(tick); // 启动递归
+          return () => { stop = true; }; // 返回一个停止函数
+        }
+
+      const fn = () => {
+        console.log(current_index)
+
+          $(`.beast .icons > div`).removeClass('active')
+          $(`.beast .icons > div .progress > div`).css('width', '0')
+
+          $(`.beast .icons > div:nth-child(${current_index}) `).addClass('active')
+          
+
+          $(`.beast .icons > div:nth-child(${current_index}) .progress > div`).animate({
+            width: '100%'
+        }, 2000)
+
+          current_index = current_index >= 3 ? 1 : current_index + 1
+      }
+
+      // customSetInterval(fn, 2000)
+
+      // start
+      // fn(current_index)
+    </script>
+
 <div class="makes">
   <div class="centeral-content">
-     <h2 class="u36Medium_v2">What makes Carbon Fusion GT <br class="pcHide">the best e-SUV?</h2>
+     <h2 class="u36Medium_v2 mobileHide">What makes Carbon Fusion GT <br class="pcHide">the best e-SUV?</h2>
      <img class="lozad mobileHide" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24888_2x_faf67fe6-5430-4a0d-b282-597ebe10aaf5.png?v=1729308387" alt="">
      <img class="lozad mobileHide" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24890_2x_5ee70e3a-6ae6-4af8-b6f8-de3a0d065224.png?v=1729308382" alt="">
      <img class="lozad pcHide" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24889_2x_00d4fe2d-5636-406e-b9b2-aff145f49f8f.png?v=1729318514" alt="">
