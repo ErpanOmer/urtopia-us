@@ -693,5 +693,213 @@ const global_config = {
           45756426027256: 'Shipping starts by late October',
           45756426060024: 'Shipping starts by late October',
         }
-    }
+    },
+    fusion_order_page_config: {
+        // chord 车默认显示 variant_id, 只有 url 上的 variant 参数为空的时候生效
+        default_variant: 45844150190328,
+        ignore_variants_available_false: [],
+        size_map: {
+          'One Size': 'Fit for 5’26’’ - 6’25’’'
+        },
+        product_media_images: [
+          {
+              text: 'Carbon Fiber Expert',
+              img: "https://newurtopia.com/cdn/shop/files/logo_0707__1.png?v=1684310857"
+          },
+          {
+              text: `“Visually stunning and lightweight bikes”`,
+              img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19051_2x_3c234be0-e1cb-4ab0-b83c-02282fd42cb4.png?v=1705485418"
+          },
+          {
+              text: `“The best electric bikes of 2024”`,
+              img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19052_2x_83b17023-7ff5-413b-9a87-571e8e6928ee.png?v=1705485424"
+          },
+          {
+              text: `“Pack with copious use of technology”`,
+              img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19053_2x_2b4e11dc-d27b-47ad-9478-92c696e1fac7.png?v=1705485431"
+          },
+          {
+              text: `“Pack with copious use of technology”`,
+              img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19054_2x_7feff357-8d1b-48a0-b9af-662442dc41f6.png?v=1705485437"
+          },
+          {
+              text: `“The epitome of raw power”`,
+              img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19055_2x_612a45c4-04fe-4477-a252-302e8d11c40e.png?v=1705485444"
+          },
+          {
+              text: `“Carbon 1 Pro as ‘a bike with spirit”`,
+              img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19056_2x_b61e963a-f2b3-49f3-8bc2-4aee5f8f2a4c.png?v=1705485451"
+          },
+          {
+              text: `“Standout feature lies in its integration with advanced technology. ”`,
+              img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19057_2x_0eabb26b-a2fe-48e8-b00e-209ef2b986e0.png?v=1705485460"
+          },
+          {
+              text: `“Interesting innovation or tech for tech’s sake”`,
+              img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19058_2x_b0454fa5-9c44-462e-8f04-5646db60456a.png?v=1705485466"
+          },
+          {
+              text: `“Completely crazy: This e-bike talks to the rider”`,
+              img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19059_2x_14b271ba-3eae-41ea-8882-e6896e9f9948.png?v=1705485473"
+          },
+          {
+              text: `“The iPhone among e-bikes”`,
+              img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19060_2x_e094650e-c53d-4e29-b805-7e89d127643d.png?v=1705485481"
+          },
+          {
+              text: `“Thanks to its full carbon frame, the Urtopia e-bikes is light”`,
+              img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19061_2x_a24c29c4-0fff-421f-9977-25989e38b7e9.png?v=1705485487"
+          }
+      ],
+        product_images: {
+          'Elegant Grey': [
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19562.jpg?v=1729305262',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Fusion2-18.jpg?v=1729305264&width=1000',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/12333.jpg?v=1729305263&width=1000',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Fusion2-26.jpg?v=1729305263&width=1000',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24909.jpg?v=1729305263',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1_3e6798ca-c8fa-4177-bd9b-89a4a927ad18.jpg?v=1729305263',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/7c82b2eb5dc055162526ce40f6992a8e.jpg?v=1729305263',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1_f6663af0-be1a-4e39-b23d-b53876ed314e.jpg?v=1729305262',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/92b8d6a675411b07ec7e7e53a0c8b8c7.jpg?v=1729305263'
+            ],
+            'Blazing Black': [
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19561.jpg?v=1729305262',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Fusion2-18.jpg?v=1729305264&width=1000',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/12333.jpg?v=1729305263&width=1000',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Fusion2-26.jpg?v=1729305263&width=1000',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24908.jpg?v=1729305263',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/ed7f58882819b78f9efde45cc0b5a2a2.jpg?v=1729305262',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1_d3123805-ad89-4f47-9f7b-2fd070d0722f.jpg?v=1729305263',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/8ea15d93b62c474589503723f875bcfb.jpg?v=1729305262',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1_f07818b8-80f5-4b35-949b-57a5fa70b4b4.jpg?v=1729305263'
+            ],
+            'Vital Orange': [
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19560.jpg?v=1729305262',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Fusion2-18.jpg?v=1729305264&width=1000',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/12333.jpg?v=1729305263&width=1000',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Fusion2-26.jpg?v=1729305263&width=1000',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24397.jpg?v=1729305263',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2_acb43f5f-677a-4687-ae6f-a2ac348de8a6.jpg?v=1729305263',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2_0bd94c6b-d30e-4d20-b599-a90e2fb36560.jpg?v=1729305263',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2.jpg?v=1729305262',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2_55d5d49f-9210-4f1d-8391-92dfb0471447.jpg?v=1729305263'
+            ],
+            commonSwiper: []
+        },
+        // 默认的发货时间 文案
+        ebike_default_delivery_time: 'Free shipping within 5 business days',
+        // 每一种variant 的发货时间文案
+        ebike_delivery_time: {},
+        sizes_and_specs: {
+          sizes: {
+            image: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240108-181634.png?v=1704709013',
+            parameters: [
+              [
+                '<span style="color: #fff;">xxxx</span>',
+                'Recomm. rider height',
+                'A. Adjustable seat range',
+                'B. Handlebar grips height',
+                'C. Seat tube length',
+                'D. Wheelbase',
+                'E. Overall length',
+                'F. Wheel diameter',
+                'G. Top tube length (effective)',
+                'H. Head tube length',
+                'I. Headset height'
+              ],
+              [
+                '<span style="color: #fff;">One Size</span>',
+                '5’26’’ - 6’25’’',
+                '140 mm',
+                '1085-1115 mm',
+                '485 mm',
+                '1205 mm',
+                '1935 mm',
+                '730 mm',
+                '633 mm',
+                '144 mm',
+                '90-120 mm'
+              ],
+              // [
+              //   '<span class="u17DemiBold_v2">Large</span>',
+              //   '175-195 cm',
+              //   '833 mm',
+              //   '60 mm',
+              //   '1023-1053 mm',
+              //   '498 mm',
+              //   '1122 mm',
+              //   '1824 mm',
+              //   '702 mm',
+              //   '653 mm',
+              //   '180 mm',
+              //   '90-120 mm'
+              // ]
+            ]
+          },
+          specs: [
+            {
+              title: 'General Info',
+              parameters: [
+                ["Model", "Carbon Fusion Lightweight E-SUV"],
+                ["Net Weight", "60 lbs"],
+                ["Material", "Carbon fiber frame"],
+                ["Range", "Up to 70 miles Extended to 120miles (Dual baterry)"],
+                ["Top Speed", "20mph by default 28mph upon unlock"],
+                ["Total Weight Limit", "330 lbs"],
+                ["Rider Height", "5’26’’ - 6’25’’"],
+                ["Brakes", "TEKTRO hydraulic disc brakes with power cut-off sensor"],
+                ["Wheels", "Kenda K1127 (29X2.05), puncture-proof tire"],
+                ["", ""],
+              ]
+            },
+            {
+              title: 'Ebike System',
+              parameters: [
+                ["Motor", "1500W peak power (36V 350W 36Nm front hub motor, 36V 350W 36Nm rear drive hub motor)"],
+                ["Battery", "36V 14.7Ah (529.2 Wh), Samsung Li-ion, removable battery"],
+                ["Pedal Assist", "4 levels"],
+                ["Trottle", "Yes (up to 20mph)"],
+                ["Charger", "3.5H fast charger, 36V 4Amp"],
+                ["Display", "LED dot-matrix (Anti-glare)"],
+                ["Sensors", "Torque sensor, accelerometer, gyroscope"],
+                ["Lights", "Front: Integrated StVZO headlight Rear: StVZO rear light (Not ARES lights)"]
+              ]
+            },
+            {
+              title: 'Drivetrain',
+              parameters: [
+                ["Chainrings", "44T"],
+                ["Crankset", "Aluminum alloy, 170mm"],
+                ["Cassette", "11-40T, 8 Speed"],
+                ["Chain", "YBN S8e, Silver"],
+                ["Rear Derailleur", "Shimano ACERA 8-Speed"],
+                ["Shift Lever", "8 Speed Trigger"],
+                ["Pedals", "9/16” Alloy Platform"],
+                ["", ""],
+              ]
+            },
+            {
+              title: 'Cockpit',
+              parameters: [
+                ["Urtopia Smartbar", "Aluminum alloy, Φ28.6mm, 720mm width, adjustable height 0/15/30mm, haptic interaction"],
+                ["Grips", "ZOOM 188NS AMS 700C Suspension fork 60mm travel"],
+                ["Grips", "Durable ergonomic Grips, lockable"],
+                ["Seat Post", "Aluminum Alloy, φ31.6mm, 100mm (size M&L), 80mm (size S)"],
+              ]
+            },
+            {
+              title: 'Smartbar',
+              parameters: [
+                ["Smartbox", "On-board navigation, fingerprint unlock, AI assistant, voice control, bluetooth speaker, OTA update (wireless firmware update)"],
+                ["Theft Defenses", "Movement alarm, Electronic Fence, Find My Bike (live GPS tracking), Beep"],
+                ["Connectivity", "eSIM with 4G, GPS, Bluetooth"],
+                ["eSIM/Connect Service", "Renewal via App (Urtopia)"],
+                ["App", "Urtopia (iOS & Android)"],
+                ["", ""],
+              ]
+            },
+          ]
+        }
+      }
 }
