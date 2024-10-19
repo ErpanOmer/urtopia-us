@@ -495,6 +495,7 @@ $product-tags-color: #DEEDFF;
             }
         }
 
+      &[data-stye="Vital Orange"],
         &[data-stye="Yellow"] {
             &::after {
                 background-color: #ffb100;
@@ -628,6 +629,7 @@ $product-tags-color: #DEEDFF;
             }
         }
 
+        &[data-stye="Vital Orange"],
         &[data-stye="Yellow"] {
             border-color: #ffb100;
 
