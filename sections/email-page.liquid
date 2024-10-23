@@ -1,1 +1,149 @@
-hello world
+<style>
+  .banner {
+    background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241022-183633_2x_003c0c4f-2e82-4ad2-9d1d-1c05b6f7649a.jpg?v=1729652313')
+      center center/cover no-repeat;
+  }
+
+  .banner .centeral-content {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .banner .centeral-content .u48DemiBold_v2 {
+    color: #fff;
+  }
+
+
+  .emailll .centeral-content .u24Medium_v2 {
+    max-width: 600px;
+  }
+
+  .emailll .centeral-content {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .emaillllllllllllll {
+    display: flex;
+    position: relative;
+    max-width: 360px;
+    width: 100%;
+    margin-top: 5vh;
+  }
+
+  .emaillllllllllllll input {
+    border-bottom-left-radius: 30px;
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    border: 2px solid #fd4b17;
+    border-right: none;
+    flex: 1;
+    padding: 0 2.5% 0 5%;
+    background-color: transparent;
+    color: #fff;
+  }
+
+  .emaillllllllllllll input::placeholder {
+    color: #b8b8b8;
+  }
+
+  .emaillllllllllllll button {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    border: none;
+    padding: 14px 30px;
+  }
+
+  .emaillllllllllllll .u17DemiBold_v2 {
+    position: absolute;
+    bottom: 0;
+    transform: translate(12.5%, 150%);
+    display: none;
+  }
+
+  @media (max-width: 767px) {
+    .banner {
+      background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241022-183633_2x_ec3e9f89-256c-43d8-aa5d-dd56ba64c064.jpg?v=1729653290');
+    }
+
+    .banner .centeral-content {
+        height: 56.65vw;
+    }
+
+
+    .banner .centeral-content .u48DemiBold_v2 {
+        font-size: 24px;
+    }
+
+    .emaillllllllllllll input {
+      flex: 1;
+      width: 0;
+      font-size: 14px;
+      border-width: 1px;
+      padding-left: 5%;
+    }
+
+    .emaillllllllllllll button {
+      padding: 3vw 6vw;
+    }
+
+    .emaillllllllllllll .u17DemiBold_v2 {
+      font-size: 14px;
+      transform: translate(10%, 150%);
+    }
+
+
+    .emailll .centeral-content {
+        padding: 16vw 8vw 40vw;
+        height: auto;
+    }
+
+    .emailll .centeral-content .u24Medium_v2 {
+        font-size: 15px;
+    }
+
+
+    .emaillllllllllllll {
+        margin-top: 30px;
+    }
+  }
+</style>
+
+<div class="banner">
+  <div class="centeral-content">
+    <h2 class="u48DemiBold_v2">Black Friday <br class="pcHide">Warm Up</h2>
+  </div>
+</div>
+<div class="emailll">
+  <div class="centeral-content">
+    <div class="u24Medium_v2">Subscribe and get the biggest fans’ giveback</div>
+    <form class="emaillllllllllllll" accept-charset="UTF-8">
+      <input class="u17Medium_v2" placeholder="Enter email here" type="email" name="email" required>
+      <button class="my-button my-button-origin" type="submit">Subscribe</button>
+      <span class="u17DemiBold_v2">Thanks for subscribing!</span>
+    </form>
+  </div>
+</div>
+
+
+<script>
+  $('.emaillllllllllllll').on('submit', function (event) {
+        $(this).find('.u17DemiBold_v2').hide()
+        fetchBuried('emailpage', 'submit', { email: $(this).find('input').val(), tag: `emailpage` }).finally(() => $(this).find('.u17DemiBold_v2').show())
+
+
+        $('.emailll .u24Medium_v2').text('Thanks for joining the Pre-Black Friday Sale. We will send an exclusive coupon email to your inbox. Don’t forget to check your email!')
+        $('.emailll .emaillllllllllllll').hide()
+
+        event.preventDefault();
+        return false;
+    })
+</script>
