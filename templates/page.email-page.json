@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "email-page": {
+      "type": "email-page",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "email-page"
+  ]
+}

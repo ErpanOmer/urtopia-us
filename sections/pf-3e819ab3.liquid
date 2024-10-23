@@ -12,7 +12,7 @@
     <div class="product-grid">
         {% assign product = all_products["urtopia-carbon-fusion-gt"] %}
         {% assign product_variants = product.variants | where: "available" %}
-        {% assign product_uhmaya = "1500W<br>power, Carbon fiber<br>frame, 240 km<br>range" | split: ", " %}
+        {% assign product_uhmaya = "1500W<br>power, Carbon fiber<br>frame, 120<br>Miles" | split: ", " %}
         {% render 'product-card-2',
             product_variants: product_variants,
             product_name: 'Fusion GT',
@@ -39,13 +39,13 @@
         {% render 'product-card-2',
             product_variants: product_variants,
             product_name: 'Carbon Fold 1',
-            product_description: 'super space-efficient',
+            product_description: 'Super space-efficient',
             product_url: product.url,
             product_uhmaya: product_uhmaya
         %}
         {% assign product = all_products["urtopia-chord-ebike"] %}
         {% assign product_variants = product.variants | where: "option1", "High-Step" | where: "available" %}
-        {% assign product_uhmaya = "Liquid forging<br>aluminum, Anti-theft<br>GPS tracking, 120 km<br>range" | split: ", " %}
+        {% assign product_uhmaya = "Liquid forging<br>aluminum, Anti-theft<br>GPS tracking, 75<br>Miles" | split: ", " %}
         {% render 'product-card-2',
             product_variants: product_variants,
             product_name: 'Chord',
@@ -54,7 +54,7 @@
             product_uhmaya: product_uhmaya
         %}
         {% assign product_variants = product.variants | where: "option1", "Step-Through" | where: "available" %}
-        {% assign product_uhmaya = "Liquid forging<br>aluminum, Anti-theft<br>GPS tracking, 120 km<br>range" | split: ", " %}
+        {% assign product_uhmaya = "Liquid forging<br>aluminum, Anti-theft<br>GPS tracking, 75<br>Miles" | split: ", " %}
         {% render 'product-card-2',
             product_variants: product_variants,
             product_name: 'Chord X',
@@ -312,7 +312,7 @@
             <p class="u17Light_v2">
                 <span>Pushing the limits of what’s possible in carbon fiber bikes. With cutting-edge technology and sleek, lightweight design, we deliver an unparalleled riding experience.</span>
             </p>
-            <a class="my-button my-button-white" target="_blank" href="/pages/carbon">Learn more</a>
+            <a class="my-button my-button-white" target="_blank" href="/pages/carbon-expert">Learn more</a>
         </div>
         <div style="--order: 6;">
             <h3 class="u30Medium_v2">The bicycle with the mind</h3>
@@ -604,7 +604,7 @@ const parameters = [
   {
       name: 'Carbon Fusion GT',
       img: 'https://newurtopia.com/cdn/shop/files/19566.png?v=1729236036&width=800',
-      size: 'Fit for 5’26” – 6’25”',
+      size: 'Fit for 5’3” – 6’3”',
       weight: '60 lbs',
       capacity: 'Max. 330 lbs',
       gearing: 'Shimano ACERA 8-Speed',
@@ -630,7 +630,7 @@ const parameters = [
   },
   {
       name: 'Carbon Fold 1',
-      img: 'https://newurtopia.com/cdn/shop/files/20241008-180903.png?v=1729234011&width=800',
+      img: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241022-144851.png?v=1729579789&width=800',
       size: 'Fit for 5’1” – 6’1”',
       weight: '29 lbs',
       capacity: 'Max. 220 lbs',

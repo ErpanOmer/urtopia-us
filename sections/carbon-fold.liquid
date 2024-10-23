@@ -371,8 +371,7 @@
       <div class="contact mb12">
         <span class="delivery_time u14Medium_v2">Free shipping within 5 business days</span><br>
         <span class="u14Light_v2">
-            Need help? Call
-            <a class="my-link" href="tel:+1 (844) 936-2868">+1 (844) 936-2868</a> or email
+            Need help? email
             <a href="mailto:support@newurtopia.com" class="my-link">support@newurtopia.com</a>
         </span>
       </div>
@@ -470,13 +469,41 @@
     </form>
   </div>
 </div>
+<div class="step_folding">
+        <div class="centeral-content">
+            <div>
+                <span class="u48Medium_v2">2 Step Folding</span>
+                <span class="u17Light_v2">It folds in 30 seconds with just two steps, making it simple and
+                    space-saving.</span>
+                <div class="progress">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" >
+                        <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241012-184840_2x_f95f0716-b194-48d8-b90f-54a30f8e989d.png?v=1729483015" />
+                    </div>
+                    <div class="swiper-slide" >
+                        <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241012-184906_2x_4e9cb21c-99e3-4d5d-acd7-12a93a099d84.png?v=1729482988" />
+                    </div>
+                    <div class="swiper-slide" >
+                        <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241012-184908_2x_f690fe39-ffed-4931-8d30-943ec18958d7.png?v=1729482982" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+          
 <div class="makes">
   <div class="centeral-content">
      <h2 class="u36Medium_v2">What makes Carbon Fold 1 <br class="pcHide">the best Foldable E-Bike</h2>
      <img class="lozad mobileHide" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24868_2x_d021d7f2-82e2-437a-ba9d-abc1c68e65b7.png?v=1729076070" alt="">
      <img class="lozad mobileHide" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24870_2x_a586c01c-a72c-42e0-9a94-d36047856d03.png?v=1729076064" alt="">
-     <img class="lozad pcHide" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24877_2x_f39ce52b-2a6a-40ac-94d2-caa009e0c3d5.png?v=1729136431" alt="">
-     <img class="lozad pcHide" style="margin-top: 12vw;" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24876_2x_0c2df05b-18d1-4826-a32b-f1889efd30ed.png?v=1729136427" alt="">
+     <img class="lozad pcHide" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24877_2x_d6c360d0-383d-4b47-b72c-8b8b2eaecbf2.png?v=1729475238" alt="">
+     <img class="lozad pcHide" style="margin-top: 12vw;" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24876_2x_493b152e-2581-4f9f-ad47-c22c9a2fe2cd.png?v=1729474418" alt="">
   </div>
 </div>
 
@@ -488,9 +515,7 @@
         Lightest E-Bike<br>Only 29 lbs
       </h3>
       <p class="u17Light_v2">
-        <span>
-          Designed by the legendary Hartmut Esslinger, the Fusion embodies his philosophy of blending form and emotion. With safety, versatility, and user-friendliness all converge to elevate the riding experience, the Fusion sets the tone for a new era of e-bike innovation.
-        </span>
+        <span>Thanks to the lightweight nature of carbon fiber, both the e-bike frame and handlebars are made from this material. This makes it easy to carry it up and down stairs and effortlessly lift it out of your car trunk.</span>
       </p>
     </div>
   </div>
@@ -599,7 +624,7 @@
       <div class="swiper-slide">
         <img
           class="lozad"
-        data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2x_9a536b74-cb64-4d9d-8247-1abf0e70df77.jpg?v=1729076862"
+        data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241021-111726.jpg?v=1729480693"
           alt=""
         >
         <span class="u20Medium_v2">Customizable Motor</span>
@@ -685,7 +710,7 @@
     </g>
   </g>
 </svg>
-	
+	<img class="toTop" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21049.svg?v=1687267470">	
 <div class="top-fixed mobileHide">
   <div class="centeral-content">
     <span class="u20DemiBold_v2">{{ product.title }}</span>
@@ -966,7 +991,7 @@
     'scroll',
     throttle(
       (e) => {
-        const top1 = $('.professional').offset().top;
+        const top1 = $('.makes').offset().top;
         const top3 = $('.product .addToCartBtn').offset().top;
         const top2 = $(e.target).scrollTop();
 
@@ -1054,7 +1079,51 @@
   });
 </script>
 
-<script src="https://cdn.storepoint.co/api/v1/js/162f21804990ff.js"></script>
+<script>
+  let direction_index = 0
+    new Swiper('.step_folding .swiper', {
+        autoplay: {
+            disableOnInteraction: false,
+            pauseOnMouseEnter: false,
+            delay: 2000,
+        },
+        loop: true,
+        effect: 'fade',
+        grabCursor: true,
+        fadeEffect: {
+            crossFade: true
+        },
+        speed: 600,
+        on: {
+            slideChange: function () {
+                if (this.realIndex === 0) {
+                    $(`.step_folding .progress > div`).removeClass('active')
+                }
+
+                if (this.realIndex === 1) {
+                    // 往右
+                    if (this.activeIndex > this.previousIndex) {
+                        $(`.step_folding .progress > div:nth-child(1)`).addClass('active')
+                    } else {
+                        $(`.step_folding .progress > div:nth-child(1)`).addClass('active')
+                        $(`.step_folding .progress > div:nth-child(2)`).removeClass('active')
+                    }
+                }
+
+                if (this.realIndex === 2) {
+                    if (this.activeIndex > this.previousIndex) {
+                        $(`.step_folding .progress > div:nth-child(2)`).addClass('active')
+                    } else {
+                        $(`.step_folding .progress > div:nth-child(1)`).addClass('active')
+                        $(`.step_folding .progress > div:nth-child(2)`).addClass('active')
+                    }                
+                }
+
+                direction_index = this.previousIndex
+            },
+        },
+    });
+</script>
 
 
           

@@ -169,6 +169,27 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/what-is-california-known-for-the-golden-gate-bridge-hero.webp?v=1697020664',
     stores: [
       {
+        name: `Adventure E-bike Company`,
+        phone: '805-852-5040',
+        email: 'info@adventureebikecompany.com',
+        timezone: "Fremont, California, USA (GMT-7)",
+        add: "2863 E Thousand Oaks Blvd Thousand Oaks California, 91362 United States",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2_2x_d577b007-2a27-4a4d-bab5-e3aaad6386e5.jpg?v=1729508081",
+        testrideSpot: "Newport Beach",
+        availableSizes: [
+          'Carbon 1 Pro Size M'
+        ],
+        businessHours: [
+           "",
+           "",
+           "11:00-18:00",
+           "11:00-17:00",
+           "11:00-18:00",
+           "11:00-18:00",
+           "11:00-18:00",
+        ],
+      },
+      {
         name: `Bikehouse`,
         phone: '949-316-4216',
         email: 'info@bikehouseca.com',
@@ -1985,7 +2006,7 @@ const testRides = [
     stores: [
       {
         name: "Spokes Bikes - Wheaton",
-        phone: "630-690-2050",
+        phone: "630-961-8222",
         email: "spokesnaperville@gmail.com",
         timezone: "Illinois, USA (GMT-7)",
         add: "229 Rice Lake Square, Wheaton, IL 60187",

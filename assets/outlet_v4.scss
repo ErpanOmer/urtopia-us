@@ -496,13 +496,13 @@ $product-tags-color: #DEEDFF;
         }
 
       &[data-stye="Vital Orange"],
-        &[data-stye="Yellow"] {
+        &[data-stye="Saffron Yellow"] {
             &::after {
                 background-color: #ffb100;
             }
         }
 
-        &[data-stye="Blue"] {
+        &[data-stye="Aegean Blue"] {
             &::after {
                 background-color: #365d8e;
             }
@@ -621,7 +621,7 @@ $product-tags-color: #DEEDFF;
         }
 
 
-        &[data-stye="Blue"] {
+        &[data-stye="Aegean Blue"] {
             border-color: #365d8e;
 
             &::after {
@@ -630,7 +630,7 @@ $product-tags-color: #DEEDFF;
         }
 
         &[data-stye="Vital Orange"],
-        &[data-stye="Yellow"] {
+        &[data-stye="Saffron Yellow"] {
             border-color: #ffb100;
 
             &::after {

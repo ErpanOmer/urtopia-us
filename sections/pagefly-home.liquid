@@ -1,172 +1,93 @@
 {{ 'home.scss.css' | asset_url | stylesheet_tag: preload: true }}
-
 <h1 class="visuallyhidden">Urtopia Ebike - Sleek, Full Carbon, Lightweight, Smart</h1>
 
-    <style>
-        .esssst {
-            height: calc(100vh - 106px);
-            position: relative;
-            overflow-x: hidden;
-            background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/us_2x_101b356e-792d-4090-a83d-98a402880fb1.jpg?v=1724479560') bottom center/cover no-repeat;
-            margin-bottom: 2vh;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            flex-direction: column;
-            padding-top: 10vh;
-            color: #fff;
-            text-align: center;
-        }
-
-      .esssst > div {
-        margin-top: 3.5vh;
-      }
-
-        .esssst a {
-            background-color: #DFD9D9;
-            color: #000;
-          margin-right: 25px;
-        }
-
-        .esssst a:hover {
-            background-color: #DFD9D9;
-        }
-
-        @media (max-width: 767px) {
-            .esssst {
-                height: unset;
-                background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/us_2x_18f6755b-5a27-4a6f-90fa-d1d23ce36553.jpg?v=1724479566');
-                text-align: center;
-                padding: 13.5vw 4vw 0;
-                margin-bottom: 2.5vw;
-                aspect-ratio: 375 / 543;
-                background-position: bottom;
-            }
-
-          .esssst > div {
-        margin-top: 4vw;
-        display: flex;
-        justify-content: space-evenly;
-        width: 100%;
-      }
-
-           .esssst > div a {
-             margin: 0;
-           }
-
-            .esssst .u48Medium_v2 {
-                font-size: 20px;
-      }
-
-        }
-    </style>
- <!-- <div class="esssst">
-     <h2 class="u48Medium_v2">Creating a unique Labor Day<br>Enjoy {{ all_products['urtopia-carbon-1-pro-ebike'].compare_at_price |  minus: all_products['urtopia-carbon-1-pro-ebike'].price |  money_without_trailing_zeros }} off</h2>
-    <div>
-      <a href="/products/urtopia-carbon-1-pro-ebike?variant=44288621314296" target="_blank" class="my-button">Meet Carbon 1 Pro</a>
-      <a href="/blogs/blog/when-mythology-meets-urtopia" target="_blank" class="my-button">Learn more</a>
-    </div>
-  </div> -->
-    
-
-<div class="bannerrrr">
-            <div class="swiper-wrapper">
-                  <div class="swiper-slide first">
-                    <div class="centeral-content">
-                      <div style="display: none;"></div>
-                      <div class="banner">
-                          <h2 class="u60Medium_v2">Carbon 1 Pro</h2>
-                          <h3 class="u20Medium_v2">Sporty and Lightweight</h3>
-                          <a class="my-button my-button-ghost" href="/pages/lightweight-ebike-urtopia-carbon-1-pro" target="_blank">Learn More</a>
-                      </div>
-                    </div>
-                  </div>
-            </div>
-            <div class="swiper-pagination"></div>
-        </div>
-
-    <!-- <div class="banner spring">
-        <h2 class="u48Medium_v2"><span style="color: rgb(198, 255, 119);">Spring</span> is The Best Time<br>to Meet by Urtopia Bike</h2>
-        <h3 class="u20Medium_v2">10:30 - 17:30 April 20th<br>Bike Store Otto-Mohr Str. 4, 01237 Dresden</h3>
-        <span class="u17Light_v2">Subscribe now for event updates and details.</span>
-        <form class="emaillllllllllllll" accept-charset="UTF-8">
-                <input class="u17Medium_v2" placeholder="Enter email here" type="email" name="email" required="">
-                <button class="my-button" type="submit">Subscribe</button>
-                <span class="u17DemiBold_v2">Thanks for subscribing!</span>
-            </form>
-    </div> -->
-    
-    <div class="banner chord">
-        <h2 class="u60Medium_v2">Chord</h2>
-        <h3 class="u20Medium_v2">Comfort and Elegance</h3>
-        <a class="my-button my-button-ghost" href="/pages/lightweight-commuter-ebike-urtopia-chord" target="_blank">Learn More</a>
-    </div>
-    <div class="banner fusion">
-        <h2 class="u60Medium_v2">Fusion</h2>
-        <h3 class="u20Medium_v2">Form Follows Emotion</h3>
-        <a class="my-button my-button-ghost" href="/pages/fusion" target="_blank">Learn More</a>
-    </div>
-    {% render 'home-page-media' %}
-    <div class="mind">
-        <h2 class="u36Medium_v2">The Bike with a Mind</h2>
-        <h3 class="u17Light_v2">An AI-Driven Smartebike, offering you more than riding.</h3>
-        <a class="my-button my-button-white" href="/pages/pages-smartest-ebike" target="_blank">Learn More</a>
-    </div>
-    <div class="smart">
-        <div>
-            <h2 class="u36Medium_v2">Reviews</h2>
-            <h3 class="u17Light_v2">True review over the web</h3>
-            <a class="my-button my-button-ghost" href="/pages/urtopia-e-bike-review" target="_blank">Learn More</a>
-            <div class="luanqibazaode">
-                <span class="u24Medium_v2">Linus Tech Tips</span>
-                <span class="u17Light_v2">15.5M Subscriber Youtube</span>
-            </div>
-        </div>
-        <div>
-            <h2 class="u36Medium_v2">Smart App</h2>
-            <h3 class="u17Light_v2">Connect, track, share, achieve - Urtopia app: Your perfect cycling companion!</h3>
-        </div>
-        <div>
-            <h2 class="u36Medium_v2">Sustainability</h2>
-            <h3 class="u17Light_v2">Sustainability at the Heart of Urtopia</h3>
-            <a class="my-button my-button-white" href="/pages/sustainability-carbon-credit" target="_blank">Learn More</a>
-        </div>
-    </div>
-    <div class="test-ride">
+<div class="banner">
         <div class="centeral-content">
-            <div href="/pages/test-ride">
-                <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Screenshot_2024-01-03_at_5.18.46_PM_2x_d12d7e8b-a5a6-4e2a-af50-54934fc52cee.jpg?v=1704525928"
-                    alt="" class="mobileHide">
-                <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Screenshot_2024-01-03_at_5.18.46_PM_2x_39df59a9-0e10-440f-b9e4-032438fc14ef.jpg?v=1704527270"  class="pcHide" alt="">
-                <h2 class="u36Medium_v2">
-                    Test Ride Spots
-                </h2>
-                <div class="flex-1"></div>
-                <h3 class="u17Light_v2">Experience the bike in real</h3>
-                <a href="/pages/test-ride" target="_blank">Learn more</a>
-            </div>
-            <div href="/pages/care">
-                <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230520-untitled-8826_2x_7e43ad38-e398-4728-9ad2-d3ae2d91333d.jpg?v=1704525890"
-                    alt="" class="mobileHide">
-                    <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230520-untitled-8826_2x_f8ac700e-c86e-4d2f-b37d-177624cf29a9.jpg?v=1704527262" class="pcHide" alt="">
-                <h2 class="u36Medium_v2">
-                    Peace of Mind
-                </h2>
-                <div class="flex-1"></div>
-                <h3 class="u17Light_v2">24/7 Support, Full After-Sales</h3>
-                <a href="/pages/care" target="_blank">Learn more</a>
-            </div>
-            <div href="/pages/aboutus">
-                <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221005-untitled-8655_2x_45235a17-d68a-415e-9b0d-37bd9c86086b.jpg?v=1704525896"
-                    alt="" class="mobileHide">
-                <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20221005-untitled-8655_2x_27950ad5-b865-40ee-aced-4e65f9942de7.jpg?v=1704527258" class="pcHide" alt="">
-                <h2 class="u36Medium_v2">
-                    About Us
-                </h2>
-                <div class="flex-1"></div>
-                <h3 class="u17Light_v2">Ride Smart, Ride Green</h3>
-                <a target="_blank" href="/pages/aboutus">Learn more</a>
-            </div>
+            <h2 class="u60DemiBold_v2">Fusion GT</h2>
+            <p class="u20Medium_v2">
+                <span>
+                    Full carbon fiber｜1500W｜120 Miles
+                </span>
+            </p>
+            <a class="my-button" target="_blank" href="/products/urtopia-carbon-fusion-gt">Shop now</a>
+        </div>
+    </div>
+    <div class="centeral-content your">
+        <h2 class="u36DemiBold_v2">Your Utopia is Here</h2>
+        <p class="u17Light_v2">
+            <span>
+                We strive to meet all user needs across various riding scenarios with our lightweight, smart carbon fiber electric bikes.
+            </span>
+        </p>
+        <a class="my-button my-button-black" target="_blank" href="/collections/e-bikes">Explore our ebikes</a>
+    </div>
+    <div class="centeral-content cards">
+        <div>
+            <span class="u24DemiBold_v2">Ride outdoors and <br>explore more trails</span>
+            <a class="my-button" target="_blank" href="/products/urtopia-carbon-fusion-gt">E-touring bike</a>
+        </div>
+        <div>
+            <span class="u24DemiBold_v2">All-Terrain Adventure</span>
+            <a class="my-button" target="_blank" href="/products/urtopia-carbon-1-pro-ebike">E-gravel bike</a>
+        </div>
+        <div>
+            <span class="u24DemiBold_v2">Explore the <br>urban landscape</span>
+            <a class="my-button" target="_blank" href="/collections/e-bikes">E-city bikes</a>
+        </div>
+    </div>
+    <div class="centeral-content carbon">
+       <video playsinline loop autoplay muted class="mobileHide" src="https://cdn.shopify.com/videos/c/o/v/3b12afd59783453c89f21ff6821e6187.mp4"></video>
+        <h2 class="u36DemiBold_v2">Carbon fiber expert</h2>
+        <p class="u17Light_v2">
+            <span>
+                Unleash the power of carbon fiber! As experts in the field, we deliver lightweight bikes that redefine performance and elevate your riding experience. Ride with the best!
+            </span>
+        </p>
+        <a class="my-button" target="_blank" href="/pages/carbon-expert">Learn more</a>
+    </div>
+    <video playsinline loop autoplay muted class="pcHide" src="https://cdn.shopify.com/videos/c/o/v/f1037f1f4d574b1ab3aca6efe4603fb3.mp4"></video>
+    <div class="app">
+        <h2 class="u36DemiBold_v2">The bicycle with a mind</h2>
+        <p class="u17Light_v2">
+            <span>
+                Where innovation fuels greatness! Our eBikes unleash unmatched intelligence, featuring cutting-edge technology like ChatGPT. Elevate your ride—dominate the road with Urtopia!
+            </span>
+        </p>
+        <a class="my-button my-button-black" target="_blank" href="/pages/pages-smartest-ebike">Learn more</a>
+    </div>
+    <div class="centeral-content reviews">
+        <div>
+            <span class="u24Medium_v2">Linus Tech Tips</span>
+            <span class="u17Light_v2">15.5M Subscriber YouTuber</span>
+            <span class="flex-1"></span>
+            <span class="u36DemiBold_v2">Reviews</span>
+            <span class="u17Light_v2">True review over the web</span>
+            <a class="my-button my-button-ghost" target="_blank" href="/pages/urtopia-e-bike-review">Learn more</a>
+        </div>
+        <div>
+            <!-- <span class="u24Medium_v2">Linus Tech Tips</span>
+            <span class="u17Light_v2">15.5M Subscriber YouTuber</span> -->
+            <span class="flex-1"></span>
+            <span class="u36DemiBold_v2">Sustainability</span>
+            <span class="u17Light_v2">Sustainability at the Heart of Urtopia</span>
+            <a class="my-button my-button-ghost" target="_blank" href="/pages/sustainability-carbon-credit">Learn more</a>
+        </div>
+    </div>
+    <div class="testride centeral-content">
+        <div href="/pages/test-ride">
+            <span class="u36DemiBold_v2">Test Ride Spots</span>
+            <span class="u17Light_v2">Experience the bike in real</span>
+            <a href="/pages/test-ride" target="_blank">Learn more</a>
+        </div>
+        <div href="/pages/care">
+            <span class="u36DemiBold_v2">Peace of Mind</span>
+            <span class="u17Light_v2">24/7 Support, Full After-Sales</span>
+            <a href="/pages/care" target="_blank">Learn more</a>
+        </div>
+        <div href="/pages/aboutus">
+            <span class="u36DemiBold_v2">About Us</span>
+            <span class="u17Light_v2">Ride Smart, Ride Green</span>
+            <a href="/pages/aboutus" target="_blank">Learn more</a>
         </div>
     </div>
     <div class="blogs">
@@ -176,7 +97,7 @@
             {% for article in blogs.blog.articles %}
                 {% if blog == article.handle %}
                   <div href="{{ article.url }}">
-                      <img class="lozad" data-src="{{ article.image.src | image_url: width: 400 }}" alt="">
+                      <img class="lozad" data-src="{{ article.image.src | image_url: width: 800 }}" alt="">
                       <h2 class="u20Medium_v2">{{ article.title }}</h2>
                       <div class="flex-1"></div>
                       <a target="_blank" href="{{ article.url }}">Read more</a>
@@ -186,62 +107,27 @@
           {% endfor %}
           {% assign article = articles['blog/the-smartest-e-bike-youll-never-lose'] %}
           <div href="{{ article.url }}">
-                      <img class="lozad" data-src="{{ article.image.src | image_url: width: 400 }}" alt="">
+                      <img class="lozad" data-src="{{ article.image.src | image_url: width: 800 }}" alt="">
                       <h2 class="u20Medium_v2">{{ article.title }}</h2>
                       <div class="flex-1"></div>
                       <a target="_blank" href="{{ article.url }}">Read more</a>
           </div>
 
           
-            <div class="gotooooooo">
+            <a class="gotooooooo" href="/blogs/blog" target="_blank">
                 <span class="u20Medium_v2">To The Blog</span>
                 <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23561_2x_128577ad-cda4-49f4-9ce6-16f8947341fb.png?v=1704528452" alt="">
-            </div>
+            </a>
         </div>
     </div>
 
-    <script>
-      console.log(JSON.parse(JSON.stringify({{ blogs.blog.articles | json }})))
-      
-      $('.gotooooooo').click(() => {
-        window.open('/blogs/blog')
-      })
 
+     <script>
       $('.blogs .centeral-content > div[href]').on('click', function () {
         window.open($(this).attr('href'))
       })
 
-      $('.test-ride .centeral-content > div[href]').on('click', function () {
+      $('.testride > div[href]').on('click', function () {
         window.open($(this).attr('href'))
       })
     </script>
-
-        <script>    
-    // 是否有多个banner, 如果有 开启swiper
-    const isMultipartBanner = document.querySelectorAll('.bannerrrr .swiper-slide')
-    
-    isMultipartBanner.length > 1 && new Swiper('.bannerrrr', {
-        autoplay: {
-            disableOnInteraction: false,
-            pauseOnMouseEnter: false,
-            delay: 10000,
-        },
-        loop: true,
-        speed: 1000,
-        pagination: {
-            el: '.bannerrrr .swiper-pagination',
-            clickable: true
-        }
-    })
-    </script>
-
-
-<script>
-  $('.emaillllllllllllll').on('submit', function (event) {
-        $(this).find('.u17DemiBold_v2').hide()
-        fetchBuried('testride', 'booknow', { store_name: 'Bike Store' }).finally(() => $(this).find('.u17DemiBold_v2').show())
-
-        event.preventDefault();
-        return false;
-    })
-</script>

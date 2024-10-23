@@ -78,7 +78,7 @@
         "type": "text",
         "id": "home_page_blogs",
         "label": "首页blog展示",
-        "default": "blog\/smart-e-bike-with-chatgpt-urtopia-eurobike2023,blog\/the-smartest-e-bike-youll-never-lose,blog\/design-story-one-and-only"
+        "default": "blog\/the-best-e-bike-for-tall-people,blog\/the-total-experience-of-online-shopping-at-urtopia,blog\/the-smartest-e-bike-youll-never-lose"
       },
       {
         "type": "text",

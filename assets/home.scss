@@ -1,6 +1,4 @@
 .u17Light_v2 {
-    opacity: 0.78;
-
     @media (max-width: 767px) {
         font-size: 14px;
     }
@@ -15,259 +13,377 @@ h4 {
 }
 
 
+.u17Light_v2 {
+    @media (max-width: 767px) {
+        font-size: 15px;
+    }
+}
+
+
 .banner {
-    background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/ggb_2x_be964127-9b3f-4948-8e94-4db1e1a82919.jpg?v=1712914363') center center/cover no-repeat;
-    height: calc(100vh - 106px);
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding-top: 7vh;
+    background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24846_2x_dad8be15-34d0-4377-b038-47cac7251c8e.jpg?v=1729410623') center center/cover no-repeat;
+    height: 700px;
 
-    .u20Medium_v2 {
-        margin: 0.5vh 0 3vh;
-    }
-
-    .u60Medium_v2 {
-        position: relative;
-
-        &::after {
-            content: "NEW";
-            color: #FF7F4E;
-            font-size: 20px;
-            font-weight: 400;
-            position: absolute;
-            top: -25%;
-            word-break: normal;
-        }
-    }
-
-    @media (max-width: 767px) {
-        background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/urtopiaebike_an_image_of_an_upcoming_crossover_suv_in_the_style_2x_40d7592d-4e2d-4454-a535-9c8e427bf51a.jpg?v=1710141632');
-        height: calc(100vh - 102px);
-
-        .u60Medium_v2 {
-            font-size: 36px;
-
-            &::after {
-                font-size: 14px;
-                font-weight: 300;
-            }
-        }
-
-        .u20Medium_v2 {
-            margin: 2.5vw 0 8vw;
-            font-size: 17px;
-        }
-    }
-}
-
-.chord {
-    background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/afa_2x_4d9bbc67-61b2-4b0e-90d2-8eb10c691d03.jpg?v=1710141036');
-  margin-top: 2vh;
-
-    .u60Medium_v2 {
-        &::after {
-            content: "";
-        }
-    }
-
-    .my-button-white {
-        &:hover {
-            background-color: transparent;
-        }
-    }
-
-    @media (max-width: 767px) {
-        background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/afa_2x_683b148c-a397-4fd6-98c5-261ef12037e2.jpg?v=1710141625');
-      margin-top: 2.5vw;
-    }
-}
-
-
-.fusion {
-    background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2x.jpg?v=1704792522');
-  margin-top: 2vh;
-
-    .u60Medium_v2 {
-        &::after {
-            color: #D1A73E;
-        }
-    }
-
-    @media (max-width: 767px) {
-        background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2x_0fcbb976-d852-495e-90b0-03cf23582e27.jpg?v=1710141608');
-      margin-top: 2.5vw;
-    }
-}
-
-
-.mind {
-    background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/pp_2x_10a4b4d7-0a3e-4908-9ec9-c15e7072e221.jpg?v=1716169543') center center/cover no-repeat;
-    height: 65vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding-top: 7vh;
-    margin: 0 20px;
-
-    .u17Light_v2 {
-        margin: 1.5vh 0 4vh;
-    }
-
-    .my-button-white {
-        &:hover {
-            background-color: transparent;
-        }
-    }
-
-    @media (max-width: 767px) {
-        background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_23860_2x_2c1c180f-1076-4dd0-80d5-cd6f94c42b49.jpg?v=1716172356');
-        height: 120vw;
-        padding: 15vw 8vw;
-        margin: 0;
-
-        .u36Medium_v2 {
-            font-size: 24px;
-        }
-
-        .u17Light_v2 {
-            margin: 2.5vw 0 8vw;
-        }
-    }
-}
-
-.smart {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-column-gap: 20px;
-    grid-row-gap: 10px;
-    margin: 20px;
-
-    & > div {
-        background: transparent center center/cover no-repeat;
+    .centeral-content {    
         display: flex;
         flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 6% 0 60%;
-        position: relative;
+        justify-content: center;
+        align-items: flex-start;
+        padding-top: 22.5vh;
+        color: #fff;
 
-        .u17Light_v2 {
-            max-width: 350px;
-            margin: 1.5% 0 4%;
+
+        .u20Medium_v2 {
+            margin: 2vh 0 4vh;
+        }
+    }
+
+
+    @media (max-width: 767px) {
+        background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24879_2x_49ee54c2-a819-44ac-8617-b50a155a523b.jpg?v=1729410782');
+        color: #fff;
+        height: 500px;
+
+        .centeral-content {
+            align-items: center;
+            justify-content: flex-start;
+            text-align: center;
+            padding-top: 10vw;
+
+            .u60DemiBold_v2 {
+                font-size: 36px;
+            }
+
+            .u20Medium_v2 {
+                margin: 8px 0 25px;
+                font-size: 17px;
+            }
+        }
+    }
+}
+
+
+.your {
+    background: #F4F5F7 url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24790_2x_57382948-6099-4d12-8038-7c5aee711110.jpg?v=1727260075') center center/cover no-repeat;
+    height: 330px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    box-sizing: border-box !important;
+    margin-top: 11vh;
+    padding-left: 60px;
+
+    .u17Light_v2 {
+        max-width: 440px;
+        margin: 24px 0 36px;
+    }
+
+
+    @media (max-width: 767px) {
+        background-image: none;
+        box-sizing: content-box !important;
+        padding: 0 30px;
+        text-align: center;
+        align-items: center;
+        margin-top: 13.5vw;
+        margin: 13.5vw 30px 0 !important;
+        border-radius: 20px;
+        height: auto;
+        padding: 8vw 4vw;
+
+        .u36DemiBold_v2 {
+            font-size: 24px;
+        }
+    }
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 24px;
+    color: #fff;
+    margin-top: 11vh;
+
+    &>div {
+        background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Fusion2-27_2x_abf54da0-2be9-4f3e-8f1f-cc57079af56a.jpg?v=1729230322') center center/cover no-repeat;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-end;
+        aspect-ratio: 103 / 140;
+        padding: 30px;
+        border-radius: 15px;
+        overflow: hidden;
+      box-sizing: border-box;
+
+
+        .u24DemiBold_v2 {
+            margin-bottom: 24px;
         }
 
-        &:nth-child(1) {
-            background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19082_2x_b5504175-81fe-4ff3-b08e-7d0affa97062.jpg?v=1716171728');
-            color: #fff;
+
+        &:nth-child(3) {
+            background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSCF1274_2x_b1d0f5b2-9f16-430a-b558-076dbd270864.jpg?v=1729230316');
         }
 
         &:nth-child(2) {
-            background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23663_2x_6702ea78-831e-48c6-a9c0-21fa3d8bcda5.jpg?v=1704524198');  
+            background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/12333321_2x_c49a5439-1e36-4d61-a381-75fe10832383.jpg?v=1727260932');
         }
-
-        &:nth-child(3) {
-            background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240524-152259.jpg?v=1716535414&width=700');
-        }
+    }
 
 
-        .luanqibazaode {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            position: absolute;
-            bottom: 2.5%;
+    @media (max-width: 767px) {
+        grid-template-columns: 1fr;
+        margin-top: 13.5vw;
+        grid-row-gap: 20px;
+
+
+        & > div {
+            .u24DemiBold_v2 {
+                font-size: 16px;
+                margin-bottom: 20px;
+            }
         }
-            
+    }
+}
+
+.carbon {
+    height: 540px;
+    margin-top: 11vh;
+    box-sizing: border-box !important;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    border-radius: 15px;
+    padding-left: 60px;
+    position: relative;
+    background-color: #000;
+  z-index: 0;
+
+    video {
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 15px;
+        overflow: hidden;
+    }
+
+    .u17Light_v2 {
+        max-width: 440px;
+        margin: 24px 0 36px;
+    }
+
+    @media (max-width: 767px) {
+        border-radius: 0;
+        background-image: none;
+        text-align: center;
+        padding: 40px 30px !important;
+        height: auto;
+        align-items: center;
+        margin-top: 13.5vw;
+
+
+        .u17Light_v2 {
+            margin: 25px 0;
+        }
+
+        .u36DemiBold_v2 {
+            font-size: 24px;
+        }
+    }
+}
+
+.app {
+    background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24791_2x_3a85f9ce-7b01-48de-b30d-ca72f5b7fde2.jpg?v=1727261952') center center/cover no-repeat;
+    aspect-ratio: 1920 / 787;
+    margin-top: 15vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    .u17Light_v2 {
+        max-width: 580px;
+        margin: 24px 0 36px;
+    }
+
+
+    @media (max-width: 767px) {
+        background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24787_2x_bfcc03fe-7337-4eca-8a16-85dbc6ef9936.jpg?v=1727329919');
+        margin-top: 13.5vw;
+        padding: 0 30px;
+        aspect-ratio: 375 / 613;
+
+        .u36DemiBold_v2 {
+            font-size: 24px;
+        }
+    }
+}
+
+
+.reviews {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20px;
+    margin-top: 17vh;
+
+    &>div {
+        aspect-ratio: 9/8;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        color: #fff;
+        border-radius: 15px;
+        overflow: hidden;
+        padding: 40px 0;
+      box-sizing: border-box;
+        background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24792_2x_2408ba49-c33a-486e-affe-b205b3e3214e.jpg?v=1727320177') center center/cover no-repeat;
+
+        .u24Medium_v2 {
+            margin-bottom: 6px;
+        }
+
+        .u17Light_v2 {
+            margin: 8px 0 36px;
+        }
+
+
+        &:last-child {
+            background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24793_2x_5175df36-93f9-4b19-a4c3-6a6917306c6d.jpg?v=1727320491');
+        }
     }
 
     @media (max-width: 767px) {
         grid-template-columns: 1fr;
-        margin: 10px 0 0 0;
-
+        grid-row-gap: 10px;
+        margin-top: 13.5vw;
+        
         & > div {
-            padding: 0;
-            height: 100vw;
-            padding-top: 8vw;
+            aspect-ratio: 280/315;
+            padding: 20px 0;
 
-            .u36Medium_v2 {
-                font-size: 24px;
+
+            .u24Medium_v2 {
+                font-size: 17px;
+                margin-bottom: -3px;
             }
-    
-            &:nth-child(2) {
-                background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23589_2x_d2d1cbf8-cbda-4809-abe8-272f2df96464.jpg?v=1704525377');
+
+
+            .u17Light_v2 {
+                margin: 5px 0 10px;
+            }
+
+            .u36DemiBold_v2 {
+                font-size: 24px;
             }
         }
     }
 }
 
-.test-ride {
-    margin: 16vh 0;
 
-    .centeral-content {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-column-gap: 1.5%;
+.testride {
+    margin-top: 13vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 20px;
+
+
+    &>div {
+        background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24794_2x_dcbf7d8a-a1d0-4378-a541-a32768e95425.jpg?v=1729411137') center center/cover no-repeat;
+        display: flex;
+        flex-direction: column;
+      box-sizing: border-box;
+        color: #fff;
+        aspect-ratio: 103 / 140;
+        align-items: center;
+        justify-content: flex-end;
+        padding-bottom: 40px;
+        text-align: center;
+        border-radius: 15px;
+      cursor: pointer;
+
+        .u17Light_v2 {
+            margin: 10px 0 25px;
+        }
+
+
+        &>a {
+            color: #fff;
+
+            &::after {
+                content: ">";
+                margin-left: 10px;
+            }
+        }
+
+
+        &:nth-child(2) {
+            background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24795_2x_67c2cae0-49d5-4048-b0a4-c6aabff48412.jpg?v=1727321507');
+        }
+
+        &:nth-child(3) {
+            background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24796_2x_7dd25b5c-3753-470e-aa35-cea2d08eac6a.jpg?v=1727321502');
+        }
+    }
+
+
+    @media (max-width: 767px) {
+        grid-template-columns: 1fr;
+        margin-top: 13.5vw;
 
 
         & > div {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            cursor: pointer;
+            background-size: contain;
+            background-position: top;
+            color: #000;
+            padding-bottom: 8vw;
+            aspect-ratio: 103 / 132;
 
-            img {
-                margin-bottom: 5%;
+            &:nth-child(1) {
+                background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2024-10-16_14.18.56_2x_9d8f4f50-ef6c-42ac-aa99-66f6d65e2e6b.jpg?v=1729411226');
+            }
+
+            &:nth-child(2) {
+                background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230520-untitled-8948_2x_4b0a1ff0-db10-4b17-82d7-fa62f6d49b0c.jpg?v=1727330750');
+            }
+
+            &:nth-child(3) {
+                background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20221005-untitled-8655_2x_58a458b5-ef95-4c4d-b41b-0c45c8604a89.jpg?v=1727330739');
+            }
+
+
+            &>a {
+                color: #000;
+            }
+
+            .u36DemiBold_v2 {
+                font-size: 24px;
             }
 
             .u17Light_v2 {
-                margin: 2% 0 5%;
-            }
-
-            a {
-                display: flex;
-                
-                &::after {
-                    content: ">";
-                    margin-left: 10px;
-                }
-            }
-        }
-    }
-
-    @media (max-width: 767px) {
-        margin: 16vw 0;
-
-        .centeral-content {
-            grid-template-columns: 1fr;
-            grid-row-gap: 8vw;
-
-            & > div {
-                .u36Medium_v2 {
-                    font-size: 24px;
-                }
-
-                .u17Light_v2 {
-                    margin: 10px 0 20px;
-                }
-
-                img {
-                    margin-bottom: 4vw;
-                }
+                margin: 10px 0 20px;
+                white-space: nowrap;
+                font-size: 13px;
             }
         }
     }
 }
+
 
 .blogs {
     padding: 14vh 0 22vh;
     background-color: #000;
     color: #fff;
+    margin-top: 15vh;
 
     .centeral-content {
         display: grid;
@@ -276,7 +392,7 @@ h4 {
         grid-row-gap: 8vw;
         position: relative;
 
-        & > div {
+        &>div {
             background-color: #313131;
             display: flex;
             flex-direction: column;
@@ -299,7 +415,7 @@ h4 {
             a {
                 display: flex;
                 color: #fff;
-                
+
                 &::after {
                     content: ">";
                     margin-left: 10px;
@@ -307,7 +423,7 @@ h4 {
             }
 
             &:hover {
-                & > img {
+                &>img {
                     transform: scale(1.05);
                 }
             }
@@ -325,9 +441,11 @@ h4 {
             flex-direction: row;
             justify-content: flex-end;
             cursor: pointer;
+            align-items: center;
 
             .u20Medium_v2 {
                 padding: 0;
+                color: #fff;
             }
 
             img {
@@ -337,7 +455,7 @@ h4 {
             }
 
             &:hover {
-                & > img {
+                &>img {
                     transform: scale(1);
                 }
             }
@@ -346,11 +464,12 @@ h4 {
 
     @media (max-width: 767px) {
         padding: 20vw 0 40vw;
- 
+        margin-top: 0;
+
         .centeral-content {
             grid-template-columns: 1fr;
 
-            & > div {
+            &>div {
                 .u20Medium_v2 {
                     font-size: 15px;
                     padding-bottom: 5vw;
@@ -400,523 +519,5 @@ h4 {
     100% {
         transform: translateY(40px);
         opacity: 0;
-    }
-}
-
-
-.page-media {
-    .centeral-content {
-        .home-page-media {
-            display: flex;
-            height: 340px;
-            width: 100%;
-            flex-direction: column;
-            align-items: center;
-            padding: 75px 0;
-            box-sizing: border-box;
-        
-            .texts {
-                flex: 1;
-                font: normal normal 600 30px/40px Urbane;
-                display: flex;
-                align-items: center;
-                flex-direction: column;
-                text-align: center;
-        
-                h2 {
-                    animation-duration: 0.5s;
-                    animation-timing-function: ease-out;
-                }
-        
-                .toTop {
-                    opacity: 1;
-                    animation-name: toTop;
-                    transform: translateY(-40px);
-                }
-        
-                .toBottom {
-                    opacity: 0;
-                    animation-name: toBottom;
-                    transform: translateY(40px);
-                }
-            }
-        
-            .logos {
-                display: flex;
-                align-items: center;
-                justify-content: space-evenly;
-                width: 100%;
-                flex-wrap: wrap;
-
-                img {
-                    width: auto;
-                    opacity: 0.5;
-                    margin: 0 24px 24px;
-                    max-height: 60px;
-                    height: unset;
-        
-                    &[active] {
-                        opacity: 1;
-                    }
-                }
-            }
-        }
-    }
-
-
-    @media (max-width: 767px) {
-        .centeral-content {
-            padding: 0;
-            
-            .home-page-media-mb {
-                padding-top: 50px;
-                padding-bottom: 50px;
-                overflow: hidden;
-            
-                .swiper-slide {
-                    box-sizing: border-box;
-                    padding: 0 10%;
-                      display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: center;
-                    text-align: center;
-            
-                    img {
-                        height: 48px;
-                      width: auto;
-                    }
-            
-                    .u20Medium {
-                        font-weight: 600;
-                        margin: 20px 0 30px;
-                        font-size: 22px;
-                        line-height: 26px;
-                    }
-                }
-            
-                .swiper-pagination {
-                    position: static;
-                }
-            
-                .swiper-pagination-bullet {
-                    height: 6px;
-                    width: 6px;
-                }
-            
-                .swiper-pagination-bullet-active {
-                    width: 30px;
-                    height: 6px;
-                    border-radius: 5px;
-                    transition: all .3s;
-                }
-            }
-        }
-    }
-}
-
-
-.bannerrrr {
-    height: calc(100vh - 106px);
-    position: relative;
-    color: #fff;
-    overflow-x: hidden;
-
-    .centeral-content {
-        display: flex;
-        height: 100%;
-        align-items: center;
-        justify-content: space-between;
-
-        &>div {
-            &:first-child {
-                flex: 1;
-            }
-
-            &:last-child {
-                display: flex;
-                flex-direction: column;
-                text-align: left;
-            }
-        }
-
-        .buttons {
-            &>a {
-                margin-right: 24px;
-            }
-
-            // & > a + a {
-            //     margin-top: 12px;
-            // }
-        }
-    }
-
-    .swiper-wrapper {
-        .swiper-slide {
-            background: center center/cover no-repeat;
-        }
-
-        .first {
-            background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/urtopiaebike_an_image_of_an_upcoming_crossover_suv_in_the_style_2x_4c2218f1-71d2-41ac-a178-43f4e53b8c55.jpg?v=1710141041');
-
-            .centeral-content {
-                .banner {
-                    align-items: center;
-                    width: 100%;
-                    background: none;
-                    height: auto;
-                    place-self: flex-start;
-    
-                    .u17Light_v2 {
-                        max-width: 450px;
-                        margin: 4.5vh 0 5vh;
-                        opacity: 0.78;
-                    }
-        
-                    img {
-                        &:nth-of-type(1) {
-                            max-width: 650px;
-                            margin-top: 2.5vh;
-                        }
-
-                        &:nth-of-type(2) {
-                            max-width: 440px;
-                            margin-top: 5vh;
-                            cursor: pointer;
-                        }
-                    }
-                }
-            }
-        }
-
-        .second {
-            background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_23341_2x_0bb8978c-fcb9-47f7-a5c2-3842daf08def.jpg?v=1707224266');
-
-          & > div {
-            & > div {
-              align-items: flex-start;
-
-              .u24Light_v2 {
-                max-width: 366px;
-                margin: 9vh 0 6vh;
-              }
-            }
-
-            img {
-            &:first-child {
-              max-width: 342px;
-            }
-          }
-
-            .xxx {
-              max-width: 408px;
-              margin-top: 8vh;
-            }
-          }
-
-          
-        }
-    }
-
-    .swiper-pagination {
-        z-index: 1;
-    }
-
-
-    .swiper-pagination-bullet {
-        height: 6px;
-        width: 6px;
-        background-color: #d5d5d5;
-        opacity: 0.5;
-    }
-
-    .swiper-pagination-bullet-active {
-        width: 30px;
-        height: 6px;
-        border-radius: 5px;
-        transition: all .3s;
-        opacity: 1;
-    }
-
-  @media (max-width: 767px) {
-    height: calc(100vh - 102px);
-
-        .centeral-content {
-            &>div {
-                &:last-child {
-                    height: 100%;
-                }
-            }
-
-            .buttons {
-                a {
-                     margin:0;
-                       width: 100%;
-                 }
-
-                & > a + a {
-                     margin-top: 12px;
-                 }
-             }
-
-           
-  }
-
-    .swiper-wrapper {
-            .swiper-slide {
-                background-position-y: top;
-            }
-
-             .first {
-               background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/urtopiaebike_an_image_of_an_upcoming_crossover_suv_in_the_style_2x_40d7592d-4e2d-4454-a535-9c8e427bf51a.jpg?v=1710141632');
-             }
-
-             .second {
-               background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/afa_2x_683b148c-a397-4fd6-98c5-261ef12037e2.jpg?v=1710141625');
-
-               & > div {
-                 & > div {
-                   align-items: center;
-                   text-align: center;
-                   padding: 6vw 0 13.5vw;
-
-                   img {
-                     max-width: 200px !important; 
-                   }
-
-                   .u24Light_v2 {
-                     font-size: 17px;
-                     margin: 5vw 0;
-                   }
-                 }
-               }
-             }
-           }
-  }
-}
-.bannerrrr2 {
-    height: calc(100vh - 106px);
-    position: relative;
-    color: #fff;
-    //overflow-x: hidden;
-
-    .centeral-content {
-        display: flex;
-        height: 100%;
-        align-items: center;
-        justify-content: space-between;
-
-        &>div {
-            &:first-child {
-                flex: 1;
-            }
-
-            &:last-child {
-                display: flex;
-                flex-direction: column;
-                text-align: left;
-            }
-        }
-
-        .buttons {
-            &>a {
-                margin-right: 24px;
-            }
-
-            // & > a + a {
-            //     margin-top: 12px;
-            // }
-        }
-    }
-
-    .swiper-wrapper {
-        .swiper-slide {
-            background: center center/cover no-repeat;
-        }
-
-        .first {
-          background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_23341_2x_0bb8978c-fcb9-47f7-a5c2-3842daf08def.jpg?v=1707224266');
-          margin-top: 2vh;
-
-          & > div {
-            & > div {
-              align-items: flex-start;
-
-              .u24Light_v2 {
-                max-width: 366px;
-                margin: 9vh 0 6vh;
-              }
-            }
-
-            img {
-            &:first-child {
-              max-width: 342px;
-            }
-          }
-
-            .xxx {
-              max-width: 408px;
-              margin-top: 8vh;
-            }
-          }
-
-          
-        }
-    }
-
-    .swiper-pagination {
-        z-index: 1;
-    }
-
-
-    .swiper-pagination-bullet {
-        height: 6px;
-        width: 6px;
-        background-color: #d5d5d5;
-        opacity: 0.5;
-    }
-
-    .swiper-pagination-bullet-active {
-        width: 30px;
-        height: 6px;
-        border-radius: 5px;
-        transition: all .3s;
-        opacity: 1;
-    }
-
-  @media (max-width: 767px) {
-    height: calc(100vh - 102px);
-
-        .centeral-content {
-            &>div {
-                &:last-child {
-                    height: 100%;
-                }
-            }
-
-            .buttons {
-                a {
-                     margin:0;
-                       width: 100%;
-                 }
-
-                & > a + a {
-                     margin-top: 12px;
-                 }
-             }
-
-           
-  }
-
-    .swiper-wrapper {
-            .swiper-slide {
-                background-position-y: top;
-            }
-
-             .first {
-               background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_23906.jpg?v=1707243389');
-               margin-top: 2.5vw;
-
-               & > div {
-                 & > div {
-                   align-items: center;
-                   text-align: center;
-                   padding: 6vw 0 13.5vw;
-
-                   img {
-                     max-width: 200px !important; 
-                   }
-
-                   .u24Light_v2 {
-                     font-size: 17px;
-                     margin: 5vw 0;
-                   }
-                 }
-               }
-             }
-           }
-  }
-}
-
-.emaillllllllllllll {
-    display: flex;
-    position: relative;
-    max-width: 360px;
-    width: 100%;
-    margin-top: 1.5vh;
-
-    input {
-        border-bottom-left-radius: 30px;
-        border-top-left-radius: 30px;
-        border-bottom-right-radius: 0;
-        border-top-right-radius: 0;
-        border:2px solid #fff;
-        border-right: none;
-        flex: 1;
-        padding: 0 2.5% 0 5%;
-        background-color: transparent;
-        color: #fff;
-
-        &::placeholder {
-            color: #fff;
-        }
-    }
-
-    button {
-        border-bottom-left-radius: 0;
-        border-top-left-radius: 0;
-        border: none;
-        padding: 14px 30px;
-    }
-
-    .u17DemiBold_v2 {
-        position: absolute;
-        bottom: 0;
-        transform: translate(12.5%, 150%);
-        display: none;
-    }
-
-    @media (max-width: 767px) {
-        input {
-            flex: 1;
-            width: 0;
-            font-size: 14px;
-            border-width: 1px;
-            padding-left: 5%;
-        }
-
-      button {
-        padding: 3vw 6vw;
-      }
-
-        .u17DemiBold_v2 {
-            font-size: 14px;
-            transform: translate(10%, 150%);
-        }
-    }
-}
-
-.spring {
-    margin-top: 2vh;
-    padding-top: 6vh;
-    height: 900px;
-
-    .u20Medium_v2 {
-        margin: 2vh 0 4vh;
-    }
-
-    @media (max-width: 767px) {
-        background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/ssssd_2x_6505054a-c6e4-4910-a60d-d2cf47c2cf0a.jpg?v=1712915341');
-        padding: 15vw 6vw;
-        margin-top: 2.5vw;
-        height: calc(100vh - 102px);
-
-        .u48Medium_v2 {
-            font-size: 24px;
-        }
-
-        .u20Medium_v2 {
-            font-size: 15px;
-        }
     }
 }

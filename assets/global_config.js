@@ -193,14 +193,14 @@ const global_config = {
         },
         // 产品系列图
         product_images: {
-            'Yellow': [
+            'Saffron Yellow': [
               'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241017-185158.jpg?v=1729162376',
               'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241017-185203.jpg?v=1729162376',
               'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241017-185140.jpg?v=1729162376',
               'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241017-185210.jpg?v=1729162376',
               'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241017-185150.jpg?v=1729162376',
             ],
-            'Blue': [
+            'Aegean Blue': [
               'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241017-185454.jpg?v=1729162539',
               'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241017-185449.jpg?v=1729162539',
               'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241017-185513.jpg?v=1729162539',
@@ -262,7 +262,7 @@ const global_config = {
               }
           ],
         // 默认的发货时间 文案
-        ebike_default_delivery_time: 'Free shipping <span>within 5 business days</span> from L.A. warehouse.',
+        ebike_default_delivery_time: 'Ships between November 20-30th, 2024 from L.A. warehouse.',
         // 发货时间映射表
         // key:    vairant_id
         // value:  发货时间文案
@@ -697,7 +697,7 @@ const global_config = {
         default_variant: 45844150190328,
         ignore_variants_available_false: [],
         size_map: {
-          'One Size': 'Fit for 5’26’’ - 6’25’’'
+          'One Size': 'Fit for 5’3’’ - 6’3’’'
         },
         product_media_images: [
           {
@@ -753,7 +753,7 @@ const global_config = {
           'Elegant Grey': [
               'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19562.jpg?v=1729305262',
               'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Fusion2-18.jpg?v=1729305264&width=1000',
-              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/12333.jpg?v=1729305263&width=1000',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/12333.jpg?v=1729305263&width=800',
               'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Fusion2-26.jpg?v=1729305263&width=1000',
               'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24909.jpg?v=1729305263',
               'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1_3e6798ca-c8fa-4177-bd9b-89a4a927ad18.jpg?v=1729305263',
@@ -764,7 +764,7 @@ const global_config = {
             'Blazing Black': [
               'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19561.jpg?v=1729305262',
               'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Fusion2-18.jpg?v=1729305264&width=1000',
-              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/12333.jpg?v=1729305263&width=1000',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/12333.jpg?v=1729305263&width=800',
               'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Fusion2-26.jpg?v=1729305263&width=1000',
               'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24908.jpg?v=1729305263',
               'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/ed7f58882819b78f9efde45cc0b5a2a2.jpg?v=1729305262',
@@ -775,7 +775,7 @@ const global_config = {
             'Vital Orange': [
               'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19560.jpg?v=1729305262',
               'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Fusion2-18.jpg?v=1729305264&width=1000',
-              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/12333.jpg?v=1729305263&width=1000',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/12333.jpg?v=1729305263&width=800',
               'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Fusion2-26.jpg?v=1729305263&width=1000',
               'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24397.jpg?v=1729305263',
               'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2_acb43f5f-677a-4687-ae6f-a2ac348de8a6.jpg?v=1729305263',
@@ -786,7 +786,7 @@ const global_config = {
             commonSwiper: []
         },
         // 默认的发货时间 文案
-        ebike_default_delivery_time: 'Free shipping within 5 business days',
+        ebike_default_delivery_time: 'Ships between November 20-30th, 2024 from L.A. warehouse.',
         // 每一种variant 的发货时间文案
         ebike_delivery_time: {},
         sizes_and_specs: {
@@ -808,7 +808,7 @@ const global_config = {
               ],
               [
                 '<span style="color: #fff;">One Size</span>',
-                '5’26’’ - 6’25’’',
+                '5’3’’ - 6’3’’',
                 '140 mm',
                 '1085-1115 mm',
                 '485 mm',
@@ -819,20 +819,6 @@ const global_config = {
                 '144 mm',
                 '90-120 mm'
               ],
-              // [
-              //   '<span class="u17DemiBold_v2">Large</span>',
-              //   '175-195 cm',
-              //   '833 mm',
-              //   '60 mm',
-              //   '1023-1053 mm',
-              //   '498 mm',
-              //   '1122 mm',
-              //   '1824 mm',
-              //   '702 mm',
-              //   '653 mm',
-              //   '180 mm',
-              //   '90-120 mm'
-              // ]
             ]
           },
           specs: [
@@ -845,7 +831,7 @@ const global_config = {
                 ["Range", "Up to 70 miles Extended to 120miles (Dual baterry)"],
                 ["Top Speed", "20mph by default 28mph upon unlock"],
                 ["Total Weight Limit", "330 lbs"],
-                ["Rider Height", "5’26’’ - 6’25’’"],
+                ["Rider Height", "5’3’’ - 6’3’’"],
                 ["Brakes", "TEKTRO hydraulic disc brakes with power cut-off sensor"],
                 ["Wheels", "Kenda K1127 (29X2.05), puncture-proof tire"],
                 ["", ""],
