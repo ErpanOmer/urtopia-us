@@ -816,8 +816,8 @@
                'items': data.items.map((item, index) => {
                  const dataLayerItem = {
                     'index': index,
-                    'item_id': this.formattedItemId  ? `shopify_${this.countryCode}_${item.product_id}_${item.variant_id}` : item.product_id.toString(),
-                    'product_id': item.product_id.toString(),
+                    
+                    'item_id': item.product_id.toString(),
                     'variant_id': item.variant_id.toString(),
                     'item_name': item.product_title,
                     'quantity': item.quantity,

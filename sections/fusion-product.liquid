@@ -335,12 +335,12 @@
           </div>
         {% endfor %}
       </div>
-      {% comment %} <div class="accessories mb12">
+      <div class="accessories mb12">
         <div class="u17DemiBold_v2 mb12">Accessories</div>
         <div class="prev"></div>
         <div class="next"></div>
         <div class="items mb12">
-          {% for prod in collections['carbon-1-pro-acc'].products %}
+          {% for prod in collections['accessories_in_fusion_product_page'].products %}
             {% if prod.available %}
               {% assign variant = prod.variants | first %}
               <div class="item" variant-id="{{ variant.id }}">
@@ -358,7 +358,7 @@
             {% endif %}
           {% endfor %}
         </div>
-      </div> {% endcomment %}
+      </div>
       <div class="free pcHide">
         <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/black_2x_c713b84b-d0ae-470d-a40a-9d4776e3decf.png?v=1729241430" alt=""/>
         <div>
@@ -710,6 +710,8 @@
                 <li>Super Lightweight e-SUV</li>
                 <li>Racecar-grade carbon fiber</li>
             </ul>
+             <a class="my-button mobileHide" target="_blank" href="/pages/carbon-expert">Carbon Fiber Expert</a>
+             <a class="my-button my-button-black pcHide" target="_blank" href="/pages/carbon-expert">Carbon Fiber Expert</a>
         </div>
     </div>
     <div class="weight embrace">
@@ -973,6 +975,7 @@
           <span class="u30DemiBold_v2">131,500+ <span class="u20Medium_v2">trees</span></span>
         </div>
       </div>
+      <a class="my-button my-button-white" target="_blank" href="/pages/sustainability-carbon-credit">Learn more</a>
     </div>
   </div>
 </div>
@@ -989,6 +992,7 @@
             Receive alerts for unauthorized movement, easily locate where you parked, and track its movements with GPS tracking.
           </span>
         </p>
+        <a style="margin-top: 2.5vh;" class="my-button my-button-ghost" target="_blank" href="/pages/pages-smartest-ebike">Urtopia's Technology</a>
       </div>
       <div>
         <h3 class="u36Medium_v2">Navigation</h3>

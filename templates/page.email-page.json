@@ -2,8 +2,7 @@
   "sections": {
     "email-page": {
       "type": "email-page",
-      "settings": {
-      }
+      "settings": {}
     }
   },
   "order": [

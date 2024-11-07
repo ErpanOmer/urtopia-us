@@ -2,8 +2,7 @@
   "sections": {
     "fusion-product": {
       "type": "fusion-product",
-      "settings": {
-      }
+      "settings": {}
     }
   },
   "order": [

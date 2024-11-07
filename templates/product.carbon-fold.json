@@ -2,8 +2,7 @@
   "sections": {
     "carbon-fold": {
       "type": "carbon-fold",
-      "settings": {
-      }
+      "settings": {}
     }
   },
   "order": [

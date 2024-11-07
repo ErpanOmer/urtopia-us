@@ -1,24 +1,40 @@
 const global_config = {
   sale_end_times: [
     {
-      sale_name: 'Autumn Adventure Sale',
-      sale_end_time: '2024-10-14'
+      sale_name: 'National Shopping Sale',
+      sale_end_time: '2024-11-4'
     },
     {
-      sale_name: 'October Price Slash',
-      sale_end_time: '2024-10-18'
+      sale_name: 'Giving Thanks, Giving Deals',
+      sale_end_time: '2024-11-8'
     },
     {
-      sale_name: 'Harvest Deals',
-      sale_end_time: '2024-10-21'
+      sale_name: 'Holiday Kickoff Sale',
+      sale_end_time: '2024-11-11'
     },
     {
-      sale_name: 'Pumpkin Price Drop',
-      sale_end_time: '2024-10-25'
+      sale_name: 'Grateful Deals',
+      sale_end_time: '2024-11-15'
     },
     {
-      sale_name: 'Mystery Markdown',
-      sale_end_time: '2024-10-28'
+      sale_name: 'Thanksgiving Sale',
+      sale_end_time: '2024-11-18'
+    },
+    {
+      sale_name: 'Black Friday Blowout',
+      sale_end_time: '2024-11-22'
+    },
+    {
+      sale_name: 'Countdown to Black Friday',
+      sale_end_time: '2024-11-26'
+    },
+    {
+      sale_name: 'Black Friday Sale',
+      sale_end_time: '2024-11-30'
+    },
+    {
+      sale_name: 'Cyber Monday Sale',
+      sale_end_time: '2024-12-3'
     },
   ],
     // 活动产品id
@@ -195,6 +211,7 @@ const global_config = {
         product_images: {
             'Saffron Yellow': [
               'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241017-185158.jpg?v=1729162376',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241023-114750.jpg?v=1729655322',
               'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241017-185203.jpg?v=1729162376',
               'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241017-185140.jpg?v=1729162376',
               'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241017-185210.jpg?v=1729162376',
@@ -314,7 +331,7 @@ const global_config = {
                     title: 'Ebike System',
                     parameters: [
                         ["Motor", "500 Peak power, 36V 250W (sustained) rear drive hub motors, 42Nm"],
-                        ["Battery", "36V 7Ah (529.2 Wh) seat post battery"],
+                        ["Battery", "36V 7Ah (252 Wh) seat post battery"],
                         ["Pedal Assist", "5 levels"],
                         ["Charger", "3H fast charger, 42V 2Amp"],
                         ["Display", "Color display"],
@@ -686,11 +703,7 @@ const global_config = {
         // 发货时间映射表
         // key:    vairant_id
         // value:  发货时间文案
-        ebike_delivery_time: {
-          45756425994488: 'Shipping starts by late October',
-          45756426027256: 'Shipping starts by late October',
-          45756426060024: 'Shipping starts by late October',
-        }
+        ebike_delivery_time: {}
     },
     fusion_order_page_config: {
         // chord 车默认显示 variant_id, 只有 url 上的 variant 参数为空的时候生效
@@ -764,7 +777,7 @@ const global_config = {
             'Blazing Black': [
               'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19561.jpg?v=1729305262',
               'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Fusion2-18.jpg?v=1729305264&width=1000',
-              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/12333.jpg?v=1729305263&width=800',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/12333.jpg?v=1729305263&width=700',
               'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Fusion2-26.jpg?v=1729305263&width=1000',
               'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24908.jpg?v=1729305263',
               'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/ed7f58882819b78f9efde45cc0b5a2a2.jpg?v=1729305262',
@@ -775,9 +788,9 @@ const global_config = {
             'Vital Orange': [
               'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19560.jpg?v=1729305262',
               'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Fusion2-18.jpg?v=1729305264&width=1000',
-              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/12333.jpg?v=1729305263&width=800',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/12333.jpg?v=1729305263&width=700',
               'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Fusion2-26.jpg?v=1729305263&width=1000',
-              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24397.jpg?v=1729305263',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24397.jpg?v=1729305263&width=1000',
               'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2_acb43f5f-677a-4687-ae6f-a2ac348de8a6.jpg?v=1729305263',
               'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2_0bd94c6b-d30e-4d20-b599-a90e2fb36560.jpg?v=1729305263',
               'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2.jpg?v=1729305262',
@@ -826,7 +839,7 @@ const global_config = {
               title: 'General Info',
               parameters: [
                 ["Model", "Carbon Fusion Lightweight E-SUV"],
-                ["Net Weight", "60 lbs"],
+                ["Net Weight", "55 lbs"],
                 ["Material", "Carbon fiber frame"],
                 ["Range", "Up to 70 miles Extended to 120miles (Dual baterry)"],
                 ["Top Speed", "20mph by default 28mph upon unlock"],

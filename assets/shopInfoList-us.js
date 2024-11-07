@@ -174,7 +174,7 @@ const testRides = [
         email: 'info@adventureebikecompany.com',
         timezone: "Fremont, California, USA (GMT-7)",
         add: "2863 E Thousand Oaks Blvd Thousand Oaks California, 91362 United States",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2_2x_d577b007-2a27-4a4d-bab5-e3aaad6386e5.jpg?v=1729508081",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/out_8.png?v=1729752038",
         testrideSpot: "Newport Beach",
         availableSizes: [
           'Carbon 1 Pro Size M'
@@ -258,7 +258,7 @@ const testRides = [
         email: 'bob@grooveebikes.com',
         timezone: "Fremont, California, USA (GMT-7)",
         add: "3740 Campus Drive, Suite A, Newport Beach, CA 92660",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_5_14ed8ff7-efb2-4dfc-b876-8cddbb525710.png?v=1727431478",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_16.png?v=1730536068",
         testrideSpot: "Newport Beach",
         availableSizes: [
           'Carbon 1 Pro Size M'
@@ -367,7 +367,7 @@ const testRides = [
         email: 'sales@irvinebicycles.com',
         timezone: "Fremont, California, USA (GMT-7)",
         add: "6604 Irvine Center Drive, Irvine, CA 92618",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_13.png?v=1724034334",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_12_86b280fc-a42f-4ee7-8716-1576548b4fa3.png?v=1730535020",
         testrideSpot: "Bell",
         availableSizes: [
           'Carbon 1 Pro Size M'
@@ -539,7 +539,7 @@ const testRides = [
         email: 'gregdt1@yahoo.com',
         timezone: "Fremont, California, USA (GMT-7)",
         add: "1800 El Camino Real, Suite C Menlo Park, CA 94061",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Bicycle_Garage_Fremont_ca_fremont.jpg?v=1686878451",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_14.png?v=1730535969",
         testrideSpot: "Menlo Park",
         availableSizes: [
           'Carbon 1 Pro Size M'
@@ -582,7 +582,7 @@ const testRides = [
         email: '',
         timezone: "Fremont, California, USA (GMT-7)",
         add: "247 F St, Davis, CA 95616",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Bicycle_Garage_Fremont_ca_fremont.jpg?v=1686878451",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_15.png?v=1730536018",
         testrideSpot: "California",
         noBook: true,
         availableSizes: [
@@ -625,7 +625,7 @@ const testRides = [
         email: 'Fisherrealtors@gmail.com',
         timezone: "Fremont, California, USA (GMT-7)",
         add: "1758 W Grand Ave Grover Beach CA, 93433 United States ",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Bicycle_Garage_Fremont_ca_fremont.jpg?v=1686878451",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_13_25ffe174-ed73-46a3-b7d4-c9c7f6ad9a6f.png?v=1730535918",
         testrideSpot: "California",
         availableSizes: [
           'Carbon 1 Pro Size M'
@@ -667,7 +667,7 @@ const testRides = [
         email: 'mike@theelectricbikeshop.org',
         timezone: "Newport Beach, CA, USA (GMT-8)",
         add: "5704 Broadway, Sacramento, CA 95820",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Groove_E-Bikes_3.jpg?v=1686878451",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_12_86b280fc-a42f-4ee7-8716-1576548b4fa3.png?v=1730535020",
         testrideSpot: "Sacramento",
         availableSizes: [
           'Carbon 1 Pro Size M',
@@ -688,7 +688,7 @@ const testRides = [
         email: 'baronwang@longhamtec.com',
         timezone: "Newport Beach, CA, USA (GMT-8)",
         add: "9621 Brighton Way Beverly Hills CA, 90210",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Icar_Lifestyle.jpg?v=1686878451",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_12_86b280fc-a42f-4ee7-8716-1576548b4fa3.png?v=1730535020",
         testrideSpot: "Beverly Hills",
         availableSizes: [
           'Carbon 1 Pro Size M',
@@ -709,7 +709,7 @@ const testRides = [
         email: 'ebikes@boostmore.com',
         timezone: "Newport Beach, CA, USA (GMT-8)",
         add: "18247 Parthenia St, Northridge, CA 91325",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Icar_Lifestyle.jpg?v=1686878451",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_12_86b280fc-a42f-4ee7-8716-1576548b4fa3.png?v=1730535020",
         testrideSpot: "Northridge",
         availableSizes: [
           'Carbon 1 Pro Size M',
@@ -1089,7 +1089,7 @@ const testRides = [
         email: "info@tailorfitcycles.com",
         timezone: "New Jersey, USA (GMT-4)",
         add: "19 Russling Rd, Hackettstown, NJ 07840",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Jersey_City_Bicycles_Co.jpg?v=1686878451",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_12_86b280fc-a42f-4ee7-8716-1576548b4fa3.png?v=1730535020",
         testrideSpot: "Hackettstown",
         availableSizes: [
           'Carbon 1 Pro Size M',
@@ -1133,6 +1133,27 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Buna_Bicycle_Works_Washington_dc.jpg?v=1665374977',
     stores: [
       {
+        name: "E-Bike Central_Oregon",
+        phone: "971-243-8428",
+        email: "ebikecentralpdx@gmail.com",
+        timezone: "Washington, DC, USA (GMT-4)",
+        add: "22415 SW Pine St #105,Sherwood OR 97140",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_8_0ab36051-a5e5-4fff-b231-63bc8b3b9d89.png?v=1729752581",
+        testrideSpot: "Sherwood",
+        availableSizes: [
+          'Carbon 1 Pro Size S/M',
+        ],
+        businessHours: [
+          "",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+        ],
+      },
+      {
         name: "Aztec Cycles",
         phone: "541-653-8185",
         email: "asestore23@gmail.com",
@@ -1159,7 +1180,7 @@ const testRides = [
         email: "business@golandspeed.com",
         timezone: "Washington, DC, USA (GMT-4)",
         add: "630 E 13th Ave, Eugene, OR 97401",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Aztec_Cycles.jpg?v=1686878451",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_12_86b280fc-a42f-4ee7-8716-1576548b4fa3.png?v=1730535020",
         testrideSpot: "Eugene",
         availableSizes: [
           'Carbon 1 Pro Size S/M/L',
@@ -1213,7 +1234,7 @@ const testRides = [
         email: "ben@igaboise.com",
         timezone: "Washington, DC, USA (GMT-4)",
         add: "609 N Orchard St, Boise, ID 83706",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Aztec_Cycles.jpg?v=1686878451",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_12_86b280fc-a42f-4ee7-8716-1576548b4fa3.png?v=1730535020",
         testrideSpot: "Boise",
         availableSizes: [
           'Carbon 1 Pro Size M/L',
@@ -1234,6 +1255,27 @@ const testRides = [
     city: 'Pennsylvania',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Buna_Bicycle_Works_Washington_dc.jpg?v=1665374977',
     stores: [
+      {
+        name: `Fitness Exchange - Emmaus`,
+        phone: "610-965-6597",
+        email: "sales@fitnessexchange.com",
+        timezone: "Pennsylvania, USA (GMT-4)",
+        add: "693 State Ave, Emmaus, PA 18049",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_17.png?v=1730536142",
+        testrideSpot: "Emmaus",
+        availableSizes: [
+          'Carbon 1 Pro Size S/M/L',
+        ],
+        businessHours: [
+          "10:00-17:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+        ],
+      },
       {
         name: `Bell's Bike Shop`,
         phone: "215-857-5793",
@@ -1322,14 +1364,14 @@ const testRides = [
       },
       {
         name: "FITNESS EXCHANGE CONSHOHOCKEN",
-        phone: "610-551-9266",
-        email: "sales@fitnessexchange.com",
+        phone: "610-397-1780",
+        email: "matt.sauls@fitnessexchange.com",
         timezone: "Pennsylvania, USA (GMT-4)",
         add: "1004 Ridge Pike Conshohocken, PA 19428",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/FITNESS_EXCHANGE_CONSHOHOCKEN.jpg?v=1696118203",
         testrideSpot: "Pennsylvania",
         availableSizes: [
-          'Carbon 1 Size M',
+          'Carbon 1 Pro Size S/M/L',
         ],
         businessHours: [
           "",
@@ -1397,7 +1439,7 @@ const testRides = [
         email: "",
         timezone: "Washington, DC, USA (GMT-4)",
         add: "502 23RD ST NW, WASHINGTON, DC 20037",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_3_c6001537-5c6a-4915-8ed1-9f21dfc55d76.png?v=1718085498",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_12_86b280fc-a42f-4ee7-8716-1576548b4fa3.png?v=1730535020",
         testrideSpot: "Lacey",
         testRideSize: "M/L",
         noBook: true,
@@ -1440,6 +1482,33 @@ const testRides = [
     ]
   },
   {
+    city: 'Nebraska',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_4_0d6b1e4d-def2-4565-9aba-0d2241618ead.png?v=1718085649',
+    stores: [
+      {
+        name: "Ecocycle",
+        phone: "531-217-3030",
+        email: "ecocyclesale@gmail.com",
+        timezone: "Washington, DC, USA (GMT-4)",
+        add: "6755 S 191st ave, Omaha, NE 68135",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_6_c6a0eaf2-cad7-4ce9-b23e-1dfa5ec46a0d.png?v=1727431908",
+        testrideSpot: "Omaha",
+        availableSizes: [
+          'Carbon 1 Pro Size M',
+        ],
+        businessHours: [
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+        ],
+      },
+    ]
+  },
+  {
     city: 'Louisiana',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_4_0d6b1e4d-def2-4565-9aba-0d2241618ead.png?v=1718085649',
     stores: [
@@ -1449,7 +1518,7 @@ const testRides = [
         email: "contact@ez-e-bikes.com",
         timezone: "Washington, DC, USA (GMT-4)",
         add: "1506 Veterans Memorial Dr, Abbeville, Louisiana 70510",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_4_0d6b1e4d-def2-4565-9aba-0d2241618ead.png?v=1718085649",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_12_86b280fc-a42f-4ee7-8716-1576548b4fa3.png?v=1730535020",
         testrideSpot: "Louisiana",
         testRideSize: "M/L",
         availableSizes: [
@@ -1500,7 +1569,7 @@ const testRides = [
         email: "info@collegeparkbicycles.com",
         timezone: "Washington, DC, USA (GMT-4)",
         add: "7301 Baltimore Avenue,College Park Maryland, 20740 United States",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_4_0d6b1e4d-def2-4565-9aba-0d2241618ead.png?v=1718085649",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_12_86b280fc-a42f-4ee7-8716-1576548b4fa3.png?v=1730535020",
         testrideSpot: "College Park",
         testRideSize: "M/L",
         availableSizes: [
@@ -1566,7 +1635,7 @@ const testRides = [
         email: "milemarker99@outlook.com",
         timezone: "Washington, DC, USA (GMT-4)",
         add: "22 N Conococheague St, Williamsport, MD 21795",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_4_0d6b1e4d-def2-4565-9aba-0d2241618ead.png?v=1718085649",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_12_86b280fc-a42f-4ee7-8716-1576548b4fa3.png?v=1730535020",
         testrideSpot: "Williamsport",
         testRideSize: "M/L",
         availableSizes: [
@@ -1636,7 +1705,7 @@ const testRides = [
         email: "sales@MECAeBIKES.com",
         timezone: "New Port Richey, FL, USA (GMT-4)",
         add: "8115 NW 93 Street, Medley FL 33166",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-E-Cycle_Adventures_fl.jpg?v=1665374977",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_12_86b280fc-a42f-4ee7-8716-1576548b4fa3.png?v=1730535020",
         testrideSpot: "Florida",
         availableSizes: [
           'Carbon 1 Pro Size M',
@@ -1723,7 +1792,7 @@ const testRides = [
         email: "russ@ebikesandcycles.com",
         timezone: "FL, USA (GMT-4)",
         add: "7941 Pinehurst St, Sarasota, FL 34243",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/E-Bikes_and_Cycles.jpg?v=1709124879",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_12_86b280fc-a42f-4ee7-8716-1576548b4fa3.png?v=1730535020",
         testrideSpot: "Florida",
         availableSizes: [
           'Carbon 1 Pro Size M/L',
@@ -1746,6 +1815,92 @@ const testRides = [
     city: 'Texas',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Playtri_dallas.jpg?v=1665374977',
     stores: [
+      {
+        name: "HUB MRKT Bikes",
+        phone: "210-334-0205",
+        email: "info.hubmrkt@gmail.com",
+        timezone: "Dallas, TX, USA (GMT-5)",
+        add: "1407 S. Saint Mary’s Street, San Antonio, TX 78210",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_8_0ab36051-a5e5-4fff-b231-63bc8b3b9d89.png?v=1729752581",
+        testrideSpot: "San Antonio",
+        availableSizes: [
+          'Carbon 1 Pro Size M',
+        ],
+        businessHours: [
+           "10:00-15:00",
+           "10:00-19:00",
+           "10:00-19:00",
+            "10:00-19:00",
+            "10:00-19:00",
+            "10:00-19:00",
+            "10:00-17:00",
+        ],
+      },
+      {
+        name: "Power ON Electric Bikes",
+        phone: "7138161390",
+        email: "david@poweronebikes.com",
+        timezone: "Dallas, TX, USA (GMT-5)",
+        add: "17944 Cypress Rosehill Rd, Unit 2-4,United States",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_8_0ab36051-a5e5-4fff-b231-63bc8b3b9d89.png?v=1729752581",
+        testrideSpot: "Cypress",
+        availableSizes: [
+          'Carbon 1 Pro Size M',
+        ],
+        businessHours: [
+           "10:00-18:00",
+           "",
+           "",
+            "10:00-18:00",
+            "10:00-18:00",
+            "10:00-18:00",
+            "10:00-18:00",
+        ],
+      },
+      {
+        name: "Playtri Las Colinas",
+        phone: "(214)-484-9788",
+        email: "",
+        timezone: "Dallas, TX, USA (GMT-5)",
+        add: "5260 North O'Connor Boulevard Irving Texas, 75039 United States",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_8_0ab36051-a5e5-4fff-b231-63bc8b3b9d89.png?v=1729752581",
+        testrideSpot: "Irving",
+        noBook: 'Please contact the shop directly to arrange test ride',
+        availableSizes: [
+          'Carbon 1 Pro Size M',
+        ],
+        businessHours: [
+           "12:00-17:00",
+           "11:00-19:00",
+           "11:00-19:00",
+           "11:00-19:00",
+           "11:00-19:00",
+           "11:00-19:00",
+           "09:00-17:00",
+        ],
+      },
+      {
+        name: "E-Bike Central_Temple",
+        phone: "254-677-6139",
+        email: "ebikecentraltx@gmail.com",
+        timezone: "Dallas, TX, USA (GMT-5)",
+        add: "1404 S 31st St, Temple, TX 76504",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_8_0ab36051-a5e5-4fff-b231-63bc8b3b9d89.png?v=1729752581",
+        testrideSpot: "Temple",
+        availableSizes: [
+          'Carbon 1 Pro Size S/M/L',
+          'Fusion GT'
+        ],
+        businessHours: [
+          "",
+           "10:00-18:00",
+           "10:00-18:00",
+           "10:00-18:00",
+           "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+        ],
+      },
       {
         name: "Cadence Cyclery of McKinney",
         phone: "(972) 548-7400",
@@ -1872,7 +2027,7 @@ const testRides = [
         email: "dale@loopylupine.com",
         timezone: "AK, USA (GMT-5)",
         add: "195 E Bunnell Ave, Homer, AK 99603, United States",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/LoopEride.png?v=1687327237",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_12_86b280fc-a42f-4ee7-8716-1576548b4fa3.png?v=1730535020",
         testrideSpot: "Alaska",
         availableSizes: [
           'Carbon 1 Size M',
@@ -1983,7 +2138,7 @@ const testRides = [
         email: "tbcridgeland@gmail.com",
         timezone: "Mississippi, USA (GMT-7)",
         add: "192 Old Town Crossing, Ridgeland, MS 39157",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/The_Bike_Crossing.png?v=1692265471",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_12_86b280fc-a42f-4ee7-8716-1576548b4fa3.png?v=1730535020",
         testrideSpot: "Mississippi",
         availableSizes: [
           'Carbon 1s Size M',
@@ -2010,7 +2165,7 @@ const testRides = [
         email: "spokesnaperville@gmail.com",
         timezone: "Illinois, USA (GMT-7)",
         add: "229 Rice Lake Square, Wheaton, IL 60187",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Jason_Mathews.jpg?v=1692617852",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_12_86b280fc-a42f-4ee7-8716-1576548b4fa3.png?v=1730535020",
         testrideSpot: "Naperville",
         availableSizes: [
           'Carbon 1 Pro Size S/M/L',
@@ -2052,7 +2207,7 @@ const testRides = [
         email: "info@windycitywheelers.com",
         timezone: "Illinois, USA (GMT-7)",
         add: "4242 N Ridge Ave, Arlington Heights, IL 60004",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Jason_Mathews.jpg?v=1692617852",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_12_86b280fc-a42f-4ee7-8716-1576548b4fa3.png?v=1730535020",
         testrideSpot: "Chicago",
         availableSizes: [
           'Carbon 1 Pro Size M',
@@ -2251,6 +2406,27 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Strictly_Ebikes.jpg?v=1709208572',
     stores: [
       {
+        name: "E-Bike Alley",
+        phone: "757-645-4232",
+        email: "thomas@e-bikealley.com",
+        timezone: "Virginia, USA (GMT-7)",
+        add: "100 College Row Ste 2105, Williamsburg, VA 23185",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_12_86b280fc-a42f-4ee7-8716-1576548b4fa3.png?v=1730535020",
+        testrideSpot: "Williamsburg",
+        availableSizes: [
+          'Carbon 1 Pro Size S/M/L'
+        ],
+        businessHours: [
+          "10:00-18:00",
+          "",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+        ],
+      },
+      {
         name: "Strictly Ebikes",
         phone: "571-312-5505",
         email: "info@strictly-ebikes.com",
@@ -2306,7 +2482,7 @@ const testRides = [
         email: "john@northsole.co",
         timezone: "Minnesota, USA (GMT-7)",
         add: "13000 Maywood Ln, Minnetonka, MN 55343",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Power_Pedal_Center.png?v=1710818584",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_12_86b280fc-a42f-4ee7-8716-1576548b4fa3.png?v=1730535020",
         testrideSpot: "Minnetonka",
         availableSizes: [
           'Carbon 1 Pro Size M',
@@ -2333,7 +2509,7 @@ const testRides = [
         email: "william@greenprojectsgroup.com",
         timezone: "Michigan, USA (GMT-7)",
         add: "2651 Brooklane Ave SE, Grand Rapids, MI 49507",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/West_Michigan_eBikes.jpg?v=1710818582",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_12_86b280fc-a42f-4ee7-8716-1576548b4fa3.png?v=1730535020",
         testrideSpot: "Michigan",
         availableSizes: [
           'Carbon 1 Pro Size M/L',
@@ -2360,20 +2536,20 @@ const testRides = [
         phone: "(602) 856-4566",
         email: "info@urbanelectrica.com",
         timezone: "Arizona, USA (GMT-7)",
-        add: "7101 E Stetson Drive, Scottsdale, AZ 85251",
+        add: "1425 E University Dr suite B104, Tempe, AZ 85288",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Urban_Electrica.jpg?v=1710818582",
         testrideSpot: "Arizona",
         availableSizes: [
           'Carbon 1 Pro Size M/L',
         ],
         businessHours: [
-          "11:00-19:00",
-          "11:00-19:00",
-          "11:00-19:00",
-          "11:00-19:00",
-          "11:00-19:00",
-          "11:00-19:00",
-          "11:00-19:00",
+          "",
+          "",
+          "11:00-18:00",
+          "11:00-18:00",
+          "11:00-18:00",
+          "11:00-18:00",
+          "11:00-18:00",
         ],
       },
     ]
@@ -2389,7 +2565,7 @@ const testRides = [
         email: "info@icycleebikes.com",
         timezone: "Arizona, USA (GMT-7)",
         add: "25 Fort Henry Drive, Kingston, ON, Canada K7K 5G8",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Kingston_Ontario_Canada_-_Laslovarga__28.jpg?v=1712714811",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_12_86b280fc-a42f-4ee7-8716-1576548b4fa3.png?v=1730535020",
         testrideSpot: "Kingston",
         availableSizes: [
           'Carbon 1 Pro Size S/M/L',
@@ -2416,7 +2592,7 @@ const testRides = [
         email: "riverbendrenewalllc@gmail.com",
         timezone: "Tennessee, USA (GMT-7)",
         add: "576 us 70, Pegram, TN 37143",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Kingston_Ontario_Canada_-_Laslovarga__28.jpg?v=1712714811",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_12_86b280fc-a42f-4ee7-8716-1576548b4fa3.png?v=1730535020",
         testrideSpot: "Pegram",
         availableSizes: [
           'Carbon 1 Pro Size M',
@@ -2443,7 +2619,7 @@ const testRides = [
         email: "Riverbicycles@yahoo.com",
         timezone: "Tennessee, USA (GMT-7)",
         add: "138 Hamilton Avenue, Greenwich, CT 6830",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Kingston_Ontario_Canada_-_Laslovarga__28.jpg?v=1712714811",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_12_86b280fc-a42f-4ee7-8716-1576548b4fa3.png?v=1730535020",
         testrideSpot: "Greenwich",
         availableSizes: [
           'Carbon 1 Pro Size S/M/L',

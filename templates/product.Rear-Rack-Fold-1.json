@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "Rear-Rack-Fold-1": {
+      "type": "Rear-Rack-Fold-1",
+      "settings": {}
+    }
+  },
+  "order": [
+    "Rear-Rack-Fold-1"
+  ]
+}

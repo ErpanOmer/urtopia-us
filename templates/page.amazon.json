@@ -2,8 +2,7 @@
   "sections": {
     "amazon": {
       "type": "amazon",
-      "settings": {
-      }
+      "settings": {}
     }
   },
   "order": [

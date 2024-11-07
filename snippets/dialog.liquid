@@ -742,12 +742,12 @@
 
 
     $(function () {
-        if (location.href.includes('/pages/lightweight-ebike-urtopia-carbon-1-pro')) {
-          return
-        }
+      const ignore = ['/pages/lightweight-ebike-urtopia-carbon-1-pro', '/pages/amazon', '/pages/email-page']
 
-      if (location.href.includes('/pages/amazon')) {
-          return
+      for (const i of ignore) {
+          if (location.href.includes(i)) {
+            return
+          }
       }
       
       showCookieDialog().then(showSubscribeEmailDialog).then(showExitSubscribeEmailDialog).then(showTestRideDialog)

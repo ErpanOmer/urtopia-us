@@ -1,0 +1,46 @@
+{% render 'accessories-default-template' %}
+
+<div class="centeral-content details" style="--swiper-navigation-color: #fff;--swiper-theme-color: #000;--swiper-pagination-color: #000;">
+  <h2 class="u36Medium_v2">Details</h2>
+  <div class="content">
+    <div class="fuckyou">
+      <div class="details-swiperrrr">
+        <div class="swiper-wrapper">
+          {% for image in product.media %}
+              <div class="swiper-slide">
+                {{ image | media_tag: image_size: 'master' }}
+              </div>
+           {% endfor %}
+        </div>
+      </div>
+      <div class="swiper-button-prev mobileHide"></div>
+      <div class="swiper-button-next mobileHide"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+    <ul class="u17Light_v2">
+      <li>Exclusively designed for the Urtopia Carbon Fold 1. Beautifully crafted from strong, lightweight aluminum for a lifetime of use.</li>
+      <li>Load Capcity: 55 lbs</li>
+    </ul>
+  </div>
+</div>
+<script>
+  new Swiper('.details .fuckyou .details-swiperrrr', {
+    navigation: {
+      nextEl: '.details .fuckyou .swiper-button-next',
+      prevEl: '.details .fuckyou .swiper-button-prev',
+    },
+    pagination: { el: '.details .fuckyou .swiper-pagination' },
+  });
+
+
+  const indexs = {
+    'Matte Black': 4,
+    'Creme': 5,
+    'Blu': 6
+  }
+
+
+  document.addEventListener('onChangeOptions', e => {
+    window.fuckyou.slideTo(indexs[e.value.title])
+  })
+</script>

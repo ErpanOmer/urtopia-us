@@ -3,7 +3,7 @@
 
 <div class="banner">
         <div class="centeral-content">
-            <h3 class="u24Medium_v2">{{ settings.sale_name }}</h3>
+            <h3 class="u24Medium_v2" sale-name>{{ settings.sale_name }}</h3>
             <h2 class="u48DemiBold_v2">Up to {{ all_products["urtopia-carbon-fusion-gt"].compare_at_price |  minus: all_products["urtopia-carbon-fusion-gt"].price | money_without_trailing_zeros }} OFF</h2>
             {% render 'sale' %}
         </div>
@@ -277,7 +277,7 @@
               </div>
           </div>
           <div class="item">
-              <div class="dimension u24DemiBold_v2">IoT sensors</div>
+              <div class="dimension u24DemiBold_v2">IoT Sensors</div>
               <div class="params">
                   <div class="param u17Medium_v2" name="sensors">Accelerometer, gyroscope, torque</div>
                   <div class="param u17Medium_v2" name="sensors">Accelerometer, gyroscope, torque</div>

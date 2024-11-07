@@ -2510,21 +2510,17 @@ h4 {
                         content: "";
                         display: block;
                         height: 5px;
-                        width: 10%;
+                        width: 0%;
                         background-color:#FFC400;
                         border-radius: 5px;
-                        transition: width .6s linear;
-                    }
-
-
-                    &:last-child {
-                        opacity: 0;
+                       
                     }
                 }
 
                 .active {
                     &::after {
                         width: 100%;
+                       transition: width 2s linear;
                     }
                 }
             }
@@ -2570,7 +2566,7 @@ h4 {
                 margin-bottom: 6vw;
 
                 .progress {
-                    grid-template-columns: 1fr 1fr;
+                    /* grid-template-columns: 1fr 1fr; */
                     margin: 0 10vw;
                 }
             }

@@ -309,12 +309,12 @@
           </div>
         {% endfor %}
       </div>
-      {% comment %} <div class="accessories mb12">
+      <div class="accessories mb12">
         <div class="u17DemiBold_v2 mb12">Accessories</div>
         <div class="prev"></div>
         <div class="next"></div>
         <div class="items mb12">
-          {% for prod in collections['carbon-1-pro-acc'].products %}
+          {% for prod in collections['accessories_in_fold_product_page'].products %}
             {% if prod.available %}
               {% assign variant = prod.variants | first %}
               <div class="item" variant-id="{{ variant.id }}">
@@ -332,7 +332,7 @@
             {% endif %}
           {% endfor %}
         </div>
-      </div> {% endcomment %}
+      </div>
       <div class="free pcHide">
         <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241008-180903_2x_38f35da3-10a5-404a-a8e3-45502019b10d.png?v=1729068869" alt=""/>
         <div>
@@ -483,14 +483,15 @@
             </div>
             <div class="swiper">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide" >
-                        <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241012-184840_2x_f95f0716-b194-48d8-b90f-54a30f8e989d.png?v=1729483015" />
+                     <div class="swiper-slide" >
+                        <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241012-184908_2x_f690fe39-ffed-4931-8d30-943ec18958d7.png?v=1729482982" />
                     </div>
                     <div class="swiper-slide" >
                         <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241012-184906_2x_4e9cb21c-99e3-4d5d-acd7-12a93a099d84.png?v=1729482988" />
                     </div>
-                    <div class="swiper-slide" >
-                        <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241012-184908_2x_f690fe39-ffed-4931-8d30-943ec18958d7.png?v=1729482982" />
+                   
+                  <div class="swiper-slide" >
+                        <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241012-184840_2x_f95f0716-b194-48d8-b90f-54a30f8e989d.png?v=1729483015" />
                     </div>
                 </div>
             </div>
@@ -546,7 +547,7 @@
     </h2>
     <p class="u17Light_v2">
       <span
-        >Easy to ride with adjustable sizing for a perfect fit—ride comfortably and keep your feet grounded. The torque sensor delivers an ultra-smooth riding experience.</span
+        >The trunk of a typical SUV can fit 2-3 Carbon Fold 1 bikes, making it the perfect companion for driving to the park for a ride—absolutely space-efficient.</span
       >
     </p>
   </div>
@@ -674,7 +675,7 @@
     </div>
   </div>
 </div>
-<div class="app">
+<!-- <div class="app">
 <div class="centeral-content">
    <div>
      <span class="u48Medium_v2">Your All in One <br>Health Coach</span>
@@ -683,7 +684,7 @@
   <img class="lozad mobileHide" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_1171275468_2x_c4e2a5ad-6173-4b69-91be-96007790d93d.png?v=1723798829"/>
   <img class="lozad pcHide" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24503_2x_e97738c9-2a66-4ca5-a108-f75bac84bafa.jpg?v=1723799497"/>
 </div>
-</div>
+</div> -->
 
 {% render 'size-guide-and-specs-template', config: 'carbon_fold_order_page_config' %}
 
@@ -916,7 +917,7 @@
         })
         .finally(() => {
           adding = false;
-          !show && fetchBuried('websiteclick', `carbon1pro-order-page`, { button: 'ATC' });
+          !show && fetchBuried('websiteclick', `fold1-order-page`, { button: 'ATC' });
 
           setTimeout(() => $('.product .error-tip').hide(), 10000);
         });
@@ -939,7 +940,7 @@
     // loading
     t.find('span').html(loading);
 
-    fetchBuried('websiteclick', `carbon1pro-order-page`, { button: type }, true);
+    fetchBuried('websiteclick', `fold1-order-page`, { button: type }, true);
     window.sessionStorage.clicked_klarna_checkout_button = 'clicked_klarna_checkout_button';
 
     if (sessionStorage.carbon_one_a_b_test_flag === 'B') {
@@ -1095,31 +1096,46 @@
         },
         speed: 600,
         on: {
-            slideChange: function () {
+          reachEnd: function(){
+            $(`.step_folding .progress > div`).removeClass('active')
+          },
+            slideChange: function () {      
+              console.log('this.realIndex', this.realIndex)
+              
                 if (this.realIndex === 0) {
-                    $(`.step_folding .progress > div`).removeClass('active')
+                    // 往右
+                    if (this.activeIndex > this.previousIndex) {
+                         setTimeout(() => {
+                           $(`.step_folding .progress > div:nth-child(1)`).addClass('active')
+                         }, 66)
+                    } else {
+                         setTimeout(() => {
+                           $(`.step_folding .progress > div:nth-child(1)`).addClass('active')
+                         }, 66)
+                      
+                        $(`.step_folding .progress > div:nth-child(2)`).removeClass('active')
+                        $(`.step_folding .progress > div:nth-child(3)`).removeClass('active')
+                    }
                 }
 
                 if (this.realIndex === 1) {
                     // 往右
                     if (this.activeIndex > this.previousIndex) {
-                        $(`.step_folding .progress > div:nth-child(1)`).addClass('active')
+                        $(`.step_folding .progress > div:nth-child(2)`).addClass('active')
                     } else {
                         $(`.step_folding .progress > div:nth-child(1)`).addClass('active')
-                        $(`.step_folding .progress > div:nth-child(2)`).removeClass('active')
+                        $(`.step_folding .progress > div:nth-child(2)`).addClass('active')
+                        $(`.step_folding .progress > div:nth-child(3)`).removeClass('active')
                     }
                 }
 
                 if (this.realIndex === 2) {
                     if (this.activeIndex > this.previousIndex) {
-                        $(`.step_folding .progress > div:nth-child(2)`).addClass('active')
+                        $(`.step_folding .progress > div:nth-child(3)`).addClass('active')
                     } else {
-                        $(`.step_folding .progress > div:nth-child(1)`).addClass('active')
-                        $(`.step_folding .progress > div:nth-child(2)`).addClass('active')
+                        $(`.step_folding .progress > div`).addClass('active')
                     }                
                 }
-
-                direction_index = this.previousIndex
             },
         },
     });

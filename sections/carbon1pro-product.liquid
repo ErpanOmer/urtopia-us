@@ -348,6 +348,10 @@
           <i class="fa fa-spinner fa-spin"></i
           ><span data-pf-type="Text" class="addToCartText u17DemiBold_v2">Add to Cart</span>
         </div>
+        <!-- <div onclick="testRideTrace('amazon', this)" class="orderTestRideBtn mb12">
+                  <img style="max-width: 50px;margin-right: 3%;" class="twoooo" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241101-174530.png?v=1730454586">
+                  <span><span class="u17DemiBold_v2">Buy on Amazon</span></span>
+                </div> -->
         <div onclick="testRideTrace('klarna_check_out', this)" class="orderTestRideBtn">
           <img
             class="twoooo"
@@ -580,6 +584,7 @@
         with Carbon 1 Pro.
       </span>
     </p>
+    <a style="margin-top: 3.5vh;" class="my-button my-button-white" target="_blank" href="/pages/carbon-expert">Carbon Fiber Expert</a>
   </div>
 </div>
 <div class="boxs">
@@ -1058,6 +1063,7 @@
           <span class="u30DemiBold_v2">131,500+ <span class="u20Medium_v2">trees</span></span>
         </div>
       </div>
+      <a style="margin-top:7.5%;" class="my-button my-button-white" target="_blank" href="/pages/sustainability-carbon-credit">Learn more</a>
     </div>
     <img
     class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/IMG_7844_2x_b321b04d-1924-4c56-a4ee-db9cb945802b.jpg?v=1721803578&width=640"
@@ -1496,6 +1502,12 @@
     // 如果已经有按钮 loading ,直接退出来
     if (!type || $('.orderTestRideBtn').hasClass('loading')) {
       return;
+    }
+
+
+    if (type === 'amazon') {
+        fetchBuried('websiteclick', `carbon1pro-order-page`, { button: type  }, true)
+        return window.open('https://www.amazon.com/dp/B0DGQJYQT5')
     }
 
     const t = $(target);
