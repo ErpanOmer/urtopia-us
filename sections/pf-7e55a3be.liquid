@@ -29,18 +29,13 @@
             <div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-25_ order-djs mb6">
                 <div class="pf-judme">{% render "judgeme_widgets", widget_type: "judgeme_preview_badge", jm_style: "", concierge_install: false, product: product %}</div>
             </div>
-            <div class="u14DemiBold_v2 mb6 sale-taggggggg">{{ settings.sale_name }}</div>
             <div class="product-price u30DemiBold_v2" style="margin: 0;" data-price="{{ product.compare_at_price | money }}">{{ product.price | money }}</div>
             <div class="sale-tag mb6">
               <!--<div class="u17Medium_v2">{{ settings.chord_sale_name }}</div>-->
               <div class="u14Light_v2">Free shipping.</div>
             </div>
-            <div class="adwarsssss"></div>
-            <!--<div class="sale-big-text mb6">
-              <div class="u20DemiBold_v2">LOWEST PRICE OF THE YEAR GUARANTEED!</div>
-              <div class="u11Light_v2">For any order during Oct 1 - Dec 31 2023, if there is a price drop within this period on our website, you will get a refund for the difference.</div>
-            </div>-->
         </div>
+        <div class="pcHide" style="margin-top: 6px;">{% render "sale" %}</div>
         <div class="featured_image">
             <div class="swiper left-swiper mobileHide">
                 <div class="swiper-wrapper">
@@ -102,17 +97,13 @@
                 <div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-25_ order-djs mb6">
                     <div class="pf-judme">{% render "judgeme_widgets", widget_type: "judgeme_preview_badge", jm_style: "", concierge_install: false, product: product %}</div>
                 </div>
-               <div class="u17DemiBold_v2 mb6 sale-taggggggg">{{ settings.sale_name }}</div>
                 <div style="margin: 0" class="product-price u30DemiBold_v2" data-price="{{ product.compare_at_price | money }}">{{ product.price | money }}</div>
                 <div class="sale-tag mb6">
                   <!--<div class="u17Medium_v2">{{ settings.chord_sale_name }}</div>-->
                   <div class="u14Light_v2" style="margin: 0">Free shipping.</div>
                 </div>
-                <!--<div class="sale-big-text mb12">
-                  <div class="u20DemiBold_v2">LOWEST PRICE OF THE YEAR GUARANTEED!</div>
-                  <div class="u11Light_v2">For any order during Oct 1 - Dec 31 2023, if there is a price drop within this period on our website, you will get a refund for the difference.</div>
-                </div>-->
             </div>
+            <div class="mobileHide" style="margin-top: 12px;">{% render "sale" %}</div>
             <div class="fenders pcHide">
                   <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230307-201732.jpg?v=1678191479" alt="">
                   <div>
@@ -121,12 +112,6 @@
                     <div class="u17Light_v2">Free Fenders, Kickstand, <br>1-Year Connect Service Included</div>
                   </div>
             </div>
-            {% unless settings.hide_sale_countdown %}
-              <div class="count-down mb12 mobileHide">
-                <div class="u17Medium_v2">Ends in：</div>
-                <img src="http://i.countdownmail.com/37l0tl.gif">
-              </div>
-            {% endunless %}
             <div class="options">
                 {% for option in product.options_with_values %}
                   <div class="option" option={{option.name}} position="{{ option.position }}">
@@ -190,12 +175,6 @@
                 </div>
             </div>
             <div class="buttons">
-                {% unless settings.hide_sale_countdown %}
-                  <div class="count-down mb12 pcHide">
-                    <div class="u17Medium_v2">Ends in：</div>
-                    <img src="http://i.countdownmail.com/37l0tl.gif">
-                  </div>
-                {% endunless %}
                 <div
                     data-product-id="{{ product.id }}"
                     class="my-button my-button-black addToCartBtn"

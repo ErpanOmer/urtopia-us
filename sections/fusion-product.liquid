@@ -496,6 +496,68 @@
   </div>
 </div>
 
+<div class="professional">
+  <div class="centeral-content">
+    <h2 class="u36Medium_v2">Professional Review</h2>
+    <div class="videos swiper-wrapper">
+      
+    <div
+    class="swiper-slide"
+    onclick="showVideoDialog('https://www.youtube.com/embed/14WsEPH8TfQ?autoplay=1&cc_load_policy=1')"
+  >
+    <img
+      class="lozad"
+      data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24716_2x_b34c17d4-c45d-4e33-8c32-10ae473bffce.jpg?v=1727085768&width=400"
+      alt=""
+    >
+    <span class="u17Light_v2">The throttle boost driven by dual motors provides an unprecedented power-maxing experience.</span>
+    <span class="flex-1"></span>
+    <div class="u17Medium_v2">
+      <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19470_2x_6a40056e-5876-49a3-8678-c9eb7f529037.png?v=1727086233" alt=""/>
+      <span>KhanFlicks</span>
+    </div>
+  </div>
+  <div
+        class="swiper-slide"
+        onclick="showVideoDialog('https://www.youtube.com/embed/8xWeb1IBfh4?autoplay=1&cc_load_policy=1')"
+      >
+        <img
+          class="lozad"
+          data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24719_2x_2636fa6e-f818-4978-af54-a9cb899630c7.jpg?v=1727090408&width=400"
+          alt=""
+        >
+        <span class="u17Light_v2">With powerful 1500W AWD assist, this full carbon beast will take you anywhere you want.</span>
+        <span class="flex-1"></span>
+        <div class="u17Medium_v2">
+          <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19469_2x_795c87d6-900b-4d78-b915-259138fa064d.png?v=1727090514" alt=""/>
+          <span>Urtopia Reviews</span>
+        </div>
+      </div>
+      <div
+        class="swiper-slide"
+        onclick="showVideoDialog('https://www.youtube.com/embed/OJgz3ZLb4F0?autoplay=1&cc_load_policy=1')"
+      >
+        <img
+          class="lozad"
+          data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24717_2x_42c326c1-7915-471d-b00e-4f5dd6b273b8.jpg?v=1727143908&width=400"
+          alt=""
+        >
+        <span class="u17Light_v2">It's the lightest step-through ebike of its size, I can just easily get on it, no big jump over.</span>
+        <span class="flex-1"></span>
+        <div class="u17Medium_v2">
+          <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19472_2x_679a808b-69a2-4e58-be5f-407efb2f88c5.png?v=1727143912" alt=""/>
+          <span>Area 13</span>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-scrollbar"></div>
+    <div class="buttons mobileHide">
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </div>
+</div>
+
 <div class="world">
         <div class="centeral-content">
             <h2 class="u36Medium_v2">World’s First Dual-Motor, <br>Dual-Battery E-Bike</h2>
@@ -1417,6 +1479,21 @@
         })
 
     })
+
+
+    new Swiper('.professional .centeral-content', {
+      slidesPerView: global_config.is_mobile ? 1.25 : 3,
+      spaceBetween: 20,
+      navigation: {
+      nextEl: '.professional .centeral-content .swiper-button-next',
+      prevEl: '.professional .centeral-content .swiper-button-prev',
+    },
+      scrollbar: {
+        el: '.professional .centeral-content .swiper-scrollbar',
+        draggable: true,
+      },
+    });
+  
 
 
 
