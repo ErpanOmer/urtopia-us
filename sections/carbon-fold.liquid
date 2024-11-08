@@ -1,6 +1,10 @@
+<style>
+  :root {
+    --product-color: #FFDF48;
+  }
+</style>
+
 {% assign prelo = "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241017-185158.jpg?v=1729162376" %}
-
-
 {{ 'carbon-fold-product.scss.css' | asset_url | stylesheet_tag: preload: true }}
 <link rel="preload" as="image" href="{{ prelo }}">
 <link rel="preload" as="image" href="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241017-185454.jpg?v=1729162539">
@@ -49,10 +53,10 @@
       <div class="swiper-pagination pcHide"></div>
       <div class="free mobileHide">
         <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241008-180903_2x_38f35da3-10a5-404a-a8e3-45502019b10d.png?v=1729068869" alt="">
-        <span class="u14Medium_v2"><span style="color:#fd4b17;">Limited offer:</span> Fenders, kickstand</span>
+        <span class="u14Medium_v2"><span style="color: var(--product-color);">Limited offer:</span> Fenders, kickstand</span>
         <span class="flex-1"></span>
         <del class="u14Light_v2">{{ 16700 | money }}</del>
-        <span class="u17Medium_v2">Free</span>
+        <span class="u17Medium_v2" style="color: #000;background-color: var(--product-color);">Free</span>
       </div>
       <div class="icons mobileHide">
         <div>
@@ -337,7 +341,7 @@
         <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241008-180903_2x_38f35da3-10a5-404a-a8e3-45502019b10d.png?v=1729068869" alt=""/>
         <div>
           <div>
-            <span class="u14Medium_v2">Free</span>
+            <span class="u14Medium_v2" style="    background-color: var(--product-color);color: #000;">Free</span>
             <del class="u11Light_v2">{{ 16700 | money }}</del>
           </div>
           <span class="u11Medium_v2">Fenders, kickstand</span>
@@ -469,6 +473,63 @@
     </form>
   </div>
 </div>
+
+<div class="expert">
+  <video muted playsinline autoplay loop
+          class="lozad mobileHide" data-src="https://cdn.shopify.com/videos/c/o/v/c814b4a0a996463f8b4a513a862b346d.mp4">
+  </video>
+  <video muted playsinline autoplay loop
+          class="lozad pcHide" data-src="https://cdn.shopify.com/videos/c/o/v/7a3e71ed3d7d4a2fb3c88bb2760fdb98.mp4">
+  </video>
+  <div class="centeral-content">
+    <h2 class="u48Medium_v2">Carbon Fiber Expert</h2>
+    <p class="u17Light_v2">
+      <span>
+        The bike frame and handlebars are made entirely of premium carbon fiber, making it the world’s lightest foldable e-bike, weighing only half that of an average e-bike.
+      </span>
+    </p>
+    <div class="my-button" onclick="showVideoDialog('https://www.youtube.com/embed/rpxbAbXzyHo?autoplay=1&amp;cc_load_policy=1')">
+        Watch Video
+        <img class="lozad mobileHide" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/screenshot-20231012-164642.png?v=1697100422" alt="" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/screenshot-20231012-164642.png?v=1697100422" data-loaded="true">
+        <img class="lozad pcHide" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/screenshot-20231012-165647.png?v=1697101021" alt="">
+      </div>
+  </div>
+</div>
+<div class="build city">
+  <div class="centeral-content">
+    <div>
+      <h3 class="u48Medium_v2">
+        Lightest E-Bike<br><span style="color: var(--product-color);">Only 29 lbs</span>
+      </h3>
+      <p class="u17Light_v2">
+        <span>Thanks to the lightweight nature of carbon fiber, both the e-bike frame and handlebars are made from this material. This makes it easy to carry it up and down stairs and effortlessly lift it out of your car trunk.</span>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="build range">
+  <div class="centeral-content">
+    <h3 class="u48Medium_v2">
+      It fits where<br class="mobileHide"> others can’t
+    </h3>
+    <p class="u17Light_v2">
+      <span>The trunk of a typical SUV can fit 2-3 Carbon Fold 1 bikes, making it the perfect companion for driving to the park for a ride—absolutely space-efficient.</span>
+    </p>
+  </div>
+  </div>
+
+  <div class="makes">
+  <div class="centeral-content">
+     <h2 class="u36Medium_v2 mobileHide">What makes Carbon Fold 1 <br class="pcHide">the best Foldable E-Bike?</h2>
+     <img class="lozad mobileHide" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25031_2x_78cf7516-8547-4ad3-b0e5-3aa896220730.png?v=1730972358" alt="">
+     <img class="lozad mobileHide" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24870_2x_ae2ddf3f-6d13-432a-baf8-b10f40568124.png?v=1730972354" alt="">
+     <img class="lozad pcHide" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25067_2x_f9ee32f6-227d-4878-999a-5ddf6a22f3c4.png?v=1731056261" alt="">
+     <img class="lozad pcHide" style="margin-top: 8vw;" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25068_2x_31d6f2f1-480c-42c7-9b42-41e743d4ec28.png?v=1731056255" alt="">
+  </div>
+</div>
+
+
 <div class="step_folding">
         <div class="centeral-content">
             <div>
@@ -498,63 +559,35 @@
         </div>
     </div>
           
-<div class="makes">
-  <div class="centeral-content">
-     <h2 class="u36Medium_v2">What makes Carbon Fold 1 <br class="pcHide">the best Foldable E-Bike</h2>
-     <img class="lozad mobileHide" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24868_2x_d021d7f2-82e2-437a-ba9d-abc1c68e65b7.png?v=1729076070" alt="">
-     <img class="lozad mobileHide" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24870_2x_a586c01c-a72c-42e0-9a94-d36047856d03.png?v=1729076064" alt="">
-     <img class="lozad pcHide" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24877_2x_d6c360d0-383d-4b47-b72c-8b8b2eaecbf2.png?v=1729475238" alt="">
-     <img class="lozad pcHide" style="margin-top: 12vw;" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24876_2x_493b152e-2581-4f9f-ad47-c22c9a2fe2cd.png?v=1729474418" alt="">
-  </div>
-</div>
+    <div class="build city Effortlessly">
+      <div class="centeral-content">
+        <div>
+          <h3 class="u48Medium_v2">
+            Effortlessly smooth <br>to ride
+          </h3>
+          <p class="u17Light_v2">
+            <span>Easy to ride with adjustable sizing for a perfect fit—ride comfortably and keep your feet grounded. The torque sensor delivers an ultra-smooth riding experience.</span>
+          </p>
+        </div>
+      </div>
+    </div>
 
-
-<div class="build city">
+    <div class="build SleekDesignHiddenPower">
   <div class="centeral-content">
     <div>
-      <h3 class="u36Medium_v2">
-        Lightest E-Bike<br>Only 29 lbs
+      <h3 class="u48Medium_v2">
+        Sleek Design, <br>Hidden Power
       </h3>
       <p class="u17Light_v2">
-        <span>Thanks to the lightweight nature of carbon fiber, both the e-bike frame and handlebars are made from this material. This makes it easy to carry it up and down stairs and effortlessly lift it out of your car trunk.</span>
+        <span>The taillight and headlight are seamlessly integrated with the bike frame, along with hidden wiring and battery design, giving the Carbon Fold 1 a sleek, minimalist look.</span>
       </p>
     </div>
   </div>
 </div>
-          <div class="build range">
+  
+<div class="quality" id="quality">
   <div class="centeral-content">
-    <h3 class="u36Medium_v2">
-      It fits where<br> others can’t
-    </h3>
-    <p class="u17Light_v2">
-      <span>Easy to ride with adjustable sizing for a perfect fit—ride comfortably and keep your feet grounded. The torque sensor delivers an ultra-smooth riding experience.</span>
-    </p>
-  </div>
-  </div>
-  <div class="sleek">
-  <video
-    muted
-    playsinline
-    loop
-    autoplay
-    class="lozad mobileHide"
-    data-src="https://cdn.shopify.com/videos/c/o/v/98214da0a16e4dd6835390461f60d95f.mp4"
-  ></video>
-  <img class="lozad pcHide" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19542_2x_48981873-44df-47db-8e61-de0b00bd6c2f.jpg?v=1729136655"/>
-  <div>
-    <h2 class="u36Medium_v2">
-      Effortlessly smooth <br>to ride
-    </h2>
-    <p class="u17Light_v2">
-      <span
-        >The trunk of a typical SUV can fit 2-3 Carbon Fold 1 bikes, making it the perfect companion for driving to the park for a ride—absolutely space-efficient.</span
-      >
-    </p>
-  </div>
-</div>
-<div class="quality">
-  <div class="centeral-content">
-    <h3 class="u36Medium_v2">Quality in details</h3>
+    <h3 class="u36Medium_v2 mobileHide">Quality in details</h3>
     <div class="items swiper-wrapper">
       <div class="swiper-slide">
         <img
@@ -581,7 +614,7 @@
       <div class="swiper-slide">
         <img
         class="lozad"
-        data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2x_57246797-db40-4da8-8577-01bd2da9219d.jpg?v=1729076841"
+        data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/123_2x_c66eddc9-ec49-46dd-88b5-cda3acce2c5c.jpg?v=1731051369"
           alt=""
         >
         <span class="u20Medium_v2">Removable seat post battery</span>
@@ -675,16 +708,62 @@
     </div>
   </div>
 </div>
-<!-- <div class="app">
-<div class="centeral-content">
-   <div>
-     <span class="u48Medium_v2">Your All in One <br>Health Coach</span>
-     <span class="u17Light_v2">Your rides and daily activities offer personalized insights. Our AI companion tailors accurate recommendations exclusively for you—no more generic advice.</span>
-   </div>
-  <img class="lozad mobileHide" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_1171275468_2x_c4e2a5ad-6173-4b69-91be-96007790d93d.png?v=1723798829"/>
-  <img class="lozad pcHide" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24503_2x_e97738c9-2a66-4ca5-a108-f75bac84bafa.jpg?v=1723799497"/>
+
+
+<div class="quality TakeItEasywithFold1">
+  <div class="centeral-content">
+    <h3 class="u36Medium_v2 mobileHide">Take It Easy with Fold 1</h3>
+    <div class="items swiper-wrapper">
+      <div class="swiper-slide">
+        <img
+         class="lozad"
+          data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSCF6175_2x_00fde150-045a-4109-97ac-e2c03013184c.jpg?v=1731052479"
+          alt=""
+        >
+      </div>
+      <div class="swiper-slide">
+        <img
+         class="lozad"
+          data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241108-155759.jpg?v=1731052717"
+          alt=""
+        >
+      </div>
+      <div class="swiper-slide">
+        <img
+         class="lozad"
+          data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241108-155810.jpg?v=1731052717"
+          alt=""
+        >
+      </div>
+      <div class="swiper-slide">
+        <img
+         class="lozad"
+          data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241108-155805.jpg?v=1731052718"
+          alt=""
+        >
+      </div>
+      <div class="swiper-slide">
+        <img
+         class="lozad"
+          data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241108-155820.jpg?v=1731052718"
+          alt=""
+        >
+      </div>
+      <div class="swiper-slide">
+        <img
+         class="lozad"
+          data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241108-155815.jpg?v=1731052718"
+          alt=""
+        >
+      </div>
+    </div>
+    <div class="swiper-scrollbar"></div>
+    <div class="buttons mobileHide">
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </div>
 </div>
-</div> -->
 
 {% render 'size-guide-and-specs-template', config: 'carbon_fold_order_page_config' %}
 
@@ -1039,15 +1118,29 @@
       });
 
 
-    new Swiper('.quality .centeral-content', {
+    new Swiper('#quality .centeral-content', {
         slidesPerView: global_config.is_mobile ? 1.25 : 3,
         spaceBetween: global_config.is_mobile ? 16 : 32,
         navigation: {
-          nextEl: '.quality .centeral-content .swiper-button-next',
-          prevEl: '.quality .centeral-content .swiper-button-prev',
+          nextEl: '#quality .centeral-content .swiper-button-next',
+          prevEl: '#quality .centeral-content .swiper-button-prev',
         },
         scrollbar: {
-          el: '.quality .centeral-content .swiper-scrollbar',
+          el: '#quality .centeral-content .swiper-scrollbar',
+          draggable: true
+        },
+      });
+
+
+      new Swiper('.TakeItEasywithFold1 .centeral-content', {
+        slidesPerView: global_config.is_mobile ? 1.25 : 2.25,
+        spaceBetween: global_config.is_mobile ? 16 : 32,
+        navigation: {
+          nextEl: '.TakeItEasywithFold1 .centeral-content .swiper-button-next',
+          prevEl: '.TakeItEasywithFold1 .centeral-content .swiper-button-prev',
+        },
+        scrollbar: {
+          el: '.TakeItEasywithFold1 .centeral-content .swiper-scrollbar',
           draggable: true
         },
       });

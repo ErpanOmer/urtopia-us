@@ -211,6 +211,11 @@ const global_config = {
         product_images: {
             'Saffron Yellow': [
               'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241017-185158.jpg?v=1729162376',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241108-155815.jpg?v=1731052718',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241108-155759.jpg?v=1731052717',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241108-155820.jpg?v=1731052718',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241108-155810.jpg?v=1731052717',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241108-155805.jpg?v=1731052718',
               'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241023-114750.jpg?v=1729655322',
               'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241017-185203.jpg?v=1729162376',
               'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241017-185140.jpg?v=1729162376',
@@ -219,6 +224,11 @@ const global_config = {
             ],
             'Aegean Blue': [
               'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241017-185454.jpg?v=1729162539',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241108-155815.jpg?v=1731052718',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241108-155759.jpg?v=1731052717',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241108-155820.jpg?v=1731052718',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241108-155810.jpg?v=1731052717',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241108-155805.jpg?v=1731052718',
               'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241017-185449.jpg?v=1729162539',
               'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241017-185513.jpg?v=1729162539',
               'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241017-185459.jpg?v=1729162539',
