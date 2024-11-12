@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "black-friday": {
+      "type": "black-friday",
+      "settings": {}
+    }
+  },
+  "order": [
+    "black-friday"
+  ]
+}
