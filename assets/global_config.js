@@ -216,7 +216,7 @@ const global_config = {
               'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241108-155820.jpg?v=1731052718',
               'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241108-155810.jpg?v=1731052717',
               'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241108-155805.jpg?v=1731052718',
-              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241023-114750.jpg?v=1729655322',
+              'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241113-140713.jpg?v=1731478063',
               'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241017-185203.jpg?v=1729162376',
               'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241017-185140.jpg?v=1729162376',
               'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241017-185210.jpg?v=1729162376',
@@ -328,8 +328,8 @@ const global_config = {
                         ["Model", "Carbon Folding E-Bike"],
                         ["Weight", "29 lbs"],
                         ["Material", "Carbon fiber (frame, fork)"],
-                        ["Range", "Up to 37 miles"],
-                        ["Top Speed", "16mph by default 20mph upon unlock"],
+                        ["Range", "40miles"],
+                        ["Top Speed", "20mph"],
                         ["Total Weight Limit", "220 lbs"],
                         ["Rider Height", `5’1’’ - 6’1’’`],
                         ["Brakes", "TEKTRO hydraulic disc brakes"],
@@ -340,7 +340,7 @@ const global_config = {
                 {
                     title: 'Ebike System',
                     parameters: [
-                        ["Motor", "500 Peak power, 36V 250W (sustained) rear drive hub motors, 42Nm"],
+                        ["Motor", "Peak 500W hub motor, 42Nm"],
                         ["Battery", "36V 7Ah (252 Wh) seat post battery"],
                         ["Pedal Assist", "5 levels"],
                         ["Charger", "3H fast charger, 42V 2Amp"],
