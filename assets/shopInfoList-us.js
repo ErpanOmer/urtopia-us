@@ -733,7 +733,6 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-BikeAttackPlayaVista.jpg?v=1665374977",
         testrideSpot: "California",
         availableSizes: [
-          'Carbon 1 Size L',
           'Carbon 1 Pro Size S/M/L',
         ],
         businessHours: [
@@ -819,7 +818,6 @@ const testRides = [
         testrideSpot: "California",
         testRideSize: "M/L",
         availableSizes: [
-          'Carbon 1 Size M',
           'Carbon 1 Pro Size M'
         ],
         businessHours: [
@@ -842,7 +840,6 @@ const testRides = [
         testrideSpot: "California",
         testRideSize: "M",
         availableSizes: [
-          'Carbon 1s Size M',
           'Carbon 1 Pro Size M',
         ],
         businessHours: [
@@ -929,7 +926,6 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Buy_My_Bikes.jpg?v=1702462014",
         testrideSpot: "California",
         availableSizes: [
-          'Carbon 1 Size M',
           'Carbon 1 Pro Size M',
         ],
         businessHours: [
@@ -1327,7 +1323,6 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Drexel_Hill_Cyclery_pa.jpg?v=1686878451",
         testrideSpot: "Pennsylvania",
         availableSizes: [
-          'Carbon 1 Size M',
           'Carbon 1 Pro Size M',
           'Chord X'
         ],
@@ -1771,8 +1766,6 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/E-Station_Sarasota.png?v=1700672076",
         testrideSpot: "Florida",
         availableSizes: [
-          'Carbon 1 Size L',
-          'Carbon 1s Size M/L',
           'Chord',
           'Chord X',
         ],
@@ -1973,8 +1966,6 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Oak_Cliff_Bike_Synergy.jpg?v=1686878451",
         testrideSpot: "Texas",
         availableSizes: [
-          'Carbon 1 Size M',
-          'Carbon 1s Size S/M/L',
           'Chord',
           'Chord X',
         ],
@@ -2084,7 +2075,6 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/E-Power_Bike_and_Board_1.jpg?v=1689228575",
         testrideSpot: "Utah",
         availableSizes: [
-          'Carbon 1 Size M/L',
           'Carbon 1 now instock',
         ],
         businessHours: [

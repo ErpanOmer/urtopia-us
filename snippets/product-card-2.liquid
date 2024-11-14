@@ -12,7 +12,7 @@
             {% endfor %}
         {% endif %}
     </div>
-    <img src="{{ product_variants.first.featured_image | image_url: width: 800 }}" class="variant-image" alt="">
+    <img src="{{ product_variants.first.featured_image | image_url: width: 600 }}" class="variant-image" alt="">
     <div class="dots">
         {% if product_variant_options_find_sort %}
                 {% assign product_variant_options_find_sort = product_variant_options_find_sort | split: "," %}
@@ -39,14 +39,14 @@
                                         data-product-discount-price="{{ product_discount_price }}"
                                         data-price="{{ variant.price }}"
                                         data-compare-at-price="{{ variant.compare_at_price }}"
-                                        data-img="{{ variant.featured_image | image_url: width: 800 }}"
+                                        data-img="{{ variant.featured_image | image_url: width: 600 }}"
                                         data-variant="{{ variant.id }}"
                                         data-stye="{{ variant.options[style_index] }}"
                                         {% if already_insert == "" %}class="active"{% endif %} 
                                         >
                                     </div>
                                     {% assign already_insert = already_insert | append: variant.options[style_index]  %}
-                                    <link rel="preload" href="{{ variant.featured_image | image_url: width: 800 }}" as="image">
+                                    <link rel="preload" href="{{ variant.featured_image | image_url: width: 600 }}" as="image">
                                 {% endif %}
                             {% endunless %}
                         {% endfor %}
@@ -57,13 +57,13 @@
                     data-product-discount-price="{{ product_discount_price }}"
                     data-price="{{ variant.price }}"
                     data-compare-at-price="{{ variant.compare_at_price }}"
-                    data-img="{{ variant.featured_image | image_url: width: 800 }}"
+                    data-img="{{ variant.featured_image | image_url: width: 600 }}"
                     data-variant="{{ variant.id }}"
                     data-stye="{{ variant.options.last }}"
                     {% if forloop.index == 1 %}class="active"{% endif %}
                     >
                 </div>
-                <link rel="preload" href="{{ variant.featured_image | image_url: width: 800 }}" as="image">
+                <link rel="preload" href="{{ variant.featured_image | image_url: width: 600 }}" as="image">
             {% endfor %}
         {% endif %}         
     </div>
