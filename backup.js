@@ -33,6 +33,6 @@ function run (command) {
 
 await run(`git checkout master`)
 await run(`git checkout -B ${version}`)
-// await run(`npm run pull`)
+await run(`npm run pull`)
 await run(`git push origin ${version} -f`)
 await run(`git checkout master`)
