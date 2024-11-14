@@ -20,43 +20,102 @@ h4 {
 }
 
 
+@mixin video {
+    video {
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+
 .banner {
-    background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24846_2x_dad8be15-34d0-4377-b038-47cac7251c8e.jpg?v=1729410623') center center/cover no-repeat;
-    height: 700px;
+    background: rgb(66, 29, 4) url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Carbon1Pro_Holiday_v8_4K_2_PosterImage.jpg?v=1731569734&width=1920') center center/cover no-repeat;
+    position: relative;
+    user-select: none;
+
+    .backround {
+        position: absolute;
+        background-image: linear-gradient(270deg, rgba(0, 0, 0, 0), rgb(0, 0, 0));
+        top: 0;
+        bottom: 0;
+        right: 50%;
+        left: 0;
+    }
+
+
+    @include video();
 
     .centeral-content {    
         display: flex;
+        height: 750px;
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
-        padding-top: 22.5vh;
-        color: #fff;
+        color: #FFDF48;
+        z-index: 1;
+        position: relative;
 
 
         .u24Medium_v2 {
             margin: 3vh 0 7vh;
         }
+
+        img {
+            max-width: 560px;
+            margin: -7% 0 -17vh -7%;
+        }
+
+        .my-button {
+            color: #000;
+            background-color: #FFDF48;
+            font-size: 30px;
+            font-weight: 600;
+            padding: 20px 48px;
+            margin-top: 7vh;
+    
+            &:hover {
+                opacity: 1;
+                background-color: #FFDF48;
+            }
+        }
     }
 
 
     @media (max-width: 767px) {
-        background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24879_2x_49ee54c2-a819-44ac-8617-b50a155a523b.jpg?v=1729410782');
+        background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Carbon1Pro_Holiday_v8_4K_1_PosterImage.jpg?v=1731571428');
         color: #fff;
-        height: 500px;
 
         .centeral-content {
-            align-items: center;
-            justify-content: flex-start;
+            align-items: flex-start;
+            justify-content: flex-end;
             text-align: center;
-            padding-top: 10vw;
+            height: 500px;
+            padding-bottom: 40px;
 
-            .u60DemiBold_v2 {
-                font-size: 36px;
+            .u90DemiBold_v2 {
+                font-size: 54px;
             }
 
-            .u24Medium_v2 {
-                margin: 8px 0 25px;
-                font-size: 17px;
+            .u20Medium_v2 {
+                font-size: 14px;
+            }
+
+            img {
+                margin: 0;
+                transform: translate(-40px, 60px);
+                max-width: 230px;
+            }
+
+            .my-button {
+                margin-top: 24px;
+                font-size: 20px;
+                padding: 16px 30px;
             }
         }
     }
@@ -64,7 +123,7 @@ h4 {
 
 
 .your {
-    background: #F4F5F7 url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24790_2x_57382948-6099-4d12-8038-7c5aee711110.jpg?v=1727260075') center center/cover no-repeat;
+    background: #F4F5F7 url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DDD_2x_4aa14eb8-f5d5-43dc-9348-383ceedcfa3a.jpg?v=1731569289') center center/cover no-repeat;
     height: 330px;
     display: flex;
     flex-direction: column;
@@ -73,15 +132,32 @@ h4 {
     box-sizing: border-box !important;
     margin-top: 11vh;
     padding-left: 60px;
+    color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
 
     .u17Light_v2 {
         max-width: 440px;
         margin: 24px 0 36px;
     }
 
+    .u36DemiBold_v2 {
+        color: #FFDF48;
+    }
+
+    .my-button-black {
+        color: #000;
+        background-color: #FFDF48;
+
+        &:hover {
+            opacity: 1;
+            background-color: #FFDF48;
+        }
+    }
+
 
     @media (max-width: 767px) {
-        background-image: none;
+        background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24975_2x_2cbc88e5-d479-4962-98b6-e4e9b632e4b7.jpg?v=1731569541');
         box-sizing: content-box !important;
         padding: 0 30px;
         text-align: center;
@@ -91,6 +167,10 @@ h4 {
         border-radius: 20px;
         height: auto;
         padding: 8vw 4vw;
+        height: 130vw;
+        justify-content: flex-end;
+        text-align: left;
+        align-items: flex-start;
 
         .u36DemiBold_v2 {
             font-size: 24px;
@@ -106,7 +186,7 @@ h4 {
     margin-top: 11vh;
 
     &>div {
-        background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Fusion2-27_2x_abf54da0-2be9-4f3e-8f1f-cc57079af56a.jpg?v=1729230322') center center/cover no-repeat;
+        background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/ROB01788_2x_6bdbbde2-d28d-4203-a634-5a11412851b3.jpg?v=1731550005&width=500') center center/cover no-repeat;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -124,11 +204,11 @@ h4 {
 
 
         &:nth-child(3) {
-            background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSCF1274_2x_b1d0f5b2-9f16-430a-b558-076dbd270864.jpg?v=1729230316');
+            background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSCF6175_2x_acefecd3-ccc0-4b8d-a97b-4db7eea47231.jpg?v=1731549997&width=500');
         }
 
         &:nth-child(2) {
-            background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/12333321_2x_c49a5439-1e36-4d61-a381-75fe10832383.jpg?v=1727260932');
+            background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/12333321_2x_c49a5439-1e36-4d61-a381-75fe10832383.jpg?v=1727260932&width=500');
         }
     }
 
@@ -258,7 +338,7 @@ h4 {
 
 
         &:last-child {
-            background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24793_2x_5175df36-93f9-4b19-a4c3-6a6917306c6d.jpg?v=1727320491');
+            background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24793_2x_5175df36-93f9-4b19-a4c3-6a6917306c6d.jpg?v=1727320491&width=700');
         }
     }
 
@@ -331,7 +411,7 @@ h4 {
         }
 
         &:nth-child(3) {
-            background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24796_2x_7dd25b5c-3753-470e-aa35-cea2d08eac6a.jpg?v=1727321502');
+            background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24796_2x_7dd25b5c-3753-470e-aa35-cea2d08eac6a.jpg?v=1727321502&width=500');
         }
     }
 
@@ -357,7 +437,7 @@ h4 {
             }
 
             &:nth-child(3) {
-                background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20221005-untitled-8655_2x_58a458b5-ef95-4c4d-b41b-0c45c8604a89.jpg?v=1727330739');
+                background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20221005-untitled-8655_2x_58a458b5-ef95-4c4d-b41b-0c45c8604a89.jpg?v=1727330739&width=500');
             }
 
 
