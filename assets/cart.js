@@ -93,27 +93,27 @@ class CartItems extends HTMLElement {
     console.log('insurance', insurance)
 
     // 如果是带活动产品
-    if (sale_name) {
-      const sale_components = items.find(`.cart-item[data-line-item-sale-name="${sale_name}"]:not([data-line-item-variant-id="${variant_id}"]):not([data-line-item-product-id="${product_id}"])`)
-      const sale_bikes = items.find(`.cart-item[data-line-item-sale-name="${sale_name}"][data-line-item-product-id="${product_id}"]`)
+    // if (sale_name) {
+    //   const sale_components = items.find(`.cart-item[data-line-item-sale-name="${sale_name}"]:not([data-line-item-variant-id="${variant_id}"]):not([data-line-item-product-id="${product_id}"])`)
+    //   const sale_bikes = items.find(`.cart-item[data-line-item-sale-name="${sale_name}"][data-line-item-product-id="${product_id}"]`)
 
-      // 计算车总数
-      let count = 0
-      // 遍历活动车
-      sale_bikes.each((i, item) => {
-        if (item === line_item[0]) {
-          count += quantity
-        } else {
-          count += parseInt($(item).attr('data-quantity'))
-        }      
-      })
+    //   // 计算车总数
+    //   let count = 0
+    //   // 遍历活动车
+    //   sale_bikes.each((i, item) => {
+    //     if (item === line_item[0]) {
+    //       count += quantity
+    //     } else {
+    //       count += parseInt($(item).attr('data-quantity'))
+    //     }      
+    //   })
 
-      // 活动配件
-      sale_components.each((i, item) => {
-        quantity_arr[$(item).attr('data-index') - 1] = (count - quantity) + to_quantity
-      })
+    //   // 活动配件
+    //   sale_components.each((i, item) => {
+    //     quantity_arr[$(item).attr('data-index') - 1] = (count - quantity) + to_quantity
+    //   })
 
-    }
+    // }
 
     // 如果当前车variant 存在保险
     if (insurance.length === 1) {

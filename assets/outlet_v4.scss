@@ -669,10 +669,12 @@ $product-tags-color: #DEEDFF;
 }
 
 @mixin product-card {
-    padding: 5%;
+    padding: 50px 5% 5%;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
+    position: relative;
+    overflow: hidden;
 
     *,
     ::after,
@@ -684,16 +686,34 @@ $product-tags-color: #DEEDFF;
         display: flex;
         flex-wrap: wrap;
         flex: 1;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 60%;
+        background-color: #ffdf48;
+        height: 50px;
+        border-bottom-right-radius: 50px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        text-align: center;
+        user-select: none;
 
-        span {
-            background-color: $product-tags-color;
-            border-radius: 10px;
-            padding: 4px 10px;
-            color: #315F9A;
-        }
+       & > span {
+            background-color: #000;
+            color: #ffdf48;
+            display: flex;
+            height: 100%;
+            width: 87.5%;
+            font-size: 22px;
+            font-weight: 600;
+            align-items: center;
+            justify-content: flex-start;
+            border-bottom-right-radius: 50px;
+            padding-left: 15px;
 
-        span {
-            margin-right: 6px;
+            span {
+                transform: translate(3px, 3px);
+            }
         }
     }
 
@@ -780,7 +800,7 @@ $product-tags-color: #DEEDFF;
     }
 
     @media (max-width: 767px) {
-        padding: 4vw;
+        padding: 50px 4vw 4vw;
 
         .product_price {
             flex-direction: column;
@@ -865,6 +885,29 @@ $product-tags-color: #DEEDFF;
                 font-size: 24px;
                 height: 75vw;
             }
+
+
+            .product-card {
+                .tags {
+                    & > span {
+                        padding-left: 12px;
+                        font-size: 18px;
+    
+                        span {
+                            font-size: 12px
+                        }
+                    }
+                }
+            }
         }
+    }
+}
+
+
+
+.buyany {
+    .dots {
+        @include dotssss;
+        margin: 5px 0 20px;
     }
 }
