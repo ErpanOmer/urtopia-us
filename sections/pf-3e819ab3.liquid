@@ -70,7 +70,7 @@
     <div class="centeral-content cards">
         <div>
             <span class="u24DemiBold_v2">Ride outdoors and <br>explore more trails</span>
-            <a class="my-button" target="_blank" href="/products/urtopia-carbon-fusion-gt">E-touring bike</a>
+            <a class="my-button" target="_blank" href="/products/urtopia-carbon-fusion-gt">E-touring bikes</a>
         </div>
         <div>
             <span class="u24DemiBold_v2">All-Terrain Adventure</span>
@@ -78,7 +78,7 @@
         </div>
         <div>
             <span class="u24DemiBold_v2">Explore the <br>urban landscape</span>
-            <a class="my-button" target="_blank" href="/products/urtopia-chord-ebike">E-city bike</a>
+            <a class="my-button" target="_blank" href="/products/urtopia-carbon-fold">E-city bikes</a>
         </div>
     </div>
     <div class="professional">
@@ -434,7 +434,7 @@
             const variant_image = target.attr('data-img')
     
             product_card.find('.product_price .u24DemiBold_v2').text(getPriceFormat(price, true)).attr('data-price', getPriceFormat(compare_at_price, true))
-            product_card.find('.tags > span:first-child').text(`Save ${getPriceFormat(compare_at_price - price, true)}`)
+            product_card.find('.tags > span:first-child').html(`${getPriceFormat(compare_at_price - price, true)} <span class="u14DemiBold_v2">OFF</span>`)
 
             if (price === compare_at_price) {
                 product_card.find('.product_price .u24DemiBold_v2').attr('data-price', '')
