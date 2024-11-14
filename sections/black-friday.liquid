@@ -8,7 +8,7 @@
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <iframe title="YouTube video player"
-                                src="https://www.youtube.com/embed/Pezebd8S--U?start=0&amp;autoplay=0&amp;loop=0&amp;mute=0&amp;controls=1&amp;enablejsapi=1"
+                                src="https://www.youtube.com/embed/Pezebd8S--U?start=0&amp;autoplay=0&amp;loop=1&amp;mute=0&amp;controls=1&amp;enablejsapi=1"
                                 height="100%" width="100%" allowfullscreen=""
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 frameborder="0">
@@ -16,7 +16,7 @@
                         </div>
                         <div class="swiper-slide">
                             <iframe title="YouTube video player"
-                                src="https://www.youtube.com/embed/Q4GQ7OUDK9A?start=0&amp;autoplay=0&amp;loop=0&amp;mute=0&amp;controls=1&amp;enablejsapi=1"
+                                src="https://www.youtube.com/embed/Q4GQ7OUDK9A?start=0&amp;autoplay=0&amp;loop=1&amp;mute=0&amp;controls=1&amp;enablejsapi=1"
                                 height="100%" width="100%" allowfullscreen=""
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 frameborder="0">
@@ -24,7 +24,7 @@
                         </div>
                         <div class="swiper-slide">
                             <iframe title="YouTube video player"
-                                src="https://www.youtube.com/embed/Adj2WsYXM8g?start=0&amp;autoplay=0&amp;loop=0&amp;mute=0&amp;controls=1&amp;enablejsapi=1"
+                                src="https://www.youtube.com/embed/Adj2WsYXM8g?start=0&amp;autoplay=0&amp;loop=1&amp;mute=0&amp;controls=1&amp;enablejsapi=1"
                                 height="100%" width="100%" allowfullscreen=""
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 frameborder="0">
@@ -32,14 +32,14 @@
                         </div>
                         <div class="swiper-slide">
                             <iframe title="YouTube video player"
-                                src="https://www.youtube.com/embed/8haN5tLyhIk?start=0&amp;autoplay=0&amp;loop=0&amp;mute=0&amp;controls=1&amp;enablejsapi=1"
+                                src="https://www.youtube.com/embed/8haN5tLyhIk?start=0&amp;autoplay=0&amp;loop=1&amp;mute=0&amp;controls=1&amp;enablejsapi=1"
                                 height="100%" width="100%" allowfullscreen=""
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 frameborder="0">
                             </iframe>
                         </div>
                     </div>
-                    <div class="swiper-pagination pcHide"></div>
+                    <!-- <div class="swiper-pagination pcHide"></div> -->
                 </div>
                 <div class="bottom mobileHide">
                     <div class="swiper-wrapper">
@@ -88,7 +88,7 @@
             <h3 class="u30DemiBold_v2">Carbon Black Friday Sale</h3>
             <p class="u17Light_v2">
                 <span>
-                    To thank Urtopians for their 4 years of support, this Black Friday, Urtopia is offering its best deals ever! Get up to $1600 OFF on all Carbon bikes.
+                    To thank Urtopians for their 4 years of support, this Black Friday, Urtopia is offering its best deals ever! Get up to {{ all_products["urtopia-carbon-fusion-gt"].compare_at_price | minus: all_products["urtopia-carbon-fusion-gt"].price | money_without_trailing_zeros }} OFF on all Carbon bikes.
                 </span>
             </p>
             {% render 'sale' %}
@@ -212,6 +212,7 @@
             %}
         </div>
     </div>
+    <div id="buyany"></div>
     <div class="buyany">
         <div class="centeral-content">
             <div class="promo-banner">
@@ -409,9 +410,6 @@
     <script>
       new Swiper(".swiperrrr .top", {
         spaceBetween: 10,
-        pagination: {
-            el: global_config.is_mobile ? null : ".swiperrrr .top .swiper-pagination",
-        },
         thumbs: global_config.is_mobile
             ? null
             : {
@@ -503,7 +501,7 @@
 
         const bikes_info = []
 
-        {% for product in collections['black-friday'].products %}
+        {% for product in collections['urtopia-black-friday-sale'].products %}
             bikes_info.push({
                 {% assign options_with_values_Style = product.options_with_values | where: "name", "Style"  %}
                 {% assign options_with_values_Color = product.options_with_values | where: "name", "Color"  %}
@@ -618,26 +616,30 @@
                             sections: cart.getSectionsToRender().map(section => section.id).join(',')
                     })], {
                     type: 'application/json',
-                }))
+                   }))
 
-                    setTimeout(() => {
-                        location.href = `/checkout`
-                    }, 100)
+                   setTimeout(() => {
+                     location.href = `/checkout`
+                   }, 300)
 
-                    // fetch('', {
+                    // fetch('/cart/add.js', {
                     //     method: 'POST',
                     //     headers: {
                     //     'Content-Type': 'application/json'
                     //     },
-                    //     body: 
+                    //     body: JSON.stringify({
+                    //         items: variants.map(id => ({ id, quantity: 1 })),
+                    //         sections: cart.getSectionsToRender().map(section => section.id).join(',')
+                    //     })
                     // })
                     //     .then(response => {
-                    //         location.href = `/checkout`
+                    //         location.href = `/discount/Black%2520Friday%2520Discount?redirect=/checkout`
                     //     })
                     //     .catch((error) => {
+                    //         $(this).removeClass('loading')
                     //         console.error('Error:', error);
                     //     }).finally(() => {
-                            
+                    //         // $(this).removeClass('loading')
                     //     })
 
                         

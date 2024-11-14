@@ -187,9 +187,16 @@ h4 {
     }
 }
 
+#buyany {
+  margin-bottom: 11vh;
+
+  @media (max-width: 767px) {
+        margin-bottom: 65px;
+  }
+}
 
 .buyany {
-    margin: 11vh 0 13vh;
+    margin: 0 0 13vh;
 
 
     div {
@@ -412,7 +419,7 @@ h4 {
 
 
     @media (max-width: 767px) {
-        margin: 60px 0;
+        margin: 0 0 60px;
 
         .centeral-content {
             padding: 0 15px;
@@ -518,7 +525,7 @@ h4 {
     margin-top: 100px;
 
     & > div {
-        background: #F4F5F7 url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24938_2x_915bcf11-cfab-4619-8839-c5bf7093f9c5.jpg?v=1731296825') center center/cover no-repeat;
+        background: #F4F5F7 url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DDD_2x_73b10954-f647-4f5e-aef6-44da6638843e.jpg?v=1731556394') center center/cover no-repeat;
         padding: 50px 0 50px 70px;
         color: #fff;
         border-radius: 10px;
@@ -540,7 +547,12 @@ h4 {
         margin: 60px auto;
 
         & > div {
+            background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24975_2x_c4da2027-e7bd-42f1-a852-6e23adf871cf.jpg?v=1731556648');
             padding: 32px 16px;
+              height: 142vw;
+              display: flex;
+              flex-direction: column;
+              justify-content: flex-end;
 
             .u30DemiBold_v2 {
                 font-size: 20px;
@@ -748,4 +760,9 @@ h4 {
             }
         }
     }
+}
+
+
+.ebike-products {
+  margin-bottom: 0;
 }

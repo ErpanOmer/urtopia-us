@@ -312,7 +312,7 @@ padding-bottom: {{ section.settings.padding_bottom }}px;
           <label class="visually-hidden" for="Quantity-{{ item.index | plus: 1 }}">
             {{ 'products.product.quantity.label' | t }}
           </label>
-          {% assign discountTitle = item.discounts.first.title %}
+          {% assign discountTitle = false %}
           {% assign sale_product_id = 7902779474168 %}
           {% assign chord_sale_product_id = 7948552077560 %}
 

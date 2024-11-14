@@ -14,38 +14,53 @@ h4 {
 
 
 .banner {
-    background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24846_2x_37169bbe-fcef-46b7-a74b-d858c2477c77.jpg?v=1729222515') center center/cover no-repeat;
+    background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DDD_2x_be673eed-b43f-4138-89fc-bea06ff2b2e4.jpg?v=1731566320') center center/cover no-repeat;
     color: #fff;
 
     .centeral-content {
-        height: 400px;
+        height: 550px;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
 
-        .u48DemiBold_v2 {
-            margin: 12px 0 7vh;
+        .u42DemiBold_v2 {
+              margin-top: -95px;
+              margin-bottom: 50px;
+              color: #ffdf48;
+            /* margin: 12px 0 7vh; */
+        }
+
+        img {
+          max-width: 500px;
+          transform: translateX(-17%);
         }
     }
 
 
     @media (max-width: 767px) {
-        background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2_2x_2cf814f3-a859-42ed-a13c-af65fb9c0959.jpg?v=1729234347');
+        background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DDD_2x_ef6327a3-210d-45aa-8151-88da13fde932.jpg?v=1731566889');
 
         .centeral-content {
             align-items: center;
             text-align: center;
             justify-content: flex-start;
+            height: 450px;
 
             .u24Medium_v2 {
                 font-size: 15px;
             }
 
-            .u48DemiBold_v2 {
+            .u42DemiBold_v2 {
                 font-size: 30px;
-                margin: 6px 0 22px;
+                  margin-top: -60px;
+                  margin-bottom: 25px;
             }
+
+          img {
+                    transform: translate(0, -30px);
+                    max-width: 230px;
+          }
         }
     }
 }
