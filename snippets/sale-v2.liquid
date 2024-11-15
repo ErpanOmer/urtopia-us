@@ -1,5 +1,19 @@
 {% unless settings.hide_sale_countdown %}
     <style>
+      .product .centeral-content .product-panel .options .Frame div[attribute=Step-Through].active, .product .centeral-content .product-panel .options .Frame div[attribute=High-Step].active {
+        color: #ffb100 !important;
+        border-color: #ffb100 !important;
+      }
+
+
+      .product .centeral-content .product-panel .options .Frame>div {
+        border-color: #e2e2e2;
+      }
+
+      .product .centeral-content .product-panel .options .Frame>div:after {
+        background-color: #ffb100;
+      }
+      
         .jdgm-preview-badge .jdgm-star {
             color: #FFDF48 !important;
         }

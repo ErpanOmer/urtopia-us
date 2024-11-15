@@ -91,25 +91,6 @@ h4 {
         align-items: flex-start;
         // grid-column-gap: 3% 7%;
 
-        .sale {
-            background-color: var(--product-color);
-
-            .u14DemiBold_v2 {
-                background: #000;
-                color: var(--product-color);
-                padding: 7.5px 24px;
-            }
-
-            div:not(.u14DemiBold_v2) {
-                color: #000;
-
-                &>div {
-                    span:last-child {
-                        opacity: 1;
-                    }
-                }
-            }
-        }
 
 
         .free {
@@ -205,17 +186,6 @@ h4 {
                     border-radius: 18px;
                     background-color: var(--product-color);
                     color: #000;
-                }
-
-                .sale {
-                    width: 100%;
-                    margin-top: 12px;
-                    margin-bottom: 0;
-
-                    .u14DemiBold_v2 {
-                        background-size: auto;
-                        padding: 7px 20px 7px 40px;
-                    }
                 }
             }
         }
