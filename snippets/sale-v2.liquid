@@ -1,0 +1,195 @@
+{% unless settings.hide_sale_countdown %}
+    <style>
+        .jdgm-preview-badge .jdgm-star {
+            color: #FFDF48 !important;
+        }
+
+        .product .centeral-content .free .u14Medium_v2 > span {
+            color: #ffb100 !important;
+        }
+
+
+        .emphasize,
+        .product .centeral-content .commonComponent .product-price {
+            color: #000;
+        }
+
+        .product .centeral-content .product-panel .free .u14Medium_v2,
+        .bottom-fixed .my-button-origin,
+        .top-fixed .centeral-content .my-button-origin,
+        .product .centeral-content .free .u17Medium_v2,
+        .product .centeral-content .product-panel .buttons .addToCartBtn,
+        .product .centeral-content .commonComponent .product-price .u14Medium_v2 {
+            background-color: #FFDF48;
+            color: #000;
+        }
+
+        .product .centeral-content .product-panel .buttons .orderTestRideBtn:hover,
+        .product .centeral-content .product-panel .buttons .addToCartBtn:hover {
+            opacity: 0.8;
+        }
+
+        .product .centeral-content .product-panel .buttons .addToCartBtn:hover {
+            background-color: #FFDF48;
+        }
+
+        
+        .product .centeral-content .product-panel .buttons .orderTestRideBtn {
+            border-color: #FFDF48;
+        }
+
+        .product .centeral-content .product-panel .buttons .orderTestRideBtn:hover {
+            border-color: #FFDF48;
+        }
+    </style>
+
+
+    <style>
+   .sale {
+     border-radius: 7px;
+                  background-color: #f9f7f6;
+                  overflow: hidden;
+                  margin-bottom: 24px;
+                  user-select: none;
+   }
+  
+      .sale  .u14DemiBold_v2 {
+         background: #000 url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/ff_2x_b7699612-c5e0-4c9d-8e98-01a7d9db864f.png?v=1731659996') left center/contain no-repeat;
+         height: 40px;
+       }
+  
+      .sale > div:not(.u14DemiBold_v2) {
+        color: #FFDF48;
+                      display: grid;
+                      grid-template-columns: repeat(4, 1fr);
+                      padding: 12px 0;
+                      border-top: 1px solid #333;
+                      background-color: #000;
+  
+      }
+  
+       .sale > div:not(.u14DemiBold_v2) > div {
+         display: flex;
+                          align-items: center;
+                          justify-content: center;
+                          text-align: center;
+                          flex-direction: column;
+       }
+  
+      .sale > div:not(.u14DemiBold_v2) > div span:last-child {
+                                  opacity: 1;
+                                  font-size: 10px;
+                                  font-weight: 500;
+                              }
+  
+      .sale > div:not(.u14DemiBold_v2) > div + div {
+         border-left: 1px solid rgba(99, 99, 99, 0.1);
+       }
+  
+      @media (max-width: 767px) {
+        .sale .u14DemiBold_v2 {
+                          font-size: 12px;
+                      }
+  
+        .sale .u36DemiBold_v2 {
+                          font-size: 30px;
+                      }
+      }
+      
+    </style>
+    <div class="sale" data-sale-end-time="{{ settings.sale_end_time }}">
+      <div class="u14DemiBold_v2"></div>
+      <div>
+        <div>
+          <span class="u36DemiBold_v2">00</span>
+          <span>Days</span>
+        </div>
+        <div>
+          <span class="u36DemiBold_v2">00</span>
+          <span>Hours</span>
+        </div>
+        <div>
+          <span class="u36DemiBold_v2">00</span>
+          <span>Minutes</span>
+        </div>
+        <div>
+          <span class="u36DemiBold_v2">00</span>
+          <span>Seconds</span>
+        </div>
+      </div>
+    </div>
+  
+    <script>
+      window.loaded_sale = false;
+  
+      (() => {
+        if (window.loaded_sale) {
+          return
+        }
+  
+        window.loaded_sale = true
+        // 当前活动索引
+        let sale_end_time_index = 0
+  
+        const timezoneoffset = (Shopify.shop === 'urtopia.myshopify.com' ? 420 : -120) * 60000;
+  
+        function getUTCTime(now = new Date()) {
+          return now.getTime() + now.getTimezoneOffset() * 60000 + timezoneoffset;
+        }
+
+        function getEndTime (i) {
+          const [y, m, d] = global_config.sale_end_times[i].sale_end_time.split('-').map(Number);
+          console.log('getEndTime', i)
+          // set name
+        //   $('.sale > .u14DemiBold_v2').text(global_config.sale_end_times[i].sale_name)
+          $('[sale-name]').text(global_config.sale_end_times[i].sale_name);
+
+          return getUTCTime(new Date(Date.UTC(y, m - 1, d, 0, 0, 0, 0) + timezoneoffset));
+        }
+
+        const difference = [1000 * 60 * 60 * 24, 1000 * 60 * 60, 1000 * 60, 1000];
+        const cache = ['00', '00', '00', '00'];
+  
+        function updateTimer(endtime) {
+          let timeDifference = endtime - getUTCTime();
+  
+          if (timeDifference <= 0) {
+            sale_end_time_index++
+            
+            if (sale_end_time_index > global_config.sale_end_times.length - 1) {
+              $('.sale').hide();
+              return console.log('Countdown Ended!');
+            }
+
+            return updateTimer(getEndTime(sale_end_time_index))
+          } else {
+            const values = [];
+  
+            for (let i = 0; i < difference.length; i++) {
+              values[i] = String(Math.floor(timeDifference / difference[i])).padStart(2, '0');
+              timeDifference = timeDifference % difference[i];
+            }
+  
+            const diff = {};
+  
+            for (let i = 0; i < values.length; i++) {
+              if (cache[i] !== values[i]) {
+                diff[i] = values[i];
+                cache[i] = values[i];
+              }
+            }
+  
+            for (const k in diff) {
+              $(`.sale > div:not(.u14DemiBold_v2) > div:nth-child(${Number(k) + 1})`)
+                .find('.u36DemiBold_v2')
+                .text(diff[k]);
+            }
+          }
+  
+          setTimeout(updateTimer, 1000, endtime);
+        }
+  
+        updateTimer(getEndTime(sale_end_time_index));
+      })();
+    </script>
+  {% endunless %}

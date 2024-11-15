@@ -26,7 +26,7 @@
           <span class="u17Medium_v2" style="font-size: 15px;">{{ product.compare_at_price | money }}</span>
           <span class="u14Medium_v2" style="font-size: 13px;">-{{ product.compare_at_price |  minus: product.price |  money_without_trailing_zeros }}</span>
         </div>
-        {% render "sale" %}
+        {% render "sale-v2" %}
       </div>
     <div class="left-swiper mobileHide">
       <div class="swiper-wrapper">
@@ -309,7 +309,7 @@
           <span class="u17Medium_v2">{{ product.compare_at_price | money }}</span>
           <span class="u14Medium_v2">-{{ product.compare_at_price |  minus: product.price |  money_without_trailing_zeros }}</span>
         </div>
-        {% render "sale" %}
+        {% render "sale-v2" %}
       </div>
       <div class="options">
         {% for option in product.options_with_values %}
@@ -1395,7 +1395,7 @@ Call
 
     let currnetScroolTop = 0
     $(document).on('scroll', throttle(e => {
-        const top1 = $('.makes').offset().top
+        const top1 = $('.world').offset().top
         const top3 = $('.product .addToCartBtn').offset().top
         const top2 = $(e.target).scrollTop()
 
