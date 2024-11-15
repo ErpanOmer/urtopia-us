@@ -17,15 +17,15 @@ const global_config = {
       sale_end_time: '2024-11-15'
     },
     {
-      sale_name: 'Thanksgiving Sale',
+      sale_name: 'Black Friday Sale',
       sale_end_time: '2024-11-18'
     },
     {
-      sale_name: 'Black Friday Blowout',
+      sale_name: 'Black Friday Sale',
       sale_end_time: '2024-11-22'
     },
     {
-      sale_name: 'Countdown to Black Friday',
+      sale_name: 'Black Friday Sale',
       sale_end_time: '2024-11-26'
     },
     {

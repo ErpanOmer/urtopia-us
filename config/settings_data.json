@@ -1,8 +1,8 @@
 {
   "current": {
-    "sale_name": "Harvest Deals",
+    "sale_name": "Black Friday Sale",
     "sale_end_time": "2024-9-13",
-    "chord_sale_name": "Harvest Deals",
+    "chord_sale_name": "Black Friday Sale",
     "hide_sale_countdown": false,
     "show_choose_different_size": false,
     "colors_solid_button_labels": "#ffffff",
@@ -129,8 +129,7 @@
         "block_order": [
           "announcement-bar-0"
         ],
-        "settings": {
-        }
+        "settings": {}
       },
       "header": {
         "type": "header",
@@ -207,31 +206,25 @@
       },
       "care": {
         "type": "care",
-        "settings": {
-        }
+        "settings": {}
       }
     },
-    "content_for_index": [
-
-    ],
+    "content_for_index": [],
     "blocks": {
       "judgeme_core_069ee759": {
         "type": "shopify:\/\/apps\/judge-me-product-reviews\/blocks\/judgeme_core\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
         "disabled": false,
-        "settings": {
-        }
+        "settings": {}
       },
       "319724205969189013": {
         "type": "shopify:\/\/apps\/hulk-form-builder\/blocks\/app-embed\/b6b8dd14-356b-4725-a4ed-77232212b3c3",
         "disabled": false,
-        "settings": {
-        }
+        "settings": {}
       },
       "pagefly-page-builder": {
         "type": "shopify:\/\/apps\/pagefly-page-builder\/blocks\/app-embed\/83e179f7-59a0-4589-8c66-c0dddf959200",
         "disabled": false,
-        "settings": {
-        }
+        "settings": {}
       }
     }
   },
@@ -352,8 +345,7 @@
           "block_order": [
             "announcement-bar-0"
           ],
-          "settings": {
-          }
+          "settings": {}
         },
         "header": {
           "type": "header",
