@@ -69,18 +69,18 @@
             </div>
             <div>
                 <img class="mobileHide lozad"
-                    data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19577_2x_92687204-484d-44df-b69c-f5bef0513ab0.png?v=1731305678&width=500"
+                    data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19577_2x_92687204-484d-44df-b69c-f5bef0513ab0.png?v=1731305678&width=800"
                     alt="" />
                 <img class="pcHide lozad"
-                    data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19594_2x_786a3c6c-0422-432e-a3ec-99befe430fe3.png?v=1731322276&width=400"
+                    data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19594_2x_786a3c6c-0422-432e-a3ec-99befe430fe3.png?v=1731322276&width=600"
                     alt="" />
                 <div>
-                    <h2 class="u48DemiBold_v2">Up to {{ all_products["urtopia-carbon-fusion-gt"].compare_at_price | minus: all_products["urtopia-carbon-fusion-gt"].price | money_without_trailing_zeros }} OFF</h2>
+                    <h2 class="u48DemiBold_v2">Up to {{ all_products["urtopia-carbon-fusion-gt"].compare_at_price | minus: all_products["urtopia-carbon-fusion-gt"].price |  plus: 20000 |  money_without_trailing_zeros }} OFF</h2>
                     <h3 class="u24DemiBold_v2">Why Choose Urtopia</h3>
                     <ul class="u17Light_v2">
                         <li>Carbon fiber, Lightweight</li>
                         <li>Super power, AWD Peak 1500W</li>
-                        <li>Super range, 240km dual battery</li>
+                        <li>Super range, 120miles dual battery</li>
                     </ul>
                 </div>
             </div>
@@ -91,7 +91,7 @@
             <h3 class="u30DemiBold_v2">Carbon Black Friday Sale</h3>
             <p class="u17Light_v2">
                 <span>
-                    To thank Urtopians for their 4 years of support, this Black Friday, Urtopia is offering its best deals ever! Get up to {{ all_products["urtopia-carbon-fusion-gt"].compare_at_price | minus: all_products["urtopia-carbon-fusion-gt"].price | money_without_trailing_zeros }} OFF on all Carbon bikes.
+                    To thank Urtopians for their 4 years of support, this Black Friday, Urtopia is offering its best deals ever! Get up to {{ all_products["urtopia-carbon-fusion-gt"].compare_at_price | minus: all_products["urtopia-carbon-fusion-gt"].price |  plus: 20000 |  money_without_trailing_zeros }} OFF on all Carbon bikes.
                 </span>
             </p>
             {% render 'sale' %}
@@ -296,23 +296,8 @@
   <div class="centeral-content">
     <h2 class="u36Medium_v2">Professional Reviews</h2>
     <div class="videos swiper-wrapper">
+
       
-    <div
-    class="swiper-slide"
-    onclick="showVideoDialog('https://www.youtube.com/embed/T-0A-EUwUfM?autoplay=1&cc_load_policy=1')"
-  >
-    <img
-      class="lozad"
-      data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24716_2x_b34c17d4-c45d-4e33-8c32-10ae473bffce.jpg?v=1727085768&width=400"
-      alt=""
-    >
-    <span class="u17Light_v2">A super light and responsive e-bike achieves faster speeds than the metro.</span>
-    <span class="flex-1"></span>
-    <div class="u17Medium_v2">
-      <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19470_2x_6a40056e-5876-49a3-8678-c9eb7f529037.png?v=1727086233" alt=""/>
-      <span>Jon Imperial</span>
-    </div>
-  </div>
   <div
         class="swiper-slide"
         onclick="showVideoDialog('https://www.youtube.com/embed/DkaGYJklmSs?autoplay=1&cc_load_policy=1')"
@@ -345,6 +330,40 @@
           <span>Area 13</span>
         </div>
       </div>
+      <div
+    class="swiper-slide"
+    onclick="showVideoDialog('https://www.youtube.com/embed/14WsEPH8TfQ?autoplay=1&cc_load_policy=1')"
+  >
+    <img
+      class="lozad"
+      data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25085_2x_218ed915-d951-4836-9315-48dbb616abc5.jpg?v=1731058283&width=400"
+      alt=""
+    >
+    <span class="u17Light_v2">The throttle boost driven by dual motors provides an unprecedented power-maxing experience.</span>
+    <span class="flex-1"></span>
+    <div class="u17Medium_v2">
+      <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/unnamed.jpg?v=1731058489" alt=""/>
+      <span>KhanFlicks</span>
+    </div>
+  </div>
+            <div
+        class="swiper-slide"
+        onclick="showVideoDialog('https://www.youtube.com/embed/OJgz3ZLb4F0?autoplay=1&cc_load_policy=1')"
+      >
+        <img
+          class="lozad"
+          data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25087_2x_fade44e6-4e58-4091-a22f-db3af7c7b2e2.jpg?v=1731058272&width=400"
+          alt=""
+        >
+        <span class="u17Light_v2">It's the lightest step-through ebike of its size, I can just easily get on it, no big jump over.</span>
+        <span class="flex-1"></span>
+        <div class="u17Medium_v2">
+          <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/channels4_profile_1.jpg?v=1731058489" alt=""/>
+          <span>Area 13</span>
+        </div>
+      </div>
+
+      
       <div
         class="swiper-slide"
         onclick="showVideoDialog('https://www.youtube.com/embed/5JI2U6EpAHA?autoplay=1&cc_load_policy=1')"
@@ -694,14 +713,14 @@
             title: `Orange Cycle`,
             span: `210 S Glassell St, Orange, CA 92866`,
             tel: '(714) 532-6838',
-            url: '/pages/test-ride?name=Don%27s%20Bicycles%20-%20Redlands'
+            url: '/pages/test-ride'
         },
         {
             image: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25022_2x_d3914ba7-6a92-4414-9b85-7d47ee6b1961.jpg?v=1731485452',
-            title: `Bike Doctor - Annapolis`,
-            span: `2138 Generals Hwy Unit A, Annapolis, MD 21401`,
-            tel: '(410) 266-7383',
-            url: '/pages/test-ride?name=Don%27s%20Bicycles%20-%20Redlands'
+            title: `Bike Doctor - Arnold`,
+            span: `953 Ritchie Hwy, Arnold, MD 21012`,
+            tel: '(410) 544-3532',
+            url: '/pages/test-ride?name=Bike%20Doctor_Arnold'
         },
         {
             image: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25027_2x_09cc4581-b094-4f0a-b6ea-62e3d82a9e6a.jpg?v=1731485458',
