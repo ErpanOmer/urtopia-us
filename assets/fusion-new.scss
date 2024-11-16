@@ -2976,13 +2976,14 @@ $product-tags-color: #FFE2D9;
 
 
     @media (max-width: 767px) {
-        padding: 8vw 0 0;
+        padding: 12vw 0 0;
 
         .centeral-content {
 
             .u36Medium_v2 {
                 font-size: 24px;
                 text-align: left;
+                  margin-bottom: 24px;
             }
 
             .videos {
@@ -2996,6 +2997,84 @@ $product-tags-color: #FFE2D9;
                         margin-bottom: 4vw;
                     }
                 }
+            }
+        }
+    }
+}
+
+
+.expert {
+    position: relative;
+  overflow: hidden;
+    aspect-ratio: 1920 / 760;
+
+    @include video;
+
+    .centeral-content {
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        height: 100%;
+        transform: translateX(50%);
+
+        .u17Light_v2 {
+            max-width: 500px;
+            margin: 5vh 0 6vh;
+        }
+
+        &>div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            padding: 6px 8px 6px 24px;
+            flex-direction: row;
+
+            &:hover {
+                opacity: 1;
+                background-color: #fff;
+            }
+
+            img {
+                max-width: 35px;
+                margin-left: 12px;
+            }
+
+        }
+    }
+
+
+    @media (max-width: 767px) {
+        display: flex;
+        flex-direction: column;
+        aspect-ratio: auto;
+        margin-top: 16vw;
+
+        video {
+            position: static;
+            height: auto;
+        }
+
+        .centeral-content {
+            color: #000;
+            justify-content: flex-end;
+            padding: 8vw 8vw 13.5vw;
+            transform: none;
+
+            .u48Medium_v2 {
+                font-size: 24px;
+            }
+
+            .u17Light_v2 {
+                margin: 26px 0;
+            }
+
+
+            &>div {
+                background-color: #000;
+                color: #fff;
             }
         }
     }
