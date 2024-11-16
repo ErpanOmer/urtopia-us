@@ -169,6 +169,49 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/what-is-california-known-for-the-golden-gate-bridge-hero.webp?v=1697020664',
     stores: [
       {
+        name: `Just Ride L.A`,
+        phone: '213 745 6783',
+        email: 'info@justridela.com',
+        timezone: "Fremont, California, USA (GMT-7)",
+        add: "1626 S Hill St Los Angeles, CA 90015",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/image_8.png?v=1731725082",
+        testrideSpot: "Los Angeles",
+        availableSizes: [
+          'Carbon 1 Pro Size S/M'
+        ],
+        businessHours: [
+           "11:00-18:00",
+           "",
+           "10:00-19:00",
+           "10:00-19:00",
+           "10:00-19:00",
+           "10:00-19:00",
+           "10:00-19:00",
+        ],
+      },
+      {
+        name: `The Bike Palace`,
+        phone: '(310) 832-1966',
+        email: 'info@adventureebikecompany.com',
+        timezone: "Fremont, California, USA (GMT-7)",
+        add: "1600B South Pacific San Pedro, CA 90731",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/image_8.png?v=1731725082",
+        testrideSpot: "San Pedro",
+        noBook: true,
+        availableSizes: [
+          'Carbon 1 Pro Size S/M/L'
+        ],
+        businessHours: [
+           "",
+           "",
+           "10:00-18:00",
+           "10:00-18:00",
+           "10:00-18:00",
+           "10:00-18:00",
+           "10:00-18:00",
+        ],
+      },
+      {
         name: `Adventure E-bike Company`,
         phone: '805-852-5040',
         email: 'info@adventureebikecompany.com',
@@ -452,7 +495,7 @@ const testRides = [
         email: '',
         timezone: "Fremont, California, USA (GMT-7)",
         add: "2815 Newport Blvd Newport Beach, CA 92663",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_8.png?v=1722853161",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/image_8.png?v=1731725082",
         testrideSpot: "Newport Beach",
         noBook: true,
         availableSizes: [
@@ -560,7 +603,7 @@ const testRides = [
         email: 'AmericanCanyonBikeShop@gmail.com',
         timezone: "Fremont, California, USA (GMT-7)",
         add: "115 Klamath Ct, American Canyon, CA 94503",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Bicycle_Garage_Fremont_ca_fremont.jpg?v=1686878451",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/image_9.png?v=1731725225",
         testrideSpot: "California",
         noBook: true,
         availableSizes: [
@@ -604,7 +647,7 @@ const testRides = [
         email: 'admin@562ebikes.com',
         timezone: "Fremont, California, USA (GMT-7)",
         add: "9345 Alondra Boulevard Bellflower, CA 90706",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Bicycle_Garage_Fremont_ca_fremont.jpg?v=1686878451",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/image_8.png?v=1731725082",
         testrideSpot: "California",
         availableSizes: [
           'Carbon 1 Pro Size M'
@@ -994,7 +1037,7 @@ const testRides = [
         email: "Bicyclejulio@gmail.com",
         timezone: "Long Island City, Queens, NY, USA (GMT-4)",
         add: "45 S. Bedford Rd, Chappaqua, NY 10514",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Spokesman_Cycles_LIC_ny.jpg?v=1665374977",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/image_8.png?v=1731725082",
         testrideSpot: "Chappaqua",
         availableSizes: [
           'Carbon 1 Pro Size M/L',
@@ -1653,6 +1696,28 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/shutterstock_469708088.jpg?v=1697188978',
     stores: [
       {
+        name: "Eventure Tour Co",
+        phone: "8505986380",
+        email: "emily@eventure30a.com",
+        timezone: "New Port Richey, FL, USA (GMT-4)",
+        add: "174 Watercolor Way Suite 106",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/image_8.png?v=1731725082",
+        testrideSpot: "Santa Rosa Beach",
+        availableSizes: [
+          'Carbon 1 Pro Size S/M/L',
+          'Fusion GT'
+        ],
+        businessHours: [
+          "",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+        ],
+      },
+      {
         name: "Bedir Bikes",
         phone: "+1 727-819-0627",
         email: "bediruna@gmail.com",
@@ -1900,7 +1965,7 @@ const testRides = [
         email: "info@cadencecyclery.com",
         timezone: "Dallas, TX, USA (GMT-5)",
         add: "119 Tennessee St, McKinney, TX 75069",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Bay_Area_Cycling_tx.jpg?v=1686878451",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/image_8.png?v=1731725082",
         testrideSpot: "McKinney",
         availableSizes: [
           'Carbon 1 Pro Size S/M/L',
@@ -2039,6 +2104,48 @@ const testRides = [
     city: 'Iowa',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Ebike_Iowa.png?v=1687327236',
     stores: [
+      {
+        name: "Ichi Bike - HIGHLAND PARK",
+        phone: "515.630.3625",
+        email: "shop@ichibike.com",
+        timezone: "Iowa, USA (GMT-5)",
+        add: "3705 6TH AVE, DES MOINES, IA 50313",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/image_8.png?v=1731725082",
+        testrideSpot: "Des Moines",
+        availableSizes: [
+          'Carbon 1 Pro Size S/M/L',
+        ],
+        businessHours: [
+          "",
+          "",
+          "10:00-16:00",
+          "10:00-16:00",
+          "10:00-16:00",
+          "10:00-16:00",
+          "09:00-16:00",
+        ],
+      },
+      {
+        name: "Ichi Bike - EAST VILLAGE",
+        phone: "515.274.0397",
+        email: "shop@ichibike.com",
+        timezone: "Iowa, USA (GMT-5)",
+        add: "311 EAST WALNUT STREET, DES MOINES, IA 50312",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/image_8.png?v=1731725082",
+        testrideSpot: "Des Moines",
+        availableSizes: [
+          'Carbon 1 Pro Size S/M/L',
+        ],
+        businessHours: [
+          "12:00-15:00",
+          "",
+          "11:00-18:00",
+          "11:00-18:00",
+          "11:00-18:00",
+          "11:00-18:00",
+          "11:00-18:00",
+        ],
+      },
       {
         name: "Ebike Iowa",
         phone: "(515) 400-3970",
@@ -2395,6 +2502,27 @@ const testRides = [
     city: 'Virginia',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Strictly_Ebikes.jpg?v=1709208572',
     stores: [
+      {
+        name: "E-Bike Alley Norfolk",
+        phone: "757-320-2400",
+        email: "Amy@e-bikealley.com",
+        timezone: "Virginia, USA (GMT-7)",
+        add: "223 E City Hall Ave, Norfolk, VA 23510",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/image_8.png?v=1731725082",
+        testrideSpot: "Norfolk",
+        availableSizes: [
+          'Carbon 1 Pro Size S/M/L'
+        ],
+        businessHours: [
+          "10:00-18:00",
+          "",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+        ],
+      },
       {
         name: "E-Bike Alley",
         phone: "757-645-4232",
