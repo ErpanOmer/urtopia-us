@@ -1477,47 +1477,6 @@ h4 {
 
 
 
-.makes {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background-color: $backround-color;
-    padding: 10vh 0 14vh;
-
-    .u36Medium_v2 {
-        margin-bottom: 6vh;
-    }
-
-    img {
-        max-width: 950px;
-    }
-
-    img+img {
-        margin-top: 10vh;
-    }
-
-    @media (max-width: 767px) {
-        padding: 13.5vw 0 16vw;
-
-        .centeral-content {
-            padding: 0 4vw;
-
-            .u36Medium_v2 {
-                font-size: 22px;
-                margin-bottom: 10vw;
-            }
-
-            img+img {
-                margin-top: 0;
-            }
-        }
-    }
-}
-
-
-
 .sleek {
     display: flex;
     position: relative;

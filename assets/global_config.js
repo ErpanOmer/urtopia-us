@@ -913,6 +913,29 @@ const global_config = {
               ]
             },
           ]
+        },
+        compare: {
+          parameters: [
+            ['', 'Fusion GT E-Bike', 'Other E-Bikes'],
+            ['Frame Material', 'Carbon Fiber', 'Aluminum Alloy'],
+            ['Motor', '1500W', '500W rear-hub motor'],
+            ['Battery Option', '900Wh Dual-battery', '672Wh battery'],
+            ['Charge Time', '3.5 Hrs', '5 Hrs'],
+            ['Max Range', '120 Miles', '60 Miles'],
+            ['Throttle', 'Yes, 20mph', 'Yes, 20mph'],
+            ['Weight', '60 lbs', '77 lbs'],
+            ['Anti-theft', 'GPS', 'X'],
+            ['Luggage Rack', 'MIK, max. 60 lbs', 'Regular'],
+            ['Max Load', '330 lbs', '300 lbs'],
+          ],
+          style: {
+            image_0: '//newurtopia.com/cdn/shop/files/19566.png?v=1729236036&width=500',
+            image_1: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/cccc_2x_366a8576-c889-4210-8bbf-05fa1c327bf8.png?v=1731912593',
+            background: 'linear-gradient(180deg, #6b97be, #151d38)',
+            title: '<h2 class="u36Medium_v2 mobileHide">What makes Carbon Fusion GT <br class="pcHide">the best e-SUV?</h2>',
+            image_pc: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24890_2x_5ee70e3a-6ae6-4af8-b6f8-de3a0d065224.png?v=1729308382',
+            image_mb: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24891_2x_2fdadff8-8384-4c6b-b678-4e604f8ff504.png?v=1729318520'
+          }
         }
       }
 }
