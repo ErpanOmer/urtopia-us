@@ -307,8 +307,8 @@
         <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DDD_2x_0c519fcb-5bfd-4633-b2d9-dbec2ee202d2.jpg?v=1731658370&width=500" alt="">
         <div class="subscribe">
             <span style="color: var(--sale-order-page-text-color);margin-bottom: 2%;" class="u17DemiBold_v2">{{ settings.sale_name }}</span>
-            <div class="u60DemiBold_v2">{{ all_products["urtopia-carbon-fusion-gt"].compare_at_price |  minus: all_products["urtopia-carbon-fusion-gt"].price |  plus: 20000 |  money_without_trailing_zeros }}<span class="u30DemiBold_v2">OFF</span></div>
-            <div class="u17Light_v2">Urtopia carbon e-bikes now up to {{ all_products["urtopia-carbon-fusion-gt"].compare_at_price |  minus: all_products["urtopia-carbon-fusion-gt"].price |  plus: 20000 |  money_without_trailing_zeros }} off! Sign up to get exclusive discount!</div>
+            <div class="u60DemiBold_v2">{{ all_products["urtopia-carbon-fusion-gt"].compare_at_price |  minus: all_products["urtopia-carbon-fusion-gt"].price | money_without_trailing_zeros }}<span class="u30DemiBold_v2">OFF</span></div>
+            <div class="u17Light_v2">Urtopia carbon e-bikes now up to {{ all_products["urtopia-carbon-fusion-gt"].compare_at_price |  minus: all_products["urtopia-carbon-fusion-gt"].price | money_without_trailing_zeros }} off! Sign up to get exclusive discount!</div>
             <form class="new-contact" action="/contact#ContactFooter" target="_blank" method="post" accept-charset="UTF-8">
                 <div class="email">
                     <input type="hidden" name="form_type" value="customer">
