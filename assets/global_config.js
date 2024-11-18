@@ -914,7 +914,7 @@ const global_config = {
             },
           ]
         },
-        compare: {
+      compare: {
           parameters: [
             ['', 'Fusion GT E-Bike', 'Other E-Bikes'],
             ['Frame Material', 'Carbon Fiber', 'Aluminum Alloy'],
