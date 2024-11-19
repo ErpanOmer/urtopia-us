@@ -537,24 +537,11 @@
         </form>
         {%- if cart != empty -%}
 
-        {% if has_carbon and has_chord %}
-            {% assign collection_value = 'carbon-in-cart' %}
-        {% elsif has_carbon %}
-            {% assign collection_value = 'carbon-in-cart' %}
-        {% elsif has_chord %}
-            {% assign collection_value = 'chord-in-cart' %}
-        {% else %}
-            {% assign collection_value = 'carbon-in-cart' %}
-        {% endif %}
-
-        <!-- {{has_carbon}} -->
-        <!-- {{has_chord}} -->
-
-        <div class="accessories" collection_value="{{collection_value}}">
+        <div class="accessories" collection_value="carbon-in-cart">
           <div class="u14DemiBold_v2">Recommended for you</div>
           <div class="items mb12">
 
-                    {% for prod in collections[collection_value].products %}
+                    {% for prod in collections['carbon-in-cart'].products %}
                         {% if prod.available %}
                             {% assign variant = prod.variants | first %}
                             <div class="item" variant-id="{{ variant.id }}">
