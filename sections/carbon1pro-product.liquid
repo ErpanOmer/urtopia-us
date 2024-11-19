@@ -1378,8 +1378,14 @@ Call
     leftSwiper.removeAllSlides()
 
     for (let i = 0; i < swiper_arr.length; i++) {
-      rightSwiper.appendSlide(`<div class="swiper-slide"><img alt="Urtopia Carbon 1 Pro" src="${swiper_arr[i]}"/></div>`)
       leftSwiper.appendSlide( `<img class="swiper-slide" alt="Urtopia Carbon 1 Pro" src="${swiper_arr[i]}"/>`)
+
+
+      if (i === 0) {
+        rightSwiper.appendSlide(`<div class="swiper-slide" style="position: relative;"><img style="position: absolute;top: 0;left: 0;max-width: 17.5%;" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241119-194025.png?v=1732016458"/><img alt="Urtopia Fusion" src="${swiper_arr[i]}"/></div>`)
+      } else {
+        rightSwiper.appendSlide(`<div class="swiper-slide"><img alt="Urtopia Carbon 1 Pro" src="${swiper_arr[i]}"/></div>`)
+      }
     }
   });
 
