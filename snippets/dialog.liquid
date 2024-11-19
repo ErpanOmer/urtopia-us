@@ -149,6 +149,50 @@
       margin: 12% 0 0;
       font-size: 15px;
     }
+
+    .subscribe-container .subscribe .box {
+        display: flex;
+        align-items: center;
+        background-color: #F4EFED;
+        border-radius: 8px;
+    }
+
+    .subscribe-container .subscribe .box img {
+        max-width: 75px;
+        margin: 0;
+    }
+
+    .subscribe-container .subscribe .box > div {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        text-align: left;
+        padding: 20px 0;
+        margin-left: 20px;
+    }
+
+    .subscribe-container .subscribe .box > div .u17Medium_v2 {
+        margin: 0;
+    }
+
+
+    .subscribe-container .subscribe .u17Light_v2 {
+        margin: 0;
+    }
+
+    .subscribe-container .subscribe .new-contact {
+        margin: 30px 0 60px;
+    }
+
+    .subscribe-container .subscribe .u60DemiBold_v2 {
+        margin: 30px 0 10px;
+    }
+
+
+  .subscribe-container .subscribe .box > div .u17DemiBold_v2{
+    margin-bottom: 8px;
+  }
     
     @media (max-width: 767px) {
         .subscribe-container {
@@ -160,7 +204,7 @@
         }
     
         .subscribe-container .subscribe {
-            padding: 15% 6vw;
+            padding: 7.5% 6vw;
         }
     
         .subscribe-container .subscribe img {
@@ -297,6 +341,29 @@
         margin: 6px 0 24px;
         font-size: 14px;
     }
+
+
+    .subscribe-container .subscribe .new-contact {
+        margin: 20px 0 30px;
+    }
+
+    .subscribe-container .subscribe .u60DemiBold_v2 {
+        margin: 10px 0 10px;
+        font-size: 42px;
+    }
+
+    .subscribe-container .subscribe .box img {
+        max-width: 45px;
+    }
+
+    .subscribe-container .subscribe .box > div {
+        margin-left: 10px;
+        padding: 10px 0;
+    }
+
+  .subscribe-container .subscribe .box > div .u17DemiBold_v2{
+    margin-bottom: 4px;
+  }
 }
 
 </style>
@@ -306,7 +373,7 @@
         <img class="mobileHide" style="height: 100%;max-width: 100%;object-fit: cover;" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DDD_2x_c86db9cd-acab-4448-bd91-d590fdcf9421.jpg?v=1731654957&width=700" alt="">
         <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DDD_2x_0c519fcb-5bfd-4633-b2d9-dbec2ee202d2.jpg?v=1731658370&width=500" alt="">
         <div class="subscribe">
-            <span style="color: var(--sale-order-page-text-color);margin-bottom: 2%;" class="u17DemiBold_v2">{{ settings.sale_name }}</span>
+            <span style="color: var(--sale-order-page-text-color);margin-bottom: 2%;" class="u20DemiBold_v2">{{ settings.sale_name }}</span>
             <div class="u60DemiBold_v2">{{ all_products["urtopia-carbon-fusion-gt"].compare_at_price |  minus: all_products["urtopia-carbon-fusion-gt"].price | money_without_trailing_zeros }}<span class="u30DemiBold_v2">OFF</span></div>
             <div class="u17Light_v2">Urtopia carbon e-bikes now up to {{ all_products["urtopia-carbon-fusion-gt"].compare_at_price |  minus: all_products["urtopia-carbon-fusion-gt"].price | money_without_trailing_zeros }} off! Sign up to get exclusive discount!</div>
             <form class="new-contact" action="/contact#ContactFooter" target="_blank" method="post" accept-charset="UTF-8">
@@ -318,6 +385,13 @@
                     <button class="my-button my-button-black" type="submit">Subscribe</button>
                 </div>
             </form>
+            <div class="box">
+                <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Gift_cards_2x_acb2903d-5cb3-4987-a6c3-4a8559a9b1fb.png?v=1731982449" alt="">
+                <div>
+                    <span class="u17DemiBold_v2">EXTRA Deals</span>
+                    <span class="u17Medium_v2">The <span style="color:#FD4B17;">First 50 Orders Today</span> Share <span style="color:#FD4B17;">$5,000</span> in Gift Card!</span>
+                </div>
+            </div>
         </div>
         <span class="close">×</span>
     </div>
