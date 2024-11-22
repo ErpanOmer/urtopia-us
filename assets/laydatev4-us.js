@@ -83,6 +83,20 @@ const bike_sizes = [
     size: 'S',
     img: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/carbon_1_pro_BL_1.png?v=1703570388&width=430'
   },
+  {
+    id: 11,
+    name: 'Fusion GT',
+    fit: ` Fit for 5’3’’~6’3’’`,
+    size: 'One Size',
+    img: 'https://newurtopia.com/cdn/shop/files/19566.png?v=1729236036&width=500'
+  },
+  {
+    id: 12,
+    name: 'Carbon Fold 1',
+    fit: ` Fit for 5’1’’~6’1’’`,
+    size: 'One Size',
+    img: 'https://newurtopia.com/cdn/shop/files/20241022-144851.png?v=1729579789&width=500'
+  },
 ]
 
 function splitTimeFormat(item = '') {
@@ -3379,16 +3393,17 @@ function splitTimeFormat(item = '') {
 
           }).filter(Boolean))
 
-         } else {
-            // 如果是chrod
-            if (size.includes('Chord')) {
+         } else if (size.includes('Fusion')) {
+             choose.push(bike_sizes.find(b => b.name === 'Fusion GT'))
+         } else if (size.includes('Fold')) {
+             choose.push(bike_sizes.find(b => b.name === 'Carbon Fold 1'))
+         } else if (size.includes('Chord')) {
               if (size.includes('X')) {
                 choose.push(bike_sizes.find(b => b.name === 'Chord X'))
               } else {
                 choose.push(bike_sizes.find(b => b.name === 'Chord'))
               }
-            } else {
-              if (size.includes('Pro')) {
+            } else if (size.includes('Pro')) {
                 choose = choose.concat(s.map(i => {
                   const find = bike_sizes.find(b => b.name === 'Carbon 1 Pro' && b.size === i)
       
@@ -3404,8 +3419,8 @@ function splitTimeFormat(item = '') {
           
                     }).filter(Boolean))
               }
-            }
-         }
+            
+         
       }
 
       lay(".select-tip").html("Choose test ride model");

@@ -518,7 +518,7 @@ const global_config = {
             'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18858.jpg?v=1722064933',
            ],
           'Blu': [
-            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240924-191502.jpg?v=1727176530',
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241120-101942.png?v=1732069202&width=1000',
             'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_24398.jpg?v=1722064933&width=800',
             'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240308-untitled-6217.jpg?v=1722064934&width=800',
             'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Urtopia-20.jpg?v=1722064933&width=800',

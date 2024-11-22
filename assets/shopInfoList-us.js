@@ -169,6 +169,27 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/what-is-california-known-for-the-golden-gate-bridge-hero.webp?v=1697020664',
     stores: [
       {
+        name: `EBike A-Go-Go`,
+        phone: '+17608778250',
+        email: 'info@e-bikeagogo.com',
+        timezone: "Fremont, California, USA (GMT-7)",
+        add: "211 N Main Ave, Fallbrook, CA 92028",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/image_8.png?v=1731725082",
+        testrideSpot: "Los Angeles",
+        availableSizes: [
+          'Fusion GT'
+        ],
+        businessHours: [
+           "11:00-17:00",
+           "10:00-17:00",
+           "10:00-17:00",
+           "10:00-17:00",
+           "10:00-17:00",
+           "10:00-17:00",
+           "10:00-17:00",
+        ],
+      },
+      {
         name: `Just Ride L.A`,
         phone: '213 745 6783',
         email: 'info@justridela.com',
@@ -607,7 +628,8 @@ const testRides = [
         testrideSpot: "California",
         noBook: true,
         availableSizes: [
-          'Carbon 1 Pro Size M'
+          'Carbon 1 Pro Size M',
+          'Fusion GT'
         ],
         businessHours: [
            "10:00-16:00",
@@ -702,27 +724,6 @@ const testRides = [
           "09:00-17:00",
           "",
           "09:00-14:00",
-        ],
-      },
-      {
-        name: 'The Electric Bike Shop',
-        phone: '(916) 594-7945',
-        email: 'mike@theelectricbikeshop.org',
-        timezone: "Newport Beach, CA, USA (GMT-8)",
-        add: "5704 Broadway, Sacramento, CA 95820",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_12_86b280fc-a42f-4ee7-8716-1576548b4fa3.png?v=1730535020",
-        testrideSpot: "Sacramento",
-        availableSizes: [
-          'Carbon 1 Pro Size M',
-        ],
-        businessHours: [
-          "",
-          "10:00-17:00",
-          "10:00-17:00",
-          "10:00-17:00",
-          "10:00-17:00",
-          "10:00-17:00",
-          "10:00-18:00",
         ],
       },
       {
@@ -1181,6 +1182,8 @@ const testRides = [
         testrideSpot: "Sherwood",
         availableSizes: [
           'Carbon 1 Pro Size S/M',
+          'Fusion GT',
+          'Carbon Fold 1'
         ],
         businessHours: [
           "",
@@ -1317,11 +1320,11 @@ const testRides = [
       },
       {
         name: `Bell's Bike Shop`,
-        phone: "215-857-5793",
-        email: "steve@bellsbikeshop.com",
+        phone: "215-543-6000",
+        email: "hello@bellsbikeshop.com",
         timezone: "Pennsylvania, USA (GMT-4)",
         add: "1320 E Passyunk Ave, Philadelphia, PA 19147",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Bell_s_Bike_Shop.jpg?v=1686878451",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_22.png?v=1732178451",
         testrideSpot: "Philadelphia",
         availableSizes: [
           'Carbon 1 Pro Size M/L',
@@ -1329,11 +1332,11 @@ const testRides = [
         businessHours: [
           "",
           "",
-          "10:00-19:00",
-          "10:00-19:00",
-          "10:00-19:00",
+          "10:00-21:00",
+          "10:00-21:00",
+          "10:00-21:00",
           "10:00-18:00",
-          "10:00-18:00",
+          "10:00-17:00",
         ],
       },
       {
@@ -1634,6 +1637,8 @@ const testRides = [
         testRideSize: "M/L",
         availableSizes: [
           'Carbon 1 Pro Size S',
+          'Fusion GT',
+          'Carbon Fold 1'
         ],
         businessHours: [
           "",
@@ -1802,27 +1807,6 @@ const testRides = [
         ],
       },
       {
-        name: "Espresso Bicycle Repairs",
-        phone: "941-893-5209",
-        email: "espressobicyclerepairs@gmail.com",
-        timezone: "New Port Richey, FL, USA (GMT-4)",
-        add: "7632 Lockwood Ridge Rd, Sarasota, FL 34243",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230731-114143.jpg?v=1690775188",
-        testrideSpot: "Florida",
-        availableSizes: [
-          'Carbon 1s Size M',
-        ],
-        businessHours: [
-          "10:00-17:00",
-          "10:00-18:00",
-          "10:00-18:00",
-          "10:00-18:00",
-          "10:00-18:00",
-          "10:00-18:00",
-          "10:00-17:00",
-        ],
-      },
-      {
         name: "E-Station Sarasota",
         phone: "941-705-2528",
         email: "ty@estationsrq.com",
@@ -1947,7 +1931,8 @@ const testRides = [
         testrideSpot: "Temple",
         availableSizes: [
           'Carbon 1 Pro Size S/M/L',
-          'Fusion GT'
+          'Fusion GT',
+          'Carbon Fold 1'
         ],
         businessHours: [
           "",
@@ -2654,7 +2639,7 @@ const testRides = [
         phone: "(602) 856-4566",
         email: "info@urbanelectrica.com",
         timezone: "Arizona, USA (GMT-7)",
-        add: "1425 E University Dr suite B104, Tempe, AZ 85288",
+        add: "1425 E University Dr Suite B104, Tempe, AZ 85288",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Urban_Electrica.jpg?v=1710818582",
         testrideSpot: "Arizona",
         availableSizes: [
@@ -2799,7 +2784,7 @@ for (const city of testRides) {
       for (const sizes of store.availableSizes) {
         const [bike, series, ttt] = sizes.split(' ')
 
-        if (ttt === "Pro") {
+        if (ttt === "Pro" || series === 'Fold') {
           bike_options.add(`${bike}${series ? ' ' + series : ''} ${ttt}`) 
         } else {
           bike_options.add(`${bike}${series ? ' ' + series : ''}`)

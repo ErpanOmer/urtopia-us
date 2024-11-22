@@ -2960,6 +2960,7 @@ $product-tags-color: #FFE2D9;
     position: relative;
   overflow: hidden;
     aspect-ratio: 1920 / 760;
+      transform: translateY(1px);
 
     @include video;
 
