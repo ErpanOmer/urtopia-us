@@ -242,36 +242,36 @@
         function refreshOrders (hours) {
           if (hours < 3) {
              $('.sale .bottom > div > div > div').css('width', '95%')
-             $('.sale .bottom .count').text('48')
+             $('.sale .bottom .count').text('28')
              return
           }
 
           if (hours < 6) {
              $('.sale .bottom > div > div > div').css('width', '90%')
-             $('.sale .bottom .count').text('45')
+             $('.sale .bottom .count').text('25')
              return
           }
 
           if (hours < 9) {
              $('.sale .bottom > div > div > div').css('width', '80%')
-             $('.sale .bottom .count').text('41')
+             $('.sale .bottom .count').text('22')
              return
           }
 
           if (hours < 12) {
              $('.sale .bottom > div > div > div').css('width', '70%')
-             $('.sale .bottom .count').text('37')
+             $('.sale .bottom .count').text('19')
              return
           }
 
           if (hours < 15) {
              $('.sale .bottom > div > div > div').css('width', '60%')
-             $('.sale .bottom .count').text('31')
+             $('.sale .bottom .count').text('16')
              return
           }
 
           $('.sale .bottom > div > div > div').css('width', '50%')
-          $('.sale .bottom .count').text('26')
+          $('.sale .bottom .count').text('14')
         }
   
         updateTimer(getEndTime(sale_end_time_index));
