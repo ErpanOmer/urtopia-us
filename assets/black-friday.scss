@@ -188,11 +188,11 @@ h4 {
 }
 
 #buyany {
-  margin-bottom: 11vh;
+    margin-bottom: 11vh;
 
-  @media (max-width: 767px) {
+    @media (max-width: 767px) {
         margin-bottom: 65px;
-  }
+    }
 }
 
 .buyany {
@@ -381,7 +381,7 @@ h4 {
                         margin-bottom: 24px;
                     }
 
-                    
+
 
                     .my-button {
                         position: relative;
@@ -524,7 +524,7 @@ h4 {
 .timeeeeeeeeeee {
     margin-top: 100px;
 
-    & > div {
+    &>div {
         background: #F4F5F7 url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DDD_2x_73b10954-f647-4f5e-aef6-44da6638843e.jpg?v=1731556394') center center/cover no-repeat;
         padding: 50px 0 50px 70px;
         color: #fff;
@@ -546,13 +546,13 @@ h4 {
         padding: 0 15px;
         margin: 60px auto;
 
-        & > div {
+        &>div {
             background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24975_2x_c4da2027-e7bd-42f1-a852-6e23adf871cf.jpg?v=1731556648');
             padding: 32px 16px;
-              height: 142vw;
-              display: flex;
-              flex-direction: column;
-              justify-content: flex-end;
+            height: 142vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
 
             .u30DemiBold_v2 {
                 font-size: 20px;
@@ -577,8 +577,8 @@ h4 {
         overflow: hidden;
 
         .u36Medium_v2 {
-                margin-bottom: 5.5vh;
-                text-align: center;
+            margin-bottom: 5.5vh;
+            text-align: center;
         }
 
         .videos {
@@ -623,7 +623,7 @@ h4 {
             width: 100%;
             background-color: #DEDEDE;
             z-index: unset;
-            
+
             .swiper-scrollbar-drag {
                 background-color: $color;
             }
@@ -646,7 +646,7 @@ h4 {
                 height: 35px;
                 margin-left: 15px;
                 z-index: unset;
-                
+
 
                 &::after {
                     font-size: 18px;
@@ -692,14 +692,14 @@ h4 {
 .findbikeshop {
     margin: 15vh auto 6vh;
 
-    & > div {
+    &>div {
         background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25017_2x_fe3a5b63-aa22-4093-9e56-9f3120d86873.jpg?v=1731479648&width=1280') center center/cover no-repeat;
         color: #fff;
         padding: 100px 0 100px calc(50% + 70px);
         border-radius: 10px;
         overflow: hidden;
 
-        
+
         .u30DemiBold_v2 {
             color: $color;
         }
@@ -715,7 +715,7 @@ h4 {
         margin: 60px auto 40px;
         padding: 0 15px;
 
-        & > div {
+        &>div {
             background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25013_2x_d61ce1ec-b2d5-4eb9-ab13-beab0401abad.jpg?v=1731494043');
             padding: 0 15px 40px;
             height: 166vw;
@@ -764,5 +764,113 @@ h4 {
 
 
 .ebike-products {
-  margin-bottom: 0;
+    margin-bottom: 0;
+
+    & > .u17Light_v2 {
+        margin: 10px 0 50px;
+    }
+
+}
+
+
+.klarna {
+    margin-bottom: 13vh;
+    .centeral-content {
+        &>div {
+            background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25129_2x_3dbbf339-1a32-42fe-a8a1-94355323e2db.jpg?v=1732696477') center left/cover no-repeat;
+            color: #fff;
+            padding: 40px 0 30px 21%;
+            border-radius: 15px;
+            overflow: hidden;
+            
+
+            .u36DemiBold_v2 {
+                margin: 10px 0;
+            }
+        }
+    }
+
+
+    @media (max-width: 767px) {
+        margin-bottom: 60px;
+
+        .centeral-content {
+            padding: 0 15px;
+
+            & > div {
+                background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25135_2x_5b047beb-c423-4b42-b58e-163571e01324.jpg?v=1732697312');
+                padding: 0 15px 10vw;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-end;
+                height: 75vw;
+
+                .u24Medium_v2 {
+                    font-size: 18px;
+                }
+
+                .u36DemiBold_v2 {
+                    font-size: 20px;
+                    margin: 10px 0 20px;
+                }
+
+                .u20Light_v2 {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+}
+
+.win {
+    margin: 12.5vh auto;
+
+    & > div {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        background-color: #F7F8FA;
+        border-radius: 15px;
+        overflow: hidden;
+        padding: 5%;
+        grid-column-gap: 15%;
+        align-items: center;
+
+        & > div {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+
+            .u17Light_v2 {
+                margin: 30px 0 50px;
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+        margin: 50px auto;
+        padding: 0 15px;
+
+        & > div {
+            grid-template-columns: 1fr;
+            padding: 8vw 4vw;
+            grid-row-gap: 8vw;
+
+            & > div {
+                order: 1;
+
+                .u30DemiBold_v2 {
+                    font-size: 20px;
+                }
+
+
+                .u17Light_v2 {
+                    font-size: 15px;
+                    margin: 20px 0 40px;
+                }
+            }
+        }
+
+    }
 }

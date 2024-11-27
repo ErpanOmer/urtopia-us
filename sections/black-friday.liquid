@@ -291,6 +291,15 @@
         </div>
     </div>
 
+    <div class="klarna">
+        <div class="centeral-content">
+            <div>
+                <h3 class="u24Medium_v2" style="color: #FFB3C7;">Ride Now, Pay Later</h3>
+            <h2 class="u36DemiBold_v2">Black Friday Limited-Time <span style="color: #FFB3C7;">0% APR</span> for 24 Months</h2>
+            <h3 class="u20Light_v2">A $1,599 purchase costs $66.62/month for 24 months at 0% APR.</h3>
+            </div>
+        </div>
+    </div>
 
     <div class="professional" id="professional">
   <div class="centeral-content">
@@ -432,6 +441,8 @@
     </div>
 </div>
 
+
+
 <div class="professional test-ride">
     <div class="centeral-content">
       <div class="videos swiper-wrapper"></div>
@@ -442,6 +453,60 @@
       </div>
     </div>
   </div>
+
+  
+<div class="centeral-content ebike-products">
+    <h3 class="u36DemiBold_v2 mobileHide">Clearance Outlet Sale</h3>
+    <p class="u17Light_v2 mobileHide">
+        <span>Last chance for Black Friday deals—final batch, no restocks!</span>
+    </p>
+    <div class="product-grid">
+        {% assign product = all_products["urtopia-chord-ebike"] %}
+        {% assign product_variants = product.variants | where: "option1", "High-Step" | where: "option2", "Black" | where: "available" %}
+        {% assign product_uhmaya = "Torque<br>Sensor, GPS<br>Tracking, 75<br>Miles" | split: ", " %}
+        {% render 'product-card-2',
+            product_variants: product_variants,
+            product_name: 'Outlet Chord',
+            product_description: 'All terrain riding',
+            product_url: product.url,
+            product_uhmaya: product_uhmaya
+        %}
+        {% assign product = all_products["urtopia-chord-ebike"] %}
+        {% assign product_variants = product.variants | where: "option1", "Step-Through" | where: "option2", "White" | where: "available" %}
+        {% assign product_uhmaya = "Torque<br>Sensor, GPS<br>Tracking, 75<br>Miles" | split: ", " %}
+        {% render 'product-card-2',
+            product_variants: product_variants,
+            product_name: 'Outlet Chord X',
+            product_description: 'All terrain riding',
+            product_url: product.url,
+            product_uhmaya: product_uhmaya
+        %}
+        {% assign product = all_products["urtopia-chord-ebike"] %}
+        {% assign product_variants = product.variants | where: "option1", "Step-Through" | where: "option2", "Gray" | where: "available" %}
+        {% assign product_uhmaya = "Torque<br>Sensor, GPS<br>Tracking, 75<br>Miles" | split: ", " %}
+        {% render 'product-card-2',
+            product_variants: product_variants,
+            product_name: 'Outlet Chord X',
+            product_description: 'All terrain riding',
+            product_url: product.url,
+            product_uhmaya: product_uhmaya
+        %}
+    </div>
+</div>
+
+
+<div class="centeral-content win">
+    <div>
+        <div>
+            <h3 class="u30DemiBold_v2">Win a Urtopia E-Bike on CBS’s Show Let’s Make a Deal</h3>
+            <span class="u17Light_v2">
+                Lights, cameras, action! Urtopia e-bikes hit CBS’s Let’s Make a Deal as the ultimate grand prize for lucky contestants. Featured by over 40 networks like ABC and NBC, CBS now joins in celebrating Urtopia. Why did this iconic show choose Urtopia? Let’s find out!
+            </span>
+            <a target="_blank" class="my-button my-button-origin" href="/blogs/blog/win-a-urtopia-e-bike-on-cbss-hit-show-let-s-make-a-deal">Read the Blog</a>
+        </div>
+        <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25141_2x_aafa8a49-b976-4f74-9721-790bf82817bd.png?v=1732698657" alt="">
+    </div>
+</div>
 
 
     <script>
