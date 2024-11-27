@@ -508,6 +508,7 @@ $product-tags-color: #DEEDFF;
             }
         }
 
+        &[data-stye="Gray"],
         &[data-stye="Aegean Blue"] {
             &::after {
                 background-color: #365d8e;
@@ -540,11 +541,6 @@ $product-tags-color: #DEEDFF;
             &::after {
                 background-color: #ddd;
             }
-        }
-
-        &[data-stye="Gray"] {
-            border-color: #405364;
-            background-color: #405364;
         }
 
         &[data-stye="Midnight in Paris"]::before {
@@ -601,14 +597,6 @@ $product-tags-color: #DEEDFF;
                 background-color: #000;
             }
         }
-        
-        &[data-stye="Gray"] {
-            border-color: #405364;
-
-            &::after {
-                background-color: #405364;
-            }
-        }
 
         &[data-stye="Blu"] {
             border-color: #9ec0d1;
@@ -626,7 +614,7 @@ $product-tags-color: #DEEDFF;
             }
         }
 
-
+        &[data-stye="Gray"],
         &[data-stye="Aegean Blue"] {
             border-color: #365d8e;
 

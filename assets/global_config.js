@@ -289,7 +289,7 @@ const global_config = {
               }
           ],
         // 默认的发货时间 文案
-        ebike_default_delivery_time: 'Ships between November 20-30th, 2024 from L.A. warehouse.',
+        ebike_default_delivery_time: 'Free shipping within 5 business days.',
         // 发货时间映射表
         // key:    vairant_id
         // value:  发货时间文案
@@ -815,7 +815,7 @@ const global_config = {
             commonSwiper: []
         },
         // 默认的发货时间 文案
-        ebike_default_delivery_time: 'Ships between November 20-30th, 2024 from L.A. warehouse.',
+        ebike_default_delivery_time: 'Free shipping within 5 business days.',
         // 每一种variant 的发货时间文案
         ebike_delivery_time: {},
         sizes_and_specs: {
