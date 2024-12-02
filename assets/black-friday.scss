@@ -116,7 +116,6 @@ h4 {
             padding-left: 10%;
 
             &>div {
-                margin-top: -12vh;
                 padding-left: 7%;
 
                 .u48DemiBold_v2 {
@@ -149,22 +148,23 @@ h4 {
             padding: 0 0 13.5vw;
 
             &>div:not(.swiperrrr) {
-                padding: 0;
+                padding: 8vw 0 0;
                 transform: unset;
                 align-items: flex-start;
 
                 img {
                     max-width: 80vw;
-                    transform: translateX(-5vw);
+                  align-self: center;
                 }
 
                 &>div {
                     padding: 0 8vw;
-                    margin-top: -14vw;
                     text-align: left;
+                    width: 100%;
 
                     .u48DemiBold_v2 {
                         font-size: 24px;
+                        text-align: center;
                     }
 
                     .u24DemiBold_v2 {

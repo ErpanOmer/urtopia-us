@@ -97,7 +97,7 @@
                               }
   
       .sale .middle > div + div {
-         border-left: 1px solid rgba(99, 99, 99, 0.25);
+         border-left: 1px solid rgba(99, 99, 99, 0.1);
        }
 
 
@@ -105,7 +105,7 @@
             display: flex;
             background-color: #292929;
             color: #fff;
-            align-items: flex-start;
+            align-items: center;
             padding: 16px 12px;
        }
 
@@ -152,14 +152,13 @@
         </div>
       </div>
       <div class="bottom">
-        <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25053_2x_b00da2ec-ab1c-4b27-8aa3-9ac6dffd738e.png?v=1732262996" alt="">
+        <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Gift_cards_2x_bfa1a8fc-8ff4-4292-be8f-6a78eceab487.png?v=1731899173" alt="">
         <div>
-          <span class="u11Medium_v2">Gear Up! <span style="color:#FFDF48;">Free Helmet and Comfort Saddle</span> for the <span style="color:#FFDF48;">First 66 Orders!</span></span>
+          <span class="u11Medium_v2">The <span style="color:#FFDF48">First 50 Orders</span> Share <span style="color:#FFDF48">{{ 500000 |  money_without_trailing_zeros }}</span> in Gift Card!</span>
           <div style="background-color: #FFDF4833; height: 5px;border-radius: 10px;margin: 10px 0;overflow: hidden;">
             <div style="width: 50%;background-color: #FFDF48;height: 100%;border-radius: 10px;"></div>
           </div>
           <span class="u11Medium_v2"><span style="color:#FFDF48"><span class="count">26</span> Orders</span> So Far Today</span>
-          <span class="u11Medium_v2" style="opacity: 0.8;font-size: 10px;margin-top: 5px;">*Freebies will be added to your order automatically later today</span>
         </div>
       </div>
     </div>
@@ -176,7 +175,7 @@
         // 当前活动索引
         let sale_end_time_index = 0
   
-        const timezoneoffset = (Shopify.shop === 'urtopia.myshopify.com' ? 420 : -120) * 60000;
+        const timezoneoffset = (Shopify.shop === 'urtopia.myshopify.com' ? 660 : -120) * 60000;
   
         function getUTCTime(now = new Date()) {
           return now.getTime() + now.getTimezoneOffset() * 60000 + timezoneoffset;
@@ -242,36 +241,36 @@
         function refreshOrders (hours) {
           if (hours < 3) {
              $('.sale .bottom > div > div > div').css('width', '95%')
-             $('.sale .bottom .count').text('62')
+             $('.sale .bottom .count').text('48')
              return
           }
 
           if (hours < 6) {
              $('.sale .bottom > div > div > div').css('width', '90%')
-             $('.sale .bottom .count').text('57')
+             $('.sale .bottom .count').text('45')
              return
           }
 
           if (hours < 9) {
              $('.sale .bottom > div > div > div').css('width', '80%')
-             $('.sale .bottom .count').text('52')
+             $('.sale .bottom .count').text('41')
              return
           }
 
           if (hours < 12) {
              $('.sale .bottom > div > div > div').css('width', '70%')
-             $('.sale .bottom .count').text('47')
+             $('.sale .bottom .count').text('37')
              return
           }
 
           if (hours < 15) {
              $('.sale .bottom > div > div > div').css('width', '60%')
-             $('.sale .bottom .count').text('42')
+             $('.sale .bottom .count').text('31')
              return
           }
 
           $('.sale .bottom > div > div > div').css('width', '50%')
-          $('.sale .bottom .count').text('37')
+          $('.sale .bottom .count').text('26')
         }
   
         updateTimer(getEndTime(sale_end_time_index));
