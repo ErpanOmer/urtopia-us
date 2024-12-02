@@ -27,7 +27,7 @@
           <span class="u17Medium_v2" style="font-size: 15px;">{{ product.compare_at_price | money }}</span>
           <span class="u14Medium_v2" style="font-size: 13px;">-{{ product.compare_at_price |  minus: product.price |  money_without_trailing_zeros }}</span>
         </div>
-        {% render "sale-v2" %}
+        {% render "sale-v3", img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241202-112550.png?v=1733109978" %}
       </div>
     <div class="left-swiper mobileHide">
       <div class="swiper-wrapper">
@@ -278,7 +278,7 @@
           <span class="u17Medium_v2">{{ product.compare_at_price | money }}</span>
           <span class="u14Medium_v2">-{{ product.compare_at_price |  minus: product.price |  money_without_trailing_zeros }}</span>
         </div>
-        {% render "sale-v2" %}
+        {% render "sale-v3", img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241202-112550.png?v=1733109978" %}
       </div>
       <div class="options">
         {% for option in product.options_with_values %}

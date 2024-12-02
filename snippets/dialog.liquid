@@ -55,7 +55,8 @@
     }
     
     .subscribe-container .subscribe img {
-        margin: 25px 0 0;
+           max-width: 280px;
+           margin: 0 0 40px 0;
     }
 
     .subscribe-container .subscribe .ffff {
@@ -208,7 +209,7 @@
         }
     
         .subscribe-container .subscribe img {
-            margin: 15px 0 0;
+          max-width: 190px;
         }
 
         .subscribe-container .subscribe .ffff {
@@ -375,6 +376,7 @@
         <div class="subscribe">
             <span style="color: var(--sale-order-page-text-color);margin-bottom: 2%;" class="u20DemiBold_v2">{{ settings.sale_name }}</span>
             <div class="u60DemiBold_v2">{{ all_products["urtopia-carbon-fusion-gt"].compare_at_price |  minus: all_products["urtopia-carbon-fusion-gt"].price | money_without_trailing_zeros }}<span class="u30DemiBold_v2">OFF</span></div>
+            <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241202-113302.png?v=1733110396"/>
             <div class="u17Light_v2">Urtopia carbon e-bikes now up to {{ all_products["urtopia-carbon-fusion-gt"].compare_at_price |  minus: all_products["urtopia-carbon-fusion-gt"].price | money_without_trailing_zeros }} off! Sign up to get exclusive discount!</div>
             <form class="new-contact" action="/contact#ContactFooter" target="_blank" method="post" accept-charset="UTF-8">
                 <div class="email">
@@ -385,13 +387,6 @@
                     <button class="my-button my-button-black" type="submit">Subscribe</button>
                 </div>
             </form>
-            <div class="box">
-                <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Gift_cards_2x_acb2903d-5cb3-4987-a6c3-4a8559a9b1fb.png?v=1731982449" alt="">
-                <div>
-                    <span class="u17DemiBold_v2">EXTRA Deals</span>
-                    <span class="u17Medium_v2">The <span style="color:#FD4B17;">First 50 Orders Today</span> Share <span style="color:#FD4B17;">$5,000</span> in Gift Card!</span>
-                </div>
-            </div>
         </div>
         <span class="close">×</span>
     </div>
