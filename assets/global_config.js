@@ -4,6 +4,14 @@ const global_config = {
       sale_name: 'Flash Sale',
       sale_end_time: '2024-12-3'
     },
+    {
+      sale_name: 'Flash Sale',
+      sale_end_time: '2024-12-6'
+    },
+    {
+      sale_name: 'Flash Sale',
+      sale_end_time: '2024-12-9'
+    },
   ],
     // 活动产品id
     event_bike_product_id: '7902779474168',
