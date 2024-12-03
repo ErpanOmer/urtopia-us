@@ -169,6 +169,68 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/what-is-california-known-for-the-golden-gate-bridge-hero.webp?v=1697020664',
     stores: [
       {
+        name: `E-Ryde`,
+        phone: '310-640-2453',
+        email: 'brandon@e-ryde.com',
+        timezone: "Fremont, California, USA (GMT-7)",
+        add: "209 E El Segundo Blvd",
+        testrideSpot: "El Segundo",
+        availableSizes: [
+          'Carbon 1 Pro Size M',
+          'Fusion GT',
+          'Carbon Fold 1'
+        ],
+        businessHours: [
+           "",
+           "",
+           "11:00-18:00",
+           "11:00-18:00",
+           "11:00-18:00",
+           "11:00-18:00",
+           "11:00-18:00",
+        ],
+      },
+      {
+        name: `Cycleogical`,
+        phone: '949-542-4777',
+        email: 'pedal@cycleogical.net',
+        timezone: "Fremont, California, USA (GMT-7)",
+        add: "34102 La Plaza #A Dana Point, CA",
+        testrideSpot: "Carlsbad",
+        availableSizes: [
+          'Carbon 1 Pro Size M'
+        ],
+        businessHours: [
+           "",
+           "",
+           "10:00-17:00",
+           "10:00-17:00",
+           "10:00-17:00",
+           "10:00-17:00",
+           "10:00-17:00",
+        ],
+      },
+      {
+        name: `Carlsbad ebikes and more`,
+        phone: '(760) 729-2453',
+        email: 'Info@CarlsbadEbikesAndMore.com',
+        timezone: "Fremont, California, USA (GMT-7)",
+        add: "2978 Carlsbad Blvd #130 Carlsbad, CA 92008",
+        testrideSpot: "Carlsbad",
+        availableSizes: [
+          'Carbon 1 Pro Size S/M/L'
+        ],
+        businessHours: [
+           "11:00-18:00",
+           "10:00-18:00",
+           "10:00-18:00",
+           "10:00-18:00",
+           "10:00-18:00",
+           "10:00-18:00",
+           "10:00-18:00",
+        ],
+      },
+      {
         name: `EBike A-Go-Go`,
         phone: '+17608778250',
         email: 'info@e-bikeagogo.com',
@@ -985,7 +1047,7 @@ const testRides = [
       {
         name: "Cycling World",
         phone: "(626) 775-4141",
-        email: "contact@cyclingworldusa.com",
+        email: "Cyclingworld23@outlook.com",
         timezone: "California, USA (GMT-7)",
         add: "503 W. Duarte Road, Monrovia, CA 91016",
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_701250bb-5882-4a90-9d1c-e44d230dc75a.jpg?v=1712713565",
@@ -1700,6 +1762,69 @@ const testRides = [
     city: 'Florida',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/shutterstock_469708088.jpg?v=1697188978',
     stores: [
+      {
+        name: "Voltaire Cycles",
+        phone: "941-922-0384",
+        email: "ron@voltairecycles-sarasota.com",
+        timezone: "New Port Richey, FL, USA (GMT-4)",
+        add: "1260 S Tamiami Trail",
+        testrideSpot: "Osprey",
+        availableSizes: [
+          'Carbon 1 Pro Size M',
+          'Fusion GT',
+          'Carbon Fold 1'
+        ],
+        businessHours: [
+          "12:00-16:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+        ],
+      },
+      {
+        name: "Tampa Bay Ebikes",
+        phone: "727-228-1975",
+        email: "info@tampabayebikes.com",
+        timezone: "New Port Richey, FL, USA (GMT-4)",
+        add: "4004 MacDill Ave #6",
+        testrideSpot: "Tampa",
+        availableSizes: [
+          'Carbon 1 Pro Size M'
+        ],
+        businessHours: [
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+        ],
+      },
+      {
+        name: "Bike Sultan",
+        phone: "714-916-7831",
+        email: "joe@bikesultan.com",
+        timezone: "New Port Richey, FL, USA (GMT-4)",
+        add: "11940 US Hwy 1 Ste. 128",
+        testrideSpot: "Palm Beach Gardens",
+        availableSizes: [
+          'Carbon 1 Pro Size M',
+          'Fusion GT'
+        ],
+        businessHours: [
+          "",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+        ],
+      },
       {
         name: "Eventure Tour Co",
         phone: "8505986380",
@@ -2779,6 +2904,7 @@ for (const city of testRides) {
       store.country = city.country || 'USA'
       store.city = city.city
       store.avalibaleDate = findAvalibaleDate(store)
+      store.imgUrl = store.imgUrl || `https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_23.png?v=1733120044`
 
 
       for (const sizes of store.availableSizes) {

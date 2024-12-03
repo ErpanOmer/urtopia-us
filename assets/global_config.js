@@ -1,39 +1,7 @@
 const global_config = {
   sale_end_times: [
     {
-      sale_name: 'National Shopping Sale',
-      sale_end_time: '2024-11-4'
-    },
-    {
-      sale_name: 'Giving Thanks, Giving Deals',
-      sale_end_time: '2024-11-8'
-    },
-    {
-      sale_name: 'Holiday Kickoff Sale',
-      sale_end_time: '2024-11-11'
-    },
-    {
-      sale_name: 'Grateful Deals',
-      sale_end_time: '2024-11-15'
-    },
-    {
-      sale_name: 'Black Friday Sale',
-      sale_end_time: '2024-11-18'
-    },
-    {
-      sale_name: 'Black Friday Sale',
-      sale_end_time: '2024-11-22'
-    },
-    {
-      sale_name: 'Black Friday Sale',
-      sale_end_time: '2024-11-25'
-    },
-    {
-      sale_name: 'Black Friday Sale',
-      sale_end_time: '2024-11-30'
-    },
-    {
-      sale_name: 'Cyber Monday Sale',
+      sale_name: 'Flash Sale',
       sale_end_time: '2024-12-3'
     },
   ],
@@ -297,27 +265,35 @@ const global_config = {
         },
         sizes_and_specs: {
             sizes: {
-                image: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19556_2x_ea5e3f39-95bd-4a6c-926b-5de332bff46e.png?v=1729162648',
+                image: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241203-110142.png?v=1733194922',
                 parameters: [
                     [
                         '<span style="color: #fff;">xxxx</span>',
                         'Recomm. rider height',
                         'A. Adjustable seat range',
-                        'B. Seat length',
+                        'B. Highest point of the seat post',
                         'C. Overall length',
                         'D. Handlebar grips height',
-                        'E. Height after folding',
-                        'F. Overall length after folding'
+                        'E. Headset height',
+                        'F. Seat tube length',
+                        'G. Wheel diameter',
+                        'H. Wheelbase',
+                        'I. Height after folding',
+                        'J. Overall length after folding',
                     ],
                     [
                         '<span class="u17DemiBold_v2">One Size</span>',
                         '5’1’’~6’1’’',
-                        '160 mm',
+                        '220 mm',
+                        '1020 mm',
+                        '1480 mm',
+                        '1090 mm',
+                        '400 mm',
+                        '310 mm',
+                        '450 mm',
                         '1000 mm',
-                        '1460 mm',
-                        '1100 mm',
                         '680 mm',
-                        '780 mm'
+                        '800 mm'
                     ],
                 ]
             },

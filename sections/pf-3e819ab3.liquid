@@ -3,7 +3,7 @@
 
 <div class="banner">
         <div class="centeral-content">
-            <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/6182211_2x_326bef30-9af5-4b65-be64-7213d43f677e.png?v=1733104950&width=800"/>
+            <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/ffff_2x_0e8eaa00-b4d4-418f-8e30-9a6ec591a4d4.png?v=1733220234&width=800"/>
             <h2 class="u42DemiBold_v2">Up to {{ all_products["urtopia-carbon-fusion-gt"].compare_at_price |  minus: all_products["urtopia-carbon-fusion-gt"].price |  money_without_trailing_zeros }} OFF</h2>
             {% render 'sale' %}
         </div>
@@ -31,8 +31,6 @@
             product_url: product.url,
             product_uhmaya: product_uhmaya
         %}
-        <div class="gray-background-color u30DemiBold_v2 lozad mobileHide" data-background-image="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24754_2x_b41f2ffd-c016-485d-81a5-ade030a0e33a.jpg?v=1727351111&width=500">Full Carbon Lightweight Sporty</div>
-        <div class="gray-background-color u30DemiBold_v2 lozad pcHide" data-background-image="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2222_2x_f3d01b36-1fba-487b-bf58-d1834e8cdfd6.jpg?v=1727408586">Full Carbon Lightweight Sporty</div>
         {% assign product = all_products["urtopia-carbon-fold"] %}
         {% assign product_variants = product.variants | where: "available" %}
         {% assign product_uhmaya = "29 lbs<br>lightweight, Full<br>carbon fiber, Torque<br>sensor" | split: ", " %}
@@ -62,44 +60,107 @@
             product_url: product.url,
             product_uhmaya: product_uhmaya
         %}
+        <div class="gray-background-color u30DemiBold_v2 lozad mobileHide" data-background-image="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24754_2x_b41f2ffd-c016-485d-81a5-ade030a0e33a.jpg?v=1727351111&width=500">Full Carbon Lightweight Sporty</div>
+        <div class="gray-background-color u30DemiBold_v2 lozad pcHide" data-background-image="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/2222_2x_f3d01b36-1fba-487b-bf58-d1834e8cdfd6.jpg?v=1727408586">Full Carbon Lightweight Sporty</div>
     </div>
 </div>
-    <h3 class="centeral-content u36DemiBold_v2 Choose">
-        Choose your ride
-    </h3>
-    <div class="centeral-content cards">
-        <div>
-            <span class="u24DemiBold_v2">Ride outdoors and <br>explore more trails</span>
-            <a class="my-button" target="_blank" href="/products/urtopia-carbon-fusion-gt">E-touring bikes</a>
-        </div>
-        <div>
-            <span class="u24DemiBold_v2">All-Terrain Adventure</span>
-            <a class="my-button" target="_blank" href="/products/urtopia-carbon-1-pro-ebike">E-gravel bikes</a>
-        </div>
-        <div>
-            <span class="u24DemiBold_v2">Explore the <br>urban landscape</span>
-            <a class="my-button" target="_blank" href="/products/urtopia-carbon-fold">E-city bikes</a>
+
+    <div id="buyany"></div>
+    <div class="buyany">
+        <div class="centeral-content">
+            <div class="promo-banner">
+                <h2 class="u36DemiBold_v2">
+                    Buy <span>any 2</span> Urtopia bikes, <br class="pcHide">Get an
+                    <span>EXTRA $200 OFF</span>
+                </h2>
+            </div>
+            <div class="two">
+                <div>
+                    <div class="selectttttttt">
+                        <select name="left"></select>
+                    </div>
+                    <div class="card">
+                        <img src="https://newurtopia.com/cdn/shop/files/19566.png?v=1729236036&width=600"
+                            alt="">
+                        <div>
+                            <div class="style">
+                                <span class="u17Medium_v2">Style - </span>
+                                <span class="u17Light_v2">Matte Black</span>
+                                <div class="dots"></div>
+                            </div>
+                            <div class="size">
+                                <span class="u17Medium_v2">Size - </span>
+                                <span class="u17Light_v2">Fit for 5’5-5’11’’ Inseam 30”</span>
+                                <div class="sizes"></div>
+                            </div>
+                            <div class="priceeeeeeeeeeee">
+                                <span class="u24DemiBold_v2">$2599</span>
+                                <del class="u20Light_v2">$3999</del>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="u48DemiBold_v2 plus">+</div>
+                <div>
+                    <div class="selectttttttt">
+                        <select name="right"></select>
+                    </div>
+                    <div class="card">
+                        <img src="https://newurtopia.com/cdn/shop/files/19566.png?v=1729236036&width=600"
+                            alt="">
+                        <div>
+                            <div class="style">
+                                <span class="u17Medium_v2">Style - </span>
+                                <span class="u17Light_v2">Matte Black</span>
+                                <div class="dots"></div>
+                            </div>
+                            <div class="size">
+                                <span class="u17Medium_v2">Size - </span>
+                                <span class="u17Light_v2">Fit for 5’5-5’11’’ Inseam 30”</span>
+                                <div class="sizes"></div>
+                            </div>
+                            <div class="priceeeeeeeeeeee">
+                                <span class="u24DemiBold_v2">$2599</span>
+                                <del class="u20Light_v2">$3999</del>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="total">
+                    <img class="mobileHide lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/ROB00399_2x_65cd9c08-d86c-4f12-b492-25a925a4400c.jpg?v=1731379861&width=500"
+                        alt="" />
+                    <div>
+                        <span class="u24DemiBold_v2">Total</span>
+                        <span class="u48DemiBold_v2">$4598</span>
+                        <div class="u24DemiBold_v2 yellow">You Save $2400</div>
+                        <span class="u17Light_v2">($2200 OFF + EXTRA $200)</span>
+                        <div class="my-button my-button-origin">Proceed to Checkout</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="professional">
+
+
+        <div class="professional" id="professional">
   <div class="centeral-content">
-    <h2 class="u36DemiBold_v2">Professional Reviews</h2>
+    <h2 class="u36Medium_v2">Professional Reviews</h2>
     <div class="videos swiper-wrapper">
-      
-    <div
+
+      <div
     class="swiper-slide"
-    onclick="showVideoDialog('https://www.youtube.com/embed/T-0A-EUwUfM?autoplay=1&cc_load_policy=1')"
+    onclick="showVideoDialog('https://www.youtube.com/embed/W9KMWM4Is00?autoplay=1&cc_load_policy=1')"
   >
     <img
       class="lozad"
-      data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24716_2x_b34c17d4-c45d-4e33-8c32-10ae473bffce.jpg?v=1727085768&width=400"
+      data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25127_2x_32bd3201-667c-41be-a264-4048e3cb8039.jpg?v=1732516610&width=400"
       alt=""
     >
-    <span class="u17Light_v2">A super light and responsive e-bike achieves faster speeds than the metro.</span>
+    <span class="u17Light_v2">It’s refreshing to ride an ebike that doesn’t feel like you’re lugging around a gigantic beast.</span>
     <span class="flex-1"></span>
     <div class="u17Medium_v2">
-      <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19470_2x_6a40056e-5876-49a3-8678-c9eb7f529037.png?v=1727086233" alt=""/>
-      <span>Jon Imperial</span>
+      <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19659_2x_e4e9dd85-d6ef-472c-804b-e4f17f3a9180.jpg?v=1732516604" alt=""/>
+      <span>Hello Road</span>
     </div>
   </div>
   <div
@@ -134,6 +195,40 @@
           <span>Area 13</span>
         </div>
       </div>
+      <div
+    class="swiper-slide"
+    onclick="showVideoDialog('https://www.youtube.com/embed/14WsEPH8TfQ?autoplay=1&cc_load_policy=1')"
+  >
+    <img
+      class="lozad"
+      data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25085_2x_218ed915-d951-4836-9315-48dbb616abc5.jpg?v=1731058283&width=400"
+      alt=""
+    >
+    <span class="u17Light_v2">The throttle boost driven by dual motors provides an unprecedented power-maxing experience.</span>
+    <span class="flex-1"></span>
+    <div class="u17Medium_v2">
+      <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/unnamed.jpg?v=1731058489" alt=""/>
+      <span>KhanFlicks</span>
+    </div>
+  </div>
+            <div
+        class="swiper-slide"
+        onclick="showVideoDialog('https://www.youtube.com/embed/OJgz3ZLb4F0?autoplay=1&cc_load_policy=1')"
+      >
+        <img
+          class="lozad"
+          data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25087_2x_fade44e6-4e58-4091-a22f-db3af7c7b2e2.jpg?v=1731058272&width=400"
+          alt=""
+        >
+        <span class="u17Light_v2">It's the lightest step-through ebike of its size, I can just easily get on it, no big jump over.</span>
+        <span class="flex-1"></span>
+        <div class="u17Medium_v2">
+          <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/channels4_profile_1.jpg?v=1731058489" alt=""/>
+          <span>Area 13</span>
+        </div>
+      </div>
+
+      
       <div
         class="swiper-slide"
         onclick="showVideoDialog('https://www.youtube.com/embed/5JI2U6EpAHA?autoplay=1&cc_load_policy=1')"
@@ -174,6 +269,25 @@
     </div>
   </div>
 </div>
+
+    <h3 class="centeral-content u36DemiBold_v2 Choose">
+        Choose your ride
+    </h3>
+    <div class="centeral-content cards">
+        <div>
+            <span class="u24DemiBold_v2">Ride outdoors and <br>explore more trails</span>
+            <a class="my-button" target="_blank" href="/products/urtopia-carbon-fusion-gt">E-touring bikes</a>
+        </div>
+        <div>
+            <span class="u24DemiBold_v2">All-Terrain Adventure</span>
+            <a class="my-button" target="_blank" href="/products/urtopia-carbon-1-pro-ebike">E-gravel bikes</a>
+        </div>
+        <div>
+            <span class="u24DemiBold_v2">Explore the <br>urban landscape</span>
+            <a class="my-button" target="_blank" href="/products/urtopia-carbon-fold">E-city bikes</a>
+        </div>
+    </div>
+
     <div id="compared" class="compared">
   <div class="centeral-content">
       <div class="items">
@@ -727,5 +841,190 @@ const parameters = [
       },
     });
   </script>
+  <script>
+        const bikes_custom_config = {
+            8794812776696: {
+                title: 'Fusion GT',
+                ...global_config.fusion_order_page_config
+            },
+            8230663028984: {
+                title: 'Carbon 1 Pro',
+                ...global_config.carbon1pro_order_page_config
+            },
+            8792002461944: {
+                title: 'Carbon Fold 1',
+                ...global_config.carbon_fold_order_page_config
+            }
+        }
+
+        const bikes_info = []
+
+        {% for product in collections['urtopia-black-friday-sale'].products %}
+            bikes_info.push({
+                {% assign options_with_values_Style = product.options_with_values | where: "name", "Style"  %}
+                {% assign options_with_values_Color = product.options_with_values | where: "name", "Color"  %}
+                {% assign options_with_values = options_with_values_Style |  concat: options_with_values_Color %}
+                style: {{ options_with_values.first.values | json }},
+                {% assign options_with_values = product.options_with_values | where: "name", "Size"  %}
+                size:{{ options_with_values.first.values | json }},
+                variants: {{ product.variants | where: "available" | json }},
+                title: bikes_custom_config['{{ product.id }}'].title,
+                id: {{ product.id }},
+                price: {{ product.price | money_without_trailing_zeros | json }},
+                compare_at_price: {{ product.compare_at_price | money_without_trailing_zeros | json }},
+                featured_image: {{ product.featured_image.src | json }},
+                first_available_variant: {{ product.first_available_variant | json  }},
+                ...bikes_custom_config['{{ product.id }}']
+             })
+        {% endfor %}
+
+
+        for (const info of bikes_info) {
+            $('.buyany select').append(new Option(info.title, info.id)) 
+        }
+
+
+        function updateTotal() {
+            let total_price = 0
+            let total_compare_at_price = 0
+            let save = 20000
+
+            $(`.buyany .priceeeeeeeeeeee`).each(function () {
+                total_price += Number($(this).find('.u24DemiBold_v2').attr('price'))
+                total_compare_at_price += Number($(this).find('.u20Light_v2').attr('compare_at_price'))
+            })
+
+
+
+            $('.buyany .total .u48DemiBold_v2').text(getPriceFormat(total_price - save, true))
+            $('.buyany .total .yellow').text(`You Save ${getPriceFormat(total_compare_at_price - total_price + save, true)}`)
+            $('.buyany .total .u17Light_v2').text(`(${getPriceFormat(total_compare_at_price - total_price, true)} OFF + EXTRA ${getPriceFormat(save, true)})`)
+        }
+
+
+        function changeVariant (target, variant) {
+            target.find('.card img').attr('src', variant.featured_image.src + '&width=600')
+            target.find('.style .u17Light_v2').text(variant.option2)
+            target.find('.size .u17Light_v2').text(bikes_custom_config[variant.featured_image.product_id].size_map[variant.option1])
+            target.find('.priceeeeeeeeeeee .u24DemiBold_v2').text(getPriceFormat(variant.price, true)).attr('price', variant.price)
+            target.find('.priceeeeeeeeeeee .u20Light_v2').text(getPriceFormat(variant.compare_at_price, true)).attr('compare_at_price', variant.compare_at_price)
+            target.attr('data-variant-id', variant.id)
+        }
+
+
+        function changeProduct (target, value) {
+            const info = bikes_info.find(info => info.id === Number(value))
+
+            changeVariant(target, info.first_available_variant)
+
+            for (const style of info.style) {
+                
+            }
+
+            target.find('.style .dots').html(info.style.map(s => `<div data-stye="${s}"></div>`).join('')).children().on('click', function () {
+                const size = target.find('.size .sizes .active').text()
+                const style = $(this).attr('data-stye')
+
+                $(this).siblings().removeClass('active')
+                $(this).addClass('active')
+
+                changeVariant(target, info.variants.find(v => v.title === `${size} / ${style}`))
+            }).first().addClass('active')
+
+            target.find('.size .sizes').html(info.size.map(s => `<div class="u17Medium_v2">${s}</div>`).join('')).children().on('click', function () {
+                const style = target.find('.style .dots .active').attr('data-stye')
+                const size = $(this).text()
+
+                $(this).siblings().removeClass('active')
+                $(this).addClass('active')
+
+                changeVariant(target, info.variants.find(v => v.title === `${size} / ${style}`))
+            }).first().addClass('active')
+
+            setTimeout(updateTotal)
+            target.find('select').val(value)
+        }
+
+
+        // dom Load
+        setTimeout(() => {
+            $('.buyany select').on('change', function () {
+                console.log('changegggggggggg')
+
+                const name = $(this).attr('name')
+                const value = $(this).val()
+                const parent = $(this).parent().parent()
+
+                changeProduct(parent, value)
+            })
+
+            $('.buyany .total .my-button').on('click', function() {
+                $(this).addClass('loading')
+
+                let cart = document.querySelector('cart-notification') || document.querySelector('cart-drawer');
+                const variants = []
+
+                $('.buyany div[data-variant-id]').each(function () {
+                    variants.push($(this).attr('data-variant-id'))
+                })
+
+                fetch('/cart/clear.js').then(() => {
+                    navigator.sendBeacon('/cart/add.js', new Blob([JSON.stringify({
+                            items: variants.map(id => ({ id, quantity: 1 })),
+                            sections: cart.getSectionsToRender().map(section => section.id).join(',')
+                    })], {
+                    type: 'application/json',
+                   }))
+
+                   setTimeout(() => {
+                     location.href = `/checkout`
+                   }, 300)
+
+                    // fetch('/cart/add.js', {
+                    //     method: 'POST',
+                    //     headers: {
+                    //     'Content-Type': 'application/json'
+                    //     },
+                    //     body: JSON.stringify({
+                    //         items: variants.map(id => ({ id, quantity: 1 })),
+                    //         sections: cart.getSectionsToRender().map(section => section.id).join(',')
+                    //     })
+                    // })
+                    //     .then(response => {
+                    //         location.href = `/discount/Black%2520Friday%2520Discount?redirect=/checkout`
+                    //     })
+                    //     .catch((error) => {
+                    //         $(this).removeClass('loading')
+                    //         console.error('Error:', error);
+                    //     }).finally(() => {
+                    //         // $(this).removeClass('loading')
+                    //     })
+
+                        
+                }).finally(() => {
+                    // $(this).removeClass('loading')
+                })
+
+
+
+                // fetch('/cart/add.js', {
+                //     method: 'POST',
+                //     body: JSON.stringify({
+                //         items: variants.map(id => ({ id, quantity: 1 })),
+                //         sections: cart.getSectionsToRender().map(section => section.id).join(',')
+                //     }),
+                //     headers: {
+                //     'Content-Type': 'application/json',
+                //     },
+                // }).then((res) => res.json()).then(res => {
+                //     cart.classList.contains('is-empty') && cart.classList.remove('is-empty');
+                //     !(res.message && res.status) && cart.renderContents(res);
+                // }).catch(console.error)
+            })
+
+            changeProduct($(`.buyany select[name="left"]`).parent().parent(), 8794812776696)
+            changeProduct($(`.buyany select[name="right"]`).parent().parent(), 8230663028984)
+        }, 100)
+    </script>
 
   
