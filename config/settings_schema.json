@@ -84,7 +84,7 @@
         "type": "text",
         "id": "accessories_show_new",
         "label": "accessories配件显示new列表",
-        "default": "8250240860408,8250240860408"
+        "default": "1,2"
       },
       {
         "type": "checkbox",
