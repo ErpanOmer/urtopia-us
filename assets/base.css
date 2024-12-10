@@ -7067,6 +7067,45 @@ cart-drawer-items::-webkit-scrollbar-track-piece {
   margin-top: 1rem;
 }
 
+.totals {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.totals > * {
+  font-size: 1.6rem;
+  margin: 0;
+}
+
+.totals > h4 {
+  font-size: calc(var(--font-heading-scale) * 2.2rem);
+  font-weight:600;
+}
+
+.totals * {
+  line-height: 1;
+}
+
+.totals > * + * {
+  margin-left: 2rem;
+}
+
+.totals__subtotal-value {
+  font-size: 2.2rem;
+  font-weight:600;
+}
+
+.cart__ctas + .totals {
+  margin-top: 2rem;
+}
+
+@media all and (min-width: 750px) {
+  .totals {
+    justify-content: flex-end;
+  }
+}
+
 
 
 
