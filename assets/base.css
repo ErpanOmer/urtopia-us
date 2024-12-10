@@ -5143,4 +5143,51 @@ predictive-search[loading] .predictive-search__results-list:first-child {
 }
 
 
+#announcement-bar {
+  height: 38px;
+  overflow: hidden;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+}
+
+#announcement-bar .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+#announcement-bar .swiper-slide > p {
+  line-height: 19px;
+  direction: ltr;
+}
+
+#announcement-bar .swiper-slide > p > span {
+  font-weight: bold;
+  color: #ffda12;
+}
+
+#announcement-bar .swiper-slide > p > a {
+  color: #fff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#announcement-bar .swiper-slide > p > a:hover {
+  color: #d6d6d6;
+}
+
+
+.announcement-bar {
+  display: none;
+}
+
+#announcement-bar > img {
+  height: 55px;
+  width: auto;
+  transform: translateY(5%);
+}
+
+
 
