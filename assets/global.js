@@ -1075,3 +1075,153 @@ window.customElements.define('count-down', class extends HTMLElement {
         this.config[name] = newValue
     }
 })
+
+
+
+      // 普通页面清掉这两个参数
+      window.sessionStorage.checkout_email = ''
+      window.sessionStorage.checkout_email_local = ''
+          // 当前页面id
+      const current_page_id = '{{ template }}'
+      console.log('current_page_id:', current_page_id);
+
+    
+      function fetchBuried (name = '', type = '', data = {}, isSendBeacon = false) {
+        const body = {
+            module: "website-us",
+            trace_name: `${name}-us`,
+            trace_type: `${type}-${document.body.clientWidth > 768 ? 'pc' : 'mb'}`,
+            extras: data
+        }
+
+        return isSendBeacon ? navigator.sendBeacon('https://api.newurtopia.com/third_part/traces', JSON.stringify(body)) : fetch("https://api.newurtopia.com/third_part/traces", {
+            method: "POST",
+            body: JSON.stringify(body),
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })
+    }
+
+    // 查询url 参数
+    function getSearchValues () {
+      const search = {}
+
+      // 页面url
+      const url = new URL(location.href)
+
+      for (const [k, v] of url.searchParams.entries()) {
+          search[k] = v
+      }
+
+      return search
+    }
+
+
+    function replaceSearchValue (k, v) {
+        if (!k || !v) {
+            return
+        }
+    
+        const url = new URL(location.href)
+        url.searchParams.set(k, v)
+    
+        history.replaceState(null, '', url);
+    }
+
+    // product price 格式化函数
+    function getPriceFormat (value = 0, ignoreZero = false) {
+      const instance =  new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: Shopify.currency.active,
+        roundingMode: 'floor',
+        minimumFractionDigits: ignoreZero ? 0 : 2,
+        maximumFractionDigits: ignoreZero ? 0 : 2
+      })
+
+      return instance.format(value / 100)
+    }
+
+    function throttle(method, delay, duration){
+        var timer=null;
+        var begin=new Date();    
+        return function(){                
+            var context=this, args=arguments;
+            var current=new Date();        
+            clearTimeout(timer);
+            if(current-begin>=duration){
+                method.apply(context,args);
+                begin=current;
+            }else{
+                timer=setTimeout(function(){
+                    method.apply(context,args);
+                },delay);
+            }
+        }
+    }
+
+
+    function debounce(fn, wait = 300) {
+        // 自由变量，debounce执行完成被释放，time也不会被释放
+        let time;
+        // 返回一个闭包，接受参数
+        return function (...args) {
+            // 保存闭包被调用时的this
+            const this_ = this;
+            // 清除上一次的定时器
+            if (time) {
+                clearTimeout(time);
+            };
+            // 不再是直接执行fn，在内部传递参数
+            time = setTimeout(function () {
+                // 通过apply修改fn的this
+                fn.apply(this_, args);
+            }, wait);
+        }
+    };
+
+
+      // 视频播放
+  function showVideoDialog (src = '') {
+    console.log('src', src)
+
+    if (!src) {
+      return
+    }
+
+    const template = `<div class="video-box">
+      <div style="position: relative">
+        <iframe
+          width="${document.body.clientWidth > 768 ? 840 : document.body.clientWidth * 0.84 }"
+          height="${document.body.clientWidth > 768 ? 472 : 'auto'}"
+          src="${src}"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+        <span class="close" onclick="closeMiniDialog()">x</span>
+      </div>
+    </div>`
+
+    showMiniDialog(template)
+  }
+
+
+  
+  function showMiniDialog(html = '') {
+    const mini_dialog = $('body .mini-dialog')
+
+    if (mini_dialog.length) {
+        return setTimeout(showMiniDialog, 5000, html)
+    }
+
+    setTimeout(() => {
+      $("body").append(`<div class="mini-dialog" style="display: flex;">${html}</div>`)
+    })
+  }
+  
+  function closeMiniDialog() {
+    // console.log(a === document.querySelector('body .mini-dialog'))
+    $('body .mini-dialog').remove()
+  }
