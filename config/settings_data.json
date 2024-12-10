@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "current": {
     "sale_name": "Flash Sale",
@@ -88,25 +97,25 @@
     "sale_badge_color_scheme": "accent-1",
     "sold_out_badge_color_scheme": "background-1",
     "accent_icons": "text",
-    "social_twitter_link": "https:\/\/twitter.com\/newurtopia_us",
-    "social_facebook_link": "https:\/\/www.facebook.com\/UrtopiaEbike\/",
+    "social_twitter_link": "https://twitter.com/newurtopia_us",
+    "social_facebook_link": "https://www.facebook.com/UrtopiaEbike/",
     "social_pinterest_link": "",
-    "social_instagram_link": "https:\/\/www.instagram.com\/newurtopia\/",
+    "social_instagram_link": "https://www.instagram.com/newurtopia/",
     "social_tiktok_link": "",
     "social_tumblr_link": "",
     "social_snapchat_link": "",
-    "social_youtube_link": "https:\/\/www.youtube.com\/channel\/UCsDmgIsvhCZyyPAWvAhKcDQ",
+    "social_youtube_link": "https://www.youtube.com/channel/UCsDmgIsvhCZyyPAWvAhKcDQ",
     "social_vimeo_link": "",
     "predictive_search_enabled": false,
     "predictive_search_show_vendor": false,
     "predictive_search_show_price": false,
-    "favicon": "shopify:\/\/shop_images\/logo_0707__1_2.png",
+    "favicon": "shopify://shop_images/logo_0707__1_2.png",
     "currency_code_enabled": false,
     "cart_type": "drawer",
     "show_vendor": false,
     "show_cart_note": false,
     "cart_drawer_collection": "accessories",
-    "checkout_logo_image": "shopify:\/\/shop_images\/logo_0707__1_bb20a36e-0db5-4d65-b13f-b4cab6d3a943.png",
+    "checkout_logo_image": "shopify://shop_images/logo_0707__1_bb20a36e-0db5-4d65-b13f-b4cab6d3a943.png",
     "checkout_logo_position": "left",
     "checkout_logo_size": "medium",
     "checkout_accent_color": "#161c1f",
@@ -122,7 +131,7 @@
               "impText": "$600 off",
               "text2": "on Carbon 1s",
               "color_scheme": "inverse",
-              "link": "shopify:\/\/products\/urtopia-carbon-e-bike"
+              "link": "shopify://products/urtopia-carbon-e-bike"
             }
           }
         },
@@ -135,7 +144,7 @@
         "type": "header",
         "settings": {
           "color_scheme": "background-1",
-          "logo": "shopify:\/\/shop_images\/logo_0707__1.png",
+          "logo": "shopify://shop_images/logo_0707__1.png",
           "logo_width": 140,
           "logo_position": "middle-left",
           "menu": "4-0-main-menu",
@@ -212,17 +221,17 @@
     "content_for_index": [],
     "blocks": {
       "judgeme_core_069ee759": {
-        "type": "shopify:\/\/apps\/judge-me-product-reviews\/blocks\/judgeme_core\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+        "type": "shopify://apps/judge-me-product-reviews/blocks/judgeme_core/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
         "disabled": false,
         "settings": {}
       },
       "319724205969189013": {
-        "type": "shopify:\/\/apps\/hulk-form-builder\/blocks\/app-embed\/b6b8dd14-356b-4725-a4ed-77232212b3c3",
+        "type": "shopify://apps/hulk-form-builder/blocks/app-embed/b6b8dd14-356b-4725-a4ed-77232212b3c3",
         "disabled": false,
         "settings": {}
       },
       "pagefly-page-builder": {
-        "type": "shopify:\/\/apps\/pagefly-page-builder\/blocks\/app-embed\/83e179f7-59a0-4589-8c66-c0dddf959200",
+        "type": "shopify://apps/pagefly-page-builder/blocks/app-embed/83e179f7-59a0-4589-8c66-c0dddf959200",
         "disabled": false,
         "settings": {}
       }
@@ -313,14 +322,14 @@
       "sale_badge_color_scheme": "accent-1",
       "sold_out_badge_color_scheme": "background-1",
       "accent_icons": "text",
-      "social_twitter_link": "https:\/\/twitter.com\/shopify",
-      "social_facebook_link": "https:\/\/www.facebook.com\/shopify",
+      "social_twitter_link": "https://twitter.com/shopify",
+      "social_facebook_link": "https://www.facebook.com/shopify",
       "social_pinterest_link": "",
       "social_snapchat_link": "",
-      "social_instagram_link": "https:\/\/www.instagram.com\/shopify",
-      "social_tiktok_link": "https:\/\/www.tiktok.com\/@shopify",
+      "social_instagram_link": "https://www.instagram.com/shopify",
+      "social_tiktok_link": "https://www.tiktok.com/@shopify",
       "social_tumblr_link": "",
-      "social_youtube_link": "https:\/\/www.youtube.com\/shopify",
+      "social_youtube_link": "https://www.youtube.com/shopify",
       "social_vimeo_link": "",
       "predictive_search_enabled": true,
       "predictive_search_show_vendor": false,
@@ -384,7 +393,7 @@
               "type": "text",
               "settings": {
                 "heading": "Our mission",
-                "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>"
+                "subtext": "<p>Share contact information, store details, and brand content with your customers.</p>"
               }
             },
             "image": {
