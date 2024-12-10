@@ -1056,7 +1056,7 @@ summary::-webkit-details-marker {
 }
 
 /* component-grid */
-.footer__blocks-wrapper {
+#shopify-section-footer .footer__blocks-wrapper {
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 2rem;
@@ -1067,13 +1067,13 @@ summary::-webkit-details-marker {
 }
 
 @media screen and (min-width: 750px) {
-  .footer__blocks-wrapper {
+  #shopify-section-footer .footer__blocks-wrapper {
     column-gap: var(--grid-desktop-horizontal-spacing);
     row-gap: var(--grid-desktop-vertical-spacing);
   }
 }
 
-.footer__blocks-wrapper:last-child {
+#shopify-section-footer  .footer__blocks-wrapper:last-child {
   margin-bottom: 0;
 }
 
