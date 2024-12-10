@@ -1075,3 +1075,4 @@ window.customElements.define('count-down', class extends HTMLElement {
         this.config[name] = newValue
     }
 })
+

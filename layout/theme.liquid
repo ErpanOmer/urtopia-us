@@ -1,11 +1,8 @@
 <!doctype html>
 <html class="no-js" lang="{{ request.locale.iso_code }}">
-
 <head>
-  
-  
   <!-- Cozy Country Redirect Optimization Code Start -->
-  {{shop.metafields.CCR.shopat_script}}
+  {% comment %} {{shop.metafields.CCR.shopat_script}} {% endcomment %}
   <!-- Cozy Country Redirect Optimization Code Start -->
 
   <!-- Basic page needs ================================================== -->
@@ -14,82 +11,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="google-site-verification" content="4CyyxbiT2JJKwsI1xsr_c7Qf-ihbvBm4WMiPhI0rOeA" />
   <meta name="google-site-verification" content="1L3RQDlBxPuNpF21De0Ah8NwPfQRUDie4JA9sbgKwfo" />
-
-    <!-- Google Tag Manager -->
-  <script>
-window.dataLayer = window.dataLayer || [];
-</script>
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-P9MZH68');</script>
-<!-- End Google Tag Manager -->
-  <!--out brain-->
-  <script data-obct type="text/javascript">
-    /** DO NOT MODIFY THIS CODE**/
-    !function (_window, _document) {
-      var OB_ADV_ID = '004724a1910ea66ba6f18eea401c197373';
-      if (_window.obApi) {
-        var toArray = function (object) {
-          return Object.prototype.toString.call(object) === '[object Array]' ? object : [object];
-        };
-        _window.obApi.marketerId = toArray(_window.obApi.marketerId).concat(toArray(OB_ADV_ID));
-        return;
-      }
-      var api = _window.obApi = function () {
-        api.dispatch ? api.dispatch.apply(api, arguments) : api.queue.push(arguments);
-      };
-      api.version = '1.1';
-      api.loaded = true;
-      api.marketerId = OB_ADV_ID;
-      api.queue = [];
-      var tag = _document.createElement('script');
-      tag.async = true;
-      tag.src = '//amplify.outbrain.com/cp/obtp.js';
-      tag.type = 'text/javascript';
-      var script = _document.getElementsByTagName('script')[0];
-      script.parentNode.insertBefore(tag, script);
-    }(window, document);
-
-    obApi('track', 'PAGE_VIEW');
-  </script>
-
-
-  <!-- 引入插件   -->
-  <!--<script src="https://www.googleoptimize.com/optimize.js?id=OPT-TP8DWLT"></script>-->
-  <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1.9.1-jquery.min.js?v=1663911504"></script>
-<!--   <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/webTrack.js?v=1675687114"></script> -->
-  <!-- <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1.14.2-TweenMax.js?v=1663912518"></script>
-  <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2.0.3-ScrollMagic.min.js?v=1663912592"></script>
-  <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2.0.3-animation.gsap.js?v=1663912682"></script>
-  <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2.0.3-debug.addIndicators.js?v=1663912891"></script>
-  <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/8-swiper-bundle.min.js?v=1663912984"> </script>-->
-<!--   <script defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v14.0"
-    nonce="dCHotZWO"></script> -->
-  <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1.0.8-lozad.js?v=1663913078"></script>
-  <script defer src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1.5.2-scrolldir.js?v=1663913144"></script>
-  <!--  <link href="https://api.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.css" rel="stylesheet">
-  <script defer src="https://api.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.js"></script>-->
-
-
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="">
   <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
-  <link rel="stylesheet" href="https://use.typekit.net/fzb3fxo.css" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript>
-    <link rel=”stylesheet” href="https://use.typekit.net/fzb3fxo.css">
-  </noscript>
-
   {%- if settings.favicon != blank -%}
   <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
   {%- endif -%}
-
-  {%- unless settings.type_header_font.system? and settings.type_body_font.system? -%}
-  <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
-  {%- endunless -%}
 
   <title>
     {{ page_title }}
@@ -103,193 +32,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   {% endif %}
 
   {% render 'meta-tags' %}
-
-  <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
-
-{% comment %}{{ content_for_header }}{% endcomment %}
-{{ content_for_header | remove: '<link href="https://monorail-edge.shopifysvc.com" rel="dns-prefetch">' }}
-
-
-  <script type='text/javascript'>
-      // 普通页面清掉这两个参数
-      window.sessionStorage.checkout_email = ''
-      window.sessionStorage.checkout_email_local = ''
-          // 当前页面id
-      const current_page_id = '{{ template }}'
-      console.log('current_page_id:', current_page_id);
-
-    
-      function fetchBuried (name = '', type = '', data = {}, isSendBeacon = false) {
-        const body = {
-            module: "website-us",
-            trace_name: `${name}-us`,
-            trace_type: `${type}-${document.body.clientWidth > 768 ? 'pc' : 'mb'}`,
-            extras: data
-        }
-
-        return isSendBeacon ? navigator.sendBeacon('https://api.newurtopia.com/third_part/traces', JSON.stringify(body)) : fetch("https://api.newurtopia.com/third_part/traces", {
-            method: "POST",
-            body: JSON.stringify(body),
-            headers: {
-                "Content-Type": "application/json",
-            },
-        })
-    }
-
-    // 查询url 参数
-    function getSearchValues () {
-      const search = {}
-
-      // 页面url
-      const url = new URL(location.href)
-
-      for (const [k, v] of url.searchParams.entries()) {
-          search[k] = v
-      }
-
-      return search
-    }
-
-
-    function replaceSearchValue (k, v) {
-        if (!k || !v) {
-            return
-        }
-    
-        const url = new URL(location.href)
-        url.searchParams.set(k, v)
-    
-        history.replaceState(null, '', url);
-    }
-
-    // product price 格式化函数
-    function getPriceFormat (value = 0, ignoreZero = false) {
-      const instance =  new Intl.NumberFormat("en-US", {
-        style: "currency",
-        currency: Shopify.currency.active,
-        roundingMode: 'floor',
-        minimumFractionDigits: ignoreZero ? 0 : 2,
-        maximumFractionDigits: ignoreZero ? 0 : 2
-      })
-
-      return instance.format(value / 100)
-    }
-
-    function throttle(method, delay, duration){
-        var timer=null;
-        var begin=new Date();    
-        return function(){                
-            var context=this, args=arguments;
-            var current=new Date();        
-            clearTimeout(timer);
-            if(current-begin>=duration){
-                method.apply(context,args);
-                begin=current;
-            }else{
-                timer=setTimeout(function(){
-                    method.apply(context,args);
-                },delay);
-            }
-        }
-    }
-
-
-    function debounce(fn, wait = 300) {
-        // 自由变量，debounce执行完成被释放，time也不会被释放
-        let time;
-        // 返回一个闭包，接受参数
-        return function (...args) {
-            // 保存闭包被调用时的this
-            const this_ = this;
-            // 清除上一次的定时器
-            if (time) {
-                clearTimeout(time);
-            };
-            // 不再是直接执行fn，在内部传递参数
-            time = setTimeout(function () {
-                // 通过apply修改fn的this
-                fn.apply(this_, args);
-            }, wait);
-        }
-    };
-
-
-      // 视频播放
-  function showVideoDialog (src = '') {
-    console.log('src', src)
-
-    if (!src) {
-      return
-    }
-
-    const template = `<div class="video-box">
-      <div style="position: relative">
-        <iframe
-          width="${document.body.clientWidth > 768 ? 840 : document.body.clientWidth * 0.84 }"
-          height="${document.body.clientWidth > 768 ? 472 : 'auto'}"
-          src="${src}"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-        <span class="close" onclick="closeMiniDialog()">x</span>
-      </div>
-    </div>`
-
-    showMiniDialog(template)
-  }
-
-
-  
-  function showMiniDialog(html = '') {
-    const mini_dialog = $('body .mini-dialog')
-
-    if (mini_dialog.length) {
-        return setTimeout(showMiniDialog, 5000, html)
-    }
-
-    setTimeout(() => {
-      $("body").append(`<div class="mini-dialog" style="display: flex;">${html}</div>`)
-    })
-  }
-  
-  function closeMiniDialog() {
-    // console.log(a === document.querySelector('body .mini-dialog'))
-    $('body .mini-dialog').remove()
-  }
-
-    // 立即执行
-    (w => {
-      const falg = w.sessionStorage.carbon_one_a_b_test_flag
-
-      // carbon 车 A/B TEST ,出现50% 的概率
-      if (!falg) {
-          w.sessionStorage.carbon_one_a_b_test_flag = Math.round(Math.random()) === 10 ? 'A' : 'B'
-      }    
-    })(window);
-  </script>
+  {{ content_for_header }}
   <!-- End of Taboola Pixel Code -->
-  {%- liquid
-  assign body_font_bold = settings.type_body_font | font_modify: 'weight', 'bold'
-  assign body_font_italic = settings.type_body_font | font_modify: 'style', 'italic'
-  assign body_font_bold_italic = body_font_bold | font_modify: 'style', 'italic'
-  %}
-
   {% style %}
-  {{ settings.type_body_font | font_face: font_display: 'swap' }}
-  {{ body_font_bold | font_face: font_display: 'swap' }}
-  {{ body_font_italic | font_face: font_display: 'swap' }}
-  {{ body_font_bold_italic | font_face: font_display: 'swap' }}
-  {{ settings.type_header_font | font_face: font_display: 'swap' }}
-
   :root {
-  --font-body-family: {{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};
+  --font-body-family: "urbane", {{ settings.type_body_font.fallback_families }};
   --font-body-style: {{ settings.type_body_font.style }};
   --font-body-weight: {{ settings.type_body_font.weight }};
   --font-body-weight-bold: {{ settings.type_body_font.weight | plus: 300 | at_most: 1000 }};
 
-  --font-heading-family: {{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};
+  --font-heading-family: "urbane", {{ settings.type_header_font.fallback_families }};
   --font-heading-style: {{ settings.type_header_font.style }};
   --font-heading-weight: {{ settings.type_header_font.weight }};
 
@@ -404,6 +156,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     --variant-pills-shadow-horizontal-offset: {{ settings.variant_pills_shadow_horizontal_offset }}px;
     --variant-pills-shadow-vertical-offset: {{ settings.variant_pills_shadow_vertical_offset }}px;
     --variant-pills-shadow-blur-radius: {{ settings.variant_pills_shadow_blur }}px;
+    --sale-order-page-text-color: #FD4B17;
     }
 
     *,
@@ -415,362 +168,80 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     
 
     html {
-    box-sizing: border-box;
-    font-size: calc(var(--font-body-scale) * 62.5%);
-    height: 100%;
+      box-sizing: border-box;
+      font-size: calc(var(--font-body-scale) * 62.5%);
+      height: 100%;
     }
 
     body {
-    display: grid;
-    grid-template-rows: auto auto 1fr auto;
-    grid-template-columns: 100%;
-    min-height: 100%;
-    margin: 0;
-    font-size: 1.5rem;
-    letter-spacing: 0.06rem;
-    line-height: calc(1 + 0.8 / var(--font-body-scale));
-    font-family: var(--font-body-family);
-    font-style: var(--font-body-style);
-    font-weight: var(--font-body-weight);
+      display: grid;
+      grid-template-rows: auto auto 1fr auto;
+      grid-template-columns: 100%;
+      min-height: 100%;
+      margin: 0;
+      font-size: 1.5rem;
+      letter-spacing: 0.06rem;
+      line-height: calc(1 + 0.8 / var(--font-body-scale));
+      font-family: var(--font-body-family);
+      font-style: var(--font-body-style);
+      font-weight: var(--font-body-weight);
     }
 
     @media screen and (min-width: 750px) {
-    body {
-    font-size: 1.6rem;
-    }
-    }
-
-
-  
+      body {
+        font-size: 1.6rem;
+      }
+    }  
     {% endstyle %}
 
-    {% render 'sale-color' %}
+       {{ 'base.css' | asset_url | stylesheet_tag }}
+           <!-- Google Tag Manager -->
+        <script>
+          window.dataLayer = window.dataLayer || [];
+      </script>
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-P9MZH68');</script>
+      <!-- End Google Tag Manager -->
+      <!--out brain-->
+      <script data-obct type="text/javascript">
+        /** DO NOT MODIFY THIS CODE**/
+        !function (_window, _document) {
+          var OB_ADV_ID = '004724a1910ea66ba6f18eea401c197373';
+          if (_window.obApi) {
+            var toArray = function (object) {
+              return Object.prototype.toString.call(object) === '[object Array]' ? object : [object];
+            };
+            _window.obApi.marketerId = toArray(_window.obApi.marketerId).concat(toArray(OB_ADV_ID));
+            return;
+          }
+          var api = _window.obApi = function () {
+            api.dispatch ? api.dispatch.apply(api, arguments) : api.queue.push(arguments);
+          };
+          api.version = '1.1';
+          api.loaded = true;
+          api.marketerId = OB_ADV_ID;
+          api.queue = [];
+          var tag = _document.createElement('script');
+          tag.async = true;
+          tag.src = '//amplify.outbrain.com/cp/obtp.js';
+          tag.type = 'text/javascript';
+          var script = _document.getElementsByTagName('script')[0];
+          script.parentNode.insertBefore(tag, script);
+        }(window, document);
 
-    {{ 'global-font-face.css' | asset_url | stylesheet_tag }}
-    {{ 'base.css' | asset_url | stylesheet_tag }}
-    {{ 'newStyle.scss.css' | asset_url | stylesheet_tag }}
-
-    {%- unless settings.type_body_font.system? -%}
-    <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
-    {%- endunless -%}
-    {%- unless settings.type_header_font.system? -%}
-    <link rel="preload" as="font" href="{{ settings.type_header_font | font_url }}" type="font/woff2" crossorigin>
-    {%- endunless -%}
-
-    {%- if settings.predictive_search_enabled -%}
-    <link rel="stylesheet" href="{{ 'component-predictive-search.css' | asset_url }}" media="print"
-      onload="this.media='all'">
-    {%- endif -%}
-
-    <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
-      if (Shopify.designMode) {
-        document.documentElement.classList.add('shopify-design-mode');
-      }
-    </script>
+        obApi('track', 'PAGE_VIEW');
+      </script>
+        <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1.9.1-jquery.min.js?v=1663911504"></script>
+        <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/8-swiper-bundle.min.js?v=1663912984"> </script>
+        <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
+        <script src="{{ 'global-sync.js' | asset_url }}"></script>
        {% include 'dataLayer-allPages' %}
-  {{ 'global_config.js' | asset_url | script_tag }}
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{% include 'pagefly-app-header' %}</head>
-
+       {% include 'pagefly-app-header' %}
+</head>
 <body class="gradient">      
-  <!--   <p class='21123'>{{ request.origin }}</p> -->
-  <a class="skip-to-content-link button visually-hidden" href="#MainContent">
-    {{ "accessibility.skip_to_text" | t }}
-  </a>
-
   {%- if settings.cart_type == 'drawer' -%}
   {%- render 'cart-drawer' -%}
   {%- endif -%}
@@ -782,11 +253,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </main>
   {% section 'care' %}
   {% section 'footer' %}
-
-  <ul hidden>
-    <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>
-    <li id="a11y-new-window-message">{{ 'accessibility.link_messages.new_window' | t }}</li>
-  </ul>
 
   {% render 'judgeme_core' %}
   <script>
@@ -840,8 +306,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <!--   klarna   -->
   <script>window.KlarnaThemeGlobals = {}; {%case template.name %} {% when"product" %} {% if product.first_available_variant.price %} window.KlarnaThemeGlobals.data_purchase_amount = {{ product.first_available_variant.price }}; {% endif %} window.KlarnaThemeGlobals.productVariants = {{ product.variants | json }}; window.KlarnaThemeGlobals.documentCopy = document.cloneNode(true); {% when"cart" %} window.KlarnaThemeGlobals.data_purchase_amount = {{ cart.total_price }}; window.KlarnaThemeGlobals.documentCopy = document.cloneNode(true); {% endcase %}</script>
 
-  <script defer src="https://na-library.klarnaservices.com/lib.js"
-    data-client-id="81e64607-a76a-5dab-b627-59f81ff7d1ee"></script>
+  <script defer src="https://na-library.klarnaservices.com/lib.js" data-client-id="81e64607-a76a-5dab-b627-59f81ff7d1ee"></script>
 
   <script>
     window.KlarnaOnsiteService = window.KlarnaOnsiteService || [];
@@ -856,10 +321,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     observer.observe('.lozad');
   </script>
 
-<!-- CRITEO START -->
 {% render 'criteo-tracking' %}
-<!-- CRITEO END -->
-</body>
 {% render 'dialog' %}
-{% render 'performance' %}
+</body>
 </html>
