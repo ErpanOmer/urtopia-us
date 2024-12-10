@@ -2156,3 +2156,9 @@ window.customElements.define('count-down', class extends HTMLElement {
           }
         }
   }
+
+
+  document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+  if (Shopify.designMode) {
+    document.documentElement.classList.add('shopify-design-mode');
+  }
