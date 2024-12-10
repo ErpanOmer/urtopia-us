@@ -261,8 +261,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
     {% endstyle %}
 
-    {% render 'sale-color' %}
-    {{ 'base.css' | asset_url | stylesheet_tag }}
+       {% render 'sale-color' %}
+       {{ 'base.css' | asset_url | stylesheet_tag }}
        {{ 'global.js' | asset_url | script_tag }}
        {% include 'dataLayer-allPages' %}
        {% include 'pagefly-app-header' %}
