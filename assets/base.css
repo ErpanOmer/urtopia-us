@@ -8839,3 +8839,31 @@ button.newsletter-form__button {
 }
 
 
+
+.norton {
+  max-width: 1300px;
+  margin: -24px auto 12px;
+}
+
+.norton > div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.norton img {
+  max-width: 92px;
+}
+
+.norton span {
+  margin: 0 18px 0 12px;
+  line-height: 23px;
+}
+
+@media (max-width: 767px) {
+  .norton > div {
+    justify-content: center;
+  }
+}
+
+
