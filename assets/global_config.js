@@ -2,15 +2,15 @@ const global_config = {
   sale_end_times: [
     {
       sale_name: 'Flash Sale',
-      sale_end_time: '2024-12-3'
-    },
-    {
-      sale_name: 'Flash Sale',
-      sale_end_time: '2024-12-6'
-    },
-    {
-      sale_name: 'Flash Sale',
       sale_end_time: '2024-12-9'
+    },
+    {
+      sale_name: 'Flash Sale',
+      sale_end_time: '2024-12-13'
+    },
+    {
+      sale_name: 'Flash Sale',
+      sale_end_time: '2024-12-16'
     },
   ],
     // 活动产品id
@@ -337,7 +337,7 @@ const global_config = {
                 {
                     title: 'Drivetrain',
                     parameters: [
-                        ["Chainrings", "11-32T"],
+                        ["Chainrings", "53T"],
                         ["Cassette", "11-32T, 8 Speed"],
                         ["Chain", "Chain KMC Z7"],
                         ["Rear Derailleur", "Shimano Altus 8-Speed"],
@@ -801,7 +801,10 @@ const global_config = {
         // 默认的发货时间 文案
         ebike_default_delivery_time: 'Free shipping within 5 business days.',
         // 每一种variant 的发货时间文案
-        ebike_delivery_time: {},
+        ebike_delivery_time: {
+          45844150255864: 'Ships between January 15-30, 2024 from L.A. warehouse.',
+          45844150190328: 'Ships between January 15-30, 2024 from L.A. warehouse.'
+        },
         sizes_and_specs: {
           sizes: {
             image: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240108-181634.png?v=1704709013',
