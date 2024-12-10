@@ -193,6 +193,19 @@
       }
     }  
     {% endstyle %}
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            screens: {
+              mb: { max: '768px' },
+              lg: { max: '1023px' }
+            }
+          }
+        }
+      }
+    </script>
 
        {{ 'base.css' | asset_url | stylesheet_tag }}
            <!-- Google Tag Manager -->
