@@ -283,8 +283,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </script>
        {% include 'dataLayer-allPages' %}
   {{ 'global_config.js' | asset_url | script_tag }}
-{% include 'pagefly-app-header' %}</head>
-<script src="{{ 'global.js' | asset_url }}"></script>
+  {{ 'global.js' | asset_url | script_tag }}
+  {% include 'pagefly-app-header' %}
+</head>
 <body class="gradient">      
   <!--   <p class='21123'>{{ request.origin }}</p> -->
   <a class="skip-to-content-link button visually-hidden" href="#MainContent">
