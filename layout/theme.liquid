@@ -85,11 +85,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   {% endif %}
 
   {% render 'meta-tags' %}
-
   <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
-
-{% comment %}{{ content_for_header }}{% endcomment %}
-{{ content_for_header | remove: '<link href="https://monorail-edge.shopifysvc.com" rel="dns-prefetch">' }}
+  {{ content_for_header }}
   <!-- End of Taboola Pixel Code -->
   {%- liquid
   assign body_font_bold = settings.type_body_font | font_modify: 'weight', 'bold'
