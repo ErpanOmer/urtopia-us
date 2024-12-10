@@ -169,7 +169,7 @@
 
     html {
       box-sizing: border-box;
-      font-size: 1;
+      font-size: calc(var(--font-body-scale) * 62.5%);
       height: 100%;
     }
 
@@ -241,7 +241,6 @@
         <script src="https://cdn.tailwindcss.com"></script>
         <script>
           tailwind.config = {
-            prefix: 'tw-',
             theme: {
               extend: {
                 screens: {
