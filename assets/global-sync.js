@@ -3,6 +3,7 @@
       // 普通页面清掉这两个参数
       window.sessionStorage.checkout_email = ''
       window.sessionStorage.checkout_email_local = ''
+      window.sessionStorage.carbon_one_a_b_test_flag = 'B'
           // 当前页面id
       const current_page_id = '{{ template }}'
       console.log('current_page_id:', current_page_id);

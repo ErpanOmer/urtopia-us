@@ -1265,14 +1265,12 @@ Call
     fetchBuried('websiteclick', `fusion-order-page`, { button: type }, true);
     window.sessionStorage.clicked_klarna_checkout_button = 'clicked_klarna_checkout_button';
 
-    if (sessionStorage.carbon_one_a_b_test_flag === 'B') {
-      setTimeout(() => {
+    setTimeout(() => {
         t.removeClass('loading');
         t.find('span').html(text);
       }, 2000);
 
       return addAllToCart('atc', true);
-    }
   }
 
 
