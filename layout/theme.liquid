@@ -282,9 +282,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       }
     </script>
        {% include 'dataLayer-allPages' %}
-        {{ 'global_config.js' | asset_url | script_tag }}
-        {{ 'global.js' | asset_url | script_tag }}
-        {% include 'pagefly-app-header' %}
+       {{ 'global_config.js' | asset_url | script_tag }}
+       {{ 'global.js' | asset_url | script_tag }}
+       {% include 'pagefly-app-header' %}
 </head>
 <body class="gradient">      
   <!--   <p class='21123'>{{ request.origin }}</p> -->
