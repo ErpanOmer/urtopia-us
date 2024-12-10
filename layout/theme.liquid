@@ -193,20 +193,6 @@
       }
     }  
     {% endstyle %}
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            screens: {
-              mb: { max: '768px' },
-              lg: { max: '1023px' }
-            }
-          }
-        }
-      }
-    </script>
-
        {{ 'base.css' | asset_url | stylesheet_tag }}
            <!-- Google Tag Manager -->
         <script>
@@ -251,6 +237,19 @@
         <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/8-swiper-bundle.min.js?v=1663912984"> </script>
         <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
         <script src="{{ 'global-sync.js' | asset_url }}"></script>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+          tailwind.config = {
+            theme: {
+              extend: {
+                screens: {
+                  mb: { max: '768px' },
+                  lg: { max: '1023px' }
+                }
+              }
+            }
+          }
+        </script>
        {% include 'dataLayer-allPages' %}
        {% include 'pagefly-app-header' %}
 </head>
