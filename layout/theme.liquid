@@ -194,7 +194,7 @@
     }  
     {% endstyle %}
 
-       {{ 'base.css' | asset_url | stylesheet_tag }}
+       {{ 'base.css' | asset_url | stylesheet_tag: preload: true }}
            <!-- Google Tag Manager -->
         <script>
           window.dataLayer = window.dataLayer || [];
@@ -235,12 +235,12 @@
         obApi('track', 'PAGE_VIEW');
         console.log('current_page_id:', '{{ template }}');
       </script>
-        <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1.9.1-jquery.min.js?v=1663911504"></script>
-        <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/8-swiper-bundle.min.js?v=1663912984"> </script>
-        <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
-        <script src="{{ 'global-sync.js' | asset_url }}"></script>
+        <script src="{{ 'global.js' | asset_url }}" defer></script>
+        <script src="{{ 'global-sync.min.js' | asset_url }}"></script>
+        {% comment %} <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/130/assets/global-sync.min.js"></script> {% endcomment %}
        {% include 'dataLayer-allPages' %}
        {% include 'pagefly-app-header' %}
+       {% render "global-config" %}
 </head>
 <body class="gradient">      
   {%- if settings.cart_type == 'drawer' -%}

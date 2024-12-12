@@ -89,6 +89,7 @@
                               alt="{{ item.image.alt | escape }}"
                               loading="lazy"
                               width="150"
+                              fetchpriority="low"
                               height="{{ 150 | divided_by: item.image.aspect_ratio | ceil }}"
                             >
                           {% endif %}
@@ -319,7 +320,7 @@
                         {% if prod.available %}
                             {% assign variant = prod.variants | first %}
                             <div class="item" variant-id="{{ variant.id }}">
-                              {{ prod.featured_image | image_url: width: 400 | image_tag }}
+                              {{ prod.featured_image | image_url: width: 400 | image_tag: loading: 'lazy', fetchpriority: "low" }}
                               <div class="u14DemiBold_v2">{{ prod.title }}</div>
                               <div class="u14Medium_v2">
                                 <span>{{ prod.price | money }}</span>
