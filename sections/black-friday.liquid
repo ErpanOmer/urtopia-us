@@ -68,14 +68,9 @@
                 <div class="swiper-button-next mobileHide"></div>
             </div>
             <div>
-                <img class="mobileHide lozad"
-                    data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/ffff_2x_0e8eaa00-b4d4-418f-8e30-9a6ec591a4d4.png?v=1733220234&width=800"
-                    alt="" />
-                <img class="pcHide lozad"
-                    data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/ffff_2x_0e8eaa00-b4d4-418f-8e30-9a6ec591a4d4.png?v=1733220234&width=600"
-                    alt="" />
+                <img class="er-max-w-[220px] mb:er-max-w-[120px]" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19654_2x_3c8c2cb2-b6ed-452a-b047-7759c1764058.png?v=1734070214" alt="Urtopia Ebike - Sleek, Full Carbon, Lightweight, Smart"/>
+                <img class="er-max-w-[480px] mb:er-max-w-[270px] er-mt-14 er-mb-28 mb:er-mt-10 mb:er-mb-16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25163_2x_08064506-c704-442c-a7fc-ecfef0fb5e47.png?v=1734072109&width=700" alt="">
                 <div>
-                    <h2 class="u48DemiBold_v2">Up to {{ all_products["urtopia-carbon-fusion-gt"].compare_at_price | minus: all_products["urtopia-carbon-fusion-gt"].price |  money_without_trailing_zeros }} OFF</h2>
                     <h3 class="u24DemiBold_v2">Why Choose Urtopia</h3>
                     <ul class="u17Light_v2">
                         <li>Carbon fiber, Lightweight</li>
@@ -87,12 +82,28 @@
         </div>
     </div>
     <div class="timeeeeeeeeeee centeral-content">
-        <div>
-            <h3 class="u30DemiBold_v2">Flash Sale Deals</h3>
-            <p class="u17Light_v2">
-                <span>To thank Urtopians for their 4 years of support, this flash sale, Get up to $1200 OFF on all Carbon bikes.</span>
+        <div class="er-p-20 er-flex er-flex-col er-items-start er-space-y-16 mb:er-p-10 mb:er-items-center mb:er-text-center mb:er-pb-16">
+            <div class="er-flex er-justify-between er-items-center er-w-full er-mb-[-20px] mb:er-flex-col-reverse">
+                <h2 class="er-text-7xl mb:!er-text-4xl mb:er-mt-[45vw]">BUY MORE! SAVE MORE!</h2>
+                {% render 'sale' %}
+            </div>
+            <div class="er-flex er-space-x-4">
+                <div class="mb:er-justify-center mb:er-p-10 mb:er-pr-12 mb:er-pt-12 er-bg-[url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25184.svg?v=1734075877')] er-bg-no-repeat er-bg-center er-bg-contain er-flex er-flex-col er-items-center er-p-[45px_25px_35px_22.5px]">
+                    <span class="u20Medium_v2 mb:!er-text-[12px]">Save</span>
+                    <span class="u36DemiBold_v2 mb:!er-text-[22px]">{{ 20000 | money_without_trailing_zeros }}</span>
+                    <span class="u17Medium_v2 mb:!er-text-[12px]">On $3000+</span>
+                </div>
+                <div class="mb:er-justify-center mb:er-p-10  mb:er-pr-12 mb:er-pt-12 er-bg-[url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25184.svg?v=1734075877')] er-bg-no-repeat er-bg-center er-bg-contain er-flex er-flex-col er-items-center er-p-[45px_25px_35px_22.5px]">
+                    <span class="u20Medium_v2 mb:!er-text-[12px]">Save</span>
+                    <span class="u36DemiBold_v2 mb:!er-text-[22px]">{{ 50000 | money_without_trailing_zeros }}</span>
+                    <span class="u17Medium_v2 mb:!er-text-[12px]">On $5000+</span>
+                </div>
+            </div>
+            <p class="u17Light_v2 er-max-w-[360px] mb:!er-text-[15px]">
+                <span>
+                    During our Christmas Sale, get an extra $200 off on any Urtopia product with purchases over $3,000, or enjoy an extra $500 off with purchases over $5,000!
+                </span>
             </p>
-            {% render 'sale' %}
             <style>
         .sale {
             width: 400px;
@@ -127,6 +138,7 @@
             font-size: 30px;
             margin-bottom: 7.5px;
             position: relative;
+            color: #D50B28;
         }
 
 
@@ -213,87 +225,12 @@
             %}
         </div>
     </div>
-    <div id="buyany"></div>
-    <div class="buyany">
-        <div class="centeral-content">
-            <div class="promo-banner">
-                <h2 class="u36DemiBold_v2">
-                    Buy <span>any 2</span> Urtopia bikes, <br class="pcHide">Get an
-                    <span>EXTRA $200 OFF</span>
-                </h2>
-            </div>
-            <div class="two">
-                <div>
-                    <div class="selectttttttt">
-                        <select name="left"></select>
-                    </div>
-                    <div class="card">
-                        <img src="https://newurtopia.com/cdn/shop/files/19566.png?v=1729236036&width=600"
-                            alt="">
-                        <div>
-                            <div class="style">
-                                <span class="u17Medium_v2">Style - </span>
-                                <span class="u17Light_v2">Matte Black</span>
-                                <div class="dots"></div>
-                            </div>
-                            <div class="size">
-                                <span class="u17Medium_v2">Size - </span>
-                                <span class="u17Light_v2">Fit for 5’5-5’11’’ Inseam 30”</span>
-                                <div class="sizes"></div>
-                            </div>
-                            <div class="priceeeeeeeeeeee">
-                                <span class="u24DemiBold_v2">$2599</span>
-                                <del class="u20Light_v2">$3999</del>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="u48DemiBold_v2 plus">+</div>
-                <div>
-                    <div class="selectttttttt">
-                        <select name="right"></select>
-                    </div>
-                    <div class="card">
-                        <img src="https://newurtopia.com/cdn/shop/files/19566.png?v=1729236036&width=600"
-                            alt="">
-                        <div>
-                            <div class="style">
-                                <span class="u17Medium_v2">Style - </span>
-                                <span class="u17Light_v2">Matte Black</span>
-                                <div class="dots"></div>
-                            </div>
-                            <div class="size">
-                                <span class="u17Medium_v2">Size - </span>
-                                <span class="u17Light_v2">Fit for 5’5-5’11’’ Inseam 30”</span>
-                                <div class="sizes"></div>
-                            </div>
-                            <div class="priceeeeeeeeeeee">
-                                <span class="u24DemiBold_v2">$2599</span>
-                                <del class="u20Light_v2">$3999</del>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="total">
-                    <img class="mobileHide lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/ROB00399_2x_65cd9c08-d86c-4f12-b492-25a925a4400c.jpg?v=1731379861&width=500"
-                        alt="" />
-                    <div>
-                        <span class="u24DemiBold_v2">Total</span>
-                        <span class="u48DemiBold_v2">$4598</span>
-                        <div class="u24DemiBold_v2 yellow">You Save $2400</div>
-                        <span class="u17Light_v2">($2200 OFF + EXTRA $200)</span>
-                        <div class="my-button my-button-origin">Proceed to Checkout</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    {% render "sale-buy-any" %}
     <div class="klarna">
         <div class="centeral-content">
             <div>
                 <h3 class="u24Medium_v2" style="color: #FFB3C7;">Ride Now, Pay Later</h3>
-            <h2 class="u36DemiBold_v2">Flash Sale Limited-Time <span style="color: #FFB3C7;">0% APR</span> for 24 Months</h2>
+            <h2 class="u36DemiBold_v2">Christmas Sale Limited-Time <span style="color: #FFB3C7;">0% APR</span> for 24 Months</h2>
             <h3 class="u20Light_v2">A $1,599 purchase costs $66.62/month for 24 months at 0% APR.</h3>
             </div>
         </div>
@@ -446,10 +383,10 @@
 
 <div class="centeral-content findbikeshop">
     <div>
-        <h3 class="u30DemiBold_v2">Find a Bike Shop Near You <br>- Same Flash Sale Deals</h3>
+        <h3 class="u30DemiBold_v2">Find a Bike Shop Near You <br>Same Deal with <span style="color:#FFDF48;"><br class="pcHide">FREE ASSEMBLY</span></h3>
         <p class="u17Light_v2">
             <span>
-                With nearly 400 Urtopia dealers worldwide, including 200+ in the US, we’ve also selected over 10 outstanding stores—if you’re nearby, perfect service is waiting for you.
+                With nearly 300 Urtopia dealers across the US, we’ve handpicked over 10 exceptional stores to provide outstanding service. If one is nearby, you can enjoy perfect service with free assembly!
             </span>
         </p>
         <a href="/pages/test-ride" target="_blank" class="my-button my-button-origin">Find a bike shop</a>
