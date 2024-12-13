@@ -812,31 +812,27 @@
 
 
     $(function () {
-      const ignore = ['/pages/lightweight-ebike-urtopia-carbon-1-pro', '/pages/amazon', '/pages/email-page', 'urtopia-black-friday-sale', 'urtopia-ces-2025']
+      const ignore = ['/pages/lightweight-ebike-urtopia-carbon-1-pro', '/pages/amazon', '/pages/email-page', 'urtopia-black-friday-sale', '/pages/urtopia-ces-2025']
 
-      for (const i of ignore) {
-          if (location.href.includes(i)) {
-            return
-          }
+      if (!ignore.includes(location.pathname)) {
+        setTimeout(() => {
+          showCookieDialog().then(showSubscribeEmailDialog).then(showExitSubscribeEmailDialog).then(showTestRideDialog)
+        }, 5000)
       }
-      
-      setTimeout(() => {
-        showCookieDialog().then(showSubscribeEmailDialog).then(showExitSubscribeEmailDialog).then(showTestRideDialog)
-      }, 5000)
-    })
-</script>
-<script>
-  const length = document.querySelectorAll('#announcement-bar .swiper-wrapper > .swiper-slide').length
 
-  length > 1 && new Swiper('#announcement-bar', {
-    direction: 'vertical',
-    speed: 600,
-    loop: true,
-    autoplay: {
-      disableOnInteraction: false,
-      pauseOnMouseEnter: true,
-      delay: 5000,
-      // reverseDirection: true
-    },
-  });
+
+      if (document.querySelectorAll('#announcement-bar .swiper-wrapper > .swiper-slide').length) {
+        new Swiper('#announcement-bar', {
+            direction: 'vertical',
+            speed: 600,
+            loop: true,
+            autoplay: {
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+              delay: 5000,
+              // reverseDirection: true
+            },
+          });
+      }
+    })
 </script>
