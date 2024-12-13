@@ -57,34 +57,8 @@ h4 {
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
-        color: #FFDF48;
         z-index: 1;
         position: relative;
-
-
-        .u24Medium_v2 {
-            margin: 3vh 0 7vh;
-        }
-
-        img {
-            max-width: 560px;
-            margin-left: -30px;
-            margin-bottom: 30px;
-        }
-
-        .my-button {
-            color: #000;
-            background-color: #FFDF48;
-            font-size: 30px;
-            font-weight: 600;
-            padding: 20px 48px;
-            margin-top: 7vh;
-    
-            &:hover {
-                opacity: 1;
-                background-color: #FFDF48;
-            }
-        }
     }
 
 
@@ -93,39 +67,19 @@ h4 {
         color: #fff;
 
         .centeral-content {
-            align-items: flex-start;
-            justify-content: flex-end;
+            align-items: center;
+            justify-content: flex-start;
             text-align: center;
             height: 500px;
-            padding-bottom: 40px;
-
-            .u90DemiBold_v2 {
-                font-size: 54px;
-            }
-
-            .u20Medium_v2 {
-                font-size: 14px;
-            }
-
-            img {
-                max-width: 230px;
-                margin-left: -10px;
-                margin-bottom: 10px;
-            }
-
-            .my-button {
-                margin-top: 24px;
-                font-size: 20px;
-                padding: 16px 30px;
-            }
+            padding-top: 8vw;
         }
     }
 }
 
 
 .your {
-    background: #F4F5F7 url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DDD_2x_4aa14eb8-f5d5-43dc-9348-383ceedcfa3a.jpg?v=1731569289') center center/cover no-repeat;
-    height: 330px;
+    background: #F4F5F7 url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25224_2x_08e2ad01-21d6-4810-95ea-6c8942bd6c1c.jpg?v=1734073153') center center/cover no-repeat;
+    height: 380px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -143,38 +97,47 @@ h4 {
     }
 
     .u36DemiBold_v2 {
-        color: #FFDF48;
+        color: white;
     }
 
     .my-button-black {
-        color: #000;
-        background-color: #FFDF48;
+        color: #fff;
+        background-color: #D50B28;
 
         &:hover {
             opacity: 1;
-            background-color: #FFDF48;
+            background-color: #D50B28;
         }
     }
 
 
     @media (max-width: 767px) {
-        background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24975_2x_2cbc88e5-d479-4962-98b6-e4e9b632e4b7.jpg?v=1731569541');
+        background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3333_2x_329d7b2d-bf2a-4031-b9ad-19011a81a3bc.jpg?v=1734073911');
         box-sizing: content-box !important;
         padding: 0 30px;
         text-align: center;
         align-items: center;
-        margin-top: 13.5vw;
-        margin: 13.5vw 30px 0 !important;
-        border-radius: 20px;
+        margin-top: 4vw;
+        border-radius: 0;
         height: auto;
-        padding: 8vw 4vw;
-        height: 130vw;
-        justify-content: flex-end;
-        text-align: left;
-        align-items: flex-start;
+        padding: 10vw 8vw;
+        height: 115vw;
+        justify-content: flex-start;
+        text-align: center;
+        align-items: center;
 
         .u36DemiBold_v2 {
             font-size: 24px;
+        }
+
+        .my-button-black {
+            color: #000;
+            background-color: inherit;
+    
+            &:hover {
+                opacity: inherit;
+                background-color: inherit;
+            }
         }
     }
 }
