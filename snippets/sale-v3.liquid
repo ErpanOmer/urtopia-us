@@ -62,16 +62,30 @@
    .sale {
      border-radius: 7px;
                   background-color: #f9f7f6;
-                  overflow: hidden;
                   margin-bottom: 24px;
                   user-select: none;
    }
   
       .sale  .u14DemiBold_v2 {
-         background: #000 url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241203-183157.png?v=1733221937') left center/contain no-repeat;
+         background: #55000F url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241213-190026.png?v=1734087643') left center/contain no-repeat;
          height: 40px;
-         background-position-x: 12px;
+         background-position-x: 50px;
+            position: relative;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
        }
+
+      .sale .u14DemiBold_v2::before {
+        content: "";
+        background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/c07044f776d2e9364978cf7563bb3a5c.svg?v=1734087530');
+    display: block;
+    position: absolute;
+            width: 50px;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-size: contain;
+            transform: translate(10px, -10px);
+      }
   
       .sale .middle {
         color: #FFDF48;
@@ -79,7 +93,9 @@
                       grid-template-columns: repeat(4, 1fr);
                       padding: 12px 0;
                       border-top: 1px solid #333;
-                      background-color: #000;
+                      background-color: #55000F;
+        border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
   
       }
   
