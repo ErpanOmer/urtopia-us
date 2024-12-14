@@ -67,9 +67,179 @@
                         <span class="u48DemiBold_v2">$4598</span>
                         <div class="u24DemiBold_v2 yellow">You Save $2400</div>
                         <span class="u17Light_v2">($2200 OFF + EXTRA $200)</span>
-                        <div class="my-button my-button-origin">Proceed to Checkout</div>
+                        <div class="my-button my-button-origin">Add To Cart</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+
+    <script>
+        const bikes_custom_config = {
+            8794812776696: {
+                title: 'Fusion GT',
+                ...global_config.fusion_order_page_config
+            },
+            8230663028984: {
+                title: 'Carbon 1 Pro',
+                ...global_config.carbon1pro_order_page_config
+            },
+            8792002461944: {
+                title: 'Carbon Fold 1',
+                ...global_config.carbon_fold_order_page_config
+            }
+        }
+
+        const bikes_info = []
+
+        {% for product in collections['urtopia-black-friday-sale'].products %}
+            bikes_info.push({
+                {% assign options_with_values_Style = product.options_with_values | where: "name", "Style"  %}
+                {% assign options_with_values_Color = product.options_with_values | where: "name", "Color"  %}
+                {% assign options_with_values = options_with_values_Style |  concat: options_with_values_Color %}
+                style: {{ options_with_values.first.values | json }},
+                {% assign options_with_values = product.options_with_values | where: "name", "Size"  %}
+                size:{{ options_with_values.first.values | json }},
+                variants: {{ product.variants | where: "available" | json }},
+                title: bikes_custom_config['{{ product.id }}'].title,
+                id: {{ product.id }},
+                price: {{ product.price | money_without_trailing_zeros | json }},
+                compare_at_price: {{ product.compare_at_price | money_without_trailing_zeros | json }},
+                featured_image: {{ product.featured_image.src | json }},
+                first_available_variant: {{ product.first_available_variant | json  }},
+                ...bikes_custom_config['{{ product.id }}']
+             })
+        {% endfor %}
+
+
+        for (const info of bikes_info) {
+            $('.buyany select').append(new Option(info.title, info.id)) 
+        }
+
+
+        function updateTotal() {
+            let total_price = 0
+            let total_compare_at_price = 0
+            let save = 20000
+
+            $(`.buyany .priceeeeeeeeeeee`).each(function () {
+                total_price += Number($(this).find('.u24DemiBold_v2').attr('price'))
+                total_compare_at_price += Number($(this).find('.u20Light_v2').attr('compare_at_price'))
+            })
+
+
+            if (total_price > 500000) {
+                save = 50000
+            }
+
+            $('.buyany .total .u48DemiBold_v2').text(getPriceFormat(total_price - save, true))
+            $('.buyany .total .yellow').text(`You Save ${getPriceFormat(total_compare_at_price - total_price + save, true)}`)
+            $('.buyany .total .u17Light_v2').text(`(${getPriceFormat(total_compare_at_price - total_price, true)} OFF + EXTRA ${getPriceFormat(save, true)})`)
+        }
+
+
+        function changeVariant (target, variant) {
+            target.find('.card img').attr('src', variant.featured_image.src + '&width=600')
+            target.find('.style .u17Light_v2').text(variant.option2)
+            target.find('.size .u17Light_v2').text(bikes_custom_config[variant.featured_image.product_id].size_map[variant.option1])
+            target.find('.priceeeeeeeeeeee .u24DemiBold_v2').text(getPriceFormat(variant.price, true)).attr('price', variant.price)
+            target.find('.priceeeeeeeeeeee .u20Light_v2').text(getPriceFormat(variant.compare_at_price, true)).attr('compare_at_price', variant.compare_at_price)
+            target.attr('data-variant-id', variant.id)
+        }
+
+
+        function changeProduct (target, value) {
+            const info = bikes_info.find(info => info.id === Number(value))
+
+            changeVariant(target, info.first_available_variant)
+
+            for (const style of info.style) {
+                
+            }
+
+            target.find('.style .dots').html(info.style.map(s => `<div data-stye="${s}"></div>`).join('')).children().on('click', function () {
+                const size = target.find('.size .sizes .active').text()
+                const style = $(this).attr('data-stye')
+
+                $(this).siblings().removeClass('active')
+                $(this).addClass('active')
+
+                changeVariant(target, info.variants.find(v => v.title === `${size} / ${style}`))
+            }).first().addClass('active')
+
+            target.find('.size .sizes').html(info.size.map(s => `<div class="u17Medium_v2">${s}</div>`).join('')).children().on('click', function () {
+                const style = target.find('.style .dots .active').attr('data-stye')
+                const size = $(this).text()
+
+                $(this).siblings().removeClass('active')
+                $(this).addClass('active')
+
+                changeVariant(target, info.variants.find(v => v.title === `${size} / ${style}`))
+            }).first().addClass('active')
+
+            setTimeout(updateTotal)
+            target.find('select').val(value)
+        }
+
+
+        // dom Load
+        setTimeout(() => {
+            $('.buyany select').on('change', function () {
+                console.log('changegggggggggg')
+
+                const name = $(this).attr('name')
+                const value = $(this).val()
+                const parent = $(this).parent().parent()
+
+                changeProduct(parent, value)
+            })
+
+            $('.buyany .total .my-button').on('click', function() {
+                $(this).addClass('loading')
+
+                let cart = document.querySelector('cart-notification') || document.querySelector('cart-drawer');
+                const variants = []
+
+                $('.buyany div[data-variant-id]').each(function () {
+                    variants.push($(this).attr('data-variant-id'))
+                })
+
+                // fetch('/cart/clear.js').then(() => {
+                //     navigator.sendBeacon('/cart/add.js', new Blob([JSON.stringify({
+                //             items: variants.map(id => ({ id, quantity: 1 })),
+                //             sections: cart.getSectionsToRender().map(section => section.id).join(',')
+                //     })], {
+                //     type: 'application/json',
+                //    }))
+
+                //    setTimeout(() => {
+                //      location.href = `/checkout`
+                //    }, 300)                        
+                // }).finally(() => {
+                //     // $(this).removeClass('loading')
+                // })
+
+
+
+                fetch('/cart/add.js', {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        items: variants.map(id => ({ id, quantity: 1 })),
+                        sections: cart.getSectionsToRender().map(section => section.id).join(',')
+                    }),
+                    headers: {
+                    'Content-Type': 'application/json',
+                    },
+                }).then((res) => res.json()).then(res => {
+                    cart.classList.contains('is-empty') && cart.classList.remove('is-empty');
+                    !(res.message && res.status) && cart.renderContents(res);
+                }).catch(console.error).finally(() => {
+                    $(this).removeClass('loading')
+                })
+            })
+
+            changeProduct($(`.buyany select[name="left"]`).parent().parent(), 8794812776696)
+            changeProduct($(`.buyany select[name="right"]`).parent().parent(), 8230663028984)
+        }, 100)
+    </script>
