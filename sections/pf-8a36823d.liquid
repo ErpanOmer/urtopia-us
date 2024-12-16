@@ -1,5 +1,4 @@
 <link rel="stylesheet" href="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/laydatev3.css">
-<link rel="preload" href="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/files/20230607-142007.jpg?v=1686118943" as="image">
 {{ 'testride.scss.css' | asset_url | stylesheet_tag }}
 
 <style>
@@ -225,6 +224,7 @@
 </div>
 
 {{ 'laydatev4-us.js' | asset_url | script_tag }}
+{{ 'shopInfoList-us.js' | asset_url | preload_tag: as: 'script' }}
 <script type="text/javascript" src="https://cdn.storepoint.co/api/v1/js/162f21804990ff.js"></script>
 
 <script>

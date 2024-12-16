@@ -169,6 +169,109 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/what-is-california-known-for-the-golden-gate-bridge-hero.webp?v=1697020664',
     stores: [
       {
+        name: `West Coast Cycles`,
+        phone: '714-833-5551',
+        email: 'info@wcebikes.com',
+        timezone: "Fremont, California, USA (GMT-7)",
+        add: "1742 S Euclid St. Anaheim, Ca 92802",
+        testrideSpot: "Anaheim",
+        availableSizes: [
+          'Carbon 1 Pro Size M',
+          'Carbon Fold 1'
+        ],
+        businessHours: [
+           "",
+           "14:00-17:00",
+           "14:00-17:00",
+           "14:00-17:00",
+           "14:00-17:00",
+           "14:00-17:00",
+           "",
+        ],
+      },
+      {
+        name: `Hermosa Cyclery`,
+        phone: '310-374-7816',
+        email: 'mark@hermosacyclery.com',
+        timezone: "Fremont, California, USA (GMT-7)",
+        add: "20 13th Street Hermosa Beach, CA 90254",
+        testrideSpot: "Hermosa Beach",
+        availableSizes: [
+          'Carbon 1 Pro Size M'
+        ],
+        businessHours: [
+           "9:00-19:00",
+           "9:00-19:00",
+           "9:00-19:00",
+           "9:00-19:00",
+           "9:00-19:00",
+           "9:00-19:00",
+           "9:00-19:00",
+        ],
+      },
+      {
+        name: `San Diego Electric Bike`,
+        phone: '858-345-1030',
+        email: 'sdebike@gmail.com',
+        timezone: "Fremont, California, USA (GMT-7)",
+        add: "10 S coast Hwy 101 Solana Beach, CA 92075",
+        testrideSpot: "Solana Beach",
+        availableSizes: [
+          'Carbon Fold 1'
+        ],
+        businessHours: [
+           "10:00-17:00",
+           "10:00-17:00",
+           "",
+           "",
+           "10:00-17:00",
+           "10:00-17:00",
+           "10:00-17:00",
+        ],
+      },
+      {
+        name: `So Cal Bike`,
+        phone: '7607101478',
+        email: 'jim@socalbike.com',
+        timezone: "Fremont, California, USA (GMT-7)",
+        add: "2028 S. Coast Hwy. Oceanside, CA 92054",
+        testrideSpot: "Oceanside",
+        availableSizes: [
+          'Fusion GT',
+          'Carbon Fold 1'
+        ],
+        businessHours: [
+           "10:00-16:00",
+           "10:00-18:00",
+           "10:00-18:00",
+           "10:00-18:00",
+           "10:00-18:00",
+           "10:00-18:00",
+           "10:00-18:00",
+        ],
+      },
+      {
+        name: `OC Bkieworks`,
+        phone: '949-550-7803',
+        email: 'milo@ocbikeworks.com',
+        timezone: "Fremont, California, USA (GMT-7)",
+        add: "1051 Avenida Pico #B San Clemente, CA 92673",
+        testrideSpot: "San Clemente",
+        availableSizes: [
+          'Fusion GT',
+          'Carbon Fold 1'
+        ],
+        businessHours: [
+           "",
+           "11:00-18:00",
+           "11:00-18:00",
+           "11:00-18:00",
+           "11:00-18:00",
+           "11:00-18:00",
+           "11:00-18:00",
+        ],
+      },
+      {
         name: `E-Ryde`,
         phone: '310-640-2453',
         email: 'brandon@e-ryde.com',
@@ -239,7 +342,8 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/image_8.png?v=1731725082",
         testrideSpot: "Los Angeles",
         availableSizes: [
-          'Fusion GT'
+          'Fusion GT',
+          'Carbon Fold 1'
         ],
         businessHours: [
            "11:00-17:00",
@@ -282,7 +386,8 @@ const testRides = [
         testrideSpot: "San Pedro",
         noBook: true,
         availableSizes: [
-          'Carbon 1 Pro Size S/M/L'
+          'Carbon 1 Pro Size S/M/L',
+          'Carbon Fold 1'
         ],
         businessHours: [
            "",
@@ -582,7 +687,9 @@ const testRides = [
         testrideSpot: "Newport Beach",
         noBook: true,
         availableSizes: [
-          'Carbon 1 Pro Size S/M/L'
+          'Carbon 1 Pro Size S/M/L',
+          'Carbon Fold 1',
+          'Fusion GT'
         ],
         businessHours: [
            "10:00-18:00",
@@ -690,8 +797,9 @@ const testRides = [
         testrideSpot: "California",
         noBook: true,
         availableSizes: [
-          'Carbon 1 Pro Size M',
-          'Fusion GT'
+          'Carbon 1 Pro Size S/M/L',
+          'Fusion GT',
+          'Carbon Fold 1'
         ],
         businessHours: [
            "10:00-16:00",
@@ -716,13 +824,13 @@ const testRides = [
           'Carbon 1 Pro Size M'
         ],
         businessHours: [
-           "",
+           "09:00-17:00",
            "09:00-18:00",
            "09:00-18:00",
             "09:00-18:00",
             "09:00-18:00",
             "09:00-18:00",
-            "09:00-17:00",
+            "09:00-18:00",
         ],
       },
       {
@@ -1645,6 +1753,27 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_4_0d6b1e4d-def2-4565-9aba-0d2241618ead.png?v=1718085649',
     stores: [
       {
+        name: "Pedego Bethesda",
+        phone: "603-370-7858",
+        email: "David@pedegobethesda.com",
+        timezone: "Washington, DC, USA (GMT-4)",
+        add: "4926 Hampden Ln Bethesda, MD 20814",
+        testrideSpot: "Bethesda",
+        testRideSize: "M/L",
+        availableSizes: [
+          'Carbon Fold 1',
+        ],
+        businessHours: [
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+        ],
+      },
+      {
         name: "Bike Doctor_Arnold",
         phone: "(410) 544-3532",
         email: "sruck@bikedoctor.com",
@@ -1762,6 +1891,28 @@ const testRides = [
     city: 'Florida',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/shutterstock_469708088.jpg?v=1697188978',
     stores: [
+      {
+        name: "Eventure Tour Co",
+        phone: "8505986380",
+        email: "emily@eventure30a.com",
+        timezone: "New Port Richey, FL, USA (GMT-4)",
+        add: "174 Watercolor Way Suite 106, Santa Rosa Beach, FL 32459",
+        testrideSpot: "Santa Rosa Beach",
+        availableSizes: [
+          'Carbon 1 Pro Size S/M/L',
+          'Fusion GT',
+          'Carbon Fold 1'
+        ],
+        businessHours: [
+          "",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+        ],
+      },
       {
         name: "Voltaire Cycles",
         phone: "941-922-0384",
@@ -1982,6 +2133,29 @@ const testRides = [
     city: 'Texas',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Playtri_dallas.jpg?v=1665374977',
     stores: [
+      {
+        name: "E-Bike Central_Waco",
+        phone: "254-677-6139",
+        email: "ebikecentraltx@gmail.com",
+        timezone: "Dallas, TX, USA (GMT-5)",
+        add: "112 Mary Ave, Waco, TX 76701",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_8_0ab36051-a5e5-4fff-b231-63bc8b3b9d89.png?v=1729752581",
+        testrideSpot: "Waco",
+        availableSizes: [
+          'Carbon 1 Pro Size M',
+          'Fusion GT',
+          'Carbon Fold 1'
+        ],
+        businessHours: [
+           "",
+           "10:00-18:00",
+           "10:00-18:00",
+            "10:00-18:00",
+           "10:00-18:00",
+            "10:00-18:00",
+            "10:00-18:00",
+        ],
+      },
       {
         name: "HUB MRKT Bikes",
         phone: "210-334-0205",
@@ -2613,6 +2787,27 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Strictly_Ebikes.jpg?v=1709208572',
     stores: [
       {
+        name: "Electric Bikes of Northern Virginia",
+        phone: "703 987 8864",
+        email: "todd@pedegoalexandria.com",
+        timezone: "Virginia, USA (GMT-7)",
+        add: "210 North Lee Street, Unit 102, Alexandria, VA 22314",
+        testrideSpot: "Alexandria",
+        availableSizes: [
+          'Carbon 1 Pro Size M/L',
+          'Fusion GT'
+        ],
+        businessHours: [
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+        ],
+      },
+      {
         name: "E-Bike Alley Norfolk",
         phone: "757-320-2400",
         email: "Amy@e-bikealley.com",
@@ -2887,6 +3082,34 @@ const testRides = [
           "10:00-18:00",
           "10:00-18:00",
           "10:00-17:00",
+        ],
+      },
+    ]
+  },
+  {
+    city: 'Rhode Island',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Urban_Electrica.jpg?v=1710818582',
+    stores: [
+      {
+        name: "Bristol Bikes",
+        phone: "413-528-5555",
+        email: "mark@bristolribikes.com",
+        timezone: "Tennessee, USA (GMT-7)",
+        add: "267 Thames St. Bristol, RI 02809",
+        testrideSpot: "Bristol",
+        availableSizes: [
+          'Carbon 1 Pro Size L',
+          'Fusion GT',
+          'Carbon Fold 1'
+        ],
+        businessHours: [
+          "9:00-17:00",
+          "9:00-17:00",
+         "9:00-17:00",
+         "9:00-17:00",
+          "9:00-17:00",
+          "9:00-17:00",
+          "9:00-17:00",
         ],
       },
     ]

@@ -1,10 +1,6 @@
 {{ 'outlet_v4.scss.css' | asset_url | stylesheet_tag: preload: true }}
 {{ 'black-friday.scss.css' | asset_url | stylesheet_tag: preload: true }}
 
-<script>
-    console.log(JSON.parse(JSON.stringify('{{ shop.metaobject["bike_shops"]["bike-shops-kyytdcoh"] | json }}')))
-</script>
-
 <div class="banner">
         <div class="centeral-content">
             <div class="swiperrrr">
@@ -401,7 +397,16 @@
 
 <div class="professional test-ride">
     <div class="centeral-content">
-      <div class="videos swiper-wrapper"></div>
+      <div class="videos swiper-wrapper">
+        {% for item in shop.metaobjects['shop_config']['test_ride_list'].value.value %}
+            <div class="swiper-slide" data-url="{{ item.url }}">
+                <img class="lozad" data-src="{{ item.image }}"/>
+                <span class="u20DemiBold_v2">{{ item.title }}</span>
+                <span class="u17Light_v2" style="margin: 0;">{{ item.span }}</span>
+                <a class="my-link" href="tel:{{ item.tel }}">{{ item.tel }}</a>
+            </div>
+        {% endfor %}
+      </div>
       <div class="swiper-scrollbar"></div>
       <div class="buttons mobileHide">
         <div class="swiper-button-prev"></div>
@@ -531,93 +536,7 @@
     })
 </script>
 <script>
-    const items = [
-        {
-            image: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25019_2x_1f2872e0-9d52-4461-bdf5-a1d820b59ce2.jpg?v=1731481159',
-            title: `Don’s Bicycle - Rialto`,
-            span: `384 S Riverside Ave, Rialto, CA 92376`,
-            tel: '(909) 875-7310',
-            url: '/pages/test-ride?name=Don%27s%20Bicycles%20-%20Redlands'
-        },
-        {
-            image: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25020_2x_e3126052-fdc2-4bba-8819-4e90df958ef4.jpg?v=1731485441',
-            title: `Two Wheels One Planet`,
-            span: `420 E 17th St, Costa Mesa, CA 92627`,
-            tel: '(949) 646-7706',
-            url: '/pages/test-ride?name=Two%20Wheels%20One%20Planet'
-        },
-        {
-            image: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25021_2x_e19b861f-8266-4841-b267-9b493bfabedb.jpg?v=1731485446',
-            title: `Orange Cycle`,
-            span: `210 S Glassell St, Orange, CA 92866`,
-            tel: '(714) 532-6838',
-            url: '/pages/test-ride'
-        },
-        {
-            image: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25022_2x_d3914ba7-6a92-4414-9b85-7d47ee6b1961.jpg?v=1731485452',
-            title: `Bike Doctor - Arnold`,
-            span: `953 Ritchie Hwy, Arnold, MD 21012`,
-            tel: '(410) 544-3532',
-            url: '/pages/test-ride?name=Bike%20Doctor_Arnold'
-        },
-        {
-            image: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25027_2x_09cc4581-b094-4f0a-b6ea-62e3d82a9e6a.jpg?v=1731485458',
-            title: `Cadence Cyclery of McKinney`,
-            span: `119 S Tennessee St, McKinney, TX 75069`,
-            tel: '(972) 548-7400',
-            url: '/pages/test-ride?name=Cadence%20Cyclery%20of%20McKinney'
-        },
-        {
-            image: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25023_2x_3d34103f-c46a-47ad-8cb9-d1281d2028cf.jpg?v=1731485463',
-            title: `American Canyon Bike Shop`,
-            span: `115 Klamath Ct, American Canyon, CA 94503`,
-            tel: '(707) 334-8122',
-            url: '/pages/test-ride?name=American%20Canyon%20Bike%20Shop'
-        },
-        {
-            image: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25026_2x_86fa014a-ed68-43b1-a733-1f3751dd8687.jpg?v=1731485469',
-            title: `Fitness Exchange - Conshohocken`,
-            span: `1004 Ridge Pike I Conshohocken, PA 19428`,
-            tel: '(610) 397-1780',
-            url: '/pages/test-ride?name=FITNESS%20EXCHANGE%20CONSHOHOCKEN'
-        },
-        {
-            image: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25028_2x_bf00b043-e721-4392-8eb8-50722e1d0490.jpg?v=1731485474',
-            title: `Elecruiser Electric Bikes`,
-            span: `Avenue Shops, 1954 NE 5th Ave #5th, Boca Raton, FL 33431`,
-            tel: '(561) 221-6797',
-            url: '/pages/test-ride?name=ELECRUISER%20ELECTRIC%20BIKES'
-        },
-        {
-            image: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25025_2x_919602bd-fca0-4203-998a-bd5033e406f8.jpg?v=1731485480',
-            title: `Julio Bicycles`,
-            span: `45 S Bedford Rd, Chappaqua, NY 10514`,
-            tel: '(914) 238-1312',
-            url: '/pages/test-ride?name=Julio%20Bicycles'
-        },
-        {
-            image: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25024_2x_d396db2c-0c0f-40e1-be0e-cde68acce4d4.jpg?v=1731485485',
-            title: `Spokes - Naperville`,
-            span: `1807 S Washington St Ste 112, Naperville, IL 60565`,
-            tel: '(630) 961-8222',
-            url: '/pages/test-ride?name=Spokes%20Bikes%20-%20Wheaton'
-        }
-    ]
-
-    for (const item of items) {
-        const html = $(`<div class="swiper-slide"><img src="${item.image}"/><span class="u20DemiBold_v2">${item.title}</span><span class="u17Light_v2" style="margin: 0;">${item.span}</span><a class="my-link" href="tel:${item.tel}">${item.tel}</a></div>`)
-        $('.test-ride .swiper-wrapper').append(html)
-
-        setTimeout(() => {
-            html.on('click', function () {
-                window.open(item.url)
-            })
-        })
-    }
-
-
-    setTimeout(() => {
-        new Swiper('.test-ride .centeral-content', {
+    new Swiper('.test-ride .centeral-content', {
             slidesPerView: global_config.is_mobile ? 1.35 : 4.5,
             spaceBetween: 20,
             navigation: {
@@ -629,5 +548,8 @@
                 draggable: true,
             },
        });
-    }, 300)
+
+       $('.test-ride .centeral-content .swiper-slide').on('click', function () {
+          window.open($(this).attr('data-url'))
+       })
 </script>
