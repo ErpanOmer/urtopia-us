@@ -205,36 +205,6 @@
       'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer','GTM-P9MZH68');</script>
       <!-- End Google Tag Manager -->
-      <!--out brain-->
-      <script data-obct type="text/javascript">
-        /** DO NOT MODIFY THIS CODE**/
-        !function (_window, _document) {
-          var OB_ADV_ID = '004724a1910ea66ba6f18eea401c197373';
-          if (_window.obApi) {
-            var toArray = function (object) {
-              return Object.prototype.toString.call(object) === '[object Array]' ? object : [object];
-            };
-            _window.obApi.marketerId = toArray(_window.obApi.marketerId).concat(toArray(OB_ADV_ID));
-            return;
-          }
-          var api = _window.obApi = function () {
-            api.dispatch ? api.dispatch.apply(api, arguments) : api.queue.push(arguments);
-          };
-          api.version = '1.1';
-          api.loaded = true;
-          api.marketerId = OB_ADV_ID;
-          api.queue = [];
-          var tag = _document.createElement('script');
-          tag.async = true;
-          tag.src = '//amplify.outbrain.com/cp/obtp.js';
-          tag.type = 'text/javascript';
-          var script = _document.getElementsByTagName('script')[0];
-          script.parentNode.insertBefore(tag, script);
-        }(window, document);
-
-        obApi('track', 'PAGE_VIEW');
-        console.log('current_page_id:', '{{ template }}');
-      </script>
         <script src="{{ 'global.js' | asset_url }}" defer></script>
         <script src="{{ 'global-sync.min.js' | asset_url }}"></script>
         {% comment %} <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/130/assets/global-sync.min.js"></script> {% endcomment %}
@@ -289,21 +259,6 @@
   <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
   {%- endif -%}
 
-
-  <!-- Track Type Script-->
-  <script type="text/javascript">
-
-    /***clarity.microsoft***/
-    (function (c, l, a, r, i, t, y) {
-      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
-      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
-      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
-    })(window, document, "clarity", "script", "bnj03r1wrv");
-
-    /*** Bing UET***/
-    (function (w, d, t, r, u) { var f, n, i; w[u] = w[u] || [], f = function () { var o = { ti: "52014030" }; o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad") }, n = d.createElement(t), n.src = r, n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && s !== "loaded" && s !== "complete" || (f(), n.onload = n.onreadystatechange = null) }, i = d.getElementsByTagName(t)[0], i.parentNode.insertBefore(n, i) })(window, document, "script", "//bat.bing.com/bat.js", "uetq");
-  </script>
-
   <!--   klarna   -->
   <script>window.KlarnaThemeGlobals = {}; {%case template.name %} {% when"product" %} {% if product.first_available_variant.price %} window.KlarnaThemeGlobals.data_purchase_amount = {{ product.first_available_variant.price }}; {% endif %} window.KlarnaThemeGlobals.productVariants = {{ product.variants | json }}; window.KlarnaThemeGlobals.documentCopy = document.cloneNode(true); {% when"cart" %} window.KlarnaThemeGlobals.data_purchase_amount = {{ cart.total_price }}; window.KlarnaThemeGlobals.documentCopy = document.cloneNode(true); {% endcase %}</script>
 
@@ -321,8 +276,6 @@
     }); // lazy loads elements with default selector as '.lozad'
     observer.observe('.lozad');
   </script>
-
-{% render 'criteo-tracking' %}
 {% render 'dialog' %}
 </body>
 </html>
