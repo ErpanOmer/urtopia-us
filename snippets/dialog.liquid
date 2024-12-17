@@ -154,7 +154,7 @@
     .subscribe-container .subscribe .box {
         display: flex;
         align-items: center;
-        background-color: #F4EFED;
+        background-color: #F4EFED50;
         border-radius: 8px;
     }
 
@@ -169,7 +169,7 @@
         align-items: flex-start;
         justify-content: center;
         text-align: left;
-        padding: 20px 0;
+        padding: 10px 0;
         margin-left: 20px;
     }
 
@@ -183,7 +183,7 @@
     }
 
     .subscribe-container .subscribe .new-contact {
-        margin: 30px 0 60px;
+        margin: 25px 0 30px;
     }
 
     .subscribe-container .subscribe .u60DemiBold_v2 {
@@ -374,7 +374,7 @@
         <img class="mobileHide" style="height: 100%;max-width: 100%;object-fit: cover;" loading="lazy" fetchpriority="low" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3333_2x_0f28fdf5-e690-4865-ab80-7a14f0014a08.png?v=1734088702&width=700" alt="">
         <img class="pcHide" loading="lazy" fetchpriority="low" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3333_2x_43420ed3-9c2e-4434-ba6b-0c41a95690d3.jpg?v=1734088969&width=500" alt="">
         <div class="subscribe">
-            <img style="box-shadow: none;    margin: 0;" class="!er-max-w-[120px] mb:!er-max-w-[90px]" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19684_2x_feece040-ee0e-4ec2-9750-abaf4caaa91f.png?v=1734088753"/>
+            <span class="u20DemiBold_v2 er-text-salecolor">{{ settings.sale_name }}</span>
             <div class="u60DemiBold_v2">{{ all_products["urtopia-carbon-fusion-gt"].compare_at_price |  minus: all_products["urtopia-carbon-fusion-gt"].price | money_without_trailing_zeros }}<span class="u30DemiBold_v2">OFF</span></div>
             <div class="u17Light_v2">Urtopia carbon e-bikes now up to {{ all_products["urtopia-carbon-fusion-gt"].compare_at_price |  minus: all_products["urtopia-carbon-fusion-gt"].price | money_without_trailing_zeros }} off! Sign up to get exclusive discount!</div>
             <form class="new-contact" action="/contact#ContactFooter" target="_blank" method="post" accept-charset="UTF-8">
@@ -386,6 +386,14 @@
                     <button class="my-button my-button-black" type="submit">Subscribe</button>
                 </div>
             </form>
+          <div class="box">
+                <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25079.svg?v=1734344936" alt="">
+                <div>
+                    <span class="u17DemiBold_v2">EXTRA Deals</span>
+                    <span class="u17Medium_v2">Gear Up! <span style="color:#D50B28">Free Helmet and Comfort Saddle</span> for the <br><span style="color:#D50B28">First 50 Orders!</span></span>
+                    </span>
+                </div>
+            </div>
         </div>
         <span class="close">×</span>
     </div>

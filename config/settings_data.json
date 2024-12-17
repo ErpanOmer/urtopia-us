@@ -1,8 +1,8 @@
 {
   "current": {
-    "sale_name": "Flash Sale",
+    "sale_name": "Christmas Sale",
     "sale_end_time": "2024-9-13",
-    "chord_sale_name": "Flash Sale",
+    "chord_sale_name": "Christmas Sale",
     "hide_sale_countdown": false,
     "show_choose_different_size": false,
     "colors_solid_button_labels": "#ffffff",
@@ -114,21 +114,6 @@
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
-        "blocks": {
-          "announcement-bar-0": {
-            "type": "announcement",
-            "settings": {
-              "text1": "Easter Sale -",
-              "impText": "$600 off",
-              "text2": "on Carbon 1s",
-              "color_scheme": "inverse",
-              "link": "shopify:\/\/products\/urtopia-carbon-e-bike"
-            }
-          }
-        },
-        "block_order": [
-          "announcement-bar-0"
-        ],
         "settings": {}
       },
       "header": {
@@ -333,18 +318,6 @@
       "sections": {
         "announcement-bar": {
           "type": "announcement-bar",
-          "blocks": {
-            "announcement-bar-0": {
-              "type": "announcement",
-              "settings": {
-                "color_scheme": "accent-1",
-                "link": ""
-              }
-            }
-          },
-          "block_order": [
-            "announcement-bar-0"
-          ],
           "settings": {}
         },
         "header": {

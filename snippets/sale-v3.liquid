@@ -94,9 +94,6 @@
                       padding: 12px 0;
                       border-top: 1px solid #333;
                       background-color: #55000F;
-        border-bottom-left-radius: 8px;
-            border-bottom-right-radius: 8px;
-  
       }
   
        .sale .middle > div {
@@ -119,23 +116,24 @@
 
 
        .sale .bottom {
-            display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            background-color: #292929;
+            display: flex;
+            background-color: #740017;
             color: #fff;
             align-items: center;
-            padding: 16px 24px;
+            padding: 16px 12px;
+                 border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+       }
+
+       .sale .bottom img {
+        max-width: 52px;
        }
 
        .sale .bottom > div {
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
-       }
-
-       .sale .bottom > div > img {
-          max-width: 52px;
-          margin-top: 12px;
+            margin-left: 10px;
+            flex: 1;
        }
   
       @media (max-width: 767px) {
@@ -173,13 +171,16 @@
           <span>Seconds</span>
         </div>
       </div>
-      <!-- <div class="bottom">
+      <div class="bottom">
+        <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25208.svg?v=1734344401" alt="">
         <div>
-          <span class="u14Medium_v2">Price Up on Dec. 3</span>
-          <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/increase_2x_e77bcf3e-22ae-4f6e-9625-87179e2bcd14.png?v=1733106774" alt="">
+          <span class="u11Medium_v2">Gear Up! <span style="color:#FFDF48">Free Helmet and Comfort Saddle</span> for the <br><span style="color:#FFDF48">First 50 Orders!</span></span>
+          <div style="background-color: #FFDF4833; height: 5px;border-radius: 10px;margin: 10px 0;overflow: hidden;">
+            <div style="width: 50%;background-color: #FFDF48;height: 100%;border-radius: 10px;"></div>
+          </div>
+          <span class="u11Medium_v2"><span style="color:#FFDF48"><span class="count">26</span> Orders</span> So Far Today</span>
         </div>
-        <img src="{{ img }}" alt="">
-      </div> -->
+      </div>
     </div>
   
     <script>

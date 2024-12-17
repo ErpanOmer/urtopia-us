@@ -155,16 +155,12 @@ document.documentElement.classList.add('shopify-design-mode');
 window.global_config = {
 sale_end_times: [
 {
-  sale_name: 'Flash Sale',
-  sale_end_time: '2024-12-9'
+  sale_name: 'Christmas Sale',
+  sale_end_time: '2024-12-19'
 },
-{
-  sale_name: 'Flash Sale',
-  sale_end_time: '2024-12-13'
-},
-{
-  sale_name: 'Flash Sale',
-  sale_end_time: '2024-12-16'
+  {
+  sale_name: 'Christmas Sale',
+  sale_end_time: '2024-12-22'
 },
 ],
 // 活动产品id
@@ -1176,168 +1172,6 @@ tailwind.config = {
         },
         '.text-base': {
           font: `normal normal normal 16px/1.4em ${theme('fontFamily.base')}`
-        },
-        '.button': {
-          font: `normal normal bold 16px/1.4em ${theme('fontFamily.base')}`,
-          borderRadius: theme('borderRadius.3xl'),
-          display: 'inline-block',
-          padding: '12px 60px',
-          cursor: 'pointer',
-          userSelect: 'none',
-          transition: 'all .3s',
-          textAlign: 'center',
-          width: 'fit-content',
-          height: 'fit-content',
-          whiteSpace: 'nowrap',
-          border: `2px solid transparent`,
-          backgroundColor: 'transparent',
-          color: 'inherit',
-          '&[disabled]': {
-            color: '#A0A1A2',
-            pointerEvents: 'none',
-            cursor: 'not-allowed',
-            userSelect: 'none'
-          }
-        },
-        '.button-primary': {
-          backgroundColor: theme('colors.primary.DEFAULT'),
-          color: theme('colors.white'),
-          borderColor: theme('colors.primary.DEFAULT'),
-          '&:hover': {
-            backgroundColor: '#FF4000',
-            borderColor: '#FF4000',
-          },
-          '&:active': {
-            backgroundColor: '#CE4520',
-            borderColor: '#CE4520',
-          },
-          '&[disabled]': {
-            backgroundColor: '#ECEDF1',
-            borderColor: '#ECEDF1',
-          }
-        },
-        '.button-primary-outline': {
-          backgroundColor: 'transparent',
-          color: theme('colors.primary.DEFAULT'),
-          borderColor: theme('colors.primary.DEFAULT'),
-          '&:hover': {
-            color: '#FF4000',
-            borderColor: '#FF4000',
-          },
-          '&:active': {
-            color: '#CE4520',
-            borderColor: '#CE4520',
-          },
-          '&[disabled]': {
-            color: '#A0A1A2',
-            borderColor: '#D3D3D3'
-          }
-        },
-        '.button-primary-text': {
-          color: theme('colors.primary.DEFAULT'),
-          '&:hover': {
-            color: '#FF4000'
-          },
-          '&:active': {
-            color: '#CE4520'
-          },
-          '&[disabled]': {
-            color: '#A0A1A2'
-          }
-        },
-        '.button-dark': {
-          backgroundColor: theme('colors.black'),
-          color: theme('colors.white'),
-          borderColor: theme('colors.black'),
-          '&:hover': {
-            backgroundColor: '#333A3E',
-            borderColor: '#333A3E',
-          },
-          '&:active': {
-            backgroundColor: '#343428',
-            borderColor: '#343428',
-          },
-          '&[disabled]': {
-            backgroundColor: '#E5E9ED',
-            borderColor: '#E5E9ED',
-          }
-        },
-        '.button-dark-outline': {
-          backgroundColor: 'transparent',
-          color: theme('colors.black'),
-          borderColor: theme('colors.black'),
-          '&:hover': {
-            color: '#333A3E',
-            borderColor: '#333A3E',
-          },
-          '&:active': {
-            color: '#343428',
-            borderColor: '#343428',
-          },
-          '&[disabled]': {
-            color: '#B0B8BD',
-            borderColor: '#E5E9ED'
-          }
-        },
-        '.button-dark-text': {
-          color: '#242729',
-          '&:hover': {
-            color: '#2F1101'
-          },
-          '&:active': {
-            color: '#343428'
-          },
-          '&[disabled]': {
-            color: '#B0B8BD'
-          }
-        },
-        '.button-white': {
-          backgroundColor: theme('colors.white'),
-          color: "#242729",
-          borderColor: theme('colors.white'),
-          '&:hover': {
-            backgroundColor: '#EEEEEE',
-            borderColor: '#EEEEEE',
-          },
-          '&:active': {
-            backgroundColor: '#ccc',
-            borderColor: '#ccc',
-            color: '#000'
-          },
-          '&[disabled]': {
-            backgroundColor: '#BCBCBC',
-            borderColor: '#BCBCBC',
-            color: '#999'
-          }
-        },
-        '.button-white-outline': {
-          backgroundColor: 'transparent',
-          color: theme('colors.white'),
-          borderColor: theme('colors.white'),
-          '&:hover': {
-            color: '#EEEEEE',
-            borderColor: '#EEEEEE',
-          },
-          '&:active': {
-            color: '#CCCCCC',
-            borderColor: '#CCCCCC',
-          },
-          '&[disabled]': {
-            color: '#999',
-            borderColor: '#999'
-          }
-        },
-        '.button-white-text': {
-          color: theme('colors.white'),
-          '&:hover': {
-            color: '#EEEEEE'
-          },
-          '&:active': {
-            color: '#CCCCCC'
-          },
-          '&[disabled]': {
-            color: '#999'
-          }
         },
       })
     }
