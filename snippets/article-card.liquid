@@ -60,7 +60,7 @@
         {%- endif -%}
         <div class="card__content">        
           <div class="card__information">
-            <h3 class="card__heading{% unless show_excerpt %} h2{% endunless %}">
+            <h3 class="card__heading h2">
               <a href="{{ article.url }}" class="full-unstyled-link">
                 {{ article.title | truncate: 50 | escape }}
               </a>
@@ -100,7 +100,7 @@
       <div class="card__content">
         <div class="card__information">
             <span class="article_tag">{{ article.tags[0]}}</span>
-          <h3 class="card__heading{% unless show_excerpt %} h2{% endunless %}">
+          <h3 class="card__heading h2">
             <a href="{{ article.url }}" class="full-unstyled-link">
               {{ article.title | truncate: 50 | escape }}
             </a>
