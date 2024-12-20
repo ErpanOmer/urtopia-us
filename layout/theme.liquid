@@ -198,6 +198,7 @@
            <!-- Google Tag Manager -->
         <script>
           window.dataLayer = window.dataLayer || [];
+          console.log('current_page_id:', '{{ template }}');
       </script>
       <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -207,7 +208,6 @@
       <!-- End Google Tag Manager -->
         <script src="{{ 'global.js' | asset_url }}" defer></script>
         <script src="{{ 'global-sync.min.js' | asset_url }}"></script>
-        {% comment %} <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/130/assets/global-sync.min.js"></script> {% endcomment %}
        {% include 'dataLayer-allPages' %}
        {% include 'pagefly-app-header' %}
        {% render "global-config" %}

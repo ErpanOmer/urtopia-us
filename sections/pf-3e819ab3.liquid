@@ -225,17 +225,13 @@
               </div>
               <div class="params">
                   <div class="param" name="img">
-                      <img class="lozad"
-                      data-src="https://newurtopia.com/cdn/shop/products/collectionblack.png?v=1703557822&width=600"
-                          alt="">
+                      {{ all_products["urtopia-carbon-1-pro-ebike"] | image_url: width: 600 | image_tag: loading: 'lazy' }}
                       <div class="select">
                           <select index="0"></select>
                       </div>
                   </div>
                   <div class="param" name="img">
-                      <img class="lozad"
-                      data-src="https://newurtopia.com/cdn/shop/files/chordblack.png?v=1695613971&width=600"
-                          alt="">
+                      {{ all_products["urtopia-carbon-fusion-gt"] | image_url: width: 600 | image_tag: loading: 'lazy' }}
                       <div class="select">
                           <select index="1"></select>
                       </div>
@@ -277,7 +273,7 @@
                   <div class="param u17Medium_v2" name="dimensions">
 
                       <img class="lozad"
-                      data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/bike_2x_329ad618-2567-4400-ab11-8e01e5ca3abf.png?v=1682065701"
+                      data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241219-180413.png?v=1734602674"
                           alt="">
                       <div class="u14DemiBold_v2 pcHide"></div>
                       <div class="sizes"></div>
@@ -503,7 +499,7 @@
 const parameters = [
     {
       name: 'Carbon 1 Pro(size S)',
-      img: 'https://newurtopia.com/cdn/shop/products/collectionblack.png?v=1703557822&width=600',
+      img: '{{ all_products["urtopia-carbon-1-pro-ebike"] | image_url: width: 600 }}',
       size: 'Fit for 5’3” - 5’9”',
       weight: '37 lbs',
       capacity: 'Max. 240 lbs',
@@ -531,7 +527,7 @@ const parameters = [
   },
     {
       name: 'Carbon 1 Pro(size M)',
-      img: 'https://newurtopia.com/cdn/shop/products/collectionblack.png?v=1703557822&width=600',
+      img: '{{ all_products["urtopia-carbon-1-pro-ebike"] | image_url: width: 600 }}',
       size: 'Fit for 5’7” - 6’1”',
       weight: '37 lbs',
       capacity: 'Max. 240 lbs',
@@ -559,7 +555,7 @@ const parameters = [
   },
   {
       name: 'Carbon 1 Pro(size L)',
-      img: 'https://newurtopia.com/cdn/shop/products/collectionblack.png?v=1703557822&width=600',
+      img: '{{ all_products["urtopia-carbon-1-pro-ebike"] | image_url: width: 600 }}',
       size: 'Fit for 5’11” - 6’5”',
       weight: '37 lbs',
       capacity: 'Max. 240 lbs',
@@ -587,7 +583,7 @@ const parameters = [
   },
   {
       name: 'Chord',
-      img: 'https://newurtopia.com/cdn/shop/files/chordblack.png?v=1695613971&width=600',
+      img: `{{ all_products['urtopia-chord-ebike'].variants | where: "option1", "High-Step" | where: "available" | first | image_url: width: 600  }}`,
       size: 'Fit for 5’7” – 6’5”',
       weight: '46 lbs',
       capacity: 'Max. 287 lbs',
@@ -615,7 +611,7 @@ const parameters = [
   },
   {
       name: 'Chord X',
-      img: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18400_2x_6789324f-33d2-4342-9519-0ee3bc943699.png?v=1677639718',
+      img: `{{ all_products['urtopia-chord-ebike'].variants | where: "option1", "Step-Through" | where: "available" | first | image_url: width: 600  }}`,
       size: 'Fit for 5’3” – 6’1”',
       weight: '46 lbs',
       capacity: 'Max. 287 lbs',
@@ -643,8 +639,8 @@ const parameters = [
   },
   {
       name: 'Carbon Fusion GT',
-      img: 'https://newurtopia.com/cdn/shop/files/19566.png?v=1729236036&width=600',
-      size: 'Fit for 5’3” – 6’3”',
+      img: '{{ all_products["urtopia-carbon-fusion-gt"] | image_url: width: 600 }}',
+      size: global_config.fusion_order_page_config.size_map['One Size'],
       weight: '60 lbs',
       capacity: 'Max. 330 lbs',
       gearing: 'Shimano ACERA 8-Speed',
@@ -654,24 +650,14 @@ const parameters = [
       sensors: 'Torque sensor, accelerometer, gyroscope',
       motor: '1500W peak power (36V 350W 36Nm front hub motor, 36V 350W 36Nm rear drive hub motor)',
       dimensions: {
-          img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240108-181634.png?v=1704709013',
-          sizes: [
-              ['A. Adjustable seat range', '140 mm'],
-              ['B. Handlebar grips height', '1085-1115 mm'],
-              ['C. Seat tube length', '485 mm'],
-              ['D. Wheelbase', '1205 mm'],
-              ['E. Overall length', '1935 mm'],
-              ['F. Wheel diameter', '730 mm'],
-              ['G. Top tube length (effective)', '633 mm'],
-              ['H. Head tube length', '144 mm'],
-              ['I. Headset height', '90-120 mm'],
-          ]
+          img: global_config.fusion_order_page_config.sizes_and_specs.sizes.image,
+          sizes: getSizes(global_config.fusion_order_page_config.sizes_and_specs.sizes.parameters)
       }
   },
   {
       name: 'Carbon Fold 1',
-      img: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241022-144851.png?v=1729579789&width=600',
-      size: 'Fit for 5’1” – 6’1”',
+      img: '{{ all_products["urtopia-carbon-fold"] | image_url: width: 600 }}',
+      size: global_config.carbon_fold_order_page_config.size_map['One Size'],
       weight: '29 lbs',
       capacity: 'Max. 220 lbs',
       gearing: 'Shimano Altus 8-Speed',
@@ -681,19 +667,21 @@ const parameters = [
       sensors: 'Torque sensor',
       motor: '500 Peak power, 36V 250W (sustained) rear drive hub motors, 42Nm',
       dimensions: {
-          img: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19556_2x_ea5e3f39-95bd-4a6c-926b-5de332bff46e.png?v=1729162648',
-          sizes: [
-              ['A. Adjustable seat range', '160 mm'],
-              ['B. Seat length', '1000 mm'],
-              ['C. Overall length', '1460 mm'],
-              ['D. Handlebar grips height', '1100 mm'],
-              ['E. Height after folding', '680 mm'],
-              ['F. Overall length after folding', '780 mm']
-          ]
+          img: global_config.carbon_fold_order_page_config.sizes_and_specs.sizes.image,
+          sizes: getSizes(global_config.carbon_fold_order_page_config.sizes_and_specs.sizes.parameters)
       }
   }
 ]
-  
+  function getSizes (parameters, index = 1) {
+    const sizes = []
+    const names = parameters[0]
+
+    for (let i = 2;i < names.length; i++) {
+      sizes[i] = [names[i], parameters[index][i]]
+    }
+    
+    return sizes
+  }
   
   function changeParameters(index, name) {
       const params = parameters.find(p => p.name === name)
@@ -705,10 +693,14 @@ const parameters = [
       $('.items .params').each((i, param) => {
           const target = $(param).find('.param')[index]
           const n = target.getAttribute('name')
+
+          
   
           // 如果img 参数
           if (n === 'img') {
-              $(target).find('img').attr('src', params.img)
+              console.log($(target).find('img'), params.img)
+            
+              $(target).find('img').attr('src', params.img).removeAttr('srcset')
               $(target).find('select').val(name)
   
               // 默认禁用掉 对面option
@@ -751,7 +743,7 @@ const parameters = [
 
     // 默认展示
     changeParameters('0', 'Carbon 1 Pro(size M)')
-    changeParameters('1', 'Chord')
+    changeParameters('1', 'Carbon Fusion GT')
 
 
     new Swiper('.professional .centeral-content', {
