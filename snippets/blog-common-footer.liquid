@@ -24,9 +24,9 @@
             {% if count < 4 %}
               <a href="{{ article.url }}" class="flex flex-column border-radius-10 mb-margin-top-40" style="overflow: hidden;border: 1px solid #e6e6e6;">
                 <div class="lozad" data-background-image="{{ article.image.src | image_url: width: 400 }}"></div>
-                <div class="flex-1 padding-top-24 padding-bottom-24 padding-right-12 padding-left-12 mb-padding-12">
-                  <h6 class="color-orange font-size-16 margin-bottom-4">Blog</h6>
-                  <h5 class="mb-font-size-20">{{ article.title }}</h5>
+                <div class="flex-1 er-p-10 mb:er-p-6">
+                  <h6 class="color-orange font-size-16 margin-bottom-12">Blog</h6>
+                  <h3 class="er-text-4xl er-leading-snug mb:er-text-2xl">{{ article.title }}</h3>
                 </div>
               </a>
             {% endif %}
