@@ -822,7 +822,8 @@
     }
 
 
-    $(document).ready(function () {
+    $(function () {
+      const $toTop = $('#global2top');
       const ignore = ['/pages/lightweight-ebike-urtopia-carbon-1-pro', '/pages/amazon', '/pages/email-page', '/collections/urtopia-black-friday-sale', '/pages/urtopia-ces-2025']
 
       if (!ignore.includes(location.pathname)) {
@@ -845,5 +846,20 @@
             },
           });
       }
+
+
+      // 监听滚动事件，显示或隐藏按钮
+        $(window).on('scroll', function () {
+            if ($(this).scrollTop() > 200) { // 页面滚动超过200px时显示按钮
+            $toTop.addClass('show').removeClass('hide');
+            } else {
+            $toTop.addClass('hide').removeClass('show');
+            }
+        });
+
+        // 点击按钮滚动到页面顶部
+        $toTop.on('click', function () {
+            $('html, body').animate({ scrollTop: 0 }, 500); // 500ms 平滑滚动到顶部
+        });
     })
 </script>
