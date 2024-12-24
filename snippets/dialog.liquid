@@ -877,16 +877,17 @@
         // 在这里执行你的逻辑
         // 访问 iframe 内部的 document
          const iframeDoc = target.contentDocument || target.contentWindow.document;
-         console.log(iframeDoc)
 
-         if (iframeDoc) {
-            const icon = iframeDoc.querySelector(`div[shape="circle"]`)
 
-            if (icon) {
-                icon.style.width = '48px'
-                icon.style.height = '48px'
+         // 在 iframe 内部插入样式
+        const style = iframeDoc.createElement('style');
+        style.textContent = `
+            body div[shape="circle"] {
+               width: 48px;
+               height: 48px;
             }
-         }
+        `;
+        iframeDoc.head.appendChild(style);
     },
     {
         disconnectOnFound: false,
