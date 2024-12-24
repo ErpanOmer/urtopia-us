@@ -870,7 +870,7 @@
             mutation.addedNodes.forEach((node) => {
             if (node.tagName === 'IFRAME') {
                 node.onload = function () {
-                console.log('动态 iframe 已加载', node.id);
+                console.log('动态 iframe 已加载', node);
                 const iframeDoc = node.contentDocument || node.contentWindow.document;
 
                 // 操作 iframe 内部内容
