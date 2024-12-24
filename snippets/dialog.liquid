@@ -878,6 +878,10 @@
         // 访问 iframe 内部的 document
          const iframeDoc = target.contentDocument || target.contentWindow.document;
          console.log(iframeDoc)
+
+         if (iframeDoc) {
+            console.log(iframeDoc.querySelector(`div[shape="circle"]`))
+         }
     },
     {
         root: document.body, // 监听整个页面
