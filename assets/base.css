@@ -8978,6 +8978,11 @@ button.newsletter-form__button {
     height: 48px;
     width: 48px;
   }
+
+  #global2top svg {
+    width: 24px;
+    height: 24px;
+  }
 }
 
 
