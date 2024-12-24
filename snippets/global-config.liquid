@@ -163,6 +163,7 @@
     const { root, debounceTime, disconnectOnFound } = finalOptions;
     const observer = new MutationObserver(debounce(() => {
       const target = root.querySelector(selector);
+      console.log(root)
       if (target) {
           callback(target); // 执行回调
           if (disconnectOnFound) {
