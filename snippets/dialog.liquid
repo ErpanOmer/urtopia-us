@@ -824,6 +824,7 @@
 
     $(function () {
       const $toTop = $('#global2top');
+
       const ignore = ['/pages/lightweight-ebike-urtopia-carbon-1-pro', '/pages/amazon', '/pages/email-page', '/collections/urtopia-black-friday-sale', '/pages/urtopia-ces-2025']
 
       if (!ignore.includes(location.pathname)) {
@@ -868,6 +869,12 @@
     // 使用示例
     global_config.is_mobile && waitForElement('#launcher', target => {
         console.log('Target element found:', target);
+
+        {% if product %}
+            $('#global2top').css('bottom', '124px');
+            target.style.bottom = '64px';
+        {% endif %}
+
         // 在这里执行你的逻辑
         // 访问 iframe 内部的 document
          const iframeDoc = target.contentDocument || target.contentWindow.document;
