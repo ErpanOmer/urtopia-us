@@ -8943,8 +8943,8 @@ button.newsletter-form__button {
   background-color: #000;
   height: 64px;
   width: 64px;
-  right: 0;
-  bottom: 0;
+  right: 16px;
+  bottom: 140px;
   display: flex;
   align-items: center;
   justify-content: center;
