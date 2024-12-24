@@ -871,7 +871,7 @@
       console.log(`document.querySelector('#launcher')`, document.querySelector('#launcher'))
     })
 
-    const observer = new MutationObserver((mutations) => {
+    new MutationObserver((mutations) => {
         mutations.forEach((mutation) => {
             mutation.addedNodes.forEach((node) => {
             if (node.tagName === 'IFRAME') {
@@ -891,8 +891,5 @@
             }
             });
         });
-        });
-
-        // 监听指定容器
-        observer.observe(document.body, { childList: true, subtree: true });
+        }).observe(document.body, { childList: true, subtree: true });
 </script>
