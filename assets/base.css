@@ -8977,6 +8977,7 @@ button.newsletter-form__button {
   #global2top {
     height: 48px;
     width: 48px;
+    bottom: 80px;
   }
 
   #global2top svg {
