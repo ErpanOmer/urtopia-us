@@ -8940,7 +8940,6 @@ button.newsletter-form__button {
 
 
 #toTop {
-  display: none; /* 默认隐藏 */
   position: fixed;
   bottom: 20px;
   right: 20px;
