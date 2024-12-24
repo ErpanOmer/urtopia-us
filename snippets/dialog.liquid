@@ -848,18 +848,20 @@
       }
 
 
-      // 监听滚动事件，显示或隐藏按钮
-        $(window).on('scroll', throttle(function () {
-            if ($(this).scrollTop() > (screen.availHeight * 2)) { // 页面滚动超过200px时显示按钮
-               $toTop.addClass('show').removeClass('hide');
-            } else {
-               $toTop.addClass('hide').removeClass('show');
-            }
-        }, 300));
+      if (document.body.scrollHeight > (screen.availHeight * 2)) {
+            // 监听滚动事件，显示或隐藏按钮
+            $(window).on('scroll', throttle(function () {
+                if ($(this).scrollTop() > (screen.availHeight * 2)) { // 页面滚动超过200px时显示按钮
+                $toTop.addClass('show').removeClass('hide');
+                } else {
+                $toTop.addClass('hide').removeClass('show');
+                }
+            }, 300));
 
-        // 点击按钮滚动到页面顶部
-        $toTop.on('click', function () {
-            $('html, body').animate({ scrollTop: 0 }, 500); // 500ms 平滑滚动到顶部
-        });
+            // 点击按钮滚动到页面顶部
+            $toTop.on('click', function () {
+                $('html, body').animate({ scrollTop: 0 }, 500); // 500ms 平滑滚动到顶部
+            });
+      }
     })
 </script>
