@@ -875,6 +875,9 @@
     waitForElement('#launcher', target => {
         console.log('Target element found:', target);
         // 在这里执行你的逻辑
+        // 访问 iframe 内部的 document
+         const iframeDoc = target.contentDocument || target.contentWindow.document;
+         console.log(iframeDoc)
     },
     {
         root: document.body, // 监听整个页面
