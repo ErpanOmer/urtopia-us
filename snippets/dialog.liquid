@@ -849,13 +849,13 @@
 
 
       // 监听滚动事件，显示或隐藏按钮
-        $(window).on('scroll', function () {
+        $(window).on('scroll', throttle(function () {
             if ($(this).scrollTop() > (screen.availHeight * 2)) { // 页面滚动超过200px时显示按钮
             $toTop.addClass('show').removeClass('hide');
             } else {
             $toTop.addClass('hide').removeClass('show');
             }
-        });
+        }));
 
         // 点击按钮滚动到页面顶部
         $toTop.on('click', function () {
