@@ -869,7 +869,7 @@
     // 使用示例
     global_config.is_mobile && waitForElement('#launcher', target => {
         console.log('Target element found:', target);
-        console.log('{{ template }}' == 'page.carbon1pro')
+        console.log({{ template }} == 'page.carbon1pro')
 
         {% if product or '{{ template }}' == 'page.carbon1pro' %}
             $('#global2top').css('bottom', '124px');
