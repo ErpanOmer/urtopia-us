@@ -8970,8 +8970,8 @@ button.newsletter-form__button {
 
 @media (max-width: 767px) {
   #launcher {
-    width: 48px;
-    height: 48px;
+    width: 48px !important;
+    height: 48px !important;
   }
 }
 
