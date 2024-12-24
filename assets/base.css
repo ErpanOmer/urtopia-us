@@ -8954,6 +8954,7 @@ button.newsletter-form__button {
   border-radius: 50%;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0;
 }
 
 #global2top.show {
@@ -8962,7 +8963,7 @@ button.newsletter-form__button {
 }
 
 #global2top.hide {
-  opacity: 0;
+
   transform: translateY(10px);
 }
 
