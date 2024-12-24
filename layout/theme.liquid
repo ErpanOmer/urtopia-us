@@ -199,6 +199,27 @@
         <script>
           window.dataLayer = window.dataLayer || [];
           console.log('current_page_id:', '{{ template }}');
+          new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+            mutation.addedNodes.forEach((node) => {
+            if (node.tagName === 'IFRAME') {
+                node.onload = function () {
+                console.log('动态 iframe 已加载', node);
+                const iframeDoc = node.contentDocument || node.contentWindow.document;
+
+                // 操作 iframe 内部内容
+                const style = iframeDoc.createElement('style');
+                style.textContent = `
+                    body {
+                    background-color: lightblue;
+                    }
+                `;
+                iframeDoc.head.appendChild(style);
+                };
+            }
+            });
+        });
+        }).observe(document.body, { childList: true, subtree: true });
       </script>
       <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
