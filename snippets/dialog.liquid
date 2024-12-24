@@ -871,48 +871,6 @@
       console.log(`document.querySelector('#launcher')`, document.querySelector('#launcher'))
     })
 
-    function waitForElement(selector, callback, options = {}) {
-            const defaultOptions = {
-                root: document.body, // 默认监听整个文档
-                childList: true, // 监听子节点的变化
-                subtree: true, // 包括深层子树节点
-                debounceTime: 100, // 去抖时间
-                disconnectOnFound: true, // 找到目标时是否自动断开监听
-            };
-
-            const finalOptions = { ...defaultOptions, ...options };
-            const { root, debounceTime, disconnectOnFound } = finalOptions;
-
-            let debounceTimeout = null; // 去抖定时器
-            const observer = new MutationObserver(() => {
-                clearTimeout(debounceTimeout);
-                debounceTimeout = setTimeout(() => {
-                const target = root.querySelector(selector);
-                if (target) {
-                    callback(target); // 执行回调
-                    if (disconnectOnFound) {
-                    observer.disconnect(); // 找到目标后停止监听
-                    }
-                }
-                }, debounceTime);
-            });
-
-            // 开始监听
-            observer.observe(root, {
-                childList: finalOptions.childList,
-                subtree: finalOptions.subtree,
-            });
-
-            // 如果目标已存在，立即执行
-            const initialTarget = root.querySelector(selector);
-            if (initialTarget) {
-                callback(initialTarget);
-                if (disconnectOnFound) {
-                observer.disconnect();
-                }
-            }
-}
-
 // 使用示例
 waitForElement(
   '#launcher', 
