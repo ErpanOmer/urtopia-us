@@ -863,12 +863,6 @@
                 $('html, body').animate({ scrollTop: 0 }, 500); // 500ms 平滑滚动到顶部
             });
       }
-
-
-      
-
-
-      console.log(`document.querySelector('#launcher')`, document.querySelector('#launcher'))
     })
 
     // 使用示例
@@ -890,7 +884,7 @@
         iframeDoc.head.appendChild(style);
     },
     {
-        disconnectOnFound: false,
+        disconnectOnFound: true,
         root: document.body, // 监听整个页面
         debounceTime: 200, // 降低回调触发频率
     }
