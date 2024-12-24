@@ -8941,8 +8941,10 @@ button.newsletter-form__button {
 
 #global2top {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  width: 64px;
+  height: 64px;
+
+  
   z-index: 1000;
   background-color: #007BFF;
   color: white;
