@@ -903,9 +903,6 @@
 
 
 </div></div></div>
-
-
-<img class="toTop" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21049.svg?v=1687267470">
 	
 <div class="top-fixed mobileHide">
   <div class="centeral-content">
@@ -931,7 +928,6 @@
   // 默认隐藏
   $('.bottom-fixed').hide()
   $('.top-fixed').hide()
-  $('.toTop').hide()
   $('.product .error-tip').hide()
   
   const leftSwiper = new Swiper(".product .left-swiper", {
@@ -1223,12 +1219,6 @@ function addAllToCart(parse, show = false) {
       })
   })
 
-  $('.toTop').on('click', e => {
-      $('html').animate({
-          scrollTop: 0
-      }, 300)
-  })
-
 
   let currnetScroolTop = 0
   $(document).on('scroll', throttle(e => {
@@ -1257,9 +1247,6 @@ function addAllToCart(parse, show = false) {
 
           currnetScroolTop = top2
       }
-
-      top2 > (h * 2) ? $('.toTop').show() : $('.toTop').hide()
-
   }, 300, 100))
 </script>
 {% render 'product-options', config_name: 'carbon_order_page_config' %}
