@@ -866,29 +866,29 @@
 
 
       const observer = new MutationObserver((mutations) => {
-  mutations.forEach((mutation) => {
-    mutation.addedNodes.forEach((node) => {
-      if (node.tagName === 'IFRAME') {
-        node.onload = function () {
-          console.log('动态 iframe 已加载');
-          const iframeDoc = node.contentDocument || node.contentWindow.document;
+        mutations.forEach((mutation) => {
+            mutation.addedNodes.forEach((node) => {
+            if (node.tagName === 'IFRAME') {
+                node.onload = function () {
+                console.log('动态 iframe 已加载', node.id);
+                const iframeDoc = node.contentDocument || node.contentWindow.document;
 
-          // 操作 iframe 内部内容
-          const style = iframeDoc.createElement('style');
-          style.textContent = `
-            body {
-              background-color: lightblue;
+                // 操作 iframe 内部内容
+                const style = iframeDoc.createElement('style');
+                style.textContent = `
+                    body {
+                    background-color: lightblue;
+                    }
+                `;
+                iframeDoc.head.appendChild(style);
+                };
             }
-          `;
-          iframeDoc.head.appendChild(style);
-        };
-      }
-    });
-  });
-});
+            });
+        });
+        });
 
-// 监听指定容器
-observer.observe(document.body, { childList: true, subtree: true });
+        // 监听指定容器
+        observer.observe(document.body, { childList: true, subtree: true });
 
 
       console.log(`document.querySelector('#launcher')`, document.querySelector('#launcher'))
