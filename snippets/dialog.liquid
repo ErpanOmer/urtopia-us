@@ -871,7 +871,7 @@
         console.log('Target element found:', target);
         console.log()
 
-        {% if product or '{{ template }}' === 'page.carbon1pro' %}
+        {% if product or '{{ template }}' == 'page.carbon1pro' %}
             $('#global2top').css('bottom', '124px');
             target.style.bottom = '64px';
         {% endif %}
