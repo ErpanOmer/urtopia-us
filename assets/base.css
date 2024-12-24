@@ -8939,7 +8939,7 @@ button.newsletter-form__button {
 }
 
 
-#toTop {
+#global2top {
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -8953,12 +8953,12 @@ button.newsletter-form__button {
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-#toTop.show {
+#global2top.show {
   opacity: 1;
   transform: translateY(0);
 }
 
-#toTop.hide {
+#global2top.hide {
   opacity: 0;
   transform: translateY(10px);
 }
