@@ -8946,7 +8946,7 @@ button.newsletter-form__button {
   height: 64px;
   width: 64px;
   right: 16px;
-  bottom: 140px;
+  bottom: 96px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -8963,7 +8963,7 @@ button.newsletter-form__button {
 }
 
 #global2top.hide {
-
+  opacity: 0;
   transform: translateY(10px);
 }
 
