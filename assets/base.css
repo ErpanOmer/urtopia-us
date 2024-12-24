@@ -8938,5 +8938,31 @@ button.newsletter-form__button {
   content: ""
 }
 
-/* https://cdn.shopify.com/s/files/1/0583/5810/4213/files/hat.png?v=1734420337 */
+
+#toTop {
+  display: none; /* 默认隐藏 */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#toTop.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#toTop.hide {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
 
