@@ -881,8 +881,11 @@
 
          if (iframeDoc) {
             const icon = iframeDoc.querySelector(`div[shape="circle"]`)
-            icon.style.width = '48px'
-            icon.style.height = '48px'
+
+            if (icon) [
+                icon.style.width = '48px'
+                icon.style.height = '48px'
+            ]
          }
     },
     {
