@@ -116,13 +116,11 @@
         </div>
         <div>
             <img
-            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/cccc_2x_366a8576-c889-4210-8bbf-05fa1c327bf8.png?v=1731912593"
             alt=""
             >
         </div>
         <div>
             <img
-            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/cccc_2x_366a8576-c889-4210-8bbf-05fa1c327bf8.png?v=1731912593"
             alt=""
             >
         </div>
@@ -133,7 +131,7 @@
 
 <script>
     $('.makes .compare img').each(function (index) {
-        $(this).attr('src', global_config.{{ config }}.compare.style[`image_${index}`]);
+        $(this).attr('src', global_config.{{ config }}.compare.style[`image_${index}`]).removeAttr('data-src')
     })
 
     const parameterssss = global_config.{{ config }}.compare.parameters

@@ -48,7 +48,7 @@
       </div>
       <div class="medias">
          <i class="u17DemiBold_v2">Carbon Fiber Expert</i>
-         <img src="https://newurtopia.com/cdn/shop/files/logo_0707__1.png?v=1684310857" alt="">
+         <img class="lozad" data-src="https://newurtopia.com/cdn/shop/files/logo_0707__1.png?v=1684310857&width=500" alt="">
       </div>
       <div class="swiper-pagination pcHide"></div>
       <div class="free mobileHide">
@@ -360,8 +360,8 @@
         </div>
         <div onclick="testRideTrace('klarna_check_out', this)" class="orderTestRideBtn">
           <img
-            class="twoooo"
-            src="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/files/20230530-121400.png?v=1685420054"
+            class="twoooo lozad"
+            data-src="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/files/20230530-121400.png?v=1685420054"
           >
           <span><span class="u14DemiBold_v2">0 APR Financing</span
             ><span class="u14Medium_v2"
@@ -490,7 +490,7 @@
     </p>
     <div class="my-button" onclick="showVideoDialog('https://www.youtube.com/embed/Adj2WsYXM8g?autoplay=1&amp;cc_load_policy=1')">
         Watch Video
-        <img class="lozad mobileHide" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/screenshot-20231012-164642.png?v=1697100422" alt="" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/screenshot-20231012-164642.png?v=1697100422" data-loaded="true">
+        <img class="lozad mobileHide" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/screenshot-20231012-164642.png?v=1697100422" alt="">
         <img class="lozad pcHide" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/screenshot-20231012-165647.png?v=1697101021" alt="">
       </div>
   </div>
@@ -545,14 +545,14 @@
             <div class="swiper">
                 <div class="swiper-wrapper">
                      <div class="swiper-slide" >
-                        <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241012-184908_2x_f690fe39-ffed-4931-8d30-943ec18958d7.png?v=1729482982" />
+                        <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241012-184908_2x_f690fe39-ffed-4931-8d30-943ec18958d7.png?v=1729482982" />
                     </div>
                     <div class="swiper-slide" >
-                        <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241012-184906_2x_4e9cb21c-99e3-4d5d-acd7-12a93a099d84.png?v=1729482988" />
+                        <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241012-184906_2x_4e9cb21c-99e3-4d5d-acd7-12a93a099d84.png?v=1729482988" />
                     </div>
                    
                   <div class="swiper-slide" >
-                        <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241012-184840_2x_f95f0716-b194-48d8-b90f-54a30f8e989d.png?v=1729483015" />
+                        <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241012-184840_2x_f95f0716-b194-48d8-b90f-54a30f8e989d.png?v=1729483015" />
                     </div>
                 </div>
             </div>
@@ -790,7 +790,7 @@
     </g>
   </g>
 </svg>
-	<img class="toTop" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21049.svg?v=1687267470">	
+	<img class="toTop lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21049.svg?v=1687267470">	
 <div class="top-fixed mobileHide">
   <div class="centeral-content">
     <span class="u20DemiBold_v2">{{ product.title }}</span>
@@ -1193,8 +1193,6 @@
             $(`.step_folding .progress > div`).removeClass('active')
           },
             slideChange: function () {      
-              console.log('this.realIndex', this.realIndex)
-              
                 if (this.realIndex === 0) {
                     // 往右
                     if (this.activeIndex > this.previousIndex) {

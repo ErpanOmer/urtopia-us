@@ -169,6 +169,48 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/what-is-california-known-for-the-golden-gate-bridge-hero.webp?v=1697020664',
     stores: [
       {
+        name: `Triabike`,
+        phone: '760-340-2840',
+        email: 'service@triabike.com',
+        timezone: "Fremont, California, USA (GMT-7)",
+        add: "44841 San Pablo Ave. Palm Desert, CA 92260",
+        testrideSpot: "Palm Desert",
+        availableSizes: [
+          'Carbon Fold 1'
+        ],
+        businessHours: [
+           "",
+           "10:00-17:00",
+           "10:00-17:00",
+           "10:00-17:00",
+           "10:00-17:00",
+           "10:00-17:00",
+           "10:00-16:00",
+        ],
+      },
+      {
+        name: `Bike Bling`,
+        phone: '760-317-5450',
+        email: 'kerry@bikebling.com',
+        timezone: "Fremont, California, USA (GMT-7)",
+        add: "333 E Grand Ave. Escondido, CA 92025",
+        testrideSpot: "Escondido",
+        availableSizes: [
+          'Carbon 1 Pro Size M',
+          'Carbon Fold 1',
+          'Fusion GT'
+        ],
+        businessHours: [
+           "10:00-16:00",
+           "9:00-18:00",
+           "9:00-18:00",
+           "9:00-18:00",
+           "9:00-18:00",
+           "9:00-18:00",
+           "10:00-16:00",
+        ],
+      },
+      {
         name: `West Coast Cycles`,
         phone: '714-833-5551',
         email: 'info@wcebikes.com',
@@ -2457,6 +2499,28 @@ const testRides = [
     city: 'Utah',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/WinterSkyline-DouglasPuslipher-Alamy-D44ETX31-1024x683_jpg.webp?v=1689229044',
     stores: [
+      {
+        name: "Garage Power Sports",
+        phone: "8052163477",
+        email: "zach@garagemotorsports.com",
+        timezone: "Utah, USA (GMT-7)",
+        add: "651 W South Jordan Pkwy South Jordan, UT 84095",
+        testrideSpot: "Utah",
+        availableSizes: [
+          'Carbon 1 Pro Size L',
+          'Carbon Fold 1',
+          'Fusion GT'
+        ],
+        businessHours: [
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+        ],
+      },
       {
         name: "E-Power Bike and Board",
         phone: "435-315-3044",
