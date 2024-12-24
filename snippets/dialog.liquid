@@ -868,7 +868,7 @@
 
     // 使用示例
     global_config.is_mobile && waitForElement('#launcher', target => {
-        {% if product or template == 'page.carbon1pro' %}
+        {% if product or template == 'page.carbon1pro' or template == 'page.pf-702944ea' %}
             $('#global2top').css('bottom', '124px');
             target.style.bottom = '64px';
         {% endif %}
