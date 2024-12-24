@@ -8973,6 +8973,11 @@ button.newsletter-form__button {
     width: 48px !important;
     height: 48px !important;
   }
+
+  #global2top {
+    height: 48px;
+    width: 48px;
+  }
 }
 
 
