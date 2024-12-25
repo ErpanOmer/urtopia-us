@@ -8972,12 +8972,14 @@ button.newsletter-form__button {
   #launcher {
     width: 48px !important;
     height: 48px !important;
+    right: 8px !important;
   }
 
   #global2top {
     height: 48px;
     width: 48px;
-    bottom: 80px;
+    bottom: 72px;
+    right: 8px;
   }
 
   #global2top svg {
