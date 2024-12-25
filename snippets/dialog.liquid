@@ -455,6 +455,9 @@
         </div>
     </div>
 </div>
+<div id="global2top">
+    <svg t="1735027455730" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1443" width="32" height="32"><path d="M576 512v512H448V512H256l256-256 256 256H576zM0 0h1024v128H0V0z" fill="#fff" p-id="1444"></path></svg>
+</div>
 
 {{  | script_tag }}
 
@@ -820,6 +823,8 @@
 
 
     $(function () {
+      const $toTop = $('#global2top');
+
       const ignore = ['/pages/lightweight-ebike-urtopia-carbon-1-pro', '/pages/amazon', '/pages/email-page', '/collections/urtopia-black-friday-sale', '/pages/urtopia-ces-2025']
 
       if (!ignore.includes(location.pathname)) {
@@ -842,5 +847,52 @@
             },
           });
       }
+
+
+      if (document.body.scrollHeight > (screen.availHeight * 2)) {
+            // 监听滚动事件，显示或隐藏按钮
+            $(window).on('scroll', throttle(function () {
+                if ($(this).scrollTop() > (screen.availHeight * 2)) { // 页面滚动超过200px时显示按钮
+                $toTop.addClass('show').removeClass('hide');
+                } else {
+                $toTop.addClass('hide').removeClass('show');
+                }
+            }, 100));
+
+            // 点击按钮滚动到页面顶部
+            $toTop.on('click', function () {
+                $('html, body').animate({ scrollTop: 0 }, 500); // 500ms 平滑滚动到顶部
+            });
+      }
     })
+
+    // 使用示例
+    global_config.is_mobile && waitForElement('#launcher', target => {
+        {% if product or template == 'page.carbon1pro' or template == 'page.pf-702944ea' %}
+            $('#global2top').css('bottom', '124px');
+            target.style.bottom = '64px';
+        {% endif %}
+
+        // 在这里执行你的逻辑
+        // 访问 iframe 内部的 document
+         const iframeDoc = target.contentDocument || target.contentWindow.document;
+
+
+         // 在 iframe 内部插入样式
+        const style = iframeDoc.createElement('style');
+        style.textContent = `
+            body div[shape="circle"] {
+               width: 48px;
+               height: 48px;
+            }
+        `;
+        iframeDoc.head.appendChild(style);
+    },
+    {
+        disconnectOnFound: true,
+        root: document.body, // 监听整个页面
+        debounceTime: 200, // 降低回调触发频率
+    }
+    );
+
 </script>

@@ -1309,25 +1309,6 @@
     {% include 'judgeme_widgets', widget_type: 'judgeme_review_widget', concierge_install: false %}
   </div>
 </div>
-
-                  <svg class="toTop" xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56">
-  <g id="Group_21049" data-name="Group 21049" transform="translate(-292 -12730.465)">
-    <g id="Ellipse_266" data-name="Ellipse 266" transform="translate(292 12730.465)" fill="#fff" stroke="#707070" stroke-width="1">
-      <circle cx="28" cy="28" r="28" stroke="none"/>
-      <circle cx="28" cy="28" r="27.5" fill="none"/>
-    </g>
-    <g id="Group_21048" data-name="Group 21048">
-      <g id="Group_20954" data-name="Group 20954" transform="translate(9662.645 24659.76)">
-        <line id="Line_972" data-name="Line 972" x2="17.711" transform="translate(-9351.5 -11919.5)" fill="none" stroke="#707070" stroke-linecap="round" stroke-width="2"/>
-        <line id="Line_973" data-name="Line 973" x2="6.291" y2="6.588" transform="translate(-9342.646 -11916.146)" fill="none" stroke="#707070" stroke-linecap="round" stroke-width="2"/>
-        <line id="Line_974" data-name="Line 974" x1="7.128" y2="6.588" transform="translate(-9349.773 -11916.146)" fill="none" stroke="#707070" stroke-linecap="round" stroke-width="2"/>
-        <path id="Path_64707" data-name="Path 64707" d="M-9327.5-11892.427v-15.217" transform="translate(-15.145 -7.664)" fill="none" stroke="#707070" stroke-linecap="round" stroke-width="2"/>
-      </g>
-      <text id="Top" transform="translate(320 12773.67)" fill="#717171" font-size="14" font-family="Urbane-Medium, Urbane" font-weight="500"><tspan x="-12.74" y="0">Top</tspan></text>
-    </g>
-  </g>
-</svg>
-	<img class="toTop" loading="lazy" fetchpriority="low" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21049.svg?v=1687267470">	
 <div class="top-fixed mobileHide">
   <div class="centeral-content">
     <span class="u20DemiBold_v2">{{ product.title }}</span>
@@ -1360,7 +1341,6 @@
   // 默认隐藏
   $('.bottom-fixed').hide();
   $('.top-fixed').hide();
-  $('.toTop').hide();
 
   const leftSwiper = new Swiper('.product .left-swiper', {
     direction: 'vertical',
@@ -1606,15 +1586,6 @@
     }
   });
 
-  $('.toTop').on('click', (e) => {
-    $('html').animate(
-      {
-        scrollTop: 0,
-      },
-      300
-    );
-  });
-
   let currnetScroolTop = 0;
   $(document).on(
     'scroll',
@@ -1645,8 +1616,6 @@
 
           currnetScroolTop = top2;
         }
-
-        top2 > h * 2 ? $('.toTop').show() : $('.toTop').hide();
       },
       300,
       100

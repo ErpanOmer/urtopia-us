@@ -8938,5 +8938,52 @@ button.newsletter-form__button {
   content: ""
 }
 
-/* https://cdn.shopify.com/s/files/1/0583/5810/4213/files/hat.png?v=1734420337 */
+
+#global2top {
+  position: fixed;
+  z-index: 1000;
+  background-color: #282828;
+  height: 64px;
+  width: 64px;
+  right: 16px;
+  bottom: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+}
+
+#global2top.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#global2top.hide {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+
+@media (max-width: 767px) {
+  #launcher {
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  #global2top {
+    height: 48px;
+    width: 48px;
+    bottom: 80px;
+  }
+
+  #global2top svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
 
