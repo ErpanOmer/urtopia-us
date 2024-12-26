@@ -24,7 +24,8 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 		featured_media: {{ product.featured_media | json }},
 		images: {{ product.images | json }},
 		quantity: {% assign quantity = '' %}{% for variant in product.variants %}{% assign quantity = quantity | append: variant.id | append: ':' | append: variant.inventory_quantity | append: ',' %}{% endfor %}{% assign quantity = quantity | split: ','%}{{quantity | json }}
-	};{% endunless %}window.__pageflyProducts["8323618865400"] = {
+	};{% endunless %}
+window.__pageflyProducts["8323618865400"] = {
 		id: {{ product_8323618865400.id | json }},
 		handle: {{ product_8323618865400.handle | json }},
 		title: {{ product_8323618865400.title | json }},
@@ -256,8 +257,9 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 <script>
     var adding = false;
     var id = 0;
-    var cart1 =document.querySelector("cart-notification") || document.querySelector("cart-drawer");
+    
     function addToCartAC(){
+        var cart1 =document.querySelector("cart-notification") || document.querySelector("cart-drawer");
         if (adding == false) {
             var acProduct = { items: [],sections: {} };
             document.querySelector(".addToCartText").innerHTML = "Adding";

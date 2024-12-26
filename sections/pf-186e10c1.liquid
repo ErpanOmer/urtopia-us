@@ -84,8 +84,8 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
     var adding = false;
     var id = 0;
   	var quantity = 1;
-    var cart1 =document.querySelector("cart-notification") || document.querySelector("cart-drawer");
     function addToCartAC(){
+      var cart1 =document.querySelector("cart-notification") || document.querySelector("cart-drawer");
         if (adding == false) {
             var acProduct = { items: [],sections: {} };
             document.querySelector(".addToCartText").innerHTML = "Adding";

@@ -1,12 +1,3 @@
-{% comment %}
-    Renders cart drawer
-
-    Usage:
-    {% render 'cart-drawer' %}
-{% endcomment %}
-
-<script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
-
 <cart-drawer class="drawer{% if cart == empty %} is-empty{% endif %}">
   <div id="CartDrawer" class="cart-drawer">
     <div id="CartDrawer-Overlay"class="cart-drawer__overlay"></div>

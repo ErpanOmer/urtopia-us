@@ -1465,9 +1465,9 @@
 
   let id = 0;
   let adding = false;
-  let cart1 = document.querySelector('cart-notification') || document.querySelector('cart-drawer');
 
   function addAllToCart(parse, show = false) {
+    let cart1 = document.querySelector('cart-notification') || document.querySelector('cart-drawer');
     // 如果 B test 需要显示 klarna checkout
     window.show_notification_checkout_button = show;
     const cartList = { items: [] };
