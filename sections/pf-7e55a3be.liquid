@@ -530,6 +530,7 @@
 
     let id = 0;
     let adding = false;
+    
 
     function testRideTrace(type = '', target) {
       // 如果已经有按钮 loading ,直接退出来
@@ -565,8 +566,8 @@
     }
 
     function addAllToCart(parse, show = false) {
+       let cart1 = document.querySelector("cart-notification") || document.querySelector("cart-drawer");
         const cartList = { items: [] }
-        let cart1 = document.querySelector("cart-notification") || document.querySelector("cart-drawer");
 
         if (adding == false) {
           !show && changeAddToCartText(parse, 1);
