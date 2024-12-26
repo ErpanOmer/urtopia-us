@@ -15,7 +15,7 @@
         <div class="drawer__inner-empty">
           <div class="cart-drawer__warnings center{% if settings.cart_drawer_collection != blank %} cart-drawer__warnings--has-collection{% endif %}">
             <div class="cart-drawer__empty-content">
-              <h2 class="cart__empty-text u36DemiBold_v2">{{ 'sections.cart.empty' | t }}</h2>
+              <h6 class="cart__empty-text u36DemiBold_v2">{{ 'sections.cart.empty' | t }}</h6>
               <button class="drawer__close" type="button" onclick="this.closest('cart-drawer').close()" aria-label="{{ 'accessibility.close' | t }}">{% render 'icon-close' %}</button>
               <a href="/collections/e-bikes" class="button" style="color: #fff;">Shop Urtopia E-Bike</a>
 
@@ -402,7 +402,7 @@
             Proceed to Checkout
           </button>
           <!--<div onclick="testRideTrace2('klarna_check_out', this)" class="orderTestRideBtn">
-            <img class="twoooo"src="https://cdn.shopifycdn.net/s/files/1/0633/2068/6808/files/20230530-121400.png?v=1685420054"/>
+            <img class="twoooo"src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230530-121400.png?v=1685420054"/>
             <span><span class="u17DemiBold_v2">0% APR Financing</span><span class="stages">24 months, €112/month</span></span>
           </div>-->
         </div>

@@ -371,8 +371,15 @@
 
 <dialog id="SubscribeEmailDialog">
     <div class="subscribe-container">
-        <img class="mobileHide" style="height: 100%;max-width: 100%;object-fit: cover;"  fetchpriority="low" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3333_2x_0f28fdf5-e690-4865-ab80-7a14f0014a08.png?v=1734088702&width=700" alt="">
-        <img class="pcHide" fetchpriority="low" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3333_2x_43420ed3-9c2e-4434-ba6b-0c41a95690d3.jpg?v=1734088969&width=500" alt="">
+        <img
+          class="er-object-cover er-h-full er-max-w-full mb:er-w-full mb:er-h-80"
+          src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3333_2x_43420ed3-9c2e-4434-ba6b-0c41a95690d3.jpg?v=1734088969&width=500"
+          alt="{{ settings.sale_name }}"
+          fetchpriority="low"
+          decoding="async"
+          srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3333_2x_43420ed3-9c2e-4434-ba6b-0c41a95690d3.jpg?v=1734088969&width=500 768w,https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3333_2x_0f28fdf5-e690-4865-ab80-7a14f0014a08.png?v=1734088702&width=700 1920w"
+          sizes="(max-width: 768px) 84vw,(min-width: 769px) 100vw"
+        >
         <div class="subscribe">
             <span class="u20DemiBold_v2 er-text-salecolor">{{ settings.sale_name }}</span>
             <div class="u60DemiBold_v2">{{ all_products["urtopia-carbon-fusion-gt"].compare_at_price |  minus: all_products["urtopia-carbon-fusion-gt"].price | money_without_trailing_zeros }}<span class="u30DemiBold_v2">OFF</span></div>
@@ -387,7 +394,7 @@
                 </div>
             </form>
           <div class="box">
-                <img style="box-shadow: none;" loading="lazy" fetchpriority="low" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25204_2x_83b28ac2-7932-487f-a2b1-6e5370b854f5.png?v=1734756157" alt="">
+                <img style="box-shadow: none;" loading="lazy" fetchpriority="low" decoding="async" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25204_2x_83b28ac2-7932-487f-a2b1-6e5370b854f5.png?v=1734756157" alt="{{ settings.sale_name }}">
                 <div>
                     <span class="u17DemiBold_v2">EXTRA Deals</span>
                     <span class="u17Medium_v2">Gear Up! <span style="color:#D50B28;">Free Water Bottle Cage and Mini Air Pump</span> for the <span style="color:#D50B28;">First 50 Orders!</span></span>
@@ -401,7 +408,7 @@
 
 <dialog id="ExitSubscribeEmailDialog">
     <div class="subscribe-container">
-        <img class="mobileHide" loading="lazy" fetchpriority="low" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_23948.jpg?v=1706585436&width=600" alt="">
+        <img class="mobileHide" loading="lazy" fetchpriority="low" decoding="async" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_23948.jpg?v=1706585436&width=600" alt="{{ settings.sale_name }}">
         <div class="subscribe">
             <div class="u17DemiBold_v2">Stay with us, Don’t Miss Out on</div>
             <div class="u30DemiBold_v2">Exclusive Offers!</div>
@@ -422,7 +429,7 @@
 
 <dialog id="TestRideDialog">
     <div class="testride_dialog">
-        <img loading="lazy" fetchpriority="low" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/ccc.png?v=1706585634&width=600">
+        <img loading="lazy" fetchpriority="low" decoding="async" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/ccc.png?v=1706585634&width=600" alt="{{ settings.sale_name }}">
         <div>
             <div class="u30DemiBold_v2">Test ride spots near you</div>
             <div class="u24Medium_v2">Experience the bike in real</div>
