@@ -3,6 +3,7 @@
   assign og_url = canonical_url | default: request.origin
   assign og_type = 'website'
   assign og_description = page_description | default: shop.description | default: shop.name
+  assign find_one = false
 
   if request.page_type == 'product'
     assign og_type = 'product'
@@ -38,18 +39,14 @@
 <meta name="twitter:title" content="{{ og_title | escape }}">
 <meta name="twitter:description" content="{{ og_description | escape }}">
 
+{% for item in shop.metaobjects['shop_config']['website-noindex'].value.value %}
+    {% if request.path contains item %}
+        <meta name="robots" content="noindex, nofollow">
+        <link rel="canonical" href="{{ request.origin }}{{ collections['e-bikes'].url }}">
+        {% assign find_one = true %}
+    {% endif %}
+{% endfor %}
 
-{% comment %} 这些集中权重 {% endcomment %}
-{% if template == "collection.urtopiaebikev4" %}
-    <link rel="canonical" href="{{ request.origin }}{{ collections['e-bikes'].url }}">
-{% elsif template == "collection.accessories" or request.path contains "chord-accessories" or request.path contains "carbon-1-1s-accessories" or request.path contains "carbon-1-pro-acc" or request.path contains "carbon-1-leasing-acc" or request.path contains "on-page" or request.path contains "chord-in-cart" or request.path contains "carbon-in-cart" %}
-    <link rel="canonical" href="{{ request.origin }}{{ collections['accessories'].url }}">
-{% elsif template == "page.testestest" %}
-    <link rel="canonical" href="{{ request.origin }}">
-{% elsif template == "page.ai-ebike" %}
-    <link rel="canonical" href="{{ request.origin }}/pages/pages-smartest-ebike">
-{% elsif request.path contains "review-review-review-review" %}
-    <link rel="canonical" href="{{ request.origin }}/pages/urtopia-e-bike-review">
-{% else %}
-    <link rel="canonical" href="{{ canonical_url }}">
-{% endif %}
+{% unless find_one %}
+  <link rel="canonical" href="{{ canonical_url }}">
+{% endunless %}
