@@ -1,0 +1,99 @@
+{% assign current_article_id = article.id %}
+
+<div class="er-mb-48 mb:er-mb-24 mb:er-space-y-16 er-space-y-32 prose-headings:er-font-base mb:prose-h2:er-leading-snug mb:prose-ul:er-text-2xl mb:prose-blockquote:er-text-2xl mb:prose-th:er-px-2 mb:prose-td:er-px-2 mb:er-prose-base mb:prose-table:er-text-xl mb:prose-h3:er-text-[17.5px] mb:prose-h2:er-text-4xl mb:prose-p:er-leading-relaxed mb:prose-p:er-text-[16px] er-prose-2xl er-mx-auto er-font-base prose-ul:er-font-medium prose-blockquote:er-text-dark/75 prose-blockquote:er-text-3xl prose-a:er-font-semibold prose-table:er-text-dark/80 prose-table:er-text-2xl prose-th:er-font-bold prose-th:er-bg-border/75 even:prose-tr:er-bg-background prose-td:er-border-solid prose-th:er-border-solid prose-th:er-border-[#ddd] prose-td:er-border-[#ddd] prose-th:er-border prose-td:er-border prose-th:er-p-3 prose-td:er-p-3 prose-td:er-text-center prose-th:er-text-center prose-table:er-w-full prose-table:er-border-collapse prose-headings:er-text-black/80 prose-a:er-text-primary prose-a:er-underline hover:prose-a:er-opacity-75 prose-p:er-text-3xl prose-ul:er-text-3xl prose-ul:er-leading-[1.8] prose-p:er-leading-[1.8] prose-h2:er-tracking-wide prose-ul:er-tracking-wider prose-ul:er-font-normal prose-ul:er-text-black/60 prose-p:er-tracking-wider prose-p:er-font-normal prose-p:er-text-black/60">
+  <header
+    class="background-image er-aspect-[3/1] mb:er-aspect-square er-px-12 er-text-center er-flex er-flex-col er-justify-center er-items-center"
+  >
+    {{
+      article
+      | image_url: width: 1920
+      | image_tag:
+        sizes: '(max-width: 768px) 50vw, 100vw',
+        widths: '640, 1024, 1280, 1920',
+        preload: true,
+        loading: 'eager',
+        fetchpriority: 'high'
+    }}
+    <div class="background-mask er-bg-black/50"></div>
+    <h1 class="er-not-prose er-text-white er-max-w-screen-xl er-leading-tight er-text-8xl er-font-base mb:er-text-5xl mb:er-leading-tight">
+      {{ article.title }}
+    </h1>
+  </header>
+
+  <main class="mb:er-space-y-16 er-space-y-32 er-max-w-screen-md er-mx-auto er-px-12 er-my-32 mb:er-my-16">
+    <p class="er-flex er-justify-between er-mb-[-48px] mb:er-mb-[-20px] er-italic">
+      <small
+        >Updated:
+        <time datetime="{{ article.updated_at | date: "%Y-%m-%dT%H:%M:%S" }}">
+          {{- article.updated_at | date: format: 'date' -}}
+        </time></small
+      >
+      <small class="er-invisible">Author: {{ article.author }}</small>
+    </p>
+    {{ article.content }}
+  </main>
+  <footer class="er-max-w-screen-xl er-mx-auto er-px-12 mb:er-space-y-16 er-space-y-32">
+    <section class="er-not-prose er-font-base er-text-white">
+      <div class="er-grid er-grid-cols-2 er-rounded-2xl er-overflow-hidden er-bg-dark mb:er-grid-cols-1">
+        <img
+          loading="lazy"
+          width="610"
+          height="465"
+          src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/ROB00399_2x_65cd9c08-d86c-4f12-b492-25a925a4400c.jpg?v=1731379861"
+          alt="Best e-bike of 2025"
+        >
+        <div class="er-flex er-flex-col er-p-24 er-justify-center mb:er-px-8 mb:er-py-12 mb:er-pb-20">
+          <h2 class="er-text-5xl er-font-base er-m-0 er-text-white mb:er-text-4xl">Best e-bike of 2025</h2>
+          <ul class="er-text-3xl er-my-16 mb:er-my-12 er-pl-8 er-space-y-4 mb:er-text-2xl">
+            <li>Carbon fiber, Lightweight</li>
+            <li>Super power, AWD Peak 1500W</li>
+            <li>Super range, 120miles dual battery</li>
+          </ul>
+          <div class="flex mb:er-space-y-4 mb:er-space-x-0 er-space-x-4">
+            <a href="/collections/e-bikes" class="er-button er-button-white mb:er-w-full">Shop Urtopia E-Bike</a>
+            <a href="/pages/test-ride" class="er-button er-button-white er-button-outline mb:er-w-full">Test ride</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="er-text-5xl er-text-center mb:er-text-4xl">More Stories</div>
+    <section class="er-grid er-grid-cols-3 er-gap-12 mb:er-gap-8 !er-mt-16 mb:!er-mt-12 mb:er-grid-cols-1">
+      {% assign count = 0 %}
+      {% for article in blogs.blog.articles %}
+        {% unless current_article_id == article.id %}
+          {% assign count = count | plus: 1 %}
+          {% if count < 4 %}
+            <a
+              href="{{ article.url }}"
+              class="er-not-prose er-flex er-flex-col er-rounded-2xl er-no-underline er-border er-border-solid er-border-gray/25 er-overflow-hidden hover:er-opacity-90"
+            >
+              {{
+                article
+                | image_url: width: 400
+                | image_tag:
+                  class: 'er-object-cover er-m-0 er-aspect-video hover:er-scale-[1.025] er-transition-transform er-duration-200 er-ease-linear',
+                  loading: 'lazy'
+              }}
+              <h3 class="er-text-3xl er-font-medium er-font-base er-leading-snug er-text-center er-no-underline er-px-9 mb:er-px-6 er-py-3 mb:er-py-0">
+                {{ article.title }}
+              </h3>
+            </a>
+          {% endif %}
+        {% endunless %}
+      {% endfor %}
+    </section>
+  </footer>
+</div>
+
+<script>
+  window.addEventListener("scroll", throttle(() => {
+    $('article .fade').each((i, item) => {
+      let { top } = item.getBoundingClientRect();
+        let s = window.innerHeight - top;
+        if (s > 0) {
+          item.classList.add("fade-in-show")
+        }
+    })
+  }, 50))
+</script>
