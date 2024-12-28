@@ -3,7 +3,7 @@
     background-color: #f7f8fa;
     padding: 15vh 0;
   }
-  
+
   .makes .centeral-content {
     display: flex;
     flex-direction: column;
@@ -14,7 +14,7 @@
   .makes .centeral-content > img {
     max-width: 950px;
   }
-  
+
   .compare {
     display: grid;
     grid-template-columns: 3fr 4.5fr 4.5fr;
@@ -108,26 +108,23 @@
   }
 </style>
 
-
 <div class="makes">
   <div class="centeral-content">
-     <div class="compare">
-        <div>
-        </div>
-        <div>
-            <img
-            alt=""
-            >
-        </div>
-        <div>
-            <img
-            alt=""
-            >
-        </div>
-        </div>
+    <div class="compare">
+      <div></div>
+      <div>
+        <img
+          alt=""
+        >
+      </div>
+      <div>
+        <img
+          alt=""
+        >
+      </div>
+    </div>
   </div>
 </div>
-
 
 <script>
     $('.makes .compare img').each(function (index) {
@@ -153,5 +150,5 @@
     
 
     $('.makes .compare').before(global_config.{{ config }}.compare.style.title);
-    $('.makes .compare').after(`<img src="${global_config.is_pc ? global_config.{{ config }}.compare.style.image_pc : global_config.{{ config }}.compare.style.image_mb}"/>`);
+    $('.makes .compare').after(`<img class="mb:er-w-full" loading="lazy" src="${global_config.is_pc ? global_config.{{ config }}.compare.style.image_pc : global_config.{{ config }}.compare.style.image_mb}"/>`);
 </script>
