@@ -3,195 +3,195 @@
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
 <style>
-  .sale_coupon {
-    background-image: linear-gradient(90deg, var(--sale-color1), var(--sale-color2));
-  }
-
-  
-  .orderTestRideBtn{
-    width: 100%;
-	height: 50px;
-	font: normal normal 600 23px/28px Urbane;
-	color: #fff;
-	background: #FD4B17;
-	border: 2px solid #FD4B17;
-	border-radius: 30px;
-	margin-bottom: 6px;
-	transition:all 0.3s;
-	line-height: 50px;
-    text-align: center;
-	background: #161c1f;
-	border: 2px solid #161c1f;
-	font-size: 15px;
-	cursor: pointer;
-    line-height: unset;
-      text-align: center;
-    background: #fff;
-    color: #000;
-    border: 2px solid #161c1f;
-    display: grid;
-      grid-template-columns: 0.5fr 1fr;
-      grid-column-gap: 12px;
-    align-items: center;
-      justify-items: right;
-    }
-
-    .orderTestRideBtn:hover {
-      opacity: 0.7;
-    }
-  
-    .orderTestRideBtn > span {
-    display: flex;
-      width: 100%;
-    flex-direction: column;
-      align-items: flex-start;
-    line-height: 16px;
-    font-size: 14px;
-      font-weight: 500;
-    }
-  
-    .orderTestRideBtn > span .u17DemiBold_v2 {
-    font-weight: 700;
-    }
-  
-    .orderTestRideBtn .oneeee {
-    width: 90px;
-    }
-  
-    .orderTestRideBtn .twoooo {
-    width: 95px;
-    }
-  
-    .orderTestRideBtn .threeee {
-    width: 125px;
-    }
-
-    .loading {
-      opacity: 0.7;
-        cursor: not-allowed;
-      }
-    
-      .loading > span {
-      flex-direction: row;
-        align-items: center;
-      }
-    
-      .loading > span i {
-      margin-right: 6px;
-      }
-
-  .product_code {
-      /* display: flex; */
-        margin-bottom: 20px;
-  }
-  
-  .carbon_code {
-      max-width: 410px;
-      background: url(https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230324-171240.png?v=1679649232) no-repeat;
-      height: 46px;
-      background-size: 100% 46px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: #fff;
-      font-size: 14px;
-      font-weight: 500;
-      line-height: 18px;
-      box-shadow: 10px 10px 10px #6B869A1C;
-  }
-  
-  .carbon_code .bold {
-      font-size: 17px;
-      font-weight: bold;
-  }
-  
-  .carbon_code > span:first-child {
-      flex-basis: 68%;
-  }
-  
-  .carbon_code > span:last-child {
-      flex-basis: 32%;
-  }
-  
-  .carbon_code > span {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-  }
-  
-  .carbon_text {
-      max-width: 410px;
-      color: #fff;
-      padding: 10px 0;
-      background-image: linear-gradient(90deg, var(--sale-color3), var(--sale-color4));
-      box-shadow: 10px 10px 10px #6B869A1C;
-      opacity: 0.88;
-      border-radius: 0 0 5px 5px;
-  }
-  
-  .carbon_code,
-  .carbon_text {
-      margin-left: auto;
-  }
-  
-  .carbon_text>div {
-      display: flex;
-      align-items: center;
-      font-weight: 500;
-      line-height: 20px;
-      padding-left: 6%;
-  }
-  
-  .carbon_text>div+div {
-      margin-top: 3px;
-  }
-  
-  .carbon_text>div>span {
-      margin-left: 10px;
-  }
-  
-  
-  
-  @media (max-width: 767px) {
-      .carbon_code {
-          font-size: 13px;
-      }
-  
-      .carbon_code .bold {
-          font-size: 16px;
-      }
+   .sale_coupon {
+     background-image: linear-gradient(90deg, var(--sale-color1), var(--sale-color2));
+   }
 
 
-      
-      .sale_coupon > div:first-child { 
-        font-size: 13px;
-      }
+   .orderTestRideBtn{
+     width: 100%;
+  height: 50px;
+  font: normal normal 600 23px/28px Urbane;
+  color: #fff;
+  background: #FD4B17;
+  border: 2px solid #FD4B17;
+  border-radius: 30px;
+  margin-bottom: 6px;
+  transition:all 0.3s;
+  line-height: 50px;
+     text-align: center;
+  background: #161c1f;
+  border: 2px solid #161c1f;
+  font-size: 15px;
+  cursor: pointer;
+     line-height: unset;
+       text-align: center;
+     background: #fff;
+     color: #000;
+     border: 2px solid #161c1f;
+     display: grid;
+       grid-template-columns: 0.5fr 1fr;
+       grid-column-gap: 12px;
+     align-items: center;
+       justify-items: right;
+     }
 
-      .sale_coupon > div:last-child { 
-        font-size: 15px;
-      }
+     .orderTestRideBtn:hover {
+       opacity: 0.7;
+     }
 
-      .orderTestRideBtn{
-        font-size:14px;
-      }
-    
-      .orderTestRideBtn > span {
-        grid-template-columns: 0.7fr 1fr;
-      }
-    
-      .orderTestRideBtn .oneeee {
-        width: 80px;
-        }
-      
-        .orderTestRideBtn .twoooo {
-        width: 85px;
-        }
-      
-        .orderTestRideBtn .threeee {
-        width: 110px;
-        }
-  }
-  </style>
+     .orderTestRideBtn > span {
+     display: flex;
+       width: 100%;
+     flex-direction: column;
+       align-items: flex-start;
+     line-height: 16px;
+     font-size: 14px;
+       font-weight: 500;
+     }
+
+     .orderTestRideBtn > span .u17DemiBold_v2 {
+     font-weight: 700;
+     }
+
+     .orderTestRideBtn .oneeee {
+     width: 90px;
+     }
+
+     .orderTestRideBtn .twoooo {
+     width: 95px;
+     }
+
+     .orderTestRideBtn .threeee {
+     width: 125px;
+     }
+
+     .loading {
+       opacity: 0.7;
+         cursor: not-allowed;
+       }
+
+       .loading > span {
+       flex-direction: row;
+         align-items: center;
+       }
+
+       .loading > span i {
+       margin-right: 6px;
+       }
+
+   .product_code {
+       /* display: flex; */
+         margin-bottom: 20px;
+   }
+
+   .carbon_code {
+       max-width: 410px;
+       background: url(https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230324-171240.png?v=1679649232) no-repeat;
+       height: 46px;
+       background-size: 100% 46px;
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       color: #fff;
+       font-size: 14px;
+       font-weight: 500;
+       line-height: 18px;
+       box-shadow: 10px 10px 10px #6B869A1C;
+   }
+
+   .carbon_code .bold {
+       font-size: 17px;
+       font-weight: bold;
+   }
+
+   .carbon_code > span:first-child {
+       flex-basis: 68%;
+   }
+
+   .carbon_code > span:last-child {
+       flex-basis: 32%;
+   }
+
+   .carbon_code > span {
+       display: flex;
+       align-items: center;
+       justify-content: center;
+   }
+
+   .carbon_text {
+       max-width: 410px;
+       color: #fff;
+       padding: 10px 0;
+       background-image: linear-gradient(90deg, var(--sale-color3), var(--sale-color4));
+       box-shadow: 10px 10px 10px #6B869A1C;
+       opacity: 0.88;
+       border-radius: 0 0 5px 5px;
+   }
+
+   .carbon_code,
+   .carbon_text {
+       margin-left: auto;
+   }
+
+   .carbon_text>div {
+       display: flex;
+       align-items: center;
+       font-weight: 500;
+       line-height: 20px;
+       padding-left: 6%;
+   }
+
+   .carbon_text>div+div {
+       margin-top: 3px;
+   }
+
+   .carbon_text>div>span {
+       margin-left: 10px;
+   }
+
+
+
+   @media (max-width: 767px) {
+       .carbon_code {
+           font-size: 13px;
+       }
+
+       .carbon_code .bold {
+           font-size: 16px;
+       }
+
+
+
+       .sale_coupon > div:first-child {
+         font-size: 13px;
+       }
+
+       .sale_coupon > div:last-child {
+         font-size: 15px;
+       }
+
+       .orderTestRideBtn{
+         font-size:14px;
+       }
+
+       .orderTestRideBtn > span {
+         grid-template-columns: 0.7fr 1fr;
+       }
+
+       .orderTestRideBtn .oneeee {
+         width: 80px;
+         }
+
+         .orderTestRideBtn .twoooo {
+         width: 85px;
+         }
+
+         .orderTestRideBtn .threeee {
+         width: 110px;
+         }
+   }
+</style>
 
 <div class="page-width{% if cart == empty %} is-empty{% endif %}" id="main-cart-footer" data-id="{{ section.id }}">
   <div>
@@ -238,127 +238,158 @@
     </script>
     <div class="cart__footer">
       {%- if settings.show_cart_note -%}
-      <cart-note class="cart__note field">
-        <label for="Cart-note">{{ 'sections.cart.note' | t }}</label>
-        <textarea class="text-area field__input" name="note" form="cart" id="Cart-note"
-          placeholder="{{ 'sections.cart.note' | t }}">{{ cart.note }}</textarea>
-      </cart-note>
+        <cart-note class="cart__note field">
+          <label for="Cart-note">{{ 'sections.cart.note' | t }}</label>
+          <textarea
+            class="text-area field__input"
+            name="note"
+            form="cart"
+            id="Cart-note"
+            placeholder="{{ 'sections.cart.note' | t }}"
+          >{{ cart.note }}</textarea>
+        </cart-note>
       {%- endif -%}
 
       {% assign bikeQuantity = 0 %}
       {% assign discountSavedPrice = 0 %}
       {%- for item in cart.items -%}
-
-      {% if item.product.title contains "Carbon One"%}
-      {% assign isEbike = true %}
-      {%- assign bikeQuantity = bikeQuantity | plus:item.quantity -%}
-      {% endif %}
-      {%- assign discountSavedPrice = discountSavedPrice | plus:item.original_line_price | minus:item.final_line_price
-      -%}
+        {% if item.product.title contains 'Carbon One' %}
+          {% assign isEbike = true %}
+          {%- assign bikeQuantity = bikeQuantity | plus: item.quantity -%}
+        {% endif %}
+        {%- assign discountSavedPrice = discountSavedPrice
+          | plus: item.original_line_price
+          | minus: item.final_line_price
+        -%}
       {%- endfor -%}
       <div class="cart__blocks">
         {% for block in section.blocks %}
-        {%- case block.type -%}
-        {%- when '@app' -%}
-        {% render block %}
-        {%- when 'subtotal' -%}
-        <div class="js-contents" {{ block.shopify_attributes }}>
-          <!--diy notification-->
-          {% if isEbike == true %}
-          <div class="cart-notification__header-container">
-            {%- assign bikeSavedPrice = bikeQuantity| times:60000 -%}
-            {%- assign totalSaved = bikeSavedPrice | plus: discountSavedPrice-%}
-<!--             <div class="notification-tips"><img
-                src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/cart-tipsicon.png?" />You saved
-              {{ totalSaved | money}}!</div> -->
-            <div class="notification-tips"><img
-                src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/cart-tipsicon.png?" />You are
-              eligible for free shipping!</div>
-            <!--
-            <div class="notification-tips"><img
-                src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/cart-tipsicon.png?" />
-              Free Accessories applied!</div>-->
-          </div>
-          {% endif %}
-          <!---->
-          <!-- 600off-->
-          {% if bikeQuantity > 0 %}
-          <div style="text-decoration: line-through;font-size:22px;" class="cart-item__old-price price price--end">
-            {{ cart.total_price | plus: totalSaved | money_with_currency }}
-          </div>
-          {%-endif-%}
-          <!-- -->
-          <div class="totals">
-            <h2 class="totals__subtotal">{{ 'sections.cart.subtotal' | t }}:</h2>
-            <p class="totals__subtotal-value">{{ cart.total_price | money_with_currency }}</p>
-          </div>
+          {%- case block.type -%}
+            {%- when '@app' -%}
+              {% render block %}
+            {%- when 'subtotal' -%}
+              <div class="js-contents" {{ block.shopify_attributes }}>
+                <!-- diy notification -->
+                {% if isEbike == true %}
+                  <div class="cart-notification__header-container">
+                    {%- assign bikeSavedPrice = bikeQuantity | times: 60000 -%}
+                    {%- assign totalSaved = bikeSavedPrice | plus: discountSavedPrice -%}
+                    <!--
+                      <div class="notification-tips"><img
+                        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/cart-tipsicon.png?" />You saved
+                      {{ totalSaved | money}}!</div>
+                    -->
+                    <div class="notification-tips">
+                      <img
+                        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/cart-tipsicon.png?"
 
-          <div>
-            {%- if cart.cart_level_discount_applications.size > 0 -%}
-            <ul class="discounts list-unstyled" role="list" aria-label="{{ 'customer.order.discount' | t }}">
-              {%- for discount in cart.cart_level_discount_applications -%}
-              <li class="discounts__discount discounts__discount--position">
-                {%- render 'icon-discount' -%}
-                {{ discount.title }}
-                {{ discount.total_allocated_amount | money }}
-              </li>
-              {%- endfor -%}
-            </ul>
-            {%- endif -%}
-          </div>
+                      >You are eligible for free shipping!
+                    </div>
+                    <!--
+                      <div class="notification-tips"><img
+                        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/cart-tipsicon.png?" />
+                      Free Accessories applied!</div>
+                    -->
+                  </div>
+                {% endif %}
+                <!--  -->
+                <!-- 600off -->
+                {% if bikeQuantity > 0 %}
+                  <div
+                    style="text-decoration: line-through;font-size:22px;"
+                    class="cart-item__old-price price price--end"
+                  >
+                    {{ cart.total_price | plus: totalSaved | money_with_currency }}
+                  </div>
+                {%- endif -%}
+                <!--  -->
+                <div class="totals">
+                  <h2 class="totals__subtotal">{{ 'sections.cart.subtotal' | t }}:</h2>
+                  <p class="totals__subtotal-value">{{ cart.total_price | money_with_currency }}</p>
+                </div>
 
-          {% if cart != empty %}
+                <div>
+                  {%- if cart.cart_level_discount_applications.size > 0 -%}
+                    <ul class="discounts list-unstyled" role="list" aria-label="{{ 'customer.order.discount' | t }}">
+                      {%- for discount in cart.cart_level_discount_applications -%}
+                        <li class="discounts__discount discounts__discount--position">
+                          {%- render 'icon-discount' -%}
+                          {{ discount.title }}
+                          {{ discount.total_allocated_amount | money }}
+                        </li>
+                      {%- endfor -%}
+                    </ul>
+                  {%- endif -%}
+                </div>
 
-          {% if isEbike == true %}
-          <small class="tax-note caption-large rte">
-            Free shipping
-          </small>
-          <small class="tax-note caption-large rte">
-            Taxes calculated at checkout
-          </small>
-          {% else %}
-          <small class="tax-note caption-large rte">
-            Taxes and shipping calculated at checkout
-          </small>
-          {% endif %}
+                {% if cart != empty %}
+                  {% if isEbike == true %}
+                    <small class="tax-note caption-large rte"> Free shipping </small>
+                    <small class="tax-note caption-large rte"> Taxes calculated at checkout </small>
+                  {% else %}
+                    <small class="tax-note caption-large rte"> Taxes and shipping calculated at checkout </small>
+                  {% endif %}
+                {% endif %}
+              </div>
+              <klarna-placement data-key="credit-promotion-badge" data-locale="en-US" data-purchase-amount="">
+              </klarna-placement>
+            {%- else -%}
+              <div class="cart__ctas" {{ block.shopify_attributes }}>
+                <noscript>
+                  <button type="submit" class="cart__update-button button button--secondary" form="cart">
+                    {{ 'sections.cart.update' | t }}
+                  </button>
+                </noscript>
 
-          {% endif %}
-        </div>
-        <klarna-placement data-key="credit-promotion-badge" data-locale="en-US" data-purchase-amount="">
-        </klarna-placement>
-        {%- else -%}
-        <div class="cart__ctas" {{ block.shopify_attributes }}>
-          <noscript>
-            <button type="submit" class="cart__update-button button button--secondary" form="cart">
-              {{ 'sections.cart.update' | t }}
-            </button>
-          </noscript>
-
-          <button onclick="obApi('track', 'Checkout');" type="submit" id="checkout" class="cart__checkout-button button"
-            name="checkout" {% if cart==empty %} disabled{% endif %} form="cart">
-            {{ 'sections.cart.checkout' | t }}<img style="width: 70px;margin-left: 12px;" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Norton_by-DigiCert_177x98_2x_8f472313-bb84-4e64-8891-3a426a0a8f91.png?v=1681735955"/>
-          </button>
-        </div>
-        <div onclick="testRideTrace('klarna_check_out', this)" class="orderTestRideBtn">
-          <img class="twoooo"src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230530-121400.png?v=1685420054" alt="klarna"/>
-          <span><span class="u17DemiBold_v2">0% APR</span><span>24 months, {{cart.total_price | divided_by: 24 | money }}/month</span></span>
-          </div>
-        {% comment %}
-        {%- if additional_checkout_buttons -%}
-        <div class="cart__dynamic-checkout-buttons additional-checkout-buttons">
-          {{ content_for_additional_checkout_buttons }}
-        </div>
-        {%- endif -%}
-        {% endcomment %}
-        {%- endcase -%}
+                <button
+                  onclick="obApi('track', 'Checkout');"
+                  type="submit"
+                  id="checkout"
+                  class="cart__checkout-button button"
+                  name="checkout"
+                  {% if cart == empty %}
+                    disabled
+                  {% endif %}
+                  form="cart"
+                >
+                  {{ 'sections.cart.checkout' | t -}}
+                  <img
+                    style="width: 70px;margin-left: 12px;"
+                    src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Norton_by-DigiCert_177x98_2x_8f472313-bb84-4e64-8891-3a426a0a8f91.png?v=1681735955"
+                  >
+                </button>
+              </div>
+              <div onclick="testRideTrace('klarna_check_out', this)" class="orderTestRideBtn">
+                <img
+                  class="twoooo"
+                  src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230530-121400.png?v=1685420054"
+                  alt="klarna"
+                >
+                <span
+                  ><span class="u17DemiBold_v2">0% APR</span
+                  ><span>24 months, {{ cart.total_price | divided_by: 24 | money }}/month</span></span
+                >
+              </div>
+              {% comment %}
+                {%- if additional_checkout_buttons -%}
+                <div class="cart__dynamic-checkout-buttons additional-checkout-buttons">
+                  {{ content_for_additional_checkout_buttons }}
+                </div>
+                {%- endif -%}
+              {% endcomment %}
+          {%- endcase -%}
         {% endfor %}
 
         <div id="cart-errors"></div>
         <div>
           <ul class="list list-payment" style="justify-content: flex-start;" role="list">
             <li class="list-payment__item">
-              <svg class="icon icon--full-color" xmlns="http://www.w3.org/2000/svg" height="24"
-                viewBox="0 0 100 40.4494">
+              <svg
+                class="icon icon--full-color"
+                xmlns="http://www.w3.org/2000/svg"
+                height="24"
+                viewBox="0 0 100 40.4494"
+              >
                 <defs>
                   <style>
                     .cls-1 {
@@ -393,12 +424,12 @@
               </svg>
             </li>
             {%- for type in shop.enabled_payment_types -%}
-            {% if type=="generic" %}
-            {% continue %}
-            {% endif %}
-            <li class="list-payment__item">
-              {{ type | payment_type_svg_tag: class:"icon icon--full-color" }}
-            </li>
+              {% if type == 'generic' %}
+                {% continue %}
+              {% endif %}
+              <li class="list-payment__item">
+                {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+              </li>
             {%- endfor -%}
           </ul>
         </div>

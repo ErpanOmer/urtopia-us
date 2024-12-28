@@ -3,7 +3,6 @@
 {{ 'chord.scss.css' | asset_url | stylesheet_tag: preload: true }}
 <link rel="preload" href="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20662.svg" as="image">
 
-
 <style>
    .product .emphasize-list {
         box-shadow: #0000001a 0 0 6px;
@@ -32,362 +31,506 @@
 </style>
 
 <div class="product" data-pf-type="ProductBox">
-    <div class="centeral-content">
-        <div class="commonComponent pcHide">
-            <div class="u36DemiBold_v2">{{ product.title }}</div>
-            <div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-25_ order-djs mb6">
-                <div class="pf-judme">{% render "judgeme_widgets", widget_type: "judgeme_preview_badge", jm_style: "", concierge_install: false, product: product %}</div>
-            </div>
-            <div class="product-price u30DemiBold_v2" style="margin: 0;" data-price="{{ product.compare_at_price | money }}">{{ product.price | money }}</div>
-            <div class="sale-tag mb6">
-              <!--<div class="u17Medium_v2">{{ settings.chord_sale_name }}</div>-->
-              <div class="u14Light_v2">Free shipping.</div>
-            </div>
+  <div class="centeral-content">
+    <div class="commonComponent pcHide">
+      <div class="u36DemiBold_v2">{{ product.title }}</div>
+      <div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-25_ order-djs mb6">
+        <div class="pf-judme">
+          {% render 'judgeme_widgets',
+            widget_type: 'judgeme_preview_badge',
+            jm_style: '',
+            concierge_install: false,
+            product: product
+          %}
         </div>
-        <div class="featured_image">
-            <div class="swiper left-swiper mobileHide">
-                <div class="swiper-wrapper">
-                </div>
-            </div>
-            <div class="swiper right-swiper" style="--swiper-navigation-color: #fff;--swiper-theme-color: #000;--swiper-pagination-color: #000;">
-                <div class="adwarsssss mobileHide"></div>
-                <div class="swiper-wrapper">
-                    {% comment %} {% for image in product.images %}
-                        <div class="swiper-slide">
-                            {{ image | image_url: width: 1000 | image_tag }}
-                        </div>
-                    {% endfor %} {% endcomment %}
-                </div>
-                <div class="swiper-button-prev mobileHide"></div><!--左箭头。如果放置在swiper外面，需要自定义样式。-->
-                <div class="swiper-button-next mobileHide"></div><!--右箭头。如果放置在swiper外面，需要自定义样式。-->
-                <div class="swiper-pagination pcHide"></div>
-                <div class="flex-1 mobileHide"></div>
-                <div class="fenders mobileHide">
-                  <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230307-201732.jpg?v=1678191479" alt="">
-                  <span class="u17DemiBold_v2">Free Fenders, Kickstand, <br>1-Year Connect Service Included</span>
-                  <span class="u17Light_v2" style="text-decoration: line-through;">{{ 16700 | money }}</span>
-                  <span class="u17DemiBold_v2">FREE</span>
-                </div>
-                <div class="parameters mobileHide">
-                    <div>
-                        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18448_2x_833c8995-fa19-4297-af29-678ac4064d0c.png?v=1687176385"/>
-                        <span><span class="u14Light_v2">Torque</span><span class="u17DemiBold_v2">45 NM</span></span>
-                    </div>
-                    <div>
-                        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18449_2x_e118ab7b-18ca-4612-afb3-20758874d9c7.png?v=1687177181"/>
-                        <span><span class="u14Light_v2">Modes X Gears</span><span class="u17DemiBold_v2">4 x 8</span></span>
-                    </div>
-                    <div>
-                        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18445_2x_2e6c6230-7ed1-4c3d-99ad-54ba48fa57b4.png?v=1687177370"/>
-                        <span><span class="u14Light_v2">Adaptive</span><span class="u17DemiBold_v2">Torque Sensor</span></span>
-                    </div>
-                    <div>
-                        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18447_2x_c102facd-9087-4028-8f97-34a7af31b1f6.png?v=1687177414"/>
-                        <span><span class="u14Light_v2">Range</span><span class="u17DemiBold_v2">75 miles</span></span>
-                    </div>
-                    <div>
-                        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18450_2x_50383af6-61df-4632-9cbc-531630580f61.png?v=1687177242"/>
-                        <span><span class="u14Light_v2">Phone App</span><span class="u17DemiBold_v2">iOS, Android</span></span>
-                    </div>
-                    <div>
-                        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18446_2x_791e060a-ed39-42c5-9cf0-965d7e5110bb.png?v=1687177232"/>
-                        <span><span class="u14Light_v2">Anti-theft</span><span class="u17DemiBold_v2">GPS Tracking</span></span>
-                    </div>
-                </div>
-            </div>            
-        </div>
-        <form method="post" accept-charset="UTF-8" action="/cart/add" class="product-panel pf-product-form" data-productid={{ product.id }} id="product_form_{{ product.id }}" enctype="multipart/form-data">
-            <input type="hidden" name="id" data-product-id="{{product.id}}" value="{{ product.selected_or_first_available_variant.id }}"/>
-            <input type="hidden" name="form_type" value="product">
-            <input type="hidden" name="utf8" value="✓">
-            <div class="commonComponent mobileHide" id="sale_acc">
-                <div class="u36DemiBold_v2 mb6">{{ product.title }}</div>
-                <div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-25_ order-djs mb6">
-                    <div class="pf-judme">{% render "judgeme_widgets", widget_type: "judgeme_preview_badge", jm_style: "", concierge_install: false, product: product %}</div>
-                </div>
-                <div style="margin: 0" class="product-price u30DemiBold_v2" data-price="{{ product.compare_at_price | money }}">{{ product.price | money }}</div>
-                <div class="sale-tag mb6">
-                  <!--<div class="u17Medium_v2">{{ settings.chord_sale_name }}</div>-->
-                  <div class="u14Light_v2" style="margin: 0">Free shipping.</div>
-                </div>
-            </div>
-          <ul class="emphasize-list u17Medium_v2">
-            <li><span>●</span><span>Used, Refurbish or Showroom Bike</span></li>
-            <li><span>●</span><span>Small to none damage</span></li>
-            <li><span>●</span><span>2 year Warranty</span></li>
-            <li><span>●</span><span>Not returnable (*see FAQ)</span></li>
-          </ul>
-            <div class="fenders pcHide">
-                  <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230307-201732.jpg?v=1678191479" alt="">
-                  <div>
-                    <span class="u17DemiBold_v2" style="background-color: #263B55; color: #fff;border-radius: 7px;padding: 3px 12px;">FREE</span>
-                    <span class="u17DemiBold_v2" style="text-decoration: line-through;">{{ 16700 | money }}</span>
-                    <div class="u17Light_v2">Free Fenders, Kickstand, <br>1-Year Connect Service Included</div>
-                  </div>
-            </div>
-            <div class="options">
-                {% for option in product.options_with_values %}
-                  <div class="option" option={{option.name}} position="{{ option.position }}">
-                    <div class="u17DemiBold_v2 mb12">{{ option.name }} - <span class="u17Light_v2"></span></div>
-                    <div class="{{ option.name }} mb12">
-                      {% for value in option.values %}
-                        {% case option.name %}
-                        {% when "Style" %}
-                          <div attribute="{{ value }}" class="{{ value }}"></div>
-                        {% else %}
-                            <div attribute="{{ value }}" class="{{ value }}">{{ value }}</div>
-                        {% endcase %}                     
-                      {% endfor %}
-                    </div>
-                  </div>
-                {% endfor %}
-            </div>
-            <div class="accessories">
-                <div class="u17DemiBold_v2 mb12">Accessories</div>
-                <div class="navigate">
-                    <div class="prev"></div>
-                    <div class="next"></div>
-                </div>
-                <div class="items mb12 chord-accessories">
-                    {% for prod in collections['chord-accessories'].products %}
-                        {% if prod.available %}
-                            {% assign variant = prod.variants | first %}
-                            <div class="item" variant-id="{{ variant.id }}">
-                              <div class="u11Medium_v2">{{ prod.title }}</div>
-                              <div>
-                                <div>
-                                  <span class="u17DemiBold_v2">{{ prod.price | money }}</span>
-                                  <span class=u11Light_v2>
-                                    <i class="fa-solid fa-plus"></i>
-                                  </span>
-                                </div>
-                                {{ prod.featured_image | image_url: width: 400 | image_tag }}
-                              </div>
-                            </div>
-                        {% endif %}
-                    {% endfor %}
-                </div>
-                <div class="items mb12 chord-accessories-1">
-                    {% for prod in collections['chord-x-accessories'].products %}
-                        {% if prod.available %}
-                            {% assign variant = prod.variants | first %}
-                            <div class="item" variant-id="{{ variant.id }}">
-                              <div class="u11Medium_v2">{{ prod.title }}</div>
-                              <div>
-                                <div>
-                                  <span class="u17DemiBold_v2">{{ prod.price | money }}</span>
-                                  <span class=u11Light_v2>
-                                    <i class="fa-solid fa-plus"></i>
-                                  </span>
-                                </div>
-                                {{ prod.featured_image | image_url: width: 400 | image_tag }}
-                              </div>
-                            </div>
-                        {% endif %}
-                    {% endfor %}
-                </div>
-            </div>
-            <div class="buttons">
-                <div
-                    data-product-id="{{ product.id }}"
-                    class="my-button my-button-black addToCartBtn"
-                    onclick="addAllToCart('atc')"
-                    id="addToCart"
-                    >
-                    <i class="fa fa-spinner fa-spin"></i><span data-pf-type="Text" class="addToCartText u17DemiBold_v2">Add to Cart</span>
-                </div>
-                <!-- <div onclick="testRideTrace('amazon', this)" class="orderTestRideBtn">
-                  <img style="max-width: 50px;margin-right: 3%;" class="twoooo" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241101-174530.png?v=1730454586">
-                  <span><span class="u17DemiBold_v2">Buy on Amazon</span></span>
-                </div> -->
-                <div onclick="testRideTrace('klarna_check_out', this)" class="orderTestRideBtn">
-                  <img class="twoooo"src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230530-121400.png?v=1685420054" alt="klarna"/>
-                  <span><span class="u17DemiBold_v2">0% APR</span><span>24 months, <span class="stages">{{ product.price | divided_by: 24 | money_without_trailing_zeros }}</span>/month</span></span>
-                </div>
-            </div>
-            <div class="delivery_time mb6">Free shipping <span>within 5 days</span></div>
-            <span class="mb12" style="line-height: 24px;">
-            Need help? Email
-            <a href="mailto:support@newurtopia.com" class="my-link">support@newurtopia.com</a>
-        </span>
-            <div class="support mb12">
-                <a href="#boxs3">
-                    <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230621-005713.png?v=1687280264"/>
-                    <span class="u11Medium_v2">150+ Spots<br>of Service</span>
-                </a>
-                <a href="/pages/shipping-and-return" target="_blank">
-                    <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_17959_2x_cff00041-4dce-479b-b87d-55b1cb89cd7a.png?v=1687161086"/>
-                    <span class="u11Medium_v2">14-Day<br>Returns</span>
-                </a>
-                <a href="/pages/warranty" target="_blank">
-                    <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_17958_2x_1e776f09-0686-4672-a22f-b29d2df3898d.png?v=1687161098"/>
-                    <span class="u11Medium_v2">2-Year<br>Warranty</span>
-                </a>
-            </div>
-            <div class="dialogs">
-                <div class="u17Medium_v2">
-                    <span>Size & Fit</span>
-                    <span>&gt;</span>
-                </div>
-                <div class="u17Medium_v2">
-                    <span>Technical Specifications</span>
-                    <span>&gt;</span>
-                </div>
-                <div class="u17Medium_v2">
-                    <span>Support & Service</span>
-                    <span>&gt;</span>
-                </div>
-                <div class="u17Medium_v2">
-                    <span>FAQs</span>
-                    <span>&gt;</span>
-                </div>
-            </div>
-        </form>
+      </div>
+      <div class="product-price u30DemiBold_v2" style="margin: 0;" data-price="{{ product.compare_at_price | money }}">
+        {{ product.price | money }}
+      </div>
+      <div class="sale-tag mb6">
+        <!-- <div class="u17Medium_v2">{{ settings.chord_sale_name }}</div> -->
+        <div class="u14Light_v2">Free shipping.</div>
+      </div>
     </div>
-</div>
-<div class="maksim-big-banner lozad" data-background-image="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23286_2x_96bb433e-b8f4-4f93-a765-376f6baaffaf.jpg?v=1699928706">
-    <div class="centeral-content">
-        <div>
-            <div class="u36Medium_v2">Design Inspired <br>from Piano</div>
-            <div class="u17Light_v2">Chord, like a beautiful piano piece, bringing unprecedented smoothness and passion
-                to the realm of bike, has won broad applause such as the German Design Award.</div>
-            <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231114-233206_2x_b057955c-2082-4a23-a9ea-daed62b2f13e.png?v=1700012494&width=200"
-                alt="">
-        </div>
-        <div>
-            <div class="u24Medium_v2">Maksim Mrvica</div>
-            <div class="u17Light_v2">World’s fastest pianist from Croatia, who blends classical grace with vibrant
-                contemporary style. As the concept designer, he extends his aesthetic to the Chord, where elegance and
-                comfort interwine seamlessly.</div>
-            <div class="my-button my-button-ghost" onclick="showVideoDialog('https://www.youtube.com/embed/gjYMDVGv_C4?autoplay=1&cc_load_policy=1')">Watch video</div>
-        </div>
-    </div>
-</div>
-<div class="gray-background-color swiperrrrr">
-    <div class="centeral-content">
-        <div>
-            <div class="swiper-wrapper">
-                <div class="swiper-slide" style="--bg-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23217_2x_fad69088-980d-4d97-be93-f78d1f4b74ed.jpg?v=1699950381');--bg-image-mb: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/chord_2x_8d52dbc8-959d-4da6-ab38-a067d7b0d171.jpg?v=1699960654&width=500');"></div>
-                <div class="swiper-slide" style="--bg-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23216_2x_eb135a16-9a6a-4835-9cb5-171cb27e6d83.jpg?v=1699950385');--bg-image-mb: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/chord_2x_cd81b463-1d38-48bc-abcf-7ad667556fa8.jpg?v=1699960659&width=500');"></div>
-                <div class="swiper-slide" style="--bg-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23215_2x_a626490b-314f-4f01-92bd-be79160fb110.jpg?v=1699950391');--bg-image-mb: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/chord_2x_9e9ca0c8-2127-4d35-b86f-9584415ad074.jpg?v=1699960665&width=500');"></div>
-            </div>
+    <div class="featured_image">
+      <div class="swiper left-swiper mobileHide">
+        <div class="swiper-wrapper"></div>
+      </div>
+      <div
+        class="swiper right-swiper"
+        style="--swiper-navigation-color: #fff;--swiper-theme-color: #000;--swiper-pagination-color: #000;"
+      >
+        <div class="adwarsssss mobileHide"></div>
+        <div class="swiper-wrapper">
+          {% comment %}
+            {% for image in product.images %}
+                <div class="swiper-slide">
+                    {{ image | image_url: width: 1000 | image_tag }}
+                </div>
+            {% endfor %}
+          {% endcomment %}
         </div>
         <div class="swiper-button-prev mobileHide"></div>
+        <!-- 左箭头。如果放置在swiper外面，需要自定义样式。 -->
         <div class="swiper-button-next mobileHide"></div>
+        <!-- 右箭头。如果放置在swiper外面，需要自定义样式。 -->
         <div class="swiper-pagination pcHide"></div>
-        <div class="texts">
-            <div class="u24Medium_v2">Artisanal Grace from <br>Superior Craftsmanship</div>
-            <div class="u17Light_v2 active">
-                <span></span>
-                <span>No weld scar, Liquid Forging technology makes a seamless frame with perfect curve</span>
-            </div>
-            <div class="u17Light_v2">
-                <span></span>
-                <span>Water-based Multi-layer Paint shines quietly and touches as exquisite as a piano</span>
-            </div>
-            <div class="u17Light_v2">
-                <span></span>
-                <span>Removable Battery on the top tube completes the entire design like a piano key</span>
-            </div>
+        <div class="flex-1 mobileHide"></div>
+        <div class="fenders mobileHide">
+          <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230307-201732.jpg?v=1678191479" alt="">
+          <span class="u17DemiBold_v2"
+            >Free Fenders, Kickstand, <br>
+            1-Year Connect Service Included</span
+          >
+          <span class="u17Light_v2" style="text-decoration: line-through;">{{ 16700 | money }}</span>
+          <span class="u17DemiBold_v2">FREE</span>
         </div>
+        <div class="parameters mobileHide">
+          <div>
+            <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18448_2x_833c8995-fa19-4297-af29-678ac4064d0c.png?v=1687176385">
+            <span><span class="u14Light_v2">Torque</span><span class="u17DemiBold_v2">45 NM</span></span>
+          </div>
+          <div>
+            <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18449_2x_e118ab7b-18ca-4612-afb3-20758874d9c7.png?v=1687177181">
+            <span><span class="u14Light_v2">Modes X Gears</span><span class="u17DemiBold_v2">4 x 8</span></span>
+          </div>
+          <div>
+            <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18445_2x_2e6c6230-7ed1-4c3d-99ad-54ba48fa57b4.png?v=1687177370">
+            <span><span class="u14Light_v2">Adaptive</span><span class="u17DemiBold_v2">Torque Sensor</span></span>
+          </div>
+          <div>
+            <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18447_2x_c102facd-9087-4028-8f97-34a7af31b1f6.png?v=1687177414">
+            <span><span class="u14Light_v2">Range</span><span class="u17DemiBold_v2">75 miles</span></span>
+          </div>
+          <div>
+            <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18450_2x_50383af6-61df-4632-9cbc-531630580f61.png?v=1687177242">
+            <span><span class="u14Light_v2">Phone App</span><span class="u17DemiBold_v2">iOS, Android</span></span>
+          </div>
+          <div>
+            <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18446_2x_791e060a-ed39-42c5-9cf0-965d7e5110bb.png?v=1687177232">
+            <span><span class="u14Light_v2">Anti-theft</span><span class="u17DemiBold_v2">GPS Tracking</span></span>
+          </div>
+        </div>
+      </div>
     </div>
+    <form
+      method="post"
+      accept-charset="UTF-8"
+      action="/cart/add"
+      class="product-panel pf-product-form"
+      data-productid="{{ product.id }}"
+      id="product_form_{{ product.id }}"
+      enctype="multipart/form-data"
+    >
+      <input
+        type="hidden"
+        name="id"
+        data-product-id="{{product.id}}"
+        value="{{ product.selected_or_first_available_variant.id }}"
+      >
+      <input type="hidden" name="form_type" value="product">
+      <input type="hidden" name="utf8" value="✓">
+      <div class="commonComponent mobileHide" id="sale_acc">
+        <div class="u36DemiBold_v2 mb6">{{ product.title }}</div>
+        <div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-25_ order-djs mb6">
+          <div class="pf-judme">
+            {% render 'judgeme_widgets',
+              widget_type: 'judgeme_preview_badge',
+              jm_style: '',
+              concierge_install: false,
+              product: product
+            %}
+          </div>
+        </div>
+        <div style="margin: 0" class="product-price u30DemiBold_v2" data-price="{{ product.compare_at_price | money }}">
+          {{ product.price | money }}
+        </div>
+        <div class="sale-tag mb6">
+          <!-- <div class="u17Medium_v2">{{ settings.chord_sale_name }}</div> -->
+          <div class="u14Light_v2" style="margin: 0">Free shipping.</div>
+        </div>
+      </div>
+      <ul class="emphasize-list u17Medium_v2">
+        <li><span>●</span><span>Used, Refurbish or Showroom Bike</span></li>
+        <li><span>●</span><span>Small to none damage</span></li>
+        <li><span>●</span><span>2 year Warranty</span></li>
+        <li><span>●</span><span>Not returnable (*see FAQ)</span></li>
+      </ul>
+      <div class="fenders pcHide">
+        <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230307-201732.jpg?v=1678191479" alt="">
+        <div>
+          <span
+            class="u17DemiBold_v2"
+            style="background-color: #263B55; color: #fff;border-radius: 7px;padding: 3px 12px;"
+            >FREE</span
+          >
+          <span class="u17DemiBold_v2" style="text-decoration: line-through;">{{ 16700 | money }}</span>
+          <div class="u17Light_v2">
+            Free Fenders, Kickstand, <br>
+            1-Year Connect Service Included
+          </div>
+        </div>
+      </div>
+      <div class="options">
+        {% for option in product.options_with_values %}
+          <div class="option" option="{{option.name}}" position="{{ option.position }}">
+            <div class="u17DemiBold_v2 mb12">{{ option.name }} - <span class="u17Light_v2"></span></div>
+            <div class="{{ option.name }} mb12">
+              {% for value in option.values %}
+                {% case option.name %}
+                  {% when 'Style' %}
+                    <div attribute="{{ value }}" class="{{ value }}"></div>
+                  {% else %}
+                    <div attribute="{{ value }}" class="{{ value }}">{{ value }}</div>
+                {% endcase %}
+              {% endfor %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="accessories">
+        <div class="u17DemiBold_v2 mb12">Accessories</div>
+        <div class="navigate">
+          <div class="prev"></div>
+          <div class="next"></div>
+        </div>
+        <div class="items mb12 chord-accessories">
+          {% for prod in collections['chord-accessories'].products %}
+            {% if prod.available %}
+              {% assign variant = prod.variants | first %}
+              <div class="item" variant-id="{{ variant.id }}">
+                <div class="u11Medium_v2">{{ prod.title }}</div>
+                <div>
+                  <div>
+                    <span class="u17DemiBold_v2">{{ prod.price | money }}</span>
+                    <span class="u11Light_v2">
+                      <i class="fa-solid fa-plus"></i>
+                    </span>
+                  </div>
+                  {{ prod.featured_image | image_url: width: 400 | image_tag }}
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+        <div class="items mb12 chord-accessories-1">
+          {% for prod in collections['chord-x-accessories'].products %}
+            {% if prod.available %}
+              {% assign variant = prod.variants | first %}
+              <div class="item" variant-id="{{ variant.id }}">
+                <div class="u11Medium_v2">{{ prod.title }}</div>
+                <div>
+                  <div>
+                    <span class="u17DemiBold_v2">{{ prod.price | money }}</span>
+                    <span class="u11Light_v2">
+                      <i class="fa-solid fa-plus"></i>
+                    </span>
+                  </div>
+                  {{ prod.featured_image | image_url: width: 400 | image_tag }}
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+      <div class="buttons">
+        <div
+          data-product-id="{{ product.id }}"
+          class="my-button my-button-black addToCartBtn"
+          onclick="addAllToCart('atc')"
+          id="addToCart"
+        >
+          <i class="fa fa-spinner fa-spin"></i
+          ><span data-pf-type="Text" class="addToCartText u17DemiBold_v2">Add to Cart</span>
+        </div>
+        <!--
+          <div onclick="testRideTrace('amazon', this)" class="orderTestRideBtn">
+            <img style="max-width: 50px;margin-right: 3%;" class="twoooo" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241101-174530.png?v=1730454586">
+            <span><span class="u17DemiBold_v2">Buy on Amazon</span></span>
+          </div>
+        -->
+        <div onclick="testRideTrace('klarna_check_out', this)" class="orderTestRideBtn">
+          <img
+            class="twoooo"
+            src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230530-121400.png?v=1685420054"
+            alt="klarna"
+          >
+          <span
+            ><span class="u17DemiBold_v2">0% APR</span
+            ><span
+              >24 months,
+              <span class="stages">{{ product.price | divided_by: 24 | money_without_trailing_zeros }}</span
+              >/month</span
+            ></span
+          >
+        </div>
+      </div>
+      <div class="delivery_time mb6">Free shipping <span>within 5 days</span></div>
+      <span class="mb12" style="line-height: 24px;">
+        Need help? Email
+        <a href="mailto:support@newurtopia.com" class="my-link">support@newurtopia.com</a>
+      </span>
+      <div class="support mb12">
+        <a href="#boxs3">
+          <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230621-005713.png?v=1687280264">
+          <span class="u11Medium_v2"
+            >150+ Spots<br>
+            of Service</span
+          >
+        </a>
+        <a href="/pages/shipping-and-return" target="_blank">
+          <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_17959_2x_cff00041-4dce-479b-b87d-55b1cb89cd7a.png?v=1687161086">
+          <span class="u11Medium_v2"
+            >14-Day<br>
+            Returns</span
+          >
+        </a>
+        <a href="/pages/warranty" target="_blank">
+          <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_17958_2x_1e776f09-0686-4672-a22f-b29d2df3898d.png?v=1687161098">
+          <span class="u11Medium_v2"
+            >2-Year<br>
+            Warranty</span
+          >
+        </a>
+      </div>
+      <div class="dialogs">
+        <div class="u17Medium_v2">
+          <span>Size & Fit</span>
+          <span>&gt;</span>
+        </div>
+        <div class="u17Medium_v2">
+          <span>Technical Specifications</span>
+          <span>&gt;</span>
+        </div>
+        <div class="u17Medium_v2">
+          <span>Support & Service</span>
+          <span>&gt;</span>
+        </div>
+        <div class="u17Medium_v2">
+          <span>FAQs</span>
+          <span>&gt;</span>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<div
+  class="maksim-big-banner lozad"
+  data-background-image="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23286_2x_96bb433e-b8f4-4f93-a765-376f6baaffaf.jpg?v=1699928706"
+>
+  <div class="centeral-content">
+    <div>
+      <div class="u36Medium_v2">
+        Design Inspired <br>
+        from Piano
+      </div>
+      <div class="u17Light_v2">
+        Chord, like a beautiful piano piece, bringing unprecedented smoothness and passion to the realm of bike, has won
+        broad applause such as the German Design Award.
+      </div>
+      <img
+        class="lozad"
+        data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231114-233206_2x_b057955c-2082-4a23-a9ea-daed62b2f13e.png?v=1700012494&width=200"
+        alt=""
+      >
+    </div>
+    <div>
+      <div class="u24Medium_v2">Maksim Mrvica</div>
+      <div class="u17Light_v2">
+        World’s fastest pianist from Croatia, who blends classical grace with vibrant contemporary style. As the concept
+        designer, he extends his aesthetic to the Chord, where elegance and comfort interwine seamlessly.
+      </div>
+      <div
+        class="my-button my-button-ghost"
+        onclick="showVideoDialog('https://www.youtube.com/embed/gjYMDVGv_C4?autoplay=1&cc_load_policy=1')"
+      >
+        Watch video
+      </div>
+    </div>
+  </div>
+</div>
+<div class="gray-background-color swiperrrrr">
+  <div class="centeral-content">
+    <div>
+      <div class="swiper-wrapper">
+        <div
+          class="swiper-slide"
+          style="--bg-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23217_2x_fad69088-980d-4d97-be93-f78d1f4b74ed.jpg?v=1699950381');--bg-image-mb: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/chord_2x_8d52dbc8-959d-4da6-ab38-a067d7b0d171.jpg?v=1699960654&width=500');"
+        ></div>
+        <div
+          class="swiper-slide"
+          style="--bg-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23216_2x_eb135a16-9a6a-4835-9cb5-171cb27e6d83.jpg?v=1699950385');--bg-image-mb: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/chord_2x_cd81b463-1d38-48bc-abcf-7ad667556fa8.jpg?v=1699960659&width=500');"
+        ></div>
+        <div
+          class="swiper-slide"
+          style="--bg-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23215_2x_a626490b-314f-4f01-92bd-be79160fb110.jpg?v=1699950391');--bg-image-mb: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/chord_2x_9e9ca0c8-2127-4d35-b86f-9584415ad074.jpg?v=1699960665&width=500');"
+        ></div>
+      </div>
+    </div>
+    <div class="swiper-button-prev mobileHide"></div>
+    <div class="swiper-button-next mobileHide"></div>
+    <div class="swiper-pagination pcHide"></div>
+    <div class="texts">
+      <div class="u24Medium_v2">
+        Artisanal Grace from <br>
+        Superior Craftsmanship
+      </div>
+      <div class="u17Light_v2 active">
+        <span></span>
+        <span>No weld scar, Liquid Forging technology makes a seamless frame with perfect curve</span>
+      </div>
+      <div class="u17Light_v2">
+        <span></span>
+        <span>Water-based Multi-layer Paint shines quietly and touches as exquisite as a piano</span>
+      </div>
+      <div class="u17Light_v2">
+        <span></span>
+        <span>Removable Battery on the top tube completes the entire design like a piano key</span>
+      </div>
+    </div>
+  </div>
 </div>
 <div class="gray-background-color boxs3645">
-    <div class="centeral-content">
-        <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18918_2x_1f5b481d-45bf-4f00-bdbf-860723102593.jpg?v=1699942828&width=800"
-            alt="">
-        <div>
-            <div class="u24Medium_v2">A Comfortable Cruiser <br>to Levitate Your Ride</div>
-            <div class="u17Light_v2">The upright riding position, with ergonomic handlebar and adjustable stem, ensures
-                ultimate comfort for the rider. The proprietary sensing and driving system gives intuitive power
-                assistance and makes every pedal as light as wind.</div>
-        </div>
-        <div>
-            <div class="u24Medium_v2">A Considerate Mate <br>to Meet Your Need</div>
-            <div class="u17Light_v2">With a superb 75 miles range, you can simply forget about battery anxiety. Abundant
-                accessories and reliable gears make the bike always practical, whether you are cruising in old towns,
-                navigating in modern cities or travelling through countryside. Chord is a perfect mate for a cozy and
-                loose lifestyle.</div>
-        </div>
-        <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DSCF1992_2x_470c2e19-f48a-4f2c-af82-ec35889cd5f2.jpg?v=1699942729&width=800"
-            alt="">
+  <div class="centeral-content">
+    <img
+      class="lozad"
+      data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18918_2x_1f5b481d-45bf-4f00-bdbf-860723102593.jpg?v=1699942828&width=800"
+      alt=""
+    >
+    <div>
+      <div class="u24Medium_v2">
+        A Comfortable Cruiser <br>
+        to Levitate Your Ride
+      </div>
+      <div class="u17Light_v2">
+        The upright riding position, with ergonomic handlebar and adjustable stem, ensures ultimate comfort for the
+        rider. The proprietary sensing and driving system gives intuitive power assistance and makes every pedal as
+        light as wind.
+      </div>
     </div>
+    <div>
+      <div class="u24Medium_v2">
+        A Considerate Mate <br>
+        to Meet Your Need
+      </div>
+      <div class="u17Light_v2">
+        With a superb 75 miles range, you can simply forget about battery anxiety. Abundant accessories and reliable
+        gears make the bike always practical, whether you are cruising in old towns, navigating in modern cities or
+        travelling through countryside. Chord is a perfect mate for a cozy and loose lifestyle.
+      </div>
+    </div>
+    <img
+      class="lozad"
+      data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DSCF1992_2x_470c2e19-f48a-4f2c-af82-ec35889cd5f2.jpg?v=1699942729&width=800"
+      alt=""
+    >
+  </div>
 </div>
 <div class="gray-background-color easy">
-    <div></div>
-    <div>
-        <div class="u36Medium_v2">Easy life , Easy go</div>
-        <div class="u17Light_v2">
-            <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18337_2x_9eb33291-ec3e-4492-ba99-2562cc1eccae.png?v=1699944156&width=50"
-                alt="">
-            <span>Finger-print unlock and GPS anti-theft provide unparalleled security for a carefree ride </span>
-        </div>
-        <div class="u17Light_v2">
-            <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231115-093430.png?v=1700012088&width=50"
-                alt="">
-            <span>Daylight-bright screen and built-in navigation show routes clearly in all weather conditions. Put your
-                cell phone in your pocket and never worry about accidental drop or battery drain.</span>
-        </div>
+  <div></div>
+  <div>
+    <div class="u36Medium_v2">Easy life , Easy go</div>
+    <div class="u17Light_v2">
+      <img
+        class="lozad"
+        data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18337_2x_9eb33291-ec3e-4492-ba99-2562cc1eccae.png?v=1699944156&width=50"
+        alt=""
+      >
+      <span>Finger-print unlock and GPS anti-theft provide unparalleled security for a carefree ride </span>
     </div>
+    <div class="u17Light_v2">
+      <img
+        class="lozad"
+        data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231115-093430.png?v=1700012088&width=50"
+        alt=""
+      >
+      <span
+        >Daylight-bright screen and built-in navigation show routes clearly in all weather conditions. Put your cell
+        phone in your pocket and never worry about accidental drop or battery drain.</span
+      >
+    </div>
+  </div>
 </div>
 <div class="yourself">
-    <div class="centeral-content">
-        <div>
-            <div class="u36Medium_v2">Be Yourself, Have Fun</div>
-            <div class="u17Light_v2">
-                <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18340_2x_c05ffbf0-9c05-4ef6-a375-ce54c68069df.png?v=1699946828&width=50"
-                    alt="">
-                <span>Smartbar plays your music like a musicbox. Let your rhythm resonate with Chord</span>
-            </div>
-            <div class="u17Light_v2">
-                <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18342_2x_5ccf7f37-a1b9-4fe7-949e-52c71f08b44c.png?v=1699946832&width=50"
-                    alt="">
-                <span>Smart App tracks your journey and health. Get on the bike and share your thrilling moments with
-                    your friends and family.</span>
-            </div>
-            <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231115-093417.png?v=1700012084&width=300"
-                alt="">
-        </div>
+  <div class="centeral-content">
+    <div>
+      <div class="u36Medium_v2">Be Yourself, Have Fun</div>
+      <div class="u17Light_v2">
+        <img
+          class="lozad"
+          data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18340_2x_c05ffbf0-9c05-4ef6-a375-ce54c68069df.png?v=1699946828&width=50"
+          alt=""
+        >
+        <span>Smartbar plays your music like a musicbox. Let your rhythm resonate with Chord</span>
+      </div>
+      <div class="u17Light_v2">
+        <img
+          class="lozad"
+          data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18342_2x_5ccf7f37-a1b9-4fe7-949e-52c71f08b44c.png?v=1699946832&width=50"
+          alt=""
+        >
+        <span
+          >Smart App tracks your journey and health. Get on the bike and share your thrilling moments with your friends
+          and family.</span
+        >
+      </div>
+      <img
+        class="lozad"
+        data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231115-093417.png?v=1700012084&width=300"
+        alt=""
+      >
     </div>
+  </div>
 </div>
-    <div class="centeral-content services">
-        <div class="u42DemiBold_v2">Peace of Mind Services</div>
-        <div class="gray-background-color boxss">
-          <div id="storepoint-container" data-tags="us" data-map-id="162f21804990ff"></div>
-            <div>
-                <div class="u30DemiBold_v2">After-sales service, Worldwide</div>
-                <div class="u17Light_v2">We have over 60 authorized repair shops across major cities in USA to provide
-                    reliable after-sales service for our e-bikes. Our repair partners are experts in their field and have
-                    been carefully selected and trained to provide you with quality products and services.<br><br>
+<div class="centeral-content services">
+  <div class="u42DemiBold_v2">Peace of Mind Services</div>
+  <div class="gray-background-color boxss">
+    <div id="storepoint-container" data-tags="us" data-map-id="162f21804990ff"></div>
+    <div>
+      <div class="u30DemiBold_v2">After-sales service, Worldwide</div>
+      <div class="u17Light_v2">
+        We have over 60 authorized repair shops across major cities in USA to provide reliable after-sales service for
+        our e-bikes. Our repair partners are experts in their field and have been carefully selected and trained to
+        provide you with quality products and services.<br>
+        <br>
 
-                    Simply visit one of our authorized repair shops for repairs or maintenance. We’re committed to ensuring
-                    that you have a positive experience with our e-bikes.</div>
-                <a class="my-button my-button-black" href="/pages/find-a-dealer">Find a Store</a>
-            </div>
-            <div>
-                <div class="u30DemiBold_v2">14-Day Free Return</div>
-                <div class="u17Light_v2">Free return of unused products within 14 days of delivery.</div>
-                <a class="u20DemiBold_v2" href="/pages/care">Learn more</a>
-                <div class="u30DemiBold_v2">2-Year Warranty</div>
-                <div class="u17Light_v2">All Urtopia bikes are covered under our 2-year Limited Warranty for the owner
-                    against all manufacturing defects.</div>
-                <a class="u20DemiBold_v2" href="/pages/care">Learn more</a>
-            </div>
-            <img class="lozad"
-                data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230213-untitled-5440.jpg?v=1678012461"
-                alt="">
-        </div>
+        Simply visit one of our authorized repair shops for repairs or maintenance. We’re committed to ensuring that you
+        have a positive experience with our e-bikes.
+      </div>
+      <a class="my-button my-button-black" href="/pages/find-a-dealer">Find a Store</a>
     </div>
+    <div>
+      <div class="u30DemiBold_v2">14-Day Free Return</div>
+      <div class="u17Light_v2">Free return of unused products within 14 days of delivery.</div>
+      <a class="u20DemiBold_v2" href="/pages/care">Learn more</a>
+      <div class="u30DemiBold_v2">2-Year Warranty</div>
+      <div class="u17Light_v2">
+        All Urtopia bikes are covered under our 2-year Limited Warranty for the owner against all manufacturing defects.
+      </div>
+      <a class="u20DemiBold_v2" href="/pages/care">Learn more</a>
+    </div>
+    <img
+      class="lozad"
+      data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230213-untitled-5440.jpg?v=1678012461"
+      alt=""
+    >
+  </div>
+</div>
 
 <div class="top-fixed mobileHide">
   <div class="centeral-content">
     <span class="u20DemiBold_v2">{{ product.title }}</span>
     <span class="flex-1"></span>
     <div>
-      <span class="u17Light_v2"><span class="u20DemiBold_v2 emphasize" style="font-weight: 600;">{{ product.price | money }}</span> {% unless product.compare_at_price == product.price %}
-        <span style="text-decoration: line-through;">{{ product.compare_at_price | money }}</span>
-    {% endunless %}</span>
-      <span class="u14Light_v2">or as low as {{ product.price | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
+      <span class="u17Light_v2"
+        ><span class="u20DemiBold_v2 emphasize" style="font-weight: 600;">{{ product.price | money }}</span>
+        {% unless product.compare_at_price == product.price %}
+          <span style="text-decoration: line-through;">{{ product.compare_at_price | money }}</span>
+        {% endunless -%}
+      </span>
+      <span class="u14Light_v2"
+        >or as low as {{ product.price | divided_by: 24 | money_without_trailing_zeros }}/Month</span
+      >
     </div>
     <a href="#product_form_{{ product.id }}" class="my-button my-button-origin">Order Now</a>
   </div>
@@ -396,13 +539,17 @@
 <div class="bottom-fixed pcHide">
   <a href="#product_form_{{ product.id }}" class="my-button my-button-origin">Order Now</a>
   <div>
-    <span class="u14Light_v2"><span class="emphasize" style="font-weight: 600;">{{ product.price | money }}</span> {% unless product.compare_at_price == product.price %}
-      <span style="text-decoration: line-through;">{{ product.compare_at_price | money }}</span>
-  {% endunless %}</span>
-    <span class="u14Light_v2">or as low as {{ product.price | divided_by: 24 | money_without_trailing_zeros }}/Month</span>
+    <span class="u14Light_v2"
+      ><span class="emphasize" style="font-weight: 600;">{{ product.price | money }}</span>
+      {% unless product.compare_at_price == product.price %}
+        <span style="text-decoration: line-through;">{{ product.compare_at_price | money }}</span>
+      {% endunless -%}
+    </span>
+    <span class="u14Light_v2"
+      >or as low as {{ product.price | divided_by: 24 | money_without_trailing_zeros }}/Month</span
+    >
   </div>
 </div>
-
 
 <script>
   // 默认隐藏
@@ -709,19 +856,26 @@
 {% render 'chord-size-and-specs' %}
 
 <div class="assembly">
-		<div class="centeral-content" style="box-sizing: content-box;">
-			<div class="gray-background-color">
-				<div class="u36DemiBold_v2">90% assembly</div>
-				<div class="u17DemiLight_v2">Delight in the convenience of our 90% pre-assembled e-bike package, making assembly a breeze!</div>
-			</div>
-			<div>
-				<img onclick="showVideoDialog('https://www.youtube.com/embed/meJBiIp32E0?autoplay=1&amp;cc_load_policy=1')" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/openvideo-1667475097262.svg" alt="">
-			</div>
-		</div>
-	</div>
+  <div class="centeral-content" style="box-sizing: content-box;">
+    <div class="gray-background-color">
+      <div class="u36DemiBold_v2">90% assembly</div>
+      <div class="u17DemiLight_v2">
+        Delight in the convenience of our 90% pre-assembled e-bike package, making assembly a breeze!
+      </div>
+    </div>
+    <div>
+      <img
+        onclick="showVideoDialog('https://www.youtube.com/embed/meJBiIp32E0?autoplay=1&amp;cc_load_policy=1')"
+        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/openvideo-1667475097262.svg"
+        alt=""
+      >
+    </div>
+  </div>
+</div>
 
-
-<div class="centeral-content">{% include 'judgeme_widgets', widget_type: 'judgeme_review_widget', concierge_install: false %}</div>
+<div class="centeral-content">
+  {% include 'judgeme_widgets', widget_type: 'judgeme_review_widget', concierge_install: false %}
+</div>
 {% render 'chord-extra-code' %}
 
 <script>
@@ -746,30 +900,30 @@
 </script>
 
 <script>
-    const swiperrrrr = new Swiper('.swiperrrrr .centeral-content > div:first-child', {
-        loop: true,
-        speed: 1000,
-        direction: global_config.is_mobile ? 'vertical' : 'horizontal',
-        navigation: {
-            nextEl: '.swiperrrrr .centeral-content .swiper-button-next',
-            prevEl: '.swiperrrrr .centeral-content .swiper-button-prev',
-        },
-        on: {
-            slideChange: function () {
-                $('.swiperrrrr .texts .u17Light_v2').removeClass('active')
-                $($('.swiperrrrr .texts .u17Light_v2')[this.realIndex]).addClass('active')
-            },
-        },
-        pagination: {
-           el:'.swiperrrrr .centeral-content .swiper-pagination'
-         },
-    })
-    $('.swiperrrrr .texts .u17Light_v2').on('click', function (e) {
-        $(this).closest('.texts').find('.u17Light_v2').removeClass('active')
-        $(this).addClass('active')
-        // console.log('index', )
-        swiperrrrr.slideTo($(this).index())
-    })
+  const swiperrrrr = new Swiper('.swiperrrrr .centeral-content > div:first-child', {
+      loop: true,
+      speed: 1000,
+      direction: global_config.is_mobile ? 'vertical' : 'horizontal',
+      navigation: {
+          nextEl: '.swiperrrrr .centeral-content .swiper-button-next',
+          prevEl: '.swiperrrrr .centeral-content .swiper-button-prev',
+      },
+      on: {
+          slideChange: function () {
+              $('.swiperrrrr .texts .u17Light_v2').removeClass('active')
+              $($('.swiperrrrr .texts .u17Light_v2')[this.realIndex]).addClass('active')
+          },
+      },
+      pagination: {
+         el:'.swiperrrrr .centeral-content .swiper-pagination'
+       },
+  })
+  $('.swiperrrrr .texts .u17Light_v2').on('click', function (e) {
+      $(this).closest('.texts').find('.u17Light_v2').removeClass('active')
+      $(this).addClass('active')
+      // console.log('index', )
+      swiperrrrr.slideTo($(this).index())
+  })
 </script>
 
 <script src="https://cdn.storepoint.co/api/v1/js/162f21804990ff.js" defer></script>

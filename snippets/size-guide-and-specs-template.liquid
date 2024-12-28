@@ -1,48 +1,79 @@
 {{ 'size-guide-and-specs-template.css' | asset_url | stylesheet_tag }}
 
 <div class="centeral-content size-guide-and-specs-template">
-    <div class="size-guide">
-        <h3 class="u36DemiBold_v2"><div class="dowwwwn">></div>Size Guide</h3>
-        <div class="content">
-            <div class="texts"></div>
-            <img width="805" height="524" loading="lazy" alt="{{ product.title }}">
-        </div>
+  <div class="size-guide">
+    <h3 class="u36DemiBold_v2">
+      <div class="dowwwwn">></div>
+      Size Guide
+    </h3>
+    <div class="content">
+      <div class="texts"></div>
+      <img width="805" height="524" loading="lazy" alt="{{ product.title }}">
     </div>
-    <div class="specs">
-        <h3 class="u36DemiBold_v2"><div>></div>Specs</h3>
-        <div class="content">
-            <div class="icons">
-                <img loading="lazy" width="40" height="29" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/icon2-1649931441565.png?v=1649931443" alt="{{ product.title }}">
-                <img loading="lazy" width="40" height="44" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/cpsc_logo-1662445677565.svg?v=1662445680" alt="{{ product.title }}">
-                <img loading="lazy" width="40" height="40" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/icon1png-1649931441566.png?v=1649931446" alt="{{ product.title }}">
-            </div>
-            <div class="u11Light_v2">*This service will be automatically activated once the bike is activated and bound to your account. We provide free access in the first year, with the following terms to be renewed by subscription to this service. A code will be sent to your email which can be used to renew the service in our App.</div>
-        </div>
+  </div>
+  <div class="specs">
+    <h3 class="u36DemiBold_v2">
+      <div>></div>
+      Specs
+    </h3>
+    <div class="content">
+      <div class="icons">
+        <img
+          loading="lazy"
+          width="40"
+          height="29"
+          src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/icon2-1649931441565.png?v=1649931443"
+          alt="{{ product.title }}"
+        >
+        <img
+          loading="lazy"
+          width="40"
+          height="44"
+          src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/cpsc_logo-1662445677565.svg?v=1662445680"
+          alt="{{ product.title }}"
+        >
+        <img
+          loading="lazy"
+          width="40"
+          height="40"
+          src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/icon1png-1649931441566.png?v=1649931446"
+          alt="{{ product.title }}"
+        >
+      </div>
+      <div class="u11Light_v2">
+        *This service will be automatically activated once the bike is activated and bound to your account. We provide
+        free access in the first year, with the following terms to be renewed by subscription to this service. A code
+        will be sent to your email which can be used to renew the service in our App.
+      </div>
     </div>
+  </div>
 </div>
 
 <dialog id="SizesDialog">
-    <div>
-        <div class="headerrrr"><span class="u17DemiBold_v2">Size & Fit</span><span class="close">✕</span></div>
-        <div class="bodyyyyyy">
-            <div class="switchhhhh"></div>
-            <div class="content">
-                <div class="parameters"></div>
-                <img width="550" height="358" alt="{{ product.title }}">
-            </div>
-        </div>
+  <div>
+    <div class="headerrrr"><span class="u17DemiBold_v2">Size & Fit</span><span class="close">✕</span></div>
+    <div class="bodyyyyyy">
+      <div class="switchhhhh"></div>
+      <div class="content">
+        <div class="parameters"></div>
+        <img width="550" height="358" alt="{{ product.title }}">
+      </div>
     </div>
+  </div>
 </dialog>
 
 <dialog id="SpecsDialog">
-    <div>
-        <div class="headerrrr"><span class="u17DemiBold_v2">Technical Specs</span><span class="close">✕</span></div>
-        <div class="bodyyyyyy">
-            <div class="u11Light_v2">*This service will be automatically activated once the bike is activated and bound to your account. We provide free access in the first year, with the following terms to be renewed by subscription to this service. A code will be sent to your email which can be used to renew the service in our App.</div>
-        </div>
+  <div>
+    <div class="headerrrr"><span class="u17DemiBold_v2">Technical Specs</span><span class="close">✕</span></div>
+    <div class="bodyyyyyy">
+      <div class="u11Light_v2">
+        *This service will be automatically activated once the bike is activated and bound to your account. We provide
+        free access in the first year, with the following terms to be renewed by subscription to this service. A code
+        will be sent to your email which can be used to renew the service in our App.
+      </div>
     </div>
+  </div>
 </dialog>
-
 
 <script>
   $('.size-guide-and-specs-template h3').click(function () {
