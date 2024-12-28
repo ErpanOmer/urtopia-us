@@ -114,12 +114,16 @@
       <div></div>
       <div>
         <img
-          alt=""
+          width="220"
+          height="150"
+          alt="{{ product.title }}"
         >
       </div>
       <div>
         <img
-          alt=""
+          width="220"
+          height="150"
+          alt="{{ product.title }}"
         >
       </div>
     </div>
@@ -150,5 +154,5 @@
     
 
     $('.makes .compare').before(global_config.{{ config }}.compare.style.title);
-    $('.makes .compare').after(`<img class="mb:er-w-full" loading="lazy" src="${global_config.is_pc ? global_config.{{ config }}.compare.style.image_pc : global_config.{{ config }}.compare.style.image_mb}"/>`);
+    $('.makes .compare').after(`<img alt="{{ product.title }}" width="950" height="619" class="mb:er-w-full" loading="lazy" src="${global_config.is_pc ? global_config.{{ config }}.compare.style.image_pc : global_config.{{ config }}.compare.style.image_mb}"/>`);
 </script>

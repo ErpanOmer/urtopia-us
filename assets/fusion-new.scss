@@ -1576,7 +1576,7 @@ h4 {
             padding: 0 10%;
             align-items: flex-start;
 
-            &:nth-child(2) {
+            &:nth-child(4) {
                 background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/6T1A8524_2x_aaecef7e-48c0-4776-8947-fa295f1c24b5.jpg?v=1680163598&width=640') center center/cover no-repeat;
                 padding-bottom: 100%;
 
@@ -1585,18 +1585,13 @@ h4 {
                 }
             }
 
-            &:nth-child(3) {
+            &:nth-child(1) {
                 background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2024-10-16_14.18.56_2x_9ef7c231-83e3-4acf-9bc4-030911f4ea33.jpg?v=1729309891') center center/cover no-repeat;
                 padding-bottom: 80%;
             }
 
-            &:nth-child(6) {
+            &:nth-child(5) {
                 background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/ROB02787-Edit_2x_ea80d6aa-e4d6-4287-96ae-6e0b10197507.jpg?v=1731999655&width=800') center center/cover no-repeat;
-                padding-bottom: 100%;
-            }
-
-            &:nth-child(7) {
-                background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/ROB02552_2x_a3ffe320-47d6-43e5-b67f-3419628797c5.jpg?v=1731999660&width=640') center center/cover no-repeat;
                 padding-bottom: 100%;
             }
 
@@ -1688,39 +1683,28 @@ h4 {
                 padding: 8vw 4vw;
 
                 &:nth-child(1) {
+                    order: 1;
+                }
+
+
+                &:nth-child(2) {
                     order: 2;
                 }
 
-                &:nth-child(2) {
-                    order: 1;
-                    padding: 0 0 85vw;
-                }
-
                 &:nth-child(3) {
-                    order: 3;
-                    padding: 0 0 85vw;
-                }
-
-                &:nth-child(4) {
                     order: 4;
                 }
 
+                &:nth-child(4) {
+                    order: 3;
+                }
+
                 &:nth-child(5) {
-                    order: 6;
+                    order: 5;
                 }
 
                 &:nth-child(6) {
-                    order: 5;
-                    padding: 0 0 85vw;
-                }
-
-                &:nth-child(7) {
-                    order: 7;
-                    padding: 0 0 85vw;
-                }
-
-                &:nth-child(8) {
-                    order: 8;
+                    order: 6;
                 }
 
                 .u17Light_v2 {

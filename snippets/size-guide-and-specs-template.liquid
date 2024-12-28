@@ -5,16 +5,16 @@
         <h3 class="u36DemiBold_v2"><div class="dowwwwn">></div>Size Guide</h3>
         <div class="content">
             <div class="texts"></div>
-            <img class="lozad" data-src="" alt="sizes">
+            <img width="805" height="524" loading="lazy" alt="{{ product.title }}">
         </div>
     </div>
     <div class="specs">
         <h3 class="u36DemiBold_v2"><div>></div>Specs</h3>
         <div class="content">
             <div class="icons">
-                <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/icon2-1649931441565.png?v=1649931443" alt="">
-                <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/cpsc_logo-1662445677565.svg?v=1662445680" alt="">
-                <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/icon1png-1649931441566.png?v=1649931446" alt="">
+                <img loading="lazy" width="40" height="29" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/icon2-1649931441565.png?v=1649931443" alt="{{ product.title }}">
+                <img loading="lazy" width="40" height="44" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/cpsc_logo-1662445677565.svg?v=1662445680" alt="{{ product.title }}">
+                <img loading="lazy" width="40" height="40" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/icon1png-1649931441566.png?v=1649931446" alt="{{ product.title }}">
             </div>
             <div class="u11Light_v2">*This service will be automatically activated once the bike is activated and bound to your account. We provide free access in the first year, with the following terms to be renewed by subscription to this service. A code will be sent to your email which can be used to renew the service in our App.</div>
         </div>
@@ -28,7 +28,7 @@
             <div class="switchhhhh"></div>
             <div class="content">
                 <div class="parameters"></div>
-                <img alt="size">
+                <img width="550" height="358" alt="{{ product.title }}">
             </div>
         </div>
     </div>
@@ -62,7 +62,7 @@
     </div></div>`)
   }
 
-  $('.size-guide-and-specs-template .size-guide .content img').attr('data-src', sizes_and_specs.sizes.image)
+  $('.size-guide-and-specs-template .size-guide .content img').attr('src', sizes_and_specs.sizes.image)
 
 
   for (let i = 0; i < sizes_and_specs.sizes.parameters.length; i++) {
