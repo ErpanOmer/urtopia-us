@@ -6,11 +6,13 @@
 {% liquid
   assign product = all_products['urtopia-chord-ebike']
   assign variant = product.selected_or_first_available_variant
+  assign vare = product.first_available_variant
 %}
 
 <script>
   console.log(JSON.parse(JSON.stringify({{ product | json }})))
   console.log(JSON.parse(JSON.stringify({{ variant | json }})))
+  console.log(JSON.parse(JSON.stringify({{ vare | json }})))
 </script>
 
 <style>
