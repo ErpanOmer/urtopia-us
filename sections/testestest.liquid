@@ -85,9 +85,7 @@
       console.log(name, ': ', value)
 
       target.parent().removeClass('er-button-outline').siblings().addClass('er-button-outline')
-      target.closest('legend').find('span').text(value)
-
-      console.log(target.closest('legend'))
+      target.closest('.option').find('legend span').text(value)
     });
   });
 </script>
