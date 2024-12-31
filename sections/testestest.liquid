@@ -81,6 +81,8 @@
       const name = target.attr('name')
       const value = target.val()
 
+      console.log(current_variant[name], value)
+
       if (current_variant[name] === value) {
         return false
       }
