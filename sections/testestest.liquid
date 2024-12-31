@@ -13,18 +13,18 @@
     display: block;
   }
 
-  legend[option="Frame"] label {
+  legend[option='Frame'] label {
     border: 2px solid #dcdcdc;
-  border-radius: 8px;
-  padding: 8px 16px;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #f9f9f9;
-  position: relative;
-  font-family: Arial, sans-serif;
-  transition: border-color 0.2s, background-color 0.2s;
+    border-radius: 8px;
+    padding: 8px 16px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
+    position: relative;
+    font-family: Arial, sans-serif;
+    transition: border-color 0.2s, background-color 0.2s;
   }
 </style>
 
@@ -49,8 +49,8 @@
       {{- product.price | money -}}
     </span>
     {% for option in product.options_with_values %}
-      <fieldset class="option er-border-none er-p-0">
-        <legend option="{{ option.name }}">
+      <fieldset class="option er-border-none er-p-0"  option="{{ option.name }}">
+        <legend>
           {{ option.name }} - <span>{{ option.selected_value }}</span>
         </legend>
         <div class="er-flex er-gap-6">
