@@ -33,7 +33,7 @@
         <legend>
           {{ option.name }} - <span>{{ option.selected_value }}</span>
         </legend>
-        <div class="er-flex er-gap-4">
+        <div class="er-flex er-gap-4 er-group">
           {% for option_value in option.values %}
             <label class="er-button er-button-dark er-button-outline{% if option_value.selected %} active{% endif %}">
               <input
