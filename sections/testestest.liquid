@@ -75,12 +75,14 @@
   }
   const product_variants = [
     {% for variant in product.variants %}
-      id: '{{ variant.id }}',
-      title: '{{ variant.title }}',
-      price: '{{ variant.price }}',
-      compare_at_price: '{{ variant.compare_at_price }}',
-      inventory_quantity: '{{ variant.inventory_quantity }}',
-      available: {{ variant.available }}
+      {
+        id: '{{ variant.id }}',
+        title: '{{ variant.title }}',
+        price: '{{ variant.price }}',
+        compare_at_price: '{{ variant.compare_at_price }}',
+        inventory_quantity: '{{ variant.inventory_quantity }}',
+        available: {{ variant.available }}
+     },
     {% endfor %}
   ]
 
