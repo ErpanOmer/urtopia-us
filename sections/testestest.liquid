@@ -35,7 +35,7 @@
       {{- product.price | money -}}
     </span>
     {% for option in product.options_with_values %}
-      <fieldset class="option er-border-none">
+      <fieldset class="option er-border-none er-p-0">
         <legend>
           {{ option.name }} - <span>{{ option.selected_value }}</span>
         </legend>
@@ -47,9 +47,7 @@
                 id="{{ option_value }}"
                 name="{{ option.name }}"
                 value="{{ option_value }}"
-                {% unless option_value.available %}
-                  class="disabled"
-                {% endunless %}
+                class="er-hidden"
                 {% if option_value.selected %}
                   checked
                 {% endif %}
