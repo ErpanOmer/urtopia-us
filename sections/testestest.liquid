@@ -33,7 +33,7 @@
         <legend>
           {{ option.name }} - <span>{{ option.selected_value }}</span>
         </legend>
-        <div class="er-flex er-gap-6">
+        <div class="er-flex er-gap-4">
           {% for option_value in option.values %}
             <label class="er-inline-flex er-border er-border-black er-bg-dark er-py-4 er-px-12 er-cursor-pointer er-items-center er-justify-center er-text-white er-rounded-full{% if option_value.selected %} active{% endif %}">
               <input
