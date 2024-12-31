@@ -30,7 +30,15 @@
       <div class="options">
         <div>{{ option.name }} - <span>Fit for 5’3’’~6’1’’</span></div>
         {% for value in option.values %}
-            <input type="radio" id="{{ value }}" name="{{ option.name }}" value="{{ value }}">
+          <input
+            type="radio"
+            id="{{ value }}"
+            name="{{ option.name }}"
+            value="{{ value }}"
+            {% unless value.available %}
+              class="disabled"
+            {% endunless %}
+          >
         {% endfor %}
       </div>
     {% endfor %}
