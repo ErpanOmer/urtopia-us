@@ -42,7 +42,7 @@
                 id="{{ option_value }}"
                 name="{{ option.name }}"
                 value="{{ option_value }}"
-                class="er-hidden {% if option_value.available %}{% endif %}"
+                class="er-hidden {% if option_value.available %}available{% endif %}"
                 {% if option_value.selected %}
                   checked
                 {% endif %}
