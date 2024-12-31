@@ -81,7 +81,7 @@
       const name = target.attr('name')
       const value = target.val()
 
-      
+      target.parent().siblings().removeClass('active').addClass('active')
 
       // 获取选中的值
       console.log(name, ': ', value)
