@@ -105,7 +105,9 @@
     title[product_options[name] - 1] = value
     title = title.join(' / ')
 
-    console.log(title)
+    const find = product_variants.find(v => v.title === title)
+
+    console.log(find)
   }
 
   // 监听每个 radio 的 change 事件
