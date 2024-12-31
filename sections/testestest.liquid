@@ -25,9 +25,11 @@
   </div>
   <div class="er-min-w-[400px] er-shrink-0 er-space-y-8">
     <h1>{{ product.title }}</h1>
-    {% for values in product.options_with_values %}
+    {% for option in product.options_with_values %}
       <div>
-        <input type="radio" id="contactChoice1" name="contact" value="email">
+        {% for value in option.values %}
+            <input type="radio" id="{{ value }}" name="{{ option.name }}" value="{{ value }}">
+        {% endfor %}
       </div>
     {% endfor %}
 
