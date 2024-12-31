@@ -65,12 +65,13 @@
   </div>
 </section>
 
-
 <script>
   // 获取所有的 radio 输入
   const radios = document.querySelectorAll('input[type="radio"]');
   const current_variant = {
-
+    {% for name in product.options_by_name %}
+      {{ name }}: '1'
+    {% endfor %}
   }
 
   // 监听每个 radio 的 change 事件
