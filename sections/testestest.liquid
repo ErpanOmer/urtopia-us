@@ -87,11 +87,10 @@
   ]
 
 
-  function onVariantChange (variant = {}) {
-    const current = Object.assign({}, current_variant)
+  function onVariantChange (name, value) {
+    const current = Object.assign({}, current, { [name]: value })
 
-    const find = 
-
+    console.log(current)
   }
 
   // 监听每个 radio 的 change 事件
