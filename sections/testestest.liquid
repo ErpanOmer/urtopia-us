@@ -94,9 +94,11 @@
   ]
 
   const product_options = [
-    {% for item in collection %}
-  
-{% endfor %}
+    {% for option in product.options_by_name %}
+      {
+        '{{ option.name }}': option.option.position
+      },
+    {% endfor %}
   ]
 
 
