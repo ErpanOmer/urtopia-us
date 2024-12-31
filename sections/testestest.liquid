@@ -36,7 +36,7 @@
         </legend>
         <div class="er-flex er-gap-4">
           {% for option_value in option.values %}
-            <label class="er-button er-button-dark er-px-12 er-text-2xl er-py-4{% unless option_value.selected %} er-button-outline{% endunless %}{% if option_value.selected %} active{% endif %}">
+            <label class="er-button er-button-dark er-px-12 er-text-2xl er-py-4{% unless option_value.selected %} er-button-outline{% endunless %}">
               <input
                 type="radio"
                 id="{{ option_value }}"
@@ -81,7 +81,7 @@
       const name = target.attr('name')
       const value = target.val()
 
-      target.parent().siblings().removeClass('active').addClass('active')
+      target.parent().siblings().removeClass('er-button-outline').addClass('active')
 
       // 获取选中的值
       console.log(name, ': ', value)
