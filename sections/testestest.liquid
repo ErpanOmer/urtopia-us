@@ -107,6 +107,10 @@
 
     const find = product_variants.find(v => v.title === title)
 
+    if (!find || !find.available) {
+      $('button').attr('disabled', true)
+    }
+
     console.log(find)
   }
 
