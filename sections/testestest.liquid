@@ -101,7 +101,10 @@
 
 
   function onVariantChange (name, value) {
-    
+    const title = []
+    title[product_options[name] - 1] = value
+
+    console.log(title)
   }
 
   // 监听每个 radio 的 change 事件
