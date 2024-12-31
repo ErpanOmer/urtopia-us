@@ -14,8 +14,7 @@
   <div class="er-flex-1 er-px-[5%]">
     <div class="er-aspect-video">
       {% for variant_image in variant.metafields.custom.variant_image.value %}
-         variant_image
-        {{ variant_image | image_url: width: 400 }}
+        {{ variant_image | image_url: width: 400 | image_tag }}
       {% endfor %}
     </div>
   </div>
