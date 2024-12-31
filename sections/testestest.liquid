@@ -8,25 +8,6 @@
   console.log(JSON.parse(JSON.stringify({{ current_variant | json }})))
 </script>
 
-<style>
-  label {
-    display: block;
-  }
-
-  fieldset[option='Frame'] label {
-    border: 2px solid #dcdcdc;
-    border-radius: 8px;
-    padding: 8px 16px;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    font-family: Arial, sans-serif;
-    transition: border-color 0.2s, background-color 0.2s;
-  }
-</style>
-
 <section class="er-max-w-screen-xl er-mx-auto er-flex er-justify-between er-px-12 er-m-48">
   <div class="er-w-24 er-shrink-0">
     <div class="er-aspect-video">
@@ -54,7 +35,7 @@
         </legend>
         <div class="er-flex er-gap-6">
           {% for option_value in option.values %}
-            <label class="er-inline-flex er-border er-border-black er-bg-dark er-py-4 er-px-12 er-pointer er-items-center er-justify-center{% if option_value.selected %} active{% endif %}">
+            <label class="er-inline-flex er-border er-border-black er-bg-dark er-py-4 er-px-12 er-pointer er-items-center er-justify-center er-white{% if option_value.selected %} active{% endif %}">
               <input
                 type="radio"
                 id="{{ option_value }}"
