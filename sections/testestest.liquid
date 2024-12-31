@@ -36,16 +36,13 @@
         </legend>
         <div class="er-flex er-gap-4">
           {% for option_value in option.values %}
-            {% if option_value.available %}
-              
-            {% endif %}
             <label class="er-button er-button-dark er-px-12 er-text-2xl er-py-4{% unless option_value.selected %} er-button-outline{% endunless %}">
               <input
                 type="radio"
                 id="{{ option_value }}"
                 name="{{ option.name }}"
                 value="{{ option_value }}"
-                class="er-hidden"
+                class="er-hidden {% if option_value.available %}{% endif %}"
                 {% if option_value.selected %}
                   checked
                 {% endif %}
