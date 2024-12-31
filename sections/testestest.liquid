@@ -35,7 +35,7 @@
       {{- product.price | money -}}
     </span>
     {% for option in product.options_with_values %}
-      <fieldset class="option">
+      <fieldset class="option er-border-none">
         <legend>
           {{ option.name }} - <span>{{ option.selected_value }}</span>
         </legend>
