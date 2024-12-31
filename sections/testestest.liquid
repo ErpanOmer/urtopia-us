@@ -107,11 +107,13 @@
 
     const find = product_variants.find(v => v.title === title)
 
+    console.log(find)
+
     if (!find || !find.available) {
       $('button').attr('disabled', true)
+    } else {
+      $('button').attr('disabled', false)
     }
-
-    console.log(find)
   }
 
   // 监听每个 radio 的 change 事件
