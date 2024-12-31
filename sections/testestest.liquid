@@ -6,6 +6,7 @@
 <script>
   console.log(JSON.parse(JSON.stringify({{ product | json }})))
   console.log(JSON.parse(JSON.stringify({{ current_variant | json }})))
+  console.log(JSON.parse(JSON.stringify({{ product.options_by_name | json }})))
 </script>
 
 <section class="er-max-w-screen-xl er-mx-auto er-flex er-justify-between er-px-12 er-m-48">
@@ -69,7 +70,7 @@
   // 获取所有的 radio 输入
   const radios = document.querySelectorAll('input[type="radio"]');
   const current_variant = {
-    
+
   }
 
   // 监听每个 radio 的 change 事件
