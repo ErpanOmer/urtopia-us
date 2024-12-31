@@ -54,7 +54,7 @@
         </legend>
         <div class="er-flex er-gap-6">
           {% for option_value in option.values %}
-            <label class="er-inline-flex er-border er-border-black{% if option_value.selected %} active{% endif %}">
+            <label class="er-inline-flex er-border er-border-black er-bg-dark er-px-2{% if option_value.selected %} active{% endif %}">
               <input
                 type="radio"
                 id="{{ option_value }}"
