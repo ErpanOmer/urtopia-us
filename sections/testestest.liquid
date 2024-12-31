@@ -73,6 +73,16 @@
       '{{ option.name }}': '{{ option.selected_value }}',
     {% endfor %}
   }
+  const product_variants = [
+    {% for variant in product.variants %}
+      id: '{{ variant.id }}',
+      title: '{{ variant.title }}',
+      price: '{{ variant.price }}',
+      compare_at_price: '{{ variant.compare_at_price }}',
+      inventory_quantity: '{{ variant.inventory_quantity }}',
+      available: {{ variant.available }}
+    {% endfor %}
+  ]
 
   // 监听每个 radio 的 change 事件
   radios.forEach(radio => {
