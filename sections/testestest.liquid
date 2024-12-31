@@ -5,7 +5,7 @@
 
 <script>
   console.log(JSON.parse(JSON.stringify({{ product | json }})))
-  console.log(JSON.parse(JSON.stringify({{ a | json }})))
+  console.log(JSON.parse(JSON.stringify({{ a.metadata | json }})))
 </script>
 
 
