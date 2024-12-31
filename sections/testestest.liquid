@@ -70,7 +70,7 @@
   const radios = document.querySelectorAll('input[type="radio"]');
   const current_variant = {
     {% for option in product.options_with_values %}
-      '{{ option.name }}': '1'
+      '{{ option.name }}': '1',
     {% endfor %}
   }
 
