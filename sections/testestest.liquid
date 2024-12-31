@@ -1,13 +1,12 @@
 {% liquid
   assign product = all_products['urtopia-chord-ebike']
-  assign variant = product.variants | where: "id", 43694976663800 | first
+  assign variant = product.variants | where: 'id', 43694976663800 | first
 %}
 
 <script>
   console.log(JSON.parse(JSON.stringify({{ product | json }})))
   // console.log(JSON.parse(JSON.stringify({{  }})))
 </script>
-
 
 <section class="er-max-w-screen-xl er-mx-auto er-flex er-justify-between er-px-12 er-m-48">
   <div class="er-w-24 er-shrink-0">
@@ -26,9 +25,12 @@
   </div>
   <div class="er-min-w-[400px] er-shrink-0 er-space-y-8">
     <h1>{{ product.title }}</h1>
-    <div>
-      <input type="radio" id="contactChoice1" name="contact" value="email" />
-    </div>
+    {% for values in product.options_with_values %}
+      <div>
+        <input type="radio" id="contactChoice1" name="contact" value="email">
+      </div>
+    {% endfor %}
+
     <div class="er-flex er-flex-col er-space-y-8">
       <button class="er-button er-w-full">Add To Cart</button>
       <button class="er-button er-button-dark er-w-full">Process Checkout</button>
