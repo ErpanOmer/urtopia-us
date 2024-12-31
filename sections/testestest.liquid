@@ -12,6 +12,20 @@
   label {
     display: block;
   }
+
+  legend[option="Frame"] label {
+    border: 2px solid #dcdcdc;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9f9f9;
+  position: relative;
+  font-family: Arial, sans-serif;
+  transition: border-color 0.2s, background-color 0.2s;
+  }
 </style>
 
 <section class="er-max-w-screen-xl er-mx-auto er-flex er-justify-between er-px-12 er-m-48">
@@ -41,7 +55,7 @@
         </legend>
         <div class="er-flex er-gap-6">
           {% for option_value in option.values %}
-            <label for="{{ option_value }}">
+            <label>
               <input
                 type="radio"
                 id="{{ option_value }}"
