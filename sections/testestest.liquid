@@ -1,6 +1,6 @@
 {% liquid
   assign product = all_products['urtopia-chord-ebike']
-  assign variant = product.variants | where: 'id', 43694976663800 | first
+  assign variant = product.selected_or_first_available_variant
 %}
 
 <script>
@@ -30,7 +30,7 @@
     </span>
     {% for option in product.options_with_values %}
       <fieldset class="option">
-        <legend>{{ option.name }} - <span>Fit for 5’3’’~6’1’’</span></legend>
+        <legend>{{ option.name }} - <span>{{  }}</span></legend>
         {% for value in option.values %}
           <input
             type="radio"
