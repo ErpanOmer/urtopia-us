@@ -36,7 +36,7 @@
     </span>
     {% for option in product.options_with_values %}
       <fieldset class="option er-border-none er-p-0">
-        <legend>
+        <legend option="{{ option.name }}">
           {{ option.name }} - <span>{{ option.selected_value }}</span>
         </legend>
         <div class="er-flex er-gap-6">
