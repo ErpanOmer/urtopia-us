@@ -93,13 +93,11 @@
     {% endfor %}
   ]
 
-  const product_options = [
+  const product_options = {
     {% for option in product.options_by_name %}
-      {
-        '{{ option.name }}': {{ option.option.position }}
-      },
+      '{{ option.name }}': '1',
     {% endfor %}
-  ]
+  }
 
 
   function onVariantChange (name, value) {
