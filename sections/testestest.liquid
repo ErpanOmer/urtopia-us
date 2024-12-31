@@ -13,7 +13,7 @@
   <div class="er-bg-dark er-w-24 er-shrink-0">
     <div class="er-aspect-video">
       {% for variant_image in variant.metafields.custom.variant_image.value %}
-        {{ variant_image | image_url: width: 640 | image_tag }}
+        {{ variant_image | image_url: width: 64 | image_tag }}
       {% endfor %}
     </div>
   </div>
