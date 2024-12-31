@@ -55,7 +55,9 @@
         </legend>
         <div class="er-flex er-gap-6">
           {% for option_value in option.values %}
-            <label>
+            <label class="{% if option_value.selected %}
+                  checked
+                {% endif %}">
               <input
                 type="radio"
                 id="{{ option_value }}"
