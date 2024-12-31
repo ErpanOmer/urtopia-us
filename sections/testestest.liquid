@@ -95,7 +95,7 @@
 
   const product_options = {
     {% for option in product.options_by_name %}
-      '{{ option.name }}': '1',
+      '{{ option }}': '1',
     {% endfor %}
   }
 
