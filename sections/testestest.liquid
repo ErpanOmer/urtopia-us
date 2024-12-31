@@ -93,7 +93,11 @@
     {% endfor %}
   ]
 
-  const options = {{ product.options }}
+  const product_options = [
+    {% for item in collection %}
+  
+{% endfor %}
+  ]
 
 
   function onVariantChange (name, value) {
