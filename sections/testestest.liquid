@@ -25,7 +25,9 @@
   </div>
   <div class="er-min-w-[400px] er-shrink-0 er-space-y-8 er-flex er-flex-col">
     <h1>{{ product.title }}</h1>
-    <span class="er-text-5xl product-price" data-price="{{ product.compare_at_price | money }}">{{ product.price | money }}</span>
+    <span class="er-text-5xl product-price" data-price="{{ product.compare_at_price | money }}">
+      {{- product.price | money -}}
+    </span>
     {% for option in product.options_with_values %}
       <fieldset class="option">
         <legend>{{ option.name }} - <span>Fit for 5’3’’~6’1’’</span></legend>
@@ -41,9 +43,9 @@
             {% if value.selected %}
               checked
             {% endif %}
-            data-product-url="{{ option_value.product_url }}"
-              data-variant-id="{{ option_value.variant.id }}"
-              data-option-value-id="{{ option_value.id }}"
+            data-product-url="{{ value.product_url }}"
+            data-variant-id="{{ value.variant.id }}"
+            data-option-value-id="{{ value.id }}"
           >
         {% endfor %}
       </fieldset>
