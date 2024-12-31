@@ -1,11 +1,11 @@
 {% liquid
   assign product = all_products['urtopia-chord-ebike']
-  assign a = product.variants | where: "id", 43694976663800
+  assign a = product.variants | where: "id", 43694976663800 | first
 %}
 
 <script>
   console.log(JSON.parse(JSON.stringify({{ product | json }})))
-  console.log(JSON.parse(JSON.stringify({{ a.first | json }})))
+  console.log(JSON.parse(JSON.stringify({{ a | json }})))
 </script>
 
 
