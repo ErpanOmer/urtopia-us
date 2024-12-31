@@ -3,21 +3,6 @@
 {{ 'chord.scss.css' | asset_url | stylesheet_tag: preload: true }}
 <link rel="preload" href="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20662.svg" as="image">
 
-{% liquid
-  assign product = all_products['urtopia-chord-ebike']
-  assign selected_or_first_available_variant = product.selected_or_first_available_variant
-  assign first_available_variant = product.first_available_variant
-  assign selected_variant = product.selected_variant
-%}
-
-<script>
-  console.log(JSON.parse(JSON.stringify({{ product | json }})))
-  console.log('{{ product.has_only_default_variant }}')
-  console.log(JSON.parse(JSON.stringify({{ selected_or_first_available_variant | json }})))
-  console.log(JSON.parse(JSON.stringify({{ first_available_variant | json }})))
-  console.log(JSON.parse(JSON.stringify({{ selected_variant | json }})))
-</script>
-
 <style>
    .product .emphasize-list {
         box-shadow: #0000001a 0 0 6px;
