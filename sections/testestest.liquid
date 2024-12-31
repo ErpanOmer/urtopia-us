@@ -36,23 +36,25 @@
         </legend>
         <div class="er-flex er-gap-4">
           {% for option_value in option.values %}
-            <label class="er-button er-button-dark er-px-12 er-text-2xl er-py-4{% unless option_value.selected %} er-button-outline{% endunless %}">
-              <input
-                type="radio"
-                id="{{ option_value }}"
-                name="{{ option.name }}"
-                value="{{ option_value }}"
-                class="er-hidden"
-                {% if option_value.selected %}
-                  checked
-                {% endif %}
-                data-variant-id="{{ option_value.variant.id }}"
-                data-option-value-id="{{ option_value.id }}"
-              >
-              <span>{% if option.position == 1 %}
-                {{ option_value }}
-              {% endif %}</span>
-            </label>
+            {% if option_value.available %}
+              <label class="er-button er-button-dark er-px-12 er-text-2xl er-py-4{% unless option_value.selected %} er-button-outline{% endunless %}">
+                <input
+                  type="radio"
+                  id="{{ option_value }}"
+                  name="{{ option.name }}"
+                  value="{{ option_value }}"
+                  class="er-hidden"
+                  {% if option_value.selected %}
+                    checked
+                  {% endif %}
+                  data-variant-id="{{ option_value.variant.id }}"
+                  data-option-value-id="{{ option_value.id }}"
+                >
+                <span>{% if option.position == 1 %}
+                  {{ option_value }}
+                {% endif %}</span>
+              </label>
+            {% endif %}
           {% endfor %}
         </div>
       </fieldset>
