@@ -2501,7 +2501,7 @@ const testRides = [
     stores: [
       {
         name: "Garage Power Sports",
-        phone: "8052163477",
+        phone: "801-206-9202",
         email: "zach@garagemotorsports.com",
         timezone: "Utah, USA (GMT-7)",
         add: "651 W South Jordan Pkwy South Jordan, UT 84095",
