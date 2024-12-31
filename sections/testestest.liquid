@@ -1,6 +1,6 @@
 {% liquid
   assign product = all_products['urtopia-chord-ebike']
-  assign a = product.variants | where: "id", 43694976663800 | first
+  assign variant = product.variants | where: "id", 43694976663800 | first
 %}
 
 <script>
@@ -13,7 +13,7 @@
   <div class="er-bg-dark er-w-24 er-shrink-0">1</div>
   <div class="er-flex-1 er-px-[5%]">
     <div class="er-aspect-video">
-      {% for variant_image in a.metafields.custom.variant_image.value %}
+      {% for variant_image in variant.metafields.custom.variant_image.value %}
          variant_image
         {{ variant_image | image_url: width: 400 }}
       {% endfor %}
