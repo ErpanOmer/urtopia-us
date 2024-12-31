@@ -5,7 +5,7 @@
 
 <script>
   console.log(JSON.parse(JSON.stringify({{ product | json }})))
-  console.log(JSON.parse(JSON.stringify({{  }})))
+  // console.log(JSON.parse(JSON.stringify({{  }})))
 </script>
 
 
@@ -14,7 +14,7 @@
   <div class="er-flex-1 er-px-[5%]">
     <div class="er-aspect-video">
       {% for variant_image in a.metafields.custom.variant_image %}
-        {{ variant_image |  image_url: width: 400 }}
+        {{ variant_image | image_url: width: 400 }}
       {% endfor %}
     </div>
   </div>
