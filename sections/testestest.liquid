@@ -66,5 +66,17 @@
 
 
 <script>
-  
+  // 获取所有的 radio 输入
+  const radios = document.querySelectorAll('input[type="radio"]');
+
+  // 监听每个 radio 的 change 事件
+  radios.forEach(radio => {
+    radio.addEventListener('change', (event) => {
+      // 获取选中的值
+      console.log('Selected value:', event.target.value);
+
+      // 示例：显示到页面
+      alert(`You selected: ${event.target.value}`);
+    });
+  });
 </script>
