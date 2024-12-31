@@ -1,189 +1,207 @@
 {% unless settings.hide_sale_countdown %}
-    <style>
-      .product .centeral-content .product-panel .options .Frame div[attribute=Step-Through].active, .product .centeral-content .product-panel .options .Frame div[attribute=High-Step].active {
-        color: #ffb100 !important;
-        border-color: #ffb100 !important;
+  <style>
+    .product .centeral-content .product-panel .options .Frame div[attribute=Step-Through].active, .product .centeral-content .product-panel .options .Frame div[attribute=High-Step].active {
+      color: #ffb100 !important;
+      border-color: #ffb100 !important;
+    }
+
+
+    .product .centeral-content .product-panel .options .Frame>div {
+      border-color: #e2e2e2;
+    }
+
+    .product .centeral-content .product-panel .options .Frame>div:after {
+      background-color: #ffb100;
+    }
+
+      .jdgm-preview-badge .jdgm-star {
+          color: #FFDF48 !important;
+      }
+
+      .product .centeral-content .free .u14Medium_v2 > span {
+          color: #ffb100 !important;
       }
 
 
-      .product .centeral-content .product-panel .options .Frame>div {
-        border-color: #e2e2e2;
+      .emphasize,
+      .product .centeral-content .commonComponent .product-price {
+          color: #000;
       }
 
-      .product .centeral-content .product-panel .options .Frame>div:after {
-        background-color: #ffb100;
+      .product .centeral-content .product-panel .free .u14Medium_v2,
+      .bottom-fixed .my-button-origin,
+      .top-fixed .centeral-content .my-button-origin,
+      .product .centeral-content .free .u17Medium_v2,
+      .product .centeral-content .product-panel .buttons .addToCartBtn,
+      .product .centeral-content .commonComponent .product-price .u14Medium_v2 {
+          background-color: #FFDF48;
+          color: #000;
       }
-      
-        .jdgm-preview-badge .jdgm-star {
-            color: #FFDF48 !important;
-        }
 
-        .product .centeral-content .free .u14Medium_v2 > span {
-            color: #ffb100 !important;
-        }
-
-
-        .emphasize,
-        .product .centeral-content .commonComponent .product-price {
-            color: #000;
-        }
-
-        .product .centeral-content .product-panel .free .u14Medium_v2,
-        .bottom-fixed .my-button-origin,
-        .top-fixed .centeral-content .my-button-origin,
-        .product .centeral-content .free .u17Medium_v2,
-        .product .centeral-content .product-panel .buttons .addToCartBtn,
-        .product .centeral-content .commonComponent .product-price .u14Medium_v2 {
-            background-color: #FFDF48;
-            color: #000;
-        }
-
-        .product .centeral-content .product-panel .buttons .orderTestRideBtn:hover,
-        .product .centeral-content .product-panel .buttons .addToCartBtn:hover {
-            opacity: 0.8;
-        }
-
-        .product .centeral-content .product-panel .buttons .addToCartBtn:hover {
-            background-color: #FFDF48;
-        }
-
-        
-        .product .centeral-content .product-panel .buttons .orderTestRideBtn {
-            border-color: #FFDF48;
-        }
-
-        .product .centeral-content .product-panel .buttons .orderTestRideBtn:hover {
-            border-color: #FFDF48;
-        }
-    </style>
-
-
-    <style>
-   .sale {
-     border-radius: 7px;
-                  background-color: #f9f7f6;
-                  margin-bottom: 24px;
-                  user-select: none;
-   }
-  
-      .sale  .u14DemiBold_v2 {
-         background: #55000F url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241213-190026.png?v=1734087643') left center/contain no-repeat;
-         height: 40px;
-         background-position-x: 50px;
-            position: relative;
-            border-top-left-radius: 8px;
-            border-top-right-radius: 8px;
-       }
-
-      .sale .u14DemiBold_v2::before {
-        content: "";
-        background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/c07044f776d2e9364978cf7563bb3a5c.svg?v=1734087530');
-    display: block;
-    position: absolute;
-            width: 50px;
-    height: 50px;
-    background-repeat: no-repeat;
-    background-size: contain;
-            transform: translate(10px, -10px);
+      .product .centeral-content .product-panel .buttons .orderTestRideBtn:hover,
+      .product .centeral-content .product-panel .buttons .addToCartBtn:hover {
+          opacity: 0.8;
       }
-  
-      .sale .middle {
-        color: #FFDF48;
-                      display: grid;
-                      grid-template-columns: repeat(4, 1fr);
-                      padding: 12px 0;
-                      border-top: 1px solid #763D1A;
-                      background-color: #55000F;
+
+      .product .centeral-content .product-panel .buttons .addToCartBtn:hover {
+          background-color: #FFDF48;
       }
-  
-       .sale .middle > div {
-         display: flex;
-                          align-items: center;
-                          justify-content: center;
-                          text-align: center;
-                          flex-direction: column;
-       }
-  
-      .sale .middle > div span:last-child {
-                                  opacity: 1;
-                                  font-size: 10px;
-                                  font-weight: 500;
-                              }
-  
-      .sale .middle > div + div {
-         border-left: 1px solid #763D1A50;
-       }
 
 
-       .sale .bottom {
-            display: flex;
-            background-color: #740017;
-            color: #fff;
-            align-items: center;
-            padding: 16px 12px;
-                 border-bottom-left-radius: 8px;
-            border-bottom-right-radius: 8px;
-       }
-
-       .sale .bottom img {
-        max-width: 52px;
-       }
-
-       .sale .bottom > div {
-            display: flex;
-            flex-direction: column;
-            margin-left: 10px;
-            flex: 1;
-       }
-  
-      @media (max-width: 767px) {
-        .sale .u14DemiBold_v2 {
-                          font-size: 12px;
-                      }
-  
-        .sale .u36DemiBold_v2 {
-                          font-size: 30px;
-                      }
-
-        .sale .bottom > div > .u14Medium_v2 {
-              font-size: 12px;
-       }
+      .product .centeral-content .product-panel .buttons .orderTestRideBtn {
+          border-color: #FFDF48;
       }
-      
-    </style>
-    <div class="sale" data-sale-end-time="{{ settings.sale_end_time }}">
-      <div class="u14DemiBold_v2"></div>
-      <div class="middle">
-        <div>
-          <span class="u36DemiBold_v2">00</span>
-          <span>Days</span>
-        </div>
-        <div>
-          <span class="u36DemiBold_v2">00</span>
-          <span>Hours</span>
-        </div>
-        <div>
-          <span class="u36DemiBold_v2">00</span>
-          <span>Minutes</span>
-        </div>
-        <div>
-          <span class="u36DemiBold_v2">00</span>
-          <span>Seconds</span>
-        </div>
+
+      .product .centeral-content .product-panel .buttons .orderTestRideBtn:hover {
+          border-color: #FFDF48;
+      }
+  </style>
+
+  <style>
+        .sale {
+          border-radius: 7px;
+                       background-color: #f9f7f6;
+                       margin-bottom: 24px;
+                       user-select: none;
+        }
+
+           .sale  .u14DemiBold_v2 {
+             background: #55000F;
+              /* background: #55000F url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241213-190026.png?v=1734087643') left center/contain no-repeat; */
+              height: 40px;
+              background-position-x: 50px;
+                 position: relative;
+                 border-top-left-radius: 8px;
+                 border-top-right-radius: 8px;
+             color: #FFDF48;
+                 display: flex
+    ;
+        align-items: center;
+        font-size: 18.75px;
+                 padding-left: 25px;
+            }
+
+           /* .sale .u14DemiBold_v2::before {
+             content: "";
+             background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/c07044f776d2e9364978cf7563bb3a5c.svg?v=1734087530');
+         display: block;
+         position: absolute;
+                 width: 50px;
+         height: 50px;
+         background-repeat: no-repeat;
+         background-size: contain;
+                 transform: translate(10px, -10px);
+           } */
+
+           .sale .middle {
+             color: #FFDF48;
+                           display: grid;
+                           grid-template-columns: repeat(4, 1fr);
+                           padding: 12px 0;
+                           border-top: 1px solid #763D1A;
+                           background-color: #55000F;
+           }
+
+            .sale .middle > div {
+              display: flex;
+                               align-items: center;
+                               justify-content: center;
+                               text-align: center;
+                               flex-direction: column;
+            }
+
+           .sale .middle > div span:last-child {
+                                       opacity: 1;
+                                       font-size: 10px;
+                                       font-weight: 500;
+                                   }
+
+           .sale .middle > div + div {
+              border-left: 1px solid #763D1A50;
+            }
+
+
+            .sale .bottom {
+                 display: flex;
+                 background-color: #740017;
+                 color: #fff;
+                 align-items: center;
+                 padding: 16px 12px;
+                      border-bottom-left-radius: 8px;
+                 border-bottom-right-radius: 8px;
+            }
+
+            .sale .bottom img {
+             max-width: 52px;
+            }
+
+            .sale .bottom > div {
+                 display: flex;
+                 flex-direction: column;
+                 margin-left: 10px;
+                 flex: 1;
+            }
+
+           @media (max-width: 767px) {
+             .sale .u14DemiBold_v2 {
+                               font-size: 12px;
+                           }
+
+             .sale .u36DemiBold_v2 {
+                               font-size: 30px;
+                           }
+
+             .sale .bottom > div > .u14Medium_v2 {
+                   font-size: 12px;
+            }
+           }
+  </style>
+  <div class="sale" data-sale-end-time="{{ settings.sale_end_time }}">
+    <div class="u14DemiBold_v2"></div>
+    <div class="middle">
+      <div>
+        <span class="u36DemiBold_v2">00</span>
+        <span>Days</span>
       </div>
-      <div class="bottom">
-        <img loading="lazy" width="52" height="52" fetchpriority="low" decoding="async" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25214_2x_84718802-edb4-4dcc-a0f2-98b31d8b43dc.png?v=1734755626" alt="{{ settings.sale_name }}">
-        <div>
-          <span class="u11Medium_v2">Gear Up! <span style="color:#FFDF48">Free Water Bottle Cage and Mini Air Pump</span> for the <span style="color:#FFDF48">First 50 Orders!</span></span>
-          <div style="background-color: #FFDF4833; height: 5px;border-radius: 10px;margin: 10px 0;overflow: hidden;">
-            <div style="width: 50%;background-color: #FFDF48;height: 100%;border-radius: 10px;"></div>
-          </div>
-          <span class="u11Medium_v2"><span style="color:#FFDF48"><span class="count">26</span> Orders</span> So Far Today</span>
-        </div>
+      <div>
+        <span class="u36DemiBold_v2">00</span>
+        <span>Hours</span>
+      </div>
+      <div>
+        <span class="u36DemiBold_v2">00</span>
+        <span>Minutes</span>
+      </div>
+      <div>
+        <span class="u36DemiBold_v2">00</span>
+        <span>Seconds</span>
       </div>
     </div>
-  
-    <script>
+    <div class="bottom">
+      <img
+        loading="lazy"
+        width="52"
+        height="52"
+        fetchpriority="low"
+        decoding="async"
+        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25214_2x_84718802-edb4-4dcc-a0f2-98b31d8b43dc.png?v=1734755626"
+        alt="{{ settings.sale_name }}"
+      >
+      <div>
+        <span class="u11Medium_v2"
+          >Gear Up! <span style="color:#FFDF48">Free Water Bottle Cage and Mini Air Pump</span> for the
+          <span style="color:#FFDF48">First 50 Orders!</span></span
+        >
+        <div style="background-color: #FFDF4833; height: 5px;border-radius: 10px;margin: 10px 0;overflow: hidden;">
+          <div style="width: 50%;background-color: #FFDF48;height: 100%;border-radius: 10px;"></div>
+        </div>
+        <span class="u11Medium_v2"
+          ><span style="color:#FFDF48"><span class="count">26</span> Orders</span> So Far Today</span
+        >
+      </div>
+    </div>
+  </div>
+
+  <script>
       window.loaded_sale = false;
   
       (() => {
@@ -205,7 +223,7 @@
           const [y, m, d] = global_config.sale_end_times[i].sale_end_time.split('-').map(Number);
           console.log('getEndTime', i)
           // set name
-        //   $('.sale > .u14DemiBold_v2').text(global_config.sale_end_times[i].sale_name)
+          $('.sale > .u14DemiBold_v2').text(global_config.sale_end_times[i].sale_name)
           $('[sale-name]').text(global_config.sale_end_times[i].sale_name);
 
           return getUTCTime(new Date(Date.UTC(y, m - 1, d, 0, 0, 0, 0) + timezoneoffset));
@@ -295,5 +313,5 @@
   
         updateTimer(getEndTime(sale_end_time_index));
       })();
-    </script>
-  {% endunless %}
+  </script>
+{% endunless %}

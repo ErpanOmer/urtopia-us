@@ -169,6 +169,92 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/what-is-california-known-for-the-golden-gate-bridge-hero.webp?v=1697020664',
     stores: [
       {
+        name: `Deer Focus E-bikes and Bicycle Shop`,
+        phone: '424-521-9550',
+        email: 'deerfocus@gmail.com',
+        timezone: "Fremont, California, USA (GMT-7)",
+        add: "1334 W Main St, Alhambra California, 91801 United States",
+        testrideSpot: "Alhambra",
+        availableSizes: [
+          'Carbon 1 Pro Size M'
+        ],
+        businessHours: [
+           "10:00-16:00",
+           "10:00-17:00",
+           "10:00-17:00",
+           "10:00-17:00",
+           "10:00-17:00",
+           "10:00-17:00",
+           "10:00-17:00",
+        ],
+      },
+      {
+        name: `Synaptic Cycles`,
+        phone: '949-484-6409',
+        email: 'shawn@synapticcycles.com',
+        timezone: "Fremont, California, USA (GMT-7)",
+        add: "34119 Pacific Coast Hwy Ste F, Dana Point, CA 92629",
+        testrideSpot: "Dana Point",
+        availableSizes: [
+          'Carbon 1 Pro Size M'
+        ],
+        businessHours: [
+           "10:00-18:00",
+           "10:00-18:00",
+           "10:00-18:00",
+           "10:00-18:00",
+           "10:00-18:00",
+           "10:00-18:00",
+           "10:00-18:00",
+        ],
+      },
+      {
+        name: `Orange Cycle`,
+        phone: '714-532-6838',
+        email: 'orangecycle@aol.com',
+        timezone: "Fremont, California, USA (GMT-7)",
+        add: "210 S Glassell St, Orange, CA 92866",
+        testrideSpot: "Orange",
+        imgUrl: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_2_0ec9af2e-317e-4b58-8115-491478794131.png?v=1735626213',
+        availableSizes: [
+          'Carbon 1 Pro Size S/M/L'
+          'Carbon Fold 1',
+          'Fusion GT'
+        ],
+        businessHours: [
+           "10:00-17:00",
+           "10:00-18:00",
+           "10:00-16:00",
+           "",
+           "10:00-18:00",
+           "10:00-18:00",
+           "10:00-18:00",
+        ],
+      },
+      {
+        name: `Ride O'Side`,
+        phone: '760-583-8737',
+        email: '',
+        timezone: "Fremont, California, USA (GMT-7)",
+        add: "306 N Cleveland St, Oceanside, CA 92054",
+        testrideSpot: "Oceanside",
+        imgUrl: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_1_b5c3a0c5-590d-44cb-8143-c70d6fb42d5d.png?v=1735626313',
+        noBook: 'Call to Schedule Test Riding',
+        availableSizes: [
+          'Carbon 1 Pro Size M'
+          'Carbon Fold 1'
+        ],
+        businessHours: [
+           "",
+           "",
+           "",
+           "10:00-17:00",
+           "10:00-17:00",
+           "10:00-17:00",
+           "10:00-17:00",
+        ],
+      },
+      {
         name: `Triabike`,
         phone: '760-340-2840',
         email: 'service@triabike.com',
@@ -492,7 +578,8 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_6_c6a0eaf2-cad7-4ce9-b23e-1dfa5ec46a0d.png?v=1727431908",
         testrideSpot: "Redlands",
         availableSizes: [
-          'Carbon 1 Pro Size S'
+          'Carbon 1 Pro Size S',
+          'Fusion GT'
         ],
         businessHours: [
            "11:00-16:00",
@@ -505,7 +592,7 @@ const testRides = [
         ],
       },
       {
-        name: `Don's Bicycles - Redlands`,
+        name: `Don's Bicycles - Rialto`,
         phone: '909-875-7310',
         email: 'donsbikes@att.net',
         timezone: "Fremont, California, USA (GMT-7)",
@@ -513,7 +600,8 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_6_c6a0eaf2-cad7-4ce9-b23e-1dfa5ec46a0d.png?v=1727431908",
         testrideSpot: "Rialto",
         availableSizes: [
-          'Carbon 1 Pro Size M'
+          'Carbon 1 Pro Size M',
+          'Fusion GT'
         ],
         businessHours: [
            "11:00-16:00",
@@ -534,7 +622,8 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_16.png?v=1730536068",
         testrideSpot: "Newport Beach",
         availableSizes: [
-          'Carbon 1 Pro Size M'
+          'Carbon 1 Pro Size M',
+          'Carbon Fold 1'
         ],
         businessHours: [
            "",
@@ -556,7 +645,8 @@ const testRides = [
         testrideSpot: "San Diego",
         noBook: true,
         availableSizes: [
-          'Carbon 1 Pro Size M'
+          'Carbon 1 Pro Size M',
+          'Fusion GT'
         ],
         businessHours: [
            "09:00-17:00",
@@ -600,7 +690,9 @@ const testRides = [
         testrideSpot: "Costa Mesa",
         noBook: true,
         availableSizes: [
-          'Carbon 1 Pro Size M'
+          'Carbon 1 Pro Size S/M/L',
+          'Fusion GT',
+          'Carbon Fold 1'
         ],
         businessHours: [
            "",
@@ -622,7 +714,8 @@ const testRides = [
         testrideSpot: "Monrovia",
         noBook: true,
         availableSizes: [
-          'Carbon 1 Pro Size M'
+          'Carbon 1 Pro Size M',
+          'Carbon Fold 1'
         ],
         businessHours: [
            "",
@@ -796,7 +889,7 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_9.png?v=1723170885",
         testrideSpot: "San Jose",
         availableSizes: [
-          'Carbon 1 Pro Size M'
+          'Carbon 1 Pro Size S/M'
         ],
         businessHours: [
            "",
@@ -1053,6 +1146,8 @@ const testRides = [
         testrideSpot: "California",
         availableSizes: [
           'Carbon 1 Size M/L',
+          'Carbon 1 Pro Size S/M/L',
+          'Carbon Fold 1'
         ],
         businessHours: [
           "12:00-16:00",
@@ -1074,7 +1169,8 @@ const testRides = [
         testrideSpot: "California",
         testRideSize: "M/L",
         availableSizes: [
-          'Carbon 1 Pro Size M'
+          'Carbon 1 Size M',
+          'Carbon 1 Pro Size S/M/L'
         ],
         businessHours: [
           "11:00-18:00",
@@ -1245,6 +1341,26 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/New_york_times_square-terabass.jpg?v=1696759734',
     stores: [
       {
+        name: "BK Wheels",
+        phone: "347-240-7787",
+        email: "admin@bkwheels.com",
+        timezone: "Long Island City, Queens, NY, USA (GMT-4)",
+        add: "9722 Seaview Ave, Brooklyn, NY 11236",
+        testrideSpot: "Brooklyn",
+        availableSizes: [
+          'Carbon 1 Pro Size M/L',
+        ],
+        businessHours: [
+          "",
+          "10:00-19:00",
+          "10:00-19:00",
+         "10:00-19:00",
+          "10:00-19:00",
+         "10:00-19:00",
+         "10:00-18:00",
+        ],
+      },
+      {
         name: "Julio Bicycles",
         phone: "914-239-1312",
         email: "Bicyclejulio@gmail.com",
@@ -1344,7 +1460,7 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_12_86b280fc-a42f-4ee7-8716-1576548b4fa3.png?v=1730535020",
         testrideSpot: "Hackettstown",
         availableSizes: [
-          'Carbon 1 Pro Size M',
+          'Carbon 1 Pro Size S/M',
         ],
         businessHours: [
           "11:00-18:00",
@@ -1408,7 +1524,7 @@ const testRides = [
         ],
       },
       {
-        name: "Aztec Cycles",
+        name: "All Seasons E-Store",
         phone: "541-653-8185",
         email: "asestore23@gmail.com",
         timezone: "Washington, DC, USA (GMT-4)",
@@ -1417,6 +1533,7 @@ const testRides = [
         testrideSpot: "Eugene",
         availableSizes: [
           'Carbon 1 Pro Size S/M/L',
+          'Fusion GT'
         ],
         businessHours: [
           "",
@@ -1509,6 +1626,26 @@ const testRides = [
     city: 'Pennsylvania',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Buna_Bicycle_Works_Washington_dc.jpg?v=1665374977',
     stores: [
+      {
+        name: `E Bike Guys of PA`,
+        phone: "717-351-3805",
+        email: "ebikeguysofpa@gmail.com",
+        timezone: "Pennsylvania, USA (GMT-4)",
+        add: "135 E Main St,New Holland Pennsylvania, 17557 United States",
+        testrideSpot: "New Holland",
+        availableSizes: [
+          'Carbon Fold 1',
+        ],
+        businessHours: [
+          "",
+          "9:00-17:00",
+          "9:00-17:00",
+          "9:00-17:00",
+          "9:00-17:00",
+          "9:00-17:00",
+          "",
+        ],
+      },
       {
         name: `Fitness Exchange - Emmaus`,
         phone: "610-965-6597",
@@ -1666,9 +1803,11 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_1_ffe05ab3-9c6f-4ee8-a8b3-427b76a65427.png?v=1721377450",
         testrideSpot: "Muncy",
         availableSizes: [
-          'Carbon 1 Pro Size M/L',
+          'Carbon 1 Pro Size S/M/L',
           'Chord',
-          'Chord X'
+          'Chord X',
+          'Carbon Fold 1',
+          'Fusion GT'
         ],
         businessHours: [
           "",
@@ -1719,8 +1858,10 @@ const testRides = [
         testrideSpot: "Lacey",
         testRideSize: "M/L",
         availableSizes: [
-          'Carbon 1 Pro Size M',
-          'Chord X'
+          'Carbon 1 Pro Size S/M/L',
+          'Chord X',
+          'Carbon Fold 1',
+          'Fusion GT'
         ],
         businessHours: [
           "",
@@ -1747,7 +1888,9 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_6_c6a0eaf2-cad7-4ce9-b23e-1dfa5ec46a0d.png?v=1727431908",
         testrideSpot: "Omaha",
         availableSizes: [
-          'Carbon 1 Pro Size M',
+          'Carbon 1 Pro Size S/M/L',
+          'Fusion GT',
+          'Carbon Fold 1'
         ],
         businessHours: [
           "10:00-17:00",
@@ -1794,6 +1937,49 @@ const testRides = [
     city: 'Maryland',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_4_0d6b1e4d-def2-4565-9aba-0d2241618ead.png?v=1718085649',
     stores: [
+      {
+        name: "Bethesda Bike and Ski",
+        phone: "301-321-2453",
+        email: "contact@bethesdabikeandski.com",
+        timezone: "Washington, DC, USA (GMT-4)",
+        add: "6917 Arlington Rd, Bethesda, MD 20814",
+        testrideSpot: "Bethesda",
+        testRideSize: "M/L",
+        availableSizes: [
+          'Carbon 1 Pro Size M',
+        ],
+        businessHours: [
+          "09:00-16:00",
+          "09:00-20:00",
+          "09:00-20:00",
+          "09:00-20:00",
+          "09:00-20:00",
+          "09:00-20:00",
+          "09:00-18:00",
+        ],
+      },
+      {
+        name: "Just Riding Along Bicycle Shop",
+        phone: "(301) 963-1273",
+        email: "",
+        timezone: "Washington, DC, USA (GMT-4)",
+        add: "Olney Laytonsville Rd #6828, Gaithersburg, MD 20882",
+        testrideSpot: "Gaithersburg",
+        testRideSize: "M/L",
+        noBook: true,
+        availableSizes: [
+          'Carbon 1 Pro Size M',
+        ],
+        businessHours: [
+          "",
+          "08:00-17:00",
+          "08:00-17:00",
+          "08:00-17:00",
+          "08:00-17:00",
+          "10:00-16:00",
+          "",
+        ],
+      },
       {
         name: "Pedego Bethesda",
         phone: "603-370-7858",
@@ -1869,7 +2055,7 @@ const testRides = [
         testrideSpot: "Mount Airy",
         testRideSize: "M/L",
         availableSizes: [
-          'Carbon 1 Pro Size S',
+          'Carbon 1 Pro Size S/M/L',
           'Fusion GT',
           'Carbon Fold 1'
         ],
@@ -1985,7 +2171,7 @@ const testRides = [
         add: "4004 MacDill Ave #6",
         testrideSpot: "Tampa",
         availableSizes: [
-          'Carbon 1 Pro Size M'
+          'Carbon 1 Pro Size M/L'
         ],
         businessHours: [
           "10:00-17:00",
@@ -2112,7 +2298,9 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_6_13c365c1-87a3-41d3-8879-b6dd7d62a503.png?v=1718329085",
         testrideSpot: "Boca Raton",
         availableSizes: [
-          'Carbon 1 Pro Size M/L',
+          'Carbon 1 Pro Size S/M/L',
+          'Carbon Fold 1',
+          'Fusion GT'
         ],
         businessHours: [
           "11:00-16:00",
@@ -2155,9 +2343,11 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_12_86b280fc-a42f-4ee7-8716-1576548b4fa3.png?v=1730535020",
         testrideSpot: "Florida",
         availableSizes: [
-          'Carbon 1 Pro Size M/L',
+          'Carbon 1 Pro Size S/M/L',
           'Chord',
           'Chord X',
+          'Carbon Fold 1',
+          'Fusion GT'
         ],
         businessHours: [
           "",
@@ -2440,6 +2630,7 @@ const testRides = [
         testrideSpot: "Des Moines",
         availableSizes: [
           'Carbon 1 Pro Size S/M/L',
+          'Carbon Fold 1'
         ],
         businessHours: [
           "",
@@ -2461,6 +2652,7 @@ const testRides = [
         testrideSpot: "Des Moines",
         availableSizes: [
           'Carbon 1 Pro Size S/M/L',
+          'Carbon Fold 1'
         ],
         businessHours: [
           "12:00-15:00",
@@ -2482,6 +2674,7 @@ const testRides = [
         testrideSpot: "Iowa",
         availableSizes: [
           'Carbon 1 Pro Size M',
+          'Fusion GT'
         ],
         businessHours: [
           "",
@@ -2502,7 +2695,7 @@ const testRides = [
       {
         name: "Garage Power Sports",
         phone: "801-206-9202",
-        email: "zach@garagemotorsports.com",
+        email: "contact@garagepowersports.com",
         timezone: "Utah, USA (GMT-7)",
         add: "651 W South Jordan Pkwy South Jordan, UT 84095",
         testrideSpot: "Utah",
@@ -2560,6 +2753,8 @@ const testRides = [
           'Carbon 1 Pro Size M/L',
           'Chord',
           'Chord X',
+          'Carbon Fold 1',
+          'Fusion GT'
         ],
         businessHours: [
           "",
@@ -2676,6 +2871,28 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/co.webp?v=1695291345',
     stores: [
       {
+        name: "Ebike Tours & Rental",
+        phone: "719-219-5702",
+        email: "",
+        timezone: "Colorado, USA (GMT-7)",
+        add: "906 Manitou Ave UNIT 102, Manitou Springs, CO 80829",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_79a58073-e8ed-4779-9e18-fb430821b9d3.png?v=1735625721",
+        testrideSpot: "Littleton",
+        noBook: 'Call to Schedule Test Riding',
+        availableSizes: [
+          'Carbon 1 Pro Size M',
+        ],
+        businessHours: [
+          "",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "11:00-16:00",
+        ],
+      },
+      {
         name: "Boost Ebikes",
         phone: "(303) 503-4748",
         email: "Info@boostebikes.com",
@@ -2685,6 +2902,7 @@ const testRides = [
         testrideSpot: "Littleton",
         availableSizes: [
           'Carbon 1 Pro Size S/M/L',
+          'Carbon Fold 1'
         ],
         businessHours: [
           "",
@@ -2823,6 +3041,28 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Milton_Delaware.jpg?v=1702122567',
     stores: [
       {
+        name: "Pedaltec Electric Bikes",
+        phone: "+13028273169",
+        email: "",
+        timezone: "Delaware, USA (GMT-7)",
+        add: "998 Kings Hwy Lewes DE , 19958 United States",
+        testrideSpot: "Lewes",
+        noBook: 'Call to Schedule Test Riding',
+        availableSizes: [
+          'Carbon 1 Pro Size M',
+          'Carbon Fold 1'
+        ],
+        businessHours: [
+          "10:00-16:00",
+          "10:00-16:00",
+          "10:00-16:00",
+          "10:00-16:00",
+          "10:00-16:00",
+          "10:00-16:00",
+          "10:00-16:00",
+        ]
+      },
+      {
         name: "Seaside Eco Bikes",
         phone: "302-329-8088",
         email: "Gilberto.medina@seasideecobikes.com",
@@ -2832,7 +3072,9 @@ const testRides = [
         testrideSpot: "Lewes",
         availableSizes: [
           'Carbon 1 Pro Size M',
-          'Chord'
+          'Chord',
+          'Carbon Fold 1',
+          'Fusion GT'
         ],
         businessHours: [
           "10:00-18:00",
@@ -2859,7 +3101,8 @@ const testRides = [
         testrideSpot: "Alexandria",
         availableSizes: [
           'Carbon 1 Pro Size M/L',
-          'Fusion GT'
+          'Fusion GT',
+          'Carbon Fold 1'
         ],
         businessHours: [
           "10:00-18:00",
@@ -2880,7 +3123,9 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/image_8.png?v=1731725082",
         testrideSpot: "Norfolk",
         availableSizes: [
-          'Carbon 1 Pro Size S/M/L'
+          'Carbon 1 Pro Size S/M/L',
+          'Fusion GT',
+          'Carbon Fold 1'
         ],
         businessHours: [
           "10:00-18:00",
@@ -2955,12 +3200,12 @@ const testRides = [
         ],
         businessHours: [
           "",
-          "9:00-18:00",
-          "9:00-18:00",
-          "9:00-18:00",
-          "9:00-18:00",
-          "9:00-18:00",
-          "9:00-15:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "",
         ],
       },
       {
@@ -3027,7 +3272,9 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Urban_Electrica.jpg?v=1710818582",
         testrideSpot: "Arizona",
         availableSizes: [
-          'Carbon 1 Pro Size M/L',
+          'Carbon 1 Pro Size S/M/L',
+          'Carbon Fold 1',
+          'Fusion GT'
         ],
         businessHours: [
           "",
@@ -3073,6 +3320,26 @@ const testRides = [
     city: 'Tennessee',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Urban_Electrica.jpg?v=1710818582',
     stores: [
+      {
+        name: "ECO E-bikes",
+        phone: "(931) 800-8444",
+        email: "eco_ebikes@yahoo.com",
+        timezone: "Tennessee, USA (GMT-7)",
+        add: "1045 W. Main St., Monteagle, Tennessee, 37356",
+        testrideSpot: "Pegram",
+        availableSizes: [
+          'Carbon Fold 1',
+        ],
+        businessHours: [
+          "10:00-16:00",
+          "09:00-17:00",
+          "09:00-17:00",
+          "09:00-17:00",
+          "09:00-17:00",
+          "09:00-15:00",
+          "",
+        ],
+      },
       {
         name: "River Bend Cycles",
         phone: "615-715-2392",
@@ -3174,6 +3441,60 @@ const testRides = [
           "9:00-17:00",
           "9:00-17:00",
           "9:00-17:00",
+        ],
+      },
+    ]
+  },
+  {
+    city: 'New Mexico',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_3_7b7d3f75-8bc1-4592-9b67-8a2844323c38.png?v=1735626823',
+    stores: [
+      {
+        name: "Silver City Cycles",
+        phone: "575-388-1444",
+        email: "shop@silvercitycycles.bike",
+        timezone: "Tennessee, USA (GMT-7)",
+        add: "914 N. Pope St. Silver City, NM 88061",
+        imgUrl: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_3_7b7d3f75-8bc1-4592-9b67-8a2844323c38.png?v=1735626823',
+        testrideSpot: "Silver City",
+        availableSizes: [
+          'Fusion GT',
+          'Carbon Fold 1'
+        ],
+        businessHours: [
+          "",
+          "",
+         "10:00-17:00",
+         "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-16:00",
+        ],
+      },
+    ]
+  },
+  {
+    city: 'Georgia',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_3_7b7d3f75-8bc1-4592-9b67-8a2844323c38.png?v=1735626823',
+    stores: [
+      {
+        name: "eStar Rides",
+        phone: "678-383-0296",
+        email: "Hello@estarbikes.com",
+        timezone: "Tennessee, USA (GMT-7)",
+        add: "1728 Campbellton Road SW Unit A1, Atlanta, GA 30311",
+        testrideSpot: "Atlanta",
+        availableSizes: [
+          'Carbon 1 Pro Size L',
+        ],
+        businessHours: [
+          "",
+          "11:00-18:00",
+          "11:00-18:00",
+          "11:00-18:00",
+          "11:00-18:00",
+          "11:00-18:00",
+          "11:00-18:00",
         ],
       },
     ]
