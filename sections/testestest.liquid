@@ -87,7 +87,7 @@
   ]
 
 
-  function onVariantChange (variant) {
+  function onVariantChange (variant = {}) {
 
   }
 
@@ -103,6 +103,7 @@
 
       target.parent().removeClass('er-button-outline').siblings().addClass('er-button-outline')
       target.closest('.option').find('legend span').text(value)
+      onVariantChange(name, value)
     });
   });
 </script>
