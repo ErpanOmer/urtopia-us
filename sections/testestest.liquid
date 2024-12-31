@@ -27,7 +27,7 @@
     <h1>{{ product.title }}</h1>
     {% for option in product.options_with_values %}
       <div class="options">
-        <div>Frame - <span>Fit for 5’3’’~6’1’’</span></div>
+        <div>{{ option.name }} - <span>Fit for 5’3’’~6’1’’</span></div>
         {% for value in option.values %}
             <input type="radio" id="{{ value }}" name="{{ option.name }}" value="{{ value }}">
         {% endfor %}
