@@ -38,6 +38,9 @@
             {% unless value.available %}
               class="disabled"
             {% endunless %}
+            {% if value.selected %}
+              checked
+            {% endif %}
           >
         {% endfor %}
       </fieldset>
