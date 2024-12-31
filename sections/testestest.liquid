@@ -25,7 +25,7 @@
   </div>
   <div class="er-min-w-[400px] er-shrink-0 er-space-y-8 er-flex er-flex-col">
     <h1>{{ product.title }}</h1>
-    <span class="er-text-4xl">{{ product.price }}</span>
+    <span class="er-text-4xl">{{ product.price | money }}</span>
     {% for option in product.options_with_values %}
       <div class="options">
         <div>{{ option.name }} - <span>Fit for 5’3’’~6’1’’</span></div>
