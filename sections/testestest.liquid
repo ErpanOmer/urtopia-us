@@ -101,8 +101,9 @@
 
 
   function onVariantChange (name, value) {
-    const title = current_variant.title.split(' / ')
+    title title = current_variant.title.split(' / ')
     title[product_options[name] - 1] = value
+    title = title.json(' / ')
 
     console.log(title)
   }
