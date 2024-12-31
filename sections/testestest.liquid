@@ -69,7 +69,7 @@
   // 获取所有的 radio 输入
   const radios = document.querySelectorAll('input[type="radio"]');
   const current_variant = {
-    {% for name in product.options_by_name %}
+    {% for name in product.options_with_values %}
       {{ name }}: '1'
     {% endfor %}
   }
