@@ -32,7 +32,7 @@
       <fieldset class="option">
         <legend>{{ option.name }} - <span>{{ option.selected_value }}</span></legend>
         {% for option_value in option.values %}
-          <label for="{{ option_value }}"></label>
+          <label for="{{ option_value }}">{{ option_value }}</label>
           <input
             type="radio"
             id="{{ option_value }}"
