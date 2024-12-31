@@ -72,11 +72,11 @@
   // 监听每个 radio 的 change 事件
   radios.forEach(radio => {
     radio.addEventListener('change', (event) => {
+      const target = event.target
+      const name = target.attr('name')
+      const value = target.val()
       // 获取选中的值
-      console.log('Selected value:', event.target.value);
-
-      // 示例：显示到页面
-      alert(`You selected: ${event.target.value}`);
+      console.log(name, ': ', value)
     });
   });
 </script>
