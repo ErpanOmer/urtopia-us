@@ -30,7 +30,7 @@
     </span>
     {% for option in product.options_with_values %}
       <fieldset class="option">
-        <legend>{{ option.name }} - <span>{{  }}</span></legend>
+        <legend>{{ option.name }} - <span>{{ variant }}</span></legend>
         {% for value in option.values %}
           <input
             type="radio"
