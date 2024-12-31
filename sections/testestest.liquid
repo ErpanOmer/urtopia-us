@@ -79,7 +79,7 @@
     inventory_quantity: '{{ current_variant.inventory_quantity }}',
     available: {{ current_variant.available }}
   }
-  
+
   const product_variants = [
     {% for variant in product.variants %}
       {
@@ -92,6 +92,8 @@
      },
     {% endfor %}
   ]
+
+  const options = {{ product.options }}
 
 
   function onVariantChange (name, value) {
