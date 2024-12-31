@@ -11,6 +11,7 @@
 
 <script>
   console.log(JSON.parse(JSON.stringify({{ product | json }})))
+  console.log('{{ product.has_only_default_variant }}')
   console.log(JSON.parse(JSON.stringify({{ variant | json }})))
   console.log(JSON.parse(JSON.stringify({{ vare | json }})))
 </script>
