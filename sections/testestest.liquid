@@ -5,7 +5,7 @@
 
 <script>
   console.log(JSON.parse(JSON.stringify({{ product | json }})))
-  console.log(JSON.parse(JSON.stringify({{ a.metafields.custom.variant_image }})))
+  console.log(JSON.parse(JSON.stringify({{  }})))
 </script>
 
 
@@ -13,7 +13,9 @@
   <div class="er-bg-dark er-w-24 er-shrink-0">1</div>
   <div class="er-flex-1 er-px-[5%]">
     <div class="er-aspect-video">
-
+      {% for variant_image in a.metafields.custom.variant_image %}
+        {{ variant_image |  image_url: width: 400 }}
+      {% endfor %}
     </div>
   </div>
   <div class="er-bg-white er-min-w-[400px] er-shrink-0">
