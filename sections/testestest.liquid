@@ -205,7 +205,8 @@
       // 获取选中的值
       console.log(name, ': ', value)
 
-      target.parent().removeClass('er-button-outline active').siblings().addClass('er-button-outline active')
+      target.parent().removeClass('er-button-outline').siblings().addClass('er-button-outline')
+      target.parent().addClass('active').siblings().removeClass('active')
       target.closest('.option').find('legend span').text(value)
       onVariantChange(name, value)
     });
