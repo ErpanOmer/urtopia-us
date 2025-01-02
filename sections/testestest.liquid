@@ -6,7 +6,7 @@
 <script>
   console.log(JSON.parse(JSON.stringify({{ product | json }})))
   console.log(JSON.parse(JSON.stringify({{ current_variant | json }})))
-  console.log(JSON.parse(JSON.stringify({{ product.options_by_name | json }})))
+  console.log(JSON.parse(JSON.stringify({{ shop.metaobjects['shop_config']['website-noindex'].value.value | json }})))
 </script>
 
 <style>
@@ -58,6 +58,7 @@
     height: 26px;
     margin: 2px;
     width: 26px;
+    border-radius: 50%;
     background-color: #000;
   }
 
@@ -110,6 +111,7 @@
               {% if option.position == 1 %}
                 class="er-button er-button-dark er-px-12 er-text-2xl er-py-4{% unless option_value.selected %} er-button-outline{% endunless %}"
               {% else %}
+                style="{{ shop.metaobjects['shop_config']['website-noindex'].value.value }}"
                 class="{% if option_value.selected %}active{% endif %}"
               {% endif %}
             >
