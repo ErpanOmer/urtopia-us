@@ -59,10 +59,6 @@
     opacity: 1;
     visibility: visible;
   }
-
-  fieldset[position='2'] label[class~="active"] {
-    border-color: var(--product-option-color);
-  }
 </style>
 
 <section class="er-max-w-screen-xl er-mx-auto er-flex er-justify-between er-px-12 er-m-48">
@@ -101,7 +97,7 @@
                 class="er-button er-button-dark er-px-12 er-text-2xl er-py-4{% unless option_value.selected %} er-button-outline{% endunless %}"
               {% else %}
                 style="--product-option-color: {{ product_color[option_value] }};"
-                class="er-w-14 er-h-14 er-rounded-full er-border-2 er-border-solid er-border-transparent er-cursor-pointer er-transition er-bg-[var(--product-option-color)] er-p-[2px] er-bg-clip-content{% if option_value.selected %} active{% endif %}"
+                class="active:er-border-[var(--product-option-color)] er-w-14 er-h-14 er-rounded-full er-border-2 er-border-solid er-border-transparent er-cursor-pointer er-transition er-bg-[var(--product-option-color)] er-p-[2px] er-bg-clip-content{% if option_value.selected %} active{% endif %}"
               {% endif %}
             >
               <input
