@@ -10,7 +10,7 @@
 </script>
 
 <style>
-  fieldset[position="2"] label {
+  fieldset[position='2'] label {
     width: 34px;
     height: 34px;
     border-radius: 50%;
@@ -21,14 +21,39 @@
     cursor: pointer;
   }
 
-  fieldset[position="2"] label > span {
+  fieldset[position='2'] label > span {
     position: absolute;
+    bottom: 150%;
+    /* Position the tooltip above the element */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #000;
+    color: #fff;
+    padding: 4px 18px;
+    border-radius: 16px;
+    white-space: nowrap;
+    opacity: 0;
     visibility: hidden;
-    top: 0;
+    transition: opacity 0.3s, visibility 0.3s;
+    font-size: 14px;
+    font-weight: 500;
+    z-index: 10;
   }
 
-  fieldset[position="2"] label::after {
-    content: "";
+  fieldset[position='2'] label > span::before {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 10px;
+    border-style: solid;
+    border-color: #000 transparent transparent transparent;
+    z-index: 9;
+  }
+
+  fieldset[position='2'] label::after {
+    content: '';
     display: inline-block;
     height: 26px;
     margin: 2px;
@@ -37,7 +62,7 @@
     background-color: #000;
   }
 
-  fieldset[position="2"] label:hover {
+  fieldset[position='2'] label:hover {
     border-color: #000;
   }
 </style>
@@ -63,18 +88,22 @@
       {{- product.price | money -}}
     </span>
     {% for option in product.options_with_values %}
-      <fieldset class="option er-border-none er-p-0 er-space-y-4" option="{{ option.name }}" position="{{ option.position }}">
+      <fieldset
+        class="option er-border-none er-p-0 er-space-y-4"
+        option="{{ option.name }}"
+        position="{{ option.position }}"
+      >
         <legend>
           {{ option.name }} - <span>{{ option.selected_value }}</span>
         </legend>
         <div class="er-flex er-gap-4">
           {% for option_value in option.values %}
             <label
-             {% if option.position == 1 %}
-              class="er-button er-button-dark er-px-12 er-text-2xl er-py-4{% unless option_value.selected %} er-button-outline{% endunless %}"
-             {% else %}
-              
-             {% endif %}
+              {% if option.position == 1 %}
+                class="er-button er-button-dark er-px-12 er-text-2xl er-py-4{% unless option_value.selected %} er-button-outline{% endunless %}"
+              {% else %}
+
+              {% endif %}
             >
               <input
                 type="radio"
@@ -88,8 +117,12 @@
                 data-variant-id="{{ option_value.variant.id }}"
                 data-option-value-id="{{ option_value.id }}"
               >
-              <span {%- if option.position == 1 %}class="tooltip"{% endif -%}>
-              {{ option_value }}
+              <span
+                {%- if option.position == 1 %}
+                  class="tooltip"
+                {% endif -%}
+              >
+                {{ option_value }}
               </span>
             </label>
           {% endfor %}
