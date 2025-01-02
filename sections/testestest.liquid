@@ -10,13 +10,6 @@
   console.log(JSON.parse(JSON.stringify({{ product_color | json }})))
 </script>
 
-<style>
-  fieldset[position='2'] label:hover > span {
-    opacity: 1;
-    visibility: visible;
-  }
-</style>
-
 <section class="er-max-w-screen-xl er-mx-auto er-flex er-justify-between er-px-12 er-m-48">
   <div class="er-w-24 er-shrink-0">
     <div class="er-aspect-video">
@@ -70,7 +63,7 @@
               >
               <span
                 {%- if option.position == 2 %}
-                  class="after:er-border-x-transparent after:er-border-t-dark after:er-border-b-transparent after:er-border-8 after:er-border-solid after:er-content-[''] after:er-bottom-[-16px] after:er-absolute after:er-left-1/2 after:er-translate-x-[-50%] er-absolute er-bottom-[150%] er-left-1/2 er-translate-x-[-50%] er-bg-dark er-text-white er-px-6 er-py-2 er-rounded-full er-whitespace-nowrap er-opacity-0 er-invisible er-transition-opacity er-duration-300 er-text-2xl er-font-medium er-z-10"
+                  class="hover:er-visible hover:opacity-100 after:er-border-x-transparent after:er-border-t-dark after:er-border-b-transparent after:er-border-8 after:er-border-solid after:er-content-[''] after:er-bottom-[-16px] after:er-absolute after:er-left-1/2 after:er-translate-x-[-50%] er-absolute er-bottom-[150%] er-left-1/2 er-translate-x-[-50%] er-bg-dark er-text-white er-px-6 er-py-2 er-rounded-full er-whitespace-nowrap er-opacity-0 er-invisible er-transition-opacity er-duration-300 er-text-2xl er-font-medium er-z-10"
                 {% endif -%}
               >
                 {{ option_value }}
