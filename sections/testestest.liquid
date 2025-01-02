@@ -4,7 +4,7 @@
   assign product_color = shop.metaobjects['shop_config']['product-option-color'].value.value
 %}
 
-<iframe></iframe>
+<iframe src="{{ 'index.html' | asset_url  }}"></iframe>
 
 <script>
   console.log(JSON.parse(JSON.stringify({{ product | json }})))
