@@ -1,12 +1,13 @@
 {% liquid
   assign product = all_products['urtopia-chord-ebike']
   assign current_variant = product.selected_or_first_available_variant
+  assign product_color = shop.metaobjects['shop_config']['product-option-color'].value.value
 %}
 
 <script>
   console.log(JSON.parse(JSON.stringify({{ product | json }})))
   console.log(JSON.parse(JSON.stringify({{ current_variant | json }})))
-  console.log(JSON.parse(JSON.stringify({{ shop.metaobjects['shop_config']['product-option-color'].value.value | json }})))
+  console.log(JSON.parse(JSON.stringify({{ product_color | json }})))
 </script>
 
 <style>
