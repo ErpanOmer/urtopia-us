@@ -113,7 +113,7 @@
                 class="er-button er-button-dark er-px-12 er-text-2xl er-py-4{% unless option_value.selected %} er-button-outline{% endunless %}"
               {% else %}
                 style="--product-option-color: {{ product_color[option_value] }};"
-                class="{% if option_value.selected %}active{% endif %}"
+                class="{% if option_value.selected %} active{% endif %}"
               {% endif %}
             >
               <input
