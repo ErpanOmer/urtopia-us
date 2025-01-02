@@ -46,7 +46,7 @@
                 class="er-button er-button-dark er-px-12 er-text-2xl er-py-4{% unless option_value.selected %} er-button-outline{% endunless %}"
               {% else %}
                 style="--product-option-color: {{ product_color[option_value] }};"
-                class="group er-w-14 er-h-14 er-rounded-full er-border-2 er-border-solid er-border-transparent er-cursor-pointer er-transition er-bg-[var(--product-option-color)] er-p-[2px] er-bg-clip-content [&[class~='active']]:er-border-[var(--product-option-color)] er-relative{% if option_value.selected %} active{% endif %}"
+                class="er-group er-w-14 er-h-14 er-rounded-full er-border-2 er-border-solid er-border-transparent er-cursor-pointer er-transition er-bg-[var(--product-option-color)] er-p-[2px] er-bg-clip-content [&[class~='active']]:er-border-[var(--product-option-color)] er-relative{% if option_value.selected %} active{% endif %}"
               {% endif %}
             >
               <input
@@ -63,7 +63,7 @@
               >
               <span
                 {%- if option.position == 2 %}
-                  class="group-hover:er-visible group-hover:opacity-100 after:er-border-x-transparent after:er-border-t-dark after:er-border-b-transparent after:er-border-8 after:er-border-solid after:er-content-[''] after:er-bottom-[-16px] after:er-absolute after:er-left-1/2 after:er-translate-x-[-50%] er-absolute er-bottom-[150%] er-left-1/2 er-translate-x-[-50%] er-bg-dark er-text-white er-px-6 er-py-2 er-rounded-full er-whitespace-nowrap er-opacity-0 er-invisible er-transition-opacity er-duration-300 er-text-2xl er-font-medium er-z-10"
+                  class="er-group-hover:er-visible er-group-hover:opacity-100 after:er-border-x-transparent after:er-border-t-dark after:er-border-b-transparent after:er-border-8 after:er-border-solid after:er-content-[''] after:er-bottom-[-16px] after:er-absolute after:er-left-1/2 after:er-translate-x-[-50%] er-absolute er-bottom-[150%] er-left-1/2 er-translate-x-[-50%] er-bg-dark er-text-white er-px-6 er-py-2 er-rounded-full er-whitespace-nowrap er-opacity-0 er-invisible er-transition-opacity er-duration-300 er-text-2xl er-font-medium er-z-10"
                 {% endif -%}
               >
                 {{ option_value }}
