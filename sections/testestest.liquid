@@ -10,14 +10,23 @@
 </script>
 
 <style>
-  fieldset[option="Style"] label {
+  fieldset[option='Style'] label {
     width: 34px;
     height: 34px;
     border-radius: 50%;
     position: relative;
     border: 2px solid transparent;
     padding: 0;
-}
+  }
+
+  fieldset[option='Style'] label::after {
+    content: '';
+    display: inline-block;
+    height: 26px;
+    margin: 2px;
+    width: 26px;
+    border-radius: 100%;
+  }
 </style>
 
 <section class="er-max-w-screen-xl er-mx-auto er-flex er-justify-between er-px-12 er-m-48">
@@ -41,7 +50,7 @@
       {{- product.price | money -}}
     </span>
     {% for option in product.options_with_values %}
-      <fieldset class="option er-border-none er-p-0 er-space-y-4"  option="{{ option.name }}">
+      <fieldset class="option er-border-none er-p-0 er-space-y-4" option="{{ option.name }}">
         <legend>
           {{ option.name }} - <span>{{ option.selected_value }}</span>
         </legend>
@@ -60,9 +69,11 @@
                 data-variant-id="{{ option_value.variant.id }}"
                 data-option-value-id="{{ option_value.id }}"
               >
-              <span>{% if option.position == 1 %}
-                {{ option_value }}
-              {% endif %}</span>
+              <span>
+                {%- if option.position == 1 %}
+                  {{ option_value }}
+                {% endif -%}
+              </span>
             </label>
           {% endfor %}
         </div>
