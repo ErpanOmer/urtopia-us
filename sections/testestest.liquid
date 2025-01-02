@@ -19,7 +19,8 @@
     padding: 0;
   }
 
-  fieldset[option='Style'] label > span {
+  fieldset[option='Style'] label::after {
+    content: "";
     display: inline-block;
     height: 26px;
     margin: 2px;
@@ -27,6 +28,8 @@
     border-radius: 100%;
     background-color: #000;
   }
+
+  fieldset[option='Style'] label:
 </style>
 
 <section class="er-max-w-screen-xl er-mx-auto er-flex er-justify-between er-px-12 er-m-48">
