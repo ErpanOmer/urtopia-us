@@ -6,7 +6,7 @@
 <script>
   console.log(JSON.parse(JSON.stringify({{ product | json }})))
   console.log(JSON.parse(JSON.stringify({{ current_variant | json }})))
-  console.log(JSON.parse(JSON.stringify({{ shop.metaobjects['shop_config']['website-noindex'].value.value | json }})))
+  console.log(JSON.parse(JSON.stringify({{ shop.metaobjects['shop_config']['product-option-color'].value.value | json }})))
 </script>
 
 <style>
