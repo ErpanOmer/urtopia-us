@@ -11,18 +11,6 @@
 </script>
 
 <style>
-  fieldset[position='2'] label {
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    position: relative;
-    border: 2px solid transparent;
-    padding: 0;
-    background-color: transparent;
-    cursor: pointer;
-    transition: all .3s;
-  }
-
   fieldset[position='2'] label > span {
     position: absolute;
     bottom: 150%;
@@ -113,7 +101,7 @@
                 class="er-button er-button-dark er-px-12 er-text-2xl er-py-4{% unless option_value.selected %} er-button-outline{% endunless %}"
               {% else %}
                 style="--product-option-color: {{ product_color[option_value] }};"
-                class="er-w-12 er-h-12{% if option_value.selected %} active{% endif %}"
+                class="er-w-12 er-h-12 er-rounded-full{% if option_value.selected %} active{% endif %}"
               {% endif %}
             >
               <input
