@@ -56,7 +56,7 @@
       {% for variant_image in current_variant.metafields.custom.variant_image.value %}
         {{
           variant_image
-          | image_url: width: product_left_swiper_width
+          | image_url: width: product_main_swiper_width
           | image_tag: class: product_left_swiper_class, data-index: forloop.index
         }}
       {% endfor %}
