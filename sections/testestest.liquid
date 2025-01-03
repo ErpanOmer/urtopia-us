@@ -58,7 +58,9 @@
     </div>
     <div class="flex">
       {% for item in product_media_reviews %}
-        <span class="er-text-3xl er-font-bold">{{ item.text }}</span>
+        <div>
+          <span class="er-text-3xl er-font-bold">{{ item.text }}</span>
+        </div>
       {% endfor %}
     </div>
   </div>
