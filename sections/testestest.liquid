@@ -67,7 +67,9 @@
     {% endfor %}
     <div>
       {% for item in product_parameter_and_icons %}
-        <div></div>
+        <div>
+          {{ item.image |  image_url: width: 45, height: 45 }}
+        </div>
       {% endfor %}
     </div>
   </div>
