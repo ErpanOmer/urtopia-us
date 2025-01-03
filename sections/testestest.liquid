@@ -13,6 +13,7 @@
   assign product_media_icon_height = 60
 
   assign product_left_swiper_class = 'er-aspect-video er-object-cover er-rounded-md er-cursor-pointer er-border-solid er-border-0 er-border-primary [&[class~="active"]]:er-border-2'
+  assign product_main_swiper_class = 'swiper-slide er-object-cover er-aspect-video er-rounded-2xl'
 %}
 
 <script>
@@ -65,7 +66,7 @@
     <div class="er-aspect-video product-panel-swiper er-relative er-overflow-hidden er-rounded-2xl" style="--swiper-theme-color: #000;">
       <div class="swiper-wrapper">
         {% for variant_image in current_variant.metafields.custom.variant_image.value %}
-          {{ variant_image | image_url: width: product_main_swiper_width | image_tag: class: 'swiper-slide er-object-cover er-aspect-video er-rounded-2xl' }}
+          {{ variant_image | image_url: width: product_main_swiper_width | image_tag: class: product_main_swiper_class }}
         {% endfor %}
       </div>
       <div class="swiper-button-prev er-transition er-bg-[#ffffff80] er-rounded-lg after:er-text-5xl after:er-content-['prev'] hover:er-opacity-70 er-select-none"></div>
