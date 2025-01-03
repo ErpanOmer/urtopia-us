@@ -31,7 +31,7 @@
       <span class="er-text-5xl er-font-extrabold product-price" data-price="{{ product.compare_at_price | money }}">
       {{- product.price | money -}}
       </span>
-      <span class="product-compare-at-price">{{ product.compare_at_price | money }}</span>
+      <span class="er-text-dark/50 product-compare-at-price">{{ product.compare_at_price | money }}</span>
     </div>
     {% for option in product.options_with_values %}
       <fieldset
