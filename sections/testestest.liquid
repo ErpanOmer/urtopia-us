@@ -321,6 +321,11 @@
 
     current_variant = Object.assign({}, find)
 
-    product_panel_swiper.removeAllSlides()
+    if (current_variant.images && current_variant.images.length) {
+      product_panel_swiper.removeAllSlides()
+      for (const element of current_variant.images) {
+        
+      }
+    }
   }
 </script>
