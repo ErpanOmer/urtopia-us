@@ -18,8 +18,7 @@
 
 <script>
   console.log(JSON.parse(JSON.stringify({{ product | json }})))
-  console.log(JSON.parse(JSON.stringify({{ current_variant | json }})))
-  console.log(JSON.parse(JSON.stringify({{ product_panel_services_icons | json }})))
+  console.log(JSON.parse(JSON.stringify({{ product.metafields.custom.product_common_images.value | json }})))
 </script>
 
 <style>
