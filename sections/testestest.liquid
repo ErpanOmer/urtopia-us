@@ -339,7 +339,7 @@
 
       console.log(variant_size)
 
-      for (let index = current_variant.images.length; index < ; index--) {
+      for (let index = current_variant.images.length - 1; index > 0 ; index--) {
         const image = current_variant.images[index];
         
         product_panel_swiper.prependSlide(image.image_tag)
