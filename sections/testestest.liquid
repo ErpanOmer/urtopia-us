@@ -10,7 +10,7 @@
   console.log(JSON.parse(JSON.stringify({{ shop.metaobjects['product-media-reviews-items'].items.value | json }})))
 </script>
 
-{% for item in shop.metaobjects['product-media-reviews-items'].items %}
+{% for item in shop.metaobjects['product-media-reviews-items'] %}
   {{ item }}
 {% endfor %}
 
