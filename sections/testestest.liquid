@@ -227,6 +227,7 @@
 </section>
 
 <script>
+  // all variants
   const product_variants = [
     {% for variant in product.variants %}
       {
@@ -239,6 +240,7 @@
      },
     {% endfor %}
   ]
+
 
   let current_variant = Object.assign({
     {% for option in product.options_with_values %}
