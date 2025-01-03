@@ -330,6 +330,7 @@
     current_variant = Object.assign({}, find)
 
     if (current_variant.images && current_variant.images.length) {
+      
       const variant_size = Number($('.product-panel').attr('data-variant-swiper-size'))
 
       console.log(variant_size)
@@ -345,7 +346,7 @@
       //   const elem = $(`<img width="{{ product_left_swiper_width }}" data-index="${ index + 1 }" src="${image.image_url}" class="{{ product_left_swiper_class }}">`)
       //   $('.product-panel .left-images').append(elem)
       //   elem.on('click', onClickLeftImages)
-      }
+      
     }
   }
 </script>
