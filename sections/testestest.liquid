@@ -60,10 +60,10 @@
       </div>
     </div>
     <span>{{ product_media_reviews.value.size }}</span>
-    <div class="er-flex er-flex-col er-items-center er-text-center">
+    {% comment %} <div class="er-flex er-flex-col er-items-center er-text-center">
       <span class="er-text-3xl er-font-bold">{{ product_media_reviews.first.text }}</span>
       {{ product_media_reviews.first.image | image_url: height: 60 | image_tag: loading: 'lazy' }}
-    </div>
+    </div> {% endcomment %}
   </div>
   <div class="er-min-w-[400px] er-max-w-2xl er-shrink-0 er-space-y-8 er-flex er-flex-col">
     <span class="er-text-4xl er-font-bold">{{ product.title }}</span>
