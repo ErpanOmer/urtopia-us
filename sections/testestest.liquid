@@ -69,7 +69,19 @@
       {% for item in product_parameter_and_icons %}
         <div class="er-flex er-items-center">
           {{ item.image | image_url: width: 45, height: 45 | image_tag: loading: 'lazy'  }}
-          <span class="er-text-2xl er-font-medium er-ml-4">{{ item.text }}</span>
+          <span class="er-text-2xl er-font-medium er-ml-2">{{ item.text }}</span>
+        </div>
+      {% endfor %}
+      {% for item in product_parameter_and_icons %}
+        <div class="er-flex er-items-center">
+          {{ item.image | image_url: width: 45, height: 45 | image_tag: loading: 'lazy'  }}
+          <span class="er-text-2xl er-font-medium er-ml-2">{{ item.text }}</span>
+        </div>
+      {% endfor %}
+      {% for item in product_parameter_and_icons %}
+        <div class="er-flex er-items-center">
+          {{ item.image | image_url: width: 45, height: 45 | image_tag: loading: 'lazy'  }}
+          <span class="er-text-2xl er-font-medium er-ml-2">{{ item.text }}</span>
         </div>
       {% endfor %}
     </div>
