@@ -244,7 +244,7 @@
     {% for option in product.options_with_values %}
       '{{ option.name }}': '{{ option.selected_value }}',
     {% endfor %}
-  }, product_variants.find(v => v.id === {{ current_variant.id }}))
+  }, product_variants.find(v => v.id === '{{ current_variant.id }}'))
 
   const product_options = {
     {% for option in product.options_with_values %}
