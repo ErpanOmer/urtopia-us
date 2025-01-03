@@ -296,13 +296,13 @@
     });
   });
 
-  new Swiper('.product-panel-swiper', {
+  new Swiper('.product-panel .product-panel-swiper', {
     navigation: {
-      nextEl: '.product-panel-swiper .swiper-button-next',
-      prevEl: '.product-panel-swiper .swiper-button-prev',
+      nextEl: '.product-panel .product-panel-swiper .swiper-button-next',
+      prevEl: '.product-panel .product-panel-swiper .swiper-button-prev',
     },
     spaceBetween: 10,
-    pagination: { el: '.product-panel-swiper .swiper-pagination' },
+    pagination: { el: '.product-panel .product-panel-swiper .swiper-pagination' },
     on:{
         slideChange: function() {
           const index = this.realIndex + 1
