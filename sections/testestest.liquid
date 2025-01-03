@@ -78,7 +78,11 @@
         </div>
       </fieldset>
     {% endfor %}
-
+    <div>
+      {% for item in product.metafields.custom.collection_in_product.value %}
+        <span>{{ item.title }}</span>
+      {% endfor %}
+    </div>
     <div class="er-flex er-flex-col er-space-y-5">
       <button class="er-button er-w-full">Add To Cart</button>
       <button class="er-button er-button-dark er-w-full">Process Checkout</button>
