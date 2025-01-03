@@ -55,7 +55,7 @@
 
 <section class="product-panel er-font-base er-max-w-screen-xl er-mx-auto er-flex er-justify-between er-px-12 er-m-36" data-variant-id="{{ current_variant.id }}">
   <div class="er-w-[{{ product_left_swiper_width }}px] er-shrink-0 er-space-y-2 left-images">
-    {% for variant_image in swiper_of_variant %}
+    {% for variant_image in swiper %}
       {{
         variant_image
         | image_url: width: product_main_swiper_width
@@ -66,7 +66,7 @@
   <div class="er-flex-1 er-px-[5%] er-flex er-flex-col er-space-y-10">
     <div class="er-aspect-video product-panel-swiper er-relative er-overflow-hidden er-rounded-2xl" style="--swiper-theme-color: #000;">
       <div class="swiper-wrapper">
-        {% for variant_image in swiper_of_variant %}
+        {% for variant_image in swiper %}
           {{ variant_image | image_url: width: product_main_swiper_width | image_tag: class: product_main_swiper_class, data-index: forloop.index }}
         {% endfor %}
       </div>
