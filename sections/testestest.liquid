@@ -58,7 +58,7 @@
     <div class="er-aspect-video swiper">
       <div class="swiper-wrapper">
         {% for variant_image in current_variant.metafields.custom.variant_image.value %}
-          {{ variant_image | image_url: width: 640 | image_tag: class: 'swiper-slide er-object-cover er-aspect-video' }}
+          {{ variant_image | image_url: width: 1000 | image_tag: class: 'swiper-slide er-object-cover er-aspect-video' }}
         {% endfor %}
       </div>
     </div>
