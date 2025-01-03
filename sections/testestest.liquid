@@ -331,7 +331,11 @@
 
     if (current_variant.images && current_variant.images.length) {
       
-      const variant_size = Number($('.product-panel').attr('data-variant-swiper-size'))
+      let variant_size = Number($('.product-panel').attr('data-variant-swiper-size'))
+
+      while(--variant_size) {
+        
+      }
 
       console.log(variant_size)
 
