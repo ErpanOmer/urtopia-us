@@ -296,7 +296,7 @@
     });
   });
 
-  const = product_panel_swiper new Swiper('.product-panel .product-panel-swiper', {
+  const product_panel_swiper = new Swiper('.product-panel .product-panel-swiper', {
     navigation: {
       nextEl: '.product-panel .product-panel-swiper .swiper-button-next',
       prevEl: '.product-panel .product-panel-swiper .swiper-button-prev',
@@ -313,6 +313,6 @@
   })
 
   $('.product-panel .left-images > img').on('click', function () {
-    $(this).addClass('active').siblings().removeClass('active')        
+    $(this).addClass('active').siblings().removeClass('active')
   })
 </script>
