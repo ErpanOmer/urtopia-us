@@ -29,10 +29,12 @@
     <span class="er-text-4xl er-font-bold">{{ product.title }}</span>
     <div class="er-flex er-items-center er-space-x-3">
       <span class="er-text-5xl er-font-extrabold product-price" data-price="{{ product.compare_at_price | money }}">
-      {{- product.price | money -}}
+        {{- product.price | money -}}
       </span>
       <span class="er-text-dark/70 er-text-3xl product-compare-at-price">{{ product.compare_at_price | money }}</span>
-      <span class="er-text-2xl er-font-bold er-block er-px-4 er-py-1 er-bg-primary er-text-white er-rounded-3xl">{{ product.compare_at_price |  minus: product.price | money }}</span>
+      <span class="er-text-2xl er-font-bold er-block er-px-4 er-py-1 er-bg-primary er-text-white er-rounded-3xl">
+        {{- product.compare_at_price | minus: product.price | money -}}
+      </span>
     </div>
     {% render 'sale' %}
     {% for option in product.options_with_values %}
@@ -78,11 +80,13 @@
         </div>
       </fieldset>
     {% endfor %}
-    <div class="er-relative er-px-6">
-        <div class="er-text-3xl er-font-bold">Accessories</div>
-        <div>
-          <div class="er-w-8 er-h-8 er-cursor-pointer er-border-none er-border-l-2 er-border-t-2 er-border-l-gray er-border-t-gray"></div>
-          <div class="er-flex er-overflow-x-hidden">
+    <div class="er-relative">
+      <div class="er-text-3xl er-font-bold">Accessories</div>
+      <div>
+        <div
+          class="er-w-8 er-h-8 er-cursor-pointer er-border-none er-border-l-2 er-border-t-2 er-border-l-gray er-border-t-gray"
+        ></div>
+        <div class="er-flex er-overflow-x-hidden">
           {% for prod in product.metafields.custom.product_accessories.value %}
             {% if prod.available %}
               {% assign variant = prod.variants | first %}
@@ -101,9 +105,9 @@
             {% endif %}
           {% endfor %}
         </div>
-        </div>
-        <div class="next"></div>
       </div>
+      <div class="next"></div>
+    </div>
     <div class="er-flex er-flex-col er-space-y-5">
       <button class="er-button er-w-full">Add To Cart</button>
       <button class="er-button er-button-dark er-w-full">Process Checkout</button>
