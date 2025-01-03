@@ -196,6 +196,11 @@
         <a href="mailto:support@newurtopia.com" class="er-button er-button-text">support@newurtopia.com</a>
       </span>
     </div>
+    <div class="">
+      {% for item in product_panel_services_icons %}
+        {{ item.image | image_url: width: 30  }}
+      {% endfor %}
+    </div>
   </div>
 </section>
 
