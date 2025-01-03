@@ -82,7 +82,8 @@
         <div class="er-text-3xl er-font-bold">Accessories</div>
         <div class="er-w-8 er-h-8 er-cursor-pointer er-absolute er-border-none er-border-l-2 er-border-t-2 er-border-l-gray er-border-t-gray"></div>
         <div class="next"></div>
-        <div class="er-flex er-overflow-x-hidden">
+        <div>
+          <div class="er-flex er-overflow-x-hidden">
           {% for prod in product.metafields.custom.product_accessories.value %}
             {% if prod.available %}
               {% assign variant = prod.variants | first %}
@@ -100,6 +101,7 @@
               </div>
             {% endif %}
           {% endfor %}
+        </div>
         </div>
       </div>
     <div class="er-flex er-flex-col er-space-y-5">
