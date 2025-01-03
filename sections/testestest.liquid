@@ -7,7 +7,7 @@
 <script>
   console.log(JSON.parse(JSON.stringify({{ product | json }})))
   console.log(JSON.parse(JSON.stringify({{ current_variant | json }})))
-  console.log(JSON.parse(JSON.stringify({{ shop.metaobjects['product-media-reviews-items'].items.values }})))
+  console.log(JSON.parse(JSON.stringify({{ shop.metaobjects['product-media-reviews-items'].items.values | json }})))
 </script>
 
 {% for item in shop.metaobjects['product-media-reviews-items'] %}
