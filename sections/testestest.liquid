@@ -306,17 +306,7 @@
     pagination: { el: '.product-panel-swiper .swiper-pagination' },
     on:{
         slideChange: function() {
-            const index = this.activeIndex % global_config.carbon_fold_order_page_config.product_media_images.length;
-            $('.product .medias').find('.u17DemiBold_v2').text(global_config.carbon_fold_order_page_config.product_media_images[index].text)
-            $('.product .medias').find('img').attr('src', global_config.carbon_fold_order_page_config.product_media_images[index].img)
-
-            if (global_config.carbon_fold_order_page_config.product_media_images[index + 1]) {
-                (new Image()).src = global_config.carbon_fold_order_page_config.product_media_images[index + 1].img
-            }
-
-            if (global_config.carbon_fold_order_page_config.product_media_images[index + 2]) {
-                (new Image()).src = global_config.carbon_fold_order_page_config.product_media_images[index + 2].img
-            }            
+          console.log(index)          
         },
     },
   })
