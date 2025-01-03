@@ -312,7 +312,8 @@
           const index = this.realIndex + 1
           const loopIndex = this.realIndex % product_medias.length
           $('.product-panel .left-images').find(`img[data-index=${index}]`).addClass('active').siblings().removeClass('active')
-          $('.product-panel .product-medias').find('img').replaceWith(product_medias[loopIndex])
+          $('.product-panel .product-medias').find('img').replaceWith(product_medias[loopIndex].image)
+          $('.product-panel .product-medias').find('span').text()
         },
     },
   })
