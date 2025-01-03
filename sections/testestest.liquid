@@ -34,7 +34,7 @@
       <span class="er-text-dark/60 er-text-3xl product-compare-at-price">{{ product.compare_at_price | money }}</span>
       <span class="er-text-2xl er-font-bold er-block er-px-4 er-py-1 er-bg-primary er-text-white er-rounded-3xl">{{ product.compare_at_price |  minus: product.price | money }}</span>
     </div>
-    {% render 'sale-v2' %}
+    {% render 'sale' %}
     {% for option in product.options_with_values %}
       <fieldset
         class="option er-border-none er-p-0 er-space-y-4"
