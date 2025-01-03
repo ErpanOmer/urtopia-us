@@ -92,7 +92,7 @@
               {% assign variant = prod.variants | first %}
               <div class="er-flex er-w-80 er-flex-col er-rounded-3xl er-border-solid er-border-border er-border er-cursor-pointer er-relative er-aspect-video er-p-4" variant-id="{{ variant.id }}">
                 <div class="er-text-xl er-text-dark/80 er-font-medium">{{ prod.title }}</div>
-                <span class="er-text-3xl er-text-bold">{{ prod.price | money }}</span>
+                <span class="er-text-3xl er-font-bold">{{ prod.price | money }}</span>
                 <span class="flex-1"></span>
                 <span class="fa-solid fa-plus"></span>
                 {{ prod.featured_image | image_url: width: 75 | image_tag: loading: 'lazy', class: "er-absolute er-right-0 er-bottom-0" }}
