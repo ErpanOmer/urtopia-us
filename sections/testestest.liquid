@@ -2,6 +2,7 @@
   assign product = all_products['urtopia-chord-ebike']
   assign current_variant = product.selected_or_first_available_variant
   assign product_color = shop.metaobjects.shop_config['product-option-color'].value.value
+  assign product_media_reviews = shop.metaobjects['media_reviews_items']['product-media-reviews-items'].items.value
 %}
 
 <script>
