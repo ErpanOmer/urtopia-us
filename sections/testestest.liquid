@@ -63,8 +63,8 @@
     {% for item in product_media_reviews %}
       {% if forloop.first %}
         <div class="er-flex er-flex-col er-items-center er-text-center er-italic">
-        <span class="er-text-3xl er-font-bold">{{ item.text }}</span>
-        {{ item.image | image_url: height: 60 | image_tag: loading: 'lazy' }}
+          <span class="er-text-3xl er-font-bold">{{ item.text }}</span>
+          {{ item.image | image_url: height: 60 | image_tag: loading: 'lazy' }}
         </div>
       {% endif %}
     {% endfor %}
@@ -187,6 +187,9 @@
     <div class="er-flex er-flex-col er-space-y-5">
       <button class="er-button er-w-full">Add To Cart</button>
       <button class="er-button er-button-dark er-w-full">Process Checkout</button>
+    </div>
+    <div>
+      
     </div>
   </div>
 </section>
