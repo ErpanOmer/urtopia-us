@@ -335,8 +335,7 @@
         const image = current_variant.images[index];
         
         product_panel_swiper.appendSlide(image.image_tag)
-        console.log($('.product-panel .left-images').append(image.image_tag))
-        // $(`.product-panel .left-images > img[data-index="${index + 1}"]`).attr('src', image.image_url).removeAttr('srcset').show()
+        $('.product-panel .left-images').append(`<img src="${image.image_url}">`)
       }
     }
   }
