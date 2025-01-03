@@ -340,6 +340,7 @@
       console.log(variant_size)
 
       product_panel_swiper.prependSlide(current_variant.images.map(item => item.image_tag))
+      product_panel_swiper.slideTo(0)
 
       for (let index = current_variant.images.length - 1; index > 0 ; index--) {
         const image = current_variant.images[index];
