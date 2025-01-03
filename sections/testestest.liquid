@@ -305,7 +305,8 @@
     pagination: { el: '.product-panel-swiper .swiper-pagination' },
     on:{
         slideChange: function() {
-          console.log(this)          
+          const index = this.realIndex
+          console.log(index)          
         },
     },
   })
