@@ -56,10 +56,15 @@
 <section class="product-panel er-font-base er-max-w-screen-xl er-mx-auto er-flex er-justify-between er-px-12 er-m-36" data-variant-id="{{ current_variant.id }}">
   <div class="er-w-[{{ product_left_swiper_width }}px] er-shrink-0 er-space-y-2 left-images">
     {% for variant_image in swiper_of_variant %}
+      {% if forloop.index > swiper_of_variant.size %}
+        {% assign swiper_class = "common-swiper" %}
+      {% else %}
+        {% assign swiper_class = "variant-swiper" %}
+      {% endif %}
       {{
         variant_image
         | image_url: width: product_main_swiper_width
-        | image_tag: class: product_left_swiper_class, data-index: forloop.index
+        | image_tag: class: product_left_swiper_class, data-index: forloop.index, data-type: swiper_class
       }}
     {% endfor %}
   </div>
