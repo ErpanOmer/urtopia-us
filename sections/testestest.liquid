@@ -335,7 +335,7 @@
 
       // 删除当前variant image
       $('.product-panel .left-images').children().slice(0, variant_size).remove();
-      product_panel_swiper.removeSlide(Array(variant_size).fill(1).map((i, j) => j))
+      product_panel_swiper.removeSlide(Array(variant_size).fill(1).map((j, i) => i))
 
       console.log(variant_size)
 
