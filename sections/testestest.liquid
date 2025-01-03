@@ -258,7 +258,7 @@
   const product_medias = [
     {%- for item in product_media_reviews -%}
       {
-        text: {{ item.text }}
+        text: '{{ item.text }}'
       },
     {%- endfor -%}
   ]
