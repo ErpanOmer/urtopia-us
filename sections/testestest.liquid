@@ -90,7 +90,7 @@
           {% for prod in product.metafields.custom.product_accessories.value %}
             {% if prod.available %}
               {% assign variant = prod.variants | first %}
-              <div class="item" variant-id="{{ variant.id }}">
+              <div class="er-flex" variant-id="{{ variant.id }}">
                 <div class="u11Medium_v2">{{ prod.title }}</div>
                 <div>
                   <div>
