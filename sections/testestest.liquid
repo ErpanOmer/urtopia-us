@@ -118,7 +118,9 @@
         {{- product.compare_at_price | minus: product.price | money -}}
       </span>
     </div>
-    {% render 'sale' %}
+    {% if product.metafields.custom.show_count_down.value %}
+      {% render 'sale' %}
+    {% endif %}
     {% for option in product.options_with_values %}
       <fieldset
         class="option er-border-none er-p-0 er-space-y-4"
