@@ -45,7 +45,7 @@
 </style>
 
 <section class="product-panel er-font-base er-max-w-screen-xl er-mx-auto er-flex er-justify-between er-px-12 er-m-36" data-variant-id="{{ current_variant.id }}">
-  <div class="er-w-[64px] er-shrink-0">
+  <div class="er-w-[{{ product_left_swiper_width }}px] er-shrink-0">
     <div class="er-space-y-2 left-images">
       {% for variant_image in current_variant.metafields.custom.variant_image.value %}
         {{
