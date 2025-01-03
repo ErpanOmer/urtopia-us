@@ -334,7 +334,6 @@
       let variant_size = Number($('.product-panel').attr('data-variant-swiper-size'))
 
       while(variant_size--) {
-        console.log(variant_size)
         product_panel_swiper.removeSlide(0)
         $('.product-panel .left-images').children().first().remove();
       }
@@ -357,7 +356,7 @@
         elem.on('click', onClickLeftImages)
       }
 
-      product_panel_swiper.slideTo(0)
+      setTimeout(product_panel_swiper.slideTo, 0, 0)
     }
   }
 </script>
