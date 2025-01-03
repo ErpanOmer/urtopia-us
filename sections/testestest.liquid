@@ -2,8 +2,8 @@
   assign product = all_products['urtopia-chord-ebike']
   assign current_variant = product.selected_or_first_available_variant
   assign product_color = shop.metaobjects.shop_config['product-option-color'].value.value
-  assign product_media_reviews = shop.metaobjects['media_reviews_items']['product-media-reviews-items'].items.value
-  assign product_parameter_and_icons  = product.metafields.custom.product_parameter_and_icons.value
+  assign product_media_reviews = shop.metaobjects.media_reviews_items['product-media-reviews-items'].items.value
+  assign product_parameter_and_icons = product.metafields.custom.product_parameter_and_icons.value
 %}
 
 <script>
@@ -14,38 +14,41 @@
 
 <style>
   .star {
-  position: relative;
-  display: inline-block;
-  width: var(--star-size);
-  height: var(--star-size);
-  background: none;
-}
+    position: relative;
+    display: inline-block;
+    width: var(--star-size);
+    height: var(--star-size);
+    background: none;
+  }
 
-.star::before,
-.star::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: gold;
-  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-  transform: rotate(72deg);
-  transform-origin: center;
-}
+  .star::before,
+  .star::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: gold;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    transform: rotate(72deg);
+    transform-origin: center;
+  }
 
-.star::after {
-  transform: rotate(-72deg);
-}
-
+  .star::after {
+    transform: rotate(-72deg);
+  }
 </style>
 
 <section class="er-font-base er-max-w-screen-xl er-mx-auto er-flex er-justify-between er-px-12 er-m-36">
   <div class="er-w-[64px] er-shrink-0">
     <div class="er-space-y-2">
       {% for variant_image in current_variant.metafields.custom.variant_image.value %}
-        {{ variant_image | image_url: width: 64 | image_tag: class: 'er-aspect-video er-object-cover er-rounded-md er-cursor-pointer' }}
+        {{
+          variant_image
+          | image_url: width: 64
+          | image_tag: class: 'er-aspect-video er-object-cover er-rounded-md er-cursor-pointer'
+        }}
       {% endfor %}
     </div>
   </div>
@@ -53,34 +56,34 @@
     <div class="er-aspect-video swiper">
       <div class="swiper-wrapper">
         {% for variant_image in current_variant.metafields.custom.variant_image.value %}
-          {{ variant_image | image_url: width: 640 | image_tag: class: "swiper-slide er-object-cover er-aspect-video" }}
+          {{ variant_image | image_url: width: 640 | image_tag: class: 'swiper-slide er-object-cover er-aspect-video' }}
         {% endfor %}
       </div>
     </div>
     {% for item in product_media_reviews %}
-      <div class="er-flex er-flex-col er-items-center er-text-center er-italic">
-        {% if forloop.first %}
-          <span class="er-text-3xl er-font-bold">{{ item.text }}</span>
-          {{ item.image | image_url: height: 60 |  image_tag: loading: 'lazy' }}
-        {% endif %}
-      </div>
+      {% if forloop.first %}
+        <div class="er-flex er-flex-col er-items-center er-text-center er-italic">
+        <span class="er-text-3xl er-font-bold">{{ item.text }}</span>
+        {{ item.image | image_url: height: 60 | image_tag: loading: 'lazy' }}
+        </div>
+      {% endif %}
     {% endfor %}
     <div class="er-grid er-grid-cols-3 er-gap-y-8">
       {% for item in product_parameter_and_icons %}
         <div class="er-flex er-items-center">
-          {{ item.image | image_url: width: 45, height: 45 | image_tag: loading: 'lazy'  }}
+          {{ item.image | image_url: width: 45, height: 45 | image_tag: loading: 'lazy' }}
           <span class="er-text-2xl er-font-medium er-ml-2">{{ item.text }}</span>
         </div>
       {% endfor %}
       {% for item in product_parameter_and_icons %}
         <div class="er-flex er-items-center">
-          {{ item.image | image_url: width: 45, height: 45 | image_tag: loading: 'lazy'  }}
+          {{ item.image | image_url: width: 45, height: 45 | image_tag: loading: 'lazy' }}
           <span class="er-text-2xl er-font-medium er-ml-2">{{ item.text }}</span>
         </div>
       {% endfor %}
       {% for item in product_parameter_and_icons %}
         <div class="er-flex er-items-center">
-          {{ item.image | image_url: width: 45, height: 45 | image_tag: loading: 'lazy'  }}
+          {{ item.image | image_url: width: 45, height: 45 | image_tag: loading: 'lazy' }}
           <span class="er-text-2xl er-font-medium er-ml-2">{{ item.text }}</span>
         </div>
       {% endfor %}
@@ -159,12 +162,19 @@
           {% for prod in product.metafields.custom.product_accessories.value %}
             {% if prod.available %}
               {% assign variant = prod.variants | first %}
-              <div class="er-flex er-flex-[0_0_47.5%] er-flex-col er-rounded-3xl er-border-solid er-border-border er-border er-cursor-pointer er-relative er-aspect-video er-p-4" variant-id="{{ variant.id }}">
+              <div
+                class="er-flex er-flex-[0_0_47.5%] er-flex-col er-rounded-3xl er-border-solid er-border-border er-border er-cursor-pointer er-relative er-aspect-video er-p-4"
+                variant-id="{{ variant.id }}"
+              >
                 <div class="er-text-xl er-text-dark/80 er-font-medium">{{ prod.title }}</div>
                 <span class="er-text-3xl er-font-bold">{{ prod.price | money }}</span>
                 <span class="flex-1"></span>
                 <span class="fa-solid fa-plus"></span>
-                {{ prod.featured_image | image_url: width: 75 | image_tag: loading: 'lazy', class: "er-absolute er-right-0 er-bottom-0" }}
+                {{
+                  prod.featured_image
+                  | image_url: width: 75
+                  | image_tag: loading: 'lazy', class: 'er-absolute er-right-0 er-bottom-0'
+                }}
               </div>
             {% endif %}
           {% endfor %}
