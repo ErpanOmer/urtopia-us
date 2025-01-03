@@ -41,7 +41,7 @@
 
 <section class="er-font-base er-max-w-screen-xl er-mx-auto er-flex er-justify-between er-px-12 er-m-36">
   <div class="er-w-[64px] er-shrink-0">
-    <div class="er-space-y-1">
+    <div class="er-space-y-2">
       {% for variant_image in current_variant.metafields.custom.variant_image.value %}
         {{ variant_image | image_url: width: 64 | image_tag: class: 'er-aspect-video er-object-cover er-rounded-md er-cursor-pointer' }}
       {% endfor %}
