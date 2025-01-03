@@ -231,8 +231,8 @@
         inventory_quantity: '{{ variant.inventory_quantity }}',
         available: {{ variant.available }},
         images: [
-          {%- for image in metafields.custom.variant_image.value -%}
-            {{ image }},
+          {%- for image in variant.metafields.custom.variant_image.value -%}
+            '{{ image }}',
           {%- endfor -%}
         ]
      },
