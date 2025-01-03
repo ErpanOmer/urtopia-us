@@ -323,6 +323,8 @@
 
     if (current_variant.images && current_variant.images.length) {
       product_panel_swiper.removeAllSlides()
+      $('.product-panel .left-images').empty()
+      
       for (const image of current_variant.images) {
         product_panel_swiper.appendSlide(image)
       }
