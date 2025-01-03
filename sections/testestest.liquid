@@ -329,7 +329,7 @@
 
     if (current_variant.images && current_variant.images.length) {
       product_panel_swiper.removeAllSlides()
-      $('.product-panel .left-images').empty()
+      $('.product-panel .left-images > img').hide()
 
       for (let index = 0; index < current_variant.images.length; index++) {
         const image = current_variant.images[index];
