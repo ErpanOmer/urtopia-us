@@ -262,25 +262,6 @@
     {%- endfor -%}
   ]
 
-
-  function onVariantChange (name, value) {
-    let title = current_variant.title.split(' / ')
-    title[product_options[name] - 1] = value
-    title = title.join(' / ')
-
-    const find = product_variants.find(v => v.title === title)
-
-    console.log(find)
-
-    if (!find || !find.available) {
-      $('button').attr('disabled', true)
-    } else {
-      $('button').attr('disabled', false)
-    }
-
-    current_variant = Object.assign({}, find)
-  }
-
   // 监听每个 radio 的 change 事件
   document.querySelectorAll('.product-panel input[type="radio"]').forEach(radio => {
     radio.addEventListener('change', (event) => {
@@ -321,4 +302,23 @@
     $(this).addClass('active').siblings().removeClass('active')
     product_panel_swiper.slideTo(index - 1)
   })
+
+
+  function onVariantChange (name, value) {
+    let title = current_variant.title.split(' / ')
+    title[product_options[name] - 1] = value
+    title = title.join(' / ')
+
+    const find = product_variants.find(v => v.title === title)
+
+    console.log(find)
+
+    if (!find || !find.available) {
+      $('button').attr('disabled', true)
+    } else {
+      $('button').attr('disabled', false)
+    }
+
+    current_variant = Object.assign({}, find)
+  }
 </script>
