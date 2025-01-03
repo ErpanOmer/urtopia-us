@@ -11,11 +11,6 @@
   console.log(JSON.parse(JSON.stringify({{ shop.metaobjects['media_reviews_items']['product-media-reviews-items'] | json }})))
 </script>
 
-{% for item in shop.metaobjects['media_reviews_items']['product-media-reviews-items'].items.value %}
-  <span>{{ item | json }}</span>
-  <span>{{ item.image |  image_url: width: 150  }}</span>
-{% endfor %}
-
 <style>
   .star {
   position: relative;
@@ -61,9 +56,9 @@
         {% endfor %}
       </div>
     </div>
-    <div>
-      {% for item in product-panel-media-logos %}
-        
+    <div class="flex">
+      {% for item in product_media_reviews %}
+
       {% endfor %}
     </div>
   </div>
