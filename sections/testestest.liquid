@@ -12,6 +12,7 @@
 
 {% for item in shop.metaobjects['media_reviews_items']['product-media-reviews-items'].items.value %}
   <span>{{ item | json }}</span>
+  <span>{{ item.image }}</span>
 {% endfor %}
 
 <style>
