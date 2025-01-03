@@ -307,7 +307,7 @@
         slideChange: function() {
           const index = this.realIndex + 1
           console.log(index)
-          console.log($('.product-panel .left-images').find(`img[data-index=${index}]`)).addClass('active')        
+          $('.product-panel .left-images').find(`img[data-index=${index}]`).addClass('active').siblings().removeClass('active')        
         },
     },
   })
