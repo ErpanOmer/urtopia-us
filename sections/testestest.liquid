@@ -227,18 +227,6 @@
 </section>
 
 <script>
-  let current_variant = {
-    {% for option in product.options_with_values %}
-      '{{ option.name }}': '{{ option.selected_value }}',
-    {% endfor %}
-    id: '{{ current_variant.id }}',
-    title: '{{ current_variant.title }}',
-    price: '{{ current_variant.price }}',
-    compare_at_price: '{{ current_variant.compare_at_price }}',
-    inventory_quantity: '{{ current_variant.inventory_quantity }}',
-    available: {{ current_variant.available }}
-  }
-
   const product_variants = [
     {% for variant in product.variants %}
       {
@@ -251,6 +239,18 @@
      },
     {% endfor %}
   ]
+  
+  let current_variant = {
+    {% for option in product.options_with_values %}
+      '{{ option.name }}': '{{ option.selected_value }}',
+    {% endfor %}
+    id: '{{ current_variant.id }}',
+    title: '{{ current_variant.title }}',
+    price: '{{ current_variant.price }}',
+    compare_at_price: '{{ current_variant.compare_at_price }}',
+    inventory_quantity: '{{ current_variant.inventory_quantity }}',
+    available: {{ current_variant.available }}
+  }
 
   const product_options = {
     {% for option in product.options_with_values %}
