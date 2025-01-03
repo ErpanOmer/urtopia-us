@@ -334,6 +334,8 @@
 
     current_variant = Object.assign({}, find)
 
+    $('.product-panel .product-delivery-time').text(current_variant.delivery_time)
+
     if (current_variant.images && current_variant.images.length) {
       let variant_size = Number($('.product-panel').attr('data-variant-swiper-size'))
 
