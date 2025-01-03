@@ -8,7 +8,7 @@
 <script>
   console.log(JSON.parse(JSON.stringify({{ product | json }})))
   console.log(JSON.parse(JSON.stringify({{ current_variant | json }})))
-  console.log(JSON.parse(JSON.stringify({{ shop.metaobjects['media_reviews_items']['product-media-reviews-items'] | json }})))
+  console.log(JSON.parse(JSON.stringify({{ product.metafields.custom.product_parameter_and_icons.value | json }})))
 </script>
 
 <style>
