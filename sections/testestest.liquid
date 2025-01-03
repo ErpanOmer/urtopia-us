@@ -72,10 +72,10 @@
     {% endfor %}
     <div class="er-flex er-bg-backround er-items-center er-rounded-2xl er-gap-x-4">
       {{ product_send_accessories_icon.image |  image_url: width: 80 | image_tag: loading: 'lazy' }}
-      <span><span class="er-text-primary er-text-2xl er-font-bold">Limited offer:</span> Fenders, kickstand</span>
+      <span><span class="er-text-primary er-text-2xl">Limited offer:</span> Fenders, kickstand</span>
       <span class="er-flex-1"></span>
       <del>{{ 16700 | money }}</del>
-      <span class="er-button er-px-3 er-py-2">FREE</span>
+      <span class="er-button er-px-3 er-py-2 er-font-bold">FREE</span>
     </div>
     <div class="er-grid er-grid-cols-3 er-gap-y-8">
       {% for item in product_parameter_and_icons %}
