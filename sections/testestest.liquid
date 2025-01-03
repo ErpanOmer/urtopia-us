@@ -9,6 +9,7 @@
 
   assign swiper_of_common = product.metafields.custom.product_common_images.value | reverse
   assign swiper_of_variant = current_variant.metafields.custom.variant_image.value | reverse
+  assign swiper_of_common = swiper_of_variant | concat: swiper_of_variant
 
   assign product_left_swiper_width = 64
   assign product_main_swiper_width = 640
@@ -21,7 +22,7 @@
 
 <script>
   console.log(JSON.parse(JSON.stringify({{ product | json }})))
-  console.log(JSON.parse(JSON.stringify({{ swiper | json }})))
+  console.log(JSON.parse(JSON.stringify({{ swiper_of_common | json }})))
 </script>
 
 <style>
