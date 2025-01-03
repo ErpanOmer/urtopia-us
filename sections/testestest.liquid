@@ -59,7 +59,7 @@
         {% endfor %}
       </div>
     </div>
-    <span>{{ product_media_reviews.size }}</span>
+    <span>{{ product_media_reviews }}</span>
     <div class="er-flex er-flex-col er-items-center er-text-center">
       <span class="er-text-3xl er-font-bold">{{ product_media_reviews.first.text }}</span>
       {{ product_media_reviews.first.image | image_url: height: 60 | image_tag: loading: 'lazy' }}
