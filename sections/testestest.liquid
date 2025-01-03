@@ -83,6 +83,30 @@
         <span>{{ item.title }}</span>
       {% endfor %}
     </div>
+    <div class="accessories">
+        <div class="u17DemiBold_v2">Accessories</div>
+        <div class="prev"></div>
+        <div class="next"></div>
+        <div class="items">
+          {% for prod in collections.accessories_in_fold_product_page.products %}
+            {% if prod.available %}
+              {% assign variant = prod.variants | first %}
+              <div class="item" variant-id="{{ variant.id }}">
+                <div class="u11Medium_v2">{{ prod.title }}</div>
+                <div>
+                  <div>
+                    <span class="u17DemiBold_v2">{{ prod.price | money }}</span>
+                    <span class="u11Light_v2">
+                      <i class="fa-solid fa-plus"></i>
+                    </span>
+                  </div>
+                  {{ prod.featured_image | image_url: width: 150 | image_tag: loading: 'lazy' }}
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
     <div class="er-flex er-flex-col er-space-y-5">
       <button class="er-button er-w-full">Add To Cart</button>
       <button class="er-button er-button-dark er-w-full">Process Checkout</button>
