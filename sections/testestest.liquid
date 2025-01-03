@@ -56,16 +56,14 @@
         {% endfor %}
       </div>
     </div>
-    <div class="er-flex">
-      {% for item in product_media_reviews %}
-        <div class="er-flex er-flex-col er-items-center er-text-center er-italic">
-          {% if forloop.first %}
-            <span class="er-text-3xl er-font-bold">{{ item.text }}</span>
-            {{ item.image | image_url: height: 60 |  image_tag: loading: 'lazy' }}
-          {% endif %}
-        </div>
-      {% endfor %}
-    </div>
+    {% for item in product_media_reviews %}
+      <div class="er-flex er-flex-col er-items-center er-text-center er-italic">
+        {% if forloop.first %}
+          <span class="er-text-3xl er-font-bold">{{ item.text }}</span>
+          {{ item.image | image_url: height: 60 |  image_tag: loading: 'lazy' }}
+        {% endif %}
+      </div>
+    {% endfor %}
   </div>
   <div class="er-min-w-[400px] er-max-w-2xl er-shrink-0 er-space-y-8 er-flex er-flex-col">
     <span class="er-text-4xl er-font-bold">{{ product.title }}</span>
