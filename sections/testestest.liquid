@@ -31,7 +31,7 @@
       <span class="er-text-5xl er-font-extrabold product-price" data-price="{{ product.compare_at_price | money }}">
       {{- product.price | money -}}
       </span>
-      <span class="er-text-dark/60 er-text-3xl product-compare-at-price">{{ product.compare_at_price | money }}</span>
+      <span class="er-text-dark/70 er-text-3xl product-compare-at-price">{{ product.compare_at_price | money }}</span>
       <span class="er-text-2xl er-font-bold er-block er-px-4 er-py-1 er-bg-primary er-text-white er-rounded-3xl">{{ product.compare_at_price |  minus: product.price | money }}</span>
     </div>
     {% render 'sale' %}
@@ -42,7 +42,7 @@
         position="{{ option.position }}"
       >
         <legend class="er-text-3xl er-font-bold">
-          {{ option.name }} - <span class="er-font-normal">{{ option.selected_value }}</span>
+          {{ option.name }} - <span class="er-font-normal er-text-dark/70">{{ option.selected_value }}</span>
         </legend>
         <div class="er-flex er-gap-4">
           {% for option_value in option.values %}
