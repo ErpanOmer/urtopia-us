@@ -86,7 +86,7 @@
         <div
           class="er-w-8 er-h-8 er-cursor-pointer er-border-none er-border-l-2 er-border-t-2 er-border-l-gray er-border-t-gray"
         ></div>
-        <div class="er-flex er-overflow-x-hidden">
+        <div class="er-flex-1 er-flex er-overflow-x-hidden">
           {% for prod in product.metafields.custom.product_accessories.value %}
             {% if prod.available %}
               {% assign variant = prod.variants | first %}
@@ -105,8 +105,8 @@
             {% endif %}
           {% endfor %}
         </div>
+        <div class="er-w-8 er-h-8 er-cursor-pointer"></div>
       </div>
-      <div class="next"></div>
     </div>
     <div class="er-flex er-flex-col er-space-y-5">
       <button class="er-button er-w-full">Add To Cart</button>
