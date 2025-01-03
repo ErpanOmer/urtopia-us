@@ -283,7 +283,7 @@
     });
   });
 
-  const onClickLeftImages = function () {
+  function onClickLeftImages () {
     const index = Number($(this).attr('data-index'))
     $(this).addClass('active').siblings().removeClass('active')
     product_panel_swiper.slideTo(index - 1)
@@ -307,7 +307,7 @@
     },
   })
 
-  $('.product-panel .left-images > img').on('click', )
+  $('.product-panel .left-images > img').on('click', onClickLeftImages)
 
 
   function onVariantChange (name, value) {
