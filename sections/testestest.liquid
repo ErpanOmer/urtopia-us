@@ -241,7 +241,7 @@
     {% endfor %}
   ]
 
-
+  // 当前variant
   let current_variant = Object.assign({
     {% for option in product.options_with_values %}
       '{{ option.name }}': '{{ option.selected_value }}',
