@@ -352,13 +352,15 @@
       $('.product-panel').attr('data-variant-swiper-size', index)
 
       while(--index) {
-        const image = current_variant.images[index - 1];
+        setTimeout(() => {
+          const image = current_variant.images[index - 1];
 
-        product_panel_swiper.prependSlide(image.image_tag)
+          product_panel_swiper.prependSlide(image.image_tag)
 
-        const elem = $(`<img width="{{ product_left_swiper_width }}" data-index="${ index }" src="${image.image_url}" class="{{ product_left_swiper_class }}">`)
-        $('.product-panel .left-images').prepend(elem)
-        elem.on('click', onClickLeftImages)
+          const elem = $(`<img width="{{ product_left_swiper_width }}" data-index="${ index }" src="${image.image_url}" class="{{ product_left_swiper_class }}">`)
+          $('.product-panel .left-images').prepend(elem)
+          elem.on('click', onClickLeftImages)
+        })
       }
 
       product_panel_swiper.slideTo(0)
