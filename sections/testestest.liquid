@@ -50,7 +50,7 @@
       {% for variant_image in current_variant.metafields.custom.variant_image.value %}
         {{
           variant_image
-          | image_url: width: 64
+          | image_url: width: product_left_swiper_width
           | image_tag: class: 'er-aspect-video er-object-cover er-rounded-md er-cursor-pointer er-border-solid er-border-0 er-border-primary [&[class~="active"]]:er-border-2', data-index: forloop.index
         }}
       {% endfor %}
