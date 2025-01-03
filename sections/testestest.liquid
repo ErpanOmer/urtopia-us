@@ -283,6 +283,12 @@
     });
   });
 
+  const onClickLeftImages = function () {
+    const index = Number($(this).attr('data-index'))
+    $(this).addClass('active').siblings().removeClass('active')
+    product_panel_swiper.slideTo(index - 1)
+  }
+
   const product_panel_swiper = new Swiper('.product-panel .product-panel-swiper', {
     navigation: {
       nextEl: '.product-panel .product-panel-swiper .swiper-button-next',
@@ -301,11 +307,7 @@
     },
   })
 
-  $('.product-panel .left-images > img').on('click', function () {
-    const index = Number($(this).attr('data-index'))
-    $(this).addClass('active').siblings().removeClass('active')
-    product_panel_swiper.slideTo(index - 1)
-  })
+  $('.product-panel .left-images > img').on('click', )
 
 
   function onVariantChange (name, value) {
