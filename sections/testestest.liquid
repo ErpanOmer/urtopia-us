@@ -7,7 +7,7 @@
 <script>
   console.log(JSON.parse(JSON.stringify({{ product | json }})))
   console.log(JSON.parse(JSON.stringify({{ current_variant | json }})))
-  console.log(JSON.parse(JSON.stringify({{ product.metafields.custom.product_accessories.value | json }})))
+  console.log(JSON.parse(JSON.stringify({{ shop.metaobjects['product-panel-media-logos']['items'].value.value | json }})))
 </script>
 
 <style>
@@ -54,6 +54,11 @@
           {{ variant_image | image_url: width: 640 | image_tag: class: "swiper-slide er-object-cover er-aspect-video" }}
         {% endfor %}
       </div>
+    </div>
+    <div>
+      {% for item in product-panel-media-logos %}
+        
+      {% endfor %}
     </div>
   </div>
   <div class="er-min-w-[400px] er-max-w-2xl er-shrink-0 er-space-y-8 er-flex er-flex-col">
