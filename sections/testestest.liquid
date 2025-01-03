@@ -94,15 +94,7 @@
                 <div class="er-text-xl er-text-dark/80">{{ prod.title }}</div>
                 <span class="er-text-2xl er-text-bold">{{ prod.price | money }}</span>
                 <i class="fa-solid fa-plus"></i>
-                <div>
-                  <div>
-                    
-                    <span class="u11Light_v2">
-                      
-                    </span>
-                  </div>
-                  {{ prod.featured_image | image_url: width: 100 | image_tag: loading: 'lazy', class: "er-absolute er-right-0 er-bottom-0" }}
-                </div>
+                {{ prod.featured_image | image_url: width: 100 | image_tag: loading: 'lazy', class: "er-absolute er-right-0 er-bottom-0" }}
               </div>
             {% endif %}
           {% endfor %}
