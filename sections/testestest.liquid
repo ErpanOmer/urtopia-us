@@ -49,6 +49,9 @@
   </div>
   <div class="er-flex-1 er-px-[5%]">
     <div class="er-aspect-video">
+      <div class="swiper-wrapper">
+
+      </div>
       {% for variant_image in current_variant.metafields.custom.variant_image.value %}
         {{ variant_image | image_url: width: 640 | image_tag: class: "swiper-slide" }}
       {% endfor %}
