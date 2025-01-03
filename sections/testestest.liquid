@@ -333,7 +333,7 @@
       
       let variant_size = Number($('.product-panel').attr('data-variant-swiper-size'))
 
-      while(--variant_size) {
+      while(variant_size--) {
         console.log(variant_size)
         product_panel_swiper.removeSlide(0)
         $('.product-panel .left-images').children().first().remove();
@@ -348,7 +348,7 @@
 
       
 
-      while(--index) {
+      while(index--) {
         const image = current_variant.images[index - 1];
 
         product_panel_swiper.prependSlide(image.image_tag)
