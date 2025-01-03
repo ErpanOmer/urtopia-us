@@ -250,9 +250,9 @@
 
   // 属性和索引映射
   const product_options = {
-    {% for option in product.options_with_values %}
+    {%- for option in product.options_with_values -%}
       '{{ option.name }}': {{ option.position }},
-    {% endfor %}
+    {%- endfor -%}
   }
 
 
