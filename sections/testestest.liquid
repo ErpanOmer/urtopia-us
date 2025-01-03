@@ -256,8 +256,10 @@
   }
 
   const product_medias = [
-    {%- for option in product_media_reviews -%}
-      '{{ option.name }}': {{ option.position }},
+    {%- for item in product_media_reviews -%}
+      {
+        text: {{ item.text }}
+      },
     {%- endfor -%}
   ]
 
