@@ -342,14 +342,14 @@
       // product_panel_swiper.prependSlide(current_variant.images.map(item => item.image_tag).reverse())
       // product_panel_swiper.slideTo(0)
 
-      let length = current_variant.images.length
+      let index = current_variant.images.length
 
-      while(--length) {
-        const image = current_variant.images[length - 1];
+      while(--index) {
+        const image = current_variant.images[index - 1];
 
         product_panel_swiper.prependSlide(image.image_tag)
 
-        const elem = $(`<img width="{{ product_left_swiper_width }}" data-index="${ index + 1 }" src="${image.image_url}" class="{{ product_left_swiper_class }}">`)
+        const elem = $(`<img width="{{ product_left_swiper_width }}" data-index="${ index }" src="${image.image_url}" class="{{ product_left_swiper_class }}">`)
         $('.product-panel .left-images').prepend(elem)
         elem.on('click', onClickLeftImages)
       }
