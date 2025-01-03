@@ -227,10 +227,10 @@
   // all variants
   const common = [
     {%- for image in swiper_of_common -%}
-            {
-              image_tag: '{{ image | image_url: width: product_main_swiper_width | image_tag: class: product_main_swiper_class }}',
-              image_url: '{{ image | image_url: width: product_main_swiper_width }}'
-            },
+        {
+          image_tag: '{{ image | image_url: width: product_main_swiper_width | image_tag: class: product_main_swiper_class }}',
+          image_url: '{{ image | image_url: width: product_main_swiper_width }}'
+        },
     {%- endfor -%}
   ]
 
