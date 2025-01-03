@@ -49,7 +49,7 @@
         {{
           variant_image
           | image_url: width: 64
-          | image_tag: class: 'er-aspect-video er-object-cover er-rounded-md er-cursor-pointer er-border-none er-border-primary [&[class~="active"]]:er-border'
+          | image_tag: class: 'er-aspect-video er-object-cover er-rounded-md er-cursor-pointer er-border-none er-border-primary [&[class~="active"]]:er-border', data-index: forloop.index
         }}
       {% endfor %}
     </div>
