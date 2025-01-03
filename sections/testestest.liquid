@@ -336,8 +336,10 @@
       while(--variant_size) {
         console.log(variant_size)
 
-        product_panel_swiper.removeSlide(0)
-        $('.product-panel .left-images').children().first().remove();
+        setTimeout(() => {
+          product_panel_swiper.removeSlide(0)
+          $('.product-panel .left-images').children().first().remove();
+        }, 0);
       }
 
       // 删除当前variant image
