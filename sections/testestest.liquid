@@ -60,7 +60,7 @@
       {% for item in product_media_reviews %}
         <div class="er-flex er-flex-col">
           <span class="er-text-3xl er-font-bold">{{ item.text }}</span>
-          {{ item.image |  image_url: height: 60 }}
+          {{ item.image | image_url: height: 60 |  image_tag: loading: 'lazy' }}
         </div>
       {% endfor %}
     </div>
