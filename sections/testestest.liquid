@@ -65,9 +65,9 @@
         {% endif %}
       </div>
     {% endfor %}
-    <div>
+    <div class="er-grid">
       {% for item in product_parameter_and_icons %}
-        <div>
+        <div class="flex">
           {{ item.image | image_url: width: 45, height: 45 | image_tag: loading: 'lazy'  }}
           <span class="er-text-2xl">{{ item.text }}</span>
         </div>
