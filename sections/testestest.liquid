@@ -43,7 +43,7 @@
   <div class="er-w-[64px] er-shrink-0">
     <div class="er-space-y-0">
       {% for variant_image in current_variant.metafields.custom.variant_image.value %}
-        {{ variant_image | image_url: width: 64 | image_tag: class: 'er-aspect-video er-object-cover' }}
+        {{ variant_image | image_url: width: 64 | image_tag: class: 'er-aspect-video er-object-cover er-rounded-xl' }}
       {% endfor %}
     </div>
   </div>
