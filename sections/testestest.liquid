@@ -10,7 +10,7 @@
   console.log(JSON.parse(JSON.stringify({{ product_color | json }})))
 </script>
 
-<section class="er-max-w-screen-xl er-mx-auto er-flex er-justify-between er-px-12 er-m-48">
+<section class="er-font-base er-max-w-screen-xl er-mx-auto er-flex er-justify-between er-px-12 er-m-48">
   <div class="er-w-24 er-shrink-0">
     <div class="er-aspect-video">
       {% for variant_image in current_variant.metafields.custom.variant_image.value %}
@@ -26,7 +26,7 @@
     </div>
   </div>
   <div class="er-min-w-[400px] er-max-w-2xl er-shrink-0 er-space-y-8 er-flex er-flex-col">
-    <span class="er-text-5xl">{{ product.title }}</span>
+    <span class="er-text-5xl er-text-">{{ product.title }}</span>
     <span class="er-text-5xl product-price" data-price="{{ product.compare_at_price | money }}">
       {{- product.price | money -}}
     </span>
