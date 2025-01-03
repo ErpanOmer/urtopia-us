@@ -7,8 +7,8 @@
   assign product_panel_services_icons = shop.metaobjects.product_panel_services_icons['product-panel-services-icons'].items.value
   assign product_send_accessories_icon = product.metafields.custom.product_send_accessories_icon.value
 
-  assign swiper_of_variant = current_variant.metafields.custom.variant_image.value | where: "size"
-  assign swiper_of_common = product.metafields.custom.product_common_images.value | where: "size"
+  assign swiper_of_variant = current_variant.metafields.custom.variant_image.value | where: "list"
+  assign swiper_of_common = product.metafields.custom.product_common_images.value | where: "list"
   assign swiper_of_variant = swiper_of_variant | concat: swiper_of_common
 
   assign product_left_swiper_width = 64
