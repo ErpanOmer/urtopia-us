@@ -313,6 +313,8 @@
   })
 
   $('.product-panel .left-images > img').on('click', function () {
+    const index = Number($(this).attr(data-index))
     $(this).addClass('active').siblings().removeClass('active')
+    product_panel_swiper.slideTo(index)
   })
 </script>
