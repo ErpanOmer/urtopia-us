@@ -232,7 +232,10 @@
         available: {{ variant.available }},
         images: [
           {%- for image in variant.metafields.custom.variant_image.value -%}
-            '{{ image | image_url: width: product_main_swiper_width | image_tag: class: "swiper-slide er-object-cover er-aspect-video er-rounded-2xl" }}',
+            {
+              image_tag: '{{ image | image_url: width: product_main_swiper_width | image_tag: class: "swiper-slide er-object-cover er-aspect-video er-rounded-2xl" }}',
+              image_url: '{{ image | image_url: width: product_main_swiper_width }}'
+            },
           {%- endfor -%}
         ]
      },
@@ -324,7 +327,7 @@
     if (current_variant.images && current_variant.images.length) {
       product_panel_swiper.removeAllSlides()
       $('.product-panel .left-images').empty()
-      
+
       for (const image of current_variant.images) {
         product_panel_swiper.appendSlide(image)
       }
