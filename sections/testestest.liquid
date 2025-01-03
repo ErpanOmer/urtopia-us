@@ -27,7 +27,7 @@
   </div>
   <div class="er-min-w-[400px] er-max-w-2xl er-shrink-0 er-space-y-8 er-flex er-flex-col">
     <span class="er-text-5xl er-font-bold">{{ product.title }}</span>
-    <span class="er-text-6xl product-price" data-price="{{ product.compare_at_price | money }}">
+    <span class="er-text-6xl er-font-extrabold product-price" data-price="{{ product.compare_at_price | money }}">
       {{- product.price | money -}}
     </span>
     {% for option in product.options_with_values %}
