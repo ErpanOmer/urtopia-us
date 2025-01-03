@@ -228,7 +228,7 @@
 
 <script>
   // 获取所有的 radio 输入
-  const radios = document.querySelectorAll('input[type="radio"]');
+  const radios = document.querySelectorAll('.product-panel input[type="radio"]');
   let current_variant = {
     {% for option in product.options_with_values %}
       '{{ option.name }}': '{{ option.selected_value }}',
