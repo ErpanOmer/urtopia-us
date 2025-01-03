@@ -330,7 +330,6 @@
     current_variant = Object.assign({}, find)
 
     if (current_variant.images && current_variant.images.length) {
-      
       let variant_size = Number($('.product-panel').attr('data-variant-swiper-size'))
 
       while(variant_size--) {
@@ -356,7 +355,9 @@
         elem.on('click', onClickLeftImages)
       }
 
-      setTimeout(product_panel_swiper.slideTo, 0, 0)
+      setTimeout(() => {
+        product_panel_swiper.slideTo(0)
+      }, 0)
     }
   }
 </script>
