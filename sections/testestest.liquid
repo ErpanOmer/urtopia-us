@@ -18,11 +18,13 @@
 
   assign product_left_swiper_class = "er-rounded-md er-cursor-pointer er-border-solid er-border-0 er-border-primary [&[class~='active']]:er-border-2"
   assign product_main_swiper_class = "swiper-slide er-object-cover er-aspect-video er-rounded-2xl"
+
+  assign product_delivery_time = current_variant.metafields.custom.delivery_time.value | default: product.metafields.custom.delivery_time.value 
 %}
 
 <script>
   console.log(JSON.parse(JSON.stringify({{ product | json }})))
-  console.log(JSON.parse(JSON.stringify({{ swiper_of_variant | json }})))
+  console.log(JSON.parse(JSON.stringify({{ product_delivery_time }})))
 </script>
 
 <style>
@@ -197,11 +199,7 @@
     </div>
     <div class="er-border er-border-border er-border-solid er-p-4 er-rounded-2xl er-flex er-flex-col er-text-2xl">
       <span class="product-delivery-time er-font-bold">
-        {% if current_variant.metafields.custom.delivery_time.value %}
-          
-        {% else %}
-          {{ product.metafields.custom.delivery_time.value }}
-        {% endif %}
+        {{ product_media_reviews }}
       </span>
       <span>
         Need help? Email
