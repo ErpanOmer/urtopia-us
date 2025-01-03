@@ -198,7 +198,7 @@
     </div>
     <div class="er-grid er-grid-cols-3">
       {% for item in product_panel_services_icons %}
-        <div>
+        <div class="er-flex er-items-center">
           {{ item.image | image_url: width: 30 | image_tag }}
           <span class="er-text-xl er-font-medium">{{ item.text }}</span>
         </div>
