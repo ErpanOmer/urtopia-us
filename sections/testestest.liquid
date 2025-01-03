@@ -95,7 +95,7 @@
                 <span class="er-text-2xl er-text-bold">{{ prod.price | money }}</span>
                 <span class="flex-1"></span>
                 <span class="fa-solid fa-plus"></span>
-                {{ prod.featured_image | image_url: width: 100 | image_tag: loading: 'lazy', class: "er-absolute er-right-0 er-bottom-0" }}
+                {{ prod.featured_image | image_url: width: 75 | image_tag: loading: 'lazy', class: "er-absolute er-right-0 er-bottom-0" }}
               </div>
             {% endif %}
           {% endfor %}
