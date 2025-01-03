@@ -229,7 +229,7 @@
 <script>
   // all variants
   const product_variants = [
-    {% for variant in product.variants %}
+    {%- for variant in product.variants -%}
       {
         id: '{{ variant.id }}',
         title: '{{ variant.title }}',
@@ -238,7 +238,7 @@
         inventory_quantity: '{{ variant.inventory_quantity }}',
         available: {{ variant.available }}
      },
-    {% endfor %}
+    {%- endfor -%}
   ]
 
   // 当前variant
