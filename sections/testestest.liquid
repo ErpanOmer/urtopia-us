@@ -232,7 +232,7 @@
         available: {{ variant.available }},
         images: [
           {%- for image in variant.metafields.custom.variant_image.value -%}
-            '{{ image }}',
+            '{{ image | image_url: width: product_main_swiper_width }}',
           {%- endfor -%}
         ]
      },
