@@ -357,7 +357,7 @@
         const elem = $(`<img width="{{ product_left_swiper_width }}" data-index="${ index }" src="${image.image_url}" class="{{ product_left_swiper_class }}">`)
         $('.product-panel .left-images').prepend(elem)
 
-        console.log(image.image_tag)
+        console.log(index)
         console.log(elem)
         elem.on('click', onClickLeftImages)
       }
