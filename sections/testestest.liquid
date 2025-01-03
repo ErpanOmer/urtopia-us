@@ -333,9 +333,13 @@
       
       let variant_size = Number($('.product-panel').attr('data-variant-swiper-size'))
 
+      while(--variant_size) {
+        product_panel_swiper.removeSlide(0)
+      }
+
       // 删除当前variant image
-      $('.product-panel .left-images').children().slice(0, variant_size - 1).remove();
-      product_panel_swiper.removeSlide(Array(variant_size).fill(1).map((j, i) => i))
+      // $('.product-panel .left-images').children().slice(0, variant_size - 1).remove();
+      // product_panel_swiper.removeSlide(Array(variant_size).fill(1).map((j, i) => i))
 
       console.log(variant_size)
 
