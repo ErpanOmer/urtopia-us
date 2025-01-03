@@ -61,8 +61,8 @@
           {{ variant_image | image_url: width: 640 | image_tag: class: 'swiper-slide er-object-cover er-aspect-video er-rounded-2xl' }}
         {% endfor %}
       </div>
-      <div class="swiper-button-prev er-transition er-bg-[#ffffff80] er-rounded-lg after:er-text-5xl after:er-content-['prev'] hover:er-opacity-75"></div>
-      <div class="swiper-button-next er-transition er-bg-[#ffffff80] er-rounded-lg after:er-text-5xl after:er-content-['next'] hover:er-opacity-75"></div>
+      <div class="swiper-button-prev er-transition er-bg-[#ffffff80] er-rounded-lg after:er-text-5xl after:er-content-['prev'] hover:er-opacity-75 er-select-none"></div>
+      <div class="swiper-button-next er-transition er-bg-[#ffffff80] er-rounded-lg after:er-text-5xl after:er-content-['next'] hover:er-opacity-75 er-select-none"></div>
     </div>
     {% for item in product_media_reviews %}
       {% if forloop.first %}
