@@ -90,16 +90,16 @@
           {% for prod in product.metafields.custom.product_accessories.value %}
             {% if prod.available %}
               {% assign variant = prod.variants | first %}
-              <div class="er-flex er-w-80 er-flex-col er-rounded-3xl er-border-solid er-border-background er-border-1 er-cursor-pointer" variant-id="{{ variant.id }}">
+              <div class="er-flex er-w-80 er-flex-col er-rounded-3xl er-border-solid er-border-background er-border-1 er-cursor-pointer er-relative" variant-id="{{ variant.id }}">
                 <div class="er-text-xl er-text-dark/80">{{ prod.title }}</div>
                 <div>
                   <div>
-                    <span class="er-text-2xl">{{ prod.price | money }}</span>
+                    <span class="er-text-2xl er-text-bold">{{ prod.price | money }}</span>
                     <span class="u11Light_v2">
                       <i class="fa-solid fa-plus"></i>
                     </span>
                   </div>
-                  {{ prod.featured_image | image_url: width: 100 | image_tag: loading: 'lazy' }}
+                  {{ prod.featured_image | image_url: width: 100 | image_tag: loading: 'lazy', class: "er-absolute" }}
                 </div>
               </div>
             {% endif %}
