@@ -48,13 +48,12 @@
     </div>
   </div>
   <div class="er-flex-1 er-px-[5%]">
-    <div class="er-aspect-video">
+    <div class="er-aspect-video swiper">
       <div class="swiper-wrapper">
-
+        {% for variant_image in current_variant.metafields.custom.variant_image.value %}
+          {{ variant_image | image_url: width: 640 | image_tag: class: "swiper-slide" }}
+        {% endfor %}
       </div>
-      {% for variant_image in current_variant.metafields.custom.variant_image.value %}
-        {{ variant_image | image_url: width: 640 | image_tag: class: "swiper-slide" }}
-      {% endfor %}
     </div>
   </div>
   <div class="er-min-w-[400px] er-max-w-2xl er-shrink-0 er-space-y-8 er-flex er-flex-col">
