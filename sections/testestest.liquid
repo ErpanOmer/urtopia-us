@@ -43,14 +43,14 @@
   <div class="er-w-[64px] er-shrink-0">
     <div class="er-space-y-2">
       {% for variant_image in current_variant.metafields.custom.variant_image.value %}
-        {{ variant_image | image_url: width: 64 | image_tag: class: 'er-aspect-video er-object-cover er-rounded-md' }}
+        {{ variant_image | image_url: width: 64 | image_tag: class: 'er-aspect-video er-object-cover er-rounded-md er-cursor-pointer' }}
       {% endfor %}
     </div>
   </div>
   <div class="er-flex-1 er-px-[5%]">
     <div class="er-aspect-video">
       {% for variant_image in current_variant.metafields.custom.variant_image.value %}
-        {{ variant_image | image_url: width: 640 | image_tag }}
+        {{ variant_image | image_url: width: 640 | image_tag: class: "swiper-slide" }}
       {% endfor %}
     </div>
   </div>
