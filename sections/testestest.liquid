@@ -334,8 +334,6 @@
       let variant_size = Number($('.product-panel').attr('data-variant-swiper-size'))
 
       while(--variant_size) {
-        console.log(variant_size)
-
         product_panel_swiper.removeSlide(0)
         $('.product-panel .left-images').children().first().remove();
       }
@@ -344,10 +342,10 @@
       // $('.product-panel .left-images').children().slice(0, variant_size - 1).remove();
       // product_panel_swiper.removeSlide(Array(variant_size).fill(1).map((j, i) => i))
 
-      console.log(variant_size)
-
       let index = current_variant.images.length
       $('.product-panel').attr('data-variant-swiper-size', index)
+
+      console.log(index)
 
       while(--index) {
         const image = current_variant.images[index - 1];
