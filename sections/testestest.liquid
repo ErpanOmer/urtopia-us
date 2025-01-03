@@ -56,12 +56,13 @@
         {% endfor %}
       </div>
     </div>
-    {{ product_media_reviews[0] }}
     <div class="er-flex">
       {% for item in product_media_reviews %}
         <div class="er-flex er-flex-col er-items-center er-text-center">
-          <span class="er-text-3xl er-font-bold">{{ item.text }}</span>
-          {{ item.image | image_url: height: 60 |  image_tag: loading: 'lazy' }}
+          {% if forloop.first %}
+            <span class="er-text-3xl er-font-bold">{{ item.text }}</span>
+            {{ item.image | image_url: height: 60 |  image_tag: loading: 'lazy' }}
+          {% endif %}
         </div>
       {% endfor %}
     </div>
