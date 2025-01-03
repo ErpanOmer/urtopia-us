@@ -4,12 +4,13 @@
   assign product_color = shop.metaobjects.shop_config['product-option-color'].value.value
   assign product_media_reviews = shop.metaobjects.media_reviews_items['product-media-reviews-items'].items.value
   assign product_parameter_and_icons = product.metafields.custom.product_parameter_and_icons.value
+  assign product_panel_services_icons = shop.metaobjects.product_panel_services_icons['product-panel-services-icons'].items.value
 %}
 
 <script>
   console.log(JSON.parse(JSON.stringify({{ product | json }})))
   console.log(JSON.parse(JSON.stringify({{ current_variant | json }})))
-  console.log(JSON.parse(JSON.stringify({{ product.metafields.custom.product_parameter_and_icons.value | json }})))
+  console.log(JSON.parse(JSON.stringify({{ product_panel_services_icons | json }})))
 </script>
 
 <style>
