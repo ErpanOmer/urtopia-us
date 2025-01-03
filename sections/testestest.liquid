@@ -250,7 +250,7 @@
               image_url: '{{ image | image_url: width: product_main_swiper_width }}'
             },
           {%- endfor -%}
-        ].push(common)
+        ].concat(common_swiper)
      },
     {%- endfor -%}
   ]
