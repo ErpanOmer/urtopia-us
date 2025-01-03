@@ -42,7 +42,7 @@
   }
 </style>
 
-<section class="er-font-base er-max-w-screen-xl er-mx-auto er-flex er-justify-between er-px-12 er-m-36">
+<section class="er-font-base er-max-w-screen-xl er-mx-auto er-flex er-justify-between er-px-12 er-m-36" data-variant-id="">
   <div class="er-w-[64px] er-shrink-0">
     <div class="er-space-y-2">
       {% for variant_image in current_variant.metafields.custom.variant_image.value %}
@@ -148,7 +148,6 @@
                 {% if option_value.selected %}
                   checked
                 {% endif %}
-                data-variant-id="{{ option_value.variant.id }}"
                 data-option-value-id="{{ option_value.id }}"
               >
               <span
