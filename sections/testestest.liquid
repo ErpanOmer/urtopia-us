@@ -68,7 +68,7 @@
       {% if forloop.first %}
         <div class="er-flex er-flex-col er-items-center er-text-center er-italic">
           <span class="er-text-3xl er-font-bold">{{ item.text }}</span>
-          {{ item.image | image_url: height: 60 | image_tag: loading: 'lazy' }}
+          {{ item.image | image_url: height: 60 | image_tag: loading: 'lazy', data-index: forloop.index }}
         </div>
       {% endif %}
     {% endfor %}
