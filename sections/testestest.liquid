@@ -333,6 +333,8 @@
       
       let variant_size = Number($('.product-panel').attr('data-variant-swiper-size'))
 
+      $('.product-panel .left-images').children().slice(0, variant_size).remove();
+
       while(variant_size--) {
         product_panel_swiper.removeSlide(0)
       }
