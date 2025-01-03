@@ -8,6 +8,7 @@
   assign product_send_accessories_icon = product.metafields.custom.product_send_accessories_icon.value
 
   assign product_left_swiper_width = 64
+  assign product_main_swiper_width = 640
 %}
 
 <script>
@@ -60,7 +61,7 @@
     <div class="er-aspect-video product-panel-swiper er-relative er-overflow-hidden er-rounded-2xl" style="--swiper-theme-color: #000;">
       <div class="swiper-wrapper">
         {% for variant_image in current_variant.metafields.custom.variant_image.value %}
-          {{ variant_image | image_url: width: 640 | image_tag: class: 'swiper-slide er-object-cover er-aspect-video er-rounded-2xl' }}
+          {{ variant_image | image_url: width: product_main_swiper_width | image_tag: class: 'swiper-slide er-object-cover er-aspect-video er-rounded-2xl' }}
         {% endfor %}
       </div>
       <div class="swiper-button-prev er-transition er-bg-[#ffffff80] er-rounded-lg after:er-text-5xl after:er-content-['prev'] hover:er-opacity-70 er-select-none"></div>
