@@ -259,7 +259,7 @@
     {%- for item in product_media_reviews -%}
       {
         text: '{{ item.text }}',
-        image: '{{ item.image | image_url: height: 60 }}'
+        image: '{{ item.image | image_url: height: 60 | image_tag }}'
       },
     {%- endfor -%}
   ]
