@@ -340,6 +340,7 @@
       console.log(variant_size)
 
       let index = current_variant.images.length
+      $('.product-panel').attr('data-variant-swiper-size', index)
 
       while(--index) {
         const image = current_variant.images[index - 1];
