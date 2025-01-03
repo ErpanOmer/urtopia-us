@@ -82,7 +82,7 @@
         <div class="er-text-3xl er-font-bold">Accessories</div>
         <div class="er-w-8 er-h-8 er-cursor-pointer er-absolute er-border-l-2 er-border-gray er-border-solid"></div>
         <div class="next"></div>
-        <div class="items">
+        <div class="er-flex er-overflow-hidden">
           {% for prod in product.metafields.custom.product_accessories.value %}
             {% if prod.available %}
               {% assign variant = prod.variants | first %}
