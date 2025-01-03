@@ -349,12 +349,11 @@
       while(index--) {
         const image = current_variant.images[index];
         product_panel_swiper.prependSlide(image.image_tag)
-        product_panel_swiper.slideTo(0)
 
         const elem = $(`<img width="{{ product_left_swiper_width }}" data-index="${ index + 1 }" src="${image.image_url}" class="{{ product_left_swiper_class }}">`)
         $('.product-panel .left-images').prepend(elem)
         elem.on('click', onClickLeftImages)
-        
+        product_panel_swiper.slideTo(0)
       }
     }
   }
