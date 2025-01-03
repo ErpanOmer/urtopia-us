@@ -227,8 +227,6 @@
 </section>
 
 <script>
-  // 获取所有的 radio 输入
-  const radios = document.querySelectorAll('.product-panel input[type="radio"]');
   let current_variant = {
     {% for option in product.options_with_values %}
       '{{ option.name }}': '{{ option.selected_value }}',
@@ -280,7 +278,7 @@
   }
 
   // 监听每个 radio 的 change 事件
-  radios.forEach(radio => {
+  document.querySelectorAll('.product-panel input[type="radio"]').forEach(radio => {
     radio.addEventListener('change', (event) => {
       const target = $(event.target)
       const name = target.attr('name')
