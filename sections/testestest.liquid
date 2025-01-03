@@ -9,7 +9,6 @@
 
   assign swiper_of_variant = current_variant.metafields.custom.variant_image.value | reverse
   assign swiper_of_common = product.metafields.custom.product_common_images.value | reverse
-
   assign swiper_of_variant = swiper_of_variant | concat: swiper_of_common
 
   assign product_left_swiper_width = 64
