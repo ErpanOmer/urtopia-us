@@ -59,7 +59,7 @@
       {{
         variant_image
         | image_url: width: product_main_swiper_width
-        | image_tag: class: product_left_swiper_class, data-index: forloop.index
+        | image_tag: class: product_left_swiper_class, data-index: forloop.index, data-type
       }}
     {% endfor %}
   </div>
@@ -67,7 +67,7 @@
     <div class="er-aspect-video product-panel-swiper er-relative er-overflow-hidden er-rounded-2xl" style="--swiper-theme-color: #000;">
       <div class="swiper-wrapper">
         {% for variant_image in swiper_of_variant %}
-          {{ variant_image | image_url: width: product_main_swiper_width | image_tag: class: product_main_swiper_class }}
+          {{ variant_image | image_url: width: product_main_swiper_width | image_tag: class: product_main_swiper_class, data-index: forloop.index }}
         {% endfor %}
       </div>
       <div class="swiper-button-prev er-transition er-bg-[#ffffff80] er-rounded-lg after:er-text-5xl after:er-content-['prev'] hover:er-opacity-70 er-select-none"></div>
