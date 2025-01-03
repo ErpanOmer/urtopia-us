@@ -330,6 +330,7 @@
 
       for (const image of current_variant.images) {
         product_panel_swiper.appendSlide(image.image_tag)
+        $('.product-panel .left-images').append(image.image_tag)
       }
     }
   }
