@@ -330,7 +330,9 @@
     current_variant = Object.assign({}, find)
 
     if (current_variant.images && current_variant.images.length) {
-      const variant_size = $('.product-panel').attr('data-variant-swiper-size')
+      const variant_size = Number($('.product-panel').attr('data-variant-swiper-size'))
+
+      console.log(variant_size)
 
       // product_panel_swiper.removeAllSlides()
       // $('.product-panel .left-images').empty()
