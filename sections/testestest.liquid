@@ -198,7 +198,8 @@
     </div>
     <div class="">
       {% for item in product_panel_services_icons %}
-        {{ item.image | image_url: width: 30  }}
+        {{ item.image | image_url: width: 30 |  image_tag }}
+        <span>{{ item.text }}</span>
       {% endfor %}
     </div>
   </div>
