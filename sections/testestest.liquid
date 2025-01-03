@@ -339,18 +339,15 @@
 
       console.log(variant_size)
 
-      // product_panel_swiper.removeAllSlides()
-      // $('.product-panel .left-images').empty()
-
-      // for (let index = 0; index < current_variant.images.length; index++) {
-      //   const image = current_variant.images[index];
+      for (let index = 0; index < current_variant.images.length; index++) {
+        const image = current_variant.images[index];
         
-      //   product_panel_swiper.appendSlide(image.image_tag)
+        product_panel_swiper.appendSlide(image.image_tag)
 
-      //   const elem = $(`<img width="{{ product_left_swiper_width }}" data-index="${ index + 1 }" src="${image.image_url}" class="{{ product_left_swiper_class }}">`)
-      //   $('.product-panel .left-images').append(elem)
-      //   elem.on('click', onClickLeftImages)
-      // }
+        const elem = $(`<img width="{{ product_left_swiper_width }}" data-index="${ index + 1 }" src="${image.image_url}" class="{{ product_left_swiper_class }}">`)
+        $('.product-panel .left-images').append(elem)
+        elem.on('click', onClickLeftImages)
+      }
       
     }
   }
