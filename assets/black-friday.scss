@@ -1,4 +1,4 @@
-$color: #DB1111;
+$color: #ffdf48;
 $backround-color: #fff;
 
 h1,
@@ -7,12 +7,6 @@ h3,
 h4 {
     color: inherit;
     margin: 0;
-}
-
-
-.my-button-origin {
-    background-color: $color !important;
-    color: #fff !important;
 }
 
 /* 旋转动画 */
@@ -27,7 +21,7 @@ h4 {
 }
 
 .banner {
-    background: #D50B28 url("https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19657_2x_c95a3029-2656-40cf-a30f-4ed450c7ea58.jpg?v=1734074816") center center/cover no-repeat;
+    background: #fff url("https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24938_2x_acfb27a4-cbc3-4ddf-b2f0-33872841087e.jpg?v=1736233352") center center/cover no-repeat;
 
     .centeral-content {
         height: 750px;
@@ -138,13 +132,13 @@ h4 {
         .centeral-content {
             grid-template-columns: 1fr;
             height: auto;
-            padding: 0 0 13.5vw;
+            padding: 0;
 
             &>div:not(.swiperrrr) {
                 padding: 8vw 0 0;
                 transform: unset;
                 align-items: flex-start;
-                background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19656_2x_fa4c8e58-9df9-43da-83b9-a46edf340861.jpg?v=1734082052') center bottom/cover no-repeat;
+                background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24973_2x_22f19949-2ae3-44d0-ba84-a57fa07d945c.jpg?v=1736233726') center bottom/cover no-repeat;
 
                 img {
                   align-self: center;
@@ -214,7 +208,7 @@ h4 {
 
     .centeral-content {
         .promo-banner {
-            background-color: rgb(16, 114, 84);
+            background-color: #FFDF48;
             text-align: center;
             color: #fff;
             padding-left: 5%;
@@ -224,10 +218,8 @@ h4 {
 
             .u36DemiBold_v2 {
                 padding: 40px 0;
-                background-color: $color;
+                background-color: #000;
                 border-top-left-radius: 100px;
-                padding-left: 10%;
-
 
                 span {
                     color: #fff;
@@ -532,30 +524,48 @@ h4 {
 }
 
 
+
 .timeeeeeeeeeee {
     margin-top: 100px;
 
     &>div {
-        background: #F4F5F7 url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25168_2x_264180c7-53bb-4a8f-8b0f-f856d00e37e7.jpg?v=1734078020') center right/cover no-repeat;
+        background: #F4F5F7 url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19696_2x_e2ff1848-8101-4013-886f-c1228dabb369.jpg?v=1736234167') center center/cover no-repeat;
+        padding: 50px 0 50px 70px;
         color: #fff;
         border-radius: 10px;
         overflow: hidden;
+
+        .u30DemiBold_v2 {
+            color: #fff;
+        }
+
+        .u17Light_v2 {
+            max-width: 450px;
+            margin: 24PX 0 60px;
+        }
     }
 
 
     @media (max-width: 767px) {
         padding: 0 15px;
-        margin: 0 auto 60px;
-        background-image: linear-gradient(0, #2E0000, #400303, #760000);
-        background-position-y: 109vw;
-            background-clip: content-box;
+        margin: 60px auto;
 
         &>div {
-            background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3333_2x_5388e10c-5199-4f46-a834-4c9954476d52.jpg?v=1734084710');
-            background-position-x: center;
-            background-size: contain;
-            background-position-y: top;
-            background-color: transparent;
+            background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25268_2x_137f9b77-fe05-43f6-a2e1-4dedeb12e857.jpg?v=1736234304');
+            padding: 32px 16px;
+            height: 142vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+
+            .u30DemiBold_v2 {
+                font-size: 20px;
+            }
+
+            .u17Light_v2 {
+                margin: 12px 0 30px;
+                font-size: 14px;
+            }
         }
     }
 }
@@ -766,7 +776,7 @@ h4 {
     margin-bottom: 13vh;
     .centeral-content {
         &>div {
-            background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25129_2x_4f1105d2-9331-4a7b-a0cd-27d5d0655dab.jpg?v=1734079275') center left/cover no-repeat;
+            background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25129_2x_a52fd38b-1bbe-4cd8-931c-faf6dbb27460.jpg?v=1736235124') center left/cover no-repeat;
             color: #fff;
             padding: 40px 0 30px 21%;
             border-radius: 15px;
@@ -787,7 +797,7 @@ h4 {
             padding: 0 15px;
 
             & > div {
-                background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25135_2x_4387590a-ba57-4017-8757-925de60dde37.jpg?v=1734085660');
+                background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25135_2x_5b8adf88-f160-4c8d-ab39-4a698d34ed20.jpg?v=1736235325');
                 padding: 0 15px 10vw;
                 display: flex;
                 flex-direction: column;
@@ -862,48 +872,4 @@ h4 {
         }
 
     }
-}
-
-
-.buyany .centeral-content .two>div:not(.total):not(.plus) .card>div .sizes .active {
-    background-color: $color;
-    border-color: $color;
-}
-
-
-.buyany .centeral-content .two .total>div .yellow {
-    background-color: #095344;
-    color: #fff;
-}
-
-
-.ebike-products .product-grid .product-card .tags {
-    background-color: rgb(180, 3, 3);
-    height: 55px;
-}
-
-.ebike-products .product-grid .product-card .tags>span {
-    background-color: $color;
-    color: #fff;
-    position: relative;
-}
-
-.ebike-products .product-grid .product-card .tags>span::before {
-    content: "";
-    background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/76699.svg?v=1734080035') left top/contain no-repeat;
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    aspect-ratio: 159 / 61;
-    transform: translate(-11%, -39%);
-}
-
-.ebike-products .product-grid .product-card {
-    overflow: visible;
-}
-
-.ebike-products .product-grid .product-card .product_price .u24DemiBold_v2 {
-    color: $color;
 }

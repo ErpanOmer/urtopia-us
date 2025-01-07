@@ -1,4 +1,4 @@
-$color: #DB1111;
+$color: #ffdf48;
 $backround-color: #fff;
 
 h1,
@@ -514,8 +514,8 @@ h4 {
     }
 
     .centeral-content {
-         .promo-banner {
-            background-color: rgb(16, 114, 84);
+        .promo-banner {
+            background-color: #FFDF48;
             text-align: center;
             color: #fff;
             padding-left: 5%;
@@ -525,10 +525,8 @@ h4 {
 
             .u36DemiBold_v2 {
                 padding: 40px 0;
-                background-color: $color;
+                background-color: #000;
                 border-top-left-radius: 100px;
-                padding-left: 10%;
-
 
                 span {
                     color: #fff;
@@ -830,50 +828,4 @@ h4 {
             }
         }
     }
-}
-
-
-
-
-.buyany .centeral-content .two>div:not(.total):not(.plus) .card>div .sizes .active {
-    background-color: $color;
-    border-color: $color;
-}
-
-
-.buyany .centeral-content .two .total>div .yellow {
-    background-color: #095344;
-    color: #fff;
-}
-
-
-.ebike-products .product-grid .product-card .tags {
-    background-color: rgb(180, 3, 3);
-    height: 55px;
-}
-
-.ebike-products .product-grid .product-card .tags>span {
-    background-color: $color;
-    color: #fff;
-    position: relative;
-}
-
-.ebike-products .product-grid .product-card .tags>span::before {
-    content: "";
-    background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/76699.svg?v=1734080035') left top/contain no-repeat;
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    aspect-ratio: 159 / 61;
-    transform: translate(-11%, -39%);
-}
-
-.ebike-products .product-grid .product-card {
-    overflow: visible;
-}
-
-.ebike-products .product-grid .product-card .product_price .u24DemiBold_v2 {
-    color: $color;
 }
