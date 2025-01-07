@@ -254,10 +254,11 @@
   <div class="centeral-content">
     <div>
       <h3 class="u24Medium_v2" style="color: #FFB3C7;">Ride Now, Pay Later</h3>
-      <h2 class="u36DemiBold_v2">
-        {{ settings.sale_name }} Limited-Time <span style="color: #FFB3C7;">0% APR</span> for 24 Months
-      </h2>
-      <h3 class="u20Light_v2">A $1,599 purchase costs $66.62/month for 24 months at 0% APR.</h3>
+      <h2 class="u36DemiBold_v2">Limited-Time <span style="color: #FFB3C7;">0% APR</span> for 24 Months</h2>
+      <h3 class="u20Light_v2">
+        A {{ all_products['urtopia-carbon-fold'].price | money_without_trailing_zeros }} purchase costs
+        {{ all_products['urtopia-carbon-fold'].price | divided_by: 24 | money }}/month for 24 months at 0% APR.
+      </h3>
     </div>
   </div>
 </div>
@@ -483,7 +484,7 @@
 <div class="centeral-content ebike-products mb:!er-mt-32">
   <h3 class="u36DemiBold_v2 mobileHide">Clearance Outlet Sale</h3>
   <p class="u17Light_v2 mobileHide">
-    <span>Last chance for Flash Sale Deals—final batch, no restocks!</span>
+    <span>Last chance for {{ settings.sale_name }}—final batch, no restocks!</span>
   </p>
   <div class="product-grid">
     {% assign product = all_products['urtopia-chord-ebike'] %}

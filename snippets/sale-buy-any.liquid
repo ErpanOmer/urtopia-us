@@ -83,7 +83,7 @@
           <span class="u48DemiBold_v2">$4598</span>
           <div class="u24DemiBold_v2 yellow">You Save $2400</div>
           <span class="u17Light_v2">($2200 OFF + EXTRA $200)</span>
-          <div class="my-button my-button-origin">Add To Cart</div>
+          <div class="my-button my-button-origin">Proceed to Checkout</div>
         </div>
       </div>
     </div>
@@ -142,11 +142,6 @@
                 total_price += Number($(this).find('.u24DemiBold_v2').attr('price'))
                 total_compare_at_price += Number($(this).find('.u20Light_v2').attr('compare_at_price'))
             })
-
-
-            if (total_price > 500000) {
-                save = 50000
-            }
 
             $('.buyany .total .u48DemiBold_v2').text(getPriceFormat(total_price - save, true))
             $('.buyany .total .yellow').text(`You Save ${getPriceFormat(total_compare_at_price - total_price + save, true)}`)
@@ -220,38 +215,38 @@
                     variants.push($(this).attr('data-variant-id'))
                 })
 
-                // fetch('/cart/clear.js').then(() => {
-                //     navigator.sendBeacon('/cart/add.js', new Blob([JSON.stringify({
-                //             items: variants.map(id => ({ id, quantity: 1 })),
-                //             sections: cart.getSectionsToRender().map(section => section.id).join(',')
-                //     })], {
-                //     type: 'application/json',
-                //    }))
+                fetch('/cart/clear.js').then(() => {
+                    navigator.sendBeacon('/cart/add.js', new Blob([JSON.stringify({
+                            items: variants.map(id => ({ id, quantity: 1 })),
+                            sections: cart.getSectionsToRender().map(section => section.id).join(',')
+                    })], {
+                    type: 'application/json',
+                   }))
 
-                //    setTimeout(() => {
-                //      location.href = `/checkout`
-                //    }, 300)                        
-                // }).finally(() => {
-                //     // $(this).removeClass('loading')
-                // })
-
-
-
-                fetch('/cart/add.js', {
-                    method: 'POST',
-                    body: JSON.stringify({
-                        items: variants.map(id => ({ id, quantity: 1 })),
-                        sections: cart.getSectionsToRender().map(section => section.id).join(',')
-                    }),
-                    headers: {
-                    'Content-Type': 'application/json',
-                    },
-                }).then((res) => res.json()).then(res => {
-                    cart.classList.contains('is-empty') && cart.classList.remove('is-empty');
-                    !(res.message && res.status) && cart.renderContents(res);
-                }).catch(console.error).finally(() => {
-                    $(this).removeClass('loading')
+                   setTimeout(() => {
+                     location.href = `/checkout`
+                   }, 300)                        
+                }).finally(() => {
+                    // $(this).removeClass('loading')
                 })
+
+
+
+                // fetch('/cart/add.js', {
+                //     method: 'POST',
+                //     body: JSON.stringify({
+                //         items: variants.map(id => ({ id, quantity: 1 })),
+                //         sections: cart.getSectionsToRender().map(section => section.id).join(',')
+                //     }),
+                //     headers: {
+                //     'Content-Type': 'application/json',
+                //     },
+                // }).then((res) => res.json()).then(res => {
+                //     cart.classList.contains('is-empty') && cart.classList.remove('is-empty');
+                //     !(res.message && res.status) && cart.renderContents(res);
+                // }).catch(console.error).finally(() => {
+                //     $(this).removeClass('loading')
+                // })
             })
 
             changeProduct($(`.buyany select[name="left"]`).parent().parent(), 8794812776696)
