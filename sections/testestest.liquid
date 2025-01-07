@@ -1,12 +1,591 @@
-<div class="prose-headings:er-font-base mb:prose-h2:er-leading-snug mb:prose-ul:er-text-2xl mb:prose-blockquote:er-text-2xl mb:prose-th:er-px-2 mb:prose-td:er-px-2 mb:er-prose-base mb:prose-table:er-text-xl mb:prose-h3:er-text-[17.5px] mb:prose-h2:er-text-4xl mb:prose-p:er-leading-relaxed mb:prose-p:er-text-[16px] er-prose-2xl er-mx-auto er-font-base prose-ul:er-font-medium prose-blockquote:er-text-dark/75 prose-blockquote:er-text-3xl prose-a:er-font-semibold prose-table:er-text-dark/80 prose-table:er-text-2xl prose-th:er-font-bold prose-th:er-bg-border/75 even:prose-tr:er-bg-background prose-td:er-border-solid prose-th:er-border-solid prose-th:er-border-[#ddd] prose-td:er-border-[#ddd] prose-th:er-border prose-td:er-border prose-th:er-p-3 prose-td:er-p-3 prose-td:er-text-center prose-th:er-text-center prose-table:er-w-full prose-table:er-border-collapse prose-headings:er-text-black/80 prose-a:er-text-primary prose-a:er-underline hover:prose-a:er-opacity-75 prose-p:er-text-3xl prose-ul:er-text-3xl prose-ul:er-leading-[1.8] prose-p:er-leading-[1.8] prose-h2:er-tracking-wide prose-ul:er-tracking-wider prose-ul:er-font-normal prose-ul:er-text-black/60 prose-p:er-tracking-wider prose-p:er-font-normal prose-p:er-text-black/60">
-  <section
-    class="background-image er-aspect-[3/1] mb:er-aspect-square er-px-12 er-text-center er-flex er-flex-col er-justify-center er-items-center"
-  >
-    {{ article | image_url: width: 1920 | image_tag: sizes: "(max-width: 768px) 50vw, 100vw", widths: '640, 1024, 1280, 1920', preload: true, loading: "eager", fetchpriority: "high" }}
-    <div class="background-mask er-bg-black/50"></div>
-    <h1 class="er-not-prose er-text-white er-max-w-screen-xl er-leading-tight er-text-8xl er-font-base mb:er-text-5xl mb:er-leading-tight">
-      {{ article.title }}
-    </h1>
-  </section>
-  {{ article.content }}
-</div>
+{% liquid
+  assign product = all_products['urtopia-chord-ebike']
+  assign current_variant = product.selected_or_first_available_variant
+  assign product_color = shop.metaobjects.shop_config['product-option-color'].value.value
+  assign product_size_map = shop.metaobjects.shop_config['product-size-map'].value.value
+  assign product_media_reviews = product.metafields.custom.product_media_reviews.value
+  assign product_parameter_and_icons = product.metafields.custom.product_parameter_icons.value
+  assign product_panel_services_icons = shop.metaobjects.product_panel_services_icons['product-panel-services-icons'].items.value
+  assign product_send_accessories_icon = product.metafields.custom.product_send_accessories_icon.value
+
+  assign product_left_swiper_width = 64
+  assign product_main_swiper_width = 640
+  assign product_prameters_size = 45
+  assign product_media_icon_height = 60
+
+  assign product_left_swiper_class = "er-rounded-md er-cursor-pointer er-border-solid er-border-0 er-border-primary [&[class~='active']]:er-border-2"
+  assign product_main_swiper_class = 'swiper-slide er-object-cover er-aspect-video er-rounded-2xl'
+  assign section_class = 'er-font-base er-max-w-screen-xl er-mx-auto er-flex er-justify-between er-px-12'
+
+  assign product_delivery_time = current_variant.metafields.custom.delivery_time.value | default: product.metafields.custom.delivery_time.value
+
+  assign swiper_of_variant = current_variant.metafields.custom.variant_image.value
+  assign swiper_of_common = product.metafields.custom.product_common_images.value
+  assign swiper = null | sort
+
+  if swiper_insert_index == blank
+    assign swiper_insert_index = swiper_of_variant.count
+  endif
+
+  assign inserted = true
+  for item in swiper_of_variant
+    if forloop.index > swiper_insert_index and inserted
+      assign inserted = false
+      for item in swiper_of_common
+        assign temp = item | sort
+        assign swiper = swiper | concat: temp
+      endfor
+    endif
+    assign temp = item | sort
+    assign swiper = swiper | concat: temp
+  endfor
+
+  if swiper_insert_index >= swiper_of_variant.count and inserted
+    for item in swiper_of_common
+      assign temp = item | sort
+      assign swiper = swiper | concat: temp
+    endfor
+  endif
+%}
+
+<script>
+  console.log(JSON.parse(JSON.stringify({{ product | json }})))
+  console.log(JSON.parse(JSON.stringify({{ product_media_reviews | json }})))
+</script>
+
+<style>
+  .star {
+    position: relative;
+    display: inline-block;
+    width: var(--star-size);
+    height: var(--star-size);
+    background: none;
+  }
+
+  .star::before,
+  .star::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: gold;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    transform: rotate(72deg);
+    transform-origin: center;
+  }
+
+  .star::after {
+    transform: rotate(-72deg);
+  }
+</style>
+
+<section
+  class="product-panel {{ section_class }} er-mt-16 er-pb-40 mb:er-flex-col mb:er-px-6 mb:er-mt-0 mb:er-pb-24"
+  data-variant-id="{{ current_variant.id }}"
+  data-swiper-insert-index="{{ swiper_insert_index }}"
+  data-variant-swiper-size="{{ swiper_of_variant.count }}"
+>
+  <div class="er-w-[{{ product_left_swiper_width }}px] er-shrink-0 er-space-y-2 left-images er-hidden xl:er-block">
+    {% for variant_image in swiper %}
+      {{
+        variant_image
+        | image_url: width: product_main_swiper_width
+        | image_tag: class: product_left_swiper_class, data-index: forloop.index, fetchpriority: 'low', decoding: 'async', loading: 'lazy'
+      }}
+    {% endfor %}
+  </div>
+  <div class="er-flex-1 er-pr-[4%] er-flex er-flex-col er-space-y-10 mb:er-px-0 er-h-fit md:er-sticky xl:er-px-[5%]">
+    {% render 'product-panel-common', product: product, class: 'md:er-hidden' %}
+    <div
+      class="er-aspect-video product-panel-swiper er-relative er-overflow-hidden er-rounded-2xl"
+      style="--swiper-theme-color: #000;"
+    >
+      <div class="swiper-wrapper">
+        {% for variant_image in swiper %}
+          {% if forloop.index < 2 %}
+            {% assign preload = true %}
+            {% assign fetchpriority = 'high' %}
+            {% assign decoding = 'sync' %}
+            {% assign loading = 'eager' %}
+          {% else %}
+            {% assign preload = false %}
+            {% assign fetchpriority = 'low' %}
+            {% assign decoding = 'async' %}
+            {% assign loading = 'lazy' %}
+          {% endif %}
+          {{
+            variant_image
+            | image_url: width: product_main_swiper_width
+            | image_tag: class: product_main_swiper_class, data-index: forloop.index, preload: preload, fetchpriority: fetchpriority, decoding: decoding, loading: loading
+          }}
+        {% endfor %}
+      </div>
+      <div
+        class="swiper-button-prev er-transition er-bg-[#ffffff80] er-rounded-lg after:er-text-5xl after:er-content-['prev'] hover:er-opacity-70 er-select-none er-z-[1] mb:er-hidden"
+      ></div>
+      <div
+        class="swiper-button-next er-transition er-bg-[#ffffff80] er-rounded-lg after:er-text-5xl after:er-content-['next'] hover:er-opacity-70 er-select-none er-z-[1] mb:er-hidden"
+      ></div>
+    </div>
+    {% for item in product_media_reviews %}
+      {% if forloop.first %}
+        <div class="er-flex er-flex-col er-items-center er-text-center er-italic product-medias">
+          <span class="er-text-3xl er-font-bold mb:er-text-2xl">{{ item.text }}</span>
+          {{
+            item.image
+            | image_url: height: product_media_icon_height
+            | image_tag: loading: 'lazy', data-index: forloop.index, class: 'mb:er-h-16 mb:er-w-auto', fetchpriority: 'low', decoding: 'async'
+          }}
+        </div>
+      {% endif %}
+    {% endfor %}
+    <div class="er-flex er-bg-background er-items-center er-rounded-2xl er-p-3 er-gap-x-4 er-pr-6">
+      {{ product_send_accessories_icon.image | image_url: width: 80 | image_tag: loading: 'lazy', fetchpriority: 'low', decoding: 'async' }}
+      <div class="er-flex er-flex-1 er-gap-x-4 mb:er-flex-col-reverse mb:er-gap-y-1 mb:er-items-start">
+        <span><span class="er-text-primary er-text-2xl er-font-bold">Limited offer:</span> Fenders, kickstand</span>
+        <span class="er-flex-1 mb:er-hidden"></span>
+        <div class="mb:er-flex mb:er-flex-row-reverse">
+          <del class="er-text-dark/80">{{ 16700 | money }}</del>
+          <span class="er-button er-px-3 er-py-2 er-font-bold er-rounded-2xl er-pointer-events-none er-ml-4 mb:er-ml-0 mb:er-mr-4">FREE</span>
+        </div>
+      </div>
+    </div>
+    <div class="er-grid er-grid-cols-2 er-gap-y-8 mb:er-hidden lg:er-grid-cols-3">
+      {% for item in product_parameter_and_icons %}
+        <div class="er-flex er-items-center">
+          {{
+            item.image
+            | image_url: width: product_prameters_size, height: product_prameters_size
+            | image_tag: loading: 'lazy', fetchpriority: 'low', decoding: 'async'
+          }}
+          <span class="er-text-2xl er-font-medium er-ml-2">{{ item.text }}</span>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="er-min-w-[400px] er-max-w-xl er-shrink-0 er-space-y-8 er-flex er-flex-col mb:er-min-w-0 mb:er-max-w-full">
+    {% render 'product-panel-common', product: product, class: 'mb:er-hidden' %}
+    {% for option in product.options_with_values %}
+      <fieldset
+        class="option er-border-none er-p-0 er-space-y-4"
+        option="{{ option.name }}"
+        position="{{ option.position }}"
+      >
+        <legend class="er-text-3xl er-font-bold">
+          {{ option.name }} -
+          <span class="er-font-normal er-text-dark/70">
+            {% if option.position == 1 %}
+              {{ product_size_map[option.selected_value] }}
+            {% else %}
+              {{ option.selected_value }}
+            {% endif -%}
+          </span>
+        </legend>
+        <div class="er-flex er-gap-4">
+          {% for option_value in option.values %}
+            <label
+              {% if option.position == 1 %}
+                class="er-button er-button-dark er-px-6 er-text-2xl er-py-2 er-rounded-xl{% unless option_value.selected %} er-button-outline{% endunless %}"
+              {% else %}
+                style="--product-option-color: {{ product_color[option_value] }};"
+                class="er-group er-w-14 er-h-14 er-rounded-full er-border-2 er-border-solid er-border-transparent er-cursor-pointer er-transition er-bg-[var(--product-option-color)] er-p-[2px] er-bg-clip-content [&[class~='active']]:er-border-[var(--product-option-color)] er-relative{% if option_value.selected %} active{% endif %}"
+              {% endif %}
+            >
+              <input
+                type="radio"
+                id="{{ option_value }}"
+                name="{{ option.name }}"
+                value="{{ option_value }}"
+                class="er-hidden{% if option_value.available %} available{% endif %}"
+                {% if option_value.selected %}
+                  checked
+                {% endif %}
+                data-option-value-id="{{ option_value.id }}"
+              >
+              <span
+                {%- if option.position == 2 %}
+                  class="group-hover:er-visible group-hover:er-opacity-100 after:er-border-x-transparent after:er-border-t-dark after:er-border-b-transparent after:er-border-8 after:er-border-solid after:er-content-[''] after:er-bottom-[-16px] after:er-absolute after:er-left-1/2 after:er-translate-x-[-50%] er-absolute er-bottom-[150%] er-left-1/2 er-translate-x-[-50%] er-bg-dark er-text-white er-px-6 er-py-2 er-rounded-full er-whitespace-nowrap er-opacity-0 er-invisible er-transition-opacity er-duration-300 er-text-2xl er-font-medium er-z-10"
+                {% endif -%}
+              >
+                {{ option_value }}
+              </span>
+            </label>
+          {% endfor %}
+        </div>
+      </fieldset>
+    {% endfor %}
+    <div class="er-space-y-6 er-mb-4 accessories">
+      <div class="er-text-3xl er-font-bold">Accessories</div>
+      <div class="er-flex er-items-center">
+        <div
+          class="er-w-6 er-h-6 er-cursor-pointer er-border-solid er-border-l-2 er-border-t-2 er-border-l-gray er-border-t-gray er-border-b-transparent er-border-r-transparent er-rotate-[-45deg] mb:er-hidden"
+        ></div>
+        <div class="er-flex er-flex-1 er-overflow-x-hidden er-space-x-3 mb:er-overflow-x-auto">
+          {% for prod in product.metafields.custom.product_accessories.value %}
+            {% if prod.available %}
+              {% assign variant = prod.variants | first %}
+              <div
+                class="er-flex er-flex-[0_0_47.5%] er-flex-col er-rounded-2xl er-border-solid er-border-border er-border-2 er-cursor-pointer er-relative er-aspect-video er-p-4 mb:er-pt-2 [&[class~='active']]:er-border-dark [&[class~='active']]:er-bg-gray/15"
+                variant-id="{{ variant.id }}"
+              >
+                <div class="er-text-xl er-text-dark/80 er-font-medium">{{ prod.title }}</div>
+                <span class="er-text-3xl er-font-bold mb:er-text-2xl">{{ prod.price | money }}</span>
+                <span class="flex-1"></span>
+                <span class="fa-solid fa-plus"></span>
+                {{
+                  prod.featured_image
+                  | image_url: width: 75
+                  | image_tag: loading: 'lazy', class: 'er-absolute er-right-0 er-bottom-0 mb:er-max-w-24', fetchpriority: 'low', decoding: 'async'
+                }}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+        <div
+          class="er-w-6 er-h-6 er-cursor-pointer er-border-solid er-border-l-2 er-border-t-2 er-border-l-gray er-border-t-gray er-border-b-transparent er-border-r-transparent er-rotate-[135deg] mb:er-hidden"
+        ></div>
+      </div>
+    </div>
+    <div class="er-flex er-flex-col er-space-y-5 buttons">
+      <button class="er-button er-w-full" id="addToCart" data-product-id="{{ product.id }}" data-button-type="ATC">
+        Add To Cart
+      </button>
+      <button class="er-button er-button-dark er-button-outline er-w-full er-py-1" data-button-type="klarna_check_out">
+        <img
+          loading="lazy"
+          width="90"
+          height="26"
+          src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230530-121400.png?v=1685420054"
+          fetchpriority="low"
+          decoding="async"
+          alt=""
+        >
+        <div class="er-flex er-flex-col er-text-2xl er-text-left">
+          <span class="er-font-bold">0 APR Financing</span>
+          <span
+            >24 months,<span class="product-stages">
+              {{- current_variant.price | divided_by: 24 | money_without_trailing_zeros -}}</span
+            >/month</span
+          >
+        </div>
+      </button>
+    </div>
+    <div class="er-border er-border-border er-border-solid er-p-4 er-rounded-2xl er-flex er-flex-col er-text-2xl">
+      <span class="product-delivery-time er-font-bold">
+        {{ product_delivery_time }}
+      </span>
+      <span>
+        Need help? Email
+        <a href="mailto:support@newurtopia.com" class="er-button er-button-text">support@newurtopia.com</a>
+      </span>
+    </div>
+    <div class="er-flex er-flex-col er-divide-y er-divide-border er-divide-solid er-divide-x-0">
+      <div class="er-flex er-py-5 er-font-medium er-text-2xl er-justify-between er-cursor-pointer">
+        <span>Size & Fit</span>
+        <span>&gt;</span>
+      </div>
+      <div class="er-flex er-py-5 er-font-medium er-text-2xl er-justify-between er-cursor-pointer">
+        <span>Technical Specs</span>
+        <span>&gt;</span>
+      </div>
+    </div>
+    <div class="er-grid er-grid-cols-3">
+      {% for item in product_panel_services_icons %}
+        <div class="er-flex er-items-center">
+          {{ item.image | image_url: width: 30 | image_tag: fetchpriority: 'low', decoding: 'async', loading: 'lazy' }}
+          <span class="er-text-xl er-font-medium er-ml-2">{{ item.text }}</span>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<section class="product-bar er-fixed er-inset-x-0 er-top-0 er-z-[-1] er-bg-white er-text-dark er-shadow er-translate-y-[-100%] er-transition er-opacity-0 er-duration-300 mb:er-top-auto mb:er-bottom-0 mb:er-translate-y-[100%]">
+  <div class="{{ section_class }} er-h-28 er-flex er-items-center er-justify-between mb:er-px-6">
+    <span class="er-text-4xl er-font-bold mb:er-hidden">{{ product.title }}</span>
+    <div class="er-flex er-items-center mb:er-flex-row-reverse mb:er-justify-between mb:er-w-full">
+      <div class="er-text-right">
+        <div class="er-flex er-items-center er-justify-end">
+          <span class="er-font-bold er-text-4xl product-price mb:er-text-3xl er-text-primary">
+            {{- current_variant.price | money -}}
+          </span>
+          <del class="er-text-3xl er-text-dark/70 er-ml-2 product-compare-at-price mb:er-text-2xl">
+            {{- current_variant.compare_at_price | money -}}
+          </del>
+        </div>
+        <div class="er-text-2xl">
+          or as low as
+          <span class="product-stages">{{ current_variant.price | divided_by: 24 | money_without_trailing_zeros }}</span
+          >/Month
+        </div>
+      </div>
+      <span class="er-flex-1"></span>
+      <a href="#addToCart" class="er-button er-ml-6 mb:er-ml-0">Order Now</a>
+    </div>
+  </div>
+</section>
+
+<script>
+
+
+  const product_variants = [
+    {%- for variant in product.variants -%}
+      {
+        id: '{{ variant.id }}',
+        title: '{{ variant.title }}',
+        price: '{{ variant.price }}',
+        compare_at_price: '{{ variant.compare_at_price }}',
+        inventory_quantity: '{{ variant.inventory_quantity }}',
+        available: {{ variant.available }},
+        delivery_time: '{{ variant.metafields.custom.delivery_time.value | default: product.metafields.custom.delivery_time.value }}',
+        images: [
+          {%- for image in variant.metafields.custom.variant_image.value -%}
+            {
+              image_tag: '{{ image | image_url: width: product_main_swiper_width | image_tag: class: product_main_swiper_class }}',
+              image_url: '{{ image | image_url: width: product_main_swiper_width }}'
+            },
+          {%- endfor -%}
+        ]
+     },
+    {%- endfor -%}
+  ]
+
+  // 当前variant
+  let current_variant = Object.assign({}, {
+    {%- for option in product.options_with_values -%}
+      '{{ option.name }}': '{{ option.selected_value }}',
+    {%- endfor -%}
+  }, product_variants.find(v => v.id === '{{ current_variant.id }}'))
+
+  // 属性和索引映射
+  const product_options = {
+    {%- for option in product.options_with_values -%}
+      '{{ option.name }}': {{ option.position }},
+    {%- endfor -%}
+  }
+
+  const product_medias = [
+    {%- for item in product_media_reviews -%}
+      {
+        text: '{{ item.text }}',
+        image: '{{ item.image | image_url: height: product_media_icon_height }}'
+      },
+    {%- endfor -%}
+  ]
+
+  const product_size_map = {{ product_size_map | json }}
+
+  // 监听每个 radio 的 change 事件
+  document.querySelectorAll('.product-panel input[type="radio"]').forEach(radio => {
+    radio.addEventListener('change', (event) => {
+      const target = $(event.target)
+      const name = target.attr('name')
+      const value = target.val()
+
+      // 获取选中的值
+      console.log(name, ': ', value)
+
+      target.parent().removeClass('er-button-outline').siblings().addClass('er-button-outline')
+      target.parent().addClass('active').siblings().removeClass('active')
+      target.closest('.option').find('legend span').text(product_size_map[value] ? `${product_size_map[value]}` : value)
+      onVariantChange(name, value)
+    });
+  });
+
+  function onClickLeftImages () {
+    const index = Number($(this).attr('data-index'))
+    $(this).addClass('active').siblings().removeClass('active')
+    product_panel_swiper.slideTo(index - 1)
+  }
+
+  const product_panel_swiper = new Swiper('.product-panel .product-panel-swiper', {
+    navigation: {
+      nextEl: '.product-panel .product-panel-swiper .swiper-button-next',
+      prevEl: '.product-panel .product-panel-swiper .swiper-button-prev',
+    },
+    spaceBetween: 10,
+    pagination: { el: '.product-panel .product-panel-swiper .swiper-pagination' },
+    on:{
+        slideChange: function() {
+          const index = this.realIndex + 1
+          const loopIndex = this.realIndex % product_medias.length
+          $('.product-panel .left-images').find(`img[data-index=${index}]`).addClass('active').siblings().removeClass('active')
+          $('.product-panel .product-medias').find('img').attr('src', product_medias[loopIndex].image).removeAttr('srcset')
+          $('.product-panel .product-medias').find('span').text(product_medias[loopIndex].text)
+        },
+    },
+  })
+
+  $('.product-panel .left-images > img').on('click', onClickLeftImages)
+
+  function removeSwiper (insert_index, variant_size) {
+      const length = $('.left-images img').length
+      let common_size = length - variant_size
+      
+      const indexs = []
+
+      for (let i = 0; i < variant_size;i++) {
+        indexs.push(i < insert_index ? i : i + common_size)
+      }
+
+      $('.product-panel .left-images').children().filter(i => indexs.includes(i)).remove()
+      product_panel_swiper.removeSlide(indexs)
+  }
+
+
+  function insertSwiper (insert_index) {
+      let images_length = current_variant.images.length
+      $('.product-panel').attr('data-variant-swiper-size', images_length)
+      const before = []
+      const after = []
+
+      for (let i = 0; i < images_length;i++) {
+        if (i < insert_index) {
+          before.push(current_variant.images[i])
+        } else {
+          after.push(current_variant.images[i])
+        }
+      }
+
+      console.log(before, after)
+
+      const fn_j = image => $(`<img width="{{ product_left_swiper_width }}" src="${image.image_url}" class="{{ product_left_swiper_class }}">`).on('click', onClickLeftImages)
+      const fn_s = image => image.image_tag
+
+      if (before.length) {
+        $('.product-panel .left-images').prepend(before.map(fn_j))
+        product_panel_swiper.prependSlide(before.map(fn_s).reverse())
+      }
+
+      if (after.length) {
+        $('.product-panel .left-images').append(after.map(fn_j))
+        product_panel_swiper.appendSlide(before.map(fn_s).reverse())
+      }
+
+      product_panel_swiper.slideTo(0)
+      $('.product-panel .left-images > img').each((index, elem) => {
+        $(elem).attr('data-index', index + 1).removeClass('active')
+      })
+  }
+
+  $('.product-panel .accessories > .er-flex > div:not(.er-flex-1)').on('click', function () {
+    const items = $('.product-panel .accessories > .er-flex > .er-flex-1');
+    items.animate(
+      {
+        scrollLeft: items.scrollLeft() + ($(this).hasClass('er-rotate-[135deg]') ? 160 : -160),
+      },
+      300
+    );
+  });
+
+  $('.product-panel .accessories > .er-flex > .er-flex-1 > div').on('click', function () {
+    const target = $(this);
+
+    console.log(target)
+
+    if (target.hasClass('active')) {
+      target.removeClass('active');
+      target.find('.fa-solid').removeClass('fa-check').addClass('fa-plus')
+    } else {
+      target.addClass('active');
+      target.find('.fa-solid').removeClass('fa-plus').addClass('fa-check')
+    }
+  });
+
+  $('.buttons > button').on('click', async function () {
+    const target = $(this)
+    const cart = document.querySelector('cart-drawer')
+    const items = []
+
+    target.addClass('er-button-loading').attr('disabled', true)
+
+    $('.product-panel .accessories > .er-flex > .er-flex-1 > .active').each((i, item) => {
+        items.push({
+          id: $(item).attr('variant-id'),
+          quantity: 1,
+        });
+    });
+
+    items.push({ id: current_variant.id, quantity: 1 })
+
+    try {
+      const res = await fetch('/cart/add.js', {
+        method: 'POST',
+        body: JSON.stringify({
+          sections: cart.getSectionsToRender().map((section) => section.id).join(','),
+          items
+        }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      }).then((res) => res.json())
+
+      if ($(cart).hasClass('is-empty')) {
+        $(cart).removeClass('is-empty')
+      }
+
+      if (res.items && res.sections && res.items.length) {
+        cart.renderContents(res)
+      }
+
+      console.log(res)
+    } catch (error) {
+      console.log(error)
+    } finally {
+      target.removeClass('er-button-loading').attr('disabled', false)
+      fetchBuried('websiteclick', location.pathname.split('/').pop(), { button: target.attr('data-button-type')  })
+    }
+  })
+
+  // 监听滚动事件，显示或隐藏按钮
+  $(window).on('scroll', throttle(function () {
+      const target = $('.product-bar')
+
+      if ($(this).scrollTop() > (screen.availHeight)) { // 页面滚动超过200px时显示按钮
+          target.css({
+            opacity: 1,
+            zIndex: 99999,
+            transform: 'translateY(0)'
+          })
+      } else {
+        target.css({
+            opacity: 0,
+            zIndex: -1,
+            transform: global_config.is_mobile ? 'translateY(100%)' : 'translateY(-100%)'
+        })
+      }
+   }, 100));
+
+
+  function onVariantChange (name, value) {
+    let title = current_variant.title.split(' / ')
+    title[product_options[name] - 1] = value
+    title = title.join(' / ')
+
+    const find = product_variants.find(v => v.title === title)
+
+    console.log(find)
+
+    if (!find || !find.available) {
+      $('button').attr('disabled', true)
+    } else {
+      $('button').attr('disabled', false)
+    }
+
+    current_variant = Object.assign({}, find)
+    $('.product-panel').attr('data-variant-id', current_variant.id)
+    replaceSearchValue('variant', current_variant.id)
+    $('.product-panel .product-delivery-time').text(current_variant.delivery_time)
+
+    if (current_variant.images && current_variant.images.length) {
+      let variant_size = Number($('.product-panel').attr('data-variant-swiper-size'))
+      let insert_index = Number($('.product-panel').attr('data-swiper-insert-index'))
+      // remove
+      removeSwiper(insert_index, variant_size)
+
+      // insert
+      insertSwiper(insert_index)
+    }
+  }
+</script>

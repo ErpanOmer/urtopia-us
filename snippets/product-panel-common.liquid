@@ -1,0 +1,29 @@
+{% assign current_variant = product.selected_or_first_available_variant %}
+<div class="er-space-y-8 {{ class }}">
+  <span class="er-text-5xl er-font-bold">{{ product.title }}</span>
+  <div class="er-flex er-items-center !er-mt-2">
+    <div class="star" style="--star-size: 16px;"></div>
+    <div class="star" style="--star-size: 16px;"></div>
+    <div class="star" style="--star-size: 16px;"></div>
+    <div class="star" style="--star-size: 16px;"></div>
+    <div class="star" style="--star-size: 16px;"></div>
+    <span class="er-text-dark/70 er-text-2xl er-ml-2">{{ shop.metafields.judgeme.all_reviews_count }} Reviews</span>
+  </div>
+  <div class="er-flex er-items-center er-space-x-3">
+    <span
+      class="er-text-5xl er-font-extrabold product-price er-text-primary"
+      data-price="{{ current_variant.compare_at_price | money }}"
+    >
+      {{- current_variant.price | money -}}
+    </span>
+    <del class="er-text-dark/70 er-text-3xl product-compare-at-price">
+      {{- current_variant.compare_at_price | money -}}
+    </del>
+    <span class="er-text-2xl er-font-bold er-block er-px-4 er-py-1 er-bg-primary er-text-white er-rounded-3xl">
+      {{- current_variant.compare_at_price | minus: current_variant.price | money -}}
+    </span>
+  </div>
+  {% if product.metafields.custom.show_count_down.value %}
+    {% render 'sale' %}
+  {% endif %}
+</div>
