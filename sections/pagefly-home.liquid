@@ -1,57 +1,34 @@
 {{ 'home.scss.css' | asset_url | stylesheet_tag: preload: true }}
 <h1 class="visuallyhidden">Urtopia Ebike - Sleek, Full Carbon, Lightweight, Smart</h1>
 
-<div class="banner">
-  <video
-    muted
-    playsinline
-    autoplay
-    loop
-    class="lozad mobileHide"
-    data-src="https://cdn.shopify.com/videos/c/o/v/3f7896a67cee4d899e35648aef886964.mp4"
-  ></video>
-  <video
-    muted
-    playsinline
-    autoplay
-    loop
-    class="lozad pcHide"
-    data-src="https://cdn.shopify.com/videos/c/o/v/6102c554763245b0a69d3849b0a36477.mp4"
-  ></video>
-  <div class="backround mobileHide"></div>
-  <div class="centeral-content">
-    <img
-      width="250"
-      height="184"
-      class="er-max-w-[320px] mb:er-max-w-[160px]"
-      src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23328_2x_b2b9eb33-f2e4-4310-828e-32478a7cfd45.png?v=1703816416"
-      alt="Urtopia Ebike - Sleek, Full Carbon, Lightweight, Smart"
-    >
-    <img
-      width="480"
-      height="147"
-      class="er-max-w-[480px] mb:er-max-w-[270px] er-mt-14 er-mb-32 mb:er-mt-10 mb:er-mb-16"
-      src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25163_2x_08064506-c704-442c-a7fc-ecfef0fb5e47.png?v=1734072109&width=700"
-      alt="Urtopia Ebike - Sleek, Full Carbon, Lightweight, Smart"
-    >
-    <a
-      class="my-button !er-bg-salecolor !er-text-white !er-text-5xl mb:!er-text-3xl !er-font-semibold !er-px-[48px]"
-      target="_blank"
-      href="/collections/urtopia-black-friday-sale"
-      >Save now</a
-    >
+<div class="background-image er-aspect-[1920/750] mb:er-aspect-[375/500] er-text-white">
+  <img
+    src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25269_2x_88e405d9-bda2-45f5-bcd4-ca934215c1b1.jpg?v=1736230821&width=768"
+    alt="Smallest Motor, Lightest E-Bike"
+    fetchpriority="high"
+    decoding="async"
+    loading="eager"
+    width="1920"
+    height="750"
+    srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25269_2x_88e405d9-bda2-45f5-bcd4-ca934215c1b1.jpg?v=1736230821&width=768 768w,https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19512_2x_cc768059-e3e0-468b-98f1-b023fd54fca5.jpg?v=1736229013&width=1920 1920w"
+    sizes="(max-width: 768px) 50vw,100vw"
+  >
+  <div class="centeral-content er-flex er-justify-center er-flex-col er-items-center er-text-center er-pt-24 mb:er-pt-14">
+    <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24897_2x_3b49e6c7-68f5-4302-9b93-5a529bcd9a46.png?v=17362295547" width="275" height="26" alt="">
+    <h2 class="er-text-7xl er-mb-20 er-mt-5 mb:er-text-5xl mb:er-my-10">Smallest Motor, Lightest E-Bike</h2>
+    <a href="https://newurtopia.com/pages/urtopia-ces-2025" class="er-button er-button-white">Learn More</a>
   </div>
 </div>
+
 <div class="centeral-content your">
-  <h2 class="u36DemiBold_v2">BUY MORE! SAVE MORE!</h2>
+  <h2 class="u30DemiBold_v2">CES 2025, Here We Come</h2>
   <p class="u17Light_v2">
     <span
-      >During our {{ settings.sale_name }}, get an extra $200 off on any Urtopia product with purchases over $3,000, or
-      enjoy an extra $500 off with purchases over $5,000!</span
+      >At CES 2025, Urtopia unveils Titanium Zero: the world’s lightest e-bike at 23.8 lbs, featuring a 3D-printed titanium frame and the revolutionary Quark DM1.2 motor.</span
     >
   </p>
-  <a class="my-button my-button-black" target="_blank" href="/collections/urtopia-black-friday-sale">
-    {{- settings.sale_name -}}
+  <a class="er-button er-button-white" target="_blank" href="https://newurtopia.com/pages/urtopia-ces-2025">
+  Learn More
   </a>
 </div>
 <div class="centeral-content cards">
@@ -187,10 +164,10 @@
 
 <script>
   $('.blogs .centeral-content > div[href]').on('click', function () {
-    window.open($(this).attr('href'))
-  })
+    window.open($(this).attr('href'));
+  });
 
   $('.testride > div[href]').on('click', function () {
-    window.open($(this).attr('href'))
-  })
+    window.open($(this).attr('href'));
+  });
 </script>
