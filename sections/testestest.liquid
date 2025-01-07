@@ -92,7 +92,12 @@
       {{
         variant_image
         | image_url: width: product_main_swiper_width
-        | image_tag: class: product_left_swiper_class, data-index: forloop.index, fetchpriority: 'low', decoding: 'async', loading: 'lazy'
+        | image_tag:
+          class: product_left_swiper_class,
+          data-index: forloop.index,
+          fetchpriority: 'low',
+          decoding: 'async',
+          loading: 'lazy'
       }}
     {% endfor %}
   </div>
@@ -118,7 +123,13 @@
           {{
             variant_image
             | image_url: width: product_main_swiper_width
-            | image_tag: class: product_main_swiper_class, data-index: forloop.index, preload: preload, fetchpriority: fetchpriority, decoding: decoding, loading: loading
+            | image_tag:
+              class: product_main_swiper_class,
+              data-index: forloop.index,
+              preload: preload,
+              fetchpriority: fetchpriority,
+              decoding: decoding,
+              loading: loading
           }}
         {% endfor %}
       </div>
@@ -136,19 +147,30 @@
           {{
             item.image
             | image_url: height: product_media_icon_height
-            | image_tag: loading: 'lazy', data-index: forloop.index, class: 'mb:er-h-16 mb:er-w-auto', fetchpriority: 'low', decoding: 'async'
+            | image_tag:
+              loading: 'lazy',
+              data-index: forloop.index,
+              class: 'mb:er-h-16 mb:er-w-auto',
+              fetchpriority: 'low',
+              decoding: 'async'
           }}
         </div>
       {% endif %}
     {% endfor %}
     <div class="er-flex er-bg-background er-items-center er-rounded-2xl er-p-3 er-gap-x-4 er-pr-6">
-      {{ product_send_accessories_icon.image | image_url: width: 80 | image_tag: loading: 'lazy', fetchpriority: 'low', decoding: 'async' }}
+      {{
+        product_send_accessories_icon.image
+        | image_url: width: 80
+        | image_tag: loading: 'lazy', fetchpriority: 'low', decoding: 'async'
+      }}
       <div class="er-flex er-flex-1 er-gap-x-4 mb:er-flex-col-reverse mb:er-gap-y-1 mb:er-items-start">
         <span><span class="er-text-primary er-text-2xl er-font-bold">Limited offer:</span> Fenders, kickstand</span>
         <span class="er-flex-1 mb:er-hidden"></span>
         <div class="mb:er-flex mb:er-flex-row-reverse">
           <del class="er-text-dark/80">{{ 16700 | money }}</del>
-          <span class="er-button er-px-3 er-py-2 er-font-bold er-rounded-2xl er-pointer-events-none er-ml-4 mb:er-ml-0 mb:er-mr-4">FREE</span>
+          <span class="er-button er-px-3 er-py-2 er-font-bold er-rounded-2xl er-pointer-events-none er-ml-4 mb:er-ml-0 mb:er-mr-4"
+            >FREE</span
+          >
         </div>
       </div>
     </div>
@@ -237,7 +259,11 @@
                 {{
                   prod.featured_image
                   | image_url: width: 75
-                  | image_tag: loading: 'lazy', class: 'er-absolute er-right-0 er-bottom-0 mb:er-max-w-24', fetchpriority: 'low', decoding: 'async'
+                  | image_tag:
+                    loading: 'lazy',
+                    class: 'er-absolute er-right-0 er-bottom-0 mb:er-max-w-24',
+                    fetchpriority: 'low',
+                    decoding: 'async'
                 }}
               </div>
             {% endif %}
