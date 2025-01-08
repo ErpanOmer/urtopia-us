@@ -48,39 +48,6 @@
   endif
 %}
 
-<script>
-  console.log(JSON.parse(JSON.stringify({{ product | json }})))
-  console.log(JSON.parse(JSON.stringify({{ product_media_reviews | json }})))
-</script>
-
-<style>
-  .star {
-    position: relative;
-    display: inline-block;
-    width: var(--star-size);
-    height: var(--star-size);
-    background: none;
-  }
-
-  .star::before,
-  .star::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: gold;
-    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-    transform: rotate(72deg);
-    transform-origin: center;
-  }
-
-  .star::after {
-    transform: rotate(-72deg);
-  }
-</style>
-
 <section
   class="product-panel {{ section_class }} er-mt-16 er-pb-40 mb:er-flex-col mb:er-px-6 mb:er-mt-0 mb:er-pb-24"
   data-variant-id="{{ current_variant.id }}"
