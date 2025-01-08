@@ -28,7 +28,7 @@
           >-{{ product.compare_at_price | minus: product.price | money_without_trailing_zeros -}}
         </span>
       </div>
-      {% render 'sale' %}
+      {% render 'sale-v2' %}
     </div>
     <div class="left-swiper mobileHide">
       <div class="swiper-wrapper">
@@ -370,7 +370,7 @@
             >-{{ product.compare_at_price | minus: product.price | money_without_trailing_zeros -}}
           </span>
         </div>
-        {% render 'sale' %}
+        {% render 'sale-v2' %}
       </div>
       <div class="options">
         {% for option in product.options_with_values %}

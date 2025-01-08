@@ -217,7 +217,7 @@ const testRides = [
         testrideSpot: "Orange",
         imgUrl: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_2_0ec9af2e-317e-4b58-8115-491478794131.png?v=1735626213',
         availableSizes: [
-          'Carbon 1 Pro Size S/M/L'
+          'Carbon 1 Pro Size S/M/L',
           'Carbon Fold 1',
           'Fusion GT'
         ],
@@ -241,7 +241,7 @@ const testRides = [
         imgUrl: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_1_b5c3a0c5-590d-44cb-8143-c70d6fb42d5d.png?v=1735626313',
         noBook: 'Call to Schedule Test Riding',
         availableSizes: [
-          'Carbon 1 Pro Size M'
+          'Carbon 1 Pro Size M',
           'Carbon Fold 1'
         ],
         businessHours: [

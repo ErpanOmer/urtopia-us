@@ -1,20 +1,28 @@
-<div id="count-down" class="er-font-base er-bg-dark er-text-white er-rounded-2xl er-overflow-hidden er-divide-y er-divide-solid er-divide-primary/30 er-divide-x-0">
-  <div class="er-text-4xl er-text-primary er-font-black er-py-4 er-pl-8" data-name="sale-name">{{ settings.sale_name }}</div>
-  <div class="er-grid er-grid-cols-4 er-py-8 er-divide-x er-divide-y-0 er-divide-solid er-divide-primary/5">
+<div
+  id="count-down"
+  class="er-font-base er-bg-dark er-text-white er-rounded-2xl er-overflow-hidden er-divide-y er-divide-solid er-divide-primary/30 er-divide-x-0 er-mb-8"
+>
+  <div
+    class="er-text-4xl mb:er-text-3xl er-text-primary er-font-black er-py-4 er-pl-8 er-uppercase"
+    data-name="sale-name"
+  >
+    {{ settings.sale_name }}
+  </div>
+  <div class="er-grid er-grid-cols-4 er-py-8 mb:er-py-6 er-divide-x er-divide-y-0 er-divide-solid er-divide-primary/5">
     <div class="er-flex er-flex-col er-text-center er-items-center">
-      <span class="er-text-6xl er-font-extrabold" data-name="days">02</span>
+      <span class="er-text-6xl mb:er-text-5xl er-font-extrabold" data-name="days">02</span>
       <span class="er-text-base er-mt-2 er-text-white/45">Days</span>
     </div>
     <div class="er-flex er-flex-col er-text-center er-items-center">
-      <span class="er-text-6xl er-font-extrabold" data-name="hours">23</span>
+      <span class="er-text-6xl mb:er-text-5xl er-font-extrabold" data-name="hours">23</span>
       <span class="er-text-base er-mt-2 er-text-white/45">Hours</span>
     </div>
     <div class="er-flex er-flex-col er-text-center er-items-center">
-      <span class="er-text-6xl er-font-extrabold" data-name="minutes">59</span>
+      <span class="er-text-6xl mb:er-text-5xl er-font-extrabold" data-name="minutes">59</span>
       <span class="er-text-base er-mt-2 er-text-white/45">Minutes</span>
     </div>
     <div class="er-flex er-flex-col er-text-center er-items-center">
-      <span class="er-text-6xl er-font-extrabold" data-name="seconds">59</span>
+      <span class="er-text-6xl mb:er-text-5xl er-font-extrabold" data-name="seconds">59</span>
       <span class="er-text-base er-mt-2 er-text-white/45">Seconds</span>
     </div>
   </div>
@@ -22,14 +30,10 @@
 
 <script>
   window.loaded_sale_countdown = false;
-  console.time('1')
-
-  window.addEventListener('load', () => {
+  window.addEventListener('DOMContentLoaded', () => {
     if (window.loaded_sale_countdown) {
       return;
     }
-
-    console.timeEnd('1')
 
     window.loaded_sale_countdown = true;
     // 当前活动索引

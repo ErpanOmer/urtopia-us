@@ -89,11 +89,7 @@
 <div id="global2top">
     <svg t="1735027455730" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1443" width="32" height="32"><path d="M576 512v512H448V512H256l256-256 256 256H576zM0 0h1024v128H0V0z" fill="#fff" p-id="1444"></path></svg>
 </div>
-
-{{  | script_tag }}
-
 <script src="{{ 'dialog-polyfill.js' | asset_url }}" fetchpriority="low" defer></script>
-
 <script>
     const storage = {
         set: function (key, value, expires = 3) {
@@ -451,10 +447,10 @@
             }), 300)
         })
     }
+    
 
-
-    $(function () {
-      const $toTop = $('#global2top');
+window.addEventListener('load', () => {
+  const $toTop = $('#global2top');
 
       const ignore = ['/pages/lightweight-ebike-urtopia-carbon-1-pro', '/pages/amazon', '/pages/email-page', '/collections/urtopia-black-friday-sale', '/pages/urtopia-ces-2025']
 
@@ -494,11 +490,9 @@
             $toTop.on('click', function () {
                 $('html, body').animate({ scrollTop: 0 }, 500); // 500ms 平滑滚动到顶部
             });
-      }
-    })
+      };
 
-    // 使用示例
-    global_config.is_mobile && waitForElement('#launcher', target => {
+  global_config.is_mobile && waitForElement('#launcher', target => {
         {% if product or template == 'page.carbon1pro' or template == 'page.pf-702944ea' %}
             $('#global2top').css('bottom', '116px');
             target.style.bottom = '64px';
@@ -525,5 +519,5 @@
         debounceTime: 200, // 降低回调触发频率
     }
     );
-
+});
 </script>

@@ -1,44 +1,43 @@
 <!doctype html>
 <html class="no-js" lang="{{ request.locale.iso_code }}">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>{{ page_title }}</title>
-  <meta name="google-site-verification" content="4CyyxbiT2JJKwsI1xsr_c7Qf-ihbvBm4WMiPhI0rOeA" />
-  <meta name="google-site-verification" content="1L3RQDlBxPuNpF21De0Ah8NwPfQRUDie4JA9sbgKwfo" />
-  <meta name="theme-color" content="">
-  {% if page_description %}
-    <meta name="description" content="{{ page_description | escape }}">
-  {% endif %}
-  {% render 'meta-tags' %}
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>{{ page_title }}</title>
+    <meta name="google-site-verification" content="4CyyxbiT2JJKwsI1xsr_c7Qf-ihbvBm4WMiPhI0rOeA">
+    <meta name="google-site-verification" content="1L3RQDlBxPuNpF21De0Ah8NwPfQRUDie4JA9sbgKwfo">
+    <meta name="theme-color" content="">
+    {% if page_description %}
+      <meta name="description" content="{{ page_description | escape }}">
+    {% endif %}
+    {% render 'meta-tags' %}
 
-  <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
-  <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
+    <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+    <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
 
-  {% render 'theme-style' %}
-  {{ 'base.css' | asset_url | stylesheet_tag: preload: true }}
+    {% render 'theme-style' %}
+    {{ 'base.css' | asset_url | stylesheet_tag: preload: true }}
+    {{ 'global-sync.min.js' | asset_url | preload_tag: as: 'script', type: 'text/javascript' }}
+    <script src="{{ 'global-sync.min.js' | asset_url }}" fetchpriority="high"></script>
+    {{ content_for_header }}
+    <script src="{{ 'global.js' | asset_url }}" fetchpriority="low" defer></script>
+    {% render 'dataLayer-allPages' %}
+    {% render 'pagefly-app-header' %}
+    {% render 'global-config' %}
+  </head>
+  <body class="gradient">
+    {% section 'announcement-bar' %}
+    {% section 'header' %}
+    <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
+      {{ content_for_layout }}
+    </main>
+    {% section 'care' %}
+    {% section 'footer' %}
+    {%- render 'cart-drawer' -%}
 
-  {{ content_for_header }}
-      
-  <script src="{{ 'global.js' | asset_url }}" defer="defer" fetchpriority="low"></script>
-  <script src="{{ 'global-sync.min.js' | asset_url }}"></script>
-  {% render 'dataLayer-allPages' %}
-  {% render 'pagefly-app-header' %}
-  {% render "global-config" %}
-</head>
-<body class="gradient">      
-  {% section 'announcement-bar' %}
-  {% section 'header' %}
-  <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
-    {{ content_for_layout }}
-  </main>
-  {% section 'care' %}
-  {% section 'footer' %}
-  {%- render 'cart-drawer' -%}
-
-  {% render 'judgeme_core' %}
-  <script>
+    {% render 'judgeme_core' %}
+    <script>
     window.shopUrl = '{{ request.origin }}';
     window.routes = {
       cart_add_url: '{{ routes.cart_add_url }}',
@@ -65,18 +64,18 @@
       pauseSlideshow: `{{ 'sections.slideshow.pause_slideshow' | t }}`,
       playSlideshow: `{{ 'sections.slideshow.play_slideshow' | t }}`,
     }
-  </script>
+    </script>
 
-  {%- if settings.predictive_search_enabled -%}
-  <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
-  {%- endif -%}
+    {%- if settings.predictive_search_enabled -%}
+      <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
+    {%- endif -%}
 
-  <script>
-    const observer = lozad('.lozad', {
-      rootMargin: '1000px 2000px' // syntax similar to that of CSS Margin
-    }); // lazy loads elements with default selector as '.lozad'
-    observer.observe('.lozad');
-  </script>
-{% render 'dialog' %}
-</body>
+    <script>
+      const observer = lozad('.lozad', {
+        rootMargin: '1000px 2000px' // syntax similar to that of CSS Margin
+      }); // lazy loads elements with default selector as '.lozad'
+      observer.observe('.lozad');
+    </script>
+    {% render 'dialog' %}
+  </body>
 </html>

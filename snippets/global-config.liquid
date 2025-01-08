@@ -542,6 +542,33 @@
           },
         ],
       },
+      compare: {
+        parameters: [
+          ['', 'Carbon Fold 1', 'Other Folding ebike'],
+          ['Price', '<span data-sale>{{ all_products["urtopia-carbon-fold"].price | money_without_trailing_zeros }}</span>', '{{ 399900 | money_without_trailing_zeros }}'],
+          ['Frame Material', 'Carbon Fiber', '❌'],
+          ['Handlebar Material', 'Carbon Fiber', 'Aluminum Alloy'],
+          ['Weight', '29 lbs', '37 lbs'],
+          ['Max. Rider Weight', '200 lbs', '180 lbs'],
+          ['Range', '40 miles', '30 miles'],
+          ['Gears', 'Shimano Altus 8-Speed', 'Shimano Nexus 3-speed'],
+          ['IoT Sensor', 'Torque Sensor', 'Torque Sensor'],
+          ['Brakes', 'TEKTRO hydraulic disc brakes', 'Hydraulic disk, front and rear'],
+          ['Integrated light', '✔', '❌']
+        ],
+        style: {
+          image_0: '{{ all_products["urtopia-carbon-fold"].variants.first.featured_image | image_url: width: 300 }}',
+          image_1:
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19638_2x_75919041-383b-4b48-bfec-76b858a0a92b.png?v=1736244768&width=300',
+          background: 'linear-gradient(180deg, #FFD362, #D57D00, #C15700)',
+          title:
+            `<h2 class="u36Medium_v2"> What makes Carbon Fold 1 <br class="pcHide">the best Foldable E-Bike</h2>`,
+          image_pc:
+            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24870_2x_a586c01c-a72c-42e0-9a94-d36047856d03.png?v=1729076064',
+          image_mb:
+            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24876_2x_493b152e-2581-4f9f-ad47-c22c9a2fe2cd.png?v=1729474418',
+        },
+      },
     },
     // chrod order page 配置项
     chord_order_page_config: {
@@ -1132,33 +1159,5 @@
         },
       },
     },
-  };
-
-  tailwind.config = {
-    prefix: 'er-',
-    corePlugins: {
-      preflight: false,
-    },
-    theme: {
-      extend: {
-        screens: {
-          mb: {
-            max: '768px',
-          },
-        },
-        fontFamily: {
-          base: ['Helvetica Now Display', 'Arial', 'sans-serif'],
-        },
-        colors: {
-          primary: '#FD4B17',
-          dark: '#242729',
-          gray: '#A0A1A2',
-          secondary: '#E2542E',
-          background: '#F7F8FA',
-          border: '#EBEDF0',
-          salecolor: '#D50B28',
-        },
-      },
-    }
   };
 </script>
