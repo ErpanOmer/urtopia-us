@@ -4,7 +4,7 @@
   width: 100%;
   margin: 3px 0;
   padding: 3px 20px;
-  font: normal normal 300 14px/19px Urbane;
+  font: normal normal 300 14px/19px var(--font-body-family);
   text-align: left;
   color:  #ff612f;
   background-color:#EDEEEE;

@@ -110,7 +110,7 @@
   height:25px;
 }
 .ebike_shippment .ship_font{
-  font:font: normal normal 500 16px/18px urbane;
+  font:font: normal normal 500 16px/18px var(--font-body-family);
 }
 .mega_ebike_content {
   padding: 40px 0px;
@@ -148,12 +148,12 @@
 }
 .mega-menu .mega-menu__list--condensed.mega_ebike_ul h2{
   margin: 0;
-  font: normal normal 600 24px/28px urbane;
+  font: normal normal 600 24px/28px var(--font-body-family);
   color: #000;
 }
 .mega-menu .mega-menu__list--condensed.mega_ebike_ul p{
   margin: 0;
-  font: normal normal 500 16px/18px urbane;
+  font: normal normal 500 16px/18px var(--font-body-family);
   color: #000;
 }
 .chord_new{

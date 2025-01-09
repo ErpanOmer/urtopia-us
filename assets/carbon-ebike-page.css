@@ -29,7 +29,7 @@
 }
 
 .menu-title {
-    font: normal normal 600 18px/50px urbane;
+    font: normal normal 600 18px/50px var(--font-body-family);
     letter-spacing: 0px;
     color: #dedede;
 }
@@ -46,7 +46,7 @@
 .column a {
     color: #dedede;
     opacity: 0.8;
-    font: normal normal 500 12px/22px urbane;
+    font: normal normal 500 12px/22px var(--font-body-family);
 }
 
 .column a:hover {
@@ -115,7 +115,7 @@
       }
       .new_mobile_sporty_container h2 {
         color: #fff;
-        font: normal normal 600 24px/30px Urbane;
+        font: normal normal 600 24px/30px var(--font-body-family);
       }
       .new_mobile_sporty_container .title {
         margin: 12px 0px;
@@ -127,7 +127,7 @@
         font-size: 14px;
       }
       .new_mobile_sporty_container p > span {
-        font: normal normal 600 36px/28px Urbane;
+        font: normal normal 600 36px/28px var(--font-body-family);
       }
       .new_mobile_sporty_container p {
         color: #fff;
@@ -149,7 +149,7 @@
         background: #fd4b17;
         border-radius: 20px;
         padding: 8px 0px;
-        font: normal normal 500 16px/22px urbane;
+        font: normal normal 500 16px/22px var(--font-body-family);
         text-decoration: none;
         width: 84%;
         text-align: center;
@@ -330,7 +330,7 @@ img {
 .detailsModal .closeModalBtn {
     padding: 2px 50px;
     background-color: #707070;
-    font: normal normal 600 17px/28px urbane;
+    font: normal normal 600 17px/28px var(--font-body-family);
     color: #cbcbcb;
     border-radius: 20px;
     cursor: pointer;
@@ -386,7 +386,7 @@ img {
 .detailsModal#mobile-anti-modal .detailsModalBanner .details-text-box h2,
 .detailsModal#mobile-ride-modal .detailsModalBanner .details-text-box h2 {
     margin: 15px 0px;
-    font: 600 24px/30px urbane;
+    font: 600 24px/30px var(--font-body-family);
 }
 
 .detailsModal#mobile-anti-modal .detailsModalBanner .details-text-box p,
@@ -411,7 +411,7 @@ img {
 }
 
 .detailsModal .detailsModalBanner .details-text-box h2 {
-    font: 600 36px/45px urbane;
+    font: 600 36px/45px var(--font-body-family);
     color: #fff;
 }
 
@@ -468,7 +468,7 @@ img {
 }
 
 .mobile-humen .human-layer .human-container h2 {
-    font: 600 30px/42px urbane;
+    font: 600 30px/42px var(--font-body-family);
     color: #fff;
 }
 
@@ -511,12 +511,12 @@ img {
 
 .ebike-content-layer h2 {
     color: #fff;
-    font: 600 48px/60px urbane;
+    font: 600 48px/60px var(--font-body-family);
 }
 
 .ebike-content-layer p {
     color: #cbcbcb;
-    font: 500 24px/28px urbane;
+    font: 500 24px/28px var(--font-body-family);
 }
 
 .ebike-content-layer {
@@ -569,7 +569,7 @@ img {
 
 .limitation .big-text-shadow {
     margin-top: 20px;
-    font: 600 100px/60px urbane;
+    font: 600 100px/60px var(--font-body-family);
     text-shadow: 3px 3px 10px #3385d7;
 }
 
@@ -667,13 +667,13 @@ img {
 .limitation-text h2 {
     margin: 0;
     color: #cbcbcb;
-    font: normal normal 500 30px/28px urbane;
+    font: normal normal 500 30px/28px var(--font-body-family);
 }
 
 .limitation-text p {
     width: 100%;
     color: #fff;
-    font: normal normal 600 60px/72px urbane;
+    font: normal normal 600 60px/72px var(--font-body-family);
 }
 
 section.more {
@@ -689,7 +689,7 @@ section.more {
     box-sizing: border-box;
     color: #fff;
     text-align: center;
-    font: normal normal 600 60px/84px urbane;
+    font: normal normal 600 60px/84px var(--font-body-family);
 }
 
 .more .more-container {
@@ -747,7 +747,7 @@ section.more {
 
 .more .more-container .omni_item h2 {
     color: #fff;
-    font: normal normal 600 36px/50.4px urbane;
+    font: normal normal 600 36px/50.4px var(--font-body-family);
 }
 
 .more .more-container .omni_item p {
@@ -765,7 +765,7 @@ section.more {
 
 .more .more-container .omni_item .omni-btn,
 .mobile-more .omni-btn {
-    font: normal normal 500 16px/3px urbane;
+    font: normal normal 500 16px/3px var(--font-body-family);
     padding: 10px 40px;
     background-color: #fff;
     border-radius: 20px;
@@ -827,7 +827,7 @@ section.more {
 .navigation-text h2 {
     margin: 0;
     color: #fff;
-    font: normal normal 600 48px/67.2px urbane;
+    font: normal normal 600 48px/67.2px var(--font-body-family);
 }
 
 .navigation-text p {
@@ -887,7 +887,7 @@ section.more {
 
 .humen .human-layer .human-container h2 {
     color: #fff;
-    font: 600 30px/42px urbane;
+    font: 600 30px/42px var(--font-body-family);
 }
 
 .humen .human-layer .human-container p {
@@ -919,12 +919,12 @@ section.more {
 
 .mobile-record-container .mobile-record-top-text h2 {
     color: #cbcbcb;
-    font: normal normal 500 24px/28px urbane;
+    font: normal normal 500 24px/28px var(--font-body-family);
 }
 
 .mobile-record-container .mobile-record-top-text p {
     color: #fff;
-    font: normal normal 600 36px/40px urbane;
+    font: normal normal 600 36px/40px var(--font-body-family);
 }
 
 .mobile-record-container .mobile-record-bottom-img img {
@@ -1071,7 +1071,7 @@ section.more {
 
 .agility-container h2 {
     color: #fff;
-    font: normal normal 600 30px/42px urbane;
+    font: normal normal 600 30px/42px var(--font-body-family);
 }
 
 .agility-container p:nth-child(2) {
@@ -1080,14 +1080,14 @@ section.more {
     background-image: linear-gradient(90deg, #178afd 0%, #1ffff6 100%);
     -webkit-background-clip: text;
     color: transparent;
-    font: normal normal 600 36px/45px urbane;
+    font: normal normal 600 36px/45px var(--font-body-family);
 }
 
 .agility-container>p:nth-child(4) {
     margin-top: 20px;
     width: 550px;
     color: #CBCBCB;
-    font: normal normal 300 20px/28px urbane;
+    font: normal normal 300 20px/28px var(--font-body-family);
     text-align: center;
 }
 
@@ -1103,7 +1103,7 @@ section.more {
     background: #fd4b17cc;
     border-radius: 20px;
     padding: 8px 0px;
-    font: normal normal 500 16px/22px urbane;
+    font: normal normal 500 16px/22px var(--font-body-family);
     text-decoration: none;
     transform: translateY(-200%);
     opacity: 0;
@@ -1153,13 +1153,13 @@ section.more {
 
 .wbike-top .wbike-top-text .wbike-txt h3 {
     color: #fff;
-    font: 700 60px/72px urbane;
+    font: 700 60px/72px var(--font-body-family);
 }
 
 .wbike-top .wbike-top-text .wbike-txt h2 {
     margin: 20px 25px 50px 0px;
     color: #cbcbcb;
-    font: 200 36px/20px urbane;
+    font: 200 36px/20px var(--font-body-family);
 }
 
 .wbike-top .wbike-top-text .wbike-txt h2::after {
@@ -1250,12 +1250,12 @@ section.more {
 
 .power-text-layer p {
     color: #cbcbcb;
-    font: normal normal 500 30px/28px urbane;
+    font: normal normal 500 30px/28px var(--font-body-family);
 }
 
 .power-text-layer h1 {
     color: #fff;
-    font: normal normal 600 60px/72px urbane;
+    font: normal normal 600 60px/72px var(--font-body-family);
 }
 
 .gate .gate-text-layer {
@@ -1267,7 +1267,7 @@ section.more {
 
 .gate .gate-text-layer h1 {
     color: #fff;
-    font: normal normal 600 36px/45px urbane;
+    font: normal normal 600 36px/45px var(--font-body-family);
 }
 
 .gate .gate-text-layer p {
@@ -1304,7 +1304,7 @@ section.more {
 
 .torque .torque-text-layer h1 {
     color: #fff;
-    font: normal normal 600 36px/45px urbane;
+    font: normal normal 600 36px/45px var(--font-body-family);
 }
 
 .torque .torque-text-layer p {
@@ -1349,7 +1349,7 @@ section.more {
     color: #fff;
     font-size: 36px;
     line-height: 42px;
-    font: normal normal 600 36px/45px urbane;
+    font: normal normal 600 36px/45px var(--font-body-family);
 }
 
 .range-container .range-left-box p {
@@ -1393,13 +1393,13 @@ section.more {
 
 .motor-container .motor-right-box h2 {
     color: #fff;
-    font: normal normal 600 36px/45px urbane;
+    font: normal normal 600 36px/45px var(--font-body-family);
 }
 
 .motor-container .motor-right-box h3 {
     margin-top: 12px;
     color: #dedede;
-    font: normal normal 500 24px/30px urbane;
+    font: normal normal 500 24px/30px var(--font-body-family);
 }
 
 .motor-container .motor-right-box p {
@@ -1599,7 +1599,7 @@ section.gate {
 
 .mobile-ebike-text-layer h2 {
     color: #fff;
-    font: normal normal 600 16px/20px Urbane;
+    font: normal normal 600 16px/20px var(--font-body-family);
 }
 
 .mobile-ebike-text-layer p {
@@ -1611,7 +1611,7 @@ section.gate {
 
 .ebike-text-layer h2 {
     color: #fff;
-    font: normal normal 600 20px/28px Urbane;
+    font: normal normal 600 20px/28px var(--font-body-family);
 }
 
 .ebike-text-layer p {
@@ -1654,12 +1654,12 @@ section.gate {
 
 .mobile-ebike-content .mobile-ebike-content-layer h2 {
     color: #fff;
-    font: normal normal 600 30px/36px Urbane;
+    font: normal normal 600 30px/36px var(--font-body-family);
 }
 
 .mobile-ebike-content .mobile-ebike-content-layer p {
     color: #cbcbcb;
-    font: normal normal 500 16px/28px Urbane;
+    font: normal normal 500 16px/28px var(--font-body-family);
 }
 
 .mobile-limitation-img-float {
@@ -1726,13 +1726,13 @@ section.gate {
 .mobile-limitation-text h2 {
     margin: 0;
     color: #cbcbcb;
-    font: normal normal 500 24px/30px Urbane;
+    font: normal normal 500 24px/30px var(--font-body-family);
 }
 
 .mobile-limitation-text p {
     width: 100%;
     color: #fff;
-    font: normal normal 600 48px/60px Urbane;
+    font: normal normal 600 48px/60px var(--font-body-family);
 }
 
 section.mobile {
@@ -1755,7 +1755,7 @@ section.mobile-more {
     box-sizing: border-box;
     color: #fff;
     text-align: center;
-    font: normal normal 600 42px/45px urbane;
+    font: normal normal 600 42px/45px var(--font-body-family);
 }
 
 .mobile-more-swiperbox .swiper-container-horizontal>.swiper-pagination-progress {
@@ -1793,12 +1793,12 @@ section.mobile-more {
 
 .mobile-more .mobile-more-container .swiper-slide h2 {
     color: #fff;
-    font: normal normal 600 24px/28px urbane;
+    font: normal normal 600 24px/28px var(--font-body-family);
 }
 
 .mobile-more .mobile-more-container .swiper-slide p {
     color: #cbcbcb;
-    font: normal normal 500 15px/21px urbane;
+    font: normal normal 500 15px/21px var(--font-body-family);
 }
 
 .mobile-more .mobile-more-container .swiper-slide img {
@@ -1841,13 +1841,13 @@ section.mobile-more {
 .mobile-navigation-text h2 {
     margin: 0;
     color: #fff;
-    font: normal normal 600 30px/36px Urbane;
+    font: normal normal 600 30px/36px var(--font-body-family);
 }
 
 .mobile-navigation-text p {
     display: inline-block;
     color: #cbcbcb;
-    font: normal normal 500 16px/28px Urbane;
+    font: normal normal 500 16px/28px var(--font-body-family);
 }
 
 .record-container {
@@ -1873,12 +1873,12 @@ section.mobile-more {
 
 .record-container .record-top-text h2 {
     color: #cbcbcb;
-    font: normal normal 500 24px/28px urbane;
+    font: normal normal 500 24px/28px var(--font-body-family);
 }
 
 .record-container .record-top-text p {
     color: #fff;
-    font: normal normal 600 36px/50.4px urbane;
+    font: normal normal 600 36px/50.4px var(--font-body-family);
 }
 
 .record-container .record-bottom-img img {
@@ -1988,12 +1988,12 @@ section.mobile-more {
 
 .getDetails .text-layer h2 {
     color: #cbcbcb;
-    font: normal normal 500 24px/28px urbane;
+    font: normal normal 500 24px/28px var(--font-body-family);
 }
 
 .getDetails .text-layer h3 {
     color: #fff;
-    font: normal normal 600 30px/37.5px urbane;
+    font: normal normal 600 30px/37.5px var(--font-body-family);
 }
 
 .getDetails .text-layer p {
@@ -2011,7 +2011,7 @@ section.mobile-more {
     border: 2px solid #fd4b17;
     border-radius: 20px;
     color: #fd4b17;
-    font: normal normal 500 17px/28px urbane;
+    font: normal normal 500 17px/28px var(--font-body-family);
     cursor: pointer;
     text-align: center;
     position: relative;
@@ -2058,12 +2058,12 @@ section.mobile-community {
 
 .mobile-community-container .mobile-community-top-text h2 {
     color: #cbcbcb;
-    font: normal normal 500 16px/20px Urbane;
+    font: normal normal 500 16px/20px var(--font-body-family);
 }
 
 .mobile-community-container .mobile-community-top-text p {
     color: #fff;
-    font: normal normal 600 30px/36px Urbane;
+    font: normal normal 600 30px/36px var(--font-body-family);
 }
 
 .mobile-community-container .mobile-community-bottom-img {
@@ -2154,12 +2154,12 @@ section.mobile-community {
 
 .mobile-getDetails .text-layer h2 {
     color: #cbcbcb;
-    font: normal normal 500 16px/20px urbane;
+    font: normal normal 500 16px/20px var(--font-body-family);
 }
 
 .mobile-getDetails .text-layer h3 {
     color: #fff;
-    font: normal normal 600 30px/36px urbane;
+    font: normal normal 600 30px/36px var(--font-body-family);
 }
 
 .mobile-getDetails .text-layer p {
@@ -2174,7 +2174,7 @@ section.mobile-community {
     border: 2px solid #fd4b17;
     border-radius: 20px;
     color: #fd4b17;
-    font: normal normal 500 17px/28px urbane;
+    font: normal normal 500 17px/28px var(--font-body-family);
     cursor: pointer;
 }
 
@@ -2217,7 +2217,7 @@ section.mobile-community {
 
 .mobile-text-show-container h2 {
     color: #cbcbcb;
-    font: normal normal 600 20px/28px Urbane;
+    font: normal normal 600 20px/28px var(--font-body-family);
 }
 
 .mobile-text-show-container h2:last-child {
@@ -2278,7 +2278,7 @@ section.mobile-community {
 
 .mobile-agility-container h2 {
     color: #fff;
-    font: normal normal 600 42px/48px Urbane;
+    font: normal normal 600 42px/48px var(--font-body-family);
     white-space: nowrap;
 }
 
@@ -2302,7 +2302,7 @@ section.mobile-community {
     margin-bottom: 12px;
     color: #fff;
     text-align: center;
-    font: normal normal 600 24px/30px Urbane;
+    font: normal normal 600 24px/30px var(--font-body-family);
 }
 
 .mobile-agility-container .mobile-agility-bottom {
@@ -2318,7 +2318,7 @@ section.mobile-community {
 }
 
 .mobile-agility-container p>span {
-    font: normal normal 500 24px/28px Urbane;
+    font: normal normal 500 24px/28px var(--font-body-family);
 }
 
 .mobile-wbike-top {
@@ -2367,7 +2367,7 @@ section.mobile-community {
 .mobile-wbike-top-text h3 {
     margin: 0;
     color: #fff;
-    font: normal normal 700 42px/52px Urbane;
+    font: normal normal 700 42px/52px var(--font-body-family);
 }
 
 .mobile-wbike-top-text span#mobile-wbike-volume {
@@ -2400,7 +2400,7 @@ section.mobile-community {
 
 .mobile-wbike-top-text .mobile-bike-light-box h2 {
     margin: 10px 10px 0px 0px;
-    font: 200 24px/16px urbane;
+    font: 200 24px/16px var(--font-body-family);
     color: #cbcbcb;
 }
 
@@ -2451,13 +2451,13 @@ section.mobile-community {
 
 .mobile-power-text-layer p {
     color: #cbcbcb;
-    font: normal normal 500 16px/20px Urbane;
+    font: normal normal 500 16px/20px var(--font-body-family);
 }
 
 .mobile-power-text-layer h1 {
     color: #fff;
     text-align: center;
-    font: normal normal 600 42px/45px Urbane;
+    font: normal normal 600 42px/45px var(--font-body-family);
 }
 
 section.mobile-gate,
@@ -2515,7 +2515,7 @@ section.mobile-torque {
     color: #fff;
     font-size: 24px;
     line-height: 45px;
-    font: normal normal 600 30px/36px urbane;
+    font: normal normal 600 30px/36px var(--font-body-family);
 }
 
 .mobile-torque .mobile-torque-text-layer p {
@@ -2548,7 +2548,7 @@ section.mobile-torque {
 
 .mobile-range-container .mobile-range-left-box h2 {
     color: #fff;
-    font: normal normal 600 30px/36px urbane;
+    font: normal normal 600 30px/36px var(--font-body-family);
 }
 
 .mobile-range-container .mobile-range-left-box p {
@@ -2573,12 +2573,12 @@ section.mobile-torque {
 
 .mobile-motor-container .mobile-motor-left-box h2 {
     color: #fff;
-    font: normal normal 600 30px/36px urbane;
+    font: normal normal 600 30px/36px var(--font-body-family);
 }
 
 .mobile-motor-container .mobile-motor-left-box h3 {
     color: #cbcbcb;
-    font: normal normal 600 24px/45px urbane;
+    font: normal normal 600 24px/45px var(--font-body-family);
 }
 
 .mobile-motor-container .mobile-motor-left-box p {

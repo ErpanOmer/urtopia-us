@@ -1,6 +1,6 @@
 .store-section-title {
     color: #161C1F;
-    font: 600 36px/67px Urbane;
+    font: 600 36px/67px var(--font-body-family);
     margin-bottom: 40px;
 }
 
@@ -23,7 +23,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    font: 600 36px/50px Urbane;
+    font: 600 36px/50px var(--font-body-family);
 }
 
 .store-section-shop-item:hover .shop-item-img {
@@ -94,7 +94,7 @@
 
 @media screen and (max-width:750px) {
     .store-section-title {
-        font: 600 24px/30px Urbane;
+        font: 600 24px/30px var(--font-body-family);
         margin-bottom: 24px;
     }
 
@@ -105,7 +105,7 @@
 
     .store-section-shop-item {
         height: calc(100% - 9px);
-        font: 600 20px/25px Urbane;
+        font: 600 20px/25px var(--font-body-family);
         margin: 4px;
     }
 
@@ -588,7 +588,7 @@
                     border-width: 0 0 1px;
                     border-color: #ebebeb;
                     text-align: left;
-                    font: normal normal 600 24px/28px Urbane;
+                    font: normal normal 600 24px/28px var(--font-body-family);
                     letter-spacing: 0;
                     color: #000;
                     background: #fff;
@@ -618,7 +618,7 @@
                 .faq-content {
                     display: none;
                     padding: 20px 18% 0 9%;
-                    font: normal normal normal 17px/24px Urbane;
+                    font: normal normal normal 17px/24px var(--font-body-family);
                     color: #000;
                     opacity: 0.9;
 
@@ -633,7 +633,7 @@
             }
 
             .titlee {
-                font: normal normal 600 42px/50px Urbane;
+                font: normal normal 600 42px/50px var(--font-body-family);
                 color: #000;
                 border-bottom: 1px solid #ebebeb;
                 padding-bottom: 40px;

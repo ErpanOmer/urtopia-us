@@ -61,16 +61,16 @@
 }
 
 .convenience-box h2 {
-    font: normal normal 600 42px/72px urbane;
+    font: normal normal 600 42px/72px var(--font-body-family);
 }
 
 .convenience-box h3 {
     text-align: left;
-    font: normal normal 600 24px/30px urbane;
+    font: normal normal 600 24px/30px var(--font-body-family);
 }
 
 .convenience-box p {
-    font: normal normal 300 24px/30px urbane;
+    font: normal normal 300 24px/30px var(--font-body-family);
 }
 
 .convenience-banner {
@@ -105,7 +105,7 @@
 }
 
 .choice-box .choice-item p {
-    font: normal normal 300 16px/20px urbane;
+    font: normal normal 300 16px/20px var(--font-body-family);
 }
 
 .convenience-banner .banner-img-box {
@@ -147,17 +147,17 @@
 
 .speed-mb h2 {
     margin: 0;
-    font: normal normal 600 30px/42px urbane;
+    font: normal normal 600 30px/42px var(--font-body-family);
 }
 
 .speed-mb>p {
     margin-bottom: 70px;
-    font: normal normal 300 20px/42px urbane;
+    font: normal normal 300 20px/42px var(--font-body-family);
 }
 
 .speed-box-mb h3 {
     margin: 0px;
-    font: normal normal 600 24px/30px urbane;
+    font: normal normal 600 24px/30px var(--font-body-family);
 }
 
 .speed-box-mb h3:nth-child(2) {
@@ -180,7 +180,7 @@
 }
 
 .speed-box-mb .spec-box-mb p {
-    font: normal normal 200 16px/20px urbane;
+    font: normal normal 200 16px/20px var(--font-body-family);
 }
 
 .spec-item-mb img {
@@ -226,16 +226,16 @@
 }
 
 .componentBox .right-container .title1 {
-    font: normal normal bold 24px/28px Urbane;
+    font: normal normal bold 24px/28px var(--font-body-family);
     margin-bottom: 34px;
 }
 
 .componentBox .right-container .smtips {
-    font: normal normal 300 16px/19px Urbane;
+    font: normal normal 300 16px/19px var(--font-body-family);
 }
 
 .componentBox .right-container .description {
-    font: normal normal 300 14px/20px Urbane;
+    font: normal normal 300 14px/20px var(--font-body-family);
 }
 
 .componentBox .right-container .bike-box {
@@ -249,11 +249,11 @@
 
 .componentBox .bike-box .bike-title {
     margin-bottom: 6px;
-    font: normal normal 600 18px/21px urbane;
+    font: normal normal 600 18px/21px var(--font-body-family);
 }
 
 .componentBox .bike-box p {
-    font: normal normal 300 14px/20px urbane;
+    font: normal normal 300 14px/20px var(--font-body-family);
 }
 
 .componentBox .close {
@@ -299,7 +299,7 @@
 }
 
 .component .des-container {
-    font: normal normal 600 24px/32px Urbane;
+    font: normal normal 600 24px/32px var(--font-body-family);
     letter-spacing: 0px;
     color: #000000;
     background: #F6F6F6;
@@ -343,11 +343,11 @@
 
     .componentBox .right-container .title1 {
         margin-bottom: 12px;
-        font: normal normal bold 20px/24px Urbane;
+        font: normal normal bold 20px/24px var(--font-body-family);
     }
 
     .componentBox .right-container .description {
-        font: normal normal 300 14px/16px Urbane;
+        font: normal normal 300 14px/16px var(--font-body-family);
         width: 100%;
     }
 
@@ -358,7 +358,7 @@
     }
 
     .component .des-container {
-        font: normal normal 600 18px/24px Urbane;
+        font: normal normal 600 18px/24px var(--font-body-family);
         padding: 12px 26px;
         height: auto;
     }
@@ -374,7 +374,7 @@
 .world-title {
     color: #fff;
     text-align: center;
-    font: normal normal 600 42px/58px Urbane;
+    font: normal normal 600 42px/58px var(--font-body-family);
     margin-bottom: 55px;
 }
 
@@ -395,7 +395,7 @@
 
 #world-swiper .description {
     color: #fff;
-    font: italic normal 300 16px/19px Urbane;
+    font: italic normal 300 16px/19px var(--font-body-family);
     width: 80%;
 }
 
@@ -438,7 +438,7 @@
     }
 
     .world-title {
-        font: normal normal 600 36px/44px Urbane;
+        font: normal normal 600 36px/44px var(--font-body-family);
     }
 }
 
@@ -473,16 +473,16 @@
         padding: 7% 8% 5%;
 
         .title1 {
-            font: normal normal bold 24px/28px Urbane;
+            font: normal normal bold 24px/28px var(--font-body-family);
             margin-bottom: 34px;
         }
 
         .smtips {
-            font: normal normal 300 16px/19px Urbane;
+            font: normal normal 300 16px/19px var(--font-body-family);
         }
 
         .description {
-            font: normal normal 300 14px/20px Urbane;
+            font: normal normal 300 14px/20px var(--font-body-family);
             height: 100%;
 
             .quiet-motor {
@@ -533,11 +533,11 @@
 
             .bike-title {
                 margin-bottom: 6px;
-                font: normal normal 600 18px/21px urbane;
+                font: normal normal 600 18px/21px var(--font-body-family);
             }
 
             p {
-                font: normal normal 300 14px/20px urbane;
+                font: normal normal 300 14px/20px var(--font-body-family);
             }
         }
     }
@@ -591,7 +591,7 @@
     }
 
     .des-container {
-        font: normal normal 600 24px/32px Urbane;
+        font: normal normal 600 24px/32px var(--font-body-family);
         letter-spacing: 0px;
         color: #000000;
         background: #fff;
@@ -1236,7 +1236,7 @@
                 .orderTestRideBtn {
                     width: 100%;
                     height: 47px;
-                    font: normal normal 600 23px/28px Urbane;
+                    font: normal normal 600 23px/28px var(--font-body-family);
                     border-radius: 30px;
                     margin-bottom: 6px;
                     // transition: all 0.3s;
@@ -2471,11 +2471,11 @@
 
             .title1 {
                 margin-bottom: 12px;
-                font: normal normal bold 20px/24px Urbane;
+                font: normal normal bold 20px/24px var(--font-body-family);
             }
 
             .description {
-                font: normal normal 300 14px/16px Urbane;
+                font: normal normal 300 14px/16px var(--font-body-family);
                 width: 100%;
                 height: auto;
 
@@ -2512,7 +2512,7 @@
 
     .component {
         .des-container {
-            font: normal normal 600 18px/24px Urbane;
+            font: normal normal 600 18px/24px var(--font-body-family);
             padding: 12px 26px;
             height: auto;
         }
@@ -2952,7 +2952,7 @@ $product-tags-color: #FFE2D9;
                 border-width: 0 0 1px;
                 border-color: #ebebeb;
                 text-align: left;
-                font: normal normal 600 24px/28px Urbane;
+                font: normal normal 600 24px/28px var(--font-body-family);
                 letter-spacing: 0;
                 color: #000;
                 background: #fff;
@@ -2982,7 +2982,7 @@ $product-tags-color: #FFE2D9;
             .faq-content {
                 display: none;
                 padding: 20px 18% 0 9%;
-                font: normal normal normal 17px/24px Urbane;
+                font: normal normal normal 17px/24px var(--font-body-family);
                 color: #000;
                 opacity: 0.9;
 
@@ -2997,7 +2997,7 @@ $product-tags-color: #FFE2D9;
         }
 
         .titlee {
-            font: normal normal 600 42px/50px Urbane;
+            font: normal normal 600 42px/50px var(--font-body-family);
             color: #000;
             border-bottom: 1px solid #ebebeb;
             padding-bottom: 40px;

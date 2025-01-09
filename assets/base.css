@@ -1,78 +1,4 @@
 @font-face {
-  font-family: "urbane";
-  src: url("https://cdn.shopify.com/s/files/1/0583/5810/4213/files/l_2?v=1733993926") format("woff2"),url("https://use.typekit.net/af/d69d3b/00000000000000007735c098/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff"),url("https://use.typekit.net/af/d69d3b/00000000000000007735c098/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("opentype");
-  font-display: auto;
-  font-style: normal;
-  font-weight: 700;
-  font-stretch: normal;
-}
-
-@font-face {
-  font-family: "urbane";
-  src: url("https://cdn.shopify.com/s/files/1/0583/5810/4213/files/l_10aaf293-6daa-42fd-a497-dcdaa120e462?v=1734429058") format("woff2"),url("https://use.typekit.net/af/62b589/00000000000000007735c09a/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3") format("woff"),url("https://use.typekit.net/af/62b589/00000000000000007735c09a/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3") format("opentype");
-  font-display: auto;
-  font-style: italic;
-  font-weight: 700;
-  font-stretch: normal;
-}
-
-@font-face {
-  font-family: "urbane";
-  src: url("https://cdn.shopify.com/s/files/1/0583/5810/4213/files/l?v=1733993811") format("woff2"),url("https://use.typekit.net/af/6b9548/00000000000000007735c09d/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3") format("woff"),url("https://use.typekit.net/af/6b9548/00000000000000007735c09d/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3") format("opentype");
-  font-display: auto;
-  font-style: normal;
-  font-weight: 600;
-  font-stretch: normal;
-}
-
-@font-face {
-  font-family: "urbane";
-  src: url("https://cdn.shopify.com/s/files/1/0583/5810/4213/files/l_5?v=1734004107") format("woff2"),url("https://use.typekit.net/af/cd86df/00000000000000007735c09f/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i6&v=3") format("woff"),url("https://use.typekit.net/af/cd86df/00000000000000007735c09f/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i6&v=3") format("opentype");
-  font-display: auto;
-  font-style: italic;
-  font-weight: 600;
-  font-stretch: normal;
-}
-
-
-@font-face {
-  font-family: "urbane";
-  src: url("https://cdn.shopify.com/s/files/1/0583/5810/4213/files/l_1?v=1733993888") format("woff2"),url("https://use.typekit.net/af/decad5/00000000000000007735c0a9/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3") format("woff"),url("https://use.typekit.net/af/decad5/00000000000000007735c0a9/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3") format("opentype");
-  font-display: auto;
-  font-style: normal;
-  font-weight: 500;
-  font-stretch: normal;
-}
-
-@font-face {
-  font-family: "urbane";
-  src: url("https://cdn.shopify.com/s/files/1/0583/5810/4213/files/l_2_44676681-7b8f-4eb7-ab3d-5530b40172c4?v=1734429246") format("woff2"),url("https://use.typekit.net/af/b3966b/00000000000000007735c0aa/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i5&v=3") format("woff"),url("https://use.typekit.net/af/b3966b/00000000000000007735c0aa/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i5&v=3") format("opentype");
-  font-display: auto;
-  font-style: italic;
-  font-weight: 500;
-  font-stretch: normal;
-}
-
-@font-face {
-  font-family: "urbane";
-  src: url("https://cdn.shopify.com/s/files/1/0583/5810/4213/files/l_3?v=1733993983") format("woff2"),url("https://use.typekit.net/af/254f88/00000000000000007735c0a7/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3") format("woff"),url("https://use.typekit.net/af/254f88/00000000000000007735c0a7/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3") format("opentype");
-  font-display: auto;
-  font-style: normal;
-  font-weight: 300;
-  font-stretch: normal;
-}
-
-@font-face {
-  font-family: "urbane";
-  src: url("https://cdn.shopify.com/s/files/1/0583/5810/4213/files/l_1_8a0bfcb0-8de9-4b3f-a392-e8446fe7aa07?v=1734429204") format("woff2"),url("https://use.typekit.net/af/d6a650/00000000000000007735c0a8/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i3&v=3") format("woff"),url("https://use.typekit.net/af/d6a650/00000000000000007735c0a8/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i3&v=3") format("opentype");
-  font-display: auto;
-  font-style: italic;
-  font-weight: 300;
-  font-stretch: normal;
-}
-
-
-@font-face {
   font-family: 'Helvetica Now Display';
   src: url("https://cdn.shopify.com/s/files/1/0583/5810/4213/files/HelveticaNowDisplay-Regular.woff2?v=1733889791") format("woff2");
   font-weight: 400;
@@ -2294,7 +2220,7 @@ input[type='checkbox'] {
 
 .announcement-bar__link .announcement-bar__message {
   padding: 0;
-  font: normal normal 500 16px/17px Urbane;
+  font: normal normal 500 16px/17px var(--font-body-family);
   letter-spacing: 0px;
 }
 
@@ -2609,7 +2535,7 @@ details[open] .modal-overlay::after {
 
 @media screen and (max-width: 750px) {
   .announcement-bar__link .announcement-bar__message {
-    font: normal normal 500 13px/14px Urbane;
+    font: normal normal 500 13px/14px var(--font-body-family);
     letter-spacing: 0px;
   }
 }
@@ -4222,17 +4148,17 @@ body {
 }
 
 h2 {
-  font: 600 72px/86px urbane
+  font: 600 72px/86px var(--font-body-family);
 }
 
 h3 {
-  font: 600 42px/50px urbane
+  font: 600 42px/50px var(--font-body-family);
 }
 
 h1 {
   margin: 0;
   font-weight: 700;
-  font: 600 48px/48px urbane
+  font: 600 48px/48px var(--font-body-family);
 }
 
 a {
@@ -4316,183 +4242,183 @@ input:focus-visible {
 }
 
 .u36Light_extra_v2 {
-  font: 200 36px/1.25em urbane
+  font: 200 36px/1.25em var(--font-body-family);
 }
 
 .u11Light_v2 {
-  font: 300 11px/1.4em urbane
+  font: 300 11px/1.4em var(--font-body-family);
 }
 
 .u14Light_v2 {
-  font: 300 14px/1.4em urbane
+  font: 300 14px/1.4em var(--font-body-family);
 }
 
 .u17Light {
-  font: 300 17px/19px urbane
+  font: 300 17px/19px var(--font-body-family);
 }
 
 .u17Light_v2 {
-  font: 300 17px/1.4em urbane
+  font: 300 17px/1.4em var(--font-body-family);
 }
 
 .u20Light {
-  font: 300 20px/24px urbane
+  font: 300 20px/24px var(--font-body-family);
 }
 
 .u20Light_v2 {
-  font: 300 20px/1.25em urbane
+  font: 300 20px/1.25em var(--font-body-family);
 }
 
 .u24Light {
-  font: 300 24px/27px urbane
+  font: 300 24px/27px var(--font-body-family);
 }
 
 .u24Light_v2 {
-  font: 300 24px/1.25em urbane
+  font: 300 24px/1.25em var(--font-body-family);
 }
 
 .u36Light {
-  font: 300 36px/42px urbane
+  font: 300 36px/42px var(--font-body-family);
 }
 
 .u36Light_v2 {
-  font: 300 36px/1.25em urbane
+  font: 300 36px/1.25em var(--font-body-family);
 }
 
 .u11Medium_v2 {
-  font: 500 11px/1.25em urbane
+  font: 500 11px/1.25em var(--font-body-family);
 }
 
 .u14Medium_v2 {
-  font: 500 14px/1.25em urbane
+  font: 500 14px/1.25em var(--font-body-family);
 }
 
 .u17Medium {
-  font: 500 17px/19px urbane
+  font: 500 17px/19px var(--font-body-family);
 }
 
 .u17Medium_v2 {
-  font: 500 17px/1.4em urbane
+  font: 500 17px/1.4em var(--font-body-family);
 }
 
 .u20Medium {
-  font: 500 20px/24px urbane
+  font: 500 20px/24px var(--font-body-family);
 }
 
 .u20Medium_v2 {
-  font: 500 20px/1.25em urbane
+  font: 500 20px/1.25em var(--font-body-family);
 }
 
 .u24Medium {
-  font: 500 24px/27px urbane
+  font: 500 24px/27px var(--font-body-family);
 }
 
 .u24Medium_v2 {
-  font: 500 24px/1.25em urbane
+  font: 500 24px/1.25em var(--font-body-family);
 }
 
 .u30Medium {
-  font: 500 30px/1.4em urbane
+  font: 500 30px/1.4em var(--font-body-family);
 }
 
 .u30Medium_v2 {
-  font: 500 30px/1.25em urbane
+  font: 500 30px/1.25em var(--font-body-family);
 }
 
 .u36Medium_v2 {
-  font: 500 36px/1.25em urbane
+  font: 500 36px/1.25em var(--font-body-family);
 }
 
 .u42Medium_v2 {
-  font: 500 42px/1.25em urbane
+  font: 500 42px/1.25em var(--font-body-family);
 }
 
 .u48Medium_v2 {
-  font: 500 48px/1.25em urbane
+  font: 500 48px/1.25em var(--font-body-family);
 }
 
 .u54Medium_v2 {
-  font: 500 54px/1.25em urbane
+  font: 500 54px/1.25em var(--font-body-family);
 }
 
 .u36Medium {
-  font: 500 36px/42px urbane
+  font: 500 36px/42px var(--font-body-family);
 }
 
 .u60Medium_v2 {
-  font: 500 60px/1.25em urbane
+  font: 500 60px/1.25em var(--font-body-family);
 }
 
 .u72Medium_v2 {
-  font: 500 72px/1.25em urbane
+  font: 500 72px/1.25em var(--font-body-family);
 }
 
 .u14DemiBold_v2 {
-  font: 600 14px/1.4em urbane
+  font: 600 14px/1.4em var(--font-body-family);
 }
 
 .u17DemiBold_v2 {
-  font: 600 17px/1.4em urbane
+  font: 600 17px/1.4em var(--font-body-family);
 }
 
 .u20DemiBold {
-  font: 600 20px/24px urbane
+  font: 600 20px/24px var(--font-body-family);
 }
 
 .u20DemiBold_v2 {
-  font: 600 20px/1.4em urbane
+  font: 600 20px/1.4em var(--font-body-family);
 }
 
 .u24DemiBold_v2 {
-  font: 600 24px/1.4em urbane
+  font: 600 24px/1.4em var(--font-body-family);
 }
 
 .u30DemiBold {
-  font: 600 30px/34px urbane
+  font: 600 30px/34px var(--font-body-family);
 }
 
 .u30DemiBold_v2 {
-  font: 600 30px/1.25em urbane
+  font: 600 30px/1.25em var(--font-body-family);
 }
 
 .u36DemiBold {
-  font: 600 36px/42px urbane
+  font: 600 36px/42px var(--font-body-family);
 }
 
 .u36DemiBold_v2 {
-  font: 600 36px/1.25em urbane
+  font: 600 36px/1.25em var(--font-body-family);
 }
 
 .u42DemiBold {
-  font: 600 42px/48px urbane
+  font: 600 42px/48px var(--font-body-family);
 }
 
 .u42DemiBold_v2 {
-  font: 600 42px/1.25em urbane
+  font: 600 42px/1.25em var(--font-body-family);
 }
 
 .u48DemiBold {
-  font: 600 48px/54px urbane
+  font: 600 48px/54px var(--font-body-family);
 }
 
 .u48DemiBold_v2 {
-  font: 600 48px/1.25em urbane
+  font: 600 48px/1.25em var(--font-body-family);
 }
 
 .u56DemiBold_v2 {
-  font: 600 56px/1.25em urbane
+  font: 600 56px/1.25em var(--font-body-family);
 }
 
 .u60DemiBold_v2 {
-  font: 600 60px/1.25em urbane
+  font: 600 60px/1.25em var(--font-body-family);
 }
 
 .u72DemiBold_v2 {
-  font: 600 72px/1.25em urbane
+  font: 600 72px/1.25em var(--font-body-family);
 }
 
 .u90DemiBold_v2 {
-  font: 600 90px/1.25em urbane
+  font: 600 90px/1.25em var(--font-body-family);
 }
 
 .hide {
@@ -4624,7 +4550,7 @@ body .my-button {
   background-color: #fff;
   color: #000;
   border-radius: 30px;
-  font: 500 16px/19px urbane;
+  font: 500 16px/19px var(--font-body-family);
   cursor: pointer;
   white-space: nowrap;
   transition: all .3s;
@@ -4704,7 +4630,7 @@ body .jBox-Modal .jBox-container {
 
 body .jBox-Modal .jBox-title {
   border-radius: 15px 15px 0 0;
-  font: 600 16px/24px urbane;
+  font: 600 16px/24px var(--font-body-family);
   background-color: #fff;
   padding-left: 70px
 }
@@ -4896,7 +4822,7 @@ body .jBox-Modal {
 
 @media (max-width: 767px) {
   h2 {
-      font: 600 48px/48px urbane
+      font: 600 48px/48px var(--font-body-family);
   }
 
   body .my-button {
@@ -5577,7 +5503,7 @@ details[open].menu-opening > .menu-drawer__submenu {
   margin: 3px 0;
   padding: 3px 20px;
   border-radius: 5px;
-  font: normal normal 300 14px/19px Urbane;
+  font: normal normal 300 14px/19px var(--font-body-family);
   text-align: left;
   color: #fff;
   background-color: #ff612f;
@@ -6286,7 +6212,7 @@ cart-remove-button .icon-remove {
   height:25px;
 }
 .ebike_shippment .ship_font{
-  font:font: normal normal 500 16px/18px urbane;
+  font:font: normal normal 500 16px/18px var(--font-body-family);
 }
 .mega_ebike_content {
   padding: 40px 0px;
@@ -6324,12 +6250,12 @@ cart-remove-button .icon-remove {
 }
 .mega-menu .mega-menu__list--condensed.mega_ebike_ul h2{
   margin: 0;
-  font: normal normal 600 24px/28px urbane;
+  font: normal normal 600 24px/28px var(--font-body-family);
   color: #000;
 }
 .mega-menu .mega-menu__list--condensed.mega_ebike_ul p{
   margin: 0;
-  font: normal normal 500 16px/18px urbane;
+  font: normal normal 500 16px/18px var(--font-body-family);
   color: #000;
 }
 .chord_new{
@@ -6373,7 +6299,7 @@ cart-remove-button .icon-remove {
 .cart-drawer .drawer__footer .orderTestRideBtn{
   width: 100%;
 height: 47px;
-font: normal normal 600 23px/28px Urbane;
+font: normal normal 600 23px/28px var(--font-body-family);
 color: #fff;
 background: #FD4B17;
 border: 2px solid #FD4B17;
@@ -7508,7 +7434,7 @@ summary.list-menu__item {
     background-color: #F7F8FA;
     border-radius: 30px;
     color: #000;
-    font: 500 16px/19px urbane;
+    font: 500 16px/19px var(--font-body-family);
     overflow: hidden;
 }
 
@@ -7570,7 +7496,7 @@ summary.list-menu__item {
   color: #FD4B17;
   position: absolute;
   top: -12.5%;
-  font: normal normal 600 11px/1em Urbane;
+  font: normal normal 600 11px/1em var(--font-body-family);
 }
 
 .hedaer-secondary-menu .centreallllll .bikesssssss > div:hover img {
@@ -7682,7 +7608,7 @@ summary.list-menu__item {
   background-color: #F7F8FA;
   border-radius: 30px;
   color: #000;
-  font: 500 12px/19px urbane;
+  font: 500 12px/19px var(--font-body-family);
   overflow: hidden;
 }
 
@@ -7759,7 +7685,7 @@ white-space: nowrap;
   border-radius: 12px;
   padding: 4px 6px;
   color: #FD4B17;
-  font: normal normal 600 11px/1em Urbane;
+  font: normal normal 600 11px/1em var(--font-body-family);
   margin-left: 8px;
 }
 

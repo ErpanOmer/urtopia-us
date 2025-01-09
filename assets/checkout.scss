@@ -32,19 +32,19 @@
   }
 
   .u11Medium_v2 {
-    font: normal normal 500 11px/1.25em urbane;
+    font: normal normal 500 11px/1.25em var(--font-body-family);
   }
 
   .u24DemiBold_v2 {
-    font: normal normal 600 24px/1.25em urbane;
+    font: normal normal 600 24px/1.25em var(--font-body-family);
   }
 
   .u17Medium_v2 {
-    font: normal normal 500 17px/1.25em urbane;
+    font: normal normal 500 17px/1.25em var(--font-body-family);
   }
 
   .u20DemiBold_v2 {
-    font: normal normal 600 20px/1.25em urbane;
+    font: normal normal 600 20px/1.25em var(--font-body-family);
   }
 
   .klarna {
@@ -82,7 +82,7 @@
     background-color: #fff;
     color: #000;
     border-radius: 30px;
-    font: normal normal 500 16px/19px urbane;
+    font: normal normal 500 16px/19px var(--font-body-family);
     cursor: pointer;
     white-space: nowrap;
     transition: all .3s;

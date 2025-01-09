@@ -22,7 +22,7 @@ $colors-name: "black", "white", "orange", "secondary", "yellow", "gray", "light-
 
 
 article {
-    font: normal normal normal $root-font-size + px/1.25em Proxima-Nova;
+    font: normal normal normal $root-font-size + px/1.25em var(--font-body-family);
 
     section {
         max-width: 1280px;
@@ -70,7 +70,6 @@ article {
     h6 {
         font-weight: 600;
         line-height: 1.25em;
-        font-family: Urbane;
     }
 
 
@@ -114,7 +113,6 @@ article {
     }
 
     xmp {
-        font-family: 'urbane';
         font-size: 14px;
         text-align: left;
         word-break: break-word;
@@ -128,7 +126,6 @@ article {
         color: #e5e5e5;
         border: none;
         border-spacing: 0;
-        font-family: urbane;
 
         th,
         td {

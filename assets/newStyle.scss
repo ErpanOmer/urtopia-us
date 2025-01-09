@@ -1,5 +1,5 @@
 body{
-  font-family: urbane;
+  font-family: var(--font-body-family);
   font-weight:400;
   font-style:normal;
   color:#161C1F;
@@ -411,17 +411,17 @@ a.moreBtn.bannerBtn.buyBtn:hover,
 }
 
 h2 {
-  font: normal normal 600 72px/86px urbane;
+  font: normal normal 600 72px/86px var(--font-body-family);
 }
 
 h3 {
-  font: normal normal 600 42px/50px urbane;
+  font: normal normal 600 42px/50px var(--font-body-family);
 }
 
 h1 {
   margin: 0;
   font-weight: bold;
-  font: normal normal 600 48px/48px urbane;
+  font: normal normal 600 48px/48px var(--font-body-family);
 }
 
 a {
@@ -514,184 +514,184 @@ input {
 
 /* 全局字体设置start */
 .u36Light_extra_v2 {
-  font: normal normal 200 36px/1.25em urbane;
+  font: normal normal 200 36px/1.25em var(--font-body-family);
 }
 
 .u11Light_v2 {
-  font: normal normal 300 11px/1.4em urbane;
+  font: normal normal 300 11px/1.4em var(--font-body-family);
 }
 
 .u14Light_v2 {
-  font: normal normal 300 14px/1.4em urbane;
+  font: normal normal 300 14px/1.4em var(--font-body-family);
 }
 
 .u17Light {
-  font: normal normal 300 17px/19px urbane;
+  font: normal normal 300 17px/19px var(--font-body-family);
 }
 
 .u17Light_v2 {
-  font: normal normal 300 17px/1.4em urbane;
+  font: normal normal 300 17px/1.4em var(--font-body-family);
 }
 
 
 .u20Light {
-  font: normal normal 300 20px/24px urbane;
+  font: normal normal 300 20px/24px var(--font-body-family);
 }
 
 .u20Light_v2 {
-  font: normal normal 300 20px/1.25em urbane;
+  font: normal normal 300 20px/1.25em var(--font-body-family);
 }
 
 .u24Light {
-  font: normal normal 300 24px/27px urbane;
+  font: normal normal 300 24px/27px var(--font-body-family);
 }
 
 .u24Light_v2 {
-  font: normal normal 300 24px/1.25em urbane;
+  font: normal normal 300 24px/1.25em var(--font-body-family);
 }
 
 .u36Light {
-  font: normal normal 300 36px/42px urbane;
+  font: normal normal 300 36px/42px var(--font-body-family);
 }
 
 .u36Light_v2 {
-  font: normal normal 300 36px/1.25em urbane;
+  font: normal normal 300 36px/1.25em var(--font-body-family);
 }
 
 .u11Medium_v2 {
-  font: normal normal 500 11px/1.25em urbane;
+  font: normal normal 500 11px/1.25em var(--font-body-family);
 }
 
 .u14Medium_v2 {
-  font: normal normal 500 14px/1.25em urbane;
+  font: normal normal 500 14px/1.25em var(--font-body-family);
 }
 
 .u17Medium {
-  font: normal normal 500 17px/19px urbane;
+  font: normal normal 500 17px/19px var(--font-body-family);
 }
 
 .u17Medium_v2 {
-  font: normal normal 500 17px/1.4em urbane;
+  font: normal normal 500 17px/1.4em var(--font-body-family);
 }
 
 .u20Medium {
-  font: normal normal 500 20px/24px urbane;
+  font: normal normal 500 20px/24px var(--font-body-family);
 }
 
 .u20Medium_v2 {
-  font: normal normal 500 20px/1.25em urbane;
+  font: normal normal 500 20px/1.25em var(--font-body-family);
 }
 
 .u24Medium {
-  font: normal normal 500 24px/27px urbane;
+  font: normal normal 500 24px/27px var(--font-body-family);
 }
 
 .u24Medium_v2 {
-  font: normal normal 500 24px/1.25em urbane;
+  font: normal normal 500 24px/1.25em var(--font-body-family);
 }
 
 .u30Medium {
-  font: normal normal 500 30px/1.4em urbane;
+  font: normal normal 500 30px/1.4em var(--font-body-family);
 }
 
 .u30Medium_v2 {
-  font: normal normal 500 30px/1.25em urbane;
+  font: normal normal 500 30px/1.25em var(--font-body-family);
 }
 
 .u36Medium_v2 {
-  font: normal normal 500 36px/1.25em urbane;
+  font: normal normal 500 36px/1.25em var(--font-body-family);
 }
 
 .u42Medium_v2 {
-  font: normal normal 500 42px/1.25em urbane;
+  font: normal normal 500 42px/1.25em var(--font-body-family);
 }
 
 .u48Medium_v2 {
-  font: normal normal 500 48px/1.25em urbane;
+  font: normal normal 500 48px/1.25em var(--font-body-family);
 }
 
 .u54Medium_v2 {
-  font: normal normal 500 54px/1.25em urbane;
+  font: normal normal 500 54px/1.25em var(--font-body-family);
 }
 
 .u36Medium {
-  font: normal normal 500 36px/42px urbane;
+  font: normal normal 500 36px/42px var(--font-body-family);
 }
 
 .u60Medium_v2 {
-  font: normal normal 500 60px/1.25em urbane;
+  font: normal normal 500 60px/1.25em var(--font-body-family);
 }
 
 .u72Medium_v2 {
-  font: normal normal 500 72px/1.25em urbane;
+  font: normal normal 500 72px/1.25em var(--font-body-family);
 }
 
 .u14DemiBold_v2 {
-  font: normal normal 600 14px/1.4em urbane;
+  font: normal normal 600 14px/1.4em var(--font-body-family);
 }
 
 .u17DemiBold_v2 {
-  font: normal normal 600 17px/1.4em urbane;
+  font: normal normal 600 17px/1.4em var(--font-body-family);
 }
 
 .u20DemiBold {
-  font: normal normal 600 20px/24px urbane;
+  font: normal normal 600 20px/24px var(--font-body-family);
 }
 
 .u20DemiBold_v2 {
-  font: normal normal 600 20px/1.4em urbane;
+  font: normal normal 600 20px/1.4em var(--font-body-family);
 }
 
 .u24DemiBold_v2 {
-  font: normal normal 600 24px/1.4em urbane;
+  font: normal normal 600 24px/1.4em var(--font-body-family);
 }
 
 .u30DemiBold {
-  font: normal normal 600 30px/34px urbane;
+  font: normal normal 600 30px/34px var(--font-body-family);
 }
 
 .u30DemiBold_v2 {
-  font: normal normal 600 30px/1.25em urbane;
+  font: normal normal 600 30px/1.25em var(--font-body-family);
 }
 
 .u36DemiBold {
-  font: normal normal 600 36px/42px urbane;
+  font: normal normal 600 36px/42px var(--font-body-family);
 }
 
 .u36DemiBold_v2 {
-  font: normal normal 600 36px/1.25em urbane;
+  font: normal normal 600 36px/1.25em var(--font-body-family);
 }
 
 .u42DemiBold {
-  font: normal normal 600 42px/48px urbane;
+  font: normal normal 600 42px/48px var(--font-body-family);
 }
 
 .u42DemiBold_v2 {
-  font: normal normal 600 42px/1.25em urbane;
+  font: normal normal 600 42px/1.25em var(--font-body-family);
 }
 
 .u48DemiBold {
-  font: normal normal 600 48px/54px urbane;
+  font: normal normal 600 48px/54px var(--font-body-family);
 }
 
 .u48DemiBold_v2 {
-  font: normal normal 600 48px/1.25em urbane;
+  font: normal normal 600 48px/1.25em var(--font-body-family);
 }
 
 .u56DemiBold_v2 {
-  font: normal normal 600 56px/1.25em urbane;
+  font: normal normal 600 56px/1.25em var(--font-body-family);
 }
 
 .u60DemiBold_v2 {
-  font: normal normal 600 60px/1.25em urbane;
+  font: normal normal 600 60px/1.25em var(--font-body-family);
 }
 
 .u72DemiBold_v2 {
-  font: normal normal 600 72px/1.25em urbane;
+  font: normal normal 600 72px/1.25em var(--font-body-family);
 }
 
 .u90DemiBold_v2 {
-  font: normal normal 600 90px/1.25em urbane;
+  font: normal normal 600 90px/1.25em var(--font-body-family);
 }
 
 .hide {
@@ -826,7 +826,7 @@ body {
     background-color: #fff;
     color: #000;
     border-radius: 30px;
-    font: normal normal 500 16px/19px urbane;
+    font: normal normal 500 16px/19px var(--font-body-family);
     cursor: pointer;
     white-space: nowrap;
     transition: all .3s;
@@ -910,7 +910,7 @@ body .jBox-Modal .jBox-container {
 
 body .jBox-Modal .jBox-title {
   border-radius: 15px 15px 0 0;
-  font: normal normal 600 16px/24px urbane;
+  font: normal normal 600 16px/24px var(--font-body-family);
   background-color: #fff;
   padding-left: 70px;
 }
@@ -1120,7 +1120,7 @@ body .jBox-Modal {
 
 @media (max-width: 767px) {
   h2 {
-    font: normal normal 600 48px/48px urbane;
+    font: normal normal 600 48px/48px var(--font-body-family);
   }
 
   body {
