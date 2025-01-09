@@ -916,13 +916,6 @@ summary::-webkit-details-marker {
   box-shadow: none;
 }
 
-*:focus-visible {
-  outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
-  outline-offset: 0.3rem;
-  box-shadow: 0 0 0 0.3rem rgb(var(--color-background)),
-    0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
-}
-
 /* Fallback - for browsers that don't support :focus-visible, a fallback is set for :focus */
 .focused,
 .no-js *:focus {
@@ -5177,51 +5170,6 @@ predictive-search[loading] .predictive-search__results-list:first-child {
 }
 
 
-#announcement-bar {
-  height: 38px;
-  overflow: hidden;
-  background-color: #000;
-  color: #fff;
-  text-align: center;
-}
-
-#announcement-bar .swiper-slide {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-#announcement-bar .swiper-slide > p {
-  line-height: 19px;
-  direction: ltr;
-}
-
-#announcement-bar .swiper-slide > p > span {
-  font-weight: bold;
-  color: #ffda12;
-}
-
-#announcement-bar .swiper-slide > p > a {
-  color: #fff;
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-#announcement-bar .swiper-slide > p > a:hover {
-  color: #d6d6d6;
-}
-
-
-.announcement-bar {
-  display: none;
-}
-
-#announcement-bar > img {
-  height: 55px;
-  width: auto;
-  transform: translateY(5%);
-}
 
 
 .list-menu--right {
@@ -9483,3 +9431,62 @@ dialog {
   transform: rotate(-72deg);
 }
 
+#announcement-bar {
+    position: relative;
+    width: 100%;
+    height: 38px;
+    overflow: hidden;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+/* 滚动容器样式 */
+#announcement-bar>div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(100%);
+    /* 初始位置为屏幕下方 */
+    animation: slideAnimation 12s infinite;
+}
+
+#announcement-bar>div:nth-child(1) {
+    animation-delay: 0s;
+}
+
+#announcement-bar>div:nth-child(2) {
+    animation-delay: 4s;
+}
+
+#announcement-bar>div:nth-child(3) {
+    animation-delay: 8s;
+}
+
+/* 动画定义 */
+@keyframes slideAnimation {
+    0% {
+        transform: translateY(100%);
+    }
+
+    10% {
+        transform: translateY(0);
+    }
+
+    33.33% {
+        transform: translateY(0);
+    }
+
+    43.33% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(-100%);
+    }
+}

@@ -89,7 +89,6 @@
 <div id="global2top">
     <svg t="1735027455730" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1443" width="32" height="32"><path d="M576 512v512H448V512H256l256-256 256 256H576zM0 0h1024v128H0V0z" fill="#fff" p-id="1444"></path></svg>
 </div>
-<script src="{{ 'dialog-polyfill.js' | asset_url }}" fetchpriority="low" defer></script>
 <script>
     const storage = {
         set: function (key, value, expires = 3) {
@@ -116,12 +115,7 @@
         }
     }
 
-    function showDialog (dialog, callback) {
-        if (!dialog.isRegistered) {
-            dialogPolyfill.forceRegisterDialog(dialog)
-            dialog.isRegistered = true
-        }
-        
+    function showDialog (dialog, callback) {        
         dialog.showModal()
 
         return new Promise(resolve => {
@@ -450,7 +444,7 @@
     
 
 window.addEventListener('load', () => {
-  const $toTop = $('#global2top');
+      const $toTop = $('#global2top');
 
       const ignore = ['/pages/lightweight-ebike-urtopia-carbon-1-pro', '/pages/amazon', '/pages/email-page', '/collections/urtopia-black-friday-sale', '/pages/urtopia-ces-2025']
 
@@ -458,21 +452,6 @@ window.addEventListener('load', () => {
         setTimeout(() => {
           showCookieDialog().then(showSubscribeEmailDialog).then(showExitSubscribeEmailDialog).then(showTestRideDialog)
         }, 5000)
-      }
-
-
-      if (document.querySelectorAll('#announcement-bar .swiper-wrapper > .swiper-slide').length) {
-        new Swiper('#announcement-bar', {
-            direction: 'vertical',
-            speed: 600,
-            loop: true,
-            autoplay: {
-              disableOnInteraction: false,
-              pauseOnMouseEnter: true,
-              delay: 5000,
-              // reverseDirection: true
-            },
-          });
       }
 
 
@@ -519,5 +498,19 @@ window.addEventListener('load', () => {
         debounceTime: 200, // 降低回调触发频率
     }
     );
+
+   // 检测浏览器是否支持 <dialog>
+    if (typeof HTMLDialogElement === "undefined") {
+      // 动态加载 Polyfill 的样式和脚本
+      const script = document.createElement("script");
+      script.src = "{{ 'dialog-polyfill.js' | asset_url }}";
+      script.onload = () => {
+        document.querySelectorAll("dialog").forEach(dialog => {
+          dialogPolyfill.registerDialog(dialog);
+        });
+      };
+      
+      document.head.appendChild(script);
+    }
 });
 </script>

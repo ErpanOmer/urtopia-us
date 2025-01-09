@@ -35,8 +35,6 @@
     {% section 'care' %}
     {% section 'footer' %}
     {%- render 'cart-drawer' -%}
-
-    {% render 'judgeme_core' %}
     <script>
     window.shopUrl = '{{ request.origin }}';
     window.routes = {
@@ -77,5 +75,6 @@
       observer.observe('.lozad');
     </script>
     {% render 'dialog' %}
+    {% render 'judgeme_core' %}
   </body>
 </html>

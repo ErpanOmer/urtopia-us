@@ -1,7 +1,39 @@
-<div id="announcement-bar" class="announcement-bar-common" dir="rtl">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide"><p><span style="color:#FD4B17;">{{ all_products['urtopia-carbon-1-pro-ebike'].compare_at_price | minus: all_products['urtopia-carbon-1-pro-ebike'].price | money_without_trailing_zeros }} off</span> on Carbon 1 Pro. <a href="/products/urtopia-carbon-1-pro-ebike">Get yours Now</a></p></div>
-      <div class="swiper-slide"><p>Financing with 24 months, 0% APR. <a href="/products/urtopia-carbon-1-pro-ebike">Get yours Now</a></p><img style="width:45px;margin-right:10px;" width="45" height="26" decoding="async" alt="klarna" loading="lazy" fetchpriority="low" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Image_154_2x_a6f60481-bf07-4fd4-93c7-8b9964570bbd.png?v=1685605445"/></div>
-      <div class="swiper-slide"><p>Try Urtopia E-Bikes for Free <br class="pcHide"> <a href="/pages/test-ride">Book a test ride now</a></p></div>
-    </div>
+<div id="announcement-bar" class="er-font-base mb:er-text-[14px]">
+  <div>
+    <span class="er-text-primary er-mr-1">
+      <b>
+        {{-
+          all_products['urtopia-carbon-1-pro-ebike'].compare_at_price
+          | minus: all_products['urtopia-carbon-1-pro-ebike'].price
+          | money_without_trailing_zeros
+        }}
+        off</b
+      ></span
+    >
+    on Carbon 1 Pro.
+    <a class="er-button er-button-text er-underline er-ml-1" href="/products/urtopia-carbon-1-pro-ebike"
+      ><b>Get yours Now</b></a
+    >
   </div>
+  <div>
+    <img
+      width="45"
+      height="26"
+      decoding="async"
+      alt="klarna"
+      loading="lazy"
+      fetchpriority="low"
+      class="er-mr-2"
+      src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Image_154_2x_a6f60481-bf07-4fd4-93c7-8b9964570bbd.png?v=1685605445"
+    >
+    Financing with 24 months, 0% APR.
+    <a class="er-button er-button-text er-underline er-ml-1" href="/products/urtopia-carbon-1-pro-ebike"
+      ><b>Get yours Now</b></a
+    >
+  </div>
+  <div>
+    Try Urtopia E-Bikes for Free
+    <br class="pcHide">
+    <a class="er-button er-button-text er-underline er-ml-1" href="/pages/test-ride"><b>Book a test ride now</b></a>
+  </div>
+</div>
