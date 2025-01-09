@@ -4,7 +4,7 @@
   font-weight: 400;
   font-style: normal;
   font-stretch: normal;
-  font-display: auto;
+  font-display: swap;
 }
 
 
@@ -14,7 +14,7 @@
   font-weight: 500;
   font-style: normal;
   font-stretch: normal;
-  font-display: auto;
+  font-display: swap;
 }
 
 @font-face {
@@ -23,7 +23,7 @@
   font-weight: 700;
   font-style: normal;
   font-stretch: normal;
-  font-display: auto;
+  font-display: swap;
 }
 
 @font-face {
@@ -32,7 +32,7 @@
   font-weight: 800;
   font-style: normal;
   font-stretch: normal;
-  font-display: auto;
+  font-display: swap;
 }
 
 :host,:root {
@@ -9199,7 +9199,7 @@ button.newsletter-form__button {
 
 @media (max-width: 767px) {
   .er-button {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     padding: 12px 30px 14px;
   }
 }
@@ -9233,8 +9233,8 @@ button.newsletter-form__button {
 .er-button.er-button-loading::after {
   content: "";
   position: absolute;
-  width: 20px;
-  height: 20px;
+  width: 28px;
+  height: 28px;
   border: 4px solid var(--er-btn-text-color);
   border-top: 4px solid transparent;
   border-radius: 50%;
@@ -9345,6 +9345,7 @@ dialog:not([open]) {
   display: none;
 }
 
+dialog::backdrop,
 dialog+.backdrop {
   position: fixed;
   top: 0;
@@ -9753,4 +9754,11 @@ dialog+.backdrop {
   100% {
     transform: translateY(-100%);
   }
+}
+
+
+.product-panel .swiper-pagination-bullet-active {
+  width: 30px;
+  border-radius: 5px;
+  transition: all .3s;
 }

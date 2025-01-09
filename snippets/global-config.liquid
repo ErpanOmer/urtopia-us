@@ -571,120 +571,94 @@
     },
     // chrod order page 配置项
     chord_order_page_config: {
-      // chord 车默认显示 variant_id, 只有 url 上的 variant 参数为空的时候生效
-      default_variant: 43694976696568,
-      // variant 为 available:false 的情况下 也要强制显示
-      ignore_variants_available_false: [],
-      size_map: {
-        'High-Step': `Fit for 5’7’’~6’5’’`,
-        'Step-Through': `Fit for 5’3’’~6’1’’`,
-      },
-      awards: ['https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231214-163200.png?v=1702542765'],
-      // 产品图
-      product_images: {
-        'High-Step': {
-          White: [
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18755.png?v=1689236358',
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18760.png?v=1689236358',
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18762.png?v=1689236358',
-
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18765.png?v=1689236562',
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18769.png?v=1689236563',
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18766.png?v=1689236562',
-          ],
-          Black: [
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18754.png?v=1689236445',
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18758.png?v=1689236445',
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18759.png?v=1689236445',
-
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18770_ae2056ef-cd08-42d1-a7b4-e8f125eae35a.png?v=1689237082',
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18771.png?v=1689237081',
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18772_58e3cebc-b65d-42e2-bee0-f40c0662e725.png?v=1695388441',
-          ],
-          commonSwiper: [
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230224-145010_f48cb52f-2d3d-4a4f-b7f7-c6c2980349c9.png?v=1689236897',
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230213-untitled-6129.jpg?v=1695387132',
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230213-untitled-6611.jpg?v=1695387132',
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DSCF2506.jpg?v=1695387132',
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230213-untitled-5302.jpg?v=1695387132',
-          ],
+      sizes_and_specs: {
+        sizes: {
+            image: [
+              'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20267.svg',
+              'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20662.svg'
+            ],
+            parameters: [
+                [
+                    '<span style="color: #fff;">xxxx</span>',
+                    'Recomm. rider height',
+                    'A. Standover height',
+                    'B. Adjustable seat range',
+                    'C. Handlebar grips height',
+                    'D. Seat tube length',
+                    'E. Wheelbase',
+                    'F. Overall length',
+                    'G. Wheel diameter',
+                    'H. Top tube length (effective)',
+                    'I. Head tube length',
+                    'J. Headset height',
+                ],
+                [
+                    '<span class="u17DemiBold_v2">High-Step</span>',
+                    '5’7’’~6’5’’',
+                    '810 mm',
+                    '100 mm',
+                    '1100-1130 mm',
+                    '500 mm',
+                    '1094 mm',
+                    '1800 mm',
+                    '700 mm',
+                    '620 mm',
+                    '200 mm',
+                    '90-120 mm'
+                ],
+                [
+                  '<span class="u17DemiBold_v2">Step-Through</span>',
+                  '5’3’’~6’1’’',
+                  '670 mm',
+                  '80 mm',
+                  '1100-1130 mm',
+                  '327 mm',
+                  '1094 mm',
+                  '1800 mm',
+                  '700 mm',
+                  '620 mm',
+                  '200 mm',
+                  '90-120 mm'
+              ],
+            ]
         },
-        'Step-Through': {
-          White: [
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18757.png?v=1689237250',
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18763.png?v=1689237250',
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18764.png?v=1689237251',
-
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18765.png?v=1689236562',
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18769.png?v=1689236563',
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18766.png?v=1689236562',
-          ],
-          Black: [
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18756.png?v=1689237251',
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18767.png?v=1689237251',
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18768.png?v=1689237250',
-
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18770_ae2056ef-cd08-42d1-a7b4-e8f125eae35a.png?v=1689237082',
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18771.png?v=1689237081',
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18772_58e3cebc-b65d-42e2-bee0-f40c0662e725.png?v=1695388441',
-          ],
-          Gray: [
-            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/chord_x_gr_side.png?v=1696833425',
-            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/chord_x_gr_front.png?v=1696833426',
-            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/chord_x_gr_back.png?v=1696833425',
-
-            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/chord_x_gr_bar.png?v=1696833426',
-            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/chord_x_gr_gear.png?v=1696833426',
-            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/chord_x_gr_downtube.png?v=1696833426',
-          ],
-          commonSwiper: [
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230224-145010_f48cb52f-2d3d-4a4f-b7f7-c6c2980349c9.png?v=1689236897',
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230213-untitled-6129.jpg?v=1695387132',
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230213-untitled-6611.jpg?v=1695387132',
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DSCF2506.jpg?v=1695387132',
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230213-untitled-5302.jpg?v=1695387132',
-          ],
-        },
-      },
-      product_media_images: [
-        {
-          text: `“The smoothest and cleanest look”`,
-          img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18675_2x_75c49337-c9e2-4f36-8d62-bf676477342b.png?v=1699861700',
-        },
-        {
-          text: `“Battery integrated under the top tube like never before.”`,
-          img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18931_2x_4bfe7a5e-d7f8-4241-b453-6f1269875cd7.png?v=1699861708',
-        },
-        {
-          text: `“A lifestyle piece incorporates cutting-edge technology”`,
-          img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18927_2x_221c18ab-9822-4bfd-8434-e4da565bc9ac.png?v=1699861715',
-        },
-        {
-          text: `“The unusual smart e-bike is worth a look.”`,
-          img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18928_2x_4fa3a41f-c723-4589-be3c-1b499e871a3f.png?v=1699861725',
-        },
-        {
-          text: `“This is a model destined to conquer the public.”`,
-          img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18929_2x_ab7441d3-d6ca-49f1-839a-1e01e2712a97.png?v=1699861731',
-        },
-        {
-          text: `“one of the most beautiful and futuristic ebikes of 2023”`,
-          img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18930_2x_9c4e218a-1697-41e3-a5da-5e771d4b7a79.png?v=1699861737',
-        },
-      ],
-      // 默认的发货时间 文案
-      ebike_default_delivery_time: 'Free shipping <span>within 5 business days</span>',
-      // 每一种variant 的发货时间文案
-      ebike_delivery_time: {
-        // chord
-        43694976663800: 'Free shipping <span>within 5 business days</span>',
-        43694976696568: 'Free shipping <span>within 5 business days</span>',
-        // chord x
-        //white
-        43694976729336: 'Free shipping <span>within 5 business days</span>',
-        43694976762104: 'Pre-order items shipped from October 15 - 30, 2023',
-        //gray
-        44047038447864: 'Free shipping <span>within 5 business days</span>',
+        specs: [
+            {
+                title: 'Smart',
+                parameters: [
+                    ["Smartbar features", "Voice control, fingerprint start, LED dot-matrix display, haptic interaction, bluetooth music, built-in navigation, GPS tracking, OTA upgrade"],
+                    ["Connectivity", "Connect Service with 4G, Bluetooth & WiFi"],
+                    ["IoT sensors", "Accelerometer, gyroscope, torque"],
+                    ["App", "iOS & Android"],
+                ]
+            },
+            {
+                title: 'Power',
+                parameters: [
+                    ["Motor", "Customized rear hub, 36 V 350 W, 45 N⋅m"],
+                    ["Speed modes", "Pedal, Eco, Comfort, Sport, Turbo"],
+                    ["Top speed (assisted)", "20 mph"],
+                    ["Range", "31-75 miles"],
+                    ["Removable battery", "352.8 Wh Samsung Li-ion, 3-hr quick charge"],
+                    ["", ""]
+                ]
+            },
+            {
+                title: 'General',
+                parameters: [
+                    ["Weight", "46 lbs."],
+                    ["Load-bearing capacity", "287 lbs."],
+                    ["Size", "High-Step: 5‘7’‘ – 6’5‘’<br>Step-Through: 5‘3’‘ – 6’1‘’"],
+                    ["Body material", "6061 aluminum with liquid forging technology."],
+                    ["Brakes", "TEKTRO hydraulic disc brakes"],
+                    ["Gearing", `8-Speed Shimano rear derailleur`],
+                    ["Integrated lights", "StVZO headlight; rear light"],
+                    ["Wheels", "700C (ISO 622 mm BSD), inner rim 19 mm"],
+                    ["Tires", `CST C1720, 700 x 42C with reflective strips`],
+                    ["", ""]
+                ]
+            }
+        ] 
       },
     },
     carbon1pro_order_page_config: {

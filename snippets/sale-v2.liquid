@@ -28,13 +28,10 @@
   </div>
 </div>
 
-<script>
+<script type="module">
   window.loaded_sale_countdown = false;
-  window.addEventListener('DOMContentLoaded', () => {
-    if (window.loaded_sale_countdown) {
-      return;
-    }
 
+  if (!window.loaded_sale_countdown) {
     window.loaded_sale_countdown = true;
     // 当前活动索引
     let sale_end_time_index = 0;
@@ -86,7 +83,9 @@
         }
 
         for (const k in diff) {
-          $(`#count-down .er-grid > div:nth-child(${Number(k) + 1})`).find('.er-text-6xl').text(diff[k]);
+          $(`#count-down .er-grid > div:nth-child(${Number(k) + 1})`)
+            .find('.er-text-6xl')
+            .text(diff[k]);
         }
       }
 
@@ -94,5 +93,5 @@
     }
 
     updateTimer(getEndTime(sale_end_time_index));
-  })
+  }
 </script>

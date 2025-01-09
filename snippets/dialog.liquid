@@ -441,6 +441,15 @@
             }), 300)
         })
     }
+
+    
+  function showSizesAndSpecs (id = '') {
+        if (!id) {
+            return
+        }
+
+        showDialog(document.getElementById(id))
+  }
     
 
 window.addEventListener('load', () => {

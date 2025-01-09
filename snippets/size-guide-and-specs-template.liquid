@@ -75,7 +75,7 @@
   </div>
 </dialog>
 
-<script>
+<script type="module">
   $('.size-guide-and-specs-template h3').click(function () {
         $(this).siblings('.size-guide-and-specs-template .content').slideToggle().parent().siblings().find('.size-guide-and-specs-template .content').slideUp();
         $(this).children('div').toggleClass('dowwwwn')
@@ -93,7 +93,7 @@
     </div></div>`)
   }
 
-  $('.size-guide-and-specs-template .size-guide .content img').attr('src', sizes_and_specs.sizes.image)
+  $('.size-guide-and-specs-template .size-guide .content img').attr('src', Array.isArray(sizes_and_specs.sizes.image) ? sizes_and_specs.sizes.image[0] : sizes_and_specs.sizes.image)
 
 
   for (let i = 0; i < sizes_and_specs.sizes.parameters.length; i++) {
@@ -116,13 +116,4 @@
             $('#SizesDialog .bodyyyyyy .content img').attr('src', Array.isArray(sizes_and_specs.sizes.image) ? sizes_and_specs.sizes.image[$(this).index()] : sizes_and_specs.sizes.image)
     })
   }, 300)
-
-
-  function showSizesAndSpecs (id = '') {
-        if (!id) {
-            return
-        }
-
-        showDialog(document.getElementById(id))
-  }
 </script>

@@ -1,319 +1,6 @@
-{{ 'pagefly-main.css' | asset_url | stylesheet_tag: preload: true }}
-{{ 'pagefly.9b29433f.css' | asset_url | stylesheet_tag: preload: true }}
 {{ 'chord.scss.css' | asset_url | stylesheet_tag: preload: true }}
-<link rel="preload" href="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20662.svg" as="image">
+{% render "product-panel", show_outlet_list: true %}
 
-<style>
-   .product .emphasize-list {
-        box-shadow: #0000001a 0 0 6px;
-        border-radius: 10px;
-        padding: 10px 15px;
-        margin: 0 0 16px;
-        line-height: 1.8em;
-      }
-      .product .emphasize-list li {
-          list-style: none;
-          display: flex;
-      }
-      .product .emphasize-list li > span:first-child {
-          color: rgb(253, 75, 23);
-          margin-right: 5px;
-          transform: translateY(-1px);
-          display: inline-block;
-      }
-
-  @media (max-width: 767px) {
-            .product .emphasize-list {
-              font-size: 14px;
-              margin-top: 6px;
-            }
-        }
-</style>
-
-<div class="product" data-pf-type="ProductBox">
-  <div class="centeral-content">
-    <div class="commonComponent pcHide">
-      <div class="u36DemiBold_v2">{{ product.title }}</div>
-      <div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-25_ order-djs mb6">
-        <div class="pf-judme">
-          {% render 'judgeme_widgets',
-            widget_type: 'judgeme_preview_badge',
-            jm_style: '',
-            concierge_install: false,
-            product: product
-          %}
-        </div>
-      </div>
-      <div class="product-price u30DemiBold_v2" style="margin: 0;" data-price="{{ product.compare_at_price | money }}">
-        {{ product.price | money }}
-      </div>
-      <div class="sale-tag mb6">
-        <!-- <div class="u17Medium_v2">{{ settings.chord_sale_name }}</div> -->
-        <div class="u14Light_v2">Free shipping.</div>
-      </div>
-    </div>
-    <div class="featured_image">
-      <div class="swiper left-swiper mobileHide">
-        <div class="swiper-wrapper"></div>
-      </div>
-      <div
-        class="swiper right-swiper"
-        style="--swiper-navigation-color: #fff;--swiper-theme-color: #000;--swiper-pagination-color: #000;"
-      >
-        <div class="adwarsssss mobileHide"></div>
-        <div class="swiper-wrapper">
-          {% comment %}
-            {% for image in product.images %}
-                <div class="swiper-slide">
-                    {{ image | image_url: width: 1000 | image_tag }}
-                </div>
-            {% endfor %}
-          {% endcomment %}
-        </div>
-        <div class="swiper-button-prev mobileHide"></div>
-        <!-- 左箭头。如果放置在swiper外面，需要自定义样式。 -->
-        <div class="swiper-button-next mobileHide"></div>
-        <!-- 右箭头。如果放置在swiper外面，需要自定义样式。 -->
-        <div class="swiper-pagination pcHide"></div>
-        <div class="flex-1 mobileHide"></div>
-        <div class="fenders mobileHide">
-          <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230307-201732.jpg?v=1678191479" alt="">
-          <span class="u17DemiBold_v2"
-            >Free Fenders, Kickstand, <br>
-            1-Year Connect Service Included</span
-          >
-          <span class="u17Light_v2" style="text-decoration: line-through;">{{ 16700 | money }}</span>
-          <span class="u17DemiBold_v2">FREE</span>
-        </div>
-        <div class="parameters mobileHide">
-          <div>
-            <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18448_2x_833c8995-fa19-4297-af29-678ac4064d0c.png?v=1687176385">
-            <span><span class="u14Light_v2">Torque</span><span class="u17DemiBold_v2">45 NM</span></span>
-          </div>
-          <div>
-            <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18449_2x_e118ab7b-18ca-4612-afb3-20758874d9c7.png?v=1687177181">
-            <span><span class="u14Light_v2">Modes X Gears</span><span class="u17DemiBold_v2">4 x 8</span></span>
-          </div>
-          <div>
-            <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18445_2x_2e6c6230-7ed1-4c3d-99ad-54ba48fa57b4.png?v=1687177370">
-            <span><span class="u14Light_v2">Adaptive</span><span class="u17DemiBold_v2">Torque Sensor</span></span>
-          </div>
-          <div>
-            <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18447_2x_c102facd-9087-4028-8f97-34a7af31b1f6.png?v=1687177414">
-            <span><span class="u14Light_v2">Range</span><span class="u17DemiBold_v2">75 miles</span></span>
-          </div>
-          <div>
-            <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18450_2x_50383af6-61df-4632-9cbc-531630580f61.png?v=1687177242">
-            <span><span class="u14Light_v2">Phone App</span><span class="u17DemiBold_v2">iOS, Android</span></span>
-          </div>
-          <div>
-            <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18446_2x_791e060a-ed39-42c5-9cf0-965d7e5110bb.png?v=1687177232">
-            <span><span class="u14Light_v2">Anti-theft</span><span class="u17DemiBold_v2">GPS Tracking</span></span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <form
-      method="post"
-      accept-charset="UTF-8"
-      action="/cart/add"
-      class="product-panel pf-product-form"
-      data-productid="{{ product.id }}"
-      id="product_form_{{ product.id }}"
-      enctype="multipart/form-data"
-    >
-      <input
-        type="hidden"
-        name="id"
-        data-product-id="{{product.id}}"
-        value="{{ product.selected_or_first_available_variant.id }}"
-      >
-      <input type="hidden" name="form_type" value="product">
-      <input type="hidden" name="utf8" value="✓">
-      <div class="commonComponent mobileHide" id="sale_acc">
-        <div class="u36DemiBold_v2 mb6">{{ product.title }}</div>
-        <div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-25_ order-djs mb6">
-          <div class="pf-judme">
-            {% render 'judgeme_widgets',
-              widget_type: 'judgeme_preview_badge',
-              jm_style: '',
-              concierge_install: false,
-              product: product
-            %}
-          </div>
-        </div>
-        <div style="margin: 0" class="product-price u30DemiBold_v2" data-price="{{ product.compare_at_price | money }}">
-          {{ product.price | money }}
-        </div>
-        <div class="sale-tag mb6">
-          <!-- <div class="u17Medium_v2">{{ settings.chord_sale_name }}</div> -->
-          <div class="u14Light_v2" style="margin: 0">Free shipping.</div>
-        </div>
-      </div>
-      <ul class="emphasize-list u17Medium_v2">
-        <li><span>●</span><span>Used, Refurbish or Showroom Bike</span></li>
-        <li><span>●</span><span>Small to none damage</span></li>
-        <li><span>●</span><span>2 year Warranty</span></li>
-        <li><span>●</span><span>Not returnable (*see FAQ)</span></li>
-      </ul>
-      <div class="fenders pcHide">
-        <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230307-201732.jpg?v=1678191479" alt="">
-        <div>
-          <span
-            class="u17DemiBold_v2"
-            style="background-color: #263B55; color: #fff;border-radius: 7px;padding: 3px 12px;"
-            >FREE</span
-          >
-          <span class="u17DemiBold_v2" style="text-decoration: line-through;">{{ 16700 | money }}</span>
-          <div class="u17Light_v2">
-            Free Fenders, Kickstand, <br>
-            1-Year Connect Service Included
-          </div>
-        </div>
-      </div>
-      <div class="options">
-        {% for option in product.options_with_values %}
-          <div class="option" option="{{option.name}}" position="{{ option.position }}">
-            <div class="u17DemiBold_v2 mb12">{{ option.name }} - <span class="u17Light_v2"></span></div>
-            <div class="{{ option.name }} mb12">
-              {% for value in option.values %}
-                {% case option.name %}
-                  {% when 'Style' %}
-                    <div attribute="{{ value }}" class="{{ value }}"></div>
-                  {% else %}
-                    <div attribute="{{ value }}" class="{{ value }}">{{ value }}</div>
-                {% endcase %}
-              {% endfor %}
-            </div>
-          </div>
-        {% endfor %}
-      </div>
-      <div class="accessories">
-        <div class="u17DemiBold_v2 mb12">Accessories</div>
-        <div class="navigate">
-          <div class="prev"></div>
-          <div class="next"></div>
-        </div>
-        <div class="items mb12 chord-accessories">
-          {% for prod in collections['chord-accessories'].products %}
-            {% if prod.available %}
-              {% assign variant = prod.variants | first %}
-              <div class="item" variant-id="{{ variant.id }}">
-                <div class="u11Medium_v2">{{ prod.title }}</div>
-                <div>
-                  <div>
-                    <span class="u17DemiBold_v2">{{ prod.price | money }}</span>
-                    <span class="u11Light_v2">
-                      <i class="fa-solid fa-plus"></i>
-                    </span>
-                  </div>
-                  {{ prod.featured_image | image_url: width: 400 | image_tag }}
-                </div>
-              </div>
-            {% endif %}
-          {% endfor %}
-        </div>
-        <div class="items mb12 chord-accessories-1">
-          {% for prod in collections['chord-x-accessories'].products %}
-            {% if prod.available %}
-              {% assign variant = prod.variants | first %}
-              <div class="item" variant-id="{{ variant.id }}">
-                <div class="u11Medium_v2">{{ prod.title }}</div>
-                <div>
-                  <div>
-                    <span class="u17DemiBold_v2">{{ prod.price | money }}</span>
-                    <span class="u11Light_v2">
-                      <i class="fa-solid fa-plus"></i>
-                    </span>
-                  </div>
-                  {{ prod.featured_image | image_url: width: 400 | image_tag }}
-                </div>
-              </div>
-            {% endif %}
-          {% endfor %}
-        </div>
-      </div>
-      <div class="buttons">
-        <div
-          data-product-id="{{ product.id }}"
-          class="my-button my-button-black addToCartBtn"
-          onclick="addAllToCart('atc')"
-          id="addToCart"
-        >
-          <i class="fa fa-spinner fa-spin"></i
-          ><span data-pf-type="Text" class="addToCartText u17DemiBold_v2">Add to Cart</span>
-        </div>
-        <!--
-          <div onclick="testRideTrace('amazon', this)" class="orderTestRideBtn">
-            <img style="max-width: 50px;margin-right: 3%;" class="twoooo" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241101-174530.png?v=1730454586">
-            <span><span class="u17DemiBold_v2">Buy on Amazon</span></span>
-          </div>
-        -->
-        <div onclick="testRideTrace('klarna_check_out', this)" class="orderTestRideBtn">
-          <img
-            class="twoooo"
-            src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230530-121400.png?v=1685420054"
-            alt="klarna"
-          >
-          <span
-            ><span class="u17DemiBold_v2">0% APR</span
-            ><span
-              >24 months,
-              <span class="stages">{{ product.price | divided_by: 24 | money_without_trailing_zeros }}</span
-              >/month</span
-            ></span
-          >
-        </div>
-      </div>
-      <div class="delivery_time mb6">Free shipping <span>within 5 days</span></div>
-      <span class="mb12" style="line-height: 24px;">
-        Need help? Email
-        <a href="mailto:support@newurtopia.com" class="my-link">support@newurtopia.com</a>
-      </span>
-      <div class="support mb12">
-        <a href="#boxs3">
-          <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230621-005713.png?v=1687280264">
-          <span class="u11Medium_v2"
-            >150+ Spots<br>
-            of Service</span
-          >
-        </a>
-        <a href="/pages/shipping-and-return" target="_blank">
-          <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_17959_2x_cff00041-4dce-479b-b87d-55b1cb89cd7a.png?v=1687161086">
-          <span class="u11Medium_v2"
-            >14-Day<br>
-            Returns</span
-          >
-        </a>
-        <a href="/pages/warranty" target="_blank">
-          <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_17958_2x_1e776f09-0686-4672-a22f-b29d2df3898d.png?v=1687161098">
-          <span class="u11Medium_v2"
-            >2-Year<br>
-            Warranty</span
-          >
-        </a>
-      </div>
-      <div class="dialogs">
-        <div class="u17Medium_v2">
-          <span>Size & Fit</span>
-          <span>&gt;</span>
-        </div>
-        <div class="u17Medium_v2">
-          <span>Technical Specifications</span>
-          <span>&gt;</span>
-        </div>
-        <div class="u17Medium_v2">
-          <span>Support & Service</span>
-          <span>&gt;</span>
-        </div>
-        <div class="u17Medium_v2">
-          <span>FAQs</span>
-          <span>&gt;</span>
-        </div>
-      </div>
-    </form>
-  </div>
-</div>
 <div
   class="maksim-big-banner lozad"
   data-background-image="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23286_2x_96bb433e-b8f4-4f93-a765-376f6baaffaf.jpg?v=1699928706"
@@ -329,8 +16,8 @@
         broad applause such as the German Design Award.
       </div>
       <img
-        class="lozad"
-        data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231114-233206_2x_b057955c-2082-4a23-a9ea-daed62b2f13e.png?v=1700012494&width=200"
+        loading="lazy"
+        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231114-233206_2x_b057955c-2082-4a23-a9ea-daed62b2f13e.png?v=1700012494&width=200"
         alt=""
       >
     </div>
@@ -393,8 +80,8 @@
 <div class="gray-background-color boxs3645">
   <div class="centeral-content">
     <img
-      class="lozad"
-      data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18918_2x_1f5b481d-45bf-4f00-bdbf-860723102593.jpg?v=1699942828&width=800"
+      loading="lazy"
+      src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18918_2x_1f5b481d-45bf-4f00-bdbf-860723102593.jpg?v=1699942828&width=800"
       alt=""
     >
     <div>
@@ -420,8 +107,8 @@
       </div>
     </div>
     <img
-      class="lozad"
-      data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DSCF1992_2x_470c2e19-f48a-4f2c-af82-ec35889cd5f2.jpg?v=1699942729&width=800"
+      loading="lazy"
+      src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/DSCF1992_2x_470c2e19-f48a-4f2c-af82-ec35889cd5f2.jpg?v=1699942729&width=800"
       alt=""
     >
   </div>
@@ -432,16 +119,16 @@
     <div class="u36Medium_v2">Easy life , Easy go</div>
     <div class="u17Light_v2">
       <img
-        class="lozad"
-        data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18337_2x_9eb33291-ec3e-4492-ba99-2562cc1eccae.png?v=1699944156&width=50"
+        loading="lazy"
+        src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18337_2x_9eb33291-ec3e-4492-ba99-2562cc1eccae.png?v=1699944156&width=50"
         alt=""
       >
       <span>Finger-print unlock and GPS anti-theft provide unparalleled security for a carefree ride </span>
     </div>
     <div class="u17Light_v2">
       <img
-        class="lozad"
-        data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231115-093430.png?v=1700012088&width=50"
+        loading="lazy"
+        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231115-093430.png?v=1700012088&width=50"
         alt=""
       >
       <span
@@ -457,16 +144,16 @@
       <div class="u36Medium_v2">Be Yourself, Have Fun</div>
       <div class="u17Light_v2">
         <img
-          class="lozad"
-          data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18340_2x_c05ffbf0-9c05-4ef6-a375-ce54c68069df.png?v=1699946828&width=50"
+          loading="lazy"
+          src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18340_2x_c05ffbf0-9c05-4ef6-a375-ce54c68069df.png?v=1699946828&width=50"
           alt=""
         >
         <span>Smartbar plays your music like a musicbox. Let your rhythm resonate with Chord</span>
       </div>
       <div class="u17Light_v2">
         <img
-          class="lozad"
-          data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18342_2x_5ccf7f37-a1b9-4fe7-949e-52c71f08b44c.png?v=1699946832&width=50"
+          loading="lazy"
+          src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18342_2x_5ccf7f37-a1b9-4fe7-949e-52c71f08b44c.png?v=1699946832&width=50"
           alt=""
         >
         <span
@@ -475,8 +162,8 @@
         >
       </div>
       <img
-        class="lozad"
-        data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231115-093417.png?v=1700012084&width=300"
+        loading="lazy"
+        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231115-093417.png?v=1700012084&width=300"
         alt=""
       >
     </div>
@@ -510,351 +197,12 @@
       <a class="u20DemiBold_v2" href="/pages/care">Learn more</a>
     </div>
     <img
-      class="lozad"
-      data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230213-untitled-5440.jpg?v=1678012461"
+    loading="lazy"
+      src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230213-untitled-5440.jpg?v=1678012461"
       alt=""
     >
   </div>
 </div>
-
-<div class="top-fixed mobileHide">
-  <div class="centeral-content">
-    <span class="u20DemiBold_v2">{{ product.title }}</span>
-    <span class="flex-1"></span>
-    <div>
-      <span class="u17Light_v2"
-        ><span class="u20DemiBold_v2 emphasize" style="font-weight: 600;">{{ product.price | money }}</span>
-        {% unless product.compare_at_price == product.price %}
-          <span style="text-decoration: line-through;">{{ product.compare_at_price | money }}</span>
-        {% endunless -%}
-      </span>
-      <span class="u14Light_v2"
-        >or as low as {{ product.price | divided_by: 24 | money_without_trailing_zeros }}/Month</span
-      >
-    </div>
-    <a href="#product_form_{{ product.id }}" class="my-button my-button-origin">Order Now</a>
-  </div>
-</div>
-
-<div class="bottom-fixed pcHide">
-  <a href="#product_form_{{ product.id }}" class="my-button my-button-origin">Order Now</a>
-  <div>
-    <span class="u14Light_v2"
-      ><span class="emphasize" style="font-weight: 600;">{{ product.price | money }}</span>
-      {% unless product.compare_at_price == product.price %}
-        <span style="text-decoration: line-through;">{{ product.compare_at_price | money }}</span>
-      {% endunless -%}
-    </span>
-    <span class="u14Light_v2"
-      >or as low as {{ product.price | divided_by: 24 | money_without_trailing_zeros }}/Month</span
-    >
-  </div>
-</div>
-
-<script>
-  // 默认隐藏
-  $('.bottom-fixed').hide();
-  $('.top-fixed').hide();
-
-  ((awards = []) => {
-        if (!awards.length) {
-            return $('.adwarsssss').hide()
-        }
-
-        $('.adwarsssss').html(awards.map(a => `<img src="${a}"/>`).join('')).css('height', global_config.is_mobile ? '30px' : '50px')
-
-        if (global_config.is_pc) {
-            $('.product .centeral-content .featured_image').css('grid-template-rows', '865px')
-        }
-
-    })(global_config.chord_order_page_config.awards);
-    
-    const leftSwiper = new Swiper(".product .left-swiper", {
-        direction: 'vertical',
-        spaceBetween: 8,
-        slidesPerView: 8,
-        freeMode: true,
-        watchSlidesProgress: true,
-      })
-
-      const rightSwiper = new Swiper(".product .right-swiper", {
-        autoHeight: true,
-        navigation: {
-          nextEl: ".product .right-swiper .swiper-button-next",
-          prevEl: ".product .right-swiper .swiper-button-prev",
-        },
-        pagination: {el:'.swiper-pagination'},
-        effect: 'fade',
-        fadeEffect:{
-            crossFade: true
-        },
-        thumbs: {
-          swiper: leftSwiper,
-        },
-      });
-
-      
-      document.addEventListener('onChangeFrame', e => {
-        if (e.value === "High-Step") {
-              $(`.product .product-panel .accessories .chord-accessories-1 .active`).click()
-              $(`.product .product-panel .accessories .chord-accessories`).show()
-              $(`.product .product-panel .accessories .chord-accessories-1`).hide()
-              $(`.product .product-panel .options > div[option="Frame"] .u17DemiBold_v2 .u17Light_v2`).text(`Chord - ${global_config.chord_order_page_config.size_map[e.value]}`)
-      } else {
-            $(`.product .product-panel .accessories .chord-accessories .active`).click()
-            $(`.product .product-panel .accessories .chord-accessories`).hide()
-            $(`.product .product-panel .accessories .chord-accessories-1`).show()
-            $(`.product .product-panel .options > div[option="Frame"] .u17DemiBold_v2 .u17Light_v2`).text(`Chord X - ${global_config.chord_order_page_config.size_map[e.value]}`)
-      }
-
-            $(`.product .product-panel .accessories .items`).animate({
-                scrollLeft: 0
-            }, 300)
-      })
-
-
-      document.addEventListener('onChangeStyle', e => {
-        $(`.product .product-panel .options > div[option="Style"] .u17DemiBold_v2 .u17Light_v2`).text(e.value)
-      })
-
-      document.addEventListener('onChangeOptions', e => {
-        const swiper_arr = global_config.chord_order_page_config.product_images[e.value.Frame][e.value.Style].concat(global_config.chord_order_page_config.product_images[e.value.Frame]['commonSwiper'])
-
-            $('.product .right-swiper .swiper-wrapper').html(swiper_arr.map((s, i) => {
-                const index = i % 6
-
-                return `<div class="swiper-slide">
-                            <img src="${s}&width=700"/>
-                            <div>
-                                <span class="u20DemiBold_v2">${global_config.chord_order_page_config.product_media_images[index].text}</span>
-                                <img src="${global_config.chord_order_page_config.product_media_images[index].img}&width=350">
-                            </div>
-                    </div>`
-              }).join(''))
-            $('.product .left-swiper .swiper-wrapper').html(swiper_arr.map(s => `<div class="swiper-slide"><img src="${s}"></div>`).join(''))
-            
-            // update
-            asyncFn(() => {
-                rightSwiper.update()
-                rightSwiper.slideTo(0, 0)
-                
-                leftSwiper.update()
-                leftSwiper.slideTo(0, 0)
-            })
-
-            $('.product .delivery_time').html(global_config.chord_order_page_config.ebike_delivery_time[current_variant_id] || global_config.chord_order_page_config.ebike_default_delivery_time)
-
-            const btn =  $('.product .buttons .addToCartBtn')
-            if (current_variant.available) {
-                btn.find('span').text('Add to Cart')
-                btn.removeClass('disabled')
-                $('.product .buttons .orderTestRideBtn').show()
-            } else {
-                btn.find('span').text('Sold out')
-                btn.addClass('disabled')
-                $('.product .buttons .orderTestRideBtn').hide()
-            }
-      })
- 
-
-  
-
-
-    function changeAddToCartText (parse, step = 0) {
-        if (step) {
-            $(".addToCartBtn i").toggleClass("showi");
-            document.querySelector(".addToCartBtn span").innerHTML = "Adding...";
-        } else {
-            setTimeout(()=>{
-                $(".addToCartBtn i").toggleClass("showi");
-                document.querySelector(".addToCartBtn span").innerHTML = "Add to Cart";
-            }, 800)
-        }
-    }
-
-    
-
-
-    let id = 0;
-    let adding = false;
-    
-
-    function testRideTrace(type = '', target) {
-      // 如果已经有按钮 loading ,直接退出来
-      if (!type || $('.orderTestRideBtn').hasClass('loading')) {
-        return
-      }
-
-
-      if (type === 'amazon') {
-        fetchBuried('websiteclick', `chord-order-page`, { button: type  }, true)
-        return window.open(current_variant_options.Frame === 'High-Step' ? 'https://www.amazon.com/dp/B0D9YM6YG3' : 'https://www.amazon.com/dp/B0D9YPN1D9')
-      }
-    
-      const t = $(target)
-    
-      t.addClass('loading')
-      // 原本的html 存起来
-      const text = t.find('span').html()
-      const loading = '<i class="fa fa-spinner fa-spin"></i>Processing...'
-    
-      // loading
-      t.find('span').html(loading)
-    
-      fetchBuried('websiteclick', `chord-order-page`, { button: type }, true)
-      window.sessionStorage.clicked_klarna_checkout_button = 'clicked_klarna_checkout_button'
-    
-      setTimeout(() => {
-          t.removeClass('loading')
-          t.find('span').html(text)
-        }, 2000)
-      
-      return addAllToCart("atc", true)
-    }
-
-    function addAllToCart(parse, show = false) {
-       let cart1 = document.querySelector("cart-notification") || document.querySelector("cart-drawer");
-        const cartList = { items: [] }
-
-        if (adding == false) {
-          !show && changeAddToCartText(parse, 1);
-          adding = true;
-          
-          cartList.items.push({ id: current_variant_id, quantity: 1 });
-
-          if (cart1) {
-            var sections = cart1.getSectionsToRender().map((section) => section.id);
-            cartList.sections = sections.join(",");
-          }
-
-          // 新增普通配件
-        $('.product .accessories .items .active').each((i, item) => {
-          cartList.items.push({ 
-            id: $(item).attr('variant-id'), 
-            quantity: 1
-          })
-        })
-
-          fetch("/cart/add.js", {
-            method: "POST",
-            body: JSON.stringify(cartList),
-            headers: {
-              "Content-Type": "application/json",
-            },
-          })
-            .then((res) => res.json())
-            .then((res1) => {
-              res1.key = "";
-
-              cart1.classList.contains('is-empty') && cart1.classList.remove('is-empty');
-
-              if (!(res1.message && res1.status)) {
-                cart1.renderContents(res1);
-              }
-
-              !show && changeAddToCartText(parse, 0);
-            })
-            .catch((err) => {
-              !show && changeAddToCartText(parse, 0);
-              
-            }).finally(() => {
-              adding = false
-              !show && fetchBuried('websiteclick', `chord-order-page`, { button: 'ATC' })
-            })
-        }
-  }
-
-
-   
-
-    $('.accessories .navigate > div').on('click', e => {
-        const items1 = $('.product .accessories .chord-accessories')
-        const items2 = $('.product .accessories .chord-accessories-1')
-
-        items1.animate({
-            scrollLeft: items1.scrollLeft() + ($(e.target).hasClass('next') ? 180 : -180)
-        }, 300)
-
-        items2.animate({
-            scrollLeft: items2.scrollLeft() + ($(e.target).hasClass('next') ? 180 : -180)
-        }, 300)
-    })
-
-    $('.accessories .items .item').on('click', e => {
-        const item = $(e.target).closest('.item')
-        const icon = item.find('.u11Light_v2')
-
-        if (item.hasClass('active')) {
-            item.removeClass('active')
-            icon.html('<i class="fa-solid fa-plus"></i>')
-            
-        } else {
-            item.addClass('active')
-            icon.html('<i class="fa-solid fa-check"></i>')
-        }
-    })
-
-    $('.product .product-panel').on("submit", function (event) {
-
-        // 阻止默认行为
-        event.preventDefault();
-        return false;
-    })
-
-    $('.product .dialogs > div').on('click', e => {
-        const m = {
-            0: 'one',
-            1: 'two',
-            2: 'three',
-            3: 'four'
-        }
-
-        $('.product .dialogs > div').each((i, t) => {
-            if ($(e.target).closest('.u17Medium_v2')[0] === t) {
-                console.log(i)
-
-                const layer = document.querySelector(`.order-modal-${m[i]}`);
-                const laybox = document.querySelector(`.order-modal-layer-${m[i]}`);
-                layer.style.display = "flex";
-                laybox.className += " dialog-open";
-            }
-        })
-    })
-
-    let currnetScroolTop = 0
-    $(document).on('scroll', throttle(e => {
-        const top1 = $('.maksim-big-banner').offset().top
-        const top3 = $('.product .addToCartBtn').offset().top
-        const top2 = $(e.target).scrollTop()
-
-        const h = window.screen.height
-
-        if (global_config.is_mobile) {
-            if (top2 > top3) {
-                $('.bottom-fixed').show()
-            } else {
-                $('.bottom-fixed').hide()
-            }
-        } else {
-            if (top2 > top1) {
-                $('.top-fixed').show()
-            } else {
-                $('.top-fixed').hide()
-            }
-
-            if (currnetScroolTop > top2) {
-                $('.top-fixed').hide()
-            }
-
-            currnetScroolTop = top2
-        }
-
-    }, 300, 100))
-</script>
-{% render 'product-options', config_name: 'chord_order_page_config' %}
-
-{% render 'chord-size-and-specs' %}
-
 <div class="assembly">
   <div class="centeral-content" style="box-sizing: content-box;">
     <div class="gray-background-color">
@@ -873,33 +221,12 @@
   </div>
 </div>
 
+{% render 'size-guide-and-specs-template', config: 'chord_order_page_config' %}
 <div class="centeral-content">
   {% include 'judgeme_widgets', widget_type: 'judgeme_review_widget', concierge_install: false %}
 </div>
-{% render 'chord-extra-code' %}
 
-<script>
-  global_config.is_mobile && new Swiper('.mediaaaaa .centeral-content', {
-        autoplay: {
-            disableOnInteraction: false,
-            pauseOnMouseEnter: false,
-            delay: 5000,
-        },
-        loop: true,
-        effect: 'fade',
-        fadeEffect: {
-            crossFade: true
-        },
-        pagination: { el: '.mediaaaaa .swiper-pagination' },
-        speed: 300
-    })
-
-    setTimeout(() => {
-        $('.size-and-specs .switch .switch-radio input[type="radio"]')[0].click()
-    }, 500);
-</script>
-
-<script>
+<script type="module">
   const swiperrrrr = new Swiper('.swiperrrrr .centeral-content > div:first-child', {
       loop: true,
       speed: 1000,
