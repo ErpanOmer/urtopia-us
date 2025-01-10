@@ -582,7 +582,7 @@
   </div>
 </div>
 
-<script>
+<script type="module">
     new Swiper(".swiperrrr .top", {
       spaceBetween: 10,
       thumbs: global_config.is_mobile
@@ -614,10 +614,25 @@
       draggable: true,
     },
   });
-</script>
 
-<script>
-    $('.product-card .dots > div').on('click', e => {
+   new Swiper('.test-ride .centeral-content', {
+          slidesPerView: global_config.is_mobile ? 1.35 : 4.5,
+          spaceBetween: 20,
+          navigation: {
+          nextEl: '.test-ride .centeral-content .swiper-button-next',
+          prevEl: '.test-ride .centeral-content .swiper-button-prev',
+          },
+          scrollbar: {
+              el: '.test-ride .centeral-content .swiper-scrollbar',
+              draggable: true,
+          },
+     });
+
+     $('.test-ride .centeral-content .swiper-slide').on('click', function () {
+        window.open($(this).attr('data-url'))
+     })
+
+   $('.product-card .dots > div').on('click', e => {
         const target = $(e.target)
         const product_card = target.closest('.product-card')
 
@@ -655,22 +670,4 @@
             }
         })
     })
-</script>
-<script>
-  new Swiper('.test-ride .centeral-content', {
-          slidesPerView: global_config.is_mobile ? 1.35 : 4.5,
-          spaceBetween: 20,
-          navigation: {
-          nextEl: '.test-ride .centeral-content .swiper-button-next',
-          prevEl: '.test-ride .centeral-content .swiper-button-prev',
-          },
-          scrollbar: {
-              el: '.test-ride .centeral-content .swiper-scrollbar',
-              draggable: true,
-          },
-     });
-
-     $('.test-ride .centeral-content .swiper-slide').on('click', function () {
-        window.open($(this).attr('data-url'))
-     })
 </script>

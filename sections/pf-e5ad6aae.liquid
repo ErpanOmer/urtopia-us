@@ -390,7 +390,7 @@
                 {% endfor %}
               </div>
             </div>
-            <div class="error-tip u14Medium_v2" style="color:red;">Your order quantity has reached our stock limit</div>
+            <div class="error-tip u14Medium_v2 er-hidden" style="color:red;">Your order quantity has reached our stock limit</div>
             <div class="buttons">
               <div
                 data-product-id="{{ product.id }}"
@@ -1369,7 +1369,7 @@
   </div>
 </div>
 
-<div class="top-fixed mobileHide">
+<div class="top-fixed mobileHide er-hidden">
   <div class="centeral-content">
     <span class="u20DemiBold_v2">{{ product.title }}</span>
     <span class="flex-1"></span>
@@ -1388,7 +1388,7 @@
   </div>
 </div>
 
-<div class="bottom-fixed pcHide">
+<div class="bottom-fixed pcHide er-hidden">
   <a href="#product_form_{{ product.id }}" class="my-button my-button-origin">Order Now</a>
   <div>
     <span class="u14Light_v2"
@@ -1403,105 +1403,7 @@
   </div>
 </div>
 
-<script>
-  // 默认隐藏
-  $('.bottom-fixed').hide()
-  $('.top-fixed').hide()
-  $('.product .error-tip').hide()
-  
-  const leftSwiper = new Swiper(".product .left-swiper", {
-      direction: 'vertical',
-      spaceBetween: 8,
-      slidesPerView: 8,
-      freeMode: true,
-      watchSlidesProgress: true,
-    })
-
-    const rightSwiper = new Swiper(".product .right-swiper", {
-      autoHeight: true,
-      navigation: {
-        nextEl: ".product .right-swiper .swiper-button-next",
-        prevEl: ".product .right-swiper .swiper-button-prev",
-      },
-      pagination: {el:'.swiper-pagination'},
-      effect: 'fade',
-      fadeEffect:{
-          crossFade: true
-      },
-      thumbs: {
-        swiper: leftSwiper,
-      },
-    });
-
-
-  document.addEventListener('onChangeModel', e => {
-        $(`.product .product-panel .options > div[option="Model"] .u17DemiBold_v2 .u17Light_v2`).text(`Urtopia Carbon ${e.value.includes('350W') ? '1s' : '1'}`)
-  })
-
-  document.addEventListener('onChangeStyle', e => {
-        $(`.product .product-panel .options > div[option="Style"] .u17DemiBold_v2 .u17Light_v2`).text(e.value)
-  })
-
-  document.addEventListener('onChangeSize', e => {
-        $(`.product .product-panel .options > div[option="Size"] .u17DemiBold_v2 .u17Light_v2`).text(global_config.carbon_order_page_config.size_map[e.value])
-  })
-
-  document.addEventListener('onChangeOptions', e => {
-          let swiper_arr = []
-          swiper_arr = swiper_arr.concat(global_config.carbon_order_page_config.product_images[e.value.Model][e.value.Style], global_config.carbon_order_page_config.product_images[e.value.Model]['commonSwiper'])
-
-          $('.product .right-swiper .swiper-wrapper').html(swiper_arr.map((s, i) => {
-              const index = i % 5
-
-              return  `<div class="swiper-slide">
-                          <img src="${s}">
-                          <div>
-                              <span class="u20DemiBold_v2">${global_config.carbon_order_page_config.product_media_images[index].text}</span>
-                              <img src="${global_config.carbon_order_page_config.product_media_images[index].img}">
-                          </div>
-                      </div>`
-            }).join(''))
-          $('.product .left-swiper .swiper-wrapper').html(swiper_arr.map(s => `<div class="swiper-slide"><img src="${s}"></div>`).join(''))
-          
-          // update
-          setTimeout(() => {
-              rightSwiper.update()
-              rightSwiper.slideTo(0, 0)
-              
-              leftSwiper.update()
-              leftSwiper.slideTo(0, 0)
-          }, 0)
-
-
-      $('.product .delivery_time').html(global_config.carbon_order_page_config.ebike_delivery_time[current_variant_id] || global_config.carbon_order_page_config.ebike_default_delivery_time)
-
-      const btn =  $('.product .buttons .addToCartBtn')
-      if (current_variant.available) {
-          btn.find('span').text('Add to Cart')
-          btn.removeClass('disabled')
-          $('.product .buttons .orderTestRideBtn').show()
-          $('.product .buttons div[onclick="buynow(this)"]').show()
-      } else {
-          btn.find('span').text('Sold out')
-          btn.addClass('disabled')
-          $('.product .buttons .orderTestRideBtn').hide()
-          $('.product .buttons div[onclick="buynow(this)"]').hide()
-      }
-
-      $('.product .error-tip').hide()
-
-      $('.product .commonComponent > .u30DemiBold_v2').text(getPriceFormat(e.value.price)).attr('data-price', getPriceFormat(e.value.compare_at_price))
-      $('.product .buttons .orderTestRideBtn .stages').text(getPriceFormat(e.value.price / 24))
-      $('.top-fixed .u17Light_v2 .u20DemiBold_v2').text(getPriceFormat(e.value.price))
-      $('.top-fixed .u17Light_v2 > span:not(.u20DemiBold_v2)').text(getPriceFormat(e.value.compare_at_price))
-      $('.top-fixed .u14Light_v2 .stages').text(getPriceFormat(e.value.price / 24))
-
-      $('.bottom-fixed .u14Light_v2 .emphasize').text(getPriceFormat(e.value.price))
-      $('.bottom-fixed .u14Light_v2 > span:not(.emphasize)').text(getPriceFormat(e.value.compare_at_price))
-      $('.bottom-fixed .u14Light_v2 .stages').text(getPriceFormat(e.value.price / 24))
-  })
-
-
+<script>  
   function changeAddToCartText (parse, step = 0) {
       if (step) {
           $(".addToCartBtn i").toggleClass("showi");
@@ -1650,6 +1552,11 @@ function addAllToCart(parse, show = false) {
   }
 }
 
+</script>
+{% render 'product-options', config_name: 'carbon_order_page_config' %}
+
+<script type="module">
+  
   $('.product .product-panel .accessories .navigate > div').on('click', e => {
       const items = $('.product .product-panel .accessories .items')
 
@@ -1727,11 +1634,98 @@ function addAllToCart(parse, show = false) {
 
           currnetScroolTop = top2
       }
-  }, 300, 100))
-</script>
-{% render 'product-options', config_name: 'carbon_order_page_config' %}
+  }, 300, 100));
+    window.leftSwiper = new Swiper(".product .left-swiper", {
+      direction: 'vertical',
+      spaceBetween: 8,
+      slidesPerView: 8,
+      freeMode: true,
+      watchSlidesProgress: true,
+    })
 
-<script>
+    window.rightSwiper = new Swiper(".product .right-swiper", {
+      autoHeight: true,
+      navigation: {
+        nextEl: ".product .right-swiper .swiper-button-next",
+        prevEl: ".product .right-swiper .swiper-button-prev",
+      },
+      pagination: {el:'.swiper-pagination'},
+      effect: 'fade',
+      fadeEffect:{
+          crossFade: true
+      },
+      thumbs: {
+        swiper: window.leftSwiper,
+      },
+    });
+
+
+  document.addEventListener('onChangeModel', e => {
+        $(`.product .product-panel .options > div[option="Model"] .u17DemiBold_v2 .u17Light_v2`).text(`Urtopia Carbon ${e.value.includes('350W') ? '1s' : '1'}`)
+  })
+
+  document.addEventListener('onChangeStyle', e => {
+        $(`.product .product-panel .options > div[option="Style"] .u17DemiBold_v2 .u17Light_v2`).text(e.value)
+  })
+
+  document.addEventListener('onChangeSize', e => {
+        $(`.product .product-panel .options > div[option="Size"] .u17DemiBold_v2 .u17Light_v2`).text(global_config.carbon_order_page_config.size_map[e.value])
+  })
+
+  document.addEventListener('onChangeOptions', e => {
+          let swiper_arr = []
+          swiper_arr = swiper_arr.concat(global_config.carbon_order_page_config.product_images[e.value.Model][e.value.Style], global_config.carbon_order_page_config.product_images[e.value.Model]['commonSwiper'])
+
+          $('.product .right-swiper .swiper-wrapper').html(swiper_arr.map((s, i) => {
+              const index = i % 5
+
+              return  `<div class="swiper-slide">
+                          <img src="${s}">
+                          <div>
+                              <span class="u20DemiBold_v2">${global_config.carbon_order_page_config.product_media_images[index].text}</span>
+                              <img src="${global_config.carbon_order_page_config.product_media_images[index].img}">
+                          </div>
+                      </div>`
+            }).join(''))
+          $('.product .left-swiper .swiper-wrapper').html(swiper_arr.map(s => `<div class="swiper-slide"><img src="${s}"></div>`).join(''))
+          
+          // update
+          setTimeout(() => {
+              window.rightSwiper.update()
+              window.rightSwiper.slideTo(0, 0)
+              
+              window.leftSwiper.update()
+              window.leftSwiper.slideTo(0, 0)
+          }, 0)
+
+
+      $('.product .delivery_time').html(global_config.carbon_order_page_config.ebike_delivery_time[current_variant_id] || global_config.carbon_order_page_config.ebike_default_delivery_time)
+
+      const btn =  $('.product .buttons .addToCartBtn')
+      if (current_variant.available) {
+          btn.find('span').text('Add to Cart')
+          btn.removeClass('disabled')
+          $('.product .buttons .orderTestRideBtn').show()
+          $('.product .buttons div[onclick="buynow(this)"]').show()
+      } else {
+          btn.find('span').text('Sold out')
+          btn.addClass('disabled')
+          $('.product .buttons .orderTestRideBtn').hide()
+          $('.product .buttons div[onclick="buynow(this)"]').hide()
+      }
+
+      $('.product .error-tip').hide()
+
+      $('.product .commonComponent > .u30DemiBold_v2').text(getPriceFormat(e.value.price)).attr('data-price', getPriceFormat(e.value.compare_at_price))
+      $('.product .buttons .orderTestRideBtn .stages').text(getPriceFormat(e.value.price / 24))
+      $('.top-fixed .u17Light_v2 .u20DemiBold_v2').text(getPriceFormat(e.value.price))
+      $('.top-fixed .u17Light_v2 > span:not(.u20DemiBold_v2)').text(getPriceFormat(e.value.compare_at_price))
+      $('.top-fixed .u14Light_v2 .stages').text(getPriceFormat(e.value.price / 24))
+
+      $('.bottom-fixed .u14Light_v2 .emphasize').text(getPriceFormat(e.value.price))
+      $('.bottom-fixed .u14Light_v2 > span:not(.emphasize)').text(getPriceFormat(e.value.compare_at_price))
+      $('.bottom-fixed .u14Light_v2 .stages').text(getPriceFormat(e.value.price / 24))
+  });
   document.body.clientWidth < 768 && new Swiper ('.mediaaaaa', {
   	autoplay: {
   		disableOnInteraction: false,
@@ -1748,7 +1742,7 @@ function addAllToCart(parse, show = false) {
     })
 </script>
 
-<script>
+<script type="module">
   let slideNo = 0;
   var swiperSectionWorld = new Swiper("#world-swiper", {
     autoplay: {
@@ -1866,7 +1860,7 @@ function addAllToCart(parse, show = false) {
   }
 </script>
 
-<script>
+<script  type="module">
   (function() {
     var a = document.createElement("script");
     a.type = "text/javascript";
@@ -1902,7 +1896,7 @@ function addAllToCart(parse, show = false) {
 
 {% render 'carbon-one-extra-code' %}
 
-<script>
+<script type="module">
   $('.emaillllllllllllll').on('submit', function (event) {
         $(this).find('.u17DemiBold_v2').hide()
         fetchBuried('emailpop', 'submit', { email: $(this).find('input').val(), tag: `US,outlet-order-page` }).finally(() => $(this).find('.u17DemiBold_v2').show())

@@ -985,7 +985,7 @@
 	</div>
   </div>
 
-  <script>
+  <script type="module">
 	$('.sizefit-switch .switch-radio input').on('change', e => {
 		console.log(e.target.id)
 
@@ -993,6 +993,26 @@
 		$(`.order-layer-body #carbon-${e.target.id}`).show()
 	})
 
+	
+  
+	  $('.faq-title').click(function () {
+		$(this)
+		  .siblings('.faq-content')
+		  .slideToggle()
+		  .parent()
+		  .siblings()
+		  .find('.faq-content')
+		  .slideUp();
+		$(this).children('i').toggleClass('faq-content-plus');
+		$(this)
+		  .parent()
+		  .siblings()
+		  .find('.faq-title')
+		  .children('i')
+		  .addClass('faq-content-plus');
+	  });
+  </script>
+	  <script>
 	function onCloseOrderLayer() {
 		let arr = ["order-modal-one", "order-modal-two", "order-modal-three", "order-modal-four"];
 		let arr2 = [
@@ -1021,50 +1041,4 @@
 		  }
 		});
 	  }
-  
-	  $('.faq-title').click(function () {
-		$(this)
-		  .siblings('.faq-content')
-		  .slideToggle()
-		  .parent()
-		  .siblings()
-		  .find('.faq-content')
-		  .slideUp();
-		$(this).children('i').toggleClass('faq-content-plus');
-		$(this)
-		  .parent()
-		  .siblings()
-		  .find('.faq-title')
-		  .children('i')
-		  .addClass('faq-content-plus');
-	  });
   </script>
-  {% if template == "product.pf-b10ddb73" %}
-	  <script>
-	document.getElementById("sizefit-btn").onclick = function () {
-		const layer = document.querySelector(".order-modal-one");
-		const laybox = document.querySelector(".order-modal-layer-one");
-		layer.style.display = "flex";
-		laybox.className += " dialog-open";
-	  };
-	document.getElementById("tspec-btn").onclick = function () {
-		const layer = document.querySelector(".order-modal-two");
-		const laybox = document.querySelector(".order-modal-layer-two");
-		layer.style.display = "flex";
-		laybox.className += " dialog-open";
-	  };
-	document.getElementById("ucare-btn").onclick = function () {
-		const layer = document.querySelector(".order-modal-three");
-		const laybox = document.querySelector(".order-modal-layer-three");
-		layer.style.display = "flex";
-		laybox.className += " dialog-open";
-	  };
-  
-	  document.getElementById("faqs-btn").onclick = function () {
-		const layer = document.querySelector(".order-modal-four");
-		const laybox = document.querySelector(".order-modal-layer-four");
-		layer.style.display = "flex";
-		laybox.className += " dialog-open";
-	  };
-  </script>
-  {% endif %}

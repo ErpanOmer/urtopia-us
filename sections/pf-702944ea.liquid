@@ -586,22 +586,7 @@
 <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2.0.3-ScrollMagic.min.js?v=1663912592"></script>
 <script src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2.0.3-animation.gsap.js?v=1663912682"></script>
 <script>
-    $('.bikes .dots > div').on('click', e => {
-        const t = $(e.target)
-        const parent = $(e.target.parentNode.parentNode)
 
-        const img_src = t.attr('img-src')
-        const variant_id = t.attr('variant-id')
-
-        // 重置active
-        parent.find('.dots > div').removeClass('active')
-        $('.bikes .dots > div')
-        // 再设置active
-        t.addClass('active')
-
-        parent.find('img').attr('src', img_src)
-        parent.find('a').attr('href', `/products/urtopia-chord-ebike?variant=${variant_id}`)
-    })
 
     const controller = new ScrollMagic.Controller();
 
@@ -875,17 +860,19 @@
 
 
 
-    $(".topbar .centeral-content .pcHide").click(function (e) {
+   
+</script>
+
+<script type="module">
+   $(".topbar .centeral-content .pcHide").click(function (e) {
         const t = $('.topbar .dropdown')
         const isShow = t.is(':visible')
 
         $(".topbar .centeral-content .pcHide").css('rotate', isShow ? '0deg' : '180deg')
         t.slideToggle()
     })
-</script>
-
-<script>
-  let scrollAction = { x: 'undefined', y: 'undefined' }
+  
+    let scrollAction = { x: 'undefined', y: 'undefined' }
   let scrollDirection = ''
 
 function scrollFunc() {
@@ -944,9 +931,7 @@ if (!global_config.is_mobile && global_config.is_pc) {
       } catch (error) {}
     }, 30);
 }
-</script>
-
-<script>
+  
   $('[action_type]').on('click', e => {
         const action_type = $(e.target).closest('[action_type]').attr('action_type')
       fetchBuried('websiteclick', 'chord-ebikepage', {
@@ -955,4 +940,21 @@ if (!global_config.is_mobile && global_config.is_pc) {
         button: action_type
       }, true)
   })
+
+      $('.bikes .dots > div').on('click', e => {
+        const t = $(e.target)
+        const parent = $(e.target.parentNode.parentNode)
+
+        const img_src = t.attr('img-src')
+        const variant_id = t.attr('variant-id')
+
+        // 重置active
+        parent.find('.dots > div').removeClass('active')
+        $('.bikes .dots > div')
+        // 再设置active
+        t.addClass('active')
+
+        parent.find('img').attr('src', img_src)
+        parent.find('a').attr('href', `/products/urtopia-chord-ebike?variant=${variant_id}`)
+    })
 </script>
