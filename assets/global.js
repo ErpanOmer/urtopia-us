@@ -1840,3 +1840,94 @@ class LocalizationForm extends HTMLElement {
 }
 
 customElements.define('localization-form', LocalizationForm);
+
+
+class StickyHeader extends HTMLElement {
+  constructor() {
+      super()
+  }
+  connectedCallback() {
+      this.header = document.getElementById("shopify-section-header"),
+      this.headerBounds = {},
+      this.currentScrollTop = 0,
+      this.preventReveal = !1,
+      this.predictiveSearch = this.querySelector("predictive-search"),
+      this.hideHeaderOnScrollUp = () => this.preventReveal = !0,
+      this.createObserver(),
+      this.header.classList.add("shopify-section-header-sticky")
+  }
+  disconnectedCallback() {
+      this.removeEventListener("preventHeaderReveal", this.hideHeaderOnScrollUp),
+      window.removeEventListener("scroll", this.onScrollHandler)
+  }
+  createObserver() {
+      new IntersectionObserver( (entries, observer2) => {
+          this.headerBounds = entries[0].intersectionRect,
+          observer2.disconnect()
+      }
+      ).observe(this.header)
+  }
+  onScroll() {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      if (!(this.predictiveSearch && this.predictiveSearch.isOpen)) {
+          if (scrollTop > this.currentScrollTop && scrollTop > this.headerBounds.bottom) {
+              if (this.preventHide)
+                  return;
+              requestAnimationFrame(this.hide.bind(this))
+          } else
+              scrollTop < this.currentScrollTop && scrollTop > this.headerBounds.bottom ? this.preventReveal ? (window.clearTimeout(this.isScrolling),
+              this.isScrolling = setTimeout( () => {
+                  this.preventReveal = !1
+              }
+              , 66),
+              requestAnimationFrame(this.hide.bind(this))) : requestAnimationFrame(this.reveal.bind(this)) : scrollTop <= this.headerBounds.top && requestAnimationFrame(this.reset.bind(this));
+          this.currentScrollTop = scrollTop
+      }
+  }
+  hide() {
+      this.header.classList.add("shopify-section-header-hidden", "shopify-section-header-sticky"),
+      this.closeMenuDisclosure(),
+      this.closeSearchModal()
+  }
+  reveal() {
+      this.header.classList.add("shopify-section-header-sticky", "animate"),
+      this.header.classList.remove("shopify-section-header-hidden")
+  }
+  reset() {
+      this.header.classList.remove("shopify-section-header-hidden", "shopify-section-header-sticky", "animate")
+  }
+  closeMenuDisclosure() {
+      this.disclosures = this.disclosures || this.header.querySelectorAll("header-menu"),
+      this.disclosures.forEach(disclosure => disclosure.close())
+  }
+  closeSearchModal() {
+      this.searchModal = this.searchModal || this.header.querySelector("details-modal"),
+      this.searchModal.close(!1)
+  }
+};
+customElements.define("sticky-header", StickyHeader);
+
+class ProductRecommendations extends HTMLElement {
+  constructor() {
+      super();
+      const handleIntersection = (entries, observer) => {
+          entries[0].isIntersecting && (observer.unobserve(this),
+          fetch(this.dataset.url).then(response => response.text()).then(text => {
+              const html = document.createElement("div");
+              html.innerHTML = text;
+              const recommendations = html.querySelector("product-recommendations");
+              recommendations && recommendations.innerHTML.trim().length && (this.innerHTML = recommendations.innerHTML),
+              html.querySelector(".grid__item") && this.classList.add("product-recommendations--loaded")
+          }
+          ).catch(e => {
+              console.error(e)
+          }
+          ))
+      }
+      ;
+      new IntersectionObserver(handleIntersection.bind(this),{
+          rootMargin: "0px 0px 200px 0px"
+      }).observe(this)
+  }
+};
+customElements.define("product-recommendations", ProductRecommendations);

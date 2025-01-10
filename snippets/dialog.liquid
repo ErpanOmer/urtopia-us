@@ -521,6 +521,13 @@ window.addEventListener('load', () => {
       
       document.head.appendChild(script);
     }
+
+    $('script[type="text/lazyload"]').each(function () {
+        console.log(document.readyState === 'complete')
+        this.type = "text/javascript";
+        this.src = this.src;
+        this.async = false;
+    })
 });
 </script>
 <script type="module">
