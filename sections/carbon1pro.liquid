@@ -462,8 +462,12 @@
             // height: '100%',
             ease: "power1.out", // 缓动效果
         });
-    } else {
-      new Swiper('#MainContent .mediaaaaa .centeral-content', {
+    }
+  </script>
+  
+<script type="module">
+    if (global_config.is_mobile) {
+        new Swiper('#MainContent .mediaaaaa .centeral-content', {
             autoplay: {
                 disableOnInteraction: false,
                 pauseOnMouseEnter: false,
@@ -479,16 +483,16 @@
         });
     }
 
-    new Swiper('#MainContent .conquer .q', {
+     new Swiper('#MainContent .conquer .q', {
             pagination: {
                 el: '#MainContent .conquer .q .swiper-pagination',
                 clickable: true,
                 renderBullet: function (index, className) {
                     switch (index) {
-                        case 0: return `<div class="${className}"><img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240826-181159.png?v=1724667176"/><span class="flex-1"></span><span class="u17Medium_v2">Field Trip</span></div>`;
-                        case 1: return `<div class="${className}"><img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240826-181211.png?v=1724667175"/><span class="flex-1"><span class="u17Medium_v2">Off Road</span></div>`;
-                        case 2: return `<div class="${className}"><img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240826-181220.png?v=1724667176"/><span class="flex-1"><span class="u17Medium_v2">City Ride</span></div>`;
-                        case 3: return `<div class="${className}"><img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240826-181227.png?v=1724667175"/><span class="flex-1"><span class="u17Medium_v2">Trail Ride</span></div>`;
+                        case 0: return `<div class="${className}"><img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240826-181159.png?v=1724667176"/><span class="flex-1"></span><span class="u17Medium_v2">Field Trip</span></div>`;
+                        case 1: return `<div class="${className}"><img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240826-181211.png?v=1724667175"/><span class="flex-1"><span class="u17Medium_v2">Off Road</span></div>`;
+                        case 2: return `<div class="${className}"><img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240826-181220.png?v=1724667176"/><span class="flex-1"><span class="u17Medium_v2">City Ride</span></div>`;
+                        case 3: return `<div class="${className}"><img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240826-181227.png?v=1724667175"/><span class="flex-1"><span class="u17Medium_v2">Trail Ride</span></div>`;
                     }
                 }
             },
@@ -497,9 +501,6 @@
             grabCursor: true
         });
 
-  </script>
-  
-<script>
     let scrollAction = { x: 'undefined', y: 'undefined' }
   let scrollDirection = ''
 

@@ -174,17 +174,6 @@
     asyncFn(batchChange, options, position)
   }
 
-  $('.product-panel .options .option >div:not(.u17DemiBold_v2) > div').on('click',e => {
-    const target = $(e.target)
-    const options = titleToOptions(current_variant.title)
-    const value = target.closest('div[attribute]').attr('attribute')
-    const position = Number(target.closest('.option').attr('position'))
-
-    options[position - 1] = value
-
-    asyncFn(changeOptions, options, position)
-  })
-
   function pageInit() {
       const variant_id = search.variant || global_config.{{ config_name }}.default_variant
       let find = findVariantFromId(variant_id)
@@ -199,7 +188,19 @@
    console.log(options_with_values)
    console.log(variants)
    console.log(options_tree)
+</script>
+<script type="module">
+// 页面初始化
+pageInit()
 
-    // 页面初始化
-    pageInit()
+$('.product-panel .options .option >div:not(.u17DemiBold_v2) > div').on('click',e => {
+    const target = $(e.target)
+    const options = titleToOptions(current_variant.title)
+    const value = target.closest('div[attribute]').attr('attribute')
+    const position = Number(target.closest('.option').attr('position'))
+
+    options[position - 1] = value
+
+    asyncFn(changeOptions, options, position)
+  })
 </script>

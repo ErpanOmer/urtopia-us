@@ -6,7 +6,10 @@
   "store": "urtopia.myshopify.com",
   "type": "module",
   "scripts": {
-    "dev": "theme watch --password=shptka_dab499d4c49564633f7e939fd532c667 --store=urtopia.myshopify.com --themeid=136550744312",
+    "css": "npx tailwindcss -o ./assets/tailwind.css",
+    "watch-css": "npx tailwindcss -o ./assets/tailwind.css --watch",
+    "dev": "run-p watch-css theme-dev",
+    "theme-dev": "theme watch --password=shptka_dab499d4c49564633f7e939fd532c667 --store=urtopia.myshopify.com --themeid=136550744312",
     "pull": "theme get --password=shptka_dab499d4c49564633f7e939fd532c667 --store=urtopia.myshopify.com --live",
     "list": "theme get --password=shptka_dab499d4c49564633f7e939fd532c667 --store=urtopia.myshopify.com --list",
     "push": "git push origin master -f",
@@ -22,5 +25,12 @@
   "bugs": {
     "url": "https://github.com/ErpanOmer/urtopia-us/issues"
   },
-  "homepage": "https://github.com/ErpanOmer/urtopia-us#readme"
+  "homepage": "https://github.com/ErpanOmer/urtopia-us#readme",
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.16",
+    "autoprefixer": "^10.4.20",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17"
+  }
 }

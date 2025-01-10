@@ -10,7 +10,7 @@ document.querySelectorAll('[id^="Details-"] summary').forEach((summary) => {
   summary.setAttribute('role', 'button');
   summary.setAttribute('aria-expanded', summary.parentNode.hasAttribute('open'));
 
-  if(summary.nextElementSibling.getAttribute('id')) {
+  if (summary.nextElementSibling.getAttribute('id')) {
     summary.setAttribute('aria-controls', summary.nextElementSibling.id);
   }
 
@@ -42,11 +42,11 @@ function trapFocus(container, elementToFocus = container) {
     document.addEventListener('keydown', trapFocusHandlers.keydown);
   };
 
-  trapFocusHandlers.focusout = function() {
+  trapFocusHandlers.focusout = function () {
     document.removeEventListener('keydown', trapFocusHandlers.keydown);
   };
 
-  trapFocusHandlers.keydown = function(event) {
+  trapFocusHandlers.keydown = function (event) {
     if (event.code.toUpperCase() !== 'TAB') return; // If not TAB key
     // On the last focusable element and tab forward, focus the first element.
     if (event.target === last && !event.shiftKey) {
@@ -73,7 +73,7 @@ function trapFocus(container, elementToFocus = container) {
 // Here run the querySelector to figure out if the browser supports :focus-visible or not and run code based on it.
 try {
   document.querySelector(":focus-visible");
-} catch(e) {
+} catch (e) {
   focusVisiblePolyfill();
 }
 
@@ -83,7 +83,7 @@ function focusVisiblePolyfill() {
   let mouseClick = null;
 
   window.addEventListener('keydown', (event) => {
-    if(navKeys.includes(event.code.toUpperCase())) {
+    if (navKeys.includes(event.code.toUpperCase())) {
       mouseClick = false;
     }
   });
@@ -140,7 +140,9 @@ class QuantityInput extends HTMLElement {
   constructor() {
     super();
     this.input = this.querySelector('input');
-    this.changeEvent = new Event('change', { bubbles: true })
+    this.changeEvent = new Event('change', {
+      bubbles: true
+    })
 
     this.querySelectorAll('button').forEach(
       (button) => button.addEventListener('click', this.onButtonClick.bind(this))
@@ -169,7 +171,10 @@ function debounce(fn, wait) {
 function fetchConfig(type = 'json') {
   return {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'Accept': `application/${type}` }
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': `application/${type}`
+    }
   };
 }
 
@@ -181,13 +186,13 @@ if ((typeof window.Shopify) == 'undefined') {
   window.Shopify = {};
 }
 
-Shopify.bind = function(fn, scope) {
-  return function() {
+Shopify.bind = function (fn, scope) {
+  return function () {
     return fn.apply(scope, arguments);
   }
 };
 
-Shopify.setSelectorByValue = function(selector, value) {
+Shopify.setSelectorByValue = function (selector, value) {
   for (var i = 0, count = selector.options.length; i < count; i++) {
     var option = selector.options[i];
     if (value == option.value || value == option.innerHTML) {
@@ -197,11 +202,11 @@ Shopify.setSelectorByValue = function(selector, value) {
   }
 };
 
-Shopify.addListener = function(target, eventName, callback) {
-  target.addEventListener ? target.addEventListener(eventName, callback, false) : target.attachEvent('on'+eventName, callback);
+Shopify.addListener = function (target, eventName, callback) {
+  target.addEventListener ? target.addEventListener(eventName, callback, false) : target.attachEvent('on' + eventName, callback);
 };
 
-Shopify.postLink = function(path, options) {
+Shopify.postLink = function (path, options) {
   options = options || {};
   var method = options['method'] || 'post';
   var params = options['parameters'] || {};
@@ -210,7 +215,7 @@ Shopify.postLink = function(path, options) {
   form.setAttribute("method", method);
   form.setAttribute("action", path);
 
-  for(var key in params) {
+  for (var key in params) {
     var hiddenField = document.createElement("input");
     hiddenField.setAttribute("type", "hidden");
     hiddenField.setAttribute("name", key);
@@ -222,34 +227,34 @@ Shopify.postLink = function(path, options) {
   document.body.removeChild(form);
 };
 
-Shopify.CountryProvinceSelector = function(country_domid, province_domid, options) {
-  this.countryEl         = document.getElementById(country_domid);
-  this.provinceEl        = document.getElementById(province_domid);
+Shopify.CountryProvinceSelector = function (country_domid, province_domid, options) {
+  this.countryEl = document.getElementById(country_domid);
+  this.provinceEl = document.getElementById(province_domid);
   this.provinceContainer = document.getElementById(options['hideElement'] || province_domid);
 
-  Shopify.addListener(this.countryEl, 'change', Shopify.bind(this.countryHandler,this));
+  Shopify.addListener(this.countryEl, 'change', Shopify.bind(this.countryHandler, this));
 
   this.initCountry();
   this.initProvince();
 };
 
 Shopify.CountryProvinceSelector.prototype = {
-  initCountry: function() {
+  initCountry: function () {
     var value = this.countryEl.getAttribute('data-default');
     Shopify.setSelectorByValue(this.countryEl, value);
     this.countryHandler();
   },
 
-  initProvince: function() {
+  initProvince: function () {
     var value = this.provinceEl.getAttribute('data-default');
     if (value && this.provinceEl.options.length > 0) {
       Shopify.setSelectorByValue(this.provinceEl, value);
     }
   },
 
-  countryHandler: function(e) {
-    var opt       = this.countryEl.options[this.countryEl.selectedIndex];
-    var raw       = opt.getAttribute('data-provinces');
+  countryHandler: function (e) {
+    var opt = this.countryEl.options[this.countryEl.selectedIndex];
+    var raw = opt.getAttribute('data-provinces');
     var provinces = JSON.parse(raw);
 
     this.clearOptions(this.provinceEl);
@@ -267,13 +272,13 @@ Shopify.CountryProvinceSelector.prototype = {
     }
   },
 
-  clearOptions: function(selector) {
+  clearOptions: function (selector) {
     while (selector.firstChild) {
       selector.removeChild(selector.firstChild);
     }
   },
 
-  setOptions: function(selector, values) {
+  setOptions: function (selector, values) {
     for (var i = 0, count = values.length; i < values.length; i++) {
       var opt = document.createElement('option');
       opt.value = values[i];
@@ -302,10 +307,10 @@ class MenuDrawer extends HTMLElement {
   }
 
   onKeyUp(event) {
-    if(event.code.toUpperCase() !== 'ESCAPE') return;
+    if (event.code.toUpperCase() !== 'ESCAPE') return;
 
     const openDetailsElement = event.target.closest('details[open]');
-    if(!openDetailsElement) return;
+    if (!openDetailsElement) return;
 
     openDetailsElement === this.mainDetailsToggle ? this.closeMenuDrawer(event, this.mainDetailsToggle.querySelector('summary')) : this.closeSubmenu(openDetailsElement);
   }
@@ -323,7 +328,7 @@ class MenuDrawer extends HTMLElement {
     }
 
     if (detailsElement === this.mainDetailsToggle) {
-      if(isOpen) event.preventDefault();
+      if (isOpen) event.preventDefault();
       isOpen ? this.closeMenuDrawer(event, summaryElement) : this.openMenuDrawer(summaryElement);
     } else {
       setTimeout(() => {
@@ -565,10 +570,12 @@ class SliderComponent extends HTMLElement {
     }
 
     if (this.currentPage != previousPage) {
-      this.dispatchEvent(new CustomEvent('slideChanged', { detail: {
-        currentPage: this.currentPage,
-        currentElement: this.sliderItemsToShow[this.currentPage - 1]
-      }}));
+      this.dispatchEvent(new CustomEvent('slideChanged', {
+        detail: {
+          currentPage: this.currentPage,
+          currentElement: this.sliderItemsToShow[this.currentPage - 1]
+        }
+      }));
     }
 
     if (this.enableSliderLooping) return;
@@ -789,13 +796,13 @@ class VariantSelects extends HTMLElement {
 
     const modalContent = document.querySelector(`#ProductModal-${this.dataset.section} .product-media-modal__content`);
     if (!modalContent) return;
-    const newMediaModal = modalContent.querySelector( `[data-media-id="${this.currentVariant.featured_media.id}"]`);
+    const newMediaModal = modalContent.querySelector(`[data-media-id="${this.currentVariant.featured_media.id}"]`);
     modalContent.prepend(newMediaModal);
   }
 
   updateURL() {
     if (!this.currentVariant || this.dataset.updateUrl === 'false') return;
-    window.history.replaceState({ }, '', `${this.dataset.url}?variant=${this.currentVariant.id}`);
+    window.history.replaceState({}, '', `${this.dataset.url}?variant=${this.currentVariant.id}`);
   }
 
   updateShareUrl() {
@@ -809,7 +816,9 @@ class VariantSelects extends HTMLElement {
     productForms.forEach((productForm) => {
       const input = productForm.querySelector('input[name="id"]');
       input.value = this.currentVariant.id;
-      input.dispatchEvent(new Event('change', { bubbles: true }));
+      input.dispatchEvent(new Event('change', {
+        bubbles: true
+      }));
     });
   }
 
@@ -902,178 +911,178 @@ customElements.define('variant-radios', VariantRadios);
 
 
 window.customElements.define('count-down', class extends HTMLElement {
-    static observedAttributes = ["endtime", "fontcolor", "fontweight", "fontfamily", "fontsize", 'ratio',
-        'timezone'
-    ];
+  static observedAttributes = ["endtime", "fontcolor", "fontweight", "fontfamily", "fontsize", 'ratio',
+    'timezone'
+  ];
 
-    // config
-    config = {
-        endtime: 0,
-        fields: ['days', 'hours', 'minutes', 'seconds'],
-        units: ['days', 'hours', 'minutes', 'seconds'],
-        days: 1000 * 60 * 60 * 24,
-        hours: 1000 * 60 * 60,
-        minutes: 1000 * 60,
-        seconds: 1000,
-        ratio: window.devicePixelRatio || 1,
-        fontsize: 100,
-        fontcolor: 'red',
-        fontweight: '600',
-        fontfamily: 'sans-serif',
-        timezoneoffset: 0
+  // config
+  config = {
+    endtime: 0,
+    fields: ['days', 'hours', 'minutes', 'seconds'],
+    units: ['days', 'hours', 'minutes', 'seconds'],
+    days: 1000 * 60 * 60 * 24,
+    hours: 1000 * 60 * 60,
+    minutes: 1000 * 60,
+    seconds: 1000,
+    ratio: window.devicePixelRatio || 1,
+    fontsize: 100,
+    fontcolor: 'red',
+    fontweight: '600',
+    fontfamily: 'sans-serif',
+    timezoneoffset: 0
+  }
+
+  width = 0
+  height = 0
+  textWidth = 0
+
+  constructor() {
+    // 必须首先调用 super 方法
+    super();
+
+    const shadow = this.attachShadow({
+      mode: "open"
+    });
+    this.canvas = document.createElement('canvas')
+    this.div = document.createElement('div')
+    shadow.appendChild(this.canvas)
+    shadow.appendChild(this.div)
+
+    this.style.display = 'flex'
+    this.style.flexDirection = 'column'
+    this.style.alignItems = 'flex-start'
+    this.style.justifyContent = 'center'
+    this.style.userSelect = 'none'
+    // this.style.letterSpacing = '0px'
+  }
+
+  getUTCTime(now = new Date()) {
+    return now.getTime() + (now.getTimezoneOffset() * 60 * 1000) + this.config.timezoneoffset
+  }
+
+
+  initCanvas() {
+    this.context = this.canvas.getContext("2d");
+
+
+    for (const unit of this.config.units) {
+      const span = document.createElement('span')
+      span.innerText = unit.toUpperCase()
+      span.style.color = this.config.fontcolor
+      span.style.fontSize = `${this.config.fontsize / 3.75}px`
+      span.style.fontWeight = `${Number(this.config.fontweight) + 200}`
+      span.style.flex = 1
+      span.style.textAlign = 'center'
+      span.style.display = 'flex'
+      span.style.alignItems = 'center'
+      span.style.justifyContent = 'center'
+      span.style.width = '100%'
+      span.style.minWidth = '100%'
+
+      this.div.appendChild(span)
     }
 
-    width = 0
-    height = 0
-    textWidth = 0
+    this.div.style.letterSpacing = '-1px'
+    this.div.style.display = 'grid'
+    this.div.style.gridTemplateColumns = `repeat(${this.config.units.length}, 1fr)`
+    this.div.style.columnGap = '12%'
 
-    constructor() {
-        // 必须首先调用 super 方法
-        super();
+    window.onresize = () => this.onResize()
+    this.onResize()
+  }
 
-        const shadow = this.attachShadow({
-            mode: "open"
-        });
-        this.canvas = document.createElement('canvas')
-        this.div = document.createElement('div')
-        shadow.appendChild(this.canvas)
-        shadow.appendChild(this.div)
+  onResize(width = 0, height = 0) {
+    console.log(width, height)
 
-        this.style.display = 'flex'
-        this.style.flexDirection = 'column'
-        this.style.alignItems = 'flex-start'
-        this.style.justifyContent = 'center'
-        this.style.userSelect = 'none'
-        // this.style.letterSpacing = '0px'
-    }
+    this.width = Math.floor(width * this.config.ratio)
+    this.height = Math.floor(height * this.config.ratio)
 
-    getUTCTime(now = new Date()) {
-        return now.getTime() + (now.getTimezoneOffset() * 60 * 1000) + this.config.timezoneoffset
-    }
+    this.canvas.width = this.width
+    this.canvas.height = this.height
+    this.canvas.style.width = `${this.width}px`
+    this.canvas.style.height = `${this.height}px`
+    this.context.scale(this.config.ratio, this.config.ratio);
+  }
 
 
-    initCanvas() {
-        this.context = this.canvas.getContext("2d");
+  startCountdown() {
+    let cachedValues = {};
 
+    const updateTimer = (timestamp) => {
+      let timeDifference = this.config.endtime - this.getUTCTime();
 
-        for (const unit of this.config.units) {
-            const span = document.createElement('span')
-            span.innerText = unit.toUpperCase()
-            span.style.color = this.config.fontcolor
-            span.style.fontSize = `${this.config.fontsize / 3.75}px`
-            span.style.fontWeight = `${Number(this.config.fontweight) + 200}`
-            span.style.flex = 1
-            span.style.textAlign = 'center'
-            span.style.display = 'flex'
-            span.style.alignItems = 'center'
-            span.style.justifyContent = 'center'
-            span.style.width = '100%'
-            span.style.minWidth = '100%'
+      if (timeDifference <= 0) {
+        this.parentNode.style.display = 'none'
+        return console.log("Countdown Ended!");
+      } else {
+        const values = {};
 
-            this.div.appendChild(span)
+        for (const field of this.config.fields) {
+          values[field] = Math.floor(timeDifference / this.config[field]);
+          timeDifference = timeDifference % this.config[field];
         }
 
-        this.div.style.letterSpacing = '-1px'
-        this.div.style.display = 'grid'
-        this.div.style.gridTemplateColumns = `repeat(${this.config.units.length}, 1fr)`
-        this.div.style.columnGap = '12%'
+        const hasChanged = Object.keys(values).some(field => values[field] !== cachedValues[field]);
 
-        window.onresize = () => this.onResize()
-        this.onResize()
-    }
-
-    onResize(width = 0, height = 0) {
-        console.log(width, height)
-
-        this.width = Math.floor(width * this.config.ratio)
-        this.height = Math.floor(height * this.config.ratio)
-
-        this.canvas.width = this.width
-        this.canvas.height = this.height
-        this.canvas.style.width = `${this.width}px`
-        this.canvas.style.height = `${this.height}px`
-       this.context.scale(this.config.ratio, this.config.ratio);
-    }
+        if (hasChanged) {
+          cachedValues = {
+            ...values
+          };
 
 
-    startCountdown() {
-        let cachedValues = {};
-
-        const updateTimer = (timestamp) => {
-            let timeDifference = this.config.endtime - this.getUTCTime();
-
-            if (timeDifference <= 0) {
-              this.parentNode.style.display = 'none'
-                return console.log("Countdown Ended!");
-            } else {
-                const values = {};
-
-                for (const field of this.config.fields) {
-                    values[field] = Math.floor(timeDifference / this.config[field]);
-                    timeDifference = timeDifference % this.config[field];
-                }
-
-                const hasChanged = Object.keys(values).some(field => values[field] !== cachedValues[field]);
-
-                if (hasChanged) {
-                    cachedValues = {
-                        ...values
-                    };
+          this.onResize(this.width, this.height)
 
 
-                    this.onResize(this.width, this.height)
+          this.context.clearRect(0, 0, this.width, this.height);
+          this.context.fillStyle = this.config.fontcolor;
+          this.context.font = `${this.config.fontweight} ${this.config.fontsize}px ${this.config.fontfamily}`;
+          // this.context.textAlign = 'center';
+          this.context.textBaseline = 'middle';
 
+          let text = "";
+          for (const field of this.config.fields) {
+            text += `${text === "" ? '' : ' : '}${String(values[field]).padStart(2, '0')}`
+          }
 
-                    this.context.clearRect(0, 0, this.width, this.height);
-                    this.context.fillStyle = this.config.fontcolor;
-                    this.context.font = `${this.config.fontweight} ${this.config.fontsize}px ${this.config.fontfamily}`;
-                    // this.context.textAlign = 'center';
-                    this.context.textBaseline = 'middle';
+          this.context.fillText(text, 0, this.height / 1.625);
 
-                    let text = "";
-                    for (const field of this.config.fields) {
-                        text += `${text === "" ? '' : ' : '}${String(values[field]).padStart(2, '0')}`
-                    }
+          const matrix = this.context.measureText(text);
+          this.height = Math.floor((matrix.actualBoundingBoxAscent + matrix.actualBoundingBoxDescent) * this.config.ratio * 1.4)
+          this.width = Math.floor(matrix.width * this.config.ratio)
 
-                    this.context.fillText(text, 0, this.height / 1.625);
-
-                    const matrix = this.context.measureText(text);
-                    this.height = Math.floor((matrix.actualBoundingBoxAscent + matrix.actualBoundingBoxDescent) * this.config.ratio * 1.4 )
-                    this.width = Math.floor(matrix.width * this.config.ratio)
-                
-                    this.div.style.width = `${this.width}px`
-                }
-            }
-
-            setTimeout(updateTimer, 1000)
+          this.div.style.width = `${this.width}px`
         }
+      }
 
-        setTimeout(updateTimer)
+      setTimeout(updateTimer, 1000)
+    }
+
+    setTimeout(updateTimer)
+  }
+
+
+  connectedCallback() {
+    this.initCanvas()
+    this.startCountdown();
+  }
+
+  attributeChangedCallback(name, oldValue, newValue) {
+    console.log(name, newValue)
+
+    if (name === 'timezone') {
+      const zone = newValue === 'us' ? 420 : -120
+      return this.config.timezoneoffset = zone * 1000 * 60
+    }
+
+    if (name === 'endtime' && newValue) {
+      const [y, m, d] = newValue.split('-').map(Number)
+      this.config.endtime = this.getUTCTime(new Date(Date.UTC(y, m - 1, d, 0, 0, 0, 0) + this.config.timezoneoffset))
+      return
     }
 
 
-    connectedCallback() {
-        this.initCanvas()
-        this.startCountdown();
-    }
-
-    attributeChangedCallback(name, oldValue, newValue) {
-        console.log(name, newValue)
-
-        if (name === 'timezone') {
-            const zone = newValue === 'us' ? 420 : -120
-            return this.config.timezoneoffset = zone * 1000 * 60
-        }
-
-        if (name === 'endtime' && newValue) {
-            const [y, m, d] = newValue.split('-').map(Number)
-            this.config.endtime = this.getUTCTime(new Date(Date.UTC(y, m - 1, d, 0, 0, 0, 0) + this.config.timezoneoffset))
-            return
-        }
-
-
-        this.config[name] = newValue
-    }
+    this.config[name] = newValue
+  }
 })
 
 
@@ -1087,9 +1096,9 @@ class CartRemoveButton extends HTMLElement {
       if ($(event.target).hasClass('button--tertiary')) {
         return false
       }
-      
+
       const cartItems = this.closest('cart-items') || this.closest('cart-drawer-items');
-      
+
       cartItems.onCartChange(event)
 
       return false
@@ -1115,8 +1124,11 @@ class CartItems extends HTMLElement {
   fetchAndRefreshCart(updates = []) {
     fetch('/cart/update.js', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': `application/json` },
-      body: JSON.stringify({ 
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': `application/json`
+      },
+      body: JSON.stringify({
         updates,
         sections: this.getSectionsToRender().map((section) => section.section),
         sections_url: window.location.pathname
@@ -1130,7 +1142,7 @@ class CartItems extends HTMLElement {
 
       if (cartFooter) cartFooter.classList.toggle('is-empty', parsedState.item_count === 0);
       if (cartDrawerWrapper) cartDrawerWrapper.classList.toggle('is-empty', parsedState.item_count === 0);
-      
+
       this.getSectionsToRender().forEach((section => {
         const elementToReplace =
           document.getElementById(section.id).querySelector(section.selector) || document.getElementById(section.id);
@@ -1146,7 +1158,7 @@ class CartItems extends HTMLElement {
     })
   }
 
-  onCartChange (event) {
+  onCartChange(event) {
     // 查找当前行
     const items = $(event.target.closest('.cart-items'))
     const line_item = $(event.target.closest('.cart-item'))
@@ -1209,7 +1221,7 @@ class CartItems extends HTMLElement {
       }
     })
 
-    
+
 
     console.log('quantity_arr', quantity_arr)
 
@@ -1226,8 +1238,7 @@ class CartItems extends HTMLElement {
   }
 
   getSectionsToRender() {
-    return [
-      {
+    return [{
         id: 'main-cart-items',
         section: document.getElementById('main-cart-items').dataset.id,
         selector: '.js-contents',
@@ -1250,7 +1261,7 @@ class CartItems extends HTMLElement {
     ];
   }
   //
-   updateQuantity(line, quantity, name,type) {
+  updateQuantity(line, quantity, name, type) {
     this.enableLoading(line);
 
     const body = JSON.stringify({
@@ -1259,7 +1270,12 @@ class CartItems extends HTMLElement {
       sections: this.getSectionsToRender().map((section) => section.section),
       sections_url: window.location.pathname
     });
-    fetch(`${routes.cart_change_url}`, {...fetchConfig(), ...{ body }})
+    fetch(`${routes.cart_change_url}`, {
+        ...fetchConfig(),
+        ...{
+          body
+        }
+      })
       .then((response) => {
         return response.text();
       })
@@ -1279,8 +1295,8 @@ class CartItems extends HTMLElement {
             this.getSectionInnerHTML(parsedState.sections[section.section], section.selector);
         }));
 
-        this.updateLiveRegions(line, parsedState.item_count,type);//更改
-        const lineItem =  document.getElementById(`CartItem-${line}`) || document.getElementById(`CartDrawer-Item-${line}`);
+        this.updateLiveRegions(line, parsedState.item_count, type); //更改
+        const lineItem = document.getElementById(`CartItem-${line}`) || document.getElementById(`CartDrawer-Item-${line}`);
         if (lineItem && lineItem.querySelector(`[name="${name}"]`)) {
           cartDrawerWrapper ? trapFocus(cartDrawerWrapper, lineItem.querySelector(`[name="${name}"]`)) : lineItem.querySelector(`[name="${name}"]`).focus();
         } else if (parsedState.item_count === 0 && cartDrawerWrapper) {
@@ -1297,8 +1313,8 @@ class CartItems extends HTMLElement {
       }).finally(refreshProductCode)
   }
 
-  updateLiveRegions(line, itemCount,type) {
-    if(type=="remove")return;//更改
+  updateLiveRegions(line, itemCount, type) {
+    if (type == "remove") return; //更改
     if (this.currentItemCount === itemCount) {
       const lineItemError = document.getElementById(`Line-item-error-${line}`) || document.getElementById(`CartDrawer-LineItemError-${line}`);
       const quantityElement = document.getElementById(`Quantity-${line}`) || document.getElementById(`Drawer-quantity-${line}`);
@@ -1355,8 +1371,15 @@ if (!customElements.get('cart-note')) {
       super();
 
       this.addEventListener('change', debounce((event) => {
-        const body = JSON.stringify({ note: event.target.value });
-        fetch(`${routes.cart_update_url}`, {...fetchConfig(), ...{ body }});
+        const body = JSON.stringify({
+          note: event.target.value
+        });
+        fetch(`${routes.cart_update_url}`, {
+          ...fetchConfig(),
+          ...{
+            body
+          }
+        });
       }, 300))
     }
   });
@@ -1445,9 +1468,9 @@ class DetailsModal extends HTMLElement {
 
   onSummaryClick(event) {
     event.preventDefault();
-    event.target.closest('details').hasAttribute('open')
-      ? this.close()
-      : this.open(event);
+    event.target.closest('details').hasAttribute('open') ?
+      this.close() :
+      this.open(event);
   }
 
   onBodyClick(event) {
@@ -1505,13 +1528,14 @@ class CartNotification extends HTMLElement {
       () => {
         this.notification.focus();
         trapFocus(this.notification);
-      },
-      { once: true }
+      }, {
+        once: true
+      }
     );
 
     document.body.addEventListener("click", this.onBodyClick);
 
-    
+
     setTimeout(() => {
       $('.cart-notification__links .button--primary').text(window.show_notification_checkout_button ? 'Check out with klarna' : 'Check out')
     })
@@ -1530,11 +1554,11 @@ class CartNotification extends HTMLElement {
     /*additional 判断加入购物车是否有E-Bike，有的话*/
     let bikeQuantity = 0;
     fetch("/cart.js", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
       .then((res) => {
         return res.json();
       })
@@ -1542,7 +1566,7 @@ class CartNotification extends HTMLElement {
         let discountSavedPrice = 0;
         res1.items.forEach((item) => {
           const title = item.product_title
-          if (title.indexOf("Carbon One")!=-1 || title.indexOf("Carbon 1")!=-1) {
+          if (title.indexOf("Carbon One") != -1 || title.indexOf("Carbon 1") != -1) {
             bikeQuantity += item.quantity;
           }
           discountSavedPrice += (item.original_line_price - item.final_line_price);
@@ -1556,7 +1580,7 @@ class CartNotification extends HTMLElement {
           });
           $(this.notification)
             .find(".notification-tips>span")
-            .html(formatter.format(discountSavedPrice+bikeQuantity*600));
+            .html(formatter.format(discountSavedPrice + bikeQuantity * 600));
           $(this.notification)
             .find(".notification-tips")
             .css("display", "flex");
@@ -1583,8 +1607,7 @@ class CartNotification extends HTMLElement {
   }
 
   getSectionsToRender() {
-    return [
-      {
+    return [{
         id: "cart-notification-product",
         selector: `[id="cart-notification-product-${this.cartItemKey}"]`,
       },
@@ -1608,9 +1631,9 @@ class CartNotification extends HTMLElement {
         resHtml +=
           "<div style='display:flex;'>" +
           new DOMParser()
-            .parseFromString(html, "text/html")
-            .querySelector(`[id="cart-notification-product-${item.key}"]`)
-            .innerHTML +
+          .parseFromString(html, "text/html")
+          .querySelector(`[id="cart-notification-product-${item.key}"]`)
+          .innerHTML +
           "</div>";
       });
       return resHtml;
@@ -1621,9 +1644,9 @@ class CartNotification extends HTMLElement {
     const target = evt.target;
     if (target !== this.notification && !target.closest("cart-notification")) {
       const disclosure = target.closest("details-disclosure, header-menu");
-      this.activeElement = disclosure
-        ? disclosure.querySelector("summary")
-        : null;
+      this.activeElement = disclosure ?
+        disclosure.querySelector("summary") :
+        null;
       this.close();
     }
   }
@@ -1667,13 +1690,17 @@ class CartDrawer extends HTMLElement {
     const cartDrawerNote = this.querySelector('[id^="Details-"] summary');
     if (cartDrawerNote && !cartDrawerNote.hasAttribute('role')) this.setSummaryAccessibility(cartDrawerNote);
     // here the animation doesn't seem to always get triggered. A timeout seem to help
-    setTimeout(() => {this.classList.add('animate', 'active')});
+    setTimeout(() => {
+      this.classList.add('animate', 'active')
+    });
 
     this.addEventListener('transitionend', () => {
       const containerToTrapFocusOn = this.classList.contains('is-empty') ? this.querySelector('.drawer__inner-empty') : document.getElementById('CartDrawer');
       const focusElement = this.querySelector('.drawer__inner') || this.querySelector('.drawer__close');
       trapFocus(containerToTrapFocusOn, focusElement);
-    }, { once: true });
+    }, {
+      once: true
+    });
 
     document.body.classList.add('overflow-hidden');
   }
@@ -1688,7 +1715,7 @@ class CartDrawer extends HTMLElement {
     cartDrawerNote.setAttribute('role', 'button');
     cartDrawerNote.setAttribute('aria-expanded', 'false');
 
-    if(cartDrawerNote.nextElementSibling.getAttribute('id')) {
+    if (cartDrawerNote.nextElementSibling.getAttribute('id')) {
       cartDrawerNote.setAttribute('aria-controls', cartDrawerNote.nextElementSibling.id);
     }
 
@@ -1706,7 +1733,7 @@ class CartDrawer extends HTMLElement {
     this.getSectionsToRender().forEach((section => {
       const sectionElement = section.selector ? document.querySelector(section.selector) : document.getElementById(section.id);
       sectionElement.innerHTML =
-          this.getSectionInnerHTML(parsedState.sections[section.id], section.selector);
+        this.getSectionInnerHTML(parsedState.sections[section.id], section.selector);
     }));
 
     setTimeout(() => {
@@ -1722,8 +1749,7 @@ class CartDrawer extends HTMLElement {
   }
 
   getSectionsToRender() {
-    return [
-      {
+    return [{
         id: 'cart-drawer',
         selector: '#CartDrawer'
       },
@@ -1748,8 +1774,7 @@ customElements.define('cart-drawer', CartDrawer);
 
 class CartDrawerItems extends CartItems {
   getSectionsToRender() {
-    return [
-      {
+    return [{
         id: 'CartDrawer',
         section: 'cart-drawer',
         selector: '.drawer__inner'
@@ -1765,4 +1790,53 @@ class CartDrawerItems extends CartItems {
 
 customElements.define('cart-drawer-items', CartDrawerItems);
 
+class LocalizationForm extends HTMLElement {
+  constructor() {
+    super();
+    this.elements = {
+      input: this.querySelector('input[name="locale_code"], input[name="country_code"]'),
+      button: this.querySelector('button'),
+      panel: this.querySelector('.disclosure__list-wrapper'),
+    };
+    this.elements.button.addEventListener('click', this.openSelector.bind(this));
+    this.elements.button.addEventListener('focusout', this.closeSelector.bind(this));
+    this.addEventListener('keyup', this.onContainerKeyUp.bind(this));
 
+    this.querySelectorAll('a').forEach(item => item.addEventListener('click', this.onItemClick.bind(this)));
+  }
+
+  hidePanel() {
+    this.elements.button.setAttribute('aria-expanded', 'false');
+    this.elements.panel.setAttribute('hidden', true);
+  }
+
+  onContainerKeyUp(event) {
+    if (event.code.toUpperCase() !== 'ESCAPE') return;
+
+    this.hidePanel();
+    this.elements.button.focus();
+  }
+
+  onItemClick(event) {
+    event.preventDefault();
+    const form = this.querySelector('form');
+    this.elements.input.value = event.currentTarget.dataset.value;
+    if (form) form.submit();
+  }
+
+  openSelector() {
+    this.elements.button.focus();
+    this.elements.panel.toggleAttribute('hidden');
+    this.elements.button.setAttribute('aria-expanded', (this.elements.button.getAttribute('aria-expanded') ===
+      'false').toString());
+  }
+
+  closeSelector(event) {
+    const shouldClose = event.relatedTarget && event.relatedTarget.nodeName === 'BUTTON';
+    if (event.relatedTarget === null || shouldClose) {
+      this.hidePanel();
+    }
+  }
+}
+
+customElements.define('localization-form', LocalizationForm);

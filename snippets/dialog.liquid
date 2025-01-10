@@ -523,3 +523,33 @@ window.addEventListener('load', () => {
     }
 });
 </script>
+<script type="module">
+    $('.blogs .centeral-content > div[href]').on('click', function () {
+      window.open($(this).attr('href'));
+    });
+
+  $('.testride > div[href]').on('click', function () {
+    window.open($(this).attr('href'));
+  });
+
+  $(".footer__newsletter").ready(() => {
+    if (window.location.href.indexOf('form_type=customer') !== -1 && !document.getElementById('ContactFooter-error')) {
+      const newDom = document.createElement('div');
+      newDom.className = "newsletter-form__message newsletter-form__message--success form__message";
+      newDom.append('You already subscribed,thank you.')
+      document.querySelector('.footer__newsletter').appendChild(newDom);
+    }
+  })
+
+  $(".mobile-footer .footer-block__heading").click(function () {
+    $(this).siblings("ul.footer-block__details-content").slideToggle()
+    .parent().siblings().find("ul.footer-block__details-content").slideUp()
+    })
+
+    $('.hedaer-secondary-menu .centreallllll .bikesssssss > div').on('click',  function (e) {
+    location.href= $(this).attr('href')
+  })
+  $('.hedaer-secondary-menu-mb .bikesssssss > div').on('click',  function (e) {
+    location.href= $(this).attr('href')
+  })
+</script>

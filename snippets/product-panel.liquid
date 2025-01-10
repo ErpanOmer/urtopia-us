@@ -7,12 +7,12 @@
   assign product_panel_services_icons = shop.metaobjects.product_panel_services_icons['product-panel-services-icons'].items.value
   assign product_send_accessories_icon = product.metafields.custom.product_send_accessories_icon.value
 
-  assign product_left_swiper_width = 64
+  assign product_left_swiper_width = product_left_swiper_width | default: 'er-w-[64px]'
   assign product_main_swiper_width = 640
   assign product_prameters_size = 45
   assign product_media_icon_height = 60
 
-  assign product_left_swiper_class = "er-rounded-md er-cursor-pointer er-border-solid er-border-0 er-border-primary [&[class~='active']]:er-border-2"
+  assign product_left_swiper_class = "{{ product_left_swiper_width }} er-rounded-md er-cursor-pointer er-border-solid er-border-0 er-border-primary [&[class~='active']]:er-border-2"
   assign product_main_swiper_class = 'swiper-slide er-object-cover er-aspect-video er-rounded-2xl'
   assign section_class = 'er-font-base er-max-w-screen-xl er-mx-auto er-flex er-justify-between er-px-12'
 
@@ -54,7 +54,7 @@
   data-swiper-insert-index="{{ swiper_insert_index }}"
   data-variant-swiper-size="{{ swiper_of_variant.count }}"
 >
-  <div class="er-w-[{{ product_left_swiper_width }}px] er-shrink-0 er-space-y-2 left-images er-hidden xl:er-block er-h-fit md:er-sticky md:er-top-28">
+  <div class="{{ product_left_swiper_width }} er-shrink-0 er-space-y-2 left-images er-hidden xl:er-block er-h-fit md:er-sticky md:er-top-28">
     {%- for variant_image in swiper -%}
       {{
         variant_image
@@ -431,7 +431,7 @@
 
       console.log(before, after)
 
-      const fn_j = image => $(`<img width="{{ product_left_swiper_width }}" src="${image.image_url}" class="{{ product_left_swiper_class }}">`).on('click', onClickLeftImages)
+      const fn_j = image => $(`<img width="64" src="${image.image_url}" class="{{ product_left_swiper_class }}">`).on('click', onClickLeftImages)
       const fn_s = image => image.image_tag
 
       if (before.length) {

@@ -440,7 +440,7 @@
           <span class="u11Medium_v2">Fenders, kickstand, 1-year eSIM service</span>
         </div>
       </div>
-      <div class="error-tip u14Medium_v2 mb12" style="color:red;">Your order quantity has reached our stock limit</div>
+      <div class="error-tip u14Medium_v2 mb12 er-hidden" style="color:red;">Your order quantity has reached our stock limit</div>
       <div class="buttons mb24">
         <div
           data-product-id="{{ product.id }}"
@@ -1520,7 +1520,7 @@
 </div>
 
 {% render 'size-guide-and-specs-template', config: 'fusion_order_page_config' %}
-<div class="top-fixed mobileHide">
+<div class="top-fixed mobileHide er-hidden">
   <div class="centeral-content">
     <span class="u20DemiBold_v2">{{ product.title }}</span>
     <span class="flex-1"></span>
@@ -1539,7 +1539,7 @@
   </div>
 </div>
 
-<div class="bottom-fixed pcHide">
+<div class="bottom-fixed pcHide er-hidden">
   <a href="#product_form_{{ product.id }}" class="my-button my-button-origin">Order Now</a>
   <div>
     <span class="u14Light_v2"
@@ -1553,95 +1553,7 @@
     >
   </div>
 </div>
-<script>
-    // 默认隐藏
-  $('.product .error-tip').hide();
-  // 默认隐藏
-  $('.bottom-fixed').hide();
-  $('.top-fixed').hide();
-    
-  const leftSwiper = new Swiper('.product .left-swiper', {
-    direction: 'vertical',
-    spaceBetween: 15,
-    slidesPerView: 9,
-    watchSlidesProgress: true,
-    // height: 360,
-  });
-
-  const rightSwiper = new Swiper('.product .right-swiper', {
-    navigation: {
-      nextEl: '.product .featured_image .swiper-button-next',
-      prevEl: '.product .featured_image .swiper-button-prev',
-    },
-    spaceBetween: 10,
-    pagination: { el: '.product .swiper-pagination' },
-    thumbs: {
-      swiper: leftSwiper,
-    },
-    roundLengths : true,
-    on:{
-        slideChange: function() {
-            const index = this.activeIndex % global_config.fusion_order_page_config.product_media_images.length;
-            $('.product .medias').find('.u17DemiBold_v2').text(global_config.fusion_order_page_config.product_media_images[index].text)
-            $('.product .medias').find('img').attr('src', global_config.fusion_order_page_config.product_media_images[index].img)
-
-            if (global_config.fusion_order_page_config.product_media_images[index + 1]) {
-                (new Image()).src = global_config.fusion_order_page_config.product_media_images[index + 1].img
-            }
-
-            if (global_config.fusion_order_page_config.product_media_images[index + 2]) {
-                (new Image()).src = global_config.fusion_order_page_config.product_media_images[index + 2].img
-            }
-        },
-    },
-  });
-
-  document.addEventListener('onChangeOptions', (e) => {
-    $('.product .delivery_time').html(
-      global_config.fusion_order_page_config.ebike_delivery_time[e.value.id] ||
-        global_config.fusion_order_page_config.ebike_default_delivery_time
-    );
-
-    const btn = $('.product .buttons .addToCartBtn');
-    if (e.value.available) {
-      btn.find('span').text('Add to Cart');
-      btn.removeClass('disabled');
-      $('.product .buttons .orderTestRideBtn').show();
-    } else {
-      btn.find('span').text('Sold out');
-      btn.addClass('disabled');
-      $('.product .buttons .orderTestRideBtn').hide();
-    }
-  });
-
-      document.addEventListener('onChangeSize', e => {
-        $(`.product .product-panel .options > div[option="Size"] .u17DemiBold_v2 .u17Light_v2`).text(global_config.fusion_order_page_config.size_map[e.value])
-      })
-
-      document.addEventListener('onChangeStyle', (e) => {
-    $(`.product .product-panel .options > div[option="Style"] .u17DemiBold_v2 .u17Light_v2`).text(e.value);
-
-    let swiper_arr = [];
-    swiper_arr = swiper_arr.concat(
-      global_config.fusion_order_page_config.product_images[e.value],
-      global_config.fusion_order_page_config.product_images['commonSwiper']
-    );
-
-    console.log(swiper_arr);
-    rightSwiper.removeAllSlides()
-    leftSwiper.removeAllSlides()
-
-    for (let i = 0; i < swiper_arr.length; i++) {
-      leftSwiper.appendSlide( `<img width="64" height="42" class="swiper-slide" alt="Urtopia Fusion" src="${swiper_arr[i]}"/>`)
-
-      if (i === 0) {
-        rightSwiper.appendSlide(`<div class="swiper-slide" style="position: relative;"><img width="94" height="84" loading="lazy" fetchpriority="low" decoding="async" style="position: absolute;top: 0;right: 0;max-width: 15%;" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241226-113839.png?v=1735184338" alt="Urtopia Fusion"><img width="662" height="432"  alt="Urtopia Fusion" src="${swiper_arr[i]}"/></div>`)
-      } else {
-        rightSwiper.appendSlide(`<div class="swiper-slide"><img width="662" height="432" alt="Urtopia Fusion" src="${swiper_arr[i]}"/></div>`)
-      }
-    }
-  });
-
+<script>    
   function changeAddToCartText(parse, step = 0) {
     if (step) {
       $('.addToCartBtn i').toggleClass('showi');
@@ -1746,9 +1658,160 @@
         });
     }
   }
+</script>
+{% render 'product-options', config_name: 'fusion_order_page_config' %}
+<script type="module">
+   window.leftSwiper = new Swiper('.product .left-swiper', {
+    direction: 'vertical',
+    spaceBetween: 15,
+    slidesPerView: 9,
+    watchSlidesProgress: true,
+    // height: 360,
+  });
+
+   window.rightSwiper = new Swiper('.product .right-swiper', {
+    navigation: {
+      nextEl: '.product .featured_image .swiper-button-next',
+      prevEl: '.product .featured_image .swiper-button-prev',
+    },
+    spaceBetween: 10,
+    pagination: { el: '.product .swiper-pagination' },
+    thumbs: {
+      swiper: window.leftSwiper,
+    },
+    roundLengths : true,
+    on:{
+        slideChange: function() {
+            const index = this.activeIndex % global_config.fusion_order_page_config.product_media_images.length;
+            $('.product .medias').find('.u17DemiBold_v2').text(global_config.fusion_order_page_config.product_media_images[index].text)
+            $('.product .medias').find('img').attr('src', global_config.fusion_order_page_config.product_media_images[index].img)
+
+            if (global_config.fusion_order_page_config.product_media_images[index + 1]) {
+                (new Image()).src = global_config.fusion_order_page_config.product_media_images[index + 1].img
+            }
+
+            if (global_config.fusion_order_page_config.product_media_images[index + 2]) {
+                (new Image()).src = global_config.fusion_order_page_config.product_media_images[index + 2].img
+            }
+        },
+    },
+  });
+
+  document.addEventListener('onChangeOptions', (e) => {
+    $('.product .delivery_time').html(
+      global_config.fusion_order_page_config.ebike_delivery_time[e.value.id] ||
+        global_config.fusion_order_page_config.ebike_default_delivery_time
+    );
+
+    const btn = $('.product .buttons .addToCartBtn');
+    if (e.value.available) {
+      btn.find('span').text('Add to Cart');
+      btn.removeClass('disabled');
+      $('.product .buttons .orderTestRideBtn').show();
+    } else {
+      btn.find('span').text('Sold out');
+      btn.addClass('disabled');
+      $('.product .buttons .orderTestRideBtn').hide();
+    }
+  });
+
+      document.addEventListener('onChangeSize', e => {
+        $(`.product .product-panel .options > div[option="Size"] .u17DemiBold_v2 .u17Light_v2`).text(global_config.fusion_order_page_config.size_map[e.value])
+      })
+
+      document.addEventListener('onChangeStyle', (e) => {
+    $(`.product .product-panel .options > div[option="Style"] .u17DemiBold_v2 .u17Light_v2`).text(e.value);
+
+    let swiper_arr = [];
+    swiper_arr = swiper_arr.concat(
+      global_config.fusion_order_page_config.product_images[e.value],
+      global_config.fusion_order_page_config.product_images['commonSwiper']
+    );
+
+    console.log(swiper_arr);
+    window.rightSwiper.removeAllSlides()
+    window.leftSwiper.removeAllSlides()
+
+    for (let i = 0; i < swiper_arr.length; i++) {
+      window.leftSwiper.appendSlide( `<img width="64" height="42" class="swiper-slide" alt="Urtopia Fusion" src="${swiper_arr[i]}"/>`)
+
+      if (i === 0) {
+        window.rightSwiper.appendSlide(`<div class="swiper-slide" style="position: relative;"><img width="94" height="84" loading="lazy" fetchpriority="low" decoding="async" style="position: absolute;top: 0;right: 0;max-width: 15%;" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241226-113839.png?v=1735184338" alt="Urtopia Fusion"><img width="662" height="432"  alt="Urtopia Fusion" src="${swiper_arr[i]}"/></div>`)
+      } else {
+        window.rightSwiper.appendSlide(`<div class="swiper-slide"><img width="662" height="432" alt="Urtopia Fusion" src="${swiper_arr[i]}"/></div>`)
+      }
+    }
+  });
+      new Swiper('.quality .centeral-content', {
+        slidesPerView: global_config.is_mobile ? 1.25 : 3,
+        spaceBetween: global_config.is_mobile ? 16 : 32,
+        navigation: {
+            nextEl: '.quality .centeral-content .swiper-button-next',
+            prevEl: '.quality .centeral-content .swiper-button-prev',
+        },
+        scrollbar: {
+            el: '.quality .centeral-content .swiper-scrollbar',
+            draggable: true
+        },
+    });
+
+      window.ultimate_swiper = new Swiper('.ultimate', {
+        autoplay: {
+            disableOnInteraction: false,
+            pauseOnMouseEnter: false,
+            delay: 2000,
+        },
+        loop: true,
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true
+        },
+        // grabCursor: true,
+        allowTouchMove: global_config.is_mobile,
+        speed: 0,
+        on: {
+            slideChange: function () {
+                $(`.ultimate .icons > div:nth-child(${this.realIndex + 1})`).addClass('active').siblings().removeClass('active')
+            },
+        },
+        pagination: { el: '.ultimate .swiper-pagination' },
+    });
 
 
+    const clears = []
+    global_config.is_pc && $(`.ultimate .icons > div`).each((index, elem) => {
+        $(elem).on('click', () => {
+            for (const c of clears) {
+                clearTimeout(c)
+            }
 
+            window.ultimate_swiper.slideToLoop(index)
+            setTimeout(() => {
+                window.ultimate_swiper.autoplay.stop()
+            })
+
+            clears.push(setTimeout(() => {
+                window.ultimate_swiper.autoplay.start()
+            }, 3000))
+        })
+
+    })
+
+
+    new Swiper('.professional .centeral-content', {
+      slidesPerView: global_config.is_mobile ? 1.25 : 3,
+      spaceBetween: 20,
+      navigation: {
+      nextEl: '.professional .centeral-content .swiper-button-next',
+      prevEl: '.professional .centeral-content .swiper-button-prev',
+    },
+      scrollbar: {
+        el: '.professional .centeral-content .swiper-scrollbar',
+        draggable: true,
+      },
+    });
+
+    
     $('.product .product-panel .accessories > div:not(.u17DemiBold_v2):not(.items)').on('click', (e) => {
     const items = $('.product .product-panel .accessories .items');
 
@@ -1834,77 +1897,6 @@
             currnetScroolTop = top2
         }
     }, 300, 100))
-</script>
-{% render 'product-options', config_name: 'fusion_order_page_config' %}
-<script>
-      new Swiper('.quality .centeral-content', {
-        slidesPerView: global_config.is_mobile ? 1.25 : 3,
-        spaceBetween: global_config.is_mobile ? 16 : 32,
-        navigation: {
-            nextEl: '.quality .centeral-content .swiper-button-next',
-            prevEl: '.quality .centeral-content .swiper-button-prev',
-        },
-        scrollbar: {
-            el: '.quality .centeral-content .swiper-scrollbar',
-            draggable: true
-        },
-    });
-
-      const ultimate_swiper = new Swiper('.ultimate', {
-        autoplay: {
-            disableOnInteraction: false,
-            pauseOnMouseEnter: false,
-            delay: 2000,
-        },
-        loop: true,
-        effect: 'fade',
-        fadeEffect: {
-            crossFade: true
-        },
-        // grabCursor: true,
-        allowTouchMove: global_config.is_mobile,
-        speed: 0,
-        on: {
-            slideChange: function () {
-                $(`.ultimate .icons > div:nth-child(${this.realIndex + 1})`).addClass('active').siblings().removeClass('active')
-            },
-        },
-        pagination: { el: '.ultimate .swiper-pagination' },
-    });
-
-
-    const clears = []
-    global_config.is_pc && $(`.ultimate .icons > div`).each((index, elem) => {
-        $(elem).on('click', () => {
-            for (const c of clears) {
-                clearTimeout(c)
-            }
-
-            ultimate_swiper.slideToLoop(index)
-            setTimeout(() => {
-                ultimate_swiper.autoplay.stop()
-            })
-
-            clears.push(setTimeout(() => {
-                ultimate_swiper.autoplay.start()
-            }, 3000))
-        })
-
-    })
-
-
-    new Swiper('.professional .centeral-content', {
-      slidesPerView: global_config.is_mobile ? 1.25 : 3,
-      spaceBetween: 20,
-      navigation: {
-      nextEl: '.professional .centeral-content .swiper-button-next',
-      prevEl: '.professional .centeral-content .swiper-button-prev',
-    },
-      scrollbar: {
-        el: '.professional .centeral-content .swiper-scrollbar',
-        draggable: true,
-      },
-    });
 </script>
 <div class="judmeeeeeeeee">
   <div class="centeral-content">

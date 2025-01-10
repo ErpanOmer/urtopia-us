@@ -18,8 +18,8 @@
 
     {% render 'theme-style' %}
     {{ 'base.css' | asset_url | stylesheet_tag: preload: true }}
-    {{ 'global-sync.min.js' | asset_url | preload_tag: as: 'script', type: 'text/javascript' }}
-    <script src="{{ 'global-sync.min.js' | asset_url }}" fetchpriority="high"></script>
+    {{ 'tailwind.css' | asset_url | stylesheet_tag: preload: true }}
+    <script src="{{ 'global-sync.min.js' | asset_url }}" fetchpriority="high" type="module"></script>
     {{ content_for_header }}
     <script src="{{ 'global.js' | asset_url }}" fetchpriority="low" defer></script>
     {% render 'dataLayer-allPages' %}

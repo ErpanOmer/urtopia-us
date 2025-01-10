@@ -326,15 +326,6 @@
         }
     ]
 
-    $('.faqs .swiper-slide').html(faqs.map(faq => `
-      <div class="faq-item">
-         <div class="faq-title">
-           <span>${faq.title}</span>
-           <i class="faq-content-plus"></i>
-         </div>
-         <div class="faq-content">${faq.content}</div>
-      </div>`).join(''))
-
 
     setTimeout(() => {
         $('.faq-title').click(function () {
@@ -890,10 +881,6 @@
             })
     })
 
-
-    
-
-
     if (!sessionStorage.isPreviewTestRide) {
         fetchBuried('testride', 'pageview')
     }
@@ -912,19 +899,14 @@
     }
 
     search.name && booknow(search.name)
-
-
-    new Swiper('.test-ride-new-banner', {
-        autoplay: {
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true,
-            delay: 10000,
-        },
-        loop: true,
-        speed: 1000,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true
-        }
-    })
+    </script>
+    <script type="module">
+         $('.faqs .swiper-slide').html(faqs.map(faq => `
+      <div class="faq-item">
+         <div class="faq-title">
+           <span>${faq.title}</span>
+           <i class="faq-content-plus"></i>
+         </div>
+         <div class="faq-content">${faq.content}</div>
+      </div>`).join(''))
     </script>

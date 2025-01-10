@@ -410,7 +410,7 @@
           <span class="u11Medium_v2">Fenders, kickstand</span>
         </div>
       </div>
-      <div class="error-tip u14Medium_v2 mb12" style="color:red;">Your order quantity has reached our stock limit</div>
+      <div class="error-tip u14Medium_v2 mb12 er-hidden" style="color:red;">Your order quantity has reached our stock limit</div>
       <div class="buttons mb24">
         <div
           data-product-id="{{ product.id }}"
@@ -944,7 +944,7 @@
     {% include 'judgeme_widgets', widget_type: 'judgeme_review_widget', concierge_install: false %}
   </div>
 </div>
-<div class="top-fixed mobileHide">
+<div class="top-fixed mobileHide er-hidden">
   <div class="centeral-content">
     <span class="u20DemiBold_v2">{{ product.title }}</span>
     <span class="flex-1"></span>
@@ -963,7 +963,7 @@
   </div>
 </div>
 
-<div class="bottom-fixed pcHide">
+<div class="bottom-fixed pcHide er-hidden">
   <a href="#product_form_{{ product.id }}" class="my-button my-button-origin">Order Now</a>
   <div>
     <span class="u14Light_v2"
@@ -981,113 +981,6 @@
 {% render 'product-options', config_name: 'carbon_fold_order_page_config', product: product %}
 
 <script>
-  // 默认隐藏
-  $('.product .error-tip').hide();
-  // 默认隐藏
-  $('.bottom-fixed').hide();
-  $('.top-fixed').hide();
-
-  const leftSwiper = new Swiper('.product .left-swiper', {
-    direction: 'vertical',
-    spaceBetween: 15,
-    slidesPerView: 9,
-    watchSlidesProgress: true,
-    // height: 360,
-  });
-
-  const rightSwiper = new Swiper('.product .right-swiper', {
-    navigation: {
-      nextEl: '.product .featured_image .swiper-button-next',
-      prevEl: '.product .featured_image .swiper-button-prev',
-    },
-    spaceBetween: 10,
-    pagination: { el: '.swiper-pagination' },
-    thumbs: {
-      swiper: leftSwiper,
-    },
-    roundLengths : true,
-    on:{
-        slideChange: function() {
-            const index = this.activeIndex % global_config.carbon_fold_order_page_config.product_media_images.length;
-            $('.product .medias').find('.u17DemiBold_v2').text(global_config.carbon_fold_order_page_config.product_media_images[index].text)
-            $('.product .medias').find('img').attr('src', global_config.carbon_fold_order_page_config.product_media_images[index].img)
-
-            if (global_config.carbon_fold_order_page_config.product_media_images[index + 1]) {
-                (new Image()).src = global_config.carbon_fold_order_page_config.product_media_images[index + 1].img
-            }
-
-            if (global_config.carbon_fold_order_page_config.product_media_images[index + 2]) {
-                (new Image()).src = global_config.carbon_fold_order_page_config.product_media_images[index + 2].img
-            }            
-        },
-    },
-  });
-
-  document.addEventListener('onChangeSize', (e) => {
-    $(`.product .product-panel .options > div[option="Size"] .u17DemiBold_v2 .u17Light_v2`).text(
-      global_config.carbon_fold_order_page_config.size_map[e.value]
-    );
-  });
-
-  document.addEventListener('onChangeColor', (e) => {
-    $(`.product .product-panel .options > div[option="Color"] .u17DemiBold_v2 .u17Light_v2`).text(e.value);
-
-    let swiper_arr = [];
-    swiper_arr = swiper_arr.concat(
-      global_config.carbon_fold_order_page_config.product_images[e.value],
-      global_config.carbon_fold_order_page_config.product_images['commonSwiper']
-    );
-
-    console.log(swiper_arr);
-    rightSwiper.removeAllSlides()
-    leftSwiper.removeAllSlides()
-
-    for (let i = 0; i < swiper_arr.length; i++) {
-      rightSwiper.appendSlide(`<div class="swiper-slide"><img alt="Urtopia Carbon 1 Pro" src="${swiper_arr[i]}"/></div>`)
-      leftSwiper.appendSlide( `<img class="swiper-slide" alt="Urtopia Carbon 1 Pro" src="${swiper_arr[i]}"/>`)
-    }
-  });
-
-  document.addEventListener('onChangeOptions', (e) => {
-    $('.product .delivery_time').html(
-      global_config.carbon_fold_order_page_config.ebike_delivery_time[e.value.id] ||
-        global_config.carbon_fold_order_page_config.ebike_default_delivery_time
-    );
-  });
-
-  $('.product .product-panel').on('submit', function (event) {
-    // 阻止默认行为
-    event.preventDefault();
-    return false;
-  });
-
-  $('.product .dialogs > div').on('click', function (e) {
-    const m = {
-      0: 'one',
-      1: 'two',
-      2: 'three',
-      3: 'four',
-    };
-
-    if ($(this).attr('onclick')) {
-      return;
-    }
-
-    $('.product .dialogs > div').each((i, t) => {
-      if ($(e.target).closest('.u17Medium_v2')[0] === t) {
-        i = i > 1 ? 3 : i;
-
-        setTimeout(() => {
-          const layer = document.querySelector(`.order-modal-${m[i]}`);
-          const laybox = document.querySelector(`.order-modal-layer-${m[i]}`);
-          layer.style.display = 'flex';
-          layer.style.zIndex = '99999';
-          laybox.className += ' dialog-open';
-        }, 100);
-      }
-    });
-  });
-
   function changeAddToCartText(parse, step = 0) {
     if (step) {
       $('.addToCartBtn i').toggleClass('showi');
@@ -1193,8 +1086,219 @@
       return addAllToCart('atc', true);
     }
   }
+</script>
+<script type="module">
+  window.leftSwiper = new Swiper('.product .left-swiper', {
+    direction: 'vertical',
+    spaceBetween: 15,
+    slidesPerView: 9,
+    watchSlidesProgress: true,
+    // height: 360,
+  });
 
-  $('.product .product-panel .accessories > div:not(.u17DemiBold_v2):not(.items)').on('click', (e) => {
+
+  window.rightSwiper = new Swiper('.product .right-swiper', {
+    navigation: {
+      nextEl: '.product .featured_image .swiper-button-next',
+      prevEl: '.product .featured_image .swiper-button-prev',
+    },
+    spaceBetween: 10,
+    pagination: { el: '.swiper-pagination' },
+    thumbs: {
+      swiper: window.leftSwiper,
+    },
+    roundLengths : true,
+    on:{
+        slideChange: function() {
+            const index = this.activeIndex % global_config.carbon_fold_order_page_config.product_media_images.length;
+            $('.product .medias').find('.u17DemiBold_v2').text(global_config.carbon_fold_order_page_config.product_media_images[index].text)
+            $('.product .medias').find('img').attr('src', global_config.carbon_fold_order_page_config.product_media_images[index].img)
+
+            if (global_config.carbon_fold_order_page_config.product_media_images[index + 1]) {
+                (new Image()).src = global_config.carbon_fold_order_page_config.product_media_images[index + 1].img
+            }
+
+            if (global_config.carbon_fold_order_page_config.product_media_images[index + 2]) {
+                (new Image()).src = global_config.carbon_fold_order_page_config.product_media_images[index + 2].img
+            }            
+        },
+    },
+  });
+
+  document.addEventListener('onChangeSize', (e) => {
+    $(`.product .product-panel .options > div[option="Size"] .u17DemiBold_v2 .u17Light_v2`).text(
+      global_config.carbon_fold_order_page_config.size_map[e.value]
+    );
+  });
+
+  document.addEventListener('onChangeColor', (e) => {
+    $(`.product .product-panel .options > div[option="Color"] .u17DemiBold_v2 .u17Light_v2`).text(e.value);
+
+    let swiper_arr = [];
+    swiper_arr = swiper_arr.concat(
+      global_config.carbon_fold_order_page_config.product_images[e.value],
+      global_config.carbon_fold_order_page_config.product_images['commonSwiper']
+    );
+
+    console.log(swiper_arr);
+    window.rightSwiper.removeAllSlides()
+    window.leftSwiper.removeAllSlides()
+
+    for (let i = 0; i < swiper_arr.length; i++) {
+      window.rightSwiper.appendSlide(`<div class="swiper-slide"><img alt="Urtopia Carbon 1 Pro" src="${swiper_arr[i]}"/></div>`)
+      window.leftSwiper.appendSlide( `<img class="swiper-slide" alt="Urtopia Carbon 1 Pro" src="${swiper_arr[i]}"/>`)
+    }
+  });
+
+  document.addEventListener('onChangeOptions', (e) => {
+    $('.product .delivery_time').html(
+      global_config.carbon_fold_order_page_config.ebike_delivery_time[e.value.id] ||
+        global_config.carbon_fold_order_page_config.ebike_default_delivery_time
+    );
+  });
+
+  $('.product .product-panel').on('submit', function (event) {
+    // 阻止默认行为
+    event.preventDefault();
+    return false;
+  });
+
+  $('.product .dialogs > div').on('click', function (e) {
+    const m = {
+      0: 'one',
+      1: 'two',
+      2: 'three',
+      3: 'four',
+    };
+
+    if ($(this).attr('onclick')) {
+      return;
+    }
+
+    $('.product .dialogs > div').each((i, t) => {
+      if ($(e.target).closest('.u17Medium_v2')[0] === t) {
+        i = i > 1 ? 3 : i;
+
+        setTimeout(() => {
+          const layer = document.querySelector(`.order-modal-${m[i]}`);
+          const laybox = document.querySelector(`.order-modal-layer-${m[i]}`);
+          layer.style.display = 'flex';
+          layer.style.zIndex = '99999';
+          laybox.className += ' dialog-open';
+        }, 100);
+      }
+    });
+  });
+
+    new Swiper('.users .sipwers', {
+        loop: true, // 启用循环模式
+        autoplay: {
+          delay: 0, // 设置为0以便无停顿地切换
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        },
+        speed: 6000, // 切换速度设置为和幻灯片显示时间一样，使其匀速播放
+        slidesPerView: global_config.is_mobile ? 1.25 : 4, // 自动根据内容设置滑动宽度
+        spaceBetween: global_config.is_mobile ? 16 : 32, // 幻灯片之间没有间距
+      });
+
+
+    new Swiper('#quality .centeral-content', {
+        slidesPerView: global_config.is_mobile ? 1.25 : 3,
+        spaceBetween: global_config.is_mobile ? 16 : 32,
+        navigation: {
+          nextEl: '#quality .centeral-content .swiper-button-next',
+          prevEl: '#quality .centeral-content .swiper-button-prev',
+        },
+        scrollbar: {
+          el: '#quality .centeral-content .swiper-scrollbar',
+          draggable: true
+        },
+      });
+
+
+      new Swiper('.TakeItEasywithFold1 .centeral-content', {
+        slidesPerView: global_config.is_mobile ? 1.25 : 2.25,
+        spaceBetween: global_config.is_mobile ? 16 : 32,
+        navigation: {
+          nextEl: '.TakeItEasywithFold1 .centeral-content .swiper-button-next',
+          prevEl: '.TakeItEasywithFold1 .centeral-content .swiper-button-prev',
+        },
+        scrollbar: {
+          el: '.TakeItEasywithFold1 .centeral-content .swiper-scrollbar',
+          draggable: true
+        },
+      });
+
+  $('.faq .items .item .u24Medium_v2').click(function () {
+    $(this).siblings('.u17Light_v2').slideToggle().parent().siblings().find('.u17Light_v2').slideUp();
+
+    if ($(this).parent().hasClass('active')) {
+      $(this).parent().removeClass('active');
+    } else {
+      $(this).parent().addClass('active');
+    }
+
+    $(this).parent().siblings().removeClass('active');
+  });
+
+  new Swiper('.step_folding .swiper', {
+        autoplay: {
+            disableOnInteraction: false,
+            pauseOnMouseEnter: false,
+            delay: 2000,
+        },
+        loop: true,
+        effect: 'fade',
+        grabCursor: true,
+        fadeEffect: {
+            crossFade: true
+        },
+        speed: 600,
+        on: {
+          reachEnd: function(){
+            $(`.step_folding .progress > div`).removeClass('active')
+          },
+            slideChange: function () {      
+                if (this.realIndex === 0) {
+                    // 往右
+                    if (this.activeIndex > this.previousIndex) {
+                         setTimeout(() => {
+                           $(`.step_folding .progress > div:nth-child(1)`).addClass('active')
+                         }, 66)
+                    } else {
+                         setTimeout(() => {
+                           $(`.step_folding .progress > div:nth-child(1)`).addClass('active')
+                         }, 66)
+                      
+                        $(`.step_folding .progress > div:nth-child(2)`).removeClass('active')
+                        $(`.step_folding .progress > div:nth-child(3)`).removeClass('active')
+                    }
+                }
+
+                if (this.realIndex === 1) {
+                    // 往右
+                    if (this.activeIndex > this.previousIndex) {
+                        $(`.step_folding .progress > div:nth-child(2)`).addClass('active')
+                    } else {
+                        $(`.step_folding .progress > div:nth-child(1)`).addClass('active')
+                        $(`.step_folding .progress > div:nth-child(2)`).addClass('active')
+                        $(`.step_folding .progress > div:nth-child(3)`).removeClass('active')
+                    }
+                }
+
+                if (this.realIndex === 2) {
+                    if (this.activeIndex > this.previousIndex) {
+                        $(`.step_folding .progress > div:nth-child(3)`).addClass('active')
+                    } else {
+                        $(`.step_folding .progress > div`).addClass('active')
+                    }                
+                }
+            },
+        },
+    });
+
+    $('.product .product-panel .accessories > div:not(.u17DemiBold_v2):not(.items)').on('click', (e) => {
     const items = $('.product .product-panel .accessories .items');
 
     items.animate(
@@ -1254,131 +1358,4 @@
       100
     )
   );
-</script>
-<script>
-    new Swiper('.users .sipwers', {
-        loop: true, // 启用循环模式
-        autoplay: {
-          delay: 0, // 设置为0以便无停顿地切换
-          disableOnInteraction: false,
-          pauseOnMouseEnter: true,
-        },
-        speed: 6000, // 切换速度设置为和幻灯片显示时间一样，使其匀速播放
-        slidesPerView: global_config.is_mobile ? 1.25 : 4, // 自动根据内容设置滑动宽度
-        spaceBetween: global_config.is_mobile ? 16 : 32, // 幻灯片之间没有间距
-      });
-
-
-    new Swiper('#quality .centeral-content', {
-        slidesPerView: global_config.is_mobile ? 1.25 : 3,
-        spaceBetween: global_config.is_mobile ? 16 : 32,
-        navigation: {
-          nextEl: '#quality .centeral-content .swiper-button-next',
-          prevEl: '#quality .centeral-content .swiper-button-prev',
-        },
-        scrollbar: {
-          el: '#quality .centeral-content .swiper-scrollbar',
-          draggable: true
-        },
-      });
-
-
-      new Swiper('.TakeItEasywithFold1 .centeral-content', {
-        slidesPerView: global_config.is_mobile ? 1.25 : 2.25,
-        spaceBetween: global_config.is_mobile ? 16 : 32,
-        navigation: {
-          nextEl: '.TakeItEasywithFold1 .centeral-content .swiper-button-next',
-          prevEl: '.TakeItEasywithFold1 .centeral-content .swiper-button-prev',
-        },
-        scrollbar: {
-          el: '.TakeItEasywithFold1 .centeral-content .swiper-scrollbar',
-          draggable: true
-        },
-      });
-
-    //   new Swiper('.professional .centeral-content', {
-    //   slidesPerView: global_config.is_mobile ? 1.25 : 3.5,
-    //   spaceBetween: 20,
-    //   navigation: {
-    //   nextEl: '.professional .centeral-content .swiper-button-next',
-    //   prevEl: '.professional .centeral-content .swiper-button-prev',
-    // },
-    //   scrollbar: {
-    //     el: '.professional .centeral-content .swiper-scrollbar',
-    //     draggable: true,
-    //   },
-    // });
-
-
-
-  $('.faq .items .item .u24Medium_v2').click(function () {
-    $(this).siblings('.u17Light_v2').slideToggle().parent().siblings().find('.u17Light_v2').slideUp();
-
-    if ($(this).parent().hasClass('active')) {
-      $(this).parent().removeClass('active');
-    } else {
-      $(this).parent().addClass('active');
-    }
-
-    $(this).parent().siblings().removeClass('active');
-  });
-</script>
-
-<script>
-  let direction_index = 0
-    new Swiper('.step_folding .swiper', {
-        autoplay: {
-            disableOnInteraction: false,
-            pauseOnMouseEnter: false,
-            delay: 2000,
-        },
-        loop: true,
-        effect: 'fade',
-        grabCursor: true,
-        fadeEffect: {
-            crossFade: true
-        },
-        speed: 600,
-        on: {
-          reachEnd: function(){
-            $(`.step_folding .progress > div`).removeClass('active')
-          },
-            slideChange: function () {      
-                if (this.realIndex === 0) {
-                    // 往右
-                    if (this.activeIndex > this.previousIndex) {
-                         setTimeout(() => {
-                           $(`.step_folding .progress > div:nth-child(1)`).addClass('active')
-                         }, 66)
-                    } else {
-                         setTimeout(() => {
-                           $(`.step_folding .progress > div:nth-child(1)`).addClass('active')
-                         }, 66)
-                      
-                        $(`.step_folding .progress > div:nth-child(2)`).removeClass('active')
-                        $(`.step_folding .progress > div:nth-child(3)`).removeClass('active')
-                    }
-                }
-
-                if (this.realIndex === 1) {
-                    // 往右
-                    if (this.activeIndex > this.previousIndex) {
-                        $(`.step_folding .progress > div:nth-child(2)`).addClass('active')
-                    } else {
-                        $(`.step_folding .progress > div:nth-child(1)`).addClass('active')
-                        $(`.step_folding .progress > div:nth-child(2)`).addClass('active')
-                        $(`.step_folding .progress > div:nth-child(3)`).removeClass('active')
-                    }
-                }
-
-                if (this.realIndex === 2) {
-                    if (this.activeIndex > this.previousIndex) {
-                        $(`.step_folding .progress > div:nth-child(3)`).addClass('active')
-                    } else {
-                        $(`.step_folding .progress > div`).addClass('active')
-                    }                
-                }
-            },
-        },
-    });
 </script>

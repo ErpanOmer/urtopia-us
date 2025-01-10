@@ -1,16 +1,16 @@
  {% assign current_article_id = article.id %}
  
  <section class="grid-box grid-columns-2 margin-top-60 margin-bottom-60 explore mb-grid-columns-1">
-    <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240118-170647.jpg?v=1705568844" alt="">
+    <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240118-170647.jpg?v=1705568844" alt="">
     <div>
-        <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/mask-group-382x-1671691876009.png" alt="">
+        <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/mask-group-382x-1671691876009.png" alt="">
         <h3 class="mb-font-size-28">Explore the</h3>
         <h3 class="mb-font-size-28">Urtopia Carbon 1 Pro</h3>
         <div class="margin-top-48">
           <a href="/products/urtopia-carbon-1-pro-ebike" class="my-button margin-right-16">Order Now</a>
           <a href="/pages/test-ride" class="my-button my-button-ghost">Test Ride</a>
         </div>
-        <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/mask-group-392x-1671691876012.png" alt="">
+        <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/mask-group-392x-1671691876012.png" alt="">
     </div>
   </section>
   <footer class="padding-bottom-120 mb-padding-bottom-80">
@@ -23,7 +23,7 @@
             {% assign count = count | plus:1 %}
             {% if count < 4 %}
               <a href="{{ article.url }}" class="flex flex-column border-radius-10 mb-margin-top-40" style="overflow: hidden;border: 1px solid #e6e6e6;">
-                <div class="lozad" data-background-image="{{ article.image.src | image_url: width: 400 }}"></div>
+                <div class="lozad" style="background-image: url({{ article.image.src | image_url: width: 400 }});"></div>
                 <div class="flex-1 er-p-10 mb:er-p-6">
                   <h6 class="color-orange font-size-16 margin-bottom-12">Blog</h6>
                   <h3 class="er-text-4xl er-leading-snug mb:er-text-2xl">{{ article.title }}</h3>
