@@ -1,5 +1,3 @@
-{{ 'size-guide-and-specs-template.css' | asset_url | stylesheet_tag }}
-
 <div class="centeral-content size-guide-and-specs-template">
   <div class="size-guide">
     <h3 class="u36DemiBold_v2">
@@ -75,7 +73,9 @@
   </div>
 </dialog>
 
-<script type="module">
+<script
+  type="module"
+>
   $('.size-guide-and-specs-template h3').click(function () {
         $(this).siblings('.size-guide-and-specs-template .content').slideToggle().parent().siblings().find('.size-guide-and-specs-template .content').slideUp();
         $(this).children('div').toggleClass('dowwwwn')

@@ -67,14 +67,7 @@
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
-
-    <script>
-      const observer = lozad('.lozad', {
-        rootMargin: '1000px 2000px' // syntax similar to that of CSS Margin
-      }); // lazy loads elements with default selector as '.lozad'
-      observer.observe('.lozad');
-    </script>
     {% render 'dialog' %}
-    {% render 'judgeme_core' %}
+    {% render 'lozad' %}
   </body>
 </html>

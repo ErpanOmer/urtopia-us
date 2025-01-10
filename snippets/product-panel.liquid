@@ -55,7 +55,7 @@
   data-variant-swiper-size="{{ swiper_of_variant.count }}"
 >
   <div class="er-w-[{{ product_left_swiper_width }}px] er-shrink-0 er-space-y-2 left-images er-hidden xl:er-block er-h-fit md:er-sticky md:er-top-28">
-    {% for variant_image in swiper %}
+    {%- for variant_image in swiper -%}
       {{
         variant_image
         | image_url: width: product_main_swiper_width
@@ -66,7 +66,7 @@
           decoding: 'async',
           loading: 'lazy'
       }}
-    {% endfor %}
+    {%- endfor -%}
   </div>
   <div class="er-flex-1 er-pr-[4%] er-flex er-flex-col er-space-y-10 mb:er-px-0 er-h-fit xl:er-px-[5%] md:er-sticky md:er-top-28">
     {% render 'product-panel-common', product: product, class: 'md:er-hidden' %}
@@ -75,7 +75,7 @@
       style="--swiper-theme-color: #000;"
     >
       <div class="swiper-wrapper">
-        {% for variant_image in swiper %}
+        {%- for variant_image in swiper -%}
           {% if forloop.index < 2 %}
             {% assign preload = true %}
             {% assign fetchpriority = 'high' %}
@@ -93,10 +93,10 @@
               data-index: forloop.index,
               preload: preload,
               fetchpriority: fetchpriority,
-              decoding: "async",
+              decoding: 'async',
               loading: loading
           }}
-        {% endfor %}
+        {%- endfor -%}
       </div>
       <div
         class="swiper-button-prev er-transition er-bg-[#ffffff80] er-rounded-lg after:er-text-5xl after:er-content-['prev'] hover:er-opacity-70 er-select-none er-z-[1] mb:er-hidden"
@@ -105,9 +105,12 @@
         class="swiper-button-next er-transition er-bg-[#ffffff80] er-rounded-lg after:er-text-5xl after:er-content-['next'] hover:er-opacity-70 er-select-none er-z-[1] mb:er-hidden"
       ></div>
     </div>
-    <div class="swiper-pagination md:er-hidden er-static !er-mt-4 !er-mb-[-15px] er-leading-none er-h-6" style="--swiper-pagination-color: #000;--swiper-pagination-bullet-size: 6px;"></div>
-    {% for item in product_media_reviews %}
-      {% if forloop.first %}
+    <div
+      class="swiper-pagination md:er-hidden er-static !er-mt-4 !er-mb-[-15px] er-leading-none er-h-6 er-z-[1]"
+      style="--swiper-pagination-color: #000;--swiper-pagination-bullet-size: 6px;"
+    ></div>
+    {%- for item in product_media_reviews -%}
+      {%- if forloop.first -%}
         <div class="er-flex er-flex-col er-items-center er-text-center er-italic product-medias">
           <span class="er-text-3xl er-font-bold mb:er-text-2xl">{{ item.text }}</span>
           {{
@@ -121,8 +124,8 @@
               decoding: 'async'
           }}
         </div>
-      {% endif %}
-    {% endfor %}
+      {%- endif -%}
+    {%- endfor -%}
     <div class="er-flex er-bg-background er-items-center er-rounded-2xl er-p-3 er-gap-x-4 er-pr-6">
       {{
         product_send_accessories_icon.image
@@ -141,7 +144,7 @@
       </div>
     </div>
     <div class="er-grid er-grid-cols-2 er-gap-y-8 mb:er-hidden lg:er-grid-cols-3">
-      {% for item in product_parameter_and_icons %}
+      {%- for item in product_parameter_and_icons -%}
         <div class="er-flex er-items-center">
           {{
             item.image
@@ -150,13 +153,21 @@
           }}
           <span class="er-text-2xl er-font-medium er-ml-2">{{ item.text }}</span>
         </div>
-      {% endfor %}
+      {%- endfor -%}
     </div>
   </div>
-  <form method="post" accept-charset="UTF-8" action="/cart/add" data-productid="{{ product.id }}" id="product_form_{{ product.id }}" enctype="multipart/form-data" class="er-min-w-[400px] er-max-w-xl er-shrink-0 er-space-y-8 er-flex er-flex-col mb:er-min-w-0 mb:er-max-w-full">
-      <input type="hidden" name="id" data-product-id="{{ product.id }}" value="{{ current_variant.id }}">
-      <input type="hidden" name="form_type" value="product">
-      <input type="hidden" name="utf8" value="✓">
+  <form
+    method="post"
+    accept-charset="UTF-8"
+    action="/cart/add"
+    data-productid="{{ product.id }}"
+    id="product_form_{{ product.id }}"
+    enctype="multipart/form-data"
+    class="er-min-w-[400px] er-max-w-xl er-shrink-0 er-space-y-8 er-flex er-flex-col mb:er-min-w-0 mb:er-max-w-full"
+  >
+    <input type="hidden" name="id" data-product-id="{{ product.id }}" value="{{ current_variant.id }}">
+    <input type="hidden" name="form_type" value="product">
+    <input type="hidden" name="utf8" value="✓">
     {% render 'product-panel-common', product: product, class: 'mb:er-hidden !er-mt-0' %}
     {% if show_outlet_list %}
       <ul class="er-shadow er-rounded-xl er-p-4 er-pl-12 marker:er-text-primary er-font-bold">
@@ -183,7 +194,7 @@
           </span>
         </legend>
         <div class="er-flex er-gap-4">
-          {% for option_value in option.values %}
+          {%- for option_value in option.values -%}
             <label
               {% if option.position == 1 %}
                 class="er-button er-button-dark er-px-6 er-text-2xl er-py-2 er-rounded-xl{% unless option_value.selected %} er-button-outline{% endunless %}"
@@ -211,7 +222,7 @@
                 {{ option_value }}
               </span>
             </label>
-          {% endfor %}
+          {%- endfor -%}
         </div>
       </fieldset>
     {% endfor %}
@@ -471,7 +482,9 @@
     }
   }
 </script>
-<script type="module">
+<script
+  type="module"
+>
   // 监听滚动事件，显示或隐藏按钮
   $(window).on('scroll', throttle(function () {
       const target = $('.product-bar')
