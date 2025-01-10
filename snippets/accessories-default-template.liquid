@@ -47,9 +47,7 @@
   </div>
 </div>
 
-<script>
-  console.log(JSON.parse(JSON.stringify({{ product | json }})))
-
+<script type="module">
   window.fuckyou = new Swiper(".product .fuckyou .swiperrrr", {
       zoom: {
         maxRatio: 2.5
@@ -60,9 +58,7 @@
       },
       pagination: {el:'.product .fuckyou .swiper-pagination'},
     });
-</script>
 
-<script>
   let adding = false;
   $('.product-panel .my-button:not(.disabled)').on('click', () => {
     !adding &&
@@ -135,14 +131,13 @@
       spinner.find('input').trigger('change');
     });
   });
-</script>
 
-<script>
-  // vairiants 
+    // vairiants 
   const variants = []
   // options 树状结构
   const options_tree = []
   const onChangeOptionsEvent = new Event("onChangeOptions")
+  let temp = null
 
   
   {% for variant in product.variants %}
