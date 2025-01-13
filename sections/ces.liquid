@@ -1,7 +1,24 @@
-{% render 'tailwind' %}
+<script src="https://cdn.tailwindcss.com"></script>
 <script>
-  console.log(JSON.parse(JSON.stringify('{{ page.metafields.custom["ces_data"].value }}')));
+  tailwind.config = {
+    theme: {
+      extend: {
+        screens: {
+          mb: { max: '768px' },
+          lg: { max: '1023px' },
+        },
+      },
+    },
+  };
 </script>
+<style>
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: inherit;
+  }
+</style>
 <section
   class="text-white aspect-[1920/850] bg-center bg-no-repeat bg-cover bg-[url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19513_2x_e6441129-fb5c-4271-9226-84592bbc538b.jpg?v=1734404029')] bg-black mb:bg-[url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24728_2x_2ab0948c-7101-422a-b65a-e2bb7f0b9505.jpg?v=1733730339')] mb:bg-contain mb:bg-top"
 >
