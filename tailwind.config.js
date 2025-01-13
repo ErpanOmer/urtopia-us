@@ -21,7 +21,7 @@ export default {
         },
       },
       fontFamily: {
-        base: ['Helvetica Now Display', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
+        base: ['Helvetica Now Display', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Ubuntu', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif', "Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"],
       },
       colors: {
         primary: '#FD4B17',
