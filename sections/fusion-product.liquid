@@ -451,18 +451,13 @@
           <i class="fa fa-spinner fa-spin"></i
           ><span data-pf-type="Text" class="addToCartText u17DemiBold_v2">Add to Cart</span>
         </div>
-        <div onclick="testRideTrace('klarna_check_out', this)" class="orderTestRideBtn mb12">
-          <img
-            class="twoooo"
-            width="90"
-            height="26"
-            loading="lazy"
-            fetchpriority="low"
-            decoding="async"
-            src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230530-121400.png?v=1685420054"
-            alt="klarna"
-          >
+        <div onclick="testRideTrace('klarna_check_out', this)" class="orderTestRideBtn" style="    display: flex;
+    align-items: center;
+    justify-content: center;">
+          <img loading="lazy" height="22" width="56" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/434_2x_d2dcc5b3-2098-426c-9ecb-c4baf3b4ddca.png?v=1736511723">
+          <img loading="lazy" height="22" width="68" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Klarna-Logo.wine_2x_30a24e0b-fbeb-461c-8ea8-0c3c8745a9d3.png?v=1736511716">
           <span
+            style="width: auto;"
             ><span class="u14DemiBold_v2">0 APR Financing</span
             ><span class="u14Medium_v2"
               >24 months,
@@ -1745,6 +1740,7 @@
       new Swiper('.quality .centeral-content', {
         slidesPerView: global_config.is_mobile ? 1.25 : 3,
         spaceBetween: global_config.is_mobile ? 16 : 32,
+        preloadImages:false,
         navigation: {
             nextEl: '.quality .centeral-content .swiper-button-next',
             prevEl: '.quality .centeral-content .swiper-button-prev',
@@ -1762,6 +1758,7 @@
             delay: 2000,
         },
         loop: true,
+        preloadImages:false,
         effect: 'fade',
         fadeEffect: {
             crossFade: true

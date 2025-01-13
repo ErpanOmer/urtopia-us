@@ -102,7 +102,7 @@
     <div class="u24DemiBold_v2" data-price="{{ product_variants.first.price | money_without_trailing_zeros }}">
       {{ product_variants.first.price | money_without_trailing_zeros }}
     </div>
-    <div class="u14Light_v2">
+    <div class="u14Light_v2" style="align-items: center;">
       Or &nbsp;<span>{{ product_variants.first.price | divided_by: 24 | money }}</span>/mo
       <img
         width="40"
@@ -110,7 +110,13 @@
         loading="lazy"
         src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Image_70_2x_8fb8f4b7-8366-43bc-b526-28f1fe7c3dee.png?v=1695607020"
         alt=""
-        class="lozad"
+      >
+      <img
+        width="40"
+        height="23"
+        loading="lazy"
+        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25284_2x_80e34140-1944-404c-9141-f5e3498ced8e.png?v=1736512437"
+        alt=""
       >
     </div>
   </div>

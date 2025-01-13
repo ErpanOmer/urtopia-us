@@ -28,7 +28,7 @@
 
 
    {% for variant in product.variants %}
-        if ({{ variant.available }} || global_config.{{ config_name }}.ignore_variants_available_false.includes({{ variant.id }})) {
+        if ({{ variant.available }}) {
           temp = options_tree
           {% for option in variant.options %}
             if (!temp['{{ option }}']) {
@@ -175,7 +175,7 @@
   }
 
   function pageInit() {
-      const variant_id = search.variant || global_config.{{ config_name }}.default_variant
+      const variant_id = search.variant
       let find = findVariantFromId(variant_id)
 
       if (!find || !find.available) {
@@ -185,12 +185,10 @@
       asyncFn(changeOptions, titleToOptions(find.title))
     }
 
-   console.log(options_with_values)
-   console.log(variants)
-   console.log(options_tree)
 </script>
 <script type="module">
-// 页面初始化
+  
+  // 页面初始化
 pageInit()
 
 $('.product-panel .options .option >div:not(.u17DemiBold_v2) > div').on('click',e => {

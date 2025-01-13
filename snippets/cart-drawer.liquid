@@ -522,12 +522,6 @@
           >
             Proceed to Checkout
           </button>
-          <!--
-            <div onclick="testRideTrace2('klarna_check_out', this)" class="orderTestRideBtn">
-              <img class="twoooo"src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230530-121400.png?v=1685420054" alt="klarna"/>
-              <span><span class="u17DemiBold_v2">0% APR Financing</span><span class="stages">24 months, €112/month</span></span>
-            </div>
-          -->
         </div>
       </div>
     </div>
@@ -535,26 +529,6 @@
 </cart-drawer>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    function isIE() {
-      const ua = window.navigator.userAgent;
-      const msie = ua.indexOf('MSIE ');
-      const trident = ua.indexOf('Trident/');
-
-      return (msie > 0 || trident > 0);
-    }
-
-    if (!isIE()) return;
-    const cartSubmitInput = document.createElement('input');
-    cartSubmitInput.setAttribute('name', 'checkout');
-    cartSubmitInput.setAttribute('type', 'hidden');
-    document.querySelector('#cart').appendChild(cartSubmitInput);
-    document.querySelector('#checkout').addEventListener('click', function(event) {
-      document.querySelector('#cart').submit();
-    });
-  });
-
-
   //Bing UET
   document.querySelector('#CartDrawer-Checkout').addEventListener('click', function () {
     fetchBuried('websiteclick', `cart-page`, { button: 'checkout' }, true)
@@ -598,14 +572,5 @@
     }).catch(e => {
       console.log()
     })
-  }
-
-
-  function testRideTrace2(type = '', target) {
-    if (type === 'klarna_check_out') {
-      fetchBuried('websiteclick', `cart-page`, { button: type, action_type: sessionStorage.carbon_one_a_b_test_flag }, true)
-
-      location.href = `/checkout?show_klarna_dialog=show_klarna_dialog`
-    }
   }
 </script>

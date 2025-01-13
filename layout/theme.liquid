@@ -8,23 +8,22 @@
     <meta name="google-site-verification" content="4CyyxbiT2JJKwsI1xsr_c7Qf-ihbvBm4WMiPhI0rOeA">
     <meta name="google-site-verification" content="1L3RQDlBxPuNpF21De0Ah8NwPfQRUDie4JA9sbgKwfo">
     <meta name="theme-color" content="">
-    {% if page_description %}
+    {%- if page_description -%}
       <meta name="description" content="{{ page_description | escape }}">
-    {% endif %}
-    {% render 'meta-tags' %}
-
+    {%- endif -%}
+    {%- render 'meta-tags' -%}
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
     <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
-
     {% render 'theme-style' %}
     {{ 'base.css' | asset_url | stylesheet_tag: preload: true }}
     {{ 'tailwind.css' | asset_url | stylesheet_tag: preload: true }}
     <script src="{{ 'global-sync.min.js' | asset_url }}" fetchpriority="high" type="module"></script>
     {% comment %} {{ content_for_header }} {% endcomment %}
-    {{ content_for_header | replace: 'preloads.js?locale=en-US"', 'preloads.js?locale=en-US" type="text/lazyload"' }}
-
-    <script src="{{ 'global.js' | asset_url }}" fetchpriority="low" defer></script>
-    {% render 'dataLayer-allPages' %}
+    {{ content_for_header 
+    | replace: 'preloads.js?locale=en-US"', 'preloads.js?locale=en-US" type="text/lazyload"' 
+    | replace: "'load', asyncLoad, false);", "'load', () => setTimeout(asyncLoad, 1000), false);"
+    | replace: 'data-source-attribution="shopify.loadfeatures" defer="defer"', 'data-source-attribution="shopify.loadfeatures" type="text/lazyload"'
+    }}
     {% render 'global-config' %}
     {% render 'pagefly-app-header' %}
   </head>
@@ -37,7 +36,7 @@
     {% section 'care' %}
     {% section 'footer' %}
     {%- render 'cart-drawer' -%}
-    <script>
+    <script type="module">
       window.shopUrl = '{{ request.origin }}';
       window.routes = {
         cart_add_url: '{{ routes.cart_add_url }}',
@@ -65,11 +64,12 @@
         playSlideshow: `{{ 'sections.slideshow.play_slideshow' | t }}`,
       };
     </script>
-
-    {%- if settings.predictive_search_enabled -%}
-      <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
-    {%- endif -%}
-    {% render 'dialog' %}
-    {% render 'lozad' %}
   </body>
+  {% render 'lozad' %}
+  {% render 'dataLayer-allPages' %}
+  {% render 'dialog' %}
+  <script src="{{ 'global.js' | asset_url }}" fetchpriority="low" type="text/lazyload"></script>
+  {% if product or request.path == '/pages/test-ride' or request.path == '/pages/urtopia-e-bike-review' %}
+    {% render 'judgeme_core' %}
+  {% endif %}
 </html>

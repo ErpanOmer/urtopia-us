@@ -130,20 +130,20 @@
 </div>
 <div class="blogs">
   <div class="centeral-content">
-    {% assign home_page_blogs = settings.home_page_blogs | split: ',' %}
-    {% for blog in home_page_blogs %}
-      {% for article in blogs.blog.articles %}
-        {% if blog == article.handle %}
+    {%- assign home_page_blogs = settings.home_page_blogs | split: ',' -%}
+    {%- for blog in home_page_blogs -%}
+      {%- for article in blogs.blog.articles -%}
+        {%- if blog == article.handle -%}
           <div href="{{ article.url }}">
             {{ article | image_url: width: 500 | image_tag: loading: 'lazy' }}
             <h2 class="u20Medium_v2">{{ article.title }}</h2>
             <div class="flex-1"></div>
             <a target="_blank" href="{{ article.url }}">Read more</a>
           </div>
-        {% endif %}
-      {% endfor %}
-    {% endfor %}
-    {% assign article = articles['blog/the-smartest-e-bike-youll-never-lose'] %}
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endfor -%}
+    {%- assign article = articles['blog/the-smartest-e-bike-youll-never-lose'] -%}
     <div href="{{ article.url }}">
       {{ article | image_url: width: 500 | image_tag: loading: 'lazy' }}
       <h2 class="u20Medium_v2">{{ article.title }}</h2>
