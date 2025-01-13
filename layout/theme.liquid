@@ -18,12 +18,94 @@
     {% style %}
       {% render 'tailwind' %}
     {% endstyle %}
+    <script>
+      (function () {
+          const pattern = [
+            ['src', 'shopify-perf-kit', 300],
+            ['src', 'https://www.google-analytics.com/analytics.js', 300],
+            ['id', 'web-pixels-manager-setup', 1000],
+            ['className', 'analytics', 300]
+          ]
+          // 存储 head 中的 script 标签信息
+          const scriptQueue = [];
+
+          // 监听 DOM 的添加
+          const observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+              mutation.addedNodes.forEach((node) => {
+                if (node.tagName === 'SCRIPT' && node.parentElement.tagName === 'HEAD') {
+                for (const [attr, value, delay] of pattern) {
+                  if (node[attr] && node[attr].includes(value)) {
+                    scriptQueue.push({
+                      src: node.src,
+                      content: node.src ? null : node.innerText,
+                      type: node.type || 'text/javascript',
+                      isInline: !!!node.src,
+                      delay,
+                      attrs: Array.from(node.attributes).map(attr => [attr.name, attr.value])
+                    });
+
+                    node.remove();
+                    break;
+                  }
+                }
+                }
+              });
+            });
+          });
+
+          // 开始观察 head 的变动
+          observer.observe(document.head, { childList: true });
+
+          // 等待页面加载完成后执行收集的 script
+          window.addEventListener('load', () => {
+            console.log('Executing collected scripts...');
+
+            console.log(scriptQueue)
+
+            document.querySelectorAll('script[type="text/lazyload"]').forEach(elem => {
+              const delay = elem.getAttribute('data-delay')
+
+              if (!Number.isNaN(delay)) {
+                setTimeout(() => {
+                  elem.type = "text/javascript";
+                  elem.src = elem.src;
+                  elem.async = false; 
+                }, Number(delay))
+              }
+            })
+
+            scriptQueue.forEach((script) => {
+              const newScript = document.createElement('script');
+
+              if (script.isInline) {
+                newScript.textContent = script.content;
+              } else {
+                newScript.src = script.src;
+              }
+
+              newScript.type = script.type;
+
+              for (const [attr, value] of script.attrs) {
+                newScript.setAttribute(attr, value)
+              }
+
+              setTimeout(() => {
+                document.head.appendChild(newScript); // 执行脚本
+              }, script.delay)
+            });
+
+            // 停止观察
+            observer.disconnect();
+          });
+        })();
+    </script>
     <script src="{{ 'global-sync.min.js' | asset_url }}" fetchpriority="high" type="module"></script>
     {% comment %} {{ content_for_header }} {% endcomment %}
     {{ content_for_header 
-    | replace: 'preloads.js?locale=en-US"', 'preloads.js?locale=en-US" type="text/lazyload"' 
+    | replace: 'preloads.js?locale=en-US"', 'preloads.js?locale=en-US" type="text/lazyload" data-delay="2000"' 
     | replace: "'load', asyncLoad, false);", "'load', () => setTimeout(asyncLoad, 1000), false);"
-    | replace: 'data-source-attribution="shopify.loadfeatures" defer="defer"', 'data-source-attribution="shopify.loadfeatures" type="text/lazyload"'
+    | replace: 'data-source-attribution="shopify.loadfeatures" defer="defer"', 'data-source-attribution="shopify.loadfeatures" data-delay="300" type="text/lazyload"'
     }}
     {% render 'global-config' %}
     {% render 'pagefly-app-header' %}
@@ -69,7 +151,7 @@
   {% render 'lozad' %}
   {% render 'dataLayer-allPages' %}
   {% render 'dialog' %}
-  <script src="{{ 'global.js' | asset_url }}" fetchpriority="low" type="text/lazyload"></script>
+  <script src="{{ 'global.js' | asset_url }}" fetchpriority="low" type="text/lazyload" data-delay="100"></script>
   {% if product or request.path == '/pages/test-ride' or request.path == '/pages/urtopia-e-bike-review' %}
     {% render 'judgeme_core' %}
   {% endif %}

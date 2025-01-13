@@ -14,9 +14,9 @@
           j = d.createElement(s),
           dl = l != 'dataLayer' ? '&l=' + l : '';
       j.defer = true;
-      j.type= "text/lazyload";
-      j.src =
-          'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      j.type = "text/lazyload";
+      j.setAttribute('data-delay', '500')
+      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
       f.parentNode.insertBefore(j, f);
   })(window, document, 'script', 'dataLayer', 'GTM-P9MZH68');
 </script>
