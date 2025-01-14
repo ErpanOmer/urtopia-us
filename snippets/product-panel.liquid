@@ -1,18 +1,17 @@
 {% liquid
   assign current_variant = product.selected_or_first_available_variant
-  assign product_color = shop.metaobjects.shop_config['product-option-color'].value.value
   assign product_size_map = shop.metaobjects.shop_config['product-size-map'].value.value
-  assign product_media_reviews = product.metafields.custom.product_media_reviews.value
+  assign product_media_reviews = product.metafields.custom.product_media_reviews.value | reverse
   assign product_parameter_and_icons = product.metafields.custom.product_parameter_icons.value
   assign product_panel_services_icons = shop.metaobjects.product_panel_services_icons['product-panel-services-icons'].items.value
   assign product_send_accessories_icon = product.metafields.custom.product_send_accessories_icon.value
 
-  assign product_left_swiper_width = product_left_swiper_width | default: 'er-w-[64px]'
+  assign product_left_swiper_width = 64
   assign product_main_swiper_width = 640
   assign product_prameters_size = 45
   assign product_media_icon_height = 60
 
-  assign product_left_swiper_class = "{{ product_left_swiper_width }} er-rounded-md er-cursor-pointer er-border-solid er-border-0 er-border-primary [&[class~='active']]:er-border-2"
+  assign product_left_swiper_class = "er-w-[64px] er-rounded-md er-cursor-pointer er-border-solid er-border-0 er-border-primary [&[class~='active']]:er-border-2"
   assign product_main_swiper_class = 'swiper-slide er-object-cover er-aspect-video er-rounded-2xl'
   assign section_class = 'er-font-base er-max-w-screen-xl er-mx-auto er-flex er-justify-between er-px-12'
 
@@ -47,18 +46,19 @@
   endif
 %}
 
-<h1 class="visuallyhidden">{{ page_title }}</h1>
+{{ swiper.first | image_url: width: product_main_swiper_width | preload_tag: as: 'image' }}
+<h1 class="er-sr-only">{{ page_title }}</h1>
 <section
   class="product-panel {{ section_class }} er-mt-16 er-pb-40 mb:er-flex-col mb:er-px-6 mb:er-mt-0 mb:er-pb-24"
   data-variant-id="{{ current_variant.id }}"
   data-swiper-insert-index="{{ swiper_insert_index }}"
   data-variant-swiper-size="{{ swiper_of_variant.count }}"
 >
-  <div class="{{ product_left_swiper_width }} er-shrink-0 er-space-y-2 left-images er-hidden xl:er-block er-h-fit md:er-sticky md:er-top-28">
+  <div class="er-flex-col er-shrink-0 er-space-y-6 left-images er-hidden xl:er-flex er-h-fit md:er-sticky md:er-top-28">
     {%- for variant_image in swiper -%}
       {{
         variant_image
-        | image_url: width: product_main_swiper_width
+        | image_url: width: product_left_swiper_width
         | image_tag:
           class: product_left_swiper_class,
           data-index: forloop.index,
@@ -69,22 +69,22 @@
     {%- endfor -%}
   </div>
   <div class="er-flex-1 er-pr-[4%] er-flex er-flex-col er-space-y-10 mb:er-px-0 er-h-fit xl:er-px-[5%] md:er-sticky md:er-top-28">
-    {% render 'product-panel-common', product: product, class: 'md:er-hidden' %}
+    {%- render 'product-panel-common', product: product, class: 'md:er-hidden' -%}
     <div
       class="er-aspect-video product-panel-swiper er-relative er-overflow-hidden er-rounded-2xl md:!er-mt-0"
       style="--swiper-theme-color: #000;"
     >
       <div class="swiper-wrapper">
         {%- for variant_image in swiper -%}
-          {% if forloop.index < 2 %}
-            {% assign preload = true %}
-            {% assign fetchpriority = 'high' %}
-            {% assign loading = 'eager' %}
-          {% else %}
-            {% assign preload = false %}
-            {% assign fetchpriority = 'low' %}
-            {% assign loading = 'lazy' %}
-          {% endif %}
+          {%- if forloop.index < 2 -%}
+            {%- assign preload = true -%}
+            {%- assign fetchpriority = 'high' -%}
+            {%- assign loading = 'eager' -%}
+          {%- else -%}
+            {%- assign preload = false -%}
+            {%- assign fetchpriority = 'low' -%}
+            {%- assign loading = 'lazy' -%}
+          {%- endif -%}
           {{
             variant_image
             | image_url: width: product_main_swiper_width
@@ -109,23 +109,19 @@
       class="swiper-pagination md:er-hidden er-static !er-mt-4 !er-mb-[-15px] er-leading-none er-h-6 er-z-[1]"
       style="--swiper-pagination-color: #000;--swiper-pagination-bullet-size: 6px;"
     ></div>
-    {%- for item in product_media_reviews -%}
-      {%- if forloop.first -%}
-        <div class="er-flex er-flex-col er-items-center er-text-center er-italic product-medias">
-          <span class="er-text-3xl er-font-bold mb:er-text-2xl">{{ item.text }}</span>
-          {{
-            item.image
-            | image_url: height: product_media_icon_height
-            | image_tag:
-              loading: 'lazy',
-              data-index: forloop.index,
-              class: 'mb:er-h-16 mb:er-w-auto',
-              fetchpriority: 'low',
-              decoding: 'async'
-          }}
-        </div>
-      {%- endif -%}
-    {%- endfor -%}
+    <div class="er-flex er-flex-col er-items-center er-text-center er-italic product-medias">
+        <span class="text-size16 er-font-bold er-text-dark/80 mb:er-text-2xl">{{ product_media_reviews.first.text }}</span>
+        {{
+          product_media_reviews.first.image
+          | image_url: height: product_media_icon_height
+          | image_tag:
+            loading: 'lazy',
+            data-index: '1',
+            class: 'mb:er-h-16 mb:er-w-auto',
+            fetchpriority: 'low',
+            decoding: 'async'
+        }}
+      </div>
     <div class="er-flex er-bg-background er-items-center er-rounded-2xl er-p-3 er-gap-x-4 er-pr-6">
       {{
         product_send_accessories_icon.image
@@ -133,7 +129,7 @@
         | image_tag: loading: 'lazy', fetchpriority: 'low', decoding: 'async'
       }}
       <div class="er-flex er-flex-1 er-gap-x-4 mb:er-flex-col-reverse mb:er-gap-y-1 mb:er-items-start">
-        <span><span class="er-text-primary er-text-2xl er-font-bold">Limited offer:</span> Fenders, kickstand</span>
+        <span><span class="er-text-primary text-size14 er-font-bold">Limited offer:</span> Fenders, kickstand</span>
         <span class="er-flex-1 mb:er-hidden"></span>
         <div class="mb:er-flex mb:er-flex-row-reverse">
           <del class="er-text-dark/80">{{ 16700 | money }}</del>
@@ -151,7 +147,7 @@
             | image_url: width: product_prameters_size, height: product_prameters_size
             | image_tag: loading: 'lazy', fetchpriority: 'low', decoding: 'async'
           }}
-          <span class="er-text-2xl er-font-medium er-ml-2">{{ item.text }}</span>
+          <span class="text-size14 er-font-medium er-ml-2">{{ item.text }}</span>
         </div>
       {%- endfor -%}
     </div>
@@ -168,56 +164,55 @@
     <input type="hidden" name="id" data-product-id="{{ product.id }}" value="{{ current_variant.id }}">
     <input type="hidden" name="form_type" value="product">
     <input type="hidden" name="utf8" value="✓">
-    {% render 'product-panel-common', product: product, class: 'mb:er-hidden !er-mt-0' %}
-    {% if show_outlet_list %}
-      <ul class="er-shadow er-rounded-xl er-p-4 er-pl-12 marker:er-text-primary er-font-bold">
+    {%- render 'product-panel-common', product: product, class: 'mb:er-hidden !er-mt-0' -%}
+    {%- if show_outlet_list -%}
+      <ul class="er-shadow er-rounded-xl er-p-4 er-pl-12 marker:er-text-primary text-size16 er-space-y-4 er-text-2xl">
         <li>Used, Refurbish or Showroom Bike</li>
         <li>Small to none damage</li>
         <li>2 year Warranty</li>
         <li>Not returnable (*see FAQ)</li>
       </ul>
-    {% endif %}
-    {% for option in product.options_with_values %}
+    {%- endif -%}
+    {%- for option in product.options_with_values -%}
       <fieldset
         class="option er-border-none er-p-0 er-space-y-4"
         option="{{ option.name }}"
         position="{{ option.position }}"
       >
-        <legend class="er-text-3xl er-font-bold">
+        <legend class="text-size18 er-font-bold mb:er-text-2xl">
           {{ option.name }} -
           <span class="er-font-normal er-text-dark/70">
-            {% if option.position == 1 %}
+            {%- if option.position == 1 -%}
               {{ product_size_map[option.selected_value] }}
-            {% else %}
+            {%- else -%}
               {{ option.selected_value }}
-            {% endif -%}
+            {%- endif -%}
           </span>
         </legend>
         <div class="er-flex er-gap-4">
           {%- for option_value in option.values -%}
             <label
-              {% if option.position == 1 %}
-                class="er-button er-button-dark er-px-6 er-text-2xl er-py-2 er-rounded-xl{% unless option_value.selected %} er-button-outline{% endunless %}"
-              {% else %}
-                style="--product-option-color: {{ product_color[option_value] }};"
-                class="er-group er-w-14 er-h-14 er-rounded-full er-border-2 er-border-solid er-border-transparent er-cursor-pointer er-transition er-bg-[var(--product-option-color)] er-p-[2px] er-bg-clip-content [&[class~='active']]:er-border-[var(--product-option-color)] er-relative{% if option_value.selected %} active{% endif %}"
-              {% endif %}
+              {%- if option.position == 1 -%}
+                class="er-button er-button-dark er-px-6 text-size14 er-py-2 er-rounded-xl{%- unless option_value.selected -%} er-button-outline{%- endunless -%}"
+              {%- else -%}
+                data-style="{{ option_value }}" class="er-group er-w-14 er-h-14 er-rounded-full er-border-2 er-border-solid er-border-transparent er-cursor-pointer er-transition er-bg-[var(--product-option-color)] er-p-[2px] er-bg-clip-content [&[class~='active']]:er-border-[var(--product-option-color)] er-relative{% if option_value.selected %} active{% endif %}"
+              {%- endif -%}
             >
               <input
                 type="radio"
                 id="{{ option_value }}"
                 name="{{ option.name }}"
                 value="{{ option_value }}"
-                class="er-hidden{% if option_value.available %} available{% endif %}"
-                {% if option_value.selected %}
+                class="er-hidden{% if option_value.available %} available{%- endif -%}"
+                {%- if option_value.selected -%}
                   checked
-                {% endif %}
+                {%- endif -%}
                 data-option-value-id="{{ option_value.id }}"
               >
               <span
-                {%- if option.position == 2 %}
-                  class="group-hover:er-visible group-hover:er-opacity-100 after:er-border-x-transparent after:er-border-t-dark after:er-border-b-transparent after:er-border-8 after:er-border-solid after:er-content-[''] after:er-bottom-[-16px] after:er-absolute after:er-left-1/2 after:er-translate-x-[-50%] er-absolute er-bottom-[150%] er-left-1/2 er-translate-x-[-50%] er-bg-dark er-text-white er-px-6 er-py-2 er-rounded-full er-whitespace-nowrap er-opacity-0 er-invisible er-transition-opacity er-duration-300 er-text-2xl er-font-medium er-z-10"
-                {% endif -%}
+                {%- if option.position == 2 -%}
+                  class="group-hover:er-visible group-hover:er-opacity-100 after:er-border-x-transparent after:er-border-t-dark after:er-border-b-transparent after:er-border-8 after:er-border-solid after:er-content-[''] after:er-bottom-[-16px] after:er-absolute after:er-left-1/2 after:er-translate-x-[-50%] er-absolute er-bottom-[150%] er-left-1/2 er-translate-x-[-50%] er-bg-dark er-text-white er-px-6 er-py-2 er-rounded-full er-whitespace-nowrap er-opacity-0 er-invisible er-transition-opacity er-duration-300 text-size14 er-font-medium er-z-10"
+                {%- endif -%}
               >
                 {{ option_value }}
               </span>
@@ -225,25 +220,26 @@
           {%- endfor -%}
         </div>
       </fieldset>
-    {% endfor %}
+    {%- endfor -%}
     <div class="er-space-y-6 er-mb-4 accessories">
-      <div class="er-text-3xl er-font-bold">Accessories</div>
+      <div class="text-size18 er-font-bold">Accessories</div>
       <div class="er-flex er-items-center">
         <div
           class="er-w-6 er-h-6 er-cursor-pointer er-border-solid er-border-l-2 er-border-t-2 er-border-l-gray er-border-t-gray er-border-b-transparent er-border-r-transparent er-rotate-[-45deg] mb:er-hidden"
         ></div>
         <div class="er-flex er-flex-1 er-overflow-x-hidden er-space-x-3 mb:er-overflow-x-auto">
-          {% for prod in product.metafields.custom.product_accessories.value %}
-            {% if prod.available %}
-              {% assign variant = prod.variants | first %}
+          {%- for prod in product.metafields.custom.product_accessories.value -%}
+            {%- if prod.available -%}
+              {%- assign variant = prod.variants | first -%}
               <div
                 class="er-flex er-flex-[0_0_47.5%] er-flex-col er-rounded-2xl er-border-solid er-border-border er-border-2 er-cursor-pointer er-relative er-aspect-video er-p-4 mb:er-pt-2 [&[class~='active']]:er-border-dark [&[class~='active']]:er-bg-gray/15"
                 variant-id="{{ variant.id }}"
               >
-                <div class="er-text-xl er-text-dark/80 er-font-medium">{{ prod.title }}</div>
-                <span class="er-text-3xl er-font-bold mb:er-text-2xl">{{ prod.price | money }}</span>
+                <div class="text-size12 mb:er-text-base">{{ prod.title }}</div>
+                <span class="text-size18 er-font-bold mb:er-text-2xl">{{ prod.price | money }}</span>
                 <span class="flex-1"></span>
-                <span class="fa-solid fa-plus"></span>
+                <span class="er-w-7 er-h-7 er-mb-1">{%- render 'icon-plus' -%}</span>
+                <span class="er-w-7 er-h-7 er-mb-1 er-hidden">{%- render 'icon-success' -%}</span>
                 {{
                   prod.featured_image
                   | image_url: width: 75
@@ -254,8 +250,8 @@
                     decoding: 'async'
                 }}
               </div>
-            {% endif %}
-          {% endfor %}
+            {%- endif -%}
+          {%- endfor -%}
         </div>
         <div
           class="er-w-6 er-h-6 er-cursor-pointer er-border-solid er-border-l-2 er-border-t-2 er-border-l-gray er-border-t-gray er-border-b-transparent er-border-r-transparent er-rotate-[135deg] mb:er-hidden"
@@ -263,10 +259,14 @@
       </div>
     </div>
     <div class="er-flex er-flex-col er-space-y-5 buttons">
-      <button class="er-button er-w-full" id="addToCart" data-product-id="{{ product.id }}" data-button-type="ATC">
-        Add To Cart
+      <button class="er-button er-w-full" data-text="Add To Cart" data-soldout="Sold Out" id="addToCart" data-product-id="{{ product.id }}" data-button-type="ATC" {%- unless current_variant.available -%}disabled{%- endunless -%}>
+        {%- if current_variant.available -%}
+          Add To Cart          
+        {%- else -%}
+         Sold Out
+        {%- endif -%}
       </button>
-      <button class="er-button er-button-dark er-button-outline er-w-full er-py-1" data-button-type="klarna_check_out">
+      <button class="er-button er-button-dark er-button-outline er-w-full er-py-1" data-button-type="klarna_check_out" {% unless current_variant.available %}disabled{% endunless %}>
         <img
           loading="lazy"
           width="90"
@@ -276,7 +276,7 @@
           decoding="async"
           alt=""
         >
-        <div class="er-flex er-flex-col er-text-2xl er-text-left">
+        <div class="er-flex er-flex-col text-size14 er-text-left">
           <span class="er-font-bold">0 APR Financing</span>
           <span
             >24 months,<span class="product-stages">
@@ -286,7 +286,7 @@
         </div>
       </button>
     </div>
-    <div class="er-border er-border-border er-border-solid er-p-4 er-rounded-2xl er-flex er-flex-col er-text-2xl">
+    <div class="er-border er-border-border er-border-solid er-p-4 er-rounded-2xl er-flex er-flex-col text-size14">
       <span class="product-delivery-time er-font-bold">
         {{ product_delivery_time }}
       </span>
@@ -297,14 +297,14 @@
     </div>
     <div class="er-flex er-flex-col er-divide-y er-divide-border er-divide-solid er-divide-x-0">
       <div
-        class="er-flex er-py-5 er-font-medium er-text-2xl er-justify-between er-cursor-pointer"
+        class="er-flex er-py-5 text-size14 er-justify-between er-cursor-pointer"
         onclick="showSizesAndSpecs('SizesDialog')"
       >
         <span>Size & Fit</span>
         <span>&gt;</span>
       </div>
       <div
-        class="er-flex er-py-5 er-font-medium er-text-2xl er-justify-between er-cursor-pointer"
+        class="er-flex er-py-5 text-size14 er-justify-between er-cursor-pointer"
         onclick="showSizesAndSpecs('SpecsDialog')"
       >
         <span>Technical Specs</span>
@@ -312,12 +312,12 @@
       </div>
     </div>
     <div class="er-grid er-grid-cols-3">
-      {% for item in product_panel_services_icons %}
+      {%- for item in product_panel_services_icons -%}
         <div class="er-flex er-items-center">
           {{ item.image | image_url: width: 30 | image_tag: fetchpriority: 'low', decoding: 'async', loading: 'lazy' }}
-          <span class="er-text-xl er-font-medium er-ml-2">{{ item.text }}</span>
+          <span class="text-size12 er-font-medium er-ml-2">{{ item.text }}</span>
         </div>
-      {% endfor %}
+      {%- endfor -%}
     </div>
   </form>
 </section>
@@ -361,7 +361,7 @@
           {%- for image in variant.metafields.custom.variant_image.value -%}
             {
               image_tag: '{{ image | image_url: width: product_main_swiper_width | image_tag: class: product_main_swiper_class }}',
-              image_url: '{{ image | image_url: width: product_main_swiper_width }}'
+              image_url: '{{ image | image_url: width: product_left_swiper_width }}'
             },
           {%- endfor -%}
         ]
@@ -461,15 +461,18 @@
     console.log(find)
 
     if (!find || !find.available) {
-      $('button').attr('disabled', true)
+      $('.product-panel .buttons > button').attr('disabled', true)
+      $('.product-panel #addToCart').text($('#addToCart').attr('data-soldout'))
     } else {
-      $('button').attr('disabled', false)
+      $('.product-panel .buttons > button').attr('disabled', false)
+      $('.product-panel #addToCart').text($('#addToCart').attr('data-text'))
     }
 
     current_variant = Object.assign({}, find)
     $('.product-panel').attr('data-variant-id', current_variant.id)
     replaceSearchValue('variant', current_variant.id)
     $('.product-panel .product-delivery-time').text(current_variant.delivery_time)
+    $('.product-panel input[name="id"]').val(current_variant.id)
 
     if (current_variant.images && current_variant.images.length) {
       let variant_size = Number($('.product-panel').attr('data-variant-swiper-size'))
@@ -521,10 +524,10 @@
 
     if (target.hasClass('active')) {
       target.removeClass('active');
-      target.find('.fa-solid').removeClass('fa-check').addClass('fa-plus')
+      target.find('.er-w-7').first().removeClass('er-hidden').next().addClass('er-hidden')
     } else {
       target.addClass('active');
-      target.find('.fa-solid').removeClass('fa-plus').addClass('fa-check')
+      target.find('.er-w-7').last().removeClass('er-hidden').prev().addClass('er-hidden')
     }
   });
 
@@ -597,6 +600,7 @@
       nextEl: '.product-panel .product-panel-swiper .swiper-button-next',
       prevEl: '.product-panel .product-panel-swiper .swiper-button-prev',
     },
+    preloadImages: false,
     spaceBetween: 10,
     pagination: { el: '.product-panel .swiper-pagination' },
     on:{

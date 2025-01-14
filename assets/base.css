@@ -2,7 +2,7 @@
   font-family: "Helvetica Now Display";
   src: url("https://cdn.shopify.com/s/files/1/0583/5810/4213/files/HelveticaNowDisplay-Regular.woff2?v=1733889791") format("woff2");
   font-weight: 400;
-  font-display: optional;
+  font-display: fallback;
   font-style: normal;
   font-stretch: normal;
 }
@@ -12,7 +12,7 @@
   font-family: 'Helvetica Now Display';
   src: url("https://cdn.shopify.com/s/files/1/0583/5810/4213/files/HelveticaNowDisplay-Medium.woff2?v=1733895976") format("woff2");
   font-weight: 500;
-  font-display: optional;
+  font-display: fallback;
   font-style: normal;
   font-stretch: normal;
 }
@@ -21,20 +21,20 @@
   font-family: "Helvetica Now Display";
   src: url("https://cdn.shopify.com/s/files/1/0583/5810/4213/files/HelveticaNowDisplay-Bold.woff2?v=1733896098") format("woff2");
   font-weight: 700;
-  font-display: optional;
+  font-display: fallback;
   font-style: normal;
   font-stretch: normal;
 }
 
-/*
+
 @font-face {
   font-family: 'Helvetica Now Display';
   src: url("https://cdn.shopify.com/s/files/1/0583/5810/4213/files/HelveticaNowDisplay-ExtraBold.woff2?v=1733896267") format("woff2");
   font-weight: 800;
+  font-display: fallback;
   font-style: normal;
   font-stretch: normal;
-  font-display: ;
-} */
+}
 
 :host,:root {
   --fa-font-regular: normal 400 1em/1 "Font Awesome 6 Free"
@@ -9297,6 +9297,7 @@ button.newsletter-form__button {
 .background-image {
   position: relative;
   overflow: hidden;
+  z-index: 0;
 }
 
 
@@ -10206,3 +10207,6 @@ dialog+.backdrop {
     }
     
 }
+
+fieldset[option="Style"] label[data-style="White"] { --product-option-color: #EDECE7; }
+fieldset[option="Style"] label[data-style="Black"] { --product-option-color: #000; }
