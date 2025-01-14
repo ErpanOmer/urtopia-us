@@ -59,10 +59,6 @@
 
           // 等待页面加载完成后执行收集的 script
           window.addEventListener('load', () => {
-            console.log('Executing collected scripts...');
-
-            console.log(scriptQueue)
-
             document.querySelectorAll('script[type="text/lazyload"]').forEach(elem => {
               const delay = elem.getAttribute('data-delay')
 
