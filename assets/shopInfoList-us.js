@@ -3423,7 +3423,7 @@ const testRides = [
     stores: [
       {
         name: "Bristol Bikes",
-        phone: "413-528-5555",
+        phone: "401-675-2000",
         email: "mark@bristolribikes.com",
         timezone: "Tennessee, USA (GMT-7)",
         add: "267 Thames St. Bristol, RI 02809",

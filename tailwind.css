@@ -159,3 +159,25 @@
         font-size: 1.6rem;
       }
     }
+
+    @layer components {
+      /* 步数2 */
+     .text-size10 { @apply er-text-[10px] er-leading-snug er-tracking-wide er-font-normal; }
+     .text-size12 { @apply er-text-[12px] er-leading-snug er-tracking-wide er-font-normal; }
+     .text-size14 { @apply er-text-[14px] er-leading-snug er-tracking-wide er-font-normal; }
+     .text-size16 { @apply er-text-[16px] er-leading-snug er-tracking-wide er-font-normal; }
+     .text-size18 { @apply er-text-[18px] er-leading-snug er-tracking-wide er-font-normal; }
+     .text-size20 { @apply er-text-[20px] er-leading-snug er-tracking-wide er-font-normal; }
+     /* 步数6 */
+     .text-size24 { @apply er-text-[24px] er-leading-tight er-tracking-normal er-font-bold }
+     .text-size30 { @apply er-text-[30px] er-leading-tight er-tracking-normal er-font-bold }
+     .text-size36 { @apply er-text-[36px] er-leading-tight er-tracking-normal er-font-bold }
+     /* 步数12 */
+     .text-size48 { @apply er-text-[48px] er-leading-tight er-tracking-normal er-font-bold }
+     .text-size60 { @apply er-text-[60px] er-leading-tight er-tracking-normal er-font-bold }
+     .text-size72 { @apply er-text-[72px] er-leading-tight er-tracking-normal er-font-bold }
+     /* 步数18 */
+     .text-size90 { @apply er-text-[90px] er-leading-[1.125] er-tracking-tight er-font-bold }
+     .text-size108 { @apply er-text-[108px] er-leading-[1.125] er-tracking-tight er-font-bold }
+     .text-size126 { @apply er-text-[126px] er-leading-[1.125] er-tracking-tight er-font-bold }
+   }
