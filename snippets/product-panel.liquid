@@ -1,4 +1,4 @@
-{% liquid
+{%- liquid
   assign current_variant = product.selected_or_first_available_variant
   assign product_size_map = shop.metaobjects.shop_config['product-size-map'].value.value
   assign product_media_reviews = product.metafields.custom.product_media_reviews.value | reverse
@@ -44,7 +44,7 @@
       assign swiper = swiper | concat: temp
     endfor
   endif
-%}
+-%}
 
 {{ swiper.first | image_url: width: product_main_swiper_width | preload_tag: as: 'image' }}
 <h1 class="er-sr-only">{{ page_title }}</h1>
@@ -192,27 +192,27 @@
         <div class="er-flex er-gap-4">
           {%- for option_value in option.values -%}
             <label
-              {%- if option.position == 1 -%}
-                class="er-button er-button-dark er-px-6 text-size14 er-py-2 er-rounded-xl{%- unless option_value.selected -%} er-button-outline{%- endunless -%}"
-              {%- else -%}
+              {% if option.position == 1 -%}
+                class="er-button er-button-dark er-px-6 text-size14 er-py-2 er-rounded-xl{% unless option_value.selected %} er-button-outline{% endunless %}"
+              {% else -%}
                 data-style="{{ option_value }}" class="er-group er-w-14 er-h-14 er-rounded-full er-border-2 er-border-solid er-border-transparent er-cursor-pointer er-transition er-bg-[var(--product-option-color)] er-p-[2px] er-bg-clip-content [&[class~='active']]:er-border-[var(--product-option-color)] er-relative{% if option_value.selected %} active{% endif %}"
-              {%- endif -%}
+              {% endif %}
             >
               <input
                 type="radio"
                 id="{{ option_value }}"
                 name="{{ option.name }}"
                 value="{{ option_value }}"
-                class="er-hidden{% if option_value.available %} available{%- endif -%}"
-                {%- if option_value.selected -%}
+                class="er-hidden{% if option_value.available %} available{% endif %}"
+                {% if option_value.selected %}
                   checked
-                {%- endif -%}
+                {% endif %}
                 data-option-value-id="{{ option_value.id }}"
               >
               <span
-                {%- if option.position == 2 -%}
+                {% if option.position == 2 %}
                   class="group-hover:er-visible group-hover:er-opacity-100 after:er-border-x-transparent after:er-border-t-dark after:er-border-b-transparent after:er-border-8 after:er-border-solid after:er-content-[''] after:er-bottom-[-16px] after:er-absolute after:er-left-1/2 after:er-translate-x-[-50%] er-absolute er-bottom-[150%] er-left-1/2 er-translate-x-[-50%] er-bg-dark er-text-white er-px-6 er-py-2 er-rounded-full er-whitespace-nowrap er-opacity-0 er-invisible er-transition-opacity er-duration-300 text-size14 er-font-medium er-z-10"
-                {%- endif -%}
+                {% endif %}
               >
                 {{ option_value }}
               </span>
