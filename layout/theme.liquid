@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
     <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
     {{ 'base.css' | asset_url | stylesheet_tag: preload: true }}
-    {{ 'tailwind.css' | asset_url |  stylesheet_tag: preload: }}
+    {{ 'tailwind.css' | asset_url | stylesheet_tag: preload: true }}
     <script>
       (function () {
           const pattern = [

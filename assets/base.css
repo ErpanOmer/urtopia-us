@@ -3429,7 +3429,7 @@ details-disclosure>details {
   margin-inline-start: var(--swiper-centered-offset-before)
 }
 
-.swiper-centered.swiper-horizontal>.swiper-wrapper: :before {
+.swiper-centered.swiper-horizontal>.swiper-wrapper::before {
   height: 100%;
   min-height: 1px;
   width: var(--swiper-centered-offset-after)
@@ -3439,7 +3439,7 @@ details-disclosure>details {
   margin-block-start: var(--swiper-centered-offset-before)
 }
 
-.swiper-centered.swiper-vertical>.swiper-wrapper: :before {
+.swiper-centered.swiper-vertical>.swiper-wrapper::before {
   width: 100%;
   min-width: 1px;
   height: var(--swiper-centered-offset-after)
@@ -6530,7 +6530,7 @@ cart-remove-button .icon-remove {
 }
 
 .ebike_shippment .ship_font {
-  font: font: normal normal 500 16px/18px var(--font-body-family);
+  font: normal normal 500 16px/18px var(--font-body-family);
 }
 
 .mega_ebike_content {

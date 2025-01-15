@@ -79,10 +79,12 @@
           {%- if forloop.index < 2 -%}
             {%- assign preload = true -%}
             {%- assign fetchpriority = 'high' -%}
+            {%- assign decoding = 'sync' -%}
             {%- assign loading = 'eager' -%}
           {%- else -%}
             {%- assign preload = false -%}
             {%- assign fetchpriority = 'low' -%}
+            {%- assign decoding = 'async' -%}
             {%- assign loading = 'lazy' -%}
           {%- endif -%}
           {{
@@ -93,7 +95,7 @@
               data-index: forloop.index,
               preload: preload,
               fetchpriority: fetchpriority,
-              decoding: 'async',
+              decoding: decoding,
               loading: loading
           }}
         {%- endfor -%}
