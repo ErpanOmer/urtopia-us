@@ -9301,7 +9301,9 @@ button.newsletter-form__button {
 }
 
 
-.background-image>img {
+.background-image>img,
+.background-image>picture>img,
+.background-image>video {
   position: absolute;
   inset: 0;
   width: 100%;
