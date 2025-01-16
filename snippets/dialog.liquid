@@ -528,10 +528,6 @@ window.addEventListener('load', () => {
       window.open($(this).attr('href'));
     });
 
-  $('.testride > div[href]').on('click', function () {
-    window.open($(this).attr('href'));
-  });
-
   $(".footer__newsletter").ready(() => {
     if (window.location.href.indexOf('form_type=customer') !== -1 && !document.getElementById('ContactFooter-error')) {
       const newDom = document.createElement('div');

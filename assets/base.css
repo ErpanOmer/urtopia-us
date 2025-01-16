@@ -10212,3 +10212,17 @@ dialog+.backdrop {
 
 fieldset[option="Style"] label[data-style="White"] { --product-option-color: #EDECE7; }
 fieldset[option="Style"] label[data-style="Black"] { --product-option-color: #000; }
+
+.Klarna-logo {
+        display: inline-flex;
+        align-items: center;
+        height: 25px;
+        width: 50px;
+        line-height: 1.4;
+        justify-content: center;
+        background-color: #ffc0cb;
+        border-radius: 5px;
+        font-size: 12px;
+        font-weight: bold;
+        color: #000;
+    }

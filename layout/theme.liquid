@@ -15,9 +15,232 @@
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
     <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
     {{ 'base.css' | asset_url | stylesheet_tag: preload: true }}
-    {{ 'tailwind.css' | asset_url | stylesheet_tag: preload: true }}
+    {{ 'tailwind.min.css' | asset_url | stylesheet_tag: preload: true }}
     <script>
-      (function () {
+      const LCP_SUB_PARTS = [
+        'Time to first byte',
+        'Resource load delay',
+        'Resource load duration',
+        'Element render delay',
+      ];
+      
+      new PerformanceObserver((list) => {
+        const lcpEntry = list.getEntries().at(-1);
+        const navEntry = performance.getEntriesByType('navigation')[0];
+        const lcpResEntry = performance
+          .getEntriesByType('resource')
+          .filter((e) => e.name === lcpEntry.url)[0];
+      
+        // Ignore LCP entries that aren't images to reduce DevTools noise.
+        // Comment this line out if you want to include text entries.
+        if (!lcpEntry.url) return;
+      
+        // Compute the start and end times of each LCP sub-part.
+        // WARNING! If your LCP resource is loaded cross-origin, make sure to add
+        // the `Timing-Allow-Origin` (TAO) header to get the most accurate results.
+        const ttfb = navEntry.responseStart;
+        const lcpRequestStart = Math.max(
+          ttfb,
+          // Prefer `requestStart` (if TOA is set), otherwise use `startTime`.
+          lcpResEntry ? lcpResEntry.requestStart || lcpResEntry.startTime : 0
+        );
+        const lcpResponseEnd = Math.max(
+          lcpRequestStart,
+          lcpResEntry ? lcpResEntry.responseEnd : 0
+        );
+        const lcpRenderTime = Math.max(
+          lcpResponseEnd,
+          // Use LCP startTime (the final LCP time) because there are sometimes
+          // slight differences between loadTime/renderTime and startTime
+          // due to rounding precision.
+          lcpEntry ? lcpEntry.startTime : 0
+        );
+      
+        // Clear previous measures before making new ones.
+        // Note: due to a bug, this doesn't work in Chrome DevTools.
+        LCP_SUB_PARTS.forEach((part) => performance.clearMeasures(part));
+      
+        // Create measures for each LCP sub-part for easier
+        // visualization in the Chrome DevTools Performance panel.
+        const lcpSubPartMeasures = [
+          performance.measure(LCP_SUB_PARTS[0], {
+            start: 0,
+            end: ttfb,
+          }),
+          performance.measure(LCP_SUB_PARTS[1], {
+            start: ttfb,
+            end: lcpRequestStart,
+          }),
+          performance.measure(LCP_SUB_PARTS[2], {
+            start: lcpRequestStart,
+            end: lcpResponseEnd,
+          }),
+          performance.measure(LCP_SUB_PARTS[3], {
+            start: lcpResponseEnd,
+            end: lcpRenderTime,
+          }),
+        ];
+      
+        // Log helpful debug information to the console.
+        console.log('LCP value: ', lcpRenderTime);
+        console.log('LCP element: ', lcpEntry.element, lcpEntry.url);
+        console.table(
+          lcpSubPartMeasures.map((measure) => ({
+            'LCP sub-part': measure.name,
+            'Time (ms)': measure.duration,
+            '% of LCP': `${
+              Math.round((1000 * measure.duration) / lcpRenderTime) / 10
+            }%`,
+          }))
+        );
+      }).observe({type: 'largest-contentful-paint', buffered: true});
+    </script>
+    <script>
+      (async function () {
+                    async function measureRTTAndDownlink(url) {
+                        const startTime = performance.now();
+                        let rtt = null, downlink = null;
+
+                        try {
+                          // 单次网络请求用于测量 RTT 和下载速度
+                          const response = await fetch(url, { method: "GET", cache: "no-cache" });
+                          const endTime = performance.now();
+                          rtt = Math.round(endTime - startTime);
+
+                          const blob = await response.blob();
+                          const fileSizeBytes = blob.size; // 文件大小（字节）
+                          const durationSeconds = (endTime - startTime) / 1000; // 持续时间（秒）
+
+                          downlink = Math.round((fileSizeBytes * 8) / (durationSeconds * 1024 * 1024)); // Mbps
+                        } catch (error) {
+                          console.warn("测量 RTT 和下载速度失败:", error);
+                        }
+
+                        return { rtt, downlink };
+                      }
+
+                      function estimateEffectiveType(downlink, rtt) {
+                        if (downlink < 0.5 || rtt > 300) return "2g";
+                        if (downlink < 1.5 || rtt > 150) return "3g";
+                        if (downlink < 20 || rtt > 50) return "4g";
+                        return "5g";
+                      }
+
+                      async function testNetwork() {
+                        const url = "https://cdn.shopify.com"; // 替换为可靠的小文件 URL
+                        const { rtt, downlink } = await measureRTTAndDownlink(url);
+
+                        const effectiveType = estimateEffectiveType(downlink, rtt);
+                        return { downlink, rtt, effectiveType };
+                      }
+
+                      async function getNetworkInfo() {
+                        const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+                        let networkInfo = {
+                          type: "unknown",
+                          effectiveType: "unknown",
+                          downlink: "unknown",
+                          rtt: "unknown",
+                          saveData: false,
+                        };
+
+                        if (connection) {
+                          // 使用 Network Information API
+                          networkInfo.type = connection.type || "unknown";
+                          networkInfo.effectiveType = connection.effectiveType || "unknown";
+                          networkInfo.downlink = connection.downlink || "unknown";
+                          networkInfo.rtt = connection.rtt || "unknown";
+                          networkInfo.saveData = connection.saveData || false;
+                        }
+
+                        // 测速补充数据
+                        const testResult = await testNetwork();
+                        networkInfo.downlink = testResult.downlink || networkInfo.downlink;
+                        networkInfo.rtt = testResult.rtt || networkInfo.rtt;
+                        networkInfo.effectiveType = testResult.effectiveType || networkInfo.effectiveType;
+
+                        return networkInfo;
+          }
+
+        function evaluateNetworkQuality(networkInfo) {
+            let totalWeight = 0;
+            let weightedScore = 0;
+
+            // Type 权重
+            const typeWeights = {
+              wifi: { baseScore: 1, weight: 2 },
+              cellular: { baseScore: 2, weight: 3 },
+              none: { baseScore: 5, weight: 5 },
+              unknown: { baseScore: 1.5, weight: 2 },
+            };
+
+            const typeData = typeWeights[networkInfo.type] || { baseScore: 3, weight: 2 };
+            weightedScore += typeData.baseScore * typeData.weight;
+            totalWeight += typeData.weight;
+
+            // EffectiveType 权重
+            const effectiveTypeWeights = {
+              "5g": { baseScore: 1, weight: 3 },
+              "4g": { baseScore: 1.5, weight: 2 },
+              "3g": { baseScore: 2.5, weight: 2 },
+              "2g": { baseScore: 4, weight: 3 },
+              "unknown": { baseScore: 2, weight: 2 },
+            };
+
+            const effectiveTypeData = effectiveTypeWeights[networkInfo.effectiveType] || { baseScore: 2, weight: 2 };
+            weightedScore += effectiveTypeData.baseScore * effectiveTypeData.weight;
+            totalWeight += effectiveTypeData.weight;
+
+            // Downlink 权重（线性映射）
+            if (networkInfo.downlink !== "unknown") {
+              let downlinkScore = 5; // 默认最低分
+              if (networkInfo.downlink >= 20) downlinkScore = 1; // 卓越
+              else if (networkInfo.downlink >= 10) downlinkScore = 1.5;
+              else if (networkInfo.downlink >= 5) downlinkScore = 2.5;
+              else if (networkInfo.downlink >= 1) downlinkScore = 3.5;
+              else if (networkInfo.downlink >= 0.5) downlinkScore = 4.5;
+
+              weightedScore += downlinkScore * 4;
+              totalWeight += 4;
+            } else {
+              weightedScore += 3 * 2; // 默认值
+              totalWeight += 2;
+            }
+
+            // RTT 权重（线性映射）
+            if (networkInfo.rtt !== "unknown") {
+              let rttScore = 5; // 默认最低分
+              if (networkInfo.rtt <= 50) rttScore = 1; // 卓越
+              else if (networkInfo.rtt <= 200) rttScore = 2;
+              else if (networkInfo.rtt <= 500) rttScore = 3;
+              else if (networkInfo.rtt <= 1000) rttScore = 4;
+              else rttScore = 5; // 极差
+
+              weightedScore += rttScore * 3;
+              totalWeight += 3;
+            } else {
+              weightedScore += 3 * 1;
+              totalWeight += 1;
+            }
+
+            // SaveData 权重
+            if (networkInfo.saveData) {
+              weightedScore += 5 * 1; // 流量保护启用，网络质量较差
+              totalWeight += 1;
+            } else {
+              weightedScore += 1 * 1; // 未启用流量保护
+              totalWeight += 1;
+            }
+
+            // 综合得分（返回小数，精确到两位）
+            const averageScore = (weightedScore / totalWeight).toFixed(2);
+
+            return parseFloat(averageScore);
+          }
+
+
+
+
           const pattern = [
             ['src', 'shopify-perf-kit', 300],
             ['src', 'https://www.google-analytics.com/analytics.js', 300],
@@ -26,7 +249,6 @@
           ]
           // 存储 head 中的 script 标签信息
           const scriptQueue = [];
-
           // 监听 DOM 的添加
           const observer = new MutationObserver((mutations) => {
             mutations.forEach((mutation) => {
@@ -54,9 +276,13 @@
 
           // 开始观察 head 的变动
           observer.observe(document.head, { childList: true });
-
+          let networkInfo = getNetworkInfo();
           // 等待页面加载完成后执行收集的 script
-          window.addEventListener('load', () => {
+          window.addEventListener('load', async () => {
+              networkInfo = await networkInfo;
+              const networkQuality = evaluateNetworkQuality(networkInfo);
+              console.log("networkInfo", JSON.stringify(networkInfo), networkQuality);
+
             document.querySelectorAll('script[type="text/lazyload"]').forEach(elem => {
               const delay = elem.getAttribute('data-delay')
 
@@ -64,8 +290,8 @@
                 setTimeout(() => {
                   elem.type = "text/javascript";
                   elem.src = elem.src;
-                  elem.async = false; 
-                }, Number(delay))
+                  elem.async = false;
+                }, parseInt(Number(delay) * networkQuality))
               }
             })
 
@@ -86,7 +312,7 @@
 
               setTimeout(() => {
                 document.head.appendChild(newScript); // 执行脚本
-              }, script.delay)
+              }, parseInt(script.delay * networkQuality))
             });
 
             // 停止观察
@@ -94,12 +320,15 @@
           });
         })();
     </script>
-    <script src="{{ 'global-sync.min.js' | asset_url }}" fetchpriority="high" type="module"></script>
+    <script src="{{ 'libs.min.js' | asset_url }}" fetchpriority="high" type="module"></script>
+    <script src="{{ 'global.js' | asset_url }}" fetchpriority="low" defer></script>
     {% comment %} {{ content_for_header }} {% endcomment %}
-    {{ content_for_header 
-    | replace: 'preloads.js?locale=en-US"', 'preloads.js?locale=en-US" type="text/lazyload" data-delay="2000"' 
-    | replace: "'load', asyncLoad, false);", "'load', () => setTimeout(asyncLoad, 1000), false);"
-    | replace: 'data-source-attribution="shopify.loadfeatures" defer="defer"', 'data-source-attribution="shopify.loadfeatures" data-delay="300" type="text/lazyload"'
+    {{
+      content_for_header
+      | replace: 'preloads.js?locale=en-US"', 'preloads.js?locale=en-US" type="text/lazyload" data-delay="2000"'
+      | replace: "'load', asyncLoad, false);", "'load', () => setTimeout(asyncLoad, 1000), false);"
+      | replace: 'data-source-attribution="shopify.loadfeatures" defer="defer"',
+        'data-source-attribution="shopify.loadfeatures" data-delay="300" type="text/lazyload"'
     }}
     {% render 'global-config' %}
     {% render 'pagefly-app-header' %}
@@ -113,7 +342,9 @@
     {% section 'care' %}
     {% section 'footer' %}
     {%- render 'cart-drawer' -%}
-    <script type="module">
+    <script
+      type="module"
+    >
       window.shopUrl = '{{ request.origin }}';
       window.routes = {
         cart_add_url: '{{ routes.cart_add_url }}',
@@ -145,7 +376,6 @@
   {% render 'lozad' %}
   {% render 'dataLayer-allPages' %}
   {% render 'dialog' %}
-  <script src="{{ 'global.js' | asset_url }}" fetchpriority="low" type="text/lazyload" data-delay="100"></script>
   {% if product or request.path == '/pages/test-ride' or request.path == '/pages/urtopia-e-bike-review' %}
     {% render 'judgeme_core' %}
   {% endif %}
