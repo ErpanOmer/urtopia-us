@@ -62,30 +62,6 @@
         <span class="close">×</span>
     </div>
 </dialog>
-
-<div class="message-box">
-  <div class="u17DemiBold_v2">Don’t Miss Out on Exclusive Updates and Offers!</div>
-  <div class="u14DemiBold_v2 emphasize">UP TO <span class="u24DemiBold_v2">{{ all_products["urtopia-carbon-1-pro-ebike"].compare_at_price | minus: all_products["urtopia-carbon-1-pro-ebike"].price | money_without_trailing_zeros }}</span> OFF NOW</div>
-  <div class="u11Light_v2">Limited-time offer with stock flying off the shelves. Subscribe now for the latest updates and instant notifications.</div>
-  <form class="email" action="/" target="_blank" method="post" accept-charset="UTF-8">
-      <input placeholder="Enter email here" type="email" name="contact[email]" required>
-      <button class="my-button my-button-black" id="global_email_submit_button" type="submit">Subscribe</button>
-  </form>
-  <span class="close">×</span>
-</div>
-
-<div class="message-box-cookie">
-    <div class="centeral-content">
-        <div>
-            <div class="u20DemiBold_v2">We value your privacy</div>
-            <div class="u17Light_v2">We and our partners use cookies and other technologies to improve your experience, measure performance, and tailor marketing. Details in our <a class="my-link" style="color: inherit;" target="_blank" href="/pages/privacy-policy">Privacy Policy.</a></div>
-        </div>
-        <div>
-            <div class="close">×</div>
-            <div class="my-button my-button-white">Accept</div>
-        </div>
-    </div>
-</div>
 <div id="global2top">
     <svg t="1735027455730" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1443" width="32" height="32"><path d="M576 512v512H448V512H256l256-256 256 256H576zM0 0h1024v128H0V0z" fill="#fff" p-id="1444"></path></svg>
 </div>
@@ -308,140 +284,6 @@
         })
     }
 
-
-    function showSubscribeEmailMessageBox () {
-        const email_dialog_key = 'emailDialog'
-        const subscribe_email_message_close_expires_time = 'subscribe_email_message_close_expires_time'
-
-        return new Promise(resolve => {
-            if (global_config.dialog.email.is_hide) {
-                return resolve()
-            }
-
-            if (storage.get(email_dialog_key)) {
-                return resolve()
-            }
-
-            if (storage.get(subscribe_email_message_close_expires_time)) {
-                return resolve()
-            }
-
-            if (!document.referrer) {
-                return resolve()
-            }
-
-            const url = new URL(document.referrer)
-            if (!url.pathname.includes('/products/')) {
-                return resolve()
-            }
-
-            const close = () => {
-                $('.message-box').animate({}, 300, function () {
-                    //第一个花括号里面是动画内容，可以为空，但不能省去中括号
-                    $('.message-box').css(global_config.is_mobile ? { transform: 'translateY(100%)' } : { right: '-360px' }); //在回调函数里面改变css属性来实现transform中的动画变换
-                });
-
-                setTimeout(resolve, global_config.dialog.email.show_delay_time * 1000)
-            }
-
-            $('.message-box').animate({}, 300, function () {
-                //第一个花括号里面是动画内容，可以为空，但不能省去中括号
-                $('.message-box').css(global_config.is_mobile ? { transform: 'translateY(0)' } : { right: '18px' }); //在回调函数里面改变css属性来实现transform中的动画变换
-            });
-
-            $('.message-box').find('form').on('submit', function (event) {
-                const email = $('.message-box').find('form input[type="email"]').val()
-
-                const emailtag = getSearchValues().emailtag
-                // 埋点
-                fetchBuried('emailpop', 'submit', { email, tag: `US,POPUP,small pop${emailtag ? ',' + emailtag : ''}` }).then(() => {
-                    dataLayer.push({
-                        'event'    :'global_email_submit',
-                        'pageType' :'emailpop',
-                    });
-                });
-
-                storage.set(email_dialog_key, email_dialog_key, global_config.dialog.email.submit_expires_time)
-
-                close()
-                event.preventDefault();
-                return false;
-            });
-
-            let startInput = false;
-            $('.message-box').find('form input[type="email"]').on(
-                'input',
-                debounce((e) => {
-                    if (startInput) {
-                        return;
-                    }
-
-                    startInput = true;
-                    fetchBuried('emailpop', 'enter', {
-                        email: e.target.value,
-                        tag: 'US,POPUP,smail pop',
-                    });
-                }, 2000)
-            );
-
-            $('.message-box .close').on('click', () => {
-                storage.set(subscribe_email_message_close_expires_time, subscribe_email_message_close_expires_time, global_config.is_mobile ? global_config.dialog.email.subscribe_email_message_close_expires_time_mb : global_config.dialog.email.subscribe_email_message_close_expires_time_pc)
-
-                close()
-            })
-        })
-    }
-
-    function showCookieDialog () {
-        return Promise.resolve()
-      
-        const cookie_dialog_expires_time = 'cookie_dialog_expires_time'
-
-        if (storage.get(cookie_dialog_expires_time)) {
-            return Promise.resolve()
-        }
-
-        return new Promise(resolve => {
-            const close = () => {
-                $('.message-box-cookie').animate({}, 300, function () {
-                    //第一个花括号里面是动画内容，可以为空，但不能省去中括号
-                    $('.message-box-cookie').css({ transform: 'translateY(100%)' }); //在回调函数里面改变css属性来实现transform中的动画变换
-                });
-
-                setTimeout(resolve, 15 * 1000)
-            }
-
-
-            $('.message-box-cookie').animate({}, 300, function () {
-                //第一个花括号里面是动画内容，可以为空，但不能省去中括号
-                $('.message-box-cookie').css({ transform: 'translateY(0)' }); //在回调函数里面改变css属性来实现transform中的动画变换
-            });
-
-            $('.message-box-cookie .close').on('click', () => {
-                // storage.set(cookie_dialog_expires_time)
-
-                close()
-
-                fetchBuried('websiteclick', 'cookies-banner', { button: 'close' })
-            })
-
-            $('.message-box-cookie .my-button').on('click', () => {
-                storage.set(cookie_dialog_expires_time, 30)
-                close()
-                fetchBuried('websiteclick', 'cookies-banner', { button: 'accept' })
-            })
-
-            $('.message-box-cookie .my-link').on('click', debounce(e => {
-                fetchBuried('websiteclick', 'cookies-banner', { button: 'privacy policy' })
-
-                window.open('/pages/privacy-policy')
-
-                e.preventDefault()
-                return false
-            }), 300)
-        })
-    }
-
     
   function showSizesAndSpecs (id = '') {
         if (!id) {
@@ -459,7 +301,7 @@ window.addEventListener('load', () => {
 
       if (!ignore.includes(location.pathname)) {
         setTimeout(() => {
-          showCookieDialog().then(showSubscribeEmailDialog).then(showExitSubscribeEmailDialog).then(showTestRideDialog)
+            showSubscribeEmailDialog().then(showExitSubscribeEmailDialog).then(showTestRideDialog)
         }, 5000)
       }
 
