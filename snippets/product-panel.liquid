@@ -240,8 +240,8 @@
                 <div class="text-size12 mb:er-text-base">{{ prod.title }}</div>
                 <span class="text-size18 er-font-bold mb:er-text-2xl">{{ prod.price | money }}</span>
                 <span class="flex-1"></span>
-                <span class="er-w-7 er-h-7 er-mb-1">{%- render 'icon-plus' -%}</span>
-                <span class="er-w-7 er-h-7 er-mb-1 er-hidden">{%- render 'icon-success' -%}</span>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="undefined"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
+                <svg class="er-hidden" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="undefined"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg>
                 {{
                   prod.featured_image
                   | image_url: width: 75
@@ -431,8 +431,6 @@
         }
       }
 
-      console.log(before, after)
-
       const fn_j = image => $(`<img width="64" src="${image.image_url}" class="{{ product_left_swiper_class }}">`).on('click', onClickLeftImages)
       const fn_s = image => image.image_tag
 
@@ -459,9 +457,6 @@
     title = title.join(' / ')
 
     const find = product_variants.find(v => v.title === title)
-
-    console.log(find)
-
     if (!find || !find.available) {
       $('.product-panel .buttons > button').attr('disabled', true)
       $('.product-panel #addToCart').text($('#addToCart').attr('data-soldout'))
@@ -521,15 +516,12 @@
 
   $('.product-panel .accessories > .er-flex > .er-flex-1 > div').on('click', function () {
     const target = $(this);
-
-    console.log(target)
-
     if (target.hasClass('active')) {
       target.removeClass('active');
-      target.find('.er-w-7').first().removeClass('er-hidden').next().addClass('er-hidden')
+      target.find('svg').first().removeClass('er-hidden').next().addClass('er-hidden')
     } else {
       target.addClass('active');
-      target.find('.er-w-7').last().removeClass('er-hidden').prev().addClass('er-hidden')
+      target.find('svg').last().removeClass('er-hidden').prev().addClass('er-hidden')
     }
   });
 

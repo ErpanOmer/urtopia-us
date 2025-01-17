@@ -15,8 +15,6 @@
     {%- render 'meta-tags' -%}
     {% render 'web-font' %}
     <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
-    {{ 'base.css' | asset_url | stylesheet_tag: preload: true }}
-    {{ 'tailwind.min.css' | asset_url | stylesheet_tag: preload: true }}
     <script>
       const LCP_SUB_PARTS = [
         'Time to first byte',
@@ -335,6 +333,8 @@
     {% render 'pagefly-app-header' %}
   </head>
   <body class="gradient">
+    {{ 'base.css' | asset_url | stylesheet_tag: preload: true }}
+    {{ 'tailwind.min.css' | asset_url | stylesheet_tag: preload: true }}
     {% section 'announcement-bar' %}
     {% section 'header' %}
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">

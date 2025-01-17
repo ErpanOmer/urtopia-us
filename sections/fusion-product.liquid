@@ -9,15 +9,13 @@
   <div class="centeral-content">
     <div class="commonComponent pcHide">
       <div class="u20DemiBold_v2">{{ product.title }}</div>
-      <div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-25_ order-djs mb16">
-        <div class="pf-judme">
-          {% render 'judgeme_widgets',
-            widget_type: 'judgeme_preview_badge',
-            jm_style: '',
-            concierge_install: false,
-            product: product
-          %}
-        </div>
+      <div class="er-flex er-items-center !er-mt-2">
+        <div class="star" style="--star-size: 16px;"></div>
+        <div class="star" style="--star-size: 16px;"></div>
+        <div class="star" style="--star-size: 16px;"></div>
+        <div class="star" style="--star-size: 16px;"></div>
+        <div class="star" style="--star-size: 16px;"></div>
+        <span class="er-text-dark/70 text-size14 er-ml-2">{{ shop.metafields.judgeme.all_reviews_count }} Reviews</span>
       </div>
       <div
         class="product-price u24DemiBold_v2 mb12"
@@ -354,15 +352,14 @@
       <input type="hidden" name="utf8" value="✓">
       <div class="commonComponent mobileHide" id="sale_acc">
         <div class="u24DemiBold_v2">{{ product.title }}</div>
-        <div class="mb16">
-          {% render 'judgeme_widgets',
-            widget_type: 'judgeme_preview_badge',
-            jm_style: '',
-            concierge_install: false,
-            product: product
-          %}
+        <div class="er-flex er-items-center !er-mt-2">
+          <div class="star" style="--star-size: 16px;"></div>
+          <div class="star" style="--star-size: 16px;"></div>
+          <div class="star" style="--star-size: 16px;"></div>
+          <div class="star" style="--star-size: 16px;"></div>
+          <div class="star" style="--star-size: 16px;"></div>
+          <span class="er-text-dark/70 text-size14 er-ml-2">{{ shop.metafields.judgeme.all_reviews_count }} Reviews</span>
         </div>
-
         <div class="product-price u30DemiBold_v2 mb16">
           {{ product.price | money }}
           <span class="u17Medium_v2">{{ product.compare_at_price | money }}</span>
@@ -412,7 +409,8 @@
                   <div>
                     <span class="u17DemiBold_v2">{{ prod.price | money }}</span>
                     <span class="u11Light_v2">
-                      <i class="fa-solid fa-plus"></i>
+                      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="undefined"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
+                      <svg class="er-hidden" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="undefined"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg>
                     </span>
                   </div>
                   {{ prod.featured_image | image_url: width: 150 | image_tag: loading: 'lazy' }}
@@ -1827,10 +1825,10 @@
 
     if (item.hasClass('active')) {
       item.removeClass('active');
-      icon.html('<i class="fa-solid fa-plus"></i>');
+      icon.find('svg').first().removeClass('er-hidden').next().addClass('er-hidden')
     } else {
       item.addClass('active');
-      icon.html('<i class="fa-solid fa-check"></i>');
+      icon.find('svg').last().removeClass('er-hidden').prev().addClass('er-hidden')
     }
   });
 
