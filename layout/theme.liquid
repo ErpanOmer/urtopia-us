@@ -15,7 +15,7 @@
     {%- render 'meta-tags' -%}
     {% render 'web-font' %}
     <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
-    {{ 'header.css' | asset_url | stylesheet_tag: preload: true }}
+    {{ 'base.css' | asset_url | stylesheet_tag: preload: true }}
     {{ 'tailwind.min.css' | asset_url | stylesheet_tag: preload: true }}
     <script>
       const LCP_SUB_PARTS = [
