@@ -529,7 +529,6 @@ header-drawer {
 @media (max-width: 990px) {
   .page-width {
     padding: 0 3rem 0 2rem;
-    height: 60px;
   }
 
   .header__icon {
