@@ -237,14 +237,11 @@
             return parseFloat(averageScore);
           }
 
-
-
-
           const pattern = [
-            ['src', 'shopify-perf-kit', 300],
+            ['src', 'shopify-perf-kit', 200],
             ['src', 'https://www.google-analytics.com/analytics.js', 300],
-            ['id', 'web-pixels-manager-setup', 1000],
-            ['className', 'analytics', 300]
+            ['className', 'analytics', 400],
+            ['id', 'web-pixels-manager-setup', 1000]
           ]
           // 存储 head 中的 script 标签信息
           const scriptQueue = [];
@@ -257,7 +254,7 @@
                   if (node[attr] && node[attr].includes(value)) {
                     scriptQueue.push({
                       src: node.src,
-                      content: node.src ? null : node.innerText,
+                      content: node.src ? null : node.innerHTML,
                       type: node.type || 'text/javascript',
                       isInline: !!!node.src,
                       delay,
@@ -320,20 +317,19 @@
         })();
     </script>
     <script src="{{ 'libs.min.js' | asset_url }}" fetchpriority="high" type="module"></script>
-    <script src="{{ 'global.js' | asset_url }}" fetchpriority="low" defer></script>
     {% comment %} {{ content_for_header }} {% endcomment %}
     {{
       content_for_header
-      | replace: 'preloads.js?locale=en-US"', 'preloads.js?locale=en-US" type="text/lazyload" data-delay="2000"'
-      | replace: "'load', asyncLoad, false);", "'load', () => setTimeout(asyncLoad, 1000), false);"
+      | replace: 'preloads.js?locale=en-US"', 'preloads.js?locale=en-US" type="text/lazyload" data-delay="1500"'
+      | replace: "'load', asyncLoad, false);", "'load', () => setTimeout(asyncLoad, 2000), false);"
       | replace: 'data-source-attribution="shopify.loadfeatures" defer="defer"',
-        'data-source-attribution="shopify.loadfeatures" data-delay="300" type="text/lazyload"'
+        'data-source-attribution="shopify.loadfeatures" data-delay="600" type="text/lazyload"'
     }}
     {% render 'global-config' %}
     {% render 'pagefly-app-header' %}
   </head>
   <body class="gradient">
-    {{ 'base.css' | asset_url | stylesheet_tag: preload: true }}
+    {{ 'base.min.css' | asset_url | stylesheet_tag: preload: true }}
     {{ 'tailwind.min.css' | asset_url | stylesheet_tag: preload: true }}
     {% section 'announcement-bar' %}
     {% section 'header' %}
@@ -380,4 +376,5 @@
   {% if product or request.path == '/pages/test-ride' or request.path == '/pages/urtopia-e-bike-review' %}
     {% render 'judgeme_core' %}
   {% endif %}
+  <script src="{{ 'global.js' | asset_url }}" fetchpriority="low" data-delay="0" type="text/lazyload"></script>
 </html>

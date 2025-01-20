@@ -62,7 +62,7 @@
         sale_end_time_index++;
 
         if (sale_end_time_index > global_config.sale_end_times.length - 1) {
-          $(`#count-down`).parent().hide();
+          $(`#count-down`).hide();
           return console.log('Countdown Ended!');
         }
 

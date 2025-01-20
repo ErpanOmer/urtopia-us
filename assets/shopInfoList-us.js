@@ -1876,35 +1876,6 @@ const testRides = [
     ]
   },
   {
-    city: 'Nebraska',
-    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_4_0d6b1e4d-def2-4565-9aba-0d2241618ead.png?v=1718085649',
-    stores: [
-      {
-        name: "Ecocycle",
-        phone: "531-217-3030",
-        email: "ecocyclesale@gmail.com",
-        timezone: "Washington, DC, USA (GMT-4)",
-        add: "6755 S 191st ave, Omaha, NE 68135",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_6_c6a0eaf2-cad7-4ce9-b23e-1dfa5ec46a0d.png?v=1727431908",
-        testrideSpot: "Omaha",
-        availableSizes: [
-          'Carbon 1 Pro Size S/M/L',
-          'Fusion GT',
-          'Carbon Fold 1'
-        ],
-        businessHours: [
-          "10:00-17:00",
-          "10:00-17:00",
-          "10:00-17:00",
-          "10:00-17:00",
-          "10:00-17:00",
-          "10:00-17:00",
-          "10:00-17:00",
-        ],
-      },
-    ]
-  },
-  {
     city: 'Louisiana',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_4_0d6b1e4d-def2-4565-9aba-0d2241618ead.png?v=1718085649',
     stores: [
