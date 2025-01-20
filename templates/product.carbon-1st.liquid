@@ -1,14 +1,10 @@
+{% render 'product-panel', swiper_insert_index: 2 %}
 <div class="background-image er-aspect-[1920/750] mb:er-aspect-auto mb:er-pt-[80vw]">
-        <img class="mobileHide"
-            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/5_2x_f182aebd-8195-4774-8dcd-b83a6e72d635.jpg?v=1737337434"
-            alt="">
-        <img class="pcHide mb:!er-object-contain mb:!er-object-top"
-            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/5_2x_fbc19aa4-11b1-4253-9817-aa20a4c81298.jpg?v=1737339158"
-            alt="">
+        {% render 'image', class: "mb:!er-object-contain mb:!er-object-top", src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/5_2x_f182aebd-8195-4774-8dcd-b83a6e72d635.jpg?v=1737337434', mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/5_2x_fbc19aa4-11b1-4253-9817-aa20a4c81298.jpg?v=1737339158" %}
         <div
             class="er-max-w-screen-xl er-mx-auto er-px-12 er-grid er-grid-cols-2 er-items-center er-h-full mb:er-grid-cols-1 mb:er-h-auto er-gap-x-40">
             <div class="er-flex er-flex-col er-items-start mb:er-pt-12 mb:er-pb-20">
-                <h2 class="text-size48 mb:er-text-4xl">Carbon Beauty, <br class="mb:er-hidden">Sleek & Duty</h2>
+                <h2 class="text-size48 mb:er-text-4xl er-m-0">Carbon Beauty, <br class="mb:er-hidden">Sleek & Duty</h2>
                 <p class="text-size18 er-max-w-3xl er-mt-8 er-mb-20 er-opacity-80 mb:er-my-10 mb:er-text-[16px]">
                     <span>
                         Built with Toray carbon fiber, renowned for its use in Formula 1 and by leading bicycle
@@ -17,6 +13,7 @@
                     </span>
                 </p>
                 <button
+                    onclick="showVideoDialog('https://www.youtube.com/embed/8haN5tLyhIk?autoplay=1&cc_load_policy=1')"
                     class="er-button er-button-white mb:[--er-btn-bg-color:theme(colors.dark)] mb:[--er-btn-text-color:theme(colors.white)] mb:er-text-white">Watch
                     video
                     <svg class="er-scale-150 er-translate-x-1/3 er-fill-dark mb:er-fill-white"
@@ -29,17 +26,12 @@
         </div>
     </div>
     <div class="background-image er-aspect-[1920/750] mb:er-aspect-auto mb:er-pt-[80vw]">
-        <img class="mobileHide"
-            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/fix-145_2x_f9e8e3ea-43a3-4fb2-9273-91f99012e5bf.jpg?v=1737341278"
-            alt="">
-        <img class="pcHide mb:!er-object-contain mb:!er-object-top"
-            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/fix-145_2x_ecc9d64b-8cec-4905-a231-1c0895928184.jpg?v=1737342263"
-            alt="">
+    {% render 'image', class: "mb:!er-object-contain mb:!er-object-top", src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/fix-145_2x_f9e8e3ea-43a3-4fb2-9273-91f99012e5bf.jpg?v=1737341278', mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/fix-145_2x_ecc9d64b-8cec-4905-a231-1c0895928184.jpg?v=1737342263" %}
         <div
             class="er-max-w-screen-xl er-mx-auto er-px-12 er-grid er-grid-cols-2 er-items-center er-h-full mb:er-grid-cols-1 mb:er-h-auto er-gap-x-40">
             <span></span>
             <div class="er-flex er-flex-col er-items-start mb:er-pt-12 mb:er-pb-20">
-                <h2 class="text-size48 mb:er-text-4xl">50% Lighter, <br class="mb:er-hidden">100% More Fun</h2>
+                <h2 class="text-size48 mb:er-text-4xl er-m-0">50% Lighter, <br class="mb:er-hidden">100% More Fun</h2>
                 <p class="text-size18 er-max-w-3xl er-mt-8 er-opacity-80 mb:er-mt-10 mb:er-text-[16px]">
                     <span>
                         Carbon fiber e-bikes are 50% lighter than aluminum ebikes, only 36 lbs. making it easier to
@@ -52,16 +44,11 @@
         </div>
     </div>
     <div class="background-image er-aspect-[1920/750] mb:er-aspect-auto mb:er-pt-[80vw]">
-        <img class="mobileHide"
-            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25315_2x_fff37dad-b3b6-4033-91e0-ac7dea6dabc1.jpg?v=1737342338"
-            alt="">
-        <img class="pcHide mb:!er-object-contain mb:!er-object-top"
-            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250120-143651.jpg?v=1737355028"
-            alt="">
+    {% render 'image', class: "mb:!er-object-contain mb:!er-object-top", src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25315_2x_fff37dad-b3b6-4033-91e0-ac7dea6dabc1.jpg?v=1737342338', mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250120-143651.jpg?v=1737355028" %}
         <div
             class="er-max-w-screen-xl er-mx-auto er-px-12 er-grid er-grid-cols-2 er-items-center er-h-full mb:er-grid-cols-1 mb:er-h-auto er-gap-x-40 er-text-white mb:er-text-black">
             <div class="er-flex er-flex-col er-items-start mb:er-pt-12 mb:er-pb-20">
-                <h2 class="text-size48 mb:er-text-4xl">Low-Step, <br class="mb:er-hidden">High Comfort</h2>
+                <h2 class="text-size48 mb:er-text-4xl er-m-0 er-text-white">Low-Step, <br class="mb:er-hidden">High Comfort</h2>
                 <p class="text-size18 er-max-w-3xl er-mt-8 er-opacity-80 mb:er-mt-10 mb:er-text-[16px]">
                     <span>
                         Our step-thru ebike features a low-step frame, making getting on and off a breeze and offering
@@ -73,22 +60,15 @@
         </div>
     </div>
     <div class="er-max-w-screen-lg er-mx-auto er-px-12 er-my-56 mb:er-mb-20 mb:er-mt-0">
-        <img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25310_2x_5042fdac-1ee0-4719-9dd3-7a2a0e9f4400.jpg?v=1737342528"
-            alt="">
-        <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25314_2x_0ccef4e7-bbab-4b14-a3a0-74c9a54ecb53.jpg?v=1737354452" alt="">
+        {% render 'image', mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25314_2x_0ccef4e7-bbab-4b14-a3a0-74c9a54ecb53.jpg?v=1737354452", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25310_2x_5042fdac-1ee0-4719-9dd3-7a2a0e9f4400.jpg?v=1737342528" %}
     </div>
     <div class="background-image er-aspect-[1920/750] mb:er-aspect-auto mb:er-pt-[80vw]">
-        <img class="mobileHide"
-            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC05866_copy_2_2x_2dc4b904-4ab9-4fa9-9fe8-48629318ae28.jpg?v=1737343659"
-            alt="">
-        <img class="pcHide mb:!er-object-contain mb:!er-object-top"
-            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC05866_copy_2_2x_f8e3ec3b-ab18-43ab-874c-6172127b894c.jpg?v=1737354592"
-            alt="">
+        {% render 'image', class: "mb:!er-object-contain mb:!er-object-top", src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC05866_copy_2_2x_2dc4b904-4ab9-4fa9-9fe8-48629318ae28.jpg?v=1737343659', mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC05866_copy_2_2x_f8e3ec3b-ab18-43ab-874c-6172127b894c.jpg?v=1737354592" %}
         <div
             class="er-max-w-screen-xl er-mx-auto er-px-12 er-grid er-grid-cols-2 er-items-center er-h-full mb:er-grid-cols-1 mb:er-h-auto er-gap-x-60 er-text-white mb:er-text-black">
             <span></span>
             <div class="er-flex er-flex-col er-items-start mb:er-pt-12 mb:er-pb-20">
-                <h2 class="text-size48 mb:er-text-4xl">Elegance in Motion</h2>
+                <h2 class="text-size48 mb:er-text-4xl er-m-0 er-text-white">Elegance in Motion</h2>
                 <p class="text-size18 er-max-w-3xl er-mt-8 er-opacity-80 mb:er-mt-10 mb:er-text-[16px]">
                     <span>
                         The design of the Carbon 1 ST is inspired by miniature garden architecture. Its clean, flowing
@@ -101,16 +81,11 @@
         </div>
     </div>
     <div class="background-image er-aspect-[1920/750] mb:er-aspect-auto mb:er-pt-[80vw]">
-        <img class="mobileHide"
-            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/557_new_2x_cfb82b16-225d-4d6c-835f-55a79cbc9d06.jpg?v=1737343949"
-            alt="">
-        <img class="pcHide mb:!er-object-contain mb:!er-object-top"
-            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/557_new_2x_83b38206-7b86-49d1-a986-959a8e49abc2.jpg?v=1737354716"
-            alt="">
+    {% render 'image', class: "mb:!er-object-contain mb:!er-object-top", src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/557_new_2x_cfb82b16-225d-4d6c-835f-55a79cbc9d06.jpg?v=1737343949', mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/557_new_2x_83b38206-7b86-49d1-a986-959a8e49abc2.jpg?v=1737354716" %}
         <div
             class="er-max-w-screen-xl er-mx-auto er-px-12 er-grid er-grid-cols-2 er-items-center er-h-full mb:er-grid-cols-1 mb:er-h-auto er-gap-x-40 er-text-white mb:er-text-black">
             <div class="er-flex er-flex-col er-items-start mb:er-pt-12 mb:er-pb-20">
-                <h2 class="text-size48 mb:er-text-4xl">Smart Power, <br class="mb:er-hidden">Longer Rides</h2>
+                <h2 class="text-size48 mb:er-text-4xl er-m-0 er-text-white">Smart Power, <br class="mb:er-hidden">Longer Rides</h2>
                 <p class="text-size18 er-max-w-3xl er-mt-8 er-opacity-80 mb:er-mt-10 mb:er-text-[16px]">
                     <span>
                         The customized motor and torque sensor work together to maximize the e-bike’s power efficiency,
@@ -123,17 +98,12 @@
         </div>
     </div>
     <div class="background-image er-aspect-[1920/750] mb:er-aspect-auto mb:er-pt-[80vw]">
-        <img class="mobileHide"
-            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25301_2x_63ffbde5-3bbc-495d-8bc5-9abfa5673b89.jpg?v=1737344611"
-            alt="">
-        <img class="pcHide mb:!er-object-contain mb:!er-object-top"
-            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25312_2x_0997090c-de9d-411d-b4d8-9bbfd31c7354.jpg?v=1737354790"
-            alt="">
+    {% render 'image', class: "mb:!er-object-contain mb:!er-object-top", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25301_2x_63ffbde5-3bbc-495d-8bc5-9abfa5673b89.jpg?v=1737344611", mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25312_2x_0997090c-de9d-411d-b4d8-9bbfd31c7354.jpg?v=1737354790" %}
         <div
             class="er-max-w-screen-xl er-mx-auto er-px-12 er-grid er-grid-cols-2 er-items-center er-h-full mb:er-grid-cols-1 mb:er-h-auto er-gap-x-40">
             <span></span>
             <div class="er-flex er-flex-col er-items-start mb:er-pt-12 mb:er-pb-20">
-                <h2 class="text-size48 mb:er-text-4xl">Tailor Power,<br class="mb:er-hidden">Perfect Ride</h2>
+                <h2 class="text-size48 mb:er-text-4xl er-m-0">Tailor Power,<br class="mb:er-hidden">Perfect Ride</h2>
                 <p class="text-size18 er-max-w-3xl er-mt-8 er-opacity-80 mb:er-mt-10 mb:er-text-[16px]">
                     <span>
                         Motor power can be customized across different assist levels via the Urtopia app. Adjust the
@@ -144,17 +114,36 @@
             </div>
         </div>
     </div>
-    <div class="background-image er-aspect-[1920/750] mb:er-aspect-auto mb:er-pt-[80vw]">
-        <img class="mobileHide"
-            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3840_1500pc__PosterImage.jpg?v=1737344768"
-            alt="">
-        <img class="pcHide mb:!er-object-contain mb:!er-object-top"
-            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/4mobile_PosterImage.jpg?v=1737354843"
-            alt="">
+    <div class="er-max-w-screen-xl er-mx-auto er-px-12 er-my-56 mb:er-mb-20 mb:er-mt-0 mb:er-pr-0">
+        <h2 class="text-size48 mb:er-text-4xl er-m-0">Quality in details</h2>
+        <div class="er-mt-10 quality_in_details er-relative er-overflow-x-hidden er-pb-40 mb:er-pb-16" style="--swiper-navigation-size: 27px; --swiper-navigation-color:#fff;">
+            <div class="swiper-wrapper">
+                {% for item in product.metafields.custom.quality_in_details.value %}
+                    {% assign text = item.text | split: "---" %}
+                    <div class="swiper-slide er-flex er-flex-col">
+                        {{ item.image | image_url: width: 400 |  image_tag: fetchpriority: 'low', decoding: 'async', loading: 'lazy' }}
+                        <h3 class="text-size20 er-my-6 er-font-bold er-text-3xl">{{ text.first }}</h3>
+                        <p class="text-size18 er-opacity-80 mb:er-text-[16px] er-max-w-2xl">
+                            <span>{{ text.last }}</span>
+                        </p>
+                    </div>
+                    
+                {% endfor %}  
+            </div>
+            <div class="swiper-scrollbar er-bg-[#386FAF] er-bg-opacity-10 !er-w-full !er-left-0"></div>
+            <div class="swiper-button-prev er-bottom-12 er-right-[60px] er-left-auto er-top-auto er-bg-dark er-rounded-full er-p-8 after:er-text-3xl mb:er-hidden er-z-2"></div>
+            <div class="swiper-button-next er-bottom-12 er-right-0 er-left-auto er-top-auto er-bg-dark er-rounded-full er-p-8 after:er-text-3xl mb:er-hidden er-z-2"></div>
+        </div>
+    </div>
+    <div class="background-image er-aspect-[1920/750] mb:er-aspect-auto">
+    <video class="lozad mb:!er-static" playsinline loop autoplay muted>
+        <source data-src="https://cdn.shopify.com/videos/c/o/v/8e67d805b7344ba390c2d190d39f8744.mp4" type="video/mp4" media="(min-width: 768px)">
+        <source data-src="https://cdn.shopify.com/videos/c/o/v/0d5c3350c7f64274891910b7192438ee.mp4" type="video/mp4" media="(max-width: 767px)">
+      </video>
         <div
             class="er-max-w-screen-xl er-mx-auto er-px-12 er-grid er-grid-cols-2 er-items-center er-h-full mb:er-grid-cols-1 mb:er-h-auto er-gap-x-40">
             <div class="er-flex er-flex-col er-items-start mb:er-pt-12 mb:er-pb-20">
-                <h2 class="text-size48 mb:er-text-4xl">Superbike, <br class="mb:er-hidden">Superpower</h2>
+                <h2 class="text-size48 mb:er-text-4xl er-m-0">Superbike, <br class="mb:er-hidden">Superpower</h2>
                 <p class="text-size18 er-max-w-3xl er-mt-8 er-opacity-80 mb:er-mt-10 mb:er-text-[16px]">
                     <span>
                         The Urtopia Smartbar combines 4G connectivity, GPS tracking, anti-theft alerts, and on-board
@@ -167,17 +156,12 @@
         </div>
     </div>
     <div class="background-image er-aspect-[1920/750] mb:er-aspect-auto mb:er-pt-[80vw]">
-        <img class="mobileHide"
-            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25033_2x_8f1d0ecb-fbf9-4354-8401-7c6b2a3ed1c2.jpg?v=1737344807"
-            alt="">
-        <img class="pcHide mb:!er-object-contain mb:!er-object-top"
-            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25313_2x_631f8215-0b59-48ec-89b9-27c1e01d7519.jpg?v=1737354902"
-            alt="">
+    {% render 'image', class: "mb:!er-object-contain mb:!er-object-top", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25033_2x_8f1d0ecb-fbf9-4354-8401-7c6b2a3ed1c2.jpg?v=1737344807", mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25313_2x_631f8215-0b59-48ec-89b9-27c1e01d7519.jpg?v=1737354902" %}
         <div
             class="er-max-w-screen-xl er-mx-auto er-px-12 er-grid er-grid-cols-2 er-items-center er-h-full mb:er-grid-cols-1 mb:er-h-auto er-gap-x-40">
             <span></span>
             <div class="er-flex er-flex-col er-items-start mb:er-pt-12 mb:er-pb-20">
-                <h2 class="text-size48 mb:er-text-4xl">All-Terrain, All Fun</h2>
+                <h2 class="text-size48 mb:er-text-4xl er-m-0">All-Terrain, All Fun</h2>
                 <p class="text-size18 er-max-w-3xl er-mt-8 er-opacity-80 mb:er-mt-10 mb:er-text-[16px]">
                     <span>
                         Engineered for diverse riding conditions, the Carbon 1 ST offers a smooth ride with its
@@ -189,17 +173,15 @@
             </div>
         </div>
     </div>
-    <div class="background-image er-aspect-[1920/750] mb:er-aspect-auto mb:er-pt-[80vw]">
-        <img class="mobileHide"
-            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/8PC_PosterImage.jpg?v=1737344926"
-            alt="">
-        <img class="pcHide mb:!er-object-contain mb:!er-object-top"
-            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/8mobile_PosterImage.jpg?v=1737354941"
-            alt="">
+    <div class="background-image er-aspect-[1920/750] mb:er-aspect-auto">
+        <video class="lozad mb:!er-static" playsinline loop autoplay muted>
+        <source data-src="https://cdn.shopify.com/videos/c/o/v/094f0d92cee44a19900f09740b0ae88a.mp4" type="video/mp4" media="(min-width: 768px)">
+        <source data-src="https://cdn.shopify.com/videos/c/o/v/e00d5f7e3bf84a4e8563520e2d2a08be.mp4" type="video/mp4" media="(max-width: 767px)">
+      </video>
         <div
             class="er-max-w-screen-xl er-mx-auto er-px-12 er-grid er-grid-cols-2 er-items-center er-h-full mb:er-grid-cols-1 mb:er-h-auto er-gap-x-40">
             <div class="er-flex er-flex-col er-items-start mb:er-pt-12 mb:er-pb-20">
-                <h2 class="text-size48 mb:er-text-4xl">Gear Up, Go Far</h2>
+                <h2 class="text-size48 mb:er-text-4xl er-m-0">Gear Up, Go Far</h2>
                 <p class="text-size18 er-max-w-3xl er-mt-8 er-opacity-80 mb:er-mt-10 mb:er-text-[16px]">
                     <span>
                         Equipped with a 15kg rear rack and a travel-specific front fork with luggage mounts, the Carbon
@@ -210,4 +192,44 @@
                 </p>
             </div>
         </div>
+    </div>
+    <div class="er-max-w-screen-xl er-mx-auto er-px-12 er-my-56 mb:er-mb-20 mb:er-mt-0 mb:er-pr-0">
+        <h2 class="text-size48 mb:er-text-4xl er-m-0">Take It Easy with Carbon 1 Step-Thru</h2>
+        <div class="er-mt-10 quality_in_details er-relative er-overflow-x-hidden er-pb-40 mb:er-pb-16" style="--swiper-navigation-size: 27px; --swiper-navigation-color:#fff;">
+            <div class="swiper-wrapper">
+                {% for item in product.metafields.custom.quality_in_details.value %}
+                    {% assign text = item.text | split: "---" %}
+                    <div class="swiper-slide er-flex er-flex-col">
+                        {{ item.image | image_url: width: 400 |  image_tag: fetchpriority: 'low', decoding: 'async', loading: 'lazy' }}
+                        <h3 class="text-size20 er-my-6 er-font-bold er-text-3xl">{{ text.first }}</h3>
+                        <p class="text-size18 er-opacity-80 mb:er-text-[16px] er-max-w-2xl">
+                            <span>{{ text.last }}</span>
+                        </p>
+                    </div>
+                    
+                {% endfor %}  
+            </div>
+            <div class="swiper-scrollbar er-bg-[#386FAF] er-bg-opacity-10 !er-w-full !er-left-0"></div>
+            <div class="swiper-button-prev er-bottom-12 er-right-[60px] er-left-auto er-top-auto er-bg-dark er-rounded-full er-p-8 after:er-text-3xl mb:er-hidden er-z-2"></div>
+            <div class="swiper-button-next er-bottom-12 er-right-0 er-left-auto er-top-auto er-bg-dark er-rounded-full er-p-8 after:er-text-3xl mb:er-hidden er-z-2"></div>
+        </div>
+    </div>
+    {% render 'size-guide-and-specs-template', config: 'carbonst_order_page_config' %}
+    <script type="module">
+        new Swiper('.quality_in_details', {
+            slidesPerView: global_config.is_mobile ? 1.25 : 3,
+            spaceBetween: global_config.is_mobile ? 16 : 32,
+            preloadImages: false,
+            navigation: {
+                nextEl: '.quality_in_details .swiper-button-next',
+                prevEl: '.quality_in_details .swiper-button-prev',
+            },
+            scrollbar: {
+                el: '.quality_in_details .swiper-scrollbar',
+                draggable: true
+            },
+        });
+    </script>
+    <div class="er-max-w-screen-xl er-mx-auto er-px-12 mb:er-px-6">
+        {% include 'judgeme_widgets', widget_type: 'judgeme_review_widget', concierge_install: false %}
     </div>
