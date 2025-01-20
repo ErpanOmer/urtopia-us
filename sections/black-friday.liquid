@@ -103,12 +103,12 @@
     <div>
       <img
         width="286"
-        height="188"
-        class="mb:er-max-w-[180px]"
-        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25266_2x_ede5ac27-c499-469a-ab61-2872a6b6dce6.png?v=1736233407"
+        height="196"
+        class="mb:er-max-w-[150px]"
+        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25266_2x_f587d238-56f2-4784-b88e-faf0f7def15d.png?v=1737378244"
         alt="Urtopia Ebike - Sleek, Full Carbon, Lightweight, Smart"
       >
-      <h2 class="er-text-8xl mb:er-text-5xl er-text-[#FFDF48] er-mt-12 er-mb-28 mb:er-mx-auto mb:er-mb-12">
+      <h2 class="er-text-8xl mb:er-text-5xl er-text-[#BFE2FF] er-mt-12 er-mb-28 mb:er-mx-auto mb:er-mb-12">
         Up to $1200 OFF
       </h2>
       <div>
@@ -124,9 +124,9 @@
 </div>
 <div class="timeeeeeeeeeee centeral-content">
   <div>
-    <h3 class="u30DemiBold_v2">CES 2025, Here We Come</h3>
+    <h3 class="u30DemiBold_v2">Carbon 1 Step-Thru</h3>
     <p class="u17Light_v2">
-      <span>At CES, Urtopia brings cutting-edge innovations—and exclusive discounts on all Carbon e-bikes</span>
+      <span>At last, the Carbon 1 Step-Thru has arrived! Effortless entry, ultimate comfort, and an ultra-light 36 lbs—your journey to joyful riding begins now!</span>
     </p>
     {% render 'sale' %}
     <style>
@@ -163,6 +163,7 @@
               font-size: 30px;
               margin-bottom: 7.5px;
               position: relative;
+              color: #006EDD;
           }
 
 
@@ -181,7 +182,7 @@
           .sale > div:not(.u14DemiBold_v2) > div span:last-child {
               opacity: 1;
               font-size: 12px;
-              color: #fff;
+              color: #006EDD;
               font-weight: 300;
           }
 
@@ -195,6 +196,7 @@
               .sale .u36DemiBold_v2 {
                   font-size: 18px;
                   padding: 10px 8px;
+                  color: #000;
               }
 
 
@@ -205,6 +207,7 @@
 
               .sale > div:not(.u14DemiBold_v2) > div span:last-child {
                   font-size: 9px;
+                  color: #fff;
               }
 
               .sale .u36DemiBold_v2::after {
@@ -216,6 +219,16 @@
 </div>
 <div class="centeral-content ebike-products">
   <div class="product-grid">
+    {% assign product = all_products['urtopia-carbon-1-step-thru-ebike'] %}
+    {% assign product_variants = product.variants | where: 'available' %}
+    {% assign product_uhmaya = '37 lbs<br>lightweight, Full<br>carbon fiber, 80<br>Miles' | split: ', ' %}
+    {% render 'product-card-2',
+      product_variants: product_variants,
+      product_name: 'Carbon 1 Step-Thru',
+      product_description: 'Urban & fitness riding',
+      product_url: product.url,
+      product_uhmaya: product_uhmaya
+    %}
     {% assign product = all_products['urtopia-carbon-fusion-gt'] %}
     {% assign product_variants = product.variants | where: 'available' %}
     {% assign product_uhmaya = '1500W<br>power, Carbon fiber<br>frame, 120<br>Miles' | split: ', ' %}
@@ -226,6 +239,7 @@
       product_url: product.url,
       product_uhmaya: product_uhmaya
     %}
+    <div class="gray-background-color u30DemiBold_v2 lozad mobileHide" data-background-image="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/648_new_2x_ac657869-5be2-4f87-8f44-0a245c45a714.jpg?v=1737379197width=500">Full Carbon Lightweight Sporty</div>
     {% assign product = all_products['urtopia-carbon-1-pro-ebike'] %}
     {% assign product_variants = product.variants | where: 'available' %}
     {% assign product_uhmaya = '37 lbs<br>lightweight, Full<br>carbon fiber, 80<br>Miles' | split: ', ' %}
@@ -253,8 +267,8 @@
 <div class="klarna">
   <div class="centeral-content">
     <div>
-      <h3 class="u24Medium_v2" style="color: #FFB3C7;">Ride Now, Pay Later</h3>
-      <h2 class="u36DemiBold_v2">Limited-Time <span style="color: #FFB3C7;">0% APR</span> for 24 Months</h2>
+      <h3 class="u24Medium_v2" style="color: #fff;">Ride Now, Pay Later</h3>
+      <h2 class="u36DemiBold_v2">Limited-Time <span style="color: #5CB6FF;">0% APR</span> for 24 Months</h2>
       <h3 class="u20Light_v2">
         A {{ all_products['urtopia-carbon-fold'].price | money_without_trailing_zeros }} purchase costs
         {{ all_products['urtopia-carbon-fold'].price | divided_by: 24 | money }}/month for 24 months at 0% APR.
@@ -523,7 +537,7 @@
     <h3 class="u30DemiBold_v2">
       Find a Bike Shop Near You <br>
       Same Deal with
-      <span style="color:#FFDF48;"
+      <span style="color:#5CB6FF;"
         ><br class="pcHide">
         FREE ASSEMBLY</span
       >

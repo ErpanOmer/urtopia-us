@@ -208,7 +208,7 @@ h4 {
 
     .centeral-content {
         .promo-banner {
-            background-color: #FFDF48;
+            background-color: rgb(125, 92, 200);
             text-align: center;
             color: #fff;
             padding-left: 5%;
@@ -529,19 +529,20 @@ h4 {
     margin-top: 100px;
 
     &>div {
-        background: #F4F5F7 url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19696_2x_e2ff1848-8101-4013-886f-c1228dabb369.jpg?v=1736234167') center center/cover no-repeat;
+        background: #F4F5F7 url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3-_2x_a4a12e5c-f86c-40bd-a06a-756ed06aef28.jpg?v=1737378435') center center/cover no-repeat;
         padding: 50px 0 50px 70px;
         color: #fff;
         border-radius: 10px;
         overflow: hidden;
 
         .u30DemiBold_v2 {
-            color: #fff;
+            color: #000;
         }
 
         .u17Light_v2 {
             max-width: 450px;
             margin: 24PX 0 60px;
+            color: #000;
         }
     }
 
@@ -560,11 +561,13 @@ h4 {
 
             .u30DemiBold_v2 {
                 font-size: 20px;
+                color: #fff;
             }
 
             .u17Light_v2 {
                 margin: 12px 0 30px;
                 font-size: 14px;
+                color: #fff;
             }
         }
     }
@@ -776,7 +779,7 @@ h4 {
     margin-bottom: 13vh;
     .centeral-content {
         &>div {
-            background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25129_2x_a52fd38b-1bbe-4cd8-931c-faf6dbb27460.jpg?v=1736235124') center left/cover no-repeat;
+            background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25384_2x_32f04bc6-4912-4c32-962d-264e25639674.jpg?v=1737379761') center left/cover no-repeat;
             color: #fff;
             padding: 40px 0 30px 21%;
             border-radius: 15px;

@@ -515,6 +515,7 @@ $product-tags-color: #DEEDFF;
             }
         }
 
+        &[data-stye="Glacier Blue"],
         &[data-stye="Blu"] {
             &::after {
                 background-color: #9ec0d1;
@@ -598,6 +599,7 @@ $product-tags-color: #DEEDFF;
             }
         }
 
+        &[data-stye="Glacier Blue"],
         &[data-stye="Blu"] {
             border-color: #9ec0d1;
 
@@ -904,4 +906,27 @@ $product-tags-color: #DEEDFF;
         @include dotssss;
         margin: 5px 0 20px;
     }
+}
+
+.ebike-products .product-grid .product-card .tags {
+    background-color: rgb(125, 92, 200);
+}
+
+.ebike-products .product-grid .product-card .tags>span {
+    color: #fff;
+}
+
+body .my-button-origin, body .my-button-origin:hover {
+    background-color: #fff !important;
+    color: #000 !important;
+    border: 2px solid #000;
+}
+
+.buyany .centeral-content .two .total>div .yellow {
+    color: #fff !important;
+}
+
+
+.professional .centeral-content .swiper-scrollbar .swiper-scrollbar-drag {
+    background-color: #000 !important;
 }
