@@ -7,7 +7,7 @@
   assign product_accessories = product.metafields.custom.product_accessories.value
 
   assign product_left_swiper_width = 64
-  assign product_main_swiper_width = 800
+  assign product_main_swiper_width = 1024
   assign product_prameters_size = 45
   assign product_media_icon_height = 60
 
@@ -46,7 +46,8 @@
   endif
 -%}
 
-{{ swiper.first | image_url: width: product_main_swiper_width | preload_tag: as: 'image', fetchpriority: 'high' }}
+{{ swiper.first | image_url: width: 1024 | preload_tag: as: 'image', fetchpriority: 'high', media: "(min-width: 769px)" }}
+{{ swiper.first | image_url: width: 640 | preload_tag: as: 'image', fetchpriority: 'high', media: "(max-width: 768px)" }}
 <h1 class="er-sr-only">{{ page_title }}</h1>
 <section
   class="product-panel {{ section_class }} er-mt-16 er-pb-40 mb:er-flex-col mb:er-px-6 mb:er-mt-0 mb:er-pb-24"
@@ -90,6 +91,8 @@
             variant_image
             | image_url: width: product_main_swiper_width
             | image_tag:
+              widths: "640, 1024",
+              sizes: "(max-width:768px) 0px, 1024px",
               class: product_main_swiper_class,
               data-index: forloop.index,
               preload: preload,
@@ -100,10 +103,10 @@
         {%- endfor -%}
       </div>
       <div
-        class="swiper-button-prev er-transition er-bg-[#ffffff80] er-rounded-lg after:er-text-5xl after:er-content-['prev'] hover:er-opacity-70 er-select-none er-z-[1] mb:er-hidden"
+        class="swiper-button-prev er-transition er-bg-[#ffffff80] er-rounded-lg after:er-text-5xl hover:er-opacity-70 er-select-none er-z-[1] mb:er-hidden"
       ></div>
       <div
-        class="swiper-button-next er-transition er-bg-[#ffffff80] er-rounded-lg after:er-text-5xl after:er-content-['next'] hover:er-opacity-70 er-select-none er-z-[1] mb:er-hidden"
+        class="swiper-button-next er-transition er-bg-[#ffffff80] er-rounded-lg after:er-text-5xl hover:er-opacity-70 er-select-none er-z-[1] mb:er-hidden"
       ></div>
     </div>
     <div
@@ -364,7 +367,7 @@
         images: [
           {%- for image in variant.metafields.custom.variant_image.value -%}
             {
-              image_tag: '{{ image | image_url: width: product_main_swiper_width | image_tag: class: product_main_swiper_class }}',
+              image_tag: '{{ image | image_url: width: product_main_swiper_width | image_tag: class: product_main_swiper_class, widths: "640, 1024", sizes: "(max-width:768px) 0px, 1024px" }}',
               image_url: '{{ image | image_url: width: product_left_swiper_width }}'
             },
           {%- endfor -%}
