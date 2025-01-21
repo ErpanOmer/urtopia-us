@@ -76,7 +76,7 @@ h4 {
         margin-top: 4vw;
         border-radius: 0;
         height: auto;
-        padding: 10vw 8vw;
+        padding: 6vw 8vw;
         height: 115vw;
         justify-content: flex-start;
         text-align: center;
@@ -338,7 +338,7 @@ h4 {
         grid-row-gap: 8vw;
         position: relative;
 
-        &>div {
+        &>a {
             background-color: #313131;
             display: flex;
             flex-direction: column;
@@ -356,16 +356,6 @@ h4 {
                 aspect-ratio: 1.325;
                 object-fit: cover;
                 transition: all .5s ease-out;
-            }
-
-            a {
-                display: flex;
-                color: #fff;
-
-                &::after {
-                    content: ">";
-                    margin-left: 10px;
-                }
             }
 
             &:hover {
@@ -393,18 +383,6 @@ h4 {
                 padding: 0;
                 color: #fff;
             }
-
-            img {
-                max-width: 48px;
-                margin-left: 20px;
-                aspect-ratio: 1;
-            }
-
-            &:hover {
-                &>img {
-                    transform: scale(1);
-                }
-            }
         }
     }
 
@@ -415,7 +393,7 @@ h4 {
         .centeral-content {
             grid-template-columns: 1fr;
 
-            &>div {
+            &>a {
                 .u20Medium_v2 {
                     font-size: 15px;
                     padding-bottom: 5vw;
@@ -424,46 +402,7 @@ h4 {
 
             .gotooooooo {
                 bottom: -20vw;
-
-                img {
-                    max-width: 35px;
-                    margin-left: 4vw;
-                }
             }
         }
-    }
-}
-
-@keyframes toTop {
-    0% {
-        opacity: 0;
-        transform: translateY(0px);
-    }
-
-    /* 50% {
-      opacity: 0.5;
-      transform: translateY(-20px);
-    } */
-
-    100% {
-        transform: translateY(-40px);
-        opacity: 1;
-    }
-}
-
-@keyframes toBottom {
-    0% {
-        opacity: 1;
-        transform: translateY(0px);
-    }
-
-    /* 50% {
-      opacity: 0.5;
-      transform: translateY(20px);
-    } */
-
-    100% {
-        transform: translateY(40px);
-        opacity: 0;
     }
 }

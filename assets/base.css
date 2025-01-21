@@ -4048,11 +4048,11 @@ body .my-button-white {
     font-family: inherit;
     font-size: 1.6rem;
     font-weight: 500;
-    line-height: 1;
+    line-height: 1.25;
     border-radius: 25px;
     display: inline-flex;
     box-sizing: border-box;
-    padding: 12px 40px 14px;
+    padding: 12px 40px;
     cursor: pointer;
     user-select: none;
     transition: all 0.3s;
@@ -4072,7 +4072,7 @@ body .my-button-white {
   @media (max-width: 767px) {
     .er-button {
       font-size: 1.5rem;
-      padding: 12px 30px 14px;
+      padding: 10px 30px 10px;
     }
   }
 

@@ -29,27 +29,6 @@
     </div>
 </dialog>
 
-<dialog id="ExitSubscribeEmailDialog">
-    <div class="subscribe-container">
-        <img class="mobileHide" loading="lazy"  width="488" height="609" fetchpriority="low" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_23948.jpg?v=1706585436&width=600" alt="{{ settings.sale_name }}">
-        <div class="subscribe">
-            <div class="u17DemiBold_v2">Stay with us, Don’t Miss Out on</div>
-            <div class="u30DemiBold_v2">Exclusive Offers!</div>
-            <span class="u17Light_v2" style="margin: 0 0 10%;">Don’t go just yet! Subscribe to our newsletter for exclusive e-bike offers, riding tips, and exciting updates. Stay connected with over 200,000 member in the community.</span>
-            <form class="new-contact" action="/contact#ContactFooter" target="_blank" method="post" accept-charset="UTF-8">
-            <div class="email">
-                <input type="hidden" name="form_type" value="customer">
-                <input type="hidden" name="utf8" value="✓">
-                <input type="hidden" name="contact[tags]" value="newsletter">
-                <input placeholder="Enter email here" type="email" name="contact[email]" required>
-                <button class="my-button my-button-black" id="global_email_submit_button" type="submit">Subscribe</button>
-            </div>
-        </form>
-        </div>
-        <span class="close">×</span>
-    </div>
-</dialog>
-
 <dialog id="TestRideDialog">
     <div class="testride_dialog">
         <img width="500" height="623" loading="lazy" fetchpriority="low" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/ccc.png?v=1706585634&width=600" alt="{{ settings.sale_name }}">
@@ -65,234 +44,6 @@
     <svg t="1735027455730" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1443" width="32" height="32"><path d="M576 512v512H448V512H256l256-256 256 256H576zM0 0h1024v128H0V0z" fill="#fff" p-id="1444"></path></svg>
 </div>
 <script>
-    const storage = {
-        set: function (key, value, expires = 3) {
-            const obj = {
-                data: value, //存储值
-                expires: Date.now() + (expires * 24 * 60 * 60 * 1000), //过期时间
-            }
-
-            localStorage.setItem(`__${key}`, JSON.stringify(obj));
-        },
-        get: function (key) {
-            try {
-                const { data, expires } = JSON.parse(localStorage.getItem(`__${key}`))
-
-                if (expires < Date.now()) {
-                    localStorage.removeItem(`__${key}`);
-                    return undefined;
-                }
-
-                return data;
-            } catch {
-                return undefined
-            }
-        }
-    }
-
-    function showDialog (dialog, callback) {        
-        dialog.showModal()
-
-        return new Promise(resolve => {
-            dialog.addEventListener("cancel", (event) => {                
-                resolve('close')
-            });
-
-            dialog.addEventListener("close", (event) => {
-                resolve('close')
-            })
-
-            $(dialog).find('.close').on('click', function () {
-                dialog.close()
-            })
-
-            setTimeout(callback, 300, dialog, resolve)
-        })
-    }
-
-    function showSubscribeEmailDialog () {
-        const email_dialog_key = 'emailDialog'
-        const subscribe_email_close_expires_time = 'subscribe_email_close_expires_time'
-
-        return new Promise(resolve => {
-            if (global_config.dialog.email.is_hide) {
-                return resolve()
-            }
-
-            if (storage.get(email_dialog_key)) {
-                return resolve()
-            }
-
-            if (storage.get(subscribe_email_close_expires_time)) {
-                return resolve()
-            }
-
-            showDialog(document.getElementById('SubscribeEmailDialog'), (dialog, r) => {
-                $(dialog).find('form').on('submit', function (event) {
-                    r($(dialog).find('form input[type="email"]').val())
-
-                    dialog.close()
-                    event.preventDefault();
-                    return false;
-                });
-
-                let startInput = false;
-                $(dialog).find('form input[type="email"]').on(
-                    'input',
-                    debounce((e) => {
-                    if (startInput) {
-                        return;
-                    }
-
-                    startInput = true;
-                    fetchBuried('emailpop', 'enter', {
-                        email: e.target.value,
-                        tag: 'US,POPUP,enter pop',
-                    });
-                    }, 2000)
-                );
-            }).then(email => {
-                storage.set(subscribe_email_close_expires_time, subscribe_email_close_expires_time, global_config.dialog.email.subscribe_email_close_expires_time)
-
-                if (email !== 'close') {
-                    const emailtag = getSearchValues().emailtag
-                    // 埋点
-                    fetchBuried('emailpop', 'submit', { email, tag: `US,POPUP,enter pop${emailtag ? ',' + emailtag : ''}` }).then(() => {
-                        dataLayer.push({
-                            'event'    :'global_email_submit',
-                            'pageType' :'emailpop',
-                        });
-                    });
-
-                    storage.set(email_dialog_key, email_dialog_key, global_config.dialog.email.submit_expires_time)
-                }
-
-                setTimeout(resolve, global_config.dialog.email.show_delay_time * 1000)
-            })
-        })
-    }
-
-    function showExitSubscribeEmailDialog () {
-        const email_dialog_key = 'emailDialog'
-        let show = false
-
-        return new Promise(resolve => {
-            if (global_config.dialog.email.is_hide) {
-                return resolve()
-            }
-
-            if (storage.get(email_dialog_key)) {
-                return resolve()
-            }
-
-            if (!global_config.is_pc && global_config.is_mobile) {
-                return resolve()
-            } 
-
-            document.body.addEventListener("mouseleave", debounce((evt) => {
-                    !show && showDialog(document.getElementById('ExitSubscribeEmailDialog'), (dialog, r) => {
-                        show = true
-
-                        $(dialog).find('form').on('submit', function (event) {
-                            r($(dialog).find('form input[type="email"]').val())
-
-                            dialog.close()
-                            event.preventDefault();
-                            return false;
-                        });
-
-                        let startInput = false;
-                        $(dialog).find('form input[type="email"]').on(
-                            'input',
-                            debounce((e) => {
-                            if (startInput) {
-                                return;
-                            }
-
-                            startInput = true;
-                            fetchBuried('emailpop', 'enter', {
-                                email: e.target.value,
-                                tag: 'US,POPUP,exit pop',
-                            });
-                            }, 2000)
-                        );
-
-                    }).then(email => {
-                        console.log(email)
-                        storage.set(email_dialog_key, email_dialog_key, global_config.dialog.email.close_expires_time)
-
-                        if (email !== 'close') {
-                            const emailtag = getSearchValues().emailtag
-                            // 埋点
-                            fetchBuried('emailpop', 'submit', { email, tag: `US,POPUP,exit pop${emailtag ? ',' + emailtag : ''}` }).then(() => {
-                                dataLayer.push({
-                                    'event'    :'global_email_submit',
-                                    'pageType' :'emailpop',
-                                });
-                            });
-
-                            storage.set(email_dialog_key, email_dialog_key, global_config.dialog.email.submit_expires_time)
-                        }
-
-                        setTimeout(resolve, global_config.dialog.email.show_delay_time * 1000)
-                    })
-                }, 500))
-        })
-    }
-
-    function showTestRideDialog () {
-        const test_ride_dialog_key = 'TestRideDialog'
-        let show = false
-
-        return new Promise(resolve => {
-            if (global_config.dialog.test_ride.is_hide) {
-                return resolve()
-            }
-
-            if (storage.get(test_ride_dialog_key)) {
-                return resolve()
-            }
-
-            if (!global_config.is_pc && global_config.is_mobile) {
-                return resolve()
-            }
-
-            document.body.addEventListener("mouseleave", debounce((evt) => {
-                !show && showDialog(document.getElementById('TestRideDialog'), (dialog, r) => {
-                    show = true
-
-                    $(dialog).find('.my-button').on('click', () => {
-                        r('book now')
-                        dialog.close()
-                    })
-
-                }).then(result => {
-                    storage.set(test_ride_dialog_key, test_ride_dialog_key, global_config.dialog.test_ride.close_expires_time)
-
-                    if (result !== 'close') {
-                        fetchBuried('emailpop', 'exitpop', { button: 'book a test ride' }, true)
-
-                        storage.set(test_ride_dialog_key, test_ride_dialog_key, global_config.dialog.test_ride.submit_expires_time)
-
-                        location.href = `/pages/test-ride?form_page=restride-dialog`
-                    }
-
-                    setTimeout(resolve, global_config.dialog.test_ride.show_delay_time * 1000)
-                })
-            }, 500))
-        })
-    }
-
-    
-  function showSizesAndSpecs (id = '') {
-        if (!id) {
-            return
-        }
-
-        showDialog(document.getElementById(id))
-  }
-    
-
 window.addEventListener('load', () => {
       const $toTop = $('#global2top');
       if (document.body.scrollHeight > (screen.availHeight * 2)) {
@@ -338,7 +89,7 @@ window.addEventListener('load', () => {
 
           if (!ignore.includes(location.pathname)) {
             setTimeout(() => {
-                showSubscribeEmailDialog().then(showExitSubscribeEmailDialog).then(showTestRideDialog)
+                showSubscribeEmailDialog().then(showTestRideDialog)
             }, 5000)
           }
     },
@@ -355,7 +106,7 @@ window.addEventListener('load', () => {
       const script = document.createElement("script");
       script.src = "{{ 'dialog-polyfill.js' | asset_url }}";
       script.onload = () => {
-        document.querySelectorAll("dialog").forEach(dialog => {
+          document.querySelectorAll("dialog").forEach(dialog => {
           dialogPolyfill.registerDialog(dialog);
         });
       };
@@ -365,10 +116,6 @@ window.addEventListener('load', () => {
 });
 </script>
 <script type="module">
-    $('.blogs .centeral-content > div[href]').on('click', function () {
-      window.open($(this).attr('href'));
-    });
-
   $(".footer__newsletter").ready(() => {
     if (window.location.href.indexOf('form_type=customer') !== -1 && !document.getElementById('ContactFooter-error')) {
       const newDom = document.createElement('div');

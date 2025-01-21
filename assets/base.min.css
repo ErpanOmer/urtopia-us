@@ -3080,7 +3080,7 @@ button.swiper-pagination-bullet {
     height: 100%;
     width: 100%;
     position: relative;
-    background: rgba(0, 0, 0, .5);
+    background: #2c2c2c;
     border-radius: 10px;
     left: 0;
     top: 0
@@ -3664,11 +3664,11 @@ body .my-button-white {
     font-family: inherit;
     font-size: 1.6rem;
     font-weight: 500;
-    line-height: 1;
+    line-height: 1.25;
     border-radius: 25px;
     display: inline-flex;
     box-sizing: border-box;
-    padding: 12px 40px 14px;
+    padding: 12px 40px;
     user-select: none;
     transition: .3s;
     gap: 8px;
@@ -3679,7 +3679,8 @@ body .my-button-white {
     overflow: hidden;
     border: 2px solid var(--er-btn-bg-color);
     background-color: var(--er-btn-bg-color);
-    color: var(--er-btn-text-color)
+    color: var(--er-btn-text-color);
+    letter-spacing: 0.025em;
 }
 
 .er-button>img,
@@ -3720,7 +3721,7 @@ body .my-button-white {
 
     .er-button {
         font-size: 1.5rem;
-        padding: 12px 30px 14px
+        padding: 8px 30px;
     }
 }
 

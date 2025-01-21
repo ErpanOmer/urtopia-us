@@ -77,14 +77,10 @@
       <div class="swiper-wrapper">
         {%- for variant_image in swiper -%}
           {%- if forloop.index < 2 -%}
-            {%- assign preload = true -%}
             {%- assign fetchpriority = 'high' -%}
-            {%- assign decoding = 'sync' -%}
             {%- assign loading = 'eager' -%}
           {%- else -%}
-            {%- assign preload = false -%}
             {%- assign fetchpriority = 'low' -%}
-            {%- assign decoding = 'sync' -%}
             {%- assign loading = 'lazy' -%}
           {%- endif -%}
           {{
@@ -95,9 +91,7 @@
               sizes: "(max-width:768px) 0px, 1024px",
               class: product_main_swiper_class,
               data-index: forloop.index,
-              preload: preload,
               fetchpriority: fetchpriority,
-              decoding: decoding,
               loading: loading
           }}
         {%- endfor -%}
@@ -267,12 +261,8 @@
       </div>
     {% endif %}
     <div class="er-flex er-flex-col er-space-y-5 buttons">
-      <button class="er-button er-w-full" data-text="Add To Cart" data-soldout="Sold Out" id="addToCart" data-product-id="{{ product.id }}" data-button-type="ATC" {%- unless current_variant.available -%}disabled{%- endunless -%}>
-        {%- if current_variant.available -%}
-          Add To Cart          
-        {%- else -%}
-         Sold Out
-        {%- endif -%}
+      <button class="er-button er-w-full er-py-5" data-text="Add To Cart" data-soldout="Sold Out" id="addToCart" data-product-id="{{ product.id }}" data-button-type="ATC" {%- unless current_variant.available -%}disabled{%- endunless -%}>
+        {%- if current_variant.available -%}Add To Cart{%- else -%}Sold Out{%- endif -%}
       </button>
       <button class="er-button er-button-dark er-button-outline er-w-full er-py-1" data-button-type="klarna_check_out" {% unless current_variant.available %}disabled{% endunless %}>
         {% render 'icon-affirm-black' %}
@@ -297,20 +287,8 @@
       </span>
     </div>
     <div class="er-flex er-flex-col er-divide-y er-divide-border er-divide-solid er-divide-x-0">
-      <div
-        class="er-flex er-py-5 text-size14 er-justify-between er-cursor-pointer"
-        onclick="showSizesAndSpecs('SizesDialog')"
-      >
-        <span>Size & Fit</span>
-        <span>&gt;</span>
-      </div>
-      <div
-        class="er-flex er-py-5 text-size14 er-justify-between er-cursor-pointer"
-        onclick="showSizesAndSpecs('SpecsDialog')"
-      >
-        <span>Technical Specs</span>
-        <span>&gt;</span>
-      </div>
+      <div class="er-flex er-py-5 text-size14 er-justify-between er-cursor-pointer" data-dialog-id="SizesDialog"><span>Size & Fit</span><span>&gt;</span></div>
+      <div class="er-flex er-py-5 text-size14 er-justify-between er-cursor-pointer" data-dialog-id="SpecsDialog"><span>Technical Specs</span><span>&gt;</span></div>
     </div>
     <div class="er-grid er-grid-cols-3">
       <div class="er-flex er-items-center">
@@ -352,8 +330,7 @@
     </div>
   </div>
 </section>
-
-<script>
+<script type="module">
   const product_variants = [
     {%- for variant in product.variants -%}
       {
@@ -486,10 +463,7 @@
       insertSwiper(insert_index)
     }
   }
-</script>
-<script
-  type="module"
->
+
   // 监听滚动事件，显示或隐藏按钮
   $(window).on('scroll', throttle(function () {
       const target = $('.product-bar')
@@ -575,10 +549,8 @@
     }
   })
 
-  // 监听每个 radio 的 change 事件
-  document.querySelectorAll('.product-panel input[type="radio"]').forEach(radio => {
-    radio.addEventListener('change', (event) => {
-      const target = $(event.target)
+  $('.product-panel input[type="radio"]').on('change', function () {
+      const target = $(this)
       const name = target.attr('name')
       const value = target.val()
 
@@ -589,27 +561,32 @@
       target.parent().addClass('active').siblings().removeClass('active')
       target.closest('.option').find('legend span').text(product_size_map[value] ? `${product_size_map[value]}` : value)
       onVariantChange(name, value)
-    });
-  });
+  })
 
   $('.product-panel .left-images > img').on('click', onClickLeftImages)
 
-  window.product_panel_swiper = new Swiper('.product-panel .product-panel-swiper', {
-    navigation: {
-      nextEl: '.product-panel .product-panel-swiper .swiper-button-next',
-      prevEl: '.product-panel .product-panel-swiper .swiper-button-prev',
-    },
-    preloadImages: false,
-    spaceBetween: 10,
-    pagination: { el: '.product-panel .swiper-pagination' },
-    on:{
-        slideChange: function() {
-          const index = this.realIndex + 1
-          const loopIndex = this.realIndex % product_medias.length
-          $('.product-panel .left-images').find(`img[data-index=${index}]`).addClass('active').siblings().removeClass('active')
-          $('.product-panel .product-medias').find('img').attr('src', product_medias[loopIndex].image).removeAttr('srcset')
-          $('.product-panel .product-medias').find('span').text(product_medias[loopIndex].text)
-        },
-    },
+  $('.product-panel div[data-dialog-id]').on('click', function () {
+    showDialog(document.getElementById($(this).attr('data-dialog-id')))
   })
+
+  $(function() {
+    window.product_panel_swiper = new Swiper('.product-panel .product-panel-swiper', {
+      navigation: {
+        nextEl: '.product-panel .product-panel-swiper .swiper-button-next',
+        prevEl: '.product-panel .product-panel-swiper .swiper-button-prev',
+      },
+      preloadImages: false,
+      spaceBetween: 10,
+      pagination: { el: '.product-panel .swiper-pagination' },
+      on:{
+          slideChange: function() {
+            const index = this.realIndex + 1
+            const loopIndex = this.realIndex % product_medias.length
+            $('.product-panel .left-images').find(`img[data-index=${index}]`).addClass('active').siblings().removeClass('active')
+            $('.product-panel .product-medias').find('img').attr('src', product_medias[loopIndex].image).removeAttr('srcset')
+            $('.product-panel .product-medias').find('span').text(product_medias[loopIndex].text)
+          },
+      },
+    })
+  });
 </script>

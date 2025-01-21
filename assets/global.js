@@ -1931,3 +1931,161 @@ class ProductRecommendations extends HTMLElement {
   }
 };
 customElements.define("product-recommendations", ProductRecommendations);
+
+const storage = {
+  set: function (key, value, expires = 3) {
+      const obj = {
+          data: value, //存储值
+          expires: Date.now() + (expires * 24 * 60 * 60 * 1000), //过期时间
+      }
+
+      localStorage.setItem(`__${key}`, JSON.stringify(obj));
+  },
+  get: function (key) {
+      try {
+          const { data, expires } = JSON.parse(localStorage.getItem(`__${key}`))
+
+          if (expires < Date.now()) {
+              localStorage.removeItem(`__${key}`);
+              return undefined;
+          }
+
+          return data;
+      } catch {
+          return undefined
+      }
+  }
+}
+
+function showDialog (dialog, callback) {        
+  dialog.showModal()
+
+  return new Promise(resolve => {
+      dialog.addEventListener("cancel", (event) => {                
+          resolve('close')
+      });
+
+      dialog.addEventListener("close", (event) => {
+          resolve('close')
+      })
+
+      $(dialog).find('.close').on('click', function () {
+          dialog.close()
+      })
+
+      setTimeout(callback, 300, dialog, resolve)
+  })
+}
+
+function showSubscribeEmailDialog () {
+  const email_dialog_key = 'emailDialog'
+  const subscribe_email_close_expires_time = 'subscribe_email_close_expires_time'
+
+  return new Promise(resolve => {
+      if (global_config.dialog.email.is_hide) {
+          return resolve()
+      }
+
+      if (storage.get(email_dialog_key)) {
+          return resolve()
+      }
+
+      if (storage.get(subscribe_email_close_expires_time)) {
+          return resolve()
+      }
+
+      showDialog(document.getElementById('SubscribeEmailDialog'), (dialog, r) => {
+          $(dialog).find('form').on('submit', function (event) {
+              r($(dialog).find('form input[type="email"]').val())
+
+              dialog.close()
+              event.preventDefault();
+              return false;
+          });
+
+          let startInput = false;
+          $(dialog).find('form input[type="email"]').on(
+              'input',
+              debounce((e) => {
+              if (startInput) {
+                  return;
+              }
+
+              startInput = true;
+              fetchBuried('emailpop', 'enter', {
+                  email: e.target.value,
+                  tag: 'US,POPUP,enter pop',
+              });
+              }, 2000)
+          );
+      }).then(email => {
+          storage.set(subscribe_email_close_expires_time, subscribe_email_close_expires_time, global_config.dialog.email.subscribe_email_close_expires_time)
+
+          if (email !== 'close') {
+              const emailtag = getSearchValues().emailtag
+              // 埋点
+              fetchBuried('emailpop', 'submit', { email, tag: `US,POPUP,enter pop${emailtag ? ',' + emailtag : ''}` }).then(() => {
+                  dataLayer.push({
+                      'event'    :'global_email_submit',
+                      'pageType' :'emailpop',
+                  });
+              });
+
+              storage.set(email_dialog_key, email_dialog_key, global_config.dialog.email.submit_expires_time)
+          }
+
+          setTimeout(resolve, global_config.dialog.email.show_delay_time * 1000)
+      })
+  })
+}
+
+function showTestRideDialog () {
+  const test_ride_dialog_key = 'TestRideDialog'
+  let show = false
+
+  return new Promise(resolve => {
+      if (global_config.dialog.test_ride.is_hide) {
+          return resolve()
+      }
+
+      if (storage.get(test_ride_dialog_key)) {
+          return resolve()
+      }
+
+      if (!global_config.is_pc && global_config.is_mobile) {
+          return resolve()
+      }
+
+      document.body.addEventListener("mouseleave", debounce((evt) => {
+          !show && showDialog(document.getElementById('TestRideDialog'), (dialog, r) => {
+              show = true
+
+              $(dialog).find('.my-button').on('click', () => {
+                  r('book now')
+                  dialog.close()
+              })
+
+          }).then(result => {
+              storage.set(test_ride_dialog_key, test_ride_dialog_key, global_config.dialog.test_ride.close_expires_time)
+
+              if (result !== 'close') {
+                  fetchBuried('emailpop', 'exitpop', { button: 'book a test ride' }, true)
+
+                  storage.set(test_ride_dialog_key, test_ride_dialog_key, global_config.dialog.test_ride.submit_expires_time)
+
+                  location.href = `/pages/test-ride?form_page=restride-dialog`
+              }
+
+              setTimeout(resolve, global_config.dialog.test_ride.show_delay_time * 1000)
+          })
+      }, 500))
+  })
+};
+
+function showSizesAndSpecs (id = '') {
+  if (!id) {
+      return
+  }
+
+  showDialog(document.getElementById(id))
+}

@@ -195,19 +195,21 @@
     </div>
     {% render 'size-guide-and-specs-template', config: 'carbonst_order_page_config' %}
     <script type="module">
-        new Swiper('.quality_in_details', {
-            slidesPerView: global_config.is_mobile ? 1.25 : 3,
-            spaceBetween: global_config.is_mobile ? 16 : 32,
-            preloadImages: false,
-            navigation: {
-                nextEl: '.quality_in_details .swiper-button-next',
-                prevEl: '.quality_in_details .swiper-button-prev',
-            },
-            scrollbar: {
-                el: '.quality_in_details .swiper-scrollbar',
-                draggable: true
-            },
-        });
+        $(function() {
+            new Swiper('.quality_in_details', {
+                slidesPerView: global_config.is_mobile ? 1.25 : 3,
+                spaceBetween: global_config.is_mobile ? 16 : 32,
+                preloadImages: false,
+                navigation: {
+                    nextEl: '.quality_in_details .swiper-button-next',
+                    prevEl: '.quality_in_details .swiper-button-prev',
+                },
+                scrollbar: {
+                    el: '.quality_in_details .swiper-scrollbar',
+                    draggable: true
+                },
+            });
+        })
     </script>
     <div class="er-max-w-screen-xl er-mx-auto er-px-12 mb:er-px-6">
         {% include 'judgeme_widgets', widget_type: 'judgeme_review_widget', concierge_install: false %}
