@@ -5,7 +5,6 @@
           src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3333_2x_43420ed3-9c2e-4434-ba6b-0c41a95690d3.jpg?v=1734088969&width=500"
           alt="{{ settings.sale_name }}"
           fetchpriority="low"
-          decoding="async"
           loading="lazy"
           width="488"
           height="609"
@@ -13,7 +12,7 @@
           sizes="(max-width: 768px) 84vw,(min-width: 769px) 100vw"
         >
         <div class="subscribe">
-            <img class="mb:er-max-w-32" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25270_2x_15db88c6-0dae-4cf6-9043-37964a71fa72.png?v=1736231934" fetchpriority="low" decoding="async" loading="lazy" width="140" height="94" alt="{{ settings.sale_name }}">
+            <img class="mb:er-max-w-32" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25270_2x_15db88c6-0dae-4cf6-9043-37964a71fa72.png?v=1736231934" fetchpriority="low" loading="lazy" width="140" height="94" alt="{{ settings.sale_name }}">
             <div class="u60DemiBold_v2 er-mt-16 er-mb-4 mb:er-mt-4">{{ all_products["urtopia-carbon-fusion-gt"].compare_at_price |  minus: all_products["urtopia-carbon-fusion-gt"].price | money_without_trailing_zeros }}<span class="u30DemiBold_v2">OFF</span></div>
             <div class="u17Light_v2">Urtopia carbon e-bikes now up to {{ all_products["urtopia-carbon-fusion-gt"].compare_at_price |  minus: all_products["urtopia-carbon-fusion-gt"].price | money_without_trailing_zeros }} off! Sign up to get exclusive discount!</div>
             <form class="new-contact er-mt-28 mb:er-mt-10" action="/contact#ContactFooter" target="_blank" method="post" accept-charset="UTF-8">
@@ -32,7 +31,7 @@
 
 <dialog id="ExitSubscribeEmailDialog">
     <div class="subscribe-container">
-        <img class="mobileHide" loading="lazy"  width="488" height="609" fetchpriority="low" decoding="async" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_23948.jpg?v=1706585436&width=600" alt="{{ settings.sale_name }}">
+        <img class="mobileHide" loading="lazy"  width="488" height="609" fetchpriority="low" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_23948.jpg?v=1706585436&width=600" alt="{{ settings.sale_name }}">
         <div class="subscribe">
             <div class="u17DemiBold_v2">Stay with us, Don’t Miss Out on</div>
             <div class="u30DemiBold_v2">Exclusive Offers!</div>
@@ -53,7 +52,7 @@
 
 <dialog id="TestRideDialog">
     <div class="testride_dialog">
-        <img width="500" height="623" loading="lazy" fetchpriority="low" decoding="async" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/ccc.png?v=1706585634&width=600" alt="{{ settings.sale_name }}">
+        <img width="500" height="623" loading="lazy" fetchpriority="low" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/ccc.png?v=1706585634&width=600" alt="{{ settings.sale_name }}">
         <div>
             <div class="u30DemiBold_v2">Test ride spots near you</div>
             <div class="u24Medium_v2">Experience the bike in real</div>
@@ -296,16 +295,6 @@
 
 window.addEventListener('load', () => {
       const $toTop = $('#global2top');
-
-      const ignore = ['/pages/lightweight-ebike-urtopia-carbon-1-pro', '/pages/amazon', '/pages/email-page', '/collections/urtopia-black-friday-sale', '/pages/urtopia-ces-2025']
-
-      if (!ignore.includes(location.pathname)) {
-        setTimeout(() => {
-            showSubscribeEmailDialog().then(showExitSubscribeEmailDialog).then(showTestRideDialog)
-        }, 5000)
-      }
-
-
       if (document.body.scrollHeight > (screen.availHeight * 2)) {
             // 监听滚动事件，显示或隐藏按钮
             $(window).on('scroll', throttle(function () {
@@ -322,26 +311,36 @@ window.addEventListener('load', () => {
             });
       };
 
-  global_config.is_mobile && waitForElement('#launcher', target => {
-        {% if product or template == 'page.carbon1pro' or template == 'page.pf-702944ea' %}
-            $('#global2top').css('bottom', '116px');
-            target.style.bottom = '64px';
-        {% endif %}
+       waitForElement('#launcher', target => {
+         if (global_config.is_mobile) {
+                {% if product or template == 'page.carbon1pro' or template == 'page.pf-702944ea' %}
+                  $('#global2top').css('bottom', '116px');
+                  target.style.bottom = '64px';
+              {% endif %}
+      
+              // 在这里执行你的逻辑
+              // 访问 iframe 内部的 document
+               const iframeDoc = target.contentDocument || target.contentWindow.document;
+      
+      
+               // 在 iframe 内部插入样式
+              const style = iframeDoc.createElement('style');
+              style.textContent = `
+                  body div[shape="circle"] {
+                     width: 48px;
+                     height: 48px;
+                  }
+              `;
+              iframeDoc.head.appendChild(style); 
+         }
 
-        // 在这里执行你的逻辑
-        // 访问 iframe 内部的 document
-         const iframeDoc = target.contentDocument || target.contentWindow.document;
+         const ignore = ['/pages/lightweight-ebike-urtopia-carbon-1-pro', '/pages/amazon', '/pages/email-page', '/collections/urtopia-black-friday-sale', '/pages/urtopia-ces-2025']
 
-
-         // 在 iframe 内部插入样式
-        const style = iframeDoc.createElement('style');
-        style.textContent = `
-            body div[shape="circle"] {
-               width: 48px;
-               height: 48px;
-            }
-        `;
-        iframeDoc.head.appendChild(style);
+          if (!ignore.includes(location.pathname)) {
+            setTimeout(() => {
+                showSubscribeEmailDialog().then(showExitSubscribeEmailDialog).then(showTestRideDialog)
+            }, 5000)
+          }
     },
     {
         disconnectOnFound: true,

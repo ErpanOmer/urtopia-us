@@ -3,7 +3,6 @@
   assign product_size_map = product.metafields.custom.sizemap.value
   assign product_media_reviews = product.metafields.custom.product_media_reviews.value | reverse
   assign product_parameter_and_icons = product.metafields.custom.product_parameter_icons.value
-  assign product_panel_services_icons = shop.metaobjects.product_panel_services_icons['product-panel-services-icons'].items.value
   assign product_send_accessories_icon = product.metafields.custom.product_send_accessories_icon.value
   assign product_accessories = product.metafields.custom.product_accessories.value
 
@@ -12,7 +11,7 @@
   assign product_prameters_size = 45
   assign product_media_icon_height = 60
 
-  assign product_left_swiper_class = "er-w-[64px] er-rounded-md er-cursor-pointer er-border-solid er-border-0 er-border-primary [&[class~='active']]:er-border-2"
+  assign product_left_swiper_class = "er-w-[64px] er-rounded-md er-cursor-pointer er-border-solid er-border-0 er-border-primary [&[class~='active']]:er-border-2 er-hidden xl:er-flex"
   assign product_main_swiper_class = 'swiper-slide er-object-cover er-aspect-[16/11] er-rounded-2xl'
   assign section_class = 'er-font-base er-max-w-screen-xl er-mx-auto er-flex er-justify-between er-px-12'
 
@@ -47,7 +46,7 @@
   endif
 -%}
 
-{{ swiper.first | image_url: width: product_main_swiper_width | preload_tag: as: 'image' }}
+{{ swiper.first | image_url: width: product_main_swiper_width | preload_tag: as: 'image', fetchpriority: 'high' }}
 <h1 class="er-sr-only">{{ page_title }}</h1>
 <section
   class="product-panel {{ section_class }} er-mt-16 er-pb-40 mb:er-flex-col mb:er-px-6 mb:er-mt-0 mb:er-pb-24"
@@ -64,7 +63,6 @@
           class: product_left_swiper_class,
           data-index: forloop.index,
           fetchpriority: 'low',
-          decoding: 'async',
           loading: 'lazy'
       }}
     {%- endfor -%}
@@ -85,7 +83,7 @@
           {%- else -%}
             {%- assign preload = false -%}
             {%- assign fetchpriority = 'low' -%}
-            {%- assign decoding = 'async' -%}
+            {%- assign decoding = 'sync' -%}
             {%- assign loading = 'lazy' -%}
           {%- endif -%}
           {{
@@ -129,7 +127,7 @@
         {{
           product_send_accessories_icon.image
           | image_url: width: 80
-          | image_tag: loading: 'lazy', fetchpriority: 'low', decoding: 'async'
+          | image_tag: fetchpriority: 'low'
         }}
         <div class="er-flex er-flex-1 er-gap-x-4 mb:er-flex-col-reverse mb:er-gap-y-1 mb:er-items-start">
           <span><span class="er-text-primary text-size14 er-font-bold">Limited offer:</span> Fenders, kickstand</span>
@@ -150,7 +148,7 @@
             {{
               item.image
               | image_url: width: product_prameters_size, height: product_prameters_size
-              | image_tag
+              | image_tag: fetchpriority: 'low', loading: 'lazy'
             }}
             <span class="text-size14 er-font-medium er-ml-2">{{ item.text }}</span>
           </div>
@@ -251,10 +249,9 @@
                     prod.featured_image
                     | image_url: width: 75
                     | image_tag:
-                      loading: 'lazy',
                       class: 'er-absolute er-right-0 er-bottom-0 mb:er-max-w-24',
                       fetchpriority: 'low',
-                      decoding: 'async'
+                      loading: 'lazy'
                   }}
                 </div>
               {%- endif -%}
@@ -275,8 +272,8 @@
         {%- endif -%}
       </button>
       <button class="er-button er-button-dark er-button-outline er-w-full er-py-1" data-button-type="klarna_check_out" {% unless current_variant.available %}disabled{% endunless %}>
-        <img height="22" width="56" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/434_2x_d2dcc5b3-2098-426c-9ecb-c4baf3b4ddca.png?v=1736511723">
-        <img height="22" width="68" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Klarna-Logo.wine_2x_30a24e0b-fbeb-461c-8ea8-0c3c8745a9d3.png?v=1736511716">
+        <img height="22" width="56" fetchpriority="low" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/434_2x_d2dcc5b3-2098-426c-9ecb-c4baf3b4ddca.png?v=1736511723">
+        <img height="22" width="68" fetchpriority="low" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Klarna-Logo.wine_2x_30a24e0b-fbeb-461c-8ea8-0c3c8745a9d3.png?v=1736511716">
         <div class="er-flex er-flex-col text-size14 er-text-left">
           <span class="er-font-bold">0 APR Financing</span>
           <span
@@ -313,12 +310,18 @@
       </div>
     </div>
     <div class="er-grid er-grid-cols-3">
-      {%- for item in product_panel_services_icons -%}
-        <div class="er-flex er-items-center">
-          {{ item.image | image_url: width: 30 | image_tag: fetchpriority: 'low', decoding: 'async', loading: 'lazy' }}
-          <span class="text-size12 er-font-medium er-ml-2">{{ item.text }}</span>
+      <div class="er-flex er-items-center">
+         <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30" fill="#333"><path d="M480-291q98.62-83.08 149.31-160.54T680-596.69q0-89.23-56-146.27Q568-800 480-800t-144 57.04q-56 57.04-56 146.27 0 67.69 50.69 145.15Q381.38-374.08 480-291Zm0 76Q350.15-315.54 285.08-411.42 220-507.31 220-596.69q0-115.39 72.62-189.35Q365.23-860 480-860t187.38 73.96Q740-712.08 740-596.69q0 89.38-65.08 185.07Q609.85-315.92 480-215Zm0-312.69q29.92 0 51.11-21.2 21.2-21.19 21.2-51.11 0-29.92-21.2-51.11-21.19-21.2-51.11-21.2-29.92 0-51.11 21.2-21.2 21.19-21.2 51.11 0 29.92 21.2 51.11 21.19 21.2 51.11 21.2ZM220-100v-60h520v60H220Zm260-500Z"/></svg>
+        <span class="text-size12 er-font-medium er-ml-2">150+<br>Bike Shops</span>
         </div>
-      {%- endfor -%}
+            <div class="er-flex er-items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30" fill="#333"><path d="M455.39-140v-60h292.3q5 0 8.66-3.08 3.65-3.07 3.65-8.07v-279.77q0-114.7-82.08-193.12-82.07-78.42-197.92-78.42t-197.92 78.42Q200-605.62 200-490.92v235.53h-30q-28.77 0-49.38-20.03Q100-295.46 100-324.23v-77.69q0-19.46 11.08-35.66 11.08-16.19 28.92-26.03l1.85-51.08q4.92-65.31 33.92-121t74.38-96.96q45.39-41.27 104.77-64.31Q414.31-820 480-820t124.77 23.04q59.08 23.04 104.77 64t74.38 96.65q28.69 55.7 34.23 121l1.85 50.08q17.46 8.23 28.73 23.54Q860-426.38 860-407.54v89.31q0 18.84-11.27 34.15-11.27 15.31-28.73 23.54v49.39q0 29.53-21.19 50.34Q777.61-140 747.69-140h-292.3Zm-87.7-269.23q-14.69 0-25.04-9.96-10.34-9.96-10.34-24.66 0-14.69 10.34-24.84 10.35-10.16 25.04-10.16 14.7 0 25.04 10.16 10.35 10.15 10.35 24.84 0 14.7-10.35 24.66-10.34 9.96-25.04 9.96Zm224.62 0q-14.7 0-25.04-9.96-10.35-9.96-10.35-24.66 0-14.69 10.35-24.84 10.34-10.16 25.04-10.16 14.69 0 25.04 10.16 10.34 10.15 10.34 24.84 0 14.7-10.34 24.66-10.35 9.96-25.04 9.96ZM254.85-472q-6.23-97.92 60.92-167.58 67.15-69.65 166.23-69.65 83.23 0 146.88 51.5 63.66 51.5 77.27 133.34-85.23-1-157.5-44.76-72.27-43.77-110.96-120-15.23 74.61-63.84 131.92-48.62 57.31-119 85.23Z"/></svg>
+            <span class="text-size12 er-font-medium er-ml-2">2-Year<br>Warranty</span>
+        </div>
+          <div class="er-flex er-items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30" fill="#333"><path d="M438-351.85 650.15-564l-42.77-42.77L438-437.38l-84.77-84.77-42.77 42.77L438-351.85Zm42 251.08q-129.77-35.39-214.88-152.77Q180-370.92 180-516v-230.15l300-112.31 300 112.31V-516q0 145.08-85.12 262.46Q609.77-136.16 480-100.77Zm0-63.23q104-33 172-132t68-220v-189l-240-89.62L240-705v189q0 121 68 220t172 132Zm0-315.62Z"/></svg>
+            <span class="text-size12 er-font-medium er-ml-2">14-Day<br>Trial</span>
+        </div>
     </div>
   </form>
 </section>
