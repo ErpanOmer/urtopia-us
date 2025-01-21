@@ -272,8 +272,8 @@
         {%- endif -%}
       </button>
       <button class="er-button er-button-dark er-button-outline er-w-full er-py-1" data-button-type="klarna_check_out" {% unless current_variant.available %}disabled{% endunless %}>
-        <img height="22" width="56" fetchpriority="low" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/434_2x_d2dcc5b3-2098-426c-9ecb-c4baf3b4ddca.png?v=1736511723">
-        <img height="22" width="68" fetchpriority="low" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Klarna-Logo.wine_2x_30a24e0b-fbeb-461c-8ea8-0c3c8745a9d3.png?v=1736511716">
+        {% render 'icon-affirm-black' %}
+        <span class="er-text-[#f472b6] er-text-3xl er-font-extrabold er-mt-2">Klarna.</span>
         <div class="er-flex er-flex-col text-size14 er-text-left">
           <span class="er-font-bold">0 APR Financing</span>
           <span
