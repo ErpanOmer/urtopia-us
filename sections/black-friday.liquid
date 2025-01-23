@@ -109,7 +109,7 @@
         alt="Urtopia Ebike - Sleek, Full Carbon, Lightweight, Smart"
       >
       <h2 class="er-text-8xl mb:er-text-5xl er-text-[#BFE2FF] er-mt-12 er-mb-28 mb:er-mx-auto mb:er-mb-12">
-        Up to $1200 OFF
+        Up to {{ all_products["urtopia-carbon-fusion-gt"].compare_at_price |  minus: all_products["urtopia-carbon-fusion-gt"].price | money_without_trailing_zeros }} OFF
       </h2>
       <div>
         <h3 class="u24DemiBold_v2">Why Choose Urtopia</h3>
@@ -221,7 +221,7 @@
   <div class="product-grid">
     {% assign product = all_products['urtopia-carbon-1-step-thru-ebike'] %}
     {% assign product_variants = product.variants | where: 'available' %}
-    {% assign product_uhmaya = '37 lbs<br>lightweight, Full<br>carbon fiber, 80<br>Miles' | split: ', ' %}
+    {% assign product_uhmaya = '36 lbs<br>lightweight, Full<br>carbon fiber, 80<br>Miles' | split: ', ' %}
     {% render 'product-card-2',
       product_variants: product_variants,
       product_name: 'Carbon 1 Step-Thru',

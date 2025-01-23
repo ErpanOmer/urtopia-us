@@ -46,8 +46,8 @@
   endif
 -%}
 
-{{ swiper.first | image_url: width: 1024 | preload_tag: as: 'image', fetchpriority: 'high', media: "(min-width: 769px)" }}
-{{ swiper.first | image_url: width: 640 | preload_tag: as: 'image', fetchpriority: 'high', media: "(max-width: 768px)" }}
+{{ swiper.first | image_url: width: 1024 | preload_tag: as: 'image', type: 'image/webp', fetchpriority: 'high', media: "(min-width: 769px)" }}
+{{ swiper.first | image_url: width: 640 | preload_tag: as: 'image', type: 'image/webp', fetchpriority: 'high', media: "(max-width: 768px)" }}
 <h1 class="er-sr-only">{{ page_title }}</h1>
 <section
   class="product-panel {{ section_class }} er-mt-16 er-pb-40 mb:er-flex-col mb:er-px-6 mb:er-mt-0 mb:er-pb-24"
@@ -78,9 +78,11 @@
         {%- for variant_image in swiper -%}
           {%- if forloop.index < 2 -%}
             {%- assign fetchpriority = 'high' -%}
+            {%- assign preload = true -%}
             {%- assign loading = 'eager' -%}
           {%- else -%}
             {%- assign fetchpriority = 'low' -%}
+            {%- assign preload = false -%}
             {%- assign loading = 'lazy' -%}
           {%- endif -%}
           {{
@@ -92,7 +94,8 @@
               class: product_main_swiper_class,
               data-index: forloop.index,
               fetchpriority: fetchpriority,
-              loading: loading
+              loading: loading,
+              preload: preload 
           }}
         {%- endfor -%}
       </div>
@@ -464,35 +467,6 @@
     }
   }
 
-  // 监听滚动事件，显示或隐藏按钮
-  $(window).on('scroll', throttle(function () {
-      const target = $('.product-bar')
-
-      if ($(this).scrollTop() > (screen.availHeight)) { // 页面滚动超过200px时显示按钮
-          target.css({
-            opacity: 1,
-            zIndex: 99999,
-            transform: 'translateY(0)'
-          })
-      } else {
-        target.css({
-            opacity: 0,
-            zIndex: -1,
-            transform: global_config.is_mobile ? 'translateY(100%)' : 'translateY(-100%)'
-        })
-      }
-   }, 100));
-
-   $('.product-panel .accessories > .er-flex > div:not(.er-flex-1)').on('click', function () {
-    const items = $('.product-panel .accessories > .er-flex > .er-flex-1');
-    items.animate(
-      {
-        scrollLeft: items.scrollLeft() + ($(this).hasClass('er-rotate-[135deg]') ? 160 : -160),
-      },
-      300
-    );
-  });
-
   $('.product-panel .accessories > .er-flex > .er-flex-1 > div').on('click', function () {
     const target = $(this);
     if (target.hasClass('active')) {
@@ -563,30 +537,73 @@
       onVariantChange(name, value)
   })
 
-  $('.product-panel .left-images > img').on('click', onClickLeftImages)
-
-  $('.product-panel div[data-dialog-id]').on('click', function () {
-    showDialog(document.getElementById($(this).attr('data-dialog-id')))
-  })
-
   $(function() {
-    window.product_panel_swiper = new Swiper('.product-panel .product-panel-swiper', {
-      navigation: {
-        nextEl: '.product-panel .product-panel-swiper .swiper-button-next',
-        prevEl: '.product-panel .product-panel-swiper .swiper-button-prev',
-      },
-      preloadImages: false,
-      spaceBetween: 10,
-      pagination: { el: '.product-panel .swiper-pagination' },
-      on:{
-          slideChange: function() {
-            const index = this.realIndex + 1
-            const loopIndex = this.realIndex % product_medias.length
-            $('.product-panel .left-images').find(`img[data-index=${index}]`).addClass('active').siblings().removeClass('active')
-            $('.product-panel .product-medias').find('img').attr('src', product_medias[loopIndex].image).removeAttr('srcset')
-            $('.product-panel .product-medias').find('span').text(product_medias[loopIndex].text)
-          },
-      },
+    requestAnimationFrame(() => {
+      
     })
+
+    requestAnimationFrame(() => {
+        $('.product-panel .accessories > .er-flex > div:not(.er-flex-1)').on('click', function () {
+            const items = $('.product-panel .accessories > .er-flex > .er-flex-1');
+            items.animate(
+              {
+                scrollLeft: items.scrollLeft() + ($(this).hasClass('er-rotate-[135deg]') ? 160 : -160),
+              },
+              300
+            );
+        });
+    })
+
+    requestAnimationFrame(() => {
+            // 监听滚动事件，显示或隐藏按钮
+        $(window).on('scroll', throttle(function () {
+            const target = $('.product-bar')
+      
+            if ($(this).scrollTop() > (screen.availHeight)) { // 页面滚动超过200px时显示按钮
+                target.css({
+                  opacity: 1,
+                  zIndex: 99999,
+                  transform: 'translateY(0)'
+                })
+            } else {
+              target.css({
+                  opacity: 0,
+                  zIndex: -1,
+                  transform: global_config.is_mobile ? 'translateY(100%)' : 'translateY(-100%)'
+              })
+            }
+         }, 100));
+    })
+
+    requestAnimationFrame(() => {
+      $('.product-panel .left-images > img').on('click', onClickLeftImages)
+    })
+
+    requestAnimationFrame(() => {
+      $('.product-panel div[data-dialog-id]').on('click', function () {
+          showDialog(document.getElementById($(this).attr('data-dialog-id')))
+      })
+    })
+    
+     setTimeout(() => {
+       window.product_panel_swiper = new Swiper('.product-panel .product-panel-swiper', {
+          navigation: {
+            nextEl: '.product-panel .product-panel-swiper .swiper-button-next',
+            prevEl: '.product-panel .product-panel-swiper .swiper-button-prev',
+          },
+          preloadImages: false,
+          spaceBetween: 10,
+          pagination: { el: '.product-panel .swiper-pagination' },
+          on:{
+              slideChange: function() {
+                const index = this.realIndex + 1
+                const loopIndex = this.realIndex % product_medias.length
+                $('.product-panel .left-images').find(`img[data-index=${index}]`).addClass('active').siblings().removeClass('active')
+                $('.product-panel .product-medias').find('img').attr('src', product_medias[loopIndex].image).removeAttr('srcset')
+                $('.product-panel .product-medias').find('span').text(product_medias[loopIndex].text)
+              },
+          },
+        })
+     },30)
   });
 </script>

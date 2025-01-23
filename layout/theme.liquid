@@ -16,85 +16,6 @@
     {% render 'web-font' %}
     <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
     <script>
-      const LCP_SUB_PARTS = [
-        'Time to first byte',
-        'Resource load delay',
-        'Resource load duration',
-        'Element render delay',
-      ];
-      
-      new PerformanceObserver((list) => {
-        const lcpEntry = list.getEntries().at(-1);
-        const navEntry = performance.getEntriesByType('navigation')[0];
-        const lcpResEntry = performance
-          .getEntriesByType('resource')
-          .filter((e) => e.name === lcpEntry.url)[0];
-      
-        // Ignore LCP entries that aren't images to reduce DevTools noise.
-        // Comment this line out if you want to include text entries.
-        if (!lcpEntry.url) return;
-      
-        // Compute the start and end times of each LCP sub-part.
-        // WARNING! If your LCP resource is loaded cross-origin, make sure to add
-        // the `Timing-Allow-Origin` (TAO) header to get the most accurate results.
-        const ttfb = navEntry.responseStart;
-        const lcpRequestStart = Math.max(
-          ttfb,
-          // Prefer `requestStart` (if TOA is set), otherwise use `startTime`.
-          lcpResEntry ? lcpResEntry.requestStart || lcpResEntry.startTime : 0
-        );
-        const lcpResponseEnd = Math.max(
-          lcpRequestStart,
-          lcpResEntry ? lcpResEntry.responseEnd : 0
-        );
-        const lcpRenderTime = Math.max(
-          lcpResponseEnd,
-          // Use LCP startTime (the final LCP time) because there are sometimes
-          // slight differences between loadTime/renderTime and startTime
-          // due to rounding precision.
-          lcpEntry ? lcpEntry.startTime : 0
-        );
-      
-        // Clear previous measures before making new ones.
-        // Note: due to a bug, this doesn't work in Chrome DevTools.
-        LCP_SUB_PARTS.forEach((part) => performance.clearMeasures(part));
-      
-        // Create measures for each LCP sub-part for easier
-        // visualization in the Chrome DevTools Performance panel.
-        const lcpSubPartMeasures = [
-          performance.measure(LCP_SUB_PARTS[0], {
-            start: 0,
-            end: ttfb,
-          }),
-          performance.measure(LCP_SUB_PARTS[1], {
-            start: ttfb,
-            end: lcpRequestStart,
-          }),
-          performance.measure(LCP_SUB_PARTS[2], {
-            start: lcpRequestStart,
-            end: lcpResponseEnd,
-          }),
-          performance.measure(LCP_SUB_PARTS[3], {
-            start: lcpResponseEnd,
-            end: lcpRenderTime,
-          }),
-        ];
-      
-        // Log helpful debug information to the console.
-        console.log('LCP value: ', lcpRenderTime);
-        console.log('LCP element: ', lcpEntry.element, lcpEntry.url);
-        console.table(
-          lcpSubPartMeasures.map((measure) => ({
-            'LCP sub-part': measure.name,
-            'Time (ms)': measure.duration,
-            '% of LCP': `${
-              Math.round((1000 * measure.duration) / lcpRenderTime) / 10
-            }%`,
-          }))
-        );
-      }).observe({type: 'largest-contentful-paint', buffered: true});
-    </script>
-    <script>
       (async function () {
                     async function measureRTTAndDownlink(url) {
                         const startTime = performance.now();
@@ -126,7 +47,7 @@
                       }
 
                       async function testNetwork() {
-                        const url = "https://cdn.shopify.com"; // 替换为可靠的小文件 URL
+                        const url = "{{ settings.favicon | image_url: width: 32, height: 32 }}"; // 替换为可靠的小文件 URL
                         const { rtt, downlink } = await measureRTTAndDownlink(url);
 
                         const effectiveType = estimateEffectiveType(downlink, rtt);
@@ -238,10 +159,10 @@
           }
 
           const pattern = [
-            ['src', 'shopify-perf-kit', 500],
-            ['src', 'https://www.google-analytics.com/analytics.js', 750],
+            ['src', 'shopify-perf-kit', 200],
+            ['src', 'https://www.google-analytics.com/analytics.js', 400],
             ['className', 'analytics', 1000],
-            ['id', 'web-pixels-manager-setup', 1500]
+            ['id', 'web-pixels-manager-setup', 1000]
           ]
           // 存储 head 中的 script 标签信息
           const scriptQueue = [];
@@ -254,7 +175,7 @@
                   if (node[attr] && node[attr].includes(value)) {
                     scriptQueue.push({
                       src: node.src,
-                      content: node.src ? null : node.innerHTML,
+                      content: node.src ? null : node.textContent,
                       type: node.type || 'text/javascript',
                       isInline: !!!node.src,
                       delay,
@@ -272,10 +193,9 @@
 
           // 开始观察 head 的变动
           observer.observe(document.head, { childList: true });
-          let networkInfo = getNetworkInfo();
           // 等待页面加载完成后执行收集的 script
           window.addEventListener('load', async () => {
-              networkInfo = await networkInfo;
+              const networkInfo = await getNetworkInfo();
               const networkQuality = evaluateNetworkQuality(networkInfo);
               console.log("networkInfo", JSON.stringify(networkInfo), networkQuality);
 
@@ -316,7 +236,7 @@
           });
         })();
     </script>
-    <script src="{{ 'libs.min.js' | asset_url }}" fetchpriority="high" type="module"></script>
+    <script src="{{ 'libs.min.js' | asset_url }}" defer></script>
     {% comment %} {{ content_for_header }} {% endcomment %}
     {{
       content_for_header

@@ -26,7 +26,7 @@
         </div>
     </div>
     <div class="background-image er-aspect-[1920/750] mb:er-aspect-auto mb:er-pt-[80vw]">
-    {% render 'image', class: "mb:!er-object-contain mb:!er-object-top", src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/fix-145_2x_f9e8e3ea-43a3-4fb2-9273-91f99012e5bf.jpg?v=1737341278', mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/fix-145_2x_ecc9d64b-8cec-4905-a231-1c0895928184.jpg?v=1737342263" %}
+    {% render 'image', class: "mb:!er-object-contain mb:!er-object-top", src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250122-140123.jpg?v=1737525707', mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/fix-145_2x_ecc9d64b-8cec-4905-a231-1c0895928184.jpg?v=1737342263" %}
         <div
             class="er-max-w-screen-xl er-mx-auto er-px-12 er-grid er-grid-cols-2 er-items-center er-h-full mb:er-grid-cols-1 mb:er-h-auto er-gap-x-40">
             <span></span>
@@ -81,7 +81,7 @@
         </div>
     </div>
     <div class="background-image er-aspect-[1920/750] mb:er-aspect-auto mb:er-pt-[80vw]">
-    {% render 'image', class: "mb:!er-object-contain mb:!er-object-top", src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/557_new_2x_cfb82b16-225d-4d6c-835f-55a79cbc9d06.jpg?v=1737343949', mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/557_new_2x_83b38206-7b86-49d1-a986-959a8e49abc2.jpg?v=1737354716" %}
+    {% render 'image', class: "mb:!er-object-contain mb:!er-object-top", src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250122-140131_62099461-b3a1-4a66-99b9-c54e13713475.jpg?v=1737526047', mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/557_new_2x_83b38206-7b86-49d1-a986-959a8e49abc2.jpg?v=1737354716" %}
         <div
             class="er-max-w-screen-xl er-mx-auto er-px-12 er-grid er-grid-cols-2 er-items-center er-h-full mb:er-grid-cols-1 mb:er-h-auto er-gap-x-40 er-text-white mb:er-text-black">
             <div class="er-flex er-flex-col er-items-start mb:er-pt-12 mb:er-pb-20">
@@ -196,19 +196,21 @@
     {% render 'size-guide-and-specs-template', config: 'carbonst_order_page_config' %}
     <script type="module">
         $(function() {
-            new Swiper('.quality_in_details', {
-                slidesPerView: global_config.is_mobile ? 1.25 : 3,
-                spaceBetween: global_config.is_mobile ? 16 : 32,
-                preloadImages: false,
-                navigation: {
-                    nextEl: '.quality_in_details .swiper-button-next',
-                    prevEl: '.quality_in_details .swiper-button-prev',
-                },
-                scrollbar: {
-                    el: '.quality_in_details .swiper-scrollbar',
-                    draggable: true
-                },
-            });
+            setTimeout(() => {
+              new Swiper('.quality_in_details', {
+                  slidesPerView: global_config.is_mobile ? 1.25 : 3,
+                  spaceBetween: global_config.is_mobile ? 16 : 32,
+                  preloadImages: false,
+                  navigation: {
+                      nextEl: '.quality_in_details .swiper-button-next',
+                      prevEl: '.quality_in_details .swiper-button-prev',
+                  },
+                  scrollbar: {
+                      el: '.quality_in_details .swiper-scrollbar',
+                      draggable: true
+                  },
+              });
+            }, 30)
         })
     </script>
     <div class="er-max-w-screen-xl er-mx-auto er-px-12 mb:er-px-6">

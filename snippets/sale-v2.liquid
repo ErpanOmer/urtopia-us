@@ -94,6 +94,8 @@
       setTimeout(updateTimer, 1000, endtime);
     }
 
-    updateTimer(getEndTime(sale_end_time_index));
+    requestAnimationFrame(() => {
+      updateTimer(getEndTime(sale_end_time_index));
+    })
   }
 </script>

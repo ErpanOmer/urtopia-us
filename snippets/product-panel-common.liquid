@@ -20,7 +20,7 @@
       {{- current_variant.compare_at_price | money -}}
     </del>
     <span class="text-size14 er-font-bold er-block er-px-4 er-py-1 er-bg-primary er-text-white er-rounded-3xl">
-      {{- current_variant.compare_at_price | minus: current_variant.price | money -}}
+      -{{- current_variant.compare_at_price | minus: current_variant.price | money -}}
     </span>
   </div>
   {%- if product.metafields.custom.show_count_down.value -%}
