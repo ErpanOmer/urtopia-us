@@ -208,7 +208,7 @@ h4 {
 
     .centeral-content {
         .promo-banner {
-            background-color: rgb(125, 92, 200);
+            background: linear-gradient(180deg, #DB51A3, #006CFF);
             text-align: center;
             color: #fff;
             padding-left: 5%;
@@ -304,6 +304,8 @@ h4 {
                         right: 7.5%;
                         top: 50%;
                         transform: translateY(-50%);
+                        z-index: 0;
+                        pointer-events: none;
                     }
                 }
 
@@ -315,6 +317,11 @@ h4 {
                     margin-top: 24px;
                     padding: 20px 0 30px;
                     height: auto;
+
+                    img {
+                        aspect-ratio: 16 / 10.75;
+                        object-fit: contain;
+                    }
 
                     &>div {
                         padding: 12px 24px 0;
@@ -531,19 +538,8 @@ h4 {
     &>div {
         background: #F4F5F7 url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3-_2x_a4a12e5c-f86c-40bd-a06a-756ed06aef28.jpg?v=1737378435') center center/cover no-repeat;
         padding: 50px 0 50px 70px;
-        color: #fff;
         border-radius: 10px;
         overflow: hidden;
-
-        .u30DemiBold_v2 {
-            color: #000;
-        }
-
-        .u17Light_v2 {
-            max-width: 450px;
-            margin: 24PX 0 60px;
-            color: #000;
-        }
     }
 
 
@@ -781,7 +777,7 @@ h4 {
         &>div {
             background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25384_2x_32f04bc6-4912-4c32-962d-264e25639674.jpg?v=1737379761') center left/cover no-repeat;
             color: #fff;
-            padding: 40px 0 30px 21%;
+            padding: 40px 0 40px 21%;
             border-radius: 15px;
             overflow: hidden;
             

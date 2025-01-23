@@ -1,10 +1,19 @@
+{{ 'outlet_v4.scss.css' | asset_url | stylesheet_tag: preload: true }}
+{{ 'black-friday.scss.css' | asset_url | stylesheet_tag: preload: true }}
+
+<style>
+    h1, h2, h3, h4 {
+        margin: 0;
+        color: inherit;
+    }
+
+    .swiper-pagination-bullet {
+        border-radius: 2px;
+    }
+</style>
+
 <div class="background-image er-aspect-[1920/750] mb:er-aspect-[375/500]">
-        <img class="mobileHide"
-            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/557_new_2x_72b7caa0-cbea-4c8a-b68f-ab4928c516e5.jpg?v=1737525500"
-            alt="">
-        <img class="pcHide mb:!er-object-contain mb:!er-object-top"
-            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/557_new_2x_3ec5248a-88cf-4ec0-bd45-31da43b44006.jpg?v=1737527608"
-            alt="">
+        {% render 'image', first_screen: true, class: "mb:!er-object-contain mb:!er-object-top", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/557_new_2x_72b7caa0-cbea-4c8a-b68f-ab4928c516e5.jpg?v=1737525500", mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/557_new_2x_3ec5248a-88cf-4ec0-bd45-31da43b44006.jpg?v=1737527608" %}
         <div
             class="centeral-content er-text-white er-flex er-flex-col er-items-start er-justify-center er-h-full mb:er-items-center mb:er-text-center mb:er-justify-start mb:er-mt-12">
             <span
@@ -22,11 +31,10 @@
     </div>
     <div class="centeral-content !er-my-48 mb:!er-my-24 mb:!er-px-6">
         <div class="er-grid er-grid-cols-2 er-bg-background er-rounded-3xl mb:er-grid-cols-1 er-p-6">
-            <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2x_7cd0ede3-6cba-4774-a7d2-b8ad0f7eb976.png?v=1737528934"
-                alt="" class="mb:er-order-1">
-            <div class="er-flex er-flex-col er-items-start er-justify-center er-ml-20 mb:er-ml-0 mb:er-pt-8">
+            {% render 'image', src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2x_7cd0ede3-6cba-4774-a7d2-b8ad0f7eb976.png?v=1737528934", width: 640 %}
+            <div class="er-flex er-flex-col er-items-start er-justify-center er-ml-20 mb:er-ml-0 mb:er-pt-8 mb:er-order-[-1]">
                 <h2 class="text-size36 mb:er-text-4xl mb:er-leading-tight">Why Carbon 1 <br class="md:er-hidden">Step Thru eBike?</h2>
-                <ul class="text-size18 er-font-medium er-mt-10 er-mb-20 er-space-y-6 er-ml-8 marker:er-text-[#006EDD] mb:er-text-2xl mb:er-my-8 er-opacity-80">
+                <ul class="text-size18 er-font-medium er-mt-10 er-mb-20 er-space-y-6 er-ml-8 marker:er-text-[#006EDD] mb:er-text-2xl mb:er-my-8 er-opacity-80 er-p-0">
                     <li>
                         Lightest Carbon E-Cruiser
                     </li>
@@ -43,36 +51,30 @@
     </div>
     <div class="centeral-content !er-my-48 mb:!er-my-24 mb:!er-px-6">
         <div class="er-grid er-grid-cols-3 er-gap-8 er-text-white mb:er-grid-cols-1">
-            <div class="background-image er-p-12 er-aspect-[414/450] mb:er-aspect-[345/250] mb:er-p-8 er-rounded-3xl er-overflow-hidden">
+            <div class="background-image er-p-12 er-aspect-[414/450] mb:er-aspect-[345/250] mb:er-p-8 er-rounded-3xl er-overflow-hidden er-flex er-flex-col">
                 <h3 class="text-size36 er-mb-2 mb:er-text-4xl">Featherlight Design</h3>
                 <span class="text-size24 er-font-medium mb:er-text-3xl">Only 36 lbs</span>
-                <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/fix-145_2x_77c731bd-d345-408c-b3a2-2a2d553efec3.jpg?v=1737529187"
-                    alt="">
+                {% render 'image', src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/fix-145_2x_77c731bd-d345-408c-b3a2-2a2d553efec3.jpg?v=1737529187", width: 500 %}
             </div>
-            <div class="background-image er-p-12 er-aspect-[414/450] mb:er-aspect-[345/250] mb:er-p-8 er-rounded-3xl er-overflow-hidden">
+            <div class="background-image er-p-12 er-aspect-[414/450] mb:er-aspect-[345/250] mb:er-p-8 er-rounded-3xl er-overflow-hidden er-flex er-flex-col">
                 <h3 class="text-size36 er-mb-2 mb:er-text-4xl">Torque Sensor</h3>
                 <span class="text-size24 er-font-medium mb:er-text-3xl">0-delay precision</span>
-                <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25384_2x_c85f6046-daea-4e51-a7bb-9ccd56d37d15.jpg?v=1737529595"
-                    alt="">
+                {% render 'image', src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25384_2x_c85f6046-daea-4e51-a7bb-9ccd56d37d15.jpg?v=1737529595", width: 500 %}
             </div>
-            <div class="background-image er-p-12 er-aspect-[414/450] mb:er-aspect-[345/250] mb:er-p-8 er-rounded-3xl er-overflow-hidden">
+            <div class="background-image er-p-12 er-aspect-[414/450] mb:er-aspect-[345/250] mb:er-p-8 er-rounded-3xl er-overflow-hidden er-flex er-flex-col">
                 <h3 class="text-size36 er-mb-2 mb:er-text-4xl">Upright Posture</h3>
                 <span class="text-size24 er-font-medium mb:er-text-3xl">0 Strain</span>
-                <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/108_new_2x_ba434db1-cdd0-44e2-a414-f37f5844891b.jpg?v=1737529589"
-                    alt="">
+                {% render 'image', src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/108_new_2x_ba434db1-cdd0-44e2-a414-f37f5844891b.jpg?v=1737529589", width: 500 %}
             </div>
-            <div class="background-image er-p-12 er-col-span-2 mb:er-col-span-1 mb:er-aspect-[345/250] mb:er-p-8 er-rounded-3xl er-overflow-hidden">
+            <div class="background-image er-p-12 er-col-span-2 mb:er-col-span-1 mb:er-aspect-[345/250] mb:er-p-8 er-rounded-3xl er-overflow-hidden er-flex er-flex-col">
                 <h3 class="text-size36 er-mb-2 mb:er-text-4xl">Power That Lasts</h3>
                 <span class="text-size24 er-font-medium mb:er-text-3xl">Up to 80 miles</span>
-                <img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25410_2x_a7b708e9-f51c-4732-af08-4bb687558d08.jpg?v=1737529662"
-                    alt="">
-                <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2x_58c2c333-be63-4ce9-8f3c-62c3c0451768.jpg?v=1737537083" alt="">
+                {% render 'image', src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25410_2x_a7b708e9-f51c-4732-af08-4bb687558d08.jpg?v=1737529662", width: 1000, mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2x_58c2c333-be63-4ce9-8f3c-62c3c0451768.jpg?v=1737537083" %}
             </div>
-            <div class="background-image er-p-12 er-aspect-[414/300] mb:er-aspect-[345/250] mb:er-p-8 er-rounded-3xl er-overflow-hidden">
+            <div class="background-image er-p-12 er-aspect-[414/300] mb:er-aspect-[345/250] mb:er-p-8 er-rounded-3xl er-overflow-hidden er-flex er-flex-col">
                 <h3 class="text-size36 er-mb-2 mb:er-text-4xl">Safety Certified</h3>
                 <span class="text-size24 er-font-medium mb:er-text-3xl">UL 2849</span>
-                <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25411_2x_a50fb92c-f3a4-4867-ab7d-dc0ccfaa4b6c.jpg?v=1737529668"
-                    alt="">
+                {% render 'image', src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25411_2x_a50fb92c-f3a4-4867-ab7d-dc0ccfaa4b6c.jpg?v=1737529668", width: 500 %}
             </div>
         </div>
     </div>
@@ -93,10 +95,8 @@
                     style="--swiper-theme-color: #000;--swiper-navigation-size: 25px;--swiper-pagination-color: #fff;--swiper-pagination-bullet-width: 80px;--swiper-pagination-bullet-height: 4px;">
                     <div class="swiper-wrapper">
                         <div
-                            class="swiper-slide background-image er-aspect-[750/500] er-text-white er-pl-20 er-pb-28 er-flex er-flex-col er-justify-end er-items-start">
-                            <img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25412_2x_4cf6260f-6a20-4f2a-893c-a46d09794d42.jpg?v=1737530401"
-                                alt="">
-                            <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250122-172739.jpg?v=1737538084" alt="">
+                            class="swiper-slide background-image er-aspect-[750/500] er-text-white er-pl-20 er-pb-28 er-flex er-flex-col er-justify-end er-items-start er-box-border">
+                            {% render 'image', width: 900, src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25412_2x_4cf6260f-6a20-4f2a-893c-a46d09794d42.jpg?v=1737530401", mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250122-172739.jpg?v=1737538084" %}
                             <h3 class="text-size36 er-mb-6 mb:er-hidden">Smartbar Tech</h3>
                             <p class="er-max-w-2xl text-size18 mb:er-hidden">
                                 <span>Navigation, theft deterrence, AI assistant, and customizable smart features in one
@@ -104,20 +104,16 @@
                             </p>
                         </div>
                         <div
-                            class="swiper-slide background-image er-aspect-[750/500] er-text-white er-pl-20 er-pb-28 er-flex er-flex-col er-justify-end er-items-start">
-                            <img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25408_2x_e8d0b963-62ed-468c-b9fb-47379b770665.jpg?v=1737531842"
-                                alt="">
-                            <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25385_2x_add86e45-df83-4f9f-bbcd-8ff27d80786e.jpg?v=1737537918" alt="">
+                            class="swiper-slide background-image er-aspect-[750/500] er-text-white er-pl-20 er-pb-28 er-flex er-flex-col er-justify-end er-items-start er-box-border">
+                            {% render 'image', width: 900, src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25408_2x_e8d0b963-62ed-468c-b9fb-47379b770665.jpg?v=1737531842", mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25385_2x_add86e45-df83-4f9f-bbcd-8ff27d80786e.jpg?v=1737537918" %}
                             <h3 class="text-size36 er-mb-6 mb:er-hidden">Urtopia Motor</h3>
                             <p class="er-max-w-2xl text-size18 mb:er-hidden">
                                 <span>Adjustable assistance for a smoother ride, longer range, and greater ease.</span>
                             </p>
                         </div>
                         <div
-                            class="swiper-slide background-image er-aspect-[750/500] er-text-white er-pl-20 er-pb-28 er-flex er-flex-col er-justify-end er-items-start">
-                            <img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25409_2x_ac1159b8-d2a6-40fa-85a7-1bac7a727e02.jpg?v=1737531830"
-                                alt="">
-                            <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2x_9d92166c-0cf8-4af1-b155-ed908d65b851.jpg?v=1737537914" alt="">
+                            class="swiper-slide background-image er-aspect-[750/500] er-text-white er-pl-20 er-pb-28 er-flex er-flex-col er-justify-end er-items-start er-box-border">
+                            {% render 'image', width: 900, src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25409_2x_ac1159b8-d2a6-40fa-85a7-1bac7a727e02.jpg?v=1737531830", mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2x_9d92166c-0cf8-4af1-b155-ed908d65b851.jpg?v=1737537914"  %}
                             <h3 class="text-size36 er-mb-6 mb:er-hidden">Torque Sensor</h3>
                             <p class="er-max-w-2xl text-size18 mb:er-hidden">
                                 <span>Seamless power delivery for a smooth, natural ride that stretches your range and
@@ -126,12 +122,12 @@
                         </div>
                     </div>
                     <div
-                        class="swiper-button-prev er-bg-white/50 er-rounded-tr-xl er-rounded-br-xl er-w-12 er-h-20 er-left-0 er-pr-2 hover:er-opacity-70 er-transition er-translate-y-[-25%]">
+                        class="swiper-button-prev er-bg-white/50 er-rounded-tr-xl er-rounded-br-xl er-w-12 er-h-20 er-left-0 er-pr-2 hover:er-opacity-70 er-transition er-translate-y-[-25%] er-z-[1]">
                     </div>
                     <div
-                        class="swiper-button-next er-bg-white/50 er-rounded-tl-xl er-rounded-bl-xl er-w-12 er-h-20 er-right-0 er-pl-2 hover:er-opacity-70 er-transition er-translate-y-[-25%]">
+                        class="swiper-button-next er-bg-white/50 er-rounded-tl-xl er-rounded-bl-xl er-w-12 er-h-20 er-right-0 er-pl-2 hover:er-opacity-70 er-transition er-translate-y-[-25%] er-z-[1]">
                     </div>
-                    <div class="swiper-pagination !er-bottom-16 er-text-left er-pl-20 mb:!er-bottom-4"></div>
+                    <div class="swiper-pagination !er-bottom-16 er-text-left er-pl-20 mb:!er-bottom-4 er-z-[1]"></div>
                 </div>
                 <div class="md:er-hidden mb:er-p-6 mb:er-pt-8 bottom-text">
                     <h3 class="text-size18 er-font-bold er-mb-3">Smartbar Tech</h3>
@@ -143,24 +139,21 @@
     <div class="centeral-content !er-my-48 mb:!er-my-24 mb:!er-px-6">
         <div class="er-grid er-grid-cols-3 er-text-white er-gap-8 mb:er-grid-cols-1">
             <div class="background-image er-aspect-[414/532] mb:er-aspect-[345/250] er-rounded-3xl er-overflow-hidden er-flex er-flex-col er-text-center er-p-10 er-items-center mb:er-items-start mb:er-text-left mb:er-p-6">
-                <img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2x_9526b5a2-69a8-419b-b600-b93a1a7f4e0b.jpg?v=1737533820" alt="">
-                <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2x_cd415924-95c4-4083-9646-8941461ab404.jpg?v=1737541366" alt="">
+                {% render 'image', width: 500, src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2x_9526b5a2-69a8-419b-b600-b93a1a7f4e0b.jpg?v=1737533820", mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2x_cd415924-95c4-4083-9646-8941461ab404.jpg?v=1737541366" %}
                 <h3 class="text-size36 er-mb-4 mb:er-text-3xl mb:er-mb-2">Glacier Blue</h3>
                 <p class="text-size18 er-max-w-md mb:er-text-2xl">
                     <span>A breath of fresh air, inspired by the calm of open skies.</span>
                 </p>
             </div>
             <div class="background-image er-aspect-[414/532] mb:er-aspect-[345/250] er-rounded-3xl er-overflow-hidden er-flex er-flex-col er-text-center er-p-10 er-items-center mb:er-items-start mb:er-text-left mb:er-p-6">
-                <img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2x_2aa9f54b-cdc3-44da-b6b9-38cbc70de102.jpg?v=1737534393" alt="">
-                <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2x_84fbe79e-e07b-4ea4-b665-9dc1f027705a.jpg?v=1737541908" alt="">
+               {% render 'image', width: 500, src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2x_2aa9f54b-cdc3-44da-b6b9-38cbc70de102.jpg?v=1737534393", mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2x_84fbe79e-e07b-4ea4-b665-9dc1f027705a.jpg?v=1737541908" %} 
                 <h3 class="text-size36 er-mb-4 mb:er-text-3xl mb:er-mb-2">Creme</h3>
                 <p class="text-size18 er-max-w-md mb:er-text-2xl">
                     <span>Soft as morning light, bringing warmth and grace to every journey.</span>
                 </p>
             </div>
             <div class="background-image er-aspect-[414/532] mb:er-aspect-[345/250] er-rounded-3xl er-overflow-hidden er-flex er-flex-col er-text-center er-p-10 er-items-center mb:er-items-start mb:er-text-left mb:er-p-6">
-                <img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2x_11ab1604-64c7-4207-977f-102b03627064.jpg?v=1737534402" alt="">
-                <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2x_d1de898a-dcf5-4151-b996-da51d16b5c70.jpg?v=1737541913" alt="">
+                {% render 'image', width: 500, src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2x_11ab1604-64c7-4207-977f-102b03627064.jpg?v=1737534402", mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2x_d1de898a-dcf5-4151-b996-da51d16b5c70.jpg?v=1737541913" %}
                 <h3 class="text-size36 er-mb-4 mb:er-text-3xl mb:er-mb-2">Matte Black</h3>
                 <p class="text-size18 er-max-w-md mb:er-text-2xl">
                     <span>A timeless shade of elegance, where every ride feels iconic.</span>
@@ -170,8 +163,8 @@
     </div>
     <div class="centeral-content !er-my-48 mb:!er-my-24 mb:!er-px-6">
         <div class="er-grid er-grid-cols-2 er-bg-background er-rounded-3xl er-overflow-hidden mb:er-grid-cols-1">
-            <img class="mb:er-order-1" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25389_2x_4b5d0c1c-9286-4cd7-968b-f5a9cc6ffd4d.jpg?v=1737534548" alt="">
-            <div class="er-flex er-flex-col er-justify-center er-items-center mb:er-px-6 mb:er-py-16 mb:er-items-start">
+            {% render 'image', src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25389_2x_4b5d0c1c-9286-4cd7-968b-f5a9cc6ffd4d.jpg?v=1737534548", width: 640 %}
+            <div class="er-flex er-flex-col er-justify-center er-items-center mb:er-px-6 mb:er-py-16 mb:er-items-start mb:er-order-[-1]">
                 <h3 class="text-size36 er-mb-8 mb:er-text-4xl mb:er-mb-4">Fits You, Fits Everyone</h3>
                 <p class="text-size18 er-max-w-xl mb:er-text-2xl er-opacity-80">
                     <span>
@@ -181,16 +174,140 @@
             </div>
         </div>
     </div>
-    <div class="background-image er-aspect-[1920/375] mb:er-aspect-[375/400]">
-        <img class="mobileHide" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3-_2x_bcc0406b-2022-4aca-8d1c-12ccf7e9dede.jpg?v=1737535162" alt="">
-        <img class="pcHide" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3-_2x_ad79dea2-9869-49a2-b47b-a66892318efc.jpg?v=1737542249" alt="">
-        <div class="centeral-content er-text-white er-flex er-flex-col er-items-start er-justify-center er-h-full mb:er-items-center mb:er-justify-start mb:er-pt-10">
+    <div class="centeral-content !er-my-48 mb:!er-my-24 mb:!er-px-6">
+        <div class="background-image er-h-[400px] er-rounded-3xl er-overflow-hidden er-pl-16 mb:er-p-0">
+         {% render 'image', width: 1480, class: "md:!er-object-left" src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250123-142552.jpg?v=1737613606", mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3-_2x_ad79dea2-9869-49a2-b47b-a66892318efc.jpg?v=1737542249" %}
+            <div class=" er-text-white er-flex er-flex-col er-items-start er-justify-center er-h-full mb:er-items-center mb:er-justify-start mb:er-pt-10">
             <span class="er-bg-gradient-to-r er-from-[#DB51A3] er-to-[#006CFF] text-size14 mb:er-text-xl er-font-bold er-py-2 er-px-6 er-rounded-3xl">New Year, New Gear</span>
-            <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25383.svg?v=1737535368" width="330" class="er-my-12 mobileHide" alt="">
-            <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25383_2d7039ac-4e90-4b3e-bf78-ca542abdcd77.svg?v=1737542387" width="250" class="er-my-10 pcHide" alt="">
+            <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25383.svg?v=1737535368" width="330" height="75"  class="er-my-12 er-mb-20 mobileHide" alt="{{ page_description }}">
+            <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25383_2d7039ac-4e90-4b3e-bf78-ca542abdcd77.svg?v=1737542387" width="250" height="57" class="er-my-10 pcHide" alt="{{ page_description }}">
+            {% render 'sale' %}
+            <style>
+                .sale {
+                    background-color: transparent;
+                    margin: 0;
+                }
+
+                .sale .u14DemiBold_v2 {
+                    display: none;
+                }
+
+                .sale .u36DemiBold_v2 {
+                    background-color: #006EDD;
+                    color: #fff;
+                    border-radius: 8px;
+                    width: 55px;
+                    height: 55px;
+                    line-height: 55px;
+                    font-size: 24px;
+                    margin-bottom: 4px;
+                }
+
+                .sale > div:not(.u14DemiBold_v2) {
+                    padding: 0;
+                    display: flex;
+                    align-items: center;
+                }
+
+                .sale > div:not(.u14DemiBold_v2) > div + div {
+                    border: none;
+                    position: relative;
+                    margin-left: 40px;
+                }
+
+                .sale > div:not(.u14DemiBold_v2) > div + div::before {
+                    content: ":";
+                    display: inline-flex;
+                    position: absolute;
+                    left: -40%;
+                    top: 30%;
+                    line-height: 0;
+                    font-size: 20px;
+                    color: #006EDD;
+                }
+
+                .sale > div:not(.u14DemiBold_v2) > div span:last-child {
+                    color: #006EDD;
+                    opacity: 1;
+                }
+
+                @media (max-width: 767px) {
+                    .sale .u36DemiBold_v2 {
+                        background-color: #fff;
+                        color: #006EDD;
+                        width: 42px;
+                        height: 42px;
+                        line-height: 42px;
+                        font-size: 18px;
+                    }
+
+                    .sale > div:not(.u14DemiBold_v2) > div span:last-child {
+                        color: #fff;
+                        font-size: 8px;
+                    }
+
+                    .sale > div:not(.u14DemiBold_v2) > div + div {
+                        margin-left: 30px;
+                    }
+
+                    .sale > div:not(.u14DemiBold_v2) > div + div::before {
+                        left: -37.5%;
+                        color: #fff;
+                    }
+                }
+            </style>
+        </div>
         </div>
     </div>
-    <script type="module">
+    <div class="centeral-content ebike-products">
+        <div class="product-grid">
+            {% assign product = all_products['urtopia-carbon-1-step-thru-ebike'] %}
+            {% assign product_variants = product.variants | where: 'available' %}
+            {% assign product_uhmaya = '36 lbs<br>lightweight, Full<br>carbon fiber, 80<br>Miles' | split: ', ' %}
+            {% render 'product-card-2',
+            product_variants: product_variants,
+            product_name: 'Carbon 1 Step-Thru',
+            product_description: 'Urban & fitness riding',
+            product_url: product.url,
+            product_uhmaya: product_uhmaya
+            %}
+            {% assign product = all_products['urtopia-carbon-fusion-gt'] %}
+            {% assign product_variants = product.variants | where: 'available' %}
+            {% assign product_uhmaya = '1500W<br>power, Carbon fiber<br>frame, 120<br>Miles' | split: ', ' %}
+            {% render 'product-card-2',
+            product_variants: product_variants,
+            product_name: 'Fusion GT',
+            product_description: 'All terrain riding',
+            product_url: product.url,
+            product_uhmaya: product_uhmaya
+            %}
+            <div class="gray-background-color u30DemiBold_v2 lozad mobileHide" data-background-image="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/648_new_2x_ac657869-5be2-4f87-8f44-0a245c45a714.jpg?v=1737379197width=500">Full Carbon Lightweight Sporty</div>
+            {% assign product = all_products['urtopia-carbon-1-pro-ebike'] %}
+            {% assign product_variants = product.variants | where: 'available' %}
+            {% assign product_uhmaya = '37 lbs<br>lightweight, Full<br>carbon fiber, 80<br>Miles' | split: ', ' %}
+            {% render 'product-card-2',
+            product_variants: product_variants,
+            product_name: 'Carbon 1 Pro',
+            product_description: 'Urban & fitness riding',
+            product_variant_options_find_sort: 'M,L,S',
+            product_url: product.url,
+            product_uhmaya: product_uhmaya
+            %}
+            {% assign product = all_products['urtopia-carbon-fold'] %}
+            {% assign product_variants = product.variants | where: 'available' %}
+            {% assign product_uhmaya = '29 lbs<br>lightweight, Full<br>carbon fiber, Torque<br>sensor' | split: ', ' %}
+            {% render 'product-card-2',
+            product_variants: product_variants,
+            product_name: 'Carbon Fold 1',
+            product_description: 'Super space-efficient',
+            product_url: product.url,
+            product_uhmaya: product_uhmaya
+            %}
+        </div>
+        </div>
+    {% render 'sale-buy-any' %}
+
+<script type="module">
   document.addEventListener('DOMContentLoaded', function () {
     new Swiper('.swappppr', {
       preloadImages: false,
@@ -215,4 +332,43 @@
       },
     });
   })
+
+  $('.product-card .dots > div').on('click', e => {
+        const target = $(e.target)
+        const product_card = target.closest('.product-card')
+
+        // 先取消 其它兄弟元素的active, 再设置active
+        target.siblings().removeClass('active')
+        target.addClass('active')
+
+        const price = Number(target.attr('data-price'))
+        const compare_at_price = Number(target.attr('data-compare-at-price'))
+        const discount_price = Number(target.attr('data-product-discount-price'))
+        const variant_id = target.attr('data-variant')
+        const variant_image = target.attr('data-img')
+
+        product_card.find('.product_price .u24DemiBold_v2').text(getPriceFormat(price, true)).attr('data-price', getPriceFormat(compare_at_price, true))
+        product_card.find('.tags > span:first-child').html(`${getPriceFormat(compare_at_price - price, true)} <span class="u14DemiBold_v2">OFF</span>`)
+
+        if (price === compare_at_price) {
+            product_card.find('.product_price .u24DemiBold_v2').attr('data-price', '')
+            product_card.find('.tags > span:first-child').hide()
+        }
+
+        product_card.find('.variant-image').attr('src', variant_image)
+        product_card.find('.my-button').attr('href', `${product_card.find('.my-button').attr('href').split('?').shift()}?variant=${variant_id}`)
+        product_card.find('.stars a').attr('href', `${product_card.find('.my-button').attr('href').split('?').shift()}?variant=${variant_id}#judgeme_product_reviews`)
+    })
+
+    setTimeout(() => {
+        $('.product-card .dots > div:first-child').click()
+
+        $('.product-card .variant-image').on('click', e => {
+            const button = $(e.target).closest('.product-card').find('.my-button')
+
+            if (button.length) {
+                button[0].click()
+            }
+        })
+    })
 </script>

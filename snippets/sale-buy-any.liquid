@@ -103,7 +103,12 @@
             8792002461944: {
                 title: 'Carbon Fold 1',
                 ...global_config.carbon_fold_order_page_config
-            }
+            },
+            8922206961912: {
+              title: 'Carbon 1 ST',
+              ...global_config.carbon1pro_order_page_config,
+              size_map: { "One Size":"Fit for 5’1’’~6’1’’" }
+            },
         }
 
         const bikes_info = []
@@ -163,10 +168,6 @@
             const info = bikes_info.find(info => info.id === Number(value))
 
             changeVariant(target, info.first_available_variant)
-
-            for (const style of info.style) {
-                
-            }
 
             target.find('.style .dots').html(info.style.map(s => `<div data-stye="${s}"></div>`).join('')).children().on('click', function () {
                 const size = target.find('.size .sizes .active').text()
@@ -250,6 +251,6 @@
             })
 
             changeProduct($(`.buyany select[name="left"]`).parent().parent(), 8794812776696)
-            changeProduct($(`.buyany select[name="right"]`).parent().parent(), 8230663028984)
+            changeProduct($(`.buyany select[name="right"]`).parent().parent(), 8922206961912)
         }, 100)
 </script>
