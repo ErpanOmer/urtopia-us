@@ -16,174 +16,45 @@
     {% render 'web-font' %}
     <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
     <script>
-      (async function () {
-                    async function measureRTTAndDownlink(url) {
-                        const startTime = performance.now();
-                        let rtt = null, downlink = null;
-
-                        try {
-                          // 单次网络请求用于测量 RTT 和下载速度
-                          const response = await fetch(url, { method: "GET", cache: "no-cache" });
-                          const endTime = performance.now();
-                          rtt = Math.round(endTime - startTime);
-
-                          const blob = await response.blob();
-                          const fileSizeBytes = blob.size; // 文件大小（字节）
-                          const durationSeconds = (endTime - startTime) / 1000; // 持续时间（秒）
-
-                          downlink = Math.round((fileSizeBytes * 8) / (durationSeconds * 1024 * 1024)); // Mbps
-                        } catch (error) {
-                          console.warn("测量 RTT 和下载速度失败:", error);
-                        }
-
-                        return { rtt, downlink };
-                      }
-
-                      function estimateEffectiveType(downlink, rtt) {
-                        if (downlink < 0.5 || rtt > 300) return "2g";
-                        if (downlink < 1.5 || rtt > 150) return "3g";
-                        if (downlink < 20 || rtt > 50) return "4g";
-                        return "5g";
-                      }
-
-                      async function testNetwork() {
-                        const url = "{{ settings.favicon | image_url: width: 32, height: 32 }}"; // 替换为可靠的小文件 URL
-                        const { rtt, downlink } = await measureRTTAndDownlink(url);
-
-                        const effectiveType = estimateEffectiveType(downlink, rtt);
-                        return { downlink, rtt, effectiveType };
-                      }
-
-                      async function getNetworkInfo() {
-                        const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
-                        let networkInfo = {
-                          type: "unknown",
-                          effectiveType: "unknown",
-                          downlink: "unknown",
-                          rtt: "unknown",
-                          saveData: false,
-                        };
-
-                        if (connection) {
-                          // 使用 Network Information API
-                          networkInfo.type = connection.type || "unknown";
-                          networkInfo.effectiveType = connection.effectiveType || "unknown";
-                          networkInfo.downlink = connection.downlink || "unknown";
-                          networkInfo.rtt = connection.rtt || "unknown";
-                          networkInfo.saveData = connection.saveData || false;
-                        }
-
-                        // 测速补充数据
-                        const testResult = await testNetwork();
-                        networkInfo.downlink = testResult.downlink || networkInfo.downlink;
-                        networkInfo.rtt = testResult.rtt || networkInfo.rtt;
-                        networkInfo.effectiveType = testResult.effectiveType || networkInfo.effectiveType;
-
-                        return networkInfo;
-          }
-
-        function evaluateNetworkQuality(networkInfo) {
-            let totalWeight = 0;
-            let weightedScore = 0;
-
-            // Type 权重
-            const typeWeights = {
-              wifi: { baseScore: 1, weight: 2 },
-              cellular: { baseScore: 2, weight: 3 },
-              none: { baseScore: 5, weight: 5 },
-              unknown: { baseScore: 1.5, weight: 2 },
-            };
-
-            const typeData = typeWeights[networkInfo.type] || { baseScore: 3, weight: 2 };
-            weightedScore += typeData.baseScore * typeData.weight;
-            totalWeight += typeData.weight;
-
-            // EffectiveType 权重
-            const effectiveTypeWeights = {
-              "5g": { baseScore: 1, weight: 3 },
-              "4g": { baseScore: 1.5, weight: 2 },
-              "3g": { baseScore: 2.5, weight: 2 },
-              "2g": { baseScore: 4, weight: 3 },
-              "unknown": { baseScore: 2, weight: 2 },
-            };
-
-            const effectiveTypeData = effectiveTypeWeights[networkInfo.effectiveType] || { baseScore: 2, weight: 2 };
-            weightedScore += effectiveTypeData.baseScore * effectiveTypeData.weight;
-            totalWeight += effectiveTypeData.weight;
-
-            // Downlink 权重（线性映射）
-            if (networkInfo.downlink !== "unknown") {
-              let downlinkScore = 5; // 默认最低分
-              if (networkInfo.downlink >= 20) downlinkScore = 1; // 卓越
-              else if (networkInfo.downlink >= 10) downlinkScore = 1.5;
-              else if (networkInfo.downlink >= 5) downlinkScore = 2.5;
-              else if (networkInfo.downlink >= 1) downlinkScore = 3.5;
-              else if (networkInfo.downlink >= 0.5) downlinkScore = 4.5;
-
-              weightedScore += downlinkScore * 4;
-              totalWeight += 4;
-            } else {
-              weightedScore += 3 * 2; // 默认值
-              totalWeight += 2;
-            }
-
-            // RTT 权重（线性映射）
-            if (networkInfo.rtt !== "unknown") {
-              let rttScore = 5; // 默认最低分
-              if (networkInfo.rtt <= 50) rttScore = 1; // 卓越
-              else if (networkInfo.rtt <= 200) rttScore = 2;
-              else if (networkInfo.rtt <= 500) rttScore = 3;
-              else if (networkInfo.rtt <= 1000) rttScore = 4;
-              else rttScore = 5; // 极差
-
-              weightedScore += rttScore * 3;
-              totalWeight += 3;
-            } else {
-              weightedScore += 3 * 1;
-              totalWeight += 1;
-            }
-
-            // SaveData 权重
-            if (networkInfo.saveData) {
-              weightedScore += 5 * 1; // 流量保护启用，网络质量较差
-              totalWeight += 1;
-            } else {
-              weightedScore += 1 * 1; // 未启用流量保护
-              totalWeight += 1;
-            }
-
-            // 综合得分（返回小数，精确到两位）
-            const averageScore = (weightedScore / totalWeight).toFixed(2);
-
-            return parseFloat(averageScore);
-          }
-
-          const pattern = [
-            ['src', 'shopify-perf-kit', 200],
-            ['src', 'https://www.google-analytics.com/analytics.js', 400],
-            ['className', 'analytics', 1000],
-            ['id', 'web-pixels-manager-setup', 1000]
+         const pattern = [
+            ['src', 'shopify-perf-kit', 2],
+            ['src', 'https://www.google-analytics.com/analytics.js', 3],
+            ['className', 'analytics', 2],
+            ['id', 'web-pixels-manager-setup', 4]
           ]
           // 存储 head 中的 script 标签信息
           const scriptQueue = [];
           // 监听 DOM 的添加
-          const observer = new MutationObserver((mutations) => {
+          window.observer = new MutationObserver((mutations) => {
             mutations.forEach((mutation) => {
               mutation.addedNodes.forEach((node) => {
                 if (node.tagName === 'SCRIPT' && node.parentElement.tagName === 'HEAD') {
-                for (const [attr, value, delay] of pattern) {
-                  if (node[attr] && node[attr].includes(value)) {
-                    scriptQueue.push({
-                      src: node.src,
-                      content: node.src ? null : node.textContent,
-                      type: node.type || 'text/javascript',
-                      isInline: !!!node.src,
-                      delay,
-                      attrs: Array.from(node.attributes).map(attr => [attr.name, attr.value])
-                    });
+                for (const [attr, value, level] of pattern) {
+                  if (node[attr] && node.type !== "text/lazyload" && node[attr].includes(value)) {
+                     const newScript = document.createElement('script');
+                     const attrs = Array.from(node.attributes).map(attr => [attr.name, attr.value])
+                     
+                     for (const [attr, value] of attrs) {
+                        newScript.setAttribute(attr, value)
+                     }
+                     // lazy
+                     newScript.type = "text/lazyload";
+                     newScript.setAttribute('data-level', level);
 
-                    node.remove();
-                    break;
+                     if (node.src) {
+                        newScript.src = node.src
+                     } else {
+                        const blob = new Blob([node.textContent], { type: 'application/javascript' })
+                        const reader = new FileReader(); 
+                        reader.onload = function (event) {
+                          newScript.src = event.target.result
+                        }
+
+                        reader.readAsDataURL(blob);
+                     }
+
+                     document.head.replaceChild(newScript, node); // 执行脚本 
+                     break;
                   }
                 }
                 }
@@ -192,88 +63,15 @@
           });
 
           // 开始观察 head 的变动
-          observer.observe(document.head, { childList: true });
-          // 等待页面加载完成后执行收集的 script
-          window.addEventListener('load', async () => {
-            // const networkInfo = await getNetworkInfo();
-            // const networkQuality = evaluateNetworkQuality(networkInfo);
-            // console.log("networkInfo", JSON.stringify(networkInfo), networkQuality);
-
-            const lazyScripts = Array.from(document.querySelectorAll('script[type="text/lazyload"]'));
-
-            // 按 data-delay 属性排序
-            lazyScripts.sort((a, b) => {
-                const delayA = parseFloat(a.getAttribute('data-delay') || 0); // 默认值为 0
-                const delayB = parseFloat(b.getAttribute('data-delay') || 0); // 默认值为 0
-                return delayA - delayB; // 升序排序
-            });
-
-            scriptQueue.forEach((script) => {
-              task(() => new Promise(resolve => {
-                try {
-                    const newScript = document.createElement('script');
-
-                    if (script.isInline) {
-                      newScript.textContent = script.content;
-                    } else {
-                      newScript.src = script.src;
-                    }
-      
-                    newScript.type = script.type;
-      
-                    for (const [attr, value] of script.attrs) {
-                      newScript.setAttribute(attr, value)
-                    }
-                    
-                    newScript.onload = function () {
-                      console.log('ok', script.src)
-                      resolve()
-                    }
-    
-                    newScript.error = function () {
-                      console.log('error1', script.src)
-                      resolve()
-                    }
-                  
-                    document.head.appendChild(newScript); // 执行脚本 
-                } catch (e) {
-                  console.log('error2', script.src)
-                } finally {
-                  resolve()
-                }
-              }))
-            });
-            
-            // 打印排序后的元素
-            lazyScripts.forEach(elem => {
-                const delay = elem.getAttribute('data-delay')
-
-                if (!Number.isNaN(delay)) {
-                  task(() => new Promise(resolve => {
-                    elem.type = "text/javascript";
-                    elem.src = elem.src;
-                    elem.async = false;
-                    elem.onload = function () {
-                      console.log(elem.src)
-                      resolve()
-                    }
-                  }))
-                }
-            });
-
-            // 停止观察
-            observer.disconnect();
-          });
-        })();
+          window.observer.observe(document.head, { childList: true });
     </script>
     <script src="{{ 'libs.min.js' | asset_url }}" defer></script>
     {% comment %} {{ content_for_header }} {% endcomment %}
     {{
       content_for_header
-      | replace: 'preloads.js?locale=en-US"', 'preloads.js?locale=en-US" type="text/lazyload" data-delay="2000"'
-      | replace: "'load', asyncLoad, false);", "'load', () => setTimeout(asyncLoad, 2000), false);"
-      | replace: 'data-source-attribution="shopify.loadfeatures" defer="defer"',
-        'data-source-attribution="shopify.loadfeatures" data-delay="1000" type="text/lazyload"'
+      | replace: 'preloads.js?locale=en-US"', 'preloads.js?locale=en-US" type="text/lazyload" data-level="5"'
+      | replace: "s.src = urls[i];", 's.type ="text/lazyload";s.async = false;s.setAttribute("data-level", "3");s.src = urls[i];'
+      | replace: 'data-source-attribution="shopify.loadfeatures" defer="defer"', 'data-source-attribution="shopify.loadfeatures" data-level="1" type="text/lazyload"'
     }}
     {% render 'global-config' %}
     {% render 'pagefly-app-header' %}

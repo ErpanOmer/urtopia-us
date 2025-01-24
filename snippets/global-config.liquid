@@ -73,64 +73,12 @@
       }, wait);
     };
   }
-  function showVideoDialog(src = '') {
-    console.log('src', src);
-    if (!src) {
-      return;
-    }
-    const template = `<div class="video-box"><div style="position: relative"><iframe width="${
-      document.body.clientWidth > 768 ? 840 : document.body.clientWidth * 0.84
-    }"height="${
-      document.body.clientWidth > 768 ? 472 : 'auto'
-    }"src="${src}"title="YouTube video player"frameborder="0"allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"allowfullscreen></iframe><span class="close"onclick="closeMiniDialog()">x</span></div></div>`;
-    showMiniDialog(template);
-  }
-  function showMiniDialog(html = '') {
-    const mini_dialog = $('body .mini-dialog');
-    if (mini_dialog.length) {
-      return setTimeout(showMiniDialog, 5000, html);
-    }
-    setTimeout(() => {
-      $('body').append(`<div class="mini-dialog"style="display: flex;">${html}</div>`);
-    });
-  }
-  function closeMiniDialog() {
-    $('body .mini-dialog').remove();
-  }
+
   document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
   if (Shopify.designMode) {
     document.documentElement.classList.add('shopify-design-mode');
   }
-  function waitForElement(selector, callback, options = {}) {
-    const defaultOptions = {
-      root: document.body,
-      childList: true,
-      subtree: true,
-      debounceTime: 100,
-      disconnectOnFound: true,
-    };
-    const finalOptions = { ...defaultOptions, ...options };
-    const { root, debounceTime, disconnectOnFound } = finalOptions;
-    const observer = new MutationObserver(
-      debounce(() => {
-        const target = root.querySelector(selector);
-        if (target) {
-          callback(target);
-          if (disconnectOnFound) {
-            observer.disconnect();
-          }
-        }
-      }, debounceTime)
-    );
-    observer.observe(root, { childList: finalOptions.childList, subtree: finalOptions.subtree });
-    const initialTarget = root.querySelector(selector);
-    if (initialTarget) {
-      callback(initialTarget);
-      if (disconnectOnFound) {
-        observer.disconnect();
-      }
-    }
-  }
+
   window.task = (() => {
     let next = Promise.resolve()
 
@@ -140,7 +88,7 @@
                 try {
                     await fn()
                 } catch (error) {
-                    console.log('task error:', e);
+                    console.log('task error:', error);
                 } finally {
                    resolve()
                 }

@@ -1844,10 +1844,10 @@ customElements.define('localization-form', LocalizationForm);
 
 class StickyHeader extends HTMLElement {
   constructor() {
-      super()
+    super()
   }
   connectedCallback() {
-      this.header = document.getElementById("shopify-section-header"),
+    this.header = document.getElementById("shopify-section-header"),
       this.headerBounds = {},
       this.currentScrollTop = 0,
       this.preventReveal = !1,
@@ -1857,51 +1857,49 @@ class StickyHeader extends HTMLElement {
       this.header.classList.add("shopify-section-header-sticky")
   }
   disconnectedCallback() {
-      this.removeEventListener("preventHeaderReveal", this.hideHeaderOnScrollUp),
+    this.removeEventListener("preventHeaderReveal", this.hideHeaderOnScrollUp),
       window.removeEventListener("scroll", this.onScrollHandler)
   }
   createObserver() {
-      new IntersectionObserver( (entries, observer2) => {
-          this.headerBounds = entries[0].intersectionRect,
-          observer2.disconnect()
-      }
-      ).observe(this.header)
+    new IntersectionObserver((entries, observer2) => {
+      this.headerBounds = entries[0].intersectionRect,
+        observer2.disconnect()
+    }).observe(this.header)
   }
   onScroll() {
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      if (!(this.predictiveSearch && this.predictiveSearch.isOpen)) {
-          if (scrollTop > this.currentScrollTop && scrollTop > this.headerBounds.bottom) {
-              if (this.preventHide)
-                  return;
-              requestAnimationFrame(this.hide.bind(this))
-          } else
-              scrollTop < this.currentScrollTop && scrollTop > this.headerBounds.bottom ? this.preventReveal ? (window.clearTimeout(this.isScrolling),
-              this.isScrolling = setTimeout( () => {
-                  this.preventReveal = !1
-              }
-              , 66),
-              requestAnimationFrame(this.hide.bind(this))) : requestAnimationFrame(this.reveal.bind(this)) : scrollTop <= this.headerBounds.top && requestAnimationFrame(this.reset.bind(this));
-          this.currentScrollTop = scrollTop
-      }
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (!(this.predictiveSearch && this.predictiveSearch.isOpen)) {
+      if (scrollTop > this.currentScrollTop && scrollTop > this.headerBounds.bottom) {
+        if (this.preventHide)
+          return;
+        requestAnimationFrame(this.hide.bind(this))
+      } else
+        scrollTop < this.currentScrollTop && scrollTop > this.headerBounds.bottom ? this.preventReveal ? (window.clearTimeout(this.isScrolling),
+          this.isScrolling = setTimeout(() => {
+            this.preventReveal = !1
+          }, 66),
+          requestAnimationFrame(this.hide.bind(this))) : requestAnimationFrame(this.reveal.bind(this)) : scrollTop <= this.headerBounds.top && requestAnimationFrame(this.reset.bind(this));
+      this.currentScrollTop = scrollTop
+    }
   }
   hide() {
-      this.header.classList.add("shopify-section-header-hidden", "shopify-section-header-sticky"),
+    this.header.classList.add("shopify-section-header-hidden", "shopify-section-header-sticky"),
       this.closeMenuDisclosure(),
       this.closeSearchModal()
   }
   reveal() {
-      this.header.classList.add("shopify-section-header-sticky", "animate"),
+    this.header.classList.add("shopify-section-header-sticky", "animate"),
       this.header.classList.remove("shopify-section-header-hidden")
   }
   reset() {
-      this.header.classList.remove("shopify-section-header-hidden", "shopify-section-header-sticky", "animate")
+    this.header.classList.remove("shopify-section-header-hidden", "shopify-section-header-sticky", "animate")
   }
   closeMenuDisclosure() {
-      this.disclosures = this.disclosures || this.header.querySelectorAll("header-menu"),
+    this.disclosures = this.disclosures || this.header.querySelectorAll("header-menu"),
       this.disclosures.forEach(disclosure => disclosure.close())
   }
   closeSearchModal() {
-      this.searchModal = this.searchModal || this.header.querySelector("details-modal"),
+    this.searchModal = this.searchModal || this.header.querySelector("details-modal"),
       this.searchModal.close(!1)
   }
 };
@@ -1909,183 +1907,333 @@ customElements.define("sticky-header", StickyHeader);
 
 class ProductRecommendations extends HTMLElement {
   constructor() {
-      super();
-      const handleIntersection = (entries, observer) => {
-          entries[0].isIntersecting && (observer.unobserve(this),
-          fetch(this.dataset.url).then(response => response.text()).then(text => {
-              const html = document.createElement("div");
-              html.innerHTML = text;
-              const recommendations = html.querySelector("product-recommendations");
-              recommendations && recommendations.innerHTML.trim().length && (this.innerHTML = recommendations.innerHTML),
-              html.querySelector(".grid__item") && this.classList.add("product-recommendations--loaded")
-          }
-          ).catch(e => {
-              console.error(e)
-          }
-          ))
-      }
-      ;
-      new IntersectionObserver(handleIntersection.bind(this),{
-          rootMargin: "0px 0px 200px 0px"
-      }).observe(this)
+    super();
+    const handleIntersection = (entries, observer) => {
+      entries[0].isIntersecting && (observer.unobserve(this),
+        fetch(this.dataset.url).then(response => response.text()).then(text => {
+          const html = document.createElement("div");
+          html.innerHTML = text;
+          const recommendations = html.querySelector("product-recommendations");
+          recommendations && recommendations.innerHTML.trim().length && (this.innerHTML = recommendations.innerHTML),
+            html.querySelector(".grid__item") && this.classList.add("product-recommendations--loaded")
+        }).catch(e => {
+          console.error(e)
+        }))
+    };
+    new IntersectionObserver(handleIntersection.bind(this), {
+      rootMargin: "0px 0px 200px 0px"
+    }).observe(this)
   }
 };
 customElements.define("product-recommendations", ProductRecommendations);
 
+function showVideoDialog(src = '') {
+  if (!src) {
+    return;
+  }
+  const template = `<div class="video-box"><div style="position: relative"><iframe width="${
+    document.body.clientWidth > 768 ? 840 : document.body.clientWidth * 0.84
+  }"height="${
+    document.body.clientWidth > 768 ? 472 : 'auto'
+  }"src="${src}"title="YouTube video player"frameborder="0"allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"allowfullscreen></iframe><span class="close"onclick="closeMiniDialog()">x</span></div></div>`;
+  showMiniDialog(template);
+}
+function showMiniDialog(html = '') {
+  const mini_dialog = $('body .mini-dialog');
+  if (mini_dialog.length) {
+    return setTimeout(showMiniDialog, 5000, html);
+  }
+  setTimeout(() => {
+    $('body').append(`<div class="mini-dialog"style="display: flex;">${html}</div>`);
+  });
+}
+function closeMiniDialog() {
+  $('body .mini-dialog').remove();
+}
+
 const storage = {
   set: function (key, value, expires = 3) {
-      const obj = {
-          data: value, //存储值
-          expires: Date.now() + (expires * 24 * 60 * 60 * 1000), //过期时间
-      }
+    const obj = {
+      data: value, //存储值
+      expires: Date.now() + (expires * 24 * 60 * 60 * 1000), //过期时间
+    }
 
-      localStorage.setItem(`__${key}`, JSON.stringify(obj));
+    localStorage.setItem(`__${key}`, JSON.stringify(obj));
   },
   get: function (key) {
-      try {
-          const { data, expires } = JSON.parse(localStorage.getItem(`__${key}`))
+    try {
+      const {
+        data,
+        expires
+      } = JSON.parse(localStorage.getItem(`__${key}`))
 
-          if (expires < Date.now()) {
-              localStorage.removeItem(`__${key}`);
-              return undefined;
-          }
-
-          return data;
-      } catch {
-          return undefined
+      if (expires < Date.now()) {
+        localStorage.removeItem(`__${key}`);
+        return undefined;
       }
+
+      return data;
+    } catch {
+      return undefined
+    }
   }
 }
 
-function showDialog (dialog, callback) {        
+function showDialog(dialog, callback) {
   dialog.showModal()
 
   return new Promise(resolve => {
-      dialog.addEventListener("cancel", (event) => {                
-          resolve('close')
-      });
+    dialog.addEventListener("cancel", (event) => {
+      resolve('close')
+    });
 
-      dialog.addEventListener("close", (event) => {
-          resolve('close')
-      })
+    dialog.addEventListener("close", (event) => {
+      resolve('close')
+    })
 
-      $(dialog).find('.close').on('click', function () {
-          dialog.close()
-      })
+    $(dialog).find('.close').on('click', function () {
+      dialog.close()
+    })
 
-      setTimeout(callback, 300, dialog, resolve)
+    setTimeout(callback, 300, dialog, resolve)
   })
 }
 
-function showSubscribeEmailDialog () {
+function showSubscribeEmailDialog() {
   const email_dialog_key = 'emailDialog'
   const subscribe_email_close_expires_time = 'subscribe_email_close_expires_time'
 
   return new Promise(resolve => {
-      if (global_config.dialog.email.is_hide) {
-          return resolve()
-      }
+    if (global_config.dialog.email.is_hide) {
+      return resolve()
+    }
 
-      if (storage.get(email_dialog_key)) {
-          return resolve()
-      }
+    if (storage.get(email_dialog_key)) {
+      return resolve()
+    }
 
-      if (storage.get(subscribe_email_close_expires_time)) {
-          return resolve()
-      }
+    if (storage.get(subscribe_email_close_expires_time)) {
+      return resolve()
+    }
 
-      showDialog(document.getElementById('SubscribeEmailDialog'), (dialog, r) => {
-          $(dialog).find('form').on('submit', function (event) {
-              r($(dialog).find('form input[type="email"]').val())
+    showDialog(document.getElementById('SubscribeEmailDialog'), (dialog, r) => {
+      $(dialog).find('form').on('submit', function (event) {
+        r($(dialog).find('form input[type="email"]').val())
 
-              dialog.close()
-              event.preventDefault();
-              return false;
-          });
+        dialog.close()
+        event.preventDefault();
+        return false;
+      });
 
-          let startInput = false;
-          $(dialog).find('form input[type="email"]').on(
-              'input',
-              debounce((e) => {
-              if (startInput) {
-                  return;
-              }
-
-              startInput = true;
-              fetchBuried('emailpop', 'enter', {
-                  email: e.target.value,
-                  tag: 'US,POPUP,enter pop',
-              });
-              }, 2000)
-          );
-      }).then(email => {
-          storage.set(subscribe_email_close_expires_time, subscribe_email_close_expires_time, global_config.dialog.email.subscribe_email_close_expires_time)
-
-          if (email !== 'close') {
-              const emailtag = getSearchValues().emailtag
-              // 埋点
-              fetchBuried('emailpop', 'submit', { email, tag: `US,POPUP,enter pop${emailtag ? ',' + emailtag : ''}` }).then(() => {
-                  dataLayer.push({
-                      'event'    :'global_email_submit',
-                      'pageType' :'emailpop',
-                  });
-              });
-
-              storage.set(email_dialog_key, email_dialog_key, global_config.dialog.email.submit_expires_time)
+      let startInput = false;
+      $(dialog).find('form input[type="email"]').on(
+        'input',
+        debounce((e) => {
+          if (startInput) {
+            return;
           }
 
-          setTimeout(resolve, global_config.dialog.email.show_delay_time * 1000)
-      })
+          startInput = true;
+          fetchBuried('emailpop', 'enter', {
+            email: e.target.value,
+            tag: 'US,POPUP,enter pop',
+          });
+        }, 2000)
+      );
+    }).then(email => {
+      storage.set(subscribe_email_close_expires_time, subscribe_email_close_expires_time, global_config.dialog.email.subscribe_email_close_expires_time)
+
+      if (email !== 'close') {
+        const emailtag = getSearchValues().emailtag
+        // 埋点
+        fetchBuried('emailpop', 'submit', {
+          email,
+          tag: `US,POPUP,enter pop${emailtag ? ',' + emailtag : ''}`
+        }).then(() => {
+          dataLayer.push({
+            'event': 'global_email_submit',
+            'pageType': 'emailpop',
+          });
+        });
+
+        storage.set(email_dialog_key, email_dialog_key, global_config.dialog.email.submit_expires_time)
+      }
+
+      setTimeout(resolve, global_config.dialog.email.show_delay_time * 1000)
+    })
   })
 }
 
-function showTestRideDialog () {
+function waitForElement(selector, callback, options = {}) {
+  const defaultOptions = {
+    root: document.body,
+    childList: true,
+    subtree: true,
+    debounceTime: 100,
+    disconnectOnFound: true,
+  };
+  const finalOptions = { ...defaultOptions, ...options };
+  const { root, debounceTime, disconnectOnFound } = finalOptions;
+  const observer = new MutationObserver(
+    debounce(() => {
+      const target = root.querySelector(selector);
+      if (target) {
+        callback(target);
+        if (disconnectOnFound) {
+          observer.disconnect();
+        }
+      }
+    }, debounceTime)
+  );
+  observer.observe(root, { childList: finalOptions.childList, subtree: finalOptions.subtree });
+  const initialTarget = root.querySelector(selector);
+  if (initialTarget) {
+    callback(initialTarget);
+    if (disconnectOnFound) {
+      observer.disconnect();
+    }
+  }
+}
+
+function showTestRideDialog() {
   const test_ride_dialog_key = 'TestRideDialog'
   let show = false
 
   return new Promise(resolve => {
-      if (global_config.dialog.test_ride.is_hide) {
-          return resolve()
-      }
+    if (global_config.dialog.test_ride.is_hide) {
+      return resolve()
+    }
 
-      if (storage.get(test_ride_dialog_key)) {
-          return resolve()
-      }
+    if (storage.get(test_ride_dialog_key)) {
+      return resolve()
+    }
 
-      if (!global_config.is_pc && global_config.is_mobile) {
-          return resolve()
-      }
+    if (!global_config.is_pc && global_config.is_mobile) {
+      return resolve()
+    }
 
-      document.body.addEventListener("mouseleave", debounce((evt) => {
-          !show && showDialog(document.getElementById('TestRideDialog'), (dialog, r) => {
-              show = true
+    document.body.addEventListener("mouseleave", debounce((evt) => {
+      !show && showDialog(document.getElementById('TestRideDialog'), (dialog, r) => {
+        show = true
 
-              $(dialog).find('.my-button').on('click', () => {
-                  r('book now')
-                  dialog.close()
-              })
+        $(dialog).find('.my-button').on('click', () => {
+          r('book now')
+          dialog.close()
+        })
 
-          }).then(result => {
-              storage.set(test_ride_dialog_key, test_ride_dialog_key, global_config.dialog.test_ride.close_expires_time)
+      }).then(result => {
+        storage.set(test_ride_dialog_key, test_ride_dialog_key, global_config.dialog.test_ride.close_expires_time)
 
-              if (result !== 'close') {
-                  fetchBuried('emailpop', 'exitpop', { button: 'book a test ride' }, true)
+        if (result !== 'close') {
+          fetchBuried('emailpop', 'exitpop', {
+            button: 'book a test ride'
+          }, true)
 
-                  storage.set(test_ride_dialog_key, test_ride_dialog_key, global_config.dialog.test_ride.submit_expires_time)
+          storage.set(test_ride_dialog_key, test_ride_dialog_key, global_config.dialog.test_ride.submit_expires_time)
 
-                  location.href = `/pages/test-ride?form_page=restride-dialog`
-              }
+          location.href = `/pages/test-ride?form_page=restride-dialog`
+        }
 
-              setTimeout(resolve, global_config.dialog.test_ride.show_delay_time * 1000)
-          })
-      }, 500))
+        setTimeout(resolve, global_config.dialog.test_ride.show_delay_time * 1000)
+      })
+    }, 500))
   })
 };
 
-function showSizesAndSpecs (id = '') {
+function showSizesAndSpecs(id = '') {
   if (!id) {
-      return
+    return
   }
 
   showDialog(document.getElementById(id))
 }
+
+// 等待页面加载完成后执行收集的 script
+window.addEventListener('load', async () => {
+  const lazyScripts = $('script[type="text/lazyload"]').toArray(); // 转换为普通数组
+
+  // 按 data-level 属性排序
+  lazyScripts.sort((a, b) => {
+    const delayA = parseFloat($(a).data('level') || 0); // 获取 data-level 属性
+    const delayB = parseFloat($(b).data('level') || 0); // 获取 data-level 属性
+    return delayA - delayB; // 升序排序
+  });
+
+  // 排序后的结果是普通数组，若需要操作 DOM，需将其重新插入
+  $(lazyScripts).each(function () {
+    task(() => new Promise(resolve => {
+      const script = this;
+      script.type = "text/javascript";
+      script.async = false;
+      script.src = script.src
+
+      script.onload = function () {
+        console.log('onload', script)
+        resolve()
+      }
+
+      script.onerror = function () {
+        console.log('onerror', script.src)
+        resolve()
+      }
+    }))
+  });
+
+  // 停止观察
+  window.observer.disconnect();
+
+  if (document.body.scrollHeight > (screen.availHeight * 2)) {
+    const $toTop = $('#global2top');
+    // 监听滚动事件，显示或隐藏按钮
+    $(window).on('scroll', throttle(function () {
+      if ($(this).scrollTop() > (screen.availHeight * 2)) { // 页面滚动超过200px时显示按钮
+        $toTop.addClass('show').removeClass('hide');
+      } else {
+        $toTop.addClass('hide').removeClass('show');
+      }
+    }, 100));
+
+    // 点击按钮滚动到页面顶部
+    $toTop.on('click', function () {
+      $('html, body').animate({
+        scrollTop: 0
+      }, 500); // 500ms 平滑滚动到顶部
+    });
+  };
+
+  if (global_config.is_mobile) {
+    waitForElement('#launcher', target => {
+      const patterns = [/\/products\//, /\/pages\/lightweight-ebike-urtopia-carbon-1-pro/]
+      for (const pattern of patterns) {
+        if (pattern.test(window.location.href)) {
+          $('#global2top').css('bottom', '116px');
+          target.style.bottom = '64px';
+          break;
+        }
+      }
+      
+      const iframeDoc = target.contentDocument || target.contentWindow.document;
+      // 在 iframe 内部插入样式
+      const style = iframeDoc.createElement('style');
+      style.textContent = `
+              body div[shape="circle"] {
+                width: 48px;
+                height: 48px;
+              }
+          `;
+      iframeDoc.head.appendChild(style);
+    }, {
+      disconnectOnFound: true,
+      root: document.body, // 监听整个页面
+      debounceTime: 200, // 降低回调触发频率
+    });
+  }
+
+  
+
+  if (![/\/pages\/lightweight-ebike-urtopia-carbon-1-pro/, /\/collections\/urtopia-black-friday-sale/].every(pattern => pattern.test(window.location.href))) {
+    task(() => {
+      showSubscribeEmailDialog().then(showTestRideDialog)
+    }, 5000)
+  }
+});
