@@ -47,7 +47,7 @@
     function getEndTime(i) {
       const [y, m, d] = global_config.sale_end_times[i].sale_end_time.split('-').map(Number);
 
-      $(`#count-down > div[data-name="sale-name"]`).text(global_config.sale_end_times[i].sale_name);
+      $(`#count-down > div[data-name="sale-name"]`).html(global_config.sale_end_times[i].sale_name);
 
       return getUTCTime(new Date(Date.UTC(y, m - 1, d, 0, 0, 0, 0) + timezoneoffset));
     }
@@ -94,8 +94,8 @@
       setTimeout(updateTimer, 1000, endtime);
     }
 
-    requestAnimationFrame(() => {
+    task(() => {
       updateTimer(getEndTime(sale_end_time_index));
-    })
+    }, 0)
   }
 </script>

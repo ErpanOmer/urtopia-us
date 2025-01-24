@@ -991,7 +991,7 @@
 
       document.addEventListener('DOMContentLoaded', function() {
         try{
-          new Ultimate_Shopify_DataLayer();
+          task(() => new Ultimate_Shopify_DataLayer())
         }catch(error) {
           console.log(error);
         }

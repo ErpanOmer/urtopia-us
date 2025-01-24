@@ -131,10 +131,31 @@
       }
     }
   }
+  window.task = (() => {
+    let next = Promise.resolve()
+
+    return (fn, time = 30) => {
+        next = next.then(() => new Promise(resolve => {
+            setTimeout(async () => {
+                try {
+                    await fn()
+                } catch (error) {
+                    console.log('task error:', e);
+                } finally {
+                   resolve()
+                }
+            }, time)
+        }))
+    }
+})()
 </script>
 <script type="module">
   window.global_config = {
-    sale_end_times: [{ sale_name: 'New Year, New Gear', sale_end_time: '2025-1-24' }],
+    sale_end_times: [
+      { sale_name: 'New Year, <span style="color:#fff;">New Gear</span>', sale_end_time: '2025-1-24' },
+      { sale_name: 'New Year, <span style="color:#fff;">New Gear</span>', sale_end_time: '2025-1-27' },
+      { sale_name: 'New Year, <span style="color:#fff;">New Gear</span>', sale_end_time: '2025-1-31' }
+    ],
     event_bike_product_id: '7902779474168',
     event_accessories_variant_ids: ['43830635561208', '43858617204984'],
     is_mobile: document.documentElement.clientWidth < 768,

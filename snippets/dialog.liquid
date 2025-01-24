@@ -88,7 +88,7 @@ window.addEventListener('load', () => {
          const ignore = ['/pages/lightweight-ebike-urtopia-carbon-1-pro', '/pages/amazon', '/pages/email-page', '/collections/urtopia-black-friday-sale', '/pages/urtopia-ces-2025']
 
           if (!ignore.includes(location.pathname)) {
-            setTimeout(() => {
+            task(() => {
                 showSubscribeEmailDialog().then(showTestRideDialog)
             }, 5000)
           }

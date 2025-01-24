@@ -196,7 +196,7 @@
     {% render 'size-guide-and-specs-template', config: 'carbonst_order_page_config' %}
     <script type="module">
         $(function() {
-            setTimeout(() => {
+            task(() => {
               new Swiper('.quality_in_details', {
                   slidesPerView: global_config.is_mobile ? 1.25 : 3,
                   spaceBetween: global_config.is_mobile ? 16 : 32,
@@ -210,7 +210,7 @@
                       draggable: true
                   },
               });
-            }, 30)
+            })
         })
     </script>
     <div class="er-max-w-screen-xl er-mx-auto er-px-12 mb:er-px-6">

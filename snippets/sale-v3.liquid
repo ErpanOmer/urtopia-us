@@ -224,7 +224,7 @@
           console.log('getEndTime', i)
           // set name
           $('.sale > .u14DemiBold_v2').text(global_config.sale_end_times[i].sale_name)
-          $('[sale-name]').text(global_config.sale_end_times[i].sale_name);
+          $('[sale-name]').html(global_config.sale_end_times[i].sale_name);
 
           return getUTCTime(new Date(Date.UTC(y, m - 1, d, 0, 0, 0, 0) + timezoneoffset));
         }

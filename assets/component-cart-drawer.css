@@ -2281,7 +2281,7 @@ cart-drawer-items::-webkit-scrollbar-track-piece {
   white-space: nowrap;
 }
 
-.hedaer-secondary-menu-mb .bikesssssss>div:first-child>div>.u14DemiBold_v2:not(.emphasize)::after {
+.hedaer-secondary-menu-mb .bikesssssss>div>div>.u14DemiBold_v2:not(.emphasize)::after {
   content: "NEW";
   background-color: #FFE2D9;
   border-radius: 12px;

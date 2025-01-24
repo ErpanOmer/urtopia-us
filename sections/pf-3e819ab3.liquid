@@ -12,7 +12,7 @@
       alt="Urtopia Ebike - Sleek, Full Carbon, Lightweight, Smart"
     >
     <h2 class="er-text-7xl mb:er-text-5xl er-text-[#FFDF48] er-mt-12 er-mb-28 mb:er-mx-auto mb:er-mb-12 mb:er-mt-8">
-      Up to $1200 OFF
+      Up to {{ all_products["urtopia-carbon-fusion-gt"].compare_at_price |  minus: all_products["urtopia-carbon-fusion-gt"].price | money_without_trailing_zeros }} OFF
     </h2>
     {% render 'sale' %}
   </div>

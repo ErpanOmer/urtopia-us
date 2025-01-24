@@ -3811,6 +3811,10 @@ body .my-button-white {
     z-index: -1
 }
 
+picture>img {
+  display: block;
+}
+
 .background-mask {
     position: absolute;
     inset: 0;

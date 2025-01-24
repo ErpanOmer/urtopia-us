@@ -796,12 +796,12 @@ $product-tags-color: #DEEDFF;
     }
 
     @media (max-width: 767px) {
-        padding: 50px 4vw 4vw;
+        padding: 50px 4vw 6vw;
 
         .product_price {
             flex-direction: column;
             align-items: flex-start;
-            margin-bottom: 6px;
+            margin-bottom: 4vw;
 
             .u20DemiBold_v2 {
                 margin-bottom: 6px;
@@ -819,6 +819,10 @@ $product-tags-color: #DEEDFF;
 
         &>.u20DemiBold_v2 {
             font-size: 16px;
+        }
+
+        .my-button {
+          width: 100%;
         }
 
 

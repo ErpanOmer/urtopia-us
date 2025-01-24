@@ -11,7 +11,7 @@
     {%- if page_description -%}
       <meta name="description" content="{{ page_description | escape }}">
     {% endif %}
-    <link rel="preconnect" href="https://cdn.shopify.com" crossorigin="anonymous">
+    <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
     {%- render 'meta-tags' -%}
     {% render 'web-font' %}
     <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
@@ -195,40 +195,70 @@
           observer.observe(document.head, { childList: true });
           // 等待页面加载完成后执行收集的 script
           window.addEventListener('load', async () => {
-              const networkInfo = await getNetworkInfo();
-              const networkQuality = evaluateNetworkQuality(networkInfo);
-              console.log("networkInfo", JSON.stringify(networkInfo), networkQuality);
+            // const networkInfo = await getNetworkInfo();
+            // const networkQuality = evaluateNetworkQuality(networkInfo);
+            // console.log("networkInfo", JSON.stringify(networkInfo), networkQuality);
 
-            document.querySelectorAll('script[type="text/lazyload"]').forEach(elem => {
-              const delay = elem.getAttribute('data-delay')
+            const lazyScripts = Array.from(document.querySelectorAll('script[type="text/lazyload"]'));
 
-              if (!Number.isNaN(delay)) {
-                setTimeout(() => {
-                  elem.type = "text/javascript";
-                  elem.src = elem.src;
-                  elem.async = false;
-                }, parseInt(Number(delay) * networkQuality))
-              }
-            })
+            // 按 data-delay 属性排序
+            lazyScripts.sort((a, b) => {
+                const delayA = parseFloat(a.getAttribute('data-delay') || 0); // 默认值为 0
+                const delayB = parseFloat(b.getAttribute('data-delay') || 0); // 默认值为 0
+                return delayA - delayB; // 升序排序
+            });
 
             scriptQueue.forEach((script) => {
-              const newScript = document.createElement('script');
+              task(() => new Promise(resolve => {
+                try {
+                    const newScript = document.createElement('script');
 
-              if (script.isInline) {
-                newScript.textContent = script.content;
-              } else {
-                newScript.src = script.src;
-              }
+                    if (script.isInline) {
+                      newScript.textContent = script.content;
+                    } else {
+                      newScript.src = script.src;
+                    }
+      
+                    newScript.type = script.type;
+      
+                    for (const [attr, value] of script.attrs) {
+                      newScript.setAttribute(attr, value)
+                    }
+                    
+                    newScript.onload = function () {
+                      console.log('ok', script.src)
+                      resolve()
+                    }
+    
+                    newScript.error = function () {
+                      console.log('error1', script.src)
+                      resolve()
+                    }
+                  
+                    document.head.appendChild(newScript); // 执行脚本 
+                } catch (e) {
+                  console.log('error2', script.src)
+                } finally {
+                  resolve()
+                }
+              }))
+            });
+            
+            // 打印排序后的元素
+            lazyScripts.forEach(elem => {
+                const delay = elem.getAttribute('data-delay')
 
-              newScript.type = script.type;
-
-              for (const [attr, value] of script.attrs) {
-                newScript.setAttribute(attr, value)
-              }
-
-              setTimeout(() => {
-                document.head.appendChild(newScript); // 执行脚本
-              }, parseInt(script.delay * networkQuality))
+                if (!Number.isNaN(delay)) {
+                  task(() => new Promise(resolve => {
+                    elem.type = "text/javascript";
+                    elem.src = elem.src;
+                    elem.async = false;
+                    elem.onload = function () {
+                      console.log(elem.src)
+                      resolve()
+                    }
+                  }))
+                }
             });
 
             // 停止观察
@@ -296,5 +326,5 @@
   {% if product or request.path == '/pages/test-ride' or request.path == '/pages/urtopia-e-bike-review' %}
     {% render 'judgeme_core' %}
   {% endif %}
-  <script src="{{ 'global.js' | asset_url }}" fetchpriority="low" data-delay="0" type="text/lazyload"></script>
+  <script src="{{ 'global.js' | asset_url }}" fetchpriority="low" defer></script>
 </html>

@@ -21,6 +21,7 @@
     loading="lazy"
     width="371"
     height="232"
+    fetchpriority="low"
     src="{{ product_variants.first.featured_image | image_url: width: 600 }}"
     class="variant-image"
     alt=""
@@ -59,7 +60,7 @@
                 {% endif %}
               ></div>
               {% assign already_insert = already_insert | append: variant.options[style_index] %}
-              <link rel="preload" href="{{ variant.featured_image | image_url: width: 600 }}" as="image">
+              <link rel="prefetch" href="{{ variant.featured_image | image_url: width: 600 }}" fetchpriority="low" as="image" crossorigin>
             {% endif %}
           {% endunless %}
         {% endfor %}
@@ -77,17 +78,11 @@
             class="active"
           {% endif %}
         ></div>
-        <link rel="preload" href="{{ variant.featured_image | image_url: width: 600 }}" as="image">
+        <link rel="prefetch" href="{{ variant.featured_image | image_url: width: 600 }}" fetchpriority="low" as="image" crossorigin>
       {% endfor %}
     {% endif %}
   </div>
   <div class="u24DemiBold_v2">{{ product_name }}</div>
-  {% comment %}
-    <div class="stars">
-        <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/star_2x_7e43ff57-6544-4236-93dc-44e2c2a966bd.png?v=1698738965" alt="">
-        <a class="u11Light_v2" href="{{ product_url }}?variant=43780147511544" target="_blank">{{ product_reviews_count }} Reviews</a>
-    </div>
-  {% endcomment %}
   <div class="u14Light_v2">{{ product_description }}</div>
   <div class="flex-1 mobileHide"></div>
   <div class="u14Light_v2 sssss">
@@ -104,20 +99,8 @@
     </div>
     <div class="u14Light_v2" style="align-items: center;">
       Or &nbsp;<span>{{ product_variants.first.price | divided_by: 24 | money }}</span>/mo
-      <img
-        width="40"
-        height="23"
-        loading="lazy"
-        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Image_70_2x_8fb8f4b7-8366-43bc-b526-28f1fe7c3dee.png?v=1695607020"
-        alt=""
-      >
-      <img
-        width="40"
-        height="23"
-        loading="lazy"
-        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25284_2x_80e34140-1944-404c-9141-f5e3498ced8e.png?v=1736512437"
-        alt=""
-      >
+      <span class="Klarna-logo er-ml-2">Klarna.</span>
+      <span class="Klarna-logo er-ml-2" style="background-color: rgb(74, 74, 244);">{% render 'icon-affirm' %}</span>
     </div>
   </div>
   <a href="{{ product_url }}?variant=43780147511544" target="_blank" class="my-button my-button-origin">Shop now</a>

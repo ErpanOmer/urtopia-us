@@ -83,7 +83,7 @@
     
       const sizes_and_specs = global_config.{{ config }}.sizes_and_specs
     
-      setTimeout(() => {
+      task(() => {
         for (const spec of sizes_and_specs.specs) {
           $('.size-guide-and-specs-template .specs .content .u11Light_v2').before(`<div class="parameters"><h4 class="u30DemiBold_v2">${spec.title}</h4><div class="boxsss">
               ${spec.parameters.map(([h5, h6]) => `<div ${h5 || 'style="margin:0;"'}><h5 class="u24DemiBold_v2">${h5}</h5><h6 class="u17Light_v2">${h6}</h6></div>`).join('')}
@@ -95,12 +95,12 @@
         }
       }, 30)
 
-      setTimeout(() => {
+      task(() => {
         $('.size-guide-and-specs-template .size-guide .content img').attr('src', Array.isArray(sizes_and_specs.sizes.image) ? sizes_and_specs.sizes.image[0] : sizes_and_specs.sizes.image)
       }, 30)
     
     
-      setTimeout(() => {
+      task(() => {
         for (let i = 0; i < sizes_and_specs.sizes.parameters.length; i++) {
             $('.size-guide-and-specs-template .size-guide .content .texts').append(`<div class="text">${sizes_and_specs.sizes.parameters[i].map(p => `<div>${p}</div>`).join('')}</div>`)
         
@@ -113,9 +113,9 @@
                 $('#SizesDialog .bodyyyyyy .content img').attr('src', typeof sizes_and_specs.sizes.image === 'string' ? sizes_and_specs.sizes.image : sizes_and_specs.sizes.image[i - 1])
             }
           }
-      }, 30)
+      })
     
-      setTimeout(() => {
+      task(() => {
         $('#SizesDialog .bodyyyyyy .switchhhhh > div').on('click', function() {
                 $(this).addClass('active').siblings().removeClass('active')
                 $('#SizesDialog .bodyyyyyy .content .parameters').html(sizes_and_specs.sizes.parameters[$(this).index() + 1].map((p, i) => i > 1 ? `<div><span class="u14DemiBold_v2">${sizes_and_specs.sizes.parameters[0][i]}</span><span class="u14Light_v2">${p}</span></div>` : '').join(''))
