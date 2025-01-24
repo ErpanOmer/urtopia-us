@@ -60,7 +60,7 @@
                 {% endif %}
               ></div>
               {% assign already_insert = already_insert | append: variant.options[style_index] %}
-              <link rel="prefetch" href="{{ variant.featured_image | image_url: width: 600 }}" fetchpriority="low" as="image" crossorigin>
+              <link rel="prefetch" href="{{ variant.featured_image | image_url: width: 600 }}" type="image/webp" fetchpriority="low" as="image" crossorigin>
             {% endif %}
           {% endunless %}
         {% endfor %}
@@ -78,7 +78,7 @@
             class="active"
           {% endif %}
         ></div>
-        <link rel="prefetch" href="{{ variant.featured_image | image_url: width: 600 }}" fetchpriority="low" as="image" crossorigin>
+        <link rel="prefetch" href="{{ variant.featured_image | image_url: width: 600 }}" type="image/webp" fetchpriority="low" as="image" crossorigin>
       {% endfor %}
     {% endif %}
   </div>
