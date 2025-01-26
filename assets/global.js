@@ -2165,10 +2165,11 @@ window.addEventListener('load', async () => {
       const script = this;
       script.type = "text/javascript";
       script.async = false;
+      script.defer = true;
       script.src = script.src
 
       script.onload = function () {
-        console.log('onload', script)
+        // console.log('onload', script)
         resolve()
       }
 
@@ -2176,7 +2177,7 @@ window.addEventListener('load', async () => {
         console.log('onerror', script.src)
         resolve()
       }
-    }))
+    }), global_config.is_mobile ? 60 : 30)
   });
 
   // 停止观察

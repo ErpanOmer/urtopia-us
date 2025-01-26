@@ -21,17 +21,14 @@
     assign decoding = 'sync'
   endif
 -%}
+{% if first_screen %}
+  <link rel="preload" href="{%- if width >= 640 -%}{{ mb_src }}&width={{ 640 }}{%- else -%}{{ mb_src }}&width={{ width }}{%- endif -%}" as="image" fetchpriorit="{{ fetchpriority }}" media="(max-width: 768px)" crossorigin>
+{% endif %}
 <picture>
+    <source srcset="{%- if width >= 640 -%}{{ mb_src }}&width={{ 640 }} 640w{%- else -%}{{ mb_src }}&width={{ width }} {{ width }}w{%- endif -%}" media="(max-width: 768px)">
     <source srcset="
-        {%- if width >= 1024 -%}{{ src }}&width={{ 1024 }} 1024w,{%- endif -%}
         {%- if width >= 1280 -%}{{ src }}&width={{ 1280 }} 1280w,{%- endif -%}
-        {%- if width >= 1536 -%}{{ src }}&width={{ 1536 }} 1536w,{%- endif -%}
         {%- if width >= 1920 -%}{{ src }}&width={{ 1920 }} 1920w,{%- endif -%}
-        {%- if width >= 2560 -%}{{ src }}&width={{ 2560 }} 2560w,{%- endif -%}
         {{ src }}&width={{ width }} {{ width }}w" media="(min-width: 769px)">
-    <source srcset="
-        {%- if width >= 384 -%}{{ mb_src }}&width={{ 384 }} 384w,{%- endif -%}
-        {%- if width >= 640 -%}{{ mb_src }}&width={{ 640 }} 640w,{%- endif -%}
-        {%- if width >= 768 -%}{{ mb_src }}&width={{ 768 }} 768w{%- else -%}{{ mb_src }}&width={{ width }} {{ width }}w{%- endif -%}" media="(max-width: 768px)">
-    <img src="{{ mb_src }}" class="{{ class }}" loading="{{ loading }}" decoding="{{ decoding }}" fetchpriority="{{ fetchpriority }}"  width="{{ width }}" height="{{ height }}" alt="{{ alt }}">
+    <img src="{{ mb_src }}&width={{ 640 }}" class="{{ class }}" loading="{{ loading }}" decoding="{{ decoding }}" fetchpriority="{{ fetchpriority }}"  width="{{ width }}" height="{{ height }}" alt="{{ alt }}">
   </picture>

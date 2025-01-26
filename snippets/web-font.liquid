@@ -1,4 +1,9 @@
 {%- assign font_list = shop.metaobjects.web_font_list['web-font-list'].item.value  -%}
+{% for item in font_list %}
+  {%- if item.preload -%}
+    {{ item.font_src | file_url | preload_tag: as: 'font', type: "font/woff2", crossorigin: "anonymous" }}
+  {%- endif -%}
+{%- endfor -%}
 {% style %}
 {%- for item in font_list -%}
     @font-face {
