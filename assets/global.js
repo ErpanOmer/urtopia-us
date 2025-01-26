@@ -2232,7 +2232,7 @@ window.addEventListener('load', async () => {
 
   
 
-  if (![/\/pages\/lightweight-ebike-urtopia-carbon-1-pro/, /\/collections\/urtopia-black-friday-sale/].every(pattern => pattern.test(window.location.href))) {
+  if (![/\/pages\/lightweight-ebike-urtopia-carbon-1-pro/, /\/collections\/urtopia-black-friday-sale/, /\/pages\/email-page/].some(pattern => pattern.test(window.location.pathname))) {
     task(() => {
       showSubscribeEmailDialog().then(showTestRideDialog)
     }, 5000)

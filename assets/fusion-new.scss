@@ -2844,8 +2844,10 @@ $product-tags-color: #FFE2D9;
                 cursor: pointer;
                 height: auto;
 
-                img {
+                & > img {
                     cursor: pointer;
+                    border-radius: 15px;
+                    aspect-ratio: 80 / 43;
                 }
 
 

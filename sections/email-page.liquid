@@ -119,12 +119,12 @@
 
 <div class="banner">
   <div class="centeral-content">
-    <h2 class="u48DemiBold_v2">Black Friday <br class="pcHide">Warm Up</h2>
+    <h2 class="u48DemiBold_v2">Urtopia x Super Bowl<br>Win the Smartest Carbon Fiber E-Bike!</h2>
   </div>
 </div>
 <div class="emailll">
   <div class="centeral-content">
-    <div class="u24Medium_v2">Subscribe and get the biggest fans’ giveback</div>
+    <div class="u24Medium_v2">Subscribe and Win A Bike!</div>
     <form class="emaillllllllllllll" accept-charset="UTF-8">
       <input class="u17Medium_v2" placeholder="Enter email here" type="email" name="email" required>
       <button class="my-button my-button-origin" type="submit">Subscribe</button>
@@ -134,13 +134,13 @@
 </div>
 
 
-<script>
+<script type="module">
   $('.emaillllllllllllll').on('submit', function (event) {
         $(this).find('.u17DemiBold_v2').hide()
         fetchBuried('emailpage', 'submit', { email: $(this).find('input').val(), tag: `emailpage` }).finally(() => $(this).find('.u17DemiBold_v2').show())
 
 
-        $('.emailll .u24Medium_v2').text('Thanks for joining the Pre-Black Friday Sale. We will send an exclusive coupon email to your inbox. Don’t forget to check your email!')
+        $('.emailll .u24Medium_v2').text('Thank you for subscribing to Urtopia! The winner will be announced live on Knockoutradio on YouTube. We’ll also notify the winner via email to arrange shipping details.')
         $('.emailll .emaillllllllllllll').hide()
 
         event.preventDefault();
