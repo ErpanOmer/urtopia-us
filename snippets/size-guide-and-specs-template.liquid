@@ -1,44 +1,43 @@
-<link rel="stylesheet" href="{{ 'size-guide-and-specs-template.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'size-guide-and-specs-template.css' | asset_url }}" media="print" onload="this.media='all'; this.onload=null;">
+{%- assign size_and_specs = product.metafields.custom.size_and_specs.value -%}
+{% assign svg = '<svg xmlns="http://www.w3.org/2000/svg" height="44px" viewBox="0 -960 960 960" width="44px" fill="#222"><path d="m517.85-480-184-184L376-706.15 602.15-480 376-253.85 333.85-296l184-184Z"/></svg>' %}
 <div class="centeral-content size-guide-and-specs-template">
   <div class="size-guide">
-    <h3 class="u36DemiBold_v2">
-      <div class="dowwwwn">></div>
-      Size Guide
-    </h3>
+    <h3 class="u36DemiBold_v2"><div class="dowwwwn">{{ svg }}</div>Size Guide</h3>
     <div class="content">
-      <div class="texts"></div>
-      <img width="805" height="524" loading="lazy" alt="{{ product.title }}">
+      <div class="texts">
+        {%- for parameters in size_and_specs.sizes.parameters -%}
+          <div class="text">
+            {%- for size in parameters -%}
+              <div>{{ size }}</div>
+            {%- endfor -%}
+          </div>
+        {%- endfor -%}
+      </div>
+      <img width="805" height="524" loading="lazy" alt="{{ product.title }}" src="{%- if size_and_specs.sizes.image.size == 2 -%}{{size_and_specs.sizes.image.first}}{%- else -%}{{size_and_specs.sizes.image}}{%- endif -%}">
     </div>
   </div>
   <div class="specs">
     <h3 class="u36DemiBold_v2">
-      <div>></div>
+      <div>{{ svg }}</div>
       Specs
     </h3>
     <div class="content">
       <div class="icons">
-        <img
-          loading="lazy"
-          width="40"
-          height="29"
-          src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/icon2-1649931441565.png?v=1649931443"
-          alt="{{ product.title }}"
-        >
-        <img
-          loading="lazy"
-          width="40"
-          height="44"
-          src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/cpsc_logo-1662445677565.svg?v=1662445680"
-          alt="{{ product.title }}"
-        >
-        <img
-          loading="lazy"
-          width="40"
-          height="40"
-          src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/icon1png-1649931441566.png?v=1649931446"
-          alt="{{ product.title }}"
-        >
+        <img loading="lazy" width="40" height="29" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/icon2-1649931441565.png?v=1649931443" alt="{{ product.title }}">
+        <img loading="lazy" width="40" height="44" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/cpsc_logo-1662445677565.svg?v=1662445680" alt="{{ product.title }}">
+        <img loading="lazy" width="40" height="40" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/icon1png-1649931441566.png?v=1649931446" alt="{{ product.title }}">
       </div>
+      {%- for spec in size_and_specs.specs -%}
+        <div class="parameters">
+          <h4 class="u30DemiBold_v2">{{ spec.title }}</h4>
+          <div class="boxsss">
+            {%- for item in spec.parameters -%}
+              <div><h5 class="u24DemiBold_v2">{{ item.first }}</h5><h6 class="u17Light_v2">{{ item.last }}</h6></div>
+            {%- endfor -%}
+           </div>
+        </div>
+      {%- endfor -%}
       <div class="u11Light_v2">
         *This service will be automatically activated once the bike is activated and bound to your account. We provide
         free access in the first year, with the following terms to be renewed by subscription to this service. A code
@@ -52,19 +51,43 @@
   <div>
     <div class="headerrrr"><span class="u17DemiBold_v2">Size & Fit</span><span class="close">✕</span></div>
     <div class="bodyyyyyy">
-      <div class="switchhhhh"></div>
+      <div class="switchhhhh">
+        {%- for parameters in size_and_specs.sizes.parameters -%}
+          {%- if forloop.index0 > 0 -%}
+            <div class="{%- if forloop.index0 == 1 -%}active{%- endif -%}">{{ parameters.first }}<span class="u14Light_v2">Fit for {{ parameters[1] }}</span></div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
       <div class="content">
-        <div class="parameters"></div>
-        <img width="550" height="358" alt="{{ product.title }}">
+        <div class="parameters">
+          {%- for size in size_and_specs.sizes.parameters[1] -%}
+            {%- if forloop.index0 > 1 -%}
+              <div>
+                <span class="u14DemiBold_v2">{{ size_and_specs.sizes.parameters.first[forloop.index0] }}</span>
+                <span class="u14Light_v2">{{ size }}</span>
+              </div>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+        <img width="550" height="358" alt="{{ product.title }}" src="{%- if size_and_specs.sizes.image.size == 2 -%}{{size_and_specs.sizes.image.first}}{%- else -%}{{size_and_specs.sizes.image}}{%- endif -%}">
       </div>
     </div>
   </div>
 </dialog>
-
 <dialog id="SpecsDialog">
   <div>
     <div class="headerrrr"><span class="u17DemiBold_v2">Technical Specs</span><span class="close">✕</span></div>
     <div class="bodyyyyyy">
+      {%- for spec in size_and_specs.specs -%}
+        <div class="parameters">
+            <h4 class="u20DemiBold_v2">{{ spec.title }}</h4>
+            <div class="boxsss">
+              {%- for item in spec.parameters -%}
+                <div><h5 class="u14DemiBold_v2">{{ item.first }}</h5><h6 class="u14Light_v2">{{ item.last }}</h6></div>
+              {%- endfor -%}
+          </div>
+          </div>
+      {%- endfor -%}
       <div class="u11Light_v2">
         *This service will be automatically activated once the bike is activated and bound to your account. We provide
         free access in the first year, with the following terms to be renewed by subscription to this service. A code
@@ -75,51 +98,17 @@
 </dialog>
 
 <script type="module">
-  $(function() {
+  $(function() {   
       $('.size-guide-and-specs-template h3').click(function () {
             $(this).siblings('.size-guide-and-specs-template .content').slideToggle().parent().siblings().find('.size-guide-and-specs-template .content').slideUp();
             $(this).children('div').toggleClass('dowwwwn')
       })
-    
-      const sizes_and_specs = global_config.{{ config }}.sizes_and_specs
-    
-      task(() => {
-        for (const spec of sizes_and_specs.specs) {
-          $('.size-guide-and-specs-template .specs .content .u11Light_v2').before(`<div class="parameters"><h4 class="u30DemiBold_v2">${spec.title}</h4><div class="boxsss">
-              ${spec.parameters.map(([h5, h6]) => `<div ${h5 || 'style="margin:0;"'}><h5 class="u24DemiBold_v2">${h5}</h5><h6 class="u17Light_v2">${h6}</h6></div>`).join('')}
-          </div></div>`)
-      
-          $('#SpecsDialog > div .bodyyyyyy .u11Light_v2').before(`<div class="parameters"><h4 class="u20DemiBold_v2">${spec.title}</h4><div class="boxsss">
-              ${spec.parameters.map(([h5, h6]) => `<div><h5 class="u14DemiBold_v2">${h5}</h5><h6 class="u14Light_v2">${h6}</h6></div>`).join('')}
-          </div></div>`)
-        }
-      }, 30)
-
-      task(() => {
-        $('.size-guide-and-specs-template .size-guide .content img').attr('src', Array.isArray(sizes_and_specs.sizes.image) ? sizes_and_specs.sizes.image[0] : sizes_and_specs.sizes.image)
-      }, 30)
-    
-    
-      task(() => {
-        for (let i = 0; i < sizes_and_specs.sizes.parameters.length; i++) {
-            $('.size-guide-and-specs-template .size-guide .content .texts').append(`<div class="text">${sizes_and_specs.sizes.parameters[i].map(p => `<div>${p}</div>`).join('')}</div>`)
-        
-            if (i !== 0) {
-                $('#SizesDialog .bodyyyyyy .switchhhhh').append(`<div ${i === 1 ? 'class="active"' : ''}>${sizes_and_specs.sizes.parameters[i][0]}<span class="u14Light_v2">Fit for ${sizes_and_specs.sizes.parameters[i][1]}</span></div>`)
-            }
-        
-            if (i === 1) {
-                $('#SizesDialog .bodyyyyyy .content .parameters').html(sizes_and_specs.sizes.parameters[i].map((p, i) => i > 1 ? `<div><span class="u14DemiBold_v2">${sizes_and_specs.sizes.parameters[0][i]}</span><span class="u14Light_v2">${p}</span></div>` : '').join(''));
-                $('#SizesDialog .bodyyyyyy .content img').attr('src', typeof sizes_and_specs.sizes.image === 'string' ? sizes_and_specs.sizes.image : sizes_and_specs.sizes.image[i - 1])
-            }
-          }
-      })
-    
+      const sizes = {{ size_and_specs.sizes | json }}
       task(() => {
         $('#SizesDialog .bodyyyyyy .switchhhhh > div').on('click', function() {
                 $(this).addClass('active').siblings().removeClass('active')
-                $('#SizesDialog .bodyyyyyy .content .parameters').html(sizes_and_specs.sizes.parameters[$(this).index() + 1].map((p, i) => i > 1 ? `<div><span class="u14DemiBold_v2">${sizes_and_specs.sizes.parameters[0][i]}</span><span class="u14Light_v2">${p}</span></div>` : '').join(''))
-                $('#SizesDialog .bodyyyyyy .content img').attr('src', Array.isArray(sizes_and_specs.sizes.image) ? sizes_and_specs.sizes.image[$(this).index()] : sizes_and_specs.sizes.image)
+                $('#SizesDialog .bodyyyyyy .content .parameters').html(sizes.parameters[$(this).index() + 1].map((p, i) => i > 1 ? `<div><span class="u14DemiBold_v2">${sizes.parameters[0][i]}</span><span class="u14Light_v2">${p}</span></div>` : '').join(''))
+                $('#SizesDialog .bodyyyyyy .content img').attr('src', Array.isArray(sizes.image) ? sizes.image[$(this).index()] : sizes.image)
         })
       }, 300)
   })
