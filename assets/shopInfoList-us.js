@@ -169,6 +169,46 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/what-is-california-known-for-the-golden-gate-bridge-hero.webp?v=1697020664',
     stores: [
       {
+        name: `Sirr John Moto`,
+        phone: '1 760-658-4739',
+        email: 'info@sirrjohnmoto.com',
+        timezone: "Fremont, California, USA (GMT-7)",
+        add: "101 West Avenida Vista Hermosa, Suite 174 San Clemente, Ca 92672",
+        testrideSpot: "San Clemente",
+        availableSizes: [
+         'Carbon 1 Pro Size M'
+        ],
+        businessHours: [
+          "10:00-20:00",
+          "10:00-20:00",
+          "10:00-20:00",
+          "10:00-20:00",
+          "10:00-20:00",
+          "10:00-20:00",
+          "10:00-20:00",
+        ],
+      },
+      {
+        name: `La Jolla Ebike and Skate`,
+        phone: '858-242-9836',
+        email: 'mobiusray@gmail.com',
+        timezone: "Fremont, California, USA (GMT-7)",
+        add: "7444 Girard Ave. La Jolla Ca 92037",
+        testrideSpot: "San Dimas",
+        availableSizes: [
+          'Carbon Fold 1'
+        ],
+        businessHours: [
+          "10:00-17:00",
+           "10:00-17:00",
+           "10:00-17:00",
+           "",
+           "10:00-17:00",
+           "10:00-17:00",
+           "10:00-17:00",
+        ],
+      },
+      {
         name: `E-bike Cyclery_San Dimas`,
         phone: '909-664-4432',
         email: '',
@@ -177,7 +217,7 @@ const testRides = [
         testrideSpot: "San Dimas",
         noBook: true,
         availableSizes: [
-          'Carbon 1 Fold'
+          'Carbon Fold 1'
         ],
         businessHours: [
            "",
@@ -958,13 +998,13 @@ const testRides = [
           'Carbon Fold 1'
         ],
         businessHours: [
+           "",
+           "",
            "10:00-16:00",
            "10:00-16:00",
            "10:00-16:00",
-            "",
-            "",
-            "",
-             "13:00-16:00",
+           "10:00-16:00",
+           "10:00-16:00",
         ],
       },
       {
@@ -1820,6 +1860,28 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_3_c6001537-5c6a-4915-8ed1-9f21dfc55d76.png?v=1718085498',
     stores: [
       {
+        name: "BicycleSPACE",
+        phone: "202-853-9390",
+        email: "",
+        timezone: "Washington, DC, USA (GMT-4)",
+        add: "Ivy City 1512 Okie St., N.E. Washington, DC 20002",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_12_86b280fc-a42f-4ee7-8716-1576548b4fa3.png?v=1730535020",
+        testrideSpot: "Washington",
+        noBook: true,
+        availableSizes: [
+          'Carbon 1 Pro Size M',
+        ],
+        businessHours: [
+          "",
+          "",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-16:00",
+        ],
+      },
+      {
         name: "King Electric Bike",
         phone: "(202) 455-4823",
         email: "",
@@ -2242,7 +2304,9 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_12_86b280fc-a42f-4ee7-8716-1576548b4fa3.png?v=1730535020",
         testrideSpot: "Florida",
         availableSizes: [
-          'Carbon 1 Pro Size M',
+          'Carbon 1 Pro Size M/L',
+          'Carbon Fold 1',
+          'Fusion GT'
         ],
         businessHours: [
           "",
@@ -2256,7 +2320,7 @@ const testRides = [
       },
       {
         name: "ELECRUISER ELECTRIC BIKES",
-        phone: "561-680-2454",
+        phone: "561-680-2453",
         email: "info@elecruiser.com",
         timezone: "New Port Richey, FL, USA (GMT-4)",
         add: "1954 NE 5th Avenue 5th Avenue Shops, Boca Raton, Florida 33431",
@@ -3014,7 +3078,7 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/output_5_8de340fe-da72-48e6-a73c-772a830b0a27.png?v=1718328789",
         testrideSpot: "Lewes",
         availableSizes: [
-          'Carbon 1 Pro Size M',
+          'Carbon 1 Pro Size S/M/L',
           'Chord',
           'Carbon Fold 1',
           'Fusion GT'
