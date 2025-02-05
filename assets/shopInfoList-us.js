@@ -3012,28 +3012,6 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Milton_Delaware.jpg?v=1702122567',
     stores: [
       {
-        name: "Pedaltec Electric Bikes",
-        phone: "+13028273169",
-        email: "",
-        timezone: "Delaware, USA (GMT-7)",
-        add: "998 Kings Hwy Lewes DE , 19958 United States",
-        testrideSpot: "Lewes",
-        noBook: 'Call to Schedule Test Riding',
-        availableSizes: [
-          'Carbon 1 Pro Size M',
-          'Carbon Fold 1'
-        ],
-        businessHours: [
-          "10:00-16:00",
-          "10:00-16:00",
-          "10:00-16:00",
-          "10:00-16:00",
-          "10:00-16:00",
-          "10:00-16:00",
-          "10:00-16:00",
-        ]
-      },
-      {
         name: "Seaside Eco Bikes",
         phone: "302-329-8088",
         email: "Gilberto.medina@seasideecobikes.com",
