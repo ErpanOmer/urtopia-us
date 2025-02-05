@@ -169,6 +169,27 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/what-is-california-known-for-the-golden-gate-bridge-hero.webp?v=1697020664',
     stores: [
       {
+        name: `E-bike Cyclery_San Dimas`,
+        phone: '909-664-4432',
+        email: '',
+        timezone: "Fremont, California, USA (GMT-7)",
+        add: "347 S. San Dimas Ave San Dimas California, 91773",
+        testrideSpot: "San Dimas",
+        noBook: true,
+        availableSizes: [
+          'Carbon 1 Fold'
+        ],
+        businessHours: [
+           "",
+           "",
+           "10:00-18:00",
+           "10:00-18:00",
+           "10:00-18:00",
+           "10:00-18:00",
+           "10:00-18:00",
+        ],
+      },
+      {
         name: `Deer Focus E-bikes and Bicycle Shop`,
         phone: '424-521-9550',
         email: 'deerfocus@gmail.com',
@@ -1566,33 +1587,6 @@ const testRides = [
           "10:00-18:00",
         ],
       }
-    ]
-  },
-  {
-    city: 'Indiana',
-    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Buna_Bicycle_Works_Washington_dc.jpg?v=1665374977',
-    stores: [
-      {
-        name: "Bicycle Outfitters Indy",
-        phone: "(317) 879-5031",
-        email: "bicycleoutfitters@gmail.com",
-        timezone: "Washington, DC, USA (GMT-4)",
-        add: "1309 S. High School Road, Indianapolis, IN 46241",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Aztec_Cycles.jpg?v=1686878451",
-        testrideSpot: "Indianapolis",
-        availableSizes: [
-          'Carbon 1 Pro Size S/M/L',
-        ],
-        businessHours: [
-          "",
-          "10:00-17:00",
-           "10:00-17:00",
-           "10:00-17:00",
-           "10:00-17:00",
-           "10:00-17:00",
-          "",
-        ],
-      },
     ]
   },
   {
@@ -3435,6 +3429,34 @@ const testRides = [
         testrideSpot: "Atlanta",
         availableSizes: [
           'Carbon 1 Pro Size L',
+        ],
+        businessHours: [
+          "",
+          "11:00-18:00",
+          "11:00-18:00",
+          "11:00-18:00",
+          "11:00-18:00",
+          "11:00-18:00",
+          "11:00-18:00",
+        ],
+      },
+    ]
+  },
+  {
+    city: 'Nebraska',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_3_7b7d3f75-8bc1-4592-9b67-8a2844323c38.png?v=1735626823',
+    stores: [
+      {
+        name: "Ecocycle",
+        phone: "531-217-3030",
+        email: "",
+        timezone: "Tennessee, USA (GMT-7)",
+        add: "6755 S 191st ave Omaha, NE 68135, Omaha/Nebraska",
+        testrideSpot: "Atlanta",
+        noBook: true,
+        availableSizes: [
+          'Carbon 1 Pro Size M',
+          'Fusion GT'
         ],
         businessHours: [
           "",
