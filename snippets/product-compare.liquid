@@ -151,28 +151,40 @@
 </div>
 
 <script type="module">
-    $('.makes .compare img').each(function (index) {
-        $(this).attr('src', global_config.{{ config }}.compare.style[`image_${index}`]).removeAttr('data-src')
+    task(() => {
+      $('.makes .compare img').each(function (index) {
+          $(this).attr('src', global_config.{{ config }}.compare.style[`image_${index}`]).removeAttr('data-src')
+      })
     })
 
-    const parameterssss = global_config.{{ config }}.compare.parameters
+    task(() => {
+      const parameterssss = global_config.{{ config }}.compare.parameters
 
-    for (let index = 0; index < parameterssss.length; index++) {
-        const arr = parameterssss[index];
+      for (let index = 0; index < parameterssss.length; index++) {
+          const arr = parameterssss[index];
 
-        if (index === 0) {
-            $(`.makes .compare div:nth-child(1)`).append(`<span class="flex-1"></span>`)
-            $(`.makes .compare div:nth-child(2)`).append(`<span class="u20Medium_v2">${arr[1]}</span>`)
-            $(`.makes .compare div:nth-child(3)`).append(`<span class="u20Medium_v2">${arr[2]}</span>`)
-            continue
-        }
+          if (index === 0) {
+              $(`.makes .compare div:nth-child(1)`).append(`<span class="flex-1"></span>`)
+              $(`.makes .compare div:nth-child(2)`).append(`<span class="u20Medium_v2">${arr[1]}</span>`)
+              $(`.makes .compare div:nth-child(3)`).append(`<span class="u20Medium_v2">${arr[2]}</span>`)
+              continue
+          }
 
-        for (let j = 0; j < arr.length; j++) {
-            $(`.makes .compare div:nth-child(${j + 1})`).append(`<span class="u17Medium_v2">${arr[j]}</span>`)
-        }
-    }
+          for (let j = 0; j < arr.length; j++) {
+              $(`.makes .compare div:nth-child(${j + 1})`).append(`<span class="u17Medium_v2">${arr[j]}</span>`)
+          }
+      }
+    })
+
+    task(() => {
+      $('.makes .compare > div:nth-child(2)').css('background', global_config.{{ config }}.compare.style.background)
+    })
     
-    $('.makes .compare > div:nth-child(2)').css('background', global_config.{{ config }}.compare.style.background)
-    $('.makes .compare').before(global_config.{{ config }}.compare.style.title);
-    $('.makes .compare').after(`<img alt="{{ product.title }}" width="950" height="619" class="mb:er-w-full" loading="lazy" src="${global_config.is_pc ? global_config.{{ config }}.compare.style.image_pc : global_config.{{ config }}.compare.style.image_mb}"/>`);
+    task(() => {
+      $('.makes .compare').before(global_config.{{ config }}.compare.style.title);
+    })
+
+    task(() => {
+      $('.makes .compare').after(`<img alt="{{ product.title }}" width="950" height="619" class="mb:er-w-full" loading="lazy" src="${global_config.is_pc ? global_config.{{ config }}.compare.style.image_pc : global_config.{{ config }}.compare.style.image_mb}"/>`);
+    })
 </script>

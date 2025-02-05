@@ -715,7 +715,7 @@ const parameters = [
   {
       name: 'Carbon Fusion GT',
       img: '{{ all_products["urtopia-carbon-fusion-gt"] | image_url: width: 600 }}',
-      size: global_config.fusion_order_page_config.size_map['One Size'],
+      size: '{{ all_products["urtopia-carbon-fusion-gt"].metafields.custom.sizemap.value["One Size"] }}',
       weight: '60 lbs',
       capacity: 'Max. 330 lbs',
       gearing: 'Shimano ACERA 8-Speed',
@@ -725,14 +725,14 @@ const parameters = [
       sensors: 'Torque sensor, accelerometer, gyroscope',
       motor: '1500W peak power (36V 350W 36Nm front hub motor, 36V 350W 36Nm rear drive hub motor)',
       dimensions: {
-          img: global_config.fusion_order_page_config.sizes_and_specs.sizes.image,
-          sizes: getSizes(global_config.fusion_order_page_config.sizes_and_specs.sizes.parameters)
+          img: '{{ all_products["urtopia-carbon-fusion-gt"].metafields.custom.size_and_specs.value.sizes.image }}',
+          sizes: getSizes({{ all_products["urtopia-carbon-fusion-gt"].metafields.custom.size_and_specs.value.sizes.parameters | split: '' }})
       }
   },
   {
       name: 'Carbon Fold 1',
       img: '{{ all_products["urtopia-carbon-fold"] | image_url: width: 600 }}',
-      size: global_config.carbon_fold_order_page_config.size_map['One Size'],
+      size: '{{ all_products["urtopia-carbon-fold"].metafields.custom.sizemap.value["One Size"] }}',
       weight: '29 lbs',
       capacity: 'Max. 220 lbs',
       gearing: 'Shimano Altus 8-Speed',
@@ -742,8 +742,8 @@ const parameters = [
       sensors: 'Torque sensor',
       motor: '500 Peak power, 36V 250W (sustained) rear drive hub motors, 42Nm',
       dimensions: {
-          img: global_config.carbon_fold_order_page_config.sizes_and_specs.sizes.image,
-          sizes: getSizes(global_config.carbon_fold_order_page_config.sizes_and_specs.sizes.parameters)
+          img: '{{ all_products["urtopia-carbon-fold"].metafields.custom.size_and_specs.value.sizes.image }}',
+          sizes: getSizes({{ all_products["urtopia-carbon-fold"].metafields.custom.size_and_specs.value.sizes.parameters | split: '' }})
       }
   }
 ]

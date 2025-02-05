@@ -80,31 +80,24 @@
   }
 
   window.task = (() => {
-    let next = Promise.resolve()
+    let next = Promise.resolve();
 
-    return (fn, time = 30) => {
-        next = next.then(() => new Promise(resolve => {
-            setTimeout(async () => {
-                try {
-                    await fn()
-                } catch (error) {
-                    console.log('task error:', error);
-                } finally {
-                   resolve()
-                }
-            }, time)
-        }))
-    }
-})()
+    const rafTimeout = (fn, time) => new Promise(resolve => {
+        const start = performance.now();
+        const step = () => 
+            performance.now() - start >= time
+                ? Promise.resolve().then(fn).catch(console.error).finally(resolve)
+                : requestAnimationFrame(step);
+        requestAnimationFrame(step);
+    });
+
+    return (fn, time = 30) => next = next.then(() => rafTimeout(fn, time));
+})();
 </script>
 <script type="module">
   window.global_config = {
     sale_end_times: [
-      { sale_name: 'New Year, <span style="color:#fff;">New Gear</span>', sale_end_time: '2025-1-24' },
-      { sale_name: 'New Year, <span style="color:#fff;">New Gear</span>', sale_end_time: '2025-1-27' },
-      { sale_name: 'New Year, <span style="color:#fff;">New Gear</span>', sale_end_time: '2025-1-31' },
-      { sale_name: 'New Year, <span style="color:#fff;">New Gear</span>', sale_end_time: '2025-2-3' },
-      { sale_name: `Valentine's Day Sale`, sale_end_time: '2025-2-7' },
+      { sale_name: `<span style="color: pink;">Valentine's Day</span> <span class="er-text-white">Sale</span>`, sale_end_time: '2025-2-7' },
       { sale_name: `Valentine's Day Sale`, sale_end_time: '2025-2-10' },
       { sale_name: `Valentine's Day Sale`, sale_end_time: '2025-2-15' },
       { sale_name: `Spring Cycling Fest`, sale_end_time: '2025-2-17' }
@@ -231,198 +224,8 @@
         43645495410936: 'Ships within <span>10 business days </span>from L.A. warehouse.',
       },
     },
-    carbon_fold_order_page_config: {
-      default_variant: 45838852129016,
-      ignore_variants_available_false: [],
-      size_map: { 'One Size': `Fit for 5’1’’~6’1’’` },
-      product_images: {
-        'Saffron Yellow': [
-          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241017-185158.jpg?v=1729162376',
-          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25195.jpg?v=1735021856&width=1000',
-          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25187.jpg?v=1735021855&width=1000',
-          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25188.jpg?v=1735021856&width=1000',
-          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241224-144537.jpg?v=1735022759&width=1000',
-          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25185.jpg?v=1735021856&width=1000',
-          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241113-140713.jpg?v=1731478063',
-          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241017-185203.jpg?v=1729162376',
-          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241017-185140.jpg?v=1729162376',
-          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241017-185210.jpg?v=1729162376',
-          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241017-185150.jpg?v=1729162376',
-        ],
-        'Aegean Blue': [
-          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241017-185454.jpg?v=1729162539',
-          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25195.jpg?v=1735021856&width=1000',
-          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25187.jpg?v=1735021855&width=1000',
-          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25188.jpg?v=1735021856&width=1000',
-          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241224-144537.jpg?v=1735022759&width=1000',
-          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25185.jpg?v=1735021856&width=1000',
-          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241017-185449.jpg?v=1729162539',
-          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241017-185513.jpg?v=1729162539',
-          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241017-185459.jpg?v=1729162539',
-          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241017-185504.jpg?v=1729162539',
-        ],
-        commonSwiper: [],
-      },
-      product_media_images: [
-        { text: 'Carbon Fiber Expert', img: 'https://newurtopia.com/cdn/shop/files/logo_0707__1.png?v=1684310857' },
-        {
-          text: `“Visually stunning and lightweight bikes”`,
-          img: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19051_2x_3c234be0-e1cb-4ab0-b83c-02282fd42cb4.png?v=1705485418',
-        },
-        {
-          text: `“The best electric bikes of 2024”`,
-          img: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19052_2x_83b17023-7ff5-413b-9a87-571e8e6928ee.png?v=1705485424',
-        },
-        {
-          text: `“Pack with copious use of technology”`,
-          img: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19053_2x_2b4e11dc-d27b-47ad-9478-92c696e1fac7.png?v=1705485431',
-        },
-        {
-          text: `“Pack with copious use of technology”`,
-          img: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19054_2x_7feff357-8d1b-48a0-b9af-662442dc41f6.png?v=1705485437',
-        },
-        {
-          text: `“The epitome of raw power”`,
-          img: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19055_2x_612a45c4-04fe-4477-a252-302e8d11c40e.png?v=1705485444',
-        },
-        {
-          text: `“Carbon 1 Pro as‘a bike with spirit”`,
-          img: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19056_2x_b61e963a-f2b3-49f3-8bc2-4aee5f8f2a4c.png?v=1705485451',
-        },
-        {
-          text: `“Standout feature lies in its integration with advanced technology.”`,
-          img: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19057_2x_0eabb26b-a2fe-48e8-b00e-209ef2b986e0.png?v=1705485460',
-        },
-        {
-          text: `“Interesting innovation or tech for tech’s sake”`,
-          img: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19058_2x_b0454fa5-9c44-462e-8f04-5646db60456a.png?v=1705485466',
-        },
-        {
-          text: `“Completely crazy:This e-bike talks to the rider”`,
-          img: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19059_2x_14b271ba-3eae-41ea-8882-e6896e9f9948.png?v=1705485473',
-        },
-        {
-          text: `“The iPhone among e-bikes”`,
-          img: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19060_2x_e094650e-c53d-4e29-b805-7e89d127643d.png?v=1705485481',
-        },
-        {
-          text: `“Thanks to its full carbon frame,the Urtopia e-bikes is light”`,
-          img: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19061_2x_a24c29c4-0fff-421f-9977-25989e38b7e9.png?v=1705485487',
-        },
-      ],
-      ebike_default_delivery_time: 'Ships between March 20-30, 2025 from L.A. warehouse.',
-      ebike_delivery_time: {},
-      sizes_and_specs: {
-        sizes: {
-          image: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241219-180628.png?v=1734602910',
-          parameters: [
-            [
-              '<span style="color: #fff;">xxxx</span>',
-              'Recomm. rider height',
-              'A. Adjustable seat range',
-              'B. Highest point of the seat post',
-              'C. Overall length',
-              'D. Handlebar grips height',
-              'E. Headset height',
-              'F. Seat tube length',
-              'G. Wheel diameter',
-              'H. Wheelbase',
-              'I. Height after folding',
-              'J. Overall length after folding',
-              'K. Standover height',
-            ],
-            [
-              '<span class="u17DemiBold_v2">One Size</span>',
-              '5’1’’~6’1’’',
-              '220 mm',
-              '1020 mm',
-              '1480 mm',
-              '1090 mm',
-              '400 mm',
-              '310 mm',
-              '450 mm',
-              '1000 mm',
-              '680 mm',
-              '800 mm',
-              '550 mm',
-            ],
-          ],
-        },
-        specs: [
-          {
-            title: 'General Info',
-            parameters: [
-              ['Model', 'Carbon Folding E-Bike'],
-              ['Weight', '29 lbs'],
-              ['Material', 'Carbon fiber (frame, fork)'],
-              ['Range', '40miles'],
-              ['Top Speed', '20mph'],
-              ['Total Weight Limit', '220 lbs'],
-              ['Rider Height', `5’1’’-6’1’’`],
-              ['Brakes', 'TEKTRO hydraulic disc brakes'],
-              ['Wheels', `Kenda 18" x 2.0"`],
-              ['', ``],
-            ],
-          },
-          {
-            title: 'Ebike System',
-            parameters: [
-              ['Motor', 'Peak 500W hub motor, 42Nm'],
-              ['Battery', '36V 7Ah (252 Wh) seat post battery'],
-              ['Pedal Assist', '5 levels'],
-              ['Charger', '3H fast charger, 42V 2Amp'],
-              ['Display', 'Color display'],
-              ['Sensors', 'Torque sensor'],
-              ['Headlights', 'External headlights 160LM'],
-              ['Rearlights', 'Integrated rear lights'],
-            ],
-          },
-          {
-            title: 'Drivetrain',
-            parameters: [
-              ['Chainrings', '53T'],
-              ['Cassette', '11-32T, 8 Speed'],
-              ['Chain', 'Chain KMC Z7'],
-              ['Rear Derailleur', 'Shimano Altus 8-Speed'],
-              ['Shift Lever', '8 Speed Trigger'],
-              ['', ``],
-            ],
-          },
-        ],
-      },
-      compare: {
-        parameters: [
-          ['', 'Carbon Fold 1', 'Other Folding ebike'],
-          [
-            'Price',
-            '<span data-sale>{{ all_products["urtopia-carbon-fold"].price | money_without_trailing_zeros }}</span>',
-            '{{ 399900 | money_without_trailing_zeros }}',
-          ],
-          ['Frame Material', 'Carbon Fiber', '❌'],
-          ['Handlebar Material', 'Carbon Fiber', 'Aluminum Alloy'],
-          ['Weight', '29 lbs', '37 lbs'],
-          ['Max. Rider Weight', '200 lbs', '180 lbs'],
-          ['Range', '40 miles', '30 miles'],
-          ['Gears', 'Shimano Altus 8-Speed', 'Shimano Nexus 3-speed'],
-          ['IoT Sensor', 'Torque Sensor', 'Torque Sensor'],
-          ['Brakes', 'TEKTRO hydraulic disc brakes', 'Hydraulic disk, front and rear'],
-          ['Integrated light', '✔', '❌'],
-        ],
-        style: {
-          image_0: '{{ all_products["urtopia-carbon-fold"].variants.first.featured_image | image_url: width: 300 }}',
-          image_1:
-            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19638_2x_75919041-383b-4b48-bfec-76b858a0a92b.png?v=1736244768&width=300',
-          background: 'linear-gradient(180deg, #FFD362, #D57D00, #C15700)',
-          title: `<h2 class="u36Medium_v2">What makes Carbon Fold 1<br class="pcHide">the best Foldable E-Bike</h2>`,
-          image_pc:
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24870_2x_a586c01c-a72c-42e0-9a94-d36047856d03.png?v=1729076064',
-          image_mb:
-            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24876_2x_493b152e-2581-4f9f-ad47-c22c9a2fe2cd.png?v=1729474418',
-        },
-      },
-    },
-    chord_order_page_config: {
-    },
+    carbon_fold_order_page_config: {},
+    chord_order_page_config: {},
     carbon1pro_order_page_config: {
       ignore_variants_available_false: [],
       default_variant: 44288621314296,
