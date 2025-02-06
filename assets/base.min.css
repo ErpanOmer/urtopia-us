@@ -3461,6 +3461,7 @@ fieldset[option=Style] label[data-style=White] {
     --product-option-color: #EDECE7
 }
 
+fieldset[option=Style] label[data-style="Vital Orange"],
 fieldset[option=Color] label[data-style="Saffron Yellow"] {
     --product-option-color: #FFB100;
 }
@@ -3473,6 +3474,11 @@ fieldset[option=Style] label[data-style='Glacier Blue'] {
     --product-option-color: #A5BFCF;
 }
 
+fieldset[option=Style] label[data-style='Elegant Grey'] {
+    --product-option-color: #dbdbdb;
+}
+
+fieldset[option=Style] label[data-style='Blazing Black'],
 fieldset[option=Style] label[data-style='Matte Black'],
 fieldset[option=Style] label[data-style=Black] {
     --product-option-color: #000;

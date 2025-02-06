@@ -94,11 +94,15 @@
         const bikes_custom_config = {
             8794812776696: {
                 title: 'Fusion GT',
-                ...global_config.fusion_order_page_config
+                size_map: { "One Size":"Fit for 5’3’’ - 6’3’’" }
             },
             8230663028984: {
                 title: 'Carbon 1 Pro',
-                ...global_config.carbon1pro_order_page_config
+                size_map: {
+                  S: `Fit for 5’3’’~5’9’’Inseam 30’’`,
+                  M: `Fit for 5’7’’~6’1’’Inseam 31’’`,
+                  L: `Fit for 5’11’’~6’5’’Inseam 33’’`,
+                },
             },
             8792002461944: {
                 title: 'Carbon Fold 1',
@@ -114,11 +118,11 @@
 
         {% for product in collections['urtopia-black-friday-sale'].products %}
             bikes_info.push({
-                {% assign options_with_values_Style = product.options_with_values | where: "name", "Style"  %}
-                {% assign options_with_values_Color = product.options_with_values | where: "name", "Color"  %}
-                {% assign options_with_values = options_with_values_Style |  concat: options_with_values_Color %}
+                {%- assign options_with_values_Style = product.options_with_values | where: "name", "Style"  -%}
+                {%- assign options_with_values_Color = product.options_with_values | where: "name", "Color"  -%}
+                {%- assign options_with_values = options_with_values_Style |  concat: options_with_values_Color -%}
                 style: {{ options_with_values.first.values | json }},
-                {% assign options_with_values = product.options_with_values | where: "name", "Size"  %}
+                {%- assign options_with_values = product.options_with_values | where: "name", "Size"  -%}
                 size:{{ options_with_values.first.values | json }},
                 variants: {{ product.variants | where: "available" | json }},
                 title: bikes_custom_config['{{ product.id }}'].title,
