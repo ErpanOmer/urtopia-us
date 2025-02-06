@@ -2326,3 +2326,22 @@ function lozad (selector = '.lozad', options = {}) {
   lozad('.lozad', {
     rootMargin: '1000px 2000px' // syntax similar to that of CSS Margin
   }).observe('.lozad');
+
+  fetch(window.location.pathname + '?sections=footer').then(r => r.json()).then(r => {
+    task(() => {
+      $(document.body).append($(r['footer']))
+    })
+
+    task(() => {
+      $(".mobile-footer .footer-block__heading").click(function () {
+        $(this).siblings("ul.footer-block__details-content").slideToggle()
+        .parent().siblings().find("ul.footer-block__details-content").slideUp()
+      })
+    })
+  })
+
+  fetch(window.location.pathname + '?sections=cart-drawer').then(r => r.json()).then(r => {
+    task(() => {
+      $(document.body).append($(r['cart-drawer']))
+    })
+  })
