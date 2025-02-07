@@ -66,7 +66,7 @@
           window.observer.observe(document.head, { childList: true });
     </script>
     <script src="{{ 'libs.min.js' | asset_url }}" defer></script>
-    {% comment %} {{ content_for_header }} {% endcomment %}
+    <template>{{ content_for_header }}</template>
     {{
       content_for_header
       | replace: 'preloads.js?locale=en-US"', 'preloads.js?locale=en-US" type="text/lazyload" data-level="5"'
@@ -85,36 +85,6 @@
       {{ content_for_layout }}
     </main>
     {% section 'care' %}
-    <script
-      type="module"
-    >
-      window.shopUrl = '{{ request.origin }}';
-      window.routes = {
-        cart_add_url: '{{ routes.cart_add_url }}',
-        cart_change_url: '{{ routes.cart_change_url }}',
-        cart_update_url: '{{ routes.cart_update_url }}',
-        cart_url: '{{ routes.cart_url }}',
-        predictive_search_url: '{{ routes.predictive_search_url }}',
-      };
-
-      window.cartStrings = {
-        error: `{{ 'sections.cart.cart_error' | t }}`,
-        quantityError: `{{ 'sections.cart.cart_quantity_error_html' | t: quantity: '[quantity]' }}`,
-      };
-
-      window.variantStrings = {
-        addToCart: `{{ 'products.product.add_to_cart' | t }}`,
-        soldOut: `{{ 'products.product.sold_out' | t }}`,
-        unavailable: `{{ 'products.product.unavailable' | t }}`,
-      };
-
-      window.accessibilityStrings = {
-        imageAvailable: `{{ 'products.product.media.image_available' | t: index: '[index]' }}`,
-        shareSuccess: `{{ 'general.share.success_message' | t }}`,
-        pauseSlideshow: `{{ 'sections.slideshow.pause_slideshow' | t }}`,
-        playSlideshow: `{{ 'sections.slideshow.play_slideshow' | t }}`,
-      };
-    </script>
   </body>
   {% render 'dialog' %}
   {% if product or request.path == '/pages/test-ride' or request.path == '/pages/urtopia-e-bike-review' %}

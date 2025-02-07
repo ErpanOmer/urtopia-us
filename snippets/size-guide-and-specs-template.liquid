@@ -69,7 +69,7 @@
             {%- endif -%}
           {%- endfor -%}
         </div>
-        <img width="550" height="358" alt="{{ product.title }}" src="{%- if size_and_specs.sizes.image.size == 2 -%}{{size_and_specs.sizes.image.first}}{%- else -%}{{size_and_specs.sizes.image}}{%- endif -%}">
+        <img width="550" height="358" loading="lazy" alt="{{ product.title }}" src="{%- if size_and_specs.sizes.image.size == 2 -%}{{size_and_specs.sizes.image.first}}{%- else -%}{{size_and_specs.sizes.image}}{%- endif -%}">
       </div>
     </div>
   </div>
