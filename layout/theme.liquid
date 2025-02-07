@@ -87,8 +87,5 @@
     {% section 'care' %}
   </body>
   {% render 'dialog' %}
-  {% if product or request.path == '/pages/test-ride' or request.path == '/pages/urtopia-e-bike-review' %}
-    {% render 'judgeme_core' %}
-  {% endif %}
   <script src="{{ 'global.js' | asset_url }}" fetchpriority="low" defer></script>
 </html>

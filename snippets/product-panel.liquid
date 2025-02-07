@@ -175,16 +175,7 @@
         option="{{ option.name }}"
         position="{{ option.position }}"
       >
-        <legend class="text-size18 er-font-bold mb:er-text-2xl">
-          {{ option.name }} -
-          <span class="er-font-normal er-text-dark/70">
-            {%- if option.position == 1 -%}
-              {{ product_size_map[option.selected_value] }}
-            {%- else -%}
-              {{ option.selected_value }}
-            {%- endif -%}
-          </span>
-        </legend>
+        <legend class="text-size18 er-font-bold mb:er-text-2xl">{{- option.name -}} - <span class="er-font-normal er-text-dark/70">{%- if option.position == 1 -%}{{ product_size_map[option.selected_value] }}{%- else -%}{{ option.selected_value }}{%- endif -%}</span></legend>
         <div class="er-flex er-gap-5">
           {%- for option_value in option.values -%}
             <label
@@ -194,24 +185,8 @@
                 data-style="{{ option_value }}" class="er-group er-w-14 er-h-14 er-rounded-full er-border-2 er-border-solid er-border-transparent er-cursor-pointer er-transition er-bg-[var(--product-option-color)] er-p-[2px] er-bg-clip-content [&[class~='active']]:er-border-[var(--product-option-color)] er-relative{% if option_value.selected %} active{% endif %}"
               {% endif %}
             >
-              <input
-                type="radio"
-                id="{{ option_value }}"
-                name="{{ option.name }}"
-                value="{{ option_value }}"
-                class="er-hidden{% if option_value.available %} available{% endif %}"
-                {% if option_value.selected %}
-                  checked
-                {% endif %}
-                data-option-value-id="{{ option_value.id }}"
-              >
-              <span
-                {% if option.position == 2 %}
-                  class="mb:er-hidden group-hover:er-visible group-hover:er-opacity-100 after:er-border-x-transparent after:er-border-t-dark after:er-border-b-transparent after:er-border-8 after:er-border-solid after:er-content-[''] after:er-bottom-[-16px] after:er-absolute after:er-left-1/2 after:er-translate-x-[-50%] er-absolute er-bottom-[150%] er-left-1/2 er-translate-x-[-50%] er-bg-dark er-text-white er-px-6 er-py-2 er-rounded-full er-whitespace-nowrap er-opacity-0 er-invisible er-transition-opacity er-duration-300 text-size14 er-font-medium er-z-10"
-                {% endif %}
-              >
-                {{ option_value }}
-              </span>
+              <input type="radio" id="{{ option_value }}" name="{{ option.name }}" value="{{ option_value }}" class="er-hidden{% if option_value.available %} available{% endif %}" data-option-value-id="{{ option_value.id }}" {%- if option_value.selected -%}checked{%- endif -%}>
+              <span {%- if option.position == 2 %} class="mb:er-hidden group-hover:er-visible group-hover:er-opacity-100 after:er-border-x-transparent after:er-border-t-dark after:er-border-b-transparent after:er-border-8 after:er-border-solid after:er-content-[''] after:er-bottom-[-16px] after:er-absolute after:er-left-1/2 after:er-translate-x-[-50%] er-absolute er-bottom-[150%] er-left-1/2 er-translate-x-[-50%] er-bg-dark er-text-white er-px-6 er-py-2 er-rounded-full er-whitespace-nowrap er-opacity-0 er-invisible er-transition-opacity er-duration-300 text-size14 er-font-medium er-z-10"{%- endif -%}>{{ option_value }}</span>
             </label>
           {%- endfor -%}
         </div>
@@ -264,21 +239,13 @@
         <span class="er-text-[#f472b6] er-text-3xl er-font-extrabold er-mt-2">Klarna.</span>
         <div class="er-flex er-flex-col text-size14 er-text-left">
           <span class="er-font-bold">0 APR Financing</span>
-          <span
-            >24 months,<span class="product-stages">
-              {{- current_variant.price | divided_by: 24 | money_without_trailing_zeros -}}</span
-            >/month</span
-          >
+          <span>24 months,<span class="product-stages">{{- current_variant.price | divided_by: 24 | money_without_trailing_zeros -}}</span>/month</span>
         </div>
       </button>
     </div>
     <div class="er-border er-border-border er-border-solid er-p-4 er-rounded-2xl er-flex er-flex-col text-size14">
-      <span class="product-delivery-time er-font-bold">
-        {{ product_delivery_time }}
-      </span>
-      <span>
-        Need help? Email
-        <a href="mailto:support@newurtopia.com" class="er-button er-button-text">support@newurtopia.com</a>
+      <span class="product-delivery-time er-font-bold">{{ product_delivery_time }}</span>
+      <span>Need help? Email <a href="mailto:support@newurtopia.com" class="er-button er-button-text">support@newurtopia.com</a>
       </span>
     </div>
     <div class="er-flex er-flex-col er-divide-y er-divide-border er-divide-solid er-divide-x-0">
@@ -314,10 +281,7 @@
             {{- current_variant.compare_at_price | money -}}
           </del>
         </div>
-        <div class="er-text-2xl">
-          or as low as
-          <span class="product-stages">{{ current_variant.price | divided_by: 24 | money_without_trailing_zeros }}</span
-          >/Month
+        <div class="er-text-2xl">or as low as<span class="product-stages">{{ current_variant.price | divided_by: 24 | money_without_trailing_zeros }}</span>/Month
         </div>
       </div>
       <span class="er-flex-1"></span>

@@ -1,726 +1,70 @@
-{% assign prelo = 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3-1.jpg?v=1722064932' %}
-
 {{ 'carbon1pro-new.scss.css' | asset_url | stylesheet_tag: preload: true }}
-<link rel="preload" as="image" href="{{ prelo }}">
-<link
-  rel="preload"
-  as="image"
-  href="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18878.jpg?v=1722064932"
->
-<link
-  rel="preload"
-  as="image"
-  href="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241120-101942.png?v=1732069202&width=1000"
->
-
-<h1 class="visuallyhidden">Urtopia Carbon 1 Pro Ebike - Sleek, Full Carbon, Lightweight, Smart</h1>
-<div class="product" data-pf-type="ProductBox">
-  <div class="centeral-content">
-    <div class="commonComponent pcHide">
-      <div class="u20DemiBold_v2">{{ product.title }}</div>
-      <div class="er-flex er-items-center !er-mt-2">
-        <div class="star" style="--star-size: 16px;"></div>
-        <div class="star" style="--star-size: 16px;"></div>
-        <div class="star" style="--star-size: 16px;"></div>
-        <div class="star" style="--star-size: 16px;"></div>
-        <div class="star" style="--star-size: 16px;"></div>
-        <span class="er-text-dark/70 text-size14 er-ml-2">{{ shop.metafields.judgeme.all_reviews_count }} Reviews</span>
-      </div>
-      <div
-        class="product-price u24DemiBold_v2 mb12"
-      >
-        {{ product.price | money_without_trailing_zeros }}
-        <span class="u17Medium_v2" style="font-size: 15px;">{{ product.compare_at_price | money }}</span>
-        <span class="u14Medium_v2" style="font-size: 13px;"
-          >-{{ product.compare_at_price | minus: product.price | money_without_trailing_zeros -}}
-        </span>
-      </div>
-      {% render 'sale-v2' %}
-    </div>
-    <div class="left-swiper mobileHide">
-      <div class="swiper-wrapper">
-        <img width="64" height="42" class="swiper-slide" alt="Urtopia Carbon 1 Pro" src="{{prelo}}">
-      </div>
-    </div>
-    <span></span>
-    <div
-      class="featured_image mb16"
-      style="--swiper-navigation-color: #000;--swiper-theme-color: #000;--swiper-pagination-color: #000;"
-    >
-      <div class="right-swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide"><img width="662" height="432" alt="Urtopia Carbon 1 Pro" src="{{prelo}}"></div>
-        </div>
-        <div class="arrow swiper-button-prev mobileHide"></div>
-        <div class="arrow swiper-button-next mobileHide"></div>
-      </div>
-      <div class="medias">
-        <i class="u17DemiBold_v2">Carbon Fiber Expert</i>
-        <img
-          width="185"
-          height="60"
-          loading="lazy"
-          fetchpriority="low"
-          decoding="async"
-          src="https://newurtopia.com/cdn/shop/files/logo_0707__1.png?v=1684310857"
-          alt="{{ page_title }}"
-        >
-      </div>
-      <div class="swiper-pagination pcHide"></div>
-      <div class="free mobileHide">
-        <img
-          loading="lazy"
-          fetchpriority="low"
-          decoding="async"
-          width="80"
-          height="57"
-          src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3-1_2x_b9ab0988-f835-49ec-8cd0-ef93bd2d9e91.png?v=1728959307"
-          alt="{{ page_title }}"
-        >
-        <span class="u14Medium_v2"
-          ><span style="color:#fd4b17;">Limited offer:</span> Fenders, kickstand, 1-year eSIM service</span
-        >
-        <span class="flex-1"></span>
-        <del class="u14Light_v2">{{ 16700 | money_without_trailing_zeros }}</del>
-        <span class="u17Medium_v2">Free</span>
-      </div>
-      <div class="icons mobileHide">
-        <div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            width="45"
-            height="45"
-            viewBox="0 0 45 45"
-          >
-            <defs>
-              <clipPath>
-                <rect id="Rectangle_25077" data-name="Rectangle 25077" width="45" height="45" transform="translate(427 824)" fill="#fff" stroke="#bfbfbf" stroke-width="1"/>
-              </clipPath>
-            </defs>
-            <g id="Mask_Group_19076" data-name="Mask Group 19076" transform="translate(-427 -824)" clip-path="url(#clip-path)">
-              <g id="Group_23890" data-name="Group 23890" transform="translate(0.184 -0.523)">
-                <path id="Path_74558" data-name="Path 74558" d="M27.864,0A5,5,0,0,1,32.19,2.493l7.351,12.683a5,5,0,0,1,0,5.014L32.19,32.874a5,5,0,0,1-4.326,2.493H13.13A5,5,0,0,1,8.8,32.874L1.453,20.191a5,5,0,0,1,0-5.014L8.8,2.493A5,5,0,0,1,13.13,0Z" transform="translate(467.184 826.744) rotate(90)" fill="#bfbfbf"/>
-                <path id="Path_74559" data-name="Path 74559" d="M21.126,0a5,5,0,0,1,4.317,2.477l5.076,8.683a5,5,0,0,1,0,5.046L25.443,24.89a5,5,0,0,1-4.317,2.477H10.867A5,5,0,0,1,6.551,24.89L1.475,16.207a5,5,0,0,1,0-5.046L6.551,2.477A5,5,0,0,1,10.867,0Z" transform="translate(463.299 831.423) rotate(90)" fill="#bfbfbf"/>
-                <path id="Path_74549" data-name="Path 74549" d="M9.87.33c4.11,0,6.99-2.19,7.92-5.88l-2.88-.57a4.952,4.952,0,0,1-4.89,3.57c-3.12,0-5.28-2.46-5.28-6.03,0-3.6,2.16-6.06,5.28-6.06a4.782,4.782,0,0,1,4.95,3.6l2.88-.57c-1.08-3.9-3.66-5.88-7.98-5.88-4.95,0-8.49,3.72-8.49,8.91S4.92.33,9.87.33Z" transform="translate(440 856)" fill="#fff"/>
-              </g>
-            </g>
-          </svg>
-
-          <div>
-            <span class="u14Light_v2">37 lbs Lightweight</span>
-            <span class="u14Medium_v2">Toray® Carbon Fiber</span>
-          </div>
-        </div>
-        <div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            width="45"
-            height="45"
-            viewBox="0 0 45 45"
-          >
-            <defs>
-              <clipPath>
-                <rect id="Rectangle_25076" data-name="Rectangle 25076" width="45" height="45" transform="translate(427 905)" fill="#fff" stroke="#707070" stroke-width="1"/>
-              </clipPath>
-            </defs>
-            <g id="Mask_Group_19077" data-name="Mask Group 19077" transform="translate(-427 -905)" clip-path="url(#clip-path)">
-              <g id="Group_23882" data-name="Group 23882" transform="translate(-2 -8)">
-                <g id="_021-wheels" data-name="021-wheels" transform="translate(432 915.498)" opacity="0.999">
-                  <path id="Path_74522" data-name="Path 74522" d="M38.493,18.632c-.606,0-.564-.663-.618-1.087-.107-.808-.267-1.052.576-1.277l.137-.24L38,13.831c-.065-.236-.332-.114-.5-.069-.583.156-.713-.484-.881-.888l-.236-.534c-.282-.625.492-.763.549-.961v-.149L35.793,9.259c-.122-.21-.355-.027-.488.053-.534.32-.82-.263-1.094-.618-.507-.656-.763-.763-.141-1.4V7L32.453,5.4c-.175-.175-.358.08-.473.191-.427.427-.858-.065-1.2-.332s-.93-.541-.629-1.079c.08-.137.278-.381.061-.5L28.213,2.529c-.187-.1-.305.179-.381.3-.305.549-.85.183-1.262,0-.694-.29-1.071-.3-.82-1.144a.2.2,0,0,0,0-.149l-.118-.092-2.2-.587a.2.2,0,0,0-.149,0l-.16.381c-.156.587-.785.381-1.2.316-.816-.107-1.091,0-1.091-.888L20.632.5H18.345c-.248,0-.194.3-.2.465,0,.606-.663.564-1.087.618-.8.107-1.052.271-1.277-.576L15.542.87l-2.193.587c-.236.065-.114.332-.069.5.156.583-.492.717-.888.881l-.53.229c-.469.214-.694-.2-.839-.458l-.271-.072L8.781,3.681c-.206.126-.031.347.053.488.32.534-.263.82-.618,1.094-.656.5-.763.763-1.4.141H6.524L4.919,7V7.28l.191.194c.423.427-.065.862-.332,1.2s-.541.934-1.079.629c-.137-.08-.381-.278-.5-.061L2.051,11.242c-.1.187.179.305.3.381.549.305.183.85,0,1.262s-.3,1.045-.881.888l-.4-.05-.092.118-.587,2.2a.2.2,0,0,0,0,.149l.381.16c.587.156.381.785.316,1.2-.107.816,0,1.091-.888,1.091L0,18.838v2.288c0,.248.3.194.465.2.606,0,.564.663.618,1.087.107.808.267,1.052-.576,1.277l-.137.24.587,2.2c.065.236.332.114.5.069.583-.156.713.484.881.888l.255.511c.282.625-.492.763-.549.961V28.7l1.144,1.971c.114.21.358.027.488-.053.534-.32.82.263,1.094.618.511.656.763.763.141,1.4v.294l1.617,1.605c.175.175.358-.08.473-.191.427-.427.858.065,1.2.332s.93.557.629,1.079c-.08.137-.278.381-.061.5L10.764,37.4c.191.1.305-.179.381-.3.305-.549.85-.183,1.262,0,.763.313,1.049.294.82,1.144a.2.2,0,0,0,0,.149l.118.092,2.2.587a.2.2,0,0,0,.149,0l.16-.381c.156-.587.785-.381,1.2-.316.816.107,1.091,0,1.091.888l.194.194h2.288c.248,0,.194-.3.2-.465,0-.606.663-.564,1.087-.618.808-.107,1.052-.271,1.277.576l.24.137,2.2-.587c.236-.065.114-.332.069-.5-.156-.583.484-.713.888-.881l.541-.233c.625-.282.763.492.961.549h.149L30.207,36.3c.21-.114.027-.358-.053-.488-.32-.534.263-.82.618-1.094.656-.511.763-.763,1.4-.141h.282l1.605-1.647v-.278c-.214-.214-.561-.534-.229-.934l.7-.911c.412-.6.9.034,1.144-.027a.2.2,0,0,0,.122-.092l1.144-1.994c.1-.187-.179-.305-.3-.381-.549-.305-.183-.85,0-1.258.29-.694.3-1.071,1.144-.82a.2.2,0,0,0,.149,0l.092-.118.587-2.2a.2.2,0,0,0,0-.149l-.381-.16c-.587-.156-.381-.785-.316-1.2.107-.816,0-1.091.888-1.091L39,21.122v-2.3c-.046-.24-.343-.191-.507-.191Z" fill="none" stroke="#bfbfbf" stroke-width="1"/>
-                </g>
-                <g id="Path_74525" data-name="Path 74525" transform="translate(432 916)" fill="none" opacity="0.999">
-                  <path d="M19.5,0A19.5,19.5,0,1,1,0,19.5,19.5,19.5,0,0,1,19.5,0Z" stroke="none"/>
-                  <path d="M 19.5 4 C 15.35980033874512 4 11.46740913391113 5.612281799316406 8.539850234985352 8.539850234985352 C 5.612281799316406 11.46740913391113 4 15.35980033874512 4 19.5 C 4 23.64019966125488 5.612281799316406 27.53258895874023 8.539850234985352 30.46014976501465 C 11.46740913391113 33.38771820068359 15.35980033874512 35 19.5 35 C 23.64019966125488 35 27.53258895874023 33.38771820068359 30.46014976501465 30.46014976501465 C 33.38771820068359 27.53258895874023 35 23.64019966125488 35 19.5 C 35 15.35980033874512 33.38771820068359 11.46740913391113 30.46014976501465 8.539850234985352 C 27.53258895874023 5.612281799316406 23.64019966125488 4 19.5 4 M 19.5 0 C 30.26955032348633 0 39 8.730449676513672 39 19.5 C 39 30.26955032348633 30.26955032348633 39 19.5 39 C 8.730449676513672 39 0 30.26955032348633 0 19.5 C 0 8.730449676513672 8.730449676513672 0 19.5 0 Z" stroke="none" fill="#bfbfbf"/>
-                </g>
-                <path id="Path_74527" data-name="Path 74527" d="M0,0V7.5" transform="translate(451.5 941.469)" fill="#bfbfbf" stroke="#bfbfbf" stroke-linecap="round" stroke-width="1"/>
-                <path id="Path_74528" data-name="Path 74528" d="M0,0H7.5" transform="translate(438.038 935.728)" fill="#bfbfbf" stroke="#bfbfbf" stroke-linecap="round" stroke-width="1"/>
-                <path id="Path_74529" data-name="Path 74529" d="M0,0V7.5" transform="translate(447.275 939.952) rotate(45)" fill="#bfbfbf" stroke="#bfbfbf" stroke-linecap="round" stroke-width="1"/>
-                <path id="Path_74526" data-name="Path 74526" d="M0,0H7.5" transform="translate(455.688 939.916) rotate(45)" fill="#bfbfbf" stroke="#bfbfbf" stroke-linecap="round" stroke-width="1"/>
-                <g id="Path_74530" data-name="Path 74530" transform="translate(447 931)" fill="#bfbfbf">
-                  <path d="M 4.5 8.5 C 2.294389963150024 8.5 0.5 6.705609798431396 0.5 4.5 C 0.5 2.294389963150024 2.294389963150024 0.5 4.5 0.5 C 6.705609798431396 0.5 8.5 2.294389963150024 8.5 4.5 C 8.5 6.705609798431396 6.705609798431396 8.5 4.5 8.5 Z" stroke="none"/>
-                  <path d="M 4.5 1 C 2.570089817047119 1 1 2.570089817047119 1 4.5 C 1 6.429909706115723 2.570089817047119 8 4.5 8 C 6.429909706115723 8 8 6.429909706115723 8 4.5 C 8 2.570089817047119 6.429909706115723 1 4.5 1 M 4.5 0 C 6.98528003692627 0 9 2.01471996307373 9 4.5 C 9 6.98528003692627 6.98528003692627 9 4.5 9 C 2.01471996307373 9 0 6.98528003692627 0 4.5 C 0 2.01471996307373 2.01471996307373 0 4.5 0 Z" stroke="none" fill="#bfbfbf"/>
-                </g>
-                <path id="Path_74531" data-name="Path 74531" d="M0,0V7.5" transform="translate(455.724 931.504) rotate(-135)" fill="#bfbfbf" stroke="#bfbfbf" stroke-linecap="round" stroke-width="1"/>
-                <path id="Path_74532" data-name="Path 74532" d="M0,0H7.5" transform="translate(447.312 931.54) rotate(-135)" fill="#bfbfbf" stroke="#bfbfbf" stroke-linecap="round" stroke-width="1"/>
-                <path id="Path_74533" data-name="Path 74533" d="M0,0H7.5" transform="translate(457.463 935.728)" fill="#bfbfbf" stroke="#bfbfbf" stroke-linecap="round" stroke-width="1"/>
-                <path id="Path_74534" data-name="Path 74534" d="M0,0V7.5" transform="translate(451.5 921.819)" fill="#bfbfbf" stroke="#bfbfbf" stroke-linecap="round" stroke-width="1"/>
-                <path id="Path_74550" data-name="Path 74550" d="M0,0V7.5" transform="translate(451.5 941.469)" fill="#bfbfbf" stroke="#bfbfbf" stroke-linecap="round" stroke-width="1"/>
-                <path id="Path_74551" data-name="Path 74551" d="M0,0H7.5" transform="translate(438.037 935.728)" fill="#bfbfbf" stroke="#bfbfbf" stroke-linecap="round" stroke-width="1"/>
-                <path id="Path_74552" data-name="Path 74552" d="M0,0V7.5" transform="translate(447.275 939.952) rotate(45)" fill="#bfbfbf" stroke="#bfbfbf" stroke-linecap="round" stroke-width="1"/>
-                <path id="Path_74553" data-name="Path 74553" d="M0,0H7.5" transform="translate(455.688 939.916) rotate(45)" fill="#bfbfbf" stroke="#bfbfbf" stroke-linecap="round" stroke-width="1"/>
-                <path id="Path_74554" data-name="Path 74554" d="M0,0V7.5" transform="translate(455.724 931.504) rotate(-135)" fill="#bfbfbf" stroke="#bfbfbf" stroke-linecap="round" stroke-width="1"/>
-                <path id="Path_74555" data-name="Path 74555" d="M0,0H7.5" transform="translate(447.312 931.54) rotate(-135)" fill="#bfbfbf" stroke="#bfbfbf" stroke-linecap="round" stroke-width="1"/>
-                <path id="Path_74556" data-name="Path 74556" d="M0,0H7.5" transform="translate(457.463 935.728)" fill="#bfbfbf" stroke="#bfbfbf" stroke-linecap="round" stroke-width="1"/>
-                <path id="Path_74557" data-name="Path 74557" d="M0,0V7.5" transform="translate(451.5 921.819)" fill="#bfbfbf" stroke="#bfbfbf" stroke-linecap="round" stroke-width="1"/>
-              </g>
-            </g>
-          </svg>
-
-          <div>
-            <span class="u14Light_v2">Long Range</span>
-            <span class="u14Medium_v2">Up to 80 miles</span>
-          </div>
-        </div>
-        <div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            width="45"
-            height="45"
-            viewBox="0 0 45 45"
-          >
-            <defs>
-              <clipPath>
-                <rect id="Rectangle_25079" data-name="Rectangle 25079" width="45" height="45" transform="translate(627 823)" fill="#fff" stroke="#707070" stroke-width="1"/>
-              </clipPath>
-            </defs>
-            <g id="Mask_Group_19079" data-name="Mask Group 19079" transform="translate(-627 -823)" clip-path="url(#clip-path)">
-              <g id="Group_23888" data-name="Group 23888" transform="translate(-0.367 1.404)">
-                <g id="Rectangle_25061" data-name="Rectangle 25061" transform="translate(649.248 829.394) rotate(45)" fill="#bfbfbf" stroke="#bfbfbf" stroke-width="1">
-                  <rect width="21.087" height="19.915" stroke="none"/>
-                  <rect x="0.5" y="0.5" width="20.087" height="18.915" fill="none"/>
-                </g>
-                <g id="Rectangle_25062" data-name="Rectangle 25062" transform="translate(637.65 826.081) rotate(45)" fill="#bfbfbf" stroke="#bfbfbf" stroke-width="1">
-                  <path d="M2,0H3.514a0,0,0,0,1,0,0V8.2a0,0,0,0,1,0,0H2a2,2,0,0,1-2-2V2A2,2,0,0,1,2,0Z" stroke="none"/>
-                  <path d="M2,.5h.514a.5.5,0,0,1,.5.5V7.2a.5.5,0,0,1-.5.5H2A1.5,1.5,0,0,1,.5,6.2V2A1.5,1.5,0,0,1,2,.5Z" fill="none"/>
-                </g>
-                <g id="Rectangle_25063" data-name="Rectangle 25063" transform="translate(661.674 861.701) rotate(-135)" fill="#bfbfbf" stroke="#bfbfbf" stroke-width="1">
-                  <path d="M2,0H3.514a0,0,0,0,1,0,0V8.2a0,0,0,0,1,0,0H2a2,2,0,0,1-2-2V2A2,2,0,0,1,2,0Z" stroke="none"/>
-                  <path d="M2,.5h.514a.5.5,0,0,1,.5.5V7.2a.5.5,0,0,1-.5.5H2A1.5,1.5,0,0,1,.5,6.2V2A1.5,1.5,0,0,1,2,.5Z" fill="none"/>
-                </g>
-                <line id="Line_2031" data-name="Line 2031" x2="3.515" transform="translate(633.716 827.945) rotate(45)" fill="none" stroke="#bfbfbf" stroke-linecap="round" stroke-width="1"/>
-                <line id="Line_2032" data-name="Line 2032" x2="3.515" transform="translate(663.33 857.559) rotate(45)" fill="none" stroke="#bfbfbf" stroke-linecap="round" stroke-width="1"/>
-                <g id="Rectangle_25059" data-name="Rectangle 25059" transform="translate(646.763 823.596) rotate(45)" fill="#bfbfbf" stroke="#bfbfbf" stroke-width="1">
-                  <rect width="9.372" height="24.601" rx="2" stroke="none"/>
-                  <rect x="0.5" y="0.5" width="8.372" height="23.601" rx="1.5" fill="none"/>
-                </g>
-                <g id="Rectangle_25060" data-name="Rectangle 25060" transform="translate(663.33 840.163) rotate(45)" fill="#bfbfbf" stroke="#bfbfbf" stroke-width="1">
-                  <rect width="9.372" height="24.601" rx="2" stroke="none"/>
-                  <rect x="0.5" y="0.5" width="8.372" height="23.601" rx="1.5" fill="none"/>
-                </g>
-              </g>
-            </g>
-          </svg>
-
-          <div>
-            <span class="u14Light_v2">Motor Power</span>
-            <span class="u14Medium_v2">Peak 750W</span>
-          </div>
-        </div>
-        <div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            width="45"
-            height="45"
-            viewBox="0 0 45 45"
-          >
-            <defs>
-              <clipPath>
-                <rect id="Rectangle_25078" data-name="Rectangle 25078" width="45" height="45" transform="translate(625 902)" fill="#fff" stroke="#707070" stroke-width="1"/>
-              </clipPath>
-            </defs>
-            <g id="Mask_Group_19078" data-name="Mask Group 19078" transform="translate(-625 -902)" clip-path="url(#clip-path)">
-              <g id="Group_23887" data-name="Group 23887" transform="translate(2.695)">
-                <g id="Group_23883" data-name="Group 23883" transform="translate(618.081 922.388) rotate(-45)">
-                  <path id="Path_74536" data-name="Path 74536" d="M17.4,4.351A13.052,13.052,0,1,0,30.456,17.4,13.067,13.067,0,0,0,17.4,4.351M17.4,0A17.4,17.4,0,1,1,0,17.4,17.4,17.4,0,0,1,17.4,0Z" transform="translate(0 0)" fill="#bfbfbf"/>
-                  <path id="Path_74540" data-name="Path 74540" d="M5.8,0A5.8,5.8,0,1,1,0,5.8,5.8,5.8,0,0,1,5.8,0Z" transform="translate(11.602 11.602)" fill="#bfbfbf"/>
-                  <path id="Path_74537" data-name="Path 74537" d="M0,0H3.481V31.906H0Z" transform="translate(15.663 1.45)" fill="#bfbfbf"/>
-                  <path id="Path_74541" data-name="Path 74541" d="M0,0H3.481V31.906H0Z" transform="translate(1.45 19.144) rotate(-90)" fill="#bfbfbf"/>
-                  <path id="Path_74542" data-name="Path 74542" d="M0,0H2.9V2.9H0Z" transform="translate(4.351 16.802) rotate(45)" fill="#bfbfbf"/>
-                  <path id="Path_74543" data-name="Path 74543" d="M0,0H2.9V2.9H0Z" transform="translate(4.351 13.902) rotate(45)" fill="#bfbfbf"/>
-                  <path id="Path_74546" data-name="Path 74546" d="M0,0H2.9V2.9H0Z" transform="translate(18.004 4.351) rotate(135)" fill="#bfbfbf"/>
-                  <path id="Path_74547" data-name="Path 74547" d="M0,0H2.9V2.9H0Z" transform="translate(20.904 4.351) rotate(135)" fill="#bfbfbf"/>
-                  <path id="Path_74538" data-name="Path 74538" d="M0,0H2.9V2.9H0Z" transform="translate(18.004 30.456) rotate(135)" fill="#bfbfbf"/>
-                  <path id="Path_74539" data-name="Path 74539" d="M0,0H2.9V2.9H0Z" transform="translate(20.904 30.456) rotate(135)" fill="#bfbfbf"/>
-                  <path id="Path_74544" data-name="Path 74544" d="M0,0H2.9V2.9H0Z" transform="translate(31.305 18.004) rotate(-135)" fill="#bfbfbf"/>
-                  <path id="Path_74545" data-name="Path 74545" d="M0,0H2.9V2.9H0Z" transform="translate(31.305 20.904) rotate(-135)" fill="#bfbfbf"/>
-                </g>
-                <g id="Group_23885" data-name="Group 23885" transform="translate(636.539 922.388) rotate(-45)">
-                  <path id="Ellipse_619" data-name="Ellipse 619" d="M4.351,2.175A2.175,2.175,0,1,0,6.526,4.351,2.178,2.178,0,0,0,4.351,2.175M4.351,0A4.351,4.351,0,1,1,0,4.351,4.351,4.351,0,0,1,4.351,0Z" fill="#bfbfbf"/>
-                  <path id="Path_74535" data-name="Path 74535" d="M4.351,3.14C6.754,3.14,8.7-1.738,8.7.665V25.32a4.351,4.351,0,1,1-8.7,0V.665C0-1.737,1.948,3.14,4.351,3.14Z" transform="translate(0 3.685)" fill="#bfbfbf"/>
-                  <path id="Path_74535_-_Outline" data-name="Path 74535 - Outline" d="M7.251,3.293a4.407,4.407,0,0,1-2.9,1.3,4.407,4.407,0,0,1-2.9-1.3V25.32a2.9,2.9,0,0,0,5.8,0V3.293M.217,0C.788,0,2.423,3.14,4.351,3.14,6.754,3.14,8.7-1.738,8.7.665V25.32a4.351,4.351,0,0,1-8.7,0V.665C0,.191.076,0,.217,0Z" transform="translate(0 3.685)" fill="#bfbfbf"/>
-                </g>
-              </g>
-            </g>
-          </svg>
-
-          <div>
-            <span class="u14Light_v2">Torque Sensor</span>
-            <span class="u14Medium_v2">0 Response Latency</span>
-          </div>
-        </div>
-        <div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            width="45"
-            height="45"
-            viewBox="0 0 45 45"
-          >
-            <defs>
-              <clipPath>
-                <rect id="Rectangle_25371" data-name="Rectangle 25371" width="45" height="45" transform="translate(456 768)" fill="#fff" stroke="#707070" stroke-width="1"/>
-              </clipPath>
-            </defs>
-            <g id="Mask_Group_19197" data-name="Mask Group 19197" transform="translate(-456 -768)" clip-path="url(#clip-path)">
-              <g id="Group_24273" data-name="Group 24273" transform="translate(0.008 -0.197)">
-                <path id="Subtraction_74" data-name="Subtraction 74" d="M-8609.84,14617.589H-8627a3,3,0,0,1-3-3V14584a3,3,0,0,1,3-3h17.161a3,3,0,0,1,3,3v30.588A3,3,0,0,1-8609.84,14617.589Zm-5.41-28.277h0a.486.486,0,0,0-.448.254c-.017.017-.068.077-.152.178l-.014.017c-.206.245-.687.821-1.48,1.706-.443.5-.926,1.043-1.437,1.622l-.279.317c-.627.713-1.362,1.547-2.151,2.433-.6.679-1.167,1.313-1.688,1.9-.7.783-1.361,1.524-1.859,2.1a.6.6,0,0,0-.128.7.5.5,0,0,0,.506.319h5.137l-.635,1.838-1.332,3.8-.119.339-.089.254,0,.013a12.607,12.607,0,0,0-.484,1.489c-.07.28-.052.451.063.568l.129.128h.124a.49.49,0,0,0,.448-.257c.045-.044.445-.511,1.242-1.439l.435-.508.667-.778c.5-.582,1-1.174,1.483-1.746l.1-.118c.949-1.122,1.93-2.283,2.919-3.4,1.3-1.463,2.067-2.347,2.271-2.583l.012-.014a.5.5,0,0,0,.063-.572.66.66,0,0,0-.568-.315h-5.074a7.02,7.02,0,0,0,.285-.781l.02-.058c.218-.635.546-1.595,1.027-2.9.834-2.435,1.27-3.68,1.332-3.8a.53.53,0,0,0-.062-.443l-.129-.129Z" transform="translate(9096.912 -13807.668)" fill="#bfbfbf"/>
-                <path id="Rectangle_25069" data-name="Rectangle 25069" d="M1.859,0h0a0,0,0,0,1,0,0V6.587a0,0,0,0,1,0,0h0A1.859,1.859,0,0,1,0,4.728V1.859A1.859,1.859,0,0,1,1.859,0Z" transform="translate(481.785 771.473) rotate(90)" fill="#bfbfbf"/>
-              </g>
-            </g>
-          </svg>
-
-          <div>
-            <span class="u14Light_v2">Portable Battery</span>
-            <span class="u14Medium_v2">Samsung Li-ion</span>
-          </div>
-        </div>
-        <div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            width="45"
-            height="45"
-            viewBox="0 0 45 45"
-          >
-            <defs>
-              <clipPath>
-                <rect id="Rectangle_25370" data-name="Rectangle 25370" width="45" height="45" transform="translate(864 830)" fill="#fff" stroke="#707070" stroke-width="1"/>
-              </clipPath>
-            </defs>
-            <g id="Mask_Group_19196" data-name="Mask Group 19196" transform="translate(-864 -830)" clip-path="url(#clip-path)">
-              <g id="Group_24272" data-name="Group 24272" transform="translate(0 1)">
-                <path id="Ellipse_630" data-name="Ellipse 630" d="M19.5,3A16.5,16.5,0,0,0,7.833,31.167,16.5,16.5,0,1,0,31.167,7.833,16.392,16.392,0,0,0,19.5,3m0-3A19.5,19.5,0,1,1,0,19.5,19.5,19.5,0,0,1,19.5,0Z" transform="translate(867 832)" fill="#bfbfbf"/>
-                <text id="U" transform="translate(876 858)" fill="#bfbfbf" font-size="24" font-family="BebasNeuePro-ExpEb, Bebas Neue Pro"><tspan x="0" y="0">U</tspan></text>
-                <text id="L" transform="translate(888 862)" fill="#bfbfbf" font-size="23" font-family="BebasNeuePro-ExpEb, Bebas Neue Pro"><tspan x="0" y="0">L</tspan></text>
-              </g>
-            </g>
-          </svg>
-
-          <div>
-            <span class="u14Light_v2">Safety Certified</span>
-            <span class="u14Medium_v2">UL 2849</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <span></span>
-    <form
-      method="post"
-      accept-charset="UTF-8"
-      action="/cart/add"
-      class="product-panel pf-product-form"
-      data-productid="{{ product.id }}"
-      id="product_form_{{ product.id }}"
-      enctype="multipart/form-data"
-    >
-      <input
-        type="hidden"
-        name="id"
-        data-product-id="{{product.id}}"
-        value="{{ product.selected_or_first_available_variant.id }}"
-      >
-      <input type="hidden" name="form_type" value="product">
-      <input type="hidden" name="utf8" value="✓">
-      <div class="commonComponent mobileHide" id="sale_acc">
-        <div class="u24DemiBold_v2">{{ product.title }}</div>
-        <div class="er-flex er-items-center !er-mt-2">
-          <div class="star" style="--star-size: 16px;"></div>
-          <div class="star" style="--star-size: 16px;"></div>
-          <div class="star" style="--star-size: 16px;"></div>
-          <div class="star" style="--star-size: 16px;"></div>
-          <div class="star" style="--star-size: 16px;"></div>
-          <span class="er-text-dark/70 text-size14 er-ml-2">{{ shop.metafields.judgeme.all_reviews_count }} Reviews</span>
-        </div>
-        <div class="product-price u30DemiBold_v2 mb16">
-          {{ product.price | money }}
-          <span class="u17Medium_v2">{{ product.compare_at_price | money }}</span>
-          <span class="u14Medium_v2"
-            >-{{ product.compare_at_price | minus: product.price | money_without_trailing_zeros -}}
-          </span>
-        </div>
-        {% render 'sale-v2' %}
-      </div>
-      <div class="options">
-        {% for option in product.options_with_values %}
-          <div class="option mb24" option="{{option.name}}" position="{{ option.position }}">
-            <div class="u17DemiBold_v2 mb16">{{ option.name }} - <span class="u17Light_v2"></span></div>
-            <div class="{{ option.name }}">
-              {% for value in option.values %}
-                {% case option.name %}
-                  {% when 'Model' %}
-                    <div attribute="{{ value }}" class="{{ value }}">
-                      {% assign values = value | split: ' · ' %}
-                      {% for value in values %}
-                        <span>{{ value }}</span>
-                      {% endfor %}
-                    </div>
-                  {% when 'Color' %}
-                    <div attribute="{{ value }}" class="{{ value }}">
-                      <span class="tooltip">{{ value }}</span>
-                    </div>
-                  {% else %}
-                    <div attribute="{{ value }}" class="{{ value }}">{{ value }}</div>
-                {% endcase %}
-              {% endfor %}
-            </div>
-          </div>
-        {% endfor %}
-      </div>
-      <div class="accessories mb12">
-        <div class="u17DemiBold_v2 mb12">Accessories</div>
-        <div class="prev"></div>
-        <div class="next"></div>
-        <div class="items mb12">
-          {% for prod in collections['carbon-1-pro-acc'].products %}
-            {% if prod.available %}
-              {% assign variant = prod.variants | first %}
-              <div class="item" variant-id="{{ variant.id }}">
-                <div class="u11Medium_v2">{{ prod.title }}</div>
-                <div>
-                  <div>
-                    <span class="u17DemiBold_v2">{{ prod.price | money }}</span>
-                    <span class="u11Light_v2">
-                      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="undefined"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
-                      <svg class="er-hidden" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="undefined"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg>
-                    </span>
-                  </div>
-                  {{
-                    prod.featured_image
-                    | image_url: width: 150
-                    | image_tag: loading: 'lazy', decoding: 'async', fetchpriority: 'low'
-                  }}
-                </div>
-              </div>
-            {% endif %}
-          {% endfor %}
-        </div>
-      </div>
-      <div class="free pcHide">
-        <img
-          loading="lazy"
-          width="80"
-          height="57"
-          decoding="async"
-          fetchpriority="low"
-          src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3-1_2x_b9ab0988-f835-49ec-8cd0-ef93bd2d9e91.png?v=1728959307"
-          alt="{{ page_title }}"
-        >
-        <div>
-          <div>
-            <span class="u14Medium_v2">Free</span>
-            <del class="u11Light_v2">{{ 16700 | money }}</del>
-          </div>
-          <span class="u11Medium_v2">Fenders, kickstand, 1-year eSIM service</span>
-        </div>
-      </div>
-      <div class="error-tip u14Medium_v2 mb12 er-hidden" style="color:red;">Your order quantity has reached our stock limit</div>
-      <div class="buttons mb24">
-        <div
-          data-product-id="{{ product.id }}"
-          class="my-button my-button-origin addToCartBtn mb12"
-          onclick="addAllToCart('atc')"
-          id="addToCart"
-        >
-          <i class="fa fa-spinner fa-spin"></i
-          ><span data-pf-type="Text" class="addToCartText u17DemiBold_v2">Add to Cart</span>
-        </div>
-        <!--
-          <div onclick="testRideTrace('amazon', this)" class="orderTestRideBtn mb12">
-            <img style="max-width: 50px;margin-right: 3%;" class="twoooo" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241101-174530.png?v=1730454586">
-            <span><span class="u17DemiBold_v2">Buy on Amazon</span></span>
-          </div>
-        -->
-        <div onclick="testRideTrace('klarna_check_out', this)" class="orderTestRideBtn" style="    display: flex;
-    align-items: center;
-    justify-content: center;">
-          <img loading="lazy" height="22" width="56" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/434_2x_d2dcc5b3-2098-426c-9ecb-c4baf3b4ddca.png?v=1736511723">
-          <img loading="lazy" height="22" width="68" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Klarna-Logo.wine_2x_30a24e0b-fbeb-461c-8ea8-0c3c8745a9d3.png?v=1736511716">
-          <span
-            style="width: auto;"
-            ><span class="u14DemiBold_v2">0 APR Financing</span
-            ><span class="u14Medium_v2"
-              >24 months,
-              <span class="stages">{{ product.price | divided_by: 24 | money_without_trailing_zeros }}</span
-              >/month</span
-            ></span
-          >
-        </div>
-      </div>
-      <div class="contact mb12">
-        <span class="delivery_time u14Medium_v2">Free shipping within 5 business days</span><br>
-        <span class="u14Light_v2">
-          Need help? Email
-          <a href="mailto:support@newurtopia.com" class="my-link">support@newurtopia.com</a>
-        </span>
-      </div>
-      <div class="dialogs mb24">
-        <div class="u17Medium_v2" onclick="showSizesAndSpecs('SizesDialog')">
-          <span>Size & Fit</span>
-          <span>&gt;</span>
-        </div>
-        <div class="u17Medium_v2" onclick="showSizesAndSpecs('SpecsDialog')">
-          <span>Technical Specs</span>
-          <span>&gt;</span>
-        </div>
-        <!--
-          <div class="u17Medium_v2">
-            	<span>Support & Service</span>
-            	<span>&gt;</span>
-            </div>
-
-          <div class="u17Medium_v2">
-            <span>Pre-order FAQs</span>
-            <span>&gt;</span>
-          </div>
-        -->
-      </div>
-      <div class="support">
-        <a href="#boxs3">
-          <svg
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 30 30"
-            height="30"
-            width="30"
-          >
-            <defs>
-              <clipPath >
-                <rect stroke-width="1.5" stroke="#000" fill="#fff" transform="translate(7402.879 1203.146)" height="30" width="30" data-name="Rectangle 25526" id="Rectangle_25526"/>
-              </clipPath>
-            </defs>
-            <g clip-path="url(#clip-path)" transform="translate(-7402.879 -1203.146)" data-name="Mask Group 19265" id="Mask_Group_19265">
-              <path stroke-width="1.5" stroke="#000" fill="none" transform="translate(7204.457 1122.369)" d="M205.3,95.313c.135.321.928,1.689,1.969,3.441.622,1.047,1.327,2.223,2.036,3.4s1.425,2.358,2.052,3.389c.715,1.176,1.316,2.171,1.684,2.767a.442.442,0,0,0,.757,0c.368-.6.969-1.591,1.684-2.767.627-1.031,1.337-2.213,2.052-3.389s1.415-2.358,2.036-3.4c1.042-1.751,1.834-3.119,1.969-3.441a8.809,8.809,0,1,0-16.24,0Zm8.12,1.446a4.923,4.923,0,1,1,4.923-4.923A4.923,4.923,0,0,1,213.422,96.759Z" data-name="GPS显示 (3)" id="GPS显示_3_"/>
-            </g>
-          </svg>
-          <span class="u11Medium_v2"
-            >150+<br>
-            Bike Shops</span
-          >
-        </a>
-        <a href="/pages/shipping-and-return" target="_blank">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            width="30"
-            height="30"
-            viewBox="0 0 30 30"
-          >
-            <defs>
-              <clipPath >
-                <rect id="Rectangle_25525" data-name="Rectangle 25525" width="30" height="30" transform="translate(0)" fill="#fff" stroke="#000" stroke-width="1.5"/>
-              </clipPath>
-            </defs>
-            <g id="Mask_Group_19264" data-name="Mask Group 19264" clip-path="url(#clip-path)">
-              <g id="_图层_1-2" transform="translate(0.973 5.885)">
-                <g id="Group_24427" data-name="Group 24427" transform="translate(0 0)">
-                  <g id="Group_24426" data-name="Group 24426" transform="translate(0 1.219)">
-                    <path id="Path_76265" data-name="Path 76265" d="M5.456,6.02,2,9.476l3.5,3.5" transform="translate(-2 -6.02)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
-                    <line id="Line_2160" data-name="Line 2160" x2="18.501" transform="translate(0.803 3.401)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
-                    <path id="Path_76266" data-name="Path 76266" d="M68.144,29.26A3.641,3.641,0,0,1,64.5,32.9" transform="translate(-45.554 -22.215)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
-                    <path id="Path_76267" data-name="Path 76267" d="M68.144,20.884A3.641,3.641,0,0,0,64.5,17.24" transform="translate(-45.554 -13.839)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="1.5"/>
-                    <line id="Line_2161" data-name="Line 2161" x2="6.436" transform="translate(12.332 10.698)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
-                  </g>
-                  <path id="Path_76268" data-name="Path 76268" d="M45.491,8.7V22.741c0,1.191-.658,2.158-1.473,2.158H28.473c-.812,0-1.473-.967-1.473-2.158V17.661" transform="translate(-19.422 -6.669)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
-                  <path id="Path_76269" data-name="Path 76269" d="M47.651,2.03H33" transform="translate(-23.603 -2.021)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
-                  <path id="Path_76270" data-name="Path 76270" d="M83.016,4.146A2.146,2.146,0,0,0,80.87,2" transform="translate(-56.961 -2)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="1.5"/>
-                </g>
-              </g>
-            </g>
-          </svg>
-
-          <span class="u11Medium_v2"
-            >14-Day<br>
-            Trial</span
-          >
-        </a>
-        <a href="/pages/warranty" target="_blank">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            width="30"
-            height="30"
-            viewBox="0 0 30 30"
-          >
-            <defs>
-              <clipPath>
-                <rect id="Rectangle_25524" data-name="Rectangle 25524" width="30" height="30" transform="translate(0)" fill="#fff" stroke="#000" stroke-width="1.5"/>
-              </clipPath>
-            </defs>
-            <g id="Mask_Group_19263" data-name="Mask Group 19263" clip-path="url(#clip-path)">
-              <g id="_图层_1-2" transform="translate(5.107 3.152)">
-                <g id="Group_24425" data-name="Group 24425" transform="translate(0 0)">
-                  <path id="Path_76261" data-name="Path 76261" d="M5.745,12.15A31.986,31.986,0,0,1,2,13.862C3.059,24.45,6.235,27.979,11.882,32.214" transform="translate(-2 -8.568)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
-                  <path id="Path_76262" data-name="Path 76262" d="M23.613,2s-1.5.971-3.483,2.118" transform="translate(-13.731 -2)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
-                  <path id="Path_76263" data-name="Path 76263" d="M30.06,2.14a65.948,65.948,0,0,0,9.882,5.294c-1.059,10.588-4.235,14.117-9.882,18.353" transform="translate(-20.157 -2.091)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
-                  <path id="Path_76264" data-name="Path 76264" d="M21.6,29.9l2.629,2.629,5.082-5.082" transform="translate(-14.682 -18.468)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
-                </g>
-              </g>
-            </g>
-          </svg>
-          <span class="u11Medium_v2"
-            >2-Year<br>
-            Warranty</span
-          >
-        </a>
-      </div>
-    </form>
-  </div>
-</div>
+{% render 'product-panel' %}
 
 <div class="professional">
   <div class="centeral-content">
     <h2 class="u36Medium_v2">Professional Reviews</h2>
     <div class="videos swiper-wrapper">
-      <div
-        class="swiper-slide"
-        onclick="showVideoDialog('https://www.youtube.com/embed/W9KMWM4Is00?autoplay=1&cc_load_policy=1')"
-      >
-        <img
-          class="lozad"
-          data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25127_2x_32bd3201-667c-41be-a264-4048e3cb8039.jpg?v=1732516610&width=400"
-          alt="{{ page_title }}"
-        >
-        <span class="u17Light_v2"
-          >It’s refreshing to ride an ebike that doesn’t feel like you’re lugging around a gigantic beast.</span
-        >
+      <div class="swiper-slide" onclick="showVideoDialog('https://www.youtube.com/embed/W9KMWM4Is00?autoplay=1&cc_load_policy=1')">
+        <img loading="lazy" width="351" height="188" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25127_2x_32bd3201-667c-41be-a264-4048e3cb8039.jpg?v=1732516610&width=350" alt="{{ page_title }}">
+        <span class="u17Light_v2">It’s refreshing to ride an ebike that doesn’t feel like you’re lugging around a gigantic beast.</span>
         <span class="flex-1"></span>
         <div class="u17Medium_v2">
-          <img
-            class="lozad"
-            data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19659_2x_e4e9dd85-d6ef-472c-804b-e4f17f3a9180.jpg?v=1732516604"
-            alt="Hello Road"
-          >
+          <img loading="lazy" height="28" width="28" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19659_2x_e4e9dd85-d6ef-472c-804b-e4f17f3a9180.jpg?v=1732516604&width=30" alt="Hello Road">
           <span>Hello Road</span>
         </div>
       </div>
-      <div
-        class="swiper-slide"
-        onclick="showVideoDialog('https://www.youtube.com/embed/mGIdG0e9mmg?autoplay=1&cc_load_policy=1')"
-      >
-        <img
-          class="lozad"
-          style="border-radius: 10px;"
-          data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241211-110158.jpg?v=1733886150&width=400"
-          alt="{{ page_title }}"
-        >
-        <span class="u17Light_v2"
-          >A full carbon eBike with voice navigation, anti-theft features, and GPS-guided rides!</span
-        >
+      <div class="swiper-slide" onclick="showVideoDialog('https://www.youtube.com/embed/mGIdG0e9mmg?autoplay=1&cc_load_policy=1')">
+        <img loading="lazy" width="351" height="188" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241211-110158.jpg?v=1733886150&width=350" alt="{{ page_title }}">
+        <span class="u17Light_v2">A full carbon eBike with voice navigation, anti-theft features, and GPS-guided rides!</span>
         <span class="flex-1"></span>
         <div class="u17Medium_v2">
-          <img
-            class="lozad"
-            data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/channels4_profile_c3257cb9-ddee-4f5a-af27-a587d558688a.jpg?v=1733886229"
-            alt="Electric Revolution"
-          >
+          <img loading="lazy" height="28" width="28" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/channels4_profile_c3257cb9-ddee-4f5a-af27-a587d558688a.jpg?v=1733886229&width=30" alt="Electric Revolution">
           <span>Electric Revolution</span>
         </div>
       </div>
-      <div
-        class="swiper-slide"
-        onclick="showVideoDialog('https://www.youtube.com/embed/T-0A-EUwUfM?autoplay=1&cc_load_policy=1')"
-      >
-        <img
-          class="lozad"
-          data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24716_2x_b34c17d4-c45d-4e33-8c32-10ae473bffce.jpg?v=1727085768&width=400"
-          alt="{{ page_title }}"
-        >
+      <div class="swiper-slide" onclick="showVideoDialog('https://www.youtube.com/embed/T-0A-EUwUfM?autoplay=1&cc_load_policy=1')">
+        <img loading="lazy" width="351" height="188" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24716_2x_b34c17d4-c45d-4e33-8c32-10ae473bffce.jpg?v=1727085768&width=350" alt="{{ page_title }}">
         <span class="u17Light_v2">A super light and responsive e-bike achieves faster speeds than the metro.</span>
         <span class="flex-1"></span>
         <div class="u17Medium_v2">
-          <img
-            class="lozad"
-            data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19470_2x_6a40056e-5876-49a3-8678-c9eb7f529037.png?v=1727086233"
-            alt="Jon Imperial"
-          >
+          <img loading="lazy" height="28" width="28" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19470_2x_6a40056e-5876-49a3-8678-c9eb7f529037.png?v=1727086233&width=30" alt="Jon Imperial">
           <span>Jon Imperial</span>
         </div>
       </div>
-      <div
-        class="swiper-slide"
-        onclick="showVideoDialog('https://www.youtube.com/embed/DkaGYJklmSs?autoplay=1&cc_load_policy=1')"
-      >
-        <img
-          class="lozad"
-          data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24719_2x_2636fa6e-f818-4978-af54-a9cb899630c7.jpg?v=1727090408&width=400"
-          alt="{{ page_title }}"
-        >
-        <span class="u17Light_v2"
-          >Urtopia clearly took comfort and assist seriously—it’s top-class and worth the price.</span
-        >
+      <div class="swiper-slide" onclick="showVideoDialog('https://www.youtube.com/embed/DkaGYJklmSs?autoplay=1&cc_load_policy=1')">
+        <img loading="lazy" width="351" height="188" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24719_2x_2636fa6e-f818-4978-af54-a9cb899630c7.jpg?v=1727090408&width=350" alt="{{ page_title }}">
+        <span class="u17Light_v2">Urtopia clearly took comfort and assist seriously—it’s top-class and worth the price.</span>
         <span class="flex-1"></span>
         <div class="u17Medium_v2">
-          <img
-            class="lozad"
-            data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19469_2x_795c87d6-900b-4d78-b915-259138fa064d.png?v=1727090514"
-            alt="Electroheads"
-          >
+          <img loading="lazy" height="28" width="28" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19469_2x_795c87d6-900b-4d78-b915-259138fa064d.png?v=1727090514&width=30" alt="Electroheads">
           <span>Electroheads</span>
         </div>
       </div>
-      <div
-        class="swiper-slide"
-        onclick="showVideoDialog('https://www.youtube.com/embed/r9TD6cPYCxc?autoplay=1&cc_load_policy=1')"
-      >
-        <img
-          class="lozad"
-          data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24717_2x_42c326c1-7915-471d-b00e-4f5dd6b273b8.jpg?v=1727143908&width=400"
-          alt="{{ page_title }}"
-        >
+      <div class="swiper-slide" onclick="showVideoDialog('https://www.youtube.com/embed/r9TD6cPYCxc?autoplay=1&cc_load_policy=1')">
+        <img loading="lazy" width="351" height="188" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24717_2x_42c326c1-7915-471d-b00e-4f5dd6b273b8.jpg?v=1727143908&width=350" alt="{{ page_title }}">
         <span class="u17Light_v2">Tested at 748W, the power of 1 Pro is higher than most all-terrain e-bikes.</span>
         <span class="flex-1"></span>
         <div class="u17Medium_v2">
-          <img
-            class="lozad"
-            data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19472_2x_679a808b-69a2-4e58-be5f-407efb2f88c5.png?v=1727143912"
-            alt="Area 13"
-          >
+          <img loading="lazy" height="28" width="28" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19472_2x_679a808b-69a2-4e58-be5f-407efb2f88c5.png?v=1727143912&width=30" alt="Area 13">
           <span>Area 13</span>
         </div>
       </div>
-      <div
-        class="swiper-slide"
-        onclick="showVideoDialog('https://www.youtube.com/embed/5JI2U6EpAHA?autoplay=1&cc_load_policy=1')"
-      >
-        <img
-          class="lozad"
-          data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24718_2x_02d66e8b-2f58-40a3-a0d9-85c287272787.jpg?v=1727144145width=400"
-          alt="{{ page_title }}"
-        >
-        <span class="u17Light_v2"
-          >A stealthy and sleek ebike, so capable and the riding experience is what I dreamed of.</span
-        >
+      <div class="swiper-slide" onclick="showVideoDialog('https://www.youtube.com/embed/5JI2U6EpAHA?autoplay=1&cc_load_policy=1')">
+        <img loading="lazy" width="351" height="188" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24718_2x_02d66e8b-2f58-40a3-a0d9-85c287272787.jpg?v=1727144145width=350" alt="{{ page_title }}">
+        <span class="u17Light_v2">A stealthy and sleek ebike, so capable and the riding experience is what I dreamed of.</span>
         <span class="flex-1"></span>
         <div class="u17Medium_v2">
-          <img
-            class="lozad"
-            data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19471_2x_b5dee01b-134a-4ebe-bd4a-6c50f2608906.png?v=1727144280"
-            alt="Electric Vehicles Space"
-          >
+          <img loading="lazy" height="28" width="28" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19471_2x_b5dee01b-134a-4ebe-bd4a-6c50f2608906.png?v=1727144280&width=30" alt="Electric Vehicles Space">
           <span>Electric Vehicles Space</span>
         </div>
       </div>
-      <div
-        class="swiper-slide"
-        onclick="showVideoDialog('https://www.youtube.com/embed/mu5MGas_F80?autoplay=1&cc_load_policy=1')"
-      >
-        <img
-          class="lozad"
-          data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24720_2x_43255c27-8e86-44bf-8148-c703e6b84b08.jpg?v=1727144140&width=400"
-          alt="{{ page_title }}"
-        >
+      <div class="swiper-slide" onclick="showVideoDialog('https://www.youtube.com/embed/mu5MGas_F80?autoplay=1&cc_load_policy=1')">
+        <img loading="lazy" width="351" height="188" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24720_2x_43255c27-8e86-44bf-8148-c703e6b84b08.jpg?v=1727144140&width=350" alt="{{ page_title }}">
         <span class="u17Light_v2">This carbon frame commuter bike weighs 37 lbs and reaches speeds up to 28 MPH.</span>
         <span class="flex-1"></span>
         <div class="u17Medium_v2">
-          <img
-            class="lozad"
-            data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19468_2x_32096d4f-978e-4fe4-a392-c5555938beff.png?v=1727144288"
-            alt="Mike Fede"
-          >
+          <img loading="lazy" height="28" width="28" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19468_2x_32096d4f-978e-4fe4-a392-c5555938beff.png?v=1727144288&width=30" alt="Mike Fede">
           <span>Mike Fede</span>
         </div>
       </div>
@@ -733,37 +77,58 @@
   </div>
 </div>
 
-<div class="makes">
-  <div class="centeral-content">
-    <h2 class="u36Medium_v2">
-      What makes Carbon 1<br class="pcHide">
-      Pro standout?
-    </h2>
-    <img
-      class="lozad mobileHide mb:er-w-full"
-      data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24554_2x_70dca228-2b4e-4643-a9ce-dfe42bc13b91.png?v=1725416435"
-      alt="{{ page_title }}"
-    >
-    <img
-      class="lozad mobileHide mb:er-w-full"
-      data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24548_2x_e1ddacf5-1137-4311-8f8b-c44f96faad48.png?v=1725416597"
-      alt="{{ page_title }}"
-    >
-    <img
-      class="lozad pcHide mb:er-w-full"
-      data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24550_2x_92c69a22-81ee-4161-8ba9-12c0ef776cd6.png?v=1725417850"
-      alt="{{ page_title }}"
-    >
-    <img
-      class="lozad pcHide mb:er-w-full"
-      style="margin-top: 12vw;"
-      data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24549_2x_428f1a79-6e19-4689-88e9-f9d6fc374c53.png?v=1725417857"
-      alt="{{ page_title }}"
-    >
+<div class="er-bg-background er-py-48 mb:er-py-24">
+  <div class="er-max-w-screen-lg er-mx-auto er-flex er-flex-col er-items-center er-text-center er-px-12 mb:er-px-6">
+    <h3 class="text-size36 mb:er-text-4xl mb:er-leading-tight">What makes Carbon 1 Pro standout?</h3>
+    <div class="er-grid er-grid-cols-[3fr_4.5fr_4.5fr] er-my-48 er-w-full er-bg-white er-shadow er-rounded-3xl mb:er-my-24">
+      <div class="er-flex er-flex-col er-divide-y-[1px] er-divide-x-0 er-divide-solid er-divide-border er-mb-12 mb:er-mb-6">
+        <div class="er-flex-1"></div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">Frame Material</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">Weight</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">Max Range</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">Top Speed</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">Motor</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">Gears</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">Battery</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">Anti-theft</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">Charge Time</div>
+      </div>
+      <div class="er-my-[-30px] mb:er-my-[-15px] er-pt-12 mb:er-pt-6 er-flex er-flex-col er-divide-y-[1px] er-divide-x-0 er-divide-solid er-divide-white/15 er-shadow er-rounded-3xl er-text-white" style="background: linear-gradient(rgb(213, 125, 0), rgb(193, 87, 0));">
+        <div class="text-size20 er-flex er-flex-col er-items-center er-justify-center er-font-medium er-py-12 mb:er-text-2xl mb:er-py-6">
+          {{ product | image_url: width: 200 | image_tag: loading: 'lazy', class: "er-aspect-video er-object-contain er-object-center" }}
+          <span class="er-mt-6 mb:er-mt-4">Carbon 1 Pro</span>
+        </div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">Carbon Fiber</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">37 lbs</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">80 Miles</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">25 mph (unlocked)</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">750 W (peak)</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">8 Speed</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">352.8Wh w/<br>Samsung cells</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">GPS Tracking</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">2.5 hours</div>
+      </div>
+      <div class="er-flex er-flex-col er-divide-y-[1px] er-divide-x-0 er-divide-solid er-divide-border er-mb-12 mb:er-mb-6">
+        <div class="text-size20 er-flex er-flex-col  er-items-center er-justify-center er-font-medium er-py-12 mb:er-text-2xl mb:er-py-6">
+          <img width="200" height="125" loading="lazy" class="er-aspect-video er-object-contain er-object-center" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/cccc_2x_366a8576-c889-4210-8bbf-05fa1c327bf8.png?v=1731912593&width=200" alt="">
+          <span class="er-mt-6 mb:er-mt-4">Other E-Bikes</span>
+        </div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">Aluminum Alloy</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">46 lbs</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">46 Miles</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">20mph</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">350 W</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">7 Speed</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">345.6Wh w/<br>LG cells</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">-</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">5 hours</div>
+      </div>
+    </div>
+    {% render 'image', width: 1024, mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24549_2x_428f1a79-6e19-4689-88e9-f9d6fc374c53.png?v=1725417857", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24548_2x_e1ddacf5-1137-4311-8f8b-c44f96faad48.png?v=1725416597" %}
   </div>
 </div>
-
-<div class="build">
+<div class="build background-image">
+  {% render 'image', class: "mb:!er-object-contain mb:!er-object-top", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240904-101642.jpg?v=1725416243", mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240902-171633_2x_9b6ebad8-391b-403c-b59a-0db593678d0e.jpg?v=1725418305" %}
   <div class="centeral-content">
     <h3 class="u36Medium_v2">Carbon Fiber Expert</h3>
     <p class="u17Light_v2">
@@ -773,37 +138,23 @@
         Carbon 1 Pro.
       </span>
     </p>
-    <a style="margin-top: 3.5vh;" class="my-button my-button-white" target="_blank" href="/pages/carbon-expert"
-      >Carbon Fiber Expert</a
-    >
+    <a style="margin-top: 3.5vh;" class="er-button er-button-dark er-button-outline" href="/pages/carbon-expert" target="_blank">Carbon Fiber Expert</a>
   </div>
 </div>
 <div class="boxs">
   <div class="centeral-content">
-    <img
-      class="lozad"
-      data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241015-153927.jpg?v=1728977983&width=800"
-      alt="Urtopia Carbon 1 Pro Ebike - Sleek, Full Carbon, Lightweight, Smart"
-    >
+    <img width="640" height="500" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241015-153927.jpg?v=1728977983&width=640" alt="{{ product.title }}">
     <div>
-      <h2 class="u30Medium_v2">
-        Your Lightweight, <br>
-        Everyday E-bike
-      </h2>
+      <h2 class="u30Medium_v2">Your Lightweight, <br>Everyday E-bike</h2>
       <p class="u17Light_v2">
-        <span
-          >A joy to pedal even without electric assist! Ride like a regular bike while easily covering more miles. For
+        <span>A joy to pedal even without electric assist! Ride like a regular bike while easily covering more miles. For
           urban ease, Carbon 1 Pro prioritizes a detachable battery — a rarity among lightweight e-bikes, making it the
-          optimal choice for city dwellers.</span
-        >
+          optimal choice for city dwellers.</span>
       </p>
       <h3 class="u48Medium_v2">50% <span class="u24Medium_v2">Lighter</span></h3>
     </div>
     <div>
-      <h2 class="u30Medium_v2">
-        Your Long-range, <br>
-        Touring E-bike
-      </h2>
+      <h2 class="u30Medium_v2">Your Long-range, <br>Touring E-bike</h2>
       <p class="u17Light_v2">
         <span>
           The synergy of the customized motor and torque sensor ensures optimal efficiency, enabling an impressive
@@ -813,221 +164,100 @@
       </p>
       <h3 class="u48Medium_v2"><span class="u24Medium_v2">Up to </span>80<span class="u24Medium_v2"> Miles</span></h3>
     </div>
-    <img
-      class="lozad"
-      data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/ccc_2x_52e3b5e8-e0af-4639-9235-e739f529e631.jpg?v=1706600937&width=800"
-      alt="Urtopia Carbon 1 Pro Ebike - Sleek, Full Carbon, Lightweight, Smart"
-    >
+    <img width="640" height="500" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/ccc_2x_52e3b5e8-e0af-4639-9235-e739f529e631.jpg?v=1706600937&width=640" alt="{{ product.title }}">
   </div>
 </div>
-<div class="quality">
-  <div class="centeral-content">
-    <h3 class="u36Medium_v2">Quality in details</h3>
-    <div class="items swiper-wrapper">
-      <div class="swiper-slide">
-        <img
-          class="lozad"
-          data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240715-150401_2x_849335f3-f868-4cd2-95f2-3938874802f9.jpg?v=1721703139"
-          alt="{{ page_title }}"
-        >
-        <span class="u20Medium_v2">Superior Frame Craftsmanship</span>
-        <span class="u14Light_v2"
-          >Using EPS molding technology, the carbon fiber frame achieves a smooth, seamless interior, eliminating stress
-          points and enhancing strength. The result is a lighter, stronger, more reliable, and precisely constructed
-          frame, crafted to the same high standards as best race bikes in the world.</span
-        >
+<div class="er-max-w-screen-xl er-mx-auto er-px-12 er-my-56 mb:er-my-24 mb:er-pr-0">
+      <h2 class="text-size48 mb:er-text-4xl er-m-0">Quality in details</h2>
+      <div class="er-mt-10 quality_in_details er-relative er-overflow-x-hidden er-pb-40 mb:er-pb-16" style="--swiper-navigation-size: 27px; --swiper-navigation-color:#fff;">
+          <div class="swiper-wrapper">
+              {% for item in product.metafields.custom.quality_in_details.value %}
+                  {%- assign text = item.text | split: "---" -%}
+                  <div class="swiper-slide er-flex er-flex-col">
+                      {{ item.image | image_url: width: 400 | image_tag: loading: 'lazy', class: "er-rounded-2xl" }}
+                      <h3 class="text-size20 er-my-6 er-font-bold er-text-3xl">{{ text.first }}</h3>
+                      <p class="text-size18 er-opacity-80 mb:er-text-[16px] er-max-w-2xl">
+                          <span>{{ text.last }}</span>
+                      </p>
+                  </div>
+                  
+              {%- endfor -%}  
+          </div>
+          <div class="swiper-scrollbar er-bg-[#386FAF] er-bg-opacity-10 !er-w-full !er-left-0"></div>
+          <div class="swiper-button-prev er-bottom-12 er-right-[60px] er-left-auto er-top-auto er-bg-dark er-rounded-full er-p-8 after:er-text-3xl mb:er-hidden er-z-2"></div>
+          <div class="swiper-button-next er-bottom-12 er-right-0 er-left-auto er-top-auto er-bg-dark er-rounded-full er-p-8 after:er-text-3xl mb:er-hidden er-z-2"></div>
       </div>
-      <div class="swiper-slide">
-        <img
-          class="lozad"
-          data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/c_2x_a76f0c74-93ae-4efa-b971-c568eaecd076.jpg?v=1721714682"
-          alt="{{ page_title }}"
-        >
-        <span class="u20Medium_v2">Customizable Smart Assist</span>
-        <span class="u14Light_v2"
-          >With a torque sensor and app-customizable assist ratios, this eBike offers a personalized, natural ride. The
-          torque sensor provides smooth, responsive power based on pedaling effort, while the app fine-tunes assist for
-          optimal battery efficiency and control in various conditions.</span
-        >
-      </div>
-      <div class="swiper-slide">
-        <img
-          class="lozad"
-          data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240712-182556_2x_7b88c6c3-261c-4f6a-94e0-4f279e97c471.jpg?v=1721714687"
-          alt="{{ page_title }}"
-        >
-        <span class="u20Medium_v2">High-Performance Motor</span>
-        <span class="u14Light_v2"
-          >Featuring a 750-watt peak power and 45 Nm rear hub motor, the 1 Pro delivers responsive performance
-          equivalent to a 65 Nm mid-drive motor. Lightweight, quiet, and quick to respond with low maintenance costs,
-          it’s power and convenient for urban and light off-road riding.</span
-        >
-      </div>
-      <div class="swiper-slide">
-        <img
-          class="lozad"
-          data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2x_78ede538-edb5-41fb-a18c-d57595204e2d.jpg?v=1721714693"
-          alt="{{ page_title }}"
-        >
-        <span class="u20Medium_v2">Gear-Optimized Extended Range</span>
-        <span class="u14Light_v2"
-          >By finely tuning the 4 levels of pedal assist and the Shimano 8-speed rear derailleur, we optimize power
-          output and leverage the wide gear ratios to enhance battery efficiency and extend the range to an impressive
-          80 miles on a single charge.</span
-        >
-      </div>
-      <div class="swiper-slide">
-        <img
-          class="lozad"
-          data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/ccc_2x_8faccdc0-333e-4aab-acdd-73639339de4e.jpg?v=1721714699"
-          alt="{{ page_title }}"
-        >
-        <span class="u20Medium_v2">Removable Battery</span>
-        <span class="u14Light_v2"
-          >Concealed in the frame, 1 Pro features a quick-detachable battery for easy carrying and charging. The 352.8
-          Wh Samsung Li-ion battery is UL-2271 and IP65 certified for safety and reliability. Fast 2.5-hour charging
-          eliminates long waits, and at 2.3 kg, it’s an ideal backup battery for long rides.</span
-        >
-      </div>
-      <div class="swiper-slide">
-        <img
-          class="lozad"
-          data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240716-095036_2x_7acbb696-f43a-4fda-b143-74be30f582b5.jpg?v=1721714705"
-          alt="{{ page_title }}"
-        >
-        <span class="u20Medium_v2">All-in-one Smartbar</span>
-        <span class="u14Light_v2"
-          >Innovative smartbar featuring a smartbox, integrated headlight, left-side control buttons, and a right-side
-          shifter. The stem can be raised by 30mm for a more comfortable upright riding position. Experience onboard
-          navigation and real-time riding data on a big display to streamline your cycling experience.</span
-        >
-      </div>
-      <div class="swiper-slide">
-        <img
-          class="lozad"
-          data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2x_ee466589-87fe-493f-9a63-4d99432e2af3.jpg?v=1721714675&width=500"
-          alt="{{ page_title }}"
-        >
-        <span class="u20Medium_v2">Versatile Tires</span>
-        <span class="u14Light_v2"
-          >Featuring 700x40C large-diameter tires for easier and faster riding. Wider tire surface provides enhanced
-          stability and comfort, improving grip and handling. Ideal for various terrains, including gravel, muddy paths,
-          and city streets, and compatible with tire widths up to 45C.</span
-        >
-      </div>
-    </div>
-    <div class="swiper-scrollbar"></div>
-    <div class="buttons mobileHide">
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
-    </div>
   </div>
-</div>
-<div class="sleek">
-  <video
-    muted
-    playsinline
-    autoplay
-    loop
-    class="lozad mobileHide"
-    data-src="https://player.vimeo.com/progressive_redirect/playback/907415400/rendition/1080p/file.mp4?loc=external&signature=796622305d603d0b7dba0ea9d0a973bd879902453dcf2e79908d7374c11031d0"
-  ></video>
-  <video
-    muted
-    playsinline
-    autoplay
-    loop
-    class="lozad pcHide"
-    data-src="https://player.vimeo.com/progressive_redirect/playback/907415420/rendition/540p/file.mp4?loc=external&signature=dd44e007d5fc0b2e3e34a8d06c7fe594bac0234cf6170de49d37ab5128a1369d"
-  ></video>
-  <div>
-    <h2 class="u36Medium_v2">
-      Sleek Design, <br>
-      Hidden Power
-    </h2>
-    <p class="u17Light_v2">
-      <span
-        >Designed by former BMW maestro Mr. Heller, Carbon 1 Pro’s unibody design hides its e-bike identity. A top
-        choice for minimalists and design enthusiasts seeking the best-designed e-bike.</span
-      >
+<div class="background-image er-aspect-[1920/750] mb:er-aspect-auto">
+  <video class="lozad mb:!er-static" playsinline loop autoplay muted>
+      <source data-src="https://player.vimeo.com/progressive_redirect/playback/907415400/rendition/1080p/file.mp4?loc=external&signature=796622305d603d0b7dba0ea9d0a973bd879902453dcf2e79908d7374c11031d0" type="video/mp4" media="(min-width: 768px)">
+      <source data-src="https://player.vimeo.com/progressive_redirect/playback/907415420/rendition/540p/file.mp4?loc=external&signature=dd44e007d5fc0b2e3e34a8d06c7fe594bac0234cf6170de49d37ab5128a1369d" type="video/mp4" media="(max-width: 767px)">
+</video>
       <div
-        class="my-button"
-        onclick="showVideoDialog('https://www.youtube.com/embed/V_YWOzAZdBg?autoplay=1&cc_load_policy=1')"
-      >
-        Watch Video
-        <img
-          class="lozad mobileHide"
-          data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/screenshot-20231012-164642.png?v=1697100422"
-          alt="Urtopia Carbon 1 Pro Ebike - Sleek, Full Carbon, Lightweight, Smart"
-        >
-        <img
-          class="lozad pcHide"
-          data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/screenshot-20231012-165647.png?v=1697101021"
-          alt="Urtopia Carbon 1 Pro Ebike - Sleek, Full Carbon, Lightweight, Smart"
-        >
+          class="er-max-w-screen-xl er-mx-auto er-px-12 er-grid er-grid-cols-2 er-items-center er-h-full mb:er-grid-cols-1 mb:er-h-auto er-gap-x-40 er-text-white mb:er-text-black">
+          <span></span>
+          <div class="er-flex er-flex-col er-items-start mb:er-pt-12 mb:er-pb-20">
+              <h2 class="text-size48 mb:er-text-4xl er-m-0 mb:er-leading-tight">Sleek Design,<br>Hidden Power</h2>
+              <p class="text-size18 er-max-w-3xl er-mt-8 er-mb-20 er-opacity-80 mb:er-my-10 mb:er-text-[16px]">
+                  <span>Designed by former BMW maestro Mr. Heller, Carbon 1 Pro’s unibody design hides its e-bike identity. A top choice for minimalists and design enthusiasts seeking the best-designed e-bike.</span>
+              </p>
+              <button
+                  onclick="showVideoDialog('https://www.youtube.com/embed/Adj2WsYXM8g?autoplay=1&cc_load_policy=1')"
+                  class="er-button er-button-white mb:[--er-btn-bg-color:theme(colors.dark)] mb:[--er-btn-text-color:theme(colors.white)] mb:er-text-white">Watch
+                  video
+                  <svg class="er-scale-150 er-translate-x-1/3 er-fill-dark mb:er-fill-white"
+                      xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20">
+                      <path
+                          d="m380-300 280-180-280-180v360ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+                  </svg>
+              </button>
+          </div>
       </div>
-    </p>
   </div>
-</div>
-<div class="sleek comfort">
-  <video
-    muted
-    playsinline
-    loop
-    class="lozad mobileHide"
-    data-src="https://cdn.shopify.com/videos/c/o/v/e11dca7d00d64d9db4454a4b08b8a589.mp4"
-  ></video>
-  <video
-    muted
-    playsinline
-    loop
-    class="lozad pcHide"
-    data-src="https://cdn.shopify.com/videos/c/o/v/fbce42f6c3e242fda0053cf6df0de478.mp4"
-  ></video>
-  <div>
-    <h2 class="u36Medium_v2">
-      Comfort or Cargo? <br>
-      Customize Your Ride!
-    </h2>
-    <p class="u17Light_v2">
-      <span
-        >Adjustable handlebars and seat post ensure a comfortable riding position for both sport and leisure. Versatile
-        accessory mounting points maximize carrying capacity. Load up and ride into adventure!</span
-      >
-    </p>
-  </div>
-</div>
-<div class="build city">
-  <div class="centeral-content">
-    <div>
-      <h3 class="u36Medium_v2">
-        Trekking or City ride? <br>
-        It’s up to you.
-      </h3>
-      <p class="u17Light_v2">
-        <span>
-          The Carbon 1 Pro is a highly versatile gravel e-bike that can support front suspension, larger tires, and a
-          rack, offering exceptional DIY possibilities. With these features, you can transform it into an all-terrain
-          beast.
-        </span>
-      </p>
+<div class="background-image er-aspect-[1920/750] mb:er-aspect-auto">
+  <video class="lozad mb:!er-static" playsinline loop autoplay muted>
+          <source data-src="https://cdn.shopify.com/videos/c/o/v/e11dca7d00d64d9db4454a4b08b8a589.mp4" type="video/mp4" media="(min-width: 768px)">
+          <source data-src="https://cdn.shopify.com/videos/c/o/v/fbce42f6c3e242fda0053cf6df0de478.mp4" type="video/mp4" media="(max-width: 767px)">
+    </video>
+          <div
+              class="er-max-w-screen-xl er-mx-auto er-px-12 er-grid er-grid-cols-2 er-items-center er-h-full mb:er-grid-cols-1 mb:er-h-auto er-gap-x-40 er-text-black">
+              <div class="er-flex er-flex-col er-items-start mb:er-pt-12 mb:er-pb-20">
+                  <h2 class="text-size48 mb:er-text-4xl er-m-0 mb:er-leading-tight">Comfort or Cargo?<br>Customize Your Ride!</h2>
+                  <p class="text-size18 er-max-w-3xl er-mt-8 er-mb-20 er-opacity-80 mb:er-my-10 mb:er-text-[16px]">
+                    <span>Adjustable handlebars and seat post ensure a comfortable riding position for both sport and leisure. Versatile
+                      accessory mounting points maximize carrying capacity. Load up and ride into adventure!</span>
+                  </p>
+              </div>
+          </div>
+      </div>
+<div class="background-image er-aspect-[1920/750] mb:er-aspect-auto mb:er-pt-[80vw]">
+ {% render 'image', class: "mb:!er-object-contain mb:!er-object-top", src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/dddd_266c34f6-4b11-4171-a6d1-b54e0d5d44c4.jpg?v=1722073622', mb_src: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/dddd_2x_a83c68a7-e939-4c64-ba6b-fdd9c366d9f4.jpg?v=1721722404" %}
+    <div
+        class="er-max-w-screen-xl er-mx-auto er-px-12 er-grid er-grid-cols-2 er-items-center er-h-full mb:er-grid-cols-1 mb:er-h-auto er-gap-x-40 er-text-black">
+        <span></span>
+        <div class="er-flex er-flex-col er-items-start mb:er-pt-12 mb:er-pb-20">
+            <h2 class="text-size48 mb:er-text-4xl er-m-0 mb:er-leading-tight">Trekking or City ride? <br>It’s up to you.</h2>
+            <p class="text-size18 er-max-w-3xl er-mt-8 er-opacity-80 mb:er-mt-10 mb:er-text-[16px]">
+                <span>
+                  The Carbon 1 Pro is a highly versatile gravel e-bike that can support front suspension, larger tires, and a rack, offering exceptional DIY possibilities. With these features, you can transform it into an all-terrain beast.
+                </span>
+            </p>
+        </div>
     </div>
-  </div>
 </div>
-<div class="build range">
-  <div class="centeral-content">
-    <h3 class="u36Medium_v2">
-      Prioritize Power or Range?<br>
-      Customize anytime.
-    </h3>
-    <p class="u17Light_v2">
-      <span>
-        Tune assist modes to prioritize powerful support for tackling tough hills or opt for energy-saving settings to
-        extend your range on longer rides. Adapt your ride to suit any journey, ensuring you get the most out of every
-        trip.
-      </span>
-    </p>
-  </div>
+<div class="background-image er-aspect-[1920/750] mb:er-aspect-auto mb:er-pt-[80vw]">
+ {% render 'image', class: "mb:!er-object-contain mb:!er-object-top", src: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24478_2x_3da668f2-e8cc-4e85-8ba5-5fca15417294.jpg?v=1723776295', mb_src: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24506_2x_4c2ff042-3499-426a-8ab1-e590cffe6e57.jpg?v=1723777261" %}
+    <div
+        class="er-max-w-screen-xl er-mx-auto er-px-12 er-grid er-grid-cols-2 er-items-center er-h-full mb:er-grid-cols-1 mb:er-h-auto er-gap-x-40 er-text-black">
+        <div class="er-flex er-flex-col er-items-start mb:er-pt-12 mb:er-pb-20">
+            <h2 class="text-size48 mb:er-text-4xl er-m-0 mb:er-leading-tight">Prioritize Power or Range?<br>Customize anytime.</h2>
+            <p class="text-size18 er-max-w-3xl er-mt-8 er-opacity-80 mb:er-mt-10 mb:er-text-[16px]">
+              <span> Tune assist modes to prioritize powerful support for tackling tough hills or opt for energy-saving settings to
+                extend your range on longer rides. Adapt your ride to suit any journey, ensuring you get the most out of every
+                trip.</span>
+            </p>
+        </div>
+    </div>
 </div>
 <div class="faq">
   <div class="centeral-content">
@@ -1035,22 +265,7 @@
     <div class="items">
       <div class="item">
         <div class="u24Medium_v2">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="29.243"
-            height="16.742"
-            viewBox="0 0 29.243 16.742"
-          >
-            <g id="Group_20413" data-name="Group 20413" transform="translate(27.121 2.121) rotate(90)">
-                <line id="Line_831" data-name="Line 831" x2="12.5" y2="12.448"
-                    transform="translate(0 0)" fill="none" stroke="#898989" stroke-linecap="round"
-                    stroke-width="3" />
-                <line id="Line_832" data-name="Line 832" y1="12.448" x2="12.5"
-                    transform="translate(0 12.552)" fill="none" stroke="#898989" stroke-linecap="round"
-                    stroke-width="3" />
-            </g>
-          </svg>
-          1. How durable is the carbon frame of the Carbon 1 Pro?
+          <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="">1. How durable is the carbon frame of the Carbon 1 Pro?
         </div>
         <p class="u17Light_v2">
           <span>
@@ -1061,24 +276,7 @@
         </p>
       </div>
       <div class="item">
-        <div class="u24Medium_v2">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="29.243"
-            height="16.742"
-            viewBox="0 0 29.243 16.742"
-          >
-            <g id="Group_20413" data-name="Group 20413" transform="translate(27.121 2.121) rotate(90)">
-                <line id="Line_831" data-name="Line 831" x2="12.5" y2="12.448"
-                    transform="translate(0 0)" fill="none" stroke="#898989" stroke-linecap="round"
-                    stroke-width="3" />
-                <line id="Line_832" data-name="Line 832" y1="12.448" x2="12.5"
-                    transform="translate(0 12.552)" fill="none" stroke="#898989" stroke-linecap="round"
-                    stroke-width="3" />
-            </g>
-          </svg>
-          2. Why does the Carbon 1 Pro use a hub motor instead of a mid-drive motor?
-        </div>
+        <div class="u24Medium_v2"><img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="">2. Why does the Carbon 1 Pro use a hub motor instead of a mid-drive motor?</div>
         <p class="u17Light_v2">
           <span>
             Hub motors are lighter, smoother, and more responsive, making them ideal for city and gravel roads.
@@ -1090,22 +288,7 @@
       </div>
       <div class="item">
         <div class="u24Medium_v2">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="29.243"
-            height="16.742"
-            viewBox="0 0 29.243 16.742"
-          >
-            <g id="Group_20413" data-name="Group 20413" transform="translate(27.121 2.121) rotate(90)">
-                <line id="Line_831" data-name="Line 831" x2="12.5" y2="12.448"
-                    transform="translate(0 0)" fill="none" stroke="#898989" stroke-linecap="round"
-                    stroke-width="3" />
-                <line id="Line_832" data-name="Line 832" y1="12.448" x2="12.5"
-                    transform="translate(0 12.552)" fill="none" stroke="#898989" stroke-linecap="round"
-                    stroke-width="3" />
-            </g>
-          </svg>
-          3. What components are used in the Carbon 1 Pro?
+          <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="">3. What components are used in the Carbon 1 Pro?
         </div>
         <p class="u17Light_v2">
           <span>
@@ -1116,24 +299,7 @@
         </p>
       </div>
       <div class="item">
-        <div class="u24Medium_v2">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="29.243"
-            height="16.742"
-            viewBox="0 0 29.243 16.742"
-          >
-            <g id="Group_20413" data-name="Group 20413" transform="translate(27.121 2.121) rotate(90)">
-                <line id="Line_831" data-name="Line 831" x2="12.5" y2="12.448"
-                    transform="translate(0 0)" fill="none" stroke="#898989" stroke-linecap="round"
-                    stroke-width="3" />
-                <line id="Line_832" data-name="Line 832" y1="12.448" x2="12.5"
-                    transform="translate(0 12.552)" fill="none" stroke="#898989" stroke-linecap="round"
-                    stroke-width="3" />
-            </g>
-          </svg>
-          4. What safety features does the Carbon 1 Pro offer?
-        </div>
+        <div class="u24Medium_v2"><img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="">4. What safety features does the Carbon 1 Pro offer?</div>
         <p class="u17Light_v2">
           <span>
             The Carbon 1 Pro offers comprehensive safety features, including GPS tracking and anti-theft protection. It
@@ -1145,23 +311,7 @@
       </div>
       <div class="item">
         <div class="u24Medium_v2">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="29.243"
-            height="16.742"
-            viewBox="0 0 29.243 16.742"
-          >
-            <g id="Group_20413" data-name="Group 20413" transform="translate(27.121 2.121) rotate(90)">
-                <line id="Line_831" data-name="Line 831" x2="12.5" y2="12.448"
-                    transform="translate(0 0)" fill="none" stroke="#898989" stroke-linecap="round"
-                    stroke-width="3" />
-                <line id="Line_832" data-name="Line 832" y1="12.448" x2="12.5"
-                    transform="translate(0 12.552)" fill="none" stroke="#898989" stroke-linecap="round"
-                    stroke-width="3" />
-            </g>
-          </svg>
-          5. Is the Carbon 1 Pro suitable for different weather conditions?
-        </div>
+          <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="">5. Is the Carbon 1 Pro suitable for different weather conditions?</div>
         <p class="u17Light_v2">
           <span>
             Yes, the Carbon 1 Pro is designed to perform well in various weather conditions. It is IP65 rated for dust
@@ -1174,81 +324,41 @@
     </div>
   </div>
 </div>
-<div class="test-ride">
-  <div class="centeral-content">
-    <div>
-      <div>
-        <h2 class="u30Medium_v2">It’s time to give it a spin!</h2>
-        <p class="u17Light_v2">
-          <span>Experience the bike in real</span>
-        </p>
-        <a
-          class="my-button my-button-white"
-          href="/pages/test-ride"
-          target="_blank"
-          >Book a Free Test Ride</a
-        >
-      </div>
-    </div>
-    <div>
-      <div style="padding: 0;">
-        <div
-          id="storepoint-container"
-          data-tags="us"
-          data-map-id="162f21804990ff"
-        ></div>
-      </div>
-    </div>
-  </div>
-</div>
 <div class="boxs3" id="boxs3">
   <div class="centeral-content">
-    <div></div>
+    <div class="background-image er-aspect-square">
+      <img loading="lazy" width="640" height="640" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2024-10-16_14.18.56_2x_9ef7c231-83e3-4acf-9bc4-030911f4ea33.jpg?v=1729309891&width=640" alt="">
+    </div>
     <div>
-      <h2 class="u30Medium_v2">Local care all the time</h2>
+      <div>
+        <div class="u30DemiBold_v2">It’s time to give it a spin!</div>
+        <div class="u17Light_v2">Experience the bike in real</div>
+        <a class="my-button my-button-white" href="/pages/test-ride" target="_blank">Book a Free Test Ride</a>
+      </div>
+    </div>
+    <div>
+      <div class="u30DemiBold_v2">Local care all the time</div>
       <div class="u17Light_v2" style="width: 100%;">
         <div>
-          <img
-            width="40"
-            height="40"
-            loading="lazy"
-            src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/shopping-mall_2x_44d99fcd-f0f4-443b-927e-b68e48af010f.png?v=1687259496"
-            alt="1 service center, 150+ service partners"
-
-          >1 service center, 150+ service partners
+          <img width="40" height="40" loading="lazy" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/shopping-mall_2x_44d99fcd-f0f4-443b-927e-b68e48af010f.png?v=1687259496" alt="1 service center, 150+ service partners">1 service center, 150+ service partners
         </div>
         <div>
-          <img
-            width="40"
-            height="40"
-            loading="lazy"
-            src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24-hours_2x_d6a8eeb2-4564-4351-8cb9-096dbb778479.png?v=1687259501"
-            alt="24hrs service response, App build-in portal"
-
-          >24hrs service response, App build-in portal
+          <img width="40" height="40" loading="lazy" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24-hours_2x_d6a8eeb2-4564-4351-8cb9-096dbb778479.png?v=1687259501" alt="24hrs service response, App build-in portal">24hrs service response, App build-in portal
         </div>
         <div>
-          <img
-            width="40"
-            height="40"
-            loading="lazy"
-            src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/box_2x_2b3b7c15-f5ae-4305-956f-7543b63b2dda.png?v=1687259506"
-            alt="Spare parts available locally, ships in 3 days."
-
-          ><span>Spare parts available locally, ships in 3 days.</span>
+          <img width="40" height="40" loading="lazy" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/box_2x_2b3b7c15-f5ae-4305-956f-7543b63b2dda.png?v=1687259506" alt="Spare parts available locally, ships in 3 days."><span>Spare parts available locally, ships in 3 days.</span>
         </div>
         <div>
-          <img
-            width="40"
-            height="40"
-            loading="lazy"
-            src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/customer-satisfaction_2x_c7081e3a-1864-43b6-8ed2-f77895eafa6a.png?v=1687259512"
-            alt="10+ technical experts, 99% satisfaction rate."
-
-          >10+ technical experts, 99% satisfaction rate.
+          <img width="40" height="40" loading="lazy" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/customer-satisfaction_2x_c7081e3a-1864-43b6-8ed2-f77895eafa6a.png?v=1687259512" alt="10+ technical experts, 99% satisfaction rate.">10+ technical experts, 99% satisfaction rate.
         </div>
       </div>
       <a class="my-button my-button-white" href="/pages/care" target="_blank">Learn more</a>
+    </div>
+    <div class="background-image er-aspect-square">
+      <img loading="lazy" width="640" height="640" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230802-150015_2x_90400ae7-f025-4661-88a0-0ace1e48b675.jpg?v=1721803593&width=640" alt="">
+    </div>
+    <div class="background-image er-aspect-square">
+      <img loading="lazy" width="640" height="640" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/IMG_7844_2x_b321b04d-1924-4c56-a4ee-db9cb945802b.jpg?v=1721803578&width=640&width=640" alt="">
     </div>
     <div>
       <div class="u30Medium_v2">Urtopians worldwide</div>
@@ -1270,19 +380,8 @@
           <span class="u30DemiBold_v2">131,500+ <span class="u20Medium_v2">trees</span></span>
         </div>
       </div>
-      <a
-        style="margin-top:7.5%;"
-        class="my-button my-button-white"
-        target="_blank"
-        href="/pages/sustainability-carbon-credit"
-        >Learn more</a
-      >
+      <a class="my-button my-button-white" target="_blank" href="/pages/sustainability-carbon-credit">Learn more</a>
     </div>
-    <img
-      class="lozad"
-      data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/IMG_7844_2x_b321b04d-1924-4c56-a4ee-db9cb945802b.jpg?v=1721803578&width=640"
-      alt="{{ page_title }}"
-    >
   </div>
 </div>
 <div class="users">
@@ -1291,96 +390,53 @@
     <div class="sipwers">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <img
-            class="lozad"
-            data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/aaa_2x_b7d8a82c-0123-4464-8e05-a61068384a8c.jpg?v=1721728097&width=400"
-            alt="{{ page_title }}"
-          >
+          <img loading="lazy" width="300" height="300" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/aaa_2x_b7d8a82c-0123-4464-8e05-a61068384a8c.jpg?v=1721728097&width=400" alt="{{ page_title }}">
           <span class="u17Light_v2">
             <i><b>Michael S. </b>“Lightweight is the magic.”</i>
           </span>
         </div>
         <div class="swiper-slide">
-          <img
-            class="lozad"
-            data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/363831887_269493272386733_7002402243999728624_n_2x_b09751de-04ae-430d-bba8-23ea7007dcfc.jpg?v=1721731773&width=400"
-            alt="{{ page_title }}"
-          >
+          <img loading="lazy" width="300" height="300" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/363831887_269493272386733_7002402243999728624_n_2x_b09751de-04ae-430d-bba8-23ea7007dcfc.jpg?v=1721731773&width=400" alt="{{ page_title }}">
           <span class="u17Light_v2">
-            <i
-              ><b>Andre. </b>“April 16 was the anniversary of my birth. On that morning my wife sent me to the garage to
+            <i><b>Andre. </b>“April 16 was the anniversary of my birth. On that morning my wife sent me to the garage to
               get her things in the car and what to my surprise was sitting in the garage covered in wrapping paper?
-              Best Birthday gift ever. I’ve already put like 360 miles on it and I am loving it.”</i
-            >
+              Best Birthday gift ever. I’ve already put like 360 miles on it and I am loving it.”</i>
           </span>
         </div>
         <div class="swiper-slide">
-          <img
-            class="lozad"
-            data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_19247_2x_35a52f03-6a80-490b-8c5b-4cf3477aa0f3.jpg?v=1721731777&width=400"
-            alt="{{ page_title }}"
-          >
+          <img loading="lazy" width="300" height="300" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_19247_2x_35a52f03-6a80-490b-8c5b-4cf3477aa0f3.jpg?v=1721731777&width=400" alt="{{ page_title }}">
           <span class="u17Light_v2">
             <i><b>Brice. </b>“Did I mention how lightweight the Carbon 1 Pro is?“</i>
           </span>
         </div>
         <div class="swiper-slide">
-          <img
-            class="lozad"
-            data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/d_2x_b874acee-2fd3-4a71-af6d-726e10bf80eb.jpg?v=1721731783&width=400"
-            alt="{{ page_title }}"
-          >
+          <img loading="lazy" width="300" height="300" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/d_2x_b874acee-2fd3-4a71-af6d-726e10bf80eb.jpg?v=1721731783&width=400" alt="{{ page_title }}">
           <span class="u17Light_v2">
             <i><b>Elnaz. </b>“Great day in Everglades“</i>
           </span>
         </div>
         <div class="swiper-slide">
-          <img
-            class="lozad"
-            data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/424810598_10220326036215939_1573558836814671753_n_2x_777345e7-b5a8-430b-a050-814a8a720f82.jpg?v=1721731788&width=400"
-            alt="{{ page_title }}"
-          >
+          <img loading="lazy" width="300" height="300" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/424810598_10220326036215939_1573558836814671753_n_2x_777345e7-b5a8-430b-a050-814a8a720f82.jpg?v=1721731788&width=400" alt="{{ page_title }}">
           <span class="u17Light_v2">
             <i><b>Chris. </b>“Outstanding performance. I love this bike.”</i>
           </span>
         </div>
         <div class="swiper-slide">
-          <img
-            class="lozad"
-            data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_19246_2x_c403a2bb-853b-4ff8-af39-9e2f399b54a8.jpg?v=1721731794&width=400"
-            alt="{{ page_title }}"
-          >
+          <img loading="lazy" width="300" height="300" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_19246_2x_c403a2bb-853b-4ff8-af39-9e2f399b54a8.jpg?v=1721731794&width=400" alt="{{ page_title }}">
           <span class="u17Light_v2">
-            <i
-              ><b>Matthew Ho. </b>“Can’t believe they have used a Toray Carbon fiber on this bike, this is worth the
-              price.“</i
-            >
+            <i><b>Matthew Ho. </b>“Can’t believe they have used a Toray Carbon fiber on this bike, this is worth the price.“</i>
           </span>
         </div>
         <div class="swiper-slide">
-          <img
-            class="lozad"
-            data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/449698987_7732111710198519_5623758882367572858_n_2x_d33ecf39-6726-4369-ad2b-6bf651e6e469.jpg?v=1721731799&width=400"
-            alt="{{ page_title }}"
-          >
+          <img loading="lazy" width="300" height="300" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/449698987_7732111710198519_5623758882367572858_n_2x_d33ecf39-6726-4369-ad2b-6bf651e6e469.jpg?v=1721731799&width=400" alt="{{ page_title }}">
           <span class="u17Light_v2">
-            <i
-              ><b>Rolf Thomas. </b>“Big praise and keep up the good work to the Urtopia team …this makes e-biking even
-              more fun 👏☀️😎“</i
-            >
+            <i><b>Rolf Thomas. </b>“Big praise and keep up the good work to the Urtopia team …this makes e-biking evenmore fun 👏☀️😎“</i>
           </span>
         </div>
         <div class="swiper-slide">
-          <img
-            class="lozad"
-            data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_19248_2x_fa7260e5-5c80-4b85-b835-b8240e81d096.jpg?v=1721731804&width=400"
-            alt="{{ page_title }}"
-          >
+          <img loading="lazy" width="300" height="300" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_19248_2x_fa7260e5-5c80-4b85-b835-b8240e81d096.jpg?v=1721731804&width=400" alt="{{ page_title }}">
           <span class="u17Light_v2">
-            <i
-              ><b>Maria. </b>“This past weekend, I completed the STP 2024, a 206-mile ride from Seattle to Portland,
-              riding my Urtopia Carbon 1 Pro.“</i
-            >
+            <i><b>Maria. </b>“This past weekend, I completed the STP 2024, a 206-mile ride from Seattle to Portland, riding my Urtopia Carbon 1 Pro.“</i>
           </span>
         </div>
       </div>
@@ -1395,16 +451,7 @@
     </h2>
     <div class="boxsxzczxc">
       <div>
-        <img
-          class="mobileHide lozad"
-          data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240628-092925_2x_0a1659dd-0ff1-4009-8aca-d9be62dd64c7.jpg?v=1721789383"
-          alt="Urtopia Carbon 1 Pro Ebike - Sleek, Full Carbon, Lightweight, Smart"
-        >
-        <img
-          class="pcHide lozad"
-          data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240628-092925_2x_e765192a-8d1a-4284-bbe4-17a4ca22e3ce.jpg?v=1721790403"
-          alt="{{ page_title }}"
-        >
+        {% render 'image', width: 640 src: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240628-092925_2x_0a1659dd-0ff1-4009-8aca-d9be62dd64c7.jpg?v=1721789383', mb_src: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240628-092925_2x_e765192a-8d1a-4284-bbe4-17a4ca22e3ce.jpg?v=1721790403" %}
         <h4 class="u30Medium_v2">Movement alarm</h4>
         <p class="u17Light_v2">
           <span> Once locked, the onboard alarm monitors movements and alerts you against unauthorized ones. </span>
@@ -1412,16 +459,7 @@
         <div class="flex-1"></div>
       </div>
       <div>
-        <img
-          class="mobileHide lozad"
-          data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18878_2x_a35bafec-b477-41aa-b2a9-21ee56829db9.jpg?v=1721789377"
-          alt="Urtopia Carbon 1 Pro Ebike - Sleek, Full Carbon, Lightweight, Smart"
-        >
-        <img
-          class="pcHide lozad"
-          data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_19273_2x_a0fe01d4-26cf-47b3-bf74-5f9dd38c2669.jpg?v=1721790465"
-          alt="{{ page_title }}"
-        >
+        {% render 'image', width: 640 src: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_18878_2x_a35bafec-b477-41aa-b2a9-21ee56829db9.jpg?v=1721789377', mb_src: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_19273_2x_a0fe01d4-26cf-47b3-bf74-5f9dd38c2669.jpg?v=1721790465" %}
         <h4 class="u30Medium_v2">GPS tracking and fence</h4>
         <p class="u17Light_v2">
           <span>
@@ -1438,19 +476,22 @@
 <div class="everything">
   <div class="centeral-content">
     <div class="boxqwewqeqs">
-      <div>
+      <div class="background-image">
+        {% render 'image', class: "mb:!er-object-contain mb:!er-object-top", mb_src: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240717-190918_2x_53073d6f-7545-4387-acf1-4959c809735c.jpg?v=1721791483", src: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240717-190918_2x_2f5815a0-e830-497a-b2ae-c19c9dfa36b4.jpg?v=1721789771" %}
         <h3 class="u30Medium_v2">Fingerprint unlock</h3>
         <p class="u17Light_v2">
           <span> No more hassle worrying about losing another key. </span>
         </p>
       </div>
-      <div>
+      <div class="background-image">
+        {% render 'image', class: "mb:!er-object-contain mb:!er-object-top", mb_src: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_24447_2x_a03892c9-b3c4-40e4-9108-de2110dabe8b.jpg?v=1721790996", src: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_24386_2x_84f8e396-8586-41ba-b191-d0e5162aa892.jpg?v=1721789648" %}
         <h3 class="u30Medium_v2">Navigation without cellphone</h3>
         <p class="u17Light_v2">
           <span> Bright screen shows navigation clearly under daylight, no more ugly phone holder. </span>
         </p>
       </div>
-      <div>
+      <div class="background-image">
+        {% render 'image', class: "mb:!er-object-contain mb:!er-object-top", mb_src: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_24448_2x_5e67777c-cd1a-4e93-9509-d9ffedef6810.jpg?v=1721791535", src: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_24381_2x_ef95665b-0f60-40cb-ab5c-3412ced72fea.jpg?v=1721789643" %}
         <h3 class="u30Medium_v2">Track your route</h3>
         <p class="u17Light_v2">
           <span>
@@ -1459,7 +500,8 @@
           </span>
         </p>
       </div>
-      <div>
+      <div class="background-image">
+        {% render 'image', class: "mb:!er-object-contain mb:!er-object-top", mb_src: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_24449_2x_51bf1163-2ec6-411d-a900-66009ca9821b.jpg?v=1721791543", src: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240724-110412.jpg?v=1721790268" %}
         <h3 class="u30Medium_v2">Bluetooth music</h3>
         <p class="u17Light_v2">
           <span>
@@ -1474,395 +516,53 @@
 <div class="app">
   <div class="centeral-content">
     <div>
-      <span class="u48Medium_v2"
-        >Your All in One <br>
-        Health Coach</span
-      >
-      <span class="u17Light_v2"
-        >Your rides and daily activities offer personalized insights. Our AI companion tailors accurate recommendations
-        exclusively for you—no more generic advice.</span
-      >
+      <span class="u48Medium_v2">Your All in One <br>Health Coach</span>
+      <span class="u17Light_v2">Your rides and daily activities offer personalized insights. Our AI companion tailors accurate recommendations
+        exclusively for you—no more generic advice.</span>
     </div>
-    <img
-      class="mobileHide"
-      alt="{{ product.title }}"
-      width="1280"
-      height="610"
-      loading="lazy"
-      src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_1171275468_2x_c4e2a5ad-6173-4b69-91be-96007790d93d.png?v=1723798829"
-    >
-    <img
-      class="pcHide"
-      alt="{{ product.title }}"
-      width="750"
-      height="580"
-      loading="lazy"
-      src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24503_2x_e97738c9-2a66-4ca5-a108-f75bac84bafa.jpg?v=1723799497"
-    >
+    <img class="mobileHide" alt="{{ product.title }}" width="1280" height="610" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_1171275468_2x_c4e2a5ad-6173-4b69-91be-96007790d93d.png?v=1723798829">
+    <img class="pcHide" alt="{{ product.title }}" width="750" height="580" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24503_2x_e97738c9-2a66-4ca5-a108-f75bac84bafa.jpg?v=1723799497">
   </div>
 </div>
-
+{% render 'size-guide-and-specs-template' %}
+<div class="centeral-content er-px-6 judgemeeeeee"></div>
 <script type="module">
-global_config.carbon1pro_order_page_config = {
-      ignore_variants_available_false: [],
-      default_variant: 44288621314296,
-      size_map: {
-        S: `Fit for 5’3’’~5’9’’Inseam 30’’`,
-        M: `Fit for 5’7’’~6’1’’Inseam 31’’`,
-        L: `Fit for 5’11’’~6’5’’Inseam 33’’`,
-      },
-      product_images: {
-        'Matte Black': [
-          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3-1.jpg?v=1722064932',
-          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_24397.jpg?v=1722064933&width=800',
-          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25180.jpg?v=1735021855&width=900',
-          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25179.jpg?v=1735021856&width=900',
-          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25181.jpg?v=1735021856&width=900',
-          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1pro-_-_c_2x_59857988-2ad6-42c3-ba78-b239cc591367.jpg?v=1721977733',
-          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1pro-_-_c__1_1_2x_1b9d5dea-a84a-442b-80ec-3fa18757aabd.jpg?v=1721977738',
-          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1pro-_1_1.jpg?v=1722064932',
-          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1pro-_c_2x_4d3389e3-6c89-4584-a35d-a7586f6f0dec.jpg?v=1721977750',
-        ],
-        Creme: [
-          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18878.jpg?v=1722064932',
-          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_24398.jpg?v=1722064933&width=800',
-          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240308-untitled-6217.jpg?v=1722064934&width=800',
-          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Urtopia-20.jpg?v=1722064933&width=800',
-          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Urtopia-11.jpg?v=1722064933&width=800',
-          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18874.jpg?v=1722064932&width=800',
-          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18870.jpg?v=1722064932&width=800',
-          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18862.jpg?v=1722064932',
-          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18858.jpg?v=1722064933',
-        ],
-        Blu: [
-          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241120-101942.png?v=1732069202&width=1000',
-          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_24398.jpg?v=1722064933&width=800',
-          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240308-untitled-6217.jpg?v=1722064934&width=800',
-          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Urtopia-20.jpg?v=1722064933&width=800',
-          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Urtopia-11.jpg?v=1722064933&width=800',
-          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240924-192253.jpg?v=1727176998&width=800',
-          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240924-192241.jpg?v=1727176998&width=800',
-          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240924-192257.jpg?v=1727176997',
-          'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240924-192248.jpg?v=1727176998',
-        ],
-        commonSwiper: [],
-      },
-      product_media_images: [
-        { text: 'Carbon Fiber Expert', img: 'https://newurtopia.com/cdn/shop/files/logo_0707__1.png?v=1684310857' },
-        {
-          text: `“Visually stunning and lightweight bikes”`,
-          img: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19051_2x_3c234be0-e1cb-4ab0-b83c-02282fd42cb4.png?v=1705485418',
+  task(() => {
+    new Swiper('.professional .centeral-content', {
+          slidesPerView: global_config.is_mobile ? 1.25 : 3.5,
+          preloadImages: false,
+          spaceBetween: 20,
+          navigation: {
+          nextEl: '.professional .centeral-content .swiper-button-next',
+          prevEl: '.professional .centeral-content .swiper-button-prev',
         },
-        {
-          text: `“The best electric bikes of 2024”`,
-          img: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19052_2x_83b17023-7ff5-413b-9a87-571e8e6928ee.png?v=1705485424',
-        },
-        {
-          text: `“Pack with copious use of technology”`,
-          img: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19053_2x_2b4e11dc-d27b-47ad-9478-92c696e1fac7.png?v=1705485431',
-        },
-        {
-          text: `“Pack with copious use of technology”`,
-          img: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19054_2x_7feff357-8d1b-48a0-b9af-662442dc41f6.png?v=1705485437',
-        },
-        {
-          text: `“The epitome of raw power”`,
-          img: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19055_2x_612a45c4-04fe-4477-a252-302e8d11c40e.png?v=1705485444',
-        },
-        {
-          text: `“Carbon 1 Pro as‘a bike with spirit”`,
-          img: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19056_2x_b61e963a-f2b3-49f3-8bc2-4aee5f8f2a4c.png?v=1705485451',
-        },
-        {
-          text: `“Standout feature lies in its integration with advanced technology.”`,
-          img: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19057_2x_0eabb26b-a2fe-48e8-b00e-209ef2b986e0.png?v=1705485460',
-        },
-        {
-          text: `“Interesting innovation or tech for tech’s sake”`,
-          img: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19058_2x_b0454fa5-9c44-462e-8f04-5646db60456a.png?v=1705485466',
-        },
-        {
-          text: `“Completely crazy:This e-bike talks to the rider”`,
-          img: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19059_2x_14b271ba-3eae-41ea-8882-e6896e9f9948.png?v=1705485473',
-        },
-        {
-          text: `“The iPhone among e-bikes”`,
-          img: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19060_2x_e094650e-c53d-4e29-b805-7e89d127643d.png?v=1705485481',
-        },
-        {
-          text: `“Thanks to its full carbon frame,the Urtopia e-bikes is light”`,
-          img: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_19061_2x_a24c29c4-0fff-421f-9977-25989e38b7e9.png?v=1705485487',
-        },
-      ],
-      ebike_default_delivery_time: 'Free shipping within 5 business days',
-      ebike_delivery_time: {},
-    }
-</script>
-
-{% render 'size-guide-and-specs-template', config: 'carbon1pro_order_page_config' %}
-
-<div class="judmeeeeeeeee">
-  <div class="centeral-content">
-    {% include 'judgeme_widgets', widget_type: 'judgeme_review_widget', concierge_install: false %}
-  </div>
-</div>
-<div class="top-fixed mobileHide er-hidden">
-  <div class="centeral-content">
-    <span class="u20DemiBold_v2">{{ product.title }}</span>
-    <span class="flex-1"></span>
-    <div>
-      <span class="u17Light_v2"
-        ><span class="u20DemiBold_v2 emphasize" style="font-weight: 600;">{{ product.price | money }}</span>
-        {% unless product.compare_at_price == product.price %}
-          <span style="text-decoration: line-through;">{{ product.compare_at_price | money }}</span>
-        {% endunless -%}
-      </span>
-      <span class="u14Light_v2"
-        >or as low as {{ product.price | divided_by: 24 | money_without_trailing_zeros }}/Month</span
-      >
-    </div>
-    <a href="#product_form_{{ product.id }}" class="my-button my-button-origin">Order Now</a>
-  </div>
-</div>
-
-<div class="bottom-fixed pcHide er-hidden">
-  <a href="#product_form_{{ product.id }}" class="my-button my-button-origin">Order Now</a>
-  <div>
-    <span class="u14Light_v2"
-      ><span class="emphasize" style="font-weight: 600;">{{ product.price | money }}</span>
-      {% unless product.compare_at_price == product.price %}
-        <span style="text-decoration: line-through;">{{ product.compare_at_price | money }}</span>
-      {% endunless -%}
-    </span>
-    <span class="u14Light_v2"
-      >or as low as {{ product.price | divided_by: 24 | money_without_trailing_zeros }}/Month</span
-    >
-  </div>
-</div>
-<script>
-   function changeAddToCartText(parse, step = 0) {
-    if (step) {
-      $('.addToCartBtn i').toggleClass('showi');
-      document.querySelector('.addToCartBtn span').innerHTML = 'Adding...';
-    } else {
-      setTimeout(() => {
-        $('.addToCartBtn i').toggleClass('showi');
-        document.querySelector('.addToCartBtn span').innerHTML = 'Add to Cart';
-      }, 800);
-    }
-  }
-  
-  let id = 0;
-  let adding = false;
-
-  function addAllToCart(parse, show = false) {
-    let cart1 = document.querySelector('cart-notification') || document.querySelector('cart-drawer');
-    // 如果 B test 需要显示 klarna checkout
-    window.show_notification_checkout_button = show;
-    const cartList = { items: [] };
-    $('.product .error-tip').hide();
-
-    if (adding == false) {
-      !show && changeAddToCartText(parse, 1);
-      adding = true;
-
-      cartList.items.push({ id: current_variant_id, quantity: 1 });
-
-      if (cart1) {
-        var sections = cart1.getSectionsToRender().map((section) => section.id);
-        cartList.sections = sections.join(',');
-      }
-
-      // 新增普通配件
-      $('.product .accessories .items .active').each((i, item) => {
-        cartList.items.push({
-          id: $(item).attr('variant-id'),
-          quantity: 1,
-        });
+          scrollbar: {
+            el: '.professional .centeral-content .swiper-scrollbar',
+            draggable: true,
+          },
       });
+  })
 
-      fetch('/cart/add.js', {
-        method: 'POST',
-        body: JSON.stringify(cartList),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
-        .then((res) => res.json())
-        .then((res1) => {
-          res1.key = '';
-
-          cart1.classList.contains('is-empty') && cart1.classList.remove('is-empty');
-
-          if (!(res1.message && res1.status)) {
-            cart1.renderContents(res1);
-          } else {
-            $('.product .error-tip').show();
-          }
-
-          !show && changeAddToCartText(parse, 0);
-        })
-        .catch((err) => {
-          !show && changeAddToCartText(parse, 0);
-          // cartList.items.splice(-1, 1);
-          console.log('err==', err);
-          $('.product .error-tip').show();
-        })
-        .finally(() => {
-          adding = false;
-          !show && fetchBuried('websiteclick', `carbon1pro-order-page`, { button: 'ATC' });
-
-          setTimeout(() => $('.product .error-tip').hide(), 10000);
+  task(() => {
+        new Swiper('.quality_in_details', {
+            slidesPerView: global_config.is_mobile ? 1.25 : 3,
+            spaceBetween: global_config.is_mobile ? 16 : 32,
+            preloadImages: false,
+            navigation: {
+                nextEl: '.quality_in_details .swiper-button-next',
+                prevEl: '.quality_in_details .swiper-button-prev',
+            },
+            scrollbar: {
+                el: '.quality_in_details .swiper-scrollbar',
+                draggable: true
+            },
         });
-    }
-  }
+      })
 
-  function testRideTrace(type = '', target) {
-    // 如果已经有按钮 loading ,直接退出来
-    if (!type || $('.orderTestRideBtn').hasClass('loading')) {
-      return;
-    }
-
-
-    if (type === 'amazon') {
-        fetchBuried('websiteclick', `carbon1pro-order-page`, { button: type  }, true)
-        return window.open('https://www.amazon.com/dp/B0DGQJYQT5')
-    }
-
-    const t = $(target);
-
-    t.addClass('loading');
-    // 原本的html 存起来
-    const text = t.find('span').html();
-    const loading = '<i class="fa fa-spinner fa-spin"></i>Processing...';
-
-    // loading
-    t.find('span').html(loading);
-
-    fetchBuried('websiteclick', `carbon1pro-order-page`, { button: type }, true);
-    window.sessionStorage.clicked_klarna_checkout_button = 'clicked_klarna_checkout_button';
-
-    if (sessionStorage.carbon_one_a_b_test_flag === 'B') {
-      setTimeout(() => {
-        t.removeClass('loading');
-        t.find('span').html(text);
-      }, 2000);
-
-      return addAllToCart('atc', true);
-    }
-  }
-</script>
-
-{% render 'product-options', config_name: 'carbon1pro_order_page_config', product: product %}
-<script type="module">
-  window.leftSwiper = new Swiper('.product .left-swiper', {
-    direction: 'vertical',
-    spaceBetween: 15,
-    slidesPerView: 9,
-    watchSlidesProgress: true,
-    // height: 360,
-  });
-
-  window.rightSwiper = new Swiper('.product .right-swiper', {
-    navigation: {
-      nextEl: '.product .featured_image .swiper-button-next',
-      prevEl: '.product .featured_image .swiper-button-prev',
-    },
-    spaceBetween: 10,
-    pagination: { el: '.swiper-pagination' },
-    thumbs: {
-      swiper: window.leftSwiper,
-    },
-    roundLengths : true,
-    on:{
-        slideChange: function() {
-            const index = this.activeIndex % global_config.carbon1pro_order_page_config.product_media_images.length;
-            $('.product .medias').find('.u17DemiBold_v2').text(global_config.carbon1pro_order_page_config.product_media_images[index].text)
-            $('.product .medias').find('img').attr('src', global_config.carbon1pro_order_page_config.product_media_images[index].img)
-
-            if (global_config.carbon1pro_order_page_config.product_media_images[index + 1]) {
-                (new Image()).src = global_config.carbon1pro_order_page_config.product_media_images[index + 1].img
-            }
-
-            if (global_config.carbon1pro_order_page_config.product_media_images[index + 2]) {
-                (new Image()).src = global_config.carbon1pro_order_page_config.product_media_images[index + 2].img
-            }            
-        },
-    },
-  });
-
-  document.addEventListener('onChangeSize', (e) => {
-    $(`.product .product-panel .options > div[option="Size"] .u17DemiBold_v2 .u17Light_v2`).text(
-      global_config.carbon1pro_order_page_config.size_map[e.value]
-    );
-  });
-
-  document.addEventListener('onChangeColor', (e) => {
-    $(`.product .product-panel .options > div[option="Color"] .u17DemiBold_v2 .u17Light_v2`).text(e.value);
-
-    let swiper_arr = [];
-    swiper_arr = swiper_arr.concat(
-      global_config.carbon1pro_order_page_config.product_images[e.value],
-      global_config.carbon1pro_order_page_config.product_images['commonSwiper']
-    );
-
-    console.log(swiper_arr);
-    window.rightSwiper.removeAllSlides()
-    window.leftSwiper.removeAllSlides()
-
-    for (let i = 0; i < swiper_arr.length; i++) {
-      window.leftSwiper.appendSlide( `<img width="62" height="40" class="swiper-slide" alt="Urtopia Carbon 1 Pro" src="${swiper_arr[i]}"/>`)
-
-
-      if (i === 0) {
-        window.rightSwiper.appendSlide(`<div class="swiper-slide" style="position: relative;"><img style="position: absolute;top: 0;right: 0;max-width: 17.5%;transform: translateX(42.5%);" width="116" height="83" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241125-174130.png?v=1732527720" alt="Urtopia Fusion"/><img width="662" height="432" alt="Urtopia Fusion" src="${swiper_arr[i]}"/></div>`)
-      } else {
-        window.rightSwiper.appendSlide(`<div class="swiper-slide"><img width="662" height="432" alt="Urtopia Carbon 1 Pro" src="${swiper_arr[i]}"/></div>`)
-      }
-    }
-  });
-
-  document.addEventListener('onChangeOptions', (e) => {
-    $('.product .delivery_time').html(
-      global_config.carbon1pro_order_page_config.ebike_delivery_time[e.value.id] ||
-        global_config.carbon1pro_order_page_config.ebike_default_delivery_time
-    );
-  });
-
-  $('.product .product-panel').on('submit', function (event) {
-    // 阻止默认行为
-    event.preventDefault();
-    return false;
-  });
-
-  $('.product .dialogs > div').on('click', function (e) {
-    const m = {
-      0: 'one',
-      1: 'two',
-      2: 'three',
-      3: 'four',
-    };
-
-    if ($(this).attr('onclick')) {
-      return;
-    }
-
-    $('.product .dialogs > div').each((i, t) => {
-      if ($(e.target).closest('.u17Medium_v2')[0] === t) {
-        i = i > 1 ? 3 : i;
-
-        setTimeout(() => {
-          const layer = document.querySelector(`.order-modal-${m[i]}`);
-          const laybox = document.querySelector(`.order-modal-layer-${m[i]}`);
-          layer.style.display = 'flex';
-          layer.style.zIndex = '99999';
-          laybox.className += ' dialog-open';
-        }, 100);
-      }
-    });
-  });
+  task(() => {
     new Swiper('.users .sipwers', {
         loop: true, // 启用循环模式
+        preloadImages: false,
         autoplay: {
           delay: 0, // 设置为0以便无停顿地切换
           disableOnInteraction: false,
@@ -1872,37 +572,10 @@ global_config.carbon1pro_order_page_config = {
         slidesPerView: global_config.is_mobile ? 1.25 : 4, // 自动根据内容设置滑动宽度
         spaceBetween: global_config.is_mobile ? 16 : 32, // 幻灯片之间没有间距
       });
+  })
 
-
-    new Swiper('.quality .centeral-content', {
-        slidesPerView: global_config.is_mobile ? 1.25 : 3,
-        spaceBetween: global_config.is_mobile ? 16 : 32,
-        navigation: {
-          nextEl: '.quality .centeral-content .swiper-button-next',
-          prevEl: '.quality .centeral-content .swiper-button-prev',
-        },
-        scrollbar: {
-          el: '.quality .centeral-content .swiper-scrollbar',
-          draggable: true
-        },
-      });
-
-      new Swiper('.professional .centeral-content', {
-      slidesPerView: global_config.is_mobile ? 1.25 : 3.5,
-      spaceBetween: 20,
-      navigation: {
-      nextEl: '.professional .centeral-content .swiper-button-next',
-      prevEl: '.professional .centeral-content .swiper-button-prev',
-    },
-      scrollbar: {
-        el: '.professional .centeral-content .swiper-scrollbar',
-        draggable: true,
-      },
-    });
-
-
-
-  $('.faq .items .item .u24Medium_v2').click(function () {
+  task(() => {
+    $('.faq .items .item .u24Medium_v2').click(function () {
     $(this).siblings('.u17Light_v2').slideToggle().parent().siblings().find('.u17Light_v2').slideUp();
 
     if ($(this).parent().hasClass('active')) {
@@ -1913,84 +586,5 @@ global_config.carbon1pro_order_page_config = {
 
     $(this).parent().siblings().removeClass('active');
   });
-
-  const allvideo = document.querySelectorAll('.comfort video');
-  const video = global_config.is_mobile ? allvideo[1] : allvideo[0];
-  const observerwww = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        video.currentTime = 0; // 重置播放位置
-        video.play();
-      } else {
-        video.pause();
-        video.currentTime = 0;
-      }
-    });
-  });
-
-  observerwww.observe(video);
-
-  
-  $('.product .product-panel .accessories > div:not(.u17DemiBold_v2):not(.items)').on('click', (e) => {
-    const items = $('.product .product-panel .accessories .items');
-
-    items.animate(
-      {
-        scrollLeft:
-          $('.product .product-panel .accessories .items').scrollLeft() + ($(e.target).hasClass('next') ? 160 : -160),
-      },
-      300
-    );
-  });
-
-  $('.product .product-panel .accessories .items .item').on('click', (e) => {
-    const item = $(e.target).closest('.item');
-    const icon = item.find('.u11Light_v2');
-
-    if (item.hasClass('active')) {
-      item.removeClass('active');
-      icon.find('svg').first().removeClass('er-hidden').next().addClass('er-hidden')
-    } else {
-      item.addClass('active');
-      icon.find('svg').last().removeClass('er-hidden').prev().addClass('er-hidden')
-    }
-  });
-
-  let currnetScroolTop = 0;
-  $(document).on(
-    'scroll',
-    throttle(
-      (e) => {
-        const top1 = $('.professional').offset().top;
-        const top3 = $('.product .addToCartBtn').offset().top;
-        const top2 = $(e.target).scrollTop();
-
-        const h = window.screen.height;
-
-        if (global_config.is_mobile) {
-          if (top2 > top3) {
-            $('.bottom-fixed').show();
-          } else {
-            $('.bottom-fixed').hide();
-          }
-        } else {
-          if (top2 > top1) {
-            $('.top-fixed').show();
-          } else {
-            $('.top-fixed').hide();
-          }
-
-          if (currnetScroolTop > top2) {
-            $('.top-fixed').hide();
-          }
-
-          currnetScroolTop = top2;
-        }
-      },
-      300,
-      100
-    )
-  );
+  })
 </script>
-
-<script src="https://cdn.storepoint.co/api/v1/js/162f21804990ff.js" defer></script>
