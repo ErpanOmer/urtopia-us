@@ -539,7 +539,8 @@
     <div class="judmeeeeeeeee">
             <div class="centeral-content">
                 <h2 class="u48Medium_v2">What our real customers say</h2>
-                {% include "judgeme_all_reviews", widget_type: "judgeme_all_review_widget", concierge_install: false %}
+                {% render "judgeme_all_reviews", widget_type: "judgeme_all_review_widget", concierge_install: false %}
+                {% render 'judgeme_core' %}
             </div>
     </div>
 

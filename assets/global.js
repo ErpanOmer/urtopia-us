@@ -2242,6 +2242,43 @@ window.addEventListener('load', async () => {
     fetch(window.location.pathname + '?sections=datalayer-allpages').then(r => r.json()).then(r => {
       $(document.body).append($(r['datalayer-allpages']))
     })
+
+    $('#shopify-section-cart-drawer').on('click', 'div[cart-variant-id]', function () {
+      const id = $(this).attr('cart-variant-id')
+      console.log(id)
+      const items = $('.cart-drawer-items')[0]
+      const sections = items.getSectionsToRender()
+      const body = {
+        sections: sections.map((section) => section.section),
+        sections_url: window.location.pathname,
+        items: [ { id, quantity: 1 } ]
+      }
+    
+      fetch("/cart/add.js", {
+        method: "POST",
+        body: JSON.stringify(body), // formData
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then((res) => res.json()).then(parsedState => {
+        console.log('parsedState', parsedState)
+    
+        items.classList.toggle('is-empty', parsedState.item_count === 0);
+        const cartDrawerWrapper = document.querySelector('cart-drawer');
+    
+        sections.forEach((section => {
+          const elementToReplace =
+            document.getElementById(section.id).querySelector(section.selector) || document.getElementById(section.id);
+          elementToReplace.innerHTML =
+          items.getSectionInnerHTML(parsedState.sections[section.section], section.selector);
+        }));
+    
+        if (cartDrawerWrapper) cartDrawerWrapper.classList.toggle('is-empty', parsedState.item_count === 0);
+    
+      }).catch(e => {
+        console.log()
+      })
+    })
 });
 
 const isIE=typeof document!=='undefined'&&document.documentMode;const support=type=>window&&window[type];const validAttribute=['data-iesrc','data-alt','data-src','data-srcset','data-background-image','data-toggle-class'];const defaultConfig={rootMargin:'0px',threshold:0,enableAutoReload:false,load(element){if(element.nodeName.toLowerCase()==='picture'){let img=element.querySelector('img');let append=false;if(img===null){img=document.createElement('img');append=true}if(isIE&&element.getAttribute('data-iesrc')){img.src=element.getAttribute('data-iesrc')}if(element.getAttribute('data-alt')){img.alt=element.getAttribute('data-alt')}if(append){element.append(img)}}if(element.nodeName.toLowerCase()==='video'&&!element.getAttribute('data-src')){if(element.children){const childs=element.children;let childSrc;for(let i=0;i<=childs.length-1;i++){childSrc=childs[i].getAttribute('data-src');if(childSrc){childs[i].src=childSrc}}element.load()}}if(element.getAttribute('data-poster')){element.poster=element.getAttribute('data-poster')}if(element.getAttribute('data-src')){element.src=element.getAttribute('data-src')}if(element.getAttribute('data-srcset')){element.setAttribute('srcset',element.getAttribute('data-srcset'))}let backgroundImageDelimiter=',';if(element.getAttribute('data-background-delimiter')){backgroundImageDelimiter=element.getAttribute('data-background-delimiter')}if(element.getAttribute('data-background-image')){element.style.backgroundImage=`url('${element.getAttribute('data-background-image').split(backgroundImageDelimiter).join('\'),url(\'')}')`;
@@ -2333,4 +2370,11 @@ waitForElement('.mobile-footer', target => {
         $(el).siblings("ul.footer-block__details-content").slideToggle().parent().siblings().find("ul.footer-block__details-content").slideUp()
     });
   });
+});
+
+$('.hedaer-secondary-menu .centreallllll .bikesssssss > div').on('click',  function (e) {
+  location.href= $(this).attr('href')
+})
+$('.hedaer-secondary-menu-mb .bikesssssss > div').on('click',  function (e) {
+  location.href= $(this).attr('href')
 });

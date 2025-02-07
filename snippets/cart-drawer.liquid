@@ -429,7 +429,7 @@
                     <div class="u14DemiBold_v2">{{ prod.title }}</div>
                     <div class="u14Medium_v2">
                       <span>{{ prod.price | money }}</span>
-                      <div class="my-button my-button-origin" onclick="addTocartFromAccessories('{{ variant.id }}')">
+                      <div class="my-button my-button-origin" cart-variant-id="{{ variant.id }}">
                         ADD
                       </div>
                     </div>
@@ -527,50 +527,3 @@
     </div>
   </div>
 </cart-drawer>
-
-<script>
-  //Bing UET
-  document.querySelector('#CartDrawer-Checkout').addEventListener('click', function () {
-    fetchBuried('websiteclick', `cart-page`, { button: 'checkout' }, true)
-  })
-
-  function addTocartFromAccessories (id) {
-    if (!id) {
-      return
-    }
-
-    const items = $('.cart-drawer-items')[0]
-    const sections = items.getSectionsToRender()
-
-    const body = {
-      sections: sections.map((section) => section.section),
-      sections_url: window.location.pathname,
-      items: [ { id, quantity: 1 } ]
-    }
-
-    fetch("/cart/add.js", {
-      method: "POST",
-      body: JSON.stringify(body), // formData
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    }).then((res) => res.json()).then(parsedState => {
-      console.log('parsedState', parsedState)
-
-      items.classList.toggle('is-empty', parsedState.item_count === 0);
-      const cartDrawerWrapper = document.querySelector('cart-drawer');
-
-      sections.forEach((section => {
-        const elementToReplace =
-          document.getElementById(section.id).querySelector(section.selector) || document.getElementById(section.id);
-        elementToReplace.innerHTML =
-        items.getSectionInnerHTML(parsedState.sections[section.section], section.selector);
-      }));
-
-      if (cartDrawerWrapper) cartDrawerWrapper.classList.toggle('is-empty', parsedState.item_count === 0);
-
-    }).catch(e => {
-      console.log()
-    })
-  }
-</script>

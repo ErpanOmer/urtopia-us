@@ -13,59 +13,10 @@
     {% endif %}
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
     {%- render 'meta-tags' -%}
-    {% render 'web-font' %}
+    {%- render 'web-font' -%}
     <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
-    <script>
-         const pattern = [
-            ['src', 'shopify-perf-kit', 2],
-            ['src', 'https://www.google-analytics.com/analytics.js', 3],
-            ['className', 'analytics', 2],
-            ['id', 'web-pixels-manager-setup', 4]
-          ]
-          // 存储 head 中的 script 标签信息
-          const scriptQueue = [];
-          // 监听 DOM 的添加
-          window.observer = new MutationObserver((mutations) => {
-            mutations.forEach((mutation) => {
-              mutation.addedNodes.forEach((node) => {
-                if (node.tagName === 'SCRIPT' && node.parentElement.tagName === 'HEAD') {
-                for (const [attr, value, level] of pattern) {
-                  if (node[attr] && node.type !== "text/lazyload" && node[attr].includes(value)) {
-                     const newScript = document.createElement('script');
-                     const attrs = Array.from(node.attributes).map(attr => [attr.name, attr.value])
-                     
-                     for (const [attr, value] of attrs) {
-                        newScript.setAttribute(attr, value)
-                     }
-                     // lazy
-                     newScript.type = "text/lazyload";
-                     newScript.setAttribute('data-level', level);
-
-                     if (node.src) {
-                        newScript.src = node.src
-                     } else {
-                        const blob = new Blob([node.textContent], { type: 'application/javascript' })
-                        const reader = new FileReader(); 
-                        reader.onload = function (event) {
-                          newScript.src = event.target.result
-                        }
-
-                        reader.readAsDataURL(blob);
-                     }
-
-                     document.head.replaceChild(newScript, node); // 执行脚本 
-                     break;
-                  }
-                }
-                }
-              });
-            });
-          });
-
-          // 开始观察 head 的变动
-          window.observer.observe(document.head, { childList: true });
-    </script>
     <script src="{{ 'libs.min.js' | asset_url }}" defer></script>
+    {%- render 'global-config' -%}
     <template>{{ content_for_header }}</template>
     {{
       content_for_header
@@ -73,7 +24,6 @@
       | replace: "s.src = urls[i];", 's.type ="text/lazyload";s.async = false;s.setAttribute("data-level", "3");s.src = urls[i];'
       | replace: 'data-source-attribution="shopify.loadfeatures" defer="defer"', 'data-source-attribution="shopify.loadfeatures" data-level="1" type="text/lazyload"'
     }}
-    {% render 'global-config' %}
     {% render 'pagefly-app-header' %}
   </head>
   <body class="gradient">
