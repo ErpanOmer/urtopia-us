@@ -180,7 +180,7 @@
           {%- for option_value in option.values -%}
             <label
               {% if option.position == 1 -%}
-                class="er-button er-button-dark er-px-6 text-size14 er-py-2 er-rounded-xl{% unless option_value.selected %} er-button-outline{% endunless %}"
+                class="er-button er-button-dark er-px-6 text-size14 er-py-2 er-rounded-xl er-min-w-28{% unless option_value.selected %} er-button-outline{% endunless %}"
               {% else -%}
                 data-style="{{ option_value }}" class="er-group er-w-14 er-h-14 er-rounded-full er-border-2 er-border-solid er-border-transparent er-cursor-pointer er-transition er-bg-[var(--product-option-color)] er-p-[2px] er-bg-clip-content [&[class~='active']]:er-border-[var(--product-option-color)] er-relative{% if option_value.selected %} active{% endif %}"
               {% endif %}
