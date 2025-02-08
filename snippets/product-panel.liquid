@@ -528,24 +528,52 @@
     })
 
     task(() => {
-            // 监听滚动事件，显示或隐藏按钮
-        $(window).on('scroll', throttle(function () {
-            const target = $('.product-bar')
-      
-            if ($(this).scrollTop() > (screen.availHeight)) { // 页面滚动超过200px时显示按钮
-                target.css({
-                  opacity: 1,
-                  zIndex: 99999,
-                  transform: 'translateY(0)'
-                })
-            } else {
-              target.css({
-                  opacity: 0,
-                  zIndex: -1,
-                  transform: global_config.is_mobile ? 'translateY(100%)' : 'translateY(-100%)'
-              })
-            }
-         }, 100));
+      let lastScrollTop = 0; // 记录上次滚动位置
+      let isVisible = false; // 记录当前状态
+      let ticking = false; // 防止 requestAnimationFrame 频繁执行
+      const target = $('.product-bar');
+      const threshold = screen.availHeight * 2; // 触发计算的阈值
+      const isMobile = global_config.is_mobile; // 判断是否是移动端
+
+      function updateNavbar(scrollTop) {
+          if (isMobile) {
+              // 📱 移动端逻辑：超过 threshold 就显示，以下隐藏
+              if (scrollTop > threshold && !isVisible) {
+                  target.css({ opacity: 1, zIndex: 99999, transform: 'translateY(0)' });
+                  isVisible = true;
+              } else if (scrollTop <= threshold && isVisible) {
+                  target.css({  opacity: 0, zIndex: -1, transform: 'translateY(100%)' });
+                  isVisible = false;
+              }
+          } else {
+              // 💻 PC 端逻辑：滚动方向决定显示 / 隐藏
+              const scrollingDown = scrollTop > lastScrollTop;
+              if (scrollTop > threshold) {
+                  if (scrollingDown && !isVisible) {
+                      target.css({ opacity: 1, zIndex: 99999, transform: 'translateY(0)' });
+                      isVisible = true;
+                  } else if (!scrollingDown && isVisible) {
+                      target.css({ opacity: 0, zIndex: -1, transform: 'translateY(-100%)' });
+                      isVisible = false;
+                  }
+              } else if (isVisible) {
+                  target.css({ opacity: 0, zIndex: -1, transform: 'translateY(-100%)' });
+                  isVisible = false;
+              }
+          }
+
+          lastScrollTop = scrollTop;
+          ticking = false;
+      }
+
+      $(window).on('scroll', function () {
+          const scrollTop = $(this).scrollTop();
+
+          if (!ticking) {
+              ticking = true;
+              requestAnimationFrame(() => updateNavbar(scrollTop));
+          }
+      });
     })
 
     task(() => {

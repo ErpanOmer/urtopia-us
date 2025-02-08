@@ -222,38 +222,59 @@
     </div>
   </div>
 </div>
-<script type="module">
-  global_config.fusion_order_page_config = {
-      compare: {
-        parameters: [
-          ['', 'Fusion GT E-Bike', 'Other E-Bikes'],
-          ['Frame Material', 'Carbon Fiber', 'Aluminum Alloy'],
-          ['Motor', '1500W', '500W rear-hub motor'],
-          ['Battery Option', '900Wh Dual-battery', '672Wh battery'],
-          ['Charge Time', '3.5 Hrs', '5 Hrs'],
-          ['Max Range', '120 Miles', '60 Miles'],
-          ['Throttle', 'Yes, 20mph', 'Yes, 20mph'],
-          ['Weight', '55 lbs', '77 lbs'],
-          ['Anti-theft', 'GPS', 'X'],
-          ['Luggage Rack', 'MIK, max. 60 lbs', 'Regular'],
-          ['Max Load', '330 lbs', '300 lbs'],
-        ],
-        style: {
-          image_0: '//newurtopia.com/cdn/shop/files/19566.png?v=1729236036&width=250',
-          image_1:
-            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/cccc_2x_366a8576-c889-4210-8bbf-05fa1c327bf8.png?v=1731912593&width=250',
-          background: 'linear-gradient(180deg, #6b97be, #151d38)',
-          title:
-            '<h2 class="u36Medium_v2 mobileHide">What makes Carbon Fusion GT <br class="pcHide">the best e-SUV?</h2>',
-          image_pc:
-            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24890_2x_5ee70e3a-6ae6-4af8-b6f8-de3a0d065224.png?v=1729308382&width=1280',
-          image_mb:
-            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24891_2x_2fdadff8-8384-4c6b-b678-4e604f8ff504.png?v=1729318520',
-        },
-      },
-    }
-</script>
-{% render 'product-compare', config: 'fusion_order_page_config' %}
+<div class="er-bg-background er-py-48 mb:er-py-24">
+  <div class="er-max-w-screen-lg er-mx-auto er-flex er-flex-col er-items-center er-text-center er-px-12 mb:er-px-6">
+    <h3 class="text-size36 mb:er-text-4xl mb:er-leading-tight">What makes Carbon Fusion GT <br class="pcHide">the best e-SUV?</h3>
+    <div class="er-grid er-grid-cols-[3fr_4.5fr_4.5fr] er-my-48 er-w-full er-bg-white er-shadow er-rounded-3xl mb:er-my-24">
+      <div class="er-flex er-flex-col er-divide-y-[1px] er-divide-x-0 er-divide-solid er-divide-border er-mb-12 mb:er-mb-6">
+        <div class="er-flex-1"></div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">Frame Material</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">Motor</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">Battery Option</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">Charge Time</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">Max Range</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">Throttle</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">Weight</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">Anti-theft</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">Luggage Rack</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">Max Load</div>
+      </div>
+      <div class="er-my-[-30px] mb:er-my-[-15px] er-pt-12 mb:er-pt-6 er-flex er-flex-col er-divide-y-[1px] er-divide-x-0 er-divide-solid er-divide-white/15 er-shadow er-rounded-3xl er-text-white" style="background: linear-gradient(180deg, #6b97be, #151d38);">
+        <div class="text-size20 er-flex er-flex-col er-items-center er-justify-center er-font-medium er-py-12 mb:er-text-2xl mb:er-py-6">
+          {{ product | image_url: width: 200 | image_tag: loading: 'lazy', class: "er-aspect-video er-object-contain er-object-center" }}
+          <span class="er-mt-6 mb:er-mt-4">Fusion GT E-Bike</span>
+        </div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">Carbon Fiber</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">1500W</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">900Wh Dual-battery</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">3.5 Hrs</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">120 Miles</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">Yes, 20mph</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">55 lbs</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">GPS</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">MIK, max. 60 lbs</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">330 lbs</div>
+      </div>
+      <div class="er-flex er-flex-col er-divide-y-[1px] er-divide-x-0 er-divide-solid er-divide-border er-mb-12 mb:er-mb-6">
+        <div class="text-size20 er-flex er-flex-col  er-items-center er-justify-center er-font-medium er-py-12 mb:er-text-2xl mb:er-py-6">
+          <img width="200" height="125" loading="lazy" class="er-aspect-video er-object-contain er-object-center" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/cccc_2x_366a8576-c889-4210-8bbf-05fa1c327bf8.png?v=1731912593&width=200" alt="">
+          <span class="er-mt-6 mb:er-mt-4">Other E-Bikes</span>
+        </div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">Aluminum Alloy</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">500W rear-hub motor</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">672Wh battery</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">5 Hrs</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">60 Miles</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">Yes, 20mph</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">77 lbs</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">❌</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">Regular</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">300 lbs</div>
+      </div>
+    </div>
+    {% render 'image', width: 1024, src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24890_2x_5ee70e3a-6ae6-4af8-b6f8-de3a0d065224.png?v=1729308382", mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24891_2x_2fdadff8-8384-4c6b-b678-4e604f8ff504.png?v=1729318520" %}
+  </div>
+</div>
 <div class="background-image er-aspect-[1920/750] mb:er-aspect-auto">
 <video class="lozad mb:!er-static" playsinline loop autoplay muted>
         <source data-src="https://player.vimeo.com/progressive_redirect/playback/936203504/rendition/1080p/file.mp4?loc=external&signature=513c8a1f46d98c9185f87ac6b4e72d8b7225271c6e4d13b2ce23566eb5bae178" type="video/mp4" media="(min-width: 768px)">

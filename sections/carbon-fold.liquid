@@ -58,42 +58,59 @@
             </div>
         </div>
     </div>
-
-<script type="module">
-global_config.carbon_fold_order_page_config = {
-  compare: {
-        parameters: [
-          ['', 'Carbon Fold 1', 'Other Folding ebike'],
-          [
-            'Price',
-            '<span data-sale>{{ all_products["urtopia-carbon-fold"].price | money_without_trailing_zeros }}</span>',
-            '{{ 399900 | money_without_trailing_zeros }}',
-          ],
-          ['Frame Material', 'Carbon Fiber', '❌'],
-          ['Handlebar Material', 'Carbon Fiber', 'Aluminum Alloy'],
-          ['Weight', '29 lbs', '37 lbs'],
-          ['Max. Rider Weight', '200 lbs', '180 lbs'],
-          ['Range', '40 miles', '30 miles'],
-          ['Gears', 'Shimano Altus 8-Speed', 'Shimano Nexus 3-speed'],
-          ['IoT Sensor', 'Torque Sensor', 'Torque Sensor'],
-          ['Brakes', 'TEKTRO hydraulic disc brakes', 'Hydraulic disk, front and rear'],
-          ['Integrated light', '✔', '❌'],
-        ],
-        style: {
-          image_0: '{{ all_products["urtopia-carbon-fold"].variants.first.featured_image | image_url: width: 250 }}',
-          image_1:
-            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19638_2x_75919041-383b-4b48-bfec-76b858a0a92b.png?v=1736244768&width=300',
-          background: 'linear-gradient(180deg, #FFD362, #D57D00, #C15700)',
-          title: `<h2 class="u36Medium_v2">What makes Carbon Fold 1<br class="pcHide">the best Foldable E-Bike</h2>`,
-          image_pc:
-            'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24870_2x_a586c01c-a72c-42e0-9a94-d36047856d03.png?v=1729076064',
-          image_mb:
-            'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24876_2x_493b152e-2581-4f9f-ad47-c22c9a2fe2cd.png?v=1729474418',
-        },
-      },
-}
-</script>
-{% render 'product-compare', config: 'carbon_fold_order_page_config' %}
+<div class="er-bg-background er-py-48 mb:er-py-24">
+  <div class="er-max-w-screen-lg er-mx-auto er-flex er-flex-col er-items-center er-text-center er-px-12 mb:er-px-6">
+    <h3 class="text-size36 mb:er-text-4xl mb:er-leading-tight">What makes Carbon Fold 1<br class="pcHide">the best Foldable E-Bike</h3>
+    <div class="er-grid er-grid-cols-[3fr_4.5fr_4.5fr] er-my-48 er-w-full er-bg-white er-shadow er-rounded-3xl mb:er-my-24">
+      <div class="er-flex er-flex-col er-divide-y-[1px] er-divide-x-0 er-divide-solid er-divide-border er-mb-12 mb:er-mb-6">
+        <div class="er-flex-1"></div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">Price</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">Frame Material</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">Handlebar Material</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">Weight</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">Max. Rider Weight</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">Range</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">Gears</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">IoT Sensor</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">Brakes</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">Integrated light</div>
+      </div>
+      <div class="er-my-[-30px] mb:er-my-[-15px] er-pt-12 mb:er-pt-6 er-flex er-flex-col er-divide-y-[1px] er-divide-x-0 er-divide-solid er-divide-white/15 er-shadow er-rounded-3xl er-text-white" style="background: linear-gradient(180deg, #FFD362, #D57D00, #C15700);">
+        <div class="text-size20 er-flex er-flex-col er-items-center er-justify-center er-font-medium er-py-12 mb:er-text-2xl mb:er-py-6">
+          {{ product | image_url: width: 200 | image_tag: loading: 'lazy', class: "er-aspect-video er-object-contain er-object-center" }}
+          <span class="er-mt-6 mb:er-mt-4">Carbon Fold 1</span>
+        </div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">{{ product.price | money_without_trailing_zeros }}</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">Carbon Fiber</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">Carbon Fiber</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">29 lbs</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">200 lbs</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">40 miles</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">Shimano Altus 8-Speed</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">Torque Sensor</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">TEKTRO hydraulic disc brakes</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">✔</div>
+      </div>
+      <div class="er-flex er-flex-col er-divide-y-[1px] er-divide-x-0 er-divide-solid er-divide-border er-mb-12 mb:er-mb-6">
+        <div class="text-size20 er-flex er-flex-col  er-items-center er-justify-center er-font-medium er-py-12 mb:er-text-xl mb:er-py-6">
+          <img width="200" height="125" loading="lazy" class="er-aspect-video er-object-contain er-object-center" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19638_2x_75919041-383b-4b48-bfec-76b858a0a92b.png?v=1736244768&width=200" alt="">
+          <span class="er-mt-6 mb:er-mt-4 mb:er-leading-relaxed">Other Folding ebike</span>
+        </div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">{{ 399900 | money_without_trailing_zeros }}</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">❌</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">Aluminum Alloy</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">37 lbs</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">180 lbs</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">30 miles</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">Shimano Nexus 3-speed</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">Torque Sensor</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">Hydraulic disk, front and rear</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">❌</div>
+      </div>
+    </div>
+    {% render 'image', width: 1024, src: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24870_2x_a586c01c-a72c-42e0-9a94-d36047856d03.png?v=1729076064", mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24876_2x_493b152e-2581-4f9f-ad47-c22c9a2fe2cd.png?v=1729474418" %}
+  </div>
+</div>
 <div class="step_folding">
   <div class="centeral-content">
     <div>
