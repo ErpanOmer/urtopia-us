@@ -2,19 +2,107 @@
 {{ 'collection.scss.css' | asset_url | stylesheet_tag: preload: true }}
 <h1 class="visuallyhidden">Urtopia Ebike - Sleek, Full Carbon, Lightweight, Smart</h1>
 
-<div class="banner">
-  <div class="centeral-content">
-    <img
-      width="220"
-      height="188"
-      class="mb:er-max-w-[120px]"
-      src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25266_2x_ede5ac27-c499-469a-ab61-2872a6b6dce6.png?v=1736233407"
-      alt="Urtopia Ebike - Sleek, Full Carbon, Lightweight, Smart"
-    >
-    <h2 class="er-text-7xl mb:er-text-5xl er-text-[#FFDF48] er-mt-12 er-mb-28 mb:er-mx-auto mb:er-mb-12 mb:er-mt-8">
-      Up to {{ all_products["urtopia-carbon-fusion-gt"].compare_at_price |  minus: all_products["urtopia-carbon-fusion-gt"].price | money_without_trailing_zeros }} OFF
-    </h2>
-    {% render 'sale' %}
+<div class="background-image">
+  {% render 'image', first_screen: true, mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC05866_copy_2_2x_d6026bec-6ab4-4292-991c-ac03e6f509e9.jpg?v=1738997732", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC05866_copy_2_2x_92f7ce0a-1123-4ecf-a7e5-182da7f8d673.jpg?v=1738996602" %}
+  <div class="centeral-content er-flex mb:er-flex-col-reverse">
+    <span class="flex-1"></span>
+    <div class="er-h-[500px] er-flex er-flex-col er-items-start er-justify-center mb:er-justify-start mb:er-items-center mb:er-pt-10">
+      <img width="162" height="110" class="mb:er-max-w-52" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25442_2x_a3c88bb7-f16e-4f78-ad61-aad4ebc8e4f5.png?v=1738996971" alt="{{ page_description }}">
+      <h2 class="er-text-7xl mb:er-text-5xl er-text-white er-mt-12 er-mb-24 mb:er-mt-6 mb:er-mb-12 mb:er-text-[#EF519A]">
+        Up to {{ all_products["urtopia-carbon-fusion-gt"].compare_at_price |  minus: all_products["urtopia-carbon-fusion-gt"].price | money_without_trailing_zeros }} OFF
+      </h2>
+      {% render 'sale' %}
+    <style>
+          .sale {
+              width: 400px;
+              background-color: transparent;
+              overflow: hidden;
+              margin-bottom: 0;
+          }
+
+          .sale > .u14DemiBold_v2 {
+              display: none;
+          }
+
+          .sale > div:not(.u14DemiBold_v2) {
+              display: flex;
+              justify-content: space-between;
+              padding: 0;
+          }
+
+          .sale > div:not(.u14DemiBold_v2) > div {
+              border-left: none !important;
+              place-self: center;
+              width: 65px;
+              align-items: unset;
+              position: relative;
+          }
+
+          .sale .u36DemiBold_v2 {
+              display: block;
+              background-color: #fff;
+              padding: 15px 12px;
+              border-radius: 7px;
+              font-size: 30px;
+              margin-bottom: 7.5px;
+              position: relative;
+              color: #EF519A;
+          }
+
+
+          .sale .u36DemiBold_v2::after {
+              content: ":";
+              position: absolute;
+              top: 50%;
+              right: 0;
+              transform: translate(25px, -50%);
+              font-size: 25px;
+              font-weight: 300;
+              color: #fff;
+          }
+
+
+          .sale > div:not(.u14DemiBold_v2) > div span:last-child {
+              opacity: 1;
+              font-size: 12px;
+              color: #fff;
+              font-weight: 300;
+          }
+
+
+          @media (max-width: 767px) {
+              .sale {
+                  max-width: 260px;
+              }
+
+
+              .sale .u36DemiBold_v2 {
+                  font-size: 18px;
+                  padding: 10px 8px;
+                  background-color: #EF519A;
+                  color: #fff;
+                  /* color: #000; */
+              }
+
+
+              .sale > div:not(.u14DemiBold_v2) > div {
+                  width: 42px;
+
+              }
+
+              .sale > div:not(.u14DemiBold_v2) > div span:last-child {
+                  font-size: 9px;
+                  color: #EF519A;
+                  /* color: #fff; */
+              }
+
+              .sale .u36DemiBold_v2::after {
+                  transform: translate(17px, -50%);
+                  color: #EF519A;
+              }
+          }
+    </style>
+    </div>
   </div>
 </div>
 <div class="centeral-content ebike-products">
@@ -446,89 +534,6 @@
     <a class="my-button my-button-white" target="_blank" href="/pages/test-ride">Learn more</a>
   </div>
 </div>
-<style>
-      .sale {
-          width: 400px;
-          background-color: transparent;
-          overflow: hidden;
-      }
-
-      .sale > .u14DemiBold_v2 {
-          display: none;
-      }
-
-      .sale > div:not(.u14DemiBold_v2) {
-          display: flex;
-          justify-content: space-between;
-          padding: 0;
-      }
-
-      .sale > div:not(.u14DemiBold_v2) > div {
-          border-left: none !important;
-          place-self: center;
-          width: 65px;
-          align-items: unset;
-          position: relative;
-      }
-
-      .sale .u36DemiBold_v2 {
-          display: block;
-          background-color: #fff;
-          padding: 15px 12px;
-          border-radius: 7px;
-          font-size: 30px;
-          margin-bottom: 7.5px;
-          position: relative;
-      }
-
-
-      .sale .u36DemiBold_v2::after {
-          content: ":";
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translate(25px, -50%);
-  font-size: 25px;
-  font-weight: 300;
-  color: #fff;
-      }
-
-
-      .sale > div:not(.u14DemiBold_v2) > div span:last-child {
-          opacity: 1;
-          font-size: 12px;
-          color: #fff;
-          font-weight: 300;
-      }
-
-
-      @media (max-width: 767px) {
-          .sale {
-              max-width: 260px;
-          }
-
-
-          .sale .u36DemiBold_v2 {
-              font-size: 18px;
-              padding: 10px 8px;
-          }
-
-
-          .sale > div:not(.u14DemiBold_v2) > div {
-              width: 42px;
-
-          }
-
-          .sale > div:not(.u14DemiBold_v2) > div span:last-child {
-              font-size: 9px;
-          }
-
-          .sale .u36DemiBold_v2::after {
-              transform: translate(17px, -50%);
-          }
-      }
-</style>
-
 <script type="module">
         $('.product-card .dots > div').on('click', e => {
             const target = $(e.target)

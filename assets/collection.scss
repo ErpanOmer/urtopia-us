@@ -29,9 +29,7 @@ h4 {
 
 
 .banner {
-    background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25225_2x_8169c0cb-72c1-49ff-9db1-13aa0b5d11ee.jpg?v=1734086685') center center/cover no-repeat;
     color: #fff;
-
     .centeral-content {
         height: 550px;
         display: flex;
@@ -42,8 +40,6 @@ h4 {
 
 
     @media (max-width: 767px) {
-        background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3333_2x_0b4d90cd-d7a8-4195-9d54-f48dae202113.jpg?v=1734086927');
-
         .centeral-content {
             align-items: center;
             text-align: center;
