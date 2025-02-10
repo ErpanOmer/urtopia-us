@@ -831,27 +831,6 @@ const testRides = [
         ],
       },
       {
-        name: 'SELA Bicycle Center',
-        phone: '(213) 410-7043',
-        email: 'Info@SelaBicycleCenter.com',
-        timezone: "Fremont, California, USA (GMT-7)",
-        add: "6239 Atlantic Ave, Bell, CA 90201",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_12.png?v=1724034147",
-        testrideSpot: "Bell",
-        availableSizes: [
-          'Carbon 1 Pro Size S/M/L'
-        ],
-        businessHours: [
-           "11:00-16:00",
-           "10:00-18:00",
-            "10:00-18:00",
-          "10:00-18:00",
-             "10:00-18:00",
-            "10:00-18:00",
-             "10:00-18:00",
-        ],
-      },
-      {
         name: 'Electric Bikes of Santa Barbara',
         phone: '805-963-8885',
         email: '',
