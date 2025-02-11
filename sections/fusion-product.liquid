@@ -675,8 +675,10 @@
        const img = $(`<img class="er-absolute er-top-0 er-left-0 er-z-[2] er-transition er-opacity-100 mb:er-max-w-32" width="116" height="90" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250123-183800.png?v=1737628695&width=150" alt="{{ product.title }}"/>`)
        $(".product-panel-swiper .swiper-wrapper").before(img)
 
-       window.product_panel_swiper.on('slideChange', function () {
+       task(() => {
+         window.product_panel_swiper.on('slideChange', function () {
               img.css('opacity', this.realIndex > 0 ? 0 : 1)
+         })
        })
   })
 </script>
