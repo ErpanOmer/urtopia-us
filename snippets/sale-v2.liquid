@@ -1,3 +1,4 @@
+{% assign coun_down = shop.metaobjects.coun_down['coun-down']['list'].value %}
 <div id="count-down" class="er-font-base er-bg-dark er-text-white er-rounded-2xl er-overflow-hidden er-divide-y er-divide-solid er-divide-primary/30 er-divide-x-0 er-mb-8">
   <div class="er-text-4xl mb:er-text-3xl er-text-primary er-font-black er-py-4 er-pl-8 er-uppercase" data-name="sale-name">
     {{ settings.sale_name }}
@@ -22,5 +23,10 @@
   </div>
 </div>
 <script type="module">
-  if(window.loaded_sale_countdown=!1,!window.loaded_sale_countdown){window.loaded_sale_countdown=!0;let e=0,t=("urtopia.myshopify.com"===Shopify.shop?660:-120)*6e4;function n(e=new Date){return e.getTime()+6e4*e.getTimezoneOffset()+t}function o(e){let[o,l,d]=global_config.sale_end_times[e].sale_end_time.split("-").map(Number);return $('#count-down > div[data-name="sale-name"]').html(global_config.sale_end_times[e].sale_name),n(new Date(Date.UTC(o,l-1,d,0,0,0,0)+t))}let l=[864e5,36e5,6e4,1e3],d=["02","23","59","59"];function a(t){let i=t-n();if(i<=0)return++e>global_config.sale_end_times.length-1?($("#count-down").hide(),console.log("Countdown Ended!")):a(o(e));{let s=[];for(let r=0;r<l.length;r++)s[r]=String(Math.floor(i/l[r])).padStart(2,"0"),i%=l[r];let u={};for(let f=0;f<s.length;f++)d[f]!==s[f]&&(u[f]=s[f],d[f]=s[f]);for(let m in u)$(`#count-down .er-grid > div:nth-child(${Number(m)+1})`).find(".er-text-6xl").text(u[m])}setTimeout(a,1e3,t)}task(()=>{a(o(e))},0)}
+  if(window.loaded_sale_countdown=!1,!window.loaded_sale_countdown){
+    const sale_end_times = [];
+    {%- for item in coun_down -%}
+      sale_end_times.push({ sale_name: `{{  item.sale_name  }}`, sale_end_time: `{{  item.sale_end_time  }}` });
+    {%- endfor -%}
+    window.loaded_sale_countdown=!0;let e=0,t=("urtopia.myshopify.com"===Shopify.shop?660:-120)*6e4;function n(e=new Date){return e.getTime()+6e4*e.getTimezoneOffset()+t}function o(e){let[o,l,d]=sale_end_times[e].sale_end_time.split("-").map(Number);return $('#count-down > div[data-name="sale-name"]').html(sale_end_times[e].sale_name),n(new Date(Date.UTC(o,l-1,d,0,0,0,0)+t))}let l=[864e5,36e5,6e4,1e3],d=["02","23","59","59"];function a(t){let i=t-n();if(i<=0)return++e>sale_end_times.length-1?($("#count-down").hide(),console.log("Countdown Ended!")):a(o(e));{let s=[];for(let r=0;r<l.length;r++)s[r]=String(Math.floor(i/l[r])).padStart(2,"0"),i%=l[r];let u={};for(let f=0;f<s.length;f++)d[f]!==s[f]&&(u[f]=s[f],d[f]=s[f]);for(let m in u)$(`#count-down .er-grid > div:nth-child(${Number(m)+1})`).find(".er-text-6xl").text(u[m])}setTimeout(a,1e3,t)}task(()=>{a(o(e))},0)}
 </script>

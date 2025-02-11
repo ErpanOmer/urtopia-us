@@ -71,14 +71,16 @@
       </div>
     </div>
   </div>
-
-  <script
-    type="module"
-  >
+  {% assign coun_down = shop.metaobjects.coun_down['coun-down']['list'].value %}
+  <script type="module">
       window.loaded_sale = false;
 
       if (!window.loaded_sale) {
         window.loaded_sale = true
+        const sale_end_times = [];
+        {%- for item in coun_down -%}
+          sale_end_times.push({ sale_name: `{{  item.sale_name  }}`, sale_end_time: `{{  item.sale_end_time  }}` });
+        {%- endfor -%}
 
          // 当前活动索引
          let sale_end_time_index = 0
@@ -90,11 +92,11 @@
   }
 
   function getEndTime (i) {
-    const [y, m, d] = global_config.sale_end_times[i].sale_end_time.split('-').map(Number);
+    const [y, m, d] = sale_end_times[i].sale_end_time.split('-').map(Number);
     console.log('getEndTime', i)
     // set name
-    $('.sale > .u14DemiBold_v2').text(global_config.sale_end_times[i].sale_name)
-    $('[sale-name]').text(global_config.sale_end_times[i].sale_name);
+    $('.sale > .u14DemiBold_v2').text(sale_end_times[i].sale_name)
+    $('[sale-name]').text(sale_end_times[i].sale_name);
 
     return getUTCTime(new Date(Date.UTC(y, m - 1, d, 0, 0, 0, 0) + timezoneoffset));
   }
@@ -108,7 +110,7 @@
     if (timeDifference <= 0) {
       sale_end_time_index++
       
-      if (sale_end_time_index > global_config.sale_end_times.length - 1) {
+      if (sale_end_time_index > sale_end_times.length - 1) {
         $('.sale').hide();
         return console.log('Countdown Ended!');
       }
