@@ -505,8 +505,7 @@
           }, 300);
     });
 
-    task(() => {
-       window.product_panel_swiper = new Swiper('.product-panel .product-panel-swiper', {
+    window.product_panel_swiper = new Swiper('.product-panel .product-panel-swiper', {
           navigation: {
             nextEl: '.product-panel .product-panel-swiper .swiper-button-next',
             prevEl: '.product-panel .product-panel-swiper .swiper-button-prev',
@@ -523,7 +522,6 @@
                 $('.product-panel .product-medias').find('span').text(product_medias[loopIndex].text)
               },
           },
-        })
     })
 
     task(() => {
