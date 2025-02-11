@@ -337,12 +337,6 @@
 
   const product_size_map = {{ product_size_map | json }}
 
-  function onClickLeftImages () {
-    const index = Number($(this).attr('data-index'))
-    $(this).addClass('active').siblings().removeClass('active')
-    window.product_panel_swiper.slideTo(index - 1)
-  }
-
   function removeSwiper (insert_index, variant_size) {
       const length = $('.left-images img').length
       let common_size = length - variant_size
@@ -372,7 +366,7 @@
         }
       }
 
-      const fn_j = image => $(`<img width="64" src="${image.image_url}" class="{{ product_left_swiper_class }}">`).on('click', onClickLeftImages)
+      const fn_j = image => $(`<img width="64" src="${image.image_url}" class="{{ product_left_swiper_class }}">`)
       const fn_s = image => image.image_tag
 
       if (before.length) {
@@ -434,7 +428,7 @@
     }
   });
 
-  $('.buttons > button').on('click', async function () {
+  $('.product-panel .buttons > button').on('click', async function () {
     const target = $(this)
     const cart = document.querySelector('cart-drawer')
     const items = []
@@ -493,7 +487,25 @@
       onVariantChange(name, value)
   })
 
-  task(() => {
+    $('.product-panel .left-images').on('click', 'img', function () {
+      const index = Number($(this).attr('data-index'))
+      $(this).addClass('active').siblings().removeClass('active')
+      window.product_panel_swiper.slideTo(index - 1)
+    })
+
+    $('.product-panel div[data-dialog-id]').on('click', function () {
+          showDialog(document.getElementById($(this).attr('data-dialog-id')))
+    })
+
+    $('.product-panel .accessories > .er-flex > div:not(.er-flex-1)').on('click', function () {
+        const items = $('.product-panel .accessories > .er-flex > .er-flex-1');
+        items.animate(
+          {
+            scrollLeft: items.scrollLeft() + ($(this).hasClass('er-rotate-[135deg]') ? 160 : -160),
+          }, 300);
+    });
+
+    task(() => {
        window.product_panel_swiper = new Swiper('.product-panel .product-panel-swiper', {
           navigation: {
             nextEl: '.product-panel .product-panel-swiper .swiper-button-next',
@@ -512,19 +524,6 @@
               },
           },
         })
-    })
-
-  $(function() {
-    task(() => {
-        $('.product-panel .accessories > .er-flex > div:not(.er-flex-1)').on('click', function () {
-            const items = $('.product-panel .accessories > .er-flex > .er-flex-1');
-            items.animate(
-              {
-                scrollLeft: items.scrollLeft() + ($(this).hasClass('er-rotate-[135deg]') ? 160 : -160),
-              },
-              300
-            );
-        });
     })
 
     task(() => {
@@ -575,15 +574,4 @@
           }
       });
     })
-
-    task(() => {
-      $('.product-panel .left-images > img').on('click', onClickLeftImages)
-    })
-
-    task(() => {
-      $('.product-panel div[data-dialog-id]').on('click', function () {
-          showDialog(document.getElementById($(this).attr('data-dialog-id')))
-      })
-    })
-  });
 </script>
