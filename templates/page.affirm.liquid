@@ -1,18 +1,15 @@
+{{ 'carbon1pro-new.scss.css' | asset_url | stylesheet_tag: preload: true }}
+{{ 'outlet_v4.scss.css' | asset_url | stylesheet_tag: preload: true }}
+
 <div class="background-image er-aspect-[1920/750] mb:er-aspect-square">
-        <picture>
-            <source media="(min-width: 768px)"
-                srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250212-110254.jpg?v=1739329401">
-            <source media="(max-width: 768px)"
-                srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250212-110301.jpg?v=1739329400">
-            <img src="" alt="">
-        </picture>
+{% render 'image', first_screen: true, src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250212-110254.jpg?v=1739329401", mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250212-110301.jpg?v=1739329400" %}
         <div class="centeral-content er-h-full er-flex er-text-white mb:er-flex-col mb:er-pt-14">
             <span class="flex-1 mb:er-hidden"></span>
             <div class="er-flex er-flex-col er-justify-center er-items-start mb:er-items-center mb:er-text-center">
                 <img loading="lazy" height="70" width="400" class="mb:er-max-w-sm"
                     src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25291_2x_464e05b0-c648-4c11-8b7d-6f46db850783.png?v=1739329499"
                     alt="">
-                <h1 class="text-size48 er-mt-20 mb:er-text-5xl mb:er-mt-14 mb:er-leading-snug">0% APR financing,<br>up
+                <h1 class="er-m-0 text-size48 er-mt-20 mb:er-text-5xl mb:er-mt-14 mb:er-leading-snug er-text-white">0% APR financing,<br>up
                     to 24 months</h1>
             </div>
             <div class="er-w-40"></div>
@@ -20,7 +17,7 @@
     </div>
     <div class="centeral-content">
         <div class="er-py-32 er-flex er-flex-col er-justify-center er-items-center er-text-center mb:er-py-20">
-            <h2 class="text-size30 mb:er-text-4xl">Pay over time with 0% APR</h2>
+            <h2 class="er-m-0 text-size30 mb:er-text-4xl">Pay over time with 0% APR</h2>
             <p class="er-mt-10 text-size18 er-opacity-80 er-max-w-screen-lg mb:er-text-2xl">
                 <span>We’re excited to partner with Affirm, giving you the flexibility to pay on your terms. Next time
                     you’re shopping with us, just select Affirm at checkout to split up your purchase into monthly
@@ -32,7 +29,7 @@
     <div class="er-bg-background er-py-32 mb:er-py-20">
         <div class="centeral-content">
             <div class="er-flex er-flex-col er-justify-center er-items-center er-text-center">
-                <h2 class="text-size30 mb:er-text-4xl">
+                <h2 class="er-m-0 text-size30 mb:er-text-4xl">
                     Buying with
                     <img width="100" class="er-mx-2 mb:er-max-w-28" height="40"
                         src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/black_logo-white_bg.svg?v=1739331149"
@@ -46,7 +43,7 @@
             <div
                 class="er-grid er-grid-cols-1 md:er-grid-cols-2 lg:er-grid-cols-4 er-text-center er-mt-20 er-gap-8 mb:er-gap-y-16">
                 <div class="er-flex er-flex-col er-items-center">
-                    <h3 class="text-size24 mb:er-text-3xl">Step 1<span class="md:er-hidden"> : </span><br class="mb:er-hidden">Fill your cart</h3>
+                    <h3 class="er-m-0 text-size24 mb:er-text-3xl">Step 1<span class="md:er-hidden"> : </span><br class="mb:er-hidden">Fill your cart</h3>
                     <img class="er-my-8 mb:er-order-1" loading="lazy" width="284" height="442"
                         src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/390_2x_e852e9b1-8639-49fd-a1ee-8be3f0bb12aa.jpg?v=1739331373"
                         alt="">
@@ -55,7 +52,7 @@
                     </p>
                 </div>
                 <div class="er-flex er-flex-col er-items-center">
-                    <h3 class="text-size24 mb:er-text-3xl">Step 2<span class="md:er-hidden"> : </span><br class="mb:er-hidden">Fill in your info</h3>
+                    <h3 class="er-m-0 text-size24 mb:er-text-3xl">Step 2<span class="md:er-hidden"> : </span><br class="mb:er-hidden">Fill in your info</h3>
                     <img class="er-my-8 mb:er-order-1" loading="lazy" width="284" height="442"
                         src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/391_2x_623824e7-73f3-4df6-ade3-47f251006eef.jpg?v=1739331734"
                         alt="">
@@ -64,7 +61,7 @@
                     </p>
                 </div>
                 <div class="er-flex er-flex-col er-items-center">
-                    <h3 class="text-size24 mb:er-text-3xl">Step 3<span class="md:er-hidden"> : </span><br class="mb:er-hidden">Choose how to pay</h3>
+                    <h3 class="er-m-0 text-size24 mb:er-text-3xl">Step 3<span class="md:er-hidden"> : </span><br class="mb:er-hidden">Choose how to pay</h3>
                     <img class="er-my-8 mb:er-order-1" loading="lazy" width="284" height="442"
                         src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2025-01-13_14.45.31_2x_9eb515c7-e933-4602-bf15-5d44d426025d.jpg?v=1739331729"
                         alt="">
@@ -73,7 +70,7 @@
                     </p>
                 </div>
                 <div class="er-flex er-flex-col er-items-center">
-                    <h3 class="text-size24 mb:er-text-3xl">Step 4<span class="md:er-hidden"> : </span><br class="mb:er-hidden">Pay over time</h3>
+                    <h3 class="er-m-0 text-size24 mb:er-text-3xl">Step 4<span class="md:er-hidden"> : </span><br class="mb:er-hidden">Pay over time</h3>
                     <img class="er-my-8 mb:er-order-1" loading="lazy" width="284" height="442"
                         src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2025-01-13_15.50.27_2x_3511f95a-6ea5-4807-9b59-9e37558a1f92.jpg?v=1739331724"
                         alt="">
@@ -85,10 +82,61 @@
             </div>
         </div>
     </div>
+<div class="centeral-content er-flex er-flex-col er-justify-center er-items-center er-text-center">
+    <h2 class="er-m-0 text-size30 mb:er-text-4xl er-mt-32 er-mb-16 mb:er-mt-20">
+        Just select <img width="100" class="er-mx-2 mb:er-max-w-28" height="40" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/black_logo-white_bg.svg?v=1739331149" loading="lazy" alt="">at checkout
+    </h2>
+</div>
+<div class="centeral-content ebike-products" style="margin-top: 0;"> 
+    <div class="product-grid">
+        {% assign product = all_products['urtopia-carbon-fold'] %}
+        {% assign product_variants = product.variants | where: 'available' %}
+        {% assign product_uhmaya = '29 lbs<br>lightweight, Full<br>carbon fiber, Torque<br>sensor' | split: ', ' %}
+        {% render 'product-card-2',
+        product_variants: product_variants,
+        product_name: 'Carbon Fold 1',
+        product_description: 'Super space-efficient',
+        product_url: product.url,
+        product_uhmaya: product_uhmaya
+        %}
+        {% assign product = all_products['urtopia-carbon-1-step-thru-ebike'] %}
+    {% assign product_variants = product.variants | where: 'available' %}
+    {% assign product_uhmaya = '36 lbs<br>lightweight, Full<br>carbon fiber, 80<br>Miles' | split: ', ' %}
+    {% render 'product-card-2',
+      product_variants: product_variants,
+      product_name: 'Carbon 1 Step-Thru',
+      product_description: 'Urban & fitness riding',
+      product_url: product.url,
+      product_uhmaya: product_uhmaya
+    %}
+    <div class="gray-background-color u30DemiBold_v2 lozad mobileHide" data-background-image="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/648_new_2x_ac657869-5be2-4f87-8f44-0a245c45a714.jpg?v=1737379197width=500">Full Carbon Lightweight Sporty</div>
+    {% assign product = all_products['urtopia-carbon-1-pro-ebike'] %}
+    {% assign product_variants = product.variants | where: 'available' %}
+    {% assign product_uhmaya = '37 lbs<br>lightweight, Full<br>carbon fiber, 80<br>Miles' | split: ', ' %}
+    {% render 'product-card-2',
+      product_variants: product_variants,
+      product_name: 'Carbon 1 Pro',
+      product_description: 'Urban & fitness riding',
+      product_variant_options_find_sort: 'M,L,S',
+      product_url: product.url,
+      product_uhmaya: product_uhmaya
+    %}
+    {% assign product = all_products['urtopia-carbon-fusion-gt'] %}
+    {% assign product_variants = product.variants | where: 'available' %}
+    {% assign product_uhmaya = '1500W<br>power, Carbon fiber<br>frame, 120<br>Miles' | split: ', ' %}
+    {% render 'product-card-2',
+      product_variants: product_variants,
+      product_name: 'Fusion GT',
+      product_description: 'All terrain riding',
+      product_url: product.url,
+      product_uhmaya: product_uhmaya
+    %}
+    </div>
+</div>
     <div class="er-bg-background er-py-32 mb:er-py-20">
         <div class="centeral-content er-flex er-flex-col er-items-center">
             <div class="er-py-32 er-flex er-flex-col er-justify-center er-items-center er-text-center mb:er-py-16">
-                <h2 class="text-size30 mb:er-text-4xl">Buy with confidence</h2>
+                <h2 class="er-m-0 text-size30 mb:er-text-4xl">Buy with confidence</h2>
                 <p class="er-mt-10 text-size18 er-opacity-80 er-max-w-screen-lg mb:er-text-2xl">
                     <span>With Affirm, you always know exactly what you’ll owe and when you’ll be done paying.</span>
                 </p>
@@ -96,7 +144,7 @@
             <div class="er-grid er-grid-cols-3 er-gap-20 mb:er-grid-cols-1">
                 <div class="er-flex er-flex-col er-items-center er-text-center">
                     <img width="92" height="92" class="er-max-w-28" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/coin_2x_f47cf61b-77bc-4441-a3a0-24be32c7f7ee.png?v=1739338896" alt="">
-                    <h3 class="text-size30 er-my-12 mb:er-text-3xl mb:er-my-6">Transparent</h3>
+                    <h3 class="er-m-0 text-size30 er-my-12 mb:er-text-3xl mb:er-my-6">Transparent</h3>
                     <p class="text-size18 er-opacity-80 mb:er-text-2xl mb:er-max-w-sm">
                         <span>Affirm tells you the total amount you’ll pay up front. That number will never go up.</span>
                     </p>
@@ -104,7 +152,7 @@
                 </div>
                 <div class="er-flex er-flex-col er-items-center er-text-center">
                     <img width="92" height="92" class="er-max-w-28" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/arrows_2x_367bd2d9-b472-40ea-b9a3-1531172452ac.png?v=1739339311" alt="">
-                    <h3 class="text-size30 er-my-12 mb:er-text-3xl mb:er-my-6">Flexible</h3>
+                    <h3 class="er-m-0 text-size30 er-my-12 mb:er-text-3xl mb:er-my-6">Flexible</h3>
                     <p class="text-size18 er-opacity-80 mb:er-text-2xl mb:er-max-w-sm">
                         <span>You choose the payment schedule that works best for you.</span>
                     </p>
@@ -112,7 +160,7 @@
                 </div>
                 <div class="er-flex er-flex-col er-items-center er-text-center">
                     <img width="92" height="92" class="er-max-w-28" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/judgement_2x_efdde016-d4ea-48e3-8ee8-25634d0822e6.png?v=1739339270" alt="">
-                    <h3 class="text-size30 er-my-12 mb:er-text-3xl mb:er-my-6">Fair</h3>
+                    <h3 class="er-m-0 text-size30 er-my-12 mb:er-text-3xl mb:er-my-6">Fair</h3>
                     <p class="text-size18 er-opacity-80 mb:er-text-2xl mb:er-max-w-sm">
                         <span>Affirm doesn’t charge late fees or hidden fees of any kind, ever.</span>
                     </p>
@@ -124,3 +172,136 @@
             </p>
         </div>
     </div>
+    <div class="faq" style="margin: 11vh 0;">
+  <div class="centeral-content">
+    <h3 class="u36Medium_v2">FAQs</h3>
+    <div class="items">
+      <div class="item">
+        <div class="u24Medium_v2">
+          <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="">Can I pay off my purchase early?
+        </div>
+        <p class="u17Light_v2">
+          <span>Yes, there’s no penalty for paying early.</span>
+        </p>
+      </div>
+      <div class="item">
+        <div class="u24Medium_v2">
+          <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="">Will I see how much interest I am paying prior to accepting my loan? 
+        </div>
+        <p class="u17Light_v2">
+          <span>Yes! Affirm works hard to be completely transparent. You'll see the amount of interest you'll owe on the 
+            terms page and again on the loan confirmation page. If you pay off your loan early, you'll receive a 
+            rebate for any interest that hasn't yet accrued.</span>
+        </p>
+      </div>
+      <div class="item">
+        <div class="u24Medium_v2">
+          <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="">How do I make my payments?
+        </div>
+        <p class="u17Light_v2">
+          <span>You can make or schedule payments at <a class="my-link" href="https://www.affirm.com/">affirm.com</a> or in the Affirm app for iOS or Android. Affirm will send you email and text reminders before payments are due.</span>
+        </p>
+      </div>
+      <div class="item">
+        <div class="u24Medium_v2">
+          <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="">Does checking my eligibility affect my credit score?
+        </div>
+        <p class="u17Light_v2">
+          <span>No, your credit score won’t be affected when you create an Affirm account or check your eligibility. If you decide to buy with Affirm, this may impact your credit score. You can find more information in <a class="my-link" href="https://helpcenter.affirm.com/s/">Affirm’s Help Center.</a></span>
+        </p>
+      </div>
+      <div class="item">
+        <div class="u24Medium_v2">
+          <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="">Do I need a mobile number to use Affirm?
+        </div>
+        <p class="u17Light_v2">
+          <span>Yes, you’ll need a mobile phone number from the U.S. or U.S. territories. This helps Affirm verify it’s really you who is creating your account and signing in.</span>
+        </p>
+      </div>
+      <div class="item">
+        <div class="u24Medium_v2">
+          <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="">Can I return an item I bought with Affirm?
+        </div>
+        <p class="u17Light_v2">
+          <span>Yes, you can return an item you bought with Affirm by initiating the return process with the store. However, if you choose the 0% APR financing, that is a special subsidy provided by Urtopia. There will be a 10% cancelling fee if an order made with Affirm is cancelled. </span>
+        </p>
+      </div>
+      <div class="item">
+        <div class="u24Medium_v2">
+          <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="">If I return an item, how do refunds work? 
+        </div>
+        <p class="u17Light_v2">
+            <span>A refund posts to your Affirm account if we process your refund request. In the event that we issue you 
+                store credit instead of a refund, you are still responsible for paying off your Affirm loan. 
+                If you have already made loan payments or a down payment, Affirm issues a refund credit to the bank 
+                account or debit card that you used to make the payments. *Paid interest - Affirm does not refund any paid interest.</span>
+        </p>
+      </div>
+      <div class="item">
+        <div class="u24Medium_v2">
+          <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="">Why was I denied financing by Affirm? 
+        </div>
+        <p class="u17Light_v2">
+            <span>The merchant has no information regarding a customer's financing denial. Affirm strives to offer all 
+                credit-worthy applicants financing with Affirm, but isn't able to offer credit in every case. Affirm will send 
+                you an email with more details about its decision. Unfortunately, Affirm's decision is final.</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="module">
+    $('.product-card .dots > div').on('click', e => {
+        const target = $(e.target)
+        const product_card = target.closest('.product-card')
+
+        // 先取消 其它兄弟元素的active, 再设置active
+        target.siblings().removeClass('active')
+        target.addClass('active')
+
+        const price = Number(target.attr('data-price'))
+        const compare_at_price = Number(target.attr('data-compare-at-price'))
+        const discount_price = Number(target.attr('data-product-discount-price'))
+        const variant_id = target.attr('data-variant')
+        const variant_image = target.attr('data-img')
+
+        product_card.find('.product_price .u24DemiBold_v2').text(getPriceFormat(price, true)).attr('data-price', getPriceFormat(compare_at_price, true))
+        product_card.find('.tags > span:first-child').html(`${getPriceFormat(compare_at_price - price, true)} <span class="u14DemiBold_v2">OFF</span>`)
+
+        if (price === compare_at_price) {
+            product_card.find('.product_price .u24DemiBold_v2').attr('data-price', '')
+            product_card.find('.tags > span:first-child').hide()
+        }
+
+        product_card.find('.variant-image').attr('src', variant_image)
+        product_card.find('.my-button').attr('href', `${product_card.find('.my-button').attr('href').split('?').shift()}?variant=${variant_id}`)
+        product_card.find('.stars a').attr('href', `${product_card.find('.my-button').attr('href').split('?').shift()}?variant=${variant_id}#judgeme_product_reviews`)
+    })
+
+    setTimeout(() => {
+        $('.product-card .dots > div:first-child').click()
+
+        $('.product-card .variant-image').on('click', e => {
+            const button = $(e.target).closest('.product-card').find('.my-button')
+
+            if (button.length) {
+                button[0].click()
+            }
+        })
+    })
+</script>
+<script type="module">
+      task(() => {
+            $('.faq .items .item .u24Medium_v2').click(function () {
+            $(this).siblings('.u17Light_v2').slideToggle().parent().siblings().find('.u17Light_v2').slideUp();
+
+            if ($(this).parent().hasClass('active')) {
+            $(this).parent().removeClass('active');
+            } else {
+            $(this).parent().addClass('active');
+            }
+
+            $(this).parent().siblings().removeClass('active');
+        });
+    })
+</script>
