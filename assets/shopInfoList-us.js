@@ -2126,6 +2126,26 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/shutterstock_469708088.jpg?v=1697188978',
     stores: [
       {
+        name: "Pedego Boca",
+        phone: "561-677-2622",
+        email: "kyle@pedegoboca.com",
+        timezone: "New Port Richey, FL, USA (GMT-4)",
+        add: "4400 N Federal Hwy, Ste 156 Boca Raton, FL 33431",
+        testrideSpot: "Boca Raton",
+        availableSizes: [
+          'Fusion GT'
+        ],
+        businessHours: [
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+        ],
+      },
+      {
         name: "Eventure Tour Co",
         phone: "8505986380",
         email: "emily@eventure30a.com",
