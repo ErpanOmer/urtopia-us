@@ -55,6 +55,122 @@ h4 {
     }
 }
 
+.professional {
+    background-color: $backround-color;
+    padding: 12vh 0;
+
+    .centeral-content {
+        overflow: hidden;
+
+        .u36Medium_v2 {
+                margin-bottom: 5.5vh;
+                text-align: center;
+        }
+
+        .videos {
+            // display: grid;
+            // grid-template-columns: repeat(3, 1fr);
+            // grid-column-gap: 30px;
+
+            &>div {
+                display: flex;
+                flex-direction: column;
+                cursor: pointer;
+                height: auto;
+
+                & > img {
+                    cursor: pointer;
+                    border-radius: 15px;
+                    aspect-ratio: 80 / 43;
+                }
+
+
+                .u17Light_v2 {
+                    margin: 12px 0 30px;
+                }
+
+                .u17Medium_v2 {
+                    display: flex;
+                    align-items: center;
+
+                    img {
+                        max-width: 28px;
+                        width: 28px;
+                        margin-right: 10px;
+                        border-radius: 50%;
+                    }
+                }
+            }
+
+
+        }
+
+
+        .swiper-scrollbar {
+            position: static;
+            margin-top: 5vh;
+            width: 100%;
+            background-color: #DEDEDE;
+            z-index: unset;
+            
+            .swiper-scrollbar-drag {
+                background-color: #FD4B17;
+            }
+        }
+
+
+
+        .buttons {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 5vh;
+
+            .swiper-button-prev,
+            .swiper-button-next {
+                position: static;
+                color: #fff;
+                background-color: #000;
+                border-radius: 50%;
+                width: 35px;
+                height: 35px;
+                margin-left: 15px;
+                z-index: unset;
+                
+
+                &::after {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+        padding: 16vw 0;
+
+        .centeral-content {
+
+            .u36Medium_v2 {
+                font-size: 24px;
+                text-align: left;
+                  margin-bottom: 24px;
+            }
+
+            .videos {
+                display: flex;
+                grid-column-gap: 0;
+
+                &>div {
+
+                    .u17Light_v2 {
+                        font-size: 14px;
+                        margin-bottom: 4vw;
+                    }
+                }
+            }
+        }
+    }
+}
+
 .makes {
     display: flex;
     flex-direction: column;
