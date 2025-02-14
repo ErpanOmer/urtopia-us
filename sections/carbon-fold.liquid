@@ -32,12 +32,21 @@
           <span>Urtopia Reviews</span>
         </div>
       </div>
+      <div class="swiper-slide" onclick="showVideoDialog('https://www.youtube.com/embed/vGq9bFvwhO4?autoplay=1&cc_load_policy=1')">
+        <img width="413" height="222" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250214-180345.jpg?v=1739527454&width=400" alt="{{ product.title }}">
+        <span class="u17Light_v2">This is hands down the easiest folding ebike I’ve ever used! The built-in magnets that keep it securely closed are a total game-changer.</span>
+        <span class="flex-1"></span>
+        <div class="u17Medium_v2">
+          <img width="28" height="28" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250214-180356.jpg?v=1739527453&width=28" alt="{{ product.title }}">
+          <span>Freshly Charged</span>
+        </div>
+      </div>
     </div>
     <div class="swiper-scrollbar"></div>
-    {% comment %} <div class="buttons mobileHide">
+    <div class="buttons mobileHide">
       <div class="swiper-button-prev"></div>
       <div class="swiper-button-next"></div>
-    </div> {% endcomment %}
+    </div>
   </div>
 </div>
 <div class="background-image er-aspect-[1920/750] mb:er-aspect-auto">
@@ -304,7 +313,7 @@
 <div class="centeral-content er-px-6 judgemeeeeee"></div>
 <script type="module">
   new Swiper('.professional .centeral-content', {
-      slidesPerView: global_config.is_mobile ? 1.25 : 3,
+      slidesPerView: global_config.is_mobile ? 1.25 : 3.5,
       spaceBetween: 20,
       preloadImages: false,
       navigation: {
