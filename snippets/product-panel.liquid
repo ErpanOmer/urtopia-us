@@ -1,5 +1,6 @@
 {%- liquid
   assign current_variant = product.selected_or_first_available_variant
+  assign product_default_variant = product.metafields.custom.default_sku.value
   assign product_size_map = product.metafields.custom.sizemap.value
   assign product_media_reviews = product.metafields.custom.product_media_reviews.value | reverse
   assign product_parameter_and_icons = product.metafields.custom.product_parameter_icons.value
@@ -15,8 +16,11 @@
   assign product_main_swiper_class = 'swiper-slide er-object-cover er-aspect-[16/11] er-rounded-2xl'
   assign section_class = 'er-font-base er-max-w-screen-xl er-mx-auto er-flex er-justify-between er-px-12'
 
-  assign product_delivery_time = current_variant.metafields.custom.delivery_time.value | default: product.metafields.custom.delivery_time.value
+  if product_default_variant
+    assign current_variant = product_default_variant
+  endif
 
+  assign product_delivery_time = current_variant.metafields.custom.delivery_time.value | default: product.metafields.custom.delivery_time.value
   assign swiper_of_variant = current_variant.metafields.custom.variant_image.value
   assign swiper_of_common = product.metafields.custom.product_common_images.value
   assign swiper = null | sort
@@ -175,17 +179,17 @@
         option="{{ option.name }}"
         position="{{ option.position }}"
       >
-        <legend class="text-size18 er-font-bold mb:er-text-2xl">{{- option.name -}} - <span class="er-font-normal er-text-dark/70">{%- if option.position == 1 -%}{{ product_size_map[option.selected_value] }}{%- else -%}{{ option.selected_value }}{%- endif -%}</span></legend>
+        <legend class="text-size18 er-font-bold mb:er-text-2xl">{{- option.name -}} - <span class="er-font-normal er-text-dark/70">{%- if option.position == 1 -%}{{ product_size_map[current_variant.options.first] }}{%- else -%}{{ current_variant.options.last }}{%- endif -%}</span></legend>
         <div class="er-flex er-gap-5">
           {%- for option_value in option.values -%}
             <label
               {% if option.position == 1 -%}
-                class="er-button er-button-dark er-px-6 text-size14 er-py-2 er-rounded-xl er-min-w-28{% unless option_value.selected %} er-button-outline{% endunless %}"
+                class="er-button er-button-dark er-px-6 text-size14 er-py-2 er-rounded-xl er-min-w-28{% unless option_value.name == current_variant.options.first %} er-button-outline{% endunless %}"
               {% else -%}
-                data-style="{{ option_value }}" class="er-group er-w-14 er-h-14 er-rounded-full er-border-2 er-border-solid er-border-transparent er-cursor-pointer er-transition er-bg-[var(--product-option-color)] er-p-[2px] er-bg-clip-content [&[class~='active']]:er-border-[var(--product-option-color)] er-relative{% if option_value.selected %} active{% endif %}"
+                data-style="{{ option_value }}" class="er-group er-w-14 er-h-14 er-rounded-full er-border-2 er-border-solid er-border-transparent er-cursor-pointer er-transition er-bg-[var(--product-option-color)] er-p-[2px] er-bg-clip-content [&[class~='active']]:er-border-[var(--product-option-color)] er-relative{% if option_value.name == current_variant.options.last %} active{% endif %}"
               {% endif %}
             >
-              <input type="radio" id="{{ option_value }}" name="{{ option.name }}" value="{{ option_value }}" class="er-hidden{% if option_value.available %} available{% endif %}" data-option-value-id="{{ option_value.id }}" {%- if option_value.selected -%}checked{%- endif -%}>
+              <input type="radio" id="{{ option_value }}" name="{{ option.name }}" value="{{ option_value }}" class="er-hidden">
               <span {%- if option.position == 2 %} class="mb:er-hidden group-hover:er-visible group-hover:er-opacity-100 after:er-border-x-transparent after:er-border-t-dark after:er-border-b-transparent after:er-border-8 after:er-border-solid after:er-content-[''] after:er-bottom-[-16px] after:er-absolute after:er-left-1/2 after:er-translate-x-[-50%] er-absolute er-bottom-[150%] er-left-1/2 er-translate-x-[-50%] er-bg-dark er-text-white er-px-6 er-py-2 er-rounded-full er-whitespace-nowrap er-opacity-0 er-invisible er-transition-opacity er-duration-300 text-size14 er-font-medium er-z-10"{%- endif -%}>{{ option_value }}</span>
             </label>
           {%- endfor -%}
@@ -313,11 +317,7 @@
   ]
 
   // 当前variant
-  let current_variant = Object.assign({}, {
-    {%- for option in product.options_with_values -%}
-      '{{ option.name }}': '{{ option.selected_value }}',
-    {%- endfor -%}
-  }, product_variants.find(v => v.id === '{{ current_variant.id }}'))
+  let current_variant = product_variants.find(v => v.id === '{{ current_variant.id }}')
 
   // 属性和索引映射
   const product_options = {
@@ -403,8 +403,8 @@
     current_variant = Object.assign({}, find)
     $('.product-panel').attr('data-variant-id', current_variant.id)
     replaceSearchValue('variant', current_variant.id)
-    $('.product-panel .product-delivery-time').text(current_variant.delivery_time)
     $('.product-panel input[name="id"]').val(current_variant.id)
+    $('.product-panel .product-delivery-time').text(current_variant.delivery_time)
 
     if (current_variant.images && current_variant.images.length) {
       let variant_size = Number($('.product-panel').attr('data-variant-swiper-size'))
