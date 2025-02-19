@@ -489,43 +489,6 @@
   </div>
 </div>
 
-<div class="centeral-content ebike-products mb:!er-mt-32">
-  <h3 class="u36DemiBold_v2 mobileHide">Clearance Outlet Sale</h3>
-  <p class="u17Light_v2 mobileHide">
-    <span>Last chance for {{ settings.sale_name }}—final batch, no restocks!</span>
-  </p>
-  <div class="product-grid">
-    {% assign product = all_products['urtopia-chord-ebike'] %}
-    {% assign product_variants = product.variants
-      | where: 'option1', 'High-Step'
-      | where: 'option2', 'White'
-      | where: 'available'
-    %}
-    {% assign product_uhmaya = 'Torque<br>Sensor, GPS<br>Tracking, 75<br>Miles' | split: ', ' %}
-    {% render 'product-card-2',
-      product_variants: product_variants,
-      product_name: 'Outlet Chord',
-      product_description: 'All terrain riding',
-      product_url: product.url,
-      product_uhmaya: product_uhmaya
-    %}
-    {% assign product = all_products['urtopia-chord-ebike'] %}
-    {% assign product_variants = product.variants
-      | where: 'option1', 'Step-Through'
-      | where: 'option2', 'White'
-      | where: 'available'
-    %}
-    {% assign product_uhmaya = 'Torque<br>Sensor, GPS<br>Tracking, 75<br>Miles' | split: ', ' %}
-    {% render 'product-card-2',
-      product_variants: product_variants,
-      product_name: 'Outlet Chord X',
-      product_description: 'All terrain riding',
-      product_url: product.url,
-      product_uhmaya: product_uhmaya
-    %}
-  </div>
-</div>
-
 <div class="centeral-content findbikeshop">
   <div>
     <h3 class="u30DemiBold_v2">

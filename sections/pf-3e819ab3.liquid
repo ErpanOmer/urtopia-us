@@ -138,26 +138,7 @@
       product_url: product.url,
       product_uhmaya: product_uhmaya
     %}
-    {% assign product = all_products['urtopia-chord-ebike'] %}
-    {% assign product_variants = product.variants | where: 'option1', 'High-Step' | where: 'available' %}
-    {% assign product_uhmaya = 'Liquid forging<br>aluminum, Anti-theft<br>GPS tracking, 75<br>Miles' | split: ', ' %}
-    {% render 'product-card-2',
-      product_variants: product_variants,
-      product_name: 'Outlet Chord',
-      product_description: 'Commuting riding',
-      product_url: product.url,
-      product_uhmaya: product_uhmaya
-    %}
-    {% assign product_variants = product.variants | where: 'option1', 'Step-Through' | where: 'available' %}
-    {% assign product_uhmaya = 'Liquid forging<br>aluminum, Anti-theft<br>GPS tracking, 75<br>Miles' | split: ', ' %}
-    {% render 'product-card-2',
-      product_variants: product_variants,
-      product_name: 'Outlet Chord X',
-      product_description: 'Commuting riding',
-      product_url: product.url,
-      product_uhmaya: product_uhmaya
-    %}
-    <div
+    <!-- <div
       class="gray-background-color u30DemiBold_v2 lozad mobileHide"
       data-background-image="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24754_2x_1e5d8be8-1218-4184-8f26-f9e9d56b3368.jpg?v=1734087145&width=500"
     >
@@ -168,7 +149,7 @@
       data-background-image="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25234_2x_14eeb426-f819-481c-b36b-4b9e470a2289.jpg?v=1734087213"
     >
       Full Carbon Lightweight Sporty
-    </div>
+    </div> -->
   </div>
 </div>
 
@@ -657,62 +638,6 @@ const parameters = [
               ['G. Wheel diameter', '702 mm'],
               ['H. Top tube length (effective)', '653 mm'],
               ['I. Head tube length', '180 mm'],
-              ['J. Headset height', '90-120 mm'],
-          ]
-      }
-  },
-  {
-      name: 'Chord',
-      img: `{{ all_products['urtopia-chord-ebike'].variants | where: "option1", "High-Step" | where: "available" | first | image_url: width: 600  }}`,
-      size: 'Fit for 5’7” – 6’5”',
-      weight: '46 lbs',
-      capacity: 'Max. 287 lbs',
-      gearing: '8-Speed Shimano rear derailleur',
-      features: 'Voice control, fingerprint start, LED dot-matrix display, haptic interaction, bluetooth music, built-in navigation, GPS tracking, OTA upgrade',
-      range: '31 - 75 miles',
-      materials: '6061 aluminum with liquid forging technology.',
-      sensors: 'Accelerometer, gyroscope, torque',
-      motor: 'Customized rear hub, 36 V 350 W, 45 N⋅m',
-      dimensions: {
-          img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20267.svg',
-          sizes: [
-              ['A. Standover height', '810 mm'],
-              ['B. Adjustable seat range', '100 mm'],
-              ['C. Handlebar grips height', '1100-1130 mm'],
-              ['D. Seat tube length', '500 mm'],
-              ['E. Wheelbase', '1094 mm'],
-              ['F. Overall length', '1800 mm'],
-              ['G. Wheel diameter', '700 mm'],
-              ['H. Top tube length (effective)', '620 mm'],
-              ['I. Head tube length', '200 mm'],
-              ['J. Headset height', '90-120 mm'],
-          ]
-      }
-  },
-  {
-      name: 'Chord X',
-      img: `{{ all_products['urtopia-chord-ebike'].variants | where: "option1", "Step-Through" | where: "available" | first | image_url: width: 600  }}`,
-      size: 'Fit for 5’3” – 6’1”',
-      weight: '46 lbs',
-      capacity: 'Max. 287 lbs',
-      gearing: '8-Speed Shimano rear derailleur',
-      features: 'Voice control, fingerprint start, LED dot-matrix display, haptic interaction, bluetooth music, built-in navigation, GPS tracking, OTA upgrade',
-      range: '31 - 75 miles',
-      materials: '6061 aluminum with liquid forging technology.',
-      sensors: 'Accelerometer, gyroscope, torque',
-      motor: 'Customized rear hub, 36 V 350 W, 45 N⋅m',
-      dimensions: {
-          img: 'https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_20662.svg',
-          sizes: [
-              ['A. Standover height', '670 mm'],
-              ['B. Adjustable seat range', '80 mm'],
-              ['C. Handlebar grips height', '1100-1130 mm'],
-              ['D. Seat tube length', '327 mm'],
-              ['E. Wheelbase', '1094 mm'],
-              ['F. Overall length', '1800 mm'],
-              ['G. Wheel diameter', '700 mm'],
-              ['H. Top tube length (effective)', '620 mm'],
-              ['I. Head tube length', '200 mm'],
               ['J. Headset height', '90-120 mm'],
           ]
       }
