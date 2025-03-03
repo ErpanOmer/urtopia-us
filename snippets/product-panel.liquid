@@ -206,7 +206,7 @@
           <div class="er-flex er-flex-1 er-overflow-x-hidden er-space-x-3 mb:er-overflow-x-auto">
             {%- for prod in product_accessories -%}
               {%- if prod.available -%}
-                {%- assign variant = prod.variants | first -%}
+              {%- assign variant = prod.first_available_variant -%}
                 <div
                   class="er-flex er-flex-[0_0_47.5%] er-flex-col er-rounded-2xl er-border-solid er-border-border er-border-2 er-cursor-pointer er-relative er-aspect-video er-p-4 mb:er-pt-2 [&[class~='active']]:er-border-dark [&[class~='active']]:er-bg-gray/15"
                   variant-id="{{ variant.id }}"

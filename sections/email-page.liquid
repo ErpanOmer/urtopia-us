@@ -1,6 +1,6 @@
 <style>
   .banner {
-    background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241022-183633_2x_003c0c4f-2e82-4ad2-9d1d-1c05b6f7649a.jpg?v=1729652313')
+    background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250221-170243.jpg?v=1740128576')
       center center/cover no-repeat;
   }
 
@@ -13,7 +13,7 @@
   }
 
   .banner .centeral-content .u48DemiBold_v2 {
-    color: #fff;
+    color: #333;
   }
 
 
@@ -70,17 +70,18 @@
   }
 
   @media (max-width: 767px) {
-    .banner {
-      background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241022-183633_2x_ec3e9f89-256c-43d8-aa5d-dd56ba64c064.jpg?v=1729653290');
-    }
+    /* .banner {
+      background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250221-165456.jpg?v=1740128115');
+    } */
 
     .banner .centeral-content {
         height: 56.65vw;
+        padding-left: 6vw;
     }
 
 
     .banner .centeral-content .u48DemiBold_v2 {
-        font-size: 24px;
+        font-size: 20px;
     }
 
     .emaillllllllllllll input {
@@ -119,12 +120,12 @@
 
 <div class="banner">
   <div class="centeral-content">
-    <h2 class="u48DemiBold_v2">Urtopia x Super Bowl<br>Win the Smartest Carbon Fiber E-Bike!</h2>
+    <h2 class="u48DemiBold_v2">The best carbon fiber ebike <br>at the best price</h2>
   </div>
 </div>
 <div class="emailll">
   <div class="centeral-content">
-    <div class="u24Medium_v2">Subscribe and Win A Bike!</div>
+    <div class="u24Medium_v2">Fill out your email here to participate!</div>
     <form class="emaillllllllllllll" accept-charset="UTF-8">
       <input class="u17Medium_v2" placeholder="Enter email here" type="email" name="email" required>
       <button class="my-button my-button-origin" type="submit">Subscribe</button>
@@ -140,7 +141,8 @@
         fetchBuried('emailpage', 'submit', { email: $(this).find('input').val(), tag: `emailpage` }).finally(() => $(this).find('.u17DemiBold_v2').show())
 
 
-        $('.emailll .u24Medium_v2').text('Thank you for subscribing to Urtopia! The winner will be announced live on Knockoutradio on YouTube. We’ll also notify the winner via email to arrange shipping details.')
+        $('.emailll .u24Medium_v2').html(`Thank you for participating in our event! 🎉<br><br>Once two more participants sign up, all three of you will automatically receive an email with your exclusive discount code. Please keep an eye on your inbox, and thank you again for joining us!
+ `)
         $('.emailll .emaillllllllllllll').hide()
 
         event.preventDefault();

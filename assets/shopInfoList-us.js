@@ -1640,6 +1640,29 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/testrideshopimg-Buna_Bicycle_Works_Washington_dc.jpg?v=1665374977',
     stores: [
       {
+        name: `PEDEGO HARRISBURG`,
+        phone: "(717) 857-7993",
+        email: "",
+        timezone: "Pennsylvania, USA (GMT-4)",
+        add: "17 N 3rd St, Harrisburg, PA 17101",
+        testrideSpot: "Harrisburg",
+        noBook: true,
+        availableSizes: [
+          'Fusion GT',
+          'Carbon 1 Pro Size M',
+          'Carbon Fold 1',
+        ],
+        businessHours: [
+          "",
+          "",
+          "12:00-18:00",
+          "14:00-19:00",
+          "12:00-18:00",
+          "12:00-18:00",
+          "11:00-17:00",
+        ],
+      },
+      {
         name: `E Bike Guys of PA`,
         phone: "717-351-3805",
         email: "ebikeguysofpa@gmail.com",
@@ -2125,6 +2148,46 @@ const testRides = [
     city: 'Florida',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/shutterstock_469708088.jpg?v=1697188978',
     stores: [
+      {
+        name: "Pedego St Pete",
+        phone: "941-260-5536",
+        email: "steve@pedegostpete.com",
+        timezone: "New Port Richey, FL, USA (GMT-4)",
+        add: "6730 22nd Ave N STE E, St Petersburg, FL 33710",
+        testrideSpot: "St. Petersburg",
+        availableSizes: [
+          'Carbon 1 Pro Size M/L',
+        ],
+        businessHours: [
+          "10:00-16:00",
+          "9:00-17:00",
+          "10:00-17:00",
+          "",
+          "9:00-17:00",
+          "9:00-17:00",
+          "9:00-17:00",
+        ],
+      },
+      {
+        name: "Pedego Sarasota",
+        phone: "941-260-5536",
+        email: "steve@pedegosarasota.com",
+        timezone: "New Port Richey, FL, USA (GMT-4)",
+        add: "3460 Clark Rd Sarasota Florida 34231",
+        testrideSpot: "Sarasota",
+        availableSizes: [
+          'Carbon 1 Pro Size M/L',
+        ],
+        businessHours: [
+          "",
+          "",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+        ],
+      },
       {
         name: "Pedego Boca",
         phone: "561-677-2622",
@@ -3242,6 +3305,28 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/West_Michigan_eBikes.jpg?v=1710818582',
     stores: [
       {
+        name: "Pedego E-Bikes of Grand Rapids",
+        phone: "616-214-8565",
+        email: "",
+        timezone: "Michigan, USA (GMT-7)",
+        add: "6744 Cascade Rd. SE,Grand Rapids, MI 49546",
+        noBook: true,
+        testrideSpot: "Grand Rapids",
+        availableSizes: [
+          'Fusion GT',
+          'Carbon 1 Pro Size M'
+        ],
+        businessHours: [
+          "",
+          "",
+          "",
+          "11:00-16:00",
+          "11:00-16:00",
+          "11:00-16:00",
+          "11:00-16:00",
+        ],
+      },
+      {
         name: "West Michigan eBikes",
         phone: "616-826-3574",
         email: "william@greenprojectsgroup.com",
@@ -3373,6 +3458,27 @@ const testRides = [
     city: 'Connecticut',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Urban_Electrica.jpg?v=1710818582',
     stores: [
+      {
+        name: "Berkshire Bike and Board",
+        phone: "860-242-9884",
+        email: "kgoeben@berkshirebikeandboard.com",
+        timezone: "Tennessee, USA (GMT-7)",
+        add: "38 Tunxis Ave, Bloomfield, CT 06002",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_12_86b280fc-a42f-4ee7-8716-1576548b4fa3.png?v=1730535020",
+        testrideSpot: "Bloomfield",
+        availableSizes: [
+          'Fusion GT',
+        ],
+        businessHours: [
+          "",
+          "",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-18:00",
+          "10:00-17:00",
+        ],
+      },
       {
         name: "River Bicycles",
         phone: "203-532-1718",
@@ -3529,6 +3635,32 @@ const testRides = [
           "11:00-18:00",
           "11:00-18:00",
           "11:00-18:00",
+        ],
+      },
+    ]
+  },
+  {
+    city: 'Ohio',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_3_7b7d3f75-8bc1-4592-9b67-8a2844323c38.png?v=1735626823',
+    stores: [
+      {
+        name: "Beechwold Bicycles",
+        phone: "+1 614-725-0500",
+        email: "bg@beechwoldbicycles.com",
+        timezone: "Tennessee, USA (GMT-7)",
+        add: "4584 North High Street Columbus Ohio, 43214 United States",
+        testrideSpot: "Columbus",
+        availableSizes: [
+          'Fusion GT'
+        ],
+        businessHours: [
+          "",
+          "",
+          "12:00-18:00",
+          "12:00-18:00",
+          "12:00-18:00",
+          "12:00-18:00",
+          "10:00-14:00",
         ],
       },
     ]
