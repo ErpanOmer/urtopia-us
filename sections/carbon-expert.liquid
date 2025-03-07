@@ -1,3 +1,138 @@
+<style>
+.swiper-pagination-bullet {
+    border-radius: 2px;
+}
+
+.swiper-button-prev:after {
+    transform: translateX(-1.5px);
+}
+
+.swiper-button-next:after {
+    transform: translateX(1.5px);
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+    font-weight: 700;
+}
+
+.swiper-button-next.swiper-button-disabled,
+.swiper-button-prev.swiper-button-disabled {
+    opacity: 1;
+    pointer-events: all;
+    cursor: pointer;
+}
+
+.comeback {
+    transform: translateX(calc(25% + 30px));
+    transition: transform .6s;
+    transition-timing-function: ease-out;
+}
+
+.comeback .swappppr::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    right: 50%;
+    background-image: linear-gradient(90deg, #00000000, #000);
+    z-index: 1;
+}
+
+/* 整个滚动条 */
+::-webkit-scrollbar {
+    width: 6px;
+    /* 滚动条宽度 */
+    height: 6px;
+    /* 水平滚动条高度 */
+}
+
+/* 滚动条轨道 */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    /* 轨道颜色 */
+    /* border-radius: 5px; */
+}
+
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    /* 滑块颜色 */
+    /* border-radius: 5px; */
+}
+
+/* 悬停时的滑块颜色 */
+::-webkit-scrollbar-thumb:hover {
+    background: #666;
+}
+
+dialog {
+    transform: translateY(0);
+    visibility: visible; /* 让 dialog 显示 */
+    transition: transform 0.5s ease-out;
+}
+
+dialog:not([open]) {
+    transition: transform 0.5s ease-out, visibility 0s linear 0.5s;
+    transform: translateY(105%);
+    display: block;
+    visibility: hidden; /* 让 dialog 关闭时不可见 */
+}
+
+
+@media (max-width: 768px) {
+    dialog:not([open]) {
+        display: none;
+        transition: none;
+    }
+
+    .comeback {
+        transform: translateX(0);
+        margin: 0 -8vw;
+        width: auto;
+    }
+
+    .comeback .swappppr::after {
+        content: none;
+    }
+
+    .comeback .swappppr .swiper-slide::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 30%;
+        /* 控制渐变的宽度 */
+        height: 100%;
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+        pointer-events: none;
+        /* 避免影响交互 */
+    }
+
+    .comeback .swappppr .swiper-slide::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 30%;
+        /* 控制渐变的宽度 */
+        height: 100%;
+        background: linear-gradient(to left, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+        pointer-events: none;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        padding: 6vw;
+    }
+
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+        color: #fff;
+        font-size: 20px;
+    }
+}
+</style>
+
 <div class="background-image er-bg-black">
         <video playsinline loop autoplay muted>
             <source src="https://cdn.shopify.com/videos/c/o/v/a8626aa31f4d47b2b94e3a241203bc5c.mp4" type="video/mp4"
