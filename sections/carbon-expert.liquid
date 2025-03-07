@@ -140,14 +140,9 @@ dialog:not([open]) {
             <source src="https://cdn.shopify.com/videos/c/o/v/b5f69f7ec9e042a9bfce00ecf681c9e1.mp4" type="video/mp4"
                 media="(max-width: 767px)">
         </video>
-        <picture>
-            <source media="(min-width: 768px)"
-                srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250220-161821.jpg?v=1740039518">
-            <img class="mb:!er-hidden" src="" alt="">
-        </picture>
         <div
             class="er-h-screen centeral-content er-text-white er-flex er-flex-col er-items-center er-justify-center er-text-center mb:er-h-[120vw]">
-            <h1 class="text-size72 mb:er-text-6xl">Carbon Fiber Expert</h1>
+            <h1 class="text-size72 mb:er-text-6xl er-text-white">Carbon Fiber Expert</h1>
             <p class="text-size18 er-opacity-80 er-mt-4 mb:er-text-2xl">
                 <span>
                     Not all carbon fiber is equal—choose the true expert.
@@ -838,10 +833,6 @@ dialog:not([open]) {
             clickable: true
         },
         loop: true
-    });
-
-    $('video').on('loadeddata', function () {
-        $(this).next().hide()
     });
 
     $('[data-dialog-id]').on('click', function () {
