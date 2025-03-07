@@ -239,13 +239,7 @@ dialog:not([open]) {
             <h2 class="text-size60 mb:er-text-4xl mb:er-leading-tight er-text-white"><span class="er-text-primary">300+</span>
                 Professional Media <br>Outlets Give High
                 Praise</h2>
-            <picture>
-                <source media="(min-width: 768px)"
-                    srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25504_2x_b95547e6-84c8-40bc-b000-b9b6a92d4698.png?v=1740019366">
-                <source media="(max-width: 768px)"
-                    srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250306-174616.jpg?v=1741254388">
-                <img loading="lazy" class="er-mt-24 er-mb-16 mb:er-my-10" src="" alt="">
-            </picture>
+                {% render 'image', class: "er-mt-24 er-mb-16 mb:er-my-10", mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250306-174616.jpg?v=1741254388", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25504_2x_b95547e6-84c8-40bc-b000-b9b6a92d4698.png?v=1740019366" %}
             <p class="er-max-w-screen-md text-size18 er-opacity-80 mb:er-text-2xl">
                 <span>
                     Urtopia’s achievements have earned widespread acclaim, including the GOOD DESIGN Award in Japan.
