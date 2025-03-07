@@ -151,13 +151,7 @@ dialog:not([open]) {
         </div>
     </div>
     <div class="background-image er-bg-black">
-        <picture>
-            <source media="(min-width: 768px)"
-                srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25508_2x_1cb0e757-cf90-4206-b872-83b288e122a3.jpg?v=1741240551">
-            <source media="(max-width: 768px)"
-                srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25559_2x_321f8e9a-018f-4bc3-9b82-47f467ff27a0.jpg?v=1741250901">
-            <img class="mb:!er-object-contain mb:!er-object-top" src="" alt="" loading="lazy">
-        </picture>
+        {% render 'image', class: "mb:!er-object-contain mb:!er-object-top", mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25559_2x_321f8e9a-018f-4bc3-9b82-47f467ff27a0.jpg?v=1741250901", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25508_2x_1cb0e757-cf90-4206-b872-83b288e122a3.jpg?v=1741240551" %}
         <div
             class="er-h-screen centeral-content er-text-white er-flex er-flex-col er-items-center er-justify-end er-text-center mb:er-h-[150vw]">
             <h2 class="text-size60 mb:er-text-5xl mb:er-leading-tight">Ride <span
