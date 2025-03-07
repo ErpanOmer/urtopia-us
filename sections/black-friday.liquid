@@ -2,7 +2,8 @@
 {{ 'black-friday.scss.css' | asset_url | stylesheet_tag: preload: true }}
 <h1 class="visuallyhidden">Urtopia Ebike - Sleek, Full Carbon, Lightweight, Smart</h1>
 
-<div class="banner">
+<div class="bannerrrrrr background-image">
+  {% render 'image', class: "mb:!er-object-top", first_screen: true, src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24938_2x_acfb27a4-cbc3-4ddf-b2f0-33872841087e.jpg?v=1736233352', mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24973_2x_22f19949-2ae3-44d0-ba84-a57fa07d945c.jpg?v=1736233726" %}
   <div class="centeral-content">
     <div class="swiperrrr">
       <div class="top">
@@ -67,6 +68,7 @@
             <img
               width="131"
               height="71"
+              loading="lazy"
               src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/sddefault_1.webp?v=1731320183&width=200"
               alt="{{ page_description }}"
             >
@@ -75,6 +77,7 @@
             <img
               width="131"
               height="71"
+              loading="lazy"
               src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/sddefault.jpg?v=1731320183&width=200"
               alt="{{ page_description }}"
             >
@@ -83,6 +86,7 @@
             <img
               width="131"
               height="71"
+              loading="lazy"
               src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25108_2x_6c97fddb-8a1e-4b40-a0e8-f01558092ede.jpg?v=1731313573&width=200"
               alt="{{ page_description }}"
             >
@@ -91,6 +95,7 @@
             <img
               width="131"
               height="71"
+              loading="lazy"
               src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/hqdefault.jpg?v=1737616585&width=200"
               alt="{{ page_description }}"
             >
@@ -99,9 +104,9 @@
       </div>
     </div>
     <div>
-      <img width="240" height="168" class="mb:er-max-w-[150px]" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25446_2x_fb5e3b7b-a57f-4f09-9cae-f84955a9f993.png?v=1739499759" alt="Urtopia Ebike - Sleek, Full Carbon, Lightweight, Smart"
+      <img width="240" height="168" class="mb:er-max-w-[150px]" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25446_2x_fb5e3b7b-a57f-4f09-9cae-f84955a9f993.png?v=1739499759&width=320" alt="Urtopia Ebike - Sleek, Full Carbon, Lightweight, Smart"
       >
-      <h2 class="text-size60 mb:er-text-5xl er-text-[#FFDF48] er-mt-12 er-mb-28 mb:er-mx-auto mb:er-mb-12">
+      <h2 class="text-size60 mb:er-text-5xl er-text-[#FFDF48] er-mt-12 er-mb-28 mb:er-mx-auto mb:er-mb-12 mb:er-text-center">
         Carbon E-Bikes<br> from {{ all_products['urtopia-carbon-fold'].price | money_without_trailing_zeros }}
       </h2>
       <div>
@@ -116,7 +121,8 @@
   </div>
 </div>
 <div class="timeeeeeeeeeee centeral-content">
-  <div class="er-text-white er-flex er-flex-col er-items-start">
+  <div class="er-text-white er-flex er-flex-col er-items-start background-image">
+    {% render 'image', width: 1440, src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250306-165712.jpg?v=1741251453", mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25462_2x_7dee56a9-12c7-4ca6-8e1a-a636c088f5ab.jpg?v=1741162617" %}
     <h4 class="er-bg-[#FFDF48] er-text-dark text-size14 er-font-bold er-py-2 er-px-6 er-rounded-3xl mb:er-text-xl">NEW</h4>
     <h3 class="text-size30 er-mt-3 mb:er-text-4xl">Carbon Fold 1</h3>
     <p class="text-size18 er-max-w-2xl er-mt-8 er-mb-16 mb:er-text-2xl mb:er-mt-6 mb:er-mb-10 er-opacity-80">
@@ -234,7 +240,7 @@
       product_url: product.url,
       product_uhmaya: product_uhmaya
     %}
-   <div class="gray-background-color u30DemiBold_v2 lozad mobileHide" data-background-image="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSCF5731_2x_16aa14e4-17e0-4b47-85b5-ea2b7f64be33.jpg?v=1739499919width=500">Full Carbon Lightweight Comfort</div>
+    <div class="gray-background-color u30DemiBold_v2 lozad mobileHide" data-background-image="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSCF5731_2x_16aa14e4-17e0-4b47-85b5-ea2b7f64be33.jpg?v=1739499919width=500">Full Carbon Lightweight Comfort</div>
     {% assign product = all_products['urtopia-carbon-fusion-gt'] %}
     {% assign product_variants = product.variants | where: 'available' %}
     {% assign product_uhmaya = '1500W<br>power, Carbon fiber<br>frame, 120<br>Miles' | split: ', ' %}
@@ -260,7 +266,8 @@
 {% render 'sale-buy-any' %}
 <div class="klarna">
   <div class="centeral-content">
-    <div>
+    <div class="background-image">
+      {% render 'image', width: 1440, mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250123-155942.jpg?v=1737619194", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25384_2x_32f04bc6-4912-4c32-962d-264e25639674.jpg?v=1737379761" %}
       <h3 class="u24Medium_v2" style="color: #fff;">Ride Now, Pay Later</h3>
       <h2 class="u36DemiBold_v2">Limited-Time <span style="color: #ffdf48;">0% APR</span> for 24 Months</h2>
       <h3 class="u20Light_v2">
@@ -542,7 +549,8 @@
 </div>
 
 <div class="centeral-content findbikeshop">
-  <div>
+  <div class="background-image">
+    {% render:"image", width: 1440, mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25013_2x_d61ce1ec-b2d5-4eb9-ab13-beab0401abad.jpg?v=1731494043", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25017_2x_fe3a5b63-aa22-4093-9e56-9f3120d86873.jpg?v=1731479648" %}
     <h3 class="u30DemiBold_v2">
       Find a Bike Shop Near You <br>
       Same Deal with
@@ -610,6 +618,7 @@
 <script type="module">
     new Swiper(".swiperrrr .top", {
       spaceBetween: 10,
+      preloadImages: false,
       thumbs: global_config.is_mobile
           ? null
           : {
@@ -618,6 +627,7 @@
                   slidesPerView: 4,
                   freeMode: true,
                   watchSlidesProgress: true,
+                  preloadImages: false,
                   // navigation: {
                   //     nextEl: ".swiperrrr .swiper-button-next",
                   //     prevEl: ".swiperrrr .swiper-button-prev",
