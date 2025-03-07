@@ -168,13 +168,7 @@ dialog:not([open]) {
         </div>
     </div>
     <div class="background-image er-bg-black">
-        <picture>
-            <source media="(min-width: 768px)"
-                srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250220-163439.jpg?v=1740040497">
-            <source media="(max-width: 768px)"
-                srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250306-170903.jpg?v=1741252164">
-            <img class="mb:!er-object-contain mb:!er-object-top" src="" alt="" loading="lazy">
-        </picture>
+        {% render 'image', class: "mb:!er-object-contain mb:!er-object-top", mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250306-170903.jpg?v=1741252164", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250220-163439.jpg?v=1740040497" %}
         <div
             class="er-h-screen centeral-content er-text-white er-flex er-flex-col er-items-center er-justify-end er-text-center mb:er-h-[150vw]">
             <h2 class="text-size60 mb:er-text-5xl mb:er-leading-tight">Ride Carbon Fiber, <br>Ride <img width="250"
