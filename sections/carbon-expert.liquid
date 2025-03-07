@@ -587,13 +587,7 @@
         </div>
     </div>
     <div class="er-bg-black background-image er-aspect-[1920/700] mb:er-aspect-square er-pt-16">
-        <picture>
-            <source media="(min-width: 768px)"
-                srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250220-161821.jpg?v=1740039518">
-            <source media="(max-width: 768px)"
-                srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19453_2x_b0232da4-4be4-4c89-8ca0-b31018c79a14.jpg?v=1741254741">
-            <img class="mb:!er-object-contain mb:!er-object-bottom" src="" alt="" loading="lazy">
-        </picture>
+       {% render 'image', class: "mb:!er-object-contain mb:!er-object-bottom", mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19453_2x_b0232da4-4be4-4c89-8ca0-b31018c79a14.jpg?v=1741254741", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250220-161821.jpg?v=1740039518" %}
         <div
             class="er-h-screen centeral-content er-text-white er-text-center er-flex er-flex-col er-justify-start er-items-center">
             <h3 class="text-size24 er-font-medium mb:er-text-3xl er-text-white er-m-0">Urtopia Carbon E-Bikes</h3>
