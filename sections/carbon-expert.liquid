@@ -817,3 +817,38 @@ dialog:not([open]) {
             </div>
         </div>
     </dialog>
+
+<script type="module">
+    $('.comeback .swiper-button-prev').one('click', function (event) {
+        $(this).closest('.comeback').css('transform', 'translateX(0)');
+        $(this).closest('.comeback').find('.swappppr').addClass('after:!er-content-none');
+
+        event.stopImmediatePropagation();
+    })
+
+    new Swiper('.swappppr', {
+        preloadImages: false,
+        effect: 'fade',
+        navigation: {
+            nextEl: '.swappppr .swiper-button-next',
+            prevEl: '.swappppr .swiper-button-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true
+        },
+        loop: true
+    });
+
+    $('video').on('loadeddata', function () {
+        $(this).next().hide()
+    });
+
+    $('[data-dialog-id]').on('click', function () {
+        document.getElementById($(this).attr('data-dialog-id')).showModal()
+    })
+
+    $('dialog .er-absolute').on('click', function () {
+        this.parentNode.close()
+    })
+</script>
