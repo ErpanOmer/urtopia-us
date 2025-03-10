@@ -1,319 +1,797 @@
-{{ 'carbon-expert.scss.css' | asset_url | stylesheet_tag: preload: true }}
+<style>
+.swiper-pagination-bullet {
+    border-radius: 2px;
+}
 
-<div class="expert">
-        <div class="centeral-content">
-            <h1 class="u60Medium_v2">Carbon Fiber Expert</h1>
-            <span class="flex-1 mobileHide"></span>
-            <p class="u17Light_v2">
+.swiper-button-prev:after {
+    transform: translateX(-1.5px);
+}
+
+.swiper-button-next:after {
+    transform: translateX(1.5px);
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+    font-weight: 700;
+}
+
+.swiper-button-next.swiper-button-disabled,
+.swiper-button-prev.swiper-button-disabled {
+    opacity: 1;
+    pointer-events: all;
+    cursor: pointer;
+}
+
+.comeback {
+    transform: translateX(calc(25% + 30px));
+    transition: transform .6s;
+    transition-timing-function: ease-out;
+}
+
+.comeback .swappppr::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    right: 50%;
+    background-image: linear-gradient(90deg, #00000000, #000);
+    z-index: 1;
+}
+
+/* 整个滚动条 */
+::-webkit-scrollbar {
+    width: 6px;
+    /* 滚动条宽度 */
+    height: 6px;
+    /* 水平滚动条高度 */
+}
+
+/* 滚动条轨道 */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    /* 轨道颜色 */
+    /* border-radius: 5px; */
+}
+
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    /* 滑块颜色 */
+    /* border-radius: 5px; */
+}
+
+/* 悬停时的滑块颜色 */
+::-webkit-scrollbar-thumb:hover {
+    background: #666;
+}
+
+#MainContent dialog {
+    transform: translateY(0);
+    visibility: visible; /* 让 dialog 显示 */
+    transition: transform 0.5s ease-out;
+}
+
+#MainContent dialog:not([open]) {
+    transition: transform 0.5s ease-out, visibility 0s linear 0.5s;
+    transform: translateY(105%);
+    display: block;
+    visibility: hidden; /* 让 dialog 关闭时不可见 */
+}
+
+
+@media (max-width: 768px) {
+    #MainContent dialog:not([open]) {
+        display: none;
+        transition: none;
+    }
+
+    .comeback {
+        transform: translateX(0);
+        margin: 0 -8vw;
+        width: auto;
+    }
+
+    .comeback .swappppr::after {
+        content: none;
+    }
+
+    .comeback .swappppr .swiper-slide::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 30%;
+        /* 控制渐变的宽度 */
+        height: 100%;
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+        pointer-events: none;
+        /* 避免影响交互 */
+    }
+
+    .comeback .swappppr .swiper-slide::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 30%;
+        /* 控制渐变的宽度 */
+        height: 100%;
+        background: linear-gradient(to left, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+        pointer-events: none;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        padding: 6vw;
+    }
+
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+        color: #fff;
+        font-size: 20px;
+    }
+}
+</style>
+
+<div class="background-image er-bg-black">
+        <video playsinline loop autoplay muted>
+            <source src="https://cdn.shopify.com/videos/c/o/v/ea0f016ff2b5495c8c6c539f0d2640ab.mp4" type="video/mp4"
+                media="(min-width: 768px)">
+            <source src="https://cdn.shopify.com/videos/c/o/v/30206fbeaeff499baa348edb39f155d9.mp4" type="video/mp4"
+                media="(max-width: 767px)">
+        </video>
+        <div
+            class="er-h-[90vh] centeral-content er-text-white er-flex er-flex-col er-items-center er-justify-center er-text-center mb:er-h-[120vw]">
+            <h1 class="text-size72 mb:er-text-6xl er-text-white">Carbon Fiber Expert</h1>
+            <p class="text-size18 er-opacity-80 er-mt-4 mb:er-text-2xl">
                 <span>
-                    Urtopia is renowned for producing lightweight carbon fiber e-bikes. Every frame produced by Urtopia
-                    exceeds relevant safety standards, and our meticulous pursuit of carbon fiber excellence has been
-                    recognized by consumers. From start to finish, Urtopia has been dedicated to advancing carbon fiber
-                    technology to create lighter, more durable, and stronger e-bikes. In this article, you will
-                    understand why Urtopia is a carbon fiber expert.
-                </span>
-            </p>
-            <div class="my-button my-button-origin" onclick="showVideoDialog('https://www.youtube.com/embed/8haN5tLyhIk?autoplay=1&cc_load_policy=1')">Watch Video <img
-                    data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/screenshot-20231011-143053.png?v=1697005879"
-                    alt="" class="lozad"></div>
-        </div>
-    </div>
-    <div class="why">
-        <div class="centeral-content">
-            <h2 class="u48Medium_v2">Why Choose Urtopia Carbon Fiber?</h2>
-            <div>
-                <div>
-                    <h3 class="u36Medium_v2">Race-Grade Carbon Fiber Frame</h3>
-                    <p class="u17Light_v2">
-                        <span>
-                            Urtopia uses the industry-leading Toray T1000 for its materials, which is among the top 10%
-                            of high-end materials globally. (Toray is the largest carbon fiber manufacturer in the
-                            world, with a global capacity of 29,100 metric tons per year of Toray™ carbon fiber
-                            produced in the United States, Japan, and France. ) <br><br>T1000 carbon fiber is renowned
-                            for its high strength-to-weight ratio, which can be 20% to 30% higher than most conventional
-                            carbon fiber materials. The frame is constructed from five types of high-performance carbon
-                            fiber, the same material used in aerospace engineering.
-                        </span>
-                    </p>
-                </div>
-                <img class="mobileHide lozad"  data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24597_2x_a24fbabe-575a-4edc-bdc7-495d2242eaab.jpg?v=1725866605"
-                    alt="">
-                <img class="pcHide lozad"  data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19386_2x_ffa0fd00-7791-4e87-b6c1-af7154d2a91a.jpg?v=1725867750" alt="">
-            </div>
-        </div>
-        <div class="centeral-content">
-            <div>
-                <div>
-                    <h3 class="u36Medium_v2"><span style="color: #FD4B17;">Top 1%</span> Industry Carbon Fiber
-                        <br class="mobileHide">Molding Technologies
-                    </h3>
-                    <p class="u17Light_v2">
-                        <span>
-                            In terms of molding, we use three advanced technologies—Monolith, Microspace, and NANO
-                            technology—that far exceed traditional methods. Compared to conventional techniques, these
-                            technologies provide the Urtopia carbon frame with a 30% increase in structural strength, a
-                            25% reduction in overall weight, a 20% improvement in shock absorption performance, and a
-                            15% increase in wear resistance. These three Urtopia carbon fiber technologies will be
-                            detailed later in this article.
-                        </span>
-
-                    </p>
-                </div>
-                <img class="mobileHide lozad"  data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24578_2x_1fbd43b2-708d-4f79-988a-258015f36a45.jpg?v=1725697892"
-                    alt="">
-                <img class="pcHide lozad"  data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24577_2x_d2867871-0c95-459b-a47d-f0b747ad239e.jpg?v=1725867756" alt="">
-            </div>
-        </div>
-        <div class="centeral-content">
-            <div>
-                <div>
-                    <h3 class="u36Medium_v2"><span style="color: #FD4B17;">50% Lighter</span> Than Similar E-Bikes</h3>
-                    <p class="u17Light_v2">
-                        <span>
-                            For riders, the greatest advantage of carbon fiber is its lightweight nature. The Urtopia
-                            carbon frame weighs only 4.6 lbs, making the entire bike weigh just 37 lbs despite having
-                            wider tires and various smart features. Due to the lightweight carbon fiber and the
-                            responsive riding experience provided by SHIMANO gear, the 350W motor delivers a peak power
-                            of 750W! A gravel e-bike with big tires and a 750W motor typically weighs 56-90 lbs, making
-                            Urtopia’s bike almost 50% lighter! <br><br>This significantly enhances the user’s
-                            portability
-                            experience, making it easy to hang on the wall or on a car rack for hassle-free
-                            transportation and convenient handling, ideal for city commuting.
-                        </span>
-
-                    </p>
-                </div>
-                <img class="mobileHide lozad"  data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24570_2x_3299bffd-b123-455c-967e-037fa7a2918c.jpg?v=1725698833"
-                    alt="">
-                <img class="pcHide lozad"  data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24581_2x_291cc799-b44b-412d-942d-a54d13b99611.jpg?v=1725867745" alt="">
-            </div>
-        </div>
-        <div class="centeral-content">
-            <div>
-                <div>
-                    <h3 style="letter-spacing: -1px;" class="u36Medium_v2">Achieving Striking Aesthetics and <span
-                            style="color: #FD4B17;">25%</span> Aerodynamic Improvement</h3>
-                    <p class="u17Light_v2">
-                        <span>
-                            For Urtopia, the advantages of carbon fiber extend beyond functionality to aesthetics. The
-                            Urtopia engineering team boldly removed the middle tube, creating a frame that appears as a
-                            single continuous line from the side, resembling a streamlined flying fish. This design
-                            increases the strength of key stress points in the frame, uses less material, and results in
-                            a lighter weight. Additionally, sharper curves improve the frame’s aerodynamic performance
-                            against the wind. The absence of the middle tube allows for a more integrated rear triangle
-                            design that better absorbs vibrations transmitted through the frame.<br><br> Through
-                            practical
-                            testing, the Carbon 1 Pro frame has shown up to a 25% reduction in drag compared to the
-                            previous generation Carbon 1 frame. Urtopia has successfully designed a frame that not only
-                            enhances aerodynamic performance but also stands out in its appearance.
-                        </span>
-
-                    </p>
-                </div>
-        <video playsinline loop autoplay muted class="lozad" data-src="https://cdn.shopify.com/videos/c/o/v/01b12de109a34ad285ce6bd694843400.mp4"></video>
-            </div>
-        </div>
-    </div>
-    <div class="fiber">
-        <div class="centeral-content">
-            <h2 class="u48Medium_v2">Why Urtopia is <br><span style="color: #FD4B17;">“Carbon Fiber Expert”</span></h2>
-            <div>
-                <img class="mobileHide lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24565_2x_52ba5609-2581-4043-8376-6c1a1825faa8.jpg?v=1725699847"
-                    alt="">
-                    <img class="pcHide lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24565_2x_632f4b41-a70f-4f11-b76a-95ff167e9a00.png?v=1725864674" alt="">
-                <h3 class="u36Medium_v2">Urtopia’s Super Smart Factory <br><span style="color: #FD4B17;">Outperforms
-                        99.9%</span> of the
-                    Industry</h3>
-                <p class="u17Light_v2">
-                    <span>
-                        Urtopia’s advanced smart factory boasts a remarkable 99.9% assembly quality rate, putting it
-                        ahead of 99.9% of the industry. The factory uses the latest automation and precision equipment,
-                        including cutting-edge wheel-building machines, to ensure every e-bike is made with exceptional
-                        accuracy and efficiency.
-                    </span>
-                </p>
-            </div>
-            <div>
-                <img class="mobileHide lozad"  data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24564_2x_2b1211f6-be1e-44d0-a9f0-bf7dcc092217.png?v=1725701312"
-                    alt="">
-                    <img class="pcHide lozad"  data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24582_2x_617ade6c-030e-4060-833b-207963e247d1.png?v=1725864683" alt="">
-                <h3 class="u36Medium_v2"><span style="color: #FD4B17;">40,000+</span> Urtopia Carbon E-Bike Users,
-                    <br>and
-                    <span style="color: #FD4B17;">ZERO Carbon Issues</span>
-                </h3>
-                <p class="u17Light_v2">
-                    <span>
-                        In just 4 years, over 40,000 users have been riding Urtopia carbon e-bikes, accumulating an
-                        impressive total mileage of over 43,000,000 km. Notably, 2% of our users have ridden over 10,000
-                        km, demonstrating their genuine passion for cycling. Most proudly, there have been ZERO reported
-                        Issues with the strength of the carbon frame from our users. This gives Urtopia immense
-                        confidence in our focus on carbon fiber e-bike production. The high demand provides us with
-                        ample usage data and strengthens our commitment to making carbon fiber even better!
-                    </span>
-                </p>
-            </div>
-            <div>
-                <img class="mobileHide lozad"  data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24567_2x_0aff97a3-b054-4b36-b990-fa7ddc1e333c.jpg?v=1725701118"
-                    alt="">
-                    <img class="pcHide lozad"  data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24583_2x_85932dee-d49c-49fe-a795-289ac035708f.png?v=1725864678" alt="">
-                <h3 class="u36Medium_v2"><span style="color: #FD4B17;">12-Year Lifespan</span> for Carbon Fiber Frames
-                </h3>
-                <p class="u17Light_v2">
-                    <span>
-                        Urtopia’s e-bikes are crafted from Toray T1000 carbon fiber, renowned for its exceptional
-                        quality and durability. Combined with our three advanced carbon fiber molding
-                        technologies—Monolith, Microspace, and NANO technology—these frames are designed to last. Under
-                        normal use, the lifespan of Urtopia’s carbon fiber frames typically ranges from 10 to 12 years.
-                        This durability ensures that your investment in a Urtopia e-bike will provide long-lasting
-                        performance. <br><br>The factory is equipped with advanced robotic systems and automated
-                        conveyors that
-                        manage various stages of the assembly process. These technologies streamline operations, boost
-                        productivity, and maintain top-notch precision throughout each bike’s assembly. <br><br>In
-                        addition,
-                        Urtopia employs eight rigorous quality inspection procedures that surpass industry standards,
-                        ensuring each e-bike delivers a flawless user experience. This commitment to excellence in
-                        manufacturing also allows Urtopia to partner with the world’s leading carbon fiber suppliers.
-                    </span>
-                </p>
-            </div>
-            <div>
-                <img class="mobileHide lozad"  data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24566_2x_40240a89-396f-45f5-8956-a3daf9244a23.jpg?v=1725700853"
-                    alt="">
-                <img class="pcHide lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24584_2x_a024b318-7fa4-4855-a98f-4919c24463cd.png?v=1725865323" alt="">
-                <h3 class="u36Medium_v2"><span style="color: #FD4B17;">20% Higher</span> Than Industry <br>Testing
-                    Standard ISO 4210</h3>
-                <p class="u17Light_v2">
-                    <span>
-                        All Urtopia models undergo strict testing according to ISO 4210 and Zedler ADV+ standards. After
-                        manufacturing, Urtopia performs rigorous frame shaping, assembly tests, and professional cycling
-                        evaluations. Our testing standards are 20% more stringent than ISO 4210, ensuring the highest
-                        level of quality and reliability.
-                    </span>
-                </p>
-            </div>
-            <div>
-                <img class="mobileHide lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24579_2x_230bcb5c-5580-4cb7-b9ef-88733d2642d2.jpg?v=1725700540"
-                    alt="">
-                <img class="pcHide lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19387_2x_96d2bdbd-d752-4694-8f5e-da54dace1686.jpg?v=1725867990" alt="">
-                <h3 class="u36Medium_v2">High Praise from <span style="color: #FD4B17;">Over 200</span><br>Professional
-                    Media Outlets</h3>
-                <p class="u17Light_v2">
-                    <span>
-                        Urtopia’s commercial and research achievements have received widespread acclaim from the media,
-                        including prestigious awards such as the GOOD DESIGN Award in Japan. Over 200 professional media
-                        outlets have covered Urtopia, including top-tier publications like USA Today, Cyclingnews,
-                        Engadget, TNW, TechCrunch, CNET, Forbes, EBR, and Digital Trends.
-                        <br>
-                        <br>
-                        <i>Forbes: "A true flyweight when
-                            it comes to e-bikes. It’s even lighter than my non-electric mountain bike." CNET: "You won't
-                            find a bike much lighter with more tech baked in than the Urtopia."</i>
-                    </span>
-                </p>
-            </div>
-        </div>
-    </div>
-    <div class="what">
-        <div class="centeral-content">
-            <h2 class="u48Medium_v2">What Makes Urtopia’s <br>Carbon Fiber Technology Stand Out?</h2>
-            <p class="u17Light_v2">
-                <span>
-                    Before introducing Urtopia’s carbon fiber technology, let’s first discuss how conventional carbon
-                    fiber is made. First, carbon fiber fabrics are layered in specific directions. These fabrics consist
-                    of thousands of extremely fine carbon fibers. The layers are then impregnated with epoxy resin and
-                    cured under high pressure and temperature using molds. The final frame structure is created by
-                    stacking multiple layers of carbon fiber fabric, with each layer providing strength in specific
-                    directions. <br><br>However, traditional methods have some limitations. The numerous connection
-                    points
-                    between layers can create small structural weaknesses, which may lead to cracks or deformations
-                    under prolonged use or intense impacts. Additionally, traditional carbon fiber frames often have
-                    limitations in vibration absorption and wear resistance, which may not fully meet the demands of
-                    long-term riding. <br><br>So, how does Urtopia address these issues?
+                    Not all carbon fiber is equal—choose the true expert.
                 </span>
             </p>
         </div>
     </div>
-    <div class="why">
-        <div class="centeral-content">
-            <div>
-                <div>
-                    <h3 class="u36Medium_v2">Urtopia’s Technique 1:<br> <span style="color: #FD4B17;">Monolith</span></h3>
-                    <p class="u17Light_v2">
-                        <span>
-                            Unlike conventional carbon fiber processes, which often involve multiple layers bonded
-                            together, Urtopia’s Monolith technology ensures a seamless, all-in-one piece carbon frame—a
-                            true monocoque frame. This process eliminates the weak points commonly found in traditional
-                            carbon fiber joints, resulting in a 30% increase in structural integrity and a 25% reduction
-                            in overall weight. The outcome is a frame that’s not only lighter but also significantly
-                            stronger, providing riders with a more stable and responsive experience. The factory that
-                            helps Urtopia achieve this technology has produced road bike frames weighing under 700g this
-                            year and helped Urtopia’s e-bike carbon frame reach just 2kg, setting an industry benchmark.
-                        </span>
-                    </p>
-                </div>
-                <img  class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24573_2x_13535100-0ce8-42e2-ab58-861b6d5b516b.jpg?v=1725705463"
-                    alt="">
-            </div>
+    <div class="background-image er-bg-black">
+        {% render 'image', class: "mb:!er-object-contain mb:!er-object-top", mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25559_2x_321f8e9a-018f-4bc3-9b82-47f467ff27a0.jpg?v=1741250901", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25508_2x_1cb0e757-cf90-4206-b872-83b288e122a3.jpg?v=1741240551" %}
+        <div
+            class="er-h-screen centeral-content er-text-white er-flex er-flex-col er-items-center er-justify-end er-text-center mb:er-h-[150vw]">
+            <h2 class="text-size60 mb:er-text-5xl mb:er-leading-tight er-text-white er-m-0">Ride <span
+                    class="er-font-thin">Lighter</span>,Ride <i>Fast,</i> <br>Ride Carbon
+                Fiber.</h2>
+            <p class="er-max-w-screen-md text-size18 er-opacity-80 er-mt-8 er-mb-36 mb:er-text-2xl mb:er-mb-20">
+                <span>
+                    Carbon fiber: a feather-light yet planet-strong material once reserved for aerospace. Now, carbon
+                    fiber eBikes deliver faster, smoother, and happier rides. Say goodbye to heavy, clunky bikes—welcome
+                    advanced technology built for you. The future is here, where cutting-edge innovation meets everyday
+                    affordability.
+                </span>
+            </p>
         </div>
-        <div class="centeral-content">
-            <div>
-                <div>
-                    <h3 class="u36Medium_v2">Urtopia’s Technique 2:<br><span style="color: #FD4B17;">Microspace</span></h3>
-                    <p class="u17Light_v2">
-                        <span>
-                            Microspace technology further enhances the frame’s strength by optimizing the internal
-                            structure of the carbon fibers. This intricate design improves load distribution, making the
-                            bike more resilient to stress and impacts. It results in a 20% increase in strength while
-                            also absorbing vibrations.
-                        </span>
-
-                    </p>
-                </div>
-                <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24580_2x_9a465162-0e01-4597-bb0d-62402cfce3ae.jpg?v=1725705473"
-                    alt="">
-            </div>
-        </div>
-        <div class="centeral-content">
-            <div>
-                <div>
-                    <h3 class="u36Medium_v2">Urtopia’s Technique 3:<br><span style="color: #FD4B17;">NANO
-                            Technology</span></h3>
-                    <p class="u17Light_v2">
-                        <span>
-                            Urtopia’s NANO technology introduces a layer of precision to the manufacturing process,
-                            ensuring that every fiber is perfectly aligned. This meticulous attention to detail
-                            increases the bike’s overall durability and performance, providing a smoother, more
-                            responsive ride compared to other e-bikes on the market. This results in a frame with 15%
-                            more resistance to wear and tear and a 10% improvement in durability under extreme
-                            conditions. The nanoscale precision ensures that the carbon fibers are perfectly aligned,
-                            maximizing their strength and longevity.
-                        </span>
-
-                    </p>
-                </div>
-                <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24569_2x_fef17a23-842e-4095-ab44-153e1efc5890.jpg?v=1725705468"
-                    alt="">
-            </div>
-        </div>
-        <div class="centeral-content">
-            <div>
-                <div>
-                    <h3 class="u36Medium_v2">Slower Production for <br><span style="color: #FD4B17;">100%</span> Perfect
-                        Quality</h3>
-                    <p class="u17Light_v2">
-                        <span>
-                            To produce 100 carbon fiber frames, a typical factory would take a certain amount of time,
-                            but Urtopia invests twice as much time due to our commitment to achieving 100% perfection in
-                            quality. Our testing and quality control processes are exceptional, and critical components
-                            undergo 100% reliability testing, including X-ray inspections and other advanced methods.
-                            We’re Willing to Invest Extra Time for Superior Quality
-                        </span>
-
-                    </p>
-                </div>
-                <img class="lozad" data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24572_2x_93761fe6-5b53-4424-ac49-cba323179473.jpg?v=1725705202"
-                    alt="">
-            </div>
-        </div>
-      <a style="margin-left: calc(50% - 65px);" href="/collections/e-bikes" target="_blank" class="my-button my-button-origin">Order Now</a>
     </div>
+    <div class="background-image er-bg-black">
+        {% render 'image', class: "mb:!er-object-contain mb:!er-object-top", mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250306-170903.jpg?v=1741252164", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250220-163439.jpg?v=1740040497" %}
+        <div
+            class="er-h-screen centeral-content er-text-white er-flex er-flex-col er-items-center er-justify-end er-text-center mb:er-h-[150vw]">
+            <h2 class="text-size60 mb:er-text-5xl mb:er-leading-tight er-text-white er-m-0">Ride Carbon Fiber, <br>Ride <img width="250"
+                    height="46" loading="lazy" class="er-align-middle mb:er-max-w-[125px]"
+                    src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/logo_0707__1_3_2x_f8ebc529-c624-49bf-8412-7f450fa66295.png?v=1740016758"
+                    alt=""></h2>
+            <p class="er-max-w-screen-md text-size18 er-opacity-80 er-mt-8 er-mb-44 mb:er-text-2xl mb:er-mb-20">
+                <span>Not all carbon fiber is equal—choose the true expert. Urtopia pioneers carbon fiber technology and
+                    craftsmanship, delivering eBikes that redefine performance and value. Through relentless innovation,
+                    advanced automation, and scalable production, we push the boundaries of quality and affordability.
+                    Trust Urtopia—your carbon fiber expert.</span>
+            </p>
+        </div>
+    </div>
+    <div class="er-py-48 er-bg-black mb:er-py-24">
+        <div class="centeral-content er-text-white er-text-center er-flex er-flex-col">
+            <h2 class="text-size60 mb:er-text-5xl mb:er-leading-tight er-text-white er-m-0"><span class="er-text-primary">3</span> Core
+                Technologies <br>of Urtopia</h2>
+            <div class="er-grid er-grid-cols-3 er-mt-28 er-gap-x-16 er-gap-y-10 mb:er-grid-cols-1 mb:er-mt-16">
+                <div class="er-box-border background-image er-rounded-3xl er-overflow-hidden er-aspect-[400/700] mb:er-aspect-[315/350] er-px-10 mb:er-px-6 er-flex er-flex-col er-pt-[108%] mb:er-pt-0 er-cursor-pointer mb:er-justify-end mb:er-pb-8"
+                    data-dialog-id="3d">
+                    {% render 'image', width: 500, mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250306-171832.jpg?v=1741252729", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25510_2x_34481019-50a8-4c05-910f-4ac3390ef805.jpg?v=1740017454" %}
+                    <h3 class="text-size48 mb:er-text-5xl er-text-white er-m-0">3D CFF</h3>
+                    <h4 class="text-size24 er-py-6 mb:er-text-3xl mb:er-py-4 er-text-white er-m-0">3D Carbon Fiber Fabrication</h4>
+                    <p class="text-size18 er-opacity-80 mb:er-text-2xl">
+                        <span>
+                            an advanced textile technology that weaves carbon fibers in three dimensions, creating
+                            complex, layered structures.
+                        </span>
+                        <img loading="lazy" class="er-absolute er-right-8 er-top-8 mb:er-max-w-14" height="50" width="50"
+                            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25473.svg?v=1740018184" alt="">
+                    </p>
+                </div>
+                <div class="er-box-border background-image er-rounded-3xl er-overflow-hidden er-aspect-[400/700] mb:er-aspect-[315/350] er-px-10 mb:er-px-6 er-flex er-flex-col er-pt-[108%]  mb:er-pt-0 er-cursor-pointer mb:er-justify-end mb:er-pb-8"
+                    data-dialog-id="ecf">
+                    {% render 'image', width: 500, mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250306-173601.jpg?v=1741253776", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25507_2x_3f095381-572c-4349-a7e7-224db8405ba0.jpg?v=1740018779" %}
+                    <h3 class="text-size48 mb:er-text-5xl er-text-white er-m-0">ECF</h3>
+                    <h4 class="text-size24 er-py-6 mb:er-text-3xl mb:er-py-4 er-text-white er-m-0">Endless Carbon Fiber Technolology</h4>
+                    <p class="text-size18 er-opacity-80 mb:er-text-2xl">
+                        <span>
+                            Non-interrupted continuous carbon fibers, unlike short or long carbon fibers that have
+                            breaking points, ECF woven carbon cloth has no breaks offering excellent strength.
+                        </span>
+                        <img loading="lazy" class="er-absolute er-right-8 er-top-8 mb:er-max-w-14" height="50" width="50"
+                            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25473.svg?v=1740018184" alt="">
+                    </p>
+                </div>
+                <div class="er-box-border background-image er-rounded-3xl er-overflow-hidden er-aspect-[400/700] mb:er-aspect-[315/350] er-px-10 mb:er-px-6 er-flex er-flex-col er-pt-[108%]  mb:er-pt-0 er-cursor-pointer mb:er-justify-end mb:er-pb-8"
+                    data-dialog-id="raf">
+                    {% render 'image', width: 500, mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25495_2x_0a4ccbe5-3248-45c5-930c-a99f6a06dd98.jpg?v=1741253430", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25511_2x_6871c397-36c8-40bb-8848-3ef1b8670199.jpg?v=1740018784" %}
+                    <h3 class="text-size48 mb:er-text-5xl er-text-white er-m-0">RAF</h3>
+                    <h4 class="text-size24 er-py-6 mb:er-text-3xl mb:er-py-4 er-text-white er-m-0">Robotics Automated Formation</h4>
+                    <p class="text-size18 er-opacity-80 mb:er-text-2xl">
+                        <span>
+                            Carbon fiber production method leveraging on the incredible capability of robotics to lay
+                            the carbon fiber strand in complex pattern in super efficient way under high quality.
+                        </span>
+                        <img loading="lazy" class="er-absolute er-right-8 er-top-8 mb:er-max-w-14" height="50" width="50"
+                            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25473.svg?v=1740018184" alt="">
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="er-py-48 er-bg-black mb:er-py-20">
+        <div
+            class="centeral-content er-text-white er-text-center er-flex er-flex-col er-justify-center er-items-center">
+            <h2 class="text-size60 mb:er-text-4xl mb:er-leading-tight er-text-white er-m-0"><span class="er-text-primary">300+</span>
+                Professional Media <br>Outlets Give High
+                Praise</h2>
+                {% render 'image', class: "er-mt-24 er-mb-16 mb:er-my-10", mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250306-174616.jpg?v=1741254388", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25504_2x_b95547e6-84c8-40bc-b000-b9b6a92d4698.png?v=1740019366" %}
+            <p class="er-max-w-screen-md text-size18 er-opacity-80 mb:er-text-2xl">
+                <span>
+                    Urtopia’s achievements have earned widespread acclaim, including the GOOD DESIGN Award in Japan.
+                    Over 300 top-tier outlets—USA Today, Cyclingnews, Engadget, TNW, TechCrunch, CNET, Forbes, EBR, and
+                    Digital Trends—have featured Urtopia.<br><br>
+                    <i><b>Forbes: “A true flyweight in e-bikes. It’s even lighter than my non-electric mountain bike.”
+                            <br>CNET: “You won’t find a bike much lighter with more tech baked in than the
+                            Urtopia.”</b></i>
+                </span>
+            </p>
+        </div>
+    </div>
+    <div class="er-py-48 er-bg-black mb:er-py-20">
+        <div
+            class="centeral-content er-text-white er-text-center er-flex er-flex-col er-justify-center er-items-center er-overflow-hidden">
+            <h2 class="text-size60 mb:er-text-5xl mb:er-leading-tight er-text-white er-m-0"><span class="er-text-primary">8</span> Steps to
+                Urtopia <br>Carbon Fiber</h2>
+            <div
+                class="er-flex er-flex-col er-w-full er-mt-32 er-items-center er-justify-center er-box-border mb:er-mt-16">
+                <div class="er-grid er-w-full er-grid-cols-2 er-box-border comeback mb:er-grid-cols-1">
+                    <img loading="lazy"
+                        class="er-border-2 er-border-solid er-border-[#666] er-rounded-2xl er-overflow-hidden er-block er-box-border mb:er-order-1 mb:er-border-0 mb:er-mt-8"
+                        width="580" height="400"
+                        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250220-142633.jpg?v=1740032809"
+                        alt="">
+                    <div class="swappppr er-flex-1 er-relative er-overflow-hidden er-px-12 er-box-border mb:er-aspect-video mb:er-px-0"
+                        style="--swiper-theme-color: #000;--swiper-navigation-size: 35px;--swiper-pagination-color: #fff;--swiper-pagination-bullet-width: 80px;--swiper-pagination-bullet-height: 4px;">
+                        <div
+                            class="swiper-wrapper er-select-none er-rounded-2xl er-overflow-hidden er-box-border mb:er-rounded-none">
+                            <div class="swiper-slide background-image er-text-white er-box-border">
+                                <img loading="lazy"
+                                width="600" height="400"
+                                    src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250220-111412.jpg?v=1740021274&width=600"
+                                    alt="">
+                            </div>
+                            <div class="swiper-slide background-image er-text-white er-box-border">
+                                <img loading="lazy"
+                                width="600" height="400"
+                                    src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250220-111406.jpg?v=1740021274&width=600"
+                                    alt="">
+                            </div>
+                            <div class="swiper-slide background-image er-text-white er-box-border">
+                                <img loading="lazy"
+                                width="600" height="400"
+                                    src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250220-111419.jpg?v=1740021274&width=600"
+                                    alt="">
+                            </div>
+                        </div>
+                        <div
+                            class="swiper-button-prev er-bg-white er-p-12 er-rounded-full er-left-0 hover:er-opacity-70 er-transition er-translate-y-[-25%] er-z-[2] mb:er-bg-transparent">
+                        </div>
+                        <div
+                            class="swiper-button-next er-bg-white er-p-12 er-rounded-full er-right-0 hover:er-opacity-70 er-transition er-translate-y-[-25%] er-z-[2] mb:er-bg-transparent">
+                        </div>
+                        <div class="swiper-pagination !er-bottom-8 er-text-center mb:!er-bottom-4 er-z-[1]"></div>
+                    </div>
+                </div>
+                <h3 class="text-size24 er-my-16 mb:er-text-3xl mb:er-my-8 er-text-white">1. Weaving and Pre-Impregnation:</h3>
+                <p class="er-max-w-screen-md text-size18 er-opacity-80 mb:er-text-2xl">
+                    <span>
+                        We select race-grade Toray T1000 carbon fibers and weave them at various angles based on design
+                        needs. Our proprietary resin, enhanced with silane coupling agents, improves wetting and curing.
+                        Lab tests show this optimized resin densifies the fabric—boosting strength by 5.7%, reducing
+                        weight by 4.3%, and cutting delamination risks, potentially extending lifespan by over 50% for
+                        enhanced safety.
+                    </span>
+                </p>
+            </div>
+            <div
+                class="er-flex er-flex-col er-w-full er-mt-32 er-items-center er-justify-center er-box-border mb:er-mt-28">
+                <div class="er-grid er-w-full er-grid-cols-2 er-box-border comeback mb:er-grid-cols-1">
+                    <img loading="lazy"
+                        class="er-border-2 er-border-solid er-border-[#666] er-rounded-2xl er-overflow-hidden er-block er-box-border mb:er-order-1 mb:er-border-0 mb:er-mt-8"
+                        width="580" height="400"
+                        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250307-145459.jpg?v=1741330515"
+                        alt="">
+                    <div class="swappppr er-flex-1 er-relative er-overflow-hidden er-px-12 er-box-border mb:er-aspect-video mb:er-px-0"
+                        style="--swiper-theme-color: #000;--swiper-navigation-size: 35px;--swiper-pagination-color: #fff;--swiper-pagination-bullet-width: 80px;--swiper-pagination-bullet-height: 4px;">
+                        <div
+                            class="swiper-wrapper er-select-none er-rounded-2xl er-overflow-hidden er-box-border mb:er-rounded-none">
+                            <div class="swiper-slide background-image er-text-white er-box-border">
+                                <img loading="lazy"
+                                width="600" height="400"
+                                    src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250219-200021_2x_85d8e70e-7322-4423-981d-5337b873678e.jpg?v=1741330636&width=600"
+                                    alt="">
+                            </div>
+                            <div class="swiper-slide background-image er-text-white er-box-border">
+                                <img loading="lazy"
+                                width="600" height="400"
+                                    src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250220-175132_2x_433bb96c-1e38-4d67-8084-579d683a97b8.jpg?v=1741330643&width=600"
+                                    alt="">
+                            </div>
+                        </div>
+                        <div
+                            class="swiper-button-prev er-bg-white er-p-12 er-rounded-full er-left-0 hover:er-opacity-70 er-transition er-translate-y-[-25%] er-z-[2] mb:er-bg-transparent">
+                        </div>
+                        <div
+                            class="swiper-button-next er-bg-white er-p-12 er-rounded-full er-right-0 hover:er-opacity-70 er-transition er-translate-y-[-25%] er-z-[2] mb:er-bg-transparent">
+                        </div>
+                        <div class="swiper-pagination !er-bottom-8 er-text-center mb:!er-bottom-4 er-z-[1]"></div>
+                    </div>
+                </div>
+                <h3 class="text-size24 er-my-16 mb:er-text-3xl mb:er-my-8 er-text-white">2. Cutting and Sorting:</h3>
+                <p class="er-max-w-screen-md text-size18 er-opacity-80 mb:er-text-2xl">
+                    <span>
+                        During carbon fabric processing, we employ an advanced automated system that precisely cuts,
+                        sorts, and codes the fabric based on input dimensions without manual labor. This system reduces
+                        the industry’s typical error rate of 0.6% to 0%, minimizing human error and ensuring consistent
+                        quality and performance.
+                    </span>
+                </p>
+            </div>
+            <div
+                class="er-flex er-flex-col er-w-full er-mt-32 er-items-center er-justify-center er-box-border mb:er-mt-28">
+                <div class="er-grid er-w-full er-grid-cols-2 er-box-border comeback mb:er-grid-cols-1">
+                    <img loading="lazy"
+                        class="er-border-2 er-border-solid er-border-[#666] er-rounded-2xl er-overflow-hidden er-block er-box-border mb:er-order-1 mb:er-border-0 mb:er-mt-8"
+                        width="580" height="400"
+                        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250307-145845.jpg?v=1741330763"
+                        alt="">
+                    <div class="swappppr er-flex-1 er-relative er-overflow-hidden er-px-12 er-box-border mb:er-aspect-video mb:er-px-0"
+                        style="--swiper-theme-color: #000;--swiper-navigation-size: 35px;--swiper-pagination-color: #fff;--swiper-pagination-bullet-width: 80px;--swiper-pagination-bullet-height: 4px;">
+                        <div
+                            class="swiper-wrapper er-select-none er-rounded-2xl er-overflow-hidden er-box-border mb:er-rounded-none">
+                            <div class="swiper-slide background-image er-text-white er-box-border">
+                                <img loading="lazy"
+                                width="600" height="400"
+                                    src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19448_2x_144b859c-ec40-40a5-94be-885e5dfa4955.jpg?v=1741330961&width=600"
+                                    alt="">
+                            </div>
+                        </div>
+                        <div
+                            class="swiper-button-prev er-bg-white er-p-12 er-rounded-full er-left-0 hover:er-opacity-70 er-transition er-translate-y-[-25%] er-z-[2] mb:er-bg-transparent mb:er-hidden">
+                        </div>
+                        <div
+                            class="swiper-button-next er-bg-white er-p-12 er-rounded-full er-right-0 hover:er-opacity-70 er-transition er-translate-y-[-25%] er-z-[2] mb:er-bg-transparent mb:er-hidden">
+                        </div>
+                        <div class="swiper-pagination !er-bottom-8 er-text-center mb:!er-bottom-4 er-z-[1]"></div>
+                    </div>
+                </div>
+                <h3 class="text-size24 er-my-16 mb:er-text-3xl mb:er-my-8 er-text-white">3. Pre-Forming:</h3>
+                <p class="er-max-w-screen-md text-size18 er-opacity-80 mb:er-text-2xl">
+                    <span>
+                        In the pre-forming stage, we use CAE (Computer Aided Engineering) and FAE (Finite Element
+                        Analysis) to aid the design of lamination. Experienced technicians then follow procedures to
+                        attach hundreds of pre-cut carbon fabric pieces onto an EPS inner mold. Our unique stacking
+                        design optimizes strength, weight, rigidity, and shock absorption— the essence of our carbon
+                        fiber frame. Specially shaped patches reinforce areas with varied stress, ensuring stability
+                        under complex loads. Consequently, frames with the same exterior can perform differently due to
+                        their stacking design.
+                    </span>
+                </p>
+            </div>
+            <div
+                class="er-flex er-flex-col er-w-full er-mt-32 er-items-center er-justify-center er-box-border mb:er-mt-28">
+                <div class="er-grid er-w-full er-grid-cols-2 er-box-border comeback mb:er-grid-cols-1">
+                    <img loading="lazy"
+                        class="er-border-2 er-border-solid er-border-[#666] er-rounded-2xl er-overflow-hidden er-block er-box-border mb:er-order-1 mb:er-border-0 mb:er-mt-8"
+                        width="580" height="400"
+                        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250307-151610.jpg?v=1741331787"
+                        alt="">
+                    <div class="swappppr er-flex-1 er-relative er-overflow-hidden er-px-12 er-box-border mb:er-aspect-video mb:er-px-0"
+                        style="--swiper-theme-color: #000;--swiper-navigation-size: 35px;--swiper-pagination-color: #fff;--swiper-pagination-bullet-width: 80px;--swiper-pagination-bullet-height: 4px;">
+                        <div
+                            class="swiper-wrapper er-select-none er-rounded-2xl er-overflow-hidden er-box-border mb:er-rounded-none">
+                            <div class="swiper-slide background-image er-text-white er-box-border">
+                                <img loading="lazy"
+                                width="600" height="400"
+                                    src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19449_2x_cbb6210b-6f7f-4472-88b8-081c33cd5a24.jpg?v=1741331336&width=600"
+                                    alt="">
+                            </div>
+                        </div>
+                        <div
+                            class="swiper-button-prev er-bg-white er-p-12 er-rounded-full er-left-0 hover:er-opacity-70 er-transition er-translate-y-[-25%] er-z-[2] mb:er-bg-transparent mb:er-hidden">
+                        </div>
+                        <div
+                            class="swiper-button-next er-bg-white er-p-12 er-rounded-full er-right-0 hover:er-opacity-70 er-transition er-translate-y-[-25%] er-z-[2] mb:er-bg-transparent mb:er-hidden">
+                        </div>
+                        <div class="swiper-pagination !er-bottom-8 er-text-center mb:!er-bottom-4 er-z-[1]"></div>
+                    </div>
+                </div>
+                <h3 class="text-size24 er-my-16 mb:er-text-3xl mb:er-my-8 er-text-white">4. Molding:</h3>
+                <p class="er-max-w-screen-md text-size18 er-opacity-80 mb:er-text-2xl">
+                    <span>
+                        Molding is a key step in forming carbon fiber products. Using high-precision molds and
+                        controlled temperatures, the fibers and resin cure perfectly. Unlike traditional splicing, our
+                        partner’s exclusive MonolithTM one-piece molding forms the entire frame in one process. This
+                        directly half the molding time as instead of 2 or 3 pieces of molds now we only do this once for
+                        one frame. Less machine time implies shorter production lead time and lower overall cost.
+                    </span>
+                </p>
+            </div>
+            <div
+                class="er-flex er-flex-col er-w-full er-mt-32 er-items-center er-justify-center er-box-border mb:er-mt-28">
+                <div class="er-grid er-w-full er-grid-cols-2 er-box-border comeback mb:er-grid-cols-1">
+                    <img loading="lazy"
+                        class="er-border-2 er-border-solid er-border-[#666] er-rounded-2xl er-overflow-hidden er-block er-box-border mb:er-order-1 mb:er-border-0 mb:er-mt-8"
+                        width="580" height="400"
+                        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250307-150934.jpg?v=1741331397"
+                        alt="">
+                    <div class="swappppr er-flex-1 er-relative er-overflow-hidden er-px-12 er-box-border mb:er-aspect-video mb:er-px-0"
+                        style="--swiper-theme-color: #000;--swiper-navigation-size: 35px;--swiper-pagination-color: #fff;--swiper-pagination-bullet-width: 80px;--swiper-pagination-bullet-height: 4px;">
+                        <div
+                            class="swiper-wrapper er-select-none er-rounded-2xl er-overflow-hidden er-box-border mb:er-rounded-none">
+                            <div class="swiper-slide background-image er-text-white er-box-border">
+                                <img loading="lazy"
+                                width="600" height="400"
+                                    src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19450_2x_b3e10db9-697d-4e7b-90d6-40a048d241de.jpg?v=1741331988&width=600"
+                                    alt="">
+                            </div>
+                        </div>
+                        <div
+                            class="swiper-button-prev er-bg-white er-p-12 er-rounded-full er-left-0 hover:er-opacity-70 er-transition er-translate-y-[-25%] er-z-[2] mb:er-bg-transparent mb:er-hidden">
+                        </div>
+                        <div
+                            class="swiper-button-next er-bg-white er-p-12 er-rounded-full er-right-0 hover:er-opacity-70 er-transition er-translate-y-[-25%] er-z-[2] mb:er-bg-transparent mb:er-hidden">
+                        </div>
+                        <div class="swiper-pagination !er-bottom-8 er-text-center mb:!er-bottom-4 er-z-[1]"></div>
+                    </div>
+                </div>
+                <h3 class="text-size24 er-my-16 mb:er-text-3xl mb:er-my-8 er-text-white">5. Machining:</h3>
+                <p class="er-max-w-screen-md text-size18 er-opacity-80 mb:er-text-2xl">
+                    <span>The Monolith™ technology offers a dual advantage: cost - effectiveness and remarkable
+                        performance. Traditional bike frames require gluing and curing, leaving behind heavy and
+                        unappealing junctions, which can also create weak points. In contrast, products made with
+                        MonolithTM are crafted in one seamless piece. This not only results in a frame with an elegant
+                        shape and smooth surface, but also brings about a significant weight reduction. Frames using
+                        this technology are over 11.7% lighter; for example, a road bike frame weighs just 583g without
+                        any comprimise on the performance.</span>
+                </p>
+            </div>
+            <div
+                class="er-flex er-flex-col er-w-full er-mt-32 er-items-center er-justify-center er-box-border mb:er-mt-28">
+                <div class="er-grid er-w-full er-grid-cols-2 er-box-border comeback mb:er-grid-cols-1">
+                    <img loading="lazy"
+                        class="er-border-2 er-border-solid er-border-[#666] er-rounded-2xl er-overflow-hidden er-block er-box-border mb:er-order-1 mb:er-border-0 mb:er-mt-8"
+                        width="580" height="400"
+                        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250307-152425.jpg?v=1741332279"
+                        alt="">
+                    <div class="swappppr er-flex-1 er-relative er-overflow-hidden er-px-12 er-box-border mb:er-aspect-video mb:er-px-0"
+                        style="--swiper-theme-color: #000;--swiper-navigation-size: 35px;--swiper-pagination-color: #fff;--swiper-pagination-bullet-width: 80px;--swiper-pagination-bullet-height: 4px;">
+                        <div
+                            class="swiper-wrapper er-select-none er-rounded-2xl er-overflow-hidden er-box-border mb:er-rounded-none">
+                            <div class="swiper-slide background-image er-text-white er-box-border">
+                                <img loading="lazy"
+                                width="600" height="400"
+                                    src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240112-untitled-5162_2x_b24d49a9-85b8-42cf-98ac-bd8f5b981d78.jpg?v=1741332112&width=600"
+                                    alt="">
+                            </div>
+                        </div>
+                        <div
+                            class="swiper-button-prev er-bg-white er-p-12 er-rounded-full er-left-0 hover:er-opacity-70 er-transition er-translate-y-[-25%] er-z-[2] mb:er-bg-transparent mb:er-hidden">
+                        </div>
+                        <div
+                            class="swiper-button-next er-bg-white er-p-12 er-rounded-full er-right-0 hover:er-opacity-70 er-transition er-translate-y-[-25%] er-z-[2] mb:er-bg-transparent mb:er-hidden">
+                        </div>
+                        <div class="swiper-pagination !er-bottom-8 er-text-center mb:!er-bottom-4 er-z-[1]"></div>
+                    </div>
+                </div>
+                <h3 class="text-size24 er-my-16 mb:er-text-3xl mb:er-my-8 er-text-white">6. Comprehensive Reliability Inspection:</h3>
+                <p class="er-max-w-screen-md text-size18 er-opacity-80 mb:er-text-2xl">
+                    <span>Each frame undergoes eight rigorous reliability tests. Our long-term investment in testing
+                        equipment and quality control ensures potential issues are identified and resolved during
+                        production. We perform comprehensive X-ray inspections to detect subtle defects, such as
+                        internal carbon fiber delamination, voids, and tiny foreign inclusions, ensuring the frame’s
+                        overall reliability and quality.</span>
+                </p>
+            </div>
+            <div
+                class="er-flex er-flex-col er-w-full er-mt-32 er-items-center er-justify-center er-box-border mb:er-mt-28">
+                <div class="er-grid er-w-full er-grid-cols-2 er-box-border comeback mb:er-grid-cols-1">
+                    <img loading="lazy"
+                        class="er-border-2 er-border-solid er-border-[#666] er-rounded-2xl er-overflow-hidden er-block er-box-border mb:er-order-1 mb:er-border-0 mb:er-mt-8"
+                        width="580" height="400"
+                        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250307-152829.jpg?v=1741332521"
+                        alt="">
+                    <div class="swappppr er-flex-1 er-relative er-overflow-hidden er-px-12 er-box-border mb:er-aspect-video mb:er-px-0"
+                        style="--swiper-theme-color: #000;--swiper-navigation-size: 35px;--swiper-pagination-color: #fff;--swiper-pagination-bullet-width: 80px;--swiper-pagination-bullet-height: 4px;">
+                        <div
+                            class="swiper-wrapper er-select-none er-rounded-2xl er-overflow-hidden er-box-border mb:er-rounded-none">
+                            <div class="swiper-slide background-image er-text-white er-box-border">
+                                <img loading="lazy"
+                                width="600" height="400"
+                                    src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240112-untitled-4813_2x_3c65825a-06a6-491e-af68-0326b4412d7d.jpg?v=1741332449&width=600"
+                                    alt="">
+                            </div>
+                            <div class="swiper-slide background-image er-text-white er-box-border">
+                                <img loading="lazy"
+                                width="600" height="400"
+                                    src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/WechatIMG36_2x_c3e6bc2e-4adc-4592-ad55-11d97ada9bf8.jpg?v=1741332455&width=600"
+                                    alt="">
+                            </div>
+                        </div>
+                        <div
+                            class="swiper-button-prev er-bg-white er-p-12 er-rounded-full er-left-0 hover:er-opacity-70 er-transition er-translate-y-[-25%] er-z-[2] mb:er-bg-transparent">
+                        </div>
+                        <div
+                            class="swiper-button-next er-bg-white er-p-12 er-rounded-full er-right-0 hover:er-opacity-70 er-transition er-translate-y-[-25%] er-z-[2] mb:er-bg-transparent">
+                        </div>
+                        <div class="swiper-pagination !er-bottom-8 er-text-center mb:!er-bottom-4 er-z-[1]"></div>
+                    </div>
+                </div>
+                <h3 class="text-size24 er-my-16 mb:er-text-3xl mb:er-my-8 er-text-white">7. Painting:</h3>
+                <p class="er-max-w-screen-md text-size18 er-opacity-80 mb:er-text-2xl">
+                    <span>
+                        Painting is the final step in our frame production. After thorough cleaning, we apply a primer
+                        and bake the frame at a controlled low temperature for proper curing. Then, we add decals and a
+                        topcoat, followed by another low-temperature bake to achieve the final finish. This process
+                        improves paint adhesion, durability, and overall lifespan, ensuring no quality issues due to
+                        carbon fiber’s unique properties.
+                    </span>
+                </p>
+            </div>
+            <div
+                class="er-flex er-flex-col er-w-full er-mt-32 er-items-center er-justify-center er-box-border mb:er-mt-28">
+                <div class="er-grid er-w-full er-grid-cols-2 er-box-border comeback mb:er-grid-cols-1">
+                    <img loading="lazy"
+                        class="er-border-2 er-border-solid er-border-[#666] er-rounded-2xl er-overflow-hidden er-block er-box-border mb:er-order-1 mb:er-border-0 mb:er-mt-8"
+                        width="580" height="400"
+                        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250307-153321.jpg?v=1741332811"
+                        alt="">
+                    <div class="swappppr er-flex-1 er-relative er-overflow-hidden er-px-12 er-box-border mb:er-aspect-video mb:er-px-0"
+                        style="--swiper-theme-color: #000;--swiper-navigation-size: 35px;--swiper-pagination-color: #fff;--swiper-pagination-bullet-width: 80px;--swiper-pagination-bullet-height: 4px;">
+                        <div
+                            class="swiper-wrapper er-select-none er-rounded-2xl er-overflow-hidden er-box-border mb:er-rounded-none">
+                            <div class="swiper-slide background-image er-text-white er-box-border">
+                                <img loading="lazy" width="600" height="400"
+                                    src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240111-untitled-4740-2_2x_9e135b32-e7f2-45df-a36a-a1d8cb33256f.jpg?v=1741332720&width=600"
+                                    alt="">
+                            </div>
+                            <div class="swiper-slide background-image er-text-white er-box-border">
+                                <img loading="lazy"
+                                     width="600" height="400"
+                                    src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240111-untitled-4739_2x_12a424b4-77ab-44fe-9071-bacdd3865aef.jpg?v=1741332726&width=600"
+                                    alt="">
+                            </div>
+                        </div>
+                        <div
+                            class="swiper-button-prev er-bg-white er-p-12 er-rounded-full er-left-0 hover:er-opacity-70 er-transition er-translate-y-[-25%] er-z-[2] mb:er-bg-transparent">
+                        </div>
+                        <div
+                            class="swiper-button-next er-bg-white er-p-12 er-rounded-full er-right-0 hover:er-opacity-70 er-transition er-translate-y-[-25%] er-z-[2] mb:er-bg-transparent">
+                        </div>
+                        <div class="swiper-pagination !er-bottom-8 er-text-center mb:!er-bottom-4 er-z-[1]"></div>
+                    </div>
+                </div>
+                <h3 class="text-size24 er-my-16 mb:er-text-3xl mb:er-my-8 er-text-white">8. Quality Inspection:</h3>
+                <p class="er-max-w-screen-md text-size18 er-opacity-80 mb:er-text-2xl">
+                    <span>
+                        Our factory adheres to ISO9001 and TS16949 standards, using automotive-grade quality controls.
+                        After 37 thorough inspections of each frame’s appearance and dimensions, the product is packaged
+                        and shipped. This rigorous process enhances reliability and safety, ensuring every consumer can
+                        trust our product.
+                    </span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="er-bg-black background-image er-aspect-[1920/700] mb:er-aspect-square er-pt-16">
+       {% render 'image', class: "mb:!er-object-contain mb:!er-object-bottom", mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19453_2x_b0232da4-4be4-4c89-8ca0-b31018c79a14.jpg?v=1741254741", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250220-161821.jpg?v=1740039518" %}
+        <div
+            class="er-h-screen centeral-content er-text-white er-text-center er-flex er-flex-col er-justify-start er-items-center">
+            <h3 class="text-size24 er-font-medium mb:er-text-3xl er-text-white er-m-0">Urtopia Carbon E-Bikes</h3>
+            <div class="er-flex er-items-center">
+                <span
+                    class="text-size126 er-text-primary er-mr-12 er-text-[160px] mb:er-text-9xl mb:er-leading-tight mb:er-mr-4">1</span>
+                <h2 class="text-size60 er-text-left mb:er-text-5xl mb:er-leading-tight er-text-white er-m-0">Gram Lighter <br>Second Faster
+                </h2>
+            </div>
+        </div>
+    </div>
+    <div class="er-bg-black er-pb-48 mb:er-pt-16">
+        <div
+            class="centeral-content er-text-white er-text-center er-flex er-flex-col er-justify-center er-items-center">
+            <p class="er-max-w-screen-md text-size18 er-opacity-80 mb:er-text-2xl">
+                <span>
+                    Riding a carbon fiber eBike is not just a commute but a cultural shift, a selection of life style.
+                    When you hop on a Urtopia carbon fiber eBike, it’s like a whole new world opens up. It’s not just
+                    about getting from point A to B; it’s about the smooth, light, and super - strong ride. You feel the
+                    difference right away, whether you’re zipping through city streets or cruising on country roads.
+                    <br><br>In
+                    a divided world, Urtopia offers unity. It’s a vision where excellence is shared, innovation is
+                    constant, and the road ahead is a portal to endless possibilities. <br><br>Ride carbon fiber, ride
+                    Urtopia.
+                </span>
+            </p>
+            <a class="er-button er-button-white er-mt-16" href="/collections/e-bikes">Learn more</a>
+        </div>
+    </div>
+    <dialog class="er-max-w-screen-lg er-rounded-3xl er-overflow-hidden er-max-h-dvh er-shadow mb:er-max-w-[92vw]"
+        id="3d">
+        <div class="er-absolute er-bg-white er-rounded-full er-right-12 er-top-8 er-p-2 er-cursor-pointer mb:er-right-6 mb:er-top-6" style=" max-height: 34px;">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000">
+                <path
+                    d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+            </svg>
+        </div>
+        <div class="er-max-h-dvh er-overflow-y-auto er-text-white er-bg-[#1F1F1F]">
+            {% render 'image', src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250221-111933.jpg?v=1740119323", width: 1000 %}
+            <div
+                class="er-max-w-screen-md er-mx-auto er-flex er-flex-col er-items-center er-text-center er-pb-24 mb:er-p-8">
+                <h3 class="text-size36 mb:er-text-3xl er-text-white er-m-0">3D Carbon Fiber Fabrication – 3D CFF</h3>
+                <p class="text-size18 er-opacity-80 er-my-12 mb:er-text-2xl mb:er-my-4">
+                    <span>
+                        3D carbon fiber weaving technology is an advanced textile process that interlaces carbon
+                        fibers in three-dimensional space to form a fabric with a 3D structure. Building on
+                        conventional 2D weaving techniques by incorporating axial fibers, specialized weaving
+                        equipment and processes are used to interlace and twist carbon fiber yarns in a
+                        predetermined pattern, creating a complex 3D structure.
+                    </span>
+                </p>
+                <div class="er-grid er-grid-cols-2 er-gap-x-4 er-gap-y-8 er-py-8 mb:er-grid-cols-1">
+                    <img class="er-rounded-3xl" loading="lazy" width="400" height="300"
+                        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/u_1534145764_306278344_fm_253_app_138_f_JPEG_2x_68f30026-f5b4-437d-9678-61de6818045e.jpg?v=1740129435&width=400"
+                        alt="">
+                    <img class="er-rounded-3xl" loading="lazy" width="400" height="300"
+                        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/u_456330931_400806073_fm_253_app_138_f_JPEG_2x_63c0fc48-2285-4642-b170-93cfebdbf1b5.jpg?v=1740129440&width=400"
+                        alt="">
+                </div>
+                <p class="text-size18 er-opacity-80 er-my-12 mb:er-text-2xl mb:er-my-4">
+                    <span>
+                        By interweaving the carbon fiber threads, the final product is less prone to delamination
+                        while exhibiting excellent torsional resistance—ideal for bicycle frames designed to handle
+                        complex road conditions and varied applications. Additionally, machine weaving eliminates the
+                        inefficiencies and inconsistencies of traditional manual carbon cloth layup, maximizing the
+                        benefits of automation and continuous production to enhance quality and reduce costs.
+                    </span>
+                </p>
+                <div class="er-grid er-grid-cols-2 er-gap-x-4 er-gap-y-8 er-py-8 mb:er-grid-cols-1">
+                    <img class="er-rounded-3xl" loading="lazy" width="400" height="300"
+                        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2025-02-13_14.21.59_2x_341a9771-bc85-4e68-8149-e0ff5421e102.jpg?v=1740132725&width=400"
+                        alt="">
+                    <img class="er-rounded-3xl" loading="lazy" width="400" height="300"
+                        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20240111-untitled-4740-2_2x_28d2270e-e50f-4857-8435-8ef1d630135d.jpg?v=1740132731&width=400"
+                        alt="">
+                </div>
+            </div>
+        </div>
+    </dialog>
+    <dialog class="er-max-w-screen-lg er-rounded-3xl er-overflow-hidden er-max-h-dvh er-shadow mb:er-max-w-[92vw]"
+        id="ecf">
+        <div class="er-absolute er-bg-white er-rounded-full er-right-12 er-top-8 er-p-2 er-cursor-pointer mb:er-right-6 mb:er-top-6" style=" max-height: 34px;">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000">
+                <path
+                    d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+            </svg>
+        </div>
+        <div class="er-max-h-dvh er-overflow-y-auto er-text-white er-bg-[#1F1F1F]">
+            {% render 'image', src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25506_2x_94b62df4-19b8-43f6-bc2e-628a1cbc6629.jpg?v=1741232255", width: 1000 %}
+            <div
+                class="er-max-w-screen-md er-mx-auto er-flex er-flex-col er-items-center er-text-center er-pb-24 mb:er-p-8">
+                <h3 class="text-size36 mb:er-text-3xl er-text-white er-m-0">ECF - Endless Carbon Fiber Technolology</h3>
+                <p class="text-size18 er-opacity-80 er-my-12 mb:er-text-2xl mb:er-my-4">
+                    <span>
+                        Infinite-length carbon fibers refer to continuous fibers that are significantly longer than
+                        100mm with no breaks. They differ from short carbon fibers (SCF), which are under 10mm and used
+                        in plastic composites, and from conventional long carbon fibers (LCF), typically cut to around
+                        100mm. The advantage of infinite-length carbon fibers is that the resulting woven carbon fabric
+                        is made from a few continuous fibers without any breakpoints, ensuring excellent continuity and
+                        superior strength.
+                    </span>
+                </p>
+                <div class="er-grid er-grid-cols-2 er-gap-x-4 er-gap-y-8 er-py-8 mb:er-grid-cols-1">
+                    <img class="er-rounded-3xl" loading="lazy" width="400" height="300"
+                        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250219-213457_2x_d83044c9-e92b-4857-8f39-bbc7ee7242ee.jpg?v=1741232572&width=400"
+                        alt="">
+                    <img class="er-rounded-3xl" loading="lazy" width="400" height="300"
+                        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250219-213500_2x_6d1673ed-9e24-40ba-8d65-d648d5b85383.jpg?v=1741232577&width=400"
+                        alt="">
+                </div>
+                <p class="text-size18 er-opacity-80 er-my-12 mb:er-text-2xl mb:er-my-4">
+                    <span>
+                        There are two production methods: one uses 3D printing to form continuous carbon fibers with the
+                        help of a plastic substrate for core strength and support; the other employs a textile-like
+                        weaving process to create carbon fabric according to specific panel sizes. By reducing fiber
+                        breakage, these methods achieve superior mechanical performance with the same material weight.
+                    </span>
+                </p>
+            </div>
+        </div>
+    </dialog>
+    <dialog class="er-max-w-screen-lg er-rounded-3xl er-overflow-hidden er-max-h-dvh er-shadow mb:er-max-w-[92vw]"
+        id="raf">
+        <div class="er-absolute er-bg-white er-rounded-full er-right-12 er-top-8 er-p-2 er-cursor-pointer mb:er-right-6 mb:er-top-6" style=" max-height: 34px;">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000">
+                <path
+                    d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+            </svg>
+        </div>
+        <div class="er-max-h-dvh er-overflow-y-auto er-text-white er-bg-[#1F1F1F]">
+            {% render 'image', src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25506_2x_f6b958fd-f87f-421b-9aa3-4e73311c7138.jpg?v=1741232784", width: 1000 %}
+            <div
+                class="er-max-w-screen-md er-mx-auto er-flex er-flex-col er-items-center er-text-center er-pb-24 mb:er-p-8">
+                <h3 class="text-size36 mb:er-text-3xl er-text-white er-m-0">RAF - Robotics Automated Formation</h3>
+                <p class="text-size18 er-opacity-80 er-my-12 mb:er-text-2xl mb:er-my-4">
+                    <span>
+                        RAF revolutionizes carbon fiber production by integrating industrial six-axis robotics for
+                        unmatched precision and efficiency. These robotic arms, with their six degrees of freedom, move
+                        with elegance and accuracy, laying continuous carbon fiber strands in complex patterns guided by
+                        advanced software. This automated process ensures high consistency, eliminates human-induced
+                        errors, and significantly reduces waste, making production more sustainable.
+                    </span>
+                </p>
+                <div class="er-grid er-grid-cols-2 er-gap-x-4 er-gap-y-8 er-py-8 mb:er-grid-cols-1">
+                    <img class="er-rounded-3xl" loading="lazy" width="400" height="300"
+                        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19430_2x_13a1f715-3a59-406d-b1d6-376200406b60.jpg?v=1741239765&width=400"
+                        alt="">
+                    <img class="er-rounded-3xl" loading="lazy" width="400" height="300"
+                        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19401_2x_e65ffc9d-3818-44ec-b684-c8552fafea04.jpg?v=1741232944&width=400"
+                        alt="">
+                </div>
+                <p class="text-size18 er-opacity-80 er-my-12 mb:er-text-2xl mb:er-my-4">
+                    <span>
+                        The speed of these robots is transformative, drastically shortening production cycles and
+                        meeting growing market demands faster than ever. By seamlessly integrating with other
+                        manufacturing steps, RAF enables scalable, consistent production of high-performance carbon
+                        fiber components. This innovation isn’t just keeping pace with the times—it’s setting new
+                        standards. Every carbon fiber product crafted by these intelligent machines delivers
+                        reliability, strength, and innovation, ready to take on the world.
+                    </span>
+                </p>
+            </div>
+        </div>
+    </dialog>
+
+<script type="module">
+    $('.comeback .swiper-button-prev').one('click', function (event) {
+        $(this).closest('.comeback').css('transform', 'translateX(0)');
+        $(this).closest('.comeback').find('.swappppr').addClass('after:!er-content-none');
+
+        event.stopImmediatePropagation();
+    })
+
+    new Swiper('.swappppr', {
+        preloadImages: false,
+        effect: 'fade',
+        navigation: {
+            nextEl: '.swappppr .swiper-button-next',
+            prevEl: '.swappppr .swiper-button-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true
+        },
+        loop: true
+    });
+
+    $('[data-dialog-id]').on('click', function () {
+        document.getElementById($(this).attr('data-dialog-id')).showModal()
+    })
+
+    $('dialog .er-absolute').on('click', function () {
+        this.parentNode.close()
+    })
+</script>
