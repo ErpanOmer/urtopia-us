@@ -3355,6 +3355,27 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Urban_Electrica.jpg?v=1710818582',
     stores: [
       {
+        name: "Pedego Glendale Peoria",
+        phone: "(623) 233-4399",
+        email: "spike@pedegogp.com",
+        timezone: "Arizona, USA (GMT-7)",
+        add: "16610 N 75th Ave Suite 107, Peoria, AZ 85382",
+        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Urban_Electrica.jpg?v=1710818582",
+        testrideSpot: "Peoria",
+        availableSizes: [
+          'Carbon 1 Pro Size M'
+        ],
+        businessHours: [
+          "",
+          "",
+          "11:00-17:00",
+          "11:00-17:00",
+          "11:00-17:00",
+          "11:00-17:00",
+          "11:00-15:00",
+        ],
+      },
+      {
         name: "Urban Electrica",
         phone: "(602) 856-4566",
         email: "info@urbanelectrica.com",
@@ -3660,7 +3681,7 @@ const testRides = [
           "12:00-18:00",
           "12:00-18:00",
           "12:00-18:00",
-          "10:00-14:00",
+          "10:00-18:00",
         ],
       },
     ]
