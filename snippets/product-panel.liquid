@@ -10,7 +10,7 @@
   assign product_left_swiper_width = 64
   assign product_main_swiper_width = 1024
   assign product_prameters_size = 45
-  assign product_media_icon_height = 60
+  assign product_media_icon_height = 50
 
   assign product_left_swiper_class = "er-w-[64px] er-rounded-md er-cursor-pointer er-border-solid er-border-0 er-border-primary [&[class~='active']]:er-border-2 er-hidden xl:er-flex"
   assign product_main_swiper_class = 'swiper-slide er-object-cover er-aspect-[16/11] er-rounded-2xl'
@@ -116,7 +116,7 @@
     ></div>
     <div class="er-flex er-flex-col er-items-center er-text-center er-italic product-medias">
         <span class="text-size16 er-font-bold er-text-dark/80 mb:er-text-2xl">{{ product_media_reviews.first.text }}</span>
-        <img src="//newurtopia.com/cdn/shop/files/logo_0707__1.png?v=1684310857&amp;width=200" alt="{{ page_description }}" width="185" height="60" data-index="1" class="mb:er-h-16 mb:er-w-auto">
+        {{ product_media_reviews.first.image | image_url: height: product_media_icon_height | image_tag: class: "er-h-20 er-object-contain mb:er-h-16 mb:er-w-auto",  data-index: "1" }}
     </div>
     {% if product_send_accessories_icon %}
       <div class="er-flex er-bg-background er-items-center er-rounded-2xl er-p-3 er-gap-x-4 er-pr-6">

@@ -21,7 +21,7 @@
       <span class="er-text-base er-mt-2 er-text-white/70">Seconds</span>
     </div>
   </div>
-  <div class="er-flex er-p-6 er-bg-dark er-items-center er-font-medium mb:er-p-4">
+  <!-- <div class="er-flex er-p-6 er-bg-dark er-items-center er-font-medium mb:er-p-4">
     <img class="er-mr-8 mb:er-mr-4" width="40" height="40" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25458_2x_fd072839-539b-46e4-b4da-5bcbc9e06805.png?v=1740045361" alt="{{ page_description }}">
     <div class="er-flex-1 er-flex er-flex-col er-w-full er-space-y-4 mb:er-space-y-3">
       <span class="text-size12 mb:er-text-[11px]"><span style="color: #FFDF48;">Free {{ 9900 | money_without_trailing_zeros }}</span> Smart Air Pump for the <span style="color: #FFDF48;">First 50 Orders</span> Today</span>
@@ -30,7 +30,7 @@
       </div>
       <span class="text-size12 mb:er-text-[11px]"><span style="color: #FFDF48;"><span class="count">22</span> Orders</span> So Far Today</span>
     </div>
-  </div>
+  </div> -->
 </div>
 <script type="module">
   if(!window.loaded_sale_countdown){
@@ -72,5 +72,5 @@
     {%- for item in coun_down -%}
       sale_end_times.push({ sale_name: `{{  item.sale_name  }}`, sale_end_time: `{{  item.sale_end_time  }}` });
     {%- endfor -%}
-    window.loaded_sale_countdown=!0;let e=0,t=("urtopia.myshopify.com"===Shopify.shop?540:-120)*6e4;function n(e=new Date){return e.getTime()+6e4*e.getTimezoneOffset()+t}function o(e){let[o,l,d]=sale_end_times[e].sale_end_time.split("-").map(Number);return $('#count-down > div[data-name="sale-name"]').html(sale_end_times[e].sale_name),n(new Date(Date.UTC(o,l-1,d,0,0,0,0)+t))}let l=[864e5,36e5,6e4,1e3],d=["02","23","59","59"];function a(t){let i=t-n();if(i<=0)return++e>sale_end_times.length-1?($("#count-down").hide(),console.log("Countdown Ended!")):a(o(e));{let s=[];for(let r=0;r<l.length;r++)s[r]=String(Math.floor(i/l[r])).padStart(2,"0"),i%=l[r];let u={};for(let f=0;f<s.length;f++)d[f]!==s[f]&&(u[f]=s[f],d[f]=s[f]);for(let m in u)$(`#count-down .er-grid > div:nth-child(${Number(m)+1})`).find(".er-text-6xl").text(u[m]);refreshOrders(Number(d[1]))}setTimeout(a,1e3,t)}task(()=>{a(o(e))},0)}
+    window.loaded_sale_countdown=!0;let e=0,t=("urtopia.myshopify.com"===Shopify.shop?540:-120)*6e4;function n(e=new Date){return e.getTime()+6e4*e.getTimezoneOffset()+t}function o(e){let[o,l,d]=sale_end_times[e].sale_end_time.split("-").map(Number);return $('#count-down > div[data-name="sale-name"]').html(sale_end_times[e].sale_name),n(new Date(Date.UTC(o,l-1,d,0,0,0,0)+t))}let l=[864e5,36e5,6e4,1e3],d=["02","23","59","59"];function a(t){let i=t-n();if(i<=0)return++e>sale_end_times.length-1?($("#count-down").hide(),console.log("Countdown Ended!")):a(o(e));{let s=[];for(let r=0;r<l.length;r++)s[r]=String(Math.floor(i/l[r])).padStart(2,"0"),i%=l[r];let u={};for(let f=0;f<s.length;f++)d[f]!==s[f]&&(u[f]=s[f],d[f]=s[f]);for(let m in u)$(`#count-down .er-grid > div:nth-child(${Number(m)+1})`).find(".er-text-6xl").text(u[m]);1 || refreshOrders(Number(d[1]))}setTimeout(a,1e3,t)}task(()=>{a(o(e))},0)}
 </script>
