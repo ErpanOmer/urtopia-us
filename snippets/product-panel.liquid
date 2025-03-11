@@ -52,7 +52,6 @@
 
 {{ swiper.first | image_url: width: 1024 | preload_tag: as: 'image', type: 'image/webp', fetchpriority: 'high', media: "(min-width: 769px)" }}
 {{ swiper.first | image_url: width: 640 | preload_tag: as: 'image', type: 'image/webp', fetchpriority: 'high', media: "(max-width: 768px)" }}
-<h1 class="er-sr-only">{{ page_title }}</h1>
 <section
   class="product-panel {{ section_class }} er-mt-16 er-pb-40 mb:er-flex-col mb:er-px-6 mb:er-mt-0 mb:er-pb-24"
   data-variant-id="{{ current_variant.id }}"
