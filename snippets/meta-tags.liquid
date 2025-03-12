@@ -47,6 +47,11 @@
     {%- endif -%}
 {%- endfor -%}
 
+{%- if template.name == 'list-collections' -%}
+  <link rel="canonical" href="{{ request.origin }}{{ collections['e-bikes'].url }}">
+  {% assign find_one = true %}
+{%- endif -%}
+
 {%- unless find_one -%}
   <link rel="canonical" href="{{ canonical_url }}">
 {%- endunless -%}

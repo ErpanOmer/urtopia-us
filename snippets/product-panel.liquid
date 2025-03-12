@@ -14,7 +14,7 @@
 
   assign product_left_swiper_class = "er-w-[64px] er-rounded-md er-cursor-pointer er-border-solid er-border-0 er-border-primary [&[class~='active']]:er-border-2 er-hidden xl:er-flex"
   assign product_main_swiper_class = 'swiper-slide er-object-cover er-aspect-[16/11] er-rounded-2xl'
-  assign section_class = 'er-font-base er-max-w-screen-xl er-mx-auto er-flex er-justify-between er-px-12'
+  assign section_class = 'er-relative er-font-base er-max-w-screen-xl er-mx-auto er-flex er-justify-between er-px-12'
 
   if product_default_variant
     assign current_variant = product_default_variant
@@ -53,11 +53,22 @@
 {{ swiper.first | image_url: width: 1024 | preload_tag: as: 'image', type: 'image/webp', fetchpriority: 'high', media: "(min-width: 769px)" }}
 {{ swiper.first | image_url: width: 640 | preload_tag: as: 'image', type: 'image/webp', fetchpriority: 'high', media: "(max-width: 768px)" }}
 <section
-  class="product-panel {{ section_class }} er-mt-16 er-pb-40 mb:er-flex-col mb:er-px-6 mb:er-mt-0 mb:er-pb-24"
+  class="product-panel {{ section_class }} er-mt-24 er-pb-40 mb:er-flex-col mb:er-px-6 mb:er-mt-0 mb:er-pb-24"
   data-variant-id="{{ current_variant.id }}"
   data-swiper-insert-index="{{ swiper_insert_index }}"
   data-variant-swiper-size="{{ swiper_of_variant.count }}"
 >
+  <nav class="er-absolute er-top-[-50px]">
+    <ol class="er-list-none er-m-0 er-p-0 er-flex er-items-center er-space-x-3 er-text-primary er-font-medium">
+      <li>
+        <a class="er-button er-button-text" href="/collections/e-bikes">E-Bikes</a>
+      </li>
+      <span>&gt;</span>
+      <li>
+        <span>{{ product.title }}</span>
+      </li>
+    </ol>
+  </nav>
   <div class="er-flex-col er-shrink-0 er-space-y-6 left-images er-hidden xl:er-flex er-h-fit md:er-sticky md:er-top-28">
     {%- for variant_image in swiper -%}
       {{
