@@ -33,7 +33,7 @@
           <h4 class="u30DemiBold_v2">{{ spec.title }}</h4>
           <div class="boxsss">
             {%- for item in spec.parameters -%}
-              <div>{% if item.first != blank %}<h5 class="u24DemiBold_v2">{{ item.first }}</h5><h6 class="u17Light_v2">{{ item.last }}</h6>{% endif %}</div>
+              <div>{% if item.first != blank %}<div class="u24DemiBold_v2">{{ item.first }}</div><div class="u17Light_v2">{{ item.last }}</div>{% endif %}</div>
             {%- endfor -%}
            </div>
         </div>
@@ -83,7 +83,7 @@
             <h4 class="u20DemiBold_v2">{{ spec.title }}</h4>
             <div class="boxsss">
               {%- for item in spec.parameters -%}
-                <div>{% if item.first != blank %}<h5 class="u14DemiBold_v2">{{ item.first }}</h5><h6 class="u14Light_v2">{{ item.last }}</h6>{% endif %}</div>
+                <div>{% if item.first != blank %}<div class="u14DemiBold_v2">{{ item.first }}</div><div class="u14Light_v2">{{ item.last }}</div>{% endif %}</div>
               {%- endfor -%}
           </div>
           </div>
