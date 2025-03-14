@@ -169,6 +169,46 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/what-is-california-known-for-the-golden-gate-bridge-hero.webp?v=1697020664',
     stores: [
       {
+        name: `NAPA VELO`,
+        phone: '707-258-8729',
+        email: 'duke@napavelo.com',
+        timezone: "Fremont, California, USA (GMT-7)",
+        add: "1630 Action Ave Ste B, Napa, CA 94559",
+        testrideSpot: "Napa",
+        availableSizes: [
+         'Carbon Fold 1'
+        ],
+        businessHours: [
+          "10:00-17:00",
+          "",
+          "9:00-18:00",
+          "9:00-18:00",
+          "9:00-18:00",
+          "9:00-18:00",
+          "9:00-18:00",
+        ],
+      },
+      {
+        name: `Pedego Electric Bikes Pismo Beach`,
+        phone: '(805) 295-6352',
+        email: 'pedegopismo@gmail.com',
+        timezone: "Fremont, California, USA (GMT-7)",
+        add: "651 Dolliver St STE A Pismo Beach California, 93449 United States",
+        testrideSpot: "Pismo Beach",
+        availableSizes: [
+         'Carbon 1 ST'
+        ],
+        businessHours: [
+          "",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+        ],
+      },
+      {
         name: `Sirr John Moto`,
         phone: '1 760-658-4739',
         email: 'info@sirrjohnmoto.com',
@@ -510,7 +550,8 @@ const testRides = [
         add: "2978 Carlsbad Blvd #130 Carlsbad, CA 92008",
         testrideSpot: "Carlsbad",
         availableSizes: [
-          'Carbon 1 Pro Size S/M/L'
+          'Carbon 1 Pro Size S/M/L',
+          'Carbon Fold 1'
         ],
         businessHours: [
            "11:00-18:00",
@@ -553,7 +594,8 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/image_8.png?v=1731725082",
         testrideSpot: "Los Angeles",
         availableSizes: [
-          'Carbon 1 Pro Size S/M'
+          'Carbon 1 Pro Size S/M',
+          'Carbon Fold 1'
         ],
         businessHours: [
            "11:00-18:00",
@@ -576,7 +618,8 @@ const testRides = [
         noBook: true,
         availableSizes: [
           'Carbon 1 Pro Size S/M/L',
-          'Carbon Fold 1'
+          'Carbon Fold 1',
+          'Carbon 1 ST'
         ],
         businessHours: [
            "",
@@ -2149,6 +2192,28 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/shutterstock_469708088.jpg?v=1697188978',
     stores: [
       {
+        name: "Tampa Bay - Dunedin Store",
+        phone: "727-228-1975",
+        email: "info@tampabayebikes.com",
+        timezone: "New Port Richey, FL, USA (GMT-4)",
+        add: "376 Patricia Ave, Dunedin, FL 34698",
+        testrideSpot: "Dunedin",
+        availableSizes: [
+          'Carbon 1 Pro Size M/L',
+          'Carbon 1 ST',
+          'Carbon Fold 1'
+        ],
+        businessHours: [
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00"
+        ],
+      },
+      {
         name: "Pedego St Pete",
         phone: "941-260-5536",
         email: "steve@pedegostpete.com",
@@ -2962,6 +3027,27 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/co.webp?v=1695291345',
     stores: [
       {
+        name: "Pedego Castle Rock",
+        phone: "720-955-0306",
+        email: "info@pedegocastlerock.com",
+        timezone: "Colorado, USA (GMT-7)",
+        add: "224 Wilcox St, Castle Rock, CO 80104",
+        testrideSpot: "Castle Rock",
+        availableSizes: [
+          'Carbon 1 Pro Size M',
+          'Carbon 1 ST'
+        ],
+        businessHours: [
+          "11:00-16:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "10:00-17:00",
+          "11:00-17:00",
+        ],
+      },
+      {
         name: "Ebike Tours & Rental",
         phone: "719-219-5702",
         email: "",
@@ -2993,7 +3079,9 @@ const testRides = [
         testrideSpot: "Littleton",
         availableSizes: [
           'Carbon 1 Pro Size S/M/L',
-          'Carbon Fold 1'
+          'Carbon Fold 1',
+          'Carbon 1 ST',
+          'Fusion GT'
         ],
         businessHours: [
           "",
@@ -3314,7 +3402,8 @@ const testRides = [
         testrideSpot: "Grand Rapids",
         availableSizes: [
           'Fusion GT',
-          'Carbon 1 Pro Size M'
+          'Carbon 1 Pro Size M/L',
+          'Carbon 1 ST'
         ],
         businessHours: [
           "",
@@ -3363,7 +3452,8 @@ const testRides = [
         imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Urban_Electrica.jpg?v=1710818582",
         testrideSpot: "Peoria",
         availableSizes: [
-          'Carbon 1 Pro Size M'
+          'Carbon 1 Pro Size M',
+          'Carbon 1 ST'
         ],
         businessHours: [
           "",
@@ -3661,9 +3751,84 @@ const testRides = [
     ]
   },
   {
+    city: 'Indiana',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_3_7b7d3f75-8bc1-4592-9b67-8a2844323c38.png?v=1735626823',
+    stores: [
+      {
+        name: "Pedego Indy",
+        phone: "(317) 759-6600",
+        email: "info@pedegoindy.com",
+        timezone: "Tennessee, USA (GMT-7)",
+        add: "850 Massachusetts Ave Suite 125, Indianapolis, IN 46204",
+        testrideSpot: "Indianapolis",
+        availableSizes: [
+           'Carbon 1 Pro Size M',
+           'Carbon Fold 1',
+           'Carbon 1 ST',
+           'Fusion GT'
+        ],
+        businessHours: [
+           "12:00-17:00",
+           "10:00-17:00",
+           "10:00-17:00",
+           "10:00-17:00",
+           "10:00-17:00",
+           "10:00-17:00",
+           "10:00-17:00",
+        ],
+      },
+    ]
+  },
+  {
+    city: 'Nevada',
+    cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_3_7b7d3f75-8bc1-4592-9b67-8a2844323c38.png?v=1735626823',
+    stores: [
+      {
+        name: "E-Bike Hub",
+        phone: "775-432-7986",
+        email: "ryan@outdoordrivensports.com",
+        timezone: "Tennessee, USA (GMT-7)",
+        add: "50 S Virginia St, Reno, NV 89501",
+        testrideSpot: "Reno",
+        availableSizes: [
+           'Carbon 1 ST'
+        ],
+        businessHours: [
+           "10:00-17:00",
+           "",
+           "10:00-18:00",
+           "10:00-18:00",
+           "10:00-18:00",
+           "10:00-18:00",
+           "10:00-18:00",
+        ],
+      },
+    ]
+  },
+  {
     city: 'Ohio',
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_3_7b7d3f75-8bc1-4592-9b67-8a2844323c38.png?v=1735626823',
     stores: [
+      {
+        name: "Jeff's Bicycle Repair",
+        phone: "740-494-7091",
+        email: "jeff@jeffsbicyclerepair.com",
+        timezone: "Tennessee, USA (GMT-7)",
+        add: "131 E Water St, Prospect, OH 43342",
+        testrideSpot: "Prospect",
+        availableSizes: [
+          'Carbon Fold 1'
+        ],
+        businessHours: [
+          "",
+          "",
+          "9:00-18:00",
+          "9:00-18:00",
+          "9:00-18:00",
+          "9:00-18:00",
+          "9:00-14:00",
+        ],
+      },
       {
         name: "Beechwold Bicycles",
         phone: "+1 614-725-0500",
@@ -3672,7 +3837,9 @@ const testRides = [
         add: "4584 North High Street Columbus Ohio, 43214 United States",
         testrideSpot: "Columbus",
         availableSizes: [
-          'Fusion GT'
+          'Fusion GT',
+          'Carbon Fold 1',
+          'Carbon 1 Pro Size M',
         ],
         businessHours: [
           "",
