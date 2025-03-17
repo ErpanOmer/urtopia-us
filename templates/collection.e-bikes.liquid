@@ -1,0 +1,765 @@
+{{ 'outlet_v4.scss.css' | asset_url | stylesheet_tag: preload: true }}
+{{ 'collection.scss.css' | asset_url | stylesheet_tag: preload: true }}
+<h1 class="visuallyhidden">Urtopia Ebike - Sleek, Full Carbon, Lightweight, Smart</h1>
+
+<div class="background-image">
+  {% render 'image', first_screen: true, mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC05866_copy_2_2x_d6026bec-6ab4-4292-991c-ac03e6f509e9.jpg?v=1738997732", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC05866_copy_2_2x_92f7ce0a-1123-4ecf-a7e5-182da7f8d673.jpg?v=1738996602" %}
+  <div class="centeral-content er-flex mb:er-flex-col-reverse">
+    <span class="flex-1"></span>
+    <div class="er-h-[500px] er-flex er-flex-col er-items-start er-justify-center mb:er-justify-start mb:er-items-center mb:er-pt-10">
+      <img width="162" height="110" class="mb:er-max-w-52" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25450_2x_e8c62648-3bcc-4070-b999-3fd989ff4b56.png?v=1739500307" alt="{{ page_description }}">
+      <h2 class="er-text-7xl mb:er-text-5xl er-text-white er-mt-12 er-mb-24 mb:er-mt-6 mb:er-mb-12 mb:er-text-[#1898D1]">
+        Up to {{ all_products["urtopia-carbon-fusion-gt"].compare_at_price |  minus: all_products["urtopia-carbon-fusion-gt"].price | money_without_trailing_zeros }} OFF
+      </h2>
+      {% render 'sale' %}
+    <style>
+          .sale {
+              width: 400px;
+              background-color: transparent;
+              overflow: hidden;
+              margin-bottom: 0;
+          }
+
+          .sale > .u14DemiBold_v2 {
+              display: none;
+          }
+
+          .sale > div:not(.u14DemiBold_v2) {
+              display: flex;
+              justify-content: space-between;
+              padding: 0;
+          }
+
+          .sale > div:not(.u14DemiBold_v2) > div {
+              border-left: none !important;
+              place-self: center;
+              width: 65px;
+              align-items: unset;
+              position: relative;
+          }
+
+          .sale .u36DemiBold_v2 {
+              display: block;
+              background-color: #fff;
+              padding: 15px 12px;
+              border-radius: 7px;
+              font-size: 30px;
+              margin-bottom: 7.5px;
+              position: relative;
+              color: #1898D1;
+          }
+
+
+          .sale .u36DemiBold_v2::after {
+              content: ":";
+              position: absolute;
+              top: 50%;
+              right: 0;
+              transform: translate(25px, -50%);
+              font-size: 25px;
+              font-weight: 300;
+              color: #fff;
+          }
+
+
+          .sale > div:not(.u14DemiBold_v2) > div span:last-child {
+              opacity: 1;
+              font-size: 12px;
+              color: #fff;
+              font-weight: 300;
+          }
+
+
+          @media (max-width: 767px) {
+              .sale {
+                  max-width: 260px;
+              }
+
+
+              .sale .u36DemiBold_v2 {
+                  font-size: 18px;
+                  padding: 10px 8px;
+                  background-color: #1898D1;
+                  color: #fff;
+                  /* color: #000; */
+              }
+
+
+              .sale > div:not(.u14DemiBold_v2) > div {
+                  width: 42px;
+
+              }
+
+              .sale > div:not(.u14DemiBold_v2) > div span:last-child {
+                  font-size: 9px;
+                  color: #1898D1;
+                  /* color: #fff; */
+              }
+
+              .sale .u36DemiBold_v2::after {
+                  transform: translate(17px, -50%);
+                  color: #1898D1;
+              }
+          }
+    </style>
+    </div>
+  </div>
+</div>
+<div class="centeral-content ebike-products">
+  <div class="product-grid">
+    {% assign product = all_products['urtopia-carbon-1-pro-ebike'] %}
+    {% assign product_variants = product.variants | where: 'available' %}
+    {% assign product_uhmaya = '37 lbs<br>lightweight, Full<br>carbon fiber, 80<br>Miles' | split: ', ' %}
+    {% render 'product-card-2',
+      product_variants: product_variants,
+      product_name: 'Carbon 1 Pro',
+      product_description: 'Urban & fitness riding',
+      product_variant_options_find_sort: 'M,L,S',
+      product_url: product.url,
+      product_uhmaya: product_uhmaya
+    %}
+    {% assign product = all_products['urtopia-carbon-fold'] %}
+    {% assign product_variants = product.variants | where: 'available' %}
+    {% assign product_uhmaya = '29 lbs<br>lightweight, Full<br>carbon fiber, Torque<br>sensor' | split: ', ' %}
+    {% render 'product-card-2',
+      product_variants: product_variants,
+      product_name: 'Carbon Fold 1',
+      product_description: 'Super space-efficient',
+      product_url: product.url,
+      product_uhmaya: product_uhmaya
+    %}
+    <div class="gray-background-color u30DemiBold_v2 lozad mobileHide" data-background-image="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSCF5731_2x_16aa14e4-17e0-4b47-85b5-ea2b7f64be33.jpg?v=1739499919width=500">Full Carbon Lightweight Comfort</div>
+    {% assign product = all_products['urtopia-carbon-fusion-gt'] %}
+    {% assign product_variants = product.variants | where: 'available' %}
+    {% assign product_uhmaya = '1500W<br>power, Carbon fiber<br>frame, 120<br>Miles' | split: ', ' %}
+    {% render 'product-card-2',
+      product_variants: product_variants,
+      product_name: 'Carbon Fusion GT',
+      product_description: 'All terrain riding',
+      product_url: product.url,
+      product_uhmaya: product_uhmaya
+    %}
+    {% assign product = all_products['urtopia-carbon-1-step-thru-ebike'] %}
+    {% assign product_variants = product.variants | where: 'available' %}
+    {% assign product_uhmaya = '36 lbs<br>lightweight, Full<br>carbon fiber, 80<br>Miles' | split: ', ' %}
+    {% render 'product-card-2',
+      product_variants: product_variants,
+      product_name: 'Carbon 1 Step-Thru',
+      product_description: 'Urban & fitness riding',
+      product_url: product.url,
+      product_uhmaya: product_uhmaya
+    %} 
+    </div>
+</div>
+
+{% render 'sale-buy-any' %}
+
+<div class="professional" id="professional">
+  <div class="centeral-content">
+    <h2 class="u36Medium_v2">Professional Reviews</h2>
+    <div class="videos swiper-wrapper">
+      <div
+        class="swiper-slide"
+        onclick="showVideoDialog('https://www.youtube.com/embed/W9KMWM4Is00?autoplay=1&cc_load_policy=1')"
+      >
+        <img
+          class="lozad"
+          data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25127_2x_32bd3201-667c-41be-a264-4048e3cb8039.jpg?v=1732516610&width=400"
+          alt=""
+        >
+        <span class="u17Light_v2"
+          >It’s refreshing to ride an ebike that doesn’t feel like you’re lugging around a gigantic beast.</span
+        >
+        <span class="flex-1"></span>
+        <div class="u17Medium_v2">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19659_2x_e4e9dd85-d6ef-472c-804b-e4f17f3a9180.jpg?v=1732516604"
+            alt=""
+          >
+          <span>Hello Road</span>
+        </div>
+      </div>
+      <div
+        class="swiper-slide"
+        onclick="showVideoDialog('https://www.youtube.com/embed/DkaGYJklmSs?autoplay=1&cc_load_policy=1')"
+      >
+        <img
+          class="lozad"
+          data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24719_2x_2636fa6e-f818-4978-af54-a9cb899630c7.jpg?v=1727090408&width=400"
+          alt=""
+        >
+        <span class="u17Light_v2"
+          >Urtopia clearly took comfort and assist seriously—it’s top-class and worth the price.</span
+        >
+        <span class="flex-1"></span>
+        <div class="u17Medium_v2">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19469_2x_795c87d6-900b-4d78-b915-259138fa064d.png?v=1727090514"
+            alt=""
+          >
+          <span>Electroheads</span>
+        </div>
+      </div>
+      <div
+        class="swiper-slide"
+        onclick="showVideoDialog('https://www.youtube.com/embed/r9TD6cPYCxc?autoplay=1&cc_load_policy=1')"
+      >
+        <img
+          class="lozad"
+          data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24717_2x_42c326c1-7915-471d-b00e-4f5dd6b273b8.jpg?v=1727143908&width=400"
+          alt=""
+        >
+        <span class="u17Light_v2">Tested at 748W, the power of 1 Pro is higher than most all-terrain e-bikes.</span>
+        <span class="flex-1"></span>
+        <div class="u17Medium_v2">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19472_2x_679a808b-69a2-4e58-be5f-407efb2f88c5.png?v=1727143912"
+            alt=""
+          >
+          <span>Area 13</span>
+        </div>
+      </div>
+      <div
+        class="swiper-slide"
+        onclick="showVideoDialog('https://www.youtube.com/embed/14WsEPH8TfQ?autoplay=1&cc_load_policy=1')"
+      >
+        <img
+          class="lozad"
+          data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25085_2x_218ed915-d951-4836-9315-48dbb616abc5.jpg?v=1731058283&width=400"
+          alt=""
+        >
+        <span class="u17Light_v2"
+          >The throttle boost driven by dual motors provides an unprecedented power-maxing experience.</span
+        >
+        <span class="flex-1"></span>
+        <div class="u17Medium_v2">
+          <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/unnamed.jpg?v=1731058489" alt="">
+          <span>KhanFlicks</span>
+        </div>
+      </div>
+      <div
+        class="swiper-slide"
+        onclick="showVideoDialog('https://www.youtube.com/embed/OJgz3ZLb4F0?autoplay=1&cc_load_policy=1')"
+      >
+        <img
+          class="lozad"
+          data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25087_2x_fade44e6-4e58-4091-a22f-db3af7c7b2e2.jpg?v=1731058272&width=400"
+          alt=""
+        >
+        <span class="u17Light_v2"
+          >It's the lightest step-through ebike of its size, I can just easily get on it, no big jump over.</span
+        >
+        <span class="flex-1"></span>
+        <div class="u17Medium_v2">
+          <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/channels4_profile_1.jpg?v=1731058489" alt="">
+          <span>Area 13</span>
+        </div>
+      </div>
+
+      <div
+        class="swiper-slide"
+        onclick="showVideoDialog('https://www.youtube.com/embed/5JI2U6EpAHA?autoplay=1&cc_load_policy=1')"
+      >
+        <img
+          class="lozad"
+          data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24718_2x_02d66e8b-2f58-40a3-a0d9-85c287272787.jpg?v=1727144145width=400"
+          alt=""
+        >
+        <span class="u17Light_v2"
+          >A stealthy and sleek ebike, so capable and the riding experience is what I dreamed of.</span
+        >
+        <span class="flex-1"></span>
+        <div class="u17Medium_v2">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19471_2x_b5dee01b-134a-4ebe-bd4a-6c50f2608906.png?v=1727144280"
+            alt=""
+          >
+          <span>Electric Vehicles Space</span>
+        </div>
+      </div>
+      <div
+        class="swiper-slide"
+        onclick="showVideoDialog('https://www.youtube.com/embed/mu5MGas_F80?autoplay=1&cc_load_policy=1')"
+      >
+        <img
+          class="lozad"
+          data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24720_2x_43255c27-8e86-44bf-8148-c703e6b84b08.jpg?v=1727144140&width=400"
+          alt=""
+        >
+        <span class="u17Light_v2">This carbon frame commuter bike weighs 37 lbs and reaches speeds up to 28 MPH.</span>
+        <span class="flex-1"></span>
+        <div class="u17Medium_v2">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19468_2x_32096d4f-978e-4fe4-a392-c5555938beff.png?v=1727144288"
+            alt=""
+          >
+          <span>Mike Fede</span>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-scrollbar"></div>
+    <div class="buttons mobileHide">
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </div>
+</div>
+
+<h3 class="centeral-content u36DemiBold_v2 Choose">Choose your ride</h3>
+<div class="centeral-content cards">
+  <div>
+    <span class="u24DemiBold_v2"
+      >Ride outdoors and <br>
+      explore more trails</span
+    >
+    <a class="my-button" target="_blank" href="/products/urtopia-carbon-fusion-gt">E-touring bikes</a>
+  </div>
+  <div>
+    <span class="u24DemiBold_v2">All-Terrain Adventure</span>
+    <a class="my-button" target="_blank" href="/products/urtopia-carbon-1-pro-ebike">E-gravel bikes</a>
+  </div>
+  <div>
+    <span class="u24DemiBold_v2"
+      >Explore the <br>
+      urban landscape</span
+    >
+    <a class="my-button" target="_blank" href="/products/urtopia-carbon-fold">E-city bikes</a>
+  </div>
+</div>
+
+<div id="compared" class="compared">
+  <div class="centeral-content">
+    <div class="items">
+      <div class="item">
+        <div class="dimension" style="justify-content: center;">
+          <div class="u42DemiBold_v2">Find Your Match</div>
+          <div class="u20Medium_v2">
+            Can’t decide which frame fits you like a glove? Let’s compare them side by side and find your match!
+          </div>
+        </div>
+        <div class="params">
+          <div class="param" name="img">
+            {{ all_products['urtopia-carbon-1-pro-ebike'] | image_url: width: 600 | image_tag: loading: 'lazy' }}
+            <div class="select">
+              <select index="0"></select>
+            </div>
+          </div>
+          <div class="param" name="img">
+            {{ all_products['urtopia-carbon-fusion-gt'] | image_url: width: 600 | image_tag: loading: 'lazy' }}
+            <div class="select">
+              <select index="1"></select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="dimension u24DemiBold_v2">Size</div>
+        <div class="params">
+          <div class="param u17Medium_v2" name="size">Fit for 170 cm - 195 cm</div>
+          <div class="param u17Medium_v2" name="size">Fit for 170 cm - 195 cm</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="dimension u24DemiBold_v2">Weight</div>
+        <div class="params">
+          <div class="param u17Medium_v2" name="weight">20.9 kg</div>
+          <div class="param u17Medium_v2" name="weight">15.8 kg</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="dimension u24DemiBold_v2">Load-bearing capacity</div>
+        <div class="params">
+          <div class="param u17Medium_v2" name="capacity">Max. 130 kg</div>
+          <div class="param u17Medium_v2" name="capacity">Max. 120 kg</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="dimension u24DemiBold_v2">Dimensions</div>
+        <div class="params params-dimensions">
+          <div class="param u17Medium_v2" name="dimensions">
+            <img
+              class="lozad"
+              data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231221-151050_2x_d883c889-6e52-477d-8672-a7dda6dbbbdd.png?v=1703577530"
+              alt=""
+            >
+            <div class="u14DemiBold_v2 pcHide"></div>
+            <div class="sizes"></div>
+          </div>
+          <div class="param u17Medium_v2" name="dimensions">
+            <img
+              class="lozad"
+              data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241219-180413.png?v=1734602674"
+              alt=""
+            >
+            <div class="u14DemiBold_v2 pcHide"></div>
+            <div class="sizes"></div>
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="dimension u24DemiBold_v2">Gearing</div>
+        <div class="params">
+          <div class="param u17Medium_v2" name="gearing">8-Speed Shimano rear derailleur</div>
+          <div class="param u17Medium_v2" name="gearing">7-Speed Shimano rear derailleur</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="dimension u24DemiBold_v2">Smart Features</div>
+        <div class="params">
+          <div class="param u17Medium_v2" name="features">
+            Voice control, fingerprint start, LED dot-matrix display, haptic interaction, bluetooth music, built-in
+            navigation, GPS tracking, OTA upgrade
+          </div>
+          <div class="param u17Medium_v2" name="features">
+            Voice control, fingerprint start, LED dot-matrix display, haptic interaction, bluetooth music, built-in
+            navigation, GPS tracking, OTA upgrade
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="dimension u24DemiBold_v2">Range</div>
+        <div class="params">
+          <div class="param u17Medium_v2" name="range">50-120 km</div>
+          <div class="param u17Medium_v2" name="range">40-100 km</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="dimension u24DemiBold_v2">Body Materials</div>
+        <div class="params">
+          <div class="param u17Medium_v2" name="materials">6061 aluminum with liquid forging technology.</div>
+          <div class="param u17Medium_v2" name="materials">6061 aluminum with liquid forging technology.</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="dimension u24DemiBold_v2">IoT Sensors</div>
+        <div class="params">
+          <div class="param u17Medium_v2" name="sensors">Accelerometer, gyroscope, torque</div>
+          <div class="param u17Medium_v2" name="sensors">Accelerometer, gyroscope, torque</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="dimension u24DemiBold_v2">Motor</div>
+        <div class="params">
+          <div class="param u17Medium_v2" name="motor">Customized rear hub, 36 V 250 W, 45 N⋅m</div>
+          <div class="param u17Medium_v2" name="motor">Customized rear hub, 36 V 250 W, 45 N⋅m</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="centeral-content careeeee">
+  <div style="--order: 2;">
+    <h3 class="u30Medium_v2">Urtopia CARE</h3>
+    <p class="u17Light_v2">
+      <span>
+        Our dedicated after-sales service that ensures you can ride with complete peace of mind. From troubleshooting to
+        regular maintenance, we’ve got you covered every step of the way.
+      </span>
+    </p>
+    <a class="my-button my-button-white" target="_blank" href="/pages/care">Learn more</a>
+  </div>
+  <img
+    style="--order: 1;"
+    class="lozad"
+    data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230520-untitled-8948_2x_f6b4a856-b689-49c6-bd39-e894a356dd5b.jpg?v=1727343486"
+    alt=""
+  >
+  <img
+    style="--order: 3;"
+    class="lozad"
+    data-src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20240927-112700.jpg?v=1727407644"
+    alt=""
+  >
+  <div style="--order: 4;">
+    <h3 class="u30Medium_v2">Carbon fiber expert</h3>
+    <p class="u17Light_v2">
+      <span
+        >Pushing the limits of what’s possible in carbon fiber bikes. With cutting-edge technology and sleek,
+        lightweight design, we deliver an unparalleled riding experience.</span
+      >
+    </p>
+    <a class="my-button my-button-white" target="_blank" href="/pages/carbon-expert">Learn more</a>
+  </div>
+  <div style="--order: 6;">
+    <h3 class="u30Medium_v2">The bicycle with the mind</h3>
+    <p class="u17Light_v2">
+      <span
+        >Where innovation meets perfection. Redefining eBikes with unmatched intelligence. Packed with cutting-edge
+        technology such as ChatGPT, our eBikes offer smart features that elevate your ride to the next level. Ride
+        smarter, ride Urtopia!</span
+      >
+    </p>
+    <a class="my-button my-button-white" target="_blank" href="/pages/pages-smartest-ebike">Learn more</a>
+  </div>
+  <img
+    style="--order: 5;"
+    class="lozad"
+    data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSCF1581_2x_dcfecbd1-83a7-4f6c-bf7a-14d8b65e3df2.jpg?v=1727343481"
+    alt=""
+  >
+  <img
+    style="--order: 7;"
+    class="lozad"
+    data-src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24751_2x_8eff0d7e-b9a8-4429-8309-772edb257630.jpg?v=1727343476"
+    alt=""
+  >
+  <div style="--order: 8;">
+    <h3 class="u30Medium_v2">Test ride</h3>
+    <p class="u17Light_v2">
+      <span>
+        Urtopia now has over 150 bike shops across Germany, including cities like Berlin, Essen, Hamburg, Cologne,
+        Münster, and Stuttgart. Experience the perfect ride- try it and you’ll know!
+      </span>
+    </p>
+    <a class="my-button my-button-white" target="_blank" href="/pages/test-ride">Learn more</a>
+  </div>
+</div>
+<script type="module">
+        $('.product-card .dots > div').on('click', e => {
+            const target = $(e.target)
+            const product_card = target.closest('.product-card')
+    
+            // 先取消 其它兄弟元素的active, 再设置active
+            target.siblings().removeClass('active')
+            target.addClass('active')
+    
+            const price = Number(target.attr('data-price'))
+            const compare_at_price = Number(target.attr('data-compare-at-price'))
+            const discount_price = Number(target.attr('data-product-discount-price'))
+            const variant_id = target.attr('data-variant')
+            const variant_image = target.attr('data-img')
+    
+            product_card.find('.product_price .u24DemiBold_v2').text(getPriceFormat(price, true)).attr('data-price', getPriceFormat(compare_at_price, true))
+            product_card.find('.tags > span:first-child').html(`${getPriceFormat(compare_at_price - price, true)} <span class="u14DemiBold_v2">OFF</span>`)
+
+            if (price === compare_at_price) {
+                product_card.find('.product_price .u24DemiBold_v2').attr('data-price', '')
+                product_card.find('.tags > span:first-child').hide()
+            }
+    
+            product_card.find('.variant-image').attr('src', variant_image)
+            product_card.find('.my-button').attr('href', `${product_card.find('.my-button').attr('href').split('?').shift()}?variant=${variant_id}`)
+            product_card.find('.stars a').attr('href', `${product_card.find('.my-button').attr('href').split('?').shift()}?variant=${variant_id}#judgeme_product_reviews`)
+        })
+    
+        setTimeout(() => {
+            $('.product-card .dots > div:first-child').click()
+    
+            $('.product-card .variant-image').on('click', e => {
+                const button = $(e.target).closest('.product-card').find('.my-button')
+    
+                if (button.length) {
+                    button[0].click()
+                }
+            })
+        })
+</script>
+
+<script type="module">  
+const parameters = [
+    {
+      name: 'Carbon 1 Pro(size S)',
+      img: '{{ all_products["urtopia-carbon-1-pro-ebike"] | image_url: width: 600 }}',
+      size: 'Fit for 5’3” - 5’9”',
+      weight: '37 lbs',
+      capacity: 'Max. 240 lbs',
+      gearing: 'Shimano 8-Speed Rear Drivetrain',
+      features: 'Voice control, fingerprint start, LED dot - matrix display, haptic interaction, bluetooth music, built-in navigation, OTA upgrade',
+      range: 'Up to 80 miles',
+      materials: 'Carbon fiber (frame, fork)',
+      sensors: 'Accelerometer, gyroscope, torque sensor',
+      motor: 'Customized rear hub, 36 V 350 W (rated), 42 N⋅m',
+      dimensions: {
+          img: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231221-151050_2x_d883c889-6e52-477d-8672-a7dda6dbbbdd.png?v=1703577530',
+          sizes: [
+              ['A. Standover height', '779 mm'],
+              ['B. Adjustable seat range', '60 mm'],
+              ['C. Handlebar grips height', '995-1025 mm'],
+              ['D. Seat tube length', '421 mm'],
+              ['E. Wheelbase', '1065 mm'],
+              ['F. Overall length', '1766 mm'],
+              ['G. Wheel diameter', '702 mm'],
+              ['H. Top tube length (effective)', '594 mm'],
+              ['I. Head tube length', '152 mm'],
+              ['J. Headset height', '90-120 mm'],
+          ]
+      }
+  },
+    {
+      name: 'Carbon 1 Pro(size M)',
+      img: '{{ all_products["urtopia-carbon-1-pro-ebike"] | image_url: width: 600 }}',
+      size: 'Fit for 5’7” - 6’1”',
+      weight: '37 lbs',
+      capacity: 'Max. 240 lbs',
+      gearing: 'Shimano 8-Speed Rear Drivetrain',
+      features: 'Voice control, fingerprint start, LED dot - matrix display, haptic interaction, bluetooth music, built-in navigation, OTA upgrade',
+      range: 'Up to 80 miles',
+      materials: 'Carbon fiber (frame, fork)',
+      sensors: 'Accelerometer, gyroscope, torque sensor',
+      motor: 'Customized rear hub, 36 V 350 W (rated), 42 N⋅m',
+      dimensions: {
+          img: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231221-151050_2x_d883c889-6e52-477d-8672-a7dda6dbbbdd.png?v=1703577530',
+          sizes: [
+              ['A. Standover height', '804 mm'],
+              ['B. Adjustable seat range', '60 mm'],
+              ['C. Handlebar grips height', '1011-1041 mm'],
+              ['D. Seat tube length', '463 mm'],
+              ['E. Wheelbase', '1093 mm'],
+              ['F. Overall length', '1795 mm'],
+              ['G. Wheel diameter', '702 mm'],
+              ['H. Top tube length (effective)', '618 mm'],
+              ['I. Head tube length', '170 mm'],
+              ['J. Headset height', '90-120 mm'],
+          ]
+      }
+  },
+  {
+      name: 'Carbon 1 Pro(size L)',
+      img: '{{ all_products["urtopia-carbon-1-pro-ebike"] | image_url: width: 600 }}',
+      size: 'Fit for 5’11” - 6’5”',
+      weight: '37 lbs',
+      capacity: 'Max. 240 lbs',
+      gearing: 'Shimano 8-Speed Rear Drivetrain',
+      features: 'Voice control, fingerprint start, LED dot - matrix display, haptic interaction, bluetooth music, built-in navigation, OTA upgrade',
+      range: 'Up to 80 miles',
+      materials: 'Carbon fiber (frame, fork)',
+      sensors: 'Accelerometer, gyroscope, torque sensor',
+      motor: 'Customized rear hub, 36 V 350 W (rated), 42 N⋅m',
+      dimensions: {
+          img: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231221-151050_2x_d883c889-6e52-477d-8672-a7dda6dbbbdd.png?v=1703577530',
+          sizes: [
+              ['A. Standover height', '833 mm'],
+              ['B. Adjustable seat range', '60 mm'],
+              ['C. Handlebar grips height', '1023-1053 mm'],
+              ['D. Seat tube length', '498 mm'],
+              ['E. Wheelbase', '1122 mm'],
+              ['F. Overall length', '1824 mm'],
+              ['G. Wheel diameter', '702 mm'],
+              ['H. Top tube length (effective)', '653 mm'],
+              ['I. Head tube length', '180 mm'],
+              ['J. Headset height', '90-120 mm'],
+          ]
+      }
+  },
+  {
+      name: 'Carbon Fusion GT',
+      img: '{{ all_products["urtopia-carbon-fusion-gt"] | image_url: width: 600 }}',
+      size: '{{ all_products["urtopia-carbon-fusion-gt"].metafields.custom.sizemap.value["One Size"] }}',
+      weight: '60 lbs',
+      capacity: 'Max. 330 lbs',
+      gearing: 'Shimano ACERA 8-Speed',
+      features: 'On-board navigation, fingerprint unlock, AI assistant, voice control, bluetooth speaker, OTA update (wireless firmware update)',
+      range: 'Up to 70 miles Extended to 120miles (Dual baterry)',
+      materials: 'Carbon fiber frame',
+      sensors: 'Torque sensor, accelerometer, gyroscope',
+      motor: '1500W peak power (36V 350W 36Nm front hub motor, 36V 350W 36Nm rear drive hub motor)',
+      dimensions: {
+          img: '{{ all_products["urtopia-carbon-fusion-gt"].metafields.custom.size_and_specs.value.sizes.image }}',
+          sizes: getSizes({{ all_products["urtopia-carbon-fusion-gt"].metafields.custom.size_and_specs.value.sizes.parameters | split: '' }})
+      }
+  },
+  {
+      name: 'Carbon Fold 1',
+      img: '{{ all_products["urtopia-carbon-fold"] | image_url: width: 600 }}',
+      size: '{{ all_products["urtopia-carbon-fold"].metafields.custom.sizemap.value["One Size"] }}',
+      weight: '29 lbs',
+      capacity: 'Max. 220 lbs',
+      gearing: 'Shimano Altus 8-Speed',
+      features: 'Voice control, fingerprint start, LED dot-matrix display, haptic interaction, bluetooth music, built-in navigation, GPS tracking, OTA upgrade',
+      range: 'Up to 37 miles',
+      materials: 'Carbon fiber (frame, fork)',
+      sensors: 'Torque sensor',
+      motor: '500 Peak power, 36V 250W (sustained) rear drive hub motors, 42Nm',
+      dimensions: {
+          img: '{{ all_products["urtopia-carbon-fold"].metafields.custom.size_and_specs.value.sizes.image }}',
+          sizes: getSizes({{ all_products["urtopia-carbon-fold"].metafields.custom.size_and_specs.value.sizes.parameters | split: '' }})
+      }
+  }
+]
+  function getSizes (parameters, index = 1) {
+    const sizes = []
+    const names = parameters[0]
+
+    for (let i = 2;i < names.length; i++) {
+      sizes[i] = [names[i], parameters[index][i]]
+    }
+    
+    return sizes
+  }
+  
+  function changeParameters(index, name) {
+      const params = parameters.find(p => p.name === name)
+  
+      if (!params) {
+          return
+      }
+  
+      $('.items .params').each((i, param) => {
+          const target = $(param).find('.param')[index]
+          const n = target.getAttribute('name')
+
+          
+  
+          // 如果img 参数
+          if (n === 'img') {
+              console.log($(target).find('img'), params.img)
+            
+              $(target).find('img').attr('src', params.img).removeAttr('srcset')
+              $(target).find('select').val(name)
+  
+              // 默认禁用掉 对面option
+              $(`.compared .params select[index="${index === '0' ? '1' : '0' }"] option`).each((i, option) => {
+                  option.disabled = name === option.value
+              })
+  
+              return
+          }
+  
+          if (n === 'dimensions') {
+              $(target).find('.u14DemiBold_v2').text(name)
+              $(target).find('img').attr('src', params.dimensions.img)
+              $(target).find('.sizes').html(params.dimensions.sizes.map(i => {
+                  return `<div>
+                              <span>${i[0]}</span>
+                              <span>${i[1]}</span>
+                          </div>`
+              }))
+  
+              return
+          }
+  
+          target.innerText = params[n]
+      })
+  }
+  
+    const select = $('.compared .params select')
+    // 动态插入
+    select.html(parameters.map(p => `<option value="${p.name}">${p.name}</option>`))
+    // 监听select 变化
+    select.on('change', e => {
+        console.log(e)
+        const index = e.target.getAttribute('index')
+        const value = e.target.value
+
+        changeParameters(index, value)
+    })
+
+
+    // 默认展示
+    changeParameters('0', 'Carbon 1 Pro(size M)')
+    changeParameters('1', 'Carbon Fusion GT')
+
+
+    new Swiper('.professional .centeral-content', {
+      slidesPerView: global_config.is_mobile ? 1.25 : 3,
+      spaceBetween: 20,
+      navigation: {
+      nextEl: '.professional .centeral-content .swiper-button-next',
+      prevEl: '.professional .centeral-content .swiper-button-prev',
+    },
+      scrollbar: {
+        el: '.professional .centeral-content .swiper-scrollbar',
+        draggable: true,
+      },
+    });
+</script>
