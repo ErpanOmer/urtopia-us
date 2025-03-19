@@ -99,18 +99,18 @@
             {%- assign preload = false -%}
             {%- assign loading = 'lazy' -%}
           {%- endif -%}
-          {{
-            variant_image
-            | image_url: width: product_main_swiper_width
-            | image_tag:
-              widths: "640, 1024",
-              sizes: "(max-width:768px) 0px, 1024px",
-              class: product_main_swiper_class,
-              data-index: forloop.index,
-              fetchpriority: fetchpriority,
-              loading: loading,
-              preload: preload 
-          }}
+            {{
+                variant_image
+              | image_url: width: product_main_swiper_width
+              | image_tag:
+                widths: "640, 1024",
+                sizes: "(max-width:768px) 0px, 1024px",
+                class: product_main_swiper_class,
+                data-index: forloop.index,
+                fetchpriority: fetchpriority,
+                loading: loading,
+                preload: preload 
+            }}
         {%- endfor -%}
       </div>
       <div
@@ -536,6 +536,7 @@
           },
           preloadImages: false,
           spaceBetween: 10,
+          slidesPerView: "auto",
           pagination: { el: '.product-panel .swiper-pagination' },
           on:{
               slideChange: function() {
