@@ -2956,27 +2956,6 @@ const testRides = [
     cityBackground: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Jason_Mathews.jpg?v=1692617852',
     stores: [
       {
-        name: "Spokes Bikes - Wheaton",
-        phone: "630-961-8222",
-        email: "spokesnaperville@gmail.com",
-        timezone: "Illinois, USA (GMT-7)",
-        add: "229 Rice Lake Square, Wheaton, IL 60187",
-        imgUrl: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/output_12_86b280fc-a42f-4ee7-8716-1576548b4fa3.png?v=1730535020",
-        testrideSpot: "Naperville",
-        availableSizes: [
-          'Carbon 1 Pro Size S/M/L',
-        ],
-        businessHours: [
-          "12:00-16:00",
-          "11:00-19:00",
-          "11:00-19:00",
-          "11:00-19:00",
-          "11:00-19:00",
-          "11:00-17:00",
-          "10:00-17:00",
-        ],
-      },
-      {
         name: "Spokes Bikes - Napervill",
         phone: "630-961-8222",
         email: "spokesnaperville@gmail.com",
