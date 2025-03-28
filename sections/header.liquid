@@ -454,7 +454,11 @@
                                           <div class="u14Light_v2">Super space-efficient</div>
                                           <span class="u17DemiBold_v2 emphasize" {% unless productttttt.first.compare_at_price == productttttt.first.price %}data-price="{{ productttttt.first.compare_at_price | money_without_trailing_zeros }}"{% endunless %}>{{ productttttt.first.price | money_without_trailing_zeros }}</span>
                                       </div>
-                                      <div class="sale-image" href="/products/urtopia-carbon-1-pro-ebike"></div>
+                                      <a class="background-image er-w-full er-rounded-2xl er-text-white er-hidden er-flex-col er-items-center er-justify-start er-pt-6 2xl:er-flex" href="https://newurtopia.com/products/urtopia-carbon-1-pro-ebike" target="_blank" rel="noopener noreferrer">
+                                        <img width="222" height="0" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250327-173115.jpg?v=1743068341" alt="{{ page_description }}">
+                                        <div class="text-size18">Carbon 1 Pro</div>
+                                        <div class="text-size24"><b>Get {{ all_products['urtopia-carbon-1-pro-ebike'].compare_at_price | minus: all_products['urtopia-carbon-1-pro-ebike'].price | money_without_trailing_zeros }} OFF</b></div>
+                                      </a>
                                   </div>
                               </div>
                               

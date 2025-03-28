@@ -1,33 +1,38 @@
 {{ 'home.scss.css' | asset_url | stylesheet_tag: preload: true }}
 <h1 class="er-sr-only">Urtopia Ebike - Sleek, Full Carbon, Lightweight, Smart</h1>
-<div class="background-image er-bg-black er-aspect-[1920/750] mb:er-aspect-[315/350]">
-        <video playsinline loop autoplay muted class="lozad">
-            <source data-src="https://cdn.shopify.com/videos/c/o/v/2452a28838b34c6281b15f2a394db4bd.mp4" type="video/mp4"
-                media="(min-width: 768px)">
-            <source data-src="https://cdn.shopify.com/videos/c/o/v/6cfabe7cb4224193a294a39382dabdce.mp4" type="video/mp4"
-                media="(max-width: 767px)">
-        </video>
-        <div
-            class="er-translate-y-1/4 er-h-full mb:er-translate-y-0 centeral-content er-text-white er-flex er-flex-col er-items-center er-justify-center mb:er-justify-start er-text-center mb:er-pt-12">
-            <img class="md:er-hidden mb:er-mb-8" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2025-03-11_10.04.23_2x_dc66f80c-9fc7-4811-9bd6-aa4674c82a84.png?v=1741673684" width="75" height="75" alt="{{ page_description }}">
-            <h2 class="text-size48 mb:er-text-4xl er-text-white er-flex er-items-center er-translate-x-20 mb:er-translate-x-0">Carbon Fiber Expert <img class="er-ml-6 mb:er-hidden" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2025-03-11_10.04.23_2x_dc66f80c-9fc7-4811-9bd6-aa4674c82a84.png?v=1741673684" width="100" height="100" alt="{{ page_description }}"></h2>
-            <p class="text-size18 er-opacity-80 er-mb-24 mb:er-text-2xl mb:er-mt-6 mb:er-mb-10">
-                <span>
-                  Ride lighter, ride fast, ride carbon fiber.
-                </span>
-            </p>
-            <a class="er-button er-button-white" href="/pages/carbon-expert" target="_blank">Learn more</a>
+<div class="background-image er-aspect-[1920/750] mb:er-aspect-[375/500] er-text-white">
+{% render 'image', first_screen: true, mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25779_2x_68c3bff1-0a7e-42d0-9221-486f673905ec.jpg?v=1743066113", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250214-102028.jpg?v=1739499686" %}
+  <div class="centeral-content er-flex er-justify-end mb:er-justify-start er-flex-col er-items-center er-text-center er-h-full mb:er-pt-12">
+    <div class="er-bg-gradient-to-r er-from-[#FF3684] er-to-[#FF8F1D] text-size14 er-font-bold er-py-2 er-px-6 er-rounded-3xl">Easter Sale</div>
+    <img width="333" height="0" class="er-my-10 mb:er-max-w-sm"
+                src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25383_daf5f794-ea47-444b-b390-bf41d8b2527e.svg?v=1742971792"
+                alt="">
+    <a href="/products/urtopia-carbon-fold" class="er-button er-button-white er-mb-24"><span><span>Shop now</span></span></a>
+  </div>
+</div>
+
+<div class="er-text-white er-pt-48 mb:er-pt-24">
+        <div class="centeral-content mb:er-px-6">
+            <div class="background-image er-aspect-[1280/450] mb:er-aspect-auto er-rounded-3xl er-overflow-hidden">
+            {% render 'image', class: "mb:!er-object-top" width: 1440, mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25761_2x_4a17286e-a4e0-46e9-ac30-989f0362868f.jpg?v=1742973590", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250318-163912_2x_fd6c0ff3-d055-4cf6-b3c1-e25877dc2965.jpg?v=1742972549" %}
+                <div
+                    class="er-flex er-flex-col er-items-start er-justify-center er-h-full er-pl-28 er-max-w-2xl mb:er-px-8 mb:er-pt-10">
+                    <h2
+                        class="er-m-0 er-text-white text-size18 er-bg-gradient-to-r er-from-[#FF3684] er-to-[#FF8F1D] er-py-3 er-px-11 er-rounded-full mb:er-self-center mb:er-text-2xl">
+                        <b>BEST PRICE EVER</b>
+                    </h2>
+                    <div class="md:er-hidden er-aspect-square er-w-9/12"></div>
+                    <h3 class="er-m-0 er-text-white text-size30 er-font-medium er-mt-6 mb:er-text-2xl">This Easter, Ride Smarter</h3>
+                    <p class="text-size18 er-my-16 er-opacity-80 mb:er-text-2xl mb:er-mb-10 mb:er-mt-6">
+                        <span>
+                          Hop Into Spring with Carbon 1 Pro – Lightweight, Smart, & Stylish at the Year’s Best Price. Now {{ all_products['urtopia-carbon-1-pro-ebike'].compare_at_price | minus: all_products['urtopia-carbon-1-pro-ebike'].price | money_without_trailing_zeros }} OFF for a Limited Time!
+                        </span>
+                    </p>
+                    <a class="er-button er-button-white mb:er-mb-20" href="https://newurtopia.com/products/urtopia-carbon-1-pro-ebike" target="_blank">Shop now</a>
+                </div>
+            </div>
         </div>
     </div>
-
-<div class="centeral-content your background-image er-text-dark">
-  {% render 'image', first_screen: true, width: 1480, src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1-2_2x_aa90e502-c874-40d4-8936-6c4f07956dfa.jpg?v=1738995639", mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1-2_2x_d8e67fdf-abd8-46d5-bd1f-3657453f03f1.jpg?v=1738995800" %}
-  <h2 class="text-size30 mb:er-text-4xl">{{ settings.sale_name }}</h2>
-  <p class="er-max-w-2xl er-mt-8 er-mb-20 text-size18 mb:er-text-2xl mb:er-mb-8">
-    <span>This spring, enjoy an Urtopia journey. The best discount—up to {{ all_products["urtopia-carbon-fusion-gt"].compare_at_price |  minus: all_products["urtopia-carbon-fusion-gt"].price | money_without_trailing_zeros }} OFF—could be the perfect gift for your spring cycling fest!</span>
-  </p>
-  <a class="er-button er-button-white" target="_blank" href="/collections/urtopia-black-friday-sale"><span>Save now</span></a>
-</div>
 <div class="centeral-content er-flex er-flex-col er-my-56 mb:er-my-28">
     <div class="home_bike_card er-relative er-pb-40 mb:er-pb-0 er-overflow-x-hidden" style="--swiper-navigation-size: 27px; --swiper-navigation-color:#fff;">
       <div class="swiper-wrapper mb:er-flex-col mb:er-space-y-6 mb:er-text-center">

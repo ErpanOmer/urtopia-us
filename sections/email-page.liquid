@@ -1,23 +1,4 @@
-<style>
-  .banner {
-    background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250221-170243.jpg?v=1740128576')
-      center center/cover no-repeat;
-  }
-
-  .banner .centeral-content {
-    height: 400px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-  }
-
-  .banner .centeral-content .u48DemiBold_v2 {
-    color: #333;
-  }
-
-
-  .emailll .centeral-content .u24Medium_v2 {
+<style>.emailll .centeral-content .u24Medium_v2 {
     max-width: 600px;
   }
 
@@ -70,20 +51,6 @@
   }
 
   @media (max-width: 767px) {
-    /* .banner {
-      background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250221-165456.jpg?v=1740128115');
-    } */
-
-    .banner .centeral-content {
-        height: 56.65vw;
-        padding-left: 6vw;
-    }
-
-
-    .banner .centeral-content .u48DemiBold_v2 {
-        font-size: 20px;
-    }
-
     .emaillllllllllllll input {
       flex: 1;
       width: 0;
@@ -117,12 +84,19 @@
     }
   }
 </style>
-
-<div class="banner">
-  <div class="centeral-content">
-    <h2 class="u48DemiBold_v2">The best carbon fiber ebike <br>at the best price</h2>
-  </div>
-</div>
+<div class="background-image er-aspect-[1920/425] mb:er-aspect-[375/500]">
+        {% render 'image', first_screen: true, src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250328-110540.jpg?v=1743131162", mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250319-105612_2x_7f80db84-93ce-42a4-8451-06914180e89a.jpg?v=1742972151" %}
+        <div class="centeral-content er-grid er-grid-cols-2 er-h-full er-gap-x-80 mb:er-grid-cols-1 mb:er-pt-14">
+          <div class="er-flex er-flex-col er-justify-center er-items-start mb:er-justify-start mb:er-items-center mb:er-text-center">
+                <img width="200" height="0"
+                    src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Easter_Sale_2x_2a51ecd2-7772-4453-aebd-fba2647e363f.png?v=1742974324"
+                    alt="">
+                <h1 class="er-text-white text-size36 mb:er-text-4xl mb:er-leading-snug">The best carbon fiber ebike<br> at the best price</h1>
+            </div>
+            <div class="mb:er-hidden"></div>
+            
+        </div>
+    </div>
 <div class="emailll">
   <div class="centeral-content">
     <div class="u24Medium_v2">Fill out your email here to participate!</div>

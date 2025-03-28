@@ -2,9 +2,9 @@
 <div class="buyany">
   <div class="centeral-content">
     <div class="promo-banner">
-      <h2 class="u36DemiBold_v2">
-        Buy <span style="color:#ffdf48;">any 2</span> Urtopia bikes, Get an
-        <span style="color:#ffdf48;">EXTRA $200 OFF</span>
+      <h2 class="u36DemiBold_v2 er-flex er-flex-col er-items-start">
+        <span class="text-size24 er-font-medium mb:er-text-2xl mb:er-font-normal">Bundle & Save – Stack Your Discounts!</span>
+        <span class="text-size36 er-mt-4 mb:er-text-3xl">Get <span style="color: #FF7BAE;">{{ 20000 |  money_without_trailing_zeros }}</span> OFF on <span>{{ 300000 |  money_without_trailing_zeros }}</span>, <br class="md:er-hidden"><span style="color: #FF7BAE;">{{ 50000 |  money_without_trailing_zeros }}</span> OFF on {{ 500000 | money_without_trailing_zeros }}</span>
       </h2>
     </div>
     <div class="two">
@@ -83,7 +83,7 @@
           <span class="u48DemiBold_v2">$4598</span>
           <div class="u24DemiBold_v2 yellow">You Save $2400</div>
           <span class="u17Light_v2">($2200 OFF + EXTRA $200)</span>
-          <div class="my-button my-button-origin">Proceed to Checkout</div>
+          <div class="my-button my-button-black">Proceed to Checkout</div>
         </div>
       </div>
     </div>
@@ -150,6 +150,10 @@
                 total_price += Number($(this).find('.u24DemiBold_v2').attr('price'))
                 total_compare_at_price += Number($(this).find('.u20Light_v2').attr('compare_at_price'))
             })
+
+            if (total_price > 500000) {
+                save = 50000
+            }
 
             $('.buyany .total .u48DemiBold_v2').text(getPriceFormat(total_price - save, true))
             $('.buyany .total .yellow').text(`You Save ${getPriceFormat(total_compare_at_price - total_price + save, true)}`)

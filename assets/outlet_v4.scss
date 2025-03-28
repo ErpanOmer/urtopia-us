@@ -1,8 +1,21 @@
-.my-button-origin {
-    background-color: #FFDF48 !important;
-    color: #000 !important;
+h1,
+h2,
+h3,
+h4 {
+    margin: 0;
+    color: inherit;
 }
 
+/* 旋转动画 */
+@keyframes spin {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
 
 @mixin dots {
     .dots {
@@ -124,279 +137,12 @@
     }
 }
 
-
-.banner {
-    background: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21062_2x_99240377-babb-4a3f-a623-38badcbb1406.jpg?v=1698736116') center center/cover no-repeat;
-
-    .centeral-content {
-        height: 530px;
-        display: flex;
-        flex-direction: column;
-        color: #fff;
-        justify-content: center;
-
-
-        .xxxxxxxx {
-            display: grid;
-            grid-template-columns: repeat(3, 100px);
-            margin-top: 40px;
-            grid-gap: 25px 50px;
-
-            &>div {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                text-align: center;
-
-                img {
-                    max-width: 40px;
-                    margin-bottom: 6px;
-                }
-            }
-        }
-    }
-
-    @media (max-width: 767px) {
-        background-image: url('https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_23283_2x_2710f446-9aac-4b7a-bc0e-474c975f8cac.png?v=1698737696');
-
-
-        .centeral-content {
-            align-items: center;
-            text-align: center;
-            justify-content: flex-end;
-            padding: 8vw 4vw 12vw;
-
-            .u48DemiBold_v2 {
-                font-size: 30px;
-            }
-
-            .xxxxxxxx {
-                grid-template-columns: repeat(3, 1fr);
-                margin-top: 6vw;
-                width: 100%;
-                grid-gap: 4vw 8vw;
-
-                &>div {
-                    font-size: 11px;
-
-                    img {
-                        max-width: 30px;
-                    }
-                }
-            }
-        }
-    }
-}
-
 .tips {
     margin: 24px auto;
 
     @media (max-width: 767px) {
         font-size: 12px;
         margin: 12px auto;
-    }
-}
-
-
-.top-area {
-    padding-top: 120px;
-    padding-bottom: 120px;
-
-    .centeral-content {
-        &>.u72DemiBold_v2 {
-            margin-bottom: 30px;
-        }
-
-
-        &>.u24Medium_v2 {
-            max-width: 530px;
-        }
-
-        .product {
-            padding: 24px 10%;
-            background-color: #fff;
-            border-radius: 15px;
-            margin-top: 80px;
-            display: flex;
-            justify-content: space-between;
-
-            &>div {
-                flex: 1;
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                justify-content: center;
-                position: relative;
-
-                .u20Light_v2 {
-                    margin-top: 12px;
-                }
-
-                .emphasize {
-                    margin-top: 40px;
-
-                    @include data-price;
-                }
-
-                @include dots;
-
-                @include off;
-
-                .my-button-origin {
-                    margin-top: 12px;
-                }
-
-
-            }
-        }
-
-        .product-chord {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-column-gap: 30px;
-            margin-top: 30px;
-
-            &>div {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                background-color: #fff;
-                border-radius: 15px;
-                padding: 8% 10%;
-
-                &>.u24DemiBold_v2 {
-                    padding: 4px 16px;
-                    background-image: linear-gradient(-90deg, #EE6426, #F4492A);
-                    color: #fff;
-                    border-radius: 35px;
-                    margin: 6px 0 24px;
-                }
-
-                .u20Light_v2 {
-                    margin: 12px 0 24px;
-                }
-
-                .price {
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    min-width: 55%;
-                    margin-top: 20px;
-
-                    @include dots;
-
-                    .emphasize {
-                        @include data-price;
-
-                        &[data-price]::after {
-                            font-size: 16px;
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    @media (max-width: 767px) {
-        padding-top: 60px;
-        padding-bottom: 60px;
-
-        .centeral-content {
-            padding: 0 4vw;
-
-            .u72DemiBold_v2 {
-                font-size: 48px;
-                margin-bottom: 20px;
-            }
-
-            .u24Medium_v2 {
-                font-size: 17px;
-            }
-
-            .product {
-                flex-direction: column-reverse;
-                padding: 6vw 0;
-                margin-top: 40px;
-                align-items: center;
-
-                .u36DemiBold_v2 {
-                    font-size: 24px;
-                }
-
-                .u20Light_v2 {
-                    margin-top: 6px;
-                }
-
-                &>div {
-                    align-items: center;
-
-                    &:first-child {
-                        margin-top: 8vw;
-                    }
-
-                    .my-button-origin {
-                        margin-top: 6px;
-                    }
-
-                    .emphasize {
-                        font-size: 28px;
-                        margin-top: 8vw;
-
-                        &[data-price]::after {
-                            font-size: 20px;
-                        }
-                    }
-
-                    .off {
-                        font-size: 30px;
-                        padding: 4px 12px;
-                        bottom: 0;
-                    }
-                }
-            }
-
-            .product-chord {
-                grid-template-columns: 1fr;
-                grid-row-gap: 6vw;
-                margin-top: 6vw;
-
-                &>div {
-                    padding: 6vw 0;
-
-                    .price {
-                        flex-direction: column-reverse;
-                        margin: 8vw 0 2vw;
-
-                        &>.u24DemiBold_v2 {
-                            font-size: 28px;
-                            line-height: 38px;
-
-                            &[data-price]:after {
-                                font-size: 20px;
-                            }
-                        }
-                    }
-
-                    .u36DemiBold_v2 {
-                        font-size: 24px;
-                        margin-top: 8vw;
-                    }
-
-                    .u20Light_v2 {
-                        margin-bottom: 0;
-                    }
-
-                    @include off;
-
-                    .off {
-                        font-size: 30px;
-                        padding: 4px 12px;
-                        bottom: 0;
-                    }
-                }
-            }
-        }
     }
 }
 
@@ -458,8 +204,6 @@
         }
     }
 }
-
-$product-tags-color: #DEEDFF;
 
 @mixin dotssss {
     display: flex;
@@ -833,7 +577,8 @@ $product-tags-color: #DEEDFF;
 }
 
 .ebike-products {
-    margin: 100px auto;
+    padding-top: 120px;
+    padding-bottom: 120px;
 
     .u24Medium_v2 {
         margin: 2.5vh 0 8vh;
@@ -862,8 +607,7 @@ $product-tags-color: #DEEDFF;
     }
 
     @media (max-width: 767px) {
-        margin: 40px auto;
-        padding: 0 4vw;
+        padding: 40px 4vw;
 
         &>.u36DemiBold_v2 {
             text-align: center;
@@ -903,6 +647,334 @@ $product-tags-color: #DEEDFF;
     }
 }
 
+.buyany {
+    div {
+        box-sizing: border-box;
+    }
+
+    .centeral-content {
+        .promo-banner {
+            background-image: linear-gradient(180deg, #FF3684, #FF8F1D);
+            text-align: center;
+            color: #fff;
+            padding-left: 5%;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            overflow: hidden;
+
+            .u36DemiBold_v2 {
+                padding: 40px 0;
+                padding-left: 12%;
+                background-color: #000;
+                border-top-left-radius: 200px;
+
+                span {
+                    color: #fff;
+                }
+            }
+        }
+
+
+        .two {
+            display: grid;
+            grid-template-columns: 1fr 30px 1fr 1fr;
+            background-color: #F5F0ED;
+            padding-left: 30px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            overflow: hidden;
+
+
+            .plus {
+                /* place-content: center; */
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                transform: translateX(-25px);
+            }
+
+
+            &>div:not(.total):not(.plus) {
+                padding-top: 30px;
+                padding-right: 12%;
+
+                .selectttttttt {
+                    select {
+                        appearance: none;
+                        background-color: transparent;
+                        border: none;
+                        margin: 0;
+                        font-family: inherit;
+                        font-size: inherit;
+                        cursor: inherit;
+                        line-height: inherit;
+                        padding: 8px 40px 8px 28px;
+                        width: 100%;
+
+                        &:focus-visible {
+                            outline-offset: unset;
+                            box-shadow: unset;
+                            outline: unset;
+                        }
+                    }
+
+
+                    font-size: 17px;
+                    font-weight: 500;
+                    border-radius: 30px;
+                    transition: all .3s;
+                    border: 2px solid #ddd;
+                    width: 55%;
+                    position: relative;
+                    background-color: #fff;
+                    overflow: hidden;
+                    cursor: pointer;
+                    transition: all .3s;
+                    box-sizing: border-box;
+
+                    &:hover {
+                        border-color: #666;
+
+                        &::after {
+                            opacity: 0.75;
+                        }
+                    }
+
+                    &::after {
+                        content: "";
+                        background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZT0iY3VycmVudENvbG9yIiBjbGFzcz0ic2l6ZS02Ij4KICA8cGF0aCBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGQ9Im0xOS41IDguMjUtNy41IDcuNS03LjUtNy41IiAvPgo8L3N2Zz4K') center center/cover no-repeat;
+                        height: 24px;
+                        width: 24px;
+                        opacity: 0.5;
+                        display: block;
+                        position: absolute;
+                        right: 7.5%;
+                        top: 50%;
+                        transform: translateY(-50%);
+                    }
+                }
+
+
+                .card {
+                    background-color: #fff;
+                    border-radius: 10px;
+                    border: 1px solid #E3E3E3;
+                    margin-top: 24px;
+                    padding: 20px 0 30px;
+                    height: auto;
+
+                    & > img {
+                        aspect-ratio: 16 / 11;
+                        object-fit: contain;
+                        object-position: center;
+                    }
+
+                    &>div {
+                        padding: 12px 24px 0;
+
+
+                        .u17Light_v2 {
+                            opacity: 0.77;
+                        }
+
+
+                        .u20Light_v2 {
+                            opacity: 0.53;
+                            margin-left: 5px;
+                        }
+
+                        .sizes {
+                            display: flex;
+                            margin: 5px 0 20px;
+
+                            .u17Medium_v2 {
+                                color: #000;
+                                border: 1px solid #0000004D;
+                                background-color: transparent;
+                                padding: 3px 30px;
+                                margin-right: 10px;
+                                border-radius: 20px;
+                                transition: all .3s;
+                                cursor: pointer;
+                            }
+
+                            .active {
+                                color: #fff;
+                                background-color: #000;
+                            }
+                        }
+
+
+                        // div+div {
+                        //     margin-top: 40px;
+                        // }
+                    }
+                }
+            }
+
+
+            .total {
+                background-color: #F0EAE7;
+                display: flex;
+                flex-direction: column;
+
+                &>div {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 7.5% 7.5% 10%;
+                    align-items: flex-start;
+
+
+                    .yellow {
+                        background-image: linear-gradient(90deg, #FF3684, #FF8F1D);
+                        color: #fff;
+                        padding: 8px 20px;
+                        border-radius: 10px;
+                        margin: 20px 0 10px;
+                    }
+
+                    .u17Light_v2 {
+                        margin-bottom: 24px;
+                    }
+
+
+
+                    .my-button {
+                        position: relative;
+                        user-select: none;
+
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            width: 25px;
+                            height: 25px;
+                            border: 3px solid #fff;
+                            border-radius: 50%;
+                            border-top-color: transparent;
+                            animation: spin 0.8s linear infinite;
+                            transform: translate(-50%, -50%);
+                            visibility: hidden;
+                        }
+                    }
+
+                    .loading {
+                        cursor: not-allowed;
+                        color: transparent !important;
+                        // pointer-events: none;
+
+                        &::after {
+                            visibility: visible;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    @media (max-width: 767px) {
+        margin: 0;
+
+        .centeral-content {
+            padding: 0 15px;
+
+            .promo-banner {
+                padding: 0 4vw 0 0;
+
+                .u36DemiBold_v2 {
+                    font-size: 20px;
+                    border-top-left-radius: 0;
+                    border-bottom-right-radius: 100px;
+                    text-align: left;
+                    padding: 24px 15px;
+                }
+            }
+
+            .two {
+                grid-template-columns: 1fr;
+                padding: 15px;
+
+                &>div:not(.total):not(.plus) {
+                    padding: 0;
+
+
+                    .selectttttttt {
+                        font-size: 14px;
+
+                        select {
+                            padding: 6px 30px 6px 20px;
+                        }
+                    }
+
+
+                    .card {
+                        margin-top: 12px;
+                        padding-bottom: 20px;
+
+                        &>div {
+                            padding: 12px 24px 0;
+
+                            .u17Medium_v2,
+                            .u17Light_v2 {
+                                font-size: 14px;
+                            }
+
+
+                            .u24DemiBold_v2 {
+                                font-size: 20px;
+                            }
+
+                            .u20Light_v2 {
+                                font-size: 16px;
+                                margin-left: 5px;
+                            }
+
+                            // div+div {
+                            //     margin-top: 16px;
+                            // }
+                        }
+                    }
+                }
+
+                .plus {
+                    align-items: center;
+                    transform: none;
+                    line-height: 1.1em;
+                }
+
+
+                .total {
+                    background-color: transparent;
+
+
+                    &>div {
+                        padding: 20px 0;
+
+                        .u24DemiBold_v2 {
+                            font-size: 15px;
+                        }
+
+                        .u48DemiBold_v2 {
+                            font-size: 36px;
+                        }
+
+                        .u17Light_v2 {
+                            font-size: 15px;
+                            margin-bottom: 20px;
+                        }
+
+                        .yellow {
+                            font-size: 18px;
+                            margin: 16px 0 8px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 
 
 .buyany {
@@ -913,7 +985,7 @@ $product-tags-color: #DEEDFF;
 }
 
 .ebike-products .product-grid .product-card .tags {
-    background: linear-gradient(180deg, #DB51A3, #006CFF);
+    background: linear-gradient(180deg, #FF3684, #FF8F1D);
 }
 
 .ebike-products .product-grid .product-card .tags>span {
@@ -924,3 +996,258 @@ $product-tags-color: #DEEDFF;
 .professional .centeral-content .swiper-scrollbar .swiper-scrollbar-drag {
     background-color: #000 !important;
 }
+
+
+.ebike-products .product-grid .product-card {
+    padding-top: 60px;
+
+    &::before {
+        content: "Best Price Ever";
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-image: linear-gradient(90deg, #FF3684, #FF8F1D);
+        padding: 4px 18px;
+        border-radius: 20px;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 600;
+    }
+}
+
+
+.professional {
+    .centeral-content {
+        overflow: hidden;
+
+        .u36Medium_v2 {
+            margin-bottom: 5.5vh;
+            text-align: center;
+        }
+
+        .videos {
+            // display: grid;
+            // grid-template-columns: repeat(3, 1fr);
+            // grid-column-gap: 30px;
+
+            &>div {
+                display: flex;
+                flex-direction: column;
+                cursor: pointer;
+                height: auto;
+
+                & > img {
+                    cursor: pointer;
+                    border-radius: 15px;
+                    aspect-ratio: 80 / 43;
+                }
+
+
+                .u17Light_v2 {
+                    margin: 12px 0 30px;
+                }
+
+                .u17Medium_v2 {
+                    display: flex;
+                    align-items: center;
+
+                    img {
+                        max-width: 28px;
+                        width: 28px;
+                        margin-right: 10px;
+                    }
+                }
+            }
+
+
+        }
+
+
+        .swiper-scrollbar {
+            position: static;
+            margin-top: 5vh;
+            width: 100%;
+            background-color: #DEDEDE;
+            z-index: unset;
+        }
+
+
+
+        .buttons {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 5vh;
+
+            .swiper-button-prev,
+            .swiper-button-next {
+                position: static;
+                color: #fff;
+                background-color: #000;
+                border-radius: 50%;
+                width: 35px;
+                height: 35px;
+                margin-left: 15px;
+                z-index: unset;
+
+
+                &::after {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+
+
+    @media (max-width: 767px) {
+        padding: 80px 0;
+
+        .centeral-content {
+            padding: 0 15px;
+
+            .u36Medium_v2 {
+                font-size: 24px;
+                text-align: left;
+                margin-bottom: 30px;
+            }
+
+            .videos {
+                display: flex;
+                grid-column-gap: 0;
+
+                &>div {
+
+                    .u17Light_v2 {
+                        font-size: 14px;
+                        margin-bottom: 4vw;
+                    }
+                }
+            }
+
+            .swiper-scrollbar {
+                margin-top: 24px;
+            }
+        }
+    }
+}
+
+
+.swiper-pagination .swiper-pagination-bullet-active {
+    width: 30px;
+    border-radius: 5px;
+    transition: all .3s;
+    background-color: #000;
+}
+
+.test-ride {
+    margin-bottom: 15vh;
+
+    .centeral-content {
+        padding: 0;
+
+        .u20DemiBold_v2 {
+            margin: 20px 0 12px;
+        }
+    }
+
+    @media (max-width: 767px) {
+        margin-bottom: 20vw;
+        padding: 0 15px 0;
+
+        .centeral-content {
+            .u20DemiBold_v2 {
+                font-size: 17px;
+            }
+        }
+    }
+}
+
+
+.faq {
+    margin-bottom: 15vh;
+    $gap: 2vh;
+
+    .centeral-content {
+        .u36Medium_v2 {
+            margin-bottom: 3.5vh;
+        }
+
+        .items {
+
+            .item {
+                .u24Medium_v2 {
+                    border-bottom: 1px solid #ccc;
+                    padding-bottom: $gap;
+                    cursor: pointer;
+                    user-select: none;
+                    display: flex;
+                    align-items: center;
+
+                    & > img {
+                        margin-right: 10px;
+                        max-width: 25px;
+                        rotate: 180deg;
+                        transition: all .5s;
+                    }
+                }
+
+                .u17Light_v2 {
+                    padding: 1.5vh 40px 2vh;
+                    display: none;
+                }
+            }
+
+            .item+.item {
+                margin-top: $gap
+            }
+
+            .active {
+                .u17Light_v2 {
+                    display: block;
+                }
+
+                .u24Medium_v2 {
+                    & > img {
+                        rotate: 0deg;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+        margin: 0 0 14vw;
+
+        .centeral-content {
+            padding: 0 8vw;
+
+            .u36Medium_v2 {
+                font-size: 24px;
+            }
+
+            .items {
+
+                .item {
+                    .u24Medium_v2 {
+                        font-size: 17px;
+                        display: flex;
+                        padding-bottom: $gap * 0.66;
+
+                        & > img {
+                            max-width: 17.5px;
+                        }
+                    }
+
+                    .u17Light_v2 {
+                        padding: $gap 0;
+                        font-size: 14px;
+                    }
+                }
+
+                .item+.item {
+                    margin-top: $gap * 0.66;
+                }
+            }
+        }
+    }
+}
+

@@ -1,1 +1,1083 @@
-<div>hello world</div>
+{{ 'outlet_v4.scss.css' | asset_url | stylesheet_tag: preload: true }}
+<h1 class="er-sr-only">{{ page_title }}</h1>
+<div class="background-image er-bg-[#FF7BAE] er-aspect-[1920/750] er-pt-16 mb:er-aspect-[375/500] mb:er-pt-14">
+        {% render 'image', first_screen: true,  mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250319-105612_2x_7f80db84-93ce-42a4-8451-06914180e89a.jpg?v=1742972151", src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250319-105612_2x_c8e9857d-eafe-484d-bf24-4445b6746119.jpg?v=1742971630' %}
+        <div class="centeral-content er-flex er-flex-col er-items-center">
+            <img width="150" height="0"
+                src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Easter_Sale_2x_2a51ecd2-7772-4453-aebd-fba2647e363f.png?v=1742974324"
+                alt="{{ page_title }}">
+            <img width="333" height="0" class="mb:er-max-w-sm"
+                src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25383_daf5f794-ea47-444b-b390-bf41d8b2527e.svg?v=1742971792"
+                alt="{{ page_title }}">
+                {% render 'sale' %}
+                <style>
+                    .sale {
+                        width: 400px;
+                        background-color: transparent;
+                        overflow: hidden;
+                        margin-bottom: 0;
+                        margin-top: 30px;
+                    }
+          
+                    .sale > .u14DemiBold_v2 {
+                        display: none;
+                    }
+          
+                    .sale > div:not(.u14DemiBold_v2) {
+                        display: flex;
+                        justify-content: space-between;
+                        padding: 0;
+                    }
+          
+                    .sale > div:not(.u14DemiBold_v2) > div {
+                        border-left: none !important;
+                        place-self: center;
+                        width: 65px;
+                        align-items: unset;
+                        position: relative;
+                    }
+          
+                    .sale .u36DemiBold_v2 {
+                        display: block;
+                        background-color: #fff;
+                        padding: 15px 12px;
+                        border-radius: 7px;
+                        font-size: 30px;
+                        margin-bottom: 7.5px;
+                        position: relative;
+                        color: #FF3684;
+                    }
+          
+          
+                    .sale .u36DemiBold_v2::after {
+                        content: ":";
+                        position: absolute;
+                        top: 50%;
+                        right: 0;
+                        transform: translate(25px, -50%);
+                        font-size: 25px;
+                        font-weight: 300;
+                        color: #fff;
+                    }
+          
+          
+                    .sale > div:not(.u14DemiBold_v2) > div span:last-child {
+                        opacity: 1;
+                        font-size: 12px;
+                        color: #fff;
+                        font-weight: 300;
+                    }
+          
+          
+                    @media (max-width: 767px) {
+                        .sale {
+                            max-width: 260px;
+                            margin-top: 30px;
+                        }
+          
+          
+                        .sale .u36DemiBold_v2 {
+                            font-size: 18px;
+                            padding: 10px 8px;
+                        }
+          
+          
+                        .sale > div:not(.u14DemiBold_v2) > div {
+                            width: 42px;
+          
+                        }
+          
+                        .sale > div:not(.u14DemiBold_v2) > div span:last-child {
+                            font-size: 9px;
+                        }
+          
+                        .sale .u36DemiBold_v2::after {
+                            transform: translate(17px, -50%);
+                        }
+                    }
+              </style>
+        </div>
+    </div>
+    <div class="er-bg-background er-py-48 mb:er-pt-32 mb:er-pb-20">
+        <div class="centeral-content er-grid er-grid-cols-3 er-gap-16 mb:er-grid-cols-1 mb:er-px-6">
+            <div class="er-bg-gradient-to-b er-from-white er-to-[#F9F7F6] er-rounded-2xl">
+                <div
+                    class="er-flex er-flex-col er-items-center er-justify-center er-text-center er-translate-y-[-40px]">
+                    <img width="72" height="83" class="mb:er-max-w-20"
+                        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25732.svg?v=1742969125" alt="{{ page_title }}">
+                    <span class="text-size20 er-mt-12 er-mb-2 mb:er-text-2xl mb:er-mt-4">High-value carbon
+                        eBike<br>starting at</span>
+                    <span class="text-size36 mb:er-text-4xl">{{ all_products['urtopia-carbon-fold'].price | money_without_trailing_zeros }}</span>
+                </div>
+            </div>
+            <div class="er-bg-gradient-to-b er-from-white er-to-[#F9F7F6] er-rounded-2xl">
+                <div
+                    class="er-flex er-flex-col er-items-center er-justify-center er-text-center er-translate-y-[-40px]">
+                    <img width="72" height="83" class="mb:er-max-w-20"
+                        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25733.svg?v=1742969872" alt="{{ page_title }}">
+                        <div class="er-grid er-grid-cols-2 er-mt-12 er-gap-x-20 mb:er-mt-4">
+                            <div class="er-flex er-flex-col er-text-center er-items-center">
+                                <span class="text-size20 mb:er-text-2xl">Save</span>
+                                <span class="text-size36 er-my-1 mb:er-text-4xl">{{ 20000 | money_without_trailing_zeros }}</span>
+                                <span class="text-size20 mb:er-text-2xl">on {{ 300000 | money_without_trailing_zeros }}</span>
+                            </div>
+                            <div class="er-flex er-flex-col er-text-center er-items-center">
+                                <span class="text-size20 mb:er-text-2xl">Save</span>
+                                <span class="text-size36 er-my-1 mb:er-text-4xl">{{ 50000 | money_without_trailing_zeros }}</span>
+                                <span class="text-size20 mb:er-text-2xl">on {{ 500000 | money_without_trailing_zeros }}</span>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <div class="er-bg-gradient-to-b er-from-white er-to-[#F9F7F6] er-rounded-2xl">
+                <div
+                    class="er-flex er-flex-col er-items-center er-justify-center er-text-center er-translate-y-[-40px]">
+                    <img width="72" height="83" class="mb:er-max-w-20"
+                        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25734.svg?v=1742969872" alt="{{ page_title }}">
+                    <span class="text-size20 er-mt-12 er-mb-2 mb:er-text-2xl mb:er-mt-4">at selected stores<br><span
+                            class="er-opacity-0 mb:er-hidden">x</span></span>
+                    <span class="text-size36 mb:er-text-4xl">Free installation</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="er-bg-background er-text-white">
+        <div class="centeral-content mb:er-px-6">
+            <div class="background-image er-aspect-[1280/450] mb:er-aspect-auto er-rounded-3xl er-overflow-hidden">
+            {% render 'image', class: "mb:!er-object-top" width: 1440, mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25761_2x_4a17286e-a4e0-46e9-ac30-989f0362868f.jpg?v=1742973590", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250318-163912_2x_fd6c0ff3-d055-4cf6-b3c1-e25877dc2965.jpg?v=1742972549" %}
+                <div
+                    class="er-flex er-flex-col er-items-start er-justify-center er-h-full er-pl-28 er-max-w-2xl mb:er-px-8 mb:er-pt-10">
+                    <h2
+                        class="er-m-0 er-text-white text-size18 er-bg-gradient-to-r er-from-[#FF3684] er-to-[#FF8F1D] er-py-3 er-px-11 er-rounded-full mb:er-self-center mb:er-text-2xl">
+                        <b>BEST PRICE EVER</b>
+                    </h2>
+                    <div class="md:er-hidden er-aspect-square er-w-9/12"></div>
+                    <h3 class="er-m-0 er-text-white text-size18 er-font-medium er-mt-16 mb:er-text-2xl">Carbon 1 Pro
+                        Commuter eBike</h3>
+                    <span class="text-size30 er-mt-4 mb:er-text-4xl"><u
+                            class="er-text-dark text-size24 mb:er-text-3xl">Was {{ all_products['urtopia-carbon-1-pro-ebike'].compare_at_price | money_without_trailing_zeros }}</u> <u>Now {{ all_products['urtopia-carbon-1-pro-ebike'].price | money_without_trailing_zeros }}</u></span>
+                    <p class="text-size18 er-mb-16 er-mt-8 er-opacity-80 mb:er-text-2xl mb:er-mb-10 mb:er-mt-6">
+                        <span>
+                            Say goodbye to bulky eBikes! Carbon Fold 1 is ultra-light and folds in seconds to fit your
+                            trunk, closet, or even under your desk. Easy to ride, easy to carry—now just {{ all_products['urtopia-carbon-fold'].price | money_without_trailing_zeros }}!
+                        </span>
+                    </p>
+                    <a class="er-button er-button-white mb:er-mb-20" href="https://newurtopia.com/products/urtopia-carbon-1-pro-ebike" target="_blank">Shop now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="er-bg-background">
+        <div class="centeral-content ebike-products">
+        <div class="product-grid">
+          {% assign product = all_products['urtopia-carbon-1-pro-ebike'] %}
+          {% assign product_variants = product.variants | where: 'available' %}
+          {% assign product_uhmaya = '37 lbs<br>lightweight, Full<br>carbon fiber, 80<br>Miles' | split: ', ' %}
+          {% render 'product-card-2',
+            product_variants: product_variants,
+            product_name: 'Carbon 1 Pro',
+            product_description: 'Urban & fitness riding',
+            product_variant_options_find_sort: 'M,L,S',
+            product_url: product.url,
+            product_uhmaya: product_uhmaya
+          %}
+          {% assign product = all_products['urtopia-carbon-fold'] %}
+          {% assign product_variants = product.variants | where: 'available' %}
+          {% assign product_uhmaya = '29 lbs<br>lightweight, Full<br>carbon fiber, Torque<br>sensor' | split: ', ' %}
+          {% render 'product-card-2',
+            product_variants: product_variants,
+            product_name: 'Carbon Fold 1',
+            product_description: 'Super space-efficient',
+            product_url: product.url,
+            product_uhmaya: product_uhmaya
+          %}
+          <div class="background-image er-rounded-2xl er-text-white er-aspect-[11/16]">
+            <img loading="lazy" width="640" height="0" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25470_2x_a8d7e086-597a-461e-8db2-0c1f2451b638.jpg?v=1743039677&width=640" alt="{{ page_description }}">
+            <div class="er-flex er-flex-col er-items-center er-justify-end er-text-center er-h-full er-pb-16 er-box-border">
+              <h2 class="er-m-0 er-text-white text-size36"><span class="text-size20 er-font-medium">Carbon E-Bikes on Sale </span><br>from {{ all_products['urtopia-carbon-fold'].price | money_without_trailing_zeros }}</h2>
+              <div class="er-grid er-grid-cols-2 er-mt-10 er-gap-x-12 mb:er-mt-4">
+                    <div class="er-flex er-flex-col er-text-center er-items-center er-rounded-3xl er-py-5 er-px-10" style="background-image: linear-gradient(180deg, #FF3885, #FF8F1D);">
+                        <span class="text-size20 mb:er-text-2xl">Save</span>
+                        <span class="text-size36 er-my-1 mb:er-text-4xl">{{ 20000 | money_without_trailing_zeros }}</span>
+                        <span class="text-size20 mb:er-text-2xl">on {{ 300000 | money_without_trailing_zeros }}</span>
+                    </div>
+                    <div class="er-flex er-flex-col er-text-center er-items-center er-rounded-3xl er-py-5 er-px-10" style="background-image: linear-gradient(180deg, #FF3885, #FF8F1D);">
+                        <span class="text-size20 mb:er-text-2xl">Save</span>
+                        <span class="text-size36 er-my-1 mb:er-text-4xl">{{ 50000 | money_without_trailing_zeros }}</span>
+                        <span class="text-size20 mb:er-text-2xl">on {{ 500000 | money_without_trailing_zeros }}</span>
+                    </div>
+                </div>
+            </div>
+          </div>
+          {% assign product = all_products['urtopia-carbon-fusion-gt'] %}
+          {% assign product_variants = product.variants | where: 'available' %}
+          {% assign product_uhmaya = '1500W<br>power, Carbon fiber<br>frame, 120<br>Miles' | split: ', ' %}
+          {% render 'product-card-2',
+            product_variants: product_variants,
+            product_name: 'Carbon Fusion GT',
+            product_description: 'All terrain riding',
+            product_url: product.url,
+            product_uhmaya: product_uhmaya
+          %}
+          {% assign product = all_products['urtopia-carbon-1-step-thru-ebike'] %}
+          {% assign product_variants = product.variants | where: 'available' %}
+          {% assign product_uhmaya = '36 lbs<br>lightweight, Full<br>carbon fiber, 80<br>Miles' | split: ', ' %}
+          {% render 'product-card-2',
+            product_variants: product_variants,
+            product_name: 'Carbon 1 Step-Thru',
+            product_description: 'Urban & fitness riding',
+            product_url: product.url,
+            product_uhmaya: product_uhmaya
+          %} 
+          </div>
+      </div>
+      </div>
+      
+      <div class="er-text-white er-bg-background">
+        <div class="centeral-content mb:er-px-6">
+          <div class="background-image er-rounded-3xl er-overflow-hidden er-aspect-[1280/180] mb:er-aspect-square er-from-[#FF3684] er-to-[#FF8F1D] er-bg-gradient-to-b mb:er-bg-gradient-to-r">
+            <div class="er-flex er-h-full mb:er-flex-col">
+              <div class="er-basis-2/12 mb:er-basis-1/4 er-flex er-flex-col er-justify-center er-space-y-6 mb:er-flex-row mb:er-space-x-6 mb:er-space-y-0 mb:er-items-center mb:er-justify-start">
+              <img loading="lazy" class="er-translate-x-1/2 mb:er-max-w-28" width="95" height="0" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25346_2x_1202f109-d0b0-4cb3-9c8b-e69e05274302.png?v=1743042755" alt="{{ page_title }}">
+              <img loading="lazy" class="er-translate-x-1/2 mb:er-max-w-28" width="95" height="0" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/70_2x_c967b944-a6b4-4169-83f7-e9760740291d.png?v=1743042760" alt="{{ page_title }}">
+              </div>
+              <div class="er-flex er-flex-col er-text-left er-items-left er-justify-center er-bg-black er-flex-1 er-pl-24 mb:er-p-8 md:er-rounded-l-3xl mb:er-rounded-tr-[50px]">
+                <h3 class="er-m-0 er-text-white text-size24 er-font-medium mb:er-text-3xl">Ride Now, Pay Later</h3>
+                <h2 class="er-m-0 er-text-white text-size36 er-my-3 mb:er-text-4xl mb:er-my-6">Limited-Time <span style="color: #FF7BAE">0% APR</span> for 24 Months</h2>
+                <p class="text-size20 mb:er-text-2xl">
+                  <span>A {{ all_products['urtopia-carbon-fold'].price | money_without_trailing_zeros }} purchase costs {{ all_products['urtopia-carbon-fold'].price | divided_by: 24 | money }}/month for 24 months at 0% APR.</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<div class="er-bg-background">
+    <div class="centeral-content er-flex er-flex-col er-py-56 mb:er-py-28 mb:er-px-6">
+        <h2 class="er-m-0 text-size36 er-text-center mb:er-text-4xl mb:er-text-left">Browse All Electric Bike Models</h2>
+        <p class="text-size18 er-text-center er-opacity-80 mb:er-text-left mb:er-text-2xl mb:er-mt-3">
+            <span>Urban commutes, weekend adventures, or off-road thrills – there’s a model for you.</span>
+        </p>
+    <div class="home_bike_card er-relative er-pb-40 mb:er-pb-0 er-overflow-x-hidden er-mt-20 mb:er-mt-10" style="--swiper-navigation-size: 27px; --swiper-navigation-color:#fff;">
+      <div class="swiper-wrapper mb:er-flex-col mb:er-space-y-6 mb:er-text-center">
+        <div class="swiper-slide er-box-border er-flex er-flex-col background-image er-aspect-[380/500] mb:er-aspect-[315/260] er-max-w-[380px] er-text-white er-justify-end er-items-start er-p-12 er-rounded-3xl er-overflow-hidden mb:er-items-center mb:er-p-8">
+          {% render 'image', mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25433_2x_f4303946-f4f7-4156-b740-f0ffccfedc02.jpg?v=1737451779", src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25441_2x_90ebacbd-c497-4121-a69d-abe7f7b4ffe2.jpg?v=1737449157', width: 400 %}
+          <h3 class="er-text-white er-m-0 text-size24 er-mb-8 mb:er-mb-6 mb:er-text-3xl">Ride outdoors and<br>explore more trails</h3>
+          <a target="_blank" class="er-button er-button-white" href="/products/urtopia-carbon-fusion-gt">Touring ebike</a>
+        </div>
+        <div class="swiper-slide er-box-border er-flex er-flex-col background-image er-aspect-[380/500] mb:er-aspect-[315/260] er-max-w-[380px] er-text-white er-justify-end er-items-start er-p-12 er-rounded-3xl er-overflow-hidden mb:er-items-center mb:er-p-8">
+          {% render 'image', mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25436_2x_5cf464df-aaee-4a86-a613-a114f6c496a2.jpg?v=1737452645", src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25440_2x_a522840a-7bf1-4639-b076-3c0937d08f10.jpg?v=1737452533', width: 400 %}
+          <h3 class="er-text-white er-m-0 text-size24 er-mb-8 mb:er-mb-6 mb:er-text-3xl">All-Terrain Adventure</h3>
+          <a target="_blank" class="er-button er-button-white" href="/products/urtopia-carbon-1-pro-ebike">Gravel ebike</a>
+        </div>
+        <div class="swiper-slide er-box-border er-flex er-flex-col background-image er-aspect-[380/500] mb:er-aspect-[315/260] er-max-w-[380px] er-text-white er-justify-end er-items-start er-p-12 er-rounded-3xl er-overflow-hidden mb:er-items-center mb:er-p-8">
+          {% render 'image', mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/557_new_2x_c13415b9-d701-4ee9-9628-7abd28541e18.jpg?v=1737452655", src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/557_new_2x_a8438202-a1f1-447e-a3cc-878bd5b37ff3.jpg?v=1737452439', width: 400 %}
+          <h3 class="er-text-white er-m-0 text-size24 er-mb-8 mb:er-mb-6 mb:er-text-3xl">Explore the<br>urban landscape</h3>
+          <a target="_blank" class="er-button er-button-white" href="/products/urtopia-carbon-1-step-thru-ebike">City ebike</a>
+        </div>
+        <div class="swiper-slide er-box-border er-flex er-flex-col background-image er-aspect-[380/500] mb:er-aspect-[315/260] er-max-w-[380px] er-text-white er-justify-end er-items-start er-p-12 er-rounded-3xl er-overflow-hidden mb:er-items-center mb:er-p-8">
+          {% render 'image', mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25439_2x_836e2159-df50-4ed0-bbce-621da6dd020a.jpg?v=1737452660", src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSCF6175_2x_a8f92c97-27f4-4862-a911-cf015a40cde8.jpg?v=1737452434', width: 400 %}
+          <h3 class="er-text-white er-m-0 text-size24 er-mb-8 mb:er-mb-6 mb:er-text-3xl">Super compact &<br>lightweight, fit anywhere</h3>
+          <a target="_blank" class="er-button er-button-white" href="/products/urtopia-carbon-fold">Folding ebike</a>
+        </div>
+      </div>
+      <div class="swiper-scrollbar !er-w-full !er-left-0 er-z-[1]" style="z-index:1;"></div>
+      <div class="swiper-button-prev er-bottom-12 er-right-[60px] er-left-auto er-top-auto er-bg-dark er-rounded-full er-w-16 er-h-16 after:er-text-3xl mb:er-hidden er-z-2" style="z-index:1;"></div>
+      <div class="swiper-button-next er-bottom-12 er-right-0 er-left-auto er-top-auto er-bg-dark er-rounded-full er-w-16 er-h-16 after:er-text-3xl mb:er-hidden er-z-2" style="z-index:1;"></div>
+  </div>
+</div>
+</div>
+
+<div class="er-bg-background">
+  {% render 'sale-buy-any' %}
+</div>
+
+<div class="er-bg-background professional" id="professional">
+  <div class="centeral-content er-flex er-flex-col er-py-56 mb:er-py-28 mb:er-px-6">
+    <h2 class="er-m-0 text-size36 er-text-center mb:er-text-4xl mb:er-text-left">Real Reviews, Real Riders!</h2>
+        <p class="text-size18 er-text-center er-opacity-80 mb:er-text-left mb:er-text-2xl mb:er-mt-3">
+            <span>See why YouTubers are raving about Urtopia eBikes!</span>
+        </p>
+    <div class="videos swiper-wrapper er-mt-20 mb:er-mt-10">
+      <div
+        class="swiper-slide"
+        onclick="showVideoDialog('https://www.youtube.com/embed/3BZdV16CjiY?autoplay=1&cc_load_policy=1')"
+      >
+        <img
+          width="413"
+          height="222"
+          loading="lazy"
+          src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/hqdefault.avif?v=1737857664&width=400"
+          alt="{{ product.title }}"
+        >
+        <span class="u17Light_v2"
+          >The Lightest Dual Motor Ebike I've Tried - Urtopia Carbon Fusion GT Review</span
+        >
+        <span class="flex-1"></span>
+        <div class="u17Medium_v2">
+          <img
+            width="28"
+            height="28"
+            loading="lazy"
+            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/channels4_profile_4ab393ec-a320-4cd7-a5fe-1b3fb72b5a91.jpg?v=1737857581"
+            alt="{{ product.title }}"
+          >
+          <span>TailHappyTV</span>
+        </div>
+      </div>
+      <div
+        class="swiper-slide"
+        onclick="showVideoDialog('https://www.youtube.com/embed/mGIdG0e9mmg?autoplay=1&cc_load_policy=1')"
+      >
+        <img
+          width="351"
+          height="188"
+          loading="lazy"
+          src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241211-110158.jpg?v=1733886150&width=400"
+          alt="{{ page_description }}"
+        >
+        <span class="u17Light_v2"
+          >A full carbon eBike with voice navigation, anti-theft features, and GPS-guided rides!</span
+        >
+        <span class="flex-1"></span>
+        <div class="u17Medium_v2">
+          <img
+            width="28"
+            height="28"
+            loading="lazy"
+            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/channels4_profile_c3257cb9-ddee-4f5a-af27-a587d558688a.jpg?v=1733886229"
+            alt="{{ page_description }}"
+          >
+          <span>Electric Revolution</span>
+        </div>
+      </div>
+      <div
+        class="swiper-slide"
+        onclick="showVideoDialog('https://www.youtube.com/embed/DkaGYJklmSs?autoplay=1&cc_load_policy=1')"
+      >
+        <img
+          width="351"
+          height="188"
+          loading="lazy"
+          src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24719_2x_2636fa6e-f818-4978-af54-a9cb899630c7.jpg?v=1727090408&width=400"
+          alt="{{ page_description }}"
+        >
+        <span class="u17Light_v2"
+          >Urtopia clearly took comfort and assist seriously—it’s top-class and worth the price.</span
+        >
+        <span class="flex-1"></span>
+        <div class="u17Medium_v2">
+          <img
+            width="28"
+            height="28"
+            loading="lazy"
+            src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19469_2x_795c87d6-900b-4d78-b915-259138fa064d.png?v=1727090514"
+            alt="{{ page_description }}"
+          >
+          <span>Electroheads</span>
+        </div>
+      </div>
+      <div
+        class="swiper-slide"
+        onclick="showVideoDialog('https://www.youtube.com/embed/k7hSELBzB7I?autoplay=1&cc_load_policy=1')"
+      >
+        <img
+          width="351"
+          height="188"
+          loading="lazy"
+          src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25384_2x_1a5ebd50-7c54-4414-8081-7b71f4f348f9.jpg?v=1740991426&width=400"
+          alt="{{ page_description }}"
+        >
+        <span class="u17Light_v2"
+  >With over 50% lighter and more compact than rivals yet matches power and range, priced to crush the competition, it’s a total market disruptor for urban commuters.</span
+        >
+        <span class="flex-1"></span>
+        <div class="u17Medium_v2">
+          <img
+            width="28"
+            height="28"
+            loading="lazy"
+            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/channels4_profile_65fa49ac-bb00-4bea-a141-9a73af8d8add.jpg?v=1740991581&width=28"
+            alt="{{ page_description }}"
+          >
+          <span>Area 13</span>
+        </div>
+      </div>
+      <div
+        class="swiper-slide"
+        onclick="showVideoDialog('https://www.youtube.com/embed/QQiiyxJJ_DA?autoplay=1&cc_load_policy=1')"
+      >
+        <img
+          width="351"
+          height="188"
+          loading="lazy"
+          src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25382_2x_c239a5d7-6d6a-435d-b6bb-166dfffb18d2.jpg?v=1740991211&width=400"
+          alt="{{ page_description }}"
+        >
+        <span class="u17Light_v2"
+          >The Carbon Fold 1 ebike comes fully assembled, so you can ride right away. My favorite part? The folding and unfolding are super easy—effortless to operate!</span
+        >
+        <span class="flex-1"></span>
+        <div class="u17Medium_v2">
+          <img
+            width="28"
+            height="28"
+            loading="lazy"
+            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19663_2x_a45f4245-f72b-498c-b0e3-0b3167d349cf.jpg?v=1739522979&width=28"
+            alt="{{ page_description }}"
+          >
+          <span>Mike Fede</span>
+        </div>
+      </div>
+      <div
+        class="swiper-slide"
+        onclick="showVideoDialog('https://www.youtube.com/embed/r9TD6cPYCxc?autoplay=1&cc_load_policy=1')"
+      >
+        <img
+          width="351"
+          height="188"
+          loading="lazy"
+          src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24717_2x_42c326c1-7915-471d-b00e-4f5dd6b273b8.jpg?v=1727143908&width=400"
+          alt="{{ page_description }}"
+        >
+        <span class="u17Light_v2">Tested at 748W, the power of 1 Pro is higher than most all-terrain e-bikes.</span>
+        <span class="flex-1"></span>
+        <div class="u17Medium_v2">
+          <img
+            width="28"
+            height="28"
+            loading="lazy"
+            src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19472_2x_679a808b-69a2-4e58-be5f-407efb2f88c5.png?v=1727143912"
+            alt="{{ page_description }}"
+          >
+          <span>Area 13</span>
+        </div>
+      </div>
+      <div
+        class="swiper-slide"
+        onclick="showVideoDialog('https://www.youtube.com/embed/14WsEPH8TfQ?autoplay=1&cc_load_policy=1')"
+      >
+        <img
+          width="351"
+          height="188"
+          loading="lazy"
+          src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25085_2x_218ed915-d951-4836-9315-48dbb616abc5.jpg?v=1731058283&width=400"
+          alt="{{ page_description }}"
+        >
+        <span class="u17Light_v2"
+          >The throttle boost driven by dual motors provides an unprecedented power-maxing experience.</span
+        >
+        <span class="flex-1"></span>
+        <div class="u17Medium_v2">
+          <img
+            width="28"
+            height="28"
+            loading="lazy"
+            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/unnamed.jpg?v=1731058489"
+            alt="{{ page_description }}"
+          >
+          <span>KhanFlicks</span>
+        </div>
+      </div>
+      <div
+        class="swiper-slide"
+        onclick="showVideoDialog('https://www.youtube.com/embed/OJgz3ZLb4F0?autoplay=1&cc_load_policy=1')"
+      >
+        <img
+          width="351"
+          height="188"
+          loading="lazy"
+          src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25087_2x_fade44e6-4e58-4091-a22f-db3af7c7b2e2.jpg?v=1731058272&width=400"
+          alt="{{ page_description }}"
+        >
+        <span class="u17Light_v2"
+          >It's the lightest step-through ebike of its size, I can just easily get on it, no big jump over.</span
+        >
+        <span class="flex-1"></span>
+        <div class="u17Medium_v2">
+          <img
+            width="28"
+            height="28"
+            loading="lazy"
+            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/channels4_profile_1.jpg?v=1731058489"
+            alt="{{ page_description }}"
+          >
+          <span>Area 13</span>
+        </div>
+      </div>
+
+      <div
+        class="swiper-slide"
+        onclick="showVideoDialog('https://www.youtube.com/embed/5JI2U6EpAHA?autoplay=1&cc_load_policy=1')"
+      >
+        <img
+          width="351"
+          height="188"
+          loading="lazy"
+          src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24718_2x_02d66e8b-2f58-40a3-a0d9-85c287272787.jpg?v=1727144145width=400"
+          alt="{{ page_description }}"
+        >
+        <span class="u17Light_v2"
+          >A stealthy and sleek ebike, so capable and the riding experience is what I dreamed of.</span
+        >
+        <span class="flex-1"></span>
+        <div class="u17Medium_v2">
+          <img
+            width="28"
+            height="28"
+            loading="lazy"
+            src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19471_2x_b5dee01b-134a-4ebe-bd4a-6c50f2608906.png?v=1727144280"
+            alt="{{ page_description }}"
+          >
+          <span>Electric Vehicles Space</span>
+        </div>
+      </div>
+      <div
+        class="swiper-slide"
+        onclick="showVideoDialog('https://www.youtube.com/embed/mu5MGas_F80?autoplay=1&cc_load_policy=1')"
+      >
+        <img
+          width="351"
+          height="188"
+          loading="lazy"
+          src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24720_2x_43255c27-8e86-44bf-8148-c703e6b84b08.jpg?v=1727144140&width=400"
+          alt="{{ page_description }}"
+        >
+        <span class="u17Light_v2">This carbon frame commuter bike weighs 37 lbs and reaches speeds up to 28 MPH.</span>
+        <span class="flex-1"></span>
+        <div class="u17Medium_v2">
+          <img
+            width="28"
+            height="28"
+            loading="lazy"
+            src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19468_2x_32096d4f-978e-4fe4-a392-c5555938beff.png?v=1727144288"
+            alt="Mike Fede"
+          >
+          <span>Mike Fede</span>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-scrollbar"></div>
+    <div class="buttons mobileHide">
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </div>
+</div>
+
+</div>
+    <div class="er-bg-background er-pb-48 mb:er-pb-24">
+        <div class="centeral-content mb:er-px-6">
+            <h2 class="er-m-0 text-size36 er-text-center er-w-full mb:er-text-4xl mb:er-text-left">What Our Riders Say</h2>
+            <div
+                class="er-grid er-grid-cols-3 er-gap-x-10 er-mt-20 mb:er-mt-10 mb:er-flex mb:er-overflow-x-scroll mb:er-pb-16 mb:er-gap-x-8">
+                <div class="er-p-12 er-bg-[#F5F0ED] er-rounded-2xl er-flex er-flex-col mb:er-p-6 mb:er-min-w-[70vw]">
+                    <img width="640" height="640" class="er-rounded-2xl er-overflow-hidden"
+                        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/439_2x_225cd678-7a9e-44e4-a7a1-73147a440ed4.jpg?v=1742975925&width=500"
+                        loading="lazy" alt="{{ page_title }}">
+                    <div class="er-flex er-my-6 mb:er-my-4">
+                        <div class="star" style="--star-size: 18px;"></div>
+                        <div class="star" style="--star-size: 18px;"></div>
+                        <div class="star" style="--star-size: 18px;"></div>
+                        <div class="star" style="--star-size: 18px;"></div>
+                        <div class="star" style="--star-size: 18px;"></div>
+                    </div>
+                    <p class="text-size16 mb:er-text-2xl">
+                        <span>“The lightweight and portable ebike I’ve been seeking” <br>– Doctor J.</span>
+                    </p>
+                </div>
+                <div class="er-p-12 er-bg-[#F5F0ED] er-rounded-2xl er-flex er-flex-col mb:er-p-6 mb:er-min-w-[70vw]">
+                    <img width="640" height="640" class="er-rounded-2xl er-overflow-hidden"
+                        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/440_2x_9affd041-56c1-4f5a-be83-8417094b05ef.jpg?v=1742976197&width=500"
+                        loading="lazy" alt="{{ page_title }}">
+                    <div class="er-flex er-my-6 mb:er-my-4">
+                        <div class="star" style="--star-size: 18px;"></div>
+                        <div class="star" style="--star-size: 18px;"></div>
+                        <div class="star" style="--star-size: 18px;"></div>
+                        <div class="star" style="--star-size: 18px;"></div>
+                        <div class="star" style="--star-size: 18px;"></div>
+                    </div>
+                    <p class="text-size16">
+                        <span>“My Urtopia E-Bike Performed FLAWLESSLY !”<br> – David P.</span>
+                    </p>
+                </div>
+                <div class="er-p-12 er-bg-[#F5F0ED] er-rounded-2xl er-flex er-flex-col mb:er-p-6 mb:er-min-w-[70vw]">
+                    <img width="640" height="640" class="er-rounded-2xl er-overflow-hidden"
+                        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/441_2x_b5b41441-a90f-4df7-8853-a6fd0c1c6ddf.jpg?v=1742976189&width=500"
+                        loading="lazy" alt="{{ page_title }}">
+                    <div class="er-flex er-my-6 mb:er-my-4">
+                        <div class="star" style="--star-size: 18px;"></div>
+                        <div class="star" style="--star-size: 18px;"></div>
+                        <div class="star" style="--star-size: 18px;"></div>
+                        <div class="star" style="--star-size: 18px;"></div>
+                        <div class="star" style="--star-size: 18px;"></div>
+                    </div>
+                    <p class="text-size16">
+                        <span>“This is the best ebike I’ve ever ridden!” <br>– Frank L.</span>
+                    </p>
+                </div>
+            </div>
+        <div class="swappppr er-relative er-overflow-hidden er-bg-[#F5F0ED] er-mt-8 er-rounded-2xl er-py-16 mb:er-pt-0"
+            style="--swiper-pagination-bullet-inactive-opacity: 0.5;--swiper-theme-color: #fff;--swiper-pagination-color: #fff;--swiper-pagination-bullet-inactive-color: #999;--swiper-pagination-bullet-width: 6px;--swiper-pagination-bullet-size:6px;">
+            <div class="swiper-wrapper er-grid er-grid-cols-3 lg:er-grid-cols-4 mb:er-flex">
+                <div class="er-box-border swiper-slide er-p-12 er-flex er-flex-col er-items-center">
+                    <p class="text-size18 er-text-center er-mb-4 mb:er-order-1 mb:er-my-8">
+                       <b>“Smoother and more efficient.”</b>
+                    </p>
+                    <span class="flex-1"></span>
+                    <img width="150" height="80" loading="lazy"
+                        class="er-h-24 er-w-auto"
+                        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19661_2x_fb0a866b-998b-4098-bdb5-1ebce962227a.png?v=1743058119"
+                        alt="{{ page_description }}">
+                </div>
+                <div class="er-box-border swiper-slide er-p-12 er-flex er-flex-col er-items-center">
+                    <p class="text-size18 er-text-center er-mb-4 mb:er-order-1 mb:er-my-8">
+                       <b>“Much lighter with more tech baked.”</b>
+                    </p>
+                    <span class="flex-1"></span>
+                    <img width="150" height="80" loading="lazy"
+                        class="er-h-24 er-w-auto"
+                        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19664_2x_96f50075-c538-49a6-bb3e-7d7d48a87acb.png?v=1743058582"
+                        alt="{{ page_description }}">
+                </div>
+                <div class="er-box-border swiper-slide er-p-12 er-flex er-flex-col er-items-center">
+                    <p class="text-size18 er-text-center er-mb-4 mb:er-order-1 mb:er-my-8">
+                       <b>“A game changer in terms of safety.”</b>
+                    </p>
+                    <span class="flex-1"></span>
+                    <img width="150" height="80" loading="lazy"
+                        class="er-h-24 er-w-auto"
+                        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19662_2x_6c54a8c7-4156-4a11-92c2-3d16e77325b5.png?v=1743058587"
+                        alt="{{ page_description }}">
+                </div>
+                <div class="er-box-border swiper-slide er-p-12 er-flex er-flex-col er-items-center">
+                    <p class="text-size18 er-text-center er-mb-4 mb:er-order-1 mb:er-my-8">
+                       <b>“Best of CES 2025”</b>
+                    </p>
+                    <span class="flex-1"></span>
+                    <img width="150" height="80" loading="lazy"
+                        class="er-h-24 er-w-auto"
+                        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19663_2x_0f8bb477-5a74-4e0e-aad1-5c838c6b7ea0.png?v=1743058592"
+                        alt="{{ page_description }}">
+                </div>
+                <div class="er-box-border swiper-slide er-p-12 er-flex er-flex-col er-items-center">
+                    <p class="text-size18 er-text-center er-mb-4 mb:er-order-1 mb:er-my-8">
+                       <b>“Light, powerful, and nimble.”</b>
+                    </p>
+                    <span class="flex-1"></span>
+                    <img width="150" height="80" loading="lazy"
+                        class="er-h-24 er-w-auto"
+                        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19665_2x_8875f1b8-0f1a-473b-9f67-a50cbf3a3042.png?v=1743058637"
+                        alt="{{ page_description }}">
+                </div>
+                <div class="er-box-border swiper-slide er-p-12 er-flex er-flex-col er-items-center">
+                    <p class="text-size18 er-text-center er-mb-4 mb:er-order-1 mb:er-my-8">
+                       <b>“Incredibly fun to ride.”</b>
+                    </p>
+                    <span class="flex-1"></span>
+                    <img width="150" height="80" loading="lazy"
+                        class="er-h-24 er-w-auto"
+                        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19666_2x_638ab8ce-9bb0-4970-8cca-d745a44ce0f8.png?v=1743058597"
+                        alt="{{ page_description }}">
+                </div>
+                <div class="er-box-border swiper-slide er-p-12 er-flex er-flex-col er-items-center">
+                    <p class="text-size18 er-text-center er-mb-4 mb:er-order-1 mb:er-my-8">
+                       <b>“One of the best well-rounded road e-bikes available”</b>
+                    </p>
+                    <span class="flex-1"></span>
+                    <img width="150" height="80" loading="lazy"
+                        class="er-h-24 er-w-auto"
+                        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19667_2x_9fa99064-4f84-40d7-b4b1-0feefd8da19e.png?v=1743058604"
+                        alt="{{ page_description }}">
+                </div>
+                <div class="er-box-border swiper-slide er-p-12 er-flex er-flex-col er-items-center">
+                    <p class="text-size18 er-text-center er-mb-4 mb:er-order-1 mb:er-my-8">
+                       <b>“Safety and sustainability.”</b>
+                    </p>
+                    <span class="flex-1"></span>
+                    <img width="150" height="80" loading="lazy"
+                        class="er-h-24 er-w-auto"
+                        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19653_2x_4582ea5b-89f5-4786-8c97-464eb36abd9b.png?v=1743058576"
+                        alt="{{ page_description }}">
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        </div>
+    </div>
+
+    <div class="er-text-white er-py-48 mb:er-py-24">
+        <div class="centeral-content mb:er-px-6">
+            <div class="background-image er-aspect-[1280/500] mb:er-aspect-auto er-rounded-t-3xl er-overflow-hidden">
+            {% render 'image', width: 1440, class: "mb:!er-object-top mb:!er-object-contain", mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230802-150015_2x_459af18d-6e27-49b9-8683-08050dab0c21.jpg?v=1742980680", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25697_2x_783f8fa0-bdec-4eba-a76f-d46c65d98168.jpg?v=1742980289" %}
+                <div class="er-grid er-grid-cols-2 er-h-full er-gap-x-32 mb:er-grid-cols-1">
+                    <div class="er-w-2/3 er-aspect-square"></div>
+                    <div class="er-flex er-flex-col er-items-start er-justify-center mb:er-pl-8 mb:er-pb-12"
+                        style="background-image: linear-gradient(180deg, #00000000 0%, #000000 37%, #000000 100%);">
+                        <h2 class="er-m-0 er-text-white text-size36 mb:er-text-4xl">500+ U.S. Stores<br> We’ve Got You
+                            Covered</h2>
+                        <p class="text-size18 er-opacity-80 er-max-w-2xl er-mt-8 er-mb-24 mb:er-text-2xl mb:er-my-10">
+                            <span>Buying online? No worries! Our nationwide stores ensure a hassle-free
+                                experience.</span>
+                        </p>
+                        <a class="er-button er-button-white" href="https://newurtopia.com/pages/find-a-dealer" target="_blank">Find a Store Near Me</a>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="er-bg-background er-text-dark er-grid er-grid-cols-3 er-py-20 er-rounded-b-3xl mb:er-grid-cols-1 mb:er-px-6 mb:er-py-10 mb:er-gap-y-5">
+                <div class="er-flex er-items-center er-self-center er-justify-center mb:er-justify-start">
+                    <svg class="mb:er-max-w-16" xmlns="http://www.w3.org/2000/svg" height="48px"
+                        viewBox="0 -960 960 960" width="48px" fill="#333">
+                        <path
+                            d="M355.08-140H200q-24.92 0-42.46-17.54T140-200v-155.08q41.08-5 70.54-34.15Q240-418.39 240-460t-29.46-70.77q-29.46-29.15-70.54-34.15V-720q0-24.92 17.54-42.46T200-780h160q5.39-38.15 33.42-62.92 28.04-24.77 66.58-24.77t66.58 24.77Q554.61-818.15 560-780h160q24.92 0 42.46 17.54T780-720v160q38.15 5.39 62.92 33.42 24.77 28.04 24.77 66.58t-24.77 66.58Q818.15-365.39 780-360v160q0 24.92-17.54 42.46T720-140H564.92q-5.38-43.08-35.15-71.54Q500-240 460-240t-69.77 28.46q-29.77 28.46-35.15 71.54ZM200-200h108.46q20.54-52.92 64.89-76.46Q417.69-300 460-300t86.65 23.54Q591-252.92 611.54-200H720v-217.69h49.23q18.38-2.31 28.42-14.85 10.04-12.54 10.04-27.46 0-14.92-10.04-27.46-10.04-12.54-28.42-14.85H720V-720H502.31v-49.23q-2.31-18.38-14.85-28.42-12.54-10.04-27.46-10.04-14.92 0-27.46 10.04-12.54 10.04-14.85 28.42V-720H200v109.54q45.54 18.85 72.77 59.88Q300-509.54 300-460q0 48.92-27.23 89.96Q245.54-329 200-309.54V-200Zm260-260Z" />
+                    </svg>
+                    <div class="er-flex er-flex-col er-ml-6">
+                        <h3 class="er-m-0 er-text-dark text-size18 mb:er-text-2xl"><b>Professional Assembly</b></h3>
+                        <span class="text-size14 er-opacity-80 mb:er-text-xl">Your bike, fully assembled!</span>
+                    </div>
+                </div>
+                <div class="er-flex er-items-center er-self-center er-justify-center mb:er-justify-start">
+                    <svg class="mb:er-max-w-16" xmlns="http://www.w3.org/2000/svg" height="48px"
+                        viewBox="0 -960 960 960" width="48px" fill="#333">
+                        <path
+                            d="m699.08-135.85-252-253.23q-21.16 9.16-43.01 14.12-21.86 4.96-46.38 4.96-95.83 0-162.91-67.08-67.09-67.09-67.09-162.92 0-31 7.89-59.27 7.88-28.27 22.42-53.81l143.69 142.93L387.54-656 245.39-798.92q25.53-14.54 53.45-22.81t58.85-8.27q95.84 0 162.92 67.08 67.08 67.09 67.08 162.92 0 25.31-4.77 47.15-4.77 21.85-14.31 42.24l253.24 252q10.46 10.59 10.46 25.6 0 15.01-10.38 25.39l-72.63 72.63q-10.38 10.37-25.07 9.99-14.69-.39-25.15-10.85Zm25.54-59.99 36.61-36.62-266.38-266.39q16.84-20.77 24.84-47.27 8-26.5 8-53.88 0-66.54-47.54-117.77Q432.61-769 359.84-768l86.7 86.69q10.84 10.85 10.84 25.31 0 14.46-10.84 25.31L327-511.15q-10.85 10.84-25.31 10.84-14.46 0-25.31-10.84l-86.69-86.7q.15 77 51.77 122.43Q293.08-430 357.69-430q26.26 0 52.52-7.81 26.25-7.8 48.02-24.42l266.39 266.39ZM472-486.46Z" />
+                    </svg>
+                    <div class="er-flex er-flex-col er-ml-6">
+                        <h3 class="er-m-0 er-text-dark text-size18 mb:er-text-2xl"><b>Easy Maintenance & Repairs</b>
+                        </h3>
+                        <span class="text-size14 er-opacity-80 mb:er-text-xl">Real people, real support.</span>
+                    </div>
+                </div>
+                <div class="er-flex er-items-center er-self-center er-justify-center mb:er-justify-start">
+                    <svg class="mb:er-max-w-16" xmlns="http://www.w3.org/2000/svg" height="48px"
+                        viewBox="0 -960 960 960" width="48px" fill="#333">
+                        <path
+                            d="M480-492.31q-57.75 0-98.87-41.12Q340-574.56 340-632.31q0-57.75 41.13-98.87 41.12-41.13 98.87-41.13 57.75 0 98.87 41.13Q620-690.06 620-632.31q0 57.75-41.13 98.88-41.12 41.12-98.87 41.12ZM180-187.69v-88.93q0-29.38 15.96-54.42 15.96-25.04 42.66-38.5 59.3-29.07 119.65-43.61 60.35-14.54 121.73-14.54t121.73 14.54q60.35 14.54 119.65 43.61 26.7 13.46 42.66 38.5Q780-306 780-276.62v88.93H180Zm60-60h480v-28.93q0-12.15-7.04-22.5-7.04-10.34-19.11-16.88-51.7-25.46-105.42-38.58Q534.7-367.69 480-367.69q-54.7 0-108.43 13.11-53.72 13.12-105.42 38.58-12.07 6.54-19.11 16.88-7.04 10.35-7.04 22.5v28.93Zm240-304.62q33 0 56.5-23.5t23.5-56.5q0-33-23.5-56.5t-56.5-23.5q-33 0-56.5 23.5t-23.5 56.5q0 33 23.5 56.5t56.5 23.5Zm0-80Zm0 384.62Z" />
+                    </svg>
+                    <div class="er-flex er-flex-col er-ml-6">
+                        <h3 class="er-m-0 er-text-dark text-size18 mb:er-text-2xl"><b>Trusted Local Experts</b></h3>
+                        <span class="text-size14 er-opacity-80 mb:er-text-xl">Help when needed.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="professional test-ride">
+        <div class="centeral-content">
+            <h2 class="er-m-0 text-size36 er-text-center er-w-full mb:er-text-4xl mb:er-text-left">Easter Exclusive: Free Assembly at Select Stores</h2>
+          <div class="videos swiper-wrapper er-mt-20 mb:er-mt-10">
+            {% for item in shop.metaobjects.shop_config.test_ride_list.value.value %}
+              <div class="swiper-slide" data-url="{{ item.url }}">
+                <img loading="lazy" width="269" height="143" src="{{ item.image }}" alt="{{ page_description }}">
+                <span class="u20DemiBold_v2">{{ item.title }}</span>
+                <span class="u17Light_v2" style="margin: 0;">{{ item.span }}</span>
+                <a class="my-link" href="tel:{{ item.tel }}">{{ item.tel }}</a>
+              </div>
+            {% endfor %}
+          </div>
+          <div class="swiper-scrollbar"></div>
+          <div class="buttons mobileHide">
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </div>
+      </div>
+
+    <div class="er-pb-48 mb:er-pb-24">
+        <div class="centeral-content mb:er-px-6 er-flex er-flex-col">
+            <h2 class="er-m-0 text-size36 er-text-center mb:er-text-4xl mb:er-text-left">Ride Smarter: <br
+                    class="md:er-hidden">Expert Tips & Guides</h2>
+            <p class="text-size18 er-text-center er-opacity-80 mb:er-text-left mb:er-text-2xl mb:er-mt-3">
+                <span>Not sure which eBike is right for you? New to electric biking? We’ve got you covered!</span>
+            </p>
+            <div
+                class="er-grid er-grid-cols-3 er-gap-x-10 er-mt-20 mb:er-mt-10 mb:er-flex mb:er-overflow-x-scroll mb:er-pb-16 mb:er-gap-x-8">
+                <a href="https://newurtopia.com/blogs/blog/urtopia-carbon-series-pro-vs-st-ebikes" target="_blank"
+                    class="er-bg-background er-rounded-2xl er-flex er-flex-col mb:er-min-w-[70vw] er-cursor-pointer">
+                    <img width="640" height="640"
+                        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19733_2x_18fadeb8-7bd1-457a-b029-3713611cfbf3.jpg?v=1742983970&width=500"
+                        loading="lazy" alt="{{ page_title }}">
+                    <div
+                        class="er-flex er-flex-col er-items-center er-text-center er-p-10 er-flex-1 mb:er-px-6 mb:er-py-8">
+                        <h3 class="er-text-dark er-m-0 text-size18 mb:er-text-2xl mb:er-font-medium">
+                            <b class="mb:er-font-medium">Urtopia Carbon 1 Pro vs. Carbon 1 ST: Which Lightweight E-Bike
+                                Reigns Supreme?</b>
+                        </h3>
+                        <span class="er-flex-1"></span>
+                        <button class="er-button er-button-dark er-mt-12 mb:er-mt-8">Read More</button>
+                    </div>
+                </a>
+                <a href="https://newurtopia.com/blogs/blog/urban-commute-vs-adventure-urtopia-ebike" target="_blank"
+                    class="er-bg-background er-rounded-2xl er-flex er-flex-col mb:er-min-w-[70vw] er-cursor-pointer">
+                    <img width="640" height="640"
+                        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19734_2x_165f22f5-3d3e-478a-847e-ed87e5d428e0.jpg?v=1742984556&width=500"
+                        loading="lazy" alt="{{ page_title }}">
+                    <div
+                        class="er-flex er-flex-col er-items-center er-text-center er-p-10 er-flex-1 mb:er-p-6 mb:er-py-8">
+                        <h3 class="er-text-dark er-m-0 text-size18 mb:er-text-2xl mb:er-font-medium">
+                            <b class="mb:er-font-medium">Urtopia Carbon 1 Pro vs. Fusion GT: Which Carbon Ride Powers
+                                Your Journey?</b>
+                        </h3>
+                        <span class="er-flex-1"></span>
+                        <button class="er-button er-button-dark er-mt-12 mb:er-mt-8">Read More</button>
+                    </div>
+                </a>
+                <a href="https://newurtopia.com/blogs/blog/first-time-e-bike-riding-beginners-guide" target="_blank"
+                    class="er-bg-background er-rounded-2xl er-flex er-flex-col mb:er-min-w-[70vw] er-cursor-pointer">
+                    <img width="640" height="640"
+                        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSCF5731_2x_16d2f720-b77e-483c-b8d3-0872cfae5cb9.jpg?v=1742984551&width=500"
+                        loading="lazy" alt="{{ page_title }}">
+                    <div
+                        class="er-flex er-flex-col er-items-center er-text-center er-p-10 er-flex-1 mb:er-p-6 mb:er-py-8">
+                        <h3 class="er-text-dark er-m-0 text-size18 mb:er-text-2xl">
+                            <b class="mb:er-font-medium">How Do You Ride an Electric Bike for the First Time?</b>
+                        </h3>
+                        <span class="er-flex-1"></span>
+                        <button class="er-button er-button-dark er-mt-12 mb:er-mt-8">Read More</button>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="er-text-white er-pb-48 mb:er-pb-24">
+        <div class="centeral-content mb:er-px-6">
+            <div
+                class="er-bg-black er-rounded-3xl er-overflow-hidden er-aspect-[1280/550] mb:er-aspect-auto er-flex er-flex-col er-justify-center er-items-start er-text-left er-pl-28 mb:er-p-8">
+                <h2 class="er-m-0 er-text-white text-size36 mb:er-text-4xl">Why Choose Urtopia?</h2>
+                <p class="text-size18 er-max-w-2xl er-opacity-80 er-mt-8 mb:er-text-2xl">
+                    <span>Experience the power of carbon fiber – the ultimate material for high-performance
+                        cycling.</span>
+                </p>
+                <ul class="text-size18 er-list-none er-space-y-8 er-my-20 er-p-0 mb:er-text-2xl mb:er-space-y-6 mb:er-my-12">
+                    <li class="marker:er-hidden"><b>✔ 100% Carbon Fiber</b><br class="md:er-hidden"> – Ultra-light & robust</li>
+                    <li><b>✔ High-Performance</b><br class="md:er-hidden"> – Speed, agility, durability </li>
+                    <li><b>✔ Unbeatable Value</b><br class="md:er-hidden"> – Premium quality, affordable price</li>
+                </ul>
+                <a href="https://newurtopia.com/pages/carbon-expert" class="er-button er-button-white">Explore the Technology</a>
+            </div>
+        </div>
+    </div>
+    <div class="faq">
+        <div class="centeral-content">
+          <h3 class="u36Medium_v2">FAQs</h3>
+          <div class="items">
+            <div class="item">
+              <div class="u24Medium_v2 text-size24">
+                <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="{{ page_title }}">1. What makes Urtopia eBikes different from other eBikes?
+              </div>
+              <p class="u17Light_v2 text-size18">
+                <span>
+                    Urtopia eBikes feature a full <a class="my-link" href="https://newurtopia.com/pages/carbon-expert">carbon fiber frame</a>, making them lighter, stronger, and more efficient than traditional aluminum eBikes. We offer the best high-performance, affordable carbon fiber eBikes for cycling enthusiasts.
+                </span>
+              </p>
+            </div>
+            <div class="item">
+              <div class="u24Medium_v2 text-size24">
+                <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="{{ page_title }}">2. Do I need to assemble the eBike myself?
+              </div>
+              <p class="u17Light_v2 text-size18">
+                <span>No worries! Your eBike arrives 90% pre-assembled, and we provide <a class="my-link" href="https://newurtopia.com/pages/tutorials">detailed step-by-step guides.</a> Plus, select stores offer free professional assembly during Easter!</span>
+              </p>
+            </div>
+            <div class="item">
+              <div class="u24Medium_v2 text-size24">
+                <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="{{ page_title }}">3. What if I don't fit the model? Can I return it?
+              </div>
+              <p class="u17Light_v2 text-size18">
+               <span>Yes! We offer a <a class="my-link" href="https://newurtopia.com/pages/refund-policy">14-day return policy</a> for unused eBikes in original packaging. Need help choosing? Seek help from our LiveChat experts!</span>
+              </p>
+            </div>
+            <div class="item">
+              <div class="u24Medium_v2 text-size24">
+                <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="{{ page_title }}">4. What warranty does Urtopia provide?
+              </div>
+              <p class="u17Light_v2 text-size18">
+                <span>We offer a <a class="my-link" href="https://newurtopia.com/pages/warranty">2-year warranty</a> on the carbon fiber frame and electrical components, so you can ride with confidence.</span>
+              </p>
+            </div>
+            <div class="item">
+              <div class="u24Medium_v2 text-size24">
+                <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="{{ page_title }}">5. Can I test ride a Urtopia eBike before buying?
+              </div>
+              <p class="u17Light_v2 text-size18">
+                <span>Yes! We have 500+ partner stores across the U.S. where you can test ride, order, and get service. [<a href="https://newurtopia.com/pages/test-ride" class="my-link">Find a Store Near You</a>]</span>
+              </p>
+            </div>
+            <div class="item">
+              <div class="u24Medium_v2 text-size24">
+                <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="{{ page_title }}">6. How does the current Easter Sale work?
+              </div>
+              <div class="u17Light_v2 text-size18">
+                <span>For a limited time:</span>
+                <ul>
+                    <li>
+                        <b>Up to $1,400 OFF</b> select models
+                    </li>
+                    <li><b>Spend $3,000 → Get $200 OFF</b></li>
+                    <li><b>Spend $5,000 → Get $500 OFF</b></li>
+                    <li><b>Free assembly at select stores</b></li>
+                </ul>
+                <span>Act fast! [<a href="https://newurtopia.com" class="my-link">Shop the Easter Sale Now</a>]</span>
+              </div>
+            </div>
+            <div class="item">
+              <div class="u24Medium_v2 text-size24">
+                <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="{{ page_title }}">7. Are Urtopia eBikes suitable for beginners?
+              </div>
+              <p class="u17Light_v2 text-size18">
+                <span>Absolutely! Our intuitive design & smart assist modes make riding easy for everyone. Plus, check out our [<a href="https://newurtopia.com/blogs/blog/first-time-e-bike-riding-beginners-guide" class="my-link">Beginner’s Guide to eBiking</a>] for tips!</span>
+              </p>
+            </div>
+            <div class="item">
+              <div class="u24Medium_v2 text-size24">
+                <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="{{ page_title }}">8. Can I use Urtopia eBikes in the rain?
+              </div>
+              <p class="u17Light_v2 text-size18">
+                <span>Yes! Our eBikes are <b>IPX65</b> water-resistant, meaning they can handle light rain and wet roads. Just avoid deep puddles or submerging the battery.</span>
+              </p>
+            </div>
+            <div class="item">
+                <div class="u24Medium_v2 text-size24">
+                  <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="{{ page_title }}">9. How do I get support if I have an issue?
+                </div>
+                <p class="u17Light_v2 text-size18">
+                <span>We’ve got you covered! Our support team is here to help. Reach us via:</span>
+                <br>
+                📧 Email: <a class="my-link" href="mailto:support@newurtopia.com">support@newurtopia.com</a><br>
+                💬 Live Chat: Available on our website 
+                </p>
+              </div>
+              <div class="item">
+                <div class="u24Medium_v2 text-size24">
+                  <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="{{ page_title }}">10. Do you offer financing options for Urtopia eBikes?
+                </div>
+                <p class="u17Light_v2 text-size18">
+                   <span>Yes! We offer 0% interest financing through Affirm and Klarna, with payment plans up to 24 months. Get your eBike now and pay over time! Simply choose your preferred payment option at checkout.</span>
+                </p>
+              </div>
+          </div>
+        </div>
+      </div>
+
+    <script type="module">
+        $('.product-card .dots > div').on('click', e => {
+            const target = $(e.target)
+            const product_card = target.closest('.product-card')
+    
+            // 先取消 其它兄弟元素的active, 再设置active
+            target.siblings().removeClass('active')
+            target.addClass('active')
+    
+            const price = Number(target.attr('data-price'))
+            const compare_at_price = Number(target.attr('data-compare-at-price'))
+            const discount_price = Number(target.attr('data-product-discount-price'))
+            const variant_id = target.attr('data-variant')
+            const variant_image = target.attr('data-img')
+    
+            product_card.find('.product_price .u24DemiBold_v2').text(getPriceFormat(price, true)).attr('data-price', getPriceFormat(compare_at_price, true))
+            product_card.find('.tags > span:first-child').html(`${getPriceFormat(compare_at_price - price, true)} <span class="u14DemiBold_v2">OFF</span>`)
+
+            if (price === compare_at_price) {
+                product_card.find('.product_price .u24DemiBold_v2').attr('data-price', '')
+                product_card.find('.tags > span:first-child').hide()
+            }
+    
+            product_card.find('.variant-image').attr('src', variant_image)
+            product_card.find('.my-button').attr('href', `${product_card.find('.my-button').attr('href').split('?').shift()}?variant=${variant_id}`)
+            product_card.find('.stars a').attr('href', `${product_card.find('.my-button').attr('href').split('?').shift()}?variant=${variant_id}#judgeme_product_reviews`)
+        })
+    
+        setTimeout(() => {
+            $('.product-card .dots > div:first-child').click()
+    
+            $('.product-card .variant-image').on('click', e => {
+                const button = $(e.target).closest('.product-card').find('.my-button')
+    
+                if (button.length) {
+                    button[0].click()
+                }
+            })
+        })
+</script>
+<script type="module">
+  $(function() {
+    if (!global_config.is_mobile) {
+      new Swiper('.home_bike_card', {
+          slidesPerView: 'auto',
+          spaceBetween:  20,
+          preloadImages: false,
+          navigation: {
+              nextEl: '.home_bike_card .swiper-button-next',
+              prevEl: '.home_bike_card .swiper-button-prev',
+          },
+          scrollbar: {
+              el: '.home_bike_card .swiper-scrollbar',
+              draggable: true
+          },
+      });
+    }
+
+    new Swiper('#professional .centeral-content', {
+    slidesPerView: global_config.is_mobile ? 1.25 : 3.5,
+    spaceBetween: 20,
+    navigation: {
+    nextEl: '#professional .centeral-content .swiper-button-next',
+    prevEl: '#professional .centeral-content .swiper-button-prev',
+  },
+    scrollbar: {
+      el: '#professional .centeral-content .swiper-scrollbar',
+      draggable: true,
+    },
+  });
+
+  global_config.is_mobile && new Swiper('.swappppr', {
+        preloadImages: false,
+        autoplay: {
+            disableOnInteraction: false,
+            pauseOnMouseEnter: false,
+            delay: 5000,
+        },
+        loop: true,
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true
+        },
+        pagination: { el: '.swappppr .swiper-pagination' },
+        speed: 300
+    });
+  })
+
+  new Swiper('.test-ride .centeral-content', {
+          slidesPerView: global_config.is_mobile ? 1.35 : 4.5,
+          spaceBetween: 20,
+          navigation: {
+          nextEl: '.test-ride .centeral-content .swiper-button-next',
+          prevEl: '.test-ride .centeral-content .swiper-button-prev',
+          },
+          scrollbar: {
+              el: '.test-ride .centeral-content .swiper-scrollbar',
+              draggable: true,
+          },
+     });
+
+     $('.test-ride .centeral-content .swiper-slide').on('click', function () {
+        window.open($(this).attr('data-url'))
+     })
+
+     task(() => {
+    $('.faq .items .item .u24Medium_v2').click(function () {
+    $(this).siblings('.u17Light_v2').slideToggle().parent().siblings().find('.u17Light_v2').slideUp();
+
+    if ($(this).parent().hasClass('active')) {
+      $(this).parent().removeClass('active');
+    } else {
+      $(this).parent().addClass('active');
+    }
+
+    $(this).parent().siblings().removeClass('active');
+  });
+  })
+</script>
