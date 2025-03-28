@@ -25,6 +25,40 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+  @keyframes gradientMove {
+      0% {
+        background-position: 0% 50%;
+      }
+      100% {
+        background-position: 100% 50%;
+      }
+    }
+
+  .header__inline-menu ul li:first-child a>span {
+    position: relative;
+    padding-right: 17.5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: transparent;
+    background-image: linear-gradient(90deg, #ff0000, #00ff00, #0000ff, #ff0000);
+    background-size: 300%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: gradientMove 2s infinite linear;
+  }
+
+  .header__inline-menu ul li:first-child a>span::after{
+    content:"";
+    display: block;
+    width: 12px;
+    height: 14px;
+    position: absolute;
+    right: 0;
+    top: 2px;
+    background :url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/77.svg?v=1743142310') center center/cover no-repeat;
+  }
+
 {%- endstyle -%}
 <svg xmlns="http://www.w3.org/2000/svg" class="hidden">
   <symbol id="icon-search" viewbox="0 0 18 19" fill="none">
