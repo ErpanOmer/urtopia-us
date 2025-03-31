@@ -1,9 +1,4 @@
-<div
-  class="er-bg-white product-card"
-  {% unless product_variants.size != 0 %}
-    style="display:none;"
-  {% endunless %}
->
+<div data-product-handle="{{  product_variants.first.product.handle }}" class="er-bg-white product-card" {% unless product_variants.size != 0 %}style="display:none;"{% endunless %}>
   <div class="u14DemiBold_v2 tags">
     <span>{{ product_discount_price | money_without_trailing_zeros }} OFF</span>
     {% if product_tags %}

@@ -241,18 +241,18 @@
     {% render 'product-card-2',
       product_variants: product_variants,
       product_name: 'Carbon 1 Pro',
-      product_description: 'Urban & fitness riding',
+      product_description: 'Leisure cruising and sightseeing',
       product_variant_options_find_sort: 'M,L,S',
       product_url: product.url,
       product_uhmaya: product_uhmaya
     %}
     {% assign product = all_products['urtopia-carbon-fold'] %}
     {% assign product_variants = product.variants | where: 'available' %}
-    {% assign product_uhmaya = '29 lbs<br>lightweight, Full<br>carbon fiber, Torque<br>sensor' | split: ', ' %}
+    {% assign product_uhmaya = '29 lbs<br>lightweight, Full<br>carbon fiber, Instant<br>folding' | split: ', ' %}
     {% render 'product-card-2',
       product_variants: product_variants,
       product_name: 'Carbon Fold 1',
-      product_description: 'Super space-efficient',
+      product_description: 'Lightest and smallest foldable bike',
       product_url: product.url,
       product_uhmaya: product_uhmaya
     %}
@@ -263,7 +263,7 @@
     {% render 'product-card-2',
       product_variants: product_variants,
       product_name: 'Carbon Fusion GT',
-      product_description: 'All terrain riding',
+      product_description: 'All-day, all-terrain adventures',
       product_url: product.url,
       product_uhmaya: product_uhmaya
     %}
@@ -273,7 +273,7 @@
     {% render 'product-card-2',
       product_variants: product_variants,
       product_name: 'Carbon 1 Step-Thru',
-      product_description: 'Urban & fitness riding',
+      product_description: 'Leisure cruising and sightseeing',
       product_url: product.url,
       product_uhmaya: product_uhmaya
     %} 
