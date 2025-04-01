@@ -2231,7 +2231,7 @@ window.addEventListener('load', async () => {
   }
 
   
-  if (![/\/pages\/carbon-expert/, /\/pages\/lightweight-ebike-urtopia-carbon-1-pro/, /\/collections\/urtopia-black-friday-sale/, /\/pages\/email-page/].some(pattern => pattern.test(window.location.pathname))) {
+  if (![/\/collections\/e-bike-sale/, /\/collections\/e-bikes/, /\/pages\/carbon-expert/, /\/pages\/lightweight-ebike-urtopia-carbon-1-pro/, /\/collections\/urtopia-black-friday-sale/, /\/pages\/email-page/].some(pattern => pattern.test(window.location.pathname))) {
     task(() => {
       showSubscribeEmailDialog().then(showTestRideDialog)
     }, 5000)
