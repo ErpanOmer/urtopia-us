@@ -1,6 +1,6 @@
 {{ 'outlet_v4.scss.css' | asset_url | stylesheet_tag: preload: true }}
 {{ 'black-friday.scss.css' | asset_url | stylesheet_tag: preload: true }}
-<h1 class="visuallyhidden">Urtopia Ebike - Sleek, Full Carbon, Lightweight, Smart</h1>
+<h1 class="er-sr-only">Urtopia Ebike - Sleek, Full Carbon, Lightweight, Smart</h1>
 
 <div class="bannerrrrrr background-image">
   {% render 'image', class: "mb:!er-object-top", first_screen: true, src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24938_2x_acfb27a4-cbc3-4ddf-b2f0-33872841087e.jpg?v=1736233352', mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24973_2x_22f19949-2ae3-44d0-ba84-a57fa07d945c.jpg?v=1736233726" %}
@@ -241,7 +241,7 @@
     {% render 'product-card-2',
       product_variants: product_variants,
       product_name: 'Carbon 1 Pro',
-      product_description: 'Leisure cruising and sightseeing',
+      product_description: 'City commuting and workout',
       product_variant_options_find_sort: 'M,L,S',
       product_url: product.url,
       product_uhmaya: product_uhmaya
@@ -252,7 +252,7 @@
     {% render 'product-card-2',
       product_variants: product_variants,
       product_name: 'Carbon Fold 1',
-      product_description: 'Lightest and smallest foldable bike',
+      product_description: 'Lightest and smallest foldable ebike',
       product_url: product.url,
       product_uhmaya: product_uhmaya
     %}
