@@ -198,7 +198,7 @@ h1, h2, h3, h4 {
         </div>
     </div>
     {% comment %} <iframe class="er-w-full er-h-[90vh] mb:er-h-auto" sandbox="allow-scripts allow-same-origin" allow="geolocation" scrolling="no" frameborder="0" id="mapp" src="{{ 'test-ride.html' | asset_url }}"></iframe> {% endcomment %}
-    <iframe class="er-w-full er-h-[90vh] mb:er-h-auto" allow="geolocation" scrolling="no" frameborder="0" id="mapp" src="http://localhost:5173?shop_name={{ shop.name }}&shop_url={{ shop.url }}"></iframe>
+    <iframe class="er-w-full er-h-[90vh] mb:er-h-auto" allow="geolocation" scrolling="no" frameborder="0" id="mapp" src="http://localhost:5173?shop_name={{ shop.name }}&shop_url={{ shop.url }}&locale={{ shop.locale }}"></iframe>
     <div class="er-text-white er-pt-48 mb:er-pt-24 er-pb-20">
         <div class="centeral-content mb:er-px-6">
             <div class="background-image er-aspect-[1280/500] mb:er-aspect-auto er-rounded-3xl er-overflow-hidden">
