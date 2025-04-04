@@ -744,7 +744,7 @@ h1, h2, h3, h4 {
   console.log(iframe)
 
   iframe.addEventListener('load', () => {
-    console.log('iframe 加载完成');
+    console.log('iframe 加载完成', iframe.contentWindow, iframe.contentDocument);
     
     // ✅ 确保可以访问内容（同源时）
     if (iframe.contentWindow && iframe.contentDocument) {
