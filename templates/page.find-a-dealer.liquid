@@ -1,9 +1,15 @@
+{{ 'outlet_v4.scss.css' | asset_url | stylesheet_tag: preload: true }}
 <style>
+h1, h2, h3, h4 {
+    color: inherit;
+    margin: 0;
+}
 .swiperl .swiper-slide,
 .swiperr .swiper-slide {
     max-width: 300px;
     place-self: center;
     height: 500px;
+    box-sizing: border-box;
 }
 
 .swiperl .swiper-slide {
@@ -113,13 +119,7 @@
 </style>
 
 <div class="background-image er-aspect-[1920/500] mb:er-aspect-[375/250]">
-        <picture>
-            <source media="(min-width: 768px)"
-                srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25692_2x_4e6031a5-552f-43b1-9f29-a0d7548de985.jpg?v=1743475878">
-            <source media="(max-width: 768px)"
-                srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25695_2x_2dfa92dc-3409-4018-bb17-b9fa4382fd0c.jpg?v=1743515115">
-            <img src="" alt="" loading="lazy">
-        </picture>
+        {% render 'image', first_screen: true, mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25695_2x_2dfa92dc-3409-4018-bb17-b9fa4382fd0c.jpg?v=1743515115", src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25692_2x_4e6031a5-552f-43b1-9f29-a0d7548de985.jpg?v=1743475878' %}
         <div
             class="centeral-content er-flex er-items-center er-justify-center er-text-center er-h-full mb:er-text-left mb:er-justify-start">
             <h1 class="er-text-white text-size60 mb:er-text-5xl mb:er-leading-tight">Find Urtopia <br
@@ -163,7 +163,7 @@
                             </g>
                         </svg>
 
-                        <div class="er-ml-6">
+                        <div class="er-ml-6 er-flex er-flex-col">
                             <h3 class="text-size36 mb:er-text-4xl"><b>500+</b></h3>
                             <h4 class="text-size20 mb:er-text-2xl"><b>ebike shops</b></h4>
                         </div>
@@ -188,7 +188,7 @@
                                 </g>
                             </g>
                         </svg>
-                        <div class="er-ml-6">
+                        <div class="er-ml-6 er-flex er-flex-col">
                             <h3 class="text-size36 mb:er-text-4xl"><b>2 Year</b></h3>
                             <h4 class="text-size20 mb:er-text-2xl"><b>warranty</b></h4>
                         </div>
@@ -197,7 +197,9 @@
             </div>
         </div>
     </div>
-    <div class="er-text-white er-py-48 mb:er-py-24">
+    <iframe class="er-w-full er-h-[90vh] mb:er-h-auto" sandbox="allow-scripts allow-same-origin" allow="geolocation" scrolling="no" frameborder="0" id="mapp" src="{{ 'test-ride.html' | asset_url }}"></iframe>
+    {% comment %} <iframe class="er-w-full er-h-[90vh] mb:er-h-auto" allow="geolocation" scrolling="no" frameborder="0" id="mapp" src="http://localhost:5173/"></iframe> {% endcomment %}
+    <div class="er-text-white er-pt-48 mb:er-pt-24 er-pb-20">
         <div class="centeral-content mb:er-px-6">
             <div class="background-image er-aspect-[1280/500] mb:er-aspect-auto er-rounded-3xl er-overflow-hidden">
                 <picture>
@@ -224,9 +226,28 @@
             </div>
         </div>
     </div>
-    <div class="er-bg-background er-py-48 mb:er-py-24 swiperr-parent">
+    <div class="professional test-ride">
+    <div class="centeral-content">
+        <div class="videos swiper-wrapper">
+        {% for item in shop.metaobjects.shop_config.test_ride_list.value.value %}
+            <div class="swiper-slide" data-url="{{ item.url }}">
+            <img loading="lazy" width="269" height="143" src="{{ item.image }}&width=400" alt="{{ page_description }}">
+            <span class="u20DemiBold_v2">{{ item.title }}</span>
+            <span class="u17Light_v2" style="margin: 0;">{{ item.span }}</span>
+            <a class="my-link" href="tel:{{ item.tel }}">{{ item.tel }}</a>
+            </div>
+        {% endfor %}
+        </div>
+        <div class="swiper-scrollbar"></div>
+        <div class="buttons mobileHide">
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        </div>
+    </div>
+    </div>
+    <div class="er-bg-background er-pt-48 er-pb-24 mb:er-pt-24 mb:er-pb-8 swiperr-parent">
         <h2 class="text-size36 mb:er-text-4xl mb:er-pl-6">E-Bike store experts recommended</h2>
-        <div class="er-flex er-relative er-mt-28 mb:er-flex-col-reverse mb:er-mt-16">
+        <div class="er-flex er-relative er-mt-28 mb:er-flex-col-reverse mb:er-mt-12">
             <div
                 class="swiperl er-bg-white er-basis-1/6 er-rounded-3xl er-mr-12 er-overflow-hidden mb:er-mr-0 mb:er-rounded-none">
                 <div class="swiper-wrapper">
@@ -372,9 +393,58 @@
             </div>
         </div>
     </div>
-    <div class="er-bg-background er-py-48 mb:er-py-24">
+    <div class="er-bg-background">
+            <div class="centeral-content ebike-products">
+            <h2 class="text-size36 mb:er-text-4xl">Browse all electric bike models</h2>
+            <div class="product-grid er-mt-28 mb:er-mt-12">
+                {% assign product = all_products['urtopia-carbon-1-pro-ebike'] %}
+                {% assign product_variants = product.variants | where: 'available' %}
+                {% assign product_uhmaya = '37 lbs<br>lightweight, Full<br>carbon fiber, 80<br>Miles' | split: ', ' %}
+                {% render 'product-card-2',
+                product_variants: product_variants,
+                product_name: 'Carbon 1 Pro',
+                product_description: 'City commuting and workout',
+                product_variant_options_find_sort: 'M,L,S',
+                product_url: product.url,
+                product_uhmaya: product_uhmaya
+                %}
+                {% assign product = all_products['urtopia-carbon-fold'] %}
+                {% assign product_variants = product.variants | where: 'available' %}
+                {% assign product_uhmaya = '29 lbs<br>lightweight, Full<br>carbon fiber, Instant<br>folding' | split: ', ' %}
+                {% render 'product-card-2',
+                product_variants: product_variants,
+                product_name: 'Carbon Fold 1',
+                product_description: 'Lightest and smallest foldable ebike',
+                product_url: product.url,
+                product_uhmaya: product_uhmaya
+                %}
+                <div class="gray-background-color u30DemiBold_v2 lozad mobileHide" data-background-image="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSCF5731_2x_16aa14e4-17e0-4b47-85b5-ea2b7f64be33.jpg?v=1739499919width=500">Full Carbon Lightweight Comfort</div>
+                {% assign product = all_products['urtopia-carbon-fusion-gt'] %}
+                {% assign product_variants = product.variants | where: 'available' %}
+                {% assign product_uhmaya = '1500W<br>power, Carbon fiber<br>frame, 120<br>Miles' | split: ', ' %}
+                {% render 'product-card-2',
+                product_variants: product_variants,
+                product_name: 'Carbon Fusion GT',
+                product_description: 'All-day, all-terrain adventures',
+                product_url: product.url,
+                product_uhmaya: product_uhmaya
+                %}
+                {% assign product = all_products['urtopia-carbon-1-step-thru-ebike'] %}
+                {% assign product_variants = product.variants | where: 'available' %}
+                {% assign product_uhmaya = '36 lbs<br>lightweight, Full<br>carbon fiber, 80<br>Miles' | split: ', ' %}
+                {% render 'product-card-2',
+                product_variants: product_variants,
+                product_name: 'Carbon 1 Step-Thru',
+                product_description: 'Leisure cruising and sightseeing',
+                product_url: product.url,
+                product_uhmaya: product_uhmaya
+                %} 
+                </div>
+            </div>
+            </div>
+    <div class="er-py-48 mb:er-py-24">
         <div class="centeral-content">
-            <h2 class="text-size36 er-text-center mb:er-text-4xl mb:er-text-left">Store Categories & Services</h2>
+            <h2 class="text-size36 er-text-center mb:er-text-4xl mb:er-text-left er-block">Store Categories & Services</h2>
             <div
                 class="er-grid er-grid-cols-3 er-gap-x-16 er-mt-28 er-gap-y-40 mb:er-grid-cols-1 mb:er-gap-y-12 mb:er-mt-12">
                 <div class="er-flex er-flex-col er-items-center er-text-center mb:er-items-start mb:er-text-left">
@@ -437,17 +507,11 @@
             </div>
         </div>
     </div>
-    <div class="background-image er-text-white er-aspect-[1920/750] mb:er-aspect-auto">
-        <picture>
-            <source media="(min-width: 768px)"
-                srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25611_2x_e0bb2309-3ff3-4024-8125-a182ba53ecdb.jpg?v=1743487211">
-            <source media="(max-width: 768px)"
-                srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250402-144619.jpg?v=1743576398">
-            <img src="" loading="lazy">
-        </picture>
+    <div class="background-image er-text-white er-aspect-[1920/750] mb:er-aspect-auto er-mb-48 mb:er-mb-24">
+        {% render 'image', mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250402-144619.jpg?v=1743576398", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25611_2x_e0bb2309-3ff3-4024-8125-a182ba53ecdb.jpg?v=1743487211" %}
         <div class="centeral-content er-grid er-grid-cols-2 er-items-center er-h-full mb:er-grid-cols-1 mb:er-px-0">
             <div class="mb:er-w-10/12 er-aspect-square"></div>
-            <div class="er-flex er-flex-col er-items-start er-justify-center mb:er-px-8 mb:er-pb-16 md:!er-bg-none">
+            <div class="er-flex er-flex-col er-items-start er-justify-center mb:er-px-12 mb:er-pb-16 md:!er-bg-none">
                 <h2 class="text-size36 mb:er-text-4xl">Can’t Find a Nearby E-Bike Store? Let Us Know!</h2>
                 <p class="text-size18 er-opacity-80 er-max-w-4xl er-mt-12 mb:er-text-2xl">
                     <span>
@@ -462,6 +526,97 @@
             </div>
         </div>
     </div>
+    <div class="faq">
+        <div class="centeral-content">
+          <h3 class="u36Medium_v2">FAQs</h3>
+          <div class="items">
+            <div class="item">
+              <div class="u24Medium_v2 text-size24">
+                <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="{{ page_title }}">1. Why should I test ride an E-Bike before I decide to buy it? 
+              </div>
+              <p class="u17Light_v2 text-size18">
+                <span>A test ride lets you personally experience the handling, comfort, and performance of different e-bike models. This firsthand experience helps you make a more informed decision about which model best fits your needs and riding style.</span>
+              </p>
+            </div>
+            <div class="item">
+              <div class="u24Medium_v2 text-size24">
+                <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="{{ page_title }}">2. What should I bring or prepare for a test ride? 
+              </div>
+              <ul class="u17Light_v2 text-size18">
+                    <li>A valid ID </li>
+                    <li>Comfortable clothing and closed-toe shoes. </li>
+                    <li>A helmet (recommended—some locations may provide one, but bringing your own is best)</li>
+                </ul>
+            </div>
+            <div class="item">
+              <div class="u24Medium_v2 text-size24">
+                <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="{{ page_title }}">3. Do I need to book a test ride in advance? 
+              </div>
+              <p class="u17Light_v2 text-size18">
+                <span>It’s recommended to call ahead or check online booking options, especially during peak seasons, to ensure availability and avoid waiting. </span>
+              </p>
+            </div>
+            <div class="item">
+              <div class="u24Medium_v2 text-size24">
+                <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="{{ page_title }}">4. How can I book a test ride online?
+              </div>
+              <p class="u17Light_v2 text-size18">
+                <span>You can book a test ride through our official website. Navigate to the "Test Ride" section, fill in your personal information, preferred store location, and desired test-ride time. You will receive a confirmation email once the reservation is successful.</span>
+              </p>
+            </div>
+            <div class="item">
+              <div class="u24Medium_v2 text-size24">
+                <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="{{ page_title }}">5. What should I check during a test ride?
+              </div>
+              <ul class="u17Light_v2 text-size18">
+                <li><b>Comfort</b>: Is the bike the right size for you? Does it feel natural and smooth to ride?</li>
+                <li><b>Handling</b>: How does it respond when turning, braking, and accelerating?</li>
+                <li><b>Assist Levels</b>: Try different assist modes to experience the ride quality and responsiveness.</li>
+            </ul>
+            </div>
+            <div class="item">
+              <div class="u24Medium_v2 text-size24">
+                <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="{{ page_title }}">6. How long does a test ride usually last? 
+              </div>
+              <p class="u17Light_v2 text-size18">
+                <span>Test rides typically last between 15 to 30 minutes, depending on the bike shop. If you need more time or distance, you can discuss options with the store. Some locations may allow longer rides if you’re seriously considering a purchase.</span>
+              </p>
+            </div>
+            <div class="item">
+              <div class="u24Medium_v2 text-size24">
+                <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="{{ page_title }}">7. Can I test ride an E-Bike without prior experience? 
+              </div>
+              <p class="u17Light_v2 text-size18">
+                <span>Yes! E-bikes are designed to be user-friendly, and store staff will typically provide a brief tutorial on how to operate the bike, including adjusting pedal-assist levels, using the brakes, and other basic functions.</span>
+              </p>
+            </div>
+            <div class="item">
+              <div class="u24Medium_v2 text-size24">
+                <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="{{ page_title }}">8. Do I have any restrictions on the locations during a test ride?       
+              </div>
+              <p class="u17Light_v2 text-size18">
+                <span>There may be restrictions on where you can ride the e-bike. Some bike stores offer designated areas for safe test rides, while others may allow you to ride on public roads or bike paths. Be sure to always follow local traffic laws and ask the store staff about any specific guidelines.</span>
+              </p>
+            </div>
+            <div class="item">
+              <div class="u24Medium_v2 text-size24">
+                <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="{{ page_title }}">9. Do I have to buy the bike after the test ride?
+              </div>
+              <p class="u17Light_v2 text-size18">
+                <span>No, there’s no obligation to purchase the bike after the test ride. It’s an opportunity for you to experience the bike firsthand and determine if it meets your needs.</span>
+              </p>
+            </div>
+            <div class="item">
+              <div class="u24Medium_v2 text-size24">
+                <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="{{ page_title }}">10. What can I do after the test ride? 
+              </div>
+              <p class="u17Light_v2 text-size18">
+                <span>After the ride, you can discuss your experience with the store staff, ask any questions, and explore purchasing options. Many bike shops also offer discounts or special promotions for customers who decide to purchase a bike after a test ride.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
 
 <script type="module">
   new Swiper('.swiperr', {
@@ -492,11 +647,10 @@
             },
         },
         thumbs: {
-            swiper: {
-                el: '.swiperl',
+            swiper: new Swiper('.swiperl', {
                 speed: 400,
                 preloadImages: false,
-                multipleActiveThumbs: false,
+                // multipleActiveThumbs: false,
                 loop: true,
                 keyboard: {
                     enabled: false, // 禁用键盘控制
@@ -505,10 +659,83 @@
                     enabled: false, // 禁用鼠标滚轮切换
                 },
                 allowTouchMove: false, // 禁止手动滑动
-            }
+            })
         },
 
         // centeredSlides: true,
         loop: true
     });
+
+    $('.product-card .dots > div').on('click', e => {
+        const target = $(e.target)
+        const product_card = target.closest('.product-card')
+
+        // 先取消 其它兄弟元素的active, 再设置active
+        target.siblings().removeClass('active')
+        target.addClass('active')
+
+        const price = Number(target.attr('data-price'))
+        const compare_at_price = Number(target.attr('data-compare-at-price'))
+        const discount_price = Number(target.attr('data-product-discount-price'))
+        const variant_id = target.attr('data-variant')
+        const variant_image = target.attr('data-img')
+
+        product_card.find('.product_price .u24DemiBold_v2').text(getPriceFormat(price, true)).attr('data-price', getPriceFormat(compare_at_price, true))
+        product_card.find('.tags > span:first-child').html(`${getPriceFormat(compare_at_price - price, true)} <span class="u14DemiBold_v2">OFF</span>`)
+
+        if (price === compare_at_price) {
+            product_card.find('.product_price .u24DemiBold_v2').attr('data-price', '')
+            product_card.find('.tags > span:first-child').hide()
+        }
+
+        product_card.find('.variant-image').attr('src', variant_image)
+        product_card.find('.my-button').attr('href', `${product_card.find('.my-button').attr('href').split('?').shift()}?variant=${variant_id}`)
+        product_card.find('.stars a').attr('href', `${product_card.find('.my-button').attr('href').split('?').shift()}?variant=${variant_id}#judgeme_product_reviews`)
+    })
+
+    setTimeout(() => {
+        $('.product-card .dots > div:first-child').click()
+
+        $('.product-card .variant-image').on('click', e => {
+            const button = $(e.target).closest('.product-card').find('.my-button')
+
+            if (button.length) {
+                button[0].click()
+            }
+        })
+    })
+
+    new Swiper('.test-ride .centeral-content', {
+          slidesPerView: global_config.is_mobile ? 1.35 : 4.5,
+          spaceBetween: 20,
+          navigation: {
+          nextEl: '.test-ride .centeral-content .swiper-button-next',
+          prevEl: '.test-ride .centeral-content .swiper-button-prev',
+          },
+          scrollbar: {
+              el: '.test-ride .centeral-content .swiper-scrollbar',
+              draggable: true,
+          },
+     });
+
+     task(() => {
+    $('.faq .items .item .u24Medium_v2').click(function () {
+    $(this).siblings('.u17Light_v2').slideToggle().parent().siblings().find('.u17Light_v2').slideUp();
+
+    if ($(this).parent().hasClass('active')) {
+      $(this).parent().removeClass('active');
+    } else {
+      $(this).parent().addClass('active');
+    }
+
+    $(this).parent().siblings().removeClass('active');
+  });
+  })
+
+
+  window.addEventListener("message", function(event) {
+    if (global_config.is_mobile && event.data.height) {
+      document.getElementById("mapp").style.height = event.data.height + "px";
+    }
+  });
 </script>
