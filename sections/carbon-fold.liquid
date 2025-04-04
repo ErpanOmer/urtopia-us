@@ -5,6 +5,15 @@
   <div class="centeral-content">
     <h2 class="u36Medium_v2">Professional Review</h2>
     <div class="videos swiper-wrapper">
+      <div class="swiper-slide" onclick="showVideoDialog('https://www.youtube.com/embed/yGeM_NAyqcA?autoplay=1&cc_load_policy=1')">
+        <img width="413" height="222" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/image_11.png?v=1743644494&width=400" alt="{{ product.title }}">
+        <span class="u17Light_v2">Its ultra-compact fold makes it the smallest e-bike I’ve seen that fits effortlessly in my Ford Fusion’s trunk, while its featherlight build ensures easy folding and handling!</span>
+        <span class="flex-1"></span>
+        <div class="u17Medium_v2">
+          <img width="28" height="28" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/unnamed_55c4b3ed-70cd-4cc7-bf85-a1e9f9a70a57.jpg?v=1743644546&width=28" alt="{{ product.title }}">
+          <span>Ebike Escape</span>
+        </div>
+      </div>
       <div class="swiper-slide" onclick="showVideoDialog('https://www.youtube.com/embed/RkBanb4LRN8?autoplay=1&cc_load_policy=1')">
         <img width="413" height="222" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25380_2x_092c0e6b-c97f-4ba9-934b-ba96837cbeb2.jpg?v=1740990938&width=400" alt="{{ product.title }}">
         <span class="u17Light_v2">This compact folding ebike, ultra-light and easy to carry, wowed reporters at CES 2025, making it one of the must-see products!</span>
@@ -15,7 +24,7 @@
         </div>
       </div>
       <div class="swiper-slide" onclick="showVideoDialog('https://www.youtube.com/embed/jfmu0CgKa2E?autoplay=1&cc_load_policy=1')">
-        <img width="413" height="222" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25386_2x_f7298518-fbce-4662-af66-d80590af68a5.jpg?v=1741936938&width=400" alt="{{ product.title }}">
+        <img width="413" height="222" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250403-093905.jpg?v=1743644380&width=400" alt="{{ product.title }}">
         <span class="u17Light_v2">The coolest folding eBike I’ve seen, with cleanest cable management and an unrivaled folding design—effortless to fold and unfold.</span>
         <span class="flex-1"></span>
         <div class="u17Medium_v2">
@@ -75,7 +84,7 @@
         <div
             class="er-max-w-screen-xl er-mx-auto er-px-12 er-grid er-grid-cols-2 er-items-center er-h-full mb:er-grid-cols-1 mb:er-h-auto er-gap-x-40 er-text-white mb:er-text-black">
             <div class="er-flex er-flex-col er-items-start mb:er-pt-12 mb:er-pb-20">
-                <h2 class="text-size48 mb:er-text-4xl er-m-0">Carbon Fiber Expert</h2>
+                <h2 class="text-size48 mb:er-text-4xl er-m-0">Lighest & Smallest <br>Foldable E-bike</h2>
                 <p class="text-size18 er-max-w-3xl er-mt-8 er-mb-20 er-opacity-80 mb:er-my-10 mb:er-text-[16px]">
                     <span>
                       Lightweight, easy to ride, and sleek—Carbon Fold 1 embodies these qualities. With premium Carbon Fiber and
@@ -438,12 +447,12 @@
       })
   })
 
-    window.addEventListener('load', function () {
-      const img = $(`<img class="er-absolute er-top-0 er-z-[2] er-transition er-opacity-100 mb:er-max-w-20 md:er-right-0 mb:er-left-0" width="70" height="104" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250211-151856.png?v=1739258383&width=100" alt="{{ product.title }}"/>`)
-      $(".product-panel-swiper .swiper-wrapper").before(img)
+  //   window.addEventListener('load', function () {
+  //     const img = $(`<img class="er-absolute er-top-0 er-z-[2] er-transition er-opacity-100 mb:er-max-w-20 md:er-right-0 mb:er-left-0" width="70" height="104" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250211-151856.png?v=1739258383&width=100" alt="{{ product.title }}"/>`)
+  //     $(".product-panel-swiper .swiper-wrapper").before(img)
 
-      window.product_panel_swiper.on('slideChange', function () {
-        img.css('opacity', this.realIndex > 0 ? 0 : 1)
-      })
-  })
+  //     window.product_panel_swiper.on('slideChange', function () {
+  //       img.css('opacity', this.realIndex > 0 ? 0 : 1)
+  //     })
+  // })
 </script>
