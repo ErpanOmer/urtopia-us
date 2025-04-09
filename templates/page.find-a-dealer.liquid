@@ -197,8 +197,8 @@ h1, h2, h3, h4 {
             </div>
         </div>
     </div>
-    <iframe class="er-w-full er-h-[90vh] mb:er-h-auto" sandbox="allow-scripts allow-same-origin" allow="geolocation" scrolling="no" frameborder="0" id="mapp" src="{{ 'test-ride.html' | asset_url }}"></iframe>
-    {% comment %} <iframe class="er-w-full er-h-[90vh] mb:er-h-auto" allow="geolocation" scrolling="no" frameborder="0" id="mapp" src="http://localhost:5173/"></iframe> {% endcomment %}
+    <iframe class="er-w-full er-h-[90vh] mb:er-h-auto" allow="geolocation" scrolling="no" frameborder="0" id="mapp" src="https://urtopia-test-ride.pages.dev?shop_name={{ shop.name }}&shop_url={{ shop.url }}&locale={{ shop.locale }}&domain={{ shop.domain }}&currency={{ shop.currency }}&language={{ localization.language.iso_code }}&country={{ localization.country.iso_code }}"></iframe>
+    {% comment %} <iframe class="er-w-full er-h-[90vh] mb:er-h-auto" allow="geolocation" scrolling="no" frameborder="0" id="mapp" src="http://localhost:5173?shop_name={{ shop.name }}&shop_url={{ shop.url }}&locale={{ shop.locale }}&domain={{ shop.domain }}&currency={{ shop.currency }}&language={{ localization.language.iso_code }}&country={{ localization.country.iso_code }}"></iframe> {% endcomment %}
     <div class="er-text-white er-pt-48 mb:er-pt-24 er-pb-20">
         <div class="centeral-content mb:er-px-6">
             <div class="background-image er-aspect-[1280/500] mb:er-aspect-auto er-rounded-3xl er-overflow-hidden">
@@ -353,7 +353,7 @@ h1, h2, h3, h4 {
                     </div>
                     <div class="swiper-slide background-image">
                         <video playsinline loop muted src="https://cdn.shopify.com/videos/c/o/v/19dab9606d2a422182ec6f66a30faada.mp4"></video>
-                        <a href="https://youtube.com/shorts/C_7kvOuhXvc" target="_blank" class="er-absolute er-inset-0 er-items-center er-justify-center er-flex er-opacity-0 er-h-0">
+                        <a href="https://www.youtube.com/shorts/dibzKIO2mwg" target="_blank" class="er-absolute er-inset-0 er-items-center er-justify-center er-flex er-opacity-0 er-h-0">
                             <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/yt_icon_rgb.png?v=1743577722&width=80" alt="">
                         </a>
                     </div>
@@ -732,10 +732,19 @@ h1, h2, h3, h4 {
   });
   })
 
+  const iframe = document.getElementById("mapp")
 
   window.addEventListener("message", function(event) {
     if (global_config.is_mobile && event.data.height) {
-      document.getElementById("mapp").style.height = event.data.height + "px";
+        iframe.style.height = event.data.height + "px";
     }
   });
+
+  iframe.addEventListener('load', () => {    
+    // ✅ 确保可以访问内容（同源时）
+    if (iframe.contentWindow) {
+        iframe.contentWindow.postMessage({ visibleHeight: window.innerHeight }, '*');
+    }
+  });
+
 </script>
