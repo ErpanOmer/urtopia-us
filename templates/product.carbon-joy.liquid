@@ -1,3 +1,4 @@
+{{ 'carbon-fold-product.scss.css' | asset_url | stylesheet_tag: preload: true }}
 <style>
   fieldset[option=Color] label[data-style="Glacier Blue"] {
     --product-option-color: #A5BFCF;
@@ -5,6 +6,12 @@
 
    fieldset[option=Color] label[data-style="Charcoal Grey"] {
     --product-option-color: #6A6A6A;
+  }
+
+  h1, h2, h3, h4 {
+    color: inherit;
+    margin: 0;
+    display: block;
   }
 </style>
 {% render 'product-panel', swiper_insert_index: 1 %}
@@ -14,8 +21,8 @@
             <div class="er-grid er-grid-cols-3 er-mt-16 mb:er-grid-cols-1 mb:er-mt-10">
                 <a class="er-flex er-flex-col er-items-start" href="https://www.youtube.com/watch?v=2Y2gGvPmh0Y"
                     target="_blank">
-                    <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/25366_2x_595d4c8e-538a-40f4-bbd0-3f3f80192d5a.jpg?v=1744352814"
-                        alt="">
+                    <img width="400" height="200" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/25366_2x_595d4c8e-538a-40f4-bbd0-3f3f80192d5a.jpg?v=1744352814&width=400"
+                        alt="{{ product.title }}">
                     <p class="text-size18 er-mt-6 er-mb-16 mb:er-text-2xl mb:er-mb-6">
                         <span>
                             This compact folding ebike, ultra-light and easy to carry, wowed reporters at CES 2025,
@@ -25,7 +32,7 @@
                     <div class="er-flex er-items-center">
                         <img width="28" height="28" class="er-mr-4 er-rounded-full"
                             src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19464_2x_cb28c852-7bce-4b53-829d-97683cd91bb0.jpg?v=1744353066"
-                            alt="">
+                            alt="{{ product.title }}">
                         <span class="text-size18 er-font-medium mb:er-text-2xl">TailHappyTV</span>
                     </div>
                 </a>
@@ -52,6 +59,7 @@
                 </span>
             </p>
             <a
+                href="/pages/carbon-expert" target="_blank"
                 class="er-button er-button-white er-mt-12 mb:er-m-0 mb:[--er-btn-bg-color:theme(colors.dark)] mb:[--er-btn-text-color:theme(colors.white)] mb:er-text-white">Watch
                 video
                 <svg class="er-scale-150 er-translate-x-1/3 er-fill-dark mb:er-fill-white"
@@ -63,13 +71,7 @@
     </section>
     <section
         class="er-bg-black er-text-white er-aspect-[1920/750] mb:er-aspect-auto background-image mb:er-bg-white mb:er-text-black">
-        <picture>
-            <source media="(min-width: 768px)"
-                srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25371_2x_a92ce7f7-8c4a-4cbb-bef9-3bcfab779f52.jpg?v=1744355455">
-            <source media="(max-width: 768px)"
-                srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC05788_2x_a179b88c-b265-46d4-9f7a-db712cdac27f.jpg?v=1744355854">
-            <img class="mb:!er-object-contain mb:!er-object-top" src="" alt="" loading="lazy">
-        </picture>
+        {% render 'image', class: "mb:!er-object-contain mb:!er-object-top", mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC05788_2x_a179b88c-b265-46d4-9f7a-db712cdac27f.jpg?v=1744355854", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25371_2x_a92ce7f7-8c4a-4cbb-bef9-3bcfab779f52.jpg?v=1744355455" %}
         <div class="centeral-content er-h-full mb:er-pt-8 mb:er-pb-20 er-flex er-gap-x-28 mb:er-flex-col">
             <div class="er-aspect-square er-w-1/2 mb:er-w-full"></div>
             <div class="er-flex er-flex-col er-justify-center er-items-start er-text-left">
@@ -84,6 +86,7 @@
                     </span>
                 </p>
                 <a
+                  href="/pages/carbon-expert" target="_blank"
                     class="er-button er-button-white er-mt-12 mb:er-m-0 mb:[--er-btn-bg-color:theme(colors.dark)] mb:[--er-btn-text-color:theme(colors.white)] mb:er-text-white">Carbon
                     fiber expert</a>
             </div>
@@ -91,13 +94,7 @@
     </section>
     <section
         class="er-bg-black er-text-white er-aspect-[1920/750] mb:er-aspect-auto background-image mb:er-bg-white mb:er-text-black">
-        <picture>
-            <source media="(min-width: 768px)"
-                srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25370_2x_87fd6a96-a83f-4be4-9b9c-d30ec1c5664e.jpg?v=1744356156">
-            <source media="(max-width: 768px)"
-                srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC06723_2x_ae4d33be-8a98-422d-9897-26cceba5d875.jpg?v=1744356237">
-            <img class="mb:!er-object-contain mb:!er-object-top" src="" alt="" loading="lazy">
-        </picture>
+        {% render 'image', class: "mb:!er-object-contain mb:!er-object-top", mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC06723_2x_ae4d33be-8a98-422d-9897-26cceba5d875.jpg?v=1744356237", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25370_2x_87fd6a96-a83f-4be4-9b9c-d30ec1c5664e.jpg?v=1744356156" %}
         <div class="centeral-content er-h-full mb:er-pt-8 mb:er-pb-20 er-flex er-gap-x-28 mb:er-flex-col">
             <div class="er-aspect-square er-w-1/2 mb:er-w-full md:er-hidden"></div>
             <div class="er-flex er-flex-col er-justify-center er-items-start er-text-left">
@@ -113,20 +110,16 @@
             </div>
         </div>
     </section>
-    <section class="er-bg-background er-py-52 mb:er-py-0">
+    <section class="er-bg-background er-pt-52 mb:er-py-0">
         <div class="centeral-content mb:er-px-6">
             <h2 class="text-size48 mb:er-text-4xl mb:er-leading-snug er-mb-3 mb:er-hidden">Built to Perform</h2>
-            <span class="text-size18 mb:er-hidden">Lightweight Cargo eBike for Daily Rides</span>
-            <div class="er-grid er-grid-cols-3 er-gap-8 er-mt-20 mb:er-gap-3">
+            <p class="text-size18 er-block mb:er-hidden">
+                <span>Lightweight Cargo eBike for Daily Rides</span>
+            </p>
+            <div class="er-grid er-grid-cols-3 er-gap-8 er-mt-20 mb:er-gap-3 mb:er-mt-0">
                 <div
                     class="er-col-span-3 background-image er-aspect-[1280/500] mb:er-aspect-[345/200] er-text-white er-pl-24 mb:er-pl-6 er-flex er-flex-col er-justify-center er-text-left er-rounded-3xl er-overflow-hidden">
-                    <picture>
-                        <source media="(min-width: 768px)"
-                            srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC08785_copy_2_2x_4f0a9153-dc3d-405b-8871-f7ea65bedf80.jpg?v=1744356561">
-                        <source media="(max-width: 768px)"
-                            srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25399_2x_eaf956bf-27e8-4995-98cb-d3de732219eb.jpg?v=1744361345">
-                        <img src="" alt="" loading="lazy">
-                    </picture>
+                    {% render 'image', width: 1440, mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25399_2x_eaf956bf-27e8-4995-98cb-d3de732219eb.jpg?v=1744361345", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC08785_copy_2_2x_4f0a9153-dc3d-405b-8871-f7ea65bedf80.jpg?v=1744356561" %}
                     <div style="background-image: linear-gradient(90deg, #061622, #05172400);"
                         class="background-mask !er-w-1/3"></div>
                     <h3 class="text-size48 mb:er-text-4xl">30% Lighter</h3>
@@ -138,13 +131,7 @@
                     class="er-col-span-2 er-rounded-3xl er-overflow-hidden er-flex er-flex-col er-gap-y-8 mb:er-gap-3 mb:er-mr-12">
                     <div
                         class="background-image er-h-3/5 er-rounded-3xl er-overflow-hidden er-flex er-flex-col er-justify-center er-pl-16 mb:er-justify-start mb:er-pl-6 mb:er-pt-4">
-                        <picture>
-                            <source media="(min-width: 768px)"
-                                srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250407-154905_2x_a7966d27-4154-43e3-9df7-9dfd237ad2fc.jpg?v=1744357370">
-                            <source media="(max-width: 768px)"
-                                srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250407-154905_2x_ab738697-7bb0-4180-8a97-aca4cfd90156.jpg?v=1744362095">
-                            <img src="" alt="" loading="lazy">
-                        </picture>
+                        {% render 'image', width: 1100, mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250407-154905_2x_ab738697-7bb0-4180-8a97-aca4cfd90156.jpg?v=1744362095", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250407-154905_2x_a7966d27-4154-43e3-9df7-9dfd237ad2fc.jpg?v=1744357370" %}
                         <h3
                             class="text-size36 mb:er-text-4xl er-text-transparent er-bg-clip-text er-bg-gradient-to-r er-from-pink-500 er-to-blue-600 er-w-fit">
                             330 lbs</h3>
@@ -154,13 +141,7 @@
                     </div>
                     <div
                         class="background-image er-h-2/5 er-rounded-3xl er-overflow-hidden er-flex er-flex-col er-justify-center er-pl-16 mb:er-pl-6 mb:er-justify-start mb:er-pt-8">
-                        <picture>
-                            <source media="(min-width: 768px)"
-                                srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2x_5a75c9a9-ee65-4921-b511-b93ca2f2c360.jpg?v=1744358295">
-                            <source media="(max-width: 768px)"
-                                srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2x_e5edd670-6287-4ae1-ba01-1cd19b8fe398.jpg?v=1744367381">
-                            <img src="" alt="" loading="lazy">
-                        </picture>
+                        {% render 'image', width: 1100, mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2x_e5edd670-6287-4ae1-ba01-1cd19b8fe398.jpg?v=1744367381", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2x_5a75c9a9-ee65-4921-b511-b93ca2f2c360.jpg?v=1744358295" %}
                         <h3
                             class="text-size36 mb:er-text-3xl er-text-transparent er-bg-clip-text er-bg-gradient-to-r er-from-pink-500 er-to-blue-600 er-w-fit">
                             Step Through</h3>
@@ -171,8 +152,8 @@
                 </div>
                 <div
                     class="background-image er-rounded-3xl er-overflow-hidden er-aspect-[480/725] mb:er-aspect-[138/350] er-flex er-flex-col er-justify-end er-pl-12 er-pb-32 mb:er-pl-4 mb:er-pb-12 mb:er-ml-[-30px]">
-                    <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/12_2x_d94a9645-f574-460d-a8ee-022b5b4e46ee.jpg?v=1744357376"
-                        alt="">
+                    <img width="420" height="660" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/12_2x_d94a9645-f574-460d-a8ee-022b5b4e46ee.jpg?v=1744357376&width=640"
+                        alt="{{ product.title }}">
                     <h3
                         class="text-size36 mb:er-text-3xl er-text-transparent er-bg-clip-text er-bg-gradient-to-r er-from-pink-500 er-to-blue-600 er-w-fit">
                         0 Response <br>Latency</h3>
@@ -182,14 +163,8 @@
                 </div>
                 <div class="er-grid er-grid-cols-2 er-col-span-3 er-gap-x-8 mb:er-gap-3">
                     <div
-                        class="background-image er-rounded-3xl er-overflow-hidden er-aspect-[640/500] mb:er-aspect-[170/220] er-pl-16 er-pt-20 mb:er-p-6">
-                        <picture>
-                            <source media="(min-width: 768px)"
-                                srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24869_2x_1a2ebe63-1d73-417f-b4fe-c6c32e3f9efe.jpg?v=1744359974">
-                            <source media="(max-width: 768px)"
-                                srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2x_0171dd47-0896-4148-b26c-b07f33cb5a1b.jpg?v=1744367912">
-                            <img src="" alt="" loading="lazy">
-                        </picture>
+                        class="er-flex er-flex-col background-image er-rounded-3xl er-overflow-hidden er-aspect-[640/500] mb:er-aspect-[170/220] er-pl-16 er-pt-20 mb:er-p-6">
+                        {% render 'image', width: 880, mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2x_0171dd47-0896-4148-b26c-b07f33cb5a1b.jpg?v=1744367912", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24869_2x_1a2ebe63-1d73-417f-b4fe-c6c32e3f9efe.jpg?v=1744359974" %}
                         <h3
                             class="text-size36 mb:er-text-3xl er-text-transparent er-bg-clip-text er-bg-gradient-to-r er-from-pink-500 er-to-blue-600 er-w-fit">
                             20" × 3" Tries</h3>
@@ -198,14 +173,8 @@
                         </p>
                     </div>
                     <div
-                        class="background-image er-rounded-3xl er-overflow-hidden er-aspect-[640/500] mb:er-aspect-[170/220] er-pl-16 er-pt-20 mb:er-p-6">
-                        <picture>
-                            <source media="(min-width: 768px)"
-                                srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2x_39587d1f-ae54-4a46-b8a6-da4257f6a9fb.jpg?v=1744361090">
-                            <source media="(max-width: 768px)"
-                                srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25395_2x_25003fbb-ad1c-47a1-a8dd-a9e47e6cad27.jpg?v=1744368029">
-                            <img src="" alt="" loading="lazy">
-                        </picture>
+                        class="er-flex er-flex-col background-image er-rounded-3xl er-overflow-hidden er-aspect-[640/500] mb:er-aspect-[170/220] er-pl-16 er-pt-20 mb:er-p-6">
+                        {% render 'image', width: 880, src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2x_39587d1f-ae54-4a46-b8a6-da4257f6a9fb.jpg?v=1744361090", mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25395_2x_25003fbb-ad1c-47a1-a8dd-a9e47e6cad27.jpg?v=1744368029" %}
                         <h3
                             class="text-size36 mb:er-text-3xl er-text-transparent er-bg-clip-text er-bg-gradient-to-r er-from-pink-500 er-to-blue-600 er-w-fit">
                             Samsung <br class="md:er-hidden">Li-ion</h3>
@@ -215,6 +184,59 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+    <section class="er-bg-background er-pb-52 mb:er-pt-24 mb:er-pb-32">
+        <div class="quality TakeItEasywithFold1">
+        <div class="centeral-content mb:er-px-6">
+            <h2 class="text-size48 mb:er-text-4xl mb:er-leading-snug er-mb-3 mb:er-mb-0">JOY-Time, Any Ride</h2>
+            <div class="items swiper-wrapper er-mt-20 mb:er-mt-8">
+            <div class="swiper-slide">
+                <img loading="lazy" width="551" height="400" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC05417_2x_59c59662-25fc-4e5c-9b25-2c63c7fbd5ba.jpg?v=1744617311&width=700" alt="{{ page_description }}">
+            </div>
+            <div class="swiper-slide">
+                <img
+                loading="lazy" width="551" height="400" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC07044_2x_86d5ccd7-7aa0-42b3-b34f-0b71b181be3e.jpg?v=1744617315&width=700"
+                alt="{{ page_description }}"
+                >
+            </div>
+            <div class="swiper-slide">
+                <img
+                loading="lazy" width="551" height="400" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC00188_2x_da994ed9-8f47-4164-bca7-359d30b17269.jpg?v=1744617320&width=700"
+                alt="{{ page_description }}"
+                >
+            </div>
+            <div class="swiper-slide">
+                <img
+                loading="lazy" width="551" height="400" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC05881_2x_212944b0-e88b-4747-bb05-09ed41d2d325.jpg?v=1744617353&width=700"
+                alt="{{ page_description }}"
+                >
+            </div>
+            <div class="swiper-slide">
+                <img
+                loading="lazy" width="551" height="400" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC05461_2x_1f039745-5c3e-4d2c-994e-d350a0e4ee65.jpg?v=1744617357&width=700"
+                alt="{{ page_description }}"
+                >
+            </div>
+            <div class="swiper-slide">
+                <img
+                loading="lazy" width="551" height="400" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC05242_2x_d5dec8f8-4548-4cce-967b-67d68d3ed8d3.jpg?v=1744617362&width=700"
+                alt="{{ page_description }}"
+                >
+            </div>
+            <div class="swiper-slide">
+                <img
+                loading="lazy" width="551" height="400" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC06995_2x_d459b299-e5b1-4338-9c59-c53be8822923.jpg?v=1744617367&width=700"
+                alt="{{ page_description }}"
+                >
+            </div>
+            </div>
+            <div class="swiper-scrollbar"></div>
+            <div class="buttons mobileHide">
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            </div>
+        </div>
         </div>
     </section>
     <section class="er-aspect-[1920/750] mb:er-aspect-auto background-image mb:er-bg-white">
@@ -237,52 +259,9 @@
             </p>
         </div>
     </section>
-    <section
-        class="er-aspect-[1920/750] mb:er-aspect-auto background-image">
-        <picture>
-            <source media="(min-width: 768px)"
-                srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25378_2x_1062ac39-a0ad-4b6b-b050-55fb33ddb908.jpg?v=1744369088">
-            <source media="(max-width: 768px)"
-                srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25397_2x_12000bae-7275-437b-b172-5d2d66acf4d6.jpg?v=1744369181">
-            <img class="mb:!er-object-contain mb:!er-object-top" src="" alt="" loading="lazy">
-        </picture>
-        <div class="centeral-content er-h-full mb:er-pt-8 mb:er-pb-20 er-flex er-gap-x-28 mb:er-flex-col">
-            <div class="er-aspect-square er-w-1/2 mb:er-w-full"></div>
-            <div class="er-flex er-flex-col er-justify-center er-items-start er-text-left">
-                <h2 class="text-size48 mb:er-text-4xl mb:er-leading-snug">Instant Power, <br>Limitless Range</h2>
-                <p class="text-size18 er-max-w-3xl er-mt-10 mb:er-text-2xl">
-                    <span>
-                        Joy Carbon eBike delivers instant power via thumb throttle and smart torque sensor that boosts
-                        range 10-30%. With 70-mile pedal-assist range (20% more than competitors) and 8-speed Shimano
-                        drivetrain, it rides farther with less effort.
-                    </span>
-                </p>
-            </div>
-        </div>
-    </section>
-    <section class="er-aspect-[1920/750] mb:er-aspect-auto background-image mb:er-bg-white">
-        <picture>
-            <source media="(min-width: 768px)"
-                srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25377_2x_b981795c-1a22-470f-beed-7916975208ad.jpg?v=1744368769">
-            <source media="(max-width: 768px)"
-                srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25398_2x_64c78526-f81e-4613-a7a6-0e2193129bef.jpg?v=1744368875">
-            <img class="mb:!er-object-contain mb:!er-object-top" src="" alt="" loading="lazy">
-        </picture>
-        <div
-            class="centeral-content er-h-full er-flex er-flex-col er-justify-center er-items-start er-text-left mb:er-pt-8 mb:er-pb-20">
-            <div class="md:er-hidden er-aspect-square er-w-full"></div>
-            <h2 class="text-size48 mb:er-text-4xl mb:er-leading-snug">Stable, Smooth, <br>Ready for Any Road</h2>
-            <p class="text-size18 er-max-w-3xl er-mt-10 mb:er-text-2xl">
-                <span>Joy’s bolt-on axle and 20” x 3.0” fat tires deliver a rock-solid yet smooth ride, absorbing shocks
-                    and gripping tough terrain—from potholes to wet roads. Combined with a suspension fork, it easily
-                    handles gravel, trails, and city streets, giving you the freedom to explore comfortably.</span>
-            </p>
-        </div>
-    </section>
-
 <div class="er-max-w-screen-xl er-mx-auto er-px-12 er-my-56 mb:er-mb-20 mb:er-mt-0 mb:er-pr-0">
-        <h2 class="text-size48 mb:er-text-4xl er-m-0">Details That Define JOY</h2>
-        <div class="er-mt-20 quality_in_details er-relative er-overflow-x-hidden er-pb-40 mb:er-pb-16" style="--swiper-navigation-size: 27px; --swiper-navigation-color:#fff;">
+        <h2 class="text-size48 mb:er-text-4xl er-m-0 mb:er-hidden">Details That Define JOY</h2>
+        <div class="er-mt-20 quality_in_details er-relative er-overflow-x-hidden er-pb-40 mb:er-pb-16 mb:er-mt-0" style="--swiper-navigation-size: 27px; --swiper-navigation-color:#fff;">
             <div class="swiper-wrapper">
                 {% for item in product.metafields.custom.quality_in_details.value %}
                     {% assign text = item.text | split: "---" %}
@@ -301,6 +280,36 @@
             <div class="swiper-button-next er-bottom-12 er-right-0 er-left-auto er-top-auto er-bg-dark er-rounded-full er-p-8 after:er-text-3xl mb:er-hidden er-z-2"></div>
         </div>
     </div>
+    <section
+        class="er-aspect-[1920/750] mb:er-aspect-auto background-image">
+        {% render 'image', class: "mb:!er-object-contain mb:!er-object-top", mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25397_2x_12000bae-7275-437b-b172-5d2d66acf4d6.jpg?v=1744369181", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25378_2x_1062ac39-a0ad-4b6b-b050-55fb33ddb908.jpg?v=1744369088" %}
+        <div class="centeral-content er-h-full mb:er-pt-8 mb:er-pb-20 er-flex er-gap-x-28 mb:er-flex-col">
+            <div class="er-aspect-square er-w-1/2 mb:er-w-full"></div>
+            <div class="er-flex er-flex-col er-justify-center er-items-start er-text-left">
+                <h2 class="text-size48 mb:er-text-4xl mb:er-leading-snug">Instant Power, <br>Limitless Range</h2>
+                <p class="text-size18 er-max-w-3xl er-mt-10 mb:er-text-2xl">
+                    <span>
+                        Joy Carbon eBike delivers instant power via thumb throttle and smart torque sensor that boosts
+                        range 10-30%. With 70-mile pedal-assist range (20% more than competitors) and 8-speed Shimano
+                        drivetrain, it rides farther with less effort.
+                    </span>
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="er-aspect-[1920/750] mb:er-aspect-auto background-image mb:er-bg-white">
+        {% render 'image', class: "mb:!er-object-contain mb:!er-object-top", mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25398_2x_64c78526-f81e-4613-a7a6-0e2193129bef.jpg?v=1744368875", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25377_2x_b981795c-1a22-470f-beed-7916975208ad.jpg?v=1744368769" %}
+        <div
+            class="centeral-content er-h-full er-flex er-flex-col er-justify-center er-items-start er-text-left mb:er-pt-8 mb:er-pb-0">
+            <div class="md:er-hidden er-aspect-square er-w-full"></div>
+            <h2 class="text-size48 mb:er-text-4xl mb:er-leading-snug">Stable, Smooth, <br>Ready for Any Road</h2>
+            <p class="text-size18 er-max-w-3xl er-mt-10 mb:er-text-2xl">
+                <span>Joy’s bolt-on axle and 20” x 3.0” fat tires deliver a rock-solid yet smooth ride, absorbing shocks
+                    and gripping tough terrain—from potholes to wet roads. Combined with a suspension fork, it easily
+                    handles gravel, trails, and city streets, giving you the freedom to explore comfortably.</span>
+            </p>
+        </div>
+    </section>
 
 {% render 'size-guide-and-specs-template' %}
 <div class="centeral-content er-px-6 judgemeeeeee"></div>
@@ -320,4 +329,20 @@
           },
       });
     })
+
+    task(() => {
+        new Swiper('.TakeItEasywithFold1 .centeral-content', {
+            slidesPerView: global_config.is_mobile ? 1.25 : 2.25,
+            spaceBetween: global_config.is_mobile ? 16 : 32,
+            preloadImages: false,
+            navigation: {
+              nextEl: '.TakeItEasywithFold1 .centeral-content .swiper-button-next',
+              prevEl: '.TakeItEasywithFold1 .centeral-content .swiper-button-prev',
+            },
+            scrollbar: {
+              el: '.TakeItEasywithFold1 .centeral-content .swiper-scrollbar',
+              draggable: true
+            },
+          });
+      })
 </script>
