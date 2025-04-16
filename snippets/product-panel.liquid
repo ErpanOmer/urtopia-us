@@ -24,6 +24,7 @@
   assign swiper_of_variant = current_variant.metafields.custom.variant_image.value
   assign swiper_of_common = product.metafields.custom.product_common_images.value
   assign swiper = null | sort
+  assign product_send_accessories_price = product_send_accessories_price | default: 16700
 
   if swiper_insert_index == blank
     assign swiper_insert_index = swiper_of_variant.count
@@ -135,11 +136,11 @@
           | image_url: height: 57
           | image_tag: fetchpriority: 'low',  height: 57
         }}
-        <div class="er-flex er-flex-1 er-gap-x-4 mb:er-flex-col-reverse mb:er-gap-y-1 mb:er-items-start">
-          <span><span class="er-text-primary text-size14 er-font-bold">Limited offer:</span> Fenders, kickstand</span>
+        <div class="er-flex er-flex-1 er-gap-x-4 mb:er-flex-col-reverse er-items-center mb:er-gap-y-1 mb:er-items-start er-leading-snug">
+          <span><span class="er-text-primary text-size14 er-font-bold">Limited offer:</span>{{ product_send_accessories_icon.text }}</span>
           <span class="er-flex-1 mb:er-hidden"></span>
-          <div class="mb:er-flex mb:er-flex-row-reverse">
-            <del class="er-text-dark/80">{{ 16700 | money }}</del>
+          <div class="er-flex er-items-center mb:er-flex-row-reverse">
+            <del class="er-text-dark/80">{{ product_send_accessories_price | money }}</del>
             <span class="er-button er-px-3 er-py-2 er-font-bold er-rounded-2xl er-pointer-events-none er-ml-4 mb:er-ml-0 mb:er-mr-4"
               >FREE</span
             >
@@ -228,10 +229,12 @@
                   <svg class="er-hidden" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="undefined"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg>
                   {{
                     prod.featured_image
-                    | image_url: height: 70
+                    | image_url: width: 120
                     | image_tag:
-                      class: 'er-absolute er-right-0 er-bottom-0 mb:er-max-w-24',
+                      class: 'er-absolute er-right-0 er-bottom-0 er-max-w-28',
                       fetchpriority: 'low',
+                      height: 120,
+                      width: 120,
                       loading: 'lazy'
                   }}
                 </div>

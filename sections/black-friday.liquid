@@ -234,50 +234,7 @@
 
 <div class="er-bg-background">
   <div class="centeral-content ebike-products">
-  <div class="product-grid">
-    {% assign product = all_products['urtopia-carbon-1-pro-ebike'] %}
-    {% assign product_variants = product.variants | where: 'available' %}
-    {% assign product_uhmaya = '37 lbs<br>lightweight, Full<br>carbon fiber, 80<br>Miles' | split: ', ' %}
-    {% render 'product-card-2',
-      product_variants: product_variants,
-      product_name: 'Carbon 1 Pro',
-      product_description: 'City commuting and workout',
-      product_variant_options_find_sort: 'M,L,S',
-      product_url: product.url,
-      product_uhmaya: product_uhmaya
-    %}
-    {% assign product = all_products['urtopia-carbon-fold'] %}
-    {% assign product_variants = product.variants | where: 'available' %}
-    {% assign product_uhmaya = '29 lbs<br>lightweight, Full<br>carbon fiber, Instant<br>folding' | split: ', ' %}
-    {% render 'product-card-2',
-      product_variants: product_variants,
-      product_name: 'Carbon Fold 1',
-      product_description: 'Lightest and smallest foldable ebike',
-      product_url: product.url,
-      product_uhmaya: product_uhmaya
-    %}
-    <div class="gray-background-color u30DemiBold_v2 lozad mobileHide" data-background-image="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSCF5731_2x_16aa14e4-17e0-4b47-85b5-ea2b7f64be33.jpg?v=1739499919width=500">Full Carbon Lightweight Comfort</div>
-    {% assign product = all_products['urtopia-carbon-fusion-gt'] %}
-    {% assign product_variants = product.variants | where: 'available' %}
-    {% assign product_uhmaya = '1500W<br>power, Carbon fiber<br>frame, 120<br>Miles' | split: ', ' %}
-    {% render 'product-card-2',
-      product_variants: product_variants,
-      product_name: 'Carbon Fusion GT',
-      product_description: 'All-day, all-terrain adventures',
-      product_url: product.url,
-      product_uhmaya: product_uhmaya
-    %}
-    {% assign product = all_products['urtopia-carbon-1-step-thru-ebike'] %}
-    {% assign product_variants = product.variants | where: 'available' %}
-    {% assign product_uhmaya = '36 lbs<br>lightweight, Full<br>carbon fiber, 80<br>Miles' | split: ', ' %}
-    {% render 'product-card-2',
-      product_variants: product_variants,
-      product_name: 'Carbon 1 Step-Thru',
-      product_description: 'Leisure cruising and sightseeing',
-      product_url: product.url,
-      product_uhmaya: product_uhmaya
-    %} 
-    </div>
+    {% render: "product-cards" %}
 </div>
 </div>
 <div class="er-bg-background">
@@ -301,6 +258,48 @@
       </div>
     </div>
   </div>
+</div>
+
+
+  <div class="er-bg-background">
+    <div class="centeral-content er-flex er-flex-col er-pb-48 mb:er-pb-24 mb:er-px-6">
+        <h2 class="er-m-0 text-size36 er-text-center mb:er-text-4xl mb:er-text-left">Browse All Electric Bike Models</h2>
+        <p class="text-size18 er-text-center er-opacity-80 mb:er-text-left mb:er-text-2xl mb:er-mt-3">
+            <span>Urban commutes, weekend adventures, or off-road thrills – there’s a model for you.</span>
+        </p>
+    <div class="home_bike_card er-relative er-pb-40 mb:er-pb-0 er-overflow-x-hidden er-mt-20 mb:er-mt-10" style="--swiper-navigation-size: 27px; --swiper-navigation-color:#fff;">
+      <div class="swiper-wrapper mb:er-flex-col mb:er-space-y-6 mb:er-text-center">
+        <div class="swiper-slide er-box-border er-flex er-flex-col background-image er-aspect-[380/500] mb:er-aspect-[315/260] er-max-w-[380px] er-text-white er-justify-end er-items-start er-p-12 er-rounded-3xl er-overflow-hidden mb:er-items-center mb:er-p-8 mb:er-max-w-none">
+          {% render 'image', mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC06367_2x_36aaa0b3-02e6-441c-9ec0-d547dadc5c01.jpg?v=1744697134", src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC06367_2x_6749f00b-7d9f-4d50-86e7-0a178fa638ba.jpg?v=1744696828', width: 400 %}
+          <h3 class="text-size24 er-mb-8 mb:er-mb-6 mb:er-text-3xl">Utility eBike for<br>Urban & Cargo</h3>
+          <a target="_blank" class="er-button er-button-white" href="/products/urtopia-joy-carbon-fat-tire-ebike">Fat Tire ebike</a>
+        </div>
+        <div class="swiper-slide er-box-border er-flex er-flex-col background-image er-aspect-[380/500] mb:er-aspect-[315/260] er-max-w-[380px] er-text-white er-justify-end er-items-start er-p-12 er-rounded-3xl er-overflow-hidden mb:er-items-center mb:er-p-8 mb:er-max-w-none">
+          {% render 'image', mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25439_2x_836e2159-df50-4ed0-bbce-621da6dd020a.jpg?v=1737452660", src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSCF6175_2x_a8f92c97-27f4-4862-a911-cf015a40cde8.jpg?v=1737452434', width: 400 %}
+          <h3 class="text-size24 er-mb-8 mb:er-mb-6 mb:er-text-3xl">Super compact &<br>lightweight, fit anywhere</h3>
+          <a target="_blank" class="er-button er-button-white" href="/products/urtopia-carbon-fold">Folding ebike</a>
+        </div>
+        <div class="swiper-slide er-box-border er-flex er-flex-col background-image er-aspect-[380/500] mb:er-aspect-[315/260] er-max-w-[380px] er-text-white er-justify-end er-items-start er-p-12 er-rounded-3xl er-overflow-hidden mb:er-items-center mb:er-p-8 mb:er-max-w-none">
+          {% render 'image', mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/557_new_2x_c13415b9-d701-4ee9-9628-7abd28541e18.jpg?v=1737452655", src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/557_new_2x_a8438202-a1f1-447e-a3cc-878bd5b37ff3.jpg?v=1737452439', width: 400 %}
+          <h3 class="text-size24 er-mb-8 mb:er-mb-6 mb:er-text-3xl">Explore the<br>urban landscape</h3>
+          <a target="_blank" class="er-button er-button-white" href="/products/urtopia-carbon-1-step-thru-ebike">City ebike</a>
+        </div>
+        <div class="swiper-slide er-box-border er-flex er-flex-col background-image er-aspect-[380/500] mb:er-aspect-[315/260] er-max-w-[380px] er-text-white er-justify-end er-items-start er-p-12 er-rounded-3xl er-overflow-hidden mb:er-items-center mb:er-p-8 mb:er-max-w-none">
+          {% render 'image', mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25436_2x_5cf464df-aaee-4a86-a613-a114f6c496a2.jpg?v=1737452645", src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25440_2x_a522840a-7bf1-4639-b076-3c0937d08f10.jpg?v=1737452533', width: 400 %}
+          <h3 class="text-size24 er-mb-8 mb:er-mb-6 mb:er-text-3xl">All-Terrain Adventure</h3>
+          <a target="_blank" class="er-button er-button-white" href="/products/urtopia-carbon-1-pro-ebike">Gravel ebike</a>
+        </div>
+        <div class="swiper-slide er-box-border er-flex er-flex-col background-image er-aspect-[380/500] mb:er-aspect-[315/260] er-max-w-[380px] er-text-white er-justify-end er-items-start er-p-12 er-rounded-3xl er-overflow-hidden mb:er-items-center mb:er-p-8 mb:er-max-w-none">
+          {% render 'image', mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25433_2x_f4303946-f4f7-4156-b740-f0ffccfedc02.jpg?v=1737451779", src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25441_2x_90ebacbd-c497-4121-a69d-abe7f7b4ffe2.jpg?v=1737449157', width: 400 %}
+          <h3 class="text-size24 er-mb-8 mb:er-mb-6 mb:er-text-3xl">Ride outdoors and<br>explore more trails</h3>
+          <a target="_blank" class="er-button er-button-white" href="/products/urtopia-carbon-fusion-gt">Touring ebike</a>
+        </div>
+      </div>
+      <div class="swiper-scrollbar !er-w-full !er-left-0 er-z-[1]" style="z-index:1;"></div>
+      <div class="swiper-button-prev er-bottom-12 er-right-[60px] er-left-auto er-top-auto er-bg-dark er-rounded-full er-w-16 er-h-16 after:er-text-3xl mb:er-hidden er-z-2" style="z-index:1;"></div>
+      <div class="swiper-button-next er-bottom-12 er-right-0 er-left-auto er-top-auto er-bg-dark er-rounded-full er-w-16 er-h-16 after:er-text-3xl mb:er-hidden er-z-2" style="z-index:1;"></div>
+  </div>
+</div>
 </div>
 
 <div class="professional er-bg-background er-pb-24" id="professional">
@@ -641,6 +640,22 @@
 </div>
 
 <script type="module">
+  if (!global_config.is_mobile) {
+      new Swiper('.home_bike_card', {
+          slidesPerView: 'auto',
+          spaceBetween:  20,
+          preloadImages: false,
+          navigation: {
+              nextEl: '.home_bike_card .swiper-button-next',
+              prevEl: '.home_bike_card .swiper-button-prev',
+          },
+          scrollbar: {
+              el: '.home_bike_card .swiper-scrollbar',
+              draggable: true
+          },
+      });
+    }
+  
     new Swiper(".swiperrrr .top", {
       spaceBetween: 10,
       preloadImages: false,

@@ -239,6 +239,12 @@ h4 {
             }
         }
 
+        &[data-stye="Charcoal Grey"] {
+            &::after {
+                background-color: #6a6a6a;
+            }
+        }
+
         &[data-stye="Creme"] {
             &::after {
                 background-color: #dbdbdb;
@@ -377,6 +383,14 @@ h4 {
                 background-color: #ffb100;
             }
         }
+
+      &[data-stye="Charcoal Grey"] {
+        border-color: #6a6a6a;
+
+            &::after {
+                background-color: #6a6a6a;
+            }
+      }
     }
 
     @media (max-width: 767px) {
@@ -1252,6 +1266,12 @@ h4 {
 }
 
 .ebike-products .product-grid .product-card[data-product-handle="urtopia-carbon-fold"] {
+    &::before {
+        content: "NEW";
+    }
+}
+
+.ebike-products .product-grid .product-card[data-product-handle="urtopia-joy-carbon-fat-tire-ebike"] {
     &::before {
         content: "NEW";
     }

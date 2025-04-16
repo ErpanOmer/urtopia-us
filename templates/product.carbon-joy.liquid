@@ -14,7 +14,7 @@
     display: block;
   }
 </style>
-{% render 'product-panel', swiper_insert_index: 1 %}
+{% render 'product-panel', swiper_insert_index: 1, product_send_accessories_price: 25700 %}
 <section class="er-bg-background er-py-32 mb:er-py-24">
         <div class="centeral-content">
             <h2 class="text-size36 mb:er-text-4xl">Professional Reviews</h2>
@@ -25,8 +25,7 @@
                         alt="{{ product.title }}">
                     <p class="text-size18 er-mt-6 er-mb-16 mb:er-text-2xl mb:er-mb-6">
                         <span>
-                            This compact folding ebike, ultra-light and easy to carry, wowed reporters at CES 2025,
-                            making it one of the must-see products!
+                            Put Joy Carbon eBike on steep hills, beaches, and city streets—and it handled it all with ease. It’s compact, sturdy, and hauls cargo like a champ!
                         </span>
                     </p>
                     <div class="er-flex er-items-center">
@@ -41,10 +40,10 @@
     </section>
     <section
         class="er-bg-black er-text-white er-aspect-[1920/750] mb:er-aspect-auto background-image mb:er-bg-white mb:er-text-black">
-        <video playsinline loop autoplay muted class="mb:!er-object-contain mb:!er-object-top">
-            <source src="https://cdn.shopify.com/videos/c/o/v/4ce1251271d549079119f40af718ad7e.mp4" type="video/mp4"
+        <video playsinline loop autoplay muted class="mb:!er-object-contain mb:!er-object-top lozad">
+            <source data-src="https://cdn.shopify.com/videos/c/o/v/40a6f68d37eb4f0a9958f7612b5dc664.mp4" type="video/mp4"
                 media="(min-width: 768px)">
-            <source src="https://cdn.shopify.com/videos/c/o/v/5307f75033d0481dab76f46a7ad1c760.mp4" type="video/mp4"
+            <source data-src="https://cdn.shopify.com/videos/c/o/v/0be3609dcf0d40638083e5a18a97c251.mp4" type="video/mp4"
                 media="(max-width: 767px)">
         </video>
         <div
@@ -59,7 +58,7 @@
                 </span>
             </p>
             <a
-                href="/pages/carbon-expert" target="_blank"
+                href="https://www.youtube.com/watch?v=-JIBlqOd3U0" target="_blank"
                 class="er-button er-button-white er-mt-12 mb:er-m-0 mb:[--er-btn-bg-color:theme(colors.dark)] mb:[--er-btn-text-color:theme(colors.white)] mb:er-text-white">Watch
                 video
                 <svg class="er-scale-150 er-translate-x-1/3 er-fill-dark mb:er-fill-white"
@@ -79,10 +78,7 @@
                     Ebike</h2>
                 <p class="text-size18 er-max-w-3xl er-mt-10 er-mb-28 mb:er-text-2xl mb:er-mb-16">
                     <span>
-                        Crafted from Toray carbon fiber—renowned in Formula 1 and elite cycling—the Joy Carbon utility
-                        family ebike ombines blends strength with a sleek step-through design. Supporting up to 330 lbs,
-                        it
-                        remains lightweight and agile, embodying Urtopia’s commitment to innovation.
+                          Crafted from Toray carbon fiber—renowned in Formula 1 and elite cycling—the Joy Carbon utility family ebike blends strength with a sleek step-through design. Supporting up to 330 lbs, it remains lightweight and agile, embodying Urtopia’s commitment to innovation.
                     </span>
                 </p>
                 <a
@@ -119,7 +115,7 @@
             <div class="er-grid er-grid-cols-3 er-gap-8 er-mt-20 mb:er-gap-3 mb:er-mt-0">
                 <div
                     class="er-col-span-3 background-image er-aspect-[1280/500] mb:er-aspect-[345/200] er-text-white er-pl-24 mb:er-pl-6 er-flex er-flex-col er-justify-center er-text-left er-rounded-3xl er-overflow-hidden">
-                    {% render 'image', width: 1440, mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25399_2x_eaf956bf-27e8-4995-98cb-d3de732219eb.jpg?v=1744361345", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC08785_copy_2_2x_4f0a9153-dc3d-405b-8871-f7ea65bedf80.jpg?v=1744356561" %}
+                    {% render 'image', width: 1640, mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25399_2x_eaf956bf-27e8-4995-98cb-d3de732219eb.jpg?v=1744361345", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC08785_copy_2_2x_4f0a9153-dc3d-405b-8871-f7ea65bedf80.jpg?v=1744356561" %}
                     <div style="background-image: linear-gradient(90deg, #061622, #05172400);"
                         class="background-mask !er-w-1/3"></div>
                     <h3 class="text-size48 mb:er-text-4xl">30% Lighter</h3>
@@ -167,7 +163,7 @@
                         {% render 'image', width: 880, mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2x_0171dd47-0896-4148-b26c-b07f33cb5a1b.jpg?v=1744367912", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24869_2x_1a2ebe63-1d73-417f-b4fe-c6c32e3f9efe.jpg?v=1744359974" %}
                         <h3
                             class="text-size36 mb:er-text-3xl er-text-transparent er-bg-clip-text er-bg-gradient-to-r er-from-pink-500 er-to-blue-600 er-w-fit">
-                            20" × 3" Tries</h3>
+                            20" × 3" Tires</h3>
                         <p class="text-size18 er-opacity-80 er-mt-2 mb:er-text-xl">
                             <span>All Terrain Adventures</span>
                         </p>
@@ -191,40 +187,40 @@
         <div class="centeral-content mb:er-px-6">
             <h2 class="text-size48 mb:er-text-4xl mb:er-leading-snug er-mb-3 mb:er-mb-0">JOY-Time, Any Ride</h2>
             <div class="items swiper-wrapper er-mt-20 mb:er-mt-8">
-            <div class="swiper-slide">
+            <div class="swiper-slide er-rounded-3xl er-overflow-hidden">
                 <img loading="lazy" width="551" height="400" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC05417_2x_59c59662-25fc-4e5c-9b25-2c63c7fbd5ba.jpg?v=1744617311&width=700" alt="{{ page_description }}">
             </div>
-            <div class="swiper-slide">
+            <div class="swiper-slide er-rounded-3xl er-overflow-hidden">
                 <img
                 loading="lazy" width="551" height="400" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC07044_2x_86d5ccd7-7aa0-42b3-b34f-0b71b181be3e.jpg?v=1744617315&width=700"
                 alt="{{ page_description }}"
                 >
             </div>
-            <div class="swiper-slide">
+            <div class="swiper-slide er-rounded-3xl er-overflow-hidden">
                 <img
                 loading="lazy" width="551" height="400" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC00188_2x_da994ed9-8f47-4164-bca7-359d30b17269.jpg?v=1744617320&width=700"
                 alt="{{ page_description }}"
                 >
             </div>
-            <div class="swiper-slide">
+            <div class="swiper-slide er-rounded-3xl er-overflow-hidden">
                 <img
                 loading="lazy" width="551" height="400" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC05881_2x_212944b0-e88b-4747-bb05-09ed41d2d325.jpg?v=1744617353&width=700"
                 alt="{{ page_description }}"
                 >
             </div>
-            <div class="swiper-slide">
+            <div class="swiper-slide er-rounded-3xl er-overflow-hidden">
                 <img
                 loading="lazy" width="551" height="400" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC05461_2x_1f039745-5c3e-4d2c-994e-d350a0e4ee65.jpg?v=1744617357&width=700"
                 alt="{{ page_description }}"
                 >
             </div>
-            <div class="swiper-slide">
+            <div class="swiper-slide er-rounded-3xl er-overflow-hidden">
                 <img
                 loading="lazy" width="551" height="400" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC05242_2x_d5dec8f8-4548-4cce-967b-67d68d3ed8d3.jpg?v=1744617362&width=700"
                 alt="{{ page_description }}"
                 >
             </div>
-            <div class="swiper-slide">
+            <div class="swiper-slide er-rounded-3xl er-overflow-hidden">
                 <img
                 loading="lazy" width="551" height="400" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC06995_2x_d459b299-e5b1-4338-9c59-c53be8822923.jpg?v=1744617367&width=700"
                 alt="{{ page_description }}"
@@ -240,10 +236,10 @@
         </div>
     </section>
     <section class="er-aspect-[1920/750] mb:er-aspect-auto background-image mb:er-bg-white">
-        <video playsinline loop autoplay muted class="mb:!er-object-contain mb:!er-object-top">
-            <source src="https://cdn.shopify.com/videos/c/o/v/513bd8c676e74b9fad21f08e507017be.mp4" type="video/mp4"
+        <video playsinline loop autoplay muted class="mb:!er-object-contain mb:!er-object-top lozad">
+            <source data-src="https://cdn.shopify.com/videos/c/o/v/d2381fa1d93042e2abc220630ecd4447.mp4" type="video/mp4"
                 media="(min-width: 768px)">
-            <source src="https://cdn.shopify.com/videos/c/o/v/5307f75033d0481dab76f46a7ad1c760.mp4" type="video/mp4"
+            <source data-src="https://cdn.shopify.com/videos/c/o/v/98fec8493ff248b19f747c2e50515916.mp4" type="video/mp4"
                 media="(max-width: 767px)">
         </video>
         <div
