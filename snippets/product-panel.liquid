@@ -133,8 +133,8 @@
       <div class="er-flex er-bg-background er-items-center er-rounded-2xl er-p-3 er-gap-x-4 er-pr-6">
         {{
           product_send_accessories_icon.image
-          | image_url: height: 57
-          | image_tag: fetchpriority: 'low',  height: 57
+          | image_url: width: 120
+          | image_tag: fetchpriority: 'low', height: 57, class: "er-h-24"
         }}
         <div class="er-flex er-flex-1 er-gap-x-4 mb:er-flex-col-reverse er-items-center mb:er-gap-y-1 mb:er-items-start er-leading-snug">
           <span><span class="er-text-primary text-size14 er-font-bold">Limited offer:</span>{{ product_send_accessories_icon.text }}</span>
