@@ -13,19 +13,18 @@
         <div class="centeral-content mb:er-px-6">
             <div class="background-image er-aspect-[1280/450] mb:er-aspect-[375/450] er-rounded-3xl er-overflow-hidden">
             
-            {% render 'image', first_screen: true, class: "mb:!er-object-top" width: 1440, mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250414-174726_2x_4c3b98e8-75e9-4623-976e-cbee21511fdd.jpg?v=1745219253", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250414-174726_2x_e4521ca2-28e9-484f-9687-41227631ad2a.jpg?v=1745219036" %}
-            <div class="background-mask !er-w-1/2 mb:er-hidden" style="background-image: linear-gradient(90deg, #0888BA, #0D89BA00);"></div>    
+            {% render 'image', first_screen: true, class: "mb:!er-object-top" width: 1440, mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250421-174717.jpg?v=1745228852", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250421-174711.jpg?v=1745228852" %}
             <div
                     class="er-flex er-flex-col er-items-start er-justify-center er-h-full er-pl-28 er-max-w-2xl mb:er-px-8 mb:er-pt-10 mb:er-items-center mb:er-justify-start mb:er-text-center">
                     <h2
                         class="er-m-0 er-text-white text-size18 er-bg-gradient-to-r er-from-[#FF3684] er-to-[#FF8F1D] er-py-3 er-px-11 er-rounded-full mb:er-self-center mb:er-text-2xl">
                         <b>BEST PRICE EVER</b>
                     </h2>
-                    {% comment %} <div class="md:er-hidden er-aspect-square er-w-9/12"></div> {% endcomment %}
+                    <div class="md:er-hidden er-aspect-square er-w-9/12"></div>
                     <h3 class="er-m-0 er-text-white text-size24 er-font-medium er-mt-6 mb:er-text-2xl">Best-valued Smart Carbon Ebike</h3>
                     <p class="text-size18 er-my-16 mb:er-text-2xl mb:er-my-8">
                         <span>
-                          Now Only {{ all_products['urtopia-carbon-1-pro-ebike'].compare_at_price | minus: all_products['urtopia-carbon-1-pro-ebike'].price | money_without_trailing_zeros }}! With its ultra-light carbon frame, 80 miles range, smart features like GPS tracking, motion alarm, and real-time navigation, this is the best deal on a premium smart eBike.
+                          Now Only {{ all_products['urtopia-carbon-1-pro-ebike'].price | money_without_trailing_zeros }}! With its ultra-light carbon frame, 80 miles range, smart features like GPS tracking, motion alarm, and real-time navigation, this is the best deal on a premium smart eBike.
                         </span>
                     </p>
                     <a class="er-button er-button-white mb:er-mb-20" href="https://newurtopia.com/products/urtopia-carbon-1-pro-ebike" target="_blank">Shop now</a>
