@@ -1,9 +1,9 @@
 {{ 'home.scss.css' | asset_url | stylesheet_tag: preload: true }}
 <h1 class="er-sr-only">Urtopia Ebike - Sleek, Full Carbon, Lightweight, Smart</h1>
 <div class="background-image er-aspect-[1920/750] mb:er-aspect-[375/500] er-text-white">
-{% render 'image', first_screen: true, mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25779_2x_68c3bff1-0a7e-42d0-9221-486f673905ec.jpg?v=1743066113", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250214-102028.jpg?v=1739499686" %}
-  <div class="centeral-content er-flex er-justify-end mb:er-justify-start er-flex-col er-items-center er-text-center er-h-full mb:er-pt-12">
-    <div class="er-bg-gradient-to-r er-from-[#FF3684] er-to-[#FF8F1D] text-size14 er-font-bold er-py-2 er-px-6 er-rounded-3xl">Easter Sale</div>
+{% render 'image', first_screen: true, mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250414-162011_2x_41bcaffb-122f-4002-ba17-7711a845b006.jpg?v=1745219216", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250414-162011_2x_61d3a96e-dc0e-4101-a9df-20b678e4dfda.jpg?v=1745219009" %}
+  <div class="centeral-content er-flex er-justify-start er-flex-col er-items-center er-text-center er-h-full er-pt-16 mb:er-pt-12">
+    <div class="er-bg-gradient-to-r er-from-[#FF3684] er-to-[#FF8F1D] text-size14 er-font-bold er-py-2 er-px-6 er-rounded-3xl">Earth Day Special</div>
     <img class="er-my-10 mb:er-max-w-sm" width="335" height="75" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250415-142833.png?v=1744698540">
     <a href="/collections/e-bike-sale" class="er-button er-button-white er-mb-24"><span><span>Shop now</span></span></a>
   </div>
@@ -11,19 +11,21 @@
 
 <div class="er-text-white er-pt-48 mb:er-pt-24">
         <div class="centeral-content mb:er-px-6">
-            <div class="background-image er-aspect-[1280/450] mb:er-aspect-auto er-rounded-3xl er-overflow-hidden">
-            {% render 'image', first_screen: true, class: "mb:!er-object-top" width: 1440, mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25761_2x_4a17286e-a4e0-46e9-ac30-989f0362868f.jpg?v=1742973590", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250318-163912_2x_fd6c0ff3-d055-4cf6-b3c1-e25877dc2965.jpg?v=1742972549" %}
-                <div
-                    class="er-flex er-flex-col er-items-start er-justify-center er-h-full er-pl-28 er-max-w-2xl mb:er-px-8 mb:er-pt-10">
+            <div class="background-image er-aspect-[1280/450] mb:er-aspect-[375/450] er-rounded-3xl er-overflow-hidden">
+            
+            {% render 'image', first_screen: true, class: "mb:!er-object-top" width: 1440, mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250414-174726_2x_4c3b98e8-75e9-4623-976e-cbee21511fdd.jpg?v=1745219253", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250414-174726_2x_e4521ca2-28e9-484f-9687-41227631ad2a.jpg?v=1745219036" %}
+            <div class="background-mask !er-w-1/2 mb:er-hidden" style="background-image: linear-gradient(90deg, #0888BA, #0D89BA00);"></div>    
+            <div
+                    class="er-flex er-flex-col er-items-start er-justify-center er-h-full er-pl-28 er-max-w-2xl mb:er-px-8 mb:er-pt-10 mb:er-items-center mb:er-justify-start mb:er-text-center">
                     <h2
                         class="er-m-0 er-text-white text-size18 er-bg-gradient-to-r er-from-[#FF3684] er-to-[#FF8F1D] er-py-3 er-px-11 er-rounded-full mb:er-self-center mb:er-text-2xl">
                         <b>BEST PRICE EVER</b>
                     </h2>
-                    <div class="md:er-hidden er-aspect-square er-w-9/12"></div>
-                    <h3 class="er-m-0 er-text-white text-size30 er-font-medium er-mt-6 mb:er-text-2xl">This Easter, Ride Smarter</h3>
-                    <p class="text-size18 er-my-16 er-opacity-80 mb:er-text-2xl mb:er-mb-10 mb:er-mt-6">
+                    {% comment %} <div class="md:er-hidden er-aspect-square er-w-9/12"></div> {% endcomment %}
+                    <h3 class="er-m-0 er-text-white text-size24 er-font-medium er-mt-6 mb:er-text-2xl">Best-valued Smart Carbon Ebike</h3>
+                    <p class="text-size18 er-my-16 mb:er-text-2xl mb:er-my-8">
                         <span>
-                          Hop Into Spring with Carbon 1 Pro – Lightweight, Smart, & Stylish at the Year’s Best Price. Now {{ all_products['urtopia-carbon-1-pro-ebike'].compare_at_price | minus: all_products['urtopia-carbon-1-pro-ebike'].price | money_without_trailing_zeros }} OFF for a Limited Time!
+                          Now Only {{ all_products['urtopia-carbon-1-pro-ebike'].compare_at_price | minus: all_products['urtopia-carbon-1-pro-ebike'].price | money_without_trailing_zeros }}! With its ultra-light carbon frame, 80 miles range, smart features like GPS tracking, motion alarm, and real-time navigation, this is the best deal on a premium smart eBike.
                         </span>
                     </p>
                     <a class="er-button er-button-white mb:er-mb-20" href="https://newurtopia.com/products/urtopia-carbon-1-pro-ebike" target="_blank">Shop now</a>
