@@ -1,6 +1,12 @@
 {{ 'carbon-fold-product.scss.css' | asset_url | stylesheet_tag: preload: true }}
 {% render 'product-panel', swiper_insert_index: 2 %}
 
+<style>
+  fieldset[option=Color] label[data-style="Lime green"] {
+    --product-option-color: #E5ECC5;
+  }
+</style>
+
 <div class="professional">
   <div class="centeral-content">
     <h2 class="u36Medium_v2">Professional Review</h2>

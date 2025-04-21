@@ -239,6 +239,12 @@ h4 {
             }
         }
 
+      &[data-stye="Lime green"] {
+            &::after {
+                background-color: #E5ECC5;
+            }
+        }
+
         &[data-stye="Charcoal Grey"] {
             &::after {
                 background-color: #6a6a6a;
@@ -355,6 +361,14 @@ h4 {
 
             &::after {
                 background-color: #9ec0d1;
+            }
+        }
+
+      &[data-stye="Lime green"] {
+            border-color: #E5ECC5;
+
+            &::after {
+                background-color: #E5ECC5;
             }
         }
 

@@ -1,4 +1,11 @@
 {{ 'carbon1pro-new.scss.css' | asset_url | stylesheet_tag: preload: true }}
+
+<style>
+  fieldset[option=Style] label[data-style="Charcoal Grey"] {
+    --product-option-color: #6a6a6a;
+  }
+</style>
+
 {% render 'product-panel', swiper_insert_index: 2 %}
 <div class="professional" style="padding-bottom: 10vh;">
   <div class="centeral-content">
