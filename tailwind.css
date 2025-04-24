@@ -176,40 +176,40 @@ body {
 
   /* 步数6 */
   .text-size24 {
-    @apply er-text-[24px] er-leading-tight er-tracking-normal er-font-bold er-inline-block;
+    @apply er-text-[24px] er-leading-tight er-tracking-normal er-font-semibold er-inline-block;
   }
 
   .text-size30 {
-    @apply er-text-[30px] er-leading-tight er-tracking-normal er-font-bold er-inline-block;
+    @apply er-text-[30px] er-leading-tight er-tracking-normal er-font-semibold er-inline-block;
   }
 
   .text-size36 {
-    @apply er-text-[36px] er-leading-tight er-tracking-normal er-font-bold er-inline-block;
+    @apply er-text-[36px] er-leading-tight er-tracking-normal er-font-semibold er-inline-block;
   }
 
   /* 步数12 */
   .text-size48 {
-    @apply er-text-[48px] er-leading-tight er-tracking-normal er-font-bold er-inline-block;
+    @apply er-text-[48px] er-leading-tight er-tracking-normal er-font-semibold er-inline-block;
   }
 
   .text-size60 {
-    @apply er-text-[60px] er-leading-tight er-tracking-normal er-font-bold er-inline-block;
+    @apply er-text-[60px] er-leading-tight er-tracking-normal er-font-semibold er-inline-block;
   }
 
   .text-size72 {
-    @apply er-text-[72px] er-leading-tight er-tracking-normal er-font-bold er-inline-block;
+    @apply er-text-[72px] er-leading-tight er-tracking-normal er-font-semibold er-inline-block;
   }
 
   /* 步数18 */
   .text-size90 {
-    @apply er-text-[90px] er-leading-[1.125] er-tracking-normal er-font-bold er-inline-block;
+    @apply er-text-[90px] er-leading-[1.125] er-tracking-normal er-font-semibold er-inline-block;
   }
 
   .text-size108 {
-    @apply er-text-[108px] er-leading-[1.125] er-tracking-normal er-font-bold er-inline-block;
+    @apply er-text-[108px] er-leading-[1.125] er-tracking-normal er-font-semibold er-inline-block;
   }
 
   .text-size126 {
-    @apply er-text-[126px] er-leading-[1.125] er-tracking-normal er-font-bold er-inline-block;
+    @apply er-text-[126px] er-leading-[1.125] er-tracking-normal er-font-semibold er-inline-block;
   }
 }
