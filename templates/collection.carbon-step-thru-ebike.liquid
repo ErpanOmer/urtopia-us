@@ -33,7 +33,7 @@
         <div class="er-grid er-grid-cols-2 er-bg-background er-rounded-3xl mb:er-grid-cols-1 er-p-6">
             {% render 'image', src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2x_7cd0ede3-6cba-4774-a7d2-b8ad0f7eb976.png?v=1737528934", width: 640 %}
             <div class="er-flex er-flex-col er-items-start er-justify-center er-ml-20 mb:er-ml-0 mb:er-pt-8 mb:er-order-[-1]">
-                <h2 class="text-size36 mb:er-text-4xl mb:er-leading-tight">Why Carbon 1 <br class="md:er-hidden">Step Thru eBike?</h2>
+                <h2 class="text-size36 mb:er-text-4xl mb:er-leading-tight">Why Carbon 1 <br class="md:er-hidden"><a class="my-link" href="https://newurtopia.com/blogs/blog/step-through-vs-step-over-ebike-frames">Step Thru eBike?</a></h2>
                 <ul class="text-size18 er-font-medium er-mt-10 er-mb-20 er-space-y-6 er-ml-8 marker:er-text-[#006EDD] mb:er-text-2xl mb:er-my-8 er-opacity-80 er-p-0">
                     <li>
                         Lightest Carbon E-Cruiser
@@ -181,85 +181,11 @@
             <span class="er-bg-gradient-to-r er-from-[#DB51A3] er-to-[#006CFF] text-size14 mb:er-text-xl er-font-bold er-py-2 er-px-6 er-rounded-3xl">New Year, New Gear</span>
             <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25383.svg?v=1737535368" width="330" height="75"  class="er-my-12 er-mb-20 mobileHide" alt="{{ page_description }}">
             <img loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25383_2d7039ac-4e90-4b3e-bf78-ca542abdcd77.svg?v=1737542387" width="250" height="57" class="er-my-10 pcHide" alt="{{ page_description }}">
-            {% render 'sale' %}
-            <style>
-                .sale {
-                    background-color: transparent;
-                    margin: 0;
-                }
-
-                .sale .u14DemiBold_v2 {
-                    display: none;
-                }
-
-                .sale .u36DemiBold_v2 {
-                    background-color: #006EDD;
-                    color: #fff;
-                    border-radius: 8px;
-                    width: 55px;
-                    height: 55px;
-                    line-height: 55px;
-                    font-size: 24px;
-                    margin-bottom: 4px;
-                }
-
-                .sale > div:not(.u14DemiBold_v2) {
-                    padding: 0;
-                    display: flex;
-                    align-items: center;
-                }
-
-                .sale > div:not(.u14DemiBold_v2) > div + div {
-                    border: none;
-                    position: relative;
-                    margin-left: 40px;
-                }
-
-                .sale > div:not(.u14DemiBold_v2) > div + div::before {
-                    content: ":";
-                    display: inline-flex;
-                    position: absolute;
-                    left: -40%;
-                    top: 30%;
-                    line-height: 0;
-                    font-size: 20px;
-                    color: #006EDD;
-                }
-
-                .sale > div:not(.u14DemiBold_v2) > div span:last-child {
-                    color: #006EDD;
-                    opacity: 1;
-                }
-
-                @media (max-width: 767px) {
-                    .sale .u36DemiBold_v2 {
-                        background-color: #fff;
-                        color: #006EDD;
-                        width: 42px;
-                        height: 42px;
-                        line-height: 42px;
-                        font-size: 18px;
-                    }
-
-                    .sale > div:not(.u14DemiBold_v2) > div span:last-child {
-                        color: #fff;
-                        font-size: 8px;
-                    }
-
-                    .sale > div:not(.u14DemiBold_v2) > div + div {
-                        margin-left: 30px;
-                    }
-
-                    .sale > div:not(.u14DemiBold_v2) > div + div::before {
-                        left: -37.5%;
-                        color: #fff;
-                    }
-                }
-            </style>
         </div>
         </div>
     </div>
-    <div class="centeral-content ebike-products">
+<div class="er-bg-background">
+  <div class="centeral-content ebike-products">
         <div class="product-grid">
             {% assign product = all_products['urtopia-carbon-1-step-thru-ebike'] %}
             {% assign product_variants = product.variants | where: 'available' %}
@@ -271,6 +197,17 @@
             product_url: product.url,
             product_uhmaya: product_uhmaya
             %}
+            {% assign product = all_products['urtopia-joy-carbon-fat-tire-ebike'] %}
+            {% assign product_variants = product.variants | where: 'available' %}
+            {% assign product_uhmaya = 'Ultralight<br>carbon frame, 3" fat tires<br>All terrain, 70<br>Miles' | split: ', ' %}
+            {% render 'product-card-2',
+              product_variants: product_variants,
+              product_name: 'Joy Carbon E-Bike',
+              product_description: 'All-terrain, cargo, family-friendly ride',
+              product_url: product.url,
+              product_uhmaya: product_uhmaya
+            %}
+            <div class="gray-background-color u30DemiBold_v2 lozad mobileHide" data-background-image="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/648_new_2x_ac657869-5be2-4f87-8f44-0a245c45a714.jpg?v=1737379197width=500">Full Carbon Lightweight Sporty</div>
             {% assign product = all_products['urtopia-carbon-fusion-gt'] %}
             {% assign product_variants = product.variants | where: 'available' %}
             {% assign product_uhmaya = '1500W<br>power, Carbon fiber<br>frame, 120<br>Miles' | split: ', ' %}
@@ -281,7 +218,7 @@
             product_url: product.url,
             product_uhmaya: product_uhmaya
             %}
-            <div class="gray-background-color u30DemiBold_v2 lozad mobileHide" data-background-image="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/648_new_2x_ac657869-5be2-4f87-8f44-0a245c45a714.jpg?v=1737379197width=500">Full Carbon Lightweight Sporty</div>
+            
             {% assign product = all_products['urtopia-carbon-1-pro-ebike'] %}
             {% assign product_variants = product.variants | where: 'available' %}
             {% assign product_uhmaya = '37 lbs<br>lightweight, Full<br>carbon fiber, 80<br>Miles' | split: ', ' %}
@@ -305,8 +242,7 @@
             %}
         </div>
         </div>
-    {% render 'sale-buy-any' %}
-
+</div>
 <script type="module">
   document.addEventListener('DOMContentLoaded', function () {
     new Swiper('.swappppr', {
