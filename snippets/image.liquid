@@ -22,9 +22,9 @@
   endif
 
    if width >= 640
-     assign mb_src = mb_src | append: "&width=640"
+     assign mb_src = mb_src
    else
-     assign mb_src = mb_src | append: "&width=" | append: width
+     assign mb_src = mb_src
    endif
 -%}
 {% if first_screen %}
@@ -33,8 +33,8 @@
 <picture>
     <source srcset="{%- if width >= 640 -%}{{ mb_src }} 640w{%- else -%}{{ mb_src }} {{ width }}w{%- endif -%}" media="(max-width: 768px)">
     <source srcset="
-        {%- if width >= 1280 -%}{{ src }}&width={{ 1280 }} 1280w,{%- endif -%}
-        {%- if width >= 1920 -%}{{ src }}&width={{ 1920 }} 1920w,{%- endif -%}
-        {{ src }}&width={{ width }} {{ width }}w" media="(min-width: 769px)">
+        {%- if width >= 1280 -%}{{ src }} 1280w,{%- endif -%}
+        {%- if width >= 1920 -%}{{ src }} 1920w,{%- endif -%}
+        {{ src }} {{ width }}w" media="(min-width: 769px)">
     <img src="{{ mb_src }}" class="{{ class }}" loading="{{ loading }}" decoding="{{ decoding }}" fetchpriority="{{ fetchpriority }}"  width="{{ width }}" height="{{ height }}" alt="{{ alt }}">
   </picture>
