@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --font-body-family: "Helvetica Now Display", -apple-system, BlinkMacSystemFont,
+  --font-body-family: "Inter", -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, Ubuntu, Helvetica Neue, Helvetica, Arial, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --font-body-style: normal;
