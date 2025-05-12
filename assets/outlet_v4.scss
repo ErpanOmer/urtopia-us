@@ -239,6 +239,12 @@ h4 {
             }
         }
 
+      &[data-stye="Rose Red"] {
+            &::after {
+                background-color: #FA003F;
+            }
+        }
+
       &[data-stye="Lime Green"] {
             &::after {
                 background-color: #E5ECC5;
@@ -342,6 +348,14 @@ h4 {
 
         &[data-stye="Black"]::after {
             background-color: #000;
+        }
+
+        &[data-stye="Rose Red"] {
+            border-color: #FA003F;
+
+            &::after {
+                background-color: #FA003F;
+            }
         }
 
 
