@@ -2202,34 +2202,6 @@ window.addEventListener('load', async () => {
     });
   };
 
-  if (global_config.is_mobile) {
-    waitForElement('#launcher', target => {
-      const patterns = [/\/products\//, /\/pages\/lightweight-ebike-urtopia-carbon-1-pro/]
-      for (const pattern of patterns) {
-        if (pattern.test(window.location.href)) {
-          $('#global2top').css('bottom', '116px');
-          target.style.bottom = '64px';
-          break;
-        }
-      }
-      
-      const iframeDoc = target.contentDocument || target.contentWindow.document;
-      // 在 iframe 内部插入样式
-      const style = iframeDoc.createElement('style');
-      style.textContent = `
-              body div[shape="circle"] {
-                width: 48px;
-                height: 48px;
-              }
-          `;
-      iframeDoc.head.appendChild(style);
-    }, {
-      disconnectOnFound: true,
-      root: document.body, // 监听整个页面
-      debounceTime: 200, // 降低回调触发频率
-    });
-  }
-
   
   if (![/\/collections\/e-bike-sale/, /\/collections\/e-bikes/, /\/pages\/carbon-expert/, /\/pages\/lightweight-ebike-urtopia-carbon-1-pro/, /\/collections\/urtopia-black-friday-sale/, /\/pages\/email-page/].some(pattern => pattern.test(window.location.pathname))) {
     task(() => {

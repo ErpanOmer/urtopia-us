@@ -207,7 +207,17 @@
               product_url: product.url,
               product_uhmaya: product_uhmaya
             %}
-            <div class="gray-background-color u30DemiBold_v2 lozad mobileHide" data-background-image="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/648_new_2x_ac657869-5be2-4f87-8f44-0a245c45a714.jpg?v=1737379197width=500">Full Carbon Lightweight Sporty</div>
+            {% assign product = all_products['urtopia-fusion-pro-carbon-long-range-ebike'] %}
+            {% assign product_variants = product.variants | where: 'available' %}
+            {% assign product_uhmaya = '50 lbs<br>lightweight, Carbon fiber<br>frame, 120<br>Miles' | split: ', ' %}
+            {% render 'product-card-2',
+              product_variants: product_variants,
+              product_name: 'Carbon Fusion Pro',
+              product_description: 'Explore Further with Dual Battery Range',
+              product_url: product.url,
+              product_uhmaya: product_uhmaya
+            %}
+            <!-- <div class="gray-background-color u30DemiBold_v2 lozad mobileHide" data-background-image="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/648_new_2x_ac657869-5be2-4f87-8f44-0a245c45a714.jpg?v=1737379197width=500">Full Carbon Lightweight Sporty</div> -->
             {% assign product = all_products['urtopia-carbon-fusion-gt'] %}
             {% assign product_variants = product.variants | where: 'available' %}
             {% assign product_uhmaya = '1500W<br>power, Carbon fiber<br>frame, 120<br>Miles' | split: ', ' %}

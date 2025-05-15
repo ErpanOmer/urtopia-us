@@ -22,7 +22,7 @@
       product_url: product.url,
       product_uhmaya: product_uhmaya
     %}
-    <div class="background-image er-rounded-2xl er-text-white er-aspect-[11/16]">
+    <!-- <div class="background-image er-rounded-2xl er-text-white er-aspect-[11/16]">
       <img loading="lazy" width="640" height="0" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25470_2x_a8d7e086-597a-461e-8db2-0c1f2451b638.jpg?v=1743039677&width=640" alt="{{ page_description }}">
       <div class="er-flex er-flex-col er-items-center er-justify-end er-text-center er-h-full er-pb-16 er-box-border">
         <h2 class="er-m-0 er-text-white text-size36"><span class="text-size20 er-font-medium">Smart E-Bikes on Sale </span><br>from {{ all_products['urtopia-carbon-fold'].price | money_without_trailing_zeros }}</h2>
@@ -39,7 +39,7 @@
               </div>
           </div>
       </div>
-    </div>
+    </div> -->
     {% assign product = all_products['urtopia-joy-carbon-fat-tire-ebike'] %}
     {% assign product_variants = product.variants | where: 'available' %}
     {% assign product_uhmaya = 'Ultralight<br>carbon frame, 3" fat tires<br>All terrain, 70<br>Miles' | split: ', ' %}
@@ -59,7 +59,17 @@
       product_description: 'Leisure cruising and sightseeing',
       product_url: product.url,
       product_uhmaya: product_uhmaya
-    %} 
+    %}
+    {% assign product = all_products['urtopia-fusion-pro-carbon-long-range-ebike'] %}
+    {% assign product_variants = product.variants | where: 'available' %}
+    {% assign product_uhmaya = '50 lbs<br>lightweight, Carbon fiber<br>frame, 120<br>Miles' | split: ', ' %}
+    {% render 'product-card-2',
+      product_variants: product_variants,
+      product_name: 'Carbon Fusion Pro',
+      product_description: 'Explore Further with Dual Battery Range',
+      product_url: product.url,
+      product_uhmaya: product_uhmaya
+    %}
     {% assign product = all_products['urtopia-carbon-fusion-gt'] %}
     {% assign product_variants = product.variants | where: 'available' %}
     {% assign product_uhmaya = '1500W<br>power, Carbon fiber<br>frame, 120<br>Miles' | split: ', ' %}

@@ -251,11 +251,17 @@ h4 {
             }
         }
 
-        &[data-stye="Charcoal Grey"] {
+        &[data-stye="Deep Sea Blue"] {
+            &::after {
+                background-color: #525D96;
+            }
+        }
+
+      &[data-stye="Charcoal Grey"] {
             &::after {
                 background-color: #6a6a6a;
             }
-        }
+      }
 
         &[data-stye="Creme"] {
             &::after {
@@ -348,6 +354,14 @@ h4 {
 
         &[data-stye="Black"]::after {
             background-color: #000;
+        }
+
+      &[data-stye="Deep Sea Blue"] {
+            border-color: #525D96;
+
+            &::after {
+                background-color: #525D96;
+            }
         }
 
         &[data-stye="Rose Red"] {
@@ -766,7 +780,7 @@ h4 {
                     border-radius: 30px;
                     transition: all .3s;
                     border: 2px solid #ddd;
-                    width: 55%;
+                    width: 75%;
                     position: relative;
                     background-color: #fff;
                     overflow: hidden;
@@ -1300,6 +1314,12 @@ h4 {
 }
 
 .ebike-products .product-grid .product-card[data-product-handle="urtopia-joy-carbon-fat-tire-ebike"] {
+    &::before {
+        content: "NEW";
+    }
+}
+
+.ebike-products .product-grid .product-card[data-product-handle="urtopia-fusion-pro-carbon-long-range-ebike"] {
     &::before {
         content: "NEW";
     }
