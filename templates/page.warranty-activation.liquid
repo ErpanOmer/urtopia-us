@@ -1,0 +1,239 @@
+<div class="background-image er-aspect-[5/1] er-text-white er-flex er-flex-col er-justify-center er-items-center er-font-base er-text-center mb:er-aspect-square er-px-12">
+        {% render 'image', first_screen: true, src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_21336.webp?v=1739850283" %}
+        <div class="background-mask er-bg-black/60"></div>
+        <h1 class="er-text-7xl mb:er-text-5xl er-text-white er-m-0 mb:er-leading-snug">Warranty Activation</h1>
+    </div>
+    <form id="form" class="er-max-w-3xl er-mx-auto er-px-12 er-my-48 er-text-dark/90 er-space-y-12 er-box-border er-flex er-flex-col er-overflow-hidden mb:er-my-24 mb:er-space-y-8">
+            <fieldset class="er-flex er-flex-col er-space-y-6 er-border-0 er-p-0">
+                <label for="email" class="text-size24 mb:er-text-3xl">Email:<span class="er-text-red-500">*</span></label>
+                <input type="email" id="email" name="email" placeholder="Please enter your email"
+                    class="mb:er-text-2xl er-box-border er-font-base er-w-full er-border-2 er-border-dark/30 placeholder:er-text-black/15 er-border-solid er-rounded-xl er-text-dark/85 er-text-3xl er-p-4 focus:er-border-primary/80 focus-visible:er-border-primary/80 focus:er-ring-primary focus:er-shadow-primary"
+                    required>
+            </fieldset>
+            <fieldset class="er-flex er-flex-col er-space-y-6 er-border-0 er-p-0">
+                <label for="serial_number" class="text-size24 mb:er-text-3xl">Frame Serial Number:<span class="er-text-red-500">*</span></label>
+                <input type="serial_number" id="serial_number" name="serial_number" placeholder="Please enter your serial number"
+                    class="mb:er-text-2xl er-box-border er-font-base er-w-full er-border-2 er-border-dark/30 placeholder:er-text-black/15 er-border-solid er-rounded-xl er-text-dark/85 er-text-3xl er-p-4 focus:er-border-primary/80 focus-visible:er-border-primary/80 focus:er-ring-primary focus:er-shadow-primary"
+                    required>
+            </fieldset>
+            <fieldset class="er-flex er-flex-col er-space-y-6 er-border-0 er-p-0">
+                <label for="purchase_channel" class="text-size24 mb:er-text-3xl">Purchase Channel:<span class="er-text-red-500">*</span></label>
+                <select id="purchase_channel" name="purchase_channel"
+                    class="mb:er-text-2xl er-box-border er-font-base er-w-full er-border-2 er-border-dark/30 er-border-solid er-rounded-xl er-text-dark/85 er-text-3xl er-p-4 focus:er-border-primary/80 focus-visible:er-border-primary/80 focus:er-ring-primary focus:er-shadow-primary"
+                    required>
+                    <option value="">----</option>
+                    <option value="online">Official Website</option>
+                    <option value="store">Physical Store</option>
+                </select>
+            </fieldset>
+            <!-- 实体店信息（仅在选择实体店时显示） -->
+            <div id="dealer_info" class="er-space-y-12" style="display:none;">
+                <fieldset class="er-flex er-flex-col er-space-y-6 er-border-0 er-p-0">
+                    <label for="dealer_name" class="text-size24 mb:er-text-3xl">Dealer Name:<span class="er-text-red-500">*</span></label>
+                    <input type="text" id="dealer_name" name="dealer_name"
+                        class="mb:er-text-2xl er-box-border er-font-base er-w-full er-border-2 er-border-dark/30 placeholder:er-text-black/15 er-border-solid er-rounded-xl er-text-dark/85 er-text-3xl er-p-4 focus:er-border-primary/80 focus-visible:er-border-primary/80 focus:er-ring-primary focus:er-shadow-primary">
+                </fieldset>
+
+                <fieldset class="er-flex er-flex-col er-space-y-6 er-border-0 er-p-0">
+                    <label for="dealer_address" class="text-size24 mb:er-text-3xl">Dealer Address:<span class="er-text-red-500">*</span></label>
+                    <input type="text" id="dealer_address" name="dealer_address"
+                        class="mb:er-text-2xl er-box-border er-font-base er-w-full er-border-2 er-border-dark/30 placeholder:er-text-black/15 er-border-solid er-rounded-xl er-text-dark/85 er-text-3xl er-p-4 focus:er-border-primary/80 focus-visible:er-border-primary/80 focus:er-ring-primary focus:er-shadow-primary">
+                </fieldset>
+            </div>
+            <fieldset class="er-flex er-flex-col er-space-y-6 er-border-0 er-p-0">
+                <label class="text-size24 mb:er-text-3xl">Order Information:<span class="er-text-red-500">*</span></label>
+                <div class="er-flex er-gap-8 er-items-center">
+                    <label class="er-flex er-items-center er-gap-2">
+                        <input type="radio" name="order_option" value="order_number" checked>
+                        <span class="mb:er-text-2xl er-text-2xl">Order Number</span>
+                    </label>
+                    <label class="er-flex er-items-center er-gap-2">
+                        <input type="radio" name="order_option" value="invoice_upload">
+                        <span class="mb:er-text-2xl er-text-2xl">Upload purchase receipt/Invoice</span>
+                    </label>
+                </div>
+
+                <!-- 订单号输入框 -->
+                <div id="order_number_field">
+                    <input type="text" id="order_number" name="order_number"
+                        class="mb:er-text-2xl er-box-border er-font-base er-w-full er-border-2 er-border-dark/30 placeholder:er-text-black/15 er-border-solid er-rounded-xl er-text-dark/85 er-text-3xl er-p-4 focus:er-border-primary/80 focus-visible:er-border-primary/80 focus:er-ring-primary focus:er-shadow-primary"
+                        placeholder="Please enter your order number" required>
+                </div>
+
+                <!-- 上传图片 -->
+                <div id="invoice_upload_field" style="display: none;">
+                    <input type="file" id="invoice_upload" name="invoice_upload" accept="image/*"
+                        class="er-text-3xl er-py-4 er-w-full er-bg-white">
+                    <!-- 上传状态显示区域 -->
+                    <div id="upload_status" style="margin-top: 10px; color: #333;"></div>
+
+                    <!-- 进度条区域 -->
+                    <div id="upload_progress" style="display:none; height: 10px; background: #f0f0f0; border-radius: 4px; margin-top: 10px;">
+                        <div id="progress_bar" style="height: 100%; width: 0%; background: #4caf50; border-radius: 4px;"></div>
+                    </div>
+                </div>
+            </fieldset>
+            <button type="submit" class="er-button !er-w-full er-mx-auto !er-mt-20">Submit</button>
+    </form>
+    <div class="er-max-w-screen-md mb:er-my-36 er-mx-auto er-px-12 er-my-48 er-text-dark/90 er-space-y-12 er-box-border er-flex-col er-overflow-hidden thankyou er-items-center er-justify-center er-text-center er-hidden">
+        <svg viewBox="64 64 896 896" focusable="false" class="er-fill-green-600" width="96" height="96"  aria-hidden="true"><path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm193.5 301.7l-210.6 292a31.8 31.8 0 01-51.7 0L318.5 484.9c-3.8-5.3 0-12.7 6.5-12.7h46.9c10.2 0 19.9 4.9 25.9 13.3l71.2 98.8 157.2-218c6-8.3 15.6-13.3 25.9-13.3H699c6.5 0 10.3 7.4 6.5 12.7z"></path></svg>
+        <h1 class="text-size60 mb:er-text-6xl">Thank You!</h1>
+        <p class="text-size18">
+            <span>We will get back to you as soon as possible with a response🙂</span>
+        </p>
+    </div>
+
+<script type="module">
+//     $(document).on('submit', `#form`, function (event) {
+//       event.preventDefault(); // 防止表单提交（为了演示）
+
+//       const values = {}
+//       // 获取表单的所有数据
+//       for (const { name, value } of $(this).serializeArray()) {
+//           values[name] = value
+//       }
+
+//       if (values.rule === 'sales_reps') {
+//           values.resume = $(`#form input[type='file']`).attr('data-file-url')
+//       }
+
+//       this.reset();
+
+//       $('.thankyou').addClass('er-flex').removeClass('er-hidden');
+//       $(this).hide();
+
+//       fetchBuried('dealers_and_salesreps', 'submit', values);
+//       return false
+//   });
+
+  $(document).on('submit', `#form`, function (event) {
+      event.preventDefault(); // 防止表单提交（为了演示）
+
+      const values = {}
+      // 获取表单的所有数据
+      for (const { name, value } of $(this).serializeArray()) {
+          values[name] = value
+      }
+
+     if (values.order_option === 'invoice_upload') {
+          values.order_image = $(`#form input[type='file']`).attr('data-file-url')
+      }
+
+      this.reset();
+
+      $('.thankyou').addClass('er-flex').removeClass('er-hidden');
+      $(this).hide();
+
+      //fetchBuried('warranty-activation', 'submit', values);
+
+      console.log(values)
+
+      return false
+  });
+
+$('input[name="order_option"]').on('change', function () {
+        const selected = $(this).val();
+        if (selected === 'order_number') {
+            $('#order_number_field').show();
+            $('#invoice_upload_field').hide();
+            $('#order_number').prop('required', true);
+            $('#invoice_upload').prop('required', false).val('');
+            $('#upload_status').text('')
+        } else {
+            $('#order_number_field').hide();
+            $('#invoice_upload_field').show();
+            $('#order_number').prop('required', false).val('');
+            $('#invoice_upload').prop('required', true);
+        }
+    });
+
+$('#purchase_channel').on('change', function () {
+        const selected = $(this).val();
+        const dealerSection = $('#dealer_info');
+        const dealerName = $('#dealer_name');
+        const dealerAddress = $('#dealer_address');
+
+        if (selected === 'store') {
+            dealerSection.show();
+            dealerName.prop('required', true);
+            dealerAddress.prop('required', true);
+        } else {
+            dealerSection.hide();
+            dealerName.prop('required', false).val('');
+            dealerAddress.prop('required', false).val('');
+        }
+    });
+
+  // 监听文件选择事件
+  $(document).off('change', `#form input[name='invoice_upload']`).on('change', `#form input[name='invoice_upload']`, function (event) {
+        const $input = $(this);
+        const file = this.files[0];
+        const $status = $('#upload_status');
+        const $progressWrap = $('#upload_progress');
+        const $progressBar = $('#progress_bar');
+
+        if (!file) return alert('Please select a file');
+
+        // 判断是否是图片
+        if (!file.type.startsWith('image/')) {
+            alert('Only image files can be uploaded');
+            $input.val('');
+            return;
+        }
+
+        // 判断文件大小不超过 4MB
+        const maxSize = 4 * 1024 * 1024;
+        if (file.size > maxSize) {
+            alert('Images cannot exceed 4MB');
+            $input.val('');
+            return;
+        }
+
+        // 禁用上传，初始化状态
+        $input.prop('disabled', true);
+        $status.text('Uploading, please wait...');
+        $progressWrap.show();
+        $progressBar.css('width', '0%');
+
+        const formData = new FormData();
+        formData.append('file', file);
+
+        $.ajax({
+            url: 'https://urtopia-file-upload.erpanomer.workers.dev/',
+            type: 'POST',
+            data: formData,
+            contentType: false,
+            processData: false,
+            xhr: function () {
+                const xhr = new window.XMLHttpRequest();
+                xhr.upload.addEventListener("progress", function (evt) {
+                    if (evt.lengthComputable) {
+                        const percent = Math.round((evt.loaded / evt.total) * 100);
+                        $progressBar.css('width', percent + '%');
+                    }
+                }, false);
+                return xhr;
+            },
+            success: function (res) {
+                if (res.success) {
+                    $status.text('✅ Upload successful!');
+                    $input.attr('data-file-url', res.url)
+                    console.log('上传结果：', res);
+                } else {
+                    $status.text('❌ Upload failed:' + res.error);
+                }
+            },
+            error: function (xhr, status, error) {
+                $status.text('❌ Upload error:' + error);
+            },
+            complete: function () {
+                // 重置状态
+                $input.prop('disabled', false)
+                setTimeout(() => {
+                    $progressWrap.fadeOut();
+                    $progressBar.css('width', '0%');
+                }, 1000);
+            }
+        });
+    });
+</script>
