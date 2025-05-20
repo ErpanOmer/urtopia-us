@@ -168,15 +168,31 @@ $('#purchase_channel').on('change', function () {
   $(document).off('change', `#form input[name='invoice_upload']`).on('change', `#form input[name='invoice_upload']`, function (event) {
         const $input = $(this);
         const file = this.files[0];
-        const $status = $('#upload_status');
+        const $status = $('#upload_status').val('');
         const $progressWrap = $('#upload_progress');
         const $progressBar = $('#progress_bar');
 
+        console.log(file)
+
         if (!file) return alert('Please select a file');
 
-        // 判断是否是图片
-        if (!file.type.startsWith('image/')) {
-            alert('Only image files can be uploaded');
+         // 允许的 MIME 类型
+        const allowedMimeTypes = [
+            'image/jpeg',
+            'image/png',
+            'image/gif',
+            'image/webp',
+            'image/svg+xml'
+        ];
+        // 允许的扩展名
+        const allowedExtensions = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'svg'];
+
+        const mimeType = file.type;
+        const extension = file.name.split('.').pop().toLowerCase();
+
+        // 检查 MIME 类型和扩展名
+        if (!allowedMimeTypes.includes(mimeType) || !allowedExtensions.includes(extension)) {
+            alert('Only images in JPEG, PNG, GIF, WebP, and SVG formats are allowed to be uploaded');
             $input.val('');
             return;
         }
