@@ -14,6 +14,20 @@
       padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
     }
 
+    @media screen and (max-width: 990px) {
+      .section-{{ section.id }}-padding {
+         padding-bottom: 30px; 
+      }
+
+      .product__title h1 {
+          font-size: 32px;
+      }
+    }
+
+    shopify-accelerated-checkout {
+      --shopify-accelerated-checkout-button-border-radius: 30px;
+    }
+
     @media screen and (min-width: 750px) {
       .section-{{ section.id }}-padding {
         padding-top: {{ section.settings.padding_top }}px;
@@ -1114,7 +1128,14 @@
 }
 {% endschema %}
 
-
+{% if request.path == '/products/hitch-bike-rack-2-bikes' %}
+  <div class="centeral-content">
+    <iframe class="er-aspect-video er-border-none er-mb-48 mb:er-mb-24 er-w-full"
+                        src="https://www.youtube.com/embed/-yoT5a7z0MQ?start=0&autoplay=0&loop=0&mute=0&controls=1&enablejsapi=1"
+                        allowfullscreen title="Hitch Bike Rack" loading="lazy"></iframe>
+  </div>
+{% endif %}
+                    
 <script type="module">
 
 let adding = false

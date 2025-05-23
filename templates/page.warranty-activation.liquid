@@ -124,7 +124,22 @@
       $('.thankyou').addClass('er-flex').removeClass('er-hidden');
       $(this).hide();
 
-      //fetchBuried('warranty-activation', 'submit', values);
+      fetch('https://api-test.newurtopia.com/third_part/product_activation', {
+        'method': 'POST',
+        'headers': {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          "email": values.email,
+          "frame_no": values.serial_number,
+          "source": location.host,
+          "channel": values.purchase_channel,
+          "dealer_name": values.dealer_name,
+          "dealer_address": values.dealer_address,
+          "order_no": values.order_number,
+          "transaction_voucher": values.order_image
+        })
+      })
 
       console.log(values)
 
