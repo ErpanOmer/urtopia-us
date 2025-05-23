@@ -20,50 +20,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 {{ 'outlet_v4.scss.css' | asset_url | stylesheet_tag: preload: true }}
 
 <div class="centeral-content ebike-products" style="margin-top: 0;"> 
-    <div class="product-grid">
-        {% assign product = all_products['urtopia-carbon-fold'] %}
-        {% assign product_variants = product.variants | where: 'available' %}
-        {% assign product_uhmaya = '29 lbs<br>lightweight, Full<br>carbon fiber, Instant<br>folding' | split: ', ' %}
-        {% render 'product-card-2',
-        product_variants: product_variants,
-        product_name: 'Carbon Fold 1',
-        product_description: 'Lightest and smallest foldable ebike',
-        product_url: product.url,
-        product_uhmaya: product_uhmaya
-        %}
-        {% assign product = all_products['urtopia-carbon-1-step-thru-ebike'] %}
-    {% assign product_variants = product.variants | where: 'available' %}
-    {% assign product_uhmaya = '36 lbs<br>lightweight, Full<br>carbon fiber, 80<br>Miles' | split: ', ' %}
-    {% render 'product-card-2',
-      product_variants: product_variants,
-      product_name: 'Carbon 1 Step-Thru',
-      product_description: 'Leisure cruising and sightseeing',
-      product_url: product.url,
-      product_uhmaya: product_uhmaya
-    %}
-    <div class="gray-background-color u30DemiBold_v2 lozad mobileHide" data-background-image="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/648_new_2x_ac657869-5be2-4f87-8f44-0a245c45a714.jpg?v=1737379197width=500">Full Carbon Lightweight Sporty</div>
-    {% assign product = all_products['urtopia-carbon-1-pro-ebike'] %}
-    {% assign product_variants = product.variants | where: 'available' %}
-    {% assign product_uhmaya = '37 lbs<br>lightweight, Full<br>carbon fiber, 80<br>Miles' | split: ', ' %}
-    {% render 'product-card-2',
-      product_variants: product_variants,
-      product_name: 'Carbon 1 Pro',
-      product_description: 'City commuting and workout',
-      product_variant_options_find_sort: 'M,L,S',
-      product_url: product.url,
-      product_uhmaya: product_uhmaya
-    %}
-    {% assign product = all_products['urtopia-carbon-fusion-gt'] %}
-    {% assign product_variants = product.variants | where: 'available' %}
-    {% assign product_uhmaya = '1500W<br>power, Carbon fiber<br>frame, 120<br>Miles' | split: ', ' %}
-    {% render 'product-card-2',
-      product_variants: product_variants,
-      product_name: 'Carbon Fusion GT',
-      product_description: 'All-day, all-terrain adventures',
-      product_url: product.url,
-      product_uhmaya: product_uhmaya
-    %}
-    </div>
+    {% render: "product-cards" %}
 </div>
 
 <script type="module">
