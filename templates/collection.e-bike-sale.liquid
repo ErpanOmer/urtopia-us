@@ -1,12 +1,8 @@
 {{ 'outlet_v4.scss.css' | asset_url | stylesheet_tag: preload: true }}
-<h1 class="er-sr-only">{{ page_title }}</h1>
 <div class="background-image er-aspect-[1920/750] er-pt-16 mb:er-aspect-[375/500] mb:er-pt-14">
         {% render 'image', first_screen: true,  mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC05417_2x_1474f03c-5e3f-434a-a1b3-fdf81084efe4.jpg?v=1745911864", src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC05417_2x_f1dc989c-cc0d-43fc-b34a-227832f564d6.jpg?v=1745911339' %}
         <div class="centeral-content er-flex er-flex-col er-items-center">
-            <img width="300" height="0"
-                class="mb:er-max-w-[220px]"
-                src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Memorial_Day_Sale_2x_27c97e8e-84ed-4a54-9237-98bb7f14b683.png?v=1747028744"
-                alt="{{ page_title }}">
+                <h1 class="text-size36 er-text-white er-mb-6 mb:er-text-4xl er-text-center">{{ settings.sale_name }}</h1>
                 <img class="mb:er-max-w-sm mb:er-mb-6" width="335" height="75" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25875_2x_91eb65db-3b79-4afa-865b-3b0895576482.png?v=1745910602">
                 {% render 'sale' %}
                 <style>
