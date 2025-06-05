@@ -479,38 +479,15 @@ h4 {
     }
 
     .tags {
-        display: flex;
-        flex-wrap: wrap;
-        flex: 1;
         position: absolute;
-        left: 0;
-        top: 0;
-        right: 60%;
-        background-color: #ffdf48;
-        height: 50px;
-        border-bottom-right-radius: 50px;
-        align-items: flex-start;
-        justify-content: flex-start;
-        text-align: center;
-        user-select: none;
-
-       & > span {
-            background-color: #000;
-            color: #ffdf48;
-            display: flex;
-            height: 100%;
-            width: 87.5%;
-            font-size: 22px;
-            font-weight: 600;
-            align-items: center;
-            justify-content: flex-start;
-            border-bottom-right-radius: 50px;
-            padding-left: 15px;
-
-            span {
-                transform: translate(3px, 3px);
-            }
-        }
+        top: 15px;
+        left: 15px;
+        background-image: linear-gradient(90deg, #ff3684, #ff8f1d);
+        padding: 5px 10px;
+        border-radius: 8px;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 600;
     }
 
     .variant-image {
@@ -618,7 +595,7 @@ h4 {
         }
 
         &>.u20DemiBold_v2 {
-            font-size: 16px;
+            /* font-size: 16px; */
         }
 
         .my-button {
@@ -689,14 +666,6 @@ h4 {
 
             .product-card {
                 .tags {
-                    & > span {
-                        padding-left: 12px;
-                        font-size: 18px;
-    
-                        span {
-                            font-size: 12px
-                        }
-                    }
                 }
             }
         }
@@ -1040,9 +1009,6 @@ h4 {
     }
 }
 
-.ebike-products .product-grid .product-card .tags {
-    background: linear-gradient(180deg, #FF3684, #FF8F1D);
-}
 
 .ebike-products .product-grid .product-card .tags>span {
     color: #fff;
@@ -1296,14 +1262,18 @@ h4 {
     &::before {
         content: "Smart Ebike";
         position: absolute;
-        top: 10px;
-        right: 10px;
-        background-image: linear-gradient(90deg, #FF3684, #FF8F1D);
-        padding: 4px 18px;
-        border-radius: 20px;
-        color: #fff;
+        top: 15px;
+        right: 15px;
+        background-color: #FF3B0015;
+        padding: 0 10px;
+        border-radius: 5px;
+        color: #FF4500;
         font-size: 14px;
         font-weight: 600;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
 

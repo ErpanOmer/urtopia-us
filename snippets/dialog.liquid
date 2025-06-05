@@ -1,13 +1,6 @@
 <dialog id="SubscribeEmailDialog">
     <div class="subscribe-container">
-        <img
-          class="er-object-cover er-h-full er-w-full mb:er-h-80"
-          src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3333_2x_43420ed3-9c2e-4434-ba6b-0c41a95690d3.jpg?v=1734088969&width=500"
-          alt="{{ settings.sale_name }}"
-          fetchpriority="low" loading="lazy" width="488" height="609"
-          srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC05242_2x_145444b3-f633-4add-ae46-aeea0ea8a790.jpg?v=1745221037&width=500 768w, https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC05242_2x_971f914d-860e-4600-8210-a8a1cff3f588.jpg?v=1745221033&width=640 1920w"
-          sizes="(max-width: 768px) 84vw,(min-width: 769px) 100vw"
-        >
+        {% render 'image', class: "er-h-full er-w-full" mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC06457_2x_c3ceb14e-56b1-4227-bd69-4837f2962bfa.jpg?v=1749112556", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC06457_2x_d5b9a43b-372b-4358-a45f-1d6fd8814a88.jpg?v=1749112562" %}
         <div class="subscribe">
             <span class="text-size30 mb:er-text-3xl" style="color: #198CBA;">{{ settings.sale_name }}</span>
             <div class="u60DemiBold_v2 er-mt-16 er-mb-4 mb:er-mt-4">{{ all_products["urtopia-carbon-fusion-gt"].compare_at_price |  minus: all_products["urtopia-carbon-fusion-gt"].price | money_without_trailing_zeros }}<span class="u30DemiBold_v2">OFF</span></div>
