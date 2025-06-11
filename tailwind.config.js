@@ -28,6 +28,7 @@ export default {
         gray: '#A0A1A2',
         secondary: '#E2542E',
         background: '#F7F8FA',
+        'background-warm': '#F9F7F6',
         border: '#EBEDF0',
         salecolor: '#D50B28',
       },

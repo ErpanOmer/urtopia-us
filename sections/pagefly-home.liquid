@@ -88,7 +88,6 @@
   </video>
 </div>
 <div class="app background-image">
-  {% render 'image', src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24791_2x_3a85f9ce-7b01-48de-b30d-ca72f5b7fde2.jpg?v=1727261952", mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24787_2x_bfcc03fe-7337-4eca-8a16-85dbc6ef9936.jpg?v=1727329919" %}
   <h2 class="u36DemiBold_v2">The bicycle with a mind</h2>
   <p class="u17Light_v2">
     <span>
@@ -97,8 +96,15 @@
     </span>
   </p>
   <a class="my-button my-button-black" target="_blank" href="/pages/pages-smartest-ebike"><span>Learn More</span></a>
+  <video class="lozad mb:!er-static" playsinline loop autoplay muted>
+    <!-- PC 端视频 -->
+    <source data-src="https://cdn.shopify.com/videos/c/o/v/76775522eab34d2080353ee97be805b2.mp4" type="video/mp4" media="(min-width: 768px)">
+    <!-- 移动端视频 -->
+    <source data-src="https://cdn.shopify.com/videos/c/o/v/4b7a075f25f74c209d3d1e47c80b916f.mp4" type="video/mp4" media="(max-width: 767px)">
+  </video>
 </div>
-<div class="centeral-content reviews">
+<section class="er-bg-white">
+  <div class="centeral-content reviews">
   <div class="background-image">
     {% render 'image', src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24792_2x_2408ba49-c33a-486e-affe-b205b3e3214e.jpg?v=1727320177", width: 640 %}
     <span class="u24Medium_v2">Linus Tech Tips</span>
@@ -120,7 +126,9 @@
     <a class="my-button my-button-ghost" target="_blank" href="/pages/sustainability-carbon-credit"><span>Learn More</span></a>
   </div>
 </div>
-<div class="testride centeral-content">
+</section>
+<section class="er-bg-white">
+  <div class="testride centeral-content">
   <a href="/pages/test-ride" class="background-image">
     {% render 'image', class: "mb:!er-object-contain mb:!er-object-top", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24794_2x_dcbf7d8a-a1d0-4378-a541-a32768e95425.jpg?v=1729411137", mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2024-10-16_14.18.56_2x_9d8f4f50-ef6c-42ac-aa99-66f6d65e2e6b.jpg?v=1729411226", width: 500 %}
     <span class="u36DemiBold_v2">Test Ride Spots</span>
@@ -140,6 +148,7 @@
     <span class="my-link er-text-white mb:er-text-dark er-leading-none"><span>Learn More</span></span>
   </a>
 </div>
+</section>
 <div class="blogs">
   <div class="centeral-content">
     {%- assign article = articles['blog/win-a-urtopia-e-bike-on-cbss-hit-show-let-s-make-a-deal'] -%}

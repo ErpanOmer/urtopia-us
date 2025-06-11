@@ -1,3 +1,10 @@
+$background: rgb(247, 247, 247);
+
+
+#MainContent {
+    background-color: $background;
+}
+
 .u17Light_v2 {
     @media (max-width: 767px) {
         font-size: 14px;
@@ -46,6 +53,7 @@ h4 {
     padding-left: 60px;
     border-radius: 10px;
     overflow: hidden;
+    background-color: $background;
 
     .u17Light_v2 {
         max-width: 440px;
@@ -193,11 +201,15 @@ h4 {
 
     @media (max-width: 767px) {
         margin-top: 13.5vw;
-        padding: 0 30px;
+        padding: 0;
         aspect-ratio: 375 / 613;
 
         .u36DemiBold_v2 {
             font-size: 24px;
+        }
+
+        .u17Light_v2 {
+            padding: 0 30px;
         }
     }
 }
@@ -207,7 +219,7 @@ h4 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 20px;
-    margin-top: 17vh;
+    padding-top: 17vh;
 
     &>div {
         aspect-ratio: 9/8;
@@ -232,7 +244,7 @@ h4 {
     @media (max-width: 767px) {
         grid-template-columns: 1fr;
         grid-row-gap: 10px;
-        margin-top: 13.5vw;
+        padding-top: 23.5vw;
         
         & > div {
             aspect-ratio: 280/315;
@@ -258,7 +270,7 @@ h4 {
 
 
 .testride {
-    margin-top: 13vh;
+    padding: 13vh 30px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap: 20px;
@@ -295,7 +307,7 @@ h4 {
 
     @media (max-width: 767px) {
         grid-template-columns: 1fr;
-        margin-top: 13.5vw;
+        padding: 23.5vw 8%;
 
 
         & > a {
@@ -328,7 +340,6 @@ h4 {
     padding: 14vh 0 22vh;
     background-color: #000;
     color: #fff;
-    margin-top: 15vh;
 
     .centeral-content {
         display: grid;
