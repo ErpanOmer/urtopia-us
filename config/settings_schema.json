@@ -6,7 +6,13 @@
         "type": "text",
         "id": "sale_name",
         "label": "活动名称",
-        "default": "Christmas Sale"
+        "default": "Independence Day Sale"
+      },
+      {
+        "type": "text",
+        "id": "shop_count",
+        "label": "店铺数量",
+        "default": "700+"
       },
       {
         "type": "text",
@@ -78,7 +84,7 @@
         "type": "text",
         "id": "home_page_blogs",
         "label": "首页blog展示",
-        "default": "blog\/the-best-e-bike-for-tall-people,blog\/win-a-urtopia-e-bike-on-cbss-hit-show-let-s-make-a-deal,blog\/the-smartest-e-bike-youll-never-lose"
+        "default": "blog/carbon-vs-aluminum-ebike-frames,blog\/win-a-urtopia-e-bike-on-cbss-hit-show-let-s-make-a-deal,blog\/the-smartest-e-bike-youll-never-lose"
       },
       {
         "type": "text",

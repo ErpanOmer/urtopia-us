@@ -1,7 +1,7 @@
 {{ 'home.scss.css' | asset_url | stylesheet_tag: preload: true }}
 <h1 class="er-sr-only">Urtopia Ebike - Sleek, Full Carbon, Lightweight, Smart</h1>
 <div class="background-image er-aspect-[1920/750] mb:er-aspect-[375/500] er-text-white">
-{% render 'image', first_screen: true, mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25907_2x_116a16a1-aa82-4e20-96a0-42bf594d8138.jpg?v=1747028395", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25877_2x_75e9635c-be6d-49d6-a58e-23ea76373694.jpg?v=1747028238" %}
+{% render 'image', first_screen: true, mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19715_2x_c0f5041d-72ba-4d2e-aeeb-dcffd74bfad5.jpg?v=1750400997", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19727_2x_0bcebcf3-e6c1-4f26-bd65-09864cb4cdd9.jpg?v=1750399276" %}
   <div class="centeral-content er-flex er-justify-end er-flex-col er-items-center er-text-center er-h-full er-pb-16 mb:er-pt-12 mb:er-justify-start">
     <div class="er-bg-gradient-to-r er-from-[#FF3684] er-to-[#FF8F1D] text-size14 er-font-bold er-py-2 er-px-6 er-rounded-3xl">{{ settings.sale_name }}</div>
     <img class="er-my-10 mb:er-max-w-sm" width="335" height="75" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25875_2x_91eb65db-3b79-4afa-865b-3b0895576482.png?v=1745910602">
@@ -13,14 +13,10 @@
         <div class="centeral-content mb:er-px-6">
             <div class="background-image er-aspect-[1280/450] mb:er-aspect-[375/600] er-rounded-3xl er-overflow-hidden">
             
-            {% render 'image', first_screen: true, class: "mb:!er-object-top" width: 1440, mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250421-174717.jpg?v=1745228852", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250421-174711.jpg?v=1745228852" %}
+            {% render 'image', first_screen: true, class: "mb:!er-object-top" width: 1440, mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25973_2x_ab775327-651c-40ea-810b-5f35c74bc138.jpg?v=1750401043", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250613-134825_2x_f2b13729-0500-4de0-8feb-ff9d15168faf.jpg?v=1750399453" %}
             <div
                     class="er-flex er-flex-col er-items-start er-justify-center er-h-full er-pl-28 er-max-w-2xl mb:er-px-8 mb:er-pt-10 mb:er-items-center mb:er-justify-start mb:er-text-center">
-                    <h2
-                        class="er-m-0 er-text-white text-size18 er-bg-gradient-to-r er-from-[#FF3684] er-to-[#FF8F1D] er-py-3 er-px-11 er-rounded-full mb:er-self-center mb:er-text-2xl">
-                        <b>BEST PRICE EVER</b>
-                    </h2>
-                    <div class="md:er-hidden er-flex-1"></div>
+                    <img width="106" height="96" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2025-03-11_10.04.23_2x_111b6995-cd40-4ab4-b842-2fdcf298d0b5.png?v=1750399446" loading="lazy" alt="ces">
                     <h3 class="er-m-0 er-text-white text-size24 er-font-medium er-mt-6 mb:er-text-2xl">Best-valued Smart Carbon Ebike</h3>
                     <p class="text-size18 er-my-16 mb:er-text-2xl mb:er-my-8">
                         <span>
@@ -131,8 +127,8 @@
   <div class="testride centeral-content">
   <a href="/pages/test-ride" class="background-image">
     {% render 'image', class: "mb:!er-object-contain mb:!er-object-top", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24794_2x_dcbf7d8a-a1d0-4378-a541-a32768e95425.jpg?v=1729411137", mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2024-10-16_14.18.56_2x_9d8f4f50-ef6c-42ac-aa99-66f6d65e2e6b.jpg?v=1729411226", width: 500 %}
-    <span class="u36DemiBold_v2">Test Ride Spots</span>
-    <span class="u17Light_v2">Experience the bike in real</span>
+    <span class="u36DemiBold_v2">{{ settings.shop_count }} Bike Shops</span>
+    <span class="u17Light_v2">Nearby support, nationwide coverage</span>
     <span class="my-link er-text-white mb:er-text-dark er-leading-none"><span>Learn More</span></span>
   </a>
   <a href="/pages/care" class="background-image">
@@ -151,23 +147,23 @@
 </section>
 <div class="blogs">
   <div class="centeral-content">
-    {%- assign article = articles['blog/win-a-urtopia-e-bike-on-cbss-hit-show-let-s-make-a-deal'] -%}
+    {%- assign article = articles['blog/carbon-vs-aluminum-ebike-frames'] -%}
     <a href="{{ article.url }}" class="er-text-white">
-      {{ article | image_url: width: 500 | image_tag: loading: 'lazy', fetchpriority: "low", decoding: "async" }}
+      {{ article | image_url: width: 800 | image_tag: loading: 'lazy' }}
       <h3 class="u20Medium_v2 er-text-white">{{ article.title }}</h3>
       <div class="flex-1"></div>
       <span class="text-size16 er-underline er-underline-offset-2">Learn More</span>
     </a>
-    {%- assign article = articles['blog/the-best-e-bike-for-tall-people'] -%}
+    {%- assign article = articles['blog/carbon-fold-1-review-by-ebike-escape'] -%}
     <a href="{{ article.url }}" class="er-text-white">
-      {{ article | image_url: width: 500 | image_tag: loading: 'lazy', fetchpriority: "low", decoding: "async" }}
+      {{ article | image_url: width: 800 | image_tag: loading: 'lazy' }}
       <h3 class="u20Medium_v2 er-text-white">{{ article.title }}</h3>
       <div class="flex-1"></div>
       <span class="text-size16 er-underline er-underline-offset-2">Learn More</span>
     </a>
-    {%- assign article = articles['blog/the-smartest-e-bike-youll-never-lose'] -%}
+    {%- assign article = articles['blog/increase-electric-bike-range-tips'] -%}
     <a href="{{ article.url }}" class="er-text-white">
-      {{ article | image_url: width: 500 | image_tag: loading: 'lazy', fetchpriority: "low", decoding: "async" }}
+      {{ article | image_url: width: 800 | image_tag: loading: 'lazy' }}
       <h3 class="u20Medium_v2 er-text-white">{{ article.title }}</h3>
       <div class="flex-1"></div>
       <span class="text-size16 er-underline er-underline-offset-2">Learn More</span>

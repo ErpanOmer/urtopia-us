@@ -443,6 +443,7 @@
                         <div class="hedaer-secondary-menu">
                               <div class="links">
                                   <div class="u24Medium_v2">Explore Urtopia world</div>
+                                  <a href="/collections/e-bike-sale" class="u14Medium_v2 er-bg-gradient-to-r er-from-[#FF3684] er-to-[#FF8F1D] text-size14 er-font-bold er-py-2 er-px-6 er-rounded-3xl er-text-white er-w-fit !er-opacity-100">Ebikes on Sale</a>
                                   {%- for childlink in link.links -%}
                                     <a class="u14Medium_v2" href="{{ childlink.url }}">{{ childlink.title }}</a>
                                   {% endfor %}
@@ -450,21 +451,25 @@
                               </div>
                               <div class="flex-1 centreallllll">
                                   <div class="supportssssss">
-                                      <div class="u11Medium_v2">
-                                        <img loading="lazy" fetchpriority="low" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_17960_2x_b54a5500-60e1-44b7-ba11-ffac13f27945.png?v=1697791367"  width="30" height="30" alt="Shipping">
-                                        <span>Free Shipping</span>
+                                     <div class="u11Medium_v2">
+                                        <img width="25" height="25" loading="lazy" fetchpriority="low" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/ChatGPT_Image_Jun_20_2025_03_17_09_PM.png?v=1750404222" alt="ul">
+                                        <span>UL Safety Certified</span>
                                       </div>
                                       <div class="u11Medium_v2">
-                                        <img loading="lazy" fetchpriority="low" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_17959_2x_5daec689-64b5-442d-b3f2-64aa9bdf17f0.png?v=1697791373" width="30" height="30" alt="14-Day Returns">
-                                        <span>14-Day Returns</span>
+                                        <img loading="lazy" fetchpriority="low" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/ChatGPT_Image_Jun_20_2025_03_32_56_PM.png?v=1750405019" width="30" height="30" alt="Flexible Payment">
+                                        <span>{{ settings.shop_count }} Bike Shops</span>
                                       </div>
                                       <div class="u11Medium_v2">
                                         <img loading="lazy" fetchpriority="low" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_17958_2x_41614a03-d5f7-4c8a-b655-e3ba79c626a6.png?v=1697791379" width="30" height="30" alt="2-Year Warranty">
                                         <span>2-Year Warranty</span>
                                       </div>
                                       <div class="u11Medium_v2">
-                                        <img loading="lazy" fetchpriority="low" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20231027-142058.png?v=1698387684" width="30" height="30" alt="Flexible Payment">
-                                        <span>Flexible Payment</span>
+                                        <img loading="lazy" fetchpriority="low" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_17960_2x_b54a5500-60e1-44b7-ba11-ffac13f27945.png?v=1697791367"  width="30" height="30" alt="Shipping">
+                                        <span>Free Shipping</span>
+                                      </div>
+                                      <div class="u11Medium_v2">
+                                        <img loading="lazy" fetchpriority="low" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Mask_Group_17959_2x_5daec689-64b5-442d-b3f2-64aa9bdf17f0.png?v=1697791373" width="30" height="30" alt="14-Day Returns">
+                                        <span>14-Day Trial</span>
                                       </div>
                                   </div>
                                   <div class="flex-1"></div>
@@ -473,49 +478,49 @@
                                       <div class="by-model" href="{{ productttttt.first.url }}">
                                           <img loading="lazy" fetchpriority="low" width="175" height="113" alt="Urtopia Ebike - Sleek, Full Carbon, Lightweight, Smart" src="{{ productttttt.first.featured_image | image_url: width: 500 }}">
                                           <div class="flex-1"></div>  
-                                          <div class="u20DemiBold_v2">Joy Carbon</div>
-                                          <div class="u14Light_v2">Lightweight Fat Tire Ebike</div>
-                                          <span class="u17DemiBold_v2 emphasize" {% unless productttttt.first.compare_at_price == productttttt.first.price %}data-price="{{ productttttt.first.compare_at_price | money_without_trailing_zeros }}"{% endunless %}>{{ productttttt.first.price | money_without_trailing_zeros }}</span>
+                                          <div class="u17DemiBold_v2">Joy Carbon</div>
+                                          <div class="er-text-xl er-my-2">Lightweight Fat Tire Ebike</div>
+                                          <span class="u14DemiBold_v2 emphasize" {% unless productttttt.first.compare_at_price == productttttt.first.price %}data-price="{{ productttttt.first.compare_at_price | money_without_trailing_zeros }}"{% endunless %}>{{ productttttt.first.price | money_without_trailing_zeros }}</span>
                                       </div>
                                     {% assign productttttt =  all_products["urtopia-carbon-fold"].variants | where: "title", "One Size / Saffron Yellow" %}
                                       <div class="by-model" href="{{ productttttt.first.url }}">
                                           <img loading="lazy" fetchpriority="low" decoding="async" width="180" height="113" alt="Urtopia Ebike - Sleek, Full Carbon, Lightweight, Smart" src="{{ productttttt.first.featured_image | image_url: width: 500 }}">
                                           <div class="flex-1"></div>
-                                          <div class="u20DemiBold_v2">Carbon Fold 1</div>
-                                          <div class="u14Light_v2">Lightweight Folding Ebike</div>
-                                          <span class="u17DemiBold_v2 emphasize" {% unless productttttt.first.compare_at_price == productttttt.first.price %}data-price="{{ productttttt.first.compare_at_price | money_without_trailing_zeros }}"{% endunless %}>{{ productttttt.first.price | money_without_trailing_zeros }}</span>
+                                          <div class="u17DemiBold_v2">Carbon Fold 1</div>
+                                          <div class="er-text-xl er-my-2">Lightweight Folding Ebike</div>
+                                          <span class="u14DemiBold_v2 emphasize" {% unless productttttt.first.compare_at_price == productttttt.first.price %}data-price="{{ productttttt.first.compare_at_price | money_without_trailing_zeros }}"{% endunless %}>{{ productttttt.first.price | money_without_trailing_zeros }}</span>
                                       </div>
                                     {% assign productttttt =  all_products["urtopia-carbon-1-pro-ebike"].variants | where: "title", "M / Matte Black" %}
                                       <div class="by-model" href="/pages/lightweight-ebike-urtopia-carbon-1-pro">
                                           <img loading="lazy" fetchpriority="low" width="180" height="113" alt="Urtopia Ebike - Sleek, Full Carbon, Lightweight, Smart" src="{{ productttttt.first.featured_image | image_url: width: 500 }}">
                                           <div class="flex-1"></div>
-                                          <div class="u20DemiBold_v2">Carbon 1 Pro</div>
-                                          <div class="u14Light_v2">Lightweight Trekking Ebike</div>
-                                          <span class="u17DemiBold_v2 emphasize" {% unless productttttt.first.compare_at_price == productttttt.first.price %}data-price="{{ productttttt.first.compare_at_price | money_without_trailing_zeros }}"{% endunless %}>{{ productttttt.first.price | money_without_trailing_zeros }}</span>
+                                          <div class="u17DemiBold_v2">Carbon 1 Pro</div>
+                                          <div class="er-text-xl er-my-2">Lightweight Trekking Ebike</div>
+                                          <span class="u14DemiBold_v2 emphasize" {% unless productttttt.first.compare_at_price == productttttt.first.price %}data-price="{{ productttttt.first.compare_at_price | money_without_trailing_zeros }}"{% endunless %}>{{ productttttt.first.price | money_without_trailing_zeros }}</span>
                                       </div>
                                     {% assign productttttt =  all_products["urtopia-carbon-1-step-thru-ebike"].variants | where: "title", "One Size / Glacier Blue" %}
                                       <div class="by-model" href="{{ productttttt.first.url }}">
                                           <img loading="lazy" fetchpriority="low" width="175" height="113" alt="Urtopia Ebike - Sleek, Full Carbon, Lightweight, Smart" src="{{ productttttt.first.featured_image | image_url: width: 500 }}">
                                           <div class="flex-1"></div>  
-                                          <div class="u20DemiBold_v2">Carbon 1 ST</div>
-                                          <div class="u14Light_v2">Lightweight Commuter Ebike</div>
-                                          <span class="u17DemiBold_v2 emphasize" {% unless productttttt.first.compare_at_price == productttttt.first.price %}data-price="{{ productttttt.first.compare_at_price | money_without_trailing_zeros }}"{% endunless %}>{{ productttttt.first.price | money_without_trailing_zeros }}</span>
+                                          <div class="u17DemiBold_v2">Carbon 1 ST</div>
+                                          <div class="er-text-xl er-my-2">Lightweight Commuter Ebike</div>
+                                          <span class="u14DemiBold_v2 emphasize" {% unless productttttt.first.compare_at_price == productttttt.first.price %}data-price="{{ productttttt.first.compare_at_price | money_without_trailing_zeros }}"{% endunless %}>{{ productttttt.first.price | money_without_trailing_zeros }}</span>
                                       </div>
                                     {% assign productttttt =  all_products["urtopia-fusion-pro-carbon-long-range-ebike"].variants | where: "title", "One Size / Vital Orange" %}
                                       <div class="by-model" href="{{ productttttt.first.url }}">
                                           <img loading="lazy" fetchpriority="low" width="180" height="113" alt="Urtopia Ebike - Sleek, Full Carbon, Lightweight, Smart" src="{{ productttttt.first.featured_image | image_url: width: 500 }}">
                                           <div class="flex-1"></div>  
-                                          <div class="u20DemiBold_v2">Carbon Fusion Pro</div>
-                                          <div class="u14Light_v2">Lightweight Long Range EBike</div>
-                                          <span class="u17DemiBold_v2 emphasize" {% unless productttttt.first.compare_at_price == productttttt.first.price %}data-price="{{ productttttt.first.compare_at_price | money_without_trailing_zeros }}"{% endunless %}>{{ productttttt.first.price | money_without_trailing_zeros }}</span>
+                                          <div class="u17DemiBold_v2">Carbon Fusion Pro</div>
+                                          <div class="er-text-xl er-my-2">Lightweight Long Range EBike</div>
+                                          <span class="u14DemiBold_v2 emphasize" {% unless productttttt.first.compare_at_price == productttttt.first.price %}data-price="{{ productttttt.first.compare_at_price | money_without_trailing_zeros }}"{% endunless %}>{{ productttttt.first.price | money_without_trailing_zeros }}</span>
                                       </div>
                                     {% assign productttttt =  all_products["urtopia-carbon-fusion-gt"].variants | where: "title", "One Size / Blazing Black" %}
                                       <div class="by-model" href="{{ productttttt.first.url }}">
                                           <img loading="lazy" fetchpriority="low" width="180" height="113" alt="Urtopia Ebike - Sleek, Full Carbon, Lightweight, Smart" src="{{ productttttt.first.featured_image | image_url: width: 500 }}">
                                           <div class="flex-1"></div>  
-                                          <div class="u20DemiBold_v2">Carbon Fusion GT</div>
-                                          <div class="u14Light_v2">Lightweight Dual Motor eBike</div>
-                                          <span class="u17DemiBold_v2 emphasize" {% unless productttttt.first.compare_at_price == productttttt.first.price %}data-price="{{ productttttt.first.compare_at_price | money_without_trailing_zeros }}"{% endunless %}>{{ productttttt.first.price | money_without_trailing_zeros }}</span>
+                                          <div class="u17DemiBold_v2">Carbon Fusion GT</div>
+                                          <div class="er-text-xl er-my-2">Lightweight Dual Motor eBike</div>
+                                          <span class="u14DemiBold_v2 emphasize" {% unless productttttt.first.compare_at_price == productttttt.first.price %}data-price="{{ productttttt.first.compare_at_price | money_without_trailing_zeros }}"{% endunless %}>{{ productttttt.first.price | money_without_trailing_zeros }}</span>
                                       </div>
                                     
                                     

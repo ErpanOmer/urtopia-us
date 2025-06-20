@@ -291,9 +291,9 @@
               class="background-image er-aspect-[630/530] mb:er-aspect-[340/400] er-rounded-3xl er-overflow-hidden er-flex er-flex-col er-justify-end er-items-start er-text-left er-p-12 mb:er-p-8">
               <img height="0" width="640" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25819_2x_5829f961-ea26-42b3-9cc9-89f3748edb64.jpg?v=1742989933&width=800"
                   alt="{{ page_title }}">
-              <h3 class="er-m-0 er-text-white text-size24 mb:er-text-3xl">Backed by 500+ Local Bike Shops</h3>
+              <h3 class="er-m-0 er-text-white text-size24 mb:er-text-3xl">Backed by {{ settings.shop_count }} Local Bike Shops</h3>
               <p class="text-size18 er-opacity-80 er-max-w-3xl er-my-8 mb:er-text-2xl mb:er-my-6">
-                  <span>Visit one of our 500+ authorized dealers across the U.S. for a test ride, expert advice,
+                  <span>Visit one of our {{ settings.shop_count }} authorized dealers across the U.S. for a test ride, expert advice,
                       or professional servicing.</span>
               </p>
               <div class="er-flex er-items-center er-w-full er-space-x-6">
@@ -322,7 +322,7 @@
                   <img width="40" height="40"
                       src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19754_2x_6a85224f-78c1-423e-a4bd-debb0fd38c63.png?v=1742988389"
                       loading="lazy" alt="{{ page_title }}">
-                  <span class="text-size18 er-ml-5 mb:er-m-0 mb:er-text-2xl mb:er-mt-2">500+ <br class="md:er-hidden">Bike Shops</span>
+                  <span class="text-size18 er-ml-5 mb:er-m-0 mb:er-text-2xl mb:er-mt-2">{{ settings.shop_count }} <br class="md:er-hidden">Bike Shops</span>
               </div>
           </div>
       </div>

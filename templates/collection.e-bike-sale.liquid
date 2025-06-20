@@ -1,8 +1,9 @@
 {{ 'outlet_v4.scss.css' | asset_url | stylesheet_tag: preload: true }}
+<h1 class="er-sr-only">{{ settings.sale_name }}</h1>
 <div class="background-image er-aspect-[1920/750] er-pt-16 mb:er-aspect-[375/500] mb:er-pt-14">
-        {% render 'image', first_screen: true,  mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC05417_2x_1474f03c-5e3f-434a-a1b3-fdf81084efe4.jpg?v=1745911864", src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC05417_2x_f1dc989c-cc0d-43fc-b34a-227832f564d6.jpg?v=1745911339' %}
+        {% render 'image', first_screen: true,  mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250613-150027_2x_e8b352f9-9516-4804-be5e-07915706adfd.jpg?v=1750401986", src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250613-150027_2x_438b269c-f5a3-4e7a-b9b8-4f5078312146.jpg?v=1750401495' %}
         <div class="centeral-content er-flex er-flex-col er-items-center">
-                <h1 class="text-size36 er-text-white er-mb-6 mb:er-text-4xl er-text-center">{{ settings.sale_name }}</h1>
+                <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Independence_Day_Sale_2x_362e34b0-896c-4760-8d28-a34435f4640a.png?v=1750401469" width="318" height="52" class="mb:er-max-w-sm mb:er-mb-6">
                 <img class="mb:er-max-w-sm mb:er-mb-6" width="335" height="75" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25875_2x_91eb65db-3b79-4afa-865b-3b0895576482.png?v=1745910602">
                 {% render 'sale' %}
                 <style>
@@ -40,7 +41,7 @@
                         font-size: 30px;
                         margin-bottom: 7.5px;
                         position: relative;
-                        color: #198CBA;
+                        color: #EA220D;
                     }
           
           
@@ -248,7 +249,7 @@
     <div class="er-bg-background-warm er-text-white">
         <div class="centeral-content mb:er-px-6">
             <div class="background-image er-aspect-[1280/450] mb:er-aspect-auto er-rounded-3xl er-overflow-hidden">
-            {% render 'image', class: "mb:!er-object-top" width: 1440, mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25944_2x_ca6839ca-a0d3-49a4-9ec3-5647bacff204.jpg?v=1749112417", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25943_2x_77f201ec-55c8-44ed-8682-9a498f6b07e8.jpg?v=1749112299" %}
+            {% render 'image', class: "mb:!er-object-top" width: 1440, mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25974_2x_f12c75d5-363a-4dd0-910b-00b9d1bf572a.jpg?v=1750402410", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250613-134825_2x_23d930df-5367-4e56-a111-a6864f82ac76.jpg?v=1750401843" %}
                  <!-- <div class="background-mask !er-w-1/2 mb:er-hidden" style="background-image: linear-gradient(90deg, #0888BA, #0D89BA00);"></div>     -->
                  <div
                     class="er-flex er-flex-col er-items-start er-justify-center er-h-full er-pl-28 er-max-w-2xl mb:er-px-8 mb:er-pt-10">
@@ -355,6 +356,32 @@
             <span>See why YouTubers are raving about Urtopia eBikes!</span>
         </p>
     <div class="videos swiper-wrapper er-mt-20 mb:er-mt-10">
+      <div
+        class="swiper-slide"
+        onclick="showVideoDialog('https://www.youtube.com/embed/m3K4EqJ34Es?autoplay=1&cc_load_policy=1')"
+      >
+        <img
+          width="413"
+          height="222"
+          loading="lazy"
+          src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250427-142311.jpg?v=1745735015&width=500"
+          alt="{{ product.title }}"
+        >
+        <span class="u17Light_v2"
+          >I really love it's sleek and seamless design, that clean internal routing makes it look so tidy. Super compact and easy to ride, no matter your height.</span
+        >
+        <span class="flex-1"></span>
+        <div class="u17Medium_v2">
+          <img
+            width="28"
+            height="28"
+            loading="lazy"
+            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/channels4_profile_239614f6-28a4-4f4e-9cf6-0c0a8e8de1d3.jpg?v=1745735148"
+            alt="{{ product.title }}"
+          >
+          <span>RunBikeMike</span>
+        </div>
+      </div>
       <div
         class="swiper-slide"
         onclick="showVideoDialog('https://www.youtube.com/embed/yGeM_NAyqcA?autoplay=1&cc_load_policy=1')"
@@ -771,7 +798,7 @@
                     <div class="er-w-2/3 er-aspect-square"></div>
                     <div class="er-flex er-flex-col er-items-start er-justify-center mb:er-pl-8 mb:er-pb-12"
                         style="background-image: linear-gradient(180deg, #00000000 0%, #000000 37%, #000000 100%);">
-                        <h2 class="er-m-0 er-text-white text-size36 mb:er-text-4xl">500+ U.S. Stores<br> We’ve Got You
+                        <h2 class="er-m-0 er-text-white text-size36 mb:er-text-4xl">{{ settings.shop_count }} U.S. Stores<br> We’ve Got You
                             Covered</h2>
                         <p class="text-size18 er-opacity-80 er-max-w-2xl er-mt-8 er-mb-24 mb:er-text-2xl mb:er-my-10">
                             <span>Buying online? No worries! Our nationwide stores ensure a hassle-free
@@ -965,7 +992,7 @@
                 <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="{{ page_title }}">5. Can I test ride a Urtopia eBike before buying?
               </div>
               <p class="u17Light_v2 text-size18">
-                <span>Yes! We have 500+ partner stores across the U.S. where you can test ride, order, and get service. [<a href="https://newurtopia.com/pages/test-ride" class="my-link">Find a Store Near You</a>]</span>
+                <span>Yes! We have {{ settings.shop_count }} partner stores across the U.S. where you can test ride, order, and get service. [<a href="https://newurtopia.com/pages/test-ride" class="my-link">Find a Store Near You</a>]</span>
               </p>
             </div>
             <div class="item">
