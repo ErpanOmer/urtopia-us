@@ -308,9 +308,12 @@
           <span class="er-font-bold er-text-4xl product-price mb:er-text-3xl er-text-primary">
             {{- current_variant.price | money -}}
           </span>
-          <del class="er-text-3xl er-text-dark/70 er-ml-2 product-compare-at-price mb:er-text-2xl">
+          {% if current_variant.compare_at_price > current_variant.price %}
+            <del class="er-text-3xl er-text-dark/70 er-ml-2 product-compare-at-price mb:er-text-2xl">
             {{- current_variant.compare_at_price | money -}}
-          </del>
+            </del>
+          {% endif %}
+          
         </div>
         <div class="er-text-2xl">or as low as<span class="product-stages">{{ current_variant.price | divided_by: 24 | money_without_trailing_zeros }}</span>/Month
         </div>
@@ -320,6 +323,48 @@
     </div>
   </div>
 </section>
+<style>
+  #b2b > div {
+    width: 500px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+  }
+
+  #b2b > div  .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 40px;
+    color: #999;
+    cursor: pointer;
+    font-weight: 100;
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    width: 40px;
+    text-align: center;
+  }
+
+   @media (max-width: 767px) {
+        #b2b > div {
+          width: 84vw;
+        }
+   }
+</style>
+<dialog id="b2b">
+   <div>
+      To place an order, please contact our B2B team at: <a href="mailto:speed@newurtopia.com" class="my-link">speed@newurtopia.com</a>
+      <span class="close">×</span>
+    </div>
+</dialog>
 <script type="module">
   const product_variants = [
     {%- for variant in product.variants -%}
@@ -455,7 +500,18 @@
     }
   });
 
-  $('.product-panel .buttons > button').on('click', async function () {
+  $('.product-panel .buttons > button').on('click', async function (e) {
+    if (/\/[^\/]*-b2b/.test(window.location.pathname)) {
+       console.log('路径中包含 -b2b 的段');
+       showDialog(document.getElementById('b2b')).then(console.log).catch(console.log);
+
+
+        e.preventDefault();   // 阻止默认行为（比如 form submit）
+        e.stopPropagation();  // 阻止事件冒泡（不往父节点传）
+        e.stopImmediatePropagation(); // 阻止当前元素上后续的所有事件绑定
+        return false; // 等价于 preventDefault + stopPropagation（不总是完整）
+    }
+    
     const target = $(this)
     const cart = document.querySelector('cart-drawer')
     const items = []

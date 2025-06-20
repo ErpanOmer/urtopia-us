@@ -18,12 +18,16 @@
     >
       {{- current_variant.price | money -}}
     </span>
-    <del class="er-text-dark/70 text-size18 product-compare-at-price">
+    {% if current_variant.compare_at_price > current_variant.price %}
+      <del class="er-text-dark/70 text-size18 product-compare-at-price">
       {{- current_variant.compare_at_price | money -}}
-    </del>
-    <span class="text-size14 er-font-bold er-block er-px-4 er-py-1 er-bg-primary er-text-white er-rounded-3xl">
+      </del>
+    {% endif %}
+    {% if current_variant.compare_at_price > current_variant.price %}
+      <span class="text-size14 er-font-bold er-block er-px-4 er-py-1 er-bg-primary er-text-white er-rounded-3xl">
       -{{- current_variant.compare_at_price | minus: current_variant.price | money -}}
-    </span>
+      </span>
+    {% endif %}
   </div>
   {%- if product.metafields.custom.show_count_down.value -%}
     {%- render 'sale-v2' -%}

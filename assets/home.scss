@@ -186,7 +186,7 @@ h4 {
 }
 
 .app {
-    aspect-ratio: 1920 / 787;
+    aspect-ratio: 1920 / 1000;
     margin-top: 15vh;
     display: flex;
     flex-direction: column;
@@ -198,15 +198,24 @@ h4 {
         margin: 24px 0 36px;
     }
 
+    video {
+      object-fit: contain;
+      object-position: bottom;
+    }
+
 
     @media (max-width: 767px) {
         margin-top: 13.5vw;
         padding: 0;
-        aspect-ratio: 375 / 613;
+        aspect-ratio: 375 / 500;
 
         .u36DemiBold_v2 {
             font-size: 24px;
         }
+      
+        video {
+        object-position: center;
+      }
 
         .u17Light_v2 {
             padding: 0 30px;
