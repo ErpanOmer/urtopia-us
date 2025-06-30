@@ -84,7 +84,7 @@
         "type": "text",
         "id": "home_page_blogs",
         "label": "首页blog展示",
-        "default": "blog/carbon-vs-aluminum-ebike-frames,blog\/win-a-urtopia-e-bike-on-cbss-hit-show-let-s-make-a-deal,blog\/the-smartest-e-bike-youll-never-lose"
+        "default": "blog\/carbon-vs-aluminum-ebike-frames,blog\/win-a-urtopia-e-bike-on-cbss-hit-show-let-s-make-a-deal,blog\/the-smartest-e-bike-youll-never-lose"
       },
       {
         "type": "text",
