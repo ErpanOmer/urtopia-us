@@ -24,8 +24,7 @@
       | replace: "s.src = urls[i];", 's.type ="text/lazyload";s.async = false;s.setAttribute("data-level", "3");s.src = urls[i];'
       | replace: 'data-source-attribution="shopify.loadfeatures" defer="defer"', 'data-source-attribution="shopify.loadfeatures" data-level="1" type="text/lazyload"'
     }}
-    {% render 'pagefly-app-header' %}
-  </head>
+  {% include 'pagefly-app-header' %}</head>
   <body class="gradient">
     {{ 'base.min.css' | asset_url | stylesheet_tag: preload: true }}
     {{ 'tailwind.min.css' | asset_url | stylesheet_tag: preload: true }}
