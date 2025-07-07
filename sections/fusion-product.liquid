@@ -1,4 +1,9 @@
 {{ 'fusion-new.scss.css' | asset_url | stylesheet_tag: preload: true }}
+<style>
+  fieldset[option=Style] label[data-style="Deep Sea Blue"] {
+    --product-option-color: #525D96;
+  }
+</style>
 {% render 'product-panel', swiper_insert_index: 1 %}
 <div class="professional">
   <div class="centeral-content">

@@ -1,6 +1,12 @@
 {{ 'carbon1pro-new.scss.css' | asset_url | stylesheet_tag: preload: true }}
-{% render 'product-panel' %}
 
+<style>
+  fieldset[option=Color] label[data-style="Glacier Blue"] {
+    --product-option-color: #9ec0d1;
+  }
+</style>
+
+{% render 'product-panel' %}
 <div class="professional">
   <div class="centeral-content">
     <h2 class="u36Medium_v2">Professional Reviews</h2>

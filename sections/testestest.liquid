@@ -1,52 +1,37 @@
-    <div
-        class="background-image er-aspect-[3.5/1] er-text-white er-flex er-flex-col er-justify-center er-items-center er-font-base er-text-center mb:er-aspect-square er-px-12">
-        <img height="1920" width="548" loading="eager"
-            srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/20220619untitled1621-1657766334254.jpg?v=1657766336&width=375 375w,
-                https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/20220619untitled1621-1657766334254.jpg?v=1657766336&width=640 640w,
-                https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/20220619untitled1621-1657766334254.jpg?v=1657766336&width=768 768w,
-                https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/20220619untitled1621-1657766334254.jpg?v=1657766336&width=1024 1024w,
-                https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/20220619untitled1621-1657766334254.jpg?v=1657766336&width=1280 1280w,
-                https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/20220619untitled1621-1657766334254.jpg?v=1657766336&width=1536 1536w,
-                https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/20220619untitled1621-1657766334254.jpg?v=1657766336&width=1920 1920w"
-            sizes="(max-width: 768px) 50vw, 100vw"
-            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/20220619untitled1621-1657766334254.jpg?v=1657766336"
-            alt="Comprehensive, Aware, Responsive, Effective">
-        <div class="background-mask er-bg-black/60"></div>
-        <h2 class="er-text-8xl mb:er-text-6xl">
-            Contact Us
-        </h2>
-        <p class="er-text-5xl er-mt-12 mb:er-text-3xl">
-            <span>
-                Ride to New Urban Utopia. See You Down the Road.
-            </span>
-        </p>
-    </div>
-    <div class="er-my-60 mb:er-my-20 er-max-w-screen-lg er-mx-auto er-px-12 er-text-3xl mb:er-text-2xl er-grid er-grid-cols-2 er-gap-28 mb:er-gap-20 er-text-dark/65 er-font-base er-items-center mb:er-grid-cols-1">
-        <form class="er-flex er-flex-col er-items-start er-space-y-12 mb:er-space-y-8 er-w-full" method="post" action="/contact#contact_form" id="contact_form">
-            <div class="er-flex er-flex-col er-items-start er-space-y-6 mb:er-space-y-4 er-w-full er-max-w-xl">
-                <label for="email">Email <sup class="er-text-primary">*</sup></label>
-                <input class="mb:er-text-2xl er-box-border er-font-base er-w-full er-border-2 er-border-dark/30 placeholder:er-text-black/15 er-border-solid er-rounded-xl er-text-dark/85 er-text-3xl er-p-4 focus:er-border-primary/80 focus-visible:er-border-primary/80 focus:er-ring-primary focus:er-shadow-primary" type="email" id="email" name="contact[email]" placeholder="Enter your email" required>
-            </div>
-            <div class="er-flex er-flex-col er-items-start er-space-y-6 mb:er-space-y-4 er-w-full er-max-w-xl">
-                <label for="message">Message</label>
-                <textarea class="mb:er-text-2xl er-box-border er-font-base er-w-full er-border-2 er-border-dark/30 placeholder:er-text-black/15 er-border-solid er-rounded-xl er-text-dark/85 er-text-3xl er-p-4 focus:er-border-primary/80 focus-visible:er-border-primary/80 focus:er-ring-primary focus:er-shadow-primary" id="message" name="contact[Message]" placeholder="Enter your message" rows="6"></textarea>
-            </div>
-            <button class="er-button er-w-1/2 mb:er-w-full" type="submit">Submit</button>
-        </form>
-        <div class="er-leading-relaxed">
-            <p>If you need assistance or have a question, either fill out the form to the left, or write to
-                <a class="er-button er-button-text er-font-bold" href="mailto:support@newurtopia.com"><b>support@newurtopia.com</b></a>. 
-                <br>We normally reply to all
-                messages within 24 business hours. Please do not send duplicate emails, as we respond in
-                chronological order.
-            </p>
-            <br>
-            <p>
-                Business Info:<br>
-                New Urtopia USA LLC.<br>
-                <a class="er-button er-button-text" href="tel:+1 (844) 936-2868"><b>+1 (844) 936-2868</b></a><br>
-                Wednesday-Friday: <span class="er-text-primary">PST 8:00 a.m.- 5:00 p.m.</span><br>
-                Address: <span class="er-text-primary">18 Goodyear STE 110, Irvine, California 92618</span>
-            </p>
-        </div>
-    </div>
+{% form 'contact' %}
+  {{ form.errors | default_errors }}
+
+  <div class="first-name">
+    <label for="first-name">First name</label>
+    <input type="text" name="contact[first_name]" id="first-name" />
+  </div>
+
+  <div class="last-name">
+    <label for="last-name">Last name</label>
+    <input type="text" name="contact[last_name]" id="last-name" />
+  </div>
+
+  <div class="phone">
+    <label for="phone">Phone</label>
+    <input type="tel" name="contact[phone]" id="phone" />
+  </div>
+
+  <div class="email">
+    <label for="email">Email</label>
+    <input type="email" name="contact[email]" id="email" />
+  </div>
+
+  <div class="order-number">
+    <label for="order-number">Order number</label>
+    <input type="text" name="contact[order_number]" id="order-number" />
+  </div>
+
+  <div class="message">
+    <label for="message">Message</label>
+    <textarea name="contact[body]" id="message"></textarea>
+  </div>
+
+  <div class="submit">
+    <input type="submit" value="Create" />
+  </div>
+{% endform %}
