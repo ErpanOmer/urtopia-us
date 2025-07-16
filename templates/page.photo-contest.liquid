@@ -212,6 +212,12 @@
             <span>By submitting, you give Urtopia the right to: <br>Display your content<br> Publish your name and general location<br> Refer to the subject of the submission (e.g., ride location or story)<br> You also confirm your submission is original, unpublished, and does not infringe on third-party rights.</span>
         </p> 
 
+      <h3 class="text-size20 er-mb-2 er-font-bold">Reward Restrictions</h3>
+       <p class="text-size18 mb:er-text-2xl">
+            <span>
+             Discount vouchers awarded as prizes cannot be used toward the purchase of e-bikes or hitch bike racks.</span>
+        </p> 
+
         <h3 class="text-size20 er-mb-2 er-font-bold">Legal Binding</h3>
        <p class="text-size18 mb:er-text-2xl">
             <span>
@@ -259,25 +265,13 @@
       $('.thankyou').addClass('er-flex').removeClass('er-hidden');
       $(this).hide();
 
-    //   fetch('https://api.newurtopia.com/third_part/product_activation', {
-    //     'method': 'POST',
-    //     'headers': {
-    //       'Content-Type': 'application/json'
-    //     },
-    //     body: JSON.stringify({
-    //       "category": values.category,
-    //       "email": values.email,
-    //       "frame_no": values.serial_number,
-    //       "source": location.host,
-    //       "channel": values.purchase_channel,
-    //       "dealer_name": values.dealer_name,
-    //       "dealer_address": values.dealer_address,
-    //       "order_no": values.order_number,
-    //       "transaction_voucher": values.order_image
-    //     })
-    //   })
-
-      
+      fetch('https://api.newurtopia.com/third_part/media_contest', {
+        'method': 'POST',
+        'headers': {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(values)
+      })
 
       return false
   });
@@ -377,8 +371,8 @@ function uploadFile(file, id) {
   const $bar = $(`#${id} .custom-upload-progress-bar`);
   const $item = $(`#${id}`);
   // 这里用演示用的模拟上传，实际请替换为你的上传接口
-//   const fakeUrl = 'https://urtopia-file-upload.erpanomer.workers.dev/';
-  const fakeUrl = 'https://httpbin.org/post';
+  const fakeUrl = 'https://urtopia-file-upload.erpanomer.workers.dev/';
+  // const fakeUrl = 'https://httpbin.org/post';
   const formData = new FormData();
   formData.append('file', file);
   formData.append('file_from', 'photo-contest');

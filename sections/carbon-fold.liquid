@@ -9,6 +9,12 @@
   fieldset[option=Color] label[data-style="Charcoal Grey"] {
     --product-option-color: #4F5153;
   }
+
+  @media (max-width: 768px) {
+     .made {
+        right: 0;
+      }
+  }
 </style>
 
 <div class="professional">
@@ -294,7 +300,7 @@
         <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">Carbon Fiber</div>
         <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">Carbon Fiber</div>
         <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">29 lbs</div>
-        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">200 lbs</div>
+        <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">220 lbs</div>
         <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">40 miles</div>
         <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">Shimano Altus 8-Speed</div>
         <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">Torque Sensor</div>
@@ -582,11 +588,14 @@
   })
 
     window.addEventListener('load', function () {
-      const img = $(`<img class="er-absolute er-rounded-2xl er-top-0 er-z-[2] er-transition er-opacity-100 mb:er-max-w-20 md:er-right-0 mb:er-left-0" width="70" height="104" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250523-182408.jpg?v=1747995867&width=90" alt="{{ product.title }}"/>`)
+      const img = $(`<img class="er-absolute er-rounded-2xl er-top-0 er-z-[2] er-transition er-opacity-100 mb:er-max-w-24 md:er-right-0 mb:er-left-0" width="70" height="104" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250523-182408.jpg?v=1747995867&width=90" alt="{{ product.title }}"/>`)
+      const img2 = $(`<img class="er-absolute er-rounded-2xl er-top-0 er-z-[2] er-transition er-opacity-100 mb:er-max-w-28 md:er-left-0 mb:er-right-0 made" width="90" height="90" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250715-185930.png?v=1752577231&width=90" alt="{{ product.title }}"/>`)
       $(".product-panel-swiper .swiper-wrapper").before(img)
+      $(".product-panel-swiper .swiper-wrapper").before(img2)
 
       window.product_panel_swiper.on('slideChange', function () {
         img.css('opacity', this.realIndex > 0 ? 0 : 1)
+        img2.css('opacity', this.realIndex > 0 ? 0 : 1)
       })
   })
 </script>
