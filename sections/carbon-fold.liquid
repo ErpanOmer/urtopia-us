@@ -588,14 +588,11 @@
   })
 
     window.addEventListener('load', function () {
-      const img = $(`<img class="er-absolute er-rounded-2xl er-top-0 er-z-[2] er-transition er-opacity-100 mb:er-max-w-24 md:er-right-0 mb:er-left-0" width="70" height="104" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250523-182408.jpg?v=1747995867&width=90" alt="{{ product.title }}"/>`)
-      const img2 = $(`<img class="er-absolute er-rounded-2xl er-top-0 er-z-[2] er-transition er-opacity-100 mb:er-max-w-28 md:er-left-0 mb:er-right-0 made" width="90" height="90" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250715-185930.png?v=1752577231&width=90" alt="{{ product.title }}"/>`)
+      const img = $(`<img class="er-absolute er-rounded-2xl er-top-0 er-z-[2] er-transition er-opacity-100 mb:er-max-w-[25vw] er-right-0" width="145" height="86" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250717-171830.jpg?v=1752743933" alt="{{ product.title }}"/>`)
       $(".product-panel-swiper .swiper-wrapper").before(img)
-      $(".product-panel-swiper .swiper-wrapper").before(img2)
 
       window.product_panel_swiper.on('slideChange', function () {
         img.css('opacity', this.realIndex > 0 ? 0 : 1)
-        img2.css('opacity', this.realIndex > 0 ? 0 : 1)
       })
   })
 </script>
