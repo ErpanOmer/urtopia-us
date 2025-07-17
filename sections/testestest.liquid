@@ -1,9 +1,4 @@
-{{ 'feel.scss.css' | asset_url | stylesheet_tag: preload: true }}
 <style>
-h1, h2, h3, h4 {
-    margin: 0;
-    color: inherit;
-}
 :root {
     --local-color: #D08E14;
     ;
@@ -81,11 +76,6 @@ h1, h2, h3, h4 {
     color: #fff;
 }
 
-.successsss .my-link {
-    opacity: 0 !important;
-    pointer-events: none;
-}
-
 
 @media (max-width: 768px) {
 
@@ -98,7 +88,6 @@ h1, h2, h3, h4 {
         opacity: 1;
         transform: translate(-50%, -50%);
         max-width: 70px;
-        display: none;
     }
 
     .tab-nav {
@@ -112,7 +101,7 @@ h1, h2, h3, h4 {
         padding-bottom: 30px;
     }
 
-    .tab-pane > div {
+    .tab-pane>a {
         min-width: 75vw;
     }
 
@@ -125,6 +114,7 @@ h1, h2, h3, h4 {
 }
 </style>
 
+<template>
     <section class="background-image er-aspect-[1920/750] mb:er-aspect-[375/500]">
         <picture>
             <source media="(min-width: 768px)"
@@ -135,7 +125,7 @@ h1, h2, h3, h4 {
         </picture>
     </section>
     <section class="er-bg-background er-py-48 mb:er-py-24">
-        <div class="centeral-content mb:er-px-6 er-flex er-flex-col">
+        <div class="centeral-content mb:er-px-6">
             <h1 class="text-size48 c er-text-center mb:er-text-4xl">Why Champions Choose Urtopia</h1>
             <p class="text-size18 er-text-center er-mt-10 er-mb-28 mb:er-text-2xl mb:er-mt-4 mb:er-mb-12">Engineered by
                 Carbon Experts. Endorsed by Champions.
@@ -143,17 +133,15 @@ h1, h2, h3, h4 {
             <div
                 class="cards er-grid lg:er-grid-cols-4 md:er-grid-cols-3 er-grid-cols-1 er-gap-x-4 er-gap-y-24 mb:er-gap-y-12">
                 <div class="er-text-center">
-                    <a href="https://www.youtube.com/watch?v=pLJlv-sP_JQ" onclick="showVideoDialog('https://www.youtube.com/embed/pLJlv-sP_JQ?autoplay=1&amp;cc_load_policy=1');return false;" target="_blank"
+                    <a href="https://www.youtube.com/watch?v=pLJlv-sP_JQ" target="_blank"
                         class="background-image er-aspect-[315/375] mb:er-aspect-[345/200] er-flex er-flex-col er-items-center er-justify-end er-pb-10 er-text-center er-cursor-pointer mycard mb:er-pb-6">
-                        <picture>
-                            <source media="(min-width: 768px)" srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/fff_2x_c4ca7611-ddcc-4fc8-8c49-12e508493d19.jpg?v=1752637234">
-                            <source media="(max-width: 768px)" srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25474_2x_a3f64bf6-027d-4157-9ea3-02e9782450ac.jpg?v=1752741389">
-                            <img src="" class="er-rounded-3xl" alt="" loading="lazy">
-                        </picture>
+                        <img loading="lazy" class="er-rounded-3xl"
+                            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/fff_2x_c4ca7611-ddcc-4fc8-8c49-12e508493d19.jpg?v=1752637234"
+                            alt="">
                         <img width="80" height="56" loading="lazy"
                             src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/yt_icon_rgb.png?v=1743577722&width=80"
                             alt="">
-                        <span class="text-size18 er-text-white er-font-bold er-flex er-items-center">Max Lemke <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#fff"><path d="M336-216v-528l408 264-408 264Z"/></svg></span>
+                        <span class="text-size18 er-text-white er-font-bold">Max Lemke</span>
                     </a>
                     <h3 class="text-size18 er-font-bold c er-mt-6 er-mb-4 mb:er-mt-4">Canoeing Olympic Champion</h3>
                     <i class="text-size16 er-opacity-80 mb:er-text-2xl">
@@ -161,201 +149,179 @@ h1, h2, h3, h4 {
                     </i>
                 </div>
                 <div class="er-text-center">
-                    <a href="https://www.youtube.com/watch?v=pLJlv-sP_JQ" onclick="showVideoDialog('https://www.youtube.com/embed/GoZU9kP3cNk?autoplay=1&amp;cc_load_policy=1');return false;" target="_blank"
+                    <a href="https://www.youtube.com/watch?v=pLJlv-sP_JQ" target="_blank"
                         class="background-image er-aspect-[315/375] mb:er-aspect-[345/200] er-flex er-flex-col er-items-center er-justify-end er-pb-10 er-text-center er-cursor-pointer mycard mb:er-pb-6">
-                        <picture>
-                            <source media="(min-width: 768px)" srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20211021-untitled-29_2x_823a654c-35a3-46b5-b330-fc7446f4d15a.jpg?v=1752666298">
-                            <source media="(max-width: 768px)" srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25475_2x_cd51421c-189e-4814-81b3-dfc8f39d172d.jpg?v=1752741385">
-                            <img src="" class="er-rounded-3xl" alt="" loading="lazy">
-                        </picture>
+                        <img loading="lazy" class="er-rounded-3xl"
+                            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/fff_2x_c4ca7611-ddcc-4fc8-8c49-12e508493d19.jpg?v=1752637234"
+                            alt="">
                         <img width="80" height="56" loading="lazy"
                             src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/yt_icon_rgb.png?v=1743577722&width=80"
                             alt="">
-                        <span class="text-size18 er-text-white er-font-bold er-flex er-items-center">Franz Loeschke <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#fff"><path d="M336-216v-528l408 264-408 264Z"/></svg></span>
+                        <span class="text-size18 er-text-white er-font-bold">Max Lemke</span>
                     </a>
-                    <h3 class="text-size18 er-font-bold c er-mt-6 er-mb-4 mb:er-mt-4">5X German Champion</h3>
+                    <h3 class="text-size18 er-font-bold c er-mt-6 er-mb-4 mb:er-mt-4">Canoeing Olympic Champion</h3>
                     <i class="text-size16 er-opacity-80 mb:er-text-2xl">
-                       “From Urtopia, I realized: a carbon e-bike can be just as cool as a triathlon bike.”
+                        “It’s the lightest and smartest carbon e-bike I’ve ever seen.”
                     </i>
                 </div>
                 <div class="er-text-center">
-                    <a href="https://www.youtube.com/watch?v=pLJlv-sP_JQ" onclick="showVideoDialog('https://www.youtube.com/embed/b7QmGZvxLIc?autoplay=1&amp;cc_load_policy=1');return false;" target="_blank"
+                    <a href="https://www.youtube.com/watch?v=pLJlv-sP_JQ" target="_blank"
                         class="background-image er-aspect-[315/375] mb:er-aspect-[345/200] er-flex er-flex-col er-items-center er-justify-end er-pb-10 er-text-center er-cursor-pointer mycard mb:er-pb-6">
-                        <picture>
-                            <source media="(min-width: 768px)" srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/dd_2x_9921250b-590d-46d6-b816-35ad24726e5e.jpg?v=1752666292">
-                            <source media="(max-width: 768px)" srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25477_2x_fbe4be7a-ae41-4d97-b4dc-bc3d96b28c03.jpg?v=1752741380">
-                            <img src="" class="er-rounded-3xl" alt="" loading="lazy">
-                        </picture>
+                        <img loading="lazy" class="er-rounded-3xl"
+                            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/fff_2x_c4ca7611-ddcc-4fc8-8c49-12e508493d19.jpg?v=1752637234"
+                            alt="">
                         <img width="80" height="56" loading="lazy"
                             src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/yt_icon_rgb.png?v=1743577722&width=80"
                             alt="">
-                        <span class="text-size18 er-text-white er-font-bold er-flex er-items-center">Philip Heintz <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#fff"><path d="M336-216v-528l408 264-408 264Z"/></svg></span>
+                        <span class="text-size18 er-text-white er-font-bold">Max Lemke</span>
                     </a>
-                    <h3 class="text-size18 er-font-bold c er-mt-6 er-mb-4 mb:er-mt-4">European Champion</h3>
+                    <h3 class="text-size18 er-font-bold c er-mt-6 er-mb-4 mb:er-mt-4">Canoeing Olympic Champion</h3>
                     <i class="text-size16 er-opacity-80 mb:er-text-2xl">
-                        “After training, my go-to is the Carbon 1 Pro — it’s just that effortless to ride.”
+                        “It’s the lightest and smartest carbon e-bike I’ve ever seen.”
                     </i>
                 </div>
                 <div class="er-text-center">
-                    <a href="https://www.youtube.com/watch?v=pLJlv-sP_JQ" onclick="showVideoDialog('https://www.youtube.com/embed/OK8cz5u8rZg?autoplay=1&amp;cc_load_policy=1');return false;" target="_blank"
+                    <a href="https://www.youtube.com/watch?v=pLJlv-sP_JQ" target="_blank"
                         class="background-image er-aspect-[315/375] mb:er-aspect-[345/200] er-flex er-flex-col er-items-center er-justify-end er-pb-10 er-text-center er-cursor-pointer mycard mb:er-pb-6">
-                        <picture>
-                            <source media="(min-width: 768px)" srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25463_2x_7efc37dd-0fbd-44a0-8c30-16588d4c7846.jpg?v=1752666286">
-                            <source media="(max-width: 768px)" srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25976_2x_1f043179-4932-49f6-bfbd-621148b8ba00.jpg?v=1752741379">
-                            <img src="" class="er-rounded-3xl" alt="" loading="lazy">
-                        </picture>
+                        <img loading="lazy" class="er-rounded-3xl"
+                            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/fff_2x_c4ca7611-ddcc-4fc8-8c49-12e508493d19.jpg?v=1752637234"
+                            alt="">
                         <img width="80" height="56" loading="lazy"
                             src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/yt_icon_rgb.png?v=1743577722&width=80"
                             alt="">
-                        <span class="text-size18 er-text-white er-font-bold er-flex er-items-center">Tracy McGrady <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#fff"><path d="M336-216v-528l408 264-408 264Z"/></svg></span>
+                        <span class="text-size18 er-text-white er-font-bold">Max Lemke</span>
                     </a>
-                    <h3 class="text-size18 er-font-bold c er-mt-6 er-mb-4 mb:er-mt-4">NBA Hall of Fame</h3>
+                    <h3 class="text-size18 er-font-bold c er-mt-6 er-mb-4 mb:er-mt-4">Canoeing Olympic Champion</h3>
                     <i class="text-size16 er-opacity-80 mb:er-text-2xl">
-                        “It represents the future. It’s the GOAT of e-bikes.”
+                        “It’s the lightest and smartest carbon e-bike I’ve ever seen.”
                     </i>
                 </div>
                 <div class="er-text-center">
-                    <a href="https://www.youtube.com/watch?v=pLJlv-sP_JQ" onclick="showVideoDialog('https://www.youtube.com/embed/gjYMDVGv_C4?autoplay=1&amp;cc_load_policy=1');return false;" target="_blank"
+                    <a href="https://www.youtube.com/watch?v=pLJlv-sP_JQ" target="_blank"
                         class="background-image er-aspect-[315/375] mb:er-aspect-[345/200] er-flex er-flex-col er-items-center er-justify-end er-pb-10 er-text-center er-cursor-pointer mycard mb:er-pb-6">
-                        <picture>
-                            <source media="(min-width: 768px)" srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25464_2x_45d9494a-79c1-4d40-a852-29c2829fc7ad.jpg?v=1752666281">
-                            <source media="(max-width: 768px)" srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25977_2x_076e5d7f-d17f-47e7-97b5-79202932b140.jpg?v=1752741375">
-                            <img src="" class="er-rounded-3xl" alt="" loading="lazy">
-                        </picture>
+                        <img loading="lazy" class="er-rounded-3xl"
+                            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/fff_2x_c4ca7611-ddcc-4fc8-8c49-12e508493d19.jpg?v=1752637234"
+                            alt="">
                         <img width="80" height="56" loading="lazy"
                             src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/yt_icon_rgb.png?v=1743577722&width=80"
                             alt="">
-                        <span class="text-size18 er-text-white er-font-bold er-flex er-items-center">Maksim Mrvica <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#fff"><path d="M336-216v-528l408 264-408 264Z"/></svg></span>
+                        <span class="text-size18 er-text-white er-font-bold">Max Lemke</span>
                     </a>
-                    <h3 class="text-size18 er-font-bold c er-mt-6 er-mb-4 mb:er-mt-4">The World’s Fastest Pianists</h3>
+                    <h3 class="text-size18 er-font-bold c er-mt-6 er-mb-4 mb:er-mt-4">Canoeing Olympic Champion</h3>
                     <i class="text-size16 er-opacity-80 mb:er-text-2xl">
-                       “Only carbon fiber can sculpt curves this elegant. It’s pure performance, pure beauty.”
+                        “It’s the lightest and smartest carbon e-bike I’ve ever seen.”
                     </i>
                 </div>
                 <div class="er-text-center">
-                    <a href="https://www.youtube.com/watch?v=pLJlv-sP_JQ" onclick="showVideoDialog('https://www.youtube.com/embed/h3XWj1TXpSw?autoplay=1&amp;cc_load_policy=1');return false;" target="_blank"
+                    <a href="https://www.youtube.com/watch?v=pLJlv-sP_JQ" target="_blank"
                         class="background-image er-aspect-[315/375] mb:er-aspect-[345/200] er-flex er-flex-col er-items-center er-justify-end er-pb-10 er-text-center er-cursor-pointer mycard mb:er-pb-6">
-                        <picture>
-                            <source media="(min-width: 768px)" srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20211018-untitled--2_2x_fcc23f66-2cbf-4b35-873b-a161693c3d06.jpg?v=1752666276">
-                            <source media="(max-width: 768px)" srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20211018-untitled--2_2x_de4a3429-d096-4c81-9e48-093a5d3a6819.jpg?v=1752741365">
-                            <img src="" class="er-rounded-3xl" alt="" loading="lazy">
-                        </picture>
+                        <img loading="lazy" class="er-rounded-3xl"
+                            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/fff_2x_c4ca7611-ddcc-4fc8-8c49-12e508493d19.jpg?v=1752637234"
+                            alt="">
                         <img width="80" height="56" loading="lazy"
                             src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/yt_icon_rgb.png?v=1743577722&width=80"
                             alt="">
-                        <span class="text-size18 er-text-white er-font-bold er-flex er-items-center">Norris Frederick <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#fff"><path d="M336-216v-528l408 264-408 264Z"/></svg></span>
+                        <span class="text-size18 er-text-white er-font-bold">Max Lemke</span>
                     </a>
-                    <h3 class="text-size18 er-font-bold c er-mt-6 er-mb-4 mb:er-mt-4">3x Indoor U.S Medal.</h3>
+                    <h3 class="text-size18 er-font-bold c er-mt-6 er-mb-4 mb:er-mt-4">Canoeing Olympic Champion</h3>
                     <i class="text-size16 er-opacity-80 mb:er-text-2xl">
-                        Urtopia builds carbon e-bikes like true pros.
+                        “It’s the lightest and smartest carbon e-bike I’ve ever seen.”
                     </i>
                 </div>
                 <div class="er-text-center mb:er-hidden">
-                    <a href="https://www.youtube.com/watch?v=pLJlv-sP_JQ" onclick="showVideoDialog('https://www.youtube.com/embed/3elIhWOeVD4?autoplay=1&amp;cc_load_policy=1');return false;" target="_blank"
+                    <a href="https://www.youtube.com/watch?v=pLJlv-sP_JQ" target="_blank"
                         class="background-image er-aspect-[315/375] mb:er-aspect-[345/200] er-flex er-flex-col er-items-center er-justify-end er-pb-10 er-text-center er-cursor-pointer mycard mb:er-pb-6">
-                        <picture>
-                            <source media="(min-width: 768px)" srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25466_2x_60a59798-9a79-4449-b6cd-8cf4ced6aa9b.jpg?v=1752666270">
-                            <source media="(max-width: 768px)" srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25979_2x_303059df-9112-4ea6-98f8-76e9cc3ead54.jpg?v=1752741359">
-                            <img src="" class="er-rounded-3xl" alt="" loading="lazy">
-                        </picture>
+                        <img loading="lazy" class="er-rounded-3xl"
+                            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/fff_2x_c4ca7611-ddcc-4fc8-8c49-12e508493d19.jpg?v=1752637234"
+                            alt="">
                         <img width="80" height="56" loading="lazy"
                             src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/yt_icon_rgb.png?v=1743577722&width=80"
                             alt="">
-                        <span class="text-size18 er-text-white er-font-bold er-flex er-items-center">Alessandro Barbero <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#fff"><path d="M336-216v-528l408 264-408 264Z"/></svg></span>
+                        <span class="text-size18 er-text-white er-font-bold">Max Lemke</span>
                     </a>
-                    <h3 class="text-size18 er-font-bold c er-mt-6 er-mb-4 mb:er-mt-4">3x Italian BMX Champion</h3>
+                    <h3 class="text-size18 er-font-bold c er-mt-6 er-mb-4 mb:er-mt-4">Canoeing Olympic Champion</h3>
                     <i class="text-size16 er-opacity-80 mb:er-text-2xl">
-                        It rides as smooth as flight. I even pulled off a few BMX moves — shout out to carbon fiber!
+                        “It’s the lightest and smartest carbon e-bike I’ve ever seen.”
                     </i>
                 </div>
                 <div class="er-text-center mb:er-hidden">
-                    <a href="https://www.youtube.com/watch?v=pLJlv-sP_JQ" onclick="showVideoDialog('https://www.youtube.com/embed/n6KJzVYgqbs?autoplay=1&amp;cc_load_policy=1');return false;" target="_blank"
+                    <a href="https://www.youtube.com/watch?v=pLJlv-sP_JQ" target="_blank"
                         class="background-image er-aspect-[315/375] mb:er-aspect-[345/200] er-flex er-flex-col er-items-center er-justify-end er-pb-10 er-text-center er-cursor-pointer mycard mb:er-pb-6">
-                        <picture>
-                            <source media="(min-width: 768px)" srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25470_2x_7004015b-c658-43df-b48a-f6fb4d735186.jpg?v=1752666263">
-                            <source media="(max-width: 768px)" srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25978_2x_864f3cc9-50bb-4cd1-a329-415fd892392b.jpg?v=1752741353">
-                            <img src="" class="er-rounded-3xl" alt="" loading="lazy">
-                        </picture>
+                        <img loading="lazy" class="er-rounded-3xl"
+                            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/fff_2x_c4ca7611-ddcc-4fc8-8c49-12e508493d19.jpg?v=1752637234"
+                            alt="">
                         <img width="80" height="56" loading="lazy"
                             src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/yt_icon_rgb.png?v=1743577722&width=80"
                             alt="">
-                        <span class="text-size18 er-text-white er-font-bold er-flex er-items-center">Linus Tech Tips <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#fff"><path d="M336-216v-528l408 264-408 264Z"/></svg></span>
+                        <span class="text-size18 er-text-white er-font-bold">Max Lemke</span>
                     </a>
-                    <h3 class="text-size18 er-font-bold c er-mt-6 er-mb-4 mb:er-mt-4">15.5M Subscriber Youtube</h3>
+                    <h3 class="text-size18 er-font-bold c er-mt-6 er-mb-4 mb:er-mt-4">Canoeing Olympic Champion</h3>
                     <i class="text-size16 er-opacity-80 mb:er-text-2xl">
-                        “A bike with ChatGPT integration? Hands-free riding has never made more sense.”
+                        “It’s the lightest and smartest carbon e-bike I’ve ever seen.”
                     </i>
                 </div>
                 <div class="er-text-center mb:er-hidden">
-                    <a href="https://www.instagram.com/reel/CmQnBRtoKmZ/" target="_blank"
+                    <a href="https://www.youtube.com/watch?v=pLJlv-sP_JQ" target="_blank"
                         class="background-image er-aspect-[315/375] mb:er-aspect-[345/200] er-flex er-flex-col er-items-center er-justify-end er-pb-10 er-text-center er-cursor-pointer mycard mb:er-pb-6">
-                        <picture>
-                            <source media="(min-width: 768px)" srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25469_2x_56acaf20-a8f0-4891-b96d-1112f1585291.jpg?v=1752666258">
-                            <source media="(max-width: 768px)" srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25982_2x_be0ebede-29b0-42bb-b44d-780b2acf0e35.jpg?v=1752741348">
-                            <img src="" class="er-rounded-3xl" alt="" loading="lazy">
-                        </picture>
+                        <img loading="lazy" class="er-rounded-3xl"
+                            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/fff_2x_c4ca7611-ddcc-4fc8-8c49-12e508493d19.jpg?v=1752637234"
+                            alt="">
                         <img width="80" height="56" loading="lazy"
                             src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/yt_icon_rgb.png?v=1743577722&width=80"
                             alt="">
-                        <span class="text-size18 er-text-white er-font-bold er-flex er-items-center">Ben Baller <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#fff"><path d="M336-216v-528l408 264-408 264Z"/></svg></span>
+                        <span class="text-size18 er-text-white er-font-bold">Max Lemke</span>
                     </a>
-                    <h3 class="text-size18 er-font-bold c er-mt-6 er-mb-4 mb:er-mt-4">Best Jewelers in the World</h3>
+                    <h3 class="text-size18 er-font-bold c er-mt-6 er-mb-4 mb:er-mt-4">Canoeing Olympic Champion</h3>
                     <i class="text-size16 er-opacity-80 mb:er-text-2xl">
-                        “I make fine jewelry. Urtopia crafts bikes the same way.”
+                        “It’s the lightest and smartest carbon e-bike I’ve ever seen.”
                     </i>
                 </div>
                 <div class="er-text-center mb:er-hidden">
-                    <a target="_blank"
+                    <a href="https://www.youtube.com/watch?v=pLJlv-sP_JQ" target="_blank"
                         class="background-image er-aspect-[315/375] mb:er-aspect-[345/200] er-flex er-flex-col er-items-center er-justify-end er-pb-10 er-text-center er-cursor-pointer mycard mb:er-pb-6">
-                        <picture>
-                            <source media="(min-width: 768px)" srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25465_2x_5aa25306-9a54-4a15-9503-2f3f2e881f27.jpg?v=1752666253">
-                            <source media="(max-width: 768px)" srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25980_2x_211cfaa6-63c3-4aea-b8af-334a9eff56bb.jpg?v=1752741342">
-                            <img src="" class="er-rounded-3xl" alt="" loading="lazy">
-                        </picture>
+                        <img loading="lazy" class="er-rounded-3xl"
+                            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/fff_2x_c4ca7611-ddcc-4fc8-8c49-12e508493d19.jpg?v=1752637234"
+                            alt="">
                         <img width="80" height="56" loading="lazy"
                             src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/yt_icon_rgb.png?v=1743577722&width=80"
                             alt="">
-                        <span class="text-size18 er-text-white er-font-bold er-flex er-items-center">Chris McCormack <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#fff"><path d="M336-216v-528l408 264-408 264Z"/></svg></span>
+                        <span class="text-size18 er-text-white er-font-bold">Max Lemke</span>
                     </a>
-                    <h3 class="text-size18 er-font-bold c er-mt-6 er-mb-4 mb:er-mt-4">2x Ironman World Champion</h3>
+                    <h3 class="text-size18 er-font-bold c er-mt-6 er-mb-4 mb:er-mt-4">Canoeing Olympic Champion</h3>
                     <i class="text-size16 er-opacity-80 mb:er-text-2xl">
-                       “Only a product-obsessed brand builds like Urtopia.”
+                        “It’s the lightest and smartest carbon e-bike I’ve ever seen.”
                     </i>
                 </div>
                 <div class="er-text-center mb:er-hidden">
-                    <a href="https://www.youtube.com/watch?v=pLJlv-sP_JQ" onclick="showVideoDialog('https://www.youtube.com/embed/OdzjlfHdd8A?autoplay=1&amp;cc_load_policy=1');return false;" target="_blank"
+                    <a href="https://www.youtube.com/watch?v=pLJlv-sP_JQ" target="_blank"
                         class="background-image er-aspect-[315/375] mb:er-aspect-[345/200] er-flex er-flex-col er-items-center er-justify-end er-pb-10 er-text-center er-cursor-pointer mycard mb:er-pb-6">
-                        <picture>
-                            <source media="(min-width: 768px)" srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25468_2x_dc000e69-446c-4c6f-bc3a-1c59ec83484b.jpg?v=1752666243">
-                            <source media="(max-width: 768px)" srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25981_2x_ba749a85-1525-4b73-9821-653e2401e9ba.jpg?v=1752741342">
-                            <img src="" class="er-rounded-3xl" alt="" loading="lazy">
-                        </picture>
+                        <img loading="lazy" class="er-rounded-3xl"
+                            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/fff_2x_c4ca7611-ddcc-4fc8-8c49-12e508493d19.jpg?v=1752637234"
+                            alt="">
                         <img width="80" height="56" loading="lazy"
                             src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/yt_icon_rgb.png?v=1743577722&width=80"
                             alt="">
-                        <span class="text-size18 er-text-white er-font-bold er-flex er-items-center">Jennifer Jolly <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#fff"><path d="M336-216v-528l408 264-408 264Z"/></svg></span>
+                        <span class="text-size18 er-text-white er-font-bold">Max Lemke</span>
                     </a>
-                    <h3 class="text-size18 er-font-bold c er-mt-6 er-mb-4 mb:er-mt-4">Emmy-Winning Journalist</h3>
+                    <h3 class="text-size18 er-font-bold c er-mt-6 er-mb-4 mb:er-mt-4">Canoeing Olympic Champion</h3>
                     <i class="text-size16 er-opacity-80 mb:er-text-2xl">
-                        “I couldn’t believe how light it is. Best e-bike experience I had at CES — hands down.”
+                        “It’s the lightest and smartest carbon e-bike I’ve ever seen.”
                     </i>
                 </div>
                 <div class="er-text-center mb:er-hidden">
-                    <a href="https://www.youtube.com/watch?v=pLJlv-sP_JQ" onclick="showVideoDialog('https://www.youtube.com/embed/cEuUJ0EQJaA?autoplay=1&amp;cc_load_policy=1');return false;" target="_blank"
+                    <a href="https://www.youtube.com/watch?v=pLJlv-sP_JQ" target="_blank"
                         class="background-image er-aspect-[315/375] mb:er-aspect-[345/200] er-flex er-flex-col er-items-center er-justify-end er-pb-10 er-text-center er-cursor-pointer mycard mb:er-pb-6">
-                        <picture>
-                            <source media="(min-width: 768px)" srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25467_2x_704cc574-f429-4dab-8480-ec8d751206da.jpg?v=1752666238">
-                            <source media="(max-width: 768px)" srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25983_2x_eaeebd53-b5f4-48a5-9686-ecf3a23f9ee1.jpg?v=1752741330">
-                            <img src="" class="er-rounded-3xl" alt="" loading="lazy">
-                        </picture>
+                        <img loading="lazy" class="er-rounded-3xl"
+                            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/fff_2x_c4ca7611-ddcc-4fc8-8c49-12e508493d19.jpg?v=1752637234"
+                            alt="">
                         <img width="80" height="56" loading="lazy"
                             src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/yt_icon_rgb.png?v=1743577722&width=80"
                             alt="">
-                        <span class="text-size18 er-text-white er-font-bold er-flex er-items-center">Olaf Hajek <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#fff"><path d="M336-216v-528l408 264-408 264Z"/></svg></span>
+                        <span class="text-size18 er-text-white er-font-bold">Max Lemke</span>
                     </a>
-                    <h3 class="text-size18 er-font-bold c er-mt-6 er-mb-4 mb:er-mt-4">German Lengedary Artist</h3>
+                    <h3 class="text-size18 er-font-bold c er-mt-6 er-mb-4 mb:er-mt-4">Canoeing Olympic Champion</h3>
                     <i class="text-size16 er-opacity-80 mb:er-text-2xl">
-                       “The design blew me away. Urtopia is the kind of ride an artist would dream of.”
+                        “It’s the lightest and smartest carbon e-bike I’ve ever seen.”
                     </i>
                 </div>
             </div>
@@ -363,8 +329,8 @@ h1, h2, h3, h4 {
         <button class="md:!er-hidden er-button er-button-dark er-mx-auto !er-block er-my-12 seemore">See More</button>
     </section>
     <section class="er-bg-background er-pt-20 mb:er-py-0">
-        <div class="centeral-content mb:er-px-6 er-relative er-flex er-flex-col er-h-full">
-            <h2 class="text-size48 c er-text-center mb:er-text-4xl er-mb-48 mb:er-mb-12">Top Media & Awards Pick Urtopia
+        <div class="centeral-content mb:er-px-6 er-relative  er-h-full">
+            <h2 class="text-size48 c er-text-center mb:er-text-4xl er-mb-40 mb:er-mb-12">Top Media & Awards Pick Urtopia
                 as the Best
             </h2>
             <div class="background-image er-aspect-[1280/400] er-rounded-3xl mb:er-aspect-auto mb:er-py-10 er-px-6">
@@ -394,8 +360,8 @@ h1, h2, h3, h4 {
                 alt="">
         </div>
     </section>
-    <section class="er-bg-background er-pb-48 er-pt-8 mb:er-pb-24">
-        <div class="centeral-content mb:er-px-6 er-flex er-flex-col">
+    <section class="er-bg-background er-pb-48 er-pt-8">
+        <div class="centeral-content mb:er-px-6">
             <div class="er-grid er-grid-cols-2 er-gap-8 mb:er-grid-cols-1">
                 <div
                     class="er-grid er-grid-cols-2 er-bg-white er-rounded-3xl er-py-16 er-items-center er-text-center mb:er-py-6">
@@ -425,7 +391,7 @@ h1, h2, h3, h4 {
                         <h4 class="text-size20 mb:er-text-2xl er-mt-8 mb:er-mt-4">Carbon 1 ST</h4>
                         <h3 class="text-size24 er-mt-2 mb:er-text-2xl er-mb-12 mb:er-mb-4">Billboard: Best E-Bike</h3>
                         <a class="er-button er-button-dark er-button-outline mb:er-my-0"
-                            href="https://newurtopia.com/products/urtopia-carbon-1-step-thru-ebike?variant=46110068506872" target="_blank">Learn
+                            href="https://newurtopia.com/products/urtopia-carbon-1-pro-ebike" target="_blank">Learn
                             More</a>
                     </div>
                 </div>
@@ -441,7 +407,7 @@ h1, h2, h3, h4 {
                         <h4 class="text-size20 mb:er-text-2xl er-mt-8 mb:er-mt-4">Carbon Joy</h4>
                         <h3 class="text-size24 er-mt-2 mb:er-text-2xl er-mb-12 mb:er-mb-4">Best of CES</h3>
                         <a class="er-button er-button-dark er-button-outline mb:er-my-0"
-                            href="https://newurtopia.com/products/urtopia-joy-carbon-fat-tire-ebike?variant=46345550037240" target="_blank">Learn
+                            href="https://newurtopia.com/products/urtopia-carbon-1-pro-ebike" target="_blank">Learn
                             More</a>
                     </div>
                 </div>
@@ -457,176 +423,15 @@ h1, h2, h3, h4 {
                         <h4 class="text-size20 mb:er-text-2xl er-mt-8 mb:er-mt-4">Fusion Pro</h4>
                         <h3 class="text-size24 er-mt-2 mb:er-text-2xl er-mb-12 mb:er-mb-4">Best of CES 2025</h3>
                         <a class="er-button er-button-dark er-button-outline mb:er-my-0"
-                            href="https://newurtopia.com/products/urtopia-fusion-pro-carbon-long-range-ebike?variant=46423178543352" target="_blank">Learn
+                            href="https://newurtopia.com/products/urtopia-carbon-1-pro-ebike" target="_blank">Learn
                             More</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-        <div class="successsss er-bg-background" style="--swiper-theme-color: #000;--swiper-pagination-color: #000;">
-        <div class="centeral-content">
-            <h2 class="text-size48 er-text-center mb:er-text-4xl">A Resounding Success</h2>
-            <p class="text-size18 er-text-center er-mt-8 er-mb-24 mb:er-text-2xl mb:er-mt-4 mb:er-mb-12">Media Reviews from Top Agencies</p>
-        </div>
-        <div style="background: #fff;">
-            <div class="centeral-content">
-                <div class="swiperrrrrqq">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18872_2x_109bbad3-32ee-4436-8e2f-b3fac6e2fe2e.png?v=1709018442"
-                                alt="">
-                            <span class="u17Light_v2">Leading newspaper</span>
-                            <div class="flex-1"></div>
-                            <img class="star"
-                                src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_19774_2x_37c97972-fcb1-492c-9d54-e4ecbb39c532.png?v=1709016432"
-                                alt="">
-                            <span class="u17DemiBold_v2">“Its range and torque are stellar for such a lightweight bike, and
-                                the torque sensor aims to make your ride smoother and more efficient.”</span>
-                            <a class="my-link" target="_blank" href="https://reviewed.usatoday.com/features/ces-2024-editors-choice-award-winners">Read the post</a>
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18912_2x_432bd681-09cc-415c-b22f-8f05221c67f7.png?v=1709018449"
-                                alt="">
-                            <span class="u17Light_v2">World leader in cycling</span>
-                            <div class="flex-1"></div>
-                            <img class="star"
-                                src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_19774_2x_37c97972-fcb1-492c-9d54-e4ecbb39c532.png?v=1709016432"
-                                alt="">
-                            <span class="u17DemiBold_v2">“The Urtopia carbon e-bike allows you to have a more efficient and
-                                sustainable way of travelling.”</span>
-                            <a class="my-link" target="_blank" href="https://www.cyclingnews.com/features/new-urtopia-carbon-e-bike-boasts-a-13kg-weight-and-a-host-of-innovative-high-tech-features/">Read the post</a>
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18873_2x_62b1a40b-72b0-4ebd-811e-b0f16a085f69.png?v=1709018456"
-                                alt="">
-                            <span class="u17Light_v2">Leading popular tech site</span>
-                            <div class="flex-1"></div>
-                            <img class="star"
-                                src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_19774_2x_37c97972-fcb1-492c-9d54-e4ecbb39c532.png?v=1709016432"
-                                alt="">
-                            <span class="u17DemiBold_v2">“Urtopia e-bike is basically a computer on wheels”</span>
-                            <a class="my-link" target="_blank" href="https://www.engadget.com/urtopia-ebike-is-the-most-tech-heavy-weve-seen-140046298.html">Read the post</a>
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18874_2x_b0b31666-5414-40bf-85e2-eb25817ded05.png?v=1709018464"
-                                alt="">
-                            <span class="u17Light_v2">World’s leading technology and web development news site</span>
-                            <div class="flex-1"></div>
-                            <img class="star"
-                                src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_19774_2x_37c97972-fcb1-492c-9d54-e4ecbb39c532.png?v=1709016432"
-                                alt="">
-                            <span class="u17DemiBold_v2">“Even if it didn’t pack any fancy smart features, I’d argue the
-                                Urtopia would be worth its price on the weight and ride quality alone.”</span>
-                            <a class="my-link" target="_blank" href="https://thenextweb.com/news/hands-on-urtopias-13-kg-carbon-fiber-ebike-promises-big-smarts">Read the post</a>
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18875_2x_ad69df9a-12cc-4a13-ab79-d7d2f40ec82e.png?v=1709018476"
-                                alt="">
-                            <span class="u17Light_v2">World’s leading news site focused on information technology</span>
-                            <div class="flex-1"></div>
-                            <img class="star"
-                                src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_19774_2x_37c97972-fcb1-492c-9d54-e4ecbb39c532.png?v=1709016432"
-                                alt="">
-                            <span class="u17DemiBold_v2">“It’s incredibly fun to ride.”</span>
-                            <a class="my-link" target="_blank" href="https://techcrunch.com/2021/12/01/urtopia-e-bike-is-basically-a-computer-on-wheels">Read the post</a>
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18900_2x_d7d13de2-546c-4334-8fa4-699ae1623e4b.png?v=1709018483"
-                                alt="">
-                            <span class="u17Light_v2">The most comprehensive consumer electronics review site.</span>
-                            <div class="flex-1"></div>
-                            <img class="star"
-                                src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_19774_2x_37c97972-fcb1-492c-9d54-e4ecbb39c532.png?v=1709016432"
-                                alt="">
-                            <span class="u17DemiBold_v2">“You won’t find a bike much lighter with more tech baked in than
-                                the Urtopia. ”</span>
-                            <a class="my-link" target="_blank" href="https://www.cnet.com/roadshow/news/black-friday-deals-on-electric-scooters-and-e-bikes/">Read the post</a>
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18902_2x_61eb545d-85b9-453c-98b1-b33bfc743d0a.png?v=1709018490"
-                                alt="">
-                            <span class="u17Light_v2">Known worldwide for its lists and top rankings</span>
-                            <div class="flex-1"></div>
-                            <img class="star"
-                                src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_19774_2x_37c97972-fcb1-492c-9d54-e4ecbb39c532.png?v=1709016432"
-                                alt="">
-                            <span class="u17DemiBold_v2">“It’s a game changer in terms of safety.”</span>
-                            <a class="my-link" target="_blank" href="https://www.forbes.com/sites/billroberson/2022/05/23/innovative-new-urban-utropia-all-carbon-ebike-looks-amazing-weighs-just-30-pounds">Read the post</a>
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18903_2x_635cb641-3120-45e0-9159-379fc0022cd9.png?v=1709018497"
-                                alt="">
-                            <span class="u17Light_v2">the most authoritative independent review for ebike</span>
-                            <div class="flex-1"></div>
-                            <img class="star"
-                                src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_19774_2x_37c97972-fcb1-492c-9d54-e4ecbb39c532.png?v=1709016432"
-                                alt="">
-                            <span class="u17DemiBold_v2">“It’s neat to see an electric bike that’s trying new things and
-                                really thinking about safety and sustainability.“</span>
-                            <a class="my-link" target="_blank" href="https://electricbikereview.com/urtopia/2022-carbon-e-bike/">Read the post</a>
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18901_2x_226d0d88-60f2-4c91-92d9-8fc9ade2540f.png?v=1709018504"
-                                alt="">
-                            <span class="u17Light_v2">One of the largest online technical publications</span>
-                            <div class="flex-1"></div>
-                            <img class="star"
-                                src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_19774_2x_37c97972-fcb1-492c-9d54-e4ecbb39c532.png?v=1709016432"
-                                alt="">
-                            <span class="u17DemiBold_v2">"The Urtopia feels like something five years ahead of its
-                                time."</span>
-                            <a class="my-link" target="_blank" href="https://www.makeuseof.com/urtopia-carbon-fiber-ebike-review/">Read the post</a>
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18904_2x_36f71900-d4bd-4c3f-b775-f2a8eb0ad263.png?v=1709018509"
-                                alt="">
-                            <span class="u17Light_v2">Digital trends pioneering media</span>
-                            <div class="flex-1"></div>
-                            <img class="star"
-                                src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_19774_2x_37c97972-fcb1-492c-9d54-e4ecbb39c532.png?v=1709016432"
-                                alt="">
-                            <span class="u17DemiBold_v2">“This e-bike does phone tech better than some phones”</span>
-                            <a class="my-link" target="_blank" href="https://www.digitaltrends.com/mobile/urtopia-ebike-with-smartphone-features/">Read the post</a>
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18906_2x_36fd37b4-8295-4d46-b842-9d1cc9c37ce4.png?v=1709018515"
-                                alt="">
-                            <span class="u17Light_v2">International benchmark for technology media</span>
-                            <div class="flex-1"></div>
-                            <img class="star"
-                                src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_19774_2x_37c97972-fcb1-492c-9d54-e4ecbb39c532.png?v=1709016432"
-                                alt="">
-                            <span class="u17DemiBold_v2">“The Urtopia Carbon E-Bike is a work of art that you can
-                                ride”</span>
-                            <a class="my-link" target="_blank" href="https://www.zdnet.com/article/urtopia-carbon-electric-bike-review/">Read the post</a>
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18907_2x_036d7f55-03ff-489b-a62c-7c4ede75d4e6.png?v=1709018521"
-                                alt="">
-                            <span class="u17Light_v2">Leading online science and technology website</span>
-                            <div class="flex-1"></div>
-                            <img class="star"
-                                src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_19774_2x_37c97972-fcb1-492c-9d54-e4ecbb39c532.png?v=1709016432"
-                                alt="">
-                            <span class="u17DemiBold_v2">“All in all, I found the Urtopia to be a fun, cool and capable
-                                alternative to more traditional commuter ebikes.”</span>
-                            <a class="my-link" target="_blank" href="https://newatlas.com/bicycles/review-urtopia-ebike/">Read the post</a>
-                        </div>
-                    </div>
-                </div>
-                <img class="swiper-button-prev mobileHide"
-                    src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_23241_2x_41d4abbd-f02a-4749-b622-487351941af5.png?v=1709019638"
-                    alt="">
-                <img class="swiper-button-next mobileHide"
-                    src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_23241_2x_41d4abbd-f02a-4749-b622-487351941af5.png?v=1709019638"
-                    alt="">
-                <div class="swiper-pagination pcHide"></div>
-            </div>
-        </div>
-    </div>
     <section class="er-bg-background er-py-48 mb:er-py-24">
-        <div class="centeral-content mb:er-px-8 er-flex er-flex-col">
+        <div class="centeral-content mb:er-px-8">
             <h2 class="text-size48 er-text-center mb:er-text-4xl">What Professional Reviewers Say</h2>
             <p class="text-size18 er-text-center er-mt-10 er-mb-28 mb:er-text-2xl mb:er-mt-4 mb:er-mb-12">True reviews
                 over the web</p>
@@ -641,138 +446,90 @@ h1, h2, h3, h4 {
                 </div>
                 <div class="tab-content">
                     <div id="content1"
-                        class="tab-pane er-grid xl:er-grid-cols-4 lg:er-grid-cols-3 md:er-grid-cols-2 er-grid-cols-1 er-mt-16 mb:er-mt-10 er-gap-y-16 er-gap-x-6">
-                        {%- for item in all_products["urtopia-carbon-fold"].metafields.custom.review_list.value -%}
-                            <div class="er-flex er-flex-col er-items-start er-cursor-pointer"
-                                    onclick="showVideoDialog('https://www.youtube.com/embed/{{ item.youtube_id }}?autoplay=1&amp;cc_load_policy=1');return false;">
-                                    {{ item.review_cover | image_url: width: 500 | image_tag: class: 'er-rounded-2xl', loading: 'lazy' }}
-                                    <p class="text-size16 er-mt-6 er-mb-8 mb:er-text-2xl mb:er-mb-6">
-                                        <span>
-                                            {{ item.review_desc }}
-                                        </span>
-                                    </p>
-                                    <span class="er-flex-1"></span>
-                                    <div class="er-flex er-items-center">
-                                        {{ item.review_auther_cover | image_url: width: 30, height: 30 | image_tag: class: 'er-mr-4 er-rounded-full', loading: 'lazy' }}
-                                        <span class="text-size16 er-font-medium mb:er-text-2xl">{{ item.review_auther_name }}</span>
-                                    </div>
-                                </div>
-                        {%- endfor -%}
+                        class="tab-pane er-grid er-grid-cols-4 er-mt-16 mb:er-grid-cols-1 mb:er-mt-10 er-gap-y-8 er-gap-x-6">
+                        <a class="er-flex er-flex-col er-items-start" href="https://www.youtube.com/watch?v=bZduNKXScvA"
+                            target="_blank"
+                            onclick="showVideoDialog('https://www.youtube.com/embed/bZduNKXScvA?autoplay=1&amp;cc_load_policy=1');return false;">
+                            <img class="er-rounded-2xl"
+                                src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250625-142813.jpg?v=1750832954&amp;width=500"
+                                alt="Carbon Fusion Pro E-Bike">
+                            <p class="text-size16 er-mt-6 er-mb-8 mb:er-text-2xl mb:er-mb-6">
+                                <span>
+                                    Surprisingly light for its size, and the build quality feels solid the moment you
+                                    hop on. It rides smooth, quiet, and looks absolutely stunning—totally stands out!
+                                </span>
+                            </p>
+                            <span class="er-flex-1"></span>
+                            <div class="er-flex er-items-center">
+                                <img width="28" height="28" class="er-mr-4 er-rounded-full"
+                                    src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/unnamed_1.jpg?v=1750833093"
+                                    alt="Carbon Fusion Pro E-Bike">
+                                <span class="text-size16 er-font-medium mb:er-text-2xl">Monkey Wrench Mike</span>
+                            </div>
+                        </a>
+                        <a class="er-flex er-flex-col er-items-start" href="https://www.youtube.com/watch?v=2kyU-qE4esU"
+                            target="_blank"
+                            onclick="showVideoDialog('https://www.youtube.com/embed/2kyU-qE4esU?autoplay=1&amp;cc_load_policy=1');return false;">
+                            <img class="er-rounded-2xl"
+                                src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250603-182251.jpg?v=1748946331&amp;width=500"
+                                alt="Carbon Fusion Pro E-Bike">
+                            <p class="text-size16 er-mt-6 er-mb-8 mb:er-text-2xl mb:er-mb-6">
+                                <span>
+                                    I love the lightweight carbon frame, cool design, and comfy upright ride. Great
+                                    value for the price!
+                                </span>
+                            </p>
+                            <span class="er-flex-1"></span>
+                            <div class="er-flex er-items-center">
+                                <img width="28" height="28" class="er-mr-4 er-rounded-full"
+                                    src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250603-182641.jpg?v=1748946403"
+                                    alt="Carbon Fusion Pro E-Bike">
+                                <span class="text-size16 er-font-medium mb:er-text-2xl">Mobile with M@</span>
+                            </div>
+                        </a>
+                        <a class="er-flex er-flex-col er-items-start" href="https://www.youtube.com/watch?v=WgMrBYJZug8"
+                            target="_blank"
+                            onclick="showVideoDialog('https://www.youtube.com/embed/WgMrBYJZug8?autoplay=1&amp;cc_load_policy=1');return false;">
+                            <img class="er-rounded-2xl"
+                                src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250612-185609.jpg?v=1749725870&amp;width=500"
+                                alt="Carbon Fusion Pro E-Bike">
+                            <p class="text-size16 er-mt-6 er-mb-8 mb:er-text-2xl mb:er-mb-6">
+                                <span>
+                                    A well-built, carbon fiber eBike with unique design and great value. Definitely a
+                                    standout I’d consider buying.
+                                </span>
+                            </p>
+                            <span class="er-flex-1"></span>
+                            <div class="er-flex er-items-center">
+                                <img width="28" height="28" class="er-mr-4 er-rounded-full"
+                                    src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/channels4_profile_2.jpg?v=1749725969"
+                                    alt="Carbon Fusion Pro E-Bike">
+                                <span class="text-size16 er-font-medium mb:er-text-2xl">Chris Crossed</span>
+                            </div>
+                        </a>
                     </div>
-                    <div id="content2"
-                        class="tab-pane er-grid xl:er-grid-cols-4 lg:er-grid-cols-3 md:er-grid-cols-2 er-grid-cols-1 er-mt-16 mb:er-mt-10 er-gap-y-16 er-gap-x-6">
-                        {%- for item in all_products["urtopia-carbon-1-pro-ebike"].metafields.custom.review_list.value -%}
-                            <div class="er-flex er-flex-col er-items-start er-cursor-pointer"
-                                    onclick="showVideoDialog('https://www.youtube.com/embed/{{ item.youtube_id }}?autoplay=1&amp;cc_load_policy=1');return false;">
-                                    {{ item.review_cover | image_url: width: 500 | image_tag: class: 'er-rounded-2xl', loading: 'lazy' }}
-                                    <p class="text-size16 er-mt-6 er-mb-8 mb:er-text-2xl mb:er-mb-6">
-                                        <span>
-                                            {{ item.review_desc }}
-                                        </span>
-                                    </p>
-                                    <span class="er-flex-1"></span>
-                                    <div class="er-flex er-items-center">
-                                        {{ item.review_auther_cover | image_url: width: 30, height: 30 | image_tag: class: 'er-mr-4 er-rounded-full', loading: 'lazy' }}
-                                        <span class="text-size16 er-font-medium mb:er-text-2xl">{{ item.review_auther_name }}</span>
-                                    </div>
-                                </div>
-                        {%- endfor -%}
-                    </div>
-                    <div id="content3"
-                        class="tab-pane er-grid xl:er-grid-cols-4 lg:er-grid-cols-3 md:er-grid-cols-2 er-grid-cols-1 er-mt-16 mb:er-mt-10 er-gap-y-16 er-gap-x-6">
-                        {%- for item in all_products["urtopia-carbon-1-step-thru-ebike"].metafields.custom.review_list.value -%}
-                            <div class="er-flex er-flex-col er-items-start er-cursor-pointer"
-                                    onclick="showVideoDialog('https://www.youtube.com/embed/{{ item.youtube_id }}?autoplay=1&amp;cc_load_policy=1');return false;">
-                                    {{ item.review_cover | image_url: width: 500 | image_tag: class: 'er-rounded-2xl', loading: 'lazy' }}
-                                    <p class="text-size16 er-mt-6 er-mb-8 mb:er-text-2xl mb:er-mb-6">
-                                        <span>
-                                            {{ item.review_desc }}
-                                        </span>
-                                    </p>
-                                    <span class="er-flex-1"></span>
-                                    <div class="er-flex er-items-center">
-                                        {{ item.review_auther_cover | image_url: width: 30, height: 30 | image_tag: class: 'er-mr-4 er-rounded-full', loading: 'lazy' }}
-                                        <span class="text-size16 er-font-medium mb:er-text-2xl">{{ item.review_auther_name }}</span>
-                                    </div>
-                                </div>
-                        {%- endfor -%}
-                    </div>
-                    <div id="content4"
-                        class="tab-pane er-grid xl:er-grid-cols-4 lg:er-grid-cols-3 md:er-grid-cols-2 er-grid-cols-1 er-mt-16 mb:er-mt-10 er-gap-y-16 er-gap-x-6">
-                        {%- for item in all_products["urtopia-joy-carbon-fat-tire-ebike"].metafields.custom.review_list.value -%}
-                            <div class="er-flex er-flex-col er-items-start er-cursor-pointer"
-                                    onclick="showVideoDialog('https://www.youtube.com/embed/{{ item.youtube_id }}?autoplay=1&amp;cc_load_policy=1');return false;">
-                                    {{ item.review_cover | image_url: width: 500 | image_tag: class: 'er-rounded-2xl', loading: 'lazy' }}
-                                    <p class="text-size16 er-mt-6 er-mb-8 mb:er-text-2xl mb:er-mb-6">
-                                        <span>
-                                            {{ item.review_desc }}
-                                        </span>
-                                    </p>
-                                    <span class="er-flex-1"></span>
-                                    <div class="er-flex er-items-center">
-                                        {{ item.review_auther_cover | image_url: width: 30, height: 30 | image_tag: class: 'er-mr-4 er-rounded-full', loading: 'lazy' }}
-                                        <span class="text-size16 er-font-medium mb:er-text-2xl">{{ item.review_auther_name }}</span>
-                                    </div>
-                                </div>
-                        {%- endfor -%}
-                    </div>
-                    <div id="content5"
-                        class="tab-pane er-grid xl:er-grid-cols-4 lg:er-grid-cols-3 md:er-grid-cols-2 er-grid-cols-1 er-mt-16 mb:er-mt-10 er-gap-y-16 er-gap-x-6">
-                        {%- for item in all_products["urtopia-fusion-pro-carbon-long-range-ebike"].metafields.custom.review_list.value -%}
-                            <div class="er-flex er-flex-col er-items-start er-cursor-pointer"
-                                    onclick="showVideoDialog('https://www.youtube.com/embed/{{ item.youtube_id }}?autoplay=1&amp;cc_load_policy=1');return false;">
-                                    {{ item.review_cover | image_url: width: 500 | image_tag: class: 'er-rounded-2xl', loading: 'lazy' }}
-                                    <p class="text-size16 er-mt-6 er-mb-8 mb:er-text-2xl mb:er-mb-6">
-                                        <span>
-                                            {{ item.review_desc }}
-                                        </span>
-                                    </p>
-                                    <span class="er-flex-1"></span>
-                                    <div class="er-flex er-items-center">
-                                        {{ item.review_auther_cover | image_url: width: 30, height: 30 | image_tag: class: 'er-mr-4 er-rounded-full', loading: 'lazy' }}
-                                        <span class="text-size16 er-font-medium mb:er-text-2xl">{{ item.review_auther_name }}</span>
-                                    </div>
-                                </div>
-                        {%- endfor -%}
-                    </div>
-                    <div id="content6"
-                        class="tab-pane er-grid xl:er-grid-cols-4 lg:er-grid-cols-3 md:er-grid-cols-2 er-grid-cols-1 er-mt-16 mb:er-mt-10 er-gap-y-16 er-gap-x-6">
-                        {%- for item in all_products["urtopia-carbon-fusion-gt"].metafields.custom.review_list.value -%}
-                            <div class="er-flex er-flex-col er-items-start er-cursor-pointer"
-                                    onclick="showVideoDialog('https://www.youtube.com/embed/{{ item.youtube_id }}?autoplay=1&amp;cc_load_policy=1');return false;">
-                                    {{ item.review_cover | image_url: width: 500 | image_tag: class: 'er-rounded-2xl', loading: 'lazy' }}
-                                    <p class="text-size16 er-mt-6 er-mb-8 mb:er-text-2xl mb:er-mb-6">
-                                        <span>
-                                            {{ item.review_desc }}
-                                        </span>
-                                    </p>
-                                    <span class="er-flex-1"></span>
-                                    <div class="er-flex er-items-center">
-                                        {{ item.review_auther_cover | image_url: width: 30, height: 30 | image_tag: class: 'er-mr-4 er-rounded-full', loading: 'lazy' }}
-                                        <span class="text-size16 er-font-medium mb:er-text-2xl">{{ item.review_auther_name }}</span>
-                                    </div>
-                                </div>
-                        {%- endfor -%}
-                    </div>
+                    <div id="content2" class="tab-pane">内容二</div>
+                    <div id="content3" class="tab-pane">内容三</div>
+                    <div id="content4" class="tab-pane">内容一</div>
+                    <div id="content5" class="tab-pane">内容二</div>
+                    <div id="content6" class="tab-pane">内容三</div>
                 </div>
             </div>
 
         </div>
     </section>
-    <section class="er-bg-background er-pt-8 er-pb-60 mb:er-pb-24">
-        <div class="centeral-content mb:er-px-4 er-flex er-flex-col">
+    <section class="er-bg-background er-py-16 mb:er-py-0">
+        <div class="centeral-content mb:er-px-4">
             <h2 class="text-size48 er-text-center mb:er-text-4xl">Love From Urtopians</h2>
             <p class="text-size18 er-text-center er-mt-10 er-mb-32 mb:er-text-2xl mb:er-mt-4 mb:er-mb-12">Urtopians
                 worldwide showed deep love—we’ll answer with excellence.</p>
             <img class="er-max-w-screen-lg er-mx-auto er-block mb:er-max-w-full" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/23919_2x_6ee17600-1d7d-490f-8a73-192699679b8e.png?v=1752656593" alt="">
         </div>
     </section>
-<div class="centeral-content">
-     <h2 class="text-size48 er-text-center mb:er-text-4xl er-w-full er-py-24 mb:er-py-16">What our real customers say</h2>
-    {% render "judgeme_all_reviews", widget_type: "judgeme_all_review_widget", concierge_install: false %}
-    {% render 'judgeme_core' %}
-</div>
+
 <script type="module">
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
     $('.seemore').on('click', function () {
         // 显示所有 mb:er-hidden 元素
         $(`.cards > div[class="er-text-center mb:er-hidden"]`).show();
@@ -786,26 +543,9 @@ h1, h2, h3, h4 {
         $('.tab-nav a').removeClass('active');
         $(this).addClass('active');
         $('.tab-pane').hide();
-        $($(this).attr('href')).css('display', global_config.is_mobile ? 'flex' : 'grid');
+        $($(this).attr('href')).css('display', isMobile ? 'flex' : 'grid');
     });
     // 默认显示第一个
     $('.tab-pane').hide();
-    $('#content1').css('display', global_config.is_mobile ? 'flex' : 'grid');
-
-    new Swiper('.successsss .swiperrrrrqq', global_config.is_mobile ? {
-        slidesPerView: 1,
-        effect: 'fade',
-        fadeEffect: {
-            crossFade: true
-        },
-        pagination: { el: '.successsss .swiper-pagination' },
-        speed: 300
-  } : {
-        slidesPerView: 4,
-        spaceBetween: '5%',
-        navigation: {
-            nextEl: '.successsss:not(.successsssc) .swiper-button-next',
-            prevEl: '.successsss:not(.successsssc) .swiper-button-prev',
-        },
-    })
+    $('#content1').css('display', isMobile ? 'flex' : 'grid');
 </script>
