@@ -1,6 +1,6 @@
 {
   "current": {
-    "sale_name": "Prime Day Extended",
+    "sale_name": "Summer Sale",
     "sale_end_time": "2024-9-13",
     "chord_sale_name": "Memorial Day Sale",
     "hide_sale_countdown": false,
@@ -192,6 +192,10 @@
       "care": {
         "type": "care",
         "settings": {}
+      },
+      "dataLayer-allPages": {
+        "type": "dataLayer-allPages",
+        "settings": {}
       }
     },
     "content_for_index": [],
@@ -204,6 +208,11 @@
       "pagefly-page-builder": {
         "type": "shopify:\/\/apps\/pagefly-page-builder\/blocks\/app-embed\/83e179f7-59a0-4589-8c66-c0dddf959200",
         "disabled": true,
+        "settings": {}
+      },
+      "6251270934270006384": {
+        "type": "shopify:\/\/apps\/stape-server-gtm\/blocks\/gtm\/7e13c847-7971-409d-8fe0-29ec14d5f048",
+        "disabled": false,
         "settings": {}
       }
     }

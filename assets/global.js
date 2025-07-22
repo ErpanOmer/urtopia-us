@@ -2208,11 +2208,6 @@ window.addEventListener('load', async () => {
       showSubscribeEmailDialog()
     }, 15000)
   }
-
-    // datalayer-allpages
-    fetch(window.location.pathname + '?sections=datalayer-allpages').then(r => r.json()).then(r => {
-      $(document.body).append($(r['datalayer-allpages']))
-    })
 });
 
 const isIE=typeof document!=='undefined'&&document.documentMode;const support=type=>window&&window[type];const validAttribute=['data-iesrc','data-alt','data-src','data-srcset','data-background-image','data-toggle-class'];const defaultConfig={rootMargin:'0px',threshold:0,enableAutoReload:false,load(element){if(element.nodeName.toLowerCase()==='picture'){let img=element.querySelector('img');let append=false;if(img===null){img=document.createElement('img');append=true}if(isIE&&element.getAttribute('data-iesrc')){img.src=element.getAttribute('data-iesrc')}if(element.getAttribute('data-alt')){img.alt=element.getAttribute('data-alt')}if(append){element.append(img)}}if(element.nodeName.toLowerCase()==='video'&&!element.getAttribute('data-src')){if(element.children){const childs=element.children;let childSrc;for(let i=0;i<=childs.length-1;i++){childSrc=childs[i].getAttribute('data-src');if(childSrc){childs[i].src=childSrc}}element.load()}}if(element.getAttribute('data-poster')){element.poster=element.getAttribute('data-poster')}if(element.getAttribute('data-src')){element.src=element.getAttribute('data-src')}if(element.getAttribute('data-srcset')){element.setAttribute('srcset',element.getAttribute('data-srcset'))}let backgroundImageDelimiter=',';if(element.getAttribute('data-background-delimiter')){backgroundImageDelimiter=element.getAttribute('data-background-delimiter')}if(element.getAttribute('data-background-image')){element.style.backgroundImage=`url('${element.getAttribute('data-background-image').split(backgroundImageDelimiter).join('\'),url(\'')}')`;
@@ -2348,3 +2343,8 @@ $(document).on('click', 'div[cart-variant-id]', function () {
         console.log()
       })
     })
+
+// datalayer-allpages
+// fetch(window.location.pathname + '?sections=datalayer-allpages').then(r => r.json()).then(r => {
+//   $(document.body).append($(r['datalayer-allpages']))
+// })

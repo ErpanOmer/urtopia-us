@@ -10,7 +10,7 @@
       j.defer = true;
       j.type = "text/javascript";
       j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-      task(() => d.head.appendChild(j))
+      d.head.appendChild(j)
     })(window, document, 'script', 'dataLayer', 'GTM-P9MZH68');
 </script>
 <script type="module">
@@ -980,5 +980,5 @@
       } 
       // end Ultimate_Shopify_DataLayer
 
-      task(() => new Ultimate_Shopify_DataLayer())
+      new Ultimate_Shopify_DataLayer()
 </script>
