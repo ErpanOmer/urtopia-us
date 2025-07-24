@@ -25,7 +25,6 @@
       | replace: 'data-source-attribution="shopify.loadfeatures" defer="defer"', 'data-source-attribution="shopify.loadfeatures" data-level="1" type="text/lazyload"'
     }}
   {% include 'pagefly-app-header' %}
-  {% section 'dataLayer-allPages' %}
   </head>
   <body class="gradient">
     {{ 'base.min.css' | asset_url | stylesheet_tag: preload: true }}
