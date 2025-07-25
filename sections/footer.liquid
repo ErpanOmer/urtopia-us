@@ -18,7 +18,7 @@
         class="footer-block {% if block.type == 'link_list' and block.settings.heading != blank %} footer-block--menu{% endif %}"
         {{ block.shopify_attributes }}>
         {%- if block.settings.heading != blank -%}
-        <h2 class="footer-block__heading">{{- block.settings.heading | escape -}}</h2>
+        <div class="footer-block__heading">{{- block.settings.heading | escape -}}</div>
         {%- endif -%}
 
         {%- case block.type -%}
@@ -62,7 +62,7 @@
         {%- if section.settings.newsletter_enable -%}
         <div class="footer-block__newsletter">
           {%- if section.settings.newsletter_heading != blank -%}
-          <h2 class="footer-block__heading">{{ section.settings.newsletter_heading | escape }}</h2>
+          <div class="footer-block__heading">{{ section.settings.newsletter_heading | escape }}</div>
           <div class="newsletter_des">Join over 200,000 members and receive updates and special offers.</div>
           {%- endif -%}
           {%- form 'customer', id: 'ContactFooter', class: 'footer__newsletter newsletter-form' -%}
@@ -119,8 +119,8 @@
       {%- if section.settings.newsletter_enable -%}
       <div class="footer-block__newsletter">
         {%- if section.settings.newsletter_heading != blank -%}
-        <h2 class="footer-block__heading footer-block__heading_none">{{ section.settings.newsletter_heading | escape }}
-        </h2>
+        <div class="footer-block__heading footer-block__heading_none">{{ section.settings.newsletter_heading | escape }}
+        </div>
         <div class="newsletter_des">Join over 200,000 members and receive updates and special offers.</div>
         {%- endif -%}
         {%- form 'customer', id: 'ContactFooter', class: 'footer__newsletter newsletter-form' -%}
@@ -177,7 +177,7 @@
         class="footer-block {% if block.type == 'link_list' and block.settings.heading != blank %} footer-block--menu{% endif %}"
         {{ block.shopify_attributes }}>
         {%- if block.settings.heading != blank -%}
-        <h2 class="footer-block__heading">{{- block.settings.heading | escape -}}</h2>
+        <div class="footer-block__heading">{{- block.settings.heading | escape -}}</div>
         {%- endif -%}
 
         {%- case block.type -%}
@@ -274,7 +274,7 @@
         <noscript>
           {%- form 'localization', id: 'FooterCountryFormNoScript', class: 'localization-form' -%}
           <div class="localization-form__select">
-            <h2 class="visually-hidden" id="FooterCountryLabelNoScript">{{ 'localization.country_label' | t }}</h2>
+            <div class="visually-hidden" id="FooterCountryLabelNoScript">{{ 'localization.country_label' | t }}</div>
             <select class="localization-selector link" name="country_code" aria-labelledby="FooterCountryLabelNoScript">
               {%- for country in localization.available_countries -%}
               <option value="{{ country.iso_code }}" {%- if country.iso_code==localization.country.iso_code %}
@@ -291,7 +291,7 @@
         <localization-form>
           {%- form 'localization', id: 'FooterCountryForm', class: 'localization-form' -%}
           <div class="no-js-hidden">
-            <h2 class="caption-large text-body" id="FooterCountryLabel">{{ 'localization.country_label' | t }}</h2>
+            <div class="caption-large text-body" id="FooterCountryLabel">{{ 'localization.country_label' | t }}</div>
             <div class="disclosure">
               <button type="button"
                 class="disclosure__button localization-form__select localization-selector link link--text caption-large"
@@ -325,7 +325,7 @@
         <noscript>
           {%- form 'localization', id: 'FooterLanguageFormNoScript', class: 'localization-form' -%}
           <div class="localization-form__select">
-            <h2 class="visually-hidden" id="FooterLanguageLabelNoScript">{{ 'localization.language_label' | t }}</h2>
+            <div class="visually-hidden" id="FooterLanguageLabelNoScript">{{ 'localization.language_label' | t }}</div>
             <select class="localization-selector link" name="locale_code" aria-labelledby="FooterLanguageLabelNoScript">
               {%- for language in localization.available_languages -%}
               <option value="{{ language.iso_code }}" lang="{{ language.iso_code }}" {%- if
@@ -343,7 +343,7 @@
         <localization-form>
           {%- form 'localization', id: 'FooterLanguageForm', class: 'localization-form' -%}
           <div class="no-js-hidden">
-            <h2 class="caption-large text-body" id="FooterLanguageLabel">{{ 'localization.language_label' | t }}</h2>
+            <div class="caption-large text-body" id="FooterLanguageLabel">{{ 'localization.language_label' | t }}</div>
             <div class="disclosure">
               <button type="button"
                 class="disclosure__button localization-form__select localization-selector link link--text caption-large"

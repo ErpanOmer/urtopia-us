@@ -1,4 +1,5 @@
 {{ 'outlet_v4.scss.css' | asset_url | stylesheet_tag: preload: true }}
+<h1 class="er-sr-only">{{ page_title }}</h1>
 <style>
 h1, h2, h3, h4 {
     color: inherit;
@@ -147,14 +148,14 @@ h1, h2, h3, h4 {
         {% render 'image', first_screen: true, mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25728_2x_dee90a7b-dc6e-4590-be1b-f6e4a95db444.jpg?v=1744191416", src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25727_2x_a7839a6d-6de2-4345-8b2f-223e6c7911a7.jpg?v=1744191050' %}
         <div
             class="centeral-content er-flex er-items-center  er-h-full er-text-left er-justify-start">
-            <h1 class="er-text-white text-size48 mb:er-text-5xl mb:er-leading-tight">Find Urtopia <br>Electric Bike Stores</h1>
+            <h2 class="er-text-white text-size48 mb:er-text-5xl mb:er-leading-tight">Find Urtopia <br>Electric Bike Stores</h2>
         </div>
     </div>
     <div class="er-py-32 mb:er-py-16">
         <div class="centeral-content">
             <div class="er-grid er-grid-cols-2 mb:er-grid-cols-1">
                 <div class="er-flex er-flex-col">
-                    <h2 class="text-size36 mb:er-text-4xl">We are in over {{ settings.shop_count }} ebike shops</h2>
+                    <h3 class="text-size36 mb:er-text-4xl">We are in over {{ settings.shop_count }} ebike shops</h3>
                     <p class="text-size18 er-mt-10 er-opacity-80 er-max-w-4xl mb:er-text-2xl mb:er-my-8">
                         <span>
                             Take your first step in to experience the stunning appearance and smooth riding. Book a FREE
@@ -188,8 +189,8 @@ h1, h2, h3, h4 {
                         </svg>
 
                         <div class="er-ml-6 er-flex er-flex-col">
-                            <h3 class="text-size36 mb:er-text-4xl"><b>{{ settings.shop_count }}</b></h3>
-                            <h4 class="text-size20 mb:er-text-2xl"><b>ebike shops</b></h4>
+                            <div class="text-size36 mb:er-text-4xl"><b>{{ settings.shop_count }}</b></div>
+                            <div class="text-size20 mb:er-text-2xl"><b>ebike shops</b></div>
                         </div>
                     </div>
                     <div class="er-flex er-items-center">
@@ -213,8 +214,8 @@ h1, h2, h3, h4 {
                             </g>
                         </svg>
                         <div class="er-ml-6 er-flex er-flex-col">
-                            <h3 class="text-size36 mb:er-text-4xl"><b>2 Year</b></h3>
-                            <h4 class="text-size20 mb:er-text-2xl"><b>warranty</b></h4>
+                            <div class="text-size36 mb:er-text-4xl"><b>2 Year</b></div>
+                            <div class="text-size20 mb:er-text-2xl"><b>warranty</b></div>
                         </div>
                     </div>
                 </div>
@@ -697,20 +698,20 @@ h1, h2, h3, h4 {
     </div>
     <div class="faq">
         <div class="centeral-content">
-          <h3 class="u36Medium_v2">FAQs</h3>
+          <h2 class="u36Medium_v2">FAQs</h2>
           <div class="items">
             <div class="item">
-              <div class="u24Medium_v2 text-size24">
+              <h3 class="u24Medium_v2 text-size24">
                 <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="{{ page_title }}">1. Why should I test ride an E-Bike before I decide to buy it? 
-              </div>
+              </h3>
               <p class="u17Light_v2 text-size18">
                 <span>A test ride lets you personally experience the handling, comfort, and performance of different e-bike models. This firsthand experience helps you make a more informed decision about which model best fits your needs and riding style.</span>
               </p>
             </div>
             <div class="item">
-              <div class="u24Medium_v2 text-size24">
+              <h3 class="u24Medium_v2 text-size24">
                 <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="{{ page_title }}">2. What should I bring or prepare for a test ride? 
-              </div>
+              </h3>
               <ul class="u17Light_v2 text-size18">
                     <li>A valid ID </li>
                     <li>Comfortable clothing and closed-toe shoes. </li>
@@ -718,25 +719,25 @@ h1, h2, h3, h4 {
                 </ul>
             </div>
             <div class="item">
-              <div class="u24Medium_v2 text-size24">
+              <h3 class="u24Medium_v2 text-size24">
                 <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="{{ page_title }}">3. Do I need to book a test ride in advance? 
-              </div>
+              </h3>
               <p class="u17Light_v2 text-size18">
                 <span>It’s recommended to call ahead or check online booking options, especially during peak seasons, to ensure availability and avoid waiting. </span>
               </p>
             </div>
             <div class="item">
-              <div class="u24Medium_v2 text-size24">
+              <h3 class="u24Medium_v2 text-size24">
                 <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="{{ page_title }}">4. How can I book a test ride online?
-              </div>
+              </h3>
               <p class="u17Light_v2 text-size18">
                 <span>You can book a test ride through our official website. Navigate to the "Test Ride" section, fill in your personal information, preferred store location, and desired test-ride time. You will receive a confirmation email once the reservation is successful.</span>
               </p>
             </div>
             <div class="item">
-              <div class="u24Medium_v2 text-size24">
+              <h3 class="u24Medium_v2 text-size24">
                 <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="{{ page_title }}">5. What should I check during a test ride?
-              </div>
+              </h3>
               <ul class="u17Light_v2 text-size18">
                 <li><b>Comfort</b>: Is the bike the right size for you? Does it feel natural and smooth to ride?</li>
                 <li><b>Handling</b>: How does it respond when turning, braking, and accelerating?</li>
@@ -744,41 +745,41 @@ h1, h2, h3, h4 {
             </ul>
             </div>
             <div class="item">
-              <div class="u24Medium_v2 text-size24">
+              <h3 class="u24Medium_v2 text-size24">
                 <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="{{ page_title }}">6. How long does a test ride usually last? 
-              </div>
+              </h3>
               <p class="u17Light_v2 text-size18">
                 <span>Test rides typically last between 15 to 30 minutes, depending on the bike shop. If you need more time or distance, you can discuss options with the store. Some locations may allow longer rides if you’re seriously considering a purchase.</span>
               </p>
             </div>
             <div class="item">
-              <div class="u24Medium_v2 text-size24">
+              <h3 class="u24Medium_v2 text-size24">
                 <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="{{ page_title }}">7. Can I test ride an E-Bike without prior experience? 
-              </div>
+              </h3>
               <p class="u17Light_v2 text-size18">
                 <span>Yes! E-bikes are designed to be user-friendly, and store staff will typically provide a brief tutorial on how to operate the bike, including adjusting pedal-assist levels, using the brakes, and other basic functions.</span>
               </p>
             </div>
             <div class="item">
-              <div class="u24Medium_v2 text-size24">
+              <h3 class="u24Medium_v2 text-size24">
                 <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="{{ page_title }}">8. Do I have any restrictions on the locations during a test ride?       
-              </div>
+              </h3>
               <p class="u17Light_v2 text-size18">
                 <span>There may be restrictions on where you can ride the e-bike. Some bike stores offer designated areas for safe test rides, while others may allow you to ride on public roads or bike paths. Be sure to always follow local traffic laws and ask the store staff about any specific guidelines.</span>
               </p>
             </div>
             <div class="item">
-              <div class="u24Medium_v2 text-size24">
+              <h3 class="u24Medium_v2 text-size24">
                 <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="{{ page_title }}">9. Do I have to buy the bike after the test ride?
-              </div>
+              </h3>
               <p class="u17Light_v2 text-size18">
                 <span>No, there’s no obligation to purchase the bike after the test ride. It’s an opportunity for you to experience the bike firsthand and determine if it meets your needs.</span>
               </p>
             </div>
             <div class="item">
-              <div class="u24Medium_v2 text-size24">
+              <h3 class="u24Medium_v2 text-size24">
                 <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="{{ page_title }}">10. What can I do after the test ride? 
-              </div>
+              </h3>
               <p class="u17Light_v2 text-size18">
                 <span>After the ride, you can discuss your experience with the store staff, ask any questions, and explore purchasing options. Many bike shops also offer discounts or special promotions for customers who decide to purchase a bike after a test ride.</span>
               </p>

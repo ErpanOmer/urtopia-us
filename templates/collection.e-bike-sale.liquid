@@ -1,5 +1,5 @@
 {{ 'outlet_v4.scss.css' | asset_url | stylesheet_tag: preload: true }}
-<h1 class="er-sr-only">{{ settings.sale_name }}</h1>
+<h1 class="er-sr-only">{{ page_title }}</h1>
 <div class="background-image er-aspect-[1920/750] er-pt-16 mb:er-aspect-[375/500] mb:er-pt-12">
         {% render 'image', first_screen: true,  mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC05417_2x_8bc0e822-a25d-4669-bceb-05f09f742046.jpg?v=1753328375", src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC05417_2x_3b193b6f-4be7-41be-b098-a5051be035b5.jpg?v=1753328367' %}
         <div class="centeral-content er-flex er-flex-col er-items-center">
@@ -274,7 +274,11 @@
     </div>
 
     <div class="er-bg-background-warm">
-        <div class="centeral-content ebike-products">
+        <div class="centeral-content ebike-products er-flex er-flex-col">
+          <h2 class="er-m-0 text-size36 er-text-center mb:er-text-4xl mb:er-text-left er-mb-4">Electric Bikes For Sale</h2>
+    <p class="text-size18 er-text-center er-opacity-80 mb:er-text-left mb:er-text-2xl er-max-w-screen-md er-mb-20 er-mx-auto mb:er-mb-8">
+        <span>Shop Urtopia lightweight carbon fiber ebikes sale. Enjoy advanced design with GPS anti-theft voice navigation, seamless pedal assist, and smart features. Explore city commuter trekking, folding fat tire, and long-range models with exclusive holiday deals. </span>
+    </p>
           {% render: "product-cards" %}
       </div>
       </div>

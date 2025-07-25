@@ -1,5 +1,5 @@
 {{ 'home.scss.css' | asset_url | stylesheet_tag: preload: true }}
-<h1 class="er-sr-only">Urtopia Ebike - Sleek, Full Carbon, Lightweight, Smart</h1>
+<h1 class="er-sr-only">{{ page_title }}</h1>
 <div class="background-image er-aspect-[1920/750] mb:er-aspect-[375/500] er-text-white">
 {% render 'image', first_screen: true, mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19715_2x_8baa0abe-d95e-4f86-9b4c-2fb4e5db1252.jpg?v=1752818913", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19727_2x_6206f64e-0cf7-4e63-b6d5-1b921e28482a.jpg?v=1752818731" %}
   <div class="centeral-content er-flex er-justify-end er-flex-col er-items-center er-text-center er-h-full er-pb-16 mb:er-pt-12 mb:er-justify-start">
@@ -17,7 +17,7 @@
             <div
                     class="er-flex er-flex-col er-items-start er-justify-center er-h-full er-pl-28 er-max-w-2xl mb:er-px-8 mb:er-pt-10 mb:er-items-center mb:er-justify-start mb:er-text-center">
                     <img width="106" height="96" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2025-03-11_10.04.23_2x_111b6995-cd40-4ab4-b842-2fdcf298d0b5.png?v=1750399446" loading="lazy" alt="ces">
-                    <h3 class="er-m-0 er-text-white text-size24 er-font-medium er-mt-6 mb:er-text-2xl">Champion Choice</h3>
+                    <h2 class="er-m-0 er-text-white text-size24 er-font-medium er-mt-6 mb:er-text-2xl">Champion Choice</h2>
                     <p class="text-size18 er-my-16 mb:er-text-2xl mb:er-my-8">
                         <span>
                           Crafted by Carbon Fiber Masters. Chosen by Champions. Discover why the world’s best athletes trust Urtopia.
@@ -106,7 +106,7 @@
     <span class="u24Medium_v2">Linus Tech Tips</span>
     <span class="u17Light_v2">15.5M Subscriber YouTuber</span>
     <span class="flex-1"></span>
-    <span class="u36DemiBold_v2">Reviews</span>
+    <h2 class="u36DemiBold_v2">Reviews</h2>
     <span class="u17Light_v2">True review over the web</span>
     <a class="my-button my-button-ghost" target="_blank" href="/pages/urtopia-e-bike-review"><span>Learn More</span></a>
   </div>
@@ -117,7 +117,7 @@
       <span class="u17Light_v2">15.5M Subscriber YouTuber</span>
     -->
     <span class="flex-1"></span>
-    <span class="u36DemiBold_v2">Sustainability</span>
+    <h2 class="u36DemiBold_v2">Sustainability</h2>
     <span class="u17Light_v2">Sustainability at the Heart of Urtopia</span>
     <a class="my-button my-button-ghost" target="_blank" href="/pages/sustainability-carbon-credit"><span>Learn More</span></a>
   </div>
@@ -127,19 +127,19 @@
   <div class="testride centeral-content">
   <a href="/pages/test-ride" class="background-image">
     {% render 'image', class: "mb:!er-object-contain mb:!er-object-top", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24794_2x_dcbf7d8a-a1d0-4378-a541-a32768e95425.jpg?v=1729411137", mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2024-10-16_14.18.56_2x_9d8f4f50-ef6c-42ac-aa99-66f6d65e2e6b.jpg?v=1729411226", width: 500 %}
-    <span class="u36DemiBold_v2">{{ settings.shop_count }} Bike Shops</span>
+    <h2 class="u36DemiBold_v2">{{ settings.shop_count }} Bike Shops</h2>
     <span class="u17Light_v2">Nearby support, nationwide coverage</span>
     <span class="my-link er-text-white mb:er-text-dark er-leading-none"><span>Learn More</span></span>
   </a>
   <a href="/pages/care" class="background-image">
     {% render 'image', class: "mb:!er-object-contain mb:!er-object-top", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250211-173756.jpg?v=1739266710", mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250211-173805.jpg?v=1739266710",  width: 500 %}
-    <span class="u36DemiBold_v2">Peace of Mind</span>
+    <h2 class="u36DemiBold_v2">Peace of Mind</h2>
     <span class="u17Light_v2">24/7 Support, Full After-Sales</span>
     <span class="my-link er-text-white mb:er-text-dark er-leading-none"><span>Learn More</span></span>
   </a>
   <a href="/pages/aboutus" class="background-image">
     {% render 'image', class: "mb:!er-object-contain mb:!er-object-top", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24796_2x_7dd25b5c-3753-470e-aa35-cea2d08eac6a.jpg?v=1727321502", mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20221005-untitled-8655_2x_58a458b5-ef95-4c4d-b41b-0c45c8604a89.jpg?v=1727330739",  width: 500 %}
-    <span class="u36DemiBold_v2">About Us</span>
+    <h2 class="u36DemiBold_v2">About Us</h2>
     <span class="u17Light_v2">Ride Smart, Ride Green</span>
     <span class="my-link er-text-white mb:er-text-dark er-leading-none"><span>Learn More</span></span>
   </a>

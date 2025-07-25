@@ -1,6 +1,6 @@
 {{ 'outlet_v4.scss.css' | asset_url | stylesheet_tag: preload: true }}
 {{ 'black-friday.scss.css' | asset_url | stylesheet_tag: preload: true }}
-<h1 class="er-sr-only">Urtopia Ebike - Sleek, Full Carbon, Lightweight, Smart</h1>
+<h1 class="er-sr-only">{{ page_title }}</h1>
 
 <div class="bannerrrrrr background-image">
   {% render 'image', class: "mb:!er-object-top", first_screen: true, src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24938_2x_acfb27a4-cbc3-4ddf-b2f0-33872841087e.jpg?v=1736233352', mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24973_2x_22f19949-2ae3-44d0-ba84-a57fa07d945c.jpg?v=1736233726" %}
@@ -233,7 +233,11 @@
 </div>
 
 <div class="er-bg-background">
-  <div class="centeral-content ebike-products">
+  <div class="centeral-content ebike-products er-flex er-flex-col">
+    <h2 class="er-m-0 text-size36 er-text-center mb:er-text-4xl mb:er-text-left er-mb-4">Affordable Electric Bike</h2>
+    <p class="text-size18 er-text-center er-opacity-80 mb:er-text-left mb:er-text-2xl er-max-w-screen-md er-mb-20 er-mx-auto mb:er-mb-8">
+        <span>Looking for the best budget electric bike? Shop Urtopia sale on lightweight carbon fiber electric bikes with smart GPS voice navigation, anti-theft technology, and seamless pedal assist. Choose from city commuter, trekking, folding fat tire, and long-range models.</span>
+    </p>
     {% render: "product-cards" %}
 </div>
 </div>
