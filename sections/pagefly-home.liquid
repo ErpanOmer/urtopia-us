@@ -1,9 +1,9 @@
 {{ 'home.scss.css' | asset_url | stylesheet_tag: preload: true }}
 <h1 class="er-sr-only">{{ page_title }}</h1>
 <div class="background-image er-aspect-[1920/750] mb:er-aspect-[375/500] er-text-white">
-{% render 'image', first_screen: true, mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/h_2x_d28f42b9-4a7a-4922-997e-8f14745815ca.jpg?v=1753689173", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/back_to_school_sale_2x_7fd21a2e-175b-4880-b35d-622f2c7ab3db.jpg?v=1753689181" %}
+{% render 'image', first_screen: true, mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/h_2x_d28f42b9-4a7a-4922-997e-8f14745815ca.jpg?v=1753689173", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250728-200752.jpg?v=1753704491" %}
   <div class="centeral-content er-flex er-justify-end er-flex-col er-items-center er-text-center er-h-full er-pb-16 mb:er-pt-12 mb:er-justify-start">
-    <div class="er-bg-gradient-to-r er-from-[#FF3684] er-to-[#FF8F1D] text-size14 er-font-bold er-py-2 er-px-6 er-rounded-3xl">{{ settings.sale_name }}</div>
+    <div class="er-bg-gradient-to-r er-from-[#FF3684] er-to-[#FF8F1D] text-size14 er-font-bold er-py-2 er-px-6 er-rounded-3xl md:er-hidden">{{ settings.sale_name }}</div>
     <img class="er-my-10 mb:er-max-w-sm" width="335" height="75" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25875_2x_91eb65db-3b79-4afa-865b-3b0895576482.png?v=1745910602">
     <a href="/collections/e-bike-sale" class="er-button er-button-white er-mb-24"><span><span>Shop now</span></span></a>
   </div>

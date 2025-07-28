@@ -1,10 +1,10 @@
 {{ 'outlet_v4.scss.css' | asset_url | stylesheet_tag: preload: true }}
 <h1 class="er-sr-only">{{ page_title }}</h1>
 <div class="background-image er-aspect-[1920/750] er-pt-16 mb:er-aspect-[375/500] mb:er-pt-12">
-        {% render 'image', first_screen: true,  mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/h_2x_d28f42b9-4a7a-4922-997e-8f14745815ca.jpg?v=1753689173", src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/back_to_school_sale_2x_7fd21a2e-175b-4880-b35d-622f2c7ab3db.jpg?v=1753689181' %}
-        <div class="centeral-content er-flex er-flex-col er-items-center">
+        {% render 'image', first_screen: true,  mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/h_2x_d28f42b9-4a7a-4922-997e-8f14745815ca.jpg?v=1753689173", src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250728-200752.jpg?v=1753704491' %}
+        <div class="centeral-content er-flex er-flex-col er-items-center md:er-h-full">
                 <div class="mb:er-hidden er-flex-1"></div>
-                <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Back_to_School_Sale_2x_b12b379f-07b1-4906-bae7-14271a21db95.png?v=1753689788" width="300" height="52" class="mb:er-max-w-xs mb:er-mb-6">
+                <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Back_to_School_Sale_2x_b12b379f-07b1-4906-bae7-14271a21db95.png?v=1753689788" width="300" height="52" class="md:er-hidden mb:er-max-w-xs mb:er-mb-6">
                 <img class="mb:er-max-w-sm mb:er-mb-6" width="335" height="75" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25875_2x_91eb65db-3b79-4afa-865b-3b0895576482.png?v=1745910602">
                 {% render 'sale' %}
                 <style>
@@ -13,7 +13,7 @@
                         background-color: transparent;
                         overflow: hidden;
                         margin-bottom: 0;
-                        margin-top: 30px;
+                        margin: 30px 0 50px;
                     }
           
                     .sale > .u14DemiBold_v2 {
