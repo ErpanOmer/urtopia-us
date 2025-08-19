@@ -2,6 +2,186 @@
 {{ 'pagefly.9b29433f.css' | asset_url | stylesheet_tag: preload: true }}
 {{ 'carbon-one.scss.css' | asset_url | stylesheet_tag: preload: true }}
 
+<script>
+  window.global_config = {
+  sale_end_times: [
+    {
+      sale_name: 'Flash Sale',
+      sale_end_time: '2024-12-9'
+    },
+    {
+      sale_name: 'Flash Sale',
+      sale_end_time: '2024-12-13'
+    },
+    {
+      sale_name: 'Flash Sale',
+      sale_end_time: '2024-12-16'
+    },
+  ],
+    // 活动产品id
+    event_bike_product_id: '7902779474168',
+    // 活动送配件 variant_id
+    event_accessories_variant_ids: ['43830635561208', '43858617204984'],
+
+    // 是否是手机
+    is_mobile: document.documentElement.clientWidth < 768,
+     // 是否是 pc
+    is_pc: !!!navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i),
+    dialog: {
+        email: {
+          is_hide: false,
+          subscribe_email_close_expires_time: 1,              // 邮件进入弹窗 关闭过期时间
+          subscribe_email_message_close_expires_time_mb: 3,   // 邮件小弹窗 关闭过期时间 -> 移动端
+          subscribe_email_message_close_expires_time_pc: 1,   // 邮件小弹窗 关闭过期时间 -> pc端
+          submit_expires_time: 30,                            // 邮件类弹窗 提交过期时间
+          close_expires_time: 3,                              // 邮件类弹窗 关闭过去时间
+          show_delay_time: 15                                 // 邮件类延迟弹出时间，单位:s
+        },
+        test_ride: {
+          is_hide: false,
+          submit_expires_time: 7,
+          close_expires_time: 3,
+          show_delay_time: 15
+        }
+      },
+      // carbon 产品页面配置
+    carbon_order_page_config: {
+        // carbon 车默认显示 variant_id, 只有 url 上的 variant 参数为空的时候生效
+        default_variant: 43556895916280,
+        // variant 为 available:false 的情况下 也要强制显示 
+        ignore_variants_available_false: [],
+        size_map: {
+            S: `Fit for 5’3’’~5’9’’ Inseam 30’’`,
+            M: `Fit for 5’7’’~6’1’’ Inseam 31’’`,
+            L: `Fit for 5’11’’~6’5’’ Inseam 33’’`
+        },
+      awards: [
+        'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231214-163215.png?v=1702542766',
+        'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20231214-163208.png?v=1702542765'
+      ],
+        // 产品系列图
+        product_images: {
+            "Carbon 1 · 250W · Carbon Belt": {
+                Sirius: [
+                    "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18718.png?v=1688710795",
+                    "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18719.png?v=1688710795",
+                    "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18720.png?v=1688710795"
+                ],
+                Lyra: [
+                    'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18721.png?v=1688710795'
+                ],
+                "Midnight in Paris": [
+                    "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18722.png?v=1688710795"
+                ],
+                Vanilla: [],
+                // 公共图片
+                commonSwiper: [
+                    "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18729.png?v=1688710794",
+                    "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18728.png?v=1688710795",
+                    "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18727.png?v=1688710794",
+                    "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18726.png?v=1688710795",
+                    "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18725.png?v=1688710795",
+                    "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18724.png?v=1688710795",
+                    "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/ssss.png?v=1688710795"
+                ]
+            },
+            "Carbon 1s · 350W · Shimano 7-Speed": {
+                Sirius: [
+                    "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18748.png?v=1688711251",
+                    "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18749.png?v=1688711251",
+                ],
+                Lyra: [
+                    'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18746.png?v=1688711251'
+                ],
+                Vanilla: [
+                    'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18750.png?v=1688711251'
+                ],
+                "Midnight in Paris": [
+                    "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18747.png?v=1688711251"
+                ],
+                commonSwiper: [
+                    "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18741.png?v=1688711251",
+                    "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/45.png?v=1688711251",
+                    "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18739.png?v=1688711251",
+                    "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18738.png?v=1688711251",
+                    "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18737.png?v=1688711251",
+                    "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_Group_18736.png?v=1688711251",
+                    "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/ssss_42ab57d5-1e69-4b74-8cba-ffc1452a3dec.png?v=1688711251"
+                ]
+            }
+        },
+        // 产品图下面的media模块, 根据产品图 循环轮播 
+        product_media_images: [
+            {
+                text: `“The AI-powered co-pilot adds a new level<br>of intelligence and interactivity”`,
+                img: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230913-173450.png?v=1694597715"
+            },
+            {
+                text: `“One of the smartest and lightest ebike”`,
+                img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/img_v2_1f5341a218124ab39b4bb5cd49cc335g-1668500914564.png"
+            },
+            {
+                text: `“Like a phone’s than a next-gen fixie”`,
+                img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/mask-group-181222x-1672131955609.png"
+            },
+            {
+                text: `“Does phone tech better than some phones”`,
+                img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/img_v2_c977d9efae3a4c46ad2ddac55c5dabfg-1668500914568.png"
+            },
+            {
+                text: `“It’s incredibly fun to ride”`,
+                img: "https://cdn.shopify.com/s/files/1/0583/5810/4213/t/63/assets/20221227174330-1672134242872.png"
+            }
+        ],
+        // 默认的发货时间 文案
+        ebike_default_delivery_time: 'Free shipping <span>within 5 business days</span> from L.A. warehouse.',
+        // 发货时间映射表
+        // key:    vairant_id
+        // value:  发货时间文案
+        ebike_delivery_time: {
+            // carbon 1
+            43556899913976: 'Ships within <span>3 business days</span> from L.A. warehouse.',
+            43556899979512: 'Ships within <span>3 business days</span> from L.A. warehouse.',
+            43556899946744: 'Ships within <span>3 business days</span> from L.A. warehouse.',
+            43645495443704: 'Ships within <span>3 business days</span> from L.A. warehouse.',
+            43556900012280: 'Ships within <span>3 business days</span> from L.A. warehouse.',
+            43556900077816: 'Ships within <span>3 business days</span> from L.A. warehouse.',
+            43556900045048: 'Ships within <span>3 business days</span> from L.A. warehouse.',
+            43645495476472: 'Ships within <span>3 business days</span> from L.A. warehouse.',
+            // carbon 1s
+            43556899651832: 'Ships within <span>10 business days</span> from L.A. warehouse.',
+            //lb l
+            43556896014584: 'Ships within <span>5 business days</span> from L.A. warehouse.',
+            //pb s
+            43556899684600: 'Ships within <span>5 business days</span> from L.A. warehouse.',
+            //pw s
+            43556899750136: 'Ships within <span>5 business days</span> from L.A. warehouse.',
+            //pw l
+            43556899881208: 'Ships within <span>5 business days</span> from L.A. warehouse.',
+            //sb m
+            43556895916280: 'Ships between <span>January 1-15, 2023 </span>from L.A. warehouse.',
+            //pb m
+            43556896047352: 'Ships within <span>5 business days</span> from L.A. warehouse.',
+            43556899619064: 'Ships within <span>10 business days </span>from L.A. warehouse.',
+            43645495345400: 'Ships within <span>10 business days </span>from L.A. warehouse.',
+            //pw m
+            43556899815672: 'Ships within <span>5 business days</span> from L.A. warehouse.',
+            //lb m
+            43556895981816: 'Ships within <span>5 business days</span> from L.A. warehouse.',
+            43645495378168: 'Ships within <span>10 business days </span>from L.A. warehouse.',
+            //sb l
+            43556895949048: 'Ships within <span>5 business days</span> from L.A. warehouse.',
+            //pb l
+            43556896080120: 'Ships within <span>5 business days</span> from L.A. warehouse.',
+            43645495410936: 'Ships within <span>10 business days </span>from L.A. warehouse.',
+            //日期写法： 'Ships between <span>July 10-20, 2023 </span>from L.A. warehouse.',
+            // chord
+            // chord x
+        }
+      }
+    }
+</script>
+
 <style>
   .sale-big-text {
     border-radius: 12px;
@@ -44,13 +224,19 @@
 				<div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-25_ order-djs mb6">
 					<div class="pf-judme">{% render "judgeme_widgets", widget_type: "judgeme_preview_badge", jm_style: "", concierge_install: false, product: product %}</div>
 				</div>
-      			<div class="u14DemiBold_v2 mb6 sale-taggggggg">{{ settings.sale_name }}</div>
+      			{% comment %} <div class="u14DemiBold_v2 mb6 sale-taggggggg">{{ settings.sale_name }}</div> {% endcomment %}
 				<div class="product-price u30DemiBold_v2" style="margin: 0;" data-price="{{ product.price | money }}">{{ product.price | minus: settings.carbon1s_ebike_discount_price | money }}</div>
         <div class="sale-tag mb6">
           <!--<div class="u17Medium_v2">{{ settings.sale_name }}</div>-->
           <div class="u14Light_v2 mb6" style="margin: 0;">Free shipping.</div>
         </div>
         <div class="adwarsssss"></div>
+                  <ul class="er-shadow er-rounded-xl er-p-4 er-pl-12 marker:er-text-primary text-size16 er-space-y-4 er-text-2xl er-w-full">
+        <li>Used, Refurbish or Showroom Bike</li>
+        <li>Small to none damage</li>
+        <li>2 year Warranty</li>
+        <li>Not returnable</li>
+      </ul>
         <!--<div class="sale-big-text mb6">
           <div class="u20DemiBold_v2">LOWEST PRICE OF THE YEAR GUARANTEED!</div>
           <div class="u11Light_v2">For any order during Oct 1 - Dec 31 2023, if there is a price drop within this period on our website, you will get a refund for the difference.</div>
@@ -111,7 +297,7 @@
 					<div data-pf-type="JudgeMe" class="sc-eZhRLC gtfCKx pf-25_ order-djs mb6">
 						<div class="pf-judme">{% render "judgeme_widgets", widget_type: "judgeme_preview_badge", jm_style: "", concierge_install: false, product: product %}</div>
 					</div>
-          <div class="u17DemiBold_v2 mb6 sale-taggggggg">{{ settings.sale_name }}</div>
+          {% comment %} <div class="u17DemiBold_v2 mb6 sale-taggggggg">{{ settings.sale_name }}</div> {% endcomment %}
 					<div class="product-price u30DemiBold_v2" style="margin: 0;" data-price="{{ product.price | money }}">{{ product.price | minus: settings.carbon1s_ebike_discount_price | money }}</div>
           <div class="sale-tag mb6">
             <!--<div class="u17Medium_v2">{{ settings.sale_name }}</div>-->
@@ -121,6 +307,12 @@
             <div class="u20DemiBold_v2">LOWEST PRICE OF THE YEAR GUARANTEED!</div>
             <div class="u11Light_v2">For any order during Oct 1 - Dec 31 2023, if there is a price drop within this period on our website, you will get a refund for the difference.</div>
           </div>-->
+                    <ul class="er-shadow er-rounded-xl er-p-4 er-pl-12 marker:er-text-primary text-size16 er-space-y-4 er-text-2xl er-w-full">
+        <li>Used, Refurbish or Showroom Bike</li>
+        <li>Small to none damage</li>
+        <li>2 year Warranty</li>
+        <li>Not returnable</li>
+      </ul>
 				</div>
 				<!--<div class="sale_acc mb12 belt">
 					<div class="u14Light_v2" style="background-image: linear-gradient(-90deg,var(--sale-color3),var(--sale-color4));">And get <span style="font-weight: 600;"> {{ settings.carbon_ebike_free_accessories_price | money_without_trailing_zeros}} </span> Accessories for <span class="u20DemiBold_v2"> Free</span></div>
@@ -142,31 +334,6 @@
 						{% endfor %}
 					</div>
 				</div>-->
-				<div class="sale_acc gear" id="sale_acc">
-					<div class="u14Light_v2">Save <span class="discount" style="font-weight: 600;">{{ settings.carbon1s_ebike_discount_price | money_without_trailing_zeros }}</span> and Get <span style="font-weight: 600;">{{ settings.carbon_ebike_free_accessories_price | money_without_trailing_zeros }}</span>  Accessories for <span style="font-weight: 600;"> Free</span></div>
-					{% assign accessories_map_1s = "7523826008312,7523827613944" | split: ',' %}
-					<div class="accs_1s">
-						{% for acc in accessories_map_1s %}
-							{% for prod in collections["accessories"].products %}
-								{% if acc contains prod.id %}
-									<div>
-										{{ prod.featured_image | image_url: width: 400 | image_tag }}
-										<div>
-											<span class="u14Medium_v2">{{ prod.title }}</span><br>
-											<span class="u17DemiBold_v2">{{ prod.price | money_without_trailing_zeros }}</span>
-										</div>
-									</div>
-								{% endif %}
-							{% endfor %}
-						{% endfor %}
-					</div>
-				</div>
-				{% unless settings.hide_sale_countdown %}
-          <div class="count-down mb12 mobileHide">
-            <div class="u17Medium_v2">{{ settings.sale_name }} Ends in:</div>
-            <img src="http://i.countdownmail.com/37l0tl.gif">
-          </div>
-        {% endunless %}
 				<div class="options">
           {% for option in product.options_with_values %}
               <div class="option" option={{option.name}} position="{{ option.position }}">
@@ -218,21 +385,14 @@
 				</div>
 				<div class="error-tip u14Medium_v2" style="color:red;">Your order quantity has reached our stock limit</div>    
 				<div class="buttons">
-					{% unless settings.hide_sale_countdown %}
-            <div class="count-down mb12 pcHide">
-              <div class="u17Medium_v2">{{ settings.sale_name }} Ends in:</div>
-              <img src="http://i.countdownmail.com/37l0tl.gif">
-            </div>
-          {% endunless %}
 					<div
 						data-product-id="{{ product.id }}"
 						class="my-button my-button-origin addToCartBtn"
-						onclick="addAllToCart('atc')"
 						id="addToCart"
 						>
 						<i class="fa fa-spinner fa-spin"></i><span data-pf-type="Text" class="addToCartText u17DemiBold_v2">Add to Cart</span>
 					</div>
-					  <div onclick="testRideTrace('klarna_check_out', this)" class="orderTestRideBtn">
+					  <div class="orderTestRideBtn">
 						<img class="twoooo"src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/20230530-121400.png?v=1685420054" alt="klarna"/>
 						<span><span class="u17DemiBold_v2">0% APR</span><span>24 months, <span class="stages">{{ product.price | minus: settings.carbon1s_ebike_discount_price | divided_by: 24 | money_without_trailing_zeros }}</span>/month</span></span>
 					</div>
@@ -491,7 +651,7 @@
 
       <div class="test-ride">
         <div class="centeral-content">
-          <div>
+          <div style="    padding-bottom: 60%;">
             <div>
               <div class="u36DemiBold_v2">Test ride spots near you</div>
               <div class="u20DemiBold_v2">Experience the bike in real</div>
@@ -501,14 +661,7 @@
                 target="_blank">Book a Free Test Ride</a>
             </div>
           </div>
-          <div>
-            <div style="padding: 0;">
-              <div
-                id="storepoint-container"
-                data-tags="us"
-                data-map-id="162f21804990ff"></div>
-            </div>
-          </div>
+          <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2024-10-16_14.18.56_2x_9ef7c231-83e3-4acf-9bc4-030911f4ea33.jpg?v=1729309891&width=640">
         </div>
       </div>
       <div class="boxs3" id="boxs3">
@@ -865,9 +1018,6 @@
 
 
 </div></div></div>
-
-
-<img class="toTop" src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/Group_21049.svg?v=1687267470">
 	
 <div class="top-fixed mobileHide">
   <div class="centeral-content">
@@ -889,25 +1039,14 @@
   </div>
 </div>
 
-<script>
+<script type="module">
     // 默认隐藏
     $('.bottom-fixed').hide();
     $('.top-fixed').hide();
     $('.toTop').hide();
   $('.product .error-tip').hide();
-
-  ((awards = []) => {
-        if (!awards.length) {
-          return $('.adwarsssss').hide()
-        }
-
-        $('.adwarsssss').html(awards.map(a => `<img src="${a}"/>`).join('')).css('height', global_config.is_mobile ? '30px' : '50px')
-
-        if (global_config.is_pc) {
-            $('.product .centeral-content .featured_image').css('grid-template-rows', '750px')
-        }
-
-    })(global_config.carbon_order_page_config.awards);
+  
+  console.log(global_config.carbon_order_page_config)
   
   const leftSwiper = new Swiper(".product .left-swiper", {
       direction: 'vertical',
@@ -1058,7 +1197,7 @@ document.addEventListener('onChangeOptions', e => {
     return
   }
 
-  const t = $(target)
+  const t = $('.orderTestRideBtn')
 
   t.addClass('loading')
   // 原本的html 存起来
@@ -1071,14 +1210,12 @@ document.addEventListener('onChangeOptions', e => {
   fetchBuried('websiteclick', `carbon-order-page`, { button: type, action_type: sessionStorage.carbon_one_a_b_test_flag }, true)
   window.sessionStorage.clicked_klarna_checkout_button = 'clicked_klarna_checkout_button'
 
-  if (sessionStorage.carbon_one_a_b_test_flag === 'B') {
-    setTimeout(() => {
+  setTimeout(() => {
       t.removeClass('loading')
       t.find('span').html(text)
     }, 2000)
   
     return addAllToCart("atc", true)
-  }
 }
 
 
@@ -1102,13 +1239,6 @@ function addAllToCart(parse, show = false) {
     if(cart1){
       var sections = cart1.getSectionsToRender().map((section) => section.id);
       cartList.sections = sections.join(",");
-    }
-
-    // 如果存在carbon 1s, 送配件
-    if (current_variant.title.includes('350W')) {
-      global_config.event_accessories_variant_ids.forEach(i => {
-        cartList.items.push({ id: i, quantity: 1 })
-      })
     }
 
     // 新增普通配件
@@ -1156,6 +1286,8 @@ function addAllToCart(parse, show = false) {
 }
 
 
+$(`#addToCart`).on('click', () => addAllToCart('atc'));
+$(`.orderTestRideBtn`).on('click', e => testRideTrace('klarna_check_out', e.target));
 
 
   $('.product .product-panel .accessories .navigate > div').on('click', e => {
@@ -1248,7 +1380,7 @@ function addAllToCart(parse, show = false) {
 </script>
 {% render 'product-options', config_name: 'carbon_order_page_config' %}
 
-<script>
+<script type="module">
 				document.body.clientWidth < 768 && new Swiper ('.mediaaaaa', {    
 					autoplay: {
 						disableOnInteraction: false,
@@ -1265,7 +1397,7 @@ function addAllToCart(parse, show = false) {
 				  })
 			</script>
 
-      <script>
+      <script type="module">
         let slideNo = 0;
         var swiperSectionWorld = new Swiper("#world-swiper", {
           autoplay: {
@@ -1321,7 +1453,7 @@ function addAllToCart(parse, show = false) {
         })
       </script>
 
-      <script>
+      <script type="module">
         var closeCheck2 = function (e,force) {
         let t = document.querySelector(".componentBox");
         if (force || t && !e.target.closest(".componentBox") ) {
@@ -1382,17 +1514,4 @@ function addAllToCart(parse, show = false) {
         document.addEventListener("touchmove", mo, false);
         }
       </script>
-
-      <script>
-  (function() {
-    var a = document.createElement("script");
-    a.type = "text/javascript";
-    a.src = "https://cdn.storepoint.co/api/v1/js/162f21804990ff.js";
-    var b = document.getElementsByTagName("script")[0];
-    b.parentNode.insertBefore(a, b);
-  }());
-
-//
-</script>
-
 {% render 'carbon-one-extra-code' %}

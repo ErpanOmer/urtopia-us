@@ -176,12 +176,12 @@
     <input type="hidden" name="form_type" value="product">
     <input type="hidden" name="utf8" value="✓">
     {%- render 'product-panel-common', product: product, class: 'mb:er-hidden !er-mt-0' -%}
-    {%- if show_outlet_list -%}
+    {%- if product.metafields.custom.is_outlet.value -%}
       <ul class="er-shadow er-rounded-xl er-p-4 er-pl-12 marker:er-text-primary text-size16 er-space-y-4 er-text-2xl">
         <li>Used, Refurbish or Showroom Bike</li>
         <li>Small to none damage</li>
         <li>2 year Warranty</li>
-        <li>Not returnable (*see FAQ)</li>
+        <li>Not returnable</li>
       </ul>
     {%- endif -%}
     {%- for option in product.options_with_values -%}
