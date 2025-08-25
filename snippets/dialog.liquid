@@ -74,12 +74,6 @@
         
         document.head.appendChild(script);
       };
-
-      {%- if product -%}
-        fetch(window.location.pathname + '?sections=judgeme_core').then(r => r.json()).then(r => {
-          $('.judgemeeeeee').html($(r['judgeme_core']))
-        });
-      {%- endif -%}
   });
 </script>
 <script>

@@ -471,7 +471,7 @@
         </div>
     </section>
 {% render 'size-guide-and-specs-template' %}
-<div class="centeral-content er-px-6 judgemeeeeee"></div>
+<div class="centeral-content er-px-6 judgemeeeeee">{% include "judgeme_widgets", widget_type: "judgeme_review_widget", concierge_install: false %}</div>
 <script type="module">
    task(() => {
       new Swiper('.quality_in_details', {
