@@ -55,16 +55,16 @@
 
 /* Add this new rule */
 .answers-container label.selected-answer {
-    border-color: #fd4b17;
+    border-color: #2c2c2c;
     /* Or any color you prefer */
-    background-color: #fd4b17;
+    background-color: #2c2c2c;
     /* A light background tint */
     font-weight: bold;
     color: #fff;
 }
 
 .answers-container label.selected-answer input[type="radio"] {
-    accent-color: #fd4b17;
+    accent-color: #2c2c2c;
 }
 
 #height-select {
@@ -146,6 +146,7 @@
         width: 50%;
     }
 }
+
 </style>
         <dialog id="quiz-dialog">
             <div id="quiz-container">
@@ -225,7 +226,7 @@
                                 older to ride</span></div>
                         <div class="answers-container">
                             <select id="height-select" name="q7"
-                                class="mb:er-text-2xl er-box-border er-font-base er-w-full er-border-2 er-border-dark/20 er-border-solid er-rounded-xl er-text-dark/85 er-text-3xl er-p-4 focus:er-border-primary/80 focus-visible:er-border-primary/80 focus:er-ring-primary focus:er-shadow-primary">
+                                class="mb:er-text-2xl er-box-border er-font-base er-w-full er-border-2 er-border-dark/20 er-border-solid er-rounded-xl er-text-dark/85 er-text-3xl er-p-4 focus:er-border-dark focus-visible:er-border-dark focus:er-ring-dark focus:er-shadow-dark">
                                 <option value="" disabled selected>Select an option</option>
                                 <option value="1">4'11" - 5'1"</option>
                                 <option value="2">5'2" - 5'4"</option>
@@ -245,7 +246,7 @@
                             <form id="email-form" class="er-mt-4">
                                 <!-- <div class="text-size16">Enter your email</div> -->
                                 <input type="email" id="email-input"
-                                    class="mb:er-text-2xl er-my-6 er-box-border er-font-base er-w-full er-border-2 er-border-dark/30 placeholder:er-text-black/15 er-border-solid er-rounded-xl er-text-dark/85 er-text-3xl er-p-4 focus:er-border-primary/80 focus-visible:er-border-primary/80 focus:er-ring-primary focus:er-shadow-primary"
+                                    class="mb:er-text-2xl er-my-6 er-box-border er-font-base er-w-full er-border-2 er-border-dark/30 placeholder:er-text-black/15 er-border-solid er-rounded-xl er-text-dark/85 er-text-3xl er-p-4 focus:er-border-dark/80 focus-visible:er-border-dark/80 focus:er-ring-dark focus:er-shadow-dark"
                                     placeholder="Please enter" required>
                                 <div class="text-size14 er-font-medium">Send you customized<br>news and offers via
                                     email😃</div>
@@ -275,11 +276,11 @@
                                 d="M640-107.69 267.69-480 640-852.31l42.54 42.54L352.77-480l329.77 329.77L640-107.69Z" />
                         </svg> Back</button>
                     <span class="er-flex-1"></span>
-                    <button id="next-btn" class="er-button">Next<svg xmlns="http://www.w3.org/2000/svg" height="24px"
+                    <button id="next-btn" class="er-button er-button-dark">Next<svg xmlns="http://www.w3.org/2000/svg" height="24px"
                             viewBox="0 -960 960 960" width="24px" fill="currentColor">
                             <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z" />
                         </svg></button>
-                    <button id="submit-btn" class="er-button" style="display: none;">Submit</button>
+                    <button id="submit-btn" class="er-button er-button-dark" style="display: none;">Submit</button>
                 </div>
             </div>
         </dialog>
@@ -291,7 +292,7 @@
             <div
                 class="er-flex er-flex-col er-flex-1 er-items-end er-gap-4 mb:er-w-full mb:er-items-center mb:er-gap-2">
                 <div class="text-size16 er-font-bold product_name">Carbon 1 Pro</div>
-                <div class="text-size24 er-font-extrabold product-price er-text-primary er-flex" data-price="$2,999.00">
+                <div class="text-size20 er-font-extrabold product-price er-text-primary er-flex" data-price="$2,999.00">
                     $1,799.00 <del class="er-text-dark/60 text-size16 product-compare-at-price er-ml-1">$2,999.00</del>
                 </div>
                 <div class="er-flex er-items-center">
