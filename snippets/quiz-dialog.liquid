@@ -1,0 +1,508 @@
+<style>
+#quiz-container {
+    min-width: 500px;
+    width: 500px;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #fff;
+    color: #000;
+    padding: 30px;
+    border-radius: 16px;
+    position: relative;
+}
+
+.quiz-step {
+    display: flex;
+    flex-direction: column;
+}
+
+#quiz-steps {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.question-header {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    min-height: 28px;
+}
+
+.answers-container label {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.6rem;
+    font-weight: 500;
+    transition: background-color, font-weight, color .15s;
+}
+
+.answers-container label:hover {
+    background-color: #f0f0f0;
+}
+
+.answers-container input[type="radio"] {
+    margin-right: 10px;
+    accent-color: #000;
+    transform: scale(1.125);
+}
+
+/* Add this new rule */
+.answers-container label.selected-answer {
+    border-color: #fd4b17;
+    /* Or any color you prefer */
+    background-color: #fd4b17;
+    /* A light background tint */
+    font-weight: bold;
+    color: #fff;
+}
+
+.answers-container label.selected-answer input[type="radio"] {
+    accent-color: #fd4b17;
+}
+
+#height-select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.navigation-buttons {
+    display: flex;
+    margin-top: 15px;
+    padding-top: 15px;
+    align-items: center;
+}
+
+.navigation-buttons button {
+    font-weight: 500;
+    gap: 0;
+    width: 33%;
+}
+
+#email-form-container {
+    text-align: center;
+}
+
+#email-input {
+    width: 80%;
+    padding: 12px;
+    font-size: 16px;
+    /* margin: 20px 0; */
+}
+
+#results-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#results-container li {
+    font-size: 18px;
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+}
+
+#back-btn {
+    justify-content: flex-start;
+    color: #444;
+}
+
+
+
+@media (max-width: 767px) {
+    #quiz-container {
+        min-width: unset;
+        width: 84vw;
+        padding: 30px 20px 20px;
+        min-height: 300px;
+    }
+
+    .question-header {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    .navigation-buttons {
+        margin-top: 0;
+    }
+
+    .answers-container label {
+        font-size: 14px;
+    }
+
+    #email-input {
+        width: 100%;
+        margin: 8px;
+    }
+
+    .navigation-buttons button {
+        width: 50%;
+    }
+}
+</style>
+
+<div>
+        <dialog id="quiz-dialog">
+            <div id="quiz-container">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                    class="close er-absolute er-right-8 er-top-6 er-cursor-pointer mb:er-right-4 mb:er-top-4"
+                    height="28px" viewBox="0 -960 960 960" width="28px" fill="#444">
+                    <path
+                        d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                </svg>
+                <div id="quiz-steps">
+
+                    <div class="quiz-step" data-step="0">
+                        <div class="question-header">Q1. What’s your main purpose?</div>
+                        <div class="answers-container">
+                            <label><input type="radio" name="q1" value="0"> A. Commuting / City rides</label>
+                            <label><input type="radio" name="q1" value="1"> B. Leisure / Lifestyle</label>
+                            <label><input type="radio" name="q1" value="2"> C. Fitness / Sport</label>
+                            <label><input type="radio" name="q1" value="3"> D. Adventure/Long trips</label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-step" data-step="1" style="display: none;">
+                        <div class="question-header">Q2. What do you value most?</div>
+                        <div class="answers-container">
+                            <label><input type="radio" name="q2" value="0"> A. Lightweight & Portable</label>
+                            <label><input type="radio" name="q2" value="1"> B. Comfort & Easy use</label>
+                            <label><input type="radio" name="q2" value="2"> C. Performance & Speed</label>
+                            <label><input type="radio" name="q2" value="3"> D. Multi-function & Range</label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-step" data-step="2" style="display: none;">
+                        <div class="question-header">Q3. Which lifestyle fits you best?</div>
+                        <div class="answers-container">
+                            <label><input type="radio" name="q3" value="0"> A. Daily city (commute, errands, coffee
+                                runs)</label>
+                            <label><input type="radio" name="q3" value="1"> B. Lifestyle (pets, family, friends
+                                outings)</label>
+                            <label><input type="radio" name="q3" value="2"> C. Sport & Training</label>
+                            <label><input type="radio" name="q3" value="3"> D. Exploration / Multi-terrain trips</label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-step" data-step="3" style="display: none;">
+                        <div class="question-header">Q4. Which frame style do you prefer?</div>
+                        <div class="answers-container">
+                            <label><input type="radio" name="q4" value="0"> A. Classic straight frame (sporty
+                                look)</label>
+                            <label><input type="radio" name="q4" value="1"> B. Step-through (easy access,
+                                comfort)</label>
+                            <label><input type="radio" name="q4" value="2"> C. Folding (portable, compact)</label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-step" data-step="4" style="display: none;">
+                        <div class="question-header">Q5. How far do you usually ride in a day?</div>
+                        <div class="answers-container">
+                            <label><input type="radio" name="q5" value="0"> A. Less than 10 miles</label>
+                            <label><input type="radio" name="q5" value="1"> B. Up to 20-30 miles</label>
+                            <label><input type="radio" name="q5" value="2"> C. Over 40 miles per day</label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-step" data-step="5" style="display: none;">
+                        <div class="question-header">Q6. Any intended passengers?</div>
+                        <div class="answers-container">
+                            <label><input type="radio" name="q6" value="0"> A. No, Just myself</label>
+                            <label><input type="radio" name="q6" value="1"> B. My Pets</label>
+                            <label><input type="radio" name="q6" value="2"> C. Children</label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-step" data-step="6" style="display: none;">
+                        <div class="question-header">Q7. How tall are you? <br><span
+                                class="er-text-2xl er-font-light er-text-primary mb:er-text-xl">Disclaimer: Must be 16
+                                years of age or
+                                older to ride</span></div>
+                        <div class="answers-container">
+                            <select id="height-select" name="q7"
+                                class="mb:er-text-2xl er-box-border er-font-base er-w-full er-border-2 er-border-dark/20 er-border-solid er-rounded-xl er-text-dark/85 er-text-3xl er-p-4 focus:er-border-primary/80 focus-visible:er-border-primary/80 focus:er-ring-primary focus:er-shadow-primary">
+                                <option value="" disabled selected>Select an option</option>
+                                <option value="1">4'11" - 5'1"</option>
+                                <option value="2">5'2" - 5'4"</option>
+                                <option value="3">5'5" - 5'7"</option>
+                                <option value="4">5'8" - 5'10"</option>
+                                <option value="5">5'11" - 6'1"</option>
+                                <option value="6">6'2" - 6'4"</option>
+                                <option value="7">6'5" or taller</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="quiz-step er-pt-24 mb:er-pt-8" data-step="7" style="display: none;">
+                        <div id="email-form-container">
+                            <div class="text-size20 er-font-medium mb:er-text-3xl">Enter your email to receive exclusive
+                                offers:</div>
+                            <form id="email-form" class="er-mt-4">
+                                <!-- <div class="text-size16">Enter your email</div> -->
+                                <input type="email" id="email-input"
+                                    class="mb:er-text-2xl er-my-6 er-box-border er-font-base er-w-full er-border-2 er-border-dark/30 placeholder:er-text-black/15 er-border-solid er-rounded-xl er-text-dark/85 er-text-3xl er-p-4 focus:er-border-primary/80 focus-visible:er-border-primary/80 focus:er-ring-primary focus:er-shadow-primary"
+                                    placeholder="Please enter" required>
+                                <div class="text-size14 er-font-medium">Send you customized<br>news and offers via
+                                    email😃</div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="quiz-step" data-step="8" style="display: none;">
+                        <div id="results-container">
+                            <div class="text-size24 mb:er-text-3xl">These are our top recommendations!</div>
+                            <div class="text-size14 er-mt-2 mb:er-text-xl">Based on your responses, we think these
+                                eBikes fit you
+                                best.😀</div>
+                            <div id="results-list" class="er-flex er-flex-col er-mt-8 er-gap-y-8 er-pb-8">
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="navigation-buttons">
+                    <button id="back-btn" class="er-button er-button-dark er-button-text !er-text-3xl mb:!er-text-2xl"
+                        style="display: none;"><svg xmlns="http://www.w3.org/2000/svg" height="20px"
+                            viewBox="0 -960 960 960" width="20px" fill="#444">
+                            <path
+                                d="M640-107.69 267.69-480 640-852.31l42.54 42.54L352.77-480l329.77 329.77L640-107.69Z" />
+                        </svg> Back</button>
+                    <span class="er-flex-1"></span>
+                    <button id="next-btn" class="er-button">Next<svg xmlns="http://www.w3.org/2000/svg" height="24px"
+                            viewBox="0 -960 960 960" width="24px" fill="currentColor">
+                            <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z" />
+                        </svg></button>
+                    <button id="submit-btn" class="er-button" style="display: none;">Submit</button>
+                </div>
+            </div>
+        </dialog>
+    </div>
+    <template id="product-template">
+        <div
+            class="er-flex er-border er-border-solid er-border-gray/50 er-rounded-3xl er-p-8 er-pl-4 er-items-center er-gap-4 mb:er-flex-col mb:er-pr-4 mb:er-pt-4 mb:er-gap-2">
+            <img src="https://newurtopia.com/cdn/shop/files/f_2x_e65e20b1-911b-4754-b595-b27ec33e8642.jpg?v=1744276805&width=500"
+                width="200" alt="">
+            <div
+                class="er-flex er-flex-col er-flex-1 er-items-end er-gap-4 mb:er-w-full mb:er-items-center mb:er-gap-2">
+                <div class="text-size16 er-font-bold product_name">Carbon 1 Pro</div>
+                <div class="text-size24 er-font-extrabold product-price er-text-primary er-flex" data-price="$2,999.00">
+                    $1,799.00 <del class="er-text-dark/60 text-size16 product-compare-at-price er-ml-1">$2,999.00</del>
+                </div>
+                <div class="er-flex er-items-center">
+                    <div class="star" style="--star-size: 16px;"></div>
+                    <div class="star" style="--star-size: 16px;"></div>
+                    <div class="star" style="--star-size: 16px;"></div>
+                    <div class="star" style="--star-size: 16px;"></div>
+                    <div class="star" style="--star-size: 16px;"></div>
+                    <span class="er-text-dark/70 text-size14 er-ml-2">1035 Reviews</span>
+                </div>
+                <a class="er-button er-button-dark er-mt-4 !er-w-full" target="_blank"
+                    href="https://newurtopia.com/?urtopiacarbonebikecarbonone=yes">View
+                    Product</a>
+            </div>
+        </div>
+    </template>
+
+<script type="module">
+        // The data structure is still needed for scoring logic
+    const quizData = [
+        { answers: [{ bikes: ["Carbon 1 Pro", "Carbon 1 ST", "Fold 1", "Joy"], points: 2 }, { bikes: ["Joy", "Carbon 1 ST", "Fold 1"], points: 2 }, { bikes: ["Carbon 1 Pro", "Fusion Pro", "Fusion GT"], points: 2 }, { bikes: ["Fusion Pro", "Fusion GT"], points: 2 }] },
+        { answers: [{ bikes: ["Fold 1", "Carbon 1 ST", "Carbon 1 Pro"], points: 2 }, { bikes: ["Carbon 1 ST", "Joy", "Fold 1"], points: 2 }, { bikes: ["Carbon 1 Pro", "Fusion Pro"], points: 2 }, { bikes: ["Joy", "Fusion Pro", "Fusion GT"], points: 2 }] },
+        { answers: [{ bikes: ["Carbon 1 ST", "Fold 1", "Carbon 1 Pro"], points: 2 }, { bikes: ["Joy", "Carbon 1 ST"], points: 2 }, { bikes: ["Carbon 1 Pro", "Fusion Pro", "Fusion GT"], points: 2 }, { bikes: ["Fusion GT", "Fusion Pro"], points: 2 }] },
+        { answers: [{ bikes: ["Carbon 1 Pro"], points: 3 }, { bikes: ["Carbon 1 ST", "Joy", "Fusion Pro", "Fusion GT"], points: 3 }, { bikes: ["Fold 1"], points: 999, isDirect: true }] },
+        { answers: [{ bikes: ["Fold 1", "Joy", "Carbon 1 Pro", "Carbon 1 ST"], points: 2 }, { bikes: ["Joy", "Carbon 1 Pro", "Carbon 1 ST"], points: 2 }, { bikes: ["Joy", "Carbon 1 Pro", "Carbon 1 ST", "Fusion Pro", "Fusion GT"], points: 2 }] },
+        { answers: [{ bikes: ["Fold 1", "Joy", "Carbon 1 Pro", "Carbon 1 ST", "Fusion Pro", "Fusion GT"], points: 2 }, { bikes: ["Joy", "Carbon 1 Pro", "Carbon 1 ST", "Fusion Pro", "Fusion GT"], points: 2 }, { bikes: ["Joy", "Fusion Pro", "Fusion GT"], points: 2 }] },
+        { answers: [{}, { bikes: ["Joy"], points: 999 }, { bikes: ["Fold 1", "Joy", "Carbon 1 ST"], points: 9 }, { bikes: ["Fold 1", "Joy", "Carbon 1 Pro", "Carbon 1 ST", "Fusion Pro", "Fusion GT"], points: 9 }, { bikes: ["Fold 1", "Joy", "Carbon 1 Pro", "Carbon 1 ST", "Fusion Pro", "Fusion GT"], points: 9 }, { bikes: ["Fold 1", "Joy", "Carbon 1 Pro", "Carbon 1 ST", "Fusion Pro", "Fusion GT"], points: 9 }, { bikes: ["Joy", "Carbon 1 Pro", "Fusion Pro", "Fusion GT"], points: 9 }, { bikes: ["Carbon 1 Pro"], points: 999 }] }
+    ];
+
+
+    const ebikes = {
+        "Carbon 1 Pro": { riviews: "1035", product_name: '{{ all_products['urtopia-carbon-1-pro-ebike'].title }}', featured_image: '{{ all_products['urtopia-carbon-1-pro-ebike'].first_available_variant.featured_image | image_url: width: 500 }}', price: '{{ all_products['urtopia-carbon-1-pro-ebike'].price | money }}', compare_at_price: '{{ all_products['urtopia-carbon-1-pro-ebike'].compare_at_price | money }}', product_url: "{{ all_products['urtopia-carbon-1-pro-ebike'].url }}" },
+        "Carbon 1 ST": { riviews: "406", product_name: '{{ all_products['urtopia-carbon-1-step-thru-ebike'].title }}', featured_image: '{{ all_products['urtopia-carbon-1-step-thru-ebike'].first_available_variant.featured_image | image_url: width: 500 }}', price: '{{ all_products['urtopia-carbon-1-step-thru-ebike'].price | money }}', compare_at_price: '{{ all_products['urtopia-carbon-1-step-thru-ebike'].compare_at_price | money }}', product_url: "{{ all_products['urtopia-carbon-1-step-thru-ebike'].url }}" },
+        "Fold 1": { riviews: "615", product_name: '{{ all_products['urtopia-carbon-fold'].title }}', featured_image: '{{ all_products['urtopia-carbon-fold'].first_available_variant.featured_image | image_url: width: 500 }}', price: '{{ all_products['urtopia-carbon-fold'].price | money }}', compare_at_price: '{{ all_products['urtopia-carbon-fold'].compare_at_price | money }}', product_url: "{{ all_products['urtopia-carbon-fold'].url }}" },
+        "Joy": { riviews: "519", product_name: '{{ all_products['urtopia-joy-carbon-fat-tire-ebike'].title }}', featured_image: '{{ all_products['urtopia-joy-carbon-fat-tire-ebike'].first_available_variant.featured_image | image_url: width: 500 }}', price: '{{ all_products['urtopia-joy-carbon-fat-tire-ebike'].price | money }}', compare_at_price: '{{ all_products['urtopia-joy-carbon-fat-tire-ebike'].compare_at_price | money }}', product_url: "{{ all_products['urtopia-joy-carbon-fat-tire-ebike'].url }}" },
+        "Fusion Pro": { riviews: "394", product_name: '{{ all_products['urtopia-fusion-pro-carbon-long-range-ebike'].title }}', featured_image: '{{ all_products['urtopia-fusion-pro-carbon-long-range-ebike'].first_available_variant.featured_image | image_url: width: 500 }}', price: '{{ all_products['urtopia-fusion-pro-carbon-long-range-ebike'].price | money }}', compare_at_price: '{{ all_products['urtopia-fusion-pro-carbon-long-range-ebike'].compare_at_price | money }}', product_url: "{{ all_products['urtopia-fusion-pro-carbon-long-range-ebike'].url }}" },
+        "Fusion GT": { riviews: "373", product_name: '{{ all_products['urtopia-carbon-fusion-gt'].title }}', featured_image: '{{ all_products['urtopia-carbon-fusion-gt'].first_available_variant.featured_image | image_url: width: 500 }}', price: '{{ all_products['urtopia-carbon-fusion-gt'].price | money }}', compare_at_price: '{{ all_products['urtopia-carbon-fusion-gt'].compare_at_price | money }}', product_url: "{{ all_products['urtopia-carbon-fusion-gt'].url }}" },
+    }
+
+    let currentStep = 0;
+    const totalQuestions = 7; // Total number of question steps
+    const userAnswers = new Array(totalQuestions).fill(null);
+    const allBikeModels = [...new Set(quizData.flatMap(q => q.answers.flatMap(a => a.bikes || [])))];
+    let email = '';
+
+    function saveCurrentAnswer() {
+        const $currentStepDiv = $(`.quiz-step[data-step="${currentStep}"]`);
+        const $input = $currentStepDiv.find('input:checked, select, input[type="email"]');
+
+
+        if (currentStep === 7) {
+            email = $('#email-input').val().trim();
+        }
+
+        if (!$input.val()) {
+            alert(currentStep === 7 ? 'Please enter your email!' : "Please select an answer.");
+            return false;
+        }
+        userAnswers[currentStep] = currentStep === 7 ? 0 : parseInt($input.val());
+        return true;
+    }
+
+    function updateButtonVisibility() {
+        $('#back-btn').toggle(currentStep > 0 && currentStep <= totalQuestions);
+        $('#next-btn').toggle(currentStep < totalQuestions);
+        $('#submit-btn').toggle(currentStep === totalQuestions);
+    }
+
+    function navigateToStep(stepIndex) {
+        $('.quiz-step').hide();
+        $(`.quiz-step[data-step="${stepIndex}"]`).show();
+        currentStep = stepIndex;
+        updateButtonVisibility();
+    }
+
+    $('#next-btn').on('click', function () {
+        if (saveCurrentAnswer()) {
+            navigateToStep(currentStep + 1);
+        }
+    });
+
+    $('#back-btn').on('click', function () {
+        navigateToStep(currentStep - 1);
+    });
+
+    $('#email-form').on('submit', function (e) {
+        e.preventDefault();
+        console.log("Email submitted:", $('#email-input').val());
+
+        // Final results calculation
+        const bikeScores = {};
+        allBikeModels.forEach(bike => bikeScores[bike] = 0);
+
+        for (let i = 0; i < totalQuestions; i++) {
+            const answerIndex = userAnswers[i];
+            if (answerIndex !== null) {
+                const answer = quizData[i].answers[answerIndex];
+                if (answer.points) {
+                    answer.bikes.forEach(bike => { bikeScores[bike] += answer.points; });
+                }
+            }
+        }
+
+        const finalScores = Object.entries(bikeScores).sort(([, scoreA], [, scoreB]) => scoreB - scoreA);
+
+        console.log(finalScores)
+
+        const $resultsList = $('#results-list').empty();
+        if (finalScores.length === 0) {
+            $resultsList.append('<li>Sorry, no bike matches your criteria.</li>');
+        } else {
+            const topRecommendations = finalScores.slice(0, 2);
+            topRecommendations.forEach(([bikeName, score]) => {
+                const $template = $('#product-template').contents().clone();
+                // 这里可以根据 bikeName 替换模板里的内容
+
+                $($template).find('.product-price').html(`${ ebikes[bikeName].price } <del class="er-text-dark/60 text-size16 product-compare-at-price er-ml-1">${ ebikes[bikeName].compare_at_price }</del>`);
+                // $($template).find('.product-compare-at-price').text(ebikes[bikeName].compare_at_price);
+                $($template).find('img').attr('src', ebikes[bikeName].featured_image);
+                $($template).find('.product-price').attr('data-price', ebikes[bikeName].price);
+                $($template).find('a').attr('href', ebikes[bikeName].product_url);
+                $($template).find('.product_name').text(ebikes[bikeName].product_name);
+                $($template).find('.star + span').text(`${ebikes[bikeName].riviews} Reviews`);
+                // 其他替换操作
+
+                // 例如：$template.find('.text-size20').text(bikeName);
+                $resultsList.append($template);
+            });
+
+            fetchBuried('emailpop', 'submit', {
+                email,
+                tag: `US,POPUP,QUIZ,${topRecommendations.map(t => t[0].replace(/\s+/g, "_")).join(',')}`
+            })
+        }
+
+        // Show the results step
+        navigateToStep(totalQuestions + 1); // This will be step 8 (results)
+        // Hide all buttons on results page
+        $('.navigation-buttons').hide();
+    });
+
+    // A better approach for the final step
+    // The previous logic was a bit convoluted. Let's simplify.
+    // Let's count email form as a "question" step for navigation purposes
+    const totalNavigableSteps = 8; // 7 questions + 1 email form
+
+    function newUpdateButtonVisibility() {
+        const isEmailStep = currentStep === totalNavigableSteps - 1;
+        const isResultStep = currentStep >= totalNavigableSteps;
+
+        $('#back-btn').toggle(currentStep > 0 && !isResultStep);
+        $('#next-btn').toggle(currentStep < totalNavigableSteps - 1); // Show next until the last question
+        $('#submit-btn').toggle(currentStep === totalNavigableSteps - 1); // Show submit on last question
+
+        if (isResultStep) {
+            $('.navigation-buttons').hide();
+        } else {
+            $('.navigation-buttons').show();
+        }
+    }
+
+    function newNavigateToStep(stepIndex) {
+        $('.quiz-step').hide();
+        $(`.quiz-step[data-step="${stepIndex}"]`).show();
+        currentStep = stepIndex;
+        newUpdateButtonVisibility();
+    }
+
+    // Replace old functions with simplified ones
+    navigateToStep = newNavigateToStep;
+    updateButtonVisibility = newUpdateButtonVisibility;
+
+    $('#next-btn').off('click').on('click', function () {
+        if (saveCurrentAnswer()) {
+            navigateToStep(currentStep + 1);
+        }
+    });
+
+    $('#back-btn').off('click').on('click', function () {
+        navigateToStep(currentStep - 1);
+    });
+
+    // 'Submit' button on last question will save answer and move to email form
+    $('#submit-btn').off('click').on('click', function () {
+        setTimeout(() => {
+            document.getElementById('email-form').requestSubmit();
+        }, 0);
+    });
+
+    // --- Add this code to handle selection styling ---
+    $('.answers-container input[type="radio"]').on('change', function () {
+        // First, remove the class from all labels in the same question
+        $(this).closest('.answers-container').find('label').removeClass('selected-answer');
+
+        // Then, add the class to the parent label of the radio button that was just checked
+        $(this).closest('label').addClass('selected-answer');
+    });
+
+    $('.start-quiz-btn').on('click', function () {
+        userAnswers.fill(null);
+
+        // Reset forms
+        $('#quiz-steps form').get(0)?.reset();
+        $('input[type="radio"]').prop('checked', false);
+        $('#height-select').val('');
+        $('.answers-container label').removeClass('selected-answer'); // Clears all selection styles
+
+        navigateToStep(0);
+
+        showDialog(document.getElementById('quiz-dialog'));
+    });
+</script>

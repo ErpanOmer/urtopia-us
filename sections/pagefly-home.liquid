@@ -67,6 +67,23 @@
       <div class="swiper-button-next er-bottom-12 er-right-0 er-left-auto er-top-auto er-bg-dark er-rounded-full er-w-16 er-h-16 after:er-text-3xl mb:er-hidden er-z-2" style="z-index:1;"></div>
   </div>
 </div>
+<div class="er-text-white er-pt-24 mb:er-pt-0">
+        <div class="centeral-content mb:er-px-0">
+            <div class="background-image er-aspect-[1280/400] mb:er-aspect-[375/400] er-rounded-3xl er-overflow-hidden mb:er-rounded-none">
+            {% render 'image', width: 1440, mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC05891_2x_a7f76d7a-c014-48be-9c96-cd4a62a05505.jpg?v=1756435306", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26016_2x_f18b1f82-9bbe-4f1f-9aff-e8e235832d6f.jpg?v=1756434708" %}
+                <div class="er-grid er-grid-cols-2 er-h-full er-gap-x-32 mb:er-grid-cols-1">
+                    <div class="er-w-2/3 er-aspect-square mb:er-hidden"></div>
+                    <div class="er-flex er-flex-col er-items-start er-justify-center mb:er-px-12 mb:er-items-center mb:er-text-center mb:er-justify-start mb:er-pt-10">
+                        <h2 class="er-m-0 er-text-white text-size36 mb:er-text-4xl">Discover Your Perfect Ride</h2>
+                        <p class="text-size18 er-max-w-2xl er-mt-8 er-mb-24 mb:er-text-2xl mb:er-my-10">
+                            <span>Take an e-bike quiz to discover which Urtopia model is your perfect fit.</span>
+                        </p>
+                        <button class="er-button er-button-white start-quiz-btn">E-bike quiz</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 <div class="centeral-content carbon background-image">
   <h2 class="u36DemiBold_v2">Carbon fiber expert</h2>
   <p class="u17Light_v2">
@@ -194,3 +211,4 @@
     }
   })
 </script>
+{% render 'quiz-dialog' %}
