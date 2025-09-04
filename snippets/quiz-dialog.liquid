@@ -343,11 +343,6 @@
         const $currentStepDiv = $(`.quiz-step[data-step="${currentStep}"]`);
         const $input = $currentStepDiv.find('input:checked, select, input[type="email"]');
 
-
-        if (currentStep === 7) {
-            email = $('#email-input').val().trim();
-        }
-
         if (!$input.val()) {
             alert(currentStep === 7 ? 'Please enter your email!' : "Please select an answer.");
             return false;
@@ -424,7 +419,7 @@
             });
 
             fetchBuried('emailpop', 'submit', {
-                email,
+                email: $('#email-input').val().trim(),
                 tag: `US,POPUP,QUIZ,${topRecommendations.map(t => t[0].replace(/\s+/g, "_")).join(',')}`
             })
         }

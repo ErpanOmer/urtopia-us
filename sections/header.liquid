@@ -127,7 +127,7 @@
                                               </div>  
                                             <img src="{{ productttttt.first.featured_image | image_url: width: 300 }}" loading="lazy" fetchpriority="low" width="134" height="84" alt="Urtopia Ebike - Sleek, Full Carbon, Lightweight, Smart">
                                         </div>
-                                      {% assign productttttt =  all_products["urtopia-carbon-fold"].variants | where: "title", "One Size / Saffron Yellow" %}
+                                      {% assign productttttt =  all_products["urtopia-carbon-fold"].variants | where: "title", "One Size / Charcoal Grey" %}
                                         <div class="by-model" href="{{ productttttt.first.url }}">
                                               <div>
                                                 <div class="u14DemiBold_v2">Carbon Fold 1</div>
@@ -482,7 +482,7 @@
                                           <div class="er-text-xl er-my-2">Lightweight Fat Tire Ebike</div>
                                           <span class="u14DemiBold_v2 emphasize" {% unless productttttt.first.compare_at_price == productttttt.first.price %}data-price="{{ productttttt.first.compare_at_price | money_without_trailing_zeros }}"{% endunless %}>{{ productttttt.first.price | money_without_trailing_zeros }}</span>
                                       </div>
-                                    {% assign productttttt =  all_products["urtopia-carbon-fold"].variants | where: "title", "One Size / Saffron Yellow" %}
+                                    {% assign productttttt =  all_products["urtopia-carbon-fold"].variants | where: "title", "One Size / Charcoal Grey" %}
                                       <div class="by-model" href="{{ productttttt.first.url }}">
                                           <img loading="lazy" fetchpriority="low" decoding="async" width="180" height="113" alt="Urtopia Ebike - Sleek, Full Carbon, Lightweight, Smart" src="{{ productttttt.first.featured_image | image_url: width: 500 }}">
                                           <div class="flex-1"></div>

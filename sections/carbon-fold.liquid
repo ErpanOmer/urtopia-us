@@ -149,7 +149,7 @@
         <div class="er-flex er-flex-col er-justify-end er-bg-cover er-bg-no-repeat er-bg-top er-mt-[-25px] er-mb-[-25px] mb:er-mt-[-15px] mb:er-mb-[-15px] er-rounded-2xl er-overflow-hidden er-shadow-sm er-pb-16 mb:er-pb-10"
             style="background-color: rgb(240, 129, 0);">
             <div class="er-flex er-items-end er-py-6 mb:er-py-3 er-px-7 mb:er-px-3 er-aspect-[6/5] er-bg-cover er-bg-top er-bg-no-repeat"
-                style="background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250523-171553.jpg?v=1747991773');">
+                style="background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250903-114601.jpg?v=1756871180');">
                 <b class="text-size20 mb:er-text-2xl er-font-bold">Carbon Fiber</b>
             </div>
             <div
@@ -300,9 +300,9 @@
         <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">Brakes</div>
         <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">Integrated light</div>
       </div>
-      <div class="er-my-[-30px] mb:er-my-[-15px] er-pt-12 mb:er-pt-6 er-flex er-flex-col er-divide-y-[1px] er-divide-x-0 er-divide-solid er-divide-white/15 er-shadow er-rounded-3xl er-text-white" style="background: linear-gradient(180deg, #FFD362, #D57D00, #C15700);">
+      <div class="er-my-[-30px] mb:er-my-[-15px] er-pt-12 mb:er-pt-6 er-flex er-flex-col er-divide-y-[1px] er-divide-x-0 er-divide-solid er-divide-white/15 er-shadow er-rounded-3xl er-text-white" style="background: linear-gradient(180deg, #F6CF97, #F29511, #CE5D00);">
         <div class="text-size20 er-flex er-flex-col er-items-center er-justify-center er-font-medium er-py-12 mb:er-text-2xl mb:er-py-6">
-          {{ product | image_url: width: 200 | image_tag: loading: 'lazy', class: "er-aspect-video er-object-contain er-object-center" }}
+          {{ product.first_available_variant.featured_image | image_url: width: 200 | image_tag: loading: 'lazy', class: "er-aspect-video er-object-contain er-object-center" }}
           <span class="er-mt-6 mb:er-mt-4">Carbon Fold 1</span>
         </div>
         <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">{{ product.price | money_without_trailing_zeros }}</div>
@@ -333,7 +333,7 @@
         <div class="text-size18 er-h-28 mb:er-h-24 er-flex er-items-center er-justify-center er-font-medium mb:er-text-xl">❌</div>
       </div>
     </div>
-    {% render 'image', width: 1024, src: "https://cdn.shopify.com/s/files/1/0633/2068/6808/files/24870_2x_a586c01c-a72c-42e0-9a94-d36047856d03.png?v=1729076064", mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24876_2x_493b152e-2581-4f9f-ad47-c22c9a2fe2cd.png?v=1729474418" %}
+    {% render 'image', width: 1024, src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25419_2x_26fe2ff5-a8bd-4876-a4f3-30be24291011.png?v=1756865902", mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25421_2x_403a15d2-6534-47b2-8c47-9a9b09d8f88c.png?v=1756866154" %}
   </div>
 </div>
 <div class="step_folding">
@@ -353,14 +353,14 @@
           <img
             loading="lazy"
             alt="{{ page_description }}"
-            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241012-184908_2x_f690fe39-ffed-4931-8d30-943ec18958d7.png?v=1729482982"
+            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2x_a9862ff7-256c-48f7-8125-0e3581192906.png?v=1756865053"
           >
         </div>
         <div class="swiper-slide">
           <img
             loading="lazy"
             alt="{{ page_description }}"
-            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241012-184906_2x_4e9cb21c-99e3-4d5d-acd7-12a93a099d84.png?v=1729482988"
+            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1_2x_4d7fdf4f-8433-468b-a905-e2274824960f.png?v=1756865046"
           >
         </div>
 
@@ -368,7 +368,7 @@
           <img
             loading="lazy"
             alt="{{ page_description }}"
-            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241012-184840_2x_f95f0716-b194-48d8-b90f-54a30f8e989d.png?v=1729483015"
+            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2_2x_4ce46c92-b93d-4b07-875d-dc30ab7de052.png?v=1756865041"
           >
         </div>
       </div>
@@ -426,7 +426,7 @@
       </div>
   </div>
 <div class="background-image er-aspect-[1920/750] mb:er-aspect-auto mb:er-pt-[80vw]">
-  {% render 'image', class: "mb:!er-object-contain mb:!er-object-top", src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20241107-102133_2x_6dd5add4-ab0d-4df8-978a-3e03ebc52071.jpg?v=1731051204', mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19648_2x_c2c76097-f12b-4419-ad21-0889e1a34e0d.jpg?v=1731057196" %}
+  {% render 'image', class: "mb:!er-object-contain mb:!er-object-top", src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2-1_2x_d299c229-c084-4349-adb7-1e78b006ae0a.jpg?v=1756865650', mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19719_2x_3889495d-3fe8-4eaf-893f-2e848f87a439.jpg?v=1756866325" %}
       <div
           class="er-max-w-screen-xl er-mx-auto er-px-12 er-grid er-grid-cols-2 er-items-center er-h-full mb:er-grid-cols-1 mb:er-h-auto er-gap-x-40 er-text-black">
           <div class="er-flex er-flex-col er-items-start mb:er-pt-12 mb:er-pb-20">
