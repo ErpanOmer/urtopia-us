@@ -1,9 +1,9 @@
 {{ 'outlet_v4.scss.css' | asset_url | stylesheet_tag: preload: true }}
 <h1 class="er-sr-only">{{ page_title }}</h1>
 <div class="background-image er-aspect-[1920/750] er-pt-12 mb:er-aspect-[375/500] mb:er-pt-12">
-        {% render 'image', first_screen: true,  mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250812-185706_2x_f5baf3e3-7f98-482a-9c0b-bf5415448811.jpg?v=1755501197", src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250812-185706_2x_8e6fce41-c433-42fc-9bd7-5fa3388d0e41.jpg?v=1755500969' %}
+        {% render 'image', first_screen: true,  mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26032_2x_5e0c57e8-28ed-4f51-80af-b0cf341fd9f4.jpg?v=1757315370", src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26031_2x_2547d032-e970-4163-854b-ecdd73f79a93.jpg?v=1757315168' %}
         <div class="centeral-content er-flex er-flex-col er-items-center md:er-h-full">
-                <div class="text-size30 er-bg-red-600 er-py-4 er-px-12 er-uppercase er-rounded-full mb:er-text-3xl er-text-white">{{ settings.sale_name }}</div>
+                <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Cycle_September_Sale_2x_8d31e764-fd29-413c-a459-94dac27435ea.png?v=1757315303" width="280">
                 <img class="mb:er-max-w-sm er-mt-10 mb:er-my-6" width="350" height="75" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25875_2x_91eb65db-3b79-4afa-865b-3b0895576482.png?v=1745910602">
                 {% render 'sale' %}
                 <style>
@@ -41,7 +41,7 @@
                         font-size: 30px;
                         margin-bottom: 7.5px;
                         position: relative;
-                        color: #EA220D;
+                        color: #151E57;
                     }
           
           
@@ -249,7 +249,7 @@
     <div class="er-bg-background-warm er-text-white">
         <div class="centeral-content mb:er-px-6">
             <div class="background-image er-aspect-[1280/450] mb:er-aspect-auto er-rounded-3xl er-overflow-hidden">
-            {% render 'image', class: "mb:!er-object-top" width: 1440, mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25974_2x_243cabef-456d-40d1-a1e6-872973f56cb4.jpg?v=1755501101", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250613-134825_2x_9cc6c527-6e19-4ede-ba19-15a2ae0f47e1.jpg?v=1755500920" %}
+            {% render 'image', class: "mb:!er-object-top" width: 1440, mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26030_2x_e765fa7b-1445-4de4-a9d9-a023b67f9ec2.jpg?v=1757315627", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26028_2x_5c94c5bb-2366-4096-af9d-ae0ee273a409.jpg?v=1757315174" %}
                  <!-- <div class="background-mask !er-w-1/2 mb:er-hidden" style="background-image: linear-gradient(90deg, #0888BA, #0D89BA00);"></div>     -->
                  <div
                     class="er-flex er-flex-col er-items-start er-justify-center er-h-full er-pl-28 er-max-w-2xl mb:er-px-8 mb:er-pt-10">
@@ -258,16 +258,15 @@
                         <b>BEST PRICE EVER</b>
                     </h2>
                     <div class="md:er-hidden er-aspect-square er-w-9/12"></div>
-                    <h3 class="er-m-0 er-text-white text-size18 er-font-medium er-mt-16 mb:er-text-2xl">Carbon 1 Pro
-                        Commuter eBike</h3>
+                    <h3 class="er-m-0 er-text-white text-size18 er-font-medium er-mt-16 mb:er-text-2xl">Joy Carbon Utility eBike</h3>
                     <span class="text-size30 er-mt-4 mb:er-text-4xl"><u
-                            class="text-size24 mb:er-text-3xl">Was {{ all_products['urtopia-carbon-1-pro-ebike'].compare_at_price | money_without_trailing_zeros }}</u> <u>Now {{ all_products['urtopia-carbon-1-pro-ebike'].price | money_without_trailing_zeros }}</u></span>
+                            class="text-size24 mb:er-text-3xl">Was {{ all_products['urtopia-joy-carbon-fat-tire-ebike'].compare_at_price | money_without_trailing_zeros }}</u> <u>Now {{ all_products['urtopia-joy-carbon-fat-tire-ebike'].price | money_without_trailing_zeros }}</u></span>
                     <p class="text-size18 er-mb-16 er-mt-8 mb:er-text-2xl mb:er-mb-10 mb:er-mt-6">
                         <span>
-                           Stands out with a striking design, ultra-light carbon fiber frame, and smart features like GPS tracking and navigation—now available at a once-in-a-lifetime discount!
+                           Now only $1,799! With an ultra-light carbon frame, up to 70 miles of range, and a design that’s easy, comfy, and built tough — this is the best deal on a premium carbon e-bike.
                         </span>
                     </p>
-                    <a class="er-button er-button-white mb:er-mb-20" href="https://newurtopia.com/products/urtopia-carbon-1-pro-ebike" target="_blank">Shop now</a>
+                    <a class="er-button er-button-white mb:er-mb-20" href="/products/urtopia-joy-carbon-fat-tire-ebike?variant=46345550037240" target="_blank">Shop now</a>
                 </div>
             </div>
         </div>
