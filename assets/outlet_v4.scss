@@ -1295,3 +1295,17 @@ h4 {
     }
 }
 
+
+
+.compare {
+    .dots {
+        @include dotssss;
+
+        @media (max-width: 767px) {
+            &> div {
+                margin-right: 8px;
+            }
+        }
+    }
+}
+
