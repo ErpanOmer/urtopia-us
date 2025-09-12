@@ -15,7 +15,7 @@
         <div class="centeral-content">
             <h2 class="text-size36 mb:er-text-4xl er-text-left er-w-full">Professional Reviews</h2>
            <div class="er-grid er-grid-cols-4 er-mt-16 mb:er-grid-cols-1 mb:er-mt-10 er-gap-4 mb:er-gap-y-16">
-               <a class="er-flex er-flex-col er-items-start" href="https://newurtopia.com/pages/urtopia-e-bike-review"
+               {% comment %} <a class="er-flex er-flex-col er-items-start" href="https://newurtopia.com/pages/urtopia-e-bike-review"
                     target="_blank">
                     <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250718-141633.jpg?v=1752819406&width=500"
                         alt="{{ product.title }}" class="er-rounded-3xl">
@@ -30,6 +30,23 @@
                             src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19464_2x_c1e0527f-3170-4d9f-9004-0fc101a9d28d.jpg?v=1752819602"
                             alt="{{ product.title }}">
                         <span class="text-size16 er-font-medium mb:er-text-2xl">Urtopia Ebike</span>
+                    </div>
+                </a> {% endcomment %}
+                 <a class="er-flex er-flex-col er-items-start" href="https://www.youtube.com/watch?v=fAsgEl3FmFg"
+                    target="_blank" onclick="showVideoDialog('https://www.youtube.com/embed/fAsgEl3FmFg?autoplay=1&cc_load_policy=1');return false;">
+                    <img width="400" height="200" class="er-rounded-2xl" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250909-181941.jpg?v=1757414105&width=500"
+                        alt="{{ product.title }}">
+                    <p class="text-size16 er-mt-6 er-mb-8 mb:er-text-2xl mb:er-mb-6">
+                        <span>
+                            The Urtopia Fusion Pro proved to be a lightweight, long-range carbon fiber e-bike, perfect for reaching photography locations
+                        </span>
+                    </p>
+                    <span class="er-flex-1"></span>
+                    <div class="er-flex er-items-center">
+                        <img width="28" height="28" class="er-mr-4 er-rounded-full"
+                            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/channels4_profile_4_0f2891ec-a386-4438-b92e-ffc5c94c592b.jpg?v=1757414299"
+                            alt="{{ product.title }}">
+                        <span class="text-size16 er-font-medium mb:er-text-2xl">photoshopCAFE</span>
                     </div>
                 </a>
               <a class="er-flex er-flex-col er-items-start" href="https://www.youtube.com/watch?v=bZduNKXScvA"

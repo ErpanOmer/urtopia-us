@@ -1,0 +1,922 @@
+{{ 'outlet_v4.scss.css' | asset_url | stylesheet_tag: preload: true }}
+
+<style>
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='none' stroke='%23333' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M6 8l4 4 4-4'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1em top 50%;
+    background-size: 1.5em auto;
+    padding-right: 2.5em;
+    border: 2px solid #f8f8f8;
+    /* transition: border-color 0.3s ease; */
+    height: 50px;
+    width: 90%;
+    margin: 0 auto;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 25px;
+    padding: 0 24px;
+    cursor: pointer;
+    box-shadow: 0 0 0 2px transparent;
+    display: block;
+    box-sizing: border-box;
+}
+
+select:hover {
+    border-color: #e8e8e8;
+}
+
+select:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #999;
+    border-color: transparent;
+}
+
+.borderrrrrrrrrt {
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.compare div[data-row-index="1"] .er-aspect-square,
+.compare div[data-row-index="3"] .er-aspect-square {
+    background-color: white;
+}
+
+.compare img {
+    aspect-ratio: 371 / 232;
+    object-fit: cover;
+}
+</style>
+    <div class="er-bg-background compare er-py-36 mb:er-pt-14">
+        <div class="centeral-content mb:er-px-0">
+            <h2 class="text-size36 er-mb-20 mb:er-text-3xl mb:er-pl-8 mb:er-mb-10">Compare E-Bikes</h2>
+            <div class="er-grid er-grid-cols-4 mb:er-grid-cols-2">
+                <div class="mb:er-hidden">
+                    <div class="er-h-20 er-mb-14"></div>
+                    <div
+                        class="er-box-border er-aspect-square text-size18 er-font-bold er-flex er-flex-col er-items-start er-justify-center er-text-left borderrrrrrrrrt">
+                        E-bike Model</div>
+                    <div
+                        class="text-size18 er-font-bold er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt">
+                        How It Feels</div>
+                    <div
+                        class="text-size18 er-font-bold er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt">
+                        Best For</div>
+                    <div
+                        class="text-size18 er-font-bold er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt">
+                        Weight</div>
+                    <div
+                        class="text-size18 er-font-bold er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt">
+                        Frame Material</div>
+                    <div
+                        class="text-size18 er-font-bold er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt">
+                        Motor</div>
+                    <div
+                        class="text-size18 er-font-bold er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt">
+                        Range</div>
+                    <div
+                        class="text-size18 er-font-bold er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt">
+                        Battery</div>
+                    <div
+                        class="text-size18 er-font-bold er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt">
+                        Drivetrain</div>
+                    <div
+                        class="text-size18 er-font-bold er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt">
+                        Sensor</div>
+                    <div
+                        class="text-size18 er-font-bold er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt">
+                        Brakes</div>
+                    <div
+                        class="text-size18 er-font-bold er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt">
+                        Payload Capacity</div>
+                    <div
+                        class="text-size18 er-font-bold er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt">
+                        UL Certified</div>
+                    <div
+                        class="text-size18 er-font-bold er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt">
+                        Handlebar</div>
+                    <div
+                        class="text-size18 er-font-bold er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt">
+                        Fork</div>
+                    <div
+                        class="text-size18 er-font-bold er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt">
+                        Tires</div>
+                    <div
+                        class="text-size18 er-font-bold er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt">
+                        Standover Height</div>
+                    <div
+                        class="text-size18 er-font-bold er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-60 borderrrrrrrrrt">
+                        Smart Function</div>
+                    <div
+                        class="text-size18 er-font-bold er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40">
+                    </div>
+                </div>
+                <div data-row-index="1">
+                    <div class="er-flex er-mb-14 mb:er-mb-8">
+                        <select name="ebike" class="mb:er-text-xl mb:er-px-4 mb:er-h-16">
+                            <option value="urtopia-carbon-1-pro-ebike">Carbon 1 Pro</option>
+                            <option value="urtopia-joy-carbon-fat-tire-ebike">Carbon Joy</option>
+                            <option value="urtopia-carbon-1-step-thru-ebike">Carbon 1 ST</option>
+                            <option value="urtopia-carbon-fold">Carbon Fold 1</option>
+                            <option value="urtopia-fusion-pro-carbon-long-range-ebike">Carbon Fusion Pro</option>
+                            <option value="urtopia-carbon-fusion-gt">Carbon Fusion GT</option>
+                        </select>
+                    </div>
+                    <div
+                        class="er-box-border er-aspect-square text-size18 er-font-bold er-flex er-flex-col er-items-center er-justify-center er-text-center borderrrrrrrrrt  er-px-[10%] er-space-y-8 er-bg-white mb:er-space-y-4">
+                        {{ all_products['urtopia-carbon-1-pro-ebike'].first_available_variant.featured_image | image_url: width: 500 | image_tag : loading: 'lazy', alt: all_products['urtopia-carbon-1-pro-ebike'].title }}
+                        <div class="dots">
+                        {% assign product = all_products['urtopia-carbon-1-pro-ebike'] %}
+
+                        {% for option in product.options_with_values %}
+                            {% if option.name == 'Color' %}
+                            {% for value in option.values %}
+                                {%- assign selected_variant = nil -%}
+
+                                {%- for variant in product.variants -%}
+                                {% if variant.option2 == value and variant.available %}
+                                    {%- assign selected_variant = variant -%}
+                                    {% break %}
+                                {% endif %}
+                                {%- endfor -%}
+
+                                {% if selected_variant %}
+                                <div 
+                                    data-stye="{{ value }}"
+                                    data-variant-id="{{ selected_variant.id }}"
+                                    data-image="{{ selected_variant.featured_image.src | image_url: width: 500 }}"
+                                    data-price="{{ selected_variant.price | money_without_trailing_zeros }}"
+                                    data-url="{{ selected_variant.url }}"
+                                    {% if forloop.first %}class="active"{% endif %}
+                                ></div>
+                                {% endif %}
+                            {% endfor %}
+                            {% endif %}
+                        {% endfor %}
+                        </div>
+                        <div class="text-size20 er-font-extrabold">{{ all_products['urtopia-carbon-1-pro-ebike'].price | money_without_trailing_zeros }}</div>
+                    </div>
+                    <div
+                        class="text-size18 er-font-medium er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt er-px-[10%]  mb:er-text-2xl mb:er-text-center mb:er-items-center mb:er-justify-start mb:er-h-[35vw] mb:er-pt-[4vw] er-bg-white">
+                        <span class="text-size16 er-font-bold er-mb-4 md:er-hidden">How It Feels</span>
+                        <span>Stylish, Sporty, Lightweight, Agile, Durable, Smart</span>
+                    </div>
+                    <div
+                        class="text-size18 er-font-medium er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt er-px-[10%]  mb:er-text-2xl mb:er-text-center mb:er-items-center mb:er-justify-start mb:er-h-[35vw] mb:er-pt-[4vw] er-bg-white">
+                        <span class="text-size16 er-font-bold er-mb-4 md:er-hidden">Best For</span>
+                        <span>Commuters, Trail-lovers, Sport & training</span>
+                    </div>
+                    <div
+                        class="text-size18 er-font-medium er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt er-px-[10%]  mb:er-text-2xl mb:er-text-center mb:er-items-center mb:er-justify-start mb:er-h-[25vw] mb:er-pt-[4vw] er-bg-white">
+                        <span class="text-size16 er-font-bold er-mb-4 md:er-hidden">Weight</span>
+                        <span>37 lbs w/o acc.</span>
+                    </div>
+                    <div
+                        class="text-size18 er-font-medium er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt er-px-[10%]  mb:er-text-2xl mb:er-text-center mb:er-items-center mb:er-justify-start mb:er-h-[25vw] mb:er-pt-[4vw] er-bg-white">
+                        <span class="text-size16 er-font-bold er-mb-4 md:er-hidden">Frame Material</span>
+                        <span>Carbon Fiber</span>
+                    </div>
+                    <div
+                        class="text-size18 er-font-medium er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt er-px-[10%]  mb:er-text-2xl mb:er-text-center mb:er-items-center mb:er-justify-start mb:er-h-[25vw] mb:er-pt-[4vw] er-bg-white">
+                        <span class="text-size16 er-font-bold er-mb-4 md:er-hidden">Motor</span>
+                        <span>750 W (Peak)</span>
+                    </div>
+                    <div
+                        class="text-size18 er-font-medium er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt er-px-[8%]  mb:er-text-2xl mb:er-text-center mb:er-items-center mb:er-justify-start mb:er-h-[35vw] mb:er-pt-[4vw] er-bg-white">
+                        <span class="text-size16 er-font-bold er-mb-4 md:er-hidden">Range</span>
+                        <span>Up to 80 miles</span>
+                    </div>
+                    <div
+                        class="text-size18 er-font-medium er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt er-px-[10%]  mb:er-text-2xl mb:er-text-center mb:er-items-center mb:er-justify-start mb:er-h-[30vw] mb:er-pt-[4vw] er-bg-white">
+                        <span class="text-size16 er-font-bold er-mb-4 md:er-hidden">Battery</span>
+                        <span>352.8Wh Samsung Li-ion</span>
+                    </div>
+                    <div
+                        class="text-size18 er-font-medium er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt er-px-[10%]  mb:er-text-2xl mb:er-text-center mb:er-items-center mb:er-justify-start mb:er-h-[25vw] mb:er-pt-[4vw] er-bg-white">
+                        <span class="text-size16 er-font-bold er-mb-4 md:er-hidden">Drivetrain</span>
+                        <span>Shimano 8 speed</span>
+                    </div>
+                    <div
+                        class="text-size18 er-font-medium er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt er-px-[10%]  mb:er-text-2xl mb:er-text-center mb:er-items-center mb:er-justify-start mb:er-h-[25vw] mb:er-pt-[4vw] er-bg-white">
+                        <span class="text-size16 er-font-bold er-mb-4 md:er-hidden">Sensor</span>
+                        <span>Torque Sensor</span>
+                    </div>
+                    <div
+                        class="text-size18 er-font-medium er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt er-px-[10%]  mb:er-text-2xl mb:er-text-center mb:er-items-center mb:er-justify-start mb:er-h-[30vw] mb:er-pt-[4vw] er-bg-white">
+                        <span class="text-size16 er-font-bold er-mb-4 md:er-hidden">Brakes</span>
+                        <span>TEKTRO hydraulic disc brakes</span>
+                    </div>
+                    <div
+                        class="text-size18 er-font-medium er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt er-px-[10%]  mb:er-text-2xl mb:er-text-center mb:er-items-center mb:er-justify-start mb:er-h-[25vw] mb:er-pt-[4vw] er-bg-white">
+                        <span class="text-size16 er-font-bold er-mb-4 md:er-hidden">Payload Capacity</span>
+                        <span>240 lbs</span>
+                    </div>
+                    <div
+                        class="text-size18 er-font-medium er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt er-px-[10%]  mb:er-text-2xl mb:er-text-center mb:er-items-center mb:er-justify-start mb:er-h-[25vw] mb:er-pt-[4vw] er-bg-white">
+                        <span class="text-size16 er-font-bold er-mb-4 md:er-hidden">UL Certified</span>
+                        <span>UL 2849</span>
+                    </div>
+                    <div
+                        class="text-size18 er-font-medium er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt er-px-[10%]  mb:er-text-2xl mb:er-text-center mb:er-items-center mb:er-justify-start mb:er-h-[30vw] mb:er-pt-[4vw] er-bg-white">
+                        <span class="text-size16 er-font-bold er-mb-4 md:er-hidden">Handlebar</span>
+                        <span>Aluminum alloy</span>
+                    </div>
+                    <div
+                        class="text-size18 er-font-medium er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt er-px-[10%]  mb:er-text-2xl mb:er-text-center mb:er-items-center mb:er-justify-start mb:er-h-[35vw] mb:er-pt-[4vw] er-bg-white">
+                        <span class="text-size16 er-font-bold er-mb-4 md:er-hidden">Fork</span>
+                        <span>Carbon Fiber</span>
+                    </div>
+                    <div
+                        class="text-size18 er-font-medium er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt er-px-[10%]  mb:er-text-2xl mb:er-text-center mb:er-items-center mb:er-justify-start mb:er-h-[25vw] mb:er-pt-[4vw] er-bg-white">
+                        <span class="text-size16 er-font-bold er-mb-4 md:er-hidden">Tires</span>
+                        <span>27.5“ x 1.5”</span>
+                    </div>
+                    <div
+                        class="text-size18 er-font-medium er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt er-px-[10%]  mb:er-text-2xl mb:er-text-center mb:er-items-center mb:er-justify-start mb:er-h-[25vw] mb:er-pt-[4vw] er-bg-white">
+                        <span class="text-size16 er-font-bold er-mb-4 md:er-hidden">Standover Height</span>
+                        <span>779 mm (31’’)</span>
+                    </div>
+                    <div
+                        class="text-size18 er-font-medium er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-60 borderrrrrrrrrt er-px-[10%]  mb:er-text-2xl mb:er-text-center mb:er-items-center mb:er-justify-start mb:er-h-[45vw] mb:er-pt-[4vw] er-bg-white">
+                        <span class="text-size16 er-font-bold er-mb-4 md:er-hidden">Smart Function</span>
+                        <span>On-board navigation, fingerprint unlock, GPS Tracking, voice control, bluetooth speaker,
+                            OTA update</span>
+                    </div>
+                    <div
+                        class="text-size18 er-font-medium er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 er-px-[10%] er-bg-white mb:er-items-center">
+                        <a class="er-button er-button-dark" href="{{ all_products['urtopia-carbon-1-pro-ebike'].url }}" target="_blank" rel="noopener noreferrer">Shop
+                            now</a>
+                    </div>
+                </div>
+                <div data-row-index="2">
+                    <div class="er-flex er-mb-14 mb:er-mb-8">
+                        <select name="ebike" class="mb:er-text-xl mb:er-px-4 mb:er-h-16">
+                            <option value="urtopia-carbon-1-pro-ebike">Carbon 1 Pro</option>
+                            <option value="urtopia-joy-carbon-fat-tire-ebike" selected>Carbon Joy</option>
+                            <option value="urtopia-carbon-1-step-thru-ebike">Carbon 1 ST</option>
+                            <option value="urtopia-carbon-fold">Carbon Fold 1</option>
+                            <option value="urtopia-fusion-pro-carbon-long-range-ebike">Carbon Fusion Pro</option>
+                            <option value="urtopia-carbon-fusion-gt">Carbon Fusion GT</option>
+                        </select>
+                    </div>
+                    <div
+                        class="er-box-border er-aspect-square text-size18 er-font-bold er-flex er-flex-col er-items-center er-justify-center er-text-center borderrrrrrrrrt  er-px-[10%] er-space-y-8 mb:er-space-y-4">
+                        {{ all_products['urtopia-joy-carbon-fat-tire-ebike'].first_available_variant.featured_image | image_url: width: 500 | image_tag : loading: 'lazy', alt: all_products['urtopia-carbon-1-pro-ebike'].title }}
+                        <div class="dots">
+                        {% assign product = all_products['urtopia-joy-carbon-fat-tire-ebike'] %}
+
+                        {% for option in product.options_with_values %}
+                            {% if option.name == 'Color' %}
+                            {% for value in option.values %}
+                                {%- assign selected_variant = nil -%}
+
+                                {%- for variant in product.variants -%}
+                                {% if variant.option2 == value and variant.available %}
+                                    {%- assign selected_variant = variant -%}
+                                    {% break %}
+                                {% endif %}
+                                {%- endfor -%}
+
+                                {% if selected_variant %}
+                                <div 
+                                    data-stye="{{ value }}"
+                                    data-variant-id="{{ selected_variant.id }}"
+                                    data-image="{{ selected_variant.featured_image.src | image_url: width: 500 }}"
+                                    data-price="{{ selected_variant.price | money_without_trailing_zeros }}"
+                                    data-url="{{ selected_variant.url }}"
+                                    {% if forloop.first %}class="active"{% endif %}
+                                ></div>
+                                {% endif %}
+                            {% endfor %}
+                            {% endif %}
+                        {% endfor %}
+                        </div>
+                        <div class="text-size20 er-font-extrabold">{{ all_products['urtopia-joy-carbon-fat-tire-ebike'].price | money_without_trailing_zeros }}</div>
+                    </div>
+                    <div
+                        class="text-size18 er-font-medium er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt er-px-[10%]  mb:er-text-2xl mb:er-text-center mb:er-items-center mb:er-justify-start mb:er-h-[35vw] mb:er-pt-[4vw]">
+                        <span class="text-size16 er-font-bold er-mb-4 md:er-hidden">How It Feels</span>
+                        <span>Comfortable, Easy- access, Practical, Lighweight</span>
+                    </div>
+                    <div
+                        class="text-size18 er-font-medium er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt er-px-[10%]  mb:er-text-2xl mb:er-text-center mb:er-items-center mb:er-justify-start mb:er-h-[35vw] mb:er-pt-[4vw]">
+                        <span class="text-size16 er-font-bold er-mb-4 md:er-hidden">Best For</span>
+                        <span>Commuters, family, Leisure, Errands, Coffee runs, Pets</span>
+                    </div>
+                    <div
+                        class="text-size18 er-font-medium er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt er-px-[10%]  mb:er-text-2xl mb:er-text-center mb:er-items-center mb:er-justify-start mb:er-h-[25vw] mb:er-pt-[4vw]">
+                        <span class="text-size16 er-font-bold er-mb-4 md:er-hidden">Weight</span>
+                        <span>45 lbs w/o acc.</span>
+                    </div>
+                    <div
+                        class="text-size18 er-font-medium er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt er-px-[10%]  mb:er-text-2xl mb:er-text-center mb:er-items-center mb:er-justify-start mb:er-h-[25vw] mb:er-pt-[4vw]">
+                        <span class="text-size16 er-font-bold er-mb-4 md:er-hidden">Frame Material</span>
+                        <span>Carbon Fiber</span>
+                    </div>
+                    <div
+                        class="text-size18 er-font-medium er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt er-px-[10%]  mb:er-text-2xl mb:er-text-center mb:er-items-center mb:er-justify-start mb:er-h-[25vw] mb:er-pt-[4vw]">
+                        <span class="text-size16 er-font-bold er-mb-4 md:er-hidden">Motor</span>
+                        <span>750 W (Peak)</span>
+                    </div>
+                    <div
+                        class="text-size18 er-font-medium er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt er-px-[8%]  mb:er-text-2xl mb:er-text-center mb:er-items-center mb:er-justify-start mb:er-h-[35vw] mb:er-pt-[4vw]">
+                        <span class="text-size16 er-font-bold er-mb-4 md:er-hidden">Range</span>
+                        <span>Up to 70 miles</span>
+                    </div>
+                    <div
+                        class="text-size18 er-font-medium er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt er-px-[10%]  mb:er-text-2xl mb:er-text-center mb:er-items-center mb:er-justify-start mb:er-h-[30vw] mb:er-pt-[4vw]">
+                        <span class="text-size16 er-font-bold er-mb-4 md:er-hidden">Battery</span>
+                        <span>529.2Wh, Samsung Li-ion</span>
+                    </div>
+                    <div
+                        class="text-size18 er-font-medium er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt er-px-[10%]  mb:er-text-2xl mb:er-text-center mb:er-items-center mb:er-justify-start mb:er-h-[25vw] mb:er-pt-[4vw]">
+                        <span class="text-size16 er-font-bold er-mb-4 md:er-hidden">Drivetrain</span>
+                        <span>Shimano 8 speed</span>
+                    </div>
+                    <div
+                        class="text-size18 er-font-medium er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt er-px-[10%]  mb:er-text-2xl mb:er-text-center mb:er-items-center mb:er-justify-start mb:er-h-[25vw] mb:er-pt-[4vw]">
+                        <span class="text-size16 er-font-bold er-mb-4 md:er-hidden">Sensor</span>
+                        <span>Torque Sensor</span>
+                    </div>
+                    <div
+                        class="text-size18 er-font-medium er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt er-px-[10%]  mb:er-text-2xl mb:er-text-center mb:er-items-center mb:er-justify-start mb:er-h-[30vw] mb:er-pt-[4vw]">
+                        <span class="text-size16 er-font-bold er-mb-4 md:er-hidden">Brakes</span>
+                        <span>TEKTRO hydraulic disc brakes</span>
+                    </div>
+                    <div
+                        class="text-size18 er-font-medium er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt er-px-[10%]  mb:er-text-2xl mb:er-text-center mb:er-items-center mb:er-justify-start mb:er-h-[25vw] mb:er-pt-[4vw]">
+                        <span class="text-size16 er-font-bold er-mb-4 md:er-hidden">Payload Capacity</span>
+                        <span>330 lbs</span>
+                    </div>
+                    <div
+                        class="text-size18 er-font-medium er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt er-px-[10%]  mb:er-text-2xl mb:er-text-center mb:er-items-center mb:er-justify-start mb:er-h-[25vw] mb:er-pt-[4vw]">
+                        <span class="text-size16 er-font-bold er-mb-4 md:er-hidden">UL Certified</span>
+                        <span>UL 2849</span>
+                    </div>
+                    <div
+                        class="text-size18 er-font-medium er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt er-px-[10%]  mb:er-text-2xl mb:er-text-center mb:er-items-center mb:er-justify-start mb:er-h-[30vw] mb:er-pt-[4vw]">
+                        <span class="text-size16 er-font-bold er-mb-4 md:er-hidden">Handlebar</span>
+                        <span>Aluminum, extender 0-60° adjustable</span>
+                    </div>
+                    <div
+                        class="text-size18 er-font-medium er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt er-px-[10%]  mb:er-text-2xl mb:er-text-center mb:er-items-center mb:er-justify-start mb:er-h-[35vw] mb:er-pt-[4vw]">
+                        <span class="text-size16 er-font-bold er-mb-4 md:er-hidden">Fork</span>
+                        <span>50mm travel suspension fork with preload adjustment</span>
+                    </div>
+                    <div
+                        class="text-size18 er-font-medium er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt er-px-[10%]  mb:er-text-2xl mb:er-text-center mb:er-items-center mb:er-justify-start mb:er-h-[25vw] mb:er-pt-[4vw]">
+                        <span class="text-size16 er-font-bold er-mb-4 md:er-hidden">Tires</span>
+                        <span>20” X 3”</span>
+                    </div>
+                    <div
+                        class="text-size18 er-font-medium er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt er-px-[10%]  mb:er-text-2xl mb:er-text-center mb:er-items-center mb:er-justify-start mb:er-h-[25vw] mb:er-pt-[4vw]">
+                        <span class="text-size16 er-font-bold er-mb-4 md:er-hidden">Standover Height</span>
+                        <span>411 mm (16’’)</span>
+                    </div>
+                    <div
+                        class="text-size18 er-font-medium er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-60 borderrrrrrrrrt er-px-[10%]  mb:er-text-2xl mb:er-text-center mb:er-items-center mb:er-justify-start mb:er-h-[45vw] mb:er-pt-[4vw]">
+                        <span class="text-size16 er-font-bold er-mb-4 md:er-hidden">Smart Function</span>
+                        <span>LED Color Display</span>
+                    </div>
+                    <div
+                        class="text-size18 er-font-medium er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 er-px-[10%] er-bg-transparent mb:er-items-center">
+                        <a class="er-button er-button-dark" href="{{ all_products['urtopia-joy-carbon-fat-tire-ebike'].url }}" target="_blank" rel="noopener noreferrer">Shop
+                            now</a>
+                    </div>
+                </div>
+                <div class="mb:er-hidden" data-row-index="3">
+                    <div class="er-flex er-mb-14 mb:er-mb-8">
+                        <select name="ebike" class="mb:er-text-xl mb:er-px-4 mb:er-h-16">
+                            <option value="urtopia-carbon-1-pro-ebike">Carbon 1 Pro</option>
+                            <option value="urtopia-joy-carbon-fat-tire-ebike">Carbon Joy</option>
+                            <option value="urtopia-carbon-1-step-thru-ebike" selected>Carbon 1 ST</option>
+                            <option value="urtopia-carbon-fold">Carbon Fold 1</option>
+                            <option value="urtopia-fusion-pro-carbon-long-range-ebike">Carbon Fusion Pro</option>
+                            <option value="urtopia-carbon-fusion-gt">Carbon Fusion GT</option>
+                        </select>
+                    </div>
+                    <div class="er-box-border er-aspect-square text-size18 er-font-bold er-flex er-flex-col er-items-center er-justify-center er-text-center borderrrrrrrrrt  er-px-[10%] er-space-y-8 mb:er-space-y-4">
+                        {{ all_products['urtopia-carbon-1-step-thru-ebike'].first_available_variant.featured_image | image_url: width: 500 | image_tag : loading: 'lazy', alt: all_products['urtopia-carbon-1-step-thru-ebike'].title }}
+                        <div class="dots">
+                        {% assign product = all_products['urtopia-carbon-1-step-thru-ebike'] %}
+
+                        {% for option in product.options_with_values %}
+                            {% if option.name == 'Style' %}
+                            {% for value in option.values %}
+                                {%- assign selected_variant = nil -%}
+
+                                {%- for variant in product.variants -%}
+                                {% if variant.option2 == value and variant.available %}
+                                    {%- assign selected_variant = variant -%}
+                                    {% break %}
+                                {% endif %}
+                                {%- endfor -%}
+
+                                {% if selected_variant %}
+                                <div 
+                                    data-stye="{{ value }}"
+                                    data-variant-id="{{ selected_variant.id }}"
+                                    data-image="{{ selected_variant.featured_image.src | image_url: width: 500 }}"
+                                    data-price="{{ selected_variant.price | money_without_trailing_zeros }}"
+                                    data-url="{{ selected_variant.url }}"
+                                    {% if forloop.first %}class="active"{% endif %}
+                                ></div>
+                                {% endif %}
+                            {% endfor %}
+                            {% endif %}
+                        {% endfor %}
+                        </div>
+                        <div class="text-size20 er-font-extrabold">{{ all_products['urtopia-carbon-1-step-thru-ebike'].price | money_without_trailing_zeros }}</div>
+                    </div>
+                    <div
+                        class="text-size18 er-font-medium er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt er-px-[10%]  mb:er-text-2xl mb:er-text-center mb:er-items-center mb:er-justify-start mb:er-h-[35vw] mb:er-pt-[4vw] er-bg-white">
+                        <span class="text-size16 er-font-bold er-mb-4 md:er-hidden">How It Feels</span>
+                        <span>Comfortable, Accessible, Practical, Smart, Stylish</span>
+                    </div>
+                    <div
+                        class="text-size18 er-font-medium er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt er-px-[10%]  mb:er-text-2xl mb:er-text-center mb:er-items-center mb:er-justify-start mb:er-h-[35vw] mb:er-pt-[4vw] er-bg-white">
+                        <span class="text-size16 er-font-bold er-mb-4 md:er-hidden">Best For</span>
+                        <span>Commuters, Family, Leisure, Lifestyle</span>
+                    </div>
+                    <div
+                        class="text-size18 er-font-medium er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt er-px-[10%]  mb:er-text-2xl mb:er-text-center mb:er-items-center mb:er-justify-start mb:er-h-[25vw] mb:er-pt-[4vw] er-bg-white">
+                        <span class="text-size16 er-font-bold er-mb-4 md:er-hidden">Weight</span>
+                        <span>36 lbs w/o acc.</span>
+                    </div>
+                    <div
+                        class="text-size18 er-font-medium er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt er-px-[10%]  mb:er-text-2xl mb:er-text-center mb:er-items-center mb:er-justify-start mb:er-h-[25vw] mb:er-pt-[4vw] er-bg-white">
+                        <span class="text-size16 er-font-bold er-mb-4 md:er-hidden">Frame Material</span>
+                        <span>Carbon Fiber</span>
+                    </div>
+                    <div
+                        class="text-size18 er-font-medium er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt er-px-[10%]  mb:er-text-2xl mb:er-text-center mb:er-items-center mb:er-justify-start mb:er-h-[25vw] mb:er-pt-[4vw] er-bg-white">
+                        <span class="text-size16 er-font-bold er-mb-4 md:er-hidden">Motor</span>
+                        <span>750 W (Peak)</span>
+                    </div>
+                    <div
+                        class="text-size18 er-font-medium er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt er-px-[10%]  mb:er-text-2xl mb:er-text-center mb:er-items-center mb:er-justify-start mb:er-h-[35vw] mb:er-pt-[4vw] er-bg-white">
+                        <span class="text-size16 er-font-bold er-mb-4 md:er-hidden">Range</span>
+                        <span>Up to 80 miles</span>
+                    </div>
+                    <div
+                        class="text-size18 er-font-medium er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt er-px-[10%]  mb:er-text-2xl mb:er-text-center mb:er-items-center mb:er-justify-start mb:er-h-[30vw] mb:er-pt-[4vw] er-bg-white">
+                        <span class="text-size16 er-font-bold er-mb-4 md:er-hidden">Battery</span>
+                        <span>352.8Wh Samsung Li-ion</span>
+                    </div>
+                    <div
+                        class="text-size18 er-font-medium er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt er-px-[10%]  mb:er-text-2xl mb:er-text-center mb:er-items-center mb:er-justify-start mb:er-h-[25vw] mb:er-pt-[4vw] er-bg-white">
+                        <span class="text-size16 er-font-bold er-mb-4 md:er-hidden">Drivetrain</span>
+                        <span>Shimano 8 speed</span>
+                    </div>
+                    <div
+                        class="text-size18 er-font-medium er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt er-px-[10%]  mb:er-text-2xl mb:er-text-center mb:er-items-center mb:er-justify-start mb:er-h-[25vw] mb:er-pt-[4vw] er-bg-white">
+                        <span class="text-size16 er-font-bold er-mb-4 md:er-hidden">Sensor</span>
+                        <span>Torque Sensor</span>
+                    </div>
+                    <div
+                        class="text-size18 er-font-medium er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt er-px-[10%]  mb:er-text-2xl mb:er-text-center mb:er-items-center mb:er-justify-start mb:er-h-[30vw] mb:er-pt-[4vw] er-bg-white">
+                        <span class="text-size16 er-font-bold er-mb-4 md:er-hidden">Brakes</span>
+                        <span>TEKTRO hydraulic disc brakes</span>
+                    </div>
+                    <div
+                        class="text-size18 er-font-medium er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt er-px-[10%]  mb:er-text-2xl mb:er-text-center mb:er-items-center mb:er-justify-start mb:er-h-[25vw] mb:er-pt-[4vw] er-bg-white">
+                        <span class="text-size16 er-font-bold er-mb-4 md:er-hidden">Payload Capacity</span>
+                        <span>240 lbs</span>
+                    </div>
+                    <div
+                        class="text-size18 er-font-medium er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt er-px-[10%]  mb:er-text-2xl mb:er-text-center mb:er-items-center mb:er-justify-start mb:er-h-[25vw] mb:er-pt-[4vw] er-bg-white">
+                        <span class="text-size16 er-font-bold er-mb-4 md:er-hidden">UL Certified</span>
+                        <span>UL 2849</span>
+                    </div>
+                    <div
+                        class="text-size18 er-font-medium er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt er-px-[10%]  mb:er-text-2xl mb:er-text-center mb:er-items-center mb:er-justify-start mb:er-h-[30vw] mb:er-pt-[4vw] er-bg-white">
+                        <span class="text-size16 er-font-bold er-mb-4 md:er-hidden">Handlebar</span>
+                        <span>Aluminum alloy</span>
+                    </div>
+                    <div
+                        class="text-size18 er-font-medium er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt er-px-[10%]  mb:er-text-2xl mb:er-text-center mb:er-items-center mb:er-justify-start mb:er-h-[35vw] mb:er-pt-[4vw] er-bg-white">
+                        <span class="text-size16 er-font-bold er-mb-4 md:er-hidden">Fork</span>
+                        <span>Carbon Fiber</span>
+                    </div>
+                    <div
+                        class="text-size18 er-font-medium er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt er-px-[10%]  mb:er-text-2xl mb:er-text-center mb:er-items-center mb:er-justify-start mb:er-h-[25vw] mb:er-pt-[4vw] er-bg-white">
+                        <span class="text-size16 er-font-bold er-mb-4 md:er-hidden">Tires</span>
+                        <span>27.5“ x 1.5”</span>
+                    </div>
+                    <div
+                        class="text-size18 er-font-medium er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 borderrrrrrrrrt er-px-[10%]  mb:er-text-2xl mb:er-text-center mb:er-items-center mb:er-justify-start mb:er-h-[25vw] mb:er-pt-[4vw] er-bg-white">
+                        <span class="text-size16 er-font-bold er-mb-4 md:er-hidden">Standover Height</span>
+                        <span>477mm (19’’)</span>
+                    </div>
+                    <div
+                        class="text-size18 er-font-medium er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-60 borderrrrrrrrrt er-px-[10%]  mb:er-text-2xl mb:er-text-center mb:er-items-center mb:er-justify-start mb:er-h-[45vw] mb:er-pt-[4vw] er-bg-white">
+                        <span class="text-size16 er-font-bold er-mb-4 md:er-hidden">Smart Function</span>
+                        <span>On-board navigation, fingerprint unlock, GPS Tracking, voice control, bluetooth speaker,
+                            OTA update</span>
+                    </div>
+                    <div
+                        class="text-size18 er-font-medium er-flex er-flex-col er-items-start er-justify-center er-text-left er-h-40 er-px-[10%] er-bg-white mb:er-items-center">
+                        <a class="er-button er-button-dark" href="{{ all_products['urtopia-carbon-1-step-thru-ebike'].url }}" target="_blank" rel="noopener noreferrer">Shop
+                            now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<template id="urtopia-carbon-1-pro-ebike">
+    <div class="er-box-border er-aspect-square text-size18 er-font-bold er-flex er-flex-col er-items-center er-justify-center er-text-center borderrrrrrrrrt  er-px-[10%] er-space-y-8 mb:er-space-y-4">
+    {{ all_products['urtopia-carbon-1-pro-ebike'].first_available_variant.featured_image | image_url: width: 500 | image_tag : loading: 'lazy', alt: all_products['urtopia-carbon-1-pro-ebike'].title }}
+    <div class="dots">
+    {% assign product = all_products['urtopia-carbon-1-pro-ebike'] %}
+    {% for option in product.options_with_values %}
+        {% if option.name == 'Color' %}
+        {% for value in option.values %}
+            {%- assign selected_variant = nil -%}
+
+            {%- for variant in product.variants -%}
+            {% if variant.option2 == value and variant.available %}
+                {%- assign selected_variant = variant -%}
+                {% break %}
+            {% endif %}
+            {%- endfor -%}
+
+            {% if selected_variant %}
+            <div 
+                data-stye="{{ value }}"
+                data-variant-id="{{ selected_variant.id }}"
+                data-image="{{ selected_variant.featured_image.src | image_url: width: 500 }}"
+                data-price="{{ selected_variant.price | money_without_trailing_zeros }}"
+                data-url="{{ selected_variant.url }}"
+                {% if forloop.first %}class="active"{% endif %}
+            ></div>
+            {% endif %}
+        {% endfor %}
+        {% endif %}
+    {% endfor %}
+    </div>
+    <div class="text-size20 er-font-extrabold">{{ all_products['urtopia-carbon-1-pro-ebike'].price | money_without_trailing_zeros }}</div>
+    </div>
+</template>
+<template id="urtopia-joy-carbon-fat-tire-ebike">
+    <div class="er-box-border er-aspect-square text-size18 er-font-bold er-flex er-flex-col er-items-center er-justify-center er-text-center borderrrrrrrrrt  er-px-[10%] er-space-y-8 mb:er-space-y-4">
+        {{ all_products['urtopia-joy-carbon-fat-tire-ebike'].first_available_variant.featured_image | image_url: width: 500 | image_tag : loading: 'lazy', alt: all_products['urtopia-joy-carbon-fat-tire-ebike'].title }}
+        <div class="dots">
+        {% assign product = all_products['urtopia-joy-carbon-fat-tire-ebike'] %}
+
+        {% for option in product.options_with_values %}
+            {% if option.name == 'Color' %}
+            {% for value in option.values %}
+                {%- assign selected_variant = nil -%}
+
+                {%- for variant in product.variants -%}
+                {% if variant.option2 == value and variant.available %}
+                    {%- assign selected_variant = variant -%}
+                    {% break %}
+                {% endif %}
+                {%- endfor -%}
+
+                {% if selected_variant %}
+                <div 
+                    data-stye="{{ value }}"
+                    data-variant-id="{{ selected_variant.id }}"
+                    data-image="{{ selected_variant.featured_image.src | image_url: width: 500 }}"
+                    data-price="{{ selected_variant.price | money_without_trailing_zeros }}"
+                    data-url="{{ selected_variant.url }}"
+                    {% if forloop.first %}class="active"{% endif %}
+                ></div>
+                {% endif %}
+            {% endfor %}
+            {% endif %}
+        {% endfor %}
+        </div>
+        <div class="text-size20 er-font-extrabold">{{ all_products['urtopia-joy-carbon-fat-tire-ebike'].price | money_without_trailing_zeros }}</div>
+    </div>
+</template>
+<template id="urtopia-carbon-1-step-thru-ebike">
+    <div class="er-box-border er-aspect-square text-size18 er-font-bold er-flex er-flex-col er-items-center er-justify-center er-text-center borderrrrrrrrrt  er-px-[10%] er-space-y-8 mb:er-space-y-4">
+        {{ all_products['urtopia-carbon-1-step-thru-ebike'].first_available_variant.featured_image | image_url: width: 500 | image_tag : loading: 'lazy', alt: all_products['urtopia-carbon-1-step-thru-ebike'].title }}
+        <div class="dots">
+        {% assign product = all_products['urtopia-carbon-1-step-thru-ebike'] %}
+
+        {% for option in product.options_with_values %}
+            {% if option.name == 'Style' %}
+            {% for value in option.values %}
+                {%- assign selected_variant = nil -%}
+
+                {%- for variant in product.variants -%}
+                {% if variant.option2 == value and variant.available %}
+                    {%- assign selected_variant = variant -%}
+                    {% break %}
+                {% endif %}
+                {%- endfor -%}
+
+                {% if selected_variant %}
+                <div 
+                    data-stye="{{ value }}"
+                    data-variant-id="{{ selected_variant.id }}"
+                    data-image="{{ selected_variant.featured_image.src | image_url: width: 500 }}"
+                    data-price="{{ selected_variant.price | money_without_trailing_zeros }}"
+                    data-url="{{ selected_variant.url }}"
+                    {% if forloop.first %}class="active"{% endif %}
+                ></div>
+                {% endif %}
+            {% endfor %}
+            {% endif %}
+        {% endfor %}
+        </div>
+        <div class="text-size20 er-font-extrabold">{{ all_products['urtopia-carbon-1-step-thru-ebike'].price | money_without_trailing_zeros }}</div>
+    </div>
+</template>
+<template id="urtopia-carbon-fold">
+    <div class="er-box-border er-aspect-square text-size18 er-font-bold er-flex er-flex-col er-items-center er-justify-center er-text-center borderrrrrrrrrt  er-px-[10%] er-space-y-8 mb:er-space-y-4">
+        {{ all_products['urtopia-carbon-fold'].first_available_variant.featured_image | image_url: width: 500 | image_tag : loading: 'lazy', alt: all_products['urtopia-carbon-fold'].title }}
+        <div class="dots">
+        {% assign product = all_products['urtopia-carbon-fold'] %}
+
+        {% for option in product.options_with_values %}
+            {% if option.name == 'Color' %}
+            {% for value in option.values %}
+                {%- assign selected_variant = nil -%}
+
+                {%- for variant in product.variants -%}
+                {% if variant.option2 == value and variant.available %}
+                    {%- assign selected_variant = variant -%}
+                    {% break %}
+                {% endif %}
+                {%- endfor -%}
+
+                {% if selected_variant %}
+                <div 
+                    data-stye="{{ value }}"
+                    data-variant-id="{{ selected_variant.id }}"
+                    data-image="{{ selected_variant.featured_image.src | image_url: width: 500 }}"
+                    data-price="{{ selected_variant.price | money_without_trailing_zeros }}"
+                    data-url="{{ selected_variant.url }}"
+                    {% if forloop.first %}class="active"{% endif %}
+                ></div>
+                {% endif %}
+            {% endfor %}
+            {% endif %}
+        {% endfor %}
+        </div>
+        <div class="text-size20 er-font-extrabold">{{ all_products['urtopia-carbon-fold'].price | money_without_trailing_zeros }}</div>
+    </div>
+</template>
+<template id="urtopia-fusion-pro-carbon-long-range-ebike">
+    <div class="er-box-border er-aspect-square text-size18 er-font-bold er-flex er-flex-col er-items-center er-justify-center er-text-center borderrrrrrrrrt  er-px-[10%] er-space-y-8 mb:er-space-y-4">
+        {{ all_products['urtopia-fusion-pro-carbon-long-range-ebike'].first_available_variant.featured_image | image_url: width: 500 | image_tag : loading: 'lazy', alt: all_products['urtopia-fusion-pro-carbon-long-range-ebike'].title }}
+        <div class="dots">
+        {% assign product = all_products['urtopia-fusion-pro-carbon-long-range-ebike'] %}
+
+        {% for option in product.options_with_values %}
+            {% if option.name == 'Style' %}
+            {% for value in option.values %}
+                {%- assign selected_variant = nil -%}
+
+                {%- for variant in product.variants -%}
+                {% if variant.option2 == value and variant.available %}
+                    {%- assign selected_variant = variant -%}
+                    {% break %}
+                {% endif %}
+                {%- endfor -%}
+
+                {% if selected_variant %}
+                <div 
+                    data-stye="{{ value }}"
+                    data-variant-id="{{ selected_variant.id }}"
+                    data-image="{{ selected_variant.featured_image.src | image_url: width: 500 }}"
+                    data-price="{{ selected_variant.price | money_without_trailing_zeros }}"
+                    data-url="{{ selected_variant.url }}"
+                    {% if forloop.first %}class="active"{% endif %}
+                ></div>
+                {% endif %}
+            {% endfor %}
+            {% endif %}
+        {% endfor %}
+        </div>
+        <div class="text-size20 er-font-extrabold">{{ all_products['urtopia-fusion-pro-carbon-long-range-ebike'].price | money_without_trailing_zeros }}</div>
+    </div>
+</template>
+<template id="urtopia-carbon-fusion-gt">
+    <div class="er-box-border er-aspect-square text-size18 er-font-bold er-flex er-flex-col er-items-center er-justify-center er-text-center borderrrrrrrrrt  er-px-[10%] er-space-y-8 mb:er-space-y-4">
+        {{ all_products['urtopia-carbon-fusion-gt'].first_available_variant.featured_image | image_url: width: 500 | image_tag : loading: 'lazy', alt: all_products['urtopia-carbon-fusion-gt'].title }}
+        <div class="dots">
+        {% assign product = all_products['urtopia-carbon-fusion-gt'] %}
+
+        {% for option in product.options_with_values %}
+            {% if option.name == 'Style' %}
+            {% for value in option.values %}
+                {%- assign selected_variant = nil -%}
+
+                {%- for variant in product.variants -%}
+                {% if variant.option2 == value and variant.available %}
+                    {%- assign selected_variant = variant -%}
+                    {% break %}
+                {% endif %}
+                {%- endfor -%}
+
+                {% if selected_variant %}
+                <div 
+                    data-stye="{{ value }}"
+                    data-variant-id="{{ selected_variant.id }}"
+                    data-image="{{ selected_variant.featured_image.src | image_url: width: 500 }}"
+                    data-price="{{ selected_variant.price | money_without_trailing_zeros }}"
+                    data-url="{{ selected_variant.url }}"
+                    {% if forloop.first %}class="active"{% endif %}
+                ></div>
+                {% endif %}
+            {% endfor %}
+            {% endif %}
+        {% endfor %}
+        </div>
+        <div class="text-size20 er-font-extrabold">{{ all_products['urtopia-carbon-fusion-gt'].price | money_without_trailing_zeros }}</div>
+    </div>
+</template>
+
+<script type="module">
+const compare_infos = {
+        "urtopia-carbon-1-pro-ebike": {
+            "url": "{{ all_products['urtopia-carbon-1-pro-ebike'].url }}",
+            "price": "{{ all_products['urtopia-carbon-1-pro-ebike'].price | money_without_trailing_zeros }}",
+            "image": "https://newurtopia.com/cdn/shop/files/f_2x_0e3f3b1c-2f4d-4e7c-8f7e-1e5e3f6a9c3b.jpg?v=1744276805&width=600",
+            "how_it_feels": "Stylish, Sporty, Lightweight, Agile, Durable, Smart",
+            "best_for": "Commuters, Trail-lovers, Sport & training",
+            "weight": "37 lbs w/o acc.",
+            "frame_material": "Carbon Fiber",
+            "motor": "750 W (Peak)",
+            "range": "Up to 80 miles",
+            "battery": "352.8Wh Samsung Li-ion",
+            "drivetrain": "Shimano 8 speed",
+            "sensor": "Torque Sensor",
+            "brakes": "TEKTRO hydraulic disc brakes",
+            "payload_capacity": "240 lbs",
+            "ul_certified": "UL 2849",
+            "handlebar": "Aluminum alloy",
+            "fork": "Carbon Fiber",
+            "tires": "27.5“ x 1.5”",
+            "standover_height": "779 mm (31’’)",
+            "smart_function": "On-board navigation, fingerprint unlock, GPS Tracking, voice control, bluetooth speaker, OTA update"
+        },
+        "urtopia-joy-carbon-fat-tire-ebike": {
+            "url": "{{ all_products['urtopia-joy-carbon-fat-tire-ebike'].url }}",
+            "price": "{{ all_products['urtopia-joy-carbon-fat-tire-ebike'].price | money_without_trailing_zeros }}",
+            "image": "https://newurtopia.com/cdn/shop/files/f_2x_e65e20b1-911b-4754-b595-b27ec33e8642.jpg?v=1744276805&width=600",
+            "how_it_feels": "Comfortable, Easy- access, Practical, Lighweight",
+            "best_for": "Commuters, family, Leisure, Errands, Coffee runs, Pets",
+            "weight": "45 lbs w/o acc.",
+            "frame_material": "Carbon Fiber",
+            "motor": "750 W (Peak)",
+            "range": "Up to 70 miles",
+            "battery": "529.2Wh, Samsung Li-ion",
+            "drivetrain": "Shimano 8 speed",
+            "sensor": "Torque Sensor",
+            "brakes": "TEKTRO hydraulic disc brakes",
+            "payload_capacity": "330 lbs",
+            "ul_certified": "UL 2849",
+            "handlebar": "Aluminum, extender 0-60° adjustable",
+            "fork": "50mm travel suspension fork with preload adjustment",
+            "tires": "20” X 3”",
+            "standover_height": "411 mm (16’’)",
+            "smart_function": "LED Color Display"
+        },
+        "urtopia-carbon-1-step-thru-ebike": {
+            "url": "{{ all_products['urtopia-carbon-1-step-thru-ebike'].url }}",
+            "price": "{{ all_products['urtopia-carbon-1-step-thru-ebike'].price | money_without_trailing_zeros }}",
+            "image": "https://newurtopia.com/cdn/shop/products/collectionblack.png?v=1703557822&width=500",
+            "how_it_feels": "Comfortable, Accessible, Practical, Smart, Stylish",
+            "best_for": "Commuters, Family, Leisure, Lifestyle",
+            "weight": "36 lbs w/o acc.",
+            "frame_material": "Carbon Fiber",
+            "motor": "750 W (Peak)",
+            "range": "Up to 80 miles",
+            "battery": "352.8Wh Samsung Li-ion",
+            "drivetrain": "Shimano 8 speed",
+            "sensor": "Torque Sensor",
+            "brakes": "TEKTRO hydraulic disc brakes",
+            "payload_capacity": "240 lbs",
+            "ul_certified": "UL 2849",
+            "handlebar": "Aluminum alloy",
+            "fork": "Carbon Fiber",
+            "tires": "27.5“ x 1.5”",
+            "standover_height": "477mm (19’’)",
+            "smart_function": "On-board navigation, fingerprint unlock, GPS Tracking, voice control, bluetooth speaker, OTA update"
+        },
+        "urtopia-carbon-fold": {
+            "url": "{{ all_products['urtopia-carbon-fold'].url }}",
+            "price": "{{ all_products['urtopia-carbon-fold'].price | money_without_trailing_zeros }}",
+            "image": "N/A",
+            "how_it_feels": "Lightweight, Accessible, Small, Comfortable",
+            "best_for": "Commuters, Daily City, Lifestyle",
+            "weight": "29 lbs w/o acc.",
+            "frame_material": "Carbon Fiber",
+            "motor": "500W (Peak)",
+            "range": "Up to 40 miles",
+            "battery": "252Wh seat post battery",
+            "drivetrain": "Shimano Altus 8-Speed",
+            "sensor": "Torque Sensor",
+            "brakes": "TEKTRO hydraulic disc brakes",
+            "payload_capacity": "220 lbs",
+            "ul_certified": "UL 2271",
+            "handlebar": "Carbon Fiber",
+            "fork": "Carbon Fiber",
+            "tires": "20” x 2”",
+            "standover_height": "550mm (22’’)",
+            "smart_function": "LED Color Display"
+        },
+        "urtopia-fusion-pro-carbon-long-range-ebike": {
+            "url": "{{ all_products['urtopia-fusion-pro-carbon-long-range-ebike'].url }}",
+            "price": "{{ all_products['urtopia-fusion-pro-carbon-long-range-ebike'].price | money_without_trailing_zeros }}",
+            "image": "N/A",
+            "how_it_feels": "Lightweight, Powerful, Long Trip, Exploration",
+            "best_for": "Commuters, Fitness, Adventure",
+            "weight": "48 lbs w/o acc.",
+            "frame_material": "Carbon Fiber",
+            "motor": "1000 W (Peak)",
+            "range": "Up to 75 miles (Extended to 120 miles with dual battery)",
+            "battery": "529.2Wh battery",
+            "drivetrain": "Shimano ACERA 8-Speed",
+            "sensor": "Torque Sensor",
+            "brakes": "TEKTRO hydraulic disc brakes",
+            "payload_capacity": "330 lbs",
+            "ul_certified": "UL 2271",
+            "handlebar": "Aluminum, extender 0–60° adjustable",
+            "fork": "ZOOM 188MS AMS 700C Suspension fork 60mm travel",
+            "tires": "29” x 2.05”",
+            "standover_height": "470mm (19’’)",
+            "smart_function": "LCD Color Display"
+        },
+        "urtopia-carbon-fusion-gt": {
+            "url": "{{ all_products['urtopia-carbon-fusion-gt'].url }}",
+            "price": "{{ all_products['urtopia-carbon-fusion-gt'].price | money_without_trailing_zeros }}",
+            "image": "N/A",
+            "how_it_feels": "Lightweight, Powerful, Long Trip, Exploration",
+            "best_for": "Commuters, Fitness, Adventure",
+            "weight": "48 lbs w/o acc.",
+            "frame_material": "Carbon Fiber",
+            "motor": "1500W (Peak) dual motor",
+            "range": "Up to 70 miles (Extended to 120 miles with dual battery)",
+            "battery": "529.2Wh battery",
+            "drivetrain": "Shimano ACERA 8-Speed",
+            "sensor": "Torque Sensor",
+            "brakes": "TEKTRO hydraulic disc brakes",
+            "payload_capacity": "330 lbs",
+            "ul_certified": "UL 2271",
+            "handlebar": "Aluminum alloy",
+            "fork": "ZOOM 188MS AMS 700C Suspension fork 60mm travel",
+            "tires": "29” x 2.05”",
+            "standover_height": "470mm (19’’)",
+            "smart_function": "On-board navigation, fingerprint unlock, GPS Tracking, voice control, bluetooth speaker, OTA update"
+        }
+
+    }
+
+    const fn = function () {
+        $(this).closest('.dots').find('div').removeClass('active');
+        $(this).addClass('active');
+
+        $(this).closest('.er-aspect-square').find('img').attr('src', $(this).attr('data-image')).removeAttr('srcset').removeAttr('sizes').removeAttr('loading');
+        $(this).closest('div[data-row-index]').find('a').attr('href', $(this).attr('data-url'));
+        $(this).closest('.er-aspect-square').find('.text-size20.er-font-extrabold').text($(this).attr('data-price'));
+    }
+
+    $('div[data-row-index] select').on('change', function () {
+        const value = $(this).val()
+        const rowIndex = $(this).closest('div[data-row-index]').attr('data-row-index');
+
+        console.log(value, rowIndex);
+        const info = compare_infos[value];
+        const template = document.getElementById(value);
+        if (template) {
+            const clone = template.content.cloneNode(true);
+            $(`div[data-row-index="${rowIndex}"] > div:nth-of-type(2)`).replaceWith(clone);
+            setTimeout(() => {
+                $(`div[data-row-index="${rowIndex}"] .dots > div`).on('click', fn);
+            }, 100);
+        }
+        
+        console.log(info);
+        
+        $(`div[data-row-index="${rowIndex}"] a`).attr('href', info.url);
+        $(`div[data-row-index="${rowIndex}"] > div:nth-of-type(3)`).find('span').eq(1).text(info.how_it_feels);
+        $(`div[data-row-index="${rowIndex}"] > div:nth-of-type(4)`).find('span').eq(1).text(info.best_for);
+        $(`div[data-row-index="${rowIndex}"] > div:nth-of-type(5)`).find('span').eq(1).text(info.weight);
+        $(`div[data-row-index="${rowIndex}"] > div:nth-of-type(6)`).find('span').eq(1).text(info.frame_material);
+        $(`div[data-row-index="${rowIndex}"] > div:nth-of-type(7)`).find('span').eq(1).text(info.motor);
+        $(`div[data-row-index="${rowIndex}"] > div:nth-of-type(8)`).find('span').eq(1).text(info.range);
+        $(`div[data-row-index="${rowIndex}"] > div:nth-of-type(9)`).find('span').eq(1).text(info.battery);
+        $(`div[data-row-index="${rowIndex}"] > div:nth-of-type(10)`).find('span').eq(1).text(info.drivetrain);
+        $(`div[data-row-index="${rowIndex}"] > div:nth-of-type(11)`).find('span').eq(1).text(info.sensor);
+        $(`div[data-row-index="${rowIndex}"] > div:nth-of-type(12)`).find('span').eq(1).text(info.brakes);
+        $(`div[data-row-index="${rowIndex}"] > div:nth-of-type(13)`).find('span').eq(1).text(info.payload_capacity);
+        $(`div[data-row-index="${rowIndex}"] > div:nth-of-type(14)`).find('span').eq(1).text(info.ul_certified);
+        $(`div[data-row-index="${rowIndex}"] > div:nth-of-type(15)`).find('span').eq(1).text(info.handlebar);
+        $(`div[data-row-index="${rowIndex}"] > div:nth-of-type(16)`).find('span').eq(1).text(info.fork);
+        $(`div[data-row-index="${rowIndex}"] > div:nth-of-type(17)`).find('span').eq(1).text(info.tires);
+        $(`div[data-row-index="${rowIndex}"] > div:nth-of-type(18)`).find('span').eq(1).text(info.standover_height);
+        $(`div[data-row-index="${rowIndex}"] > div:nth-of-type(19)`).find('span').eq(1).text(info.smart_function);
+    });
+
+    $('.compare .dots > div').on('click', fn)
+</script>
