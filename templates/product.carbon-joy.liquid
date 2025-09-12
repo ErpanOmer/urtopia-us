@@ -19,81 +19,30 @@
   }
 </style>
 {% render 'product-panel', swiper_insert_index: 1, product_send_accessories_price: 25700 %}
-<section class="er-bg-background er-py-32 mb:er-py-24">
-        <div class="centeral-content">
-            <h2 class="text-size36 mb:er-text-4xl er-text-center er-w-full">Professional Reviews</h2>
-            <div class="er-grid er-grid-cols-4 er-mt-16 mb:er-grid-cols-1 mb:er-mt-10 er-gap-4 mb:er-gap-y-16">
-              <a class="er-flex er-flex-col er-items-start" href="https://www.youtube.com/watch?v=gkEXXFe7WHw"
-                    target="_blank" onclick="showVideoDialog('https://www.youtube.com/embed/gkEXXFe7WHw?autoplay=1&cc_load_policy=1');return false;">
-                    <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250911-181936.jpg?v=1757586000&width=500"
-                        alt="{{ product.title }}" class="er-rounded-2xl">
-                    <p class="text-size16 er-mt-6 er-mb-8 mb:er-text-2xl mb:er-mb-6">
-                        <span>
-                            The big tires are super grippy, and the ride feels really smooth. If you’re looking for a carbon fiber utility cargo-style bike, this is the one for you.
-                        </span>
-                    </p>
-                    <span class="er-flex-1"></span>
-                    <div class="er-flex er-items-center">
-                        <img width="28" height="28" class="er-mr-4 er-rounded-full"
-                            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/channels4_profile_5_b15ea38a-a10b-424a-9327-d2d5486d5025.jpg?v=1757586191"
-                            alt="{{ product.title }}">
-                        <span class="text-size16 er-font-medium mb:er-text-2xl">Mike Fede</span>
+<div class="er-bg-background er-py-32 mb:er-py-24">
+    <div class="centeral-content mb:er-px-6">
+        <h2 class="text-size36 mb:er-text-4xl er-text-center er-w-full">Professional Reviews</h2>
+        <div class="er-grid xl:er-grid-cols-4 lg:er-grid-cols-3 md:er-grid-cols-2 er-grid-cols-1 er-mt-16 mb:er-mt-10 er-gap-y-16 er-gap-x-6 mb:er-overflow-x-scroll mb:er-flex mb:er-pb-8">
+            {%- for item in all_products["urtopia-joy-carbon-fat-tire-ebike"].metafields.custom.review_list.value -%}
+                <div class="er-flex er-flex-col er-items-start er-cursor-pointer mb:er-min-w-[75vw]"
+                        onclick="showVideoDialog('https://www.youtube.com/embed/{{ item.youtube_id }}?autoplay=1&amp;cc_load_policy=1');return false;">
+                        {{ item.review_cover | image_url: width: 500 | image_tag: class: 'er-rounded-2xl mb:er-rounded-xl', loading: 'lazy' }}
+                        <p class="text-size16 er-mt-6 er-mb-8 mb:er-text-2xl mb:er-mb-6">
+                            <span>
+                                {{ item.review_desc }}
+                            </span>
+                        </p>
+                        <span class="er-flex-1"></span>
+                        <div class="er-flex er-items-center">
+                            {{ item.review_auther_cover | image_url: width: 30, height: 30 | image_tag: class: 'er-mr-4 er-rounded-full', loading: 'lazy' }}
+                            <span class="text-size16 er-font-medium mb:er-text-2xl">{{ item.review_auther_name }}</span>
+                        </div>
                     </div>
-                </a>
-              <a class="er-flex er-flex-col er-items-start" href="https://www.youtube.com/watch?v=m3K4EqJ34Es"
-                    target="_blank" onclick="showVideoDialog('https://www.youtube.com/embed/m3K4EqJ34Es?autoplay=1&cc_load_policy=1');return false;">
-                    <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250427-142311.jpg?v=1745735015&width=500"
-                        alt="{{ product.title }}">
-                    <p class="text-size16 er-mt-6 er-mb-8 mb:er-text-2xl mb:er-mb-6">
-                        <span>
-                            I really love it's sleek and seamless design, that clean internal routing makes it look so tidy. Super compact and easy to ride, no matter your height.
-                        </span>
-                    </p>
-                    <span class="er-flex-1"></span>
-                    <div class="er-flex er-items-center">
-                        <img width="28" height="28" class="er-mr-4 er-rounded-full"
-                            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/channels4_profile_239614f6-28a4-4f4e-9cf6-0c0a8e8de1d3.jpg?v=1745735148"
-                            alt="{{ product.title }}">
-                        <span class="text-size16 er-font-medium mb:er-text-2xl">RunBikeMike</span>
-                    </div>
-                </a>
-                <a class="er-flex er-flex-col er-items-start" href="https://www.youtube.com/watch?v=DblWTkJkKuE"
-                    target="_blank" onclick="showVideoDialog('https://www.youtube.com/embed/DblWTkJkKuE?autoplay=1&cc_load_policy=1');return false;">
-                    <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250421-114325.jpg?v=1745207191&width=500"
-                        alt="{{ product.title }}">
-                    <p class="text-size16 er-mt-6 er-mb-8 mb:er-text-2xl mb:er-mb-6">
-                        <span>
-                            I find riding a smaller frame really comfortable and surprisingly easy to maneuver even I had the bike loaded.
-                        </span>
-                    </p>
-                    <span class="er-flex-1"></span>
-                    <div class="er-flex er-items-center">
-                        <img width="28" height="28" class="er-mr-4 er-rounded-full"
-                            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/channels4_profile_0b783b13-3ede-4636-9e64-2b7b35fdf850.jpg?v=1745207190"
-                            alt="{{ product.title }}">
-                        <span class="text-size16 er-font-medium mb:er-text-2xl">Erin Lawrence</span>
-                    </div>
-                </a>
-                <a class="er-flex er-flex-col er-items-start" href="https://www.youtube.com/watch?v=Ia7IY_8fVHI"
-                    target="_blank" onclick="showVideoDialog('https://www.youtube.com/embed/Ia7IY_8fVHI?autoplay=1&cc_load_policy=1');return false;">
-                    <img src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/25366_2x_595d4c8e-538a-40f4-bbd0-3f3f80192d5a.jpg?v=1744352814&width=500"
-                        alt="{{ product.title }}">
-                    <p class="text-size16 er-mt-6 er-mb-8 mb:er-text-2xl mb:er-mb-6">
-                        <span>
-                            Put Joy Carbon eBike on steep hills, beaches, and city streets—and it handled it all with ease. It’s compact, sturdy, and hauls cargo like a champ!
-                        </span>
-                    </p>
-                    <span class="er-flex-1"></span>
-                    <div class="er-flex er-items-center">
-                        <img width="28" height="28" class="er-mr-4 er-rounded-full"
-                            src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/19464_2x_cb28c852-7bce-4b53-829d-97683cd91bb0.jpg?v=1744353066"
-                            alt="{{ product.title }}">
-                        <span class="text-size16 er-font-medium mb:er-text-2xl">TailHappyTV</span>
-                    </div>
-                </a>
-            </div>
+            {%- endfor -%}
         </div>
-    </section>
+    </div>
+</div>
+
     <section class="er-bg-background er-pt-16 er-pb-56 mb:er-pt-12 mb:er-pb-36">
     <h2 class="text-size36 er-text-center er-w-full er-mb-32 mb:er-text-4xl mb:er-mb-24">Why Carbon Fiber Is Worth It?</h2>
     <section

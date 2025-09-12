@@ -5,62 +5,28 @@
   }
 </style>
 {% render 'product-panel', swiper_insert_index: 1 %}
-<div class="professional">
-  <div class="centeral-content">
-    <h2 class="u36Medium_v2">Professional Review</h2>
-    <div class="videos swiper-wrapper">
-      <a href="https://newurtopia.com/pages/urtopia-e-bike-review" class="swiper-slide er-flex er-flex-col" target="_blank" style="height:auto;">
-        <img width="413" height="222" loading="lazy" class="er-rounded-3xl" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250718-141633.jpg?v=1752819406&width=400" alt="{{ product.title }}">
-        <span class="u17Light_v2 er-mt-5">Crafted by Carbon Fiber Masters. Chosen by Champions. Discover why the world’s best athletes trust Urtopia.</span>
-        <span class="flex-1"></span>
-        <div class="u17Medium_v2 er-flex er-items-center">
-          <img width="28" height="28" class="er-mr-2" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19464_2x_c1e0527f-3170-4d9f-9004-0fc101a9d28d.jpg?v=1752819602&width=28" alt="{{ product.title }}">
-          <span>Urtopia Ebike</span>
+<div class="er-bg-background er-py-32 mb:er-py-24">
+    <div class="centeral-content mb:er-px-6">
+        <h2 class="text-size36 mb:er-text-4xl er-text-center er-w-full">Professional Reviews</h2>
+        <div class="er-grid xl:er-grid-cols-4 lg:er-grid-cols-3 md:er-grid-cols-2 er-grid-cols-1 er-mt-16 mb:er-mt-10 er-gap-y-16 er-gap-x-6 mb:er-overflow-x-scroll mb:er-flex mb:er-pb-8">
+            {%- for item in all_products["urtopia-carbon-fusion-gt"].metafields.custom.review_list.value -%}
+                <div class="er-flex er-flex-col er-items-start er-cursor-pointer mb:er-min-w-[75vw]"
+                        onclick="showVideoDialog('https://www.youtube.com/embed/{{ item.youtube_id }}?autoplay=1&amp;cc_load_policy=1');return false;">
+                        {{ item.review_cover | image_url: width: 500 | image_tag: class: 'er-rounded-2xl mb:er-rounded-xl', loading: 'lazy' }}
+                        <p class="text-size16 er-mt-6 er-mb-8 mb:er-text-2xl mb:er-mb-6">
+                            <span>
+                                {{ item.review_desc }}
+                            </span>
+                        </p>
+                        <span class="er-flex-1"></span>
+                        <div class="er-flex er-items-center">
+                            {{ item.review_auther_cover | image_url: width: 30, height: 30 | image_tag: class: 'er-mr-4 er-rounded-full', loading: 'lazy' }}
+                            <span class="text-size16 er-font-medium mb:er-text-2xl">{{ item.review_auther_name }}</span>
+                        </div>
+                    </div>
+            {%- endfor -%}
         </div>
-      </a>
-      <div class="swiper-slide" onclick="showVideoDialog('https://www.youtube.com/embed/3BZdV16CjiY?autoplay=1&cc_load_policy=1')">
-        <img width="413" height="222" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25367_2x_b0fb6af0-2115-4f82-872d-dfefd7bebc99.jpg?v=1740993708&width=400" alt="{{ product.title }}">
-        <span class="u17Light_v2">The Lightest Dual Motor Ebike I've Tried - Urtopia Carbon Fusion GT Review</span>
-        <span class="flex-1"></span>
-        <div class="u17Medium_v2">
-          <img width="28" height="28" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/channels4_profile_4ab393ec-a320-4cd7-a5fe-1b3fb72b5a91.jpg?v=1737857581&width=28" alt="{{ product.title }}">
-          <span>TailHappyTV</span>
-        </div>
-      </div>
-      <div class="swiper-slide" onclick="showVideoDialog('https://www.youtube.com/embed/14WsEPH8TfQ?autoplay=1&cc_load_policy=1')">
-        <img width="413" height="222" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25368_2x_69e3cdec-4c04-44ca-aab9-82a75522cb37.jpg?v=1740993778&width=400" alt="{{ product.title }}">
-        <span class="u17Light_v2">The throttle boost driven by dual motors provides an unprecedented power-maxing experience.</span>
-        <span class="flex-1"></span>
-        <div class="u17Medium_v2">
-          <img width="28" height="28" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/unnamed.jpg?v=1731058489&width=28" alt="{{ product.title }}">
-          <span>KhanFlicks</span>
-        </div>
-      </div>
-       <div class="swiper-slide" onclick="showVideoDialog('https://www.youtube.com/embed/8xWeb1IBfh4?autoplay=1&cc_load_policy=1')">
-        <img width="413" height="222" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25369_2x_0af6ce4c-689d-4691-bfb6-a1ed1f92da45.jpg?v=1740993786&width=400" alt="{{ product.title }}">
-        <span class="u17Light_v2">With powerful 1500W AWD assist, this full carbon beast will take you anywhere you want.</span>
-        <span class="flex-1"></span>
-        <div class="u17Medium_v2">
-          <img width="28" height="28" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/channels4_profile.jpg?v=1731058489&width=28" alt="{{ product.title }}">
-          <span>Urtopia Reviews</span>
-        </div>
-      </div>
-      <div class="swiper-slide" onclick="showVideoDialog('https://www.youtube.com/embed/OJgz3ZLb4F0?autoplay=1&cc_load_policy=1')">
-        <img width="413" height="222" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25370_2x_76263bc1-982c-49dd-81da-2ff8d2d60cad.jpg?v=1740993793&width=400" alt="{{ product.title }}">
-        <span class="u17Light_v2">It's the lightest step-through ebike of its size, I can just easily get on it, no big jump over.</span>
-        <span class="flex-1"></span>
-        <div class="u17Medium_v2">
-          <img width="28" height="28" loading="lazy" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/channels4_profile_1.jpg?v=1731058489&width=28" alt="{{ product.title }}">
-          <span>E-Bike America</span>
-        </div>
-      </div>
     </div>
-    <div class="swiper-scrollbar"></div>
-    <div class="buttons mobileHide">
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
-    </div>
-  </div>
 </div>
 <section class="er-bg-background er-pt-4 er-pb-56 mb:er-pt-16 mb:er-pb-36">
     <h2 class="text-size36 er-text-center er-w-full er-mb-32 mb:er-text-4xl mb:er-mb-24">Why Carbon Fiber Is Worth It?</h2>

@@ -11,99 +11,30 @@
 </style>
 
 {% render 'product-panel', swiper_insert_index: 1 %}
-<section class="er-bg-background-warm er-pt-48 mb:er-pt-28">
-        <div class="centeral-content">
-            <h2 class="text-size36 mb:er-text-4xl er-text-left er-w-full">Professional Reviews</h2>
-           <div class="er-grid er-grid-cols-4 er-mt-16 mb:er-grid-cols-1 mb:er-mt-10 er-gap-4 mb:er-gap-y-16">
-               {% comment %} <a class="er-flex er-flex-col er-items-start" href="https://newurtopia.com/pages/urtopia-e-bike-review"
-                    target="_blank">
-                    <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250718-141633.jpg?v=1752819406&width=500"
-                        alt="{{ product.title }}" class="er-rounded-3xl">
-                    <p class="text-size16 er-mt-6 er-mb-8 mb:er-text-2xl mb:er-mb-6">
-                        <span>
-                            Crafted by Carbon Fiber Masters. Chosen by Champions. Discover why the world’s best athletes trust Urtopia.
-                        </span>
-                    </p>
-                    <span class="er-flex-1"></span>
-                    <div class="er-flex er-items-center">
-                        <img width="28" height="28" class="er-mr-4 er-rounded-full"
-                            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19464_2x_c1e0527f-3170-4d9f-9004-0fc101a9d28d.jpg?v=1752819602"
-                            alt="{{ product.title }}">
-                        <span class="text-size16 er-font-medium mb:er-text-2xl">Urtopia Ebike</span>
+<div class="er-bg-background-warm er-py-32 mb:er-py-24">
+    <div class="centeral-content mb:er-px-6">
+        <h2 class="text-size36 mb:er-text-4xl er-text-center er-w-full">Professional Reviews</h2>
+        <div class="er-grid xl:er-grid-cols-4 lg:er-grid-cols-3 md:er-grid-cols-2 er-grid-cols-1 er-mt-16 mb:er-mt-10 er-gap-y-16 er-gap-x-6 mb:er-overflow-x-scroll mb:er-flex mb:er-pb-8">
+            {%- for item in all_products["urtopia-fusion-pro-carbon-long-range-ebike"].metafields.custom.review_list.value -%}
+                <div class="er-flex er-flex-col er-items-start er-cursor-pointer mb:er-min-w-[75vw]"
+                        onclick="showVideoDialog('https://www.youtube.com/embed/{{ item.youtube_id }}?autoplay=1&amp;cc_load_policy=1');return false;">
+                        {{ item.review_cover | image_url: width: 500 | image_tag: class: 'er-rounded-2xl mb:er-rounded-xl', loading: 'lazy' }}
+                        <p class="text-size16 er-mt-6 er-mb-8 mb:er-text-2xl mb:er-mb-6">
+                            <span>
+                                {{ item.review_desc }}
+                            </span>
+                        </p>
+                        <span class="er-flex-1"></span>
+                        <div class="er-flex er-items-center">
+                            {{ item.review_auther_cover | image_url: width: 30, height: 30 | image_tag: class: 'er-mr-4 er-rounded-full', loading: 'lazy' }}
+                            <span class="text-size16 er-font-medium mb:er-text-2xl">{{ item.review_auther_name }}</span>
+                        </div>
                     </div>
-                </a> {% endcomment %}
-                 <a class="er-flex er-flex-col er-items-start" href="https://www.youtube.com/watch?v=fAsgEl3FmFg"
-                    target="_blank" onclick="showVideoDialog('https://www.youtube.com/embed/fAsgEl3FmFg?autoplay=1&cc_load_policy=1');return false;">
-                    <img width="400" height="200" class="er-rounded-2xl" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250909-181941.jpg?v=1757414105&width=500"
-                        alt="{{ product.title }}">
-                    <p class="text-size16 er-mt-6 er-mb-8 mb:er-text-2xl mb:er-mb-6">
-                        <span>
-                            The Urtopia Fusion Pro proved to be a lightweight, long-range carbon fiber e-bike, perfect for reaching photography locations
-                        </span>
-                    </p>
-                    <span class="er-flex-1"></span>
-                    <div class="er-flex er-items-center">
-                        <img width="28" height="28" class="er-mr-4 er-rounded-full"
-                            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/channels4_profile_4_0f2891ec-a386-4438-b92e-ffc5c94c592b.jpg?v=1757414299"
-                            alt="{{ product.title }}">
-                        <span class="text-size16 er-font-medium mb:er-text-2xl">photoshopCAFE</span>
-                    </div>
-                </a>
-              <a class="er-flex er-flex-col er-items-start" href="https://www.youtube.com/watch?v=bZduNKXScvA"
-                    target="_blank" onclick="showVideoDialog('https://www.youtube.com/embed/bZduNKXScvA?autoplay=1&cc_load_policy=1');return false;">
-                    <img width="400" height="200" class="er-rounded-2xl" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250625-142813.jpg?v=1750832954&width=500"
-                        alt="{{ product.title }}">
-                    <p class="text-size16 er-mt-6 er-mb-8 mb:er-text-2xl mb:er-mb-6">
-                        <span>
-                            Surprisingly light for its size, and the build quality feels solid the moment you hop on. It rides smooth, quiet, and looks absolutely stunning—totally stands out!
-                        </span>
-                    </p>
-                    <span class="er-flex-1"></span>
-                    <div class="er-flex er-items-center">
-                        <img width="28" height="28" class="er-mr-4 er-rounded-full"
-                            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/unnamed_1.jpg?v=1750833093"
-                            alt="{{ product.title }}">
-                        <span class="text-size16 er-font-medium mb:er-text-2xl">Monkey Wrench Mike</span>
-                    </div>
-                </a>
-                <a class="er-flex er-flex-col er-items-start" href="https://www.youtube.com/watch?v=2kyU-qE4esU"
-                    target="_blank" onclick="showVideoDialog('https://www.youtube.com/embed/2kyU-qE4esU?autoplay=1&cc_load_policy=1');return false;">
-                    <img width="400" height="200" class="er-rounded-2xl" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250603-182251.jpg?v=1748946331&width=500"
-                        alt="{{ product.title }}">
-                    <p class="text-size16 er-mt-6 er-mb-8 mb:er-text-2xl mb:er-mb-6">
-                        <span>
-                            I love the lightweight carbon frame, cool design, and comfy upright ride. Great value for the price!
-                        </span>
-                    </p>
-                    <span class="er-flex-1"></span>
-                    <div class="er-flex er-items-center">
-                        <img width="28" height="28" class="er-mr-4 er-rounded-full"
-                            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250603-182641.jpg?v=1748946403"
-                            alt="{{ product.title }}">
-                        <span class="text-size16 er-font-medium mb:er-text-2xl">Mobile with M@</span>
-                    </div>
-                </a>
-              <a class="er-flex er-flex-col er-items-start" href="https://www.youtube.com/watch?v=WgMrBYJZug8"
-                    target="_blank" onclick="showVideoDialog('https://www.youtube.com/embed/WgMrBYJZug8?autoplay=1&cc_load_policy=1');return false;">
-                    <img width="400" height="200" class="er-rounded-2xl" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250612-185609.jpg?v=1749725870&width=500"
-                        alt="{{ product.title }}">
-                    <p class="text-size16 er-mt-6 er-mb-8 mb:er-text-2xl mb:er-mb-6">
-                        <span>
-                            A well-built, carbon fiber eBike with unique design and great value. Definitely a standout I’d consider buying.
-                        </span>
-                    </p>
-                    <span class="er-flex-1"></span>
-                    <div class="er-flex er-items-center">
-                        <img width="28" height="28" class="er-mr-4 er-rounded-full"
-                            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/channels4_profile_2.jpg?v=1749725969"
-                            alt="{{ product.title }}">
-                        <span class="text-size16 er-font-medium mb:er-text-2xl">Chris Crossed</span>
-                    </div>
-                </a>
-            </div>
+            {%- endfor -%}
         </div>
-    </section>
-<section class="er-bg-background-warm er-pt-48 er-pb-56 mb:er-pt-28 mb:er-pb-36">
+    </div>
+</div>
+<section class="er-bg-background-warm er-pt-48 er-pb-56 mb:er-pt-20 mb:er-pb-36">
     <h2 class="text-size36 er-text-center er-w-full er-mb-32 mb:er-text-4xl mb:er-mb-24">Why Carbon Fiber Is Worth It?</h2>
     <section
         class="er-mx-auto er-max-w-[768px] er-grid er-grid-cols-3 er-rounded-2xl er-shadow-sm er-text-white mb:er-grid-cols-[1fr_1.5fr_1.5fr] mb:er-rounded-none">
