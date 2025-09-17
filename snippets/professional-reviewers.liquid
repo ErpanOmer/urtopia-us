@@ -1,0 +1,196 @@
+<style>
+.tab-pane {
+    display: none;
+}
+
+.tab-nav {
+    display: flex;
+    gap: 20px;
+}
+
+.tab-nav a {
+    flex: 1;
+    display: block;
+    background: #fff;
+    color: #000;
+    border-radius: 10px;
+    height: 60px;
+    font-size: 20px;
+    text-align: center;
+    line-height: 60px;
+    font-weight: 500;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: all 0.3s;
+}
+
+.tab-nav a.active {
+    background-color: #000;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .tab-nav {
+        gap: 8px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .tab-pane {
+        overflow-x: scroll;
+        padding-bottom: 30px;
+    }
+
+    .tab-pane > div {
+        min-width: 75vw;
+    }
+
+    .tab-nav a {
+        font-size: 14px;
+        flex: auto;
+        height: 42px;
+        line-height: 42px;
+    }
+}
+</style>
+
+<div class="tabs">
+                <div class="tab-nav">
+                    <a href="#content2" class="active">Carbon 1 Pro</a>
+                    <a href="#content4">Carbon Joy</a>
+                    <a href="#content3">Carbon 1 ST</a>
+                    <a href="#content1">Carbon Fold 1</a>
+                    <a href="#content5">Fusion Pro</a>
+                    <a href="#content6">Fusion GT</a>
+                </div>
+                <div class="tab-content">
+                    <div id="content1"
+                        class="tab-pane er-grid xl:er-grid-cols-4 lg:er-grid-cols-3 md:er-grid-cols-2 er-grid-cols-1 er-mt-16 mb:er-mt-10 er-gap-y-16 er-gap-x-6">
+                        {%- for item in all_products["urtopia-carbon-fold"].metafields.custom.review_list.value -%}
+                            <div class="er-flex er-flex-col er-items-start er-cursor-pointer"
+                                    onclick="showVideoDialog('https://www.youtube.com/embed/{{ item.youtube_id }}?autoplay=1&amp;cc_load_policy=1');return false;">
+                                    {{ item.review_cover | image_url: width: 500 | image_tag: class: 'er-rounded-2xl', loading: 'lazy' }}
+                                    <p class="text-size16 er-mt-6 er-mb-8 mb:er-text-2xl mb:er-mb-6">
+                                        <span>
+                                            {{ item.review_desc }}
+                                        </span>
+                                    </p>
+                                    <span class="er-flex-1"></span>
+                                    <div class="er-flex er-items-center">
+                                        {{ item.review_auther_cover | image_url: width: 30, height: 30 | image_tag: class: 'er-mr-4 er-rounded-full', loading: 'lazy' }}
+                                        <span class="text-size16 er-font-medium mb:er-text-2xl">{{ item.review_auther_name }}</span>
+                                    </div>
+                                </div>
+                        {%- endfor -%}
+                    </div>
+                    <div id="content2"
+                        class="tab-pane er-grid xl:er-grid-cols-4 lg:er-grid-cols-3 md:er-grid-cols-2 er-grid-cols-1 er-mt-16 mb:er-mt-10 er-gap-y-16 er-gap-x-6">
+                        {%- for item in all_products["urtopia-carbon-1-pro-ebike"].metafields.custom.review_list.value -%}
+                            <div class="er-flex er-flex-col er-items-start er-cursor-pointer"
+                                    onclick="showVideoDialog('https://www.youtube.com/embed/{{ item.youtube_id }}?autoplay=1&amp;cc_load_policy=1');return false;">
+                                    {{ item.review_cover | image_url: width: 500 | image_tag: class: 'er-rounded-2xl', loading: 'lazy' }}
+                                    <p class="text-size16 er-mt-6 er-mb-8 mb:er-text-2xl mb:er-mb-6">
+                                        <span>
+                                            {{ item.review_desc }}
+                                        </span>
+                                    </p>
+                                    <span class="er-flex-1"></span>
+                                    <div class="er-flex er-items-center">
+                                        {{ item.review_auther_cover | image_url: width: 30, height: 30 | image_tag: class: 'er-mr-4 er-rounded-full', loading: 'lazy' }}
+                                        <span class="text-size16 er-font-medium mb:er-text-2xl">{{ item.review_auther_name }}</span>
+                                    </div>
+                                </div>
+                        {%- endfor -%}
+                    </div>
+                    <div id="content3"
+                        class="tab-pane er-grid xl:er-grid-cols-4 lg:er-grid-cols-3 md:er-grid-cols-2 er-grid-cols-1 er-mt-16 mb:er-mt-10 er-gap-y-16 er-gap-x-6">
+                        {%- for item in all_products["urtopia-carbon-1-step-thru-ebike"].metafields.custom.review_list.value -%}
+                            <div class="er-flex er-flex-col er-items-start er-cursor-pointer"
+                                    onclick="showVideoDialog('https://www.youtube.com/embed/{{ item.youtube_id }}?autoplay=1&amp;cc_load_policy=1');return false;">
+                                    {{ item.review_cover | image_url: width: 500 | image_tag: class: 'er-rounded-2xl', loading: 'lazy' }}
+                                    <p class="text-size16 er-mt-6 er-mb-8 mb:er-text-2xl mb:er-mb-6">
+                                        <span>
+                                            {{ item.review_desc }}
+                                        </span>
+                                    </p>
+                                    <span class="er-flex-1"></span>
+                                    <div class="er-flex er-items-center">
+                                        {{ item.review_auther_cover | image_url: width: 30, height: 30 | image_tag: class: 'er-mr-4 er-rounded-full', loading: 'lazy' }}
+                                        <span class="text-size16 er-font-medium mb:er-text-2xl">{{ item.review_auther_name }}</span>
+                                    </div>
+                                </div>
+                        {%- endfor -%}
+                    </div>
+                    <div id="content4"
+                        class="tab-pane er-grid xl:er-grid-cols-4 lg:er-grid-cols-3 md:er-grid-cols-2 er-grid-cols-1 er-mt-16 mb:er-mt-10 er-gap-y-16 er-gap-x-6">
+                        {%- for item in all_products["urtopia-joy-carbon-fat-tire-ebike"].metafields.custom.review_list.value -%}
+                            <div class="er-flex er-flex-col er-items-start er-cursor-pointer"
+                                    onclick="showVideoDialog('https://www.youtube.com/embed/{{ item.youtube_id }}?autoplay=1&amp;cc_load_policy=1');return false;">
+                                    {{ item.review_cover | image_url: width: 500 | image_tag: class: 'er-rounded-2xl', loading: 'lazy' }}
+                                    <p class="text-size16 er-mt-6 er-mb-8 mb:er-text-2xl mb:er-mb-6">
+                                        <span>
+                                            {{ item.review_desc }}
+                                        </span>
+                                    </p>
+                                    <span class="er-flex-1"></span>
+                                    <div class="er-flex er-items-center">
+                                        {{ item.review_auther_cover | image_url: width: 30, height: 30 | image_tag: class: 'er-mr-4 er-rounded-full', loading: 'lazy' }}
+                                        <span class="text-size16 er-font-medium mb:er-text-2xl">{{ item.review_auther_name }}</span>
+                                    </div>
+                                </div>
+                        {%- endfor -%}
+                    </div>
+                    <div id="content5"
+                        class="tab-pane er-grid xl:er-grid-cols-4 lg:er-grid-cols-3 md:er-grid-cols-2 er-grid-cols-1 er-mt-16 mb:er-mt-10 er-gap-y-16 er-gap-x-6">
+                        {%- for item in all_products["urtopia-fusion-pro-carbon-long-range-ebike"].metafields.custom.review_list.value -%}
+                            <div class="er-flex er-flex-col er-items-start er-cursor-pointer"
+                                    onclick="showVideoDialog('https://www.youtube.com/embed/{{ item.youtube_id }}?autoplay=1&amp;cc_load_policy=1');return false;">
+                                    {{ item.review_cover | image_url: width: 500 | image_tag: class: 'er-rounded-2xl', loading: 'lazy' }}
+                                    <p class="text-size16 er-mt-6 er-mb-8 mb:er-text-2xl mb:er-mb-6">
+                                        <span>
+                                            {{ item.review_desc }}
+                                        </span>
+                                    </p>
+                                    <span class="er-flex-1"></span>
+                                    <div class="er-flex er-items-center">
+                                        {{ item.review_auther_cover | image_url: width: 30, height: 30 | image_tag: class: 'er-mr-4 er-rounded-full', loading: 'lazy' }}
+                                        <span class="text-size16 er-font-medium mb:er-text-2xl">{{ item.review_auther_name }}</span>
+                                    </div>
+                                </div>
+                        {%- endfor -%}
+                    </div>
+                    <div id="content6"
+                        class="tab-pane er-grid xl:er-grid-cols-4 lg:er-grid-cols-3 md:er-grid-cols-2 er-grid-cols-1 er-mt-16 mb:er-mt-10 er-gap-y-16 er-gap-x-6">
+                        {%- for item in all_products["urtopia-carbon-fusion-gt"].metafields.custom.review_list.value -%}
+                            <div class="er-flex er-flex-col er-items-start er-cursor-pointer"
+                                    onclick="showVideoDialog('https://www.youtube.com/embed/{{ item.youtube_id }}?autoplay=1&amp;cc_load_policy=1');return false;">
+                                    {{ item.review_cover | image_url: width: 500 | image_tag: class: 'er-rounded-2xl', loading: 'lazy' }}
+                                    <p class="text-size16 er-mt-6 er-mb-8 mb:er-text-2xl mb:er-mb-6">
+                                        <span>
+                                            {{ item.review_desc }}
+                                        </span>
+                                    </p>
+                                    <span class="er-flex-1"></span>
+                                    <div class="er-flex er-items-center">
+                                        {{ item.review_auther_cover | image_url: width: 30, height: 30 | image_tag: class: 'er-mr-4 er-rounded-full', loading: 'lazy' }}
+                                        <span class="text-size16 er-font-medium mb:er-text-2xl">{{ item.review_auther_name }}</span>
+                                    </div>
+                                </div>
+                        {%- endfor -%}
+                    </div>
+                </div>
+            </div>
+
+<script type="module">
+        // jQuery Tab 切换
+    $('.tab-nav a').on('click', function (e) {
+        e.preventDefault();
+        $('.tab-nav a').removeClass('active');
+        $(this).addClass('active');
+        $('.tab-pane').hide();
+        $($(this).attr('href')).css('display', global_config.is_mobile ? 'flex' : 'grid');
+    });
+    // 默认显示第一个
+    $('.tab-pane').hide();
+    $('#content2').css('display', global_config.is_mobile ? 'flex' : 'grid');
+</script>

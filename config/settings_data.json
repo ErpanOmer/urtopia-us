@@ -215,6 +215,11 @@
         "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/judgeme_core\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
         "disabled": false,
         "settings": {}
+      },
+      "7872257831342662540": {
+        "type": "shopify:\/\/apps\/worry-free-purchase\/blocks\/index\/c61a403d-127f-4a83-aa2d-dd891cc35fd1",
+        "disabled": false,
+        "settings": {}
       }
     }
   },

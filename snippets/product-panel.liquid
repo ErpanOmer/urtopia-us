@@ -50,7 +50,12 @@
     endfor
   endif
 -%}
-<h1 class="er-sr-only">{{ product.title }}</h1>
+
+{% if product.handle == "urtopia-joy-carbon-fat-tire-ebike" %}
+  <h1 class="er-sr-only">Urtopia Joy Carbon Fat Tire Electric Bike</h1>
+{% else %}
+  <h1 class="er-sr-only">{{ product.title }}</h1>
+{% endif %}
 {{ swiper.first | image_url: width: 1024 | preload_tag: as: 'image', type: 'image/webp', fetchpriority: 'high', media: "(min-width: 769px)" }}
 {{ swiper.first | image_url: width: 640 | preload_tag: as: 'image', type: 'image/webp', fetchpriority: 'high', media: "(max-width: 768px)" }}
 <section
