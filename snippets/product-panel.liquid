@@ -196,8 +196,9 @@
     {% if product_accessories.count %}
       <div class="er-flex er-flex-col er-border er-border-solid er-border-border er-rounded-lg er-p-4 accessories">
         <div class="text-size18 er-font-bold er-mt-2 er-mb-4 mb:er-text-2xl">Compatible Accessory</div>
-        <label class="er-bg-border er-py-2 er-select-none er-pointer-events-none er-pl-2 er-pr-6 er-flex er-items-center peer-checked:er-bg-primary er-rounded-lg er-transition-colors er-gap-x-3 er-cursor-pointer {% if forloop.index > 2 %}er-hidden{% endif %}">
-              <input checked type="checkbox" name="id" value="{{ variant.id }}" class="peer er-block !er-min-w-8 !er-w-8 !er-h-8 er-accent-primary mb:!er-min-w-6 mb:!er-w-6 mb:!er-h-6" />
+        <label class="er-bg-border er-pl-2 mb:er-pl-1 er-pr-6 er-py-4 er-select-none er-pointer-events-none er-flex er-items-center peer-checked:er-bg-primary er-rounded-lg er-transition-colors er-gap-x-3 er-cursor-pointer {% if forloop.index > 2 %}er-hidden{% endif %}">
+              <input checked type="checkbox" name="id" value="{{ variant.id }}" style="width: 0;height: 0;margin: 0;"/>
+              <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25960.svg?v=1758174989" height="20" width="20" class="!er-min-w-8 mb:!er-min-w-6" alt="">
               {{
                 product_send_accessories_icon.image
                 | image_url: width: 120
@@ -216,8 +217,10 @@
           {%- if prod.available -%}
             {%- assign counter = counter | plus: 1 -%}
             {%- assign variant = prod.first_available_variant -%}
-            <label class="er-select-none er-pl-2 er-pr-6 er-flex er-items-center peer-checked:er-bg-primary er-rounded-lg er-transition-colors er-gap-x-4 mb:er-gap-x-3 er-cursor-pointer {% if counter > 2 %}er-hidden{% endif %}" variant-id="{{ variant.id }}">
-              <input type="checkbox" name="id" value="{{ variant.id }}" class="peer er-block !er-w-8 !er-h-8 er-accent-primary mb:!er-w-6 mb:!er-h-6" />
+            <label class="er-select-none er-p-1 er-pr-6 er-flex er-items-center peer-checked:er-bg-primary er-rounded-lg er-transition-colors er-gap-x-4 mb:er-gap-x-3 er-cursor-pointer {% if counter > 2 %}er-hidden{% endif %}" variant-id="{{ variant.id }}">
+              <input type="checkbox" name="id" value="{{ variant.id }}" class="peer" style="width: 0;height: 0;margin: 0;"/>
+              <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/27315.svg?v=1758174989" width="20" height="20" alt="" data-status="unchecked" class="!er-w-8 mb:!er-w-6">
+              <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25960.svg?v=1758174989" width="20" height="20" alt="" data-status="checked" class="!er-w-8 mb:!er-w-6" style="display: none;">
               {{
                   prod.featured_image
                   | image_url: width: 120
@@ -486,8 +489,12 @@
     const label = $(this).closest('label');
     if ($(this).is(':checked')) {
       label.addClass('er-bg-border')
+      label.find('img[data-status="unchecked"]').hide();
+      label.find('img[data-status="checked"]').show();
     } else {
       label.removeClass('er-bg-border');
+      label.find('img[data-status="unchecked"]').show();
+      label.find('img[data-status="checked"]').hide();
     }
   });
 
