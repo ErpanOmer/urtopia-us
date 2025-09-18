@@ -134,25 +134,6 @@
         <span class="text-size16 er-font-bold er-text-dark/80 mb:er-text-2xl">{{ product_media_reviews.first.text }}</span>
         {{ product_media_reviews.first.image | image_url: height: product_media_icon_height | image_tag: class: "er-h-20 er-object-contain mb:er-h-16 mb:er-w-auto",  data-index: "1" }}
     </div>
-    {% if product_send_accessories_icon %}
-      <div class="er-flex er-bg-background er-items-center er-rounded-2xl er-p-3 er-gap-x-4 er-pr-6">
-        {{
-          product_send_accessories_icon.image
-          | image_url: width: 120
-          | image_tag: fetchpriority: 'low', height: 57, class: "er-h-24"
-        }}
-        <div class="er-flex er-flex-1 er-gap-x-4 mb:er-flex-col-reverse er-items-center mb:er-gap-y-1 mb:er-items-start er-leading-snug">
-          <span><span class="er-text-primary text-size14 er-font-bold">Limited offer:</span>{{ product_send_accessories_icon.text }}</span>
-          <span class="er-flex-1 mb:er-hidden"></span>
-          <div class="er-flex er-items-center mb:er-flex-row-reverse">
-            <del class="er-text-dark/80">{{ product_send_accessories_price | money }}</del>
-            <span class="er-button er-px-3 er-py-2 er-font-bold er-rounded-2xl er-pointer-events-none er-ml-4 mb:er-ml-0 mb:er-mr-4"
-              >FREE</span
-            >
-          </div>
-        </div>
-      </div>
-    {% endif %}
     {% if product_parameter_and_icons.count %}
       <div class="er-grid er-grid-cols-2 er-gap-y-8 mb:er-hidden lg:er-grid-cols-3">
         {%- for item in product_parameter_and_icons -%}
@@ -213,43 +194,45 @@
       </fieldset>
     {%- endfor -%}
     {% if product_accessories.count %}
-      <div class="er-space-y-6 er-mb-4 accessories">
-        <div class="text-size18 er-font-bold">Accessories</div>
-        <div class="er-flex er-items-center">
-          <div
-            class="er-w-6 er-h-6 er-cursor-pointer er-border-solid er-border-l-2 er-border-t-2 er-border-l-gray er-border-t-gray er-border-b-transparent er-border-r-transparent er-rotate-[-45deg] mb:er-hidden"
-          ></div>
-          <div class="er-flex er-flex-1 er-overflow-x-hidden er-space-x-3 mb:er-overflow-x-auto">
-            {%- for prod in product_accessories -%}
-              {%- if prod.available -%}
-              {%- assign variant = prod.first_available_variant -%}
-                <div
-                  class="er-flex er-flex-[0_0_47.5%] er-flex-col er-rounded-2xl er-border-solid er-border-border er-border-2 er-cursor-pointer er-relative er-aspect-video er-p-4 mb:er-pt-2 [&[class~='active']]:er-border-dark [&[class~='active']]:er-bg-gray/15"
-                  variant-id="{{ variant.id }}"
-                >
-                  <div class="text-size12 mb:er-text-base">{{ prod.title }}</div>
-                  <span class="text-size18 er-font-bold mb:er-text-2xl">{{ prod.price | money }}</span>
-                  <span class="flex-1"></span>
-                  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="undefined"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
-                  <svg class="er-hidden" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="undefined"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg>
-                  {{
-                    prod.featured_image
-                    | image_url: width: 120
-                    | image_tag:
-                      class: 'er-absolute er-right-0 er-bottom-0 er-max-w-28',
-                      fetchpriority: 'low',
-                      height: 120,
-                      width: 120,
-                      loading: 'lazy'
-                  }}
-                </div>
-              {%- endif -%}
-            {%- endfor -%}
-          </div>
-          <div
-            class="er-w-6 er-h-6 er-cursor-pointer er-border-solid er-border-l-2 er-border-t-2 er-border-l-gray er-border-t-gray er-border-b-transparent er-border-r-transparent er-rotate-[135deg] mb:er-hidden"
-          ></div>
-        </div>
+      <div class="er-flex er-flex-col er-border er-border-solid er-border-border er-rounded-lg er-p-4 accessories">
+        <div class="text-size18 er-font-bold er-mt-2 er-mb-4 mb:er-text-2xl">Compatible Accessory</div>
+        <label class="er-bg-border er-py-2 er-select-none er-pointer-events-none er-pl-2 er-pr-6 er-flex er-items-center peer-checked:er-bg-primary er-rounded-lg er-transition-colors er-gap-x-3 er-cursor-pointer {% if forloop.index > 2 %}er-hidden{% endif %}">
+              <input checked type="checkbox" name="id" value="{{ variant.id }}" class="peer er-block !er-min-w-8 !er-w-8 !er-h-8 er-accent-primary mb:!er-min-w-6 mb:!er-w-6 mb:!er-h-6" />
+              {{
+                product_send_accessories_icon.image
+                | image_url: height: 55
+                | image_tag: class: 'mb:er-h-20 mb:er-w-auto', loading: 'lazy'
+              }}
+              <span class="text-size14 mb:er-text-xl">{{ product_send_accessories_icon.text }}<br><span class="er-text-[#909090] text-size12 mb:er-text-base">*included in the E-Bike box</span></span>
+              <span class="er-flex-1"></span>
+              <div class="er-flex er-flex-col er-items-end">
+                <span class="er-bg-primary text-size18 er-font-bold mb:er-text-2xl er-text-white er-rounded-lg er-px-3">FREE</span>
+                <del class="er-block text-size18 er-font-bold mb:er-text-2xl er-text-[#909090] er-mt-1">{{ product_send_accessories_price | money_without_trailing_zeros }}</del>
+              </div>
+        </label>
+        <div class="er-border-0 er-border-b er-border-solid er-border-b-border er-my-4 mb:er-my-3"></div>
+        {%- assign counter = 0 -%}
+        {% for prod in product_accessories %}
+          {%- if prod.available -%}
+            {%- assign counter = counter | plus: 1 -%}
+            {%- assign variant = prod.first_available_variant -%}
+            <label class="er-select-none er-pl-2 er-pr-6 er-flex er-items-center peer-checked:er-bg-primary er-rounded-lg er-transition-colors er-gap-x-4 mb:er-gap-x-3 er-cursor-pointer {% if counter > 2 %}er-hidden{% endif %}" variant-id="{{ variant.id }}">
+              <input type="checkbox" name="id" value="{{ variant.id }}" class="peer er-block !er-w-8 !er-h-8 er-accent-primary mb:!er-w-6 mb:!er-h-6" />
+              {{
+                  prod.featured_image
+                  | image_url: height: 55
+                  | image_tag:
+                    class: 'mb:er-h-20 mb:er-w-auto',
+                    loading: 'lazy'
+              }}
+              <span class="text-size14 mb:er-text-xl">{{ prod.title }}</span>
+              <span class="er-flex-1"></span>
+              <span class="text-size18 er-font-bold mb:er-text-2xl">{{ prod.price | money_without_trailing_zeros }}</span>
+            </label>
+            <div class="er-border-0 er-border-b er-border-solid er-border-b-border er-my-4 mb:er-my-3 {% if counter > 2 %}er-hidden{% endif %}"></div>
+          {%- endif -%}
+        {%- endfor -%}
+        <span class="text-size14 er-text-primary er-cursor-pointer er-place-self-end showmore">Show more…</span>
       </div>
     {% endif %}
     <div class="er-flex er-flex-col er-space-y-5 buttons">
@@ -494,14 +477,17 @@
     }
   }
 
-  $('.product-panel .accessories > .er-flex > .er-flex-1 > div').on('click', function () {
-    const target = $(this);
-    if (target.hasClass('active')) {
-      target.removeClass('active');
-      target.find('svg').first().removeClass('er-hidden').next().addClass('er-hidden')
+  $('.showmore').on('click', function() {
+    $('.product-panel .accessories').find('.er-hidden').removeClass('er-hidden');
+    $(this).remove();
+  });
+
+  $('.product-panel .accessories input[type="checkbox"].peer').on('change', function() {
+    const label = $(this).closest('label');
+    if ($(this).is(':checked')) {
+      label.addClass('er-bg-border')
     } else {
-      target.addClass('active');
-      target.find('svg').last().removeClass('er-hidden').prev().addClass('er-hidden')
+      label.removeClass('er-bg-border');
     }
   });
 
@@ -523,9 +509,11 @@
 
     target.addClass('er-button-loading').attr('disabled', true)
 
-    $('.product-panel .accessories > .er-flex > .er-flex-1 > .active').each((i, item) => {
-        items.push({
-          id: $(item).attr('variant-id'),
+    $('.product-panel .accessories input:checked').each((i, item) => {
+      const id = $(item).closest('label').attr('variant-id');
+
+        id && items.push({
+          id,
           quantity: 1,
         });
     });
@@ -584,14 +572,6 @@
     $('.product-panel div[data-dialog-id]').on('click', function () {
           showDialog(document.getElementById($(this).attr('data-dialog-id')))
     })
-
-    $('.product-panel .accessories > .er-flex > div:not(.er-flex-1)').on('click', function () {
-        const items = $('.product-panel .accessories > .er-flex > .er-flex-1');
-        items.animate(
-          {
-            scrollLeft: items.scrollLeft() + ($(this).hasClass('er-rotate-[135deg]') ? 160 : -160),
-          }, 300);
-    });
 
     window.product_panel_swiper = new Swiper('.product-panel .product-panel-swiper', {
           navigation: {
