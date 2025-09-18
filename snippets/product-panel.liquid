@@ -200,8 +200,8 @@
               <input checked type="checkbox" name="id" value="{{ variant.id }}" class="peer er-block !er-min-w-8 !er-w-8 !er-h-8 er-accent-primary mb:!er-min-w-6 mb:!er-w-6 mb:!er-h-6" />
               {{
                 product_send_accessories_icon.image
-                | image_url: height: 55
-                | image_tag: class: 'mb:er-h-20 mb:er-w-auto', loading: 'lazy'
+                | image_url: width: 120
+                | image_tag: class: 'er-max-w-24 mb:er-max-w-20', loading: 'lazy'
               }}
               <span class="text-size14 mb:er-text-xl">{{ product_send_accessories_icon.text }}<br><span class="er-text-[#909090] text-size12 mb:er-text-base">*included in the E-Bike box</span></span>
               <span class="er-flex-1"></span>
@@ -220,9 +220,9 @@
               <input type="checkbox" name="id" value="{{ variant.id }}" class="peer er-block !er-w-8 !er-h-8 er-accent-primary mb:!er-w-6 mb:!er-h-6" />
               {{
                   prod.featured_image
-                  | image_url: height: 55
+                  | image_url: width: 120
                   | image_tag:
-                    class: 'mb:er-h-20 mb:er-w-auto',
+                    class: 'er-max-w-24 mb:er-max-w-20',
                     loading: 'lazy'
               }}
               <span class="text-size14 mb:er-text-xl">{{ prod.title }}</span>
