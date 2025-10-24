@@ -5,4 +5,25 @@
 </style>
 
 {% render 'product-panel', swiper_insert_index: 1 %}
+<div class="er-max-w-screen-xl er-mx-auto er-px-12 er-my-56 mb:er-mb-20 mb:er-mt-0 mb:er-pr-0">
+        <h2 class="text-size48 mb:er-text-4xl er-m-0">Quality in details</h2>
+        <div class="er-mt-10 quality_in_details er-relative er-overflow-x-hidden er-pb-40 mb:er-pb-16" style="--swiper-navigation-size: 27px; --swiper-navigation-color:#fff;">
+            <div class="swiper-wrapper">
+                {% for item in product.metafields.custom.quality_in_details.value %}
+                    {% assign text = item.text | split: "---" %}
+                    <div class="swiper-slide er-flex er-flex-col">
+                        {{ item.image | image_url: width: 500 |  image_tag: loading: 'lazy', class: "er-rounded-3xl" }}
+                        <h3 class="text-size20 er-my-6 er-font-bold er-text-3xl">{{ text.first }}</h3>
+                        <p class="text-size18 er-opacity-80 mb:er-text-[16px] er-max-w-2xl">
+                            <span>{{ text.last }}</span>
+                        </p>
+                    </div>
+                    
+                {% endfor %}  
+            </div>
+            <div class="swiper-scrollbar er-bg-[#386FAF] er-bg-opacity-10 !er-w-full !er-left-0"></div>
+            <div class="swiper-button-prev er-bottom-12 er-right-[60px] er-left-auto er-top-auto er-bg-dark er-rounded-full er-p-8 after:er-text-3xl mb:er-hidden er-z-2"></div>
+            <div class="swiper-button-next er-bottom-12 er-right-0 er-left-auto er-top-auto er-bg-dark er-rounded-full er-p-8 after:er-text-3xl mb:er-hidden er-z-2"></div>
+        </div>
+    </div>
 {% render 'size-guide-and-specs-template' %}
