@@ -1,0 +1,279 @@
+{{ 'carbon-fold-product.scss.css' | asset_url | stylesheet_tag: preload: true }}
+{{ 'outlet_v4.scss.css' | asset_url | stylesheet_tag: preload: true }}
+
+<style>
+  h1, h2, h3, h4 {
+    color: inherit;
+    margin: 0;
+    display: block;
+  }
+
+  .TakeItEasywithFold1 .centeral-content .items>div{
+    aspect-ratio:unset;
+  }
+</style>
+
+{% render 'product-panel', swiper_insert_index: 1 %}
+<section
+    class="er-bg-black er-text-white er-aspect-[1920/750] mb:er-aspect-auto background-image mb:er-bg-background mb:er-text-black" style="transform: translateY(1px);">
+    <video playsinline loop autoplay muted class="mb:!er-object-contain mb:!er-object-top lozad">
+        <source data-src="https://cdn.shopify.com/videos/c/o/v/c78a9fec511245e68e6feff6b4ac56a8.mp4" type="video/mp4"
+            media="(min-width: 768px)">
+        <source data-src="https://cdn.shopify.com/videos/c/o/v/2fd5f660d06c40dda8d51f20378654dc.mp4" type="video/mp4"
+            media="(max-width: 767px)">
+    </video>
+    <div
+        class="centeral-content er-h-full er-flex er-flex-col er-justify-center er-items-start er-text-left mb:er-pb-24 mb:er-px-6">
+        <div class="md:er-hidden er-aspect-square er-w-full"></div>
+        <h2 class="text-size36 mb:er-text-4xl">Light as Air, Bold by Design</h2>
+        <p class="text-size18 er-max-w-3xl er-mt-10 er-mb-28 mb:er-text-2xl mb:er-mb-16">
+            <span>
+                Built with aerospace-grade Toray™ carbon fiber, the Carbon Classic ST is 30% lighter than aluminum yet incredibly strong. Its sleek carbon frame, torque sensor, and throttle deliver effortless control and instant acceleration — redefining smooth, powerful riding.
+            </span>
+        </p>
+        <a
+            href="https://www.youtube.com/watch?v=HKY6ewUznbc" target="_blank"
+            class="er-button er-button-white er-mt-12 mb:er-m-0 mb:[--er-btn-bg-color:theme(colors.dark)] mb:[--er-btn-text-color:theme(colors.white)] mb:er-text-white">Watch
+            video
+            <svg class="er-scale-150 er-translate-x-1/3 er-fill-dark mb:er-fill-white"
+                xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20">
+                <path
+                    d="m380-300 280-180-280-180v360ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+            </svg></a>
+    </div>
+</section>
+<section class="er-bg-background er-py-56 mb:er-pt-0 mb:er-pb-20">
+  <div class="centeral-content er-flex er-flex-col er-items-center er-text-center er-justify-center mb:er-px-6">
+    {% render 'image', mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26350_2x_366d9ebd-c278-465a-ad8e-d97a4a375d60.png?v=1761640413", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26348_2x_14fa8802-3ce3-42bc-9efc-dc41ef9de14a.png?v=1761640123", width: 1100 %}
+    <h2 class="text-size36 er-mb-16 er-mt-52 mb:er-mt-20 mb:er-mb-12 mb:er-text-4xl">Why Carbon Fiber Is Worth It?</h2>
+    {% render 'image', mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20251028-170944.png?v=1761642621", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20251028-171249.png?v=1761642785", width: 750 %}
+  </div>
+</section>
+<section class="er-pb-56 mb:er-py-20">
+        <div class="quality TakeItEasywithFold1">
+        <div class="centeral-content mb:er-px-6">
+            <h2 class="text-size36 mb:er-text-4xl mb:er-leading-snug er-mb-3 mb:er-mb-0">Streamlined. Sophisticated. Classic.</h2>
+            <div class="items swiper-wrapper er-mt-16 mb:er-mt-8">
+            <div class="swiper-slide er-rounded-2xl er-overflow-hidden">
+                <img loading="lazy" width="551" height="400" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC01111_2x_9ed21245-aadd-46c2-b1c9-c59bef281e57.jpg?v=1761641329&width=700" alt="{{ page_description }}">
+            </div>
+            <div class="swiper-slide er-rounded-2xl er-overflow-hidden">
+                <img
+                loading="lazy" width="551" height="400" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC01283_2x_e81380b7-46e6-4902-9da3-ee7716af0d1d.jpg?v=1761641324&width=700"
+                alt="{{ page_description }}"
+                >
+            </div>
+            <div class="swiper-slide er-rounded-2xl er-overflow-hidden">
+                <img
+                loading="lazy" width="551" height="400" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC08490_2x_0b993070-0d7f-45ed-a101-c4e69126bd68.jpg?v=1761641318&width=700"
+                alt="{{ page_description }}"
+                >
+            </div>
+            <div class="swiper-slide er-rounded-2xl er-overflow-hidden">
+                <img
+                loading="lazy" width="551" height="400" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC08424_2x_8e696358-5a33-4b9c-a833-4b24d98f0986.jpg?v=1761641313&width=700"
+                alt="{{ page_description }}"
+                >
+            </div>
+            <div class="swiper-slide er-rounded-2xl er-overflow-hidden">
+                <img
+                loading="lazy" width="551" height="400" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC01149_2x_17076bda-9b2a-4bef-b88b-2986f705470b.jpg?v=1761641307&width=700"
+                alt="{{ page_description }}"
+                >
+            </div>
+            <div class="swiper-slide er-rounded-2xl er-overflow-hidden">
+                <img
+                loading="lazy" width="551" height="400" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC01205_2x_20362b76-8808-470c-a20a-8f86ce986107.jpg?v=1761641301&width=700"
+                alt="{{ page_description }}"
+                >
+            </div>
+            </div>
+            <div class="swiper-scrollbar"></div>
+            <div class="buttons mobileHide">
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            </div>
+        </div>
+        </div>
+    </section>
+<section class="er-bg-background er-py-48 mb:er-py-20">
+  <div class="centeral-content mb:er-px-6">
+        <h2 class="text-size36 mb:er-text-4xl er-m-0">Quality in details</h2>
+        <div class="er-mt-10 quality_in_details er-relative er-overflow-x-hidden er-pb-40 mb:er-pb-16" style="--swiper-navigation-size: 27px; --swiper-navigation-color:#fff;">
+            <div class="swiper-wrapper">
+                {% for item in product.metafields.custom.quality_in_details.value %}
+                    {% assign text = item.text | split: "---" %}
+                    <div class="swiper-slide er-flex er-flex-col">
+                        {{ item.image | image_url: width: 500 |  image_tag: loading: 'lazy', class: "er-rounded-3xl" }}
+                        <h3 class="text-size20 er-my-6 er-font-bold er-text-3xl">{{ text.first }}</h3>
+                        <p class="text-size18 er-opacity-80 mb:er-text-[16px] er-max-w-2xl">
+                            <span>{{ text.last }}</span>
+                        </p>
+                    </div>
+                    
+                {% endfor %}  
+            </div>
+            <div class="swiper-scrollbar er-bg-[#386FAF] er-bg-opacity-10 !er-w-full !er-left-0"></div>
+            <div class="swiper-button-prev er-bottom-12 er-right-[60px] er-left-auto er-top-auto er-bg-dark er-rounded-full er-p-8 after:er-text-3xl mb:er-hidden er-z-2 er-box-border"></div>
+            <div class="swiper-button-next er-bottom-12 er-right-0 er-left-auto er-top-auto er-bg-dark er-rounded-full er-p-8 after:er-text-3xl mb:er-hidden er-z-2 er-box-border"></div>
+        </div>
+    </div>
+</section>
+<section class="er-aspect-[1920/750] mb:er-aspect-auto background-image er-bg-background">
+        <video playsinline loop autoplay muted class="mb:!er-object-contain mb:!er-object-top lozad">
+            <source data-src="https://cdn.shopify.com/videos/c/o/v/c91af425fdb3466aae69f9aa232a27b2.mp4" type="video/mp4"
+                media="(min-width: 768px)">
+            <source data-src="https://cdn.shopify.com/videos/c/o/v/b680e0dc8ae841c8940ec2bce8f69c95.mp4" type="video/mp4"
+                media="(max-width: 767px)">
+        </video>
+        <div
+            class="centeral-content er-h-full er-flex er-flex-col er-justify-center er-items-start er-text-left mb:er-pb-20 mb:er-px-6">
+            <div class="md:er-hidden er-aspect-square er-w-full"></div>
+            <h2 class="text-size48 mb:er-text-4xl mb:er-leading-snug">Gear Up, Go Far</h2>
+            <p class="text-size18 er-max-w-3xl er-mt-10 mb:er-text-2xl">
+                <span>Equipped with a rear rack and travel-ready front fork with luggage mounts, the Carbon Classic ST is built for long rides. Four extra frame mounts provide versatile storage—just pack up and go!</span>
+            </p>
+        </div>
+    </section>
+    <section class="er-bg-background md:er-pt-56">
+      <div class="centeral-content mb:er-px-6">
+        <div class="er-grid er-grid-cols-2 mb:er-grid-cols-1">
+          <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2025-10-18_16.38.01_2x_effe36e7-762b-4328-bf21-56a95bd3a73a.jpg?v=1761553347" loading="lazy" alt="">
+          <div class="er-bg-white er-flex er-flex-col er-justify-center er-px-28 mb:er-px-6 mb:er-py-12">
+            <h3 class="text-size36 mb:er-text-4xl">It’s Time to Give It a Spin!</h3>
+            <p class="text-size18 er-mt-12 er-mb-20 mb:er-text-2xl mb:er-my-8">
+              <span>
+                Experience the ride in person — with over 750 service partners across the U.S., you can enjoy a professional test ride and discover the Urtopia difference for yourself.
+              </span>
+            </p>
+            <a class="er-button er-button-dark" href="https://newurtopia.com/pages/find-a-dealer">Test ride</a>
+          </div>
+          <div class="er-bg-white er-flex er-flex-col er-justify-center er-px-28 mb:er-px-6 mb:er-py-12 mb:er-order-1">
+            <h3 class="text-size36 mb:er-text-4xl">Local Care, Anytime</h3>
+            <div class="text-size18 er-my-12 mb:er-text-2xl mb:er-my-8">
+              <div>Enjoy complete peace of mind with Urtopia’s trusted service network:</div>
+              <ul class="er-p-0 er-list-none er-space-y-10 mb:er-space-y-8">
+                <li class="marker:er-hidden er-flex er-items-center">
+                  <img class="er-block er-mr-6" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26153.svg?v=1761559856" loading="lazy" alt="">
+                  <span>2-year warranty on all e-bikes</span>
+                </li>
+               <li class="marker:er-hidden er-flex er-items-center">
+                  <img class="er-block er-mr-6" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26152.svg?v=1761559856" loading="lazy" alt="">
+                  <span>24-hour service response via our in-app support portal</span>
+                </li>
+                <li class="marker:er-hidden er-flex er-items-center">
+                  <img class="er-block er-mr-6" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26154.svg?v=1761559856" loading="lazy" alt="">
+                  <span>Spare parts available locally, shipping within 3 days</span>
+                </li>
+                <li class="marker:er-hidden er-flex er-items-center">
+                  <img class="er-block er-mr-6" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/76863.svg?v=1761559856" loading="lazy" alt="">
+                  <span>10+ technical experts with a 99% satisfaction rate</span>
+                </li>
+              </ul>
+            </div>
+            <a class="er-button er-button-dark" href="https://newurtopia.com/pages/care">Learn more</a>
+          </div>
+          <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC00386_1_2x_a0c03d87-7030-4065-aa68-9be927e0d927.jpg?v=1761553352" loading="lazy" alt="">
+        </div>
+      </div>
+    </section>
+    <div class="faq er-bg-background er-py-48 mb:er-py-20">
+        <div class="centeral-content">
+          <h2 class="u36Medium_v2">FAQs</h2>
+          <div class="items">
+            <div class="item">
+              <h3 class="u24Medium_v2 text-size24">
+                <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="{{ page_title }}">
+                1. How durable is the carbon frame of the Carbon Classic ST?
+              </h3>
+              <p class="u17Light_v2 text-size18">
+                <span>The Carbon Classic ST uses high-quality Toray T700/T800 carbon fibers and EPS molding technology. This creates a lightweight, strong, and impact-resistant frame with a seamless interior, eliminating stress points and enhancing durability. The result is a precisely constructed frame, as reliable as the best race bikes.</span>
+              </p>
+            </div>
+            <div class="item">
+              <h3 class="u24Medium_v2 text-size24">
+                <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="{{ page_title }}">
+                2. Why does the Carbon Classic ST use a hub motor instead ofa mid-drive motor?
+              </h3>
+              <p class="u17Light_v2 text-size18">
+                <span>Hub motors are lighter, smoother, and more responsive, making them ideal for city and gravel roads. Mid-drive motors, while better for steep climbs, tend to be heavier, noisier, and more complex. The Carbon Classic ST, designed for urban and gravel environments, features a hub motor for agile riding experience. For those looking to conquer steep climbs, our Fusion model is available.</span>
+              </p>
+            </div>
+            <div class="item">
+              <h3 class="u24Medium_v2 text-size24">
+                <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="{{ page_title }}">
+                3. Is the handlebar adjustable?
+              </h3>
+              <p class="u17Light_v2 text-size18">
+                <span>Yes, this bike comes with a 60° adujstable handlbar that allows the rider to achieve desired riding position.</span>
+              </p>
+            </div>
+            <div class="item">
+              <h3 class="u24Medium_v2 text-size24">
+                <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="{{ page_title }}">
+                4. Is the Carbon Classic ST suitable for different weather conditions?
+              </h3>
+              <p class="u17Light_v2 text-size18">
+                <span>Yes, the Carbon Classic ST is designed to perform well in various weather conditions. It is IP65 rated for dust and water resistance, ensuring protection against rain and splashes. Additionally, it can accommodate tires up to 45c in width, providing excellent stability and traction on wet or uneven surfaces. Whether you’re riding in rain, dust, or on rough terrain, the Carbon 1 Pro is built to handle it all.</span>
+              </p>
+            </div>
+            <div class="item">
+              <h3 class="u24Medium_v2 text-size24">
+                <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="{{ page_title }}">
+                5. What is the display on Carbon Classic ST
+              </h3>
+              <p class="u17Light_v2 text-size18">
+                <span>Carbon Classic ST comes with a bright LCD display that shows speed, battery and assist mode. It also comes with a USB-C port to charge your phone during a ride</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+{% render 'size-guide-and-specs-template' %}
+<script type="module">
+  task(() => {
+              new Swiper('.quality_in_details', {
+                  slidesPerView: global_config.is_mobile ? 1.25 : 3,
+                  spaceBetween: global_config.is_mobile ? 16 : 32,
+                  preloadImages: false,
+                  navigation: {
+                      nextEl: '.quality_in_details .swiper-button-next',
+                      prevEl: '.quality_in_details .swiper-button-prev',
+                  },
+                  scrollbar: {
+                      el: '.quality_in_details .swiper-scrollbar',
+                      draggable: true
+                  },
+              });
+    })
+
+    task(() => {
+        new Swiper('.TakeItEasywithFold1 .centeral-content', {
+            slidesPerView: global_config.is_mobile ? 1.25 : 3,
+            spaceBetween: global_config.is_mobile ? 16 : 32,
+            preloadImages: false,
+            navigation: {
+              nextEl: '.TakeItEasywithFold1 .centeral-content .swiper-button-next',
+              prevEl: '.TakeItEasywithFold1 .centeral-content .swiper-button-prev',
+            },
+            scrollbar: {
+              el: '.TakeItEasywithFold1 .centeral-content .swiper-scrollbar',
+              draggable: true
+            },
+          });
+      })
+
+         task(() => {
+            $('.faq .items .item .u24Medium_v2').click(function () {
+            $(this).siblings('.u17Light_v2').slideToggle().parent().siblings().find('.u17Light_v2').slideUp();
+
+            if ($(this).parent().hasClass('active')) {
+              $(this).parent().removeClass('active');
+            } else {
+              $(this).parent().addClass('active');
+            }
+
+            $(this).parent().siblings().removeClass('active');
+          });
+          })
+</script>
