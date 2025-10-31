@@ -679,20 +679,17 @@ h4 {
 
     .centeral-content {
         .promo-banner {
-            background-image: linear-gradient(180deg, #FF3684, #FF8F1D);
+            background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26314_2x_282d326c-0ee5-4976-989a-b8d876194f89.png?v=1761742764') center center/contain no-repeat;
             text-align: center;
             color: #fff;
             padding-left: 5%;
             border-top-left-radius: 10px;
             border-top-right-radius: 10px;
             overflow: hidden;
+            background-position-y: bottom;
 
             .u36DemiBold_v2 {
-                padding: 40px 0;
-                padding-left: 12%;
-                background-color: #000;
-                border-top-left-radius: 200px;
-
+                padding: 40px 0 30px 12%;
                 span {
                     color: #fff;
                 }
@@ -907,6 +904,8 @@ h4 {
 
             .promo-banner {
                 padding: 0 4vw 0 0;
+                background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20251030-103709.png?v=1761791873');
+                background-position-y: center;
 
                 .u36DemiBold_v2 {
                     font-size: 20px;
@@ -1260,12 +1259,12 @@ h4 {
     padding-top: 60px;
 
     &::before {
-        content: "Smart Ebike";
+        content: "";
         position: absolute;
         top: 15px;
         right: 15px;
         background-color: #FF3B0015;
-        padding: 0 10px;
+        padding: 0;
         border-radius: 5px;
         color: #FF4500;
         font-size: 14px;
@@ -1277,21 +1276,32 @@ h4 {
     }
 }
 
-.ebike-products .product-grid .product-card[data-product-handle="urtopia-carbon-fold"] {
+.ebike-products .product-grid .product-card[data-product-handle="urtopia-carbon-classic-step-thru-ebike"] {
     &::before {
         content: "NEW";
+        padding: 0 10px;
     }
 }
 
-.ebike-products .product-grid .product-card[data-product-handle="urtopia-joy-carbon-fat-tire-ebike"] {
+
+.ebike-products .product-grid .product-card[data-product-handle="urtopia-carbon-classic-ebike"] {
     &::before {
         content: "NEW";
+        padding: 0 10px;
     }
 }
 
-.ebike-products .product-grid .product-card[data-product-handle="urtopia-fusion-pro-carbon-long-range-ebike"] {
+.ebike-products .product-grid .product-card[data-product-handle="urtopia-carbon-1-pro-ebike"] {
     &::before {
-        content: "NEW";
+        content: "Smart Ebike";
+        padding: 0 10px;
+    }
+}
+
+.ebike-products .product-grid .product-card[data-product-handle="urtopia-carbon-1-step-thru-ebike"] {
+    &::before {
+        content: "Smart Ebike";
+        padding: 0 10px;
     }
 }
 
@@ -1309,3 +1319,11 @@ h4 {
     }
 }
 
+
+.buyany .centeral-content .two .total>div .yellow {
+        background-image: linear-gradient(90deg, #B18A39, #E0BD76);
+}
+
+.buyany .centeral-content .two .total {
+    transform: translateX(1px);
+}

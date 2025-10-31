@@ -1,81 +1,85 @@
 <div class="product-grid">
-    {% assign product = all_products['urtopia-joy-carbon-fat-tire-ebike'] %}
-    {% assign product_variants = product.variants | where: 'available' %}
-    {% assign product_uhmaya = 'Ultralight<br>carbon frame, 3" fat tires<br>All terrain, 70<br>Miles' | split: ', ' %}
-    {% render 'product-card-2',
-      product_variants: product_variants,
-      product_name: 'Joy Carbon E-Bike',
-      product_description: 'All-terrain, cargo, family-friendly ride',
-      product_url: product.url,
-      product_uhmaya: product_uhmaya
-    %} 
-    {% assign product = all_products['urtopia-carbon-1-pro-ebike'] %}
-    {% assign product_variants = product.variants | where: 'available' %}
-    {% assign product_uhmaya = '37 lbs<br>lightweight, Full<br>carbon fiber, 80<br>Miles' | split: ', ' %}
-    {% render 'product-card-2',
-      product_variants: product_variants,
-      product_name: 'Carbon 1 Pro',
-      product_description: 'City commuting and workout',
-      product_variant_options_find_sort: 'M,L,S',
-      product_url: product.url,
-      product_uhmaya: product_uhmaya
-    %}
-    {% assign product = all_products['urtopia-carbon-1-step-thru-ebike'] %}
-    {% assign product_variants = product.variants | where: 'available' %}
-    {% assign product_uhmaya = '36 lbs<br>lightweight, Full<br>carbon fiber, 80<br>Miles' | split: ', ' %}
-    {% render 'product-card-2',
-      product_variants: product_variants,
-      product_name: 'Carbon 1 Step-Thru',
-      product_description: 'Leisure cruising and sightseeing',
-      product_url: product.url,
-      product_uhmaya: product_uhmaya
-    %}
-    {% assign product = all_products['urtopia-carbon-fold'] %}
-    {% assign product_variants = product.variants | where: 'available' %}
-    {% assign product_uhmaya = '29 lbs<br>lightweight, Full<br>carbon fiber, Instant<br>folding' | split: ', ' %}
-    {% render 'product-card-2',
-      product_variants: product_variants,
-      product_name: 'Carbon Fold 1',
-      product_description: 'Lightest and smallest foldable ebike',
-      product_url: product.url,
-      product_uhmaya: product_uhmaya
-    %}
-    <!-- <div class="background-image er-rounded-2xl er-text-white er-aspect-[11/16]">
-      <img loading="lazy" width="640" height="0" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25470_2x_a8d7e086-597a-461e-8db2-0c1f2451b638.jpg?v=1743039677&width=640" alt="{{ page_description }}">
-      <div class="er-flex er-flex-col er-items-center er-justify-end er-text-center er-h-full er-pb-16 er-box-border">
-        <h2 class="er-m-0 er-text-white text-size36"><span class="text-size20 er-font-medium">Smart E-Bikes on Sale </span><br>from {{ all_products['urtopia-carbon-fold'].price | money_without_trailing_zeros }}</h2>
-        <div class="er-grid er-grid-cols-2 er-mt-10 er-gap-x-12 mb:er-mt-4">
-              <div class="er-flex er-flex-col er-text-center er-items-center er-rounded-3xl er-py-5 er-px-10" style="background-image: linear-gradient(180deg, #FF3885, #FF8F1D);">
-                  <span class="text-size20 mb:er-text-2xl">Save</span>
-                  <span class="text-size36 er-my-1 mb:er-text-4xl">{{ 20000 | money_without_trailing_zeros }}</span>
-                  <span class="text-size20 mb:er-text-2xl">on {{ 300000 | money_without_trailing_zeros }}</span>
-              </div>
-              <div class="er-flex er-flex-col er-text-center er-items-center er-rounded-3xl er-py-5 er-px-10" style="background-image: linear-gradient(180deg, #FF3885, #FF8F1D);">
-                  <span class="text-size20 mb:er-text-2xl">Save</span>
-                  <span class="text-size36 er-my-1 mb:er-text-4xl">{{ 50000 | money_without_trailing_zeros }}</span>
-                  <span class="text-size20 mb:er-text-2xl">on {{ 500000 | money_without_trailing_zeros }}</span>
-              </div>
-          </div>
-      </div>
-    </div> -->
-    {% assign product = all_products['urtopia-fusion-pro-carbon-long-range-ebike'] %}
-    {% assign product_variants = product.variants | where: 'available' %}
-    {% assign product_uhmaya = '50 lbs<br>lightweight, Carbon fiber<br>frame, 120<br>Miles' | split: ', ' %}
-    {% render 'product-card-2',
-      product_variants: product_variants,
-      product_name: 'Carbon Fusion Pro',
-      product_description: 'Explore Further with Dual Battery Range',
-      product_url: product.url,
-      product_uhmaya: product_uhmaya
-    %}
-    {% assign product = all_products['urtopia-carbon-fusion-gt'] %}
-    {% assign product_variants = product.variants | where: 'available' %}
-    {% assign product_uhmaya = '1500W<br>power, Carbon fiber<br>frame, 120<br>Miles' | split: ', ' %}
-    {% render 'product-card-2',
-      product_variants: product_variants,
-      product_name: 'Carbon Fusion GT',
-      product_description: 'All-day, all-terrain adventures',
-      product_url: product.url,
-      product_uhmaya: product_uhmaya
-    %}
+      {% assign product = all_products['urtopia-carbon-classic-ebike'] %}
+      {% assign product_variants = product.variants | where: 'available' %}
+      {% assign product_uhmaya = '38 lbs---Carbon fiber,65 Miles---Max Range,750W---Peak Power,Throttle---Tap to go' | split: ',' %}
+      {% render 'product-card-3',
+        product_variants: product_variants,
+        product_name: 'Carbon 1 Pro',
+        product_variant_options_find_sort: 'M,L,S',
+        product_description: 'Effortless rides, timeless carbon style',
+        product_url: product.url,
+        product_uhmaya: product_uhmaya
+      %}
+      {% assign product = all_products['urtopia-carbon-classic-step-thru-ebike'] %}
+      {% assign product_variants = product.variants | where: 'available' %}
+      {% assign product_uhmaya = '38 lbs---Carbon fiber,65 Miles---Max Range,750W---Peak Power,Throttle---Tap to go' | split: ',' %}
+      {% render 'product-card-3',
+        product_variants: product_variants,
+        product_name: 'Carbon Fold 1',
+        product_description: 'Relaxed cruiser for everyday city use',
+        product_url: product.url,
+        product_uhmaya: product_uhmaya
+      %}
+      <div class="gray-background-color u30DemiBold_v2 lozad mobileHide" style="align-items: flex-end;padding-bottom: 25px;border-bottom-left-radius: 15px;" data-background-image="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC09921_2x_5829f0af-0d41-4631-88e2-65d1b792ddef.jpg?v=1761733720width=500">Lightest Carbon Ebike</div>
+      {% assign product = all_products['urtopia-carbon-1-pro-ebike'] %}
+      {% assign product_variants = product.variants | where: 'available' %}
+      {% assign product_uhmaya = '37 lbs---Carbon fiber,80 Miles---Max Range,750W---Peak Power,GPS---Tracking' | split: ',' %}
+      {% render 'product-card-3',
+        product_variants: product_variants,
+        product_name: 'Carbon 1 Pro',
+        product_description: 'City commuting and workout',
+        product_variant_options_find_sort: 'M,L,S',
+        product_url: product.url,
+        product_uhmaya: product_uhmaya
+      %}
+      {% assign product = all_products['urtopia-carbon-fold'] %}
+      {% assign product_variants = product.variants | where: 'available' %}
+      {% assign product_uhmaya = '29 lbs---Carbon fiber,40 Miles---Max Range,2 Step---Folding,Torque---Sensor' | split: ',' %}
+      {% render 'product-card-3',
+        product_variants: product_variants,
+        product_name: 'Carbon Fold 1',
+        product_description: 'Lightest and smallest foldable ebike',
+        product_url: product.url,
+        product_uhmaya: product_uhmaya
+      %}
+      {% assign product = all_products['urtopia-joy-carbon-fat-tire-ebike'] %}
+      {% assign product_variants = product.variants | where: 'available' %}
+      {% assign product_uhmaya = '50 lbs---Carbon fiber,70 Miles---Max Range,750W---Peak Power,Throttle---Tap to go' | split: ',' %}
+      {% render 'product-card-3',
+        product_variants: product_variants,
+        product_name: 'Joy Carbon E-Bike',
+        product_description: 'All-terrain, cargo, family-friendly ride',
+        product_url: product.url,
+        product_uhmaya: product_uhmaya
+      %}
+      {% assign product = all_products['urtopia-carbon-1-step-thru-ebike'] %}
+      {% assign product_variants = product.variants | where: 'available' %}
+      {% assign product_uhmaya = '36 lbs---Carbon fiber,80 Miles---Max Range,750W---Peak Power,GPS---Tracking' | split: ',' %}
+      {% render 'product-card-3',
+        product_variants: product_variants,
+        product_name: 'Carbon 1 Step-Thru',
+        product_description: 'Leisure cruising and sightseeing',
+        product_url: product.url,
+        product_uhmaya: product_uhmaya
+      %}
+      {% assign product = all_products['urtopia-fusion-pro-carbon-long-range-ebike'] %}
+      {% assign product_variants = product.variants | where: 'available' %}
+      {% assign product_uhmaya = '50 lbs---Carbon fiber,120 Miles---Max Range,1000W---Peak Power,Throttle---Tap to go' | split: ',' %}
+      {% render 'product-card-3',
+        product_variants: product_variants,
+        product_name: 'Carbon Fusion Pro',
+        product_description: 'Explore Further with Dual Battery Range',
+        product_url: product.url,
+        product_uhmaya: product_uhmaya
+      %}
+      {% assign product = all_products['urtopia-carbon-fusion-gt'] %}
+      {% assign product_variants = product.variants | where: 'available' %}
+      {% assign product_uhmaya = '50 lbs---Carbon fiber,120 Miles---Max Range,1500W---Peak Power,Throttle---Tap to go' | split: ',' %}
+      {% render 'product-card-3',
+        product_variants: product_variants,
+        product_name: 'Carbon Fusion GT',
+        product_description: 'All-day, all-terrain adventures',
+        product_url: product.url,
+        product_uhmaya: product_uhmaya
+      %}
     </div>

@@ -19,24 +19,25 @@
 {% render 'product-panel', swiper_insert_index: 1 %}
 <section
     class="er-bg-black er-text-white er-aspect-[1920/750] mb:er-aspect-auto background-image mb:er-bg-background-warm mb:er-text-black" style="transform: translateY(1px);">
-    <video playsinline loop autoplay muted class="mb:!er-object-contain mb:!er-object-top lozad">
-        <source data-src="https://cdn.shopify.com/videos/c/o/v/c78a9fec511245e68e6feff6b4ac56a8.mp4" type="video/mp4"
-            media="(min-width: 768px)">
-        <source data-src="https://cdn.shopify.com/videos/c/o/v/2fd5f660d06c40dda8d51f20378654dc.mp4" type="video/mp4"
-            media="(max-width: 767px)">
-    </video>
+    <picture>
+            <source media="(min-width: 768px)"
+                srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26372_2x_f0f4c19c-8be2-4408-b70e-a877f3e12ca0.jpg?v=1761878993">
+            <source media="(max-width: 768px)"
+                srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC09976_2x_98979c2b-27ed-4911-bc5e-71b8a1afd7d8.jpg?v=1761879243">
+            <img src="" class="mb:!er-object-top mb:!er-object-contain" alt="{{ product.title }}" loading="lazy">
+      </picture>
     <div
         class="centeral-content er-h-full er-flex er-flex-col er-justify-center er-items-start er-text-left mb:er-pb-24 mb:er-px-6">
-        <div class="md:er-hidden er-aspect-square er-w-full"></div>
-        <h2 class="text-size36 mb:er-text-4xl">Light as Air,<br>Bold by Design</h2>
-        <p class="text-size18 er-max-w-3xl er-mt-10 er-mb-28 mb:er-text-2xl mb:er-mb-16">
+        <div class="md:er-hidden er-aspect-[16/15] er-w-full"></div>
+        <h2 class="text-size36 mb:er-text-4xl">Light as Air, Bold by Design</h2>
+        <p class="text-size18 er-max-w-3xl er-mt-10 er-mb-28 mb:er-text-2xl mb:er-mb-4">
             <span>
                 Built with aerospace-grade Toray™ carbon fiber, the Carbon Classic is 30% lighter than aluminum yet incredibly strong. Its sleek carbon frame, torque sensor, and throttle deliver effortless control and instant acceleration — redefining smooth, powerful riding.
             </span>
         </p>
         <a
             href="https://www.youtube.com/watch?v=HKY6ewUznbc" target="_blank"
-            class="er-button er-button-white er-mt-12 mb:er-m-0 mb:[--er-btn-bg-color:theme(colors.dark)] mb:[--er-btn-text-color:theme(colors.white)] mb:er-text-white">Watch
+            class="er-button er-button-white er-mt-12 mb:er-m-0 mb:[--er-btn-bg-color:theme(colors.dark)] mb:[--er-btn-text-color:theme(colors.white)] mb:er-text-white" style="display: none;">Watch
             video
             <svg class="er-scale-150 er-translate-x-1/3 er-fill-dark mb:er-fill-white"
                 xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20">
@@ -137,7 +138,7 @@
         </video>
         <div
             class="centeral-content er-h-full er-flex er-flex-col er-justify-center er-items-start er-text-left mb:er-pb-20 mb:er-px-6">
-            <div class="md:er-hidden er-aspect-square er-w-full"></div>
+            <div class="md:er-hidden er-aspect-[16/15] er-w-full"></div>
             <h2 class="text-size48 mb:er-text-4xl mb:er-leading-snug">Comfort or Cargo?<br>Customize Your Ride!</h2>
             <p class="text-size18 er-max-w-3xl er-mt-10 mb:er-text-2xl">
                 <span>
@@ -207,7 +208,7 @@
                 2. Why does the Carbon Classic use a hub motor instead ofa mid-drive motor?
               </h3>
               <p class="u17Light_v2 text-size18">
-                <span>Hub motors are lighter, smoother, and more responsive, making them ideal for city and gravel roads. Mid-drive motors, while better for steep climbs, tend to be heavier, noisier, and more complex. The Carbon Classic, designed for urban and gravel environments, features a hub motor for agile riding experience. For those looking to conquer steep climbs, our Fusion model is available.</span>
+                <span>Hub motors are lighter, smoother, and more responsive, making them ideal for city and gravel roads. Mid-drive motors, while better for steep climbs, tend to be heavier, noisier, and more complex. The Carbon Classic, urban and gravel environments, features a hub motor for an agile riding experience. For those looking to conquer steep climbs, our Fusion model is available: <a class="my-link" href="/products/urtopia-fusion-pro-carbon-long-range-ebike">Carbon Fusion Pro E-Bike</a> and <a class="my-link" href="/products/urtopia-carbon-fusion-gt">Carbon Fusion GT E-Bike</a></span>
               </p>
             </div>
             <div class="item">

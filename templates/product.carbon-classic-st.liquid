@@ -16,24 +16,29 @@
 {% render 'product-panel', swiper_insert_index: 1 %}
 <section
     class="er-bg-black er-text-white er-aspect-[1920/750] mb:er-aspect-auto background-image mb:er-bg-background mb:er-text-black" style="transform: translateY(1px);">
-    <video playsinline loop autoplay muted class="mb:!er-object-contain mb:!er-object-top lozad">
+    <picture>
+            <source media="(min-width: 768px)"
+                srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26366_2x_d2cbbce8-6133-4128-abbe-6faddf134a9d.jpg?v=1761882322">
+            <source media="(max-width: 768px)"
+                srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC08624_2x_82223ada-ca75-4545-847b-b4faf40eef26.jpg?v=1761882487">
+            <img src="" class="mb:!er-object-top mb:!er-object-contain" alt="{{ product.title }}" loading="lazy">
+      </picture>
+    {% comment %} <video playsinline loop autoplay muted class="mb:!er-object-contain mb:!er-object-top lozad">
         <source data-src="https://cdn.shopify.com/videos/c/o/v/c78a9fec511245e68e6feff6b4ac56a8.mp4" type="video/mp4"
             media="(min-width: 768px)">
         <source data-src="https://cdn.shopify.com/videos/c/o/v/2fd5f660d06c40dda8d51f20378654dc.mp4" type="video/mp4"
             media="(max-width: 767px)">
-    </video>
+    </video> {% endcomment %}
     <div
-        class="centeral-content er-h-full er-flex er-flex-col er-justify-center er-items-start er-text-left mb:er-pb-24 mb:er-px-6">
-        <div class="md:er-hidden er-aspect-square er-w-full"></div>
+        class="centeral-content er-h-full er-flex er-flex-col er-justify-center er-items-start er-text-left mb:er-pb-16 mb:er-px-6">
+        <div class="md:er-hidden er-aspect-[16/15] er-w-full"></div>
         <h2 class="text-size36 mb:er-text-4xl">Light as Air, Bold by Design</h2>
-        <p class="text-size18 er-max-w-3xl er-mt-10 er-mb-28 mb:er-text-2xl mb:er-mb-16">
-            <span>
-                Built with aerospace-grade Toray™ carbon fiber, the Carbon Classic ST is 30% lighter than aluminum yet incredibly strong. Its sleek carbon frame, torque sensor, and throttle deliver effortless control and instant acceleration — redefining smooth, powerful riding.
-            </span>
+        <p class="text-size18 er-max-w-3xl er-mt-10 er-mb-28 mb:er-text-2xl mb:er-mb-4">
+            <span>Built with aerospace-grade Torayto carbon fiber, the Carbon Classic ST Electric City Bicycle is 30% lighter than aluminum yet incredibly strong. Its sleek carbon frame,torque sensor, and throttle deliver effortless control and instant acceleration-redefining smooth, powerful riding.</span>
         </p>
         <a
             href="https://www.youtube.com/watch?v=HKY6ewUznbc" target="_blank"
-            class="er-button er-button-white er-mt-12 mb:er-m-0 mb:[--er-btn-bg-color:theme(colors.dark)] mb:[--er-btn-text-color:theme(colors.white)] mb:er-text-white">Watch
+            class="er-button er-button-white er-mt-12 mb:er-m-0 mb:[--er-btn-bg-color:theme(colors.dark)] mb:[--er-btn-text-color:theme(colors.white)] mb:er-text-white" style="display: none;">Watch
             video
             <svg class="er-scale-150 er-translate-x-1/3 er-fill-dark mb:er-fill-white"
                 xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20">
@@ -128,10 +133,10 @@
         </video>
         <div
             class="centeral-content er-h-full er-flex er-flex-col er-justify-center er-items-start er-text-left mb:er-pb-20 mb:er-px-6">
-            <div class="md:er-hidden er-aspect-square er-w-full"></div>
+            <div class="md:er-hidden er-aspect-[16/15] er-w-full"></div>
             <h2 class="text-size48 mb:er-text-4xl mb:er-leading-snug">Gear Up, Go Far</h2>
             <p class="text-size18 er-max-w-3xl er-mt-10 mb:er-text-2xl">
-                <span>Equipped with a rear rack and travel-ready front fork with luggage mounts, the Carbon Classic ST is built for long rides. Four extra frame mounts provide versatile storage—just pack up and go!</span>
+              <span>Equipped with a rear rack and travel-ready front fork with luggage mounts, the Carbon Classic ST Electric City Bicycle is built for long rides. Four extra frame mounts provide versatile storage-just pack up and go!</span>
             </p>
         </div>
     </section>
@@ -184,19 +189,19 @@
             <div class="item">
               <h3 class="u24Medium_v2 text-size24">
                 <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="{{ page_title }}">
-                1. How durable is the carbon frame of the Carbon Classic ST?
+                1. How durable is the carbon frame of the Carbon Classic ST Electric City Bicycle?
               </h3>
               <p class="u17Light_v2 text-size18">
-                <span>The Carbon Classic ST uses high-quality Toray T700/T800 carbon fibers and EPS molding technology. This creates a lightweight, strong, and impact-resistant frame with a seamless interior, eliminating stress points and enhancing durability. The result is a precisely constructed frame, as reliable as the best race bikes.</span>
+                <span>The Carbon Classic ST is a premium urban e bike built with high-quality Toray T700/T800 carbon fibers and advanced EPS molding technology. This process creates a lightweight yet exceptionally strong and impact-resistant frame with a smooth, seamless interior that eliminates stress points. The result is a precisely engineered structure that offers the same reliability and performance you would expect from top-tier racing bikes, making it perfect for everyday city rides and long-term durability.</span>
               </p>
             </div>
             <div class="item">
               <h3 class="u24Medium_v2 text-size24">
                 <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="{{ page_title }}">
-                2. Why does the Carbon Classic ST use a hub motor instead ofa mid-drive motor?
+                2. What is the difference between a hub motor and a mid-drive motor?
               </h3>
               <p class="u17Light_v2 text-size18">
-                <span>Hub motors are lighter, smoother, and more responsive, making them ideal for city and gravel roads. Mid-drive motors, while better for steep climbs, tend to be heavier, noisier, and more complex. The Carbon Classic ST, designed for urban and gravel environments, features a hub motor for agile riding experience. For those looking to conquer steep climbs, our Fusion model is available.</span>
+                <span>Hub motors are generally lighter, smoother, and more responsive, making them ideal for city ebike rides and gravel roads. Mid-drive motors, on the other hand, deliver better performance on steep climbs but tend to be heavier, noisier, and more complex. The Carbon Classic ST and <a class="my-link" href="/products/urtopia-carbon-classic-ebike">Carbon Classic eBike</a> are designed for urban and gravel environments and feature a hub motor to provide an agile and effortless riding experience. For riders who often face steep hills, our Fusion models offer a powerful alternative.</span>
               </p>
             </div>
             <div class="item">
@@ -205,25 +210,25 @@
                 3. Is the handlebar adjustable?
               </h3>
               <p class="u17Light_v2 text-size18">
-                <span>Yes, this bike comes with a 60° adujstable handlbar that allows the rider to achieve desired riding position.</span>
+                <span>Yes, this bike comes with a 60° adjustable handlebar that allows the rider to achieve the  desired riding position</span>
               </p>
             </div>
             <div class="item">
               <h3 class="u24Medium_v2 text-size24">
                 <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="{{ page_title }}">
-                4. Is the Carbon Classic ST suitable for different weather conditions?
+               4. Can I ride a step through cruiser e-bike in different weather conditions?
               </h3>
               <p class="u17Light_v2 text-size18">
-                <span>Yes, the Carbon Classic ST is designed to perform well in various weather conditions. It is IP65 rated for dust and water resistance, ensuring protection against rain and splashes. Additionally, it can accommodate tires up to 45c in width, providing excellent stability and traction on wet or uneven surfaces. Whether you’re riding in rain, dust, or on rough terrain, the Carbon 1 Pro is built to handle it all.</span>
+                <span>Yes, the Carbon Classic ST is designed to perform reliably in all weather conditions. With an IP65 rating for dust and water resistance, it protects you from rain and splashes. Its frame accommodates tires up to 45C wide, providing excellent stability and traction on wet, uneven, or rough surfaces. Whether riding through rain, dust, or challenging terrain, the Carbon Classic ST delivers a confident and dependable ride.</span>
               </p>
             </div>
             <div class="item">
               <h3 class="u24Medium_v2 text-size24">
                 <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="{{ page_title }}">
-                5. What is the display on Carbon Classic ST
+                5. What is the display on the Carbon Classic ST Electric City Bicycle?
               </h3>
               <p class="u17Light_v2 text-size18">
-                <span>Carbon Classic ST comes with a bright LCD display that shows speed, battery and assist mode. It also comes with a USB-C port to charge your phone during a ride</span>
+                <span>Carbon Classic ST comfort ebikes come with a bright LCD display that shows speed, battery, and assist mode. It also comes with a USB-C port to charge your phone during a ride</span>
               </p>
             </div>
           </div>
