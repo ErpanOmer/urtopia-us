@@ -905,14 +905,16 @@ h4 {
             .promo-banner {
                 padding: 0 4vw 0 0;
                 background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20251030-103709.png?v=1761791873');
-                background-position-y: center;
+                background-size: cover;
+                background-position-x: right;
+                
 
                 .u36DemiBold_v2 {
                     font-size: 20px;
                     border-top-left-radius: 0;
                     border-bottom-right-radius: 100px;
                     text-align: left;
-                    padding: 24px 15px;
+                    padding: 25px 15px;
                 }
             }
 
