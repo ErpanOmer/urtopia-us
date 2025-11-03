@@ -11,6 +11,18 @@
   .TakeItEasywithFold1 .centeral-content .items>div{
     aspect-ratio:unset;
   }
+
+
+.swiper-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2; 
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+  }
+
 </style>
 
 {% render 'product-panel', swiper_insert_index: 1 %}
@@ -283,12 +295,26 @@
           })
 
           window.addEventListener('load', function () {
-            const img = $(`<img class="er-absolute er-top-0 er-z-[2] er-transition er-opacity-100 mb:er-max-w-20 md:er-right-0 mb:er-left-0" width="70" height="104" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250211-151856.png?v=1739258383&width=100" alt="{{ product.title }}"/>`)
-            $(".product-panel-swiper .swiper-wrapper").before(img)
+            const img = $(`<img class="er-absolute er-top-0 er-z-[2] er-transition er-opacity-100 mb:er-max-w-20 md:er-right-0 mb:er-left-0" width="70" height="104" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250211-151856.png?v=1739258383&width=100" alt="{{ product.title }}"/>`);
+            $(".product-panel-swiper .swiper-wrapper").before(img);
 
             window.product_panel_swiper.on('slideChange', function () {
-                img.css('opacity', this.realIndex > 0 ? 0 : 1)
+                img.css('opacity', this.realIndex > 0 ? 0 : 1);
             })
+        })
+
+        task(() => {
+          const video_img = $(`<img class="swiper-video er-transition" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/yt_icon_rgb.png?v=1743577722&width=80">`);
+
+          $(".product-panel-swiper .swiper-wrapper").before(video_img);
+
+          video_img.click(function () {
+              showVideoDialog('https://www.youtube.com/embed/3US877kBROI?autoplay=1&cc_load_policy=1')
+          });
+
+          window.product_panel_swiper.on('slideChange', function () {
+                video_img.css('opacity', this.realIndex === 1 ? 1 : 0);
+          })
         })
 </script>
 <div class="centeral-content er-px-6 judgemeeeeee">{% include "judgeme_widgets", widget_type: "judgeme_review_widget", concierge_install: false %}</div>
