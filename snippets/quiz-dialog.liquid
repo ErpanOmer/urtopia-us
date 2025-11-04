@@ -313,20 +313,120 @@
 
 <script type="module">
         // The data structure is still needed for scoring logic
-    const quizData = [
-        { answers: [{ bikes: ["Carbon 1 Pro", "Carbon 1 ST", "Fold 1", "Joy"], points: 2 }, { bikes: ["Joy", "Carbon 1 ST", "Fold 1"], points: 2 }, { bikes: ["Carbon 1 Pro", "Fusion Pro", "Fusion GT"], points: 2 }, { bikes: ["Fusion Pro", "Fusion GT"], points: 2 }] },
-        { answers: [{ bikes: ["Fold 1", "Carbon 1 ST", "Carbon 1 Pro"], points: 2 }, { bikes: ["Carbon 1 ST", "Joy", "Fold 1"], points: 2 }, { bikes: ["Carbon 1 Pro", "Fusion Pro"], points: 2 }, { bikes: ["Joy", "Fusion Pro", "Fusion GT"], points: 2 }] },
-        { answers: [{ bikes: ["Carbon 1 ST", "Fold 1", "Carbon 1 Pro"], points: 2 }, { bikes: ["Joy", "Carbon 1 ST"], points: 2 }, { bikes: ["Carbon 1 Pro", "Fusion Pro", "Fusion GT"], points: 2 }, { bikes: ["Fusion GT", "Fusion Pro"], points: 2 }] },
-        { answers: [{ bikes: ["Carbon 1 Pro"], points: 3 }, { bikes: ["Carbon 1 ST", "Joy", "Fusion Pro", "Fusion GT"], points: 3 }, { bikes: ["Fold 1"], points: 999, isDirect: true }] },
-        { answers: [{ bikes: ["Fold 1", "Joy", "Carbon 1 Pro", "Carbon 1 ST"], points: 2 }, { bikes: ["Joy", "Carbon 1 Pro", "Carbon 1 ST"], points: 2 }, { bikes: ["Joy", "Carbon 1 Pro", "Carbon 1 ST", "Fusion Pro", "Fusion GT"], points: 2 }] },
-        { answers: [{ bikes: ["Fold 1", "Joy", "Carbon 1 Pro", "Carbon 1 ST", "Fusion Pro", "Fusion GT"], points: 2 }, { bikes: ["Joy", "Carbon 1 Pro", "Carbon 1 ST", "Fusion Pro", "Fusion GT"], points: 2 }, { bikes: ["Joy", "Fusion Pro", "Fusion GT"], points: 2 }] },
-        { answers: [{}, { bikes: ["Joy"], points: 999 }, { bikes: ["Fold 1", "Joy", "Carbon 1 ST"], points: 9 }, { bikes: ["Fold 1", "Joy", "Carbon 1 Pro", "Carbon 1 ST", "Fusion Pro", "Fusion GT"], points: 9 }, { bikes: ["Fold 1", "Joy", "Carbon 1 Pro", "Carbon 1 ST", "Fusion Pro", "Fusion GT"], points: 9 }, { bikes: ["Fold 1", "Joy", "Carbon 1 Pro", "Carbon 1 ST", "Fusion Pro", "Fusion GT"], points: 9 }, { bikes: ["Joy", "Carbon 1 Pro", "Fusion Pro", "Fusion GT"], points: 9 }, { bikes: ["Carbon 1 Pro"], points: 999 }] }
-    ];
+    const quizData = [{
+        answers: [{
+            bikes: ["Carbon 1 Pro", "Carbon Classic", "Carbon 1 ST", "Carbon Classic ST", "Fold 1", "Joy"],
+            points: 2
+        }, {
+            bikes: ["Joy", "Carbon 1 ST", "Carbon Classic ST", "Fold 1"],
+            points: 2
+        }, {
+            bikes: ["Carbon 1 Pro", "Carbon Classic", "Fusion Pro", "Fusion GT"],
+            points: 2
+        }, {
+            bikes: ["Fusion Pro", "Fusion GT"],
+            points: 2
+        }]
+    },
+    {
+        answers: [{
+            bikes: ["Fold 1", "Carbon 1 ST", "Carbon Classic ST", "Carbon 1 Pro", "Carbon Classic"],
+            points: 2
+        }, {
+            bikes: ["Carbon 1 ST", "Carbon Classic ST", "Joy", "Fold 1"],
+            points: 2
+        }, {
+            bikes: ["Carbon 1 Pro", "Carbon Classic", "Fusion Pro"],
+            points: 2
+        }, {
+            bikes: ["Joy", "Fusion Pro", "Fusion GT"],
+            points: 2
+        }]
+    },
+    {
+        answers: [{
+            bikes: ["Carbon 1 ST", "Carbon Classic ST", "Fold 1", "Carbon 1 Pro", "Carbon Classic"],
+            points: 2
+        }, {
+            bikes: ["Joy", "Carbon 1 ST", "Carbon Classic ST"],
+            points: 2
+        }, {
+            bikes: ["Carbon 1 Pro", "Carbon Classic", "Fusion Pro", "Fusion GT"],
+            points: 2
+        }, {
+            bikes: ["Fusion GT", "Fusion Pro"],
+            points: 2
+        }]
+    },
+    {
+        answers: [{
+            bikes: ["Carbon 1 Pro", "Carbon Classic"],
+            points: 3
+        }, {
+            bikes: ["Carbon 1 ST", "Carbon Classic ST", "Joy", "Fusion Pro", "Fusion GT"],
+            points: 3
+        }, {
+            bikes: ["Fold 1"],
+            points: 999,
+            isDirect: true
+        }]
+    },
+    {
+        answers: [{
+            bikes: ["Fold 1", "Joy", "Carbon 1 Pro", "Carbon Classic", "Carbon 1 ST", "Carbon Classic ST"],
+            points: 2
+        }, {
+            bikes: ["Joy", "Carbon 1 Pro", "Carbon Classic", "Carbon 1 ST", "Carbon Classic ST"],
+            points: 2
+        }, {
+            bikes: ["Joy", "Carbon 1 Pro", "Carbon Classic", "Carbon 1 ST", "Carbon Classic ST", "Fusion Pro", "Fusion GT"],
+            points: 2
+        }]
+    },
+    {
+        answers: [{
+            bikes: ["Fold 1", "Joy", "Carbon 1 Pro", "Carbon Classic", "Carbon 1 ST", "Carbon Classic ST", "Fusion Pro", "Fusion GT"],
+            points: 2
+        }, {
+            bikes: ["Joy", "Carbon 1 Pro", "Carbon Classic", "Carbon 1 ST", "Carbon Classic ST", "Fusion Pro", "Fusion GT"],
+            points: 2
+        }, {
+            bikes: ["Joy", "Fusion Pro", "Fusion GT"],
+            points: 2
+        }]
+    },
+    {
+        answers: [{}, {
+            bikes: ["Joy"],
+            points: 999
+        }, {
+            bikes: ["Fold 1", "Joy", "Carbon 1 ST", "Carbon Classic ST"],
+            points: 9
+        }, {
+            bikes: ["Fold 1", "Joy", "Carbon 1 Pro", "Carbon Classic", "Carbon 1 ST", "Carbon Classic ST", "Fusion Pro", "Fusion GT"],
+            points: 9
+        }, {
+            bikes: ["Fold 1", "Joy", "Carbon 1 Pro", "Carbon Classic", "Carbon 1 ST", "Carbon Classic ST", "Fusion Pro", "Fusion GT"],
+            points: 9
+        }, {
+            bikes: ["Fold 1", "Joy", "Carbon 1 Pro", "Carbon Classic", "Carbon 1 ST", "Carbon Classic ST", "Fusion Pro", "Fusion GT"],
+            points: 9
+        }, {
+            bikes: ["Joy", "Carbon 1 Pro", "Carbon Classic", "Fusion Pro", "Fusion GT"],
+            points: 9
+        }, {
+            bikes: ["Carbon Classic", "Carbon 1 Pro"],
+            points: 999
+        }]
+    }
+];
 
 
     const ebikes = {
         "Carbon 1 Pro": { riviews: "1035", product_name: '{{ all_products['urtopia-carbon-1-pro-ebike'].title }}', featured_image: '{{ all_products['urtopia-carbon-1-pro-ebike'].first_available_variant.featured_image | image_url: width: 500 }}', price: '{{ all_products['urtopia-carbon-1-pro-ebike'].price | money }}', compare_at_price: '{{ all_products['urtopia-carbon-1-pro-ebike'].compare_at_price | money }}', product_url: "{{ all_products['urtopia-carbon-1-pro-ebike'].url }}" },
+        "Carbon Classic": { riviews: "1101", product_name: '{{ all_products['urtopia-carbon-classic-ebike'].title }}', featured_image: '{{ all_products['urtopia-carbon-classic-ebike'].first_available_variant.featured_image | image_url: width: 500 }}', price: '{{ all_products['urtopia-carbon-classic-ebike'].price | money }}', compare_at_price: '{{ all_products['urtopia-carbon-classic-ebike'].compare_at_price | money }}', product_url: "{{ all_products['urtopia-carbon-classic-ebike'].url }}" },
         "Carbon 1 ST": { riviews: "406", product_name: '{{ all_products['urtopia-carbon-1-step-thru-ebike'].title }}', featured_image: '{{ all_products['urtopia-carbon-1-step-thru-ebike'].first_available_variant.featured_image | image_url: width: 500 }}', price: '{{ all_products['urtopia-carbon-1-step-thru-ebike'].price | money }}', compare_at_price: '{{ all_products['urtopia-carbon-1-step-thru-ebike'].compare_at_price | money }}', product_url: "{{ all_products['urtopia-carbon-1-step-thru-ebike'].url }}" },
+        "Carbon Classic ST": { riviews: "250", product_name: '{{ all_products['urtopia-carbon-classic-step-thru-ebike'].title }}', featured_image: '{{ all_products['urtopia-carbon-classic-step-thru-ebike'].first_available_variant.featured_image | image_url: width: 500 }}', price: '{{ all_products['urtopia-carbon-classic-step-thru-ebike'].price | money }}', compare_at_price: '{{ all_products['urtopia-carbon-classic-step-thru-ebike'].compare_at_price | money }}', product_url: "{{ all_products['urtopia-carbon-classic-step-thru-ebike'].url }}" },
         "Fold 1": { riviews: "615", product_name: '{{ all_products['urtopia-carbon-fold'].title }}', featured_image: '{{ all_products['urtopia-carbon-fold'].first_available_variant.featured_image | image_url: width: 500 }}', price: '{{ all_products['urtopia-carbon-fold'].price | money }}', compare_at_price: '{{ all_products['urtopia-carbon-fold'].compare_at_price | money }}', product_url: "{{ all_products['urtopia-carbon-fold'].url }}" },
         "Joy": { riviews: "519", product_name: '{{ all_products['urtopia-joy-carbon-fat-tire-ebike'].title }}', featured_image: '{{ all_products['urtopia-joy-carbon-fat-tire-ebike'].first_available_variant.featured_image | image_url: width: 500 }}', price: '{{ all_products['urtopia-joy-carbon-fat-tire-ebike'].price | money }}', compare_at_price: '{{ all_products['urtopia-joy-carbon-fat-tire-ebike'].compare_at_price | money }}', product_url: "{{ all_products['urtopia-joy-carbon-fat-tire-ebike'].url }}" },
         "Fusion Pro": { riviews: "394", product_name: '{{ all_products['urtopia-fusion-pro-carbon-long-range-ebike'].title }}', featured_image: '{{ all_products['urtopia-fusion-pro-carbon-long-range-ebike'].first_available_variant.featured_image | image_url: width: 500 }}', price: '{{ all_products['urtopia-fusion-pro-carbon-long-range-ebike'].price | money }}', compare_at_price: '{{ all_products['urtopia-fusion-pro-carbon-long-range-ebike'].compare_at_price | money }}', product_url: "{{ all_products['urtopia-fusion-pro-carbon-long-range-ebike'].url }}" },

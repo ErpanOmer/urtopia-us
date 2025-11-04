@@ -27,6 +27,29 @@
 </style>
 
 {% render 'product-panel', swiper_insert_index: 1 %}
+<div class="er-bg-background-warm er-py-32 mb:er-py-16">
+    <div class="centeral-content mb:er-px-6">
+        <h2 class="text-size36 mb:er-text-4xl er-text-left er-w-full">Professional Reviews</h2>
+        <div class="er-grid xl:er-grid-cols-4 lg:er-grid-cols-3 md:er-grid-cols-2 er-grid-cols-1 er-mt-16 mb:er-mt-10 er-gap-y-16 er-gap-x-6 mb:er-overflow-x-scroll mb:er-flex mb:er-pb-8">
+            {%- for item in product.metafields.custom.review_list.value -%}
+                <div class="er-flex er-flex-col er-items-start er-cursor-pointer mb:er-min-w-[75vw]"
+                        onclick="showVideoDialog('https://www.youtube.com/embed/{{ item.youtube_id }}?autoplay=1&amp;cc_load_policy=1');return false;">
+                        {{ item.review_cover | image_url: width: 500 | image_tag: class: 'er-rounded-2xl mb:er-rounded-xl', loading: 'lazy' }}
+                        <p class="text-size16 er-mt-6 er-mb-8 mb:er-text-2xl mb:er-mb-6">
+                            <span>
+                                {{ item.review_desc }}
+                            </span>
+                        </p>
+                        <span class="er-flex-1"></span>
+                        <div class="er-flex er-items-center">
+                            {{ item.review_auther_cover | image_url: width: 30, height: 30 | image_tag: class: 'er-mr-4 er-rounded-full', loading: 'lazy' }}
+                            <span class="text-size16 er-font-medium mb:er-text-2xl">{{ item.review_auther_name }}</span>
+                        </div>
+                    </div>
+            {%- endfor -%}
+        </div>
+    </div>
+</div>
 <section
     class="er-bg-black er-text-white er-aspect-[1920/750] mb:er-aspect-auto background-image mb:er-bg-background-warm mb:er-text-black" style="transform: translateY(1px);">
     <picture>

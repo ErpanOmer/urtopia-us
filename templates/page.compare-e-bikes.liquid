@@ -122,6 +122,8 @@ select:focus {
                             <option value="urtopia-carbon-fold">Carbon Fold 1</option>
                             <option value="urtopia-fusion-pro-carbon-long-range-ebike">Carbon Fusion Pro</option>
                             <option value="urtopia-carbon-fusion-gt">Carbon Fusion GT</option>
+                            <option value="urtopia-carbon-classic-ebike">Carbon Classic</option>
+                            <option value="urtopia-carbon-classic-step-thru-ebike">Carbon Classic ST</option>
                         </select>
                     </div>
                     <div
@@ -259,6 +261,8 @@ select:focus {
                             <option value="urtopia-carbon-fold">Carbon Fold 1</option>
                             <option value="urtopia-fusion-pro-carbon-long-range-ebike">Carbon Fusion Pro</option>
                             <option value="urtopia-carbon-fusion-gt">Carbon Fusion GT</option>
+                            <option value="urtopia-carbon-classic-ebike">Carbon Classic</option>
+                            <option value="urtopia-carbon-classic-step-thru-ebike">Carbon Classic ST</option>
                         </select>
                     </div>
                     <div
@@ -395,6 +399,8 @@ select:focus {
                             <option value="urtopia-carbon-fold">Carbon Fold 1</option>
                             <option value="urtopia-fusion-pro-carbon-long-range-ebike">Carbon Fusion Pro</option>
                             <option value="urtopia-carbon-fusion-gt">Carbon Fusion GT</option>
+                            <option value="urtopia-carbon-classic-ebike">Carbon Classic</option>
+                            <option value="urtopia-carbon-classic-step-thru-ebike">Carbon Classic ST</option>
                         </select>
                     </div>
                     <div class="er-box-border er-aspect-square text-size18 er-font-bold er-flex er-flex-col er-items-center er-justify-center er-text-center borderrrrrrrrrt  er-px-[10%] er-space-y-8 mb:er-space-y-4">
@@ -734,7 +740,75 @@ select:focus {
         <div class="text-size20 er-font-extrabold">{{ all_products['urtopia-carbon-fusion-gt'].price | money_without_trailing_zeros }}</div>
     </div>
 </template>
+<template id="urtopia-carbon-classic-ebike">
+    <div class="er-box-border er-aspect-square text-size18 er-font-bold er-flex er-flex-col er-items-center er-justify-center er-text-center borderrrrrrrrrt  er-px-[10%] er-space-y-8 mb:er-space-y-4">
+    {{ all_products['urtopia-carbon-classic-ebike'].first_available_variant.featured_image | image_url: width: 500 | image_tag : loading: 'lazy', alt: all_products['urtopia-carbon-classic-ebike'].title }}
+    <div class="dots">
+    {% assign product = all_products['urtopia-carbon-classic-ebike'] %}
+    {% for option in product.options_with_values %}
+        {% if option.name == 'Color' %}
+        {% for value in option.values %}
+            {%- assign selected_variant = nil -%}
 
+            {%- for variant in product.variants -%}
+            {% if variant.option2 == value and variant.available %}
+                {%- assign selected_variant = variant -%}
+                {% break %}
+            {% endif %}
+            {%- endfor -%}
+
+            {% if selected_variant %}
+            <div 
+                data-stye="{{ value }}"
+                data-variant-id="{{ selected_variant.id }}"
+                data-image="{{ selected_variant.featured_image.src | image_url: width: 500 }}"
+                data-price="{{ selected_variant.price | money_without_trailing_zeros }}"
+                data-url="{{ selected_variant.url }}"
+                {% if forloop.first %}class="active"{% endif %}
+            ></div>
+            {% endif %}
+        {% endfor %}
+        {% endif %}
+    {% endfor %}
+    </div>
+    <div class="text-size20 er-font-extrabold">{{ all_products['urtopia-carbon-classic-ebike'].price | money_without_trailing_zeros }}</div>
+    </div>
+</template>
+<template id="urtopia-carbon-classic-step-thru-ebike">
+    <div class="er-box-border er-aspect-square text-size18 er-font-bold er-flex er-flex-col er-items-center er-justify-center er-text-center borderrrrrrrrrt  er-px-[10%] er-space-y-8 mb:er-space-y-4">
+        {{ all_products['urtopia-carbon-classic-step-thru-ebike'].first_available_variant.featured_image | image_url: width: 500 | image_tag : loading: 'lazy', alt: all_products['urtopia-carbon-classic-step-thru-ebike'].title }}
+        <div class="dots">
+        {% assign product = all_products['urtopia-carbon-classic-step-thru-ebike'] %}
+
+        {% for option in product.options_with_values %}
+            {% if option.name == 'Style' %}
+            {% for value in option.values %}
+                {%- assign selected_variant = nil -%}
+
+                {%- for variant in product.variants -%}
+                {% if variant.option2 == value and variant.available %}
+                    {%- assign selected_variant = variant -%}
+                    {% break %}
+                {% endif %}
+                {%- endfor -%}
+
+                {% if selected_variant %}
+                <div 
+                    data-stye="{{ value }}"
+                    data-variant-id="{{ selected_variant.id }}"
+                    data-image="{{ selected_variant.featured_image.src | image_url: width: 500 }}"
+                    data-price="{{ selected_variant.price | money_without_trailing_zeros }}"
+                    data-url="{{ selected_variant.url }}"
+                    {% if forloop.first %}class="active"{% endif %}
+                ></div>
+                {% endif %}
+            {% endfor %}
+            {% endif %}
+        {% endfor %}
+        </div>
+        <div class="text-size20 er-font-extrabold">{{ all_products['urtopia-carbon-classic-step-thru-ebike'].price | money_without_trailing_zeros }}</div>
+    </div>
+</template>
 <script type="module">
 const compare_infos = {
         "urtopia-carbon-1-pro-ebike": {
@@ -758,6 +832,28 @@ const compare_infos = {
             "tires": "27.5“ x 1.5”",
             "standover_height": "779 mm (31’’)",
             "smart_function": "On-board navigation, fingerprint unlock, GPS Tracking, voice control, bluetooth speaker, OTA update"
+        },
+        "urtopia-carbon-classic-ebike": {
+            "url": "{{ all_products['urtopia-carbon-classic-ebike'].url }}",
+            "price": "{{ all_products['urtopia-carbon-classic-ebike'].price | money_without_trailing_zeros }}",
+            "image": "https://newurtopia.com/cdn/shop/files/f_2x_0e3f3b1c-2f4d-4e7c-8f7e-1e5e3f6a9c3b.jpg?v=1744276805&width=600",
+            "how_it_feels": "Stylish, Sporty, Lightweight, Agile, Durable, Practical",
+            "best_for": "Commuters, Trail-lovers, Sprot & training",
+            "weight": "38 lbs w/o acc.",
+            "frame_material": "Carbon Fiber",
+            "motor": "750 W (Peak)",
+            "range": "Up to 75 miles",
+            "battery": "352.8Wh Samsung Li-ion",
+            "drivetrain": "Shimano 8 speed",
+            "sensor": "Torque Sensor",
+            "brakes": "TEKTRO hydraulic disc brakes",
+            "payload_capacity": "240 lbs",
+            "ul_certified": "UL 2849",
+            "handlebar": "Aluminum, extender 0-90° adjustable",
+            "fork": "Carbon Fiber",
+            "tires": "27.5“ x 1.5”",
+            "standover_height": "779 mm (31’’)",
+            "smart_function": "LCD Color Display AirTag (Optional)"
         },
         "urtopia-joy-carbon-fat-tire-ebike": {
             "url": "{{ all_products['urtopia-joy-carbon-fat-tire-ebike'].url }}",
@@ -802,6 +898,28 @@ const compare_infos = {
             "tires": "27.5“ x 1.5”",
             "standover_height": "477mm (19’’)",
             "smart_function": "On-board navigation, fingerprint unlock, GPS Tracking, voice control, bluetooth speaker, OTA update"
+        },
+        "urtopia-carbon-classic-step-thru-ebike": {
+            "url": "{{ all_products['urtopia-carbon-classic-step-thru-ebike'].url }}",
+            "price": "{{ all_products['urtopia-carbon-classic-step-thru-ebike'].price | money_without_trailing_zeros }}",
+            "image": "https://newurtopia.com/cdn/shop/products/collectionblack.png?v=1703557822&width=500",
+            "how_it_feels": "Comfortable, Accessible, Practical, Stylish",
+            "best_for": "Commuters, Family, Leisure, Lifestyle",
+            "weight": "38 lbs w/o acc.",
+            "frame_material": "Carbon Fiber",
+            "motor": "750 W (Peak)",
+            "range": "Up to 75 miles",
+            "battery": "352.8Wh Samsung Li-ion",
+            "drivetrain": "Shimano 8 speed",
+            "sensor": "Torque Sensor",
+            "brakes": "TEKTRO hydraulic disc brakes",
+            "payload_capacity": "240 lbs",
+            "ul_certified": "UL 2849",
+            "handlebar": "Aluminum, extender 0-90° adjustable",
+            "fork": "Carbon Fiber",
+            "tires": "27.5“ x 1.5”",
+            "standover_height": "477mm (19’’)",
+            "smart_function": "LCD Color Display AirTag (Optional)"
         },
         "urtopia-carbon-fold": {
             "url": "{{ all_products['urtopia-carbon-fold'].url }}",
