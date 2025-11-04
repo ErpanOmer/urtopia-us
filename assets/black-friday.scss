@@ -47,17 +47,15 @@ h4 {
             .bottom {
                 position: relative;
                 overflow: hidden;
-                width: 90%;
-                max-width: 90%;
                 margin: auto;
-                margin-top: 5vh;
+                margin-top: 4vh;
 
                 .swiper-slide {
                     display: flex;
                     flex-direction: column;
                     display: flex;
                     opacity: 0.5;
-                    height: 75px;
+                    height: 60px;
                     cursor: pointer;
                     border-radius: 6px;
                     overflow: hidden;
