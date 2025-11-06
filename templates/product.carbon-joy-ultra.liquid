@@ -1,0 +1,20 @@
+<style>
+  fieldset[option=Color] label[data-style="Glacier Blue"] {
+    --product-option-color: #A5BFCF;
+  }
+
+   fieldset[option=Color] label[data-style="Charcoal Grey"] {
+    --product-option-color: #6A6A6A;
+  }
+
+  fieldset[option=Color] label[data-style="Rose Red"] {
+    --product-option-color: #FA003F;
+  }
+
+  h1, h2, h3, h4 {
+    color: inherit;
+    margin: 0;
+    display: block;
+  }
+</style>
+{% render 'product-panel', swiper_insert_index: 1, product_send_accessories_price: 29600 %}
