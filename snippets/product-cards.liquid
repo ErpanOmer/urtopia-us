@@ -20,7 +20,16 @@
         product_url: product.url,
         product_uhmaya: product_uhmaya
       %}
-      <div class="gray-background-color u30DemiBold_v2 lozad mobileHide" style="align-items: flex-end;padding-bottom: 25px;border-bottom-left-radius: 15px;" data-background-image="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC09921_2x_5829f0af-0d41-4631-88e2-65d1b792ddef.jpg?v=1761733720width=500">Lightest Carbon Ebike</div>
+      {% assign product = all_products['urtopia-carbon-joy-ultra-ebike'] %}
+      {% assign product_variants = product.variants | where: 'available' %}
+      {% assign product_uhmaya = '42 lbs---Carbon fiber,70 Miles---Max Range,750W---Peak Power,Throttle---Tap to go' | split: ',' %}
+      {% render 'product-card-3',
+        product_variants: product_variants,
+        product_name: 'Joy Carbon E-Bike',
+        product_description: 'All-terrain, cargo, family-friendly ride',
+        product_url: product.url,
+        product_uhmaya: product_uhmaya
+      %}
       {% assign product = all_products['urtopia-carbon-1-pro-ebike'] %}
       {% assign product_variants = product.variants | where: 'available' %}
       {% assign product_uhmaya = '37 lbs---Carbon fiber,80 Miles---Max Range,750W---Peak Power,GPS---Tracking' | split: ',' %}

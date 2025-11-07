@@ -214,7 +214,7 @@ h4 {
     &>div {
         width: 30px;
         height: 30px;
-        margin-right: 12px;
+        margin-right: 9px !important;
         border-radius: 50%;
         cursor: pointer;
         display: flex;
@@ -242,6 +242,12 @@ h4 {
       &[data-stye="Rose Red"] {
             &::after {
                 background-color: #FA003F;
+            }
+        }
+
+        &[data-stye="Lychee Pink"] {
+            &::after {
+                background-color: #FFC0CB;
             }
         }
 
@@ -369,6 +375,14 @@ h4 {
 
             &::after {
                 background-color: #FA003F;
+            }
+        }
+
+        &[data-stye="Lychee Pink"] {
+            border-color: #FFC0CB;
+
+            &::after {
+                background-color: #FFC0CB;
             }
         }
 
@@ -1278,36 +1292,18 @@ h4 {
     }
 }
 
-.ebike-products .product-grid .product-card[data-product-handle="urtopia-carbon-classic-step-thru-ebike"] {
-    &::before {
-        content: "NEW";
-        padding: 0 10px;
-    }
+.ebike-products .product-grid .product-card:before {
+    width: 17%;
+    height: 21%;
+    top: 7.5px;
+    background: transparent url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26493_2x_dba9e9aa-33dc-4103-8f9e-51e698549fcd.png?v=1762423797') center center/contain no-repeat;
 }
 
-
-.ebike-products .product-grid .product-card[data-product-handle="urtopia-carbon-classic-ebike"] {
+.ebike-products .product-grid .product-card[data-product-handle="urtopia-joy-carbon-fat-tire-ebike"] {
     &::before {
-        content: "NEW";
-        padding: 0 10px;
+        background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26497_2x_a2275fa2-53b9-4522-b723-9e322844f0a5.png?v=1762424899')
     }
 }
-
-.ebike-products .product-grid .product-card[data-product-handle="urtopia-carbon-1-pro-ebike"] {
-    &::before {
-        content: "Smart Ebike";
-        padding: 0 10px;
-    }
-}
-
-.ebike-products .product-grid .product-card[data-product-handle="urtopia-carbon-1-step-thru-ebike"] {
-    &::before {
-        content: "Smart Ebike";
-        padding: 0 10px;
-    }
-}
-
-
 
 .compare {
     .dots {
@@ -1328,4 +1324,60 @@ h4 {
 
 .buyany .centeral-content .two .total {
     transform: translateX(1px);
+}
+
+
+
+    @media (min-width: 768px) {
+        .ebike-products .product-grid .product-card .sssss {
+            max-width: 95%;
+        }
+    }
+
+    .ebike-products .product-grid .product-card .dots {
+        margin: 0;
+    }
+
+    .ebike-products .product-grid .product-card .my-button {
+        background-color: #B18A39;
+        color: #fff;
+        border-color: #B18A39;
+    }
+
+    .ebike-products .product-grid .product-card {
+        overflow: unset;
+    }
+
+.coupon {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 15px 0 12.5px;
+  background: linear-gradient(135deg, #b6862e, #e6c16b);
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 5px;
+  top: 15px;
+  left: 15px;
+  transform: translateX(-29px);
+}
+
+/* 左右两侧的“缺口” */
+.coupon::before,
+.coupon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  background: transparent;  /* 网页背景色，伪装成挖空 */
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+
+.coupon::after {
+  right: -6px;
+  background-color: #fff;
 }

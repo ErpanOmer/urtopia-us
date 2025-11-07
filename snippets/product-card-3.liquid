@@ -1,72 +1,12 @@
 <style>
-    @media (min-width: 768px) {
-        .ebike-products .product-grid .product-card .sssss {
-            max-width: 95%;
-        }
-    }
-
-    .ebike-products .product-grid .product-card .dots {
-        margin: 0;
-    }
-
-    .ebike-products .product-grid .product-card .my-button {
-        background-color: #B18A39;
-        color: #fff;
-        border-color: #B18A39;
-    }
-
-    .ebike-products .product-grid .product-card {
-        overflow: unset;
-    }
-
-    .ebike-products .product-grid .product-card:before {
-          color: #B18A39;
-          background-color: #E0BD7615;
-    }
-
-.coupon {
-  position: absolute;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0px 15px 0 12.5px;
-  background: linear-gradient(135deg, #b6862e, #e6c16b);
-  color: #fff;
-  font-weight: bold;
-  font-size: 16px;
-  border-radius: 5px;
-  top: 15px;
-  left: 15px;
-  transform: translateX(-29px);
-}
-
-/* 左右两侧的“缺口” */
-.coupon::before,
-.coupon::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  width: 12px;
-  height: 12px;
-  background: transparent;  /* 网页背景色，伪装成挖空 */
-  border-radius: 50%;
-  transform: translateY(-50%);
-}
-
-.coupon::before {
-  left: -6px;
-  {% if request.path == '/collections/urtopia-black-friday-sale' %}
-  background-color: #1C1B19;
-  {% else %}
-    background-color: rgb(247 248 250);
-  {% endif %}
-}
-
-.coupon::after {
-  right: -6px;
-  background-color: #fff;
-}
-
+  .coupon::before {
+    left: -6px;
+    {% if template.suffix == 'black-firday' %}
+    background-color: #1C1B19;
+    {% else %}
+      background-color: rgb(247 248 250);
+    {% endif %}
+  }
 </style>
 <div data-product-handle="{{  product_variants.first.product.handle }}" class="er-bg-white product-card" {% unless product_variants.size != 0 %}style="display:none;"{% endunless %}>
   <div class="coupon">
@@ -107,7 +47,7 @@
       <span class="Klarna-logo er-ml-2" style="background-color: rgb(74, 74, 244);">{% render 'icon-affirm' %}</span>
     </div>
   </div>
-  <div class="er-flex er-items-center er-justify-between mb:er-gap-x-10 er-pt-4">
+  <div class="er-flex er-items-center er-justify-between mb:er-gap-x-6 er-pt-4">
     <div class="dots">
     {% if product_variant_options_find_sort %}
       {% assign product_variant_options_find_sort = product_variant_options_find_sort | split: ',' %}
@@ -164,6 +104,6 @@
       {% endfor %}
     {% endif %}
   </div>
-    <a href="{{ product_url }}?variant=43780147511544" target="_blank" class="my-button my-button-white">Shop now</a>
+    <a href="{{ product_url }}?variant=43780147511544" target="_blank" class="my-button my-button-white mb:er-max-w-[50%]">Shop now</a>
   </div>
 </div>

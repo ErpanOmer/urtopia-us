@@ -2,10 +2,69 @@
 {{ 'outlet_v4.scss.css' | asset_url | stylesheet_tag: preload: true }}
 <h1 class="er-sr-only">{{ page_title }}</h1>
 
-<div class="bannerrrrrr background-image">
-  {% render 'image', class: "mb:!er-object-top", first_screen: true, src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24938_2x_b591b7b4-2446-4d64-bdde-3ad5fd64b772.jpg?v=1761708006', mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24973_2x_22f19949-2ae3-44d0-ba84-a57fa07d945c.jpg?v=1736233726" %}
+<style>
+  .swiper-scrollbar {
+    background-color: #E0BD7650 !important;
+  }
+
+  .professional .centeral-content .swiper-scrollbar .swiper-scrollbar-drag,
+  .swiper-scrollbar-drag {
+        background-color: #E0BD76 !important;
+  }
+
+  .swiper-button-prev,
+  .my-link,
+  .swiper-button-next {
+    color: #E0BD76 !important;
+  }
+
+  .tab-nav a.active,
+  .star::after, 
+  .star::before {
+        background-color: #E0BD76 !important;
+  }
+
+  .leftright {
+    display: inline-block;
+    position: relative;
+  }
+
+  .leftright::after {
+    content: "";
+    background: url(https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26542.svg?v=1762424999) center center no-repeat;
+    width: 25px;
+    height: 35px;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translateX(135%);
+  }
+
+  @media (min-width: 768px) {
+        .leftright::before {
+            content: "";
+            background: url(https://cdn.shopify.com/s/files/1/0583/5810/4213/files/77012.svg?v=1762424998) center center no-repeat;
+            width: 25px;
+            height: 35px;
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            transform: translateX(-115%);
+          }
+  }
+</style>
+
+<div class="bannerrrrrr background-image er-bg-dark">
+  {% if collection.handle == "urtopia-black-friday-sale" %}
+    {% render 'image', class: "mb:!er-object-top", first_screen: true, src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/24938_2x_36c575d9-4810-470a-b86a-bc26b5a501e0.jpg?v=1762421410', mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26530_2x_740bef22-f1e4-4792-afdf-bcd268a5de9c.jpg?v=1762422504" %}
+  {% else %}
+    {% render 'image', class: "mb:!er-object-top", first_screen: true, src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/black_friday_homepage_banner_2x_ee8158d9-e515-4851-93e9-ec2af3b92616.jpg?v=1762482945', mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26329_2x_ad867007-9bf1-4698-a724-ec7410c75c3f.jpg?v=1762483165" %}
+  {% endif %}
   <div class="centeral-content">
-    <div class="swiperrrr">
+    {% if collection.handle == "urtopia-black-friday-sale" %}
+          <div class="swiperrrr">
       <div class="top">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
@@ -147,19 +206,89 @@
         </div>
       </div>
     </div>
-    <div>
-      <img class="mb:er-max-w-80" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26286_2x_17578820-4694-4d62-a904-b1ddf4642fd1.png?v=1761720735" width="240" height="200" alt="">
-      <h2 class="text-size48 mb:er-text-5xl er-text-[#FF7BAE] er-mt-20 er-mb-16 mb:er-mx-auto mb:er-my-12 mb:er-text-center" style="color: #E0BD76;">
+    {% endif %}
+    <div class="er-pt-16 {% unless collection.handle == "urtopia-black-friday-sale" %}mb:er-aspect-[375/500] mb:!er-justify-start{% endunless %}">
+      <img class="mb:er-max-w-80 {% unless collection.handle == "urtopia-black-friday-sale" %}mb:!er-max-w-64{% endunless %}" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26523_2x_9ed9e40b-5617-4225-bb47-67da821e8027.png?v=1762421403" width="350" height="250" alt="">
+      <h2 class="text-size48 mb:er-text-5xl er-text-[#FF7BAE] er-mt-16 er-mb-10 mb:er-mx-auto mb:er-my-12 mb:er-text-center {% unless collection.handle == "urtopia-black-friday-sale" %}mb:!er-my-6{% endunless %}" style="color: #E0BD76;">
         Up to $1200 OFF
       </h2>
-      <div>
-        <h3 class="u24DemiBold_v2">Why Choose Urtopia</h3>
-        <ul class="u17Light_v2">
-          <li>Lightest eBikes, Proven Performance</li>
-          <li>Premium Carbon Fiber, Unbeatable Value</li>
-          <li>Smart Anti-Theft with Real-Time Tracking</li>
-        </ul>
-      </div>
+      {% render 'sale' %}
+      <style>
+                    .sale {
+                        width: 400px;
+                        background-color: transparent;
+                        overflow: hidden;
+                    }
+          
+                    .sale > .u14DemiBold_v2 {
+                        display: none;
+                    }
+          
+                    .sale > div:not(.u14DemiBold_v2) {
+                        display: flex;
+                        justify-content: space-between;
+                        padding: 0;
+                    }
+          
+                    .sale > div:not(.u14DemiBold_v2) > div {
+                        border-left: none !important;
+                        place-self: center;
+                        width: 70px;
+                        align-items: unset;
+                        position: relative;
+                    }
+          
+                    .sale .u36DemiBold_v2 {
+                        display: block;
+                        background-color: #fff;
+                        padding: 15px;
+                        border-radius: 7px;
+                        font-size: 28px;
+                        margin-bottom: 5px;
+                        position: relative;
+                        color: #BA9A47;
+                    }
+          
+          
+                    .sale .u36DemiBold_v2::after {
+                        content: ":";
+                        position: absolute;
+                        top: 50%;
+                        right: 0;
+                        transform: translate(22px, -50%);
+                        font-size: 25px;
+                        font-weight: 300;
+                        color: #BA9A47;
+                    }
+          
+          
+                    .sale > div:not(.u14DemiBold_v2) > div span:last-child {
+                        opacity: 1;
+                        font-size: 12px;
+                        color: #BA9A47;
+                        font-weight: 300;
+                    }
+          
+          
+                    @media (max-width: 767px) {
+                      .sale > div:not(.u14DemiBold_v2) > div {
+                        width: 60px;
+                      }
+
+                      .sale .u36DemiBold_v2 {
+                        padding: 12px;
+                        font-size: 22px;
+                      }
+
+                      .sale .u36DemiBold_v2::after {
+                        display: none;
+                      }
+
+                      .sale > div:not(.u14DemiBold_v2) > div span:last-child {
+                        font-size: 10px;
+                      }
+                    }
+              </style>
     </div>
   </div>
 </div>
@@ -197,7 +326,7 @@
             <div class="er-rounded-2xl er-bg-[url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26327_2x_b796e698-2876-4cdd-8745-04d156ec1399.jpg?v=1761722902')] er-bg-center er-bg-cover er-bg-no-repeat">
                 <div
                     class="er-flex er-flex-col er-items-center er-justify-center er-text-center er-translate-y-[-30px] mb:er-translate-y-0 mb:er-flex-row mb:er-py-6 mb:er-px-8 mb:er-justify-start mb:er-text-left mb:er-gap-x-10">
-                    <img class="mb:er-max-w-24" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26289_2x_11f2feee-3767-4538-9d84-db003b7a6ca5.png?v=1761722752" width="110" height="72" alt="">
+                    <img class="mb:er-max-w-32" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26534_2x_68824e00-21be-4167-a390-197c847271ad.png?v=1762426052" width="150" height="72" alt="">
                     <span class="text-size20 er-mt-12 er-mb-2 mb:er-text-2xl mb:er-my-0">High-value carbon
                         eBike<br>starting at <span class="text-size16 er-font-bold md:er-hidden" style="color: #E0BD76;">{{ all_products['urtopia-carbon-fold'].price | money_without_trailing_zeros }}</span></span>
                     <span class="text-size36 mb:er-text-4xl mb:er-hidden" style="color: #E0BD76;">{{ all_products['urtopia-carbon-fold'].price | money_without_trailing_zeros }}</span>
@@ -206,7 +335,7 @@
             <div class="er-rounded-2xl er-bg-[url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26327_2x_b796e698-2876-4cdd-8745-04d156ec1399.jpg?v=1761722902')] er-bg-center er-bg-cover er-bg-no-repeat">
                 <div
                     class="er-flex er-flex-col er-items-center er-justify-center er-text-center er-translate-y-[-30px] mb:er-translate-y-0 mb:er-flex-row mb:er-py-6 mb:er-px-8 mb:er-justify-start mb:er-text-left mb:er-gap-x-10">
-                    <img class="mb:er-max-w-24" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26290_2x_7701ff81-1b6c-4e1b-b384-17b557c34e25.png?v=1761722745" width="110" height="72" alt="">
+                    <img class="mb:er-max-w-32" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26536_2x_f16762fb-dcd5-4f6f-9dcd-4d892e4eb1d5.png?v=1762426046" width="150" height="72" alt="">
                         <div class="er-grid er-grid-cols-2 er-mt-12 er-gap-x-20 mb:er-grid-cols-1 mb:er-my-0">
                             <div class="er-flex er-flex-col er-text-center er-items-center mb:er-flex-row mb:er-gap-x-2">
                                 <span class="text-size20 mb:er-text-2xl">Save</span>
@@ -224,7 +353,7 @@
             <div class="er-rounded-2xl er-bg-[url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26327_2x_b796e698-2876-4cdd-8745-04d156ec1399.jpg?v=1761722902')] er-bg-center er-bg-cover er-bg-no-repeat">
                 <div
                     class="er-flex er-flex-col er-items-center er-justify-center er-text-center er-translate-y-[-30px] mb:er-translate-y-0 mb:er-flex-row mb:er-py-6 mb:er-px-8 mb:er-justify-start mb:er-text-left mb:er-gap-x-10">
-                    <img class="mb:er-max-w-24" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26291_2x_721be2e8-732b-4863-9bc7-337208e00956.png?v=1761722739" width="110" height="72" alt="">
+                    <img class="mb:er-max-w-32" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26537_2x_747a00da-4173-4da6-80d9-9ab1a17ed2c6.png?v=1762426041" width="150" height="72" alt="">
                     <span class="text-size20 er-mt-12 er-mb-2 mb:er-text-2xl mb:er-my-0"><span class="er-font-bold md:er-hidden" style="color: #E0BD76;">Free installation</span><br class="md:er-hidden">At selected<br class="mb:er-hidden"><span> stores</span></span>
                     <span class="text-size36 mb:er-text-4xl mb:er-hidden" style="color: #E0BD76;">Free installation</span>
                 </div>
@@ -234,7 +363,7 @@
 <div class="er-bg-[#1C1B19] er-text-white">
         <div class="centeral-content mb:er-px-6">
             <div class="background-image er-aspect-[1280/450] mb:er-aspect-auto er-rounded-3xl er-overflow-hidden">
-            {% render 'image', class: "mb:!er-object-top" width: 1440, mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26315_2x_3ec5759f-71a3-4f77-a6a6-e12a1b99563a.jpg?v=1761733394", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/n_2x_84725590-7d15-4d4d-95e7-ee78c8d1d870.jpg?v=1761731616" %}
+            {% render 'image', class: "mb:!er-object-top" width: 1440, mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26526_2x_cfbe33ae-8282-42ed-8be0-210461c96e9e.jpg?v=1762427072", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/n_2x_cdf8102e-e431-413f-bf43-d7bc6cdf4b3b.jpg?v=1762425912" %}
                  <!-- <div class="background-mask !er-w-1/2 mb:er-hidden" style="background-image: linear-gradient(90deg, #0888BA, #0D89BA00);"></div>     -->
                  <div
                     class="er-flex er-flex-col er-items-start er-justify-center er-h-full er-pl-28 er-max-w-2xl mb:er-px-8 mb:er-pt-10">
@@ -259,7 +388,9 @@
 
 <div class="er-bg-[#1C1B19]">
   <div class="centeral-content ebike-products er-flex er-flex-col">
-    <h2 class="er-m-0 text-size36 er-text-center mb:er-text-4xl mb:er-text-left er-mb-4 er-text-white" style="color: #E0BD76;">Black Friday Ebike Deals</h2>
+    <h2 class="er-m-0 text-size36 er-text-center mb:er-text-4xl mb:er-text-left er-mb-4 er-text-white" style="color: #E0BD76;">
+      <span class="leftright">Black Friday Ebike Deals</span>
+    </h2>
     <p class="text-size18 er-text-center er-opacity-80 mb:er-text-left mb:er-text-2xl er-max-w-screen-md er-mb-20 er-mx-auto mb:er-mb-8 er-text-white">
         <span>Explore Urtopia’s lightweight Toray carbon e-bikes: seamless pedal assist, smart tech, and exclusive Black Friday savings on commuter, trekking, folding, fat-tire, and long-range models.</span>
     </p>
@@ -293,8 +424,8 @@
   </div>
 </div>
 </div>
-  <div class="er-bg-background">
-    <div class="centeral-content er-pt-48 er-flex er-flex-col mb:er-pt-24 mb:er-pb-24 mb:er-px-6">
+  <div class="er-bg-[#1C1B19] er-text-white">
+    <div class="centeral-content er-pt-32 er-flex er-flex-col mb:er-pt-24 mb:er-pb-24 mb:er-px-6">
         <h2 class="er-m-0 text-size36 er-text-center mb:er-text-4xl mb:er-text-left">Browse All Electric Bike Models</h2>
         <p class="text-size18 er-text-center er-opacity-80 mb:er-text-left mb:er-text-2xl er-mb-20 mb:er-mt-3 mb:er-mb-8">
             <span>Urban commutes, weekend adventures, or off-road thrills – there’s a model for you.</span>
@@ -303,10 +434,10 @@
 </div>
 </div>
 
-<div class="er-py-56 mb:er-pt-8 mb:er-pb-0 er-relative er-w-full er-overflow-hidden er-bg-background-warm">
+<div class="er-py-56 mb:er-pt-8 mb:er-pb-0 er-relative er-w-full er-overflow-hidden er-bg-[#1C1B19]">
         {% render "media-logos" %}
 </div>
-<div class="er-bg-background-warm professional" id="professional">
+<div class="er-bg-[#1C1B19] professional er-text-white" id="professional">
   <div class="centeral-content er-flex er-flex-col er-pb-56 mb:er-pb-28 mb:er-px-6">
     <h2 class="er-m-0 text-size36 er-text-center mb:er-text-4xl mb:er-text-left">Real Reviews, Real Riders!</h2>
         <p class="text-size18 er-text-center er-opacity-80 mb:er-text-left mb:er-text-2xl mb:er-mt-3 er-mb-20 mb:er-mb-8">
@@ -315,12 +446,12 @@
         {%render 'professional-reviewers' %}
   </div>
 </div>
-    <div class="er-bg-background-warm er-pb-48 mb:er-pb-24">
+    <div class="er-bg-[#1C1B19] er-pb-48 mb:er-pb-24 er-text-white">
         <div class="centeral-content mb:er-px-6">
             <h2 class="er-m-0 text-size36 er-text-center er-w-full mb:er-text-4xl mb:er-text-left">What Our Riders Say</h2>
             <div
                 class="er-grid er-grid-cols-3 er-gap-x-10 er-mt-20 mb:er-mt-10 mb:er-flex mb:er-overflow-x-scroll mb:er-pb-16 mb:er-gap-x-8">
-                <div class="er-p-12 er-bg-[#F5F0ED] er-rounded-2xl er-flex er-flex-col mb:er-p-6 mb:er-min-w-[70vw]">
+                <div class="er-p-12 er-bg-[#292827] er-rounded-2xl er-flex er-flex-col mb:er-p-6 mb:er-min-w-[70vw]">
                     <img width="640" height="640" class="er-rounded-2xl er-overflow-hidden"
                         src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/439_2x_225cd678-7a9e-44e4-a7a1-73147a440ed4.jpg?v=1742975925&width=500"
                         loading="lazy" alt="{{ page_title }}">
@@ -331,11 +462,11 @@
                         <div class="star" style="--star-size: 18px;"></div>
                         <div class="star" style="--star-size: 18px;"></div>
                     </div>
-                    <p class="text-size16 mb:er-text-2xl">
+                    <p class="text-size16 mb:er-text-2xl er-text-white">
                         <span>“The lightweight and portable ebike I’ve been seeking” <br>– Doctor J.</span>
                     </p>
                 </div>
-                <div class="er-p-12 er-bg-[#F5F0ED] er-rounded-2xl er-flex er-flex-col mb:er-p-6 mb:er-min-w-[70vw]">
+                <div class="er-p-12 er-bg-[#292827] er-rounded-2xl er-flex er-flex-col mb:er-p-6 mb:er-min-w-[70vw]">
                     <img width="640" height="640" class="er-rounded-2xl er-overflow-hidden"
                         src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/440_2x_9affd041-56c1-4f5a-be83-8417094b05ef.jpg?v=1742976197&width=500"
                         loading="lazy" alt="{{ page_title }}">
@@ -346,11 +477,11 @@
                         <div class="star" style="--star-size: 18px;"></div>
                         <div class="star" style="--star-size: 18px;"></div>
                     </div>
-                    <p class="text-size16">
+                    <p class="text-size16 er-text-white">
                         <span>“My Urtopia E-Bike Performed FLAWLESSLY !”<br> – David P.</span>
                     </p>
                 </div>
-                <div class="er-p-12 er-bg-[#F5F0ED] er-rounded-2xl er-flex er-flex-col mb:er-p-6 mb:er-min-w-[70vw]">
+                <div class="er-p-12 er-bg-[#292827] er-rounded-2xl er-flex er-flex-col mb:er-p-6 mb:er-min-w-[70vw]">
                     <img width="640" height="640" class="er-rounded-2xl er-overflow-hidden"
                         src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/441_2x_b5b41441-a90f-4df7-8853-a6fd0c1c6ddf.jpg?v=1742976189&width=500"
                         loading="lazy" alt="{{ page_title }}">
@@ -361,7 +492,8 @@
                         <div class="star" style="--star-size: 18px;"></div>
                         <div class="star" style="--star-size: 18px;"></div>
                     </div>
-                    <p class="text-size16">
+                    <p class="text-size16 er-text-white">
+
                         <span>“This is the best ebike I’ve ever ridden!” <br>– Frank L.</span>
                     </p>
                 </div>
@@ -451,7 +583,7 @@ Plus, check out our [<a class="my-link" href="https://newurtopia.com/blogs/blog/
         </div>
     </div>
 
-    <div class="er-text-white er-py-48 mb:er-py-24">
+    <div class="er-text-white er-py-48 mb:er-py-24 er-bg-[#1C1B19]">
         <div class="centeral-content mb:er-px-6">
             <div class="background-image er-aspect-[1280/500] mb:er-aspect-auto er-rounded-t-3xl er-overflow-hidden">
             {% render 'image', width: 1440, class: "mb:!er-object-top mb:!er-object-contain", mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20230802-150015_2x_459af18d-6e27-49b9-8683-08050dab0c21.jpg?v=1742980680", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25697_2x_783f8fa0-bdec-4eba-a76f-d46c65d98168.jpg?v=1742980289" %}
@@ -470,45 +602,45 @@ Plus, check out our [<a class="my-link" href="https://newurtopia.com/blogs/blog/
                 </div>
             </div>
             <div
-                class="er-bg-background-warm er-text-dark er-grid er-grid-cols-3 er-py-20 er-rounded-b-3xl mb:er-grid-cols-1 mb:er-px-6 mb:er-py-10 mb:er-gap-y-5">
+                class="er-text-white er-bg-[#292827] er-grid er-grid-cols-3 er-py-20 er-rounded-b-3xl mb:er-grid-cols-1 mb:er-px-6 mb:er-py-10 mb:er-gap-y-5">
                 <div class="er-flex er-items-center er-self-center er-justify-center mb:er-justify-start">
                     <svg class="mb:er-max-w-16" xmlns="http://www.w3.org/2000/svg" height="48px"
-                        viewBox="0 -960 960 960" width="48px" fill="#333">
+                        viewBox="0 -960 960 960" width="48px" fill="#fff">
                         <path
                             d="M355.08-140H200q-24.92 0-42.46-17.54T140-200v-155.08q41.08-5 70.54-34.15Q240-418.39 240-460t-29.46-70.77q-29.46-29.15-70.54-34.15V-720q0-24.92 17.54-42.46T200-780h160q5.39-38.15 33.42-62.92 28.04-24.77 66.58-24.77t66.58 24.77Q554.61-818.15 560-780h160q24.92 0 42.46 17.54T780-720v160q38.15 5.39 62.92 33.42 24.77 28.04 24.77 66.58t-24.77 66.58Q818.15-365.39 780-360v160q0 24.92-17.54 42.46T720-140H564.92q-5.38-43.08-35.15-71.54Q500-240 460-240t-69.77 28.46q-29.77 28.46-35.15 71.54ZM200-200h108.46q20.54-52.92 64.89-76.46Q417.69-300 460-300t86.65 23.54Q591-252.92 611.54-200H720v-217.69h49.23q18.38-2.31 28.42-14.85 10.04-12.54 10.04-27.46 0-14.92-10.04-27.46-10.04-12.54-28.42-14.85H720V-720H502.31v-49.23q-2.31-18.38-14.85-28.42-12.54-10.04-27.46-10.04-14.92 0-27.46 10.04-12.54 10.04-14.85 28.42V-720H200v109.54q45.54 18.85 72.77 59.88Q300-509.54 300-460q0 48.92-27.23 89.96Q245.54-329 200-309.54V-200Zm260-260Z" />
                     </svg>
                     <div class="er-flex er-flex-col er-ml-6">
-                        <h3 class="er-m-0 er-text-dark text-size18 mb:er-text-2xl"><b>FREE Test Ride</b></h3>
+                        <h3 class="er-m-0 text-size18 mb:er-text-2xl"><b>FREE Test Ride</b></h3>
                         <span class="text-size14 er-opacity-80 mb:er-text-xl">One ride says it all.</span>
                     </div>
                 </div>
                 <div class="er-flex er-items-center er-self-center er-justify-center mb:er-justify-start">
                     <svg class="mb:er-max-w-16" xmlns="http://www.w3.org/2000/svg" height="48px"
-                        viewBox="0 -960 960 960" width="48px" fill="#333">
+                        viewBox="0 -960 960 960" width="48px" fill="#fff">
                         <path
                             d="m699.08-135.85-252-253.23q-21.16 9.16-43.01 14.12-21.86 4.96-46.38 4.96-95.83 0-162.91-67.08-67.09-67.09-67.09-162.92 0-31 7.89-59.27 7.88-28.27 22.42-53.81l143.69 142.93L387.54-656 245.39-798.92q25.53-14.54 53.45-22.81t58.85-8.27q95.84 0 162.92 67.08 67.08 67.09 67.08 162.92 0 25.31-4.77 47.15-4.77 21.85-14.31 42.24l253.24 252q10.46 10.59 10.46 25.6 0 15.01-10.38 25.39l-72.63 72.63q-10.38 10.37-25.07 9.99-14.69-.39-25.15-10.85Zm25.54-59.99 36.61-36.62-266.38-266.39q16.84-20.77 24.84-47.27 8-26.5 8-53.88 0-66.54-47.54-117.77Q432.61-769 359.84-768l86.7 86.69q10.84 10.85 10.84 25.31 0 14.46-10.84 25.31L327-511.15q-10.85 10.84-25.31 10.84-14.46 0-25.31-10.84l-86.69-86.7q.15 77 51.77 122.43Q293.08-430 357.69-430q26.26 0 52.52-7.81 26.25-7.8 48.02-24.42l266.39 266.39ZM472-486.46Z" />
                     </svg>
                     <div class="er-flex er-flex-col er-ml-6">
-                        <h3 class="er-m-0 er-text-dark text-size18 mb:er-text-2xl"><b>Easy Maintenance & Repairs</b>
+                        <h3 class="er-m-0 text-size18 mb:er-text-2xl"><b>Easy Maintenance & Repairs</b>
                         </h3>
                         <span class="text-size14 er-opacity-80 mb:er-text-xl">Real people, real support.</span>
                     </div>
                 </div>
                 <div class="er-flex er-items-center er-self-center er-justify-center mb:er-justify-start">
                     <svg class="mb:er-max-w-16" xmlns="http://www.w3.org/2000/svg" height="48px"
-                        viewBox="0 -960 960 960" width="48px" fill="#333">
+                        viewBox="0 -960 960 960" width="48px" fill="#fff">
                         <path
                             d="M480-492.31q-57.75 0-98.87-41.12Q340-574.56 340-632.31q0-57.75 41.13-98.87 41.12-41.13 98.87-41.13 57.75 0 98.87 41.13Q620-690.06 620-632.31q0 57.75-41.13 98.88-41.12 41.12-98.87 41.12ZM180-187.69v-88.93q0-29.38 15.96-54.42 15.96-25.04 42.66-38.5 59.3-29.07 119.65-43.61 60.35-14.54 121.73-14.54t121.73 14.54q60.35 14.54 119.65 43.61 26.7 13.46 42.66 38.5Q780-306 780-276.62v88.93H180Zm60-60h480v-28.93q0-12.15-7.04-22.5-7.04-10.34-19.11-16.88-51.7-25.46-105.42-38.58Q534.7-367.69 480-367.69q-54.7 0-108.43 13.11-53.72 13.12-105.42 38.58-12.07 6.54-19.11 16.88-7.04 10.35-7.04 22.5v28.93Zm240-304.62q33 0 56.5-23.5t23.5-56.5q0-33-23.5-56.5t-56.5-23.5q-33 0-56.5 23.5t-23.5 56.5q0 33 23.5 56.5t56.5 23.5Zm0-80Zm0 384.62Z" />
                     </svg>
                     <div class="er-flex er-flex-col er-ml-6">
-                        <h3 class="er-m-0 er-text-dark text-size18 mb:er-text-2xl"><b>Trusted Local Experts</b></h3>
+                        <h3 class="er-m-0 text-size18 mb:er-text-2xl"><b>Trusted Local Experts</b></h3>
                         <span class="text-size14 er-opacity-80 mb:er-text-xl">Help when needed.</span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="professional test-ride">
+    <div class="professional test-ride er-bg-[#1C1B19] er-text-white" style="margin: 0;">
         <div class="centeral-content">
             <h2 class="er-m-0 text-size36 er-text-center er-w-full mb:er-text-4xl mb:er-text-left">Free In-Store Assembly at Participating Dealers</h2>
           <div class="videos swiper-wrapper er-mt-20 mb:er-mt-10">
@@ -529,7 +661,7 @@ Plus, check out our [<a class="my-link" href="https://newurtopia.com/blogs/blog/
         </div>
       </div>
 
-    <div class="er-pb-48 mb:er-pb-24">
+    <div class="er-py-48 mb:er-py-24 er-bg-[#1C1B19] er-text-white">
         <div class="centeral-content mb:er-px-6 er-flex er-flex-col">
             <h2 class="er-m-0 text-size36 er-text-center mb:er-text-4xl mb:er-text-left">Ride Smarter: <br
                     class="md:er-hidden">Expert Tips & Guides</h2>
@@ -540,47 +672,47 @@ Plus, check out our [<a class="my-link" href="https://newurtopia.com/blogs/blog/
                 class="er-grid er-grid-cols-3 er-gap-x-10 er-mt-20 mb:er-mt-10 mb:er-flex mb:er-overflow-x-scroll mb:er-pb-16 mb:er-gap-x-8">
                 {%- assign article = articles['blog/the-best-e-bike-for-tall-people'] -%}
                 <a href="{{ article.url }}" target="_blank"
-                    class="er-bg-background-warm er-rounded-2xl er-flex er-flex-col mb:er-min-w-[70vw] er-cursor-pointer">
+                    class="er-bg-[#292827] er-rounded-2xl er-flex er-flex-col mb:er-min-w-[70vw] er-cursor-pointer">
                     {{ article | image_url: width: 900 | image_tag: loading: 'lazy', class: "er-aspect-video er-object-cover er-rounded-t-2xl" }}
                     <div
                         class="er-flex er-flex-col er-items-center er-text-center er-p-10 er-flex-1 mb:er-px-6 mb:er-py-8">
-                        <h3 class="er-text-dark er-m-0 text-size18 mb:er-text-2xl mb:er-font-medium">
+                        <h3 class="er-text-white er-m-0 text-size18 mb:er-text-2xl mb:er-font-medium">
                             <b class="mb:er-font-medium">{{ article.title }}</b>
                         </h3>
                         <span class="er-flex-1"></span>
-                        <button class="er-button er-button-dark er-mt-12 mb:er-mt-8">Read More</button>
+                        <button class="er-button er-button-white er-mt-12 mb:er-mt-8">Read More</button>
                     </div>
                 </a>
                 {%- assign article = articles['blog/750w-1000w-ebike-guide'] -%}
                 <a href="{{ article.url }}" target="_blank"
-                    class="er-bg-background-warm er-rounded-2xl er-flex er-flex-col mb:er-min-w-[70vw] er-cursor-pointer">
+                    class="er-bg-[#292827] er-rounded-2xl er-flex er-flex-col mb:er-min-w-[70vw] er-cursor-pointer">
                     {{ article | image_url: width: 900 | image_tag: loading: 'lazy', class: "er-aspect-video er-object-cover er-rounded-t-2xl"  }}
                     <div
                         class="er-flex er-flex-col er-items-center er-text-center er-p-10 er-flex-1 mb:er-px-6 mb:er-py-8">
-                        <h3 class="er-text-dark er-m-0 text-size18 mb:er-text-2xl mb:er-font-medium">
+                        <h3 class="er-text-white er-m-0 text-size18 mb:er-text-2xl mb:er-font-medium">
                             <b class="mb:er-font-medium">{{ article.title }}</b>
                         </h3>
                         <span class="er-flex-1"></span>
-                        <button class="er-button er-button-dark er-mt-12 mb:er-mt-8">Read More</button>
+                        <button class="er-button er-button-white er-mt-12 mb:er-mt-8">Read More</button>
                     </div>
                 </a>
                 {%- assign article = articles['blog/first-time-e-bike-riding-beginners-guide'] -%}
                 <a href="{{ article.url }}" target="_blank"
-                    class="er-bg-background-warm er-rounded-2xl er-flex er-flex-col mb:er-min-w-[70vw] er-cursor-pointer">
+                    class="er-bg-[#292827] er-rounded-2xl er-flex er-flex-col mb:er-min-w-[70vw] er-cursor-pointer">
                     {{ article | image_url: width: 900 | image_tag: loading: 'lazy', class: "er-aspect-video er-object-cover er-rounded-t-2xl"  }}
                     <div
                         class="er-flex er-flex-col er-items-center er-text-center er-p-10 er-flex-1 mb:er-px-6 mb:er-py-8">
-                        <h3 class="er-text-dark er-m-0 text-size18 mb:er-text-2xl mb:er-font-medium">
+                        <h3 class="er-text-white er-m-0 text-size18 mb:er-text-2xl mb:er-font-medium">
                             <b class="mb:er-font-medium">{{ article.title }}</b>
                         </h3>
                         <span class="er-flex-1"></span>
-                        <button class="er-button er-button-dark er-mt-12 mb:er-mt-8">Read More</button>
+                        <button class="er-button er-button-white er-mt-12 mb:er-mt-8">Read More</button>
                     </div>
                 </a>
             </div>
         </div>
     </div>
-    <div class="er-text-white er-pb-48 mb:er-pb-24">
+    <div class="er-text-white er-pb-48 mb:er-pb-24 er-bg-[#1C1B19]">
         <div class="centeral-content mb:er-px-6">
           <div class="background-image er-rounded-3xl er-overflow-hidden er-aspect-[1280/180] mb:er-aspect-square er-from-[#FF3684] er-to-[#FF8F1D] er-bg-gradient-to-b mb:er-bg-gradient-to-r">
             <div class="er-flex er-h-full mb:er-flex-col">
@@ -590,7 +722,7 @@ Plus, check out our [<a class="my-link" href="https://newurtopia.com/blogs/blog/
               </div>
               <div class="er-flex er-flex-col er-text-left er-items-left er-justify-center er-bg-black er-flex-1 er-pl-24 mb:er-p-8 md:er-rounded-l-3xl mb:er-rounded-tr-[50px]">
                 <h3 class="er-m-0 er-text-white text-size24 er-font-medium mb:er-text-3xl">Ride Now, Pay Later</h3>
-                <h2 class="er-m-0 er-text-white text-size36 er-my-3 mb:er-text-4xl mb:er-my-6">Limited-Time <span style="color: #FF7BAE">0% APR</span> for 24 Months</h2>
+                <h2 class="er-m-0 er-text-white text-size36 er-my-3 mb:er-text-4xl mb:er-my-6">Limited-Time <span style="color: #E0BD76">0% APR</span> for 24 Months</h2>
                 <p class="text-size20 mb:er-text-2xl">
                   <span>A {{ all_products['urtopia-carbon-fold'].price | money_without_trailing_zeros }} purchase costs {{ all_products['urtopia-carbon-fold'].price | divided_by: 24 | money }}/month for 24 months at 0% APR.</span>
                 </p>
@@ -599,7 +731,7 @@ Plus, check out our [<a class="my-link" href="https://newurtopia.com/blogs/blog/
           </div>
         </div>
       </div>
-    <div class="er-text-white er-pb-48 mb:er-pb-24">
+    <div class="er-text-white er-pb-48 mb:er-pb-24 er-bg-[#1C1B19]">
         <div class="centeral-content mb:er-px-6">
             <div
                 class="er-bg-black er-rounded-3xl er-overflow-hidden er-aspect-[1280/550] mb:er-aspect-auto er-flex er-flex-col er-justify-center er-items-start er-text-left er-pl-28 mb:er-p-8 background-image">

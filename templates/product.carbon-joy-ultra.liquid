@@ -1,3 +1,5 @@
+{{ 'carbon-fold-product.scss.css' | asset_url | stylesheet_tag: preload: true }}
+{{ 'outlet_v4.scss.css' | asset_url | stylesheet_tag: preload: true }}
 <style>
   fieldset[option=Color] label[data-style="Glacier Blue"] {
     --product-option-color: #A5BFCF;
@@ -11,6 +13,14 @@
     --product-option-color: #FA003F;
   }
 
+   fieldset[option=Color] label[data-style="Lychee Pink"] {
+    --product-option-color: #FFC0CB;
+  }
+
+  .TakeItEasywithFold1 .centeral-content .items>div{
+    aspect-ratio:unset;
+  }
+
   h1, h2, h3, h4 {
     color: inherit;
     margin: 0;
@@ -18,3 +28,275 @@
   }
 </style>
 {% render 'product-panel', swiper_insert_index: 1, product_send_accessories_price: 29600 %}
+<section
+    class="er-bg-black er-text-white er-aspect-[1920/750] mb:er-aspect-auto background-image mb:er-bg-background mb:er-text-black" style="transform: translateY(1px);">
+    {% comment %} <video playsinline loop autoplay muted class="mb:!er-object-contain mb:!er-object-top lozad">
+        <source data-src="https://cdn.shopify.com/videos/c/o/v/2192d207d530441083a769948acab14e.mp4" type="video/mp4"
+            media="(min-width: 768px)">
+        <source data-src="https://cdn.shopify.com/videos/c/o/v/ccdfb0748622447aa60449096665fb67.mp4" type="video/mp4"
+            media="(max-width: 767px)">
+      </video> {% endcomment %}
+      <picture>
+            <source media="(min-width: 768px)"
+                srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2025.11_-_Urtopia_Joy_2-004_2x_3845da65-930f-4dbe-a8a5-0bbc995a49c2.jpg?v=1762414132">
+            <source media="(max-width: 768px)"
+                srcset="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2025.11_-_Urtopia_Joy_2-004_2x_77e44127-1de6-4cc1-a609-dd7fcff25479.jpg?v=1762414197">
+            <img src="" alt="" class="mb:!er-object-contain mb:!er-object-top" loading="lazy">
+      </picture>
+    <div
+        class="centeral-content er-h-full er-flex er-flex-col er-justify-center er-items-start er-text-left mb:er-pb-16 mb:er-px-6">
+        <div class="md:er-hidden er-aspect-[16/15] er-w-full"></div>
+        <h2 class="text-size36 mb:er-text-4xl">Light as Air, Bold by Design</h2>
+        <p class="text-size18 er-max-w-3xl er-mt-10 er-mb-28 mb:er-text-2xl mb:er-mb-4">
+          <span>The Carbon Joy Ultra electric cruiser bike is 50% lighter than aluminum while ensuring exceptional strength and durability. Its flowing ribbon-inspired chainstays evoke motion, while the seat-tube-free frame is designed to turn heads and stand out.</span>
+        </p>
+        <a
+            href="https://www.youtube.com/watch?v=LGb0W-i5Dqo" target="_blank"
+            class="er-button er-button-white er-mt-12 mb:er-m-0 mb:[--er-btn-bg-color:theme(colors.dark)] mb:[--er-btn-text-color:theme(colors.white)] mb:er-text-white" style="display: none;">Watch
+            video
+            <svg class="er-scale-150 er-translate-x-1/3 er-fill-dark mb:er-fill-white"
+                xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20">
+                <path
+                    d="m380-300 280-180-280-180v360ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+            </svg></a>
+    </div>
+</section>
+<section class="er-bg-background er-py-56 mb:er-pt-0 mb:er-pb-20">
+  <div class="centeral-content er-flex er-flex-col er-items-center er-text-center er-justify-center mb:er-px-6">
+    {% render 'image', mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20251106-154520.png?v=1762415136", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26482_2x_2882ca6e-0aeb-450d-9b84-06a56ed73f7b.png?v=1762414388", width: 1100 %}
+    <h2 class="text-size36 er-mb-16 er-mt-52 mb:er-mt-20 mb:er-mb-12 mb:er-text-4xl">Why Carbon Fiber Is Worth It?</h2>
+    {% render 'image', mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26374_2x_41daf868-d99d-4ab0-8350-ab85a6d16124.png?v=1762414719", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26502_2x_7d788583-a85a-4aad-be81-e7f243dbd6c6.png?v=1762414393", width: 750 %}
+  </div>
+</section>
+<section class="er-pb-56 mb:er-py-20">
+        <div class="quality TakeItEasywithFold1">
+        <div class="centeral-content mb:er-px-6">
+            <h2 class="text-size36 mb:er-text-4xl mb:er-leading-snug er-mb-3 mb:er-mb-0">Streamlined. Sophisticated. Classic.</h2>
+            <div class="items swiper-wrapper er-mt-16 mb:er-mt-8">
+            <div class="swiper-slide er-rounded-2xl er-overflow-hidden">
+                <img loading="lazy" width="551" height="400" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2025.11_-_Urtopia_Joy_2-069_2x_0e2f4698-0478-4bde-b5ae-32a15c3d8a64.jpg?v=1762415493&width=700" alt="{{ page_description }}">
+            </div>
+            <div class="swiper-slide er-rounded-2xl er-overflow-hidden">
+                <img
+                loading="lazy" width="551" height="400" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2025.11_-_Urtopia_Joy_2-102_2x_e3e82650-34ff-4fa8-8469-874a17802a3a.jpg?v=1762415499&width=700"
+                alt="{{ page_description }}"
+                >
+            </div>
+            <div class="swiper-slide er-rounded-2xl er-overflow-hidden">
+                <img
+                loading="lazy" width="551" height="400" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2025.11_-_Urtopia_Joy_2-099_2x_3292ff73-ff27-4a28-9012-060bde1147c3.jpg?v=1762415504&width=700"
+                alt="{{ page_description }}"
+                >
+            </div>
+            <div class="swiper-slide er-rounded-2xl er-overflow-hidden">
+                <img
+                loading="lazy" width="551" height="400" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2025.11_-_Urtopia_Joy_2-027_2x_9c50c109-d859-4edb-b367-3a91eb92f464.jpg?v=1762415510&width=700"
+                alt="{{ page_description }}"
+                >
+            </div>
+            <div class="swiper-slide er-rounded-2xl er-overflow-hidden">
+                <img
+                loading="lazy" width="551" height="400" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2025.11_-_Urtopia_Joy_2-081_2x_b53532b1-f4c5-41ba-9b48-14dd0006a514.jpg?v=1762415516&width=700"
+                alt="{{ page_description }}"
+                >
+            </div>
+            <div class="swiper-slide er-rounded-2xl er-overflow-hidden">
+                <img
+                loading="lazy" width="551" height="400" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2025.11_-_Urtopia_Joy_2-063_2x_982232fe-b77b-455b-ad4f-c827bec1db36.jpg?v=1762415522&width=700"
+                alt="{{ page_description }}"
+                >
+            </div>
+            <div class="swiper-slide er-rounded-2xl er-overflow-hidden">
+                <img
+                loading="lazy" width="551" height="400" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2025.11_-_Urtopia_Joy_2-152_2x_efd5fce8-aea6-4f02-be53-12400f581709.jpg?v=1762415527&width=700"
+                alt="{{ page_description }}"
+                >
+            </div>
+            <div class="swiper-slide er-rounded-2xl er-overflow-hidden">
+                <img
+                loading="lazy" width="551" height="400" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2025.11_-_Urtopia_Joy_2-122_2x_81805fef-ffde-413c-8032-50560097e49d.jpg?v=1762415532&width=700"
+                alt="{{ page_description }}"
+                >
+            </div>
+            </div>
+            <div class="swiper-scrollbar"></div>
+            <div class="buttons mobileHide">
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            </div>
+        </div>
+        </div>
+    </section>
+  <section class="er-bg-background er-py-48 mb:er-py-20">
+  <div class="centeral-content mb:er-px-6">
+        <h2 class="text-size36 mb:er-text-4xl er-m-0">Quality in details</h2>
+        <div class="er-mt-10 quality_in_details er-relative er-overflow-x-hidden er-pb-40 mb:er-pb-16" style="--swiper-navigation-size: 27px; --swiper-navigation-color:#fff;">
+            <div class="swiper-wrapper">
+                {% for item in product.metafields.custom.quality_in_details.value %}
+                    {% assign text = item.text | split: "---" %}
+                    <div class="swiper-slide er-flex er-flex-col">
+                        {{ item.image | image_url: width: 500 |  image_tag: loading: 'lazy', class: "er-rounded-3xl" }}
+                        <h3 class="text-size20 er-my-6 er-font-bold er-text-3xl">{{ text.first }}</h3>
+                        <p class="text-size18 er-opacity-80 mb:er-text-[16px] er-max-w-2xl">
+                            <span>{{ text.last }}</span>
+                        </p>
+                    </div>
+                    
+                {% endfor %}  
+            </div>
+            <div class="swiper-scrollbar er-bg-[#386FAF] er-bg-opacity-10 !er-w-full !er-left-0"></div>
+            <div class="swiper-button-prev er-bottom-12 er-right-[60px] er-left-auto er-top-auto er-bg-dark er-rounded-full er-p-8 after:er-text-3xl mb:er-hidden er-z-2 er-box-border"></div>
+            <div class="swiper-button-next er-bottom-12 er-right-0 er-left-auto er-top-auto er-bg-dark er-rounded-full er-p-8 after:er-text-3xl mb:er-hidden er-z-2 er-box-border"></div>
+        </div>
+    </div>
+</section>
+<section class="er-aspect-[1920/750] mb:er-aspect-auto background-image er-bg-background">
+        <video playsinline loop autoplay muted class="mb:!er-object-contain mb:!er-object-top lozad">
+            <source data-src="https://cdn.shopify.com/videos/c/o/v/0127c2a7f5c84aacb6ac809f51a91a6b.mp4" type="video/mp4"
+                media="(min-width: 768px)">
+            <source data-src="https://cdn.shopify.com/videos/c/o/v/95b882dd822542d6a42036d945845e83.mp4" type="video/mp4"
+                media="(max-width: 767px)">
+        </video>
+        <div
+            class="centeral-content er-h-full er-flex er-flex-col er-justify-center er-items-start er-text-left mb:er-pb-20 mb:er-px-6">
+            <div class="md:er-hidden er-aspect-[16/15] er-w-full"></div>
+            <h2 class="text-size36 mb:er-text-4xl mb:er-leading-snug">Effortless Comfort, Perfect Fit</h2>
+            <p class="text-size18 er-max-w-3xl er-mt-10 mb:er-text-2xl">
+              <span>Designed for all-day comfort, the step-through frame and 20-inch wheels allow effortless mounting for riders of all heights. Enjoy smooth, nimble handling with carbon fork and shock-absorbing saddle, and adjustable 0-60° handlebars for customized positioning.</span>
+            </p>
+        </div>
+    </section>
+        <section class="er-bg-background md:er-pt-56">
+      <div class="centeral-content mb:er-px-6">
+        <div class="er-grid er-grid-cols-2 mb:er-grid-cols-1">
+          <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2025-10-18_16.38.01_2x_effe36e7-762b-4328-bf21-56a95bd3a73a.jpg?v=1761553347" loading="lazy" alt="">
+          <div class="er-bg-white er-flex er-flex-col er-justify-center er-px-28 mb:er-px-6 mb:er-py-12">
+            <h3 class="text-size36 mb:er-text-4xl">It’s Time to Give It a Spin!</h3>
+            <p class="text-size18 er-mt-12 er-mb-20 mb:er-text-2xl mb:er-my-8">
+              <span>
+                Experience the ride in person — with over 750 service partners across the U.S., you can enjoy a professional test ride and discover the Urtopia difference for yourself.
+              </span>
+            </p>
+            <a class="er-button er-button-dark" href="https://newurtopia.com/pages/find-a-dealer">Test ride</a>
+          </div>
+          <div class="er-bg-white er-flex er-flex-col er-justify-center er-px-28 mb:er-px-6 mb:er-py-12 mb:er-order-1">
+            <h3 class="text-size36 mb:er-text-4xl">Local Care, Anytime</h3>
+            <div class="text-size18 er-my-12 mb:er-text-2xl mb:er-my-8">
+              <div>Enjoy complete peace of mind with Urtopia’s trusted service network:</div>
+              <ul class="er-p-0 er-list-none er-space-y-10 mb:er-space-y-8">
+                <li class="marker:er-hidden er-flex er-items-center">
+                  <img class="er-block er-mr-6" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26153.svg?v=1761559856" loading="lazy" alt="">
+                  <span>2-year warranty on all e-bikes</span>
+                </li>
+               <li class="marker:er-hidden er-flex er-items-center">
+                  <img class="er-block er-mr-6" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26152.svg?v=1761559856" loading="lazy" alt="">
+                  <span>24-hour service response via our in-app support portal</span>
+                </li>
+                <li class="marker:er-hidden er-flex er-items-center">
+                  <img class="er-block er-mr-6" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26154.svg?v=1761559856" loading="lazy" alt="">
+                  <span>Spare parts available locally, shipping within 3 days</span>
+                </li>
+                <li class="marker:er-hidden er-flex er-items-center">
+                  <img class="er-block er-mr-6" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/76863.svg?v=1761559856" loading="lazy" alt="">
+                  <span>10+ technical experts with a 99% satisfaction rate</span>
+                </li>
+              </ul>
+            </div>
+            <a class="er-button er-button-dark" href="https://newurtopia.com/pages/care">Learn more</a>
+          </div>
+          <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC00386_1_2x_a0c03d87-7030-4065-aa68-9be927e0d927.jpg?v=1761553352" loading="lazy" alt="">
+        </div>
+      </div>
+    </section>
+    <div class="faq er-bg-background er-py-48 mb:er-py-20">
+        <div class="centeral-content">
+          <h2 class="u36Medium_v2">FAQs</h2>
+          <div class="items">
+            <div class="item">
+              <h3 class="u24Medium_v2 text-size24">
+                <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="{{ page_title }}">
+                1. What is an Electric Cruiser Bike, and how does it differ from a standard fat ebike?
+              </h3>
+              <p class="u17Light_v2 text-size18">
+                <span>An Electric Cruiser Bike is designed for comfort, style, and relaxed riding. It features an upright seating position, wide handlebars, and a soft, cushioned saddle that promotes easy cruising on city streets or beach paths. In contrast, a standard <a class="my-link" href="/products/urtopia-joy-carbon-fat-tire-ebike">fat tire ebike</a> focuses more on all-terrain capability, using oversized tires for better traction on sand, snow, or gravel. While both provide electric assist, cruiser eBikes emphasize comfort and aesthetics, whereas fat eBikes prioritize power and versatility for off-road adventures.</span>
+              </p>
+            </div>
+            <div class="item">
+              <h3 class="u24Medium_v2 text-size24">
+                <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="{{ page_title }}">
+                2. What kind of maintenance does an e bike beach cruiser need?
+              </h3>
+              <p class="u17Light_v2 text-size18">
+                <span>Maintenance for an e bike beach cruiser is simple but important to keep it running smoothly. Check tire pressure regularly to ensure stability and comfort. Clean and lubricate the chain to prevent rust, especially after coastal rides. Always wipe off sand and salt residue to avoid corrosion on metal parts. Recharge and store the battery in a cool, dry place to preserve its capacity. Periodic brake and gear inspections also help maintain safe, effortless cruising for years of enjoyable beachside rides.</span>
+              </p>
+            </div>
+            <div class="item">
+              <h3 class="u24Medium_v2 text-size24">
+                <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="{{ page_title }}">
+                3. Can I ride the Carbon Joy Ultra E-Bike in snow, sand, or mud?
+              </h3>
+              <p class="u17Light_v2 text-size18">
+                <span>Absolutely. The Carbon Joy Ultra’s fat tires provide superior grip and flotation, allowing it to handle challenging surfaces such as snow, sand, or muddy trails. Combined with its full suspension system, it ensures a stable and controlled ride even in slippery or uneven conditions.</span>
+              </p>
+            </div>
+            <div class="item">
+              <h3 class="u24Medium_v2 text-size24">
+                <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="{{ page_title }}">
+               4. How much weight can a step through fat tire e-bike support?
+              </h3>
+              <p class="u17Light_v2 text-size18">
+                <span>The Carbon Joy Ultra E-Bike is engineered with a sturdy step-through frame and reinforced fat tires for enhanced stability. Its total weight limit is 330 lbs, including the rider and cargo. This robust capacity makes it ideal for diverse riders and everyday use, from city commutes to coastal cruising. The wide tires provide excellent traction and comfort, ensuring a smooth, safe, and enjoyable ride even when carrying extra gear or accessories.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+{% render 'size-guide-and-specs-template' %}
+<div class="centeral-content er-px-6 judgemeeeeee">{% include "judgeme_widgets", widget_type: "judgeme_review_widget", concierge_install: false %}</div>
+<script type="module">
+  task(() => {
+        new Swiper('.TakeItEasywithFold1 .centeral-content', {
+            slidesPerView: global_config.is_mobile ? 1.25 : 3,
+            spaceBetween: global_config.is_mobile ? 16 : 32,
+            preloadImages: false,
+            navigation: {
+              nextEl: '.TakeItEasywithFold1 .centeral-content .swiper-button-next',
+              prevEl: '.TakeItEasywithFold1 .centeral-content .swiper-button-prev',
+            },
+            scrollbar: {
+              el: '.TakeItEasywithFold1 .centeral-content .swiper-scrollbar',
+              draggable: true
+            },
+          });
+      })
+
+      task(() => {
+              new Swiper('.quality_in_details', {
+                  slidesPerView: global_config.is_mobile ? 1.25 : 3,
+                  spaceBetween: global_config.is_mobile ? 16 : 32,
+                  preloadImages: false,
+                  navigation: {
+                      nextEl: '.quality_in_details .swiper-button-next',
+                      prevEl: '.quality_in_details .swiper-button-prev',
+                  },
+                  scrollbar: {
+                      el: '.quality_in_details .swiper-scrollbar',
+                      draggable: true
+                  },
+              });
+    })
+
+    task(() => {
+            $('.faq .items .item .u24Medium_v2').click(function () {
+            $(this).siblings('.u17Light_v2').slideToggle().parent().siblings().find('.u17Light_v2').slideUp();
+
+            if ($(this).parent().hasClass('active')) {
+              $(this).parent().removeClass('active');
+            } else {
+              $(this).parent().addClass('active');
+            }
+
+            $(this).parent().siblings().removeClass('active');
+          });
+          })
+</script>
