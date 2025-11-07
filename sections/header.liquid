@@ -149,6 +149,15 @@
                                               </div>  
                                             <img src="{{ productttttt.featured_image | image_url: width: 300 }}" loading="lazy" fetchpriority="low" width="134" height="84" alt="Urtopia Ebike - Sleek, Full Carbon, Lightweight, Smart">
                                         </div>
+                                        {% assign productttttt = all_products["urtopia-carbon-joy-ultra-ebike"].first_available_variant %}
+                                        <div class="by-model" href="{{ productttttt.url }}">
+                                              <div>
+                                                <div class="u14DemiBold_v2">Carbon Joy Ultra</div>
+                                                <div class="u11Light_v2">Built for City Hauls</div>
+                                                <span class="u14DemiBold_v2 emphasize" {% unless productttttt.compare_at_price == productttttt.price %}data-price="{{ productttttt.compare_at_price | money_without_trailing_zeros }}"{% endunless %}>{{ productttttt.price | money_without_trailing_zeros }}</span>
+                                              </div>  
+                                            <img src="{{ productttttt.featured_image | image_url: width: 300 }}" loading="lazy" fetchpriority="low" width="134" height="84" alt="Urtopia Ebike - Sleek, Full Carbon, Lightweight, Smart">
+                                        </div>
                                       {% assign productttttt = all_products["urtopia-joy-carbon-fat-tire-ebike"].first_available_variant %}
                                         <div class="by-model" href="{{ productttttt.url }}">
                                               <div>
@@ -521,6 +530,15 @@
                                           <div class="flex-1"></div>
                                           <div class="u17DemiBold_v2">Carbon Classic ST</div>
                                           <div class="er-text-xl er-my-2">Lightweight Step-through Ebike</div>
+                                          <span class="u14DemiBold_v2 emphasize" {% unless productttttt.compare_at_price == productttttt.price %}data-price="{{ productttttt.compare_at_price | money_without_trailing_zeros }}"{% endunless %}>{{ productttttt.price | money_without_trailing_zeros }}</span>
+                                      </div>
+                                      {% assign productttttt =  all_products["urtopia-carbon-joy-ultra-ebike"].first_available_variant %}
+                                      <div class="by-model" href="{{ productttttt.url }}">
+                                          <span class="takkatukku">NEW</span>  
+                                          <img loading="lazy" fetchpriority="low" width="175" height="113" alt="Urtopia Ebike - Sleek, Full Carbon, Lightweight, Smart" src="{{ productttttt.featured_image | image_url: width: 500 }}">
+                                          <div class="flex-1"></div>  
+                                          <div class="u17DemiBold_v2">Carbon Joy Ultra</div>
+                                          <div class="er-text-xl er-my-2">Built for City Hauls</div>
                                           <span class="u14DemiBold_v2 emphasize" {% unless productttttt.compare_at_price == productttttt.price %}data-price="{{ productttttt.compare_at_price | money_without_trailing_zeros }}"{% endunless %}>{{ productttttt.price | money_without_trailing_zeros }}</span>
                                       </div>
                                     {% assign productttttt =  all_products["urtopia-joy-carbon-fat-tire-ebike"].first_available_variant %}
