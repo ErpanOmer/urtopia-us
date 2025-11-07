@@ -1,10 +1,47 @@
-<div id="announcement-bar" class="er-font-base mb:er-text-[14px]">
+<style>
+  #announcement-bar>div {
+    animation: none;
+    transform: none;
+    font-weight: bold;
+  }
+
+   #announcement-bar>div span {
+    display: inline-block;
+    position: relative;
+   }
+
+  #announcement-bar>div span::after {
+    content: "";
+    background: url(https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26542.svg?v=1762424999) center center no-repeat;
+    width: 25px;
+    height: 35px;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translateX(105%);
+    background-size: 80%;
+  }
+
+  #announcement-bar>div span::before {
+            content: "";
+            background: url(https://cdn.shopify.com/s/files/1/0583/5810/4213/files/77012.svg?v=1762424998) center center no-repeat;
+            width: 25px;
+            height: 35px;
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            transform: translateX(-105%);
+                background-position-y: 35%;
+ }
+</style>
+
+<div id="announcement-bar" class="er-font-base">
   <div>
-    <span class="er-text-primary er-mr-1">
-      <b>{{- all_products['urtopia-carbon-1-pro-ebike'].compare_at_price | minus: all_products['urtopia-carbon-1-pro-ebike'].price | money_without_trailing_zeros }} off</b></span> on Carbon 1 Pro.
-    <a class="er-button er-button-text er-underline er-ml-1" href="/collections/e-bike-sale"><b>Get yours Now</b></a>
+    <span>Black Friday 👉 <a class="er-button er-button-text er-underline" href="/collections/urtopia-black-friday-sale" style="color: #E0BD76;">Best Deals of the Year</a></span>
   </div>
-  <div>
+  {% comment %} <div>
     <span class="Klarna-logo er-mr-2" style="background-color: rgb(74, 74, 244);">{% render 'icon-affirm' %}</span>
     <span class="Klarna-logo er-mr-2">Klarna.</span>
     0% APR, up to 24 months
@@ -14,5 +51,5 @@
     {{ settings.shop_count }} shops for 👉
     <br class="pcHide">
     <a class="er-button er-button-text er-underline er-ml-1" href="/pages/find-a-dealer"><b>free test ride</b></a>
-  </div>
+  </div> {% endcomment %}
 </div>
