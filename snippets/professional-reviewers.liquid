@@ -56,7 +56,8 @@
 
 <div class="tabs">
                 <div class="tab-nav">
-                    <a href="#content2" class="active">Carbon 1 Pro</a>
+                    <a href="#content7" class="active">Carbon Classic</a>
+                    <a href="#content2">Carbon 1 Pro</a>
                     <a href="#content4">Carbon Joy</a>
                     <a href="#content3">Carbon 1 ST</a>
                     <a href="#content1">Carbon Fold 1</a>
@@ -178,6 +179,25 @@
                                 </div>
                         {%- endfor -%}
                     </div>
+                    <div id="content7"
+                        class="tab-pane er-grid xl:er-grid-cols-4 lg:er-grid-cols-3 md:er-grid-cols-2 er-grid-cols-1 er-mt-16 mb:er-mt-10 er-gap-y-16 er-gap-x-6">
+                        {%- for item in all_products["urtopia-carbon-classic-ebike"].metafields.custom.review_list.value -%}
+                            <div class="er-flex er-flex-col er-items-start er-cursor-pointer"
+                                    onclick="showVideoDialog('https://www.youtube.com/embed/{{ item.youtube_id }}?autoplay=1&amp;cc_load_policy=1');return false;">
+                                    {{ item.review_cover | image_url: width: 500 | image_tag: class: 'er-rounded-2xl', loading: 'lazy' }}
+                                    <p class="text-size16 er-mt-6 er-mb-8 mb:er-text-2xl mb:er-mb-6">
+                                        <span>
+                                            {{ item.review_desc }}
+                                        </span>
+                                    </p>
+                                    <span class="er-flex-1"></span>
+                                    <div class="er-flex er-items-center">
+                                        {{ item.review_auther_cover | image_url: width: 30, height: 30 | image_tag: class: 'er-mr-4 er-rounded-full', loading: 'lazy' }}
+                                        <span class="text-size16 er-font-medium mb:er-text-2xl">{{ item.review_auther_name }}</span>
+                                    </div>
+                                </div>
+                        {%- endfor -%}
+                    </div>
                 </div>
             </div>
 
@@ -192,5 +212,5 @@
     });
     // 默认显示第一个
     $('.tab-pane').hide();
-    $('#content2').css('display', global_config.is_mobile ? 'flex' : 'grid');
+    $('#content7').css('display', global_config.is_mobile ? 'flex' : 'grid');
 </script>
