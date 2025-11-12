@@ -18,6 +18,9 @@ export default {
         mb: {
           max: '768px',
         },
+        headermb: {
+          max: '989px',
+        }
       },
       fontFamily: {
         base: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Ubuntu', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif', "Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"],
