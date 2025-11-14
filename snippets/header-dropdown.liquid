@@ -23,7 +23,7 @@
                     {% for product_item in collections["e-bikes"].products %}
                         {% if product_item.available %}
                             <a href="{{ product_item.first_available_variant.url }}" class="er-bg-background er-rounded-xl er-p-8 er-flex er-flex-col er-items-center er-text-center er-justify-start er-relative headermb:er-py-6 headermb:er-px-4">
-                                {% if forloop.index < 4 %}
+                                {% if forloop.index < 5 %}
                                     <div class="er-absolute er-left-4 er-top-4 text-size12 er-font-bold er-bg-primary/15 er-text-primary er-rounded-xl er-px-3 er-py-1 mb:er-text-base mb:er-left-2 mb:er-top-2">NEW</div>
                                 {% endif %}
                                 {{ product_item.first_available_variant | image_url: width: 300 | image_tag : class: "hover:er-scale-105 er-transition er-aspect-[16/10] er-object-cover" }}

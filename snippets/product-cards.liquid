@@ -20,6 +20,16 @@
         product_url: product.url,
         product_uhmaya: product_uhmaya
       %}
+      {% assign product = all_products['urtopia-carbon-fold-step-thru-ebike'] %}
+      {% assign product_variants = product.variants | where: 'available' %}
+      {% assign product_uhmaya = '31 lbs---Carbon fiber,50 Miles---Max Range,2 Step---Folding,Torque---Sensor' | split: ',' %}
+      {% render 'product-card-3',
+        product_variants: product_variants,
+        product_name: 'Joy Carbon E-Bike',
+        product_description: 'Light to ride, comfy to cruise, built tough',
+        product_url: product.url,
+        product_uhmaya: product_uhmaya
+      %}
       {% assign product = all_products['urtopia-carbon-joy-ultra-ebike'] %}
       {% assign product_variants = product.variants | where: 'available' %}
       {% assign product_uhmaya = '42 lbs---Carbon fiber,70 Miles---Max Range,750W---Peak Power,Throttle---Tap to go' | split: ',' %}
