@@ -1293,23 +1293,24 @@ h4 {
 }
 
 .ebike-products .product-grid .product-card:before {
-    width: 17%;
+    width: 20%;
     height: 21%;
-    top: 7.5px;
-    background: transparent url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26493_2x_dba9e9aa-33dc-4103-8f9e-51e698549fcd.png?v=1762423797') center center/contain no-repeat;
+    top: 10px;
+    right: 10px;
+    background: transparent url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26585_2x_bb457d1a-9986-4208-8ce2-bcfc0d467180.png?v=1763107447') top center/contain no-repeat;
 }
 
-.ebike-products .product-grid .product-card[data-product-handle="urtopia-joy-carbon-fat-tire-ebike"] {
-    &::before {
-        background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26497_2x_a2275fa2-53b9-4522-b723-9e322844f0a5.png?v=1762424899')
-    }
-}
+// .ebike-products .product-grid .product-card[data-product-handle="urtopia-joy-carbon-fat-tire-ebike"] {
+//     &::before {
+//         background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26497_2x_a2275fa2-53b9-4522-b723-9e322844f0a5.png?v=1762424899')
+//     }
+// }
 
-.ebike-products .product-grid .product-card[data-product-handle="urtopia-carbon-joy-ultra-ebike"] {
-    &::before {
-        background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26497_2x_a2275fa2-53b9-4522-b723-9e322844f0a5.png?v=1762424899')
-    }
-}
+// .ebike-products .product-grid .product-card[data-product-handle="urtopia-carbon-joy-ultra-ebike"] {
+//     &::before {
+//         background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26497_2x_a2275fa2-53b9-4522-b723-9e322844f0a5.png?v=1762424899')
+//     }
+// }
 
 .compare {
     .dots {
