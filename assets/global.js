@@ -2348,3 +2348,43 @@ $(document).on('click', 'div[cart-variant-id]', function () {
 // fetch(window.location.pathname + '?sections=datalayer-allpages').then(r => r.json()).then(r => {
 //   $(document.body).append($(r['datalayer-allpages']))
 // })
+
+
+$(document).on('submit', `.footer__newsletter.newsletter-form`, function (event) {
+      event.preventDefault(); // 防止表单提交（为了演示）
+      $(this).next(".subscribe-tip").remove();
+
+       // 创建提示元素
+      const $tip = $('<div class="subscribe-tip">Thank you for subscribing!</div>');
+
+      // 设置样式（5px 间距）
+      $tip.css({
+        "margin-top": "5px",
+        "font-size": "16px",
+        "color": "#fd4b17",
+        "text-align": "left",
+        "padding": "0 12px"
+      });
+
+      $(this).after($tip);
+
+      const values = {}
+      // 获取表单的所有数据
+      for (const { name, value } of $(this).serializeArray()) {
+          values[name] = value
+      }
+
+      // 埋点
+      fetchBuried('emailpop', 'submit', {
+        email: values[`contact[email]`],
+        tag: `US,POPUP,enter pop`
+      })
+      
+      setTimeout(() => {
+        $tip.fadeOut(300, function () {
+          $(this).remove();
+        });
+      }, 5000);
+
+      return false
+  });
