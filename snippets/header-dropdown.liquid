@@ -26,7 +26,7 @@
                                 {% if forloop.index < 5 %}
                                     <div class="er-absolute er-left-4 er-top-4 text-size12 er-font-bold er-bg-primary/15 er-text-primary er-rounded-xl er-px-3 er-py-1 mb:er-text-base mb:er-left-2 mb:er-top-2">NEW</div>
                                 {% endif %}
-                                {{ product_item.first_available_variant | image_url: width: 300 | image_tag : class: "hover:er-scale-105 er-transition er-aspect-[16/10] er-object-cover" }}
+                                {{ product_item.first_available_variant | image_url: width: 300 | image_tag : class: "hover:er-scale-105 er-transition er-aspect-[16/11] er-object-contain" }}
                                 <div class="text-size16 er-font-bold er-mt-4 er-mb-2 mb:er-text-2xl">{{ product_item.metafields.custom.product-in-header.value.title }}</div>
                                 <div class="text-size12 er-opacity-70">
                                     {{ product_item.metafields.custom.product-in-header.value.discription }}
