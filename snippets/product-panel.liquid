@@ -196,22 +196,26 @@
         </div>
       </fieldset>
     {%- endfor -%}
+    <style>
+      .accessories label:nth-of-type(1) {
+        background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26621_2x_7874041c-2d28-4ab3-9093-616d203260f7.jpg?v=1763712616') center center/cover no-repeat;
+        {% if product.handle == 'urtopia-joy-carbon-fat-tire-ebike' or product.handle == 'urtopia-carbon-joy-ultra-ebike' %}
+          background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26626_2x_00afaac3-ad2c-4b3d-be79-ff36d431e788.jpg?v=1763716027');
+        {%- endif -%}
+        background-size: 100% 100%;
+      }
+    </style>
     {% if product_accessories.count %}
       <div class="er-flex er-flex-col er-border er-border-solid er-border-border er-rounded-lg er-p-4 accessories">
         <div class="text-size18 er-font-bold er-mt-2 er-mb-4 mb:er-text-2xl">Compatible Accessory</div>
-        <label class="er-bg-border er-pl-2 mb:er-pl-1 er-pr-6 er-py-4 er-select-none er-pointer-events-none er-flex er-items-center peer-checked:er-bg-primary er-rounded-lg er-transition-colors er-gap-x-3 er-cursor-pointer {% if forloop.index > 2 %}er-hidden{% endif %}">
+        <label class="er-bg-border er-text-white er-pl-5 er-p-4 mb:er-pl-4 er-select-none er-pointer-events-none er-flex er-items-center peer-checked:er-bg-primary er-rounded-lg">
               <input checked type="checkbox" name="id" value="{{ variant.id }}" style="width: 0;height: 0;margin: 0;appearance: none;accent-color: transparent;background-image: none;border: none;box-shadow: none;padding: 0;"/>
-              <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25961.svg?v=1758174989" height="20" width="20" class="!er-min-w-8 mb:!er-min-w-6" alt="">
-              {{
-                product_send_accessories_icon.image
-                | image_url: width: 150
-                | image_tag: class: 'er-max-w-24 mb:er-max-w-20', loading: 'lazy'
-              }}
-              <span class="text-size14 mb:er-text-xl">{{ product_send_accessories_icon.text }}</span>
+              <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26635.svg?v=1763715483" height="20" width="20" class="!er-min-w-8 mb:!er-min-w-6 mb:!er-max-w-6" alt="">
               <span class="er-flex-1"></span>
-              <div class="er-flex er-flex-col er-items-end">
-                <span class="er-bg-primary text-size18 er-font-bold mb:er-text-2xl er-text-white er-rounded-lg er-px-3">FREE</span>
-                <del class="er-block text-size18 er-font-bold mb:er-text-2xl er-text-[#909090] er-mt-1">{{ product_send_accessories_price | money_without_trailing_zeros }}</del>
+              <span class="text-size14 mb:er-text-xl"><span class="er-font-bold" style="color:#FFDF48;">FREE</span> Helmet, Air Pump,<br>Bottle Cage &&nbsp;{%- if product.handle == 'urtopia-joy-carbon-fat-tire-ebike' or product.handle == 'urtopia-carbon-joy-ultra-ebike' -%}Front Rack{%- else -%}Rear Rack{%- endif -%} <br><span class="text-size12 er-whitespace-nowrap er-opacity-50 mb:er-text-base">added automatically on shipment</span></span>
+              <div class="er-flex er-flex-col er-items-end er-ml-6">
+                <span class="er-bg-[#FFDF48] text-size18 er-font-bold mb:er-text-2xl er-text-black er-rounded-lg er-px-3">FREE</span>
+                <del class="er-block text-size18 er-font-bold mb:er-text-2xl er-mt-1">{{ 30600 | money_without_trailing_zeros }}</del>
               </div>
         </label>
         <div class="er-border-0 er-border-b er-border-solid er-border-b-border er-my-4 mb:er-my-3"></div>
