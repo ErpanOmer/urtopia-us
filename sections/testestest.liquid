@@ -1,12 +1,10 @@
 {{ 'outlet_v4.scss.css' | asset_url | stylesheet_tag: preload: true }}
 
-
-
-<section class="er-bg-background er-mx-auto er-max-w-screen-2xl">
-    <div>
-        
-    </div>
+<section class="er-bg-background">
+  <div class="er-mx-auto er-max-w-screen-2xl">
+    <div></div>
     <div class="ebike-products er-max-w-screen-xl">
-        {% render: "product-cards" %}
+      {% render : "product-cards" %}
     </div>
+  </div>
 </section>
