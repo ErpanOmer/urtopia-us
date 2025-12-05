@@ -2,9 +2,11 @@
 
 <section class="er-bg-background">
   <div class="er-mx-auto er-max-w-screen-2xl er-flex">
-    <div class="filter"></div>
+    <div class="filters er-flex-1">
+      {% render "filters" %}
+    </div>
     <div class="ebike-products er-max-w-screen-xl">
-      {% render : "product-cards" %}
+      {% render "product-cards" %}
     </div>
   </div>
 </section>

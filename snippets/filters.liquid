@@ -1,0 +1,144 @@
+<style>
+  .filter-section { font-size: 1.4rem; }
+  .filter-title { font-size: 1.6rem; font-weight: 600; }
+  .checkbox-item { font-size: 1.3rem; }
+</style>
+
+<div class="filters er-w-80 er-bg-red-500 er-rounded-lg er-p-6">
+  <!-- Results Header -->
+  <div class="er-flex er-justify-between er-items-center er-mb-6">
+    <span class="filter-title er-text-gray-800">1 OF 1 RESULTS</span>
+    <a href="#" class="er-text-blue-600 er-text-1.2rem er-underline">Clear filters (0)</a>
+  </div>
+
+  <!-- Collections Filter -->
+  <div class="filter-section er-mb-6 er-border-b er-border-red-400">
+    <div class="filter-title er-text-gray-800 er-flex er-justify-between er-items-center er-cursor-pointer er-pb-4 collection-toggle">
+      <span>COLLECTIONS</span>
+      <span class="er-text-1.8rem">−</span>
+    </div>
+    <div class="collection-content er-space-y-3 er-pt-4">
+      <label class="checkbox-item er-flex er-items-center er-cursor-pointer">
+        <input type="radio" name="collection" value="electric-bikes" class="er-mr-3">
+        <span>Electric Bikes</span>
+      </label>
+      <label class="checkbox-item er-flex er-items-center er-cursor-pointer">
+        <input type="radio" name="collection" value="newly-released" class="er-mr-3">
+        <span>Newly Released Ebikes</span>
+      </label>
+      <label class="checkbox-item er-flex er-items-center er-cursor-pointer er-font-bold">
+        <input type="radio" name="collection" value="mountain-bike" class="er-mr-3" checked>
+        <span>Electric Mountain Bike</span>
+      </label>
+      <label class="checkbox-item er-flex er-items-center er-cursor-pointer">
+        <input type="radio" name="collection" value="commuter" class="er-mr-3">
+        <span>Commuter Ebikes</span>
+      </label>
+      <label class="checkbox-item er-flex er-items-center er-cursor-pointer">
+        <input type="radio" name="collection" value="fat-tire" class="er-mr-3">
+        <span>Fat Tire Ebikes</span>
+      </label>
+      <label class="checkbox-item er-flex er-items-center er-cursor-pointer">
+        <input type="radio" name="collection" value="folding" class="er-mr-3">
+        <span>Folding Ebike</span>
+      </label>
+      <label class="checkbox-item er-flex er-items-center er-cursor-pointer">
+        <input type="radio" name="collection" value="cruiser" class="er-mr-3">
+        <span>Cruiser Ebikes</span>
+      </label>
+      <label class="checkbox-item er-flex er-items-center er-cursor-pointer">
+        <input type="radio" name="collection" value="cargo" class="er-mr-3">
+        <span>Cargo & Utility Ebikes</span>
+      </label>
+      <label class="checkbox-item er-flex er-items-center er-cursor-pointer">
+        <input type="radio" name="collection" value="step-over" class="er-mr-3">
+        <span>Step Over Electric Bikes</span>
+      </label>
+      <label class="checkbox-item er-flex er-items-center er-cursor-pointer">
+        <input type="radio" name="collection" value="step-through" class="er-mr-3">
+        <span>Step Through Ebikes</span>
+      </label>
+    </div>
+  </div>
+
+  <!-- Price Filter -->
+  <div class="filter-section er-mb-6 er-border-b er-border-red-400">
+    <div class="filter-title er-text-gray-800 er-flex er-justify-between er-items-center er-cursor-pointer er-pb-4 price-toggle">
+      <span>PRICE</span>
+      <span class="er-text-1.8rem">▼</span>
+    </div>
+    <div class="price-content er-hidden er-pt-4">
+      <!-- Price content here -->
+    </div>
+  </div>
+
+  <!-- Range Filter -->
+  <div class="filter-section er-mb-6 er-border-b er-border-red-400">
+    <div class="filter-title er-text-gray-800 er-flex er-justify-between er-items-center er-cursor-pointer er-pb-4 range-toggle">
+      <span>RANGE</span>
+      <span class="er-text-1.8rem">−</span>
+    </div>
+    <div class="range-content er-space-y-3 er-pt-4">
+      <label class="checkbox-item er-flex er-items-center er-cursor-pointer">
+        <input type="checkbox" class="er-mr-3">
+        <span>Under 50 miles (0)</span>
+      </label>
+      <label class="checkbox-item er-flex er-items-center er-cursor-pointer">
+        <input type="checkbox" class="er-mr-3">
+        <span>50 - 59 miles (0)</span>
+      </label>
+      <label class="checkbox-item er-flex er-items-center er-cursor-pointer">
+        <input type="checkbox" class="er-mr-3">
+        <span>60 - 69 miles (0)</span>
+      </label>
+      <label class="checkbox-item er-flex er-items-center er-cursor-pointer">
+        <input type="checkbox" class="er-mr-3">
+        <span>Over 70 miles (1)</span>
+      </label>
+    </div>
+  </div>
+
+  <!-- Max Speed Filter -->
+  <div class="filter-section">
+    <div class="filter-title er-text-gray-800 er-flex er-justify-between er-items-center er-cursor-pointer er-pb-4 speed-toggle">
+      <span>MAX SPEED</span>
+      <span class="er-text-1.8rem">▼</span>
+    </div>
+    <div class="speed-content er-hidden er-pt-4">
+      <!-- Speed content here -->
+    </div>
+  </div>
+</div>
+
+<script>
+jQuery(document).ready(function($) {
+  // Toggle sections
+  $('.collection-toggle').on('click', function() {
+    $('.collection-content').slideToggle(300);
+    $(this).find('span:last').text(function(i, text) {
+      return text === '−' ? '▼' : '−';
+    });
+  });
+
+  $('.price-toggle').on('click', function() {
+    $('.price-content').slideToggle(300);
+    $(this).find('span:last').text(function(i, text) {
+      return text === '▼' ? '−' : '▼';
+    });
+  });
+
+  $('.range-toggle').on('click', function() {
+    $('.range-content').slideToggle(300);
+    $(this).find('span:last').text(function(i, text) {
+      return text === '−' ? '▼' : '−';
+    });
+  });
+
+  $('.speed-toggle').on('click', function() {
+    $('.speed-content').slideToggle(300);
+    $(this).find('span:last').text(function(i, text) {
+      return text === '▼' ? '−' : '▼';
+    });
+  });
+});
+</script>
