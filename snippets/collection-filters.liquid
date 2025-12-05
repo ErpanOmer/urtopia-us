@@ -1,0 +1,559 @@
+{% comment %}
+  Renders the collection filters component
+  
+  Usage:
+  {% render 'collection-filters' %}
+{% endcomment %}
+
+<style>
+  /* Filters Component Styles - Using Tailwind with 1rem = 10px */
+  .filters {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    font-size: 1.4rem; /* 14px */
+  }
+
+  /* Filter Header */
+  .filters__header {
+    padding: 1.6rem 0;
+    border-bottom: 1px solid #EBEDF0;
+  }
+
+  .filters__results-count {
+    font-size: 1.2rem; /* 12px */
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #242729;
+  }
+
+  .filters__results-count .highlight {
+    color: #00A3E0;
+  }
+
+  .filters__clear-link {
+    font-size: 1.4rem; /* 14px */
+    color: #00A3E0;
+    text-decoration: none;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+
+  .filters__clear-link:hover {
+    opacity: 0.7;
+  }
+
+  /* Filter Section */
+  .filters__section {
+    border-bottom: 1px solid #EBEDF0;
+  }
+
+  .filters__section-header {
+    padding: 1.6rem 0;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .filters__section-title {
+    font-size: 1.2rem; /* 12px */
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #242729;
+  }
+
+  .filters__section-arrow {
+    width: 1rem;
+    height: 1rem;
+    transition: transform 0.3s ease;
+  }
+
+  .filters__section.is-collapsed .filters__section-arrow {
+    transform: rotate(180deg);
+  }
+
+  .filters__section-content {
+    padding-bottom: 1.6rem;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+  }
+
+  .filters__section.is-collapsed .filters__section-content {
+    max-height: 0 !important;
+    padding-bottom: 0;
+    opacity: 0;
+  }
+
+  /* Filter Options List */
+  .filters__options-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem; /* 12px */
+  }
+
+  /* Radio Option (Collections) */
+  .filters__radio-option {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* 10px */
+    cursor: pointer;
+  }
+
+  .filters__radio-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .filters__radio-circle {
+    width: 1.4rem; /* 14px */
+    height: 1.4rem; /* 14px */
+    border: 1.5px solid #A0A1A2;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: border-color 0.2s;
+  }
+
+  .filters__radio-circle-inner {
+    width: 0.8rem; /* 8px */
+    height: 0.8rem; /* 8px */
+    background-color: #242729;
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 0.2s, transform 0.2s;
+  }
+
+  .filters__radio-option input[type="radio"]:checked + .filters__radio-circle {
+    border-color: #242729;
+  }
+
+  .filters__radio-option input[type="radio"]:checked + .filters__radio-circle .filters__radio-circle-inner {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .filters__option-label {
+    font-size: 1.4rem; /* 14px */
+    color: #242729;
+    line-height: 1.4;
+  }
+
+  /* Checkbox Option (Price, Range, Max Speed) */
+  .filters__checkbox-option {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* 10px */
+    cursor: pointer;
+  }
+
+  .filters__checkbox-option input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .filters__checkbox-box {
+    width: 1.6rem; /* 16px */
+    height: 1.6rem; /* 16px */
+    border: 1.5px solid #A0A1A2;
+    border-radius: 0.3rem; /* 3px */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background-color 0.2s, border-color 0.2s;
+  }
+
+  .filters__checkbox-check {
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 0.2s, transform 0.2s;
+  }
+
+  .filters__checkbox-option input[type="checkbox"]:checked + .filters__checkbox-box {
+    background-color: #00A3E0;
+    border-color: #00A3E0;
+  }
+
+  .filters__checkbox-option input[type="checkbox"]:checked + .filters__checkbox-box .filters__checkbox-check {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .filters__option-count {
+    color: #A0A1A2;
+    font-size: 1.4rem; /* 14px */
+  }
+</style>
+
+<div class="filters__header er-flex er-justify-between er-items-center">
+  <span class="filters__results-count">
+    <span class="highlight">0</span> OF <span class="total-count">1</span> RESULTS
+  </span>
+  <a href="#" class="filters__clear-link" id="clearFilters">Clear filters (<span class="active-count">1</span>)</a>
+</div>
+
+<!-- COLLECTIONS Section -->
+<div class="filters__section" data-filter-section="collections">
+  <div class="filters__section-header">
+    <span class="filters__section-title">COLLECTIONS</span>
+    <svg class="filters__section-arrow" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1 1L5 5L9 1" stroke="#242729" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <div class="filters__section-content">
+    <ul class="filters__options-list">
+      <li>
+        <label class="filters__radio-option">
+          <input type="radio" name="collection" value="electric-bikes">
+          <span class="filters__radio-circle">
+            <span class="filters__radio-circle-inner"></span>
+          </span>
+          <span class="filters__option-label">Electric Bikes</span>
+        </label>
+      </li>
+      <li>
+        <label class="filters__radio-option">
+          <input type="radio" name="collection" value="newly-released">
+          <span class="filters__radio-circle">
+            <span class="filters__radio-circle-inner"></span>
+          </span>
+          <span class="filters__option-label">Newly Released Ebikes</span>
+        </label>
+      </li>
+      <li>
+        <label class="filters__radio-option">
+          <input type="radio" name="collection" value="electric-mountain" checked>
+          <span class="filters__radio-circle">
+            <span class="filters__radio-circle-inner"></span>
+          </span>
+          <span class="filters__option-label">Electric Mountain Bike</span>
+        </label>
+      </li>
+      <li>
+        <label class="filters__radio-option">
+          <input type="radio" name="collection" value="commuter">
+          <span class="filters__radio-circle">
+            <span class="filters__radio-circle-inner"></span>
+          </span>
+          <span class="filters__option-label">Commuter Ebikes</span>
+        </label>
+      </li>
+      <li>
+        <label class="filters__radio-option">
+          <input type="radio" name="collection" value="fat-tire">
+          <span class="filters__radio-circle">
+            <span class="filters__radio-circle-inner"></span>
+          </span>
+          <span class="filters__option-label">Fat Tire Ebikes</span>
+        </label>
+      </li>
+      <li>
+        <label class="filters__radio-option">
+          <input type="radio" name="collection" value="folding">
+          <span class="filters__radio-circle">
+            <span class="filters__radio-circle-inner"></span>
+          </span>
+          <span class="filters__option-label">Folding Ebike</span>
+        </label>
+      </li>
+      <li>
+        <label class="filters__radio-option">
+          <input type="radio" name="collection" value="cruiser">
+          <span class="filters__radio-circle">
+            <span class="filters__radio-circle-inner"></span>
+          </span>
+          <span class="filters__option-label">Cruiser Ebikes</span>
+        </label>
+      </li>
+      <li>
+        <label class="filters__radio-option">
+          <input type="radio" name="collection" value="cargo-utility">
+          <span class="filters__radio-circle">
+            <span class="filters__radio-circle-inner"></span>
+          </span>
+          <span class="filters__option-label">Cargo & Utility Ebikes</span>
+        </label>
+      </li>
+      <li>
+        <label class="filters__radio-option">
+          <input type="radio" name="collection" value="step-over">
+          <span class="filters__radio-circle">
+            <span class="filters__radio-circle-inner"></span>
+          </span>
+          <span class="filters__option-label">Step Over Electric Bikes</span>
+        </label>
+      </li>
+      <li>
+        <label class="filters__radio-option">
+          <input type="radio" name="collection" value="step-through">
+          <span class="filters__radio-circle">
+            <span class="filters__radio-circle-inner"></span>
+          </span>
+          <span class="filters__option-label">Step Through Ebikes</span>
+        </label>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- PRICE Section -->
+<div class="filters__section" data-filter-section="price">
+  <div class="filters__section-header">
+    <span class="filters__section-title">PRICE</span>
+    <svg class="filters__section-arrow" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1 1L5 5L9 1" stroke="#242729" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <div class="filters__section-content">
+    <ul class="filters__options-list">
+      <li>
+        <label class="filters__checkbox-option">
+          <input type="checkbox" name="price" value="under-1000">
+          <span class="filters__checkbox-box">
+            <svg class="filters__checkbox-check" width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="filters__option-label">Under $1000 <span class="filters__option-count">(0)</span></span>
+        </label>
+      </li>
+      <li>
+        <label class="filters__checkbox-option">
+          <input type="checkbox" name="price" value="1000-1500">
+          <span class="filters__checkbox-box">
+            <svg class="filters__checkbox-check" width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="filters__option-label">$1,000 to $1,500 <span class="filters__option-count">(0)</span></span>
+        </label>
+      </li>
+      <li>
+        <label class="filters__checkbox-option">
+          <input type="checkbox" name="price" value="1500-2000">
+          <span class="filters__checkbox-box">
+            <svg class="filters__checkbox-check" width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="filters__option-label">$1,500 to $2,000 <span class="filters__option-count">(0)</span></span>
+        </label>
+      </li>
+      <li>
+        <label class="filters__checkbox-option">
+          <input type="checkbox" name="price" value="over-2000">
+          <span class="filters__checkbox-box">
+            <svg class="filters__checkbox-check" width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="filters__option-label">Over $2,000 <span class="filters__option-count">(1)</span></span>
+        </label>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- RANGE Section -->
+<div class="filters__section" data-filter-section="range">
+  <div class="filters__section-header">
+    <span class="filters__section-title">RANGE</span>
+    <svg class="filters__section-arrow" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1 1L5 5L9 1" stroke="#242729" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <div class="filters__section-content">
+    <ul class="filters__options-list">
+      <li>
+        <label class="filters__checkbox-option">
+          <input type="checkbox" name="range" value="under-50" checked>
+          <span class="filters__checkbox-box">
+            <svg class="filters__checkbox-check" width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="filters__option-label">Under 50 miles <span class="filters__option-count">(0)</span></span>
+        </label>
+      </li>
+      <li>
+        <label class="filters__checkbox-option">
+          <input type="checkbox" name="range" value="50-59">
+          <span class="filters__checkbox-box">
+            <svg class="filters__checkbox-check" width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="filters__option-label">50 - 59 miles <span class="filters__option-count">(0)</span></span>
+        </label>
+      </li>
+      <li>
+        <label class="filters__checkbox-option">
+          <input type="checkbox" name="range" value="60-69">
+          <span class="filters__checkbox-box">
+            <svg class="filters__checkbox-check" width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="filters__option-label">60 - 69 miles <span class="filters__option-count">(0)</span></span>
+        </label>
+      </li>
+      <li>
+        <label class="filters__checkbox-option">
+          <input type="checkbox" name="range" value="over-70">
+          <span class="filters__checkbox-box">
+            <svg class="filters__checkbox-check" width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="filters__option-label">Over 70 miles <span class="filters__option-count">(1)</span></span>
+        </label>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- MAX SPEED Section -->
+<div class="filters__section" data-filter-section="max-speed">
+  <div class="filters__section-header">
+    <span class="filters__section-title">MAX SPEED</span>
+    <svg class="filters__section-arrow" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1 1L5 5L9 1" stroke="#242729" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <div class="filters__section-content">
+    <ul class="filters__options-list">
+      <li>
+        <label class="filters__checkbox-option">
+          <input type="checkbox" name="max-speed" value="20-mph">
+          <span class="filters__checkbox-box">
+            <svg class="filters__checkbox-check" width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="filters__option-label">20 MPH <span class="filters__option-count">(0)</span></span>
+        </label>
+      </li>
+      <li>
+        <label class="filters__checkbox-option">
+          <input type="checkbox" name="max-speed" value="25-mph">
+          <span class="filters__checkbox-box">
+            <svg class="filters__checkbox-check" width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="filters__option-label">25 MPH <span class="filters__option-count">(1)</span></span>
+        </label>
+      </li>
+      <li>
+        <label class="filters__checkbox-option">
+          <input type="checkbox" name="max-speed" value="28-mph">
+          <span class="filters__checkbox-box">
+            <svg class="filters__checkbox-check" width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="filters__option-label">28 MPH <span class="filters__option-count">(0)</span></span>
+        </label>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<script>
+(function($) {
+  'use strict';
+
+  // Wait for DOM ready
+  $(function() {
+    // Accordion toggle functionality
+    $('.filters__section-header').on('click', function() {
+      var $section = $(this).closest('.filters__section');
+      $section.toggleClass('is-collapsed');
+      
+      var $content = $section.find('.filters__section-content');
+      if ($section.hasClass('is-collapsed')) {
+        $content.css('max-height', '0');
+      } else {
+        $content.css('max-height', $content.prop('scrollHeight') + 'px');
+      }
+    });
+
+    // Initialize content heights
+    $('.filters__section-content').each(function() {
+      var $content = $(this);
+      var $section = $content.closest('.filters__section');
+      if (!$section.hasClass('is-collapsed')) {
+        $content.css('max-height', $content.prop('scrollHeight') + 'px');
+      }
+    });
+
+    // Update active filter count
+    function updateFilterCount() {
+      var activeCount = 0;
+      
+      // Count checked checkboxes
+      $('.filters__checkbox-option input[type="checkbox"]:checked').each(function() {
+        activeCount++;
+      });
+      
+      // Count selected radio (only if not default)
+      var $selectedRadio = $('.filters__radio-option input[type="radio"]:checked');
+      if ($selectedRadio.length > 0) {
+        activeCount++;
+      }
+      
+      $('.active-count').text(activeCount);
+      
+      // Show/hide clear link based on active filters
+      if (activeCount > 0) {
+        $('#clearFilters').show();
+      } else {
+        $('#clearFilters').hide();
+      }
+    }
+
+    // Handle checkbox/radio changes
+    $('.filters input[type="checkbox"], .filters input[type="radio"]').on('change', function() {
+      updateFilterCount();
+      
+      // Trigger custom event for external handling
+      $(document).trigger('filters:changed', {
+        filterType: $(this).attr('name'),
+        filterValue: $(this).val(),
+        isChecked: $(this).is(':checked')
+      });
+    });
+
+    // Clear all filters
+    $('#clearFilters').on('click', function(e) {
+      e.preventDefault();
+      
+      // Uncheck all checkboxes
+      $('.filters__checkbox-option input[type="checkbox"]').prop('checked', false);
+      
+      // Reset radio to first option or uncheck all
+      $('.filters__radio-option input[type="radio"]').prop('checked', false);
+      
+      updateFilterCount();
+      
+      // Trigger custom event
+      $(document).trigger('filters:cleared');
+    });
+
+    // Initial count update
+    updateFilterCount();
+  });
+})(jQuery);
+</script>
