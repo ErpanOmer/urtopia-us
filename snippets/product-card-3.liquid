@@ -9,7 +9,7 @@
   }
 </style>
 
-{% for item in product_variants.first.product.metafields.custom.product_filters %}
+{% for item in product_variants.first.product.metafields.custom.product_filters.value %}
   {{ item }}
 {% endfor %}
 
