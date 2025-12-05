@@ -77,7 +77,7 @@
   }
 
   .filters__section-content {
-    padding-bottom: 1.6rem;
+    padding-bottom: 2rem;
     overflow: hidden;
     transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
   }
@@ -86,6 +86,11 @@
     max-height: 0 !important;
     padding-bottom: 0;
     opacity: 0;
+  }
+
+  /* Ensure last item has proper spacing */
+  .filters__options-list li:last-child {
+    margin-bottom: 0;
   }
 
   /* Filter Options List */
@@ -590,111 +595,142 @@
   </div>
 </div>
 
-<script type="module">
-  // Wait for DOM ready
-  document.addEventListener('DOMContentLoaded', function() {
-    var filtersContainer = document.querySelector('.filters');
-    if (!filtersContainer) return;
+<script>
+/**
+ * Collection Filters Component
+ * A clean, modular filter system using jQuery
+ */
+(function($) {
+  'use strict';
 
-    // Accordion toggle functionality
-    filtersContainer.addEventListener('click', function(e) {
-      var header = e.target.closest('.filters__section-header');
-      if (!header) return;
+  // Filters Module
+  var Filters = {
+    $container: null,
+
+    // Initialize the filters
+    init: function() {
+      this.$container = $('.filters');
+      if (!this.$container.length) return;
+
+      this.bindEvents();
+      this.initAccordions();
+      this.updateCount();
+    },
+
+    // Bind all event handlers
+    bindEvents: function() {
+      var self = this;
+
+      // Accordion toggle
+      this.$container.on('click', '.filters__section-header', function() {
+        self.toggleSection($(this).closest('.filters__section'));
+      });
+
+      // Filter change
+      this.$container.on('change', 'input[type="checkbox"], input[type="radio"]', function() {
+        self.onFilterChange($(this));
+      });
+
+      // Clear all
+      this.$container.on('click', '.js-clear-filters', function(e) {
+        e.preventDefault();
+        self.clearAll();
+      });
+    },
+
+    // Initialize accordion heights
+    initAccordions: function() {
+      this.$container.find('.filters__section-content').each(function() {
+        var $content = $(this);
+        var $section = $content.closest('.filters__section');
+        
+        if (!$section.hasClass('is-collapsed')) {
+          $content.css('max-height', $content.prop('scrollHeight') + 'px');
+        }
+      });
+    },
+
+    // Toggle accordion section
+    toggleSection: function($section) {
+      var $content = $section.find('.filters__section-content');
       
-      var section = header.closest('.filters__section');
-      section.classList.toggle('is-collapsed');
+      $section.toggleClass('is-collapsed');
       
-      var content = section.querySelector('.filters__section-content');
-      if (section.classList.contains('is-collapsed')) {
-        content.style.maxHeight = '0';
+      if ($section.hasClass('is-collapsed')) {
+        $content.css('max-height', 0);
       } else {
-        content.style.maxHeight = content.scrollHeight + 'px';
+        $content.css('max-height', $content.prop('scrollHeight') + 'px');
       }
-    });
+    },
 
-    // Initialize content heights
-    var contentElements = filtersContainer.querySelectorAll('.filters__section-content');
-    contentElements.forEach(function(content) {
-      var section = content.closest('.filters__section');
-      if (!section.classList.contains('is-collapsed')) {
-        content.style.maxHeight = content.scrollHeight + 'px';
-      }
-    });
+    // Handle filter change
+    onFilterChange: function($input) {
+      this.updateCount();
+      
+      // Trigger custom event
+      $(document).trigger('filters:changed', {
+        type: $input.attr('name'),
+        value: $input.val(),
+        checked: $input.is(':checked')
+      });
+    },
 
     // Update active filter count
-    function updateFilterCount() {
-      var activeCount = 0;
+    updateCount: function() {
+      var count = 0;
       
-      // Count checked checkboxes
-      var checkedCheckboxes = filtersContainer.querySelectorAll('.filters__checkbox-option input[type="checkbox"]:checked');
-      activeCount += checkedCheckboxes.length;
+      // Count checkboxes
+      count += this.$container.find('input[type="checkbox"]:checked').length;
       
-      // Count selected radio groups (each group counts as 1 if any is checked)
+      // Count radio groups (each group = 1)
       var radioGroups = {};
-      var checkedRadios = filtersContainer.querySelectorAll('.filters__radio-option input[type="radio"]:checked');
-      checkedRadios.forEach(function(radio) {
-        radioGroups[radio.name] = true;
+      this.$container.find('input[type="radio"]:checked').each(function() {
+        radioGroups[$(this).attr('name')] = true;
       });
-      activeCount += Object.keys(radioGroups).length;
+      count += Object.keys(radioGroups).length;
       
-      var activeCountEl = filtersContainer.querySelector('.js-active-count');
-      if (activeCountEl) {
-        activeCountEl.textContent = activeCount;
-      }
-      
-      // Show/hide clear link based on active filters
-      var clearLink = filtersContainer.querySelector('.js-clear-filters');
-      if (clearLink) {
-        clearLink.style.display = activeCount > 0 ? 'inline' : 'none';
-      }
-    }
-
-    // Handle checkbox/radio changes
-    filtersContainer.addEventListener('change', function(e) {
-      var input = e.target;
-      if (input.type === 'checkbox' || input.type === 'radio') {
-        updateFilterCount();
-        
-        // Dispatch custom event for external handling
-        var event = new CustomEvent('filters:changed', {
-          detail: {
-            filterType: input.name,
-            filterValue: input.value,
-            isChecked: input.checked
-          }
-        });
-        document.dispatchEvent(event);
-      }
-    });
+      // Update UI
+      this.$container.find('.js-active-count').text(count);
+      this.$container.find('.js-clear-filters').toggle(count > 0);
+    },
 
     // Clear all filters
-    var clearLink = filtersContainer.querySelector('.js-clear-filters');
-    if (clearLink) {
-      clearLink.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        // Uncheck all checkboxes
-        var checkboxes = filtersContainer.querySelectorAll('.filters__checkbox-option input[type="checkbox"]');
-        checkboxes.forEach(function(checkbox) {
-          checkbox.checked = false;
-        });
-        
-        // Reset radio buttons
-        var radios = filtersContainer.querySelectorAll('.filters__radio-option input[type="radio"]');
-        radios.forEach(function(radio) {
-          radio.checked = false;
-        });
-        
-        updateFilterCount();
-        
-        // Dispatch custom event
-        var event = new CustomEvent('filters:cleared');
-        document.dispatchEvent(event);
-      });
-    }
+    clearAll: function() {
+      this.$container.find('input[type="checkbox"]').prop('checked', false);
+      this.$container.find('input[type="radio"]').prop('checked', false);
+      
+      this.updateCount();
+      
+      // Trigger custom event
+      $(document).trigger('filters:cleared');
+    },
 
-    // Initial count update
-    updateFilterCount();
+    // Get current filter state (for external use)
+    getState: function() {
+      var state = {};
+      
+      this.$container.find('input:checked').each(function() {
+        var name = $(this).attr('name');
+        var value = $(this).val();
+        
+        if (!state[name]) {
+          state[name] = [];
+        }
+        state[name].push(value);
+      });
+      
+      return state;
+    }
+  };
+
+  // Initialize on DOM ready
+  $(function() {
+    Filters.init();
+    
+    // Expose to global scope for external access
+    window.CollectionFilters = Filters;
   });
+
+})(jQuery);
 </script>
 
