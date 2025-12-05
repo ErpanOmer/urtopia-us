@@ -1,24 +1,22 @@
 {% assign coun_down = shop.metaobjects.coun_down['coun-down']['list'].value %}
-{% if product.handle == 'urtopia-joy-carbon-fat-tire-ebike' or product.handle == 'urtopia-carbon-joy-ultra-ebike' %}
-  <style>
-  #count-down div[ddata-name="sale-name"] {
-    background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26629_2x_ae91c593-83ae-431f-9193-a0e3afa044f1.png?v=1763716533');
+<style>
+  div[ddata-name="sale-name"] {
+    background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26164_2x_6744b2d8-11e8-4646-8033-3ff4e85a83df.png?v=1761814508');
+    background-position-x: right;
+    background-size: contain;
   }
 </style>
-{%- endif -%}
 <div id="count-down" class="er-font-base er-bg-black er-text-white er-rounded-2xl er-overflow-hidden er-mb-8 er-relative">
-  <div style="background-position-x: right;background-size: 100% 101%;" class="er-text-4xl mb:er-text-3xl er-font-black er-p-7 mb:er-p-5 er-flex er-items-center er-bg-no-repeat er-bg-contain er-bg-[url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26166_2x_fca37883-d20f-4f28-ba04-c93e771e98bf.png?v=1763711861')]" ddata-name="sale-name">
-    BLACK FRIDAY&nbsp;&nbsp;<span style="color: #FFDF48;">DEAL</span>
+  <div style="background-position-x: right;" class="text-size20 mb:er-text-3xl er-font-black er-p-7 mb:er-p-5 er-flex er-items-center er-bg-no-repeat er-bg-contain" ddata-name="sale-name">
+    BLACK FRIDAY&nbsp;&nbsp;<span style="color: #FFDF48;">EXTENDED</span>
   </div>
   <div class="er-flex er-flex-col er-px-7 er-py-4 er-items-start er-text-left mb:er-px-5" style="border-top: 1px solid #554B1770;">
-    <div class="text-size14 er-text-[13px] er-font-medium">
-      Black Friday Exclusive: <span style="color: #FFDF48;">$300 FREE Accessory Bundle</span><br>FREE Smart Helmet, Air Pump, Bottle Cage &&nbsp; {%- if product.handle == 'urtopia-joy-carbon-fat-tire-ebike' or product.handle == 'urtopia-carbon-joy-ultra-ebike' -%}Front Rack{%- else -%}Rear Rack{%- endif -%}&nbsp; for<br><span style="color: #FFDF48;">the First 99 Orders.</span>
-    </div>
+    <div class="text-size14 er-text-[13px] er-font-medium">Gear Up! <span style="color: #FFDF48;">Free Air Pump and Rear Rack</span> for the <span style="color: #FFDF48;">First 30 Orders!</span></div>
     <div class="er-bg-[#FFDF4833] er-h-2 er-rounded-3xl er-w-full er-my-4">
         <div class="er-bg-[#FFDF48] er-h-full er-rounded-3xl percent" style="width: 55%;"></div>
     </div>
-    <span class="text-size14 er-font-medium mb:er-text-xl"><span style="color: #FFDF48;"><span class="count">60</span> Orders</span> So Far Today</span>
-    <span class="text-size12 er-opacity-80 mb:er-text-base er-block er-mt-1">*Freebies will be added to your order automatically later today</span>
+    <span class="text-size14 er-font-medium mb:er-text-xl"><span style="color: #FFDF48;"><span class="count">22</span> Orders</span> So Far Today</span>
+    <span class="text-size12 er-opacity-80 mb:er-text-base">*Freebies will be added to your order automatically later today</span>
   </div>
   <div class="er-grid er-grid-cols-4 er-py-8 er-pb-10 mb:er-py-6 er-divide-x er-divide-y-0 er-divide-solid er-divide-primary/20 er-bg-dark">
     <div class="er-flex er-flex-col er-text-center er-items-center">
@@ -44,36 +42,36 @@
     function refreshOrders (hours) {
           if (hours < 3) {
              $('#count-down .percent').css('width', '95%')
-             $('#count-down .count').text('95')
+             $('#count-down .count').text('28')
              return
           }
 
           if (hours < 6) {
              $('#count-down .percent').css('width', '90%')
-             $('#count-down .count').text('90')
+             $('#count-down .count').text('25')
              return
           }
 
           if (hours < 9) {
              $('#count-down .percent').css('width', '80%')
-             $('#count-down .count').text('80')
+             $('#count-down .count').text('22')
              return
           }
 
           if (hours < 12) {
              $('#count-down .percent').css('width', '70%')
-             $('#count-down .count').text('70')
+             $('#count-down .count').text('20')
              return
           }
 
           if (hours < 15) {
              $('#count-down .percent').css('width', '60%')
-             $('#count-down .count').text('65')
+             $('#count-down .count').text('18')
              return
           }
 
           $('#count-down .percent').css('width', '50%')
-          $('#count-down .count').text('60')
+          $('#count-down .count').text('16')
     };
     const sale_end_times = [];
     {%- for item in coun_down -%}

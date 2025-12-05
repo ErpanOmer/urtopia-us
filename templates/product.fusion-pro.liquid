@@ -16,7 +16,7 @@
   <div class="centeral-content">
     <h2 class="u36Medium_v2">Professional Review</h2>
     <div class="videos swiper-wrapper">
-        {%- for item in all_products["urtopia-fusion-pro-carbon-long-range-ebike"].metafields.custom.review_list.value -%}
+        {%- for item in product.metafields.custom.review_list.value -%}
             <div class="swiper-slide" onclick="showVideoDialog('https://www.youtube.com/embed/{{ item.youtube_id }}?autoplay=1&cc_load_policy=1')">
                 {{ item.review_cover | image_url: width: 500 | image_tag: class: 'er-rounded-2xl mb:er-rounded-xl', loading: 'lazy' }}
                 <span class="u17Light_v2">{{ item.review_desc }}</span>
