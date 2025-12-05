@@ -6,7 +6,7 @@
 {% endcomment %}
 
 <style>
-  /* Filters Component Styles - Using Tailwind with 1rem = 10px */
+  /* Filters Component Styles - Using 1rem = 10px base */
   .filters {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
     font-size: 1.4rem; /* 14px */
@@ -16,6 +16,9 @@
   .filters__header {
     padding: 1.6rem 0;
     border-bottom: 1px solid #EBEDF0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .filters__results-count {
@@ -77,7 +80,7 @@
   .filters__section-content {
     padding-bottom: 1.6rem;
     overflow: hidden;
-    transition: max-height 0.3s ease, opacity 0.3s ease;
+    transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
   }
 
   .filters__section.is-collapsed .filters__section-content {
@@ -102,6 +105,7 @@
     align-items: center;
     gap: 1rem; /* 10px */
     cursor: pointer;
+    position: relative;
   }
 
   .filters__radio-option input[type="radio"] {
@@ -154,6 +158,7 @@
     align-items: center;
     gap: 1rem; /* 10px */
     cursor: pointer;
+    position: relative;
   }
 
   .filters__checkbox-option input[type="checkbox"] {
@@ -197,11 +202,11 @@
   }
 </style>
 
-<div class="filters__header er-flex er-justify-between er-items-center">
+<div class="filters__header">
   <span class="filters__results-count">
-    <span class="highlight">0</span> OF <span class="total-count">1</span> RESULTS
+    <span class="highlight js-results-shown">0</span> OF <span class="js-results-total">1</span> RESULTS
   </span>
-  <a href="#" class="filters__clear-link" id="clearFilters">Clear filters (<span class="active-count">1</span>)</a>
+  <a href="#" class="filters__clear-link js-clear-filters">Clear filters (<span class="js-active-count">1</span>)</a>
 </div>
 
 <!-- COLLECTIONS Section -->
@@ -475,10 +480,12 @@
 (function($) {
   'use strict';
 
-  // Wait for DOM ready
+  // Wait for DOM and jQuery ready
   $(function() {
+    var $filtersContainer = $('.filters');
+    
     // Accordion toggle functionality
-    $('.filters__section-header').on('click', function() {
+    $filtersContainer.on('click', '.filters__section-header', function() {
       var $section = $(this).closest('.filters__section');
       $section.toggleClass('is-collapsed');
       
@@ -491,7 +498,7 @@
     });
 
     // Initialize content heights
-    $('.filters__section-content').each(function() {
+    $filtersContainer.find('.filters__section-content').each(function() {
       var $content = $(this);
       var $section = $content.closest('.filters__section');
       if (!$section.hasClass('is-collapsed')) {
@@ -504,28 +511,29 @@
       var activeCount = 0;
       
       // Count checked checkboxes
-      $('.filters__checkbox-option input[type="checkbox"]:checked').each(function() {
+      $filtersContainer.find('.filters__checkbox-option input[type="checkbox"]:checked').each(function() {
         activeCount++;
       });
       
-      // Count selected radio (only if not default)
-      var $selectedRadio = $('.filters__radio-option input[type="radio"]:checked');
+      // Count selected radio (if any is checked)
+      var $selectedRadio = $filtersContainer.find('.filters__radio-option input[type="radio"]:checked');
       if ($selectedRadio.length > 0) {
         activeCount++;
       }
       
-      $('.active-count').text(activeCount);
+      $filtersContainer.find('.js-active-count').text(activeCount);
       
       // Show/hide clear link based on active filters
+      var $clearLink = $filtersContainer.find('.js-clear-filters');
       if (activeCount > 0) {
-        $('#clearFilters').show();
+        $clearLink.css('display', 'inline');
       } else {
-        $('#clearFilters').hide();
+        $clearLink.css('display', 'none');
       }
     }
 
     // Handle checkbox/radio changes
-    $('.filters input[type="checkbox"], .filters input[type="radio"]').on('change', function() {
+    $filtersContainer.on('change', 'input[type="checkbox"], input[type="radio"]', function() {
       updateFilterCount();
       
       // Trigger custom event for external handling
@@ -537,14 +545,14 @@
     });
 
     // Clear all filters
-    $('#clearFilters').on('click', function(e) {
+    $filtersContainer.on('click', '.js-clear-filters', function(e) {
       e.preventDefault();
       
       // Uncheck all checkboxes
-      $('.filters__checkbox-option input[type="checkbox"]').prop('checked', false);
+      $filtersContainer.find('.filters__checkbox-option input[type="checkbox"]').prop('checked', false);
       
-      // Reset radio to first option or uncheck all
-      $('.filters__radio-option input[type="radio"]').prop('checked', false);
+      // Reset radio buttons
+      $filtersContainer.find('.filters__radio-option input[type="radio"]').prop('checked', false);
       
       updateFilterCount();
       
