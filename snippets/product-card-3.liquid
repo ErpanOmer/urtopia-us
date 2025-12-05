@@ -9,7 +9,7 @@
   }
 </style>
 {% if product_variants.first.product.available %}
-  <div data-product-handle="{{  product_variants.first.product.handle }}" data-product-tags="{{ product_variants.first.product.metafields.custom.product_filters.value }}" class="er-bg-white product-card">
+  <div data-product-handle="{{  product_variants.first.product.handle }}" data-product-tags="{{ product_variants.first.product.metafields.custom.product_filters }}" class="er-bg-white product-card">
     <div class="coupon">
       <span style=" display: block;padding: 19px 5px;border-left-width: 2px;border-left-color: #fff;border-left-style: dashed;"></span>
       <span>{{ product_variants.first.product.compare_at_price |  minus: product_variants.first.product.price | money_without_trailing_zeros }} OFF</span>
