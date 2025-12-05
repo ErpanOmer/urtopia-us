@@ -78,19 +78,10 @@
 
   .filters__section-content {
     padding-bottom: 2rem;
-    overflow: hidden;
-    transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
   }
 
   .filters__section.is-collapsed .filters__section-content {
-    max-height: 0 !important;
-    padding-bottom: 0;
-    opacity: 0;
-  }
-
-  /* Ensure last item has proper spacing */
-  .filters__options-list li:last-child {
-    margin-bottom: 0;
+    display: none;
   }
 
   /* Filter Options List */
@@ -595,131 +586,65 @@
   </div>
 </div>
 
-<script type="module">
+<script>
+(function($) {
+  var $filters = $('.filters');
 
-  // Filters Module
-  var Filters = {
-    $container: null,
+  // 手风琴展开/收缩
+  $filters.on('click', '.filters__section-header', function() {
+    var $section = $(this).closest('.filters__section');
+    
+    $section.toggleClass('is-collapsed')
+      .find('.filters__section-content').slideToggle(200);
+  });
 
-    // Initialize the filters
-    init: function() {
-      this.$container = $('.filters');
-      if (!this.$container.length) return;
+  // 过滤器变化
+  $filters.on('change', 'input[type="checkbox"], input[type="radio"]', function() {
+    updateCount();
+    $(document).trigger('filters:changed', {
+      type: $(this).attr('name'),
+      value: $(this).val(),
+      checked: $(this).is(':checked')
+    });
+  });
 
-      this.bindEvents();
-      this.initAccordions();
-      this.updateCount();
-    },
+  // 清除所有
+  $filters.on('click', '.js-clear-filters', function(e) {
+    e.preventDefault();
+    $filters.find('input').prop('checked', false);
+    updateCount();
+    $(document).trigger('filters:cleared');
+  });
 
-    // Bind all event handlers
-    bindEvents: function() {
-      var self = this;
+  // 更新计数
+  function updateCount() {
+    var count = $filters.find('input[type="checkbox"]:checked').length;
+    
+    // 每个 radio group 算 1 个
+    var groups = {};
+    $filters.find('input[type="radio"]:checked').each(function() {
+      groups[$(this).attr('name')] = true;
+    });
+    count += Object.keys(groups).length;
 
-      // Accordion toggle
-      this.$container.on('click', '.filters__section-header', function() {
-        self.toggleSection($(this).closest('.filters__section'));
-      });
+    $filters.find('.js-active-count').text(count);
+    $filters.find('.js-clear-filters').toggle(count > 0);
+  }
 
-      // Filter change
-      this.$container.on('change', 'input[type="checkbox"], input[type="radio"]', function() {
-        self.onFilterChange($(this));
-      });
-
-      // Clear all
-      this.$container.on('click', '.js-clear-filters', function(e) {
-        e.preventDefault();
-        self.clearAll();
-      });
-    },
-
-    // Initialize accordion heights
-    initAccordions: function() {
-      this.$container.find('.filters__section-content').each(function() {
-        var $content = $(this);
-        var $section = $content.closest('.filters__section');
-        
-        if (!$section.hasClass('is-collapsed')) {
-          $content.css('max-height', $content.prop('scrollHeight') + 'px');
-        }
-      });
-    },
-
-    // Toggle accordion section
-    toggleSection: function($section) {
-      var $content = $section.find('.filters__section-content');
-      
-      $section.toggleClass('is-collapsed');
-      
-      if ($section.hasClass('is-collapsed')) {
-        $content.css('max-height', 0);
-      } else {
-        $content.css('max-height', $content.prop('scrollHeight') + 'px');
-      }
-    },
-
-    // Handle filter change
-    onFilterChange: function($input) {
-      this.updateCount();
-      
-      // Trigger custom event
-      $(document).trigger('filters:changed', {
-        type: $input.attr('name'),
-        value: $input.val(),
-        checked: $input.is(':checked')
-      });
-    },
-
-    // Update active filter count
-    updateCount: function() {
-      var count = 0;
-      
-      // Count checkboxes
-      count += this.$container.find('input[type="checkbox"]:checked').length;
-      
-      // Count radio groups (each group = 1)
-      var radioGroups = {};
-      this.$container.find('input[type="radio"]:checked').each(function() {
-        radioGroups[$(this).attr('name')] = true;
-      });
-      count += Object.keys(radioGroups).length;
-      
-      // Update UI
-      this.$container.find('.js-active-count').text(count);
-      this.$container.find('.js-clear-filters').toggle(count > 0);
-    },
-
-    // Clear all filters
-    clearAll: function() {
-      this.$container.find('input[type="checkbox"]').prop('checked', false);
-      this.$container.find('input[type="radio"]').prop('checked', false);
-      
-      this.updateCount();
-      
-      // Trigger custom event
-      $(document).trigger('filters:cleared');
-    },
-
-    // Get current filter state (for external use)
-    getState: function() {
-      var state = {};
-      
-      this.$container.find('input:checked').each(function() {
-        var name = $(this).attr('name');
-        var value = $(this).val();
-        
-        if (!state[name]) {
-          state[name] = [];
-        }
-        state[name].push(value);
-      });
-      
-      return state;
-    }
+  // 获取当前状态
+  window.getFiltersState = function() {
+    var state = {};
+    $filters.find('input:checked').each(function() {
+      var name = $(this).attr('name');
+      if (!state[name]) state[name] = [];
+      state[name].push($(this).val());
+    });
+    return state;
   };
 
-    Filters.init();
-    
-    // Expose to global scope for external access
-    window.CollectionFilters = Filters;
+  // 初始化
+  updateCount();
+
+})(jQuery);
 </script>
 
