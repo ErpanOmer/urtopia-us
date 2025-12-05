@@ -596,12 +596,6 @@
 </div>
 
 <script>
-/**
- * Collection Filters Component
- * A clean, modular filter system using jQuery
- */
-(function($) {
-  'use strict';
 
   // Filters Module
   var Filters = {
@@ -723,14 +717,9 @@
     }
   };
 
-  // Initialize on DOM ready
-  $(function() {
     Filters.init();
     
     // Expose to global scope for external access
     window.CollectionFilters = Filters;
-  });
-
-})(jQuery);
 </script>
 
