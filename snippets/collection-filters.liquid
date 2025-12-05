@@ -586,65 +586,59 @@
   </div>
 </div>
 
-<script>
-(function($) {
-  var $filters = $('.filters');
+<script type="module">
+var $filters = $('.filters');
 
-  // 手风琴展开/收缩
-  $filters.on('click', '.filters__section-header', function() {
-    var $section = $(this).closest('.filters__section');
-    
-    $section.toggleClass('is-collapsed')
-      .find('.filters__section-content').slideToggle(200);
-  });
+// 手风琴展开/收缩
+$filters.on('click', '.filters__section-header', function() {
+  $(this).closest('.filters__section')
+    .toggleClass('is-collapsed')
+    .find('.filters__section-content').slideToggle(200);
+});
 
-  // 过滤器变化
-  $filters.on('change', 'input[type="checkbox"], input[type="radio"]', function() {
-    updateCount();
-    $(document).trigger('filters:changed', {
-      type: $(this).attr('name'),
-      value: $(this).val(),
-      checked: $(this).is(':checked')
-    });
-  });
-
-  // 清除所有
-  $filters.on('click', '.js-clear-filters', function(e) {
-    e.preventDefault();
-    $filters.find('input').prop('checked', false);
-    updateCount();
-    $(document).trigger('filters:cleared');
-  });
-
-  // 更新计数
-  function updateCount() {
-    var count = $filters.find('input[type="checkbox"]:checked').length;
-    
-    // 每个 radio group 算 1 个
-    var groups = {};
-    $filters.find('input[type="radio"]:checked').each(function() {
-      groups[$(this).attr('name')] = true;
-    });
-    count += Object.keys(groups).length;
-
-    $filters.find('.js-active-count').text(count);
-    $filters.find('.js-clear-filters').toggle(count > 0);
-  }
-
-  // 获取当前状态
-  window.getFiltersState = function() {
-    var state = {};
-    $filters.find('input:checked').each(function() {
-      var name = $(this).attr('name');
-      if (!state[name]) state[name] = [];
-      state[name].push($(this).val());
-    });
-    return state;
-  };
-
-  // 初始化
+// 过滤器变化
+$filters.on('change', 'input[type="checkbox"], input[type="radio"]', function() {
   updateCount();
+  $(document).trigger('filters:changed', {
+    type: $(this).attr('name'),
+    value: $(this).val(),
+    checked: $(this).is(':checked')
+  });
+});
 
-})(jQuery);
+// 清除所有
+$filters.on('click', '.js-clear-filters', function(e) {
+  e.preventDefault();
+  $filters.find('input').prop('checked', false);
+  updateCount();
+  $(document).trigger('filters:cleared');
+});
+
+// 更新计数
+function updateCount() {
+  var count = $filters.find('input[type="checkbox"]:checked').length;
+  
+  var groups = {};
+  $filters.find('input[type="radio"]:checked').each(function() {
+    groups[$(this).attr('name')] = true;
+  });
+  count += Object.keys(groups).length;
+
+  $filters.find('.js-active-count').text(count);
+  $filters.find('.js-clear-filters').toggle(count > 0);
+}
+
+// 获取当前状态
+window.getFiltersState = function() {
+  var state = {};
+  $filters.find('input:checked').each(function() {
+    var name = $(this).attr('name');
+    if (!state[name]) state[name] = [];
+    state[name].push($(this).val());
+  });
+  return state;
+};
+
+updateCount();
 </script>
 
