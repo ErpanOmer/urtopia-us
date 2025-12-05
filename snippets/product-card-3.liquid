@@ -9,7 +9,7 @@
   }
 </style>
 
-{{ product_variants.first.product.metafields.custom.product_filters.value |  split: ',' }}
+{{ product_variants.first.product.metafields.custom.product_filters.value |  split: ',' |  join: '-'  }}
 
 {% for item in product_variants.first.product.metafields.custom.product_filters.value %}
   {{ item }}
