@@ -1,9 +1,25 @@
 {{ 'outlet_v4.scss.css' | asset_url | stylesheet_tag: preload: true }}
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
+<style>
+  /* Filters container specific styles */
+  .filters-container {
+    width: 28rem; /* 280px */
+    flex-shrink: 0;
+    padding: 2rem;
+    background-color: #fff;
+  }
+  
+  @media (max-width: 768px) {
+    .filters-container {
+      display: none;
+    }
+  }
+</style>
+
 <section class="er-bg-background">
   <div class="er-mx-auto er-max-w-screen-2xl er-flex">
-    <div class="filters er-w-[28rem] er-flex-shrink-0 er-px-[2rem] er-py-[2rem] er-bg-white">
+    <div class="filters filters-container">
       {% render 'collection-filters' %}
     </div>
     <div class="ebike-products er-flex-1">
@@ -11,3 +27,10 @@
     </div>
   </div>
 </section>
+
+{% schema %}
+{
+  "name": "Test Section",
+  "settings": []
+}
+{% endschema %}
