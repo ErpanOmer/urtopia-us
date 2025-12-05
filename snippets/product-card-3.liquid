@@ -8,6 +8,11 @@
     {% endif %}
   }
 </style>
+
+{% for item in product_variants.first.product.metafields.custom.product_filters %}
+  {{ item }}
+{% endfor %}
+
 {% if product_variants.first.product.available %}
   <div data-product-handle="{{  product_variants.first.product.handle }}" data-product-tags="{{ product_variants.first.product.metafields.custom.product_filters }}" class="er-bg-white product-card">
     <div class="coupon">
