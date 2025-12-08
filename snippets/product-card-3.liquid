@@ -8,18 +8,23 @@
     {% endif %}
   }
 </style>
+{%- assign price_tag = '' -%}
+{%- if product_variants.first.product.price >= 150000 and product_variants.first.product.price < 200000 -%}
+  {%- assign price_tag = price_tag | append: 'price-1500-2000' -%}
+{%- elsif product_variants.first.product.price >= 200000 and product_variants.first.product.price < 250000 -%}
+  {%- assign price_tag = price_tag | append: 'price-2000-2500' -%}
+{%- elsif product_variants.first.product.price >= 250000 -%}
+  {%- assign price_tag = price_tag | append: 'over-2500' -%}
+{%- endif -%}
+{%- for item in product_variants.first.product.metafields.custom.product_filters.value -%}
+  {%- assign price_tag = price_tag | append: ',' | append: item -%}
+{%- endfor -%}
+{%- assign price_tag = price_tag | strip | strip_newlines | replace: ' ', '' -%}
+
 {% if product_variants.first.product.available %}
   <div
     data-product-handle="{{  product_variants.first.product.handle }}"
-    data-product-tags="
-      {%- if product_variants.first.product.price >= 150000 and product_variants.first.product.price < 200000 -%}
-        price-1500-2000
-      {%- elsif product_variants.first.product.price >= 200000 and product_variants.first.product.price < 250000 -%}
-        price-2000-2500
-      {%- elsif product_variants.first.product.price >= 250000 -%}
-        over-2500
-      {%- endif -%}{%- for item in product_variants.first.product.metafields.custom.product_filters.value -%},{{ item }}{%- endfor %}
-    "
+    data-product-tags="{{ price_tag }}"
     class="er-bg-white product-card"
   >
     <div class="coupon">

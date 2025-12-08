@@ -22,13 +22,12 @@
     top: 0;
     background: #fff;
     z-index: 1;
+    flex-wrap: wrap;
+    font-size: 15px;
+    font-weight: 700;
   }
 
   .filters__results-count {
-    font-size: 1.2rem; /* 12px */
-    font-weight: 500;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
     color: #242729;
   }
 
@@ -42,6 +41,7 @@
     text-decoration: none;
     cursor: pointer;
     transition: opacity 0.2s;
+    text-decoration: underline;
   }
 
   .filters__clear-link:hover {
@@ -63,8 +63,8 @@
   }
 
   .filters__section-title {
-    font-size: 1.2rem; /* 12px */
-    font-weight: 500;
+    font-size: 1.4rem; /* 12px */
+    font-weight: 700;
     letter-spacing: 0.05em;
     text-transform: uppercase;
     color: #242729;
@@ -182,8 +182,8 @@
   }
 
   .filters__checkbox-option input[type='checkbox']:checked + .filters__checkbox-box {
-    background-color: #fd4b17;
-    border-color: #fd4b17;
+    background-color: #000;
+    border-color: #000;
   }
 
   .filters__checkbox-option input[type='checkbox']:checked + .filters__checkbox-box .filters__checkbox-check {
@@ -196,10 +196,215 @@
     font-size: 1.4rem; /* 14px */
   }
 </style>
+<style>
+  .ebike-products {
+    padding: 0;
+  }
+
+  /* 防闪烁：产品卡片初始隐藏，JS 过滤完成后显示 */
+  [data-product-tags] {
+    opacity: 0;
+    transition: opacity 0.15s ease;
+  }
+
+  .products-filtered [data-product-tags] {
+    opacity: 1;
+  }
+
+  /* 桌面端隐藏触发按钮和遮罩 */
+  .filters-mobile-trigger,
+  .filters-overlay {
+    display: none;
+  }
+
+  /* Filters container 桌面端样式 */
+  .filters-container {
+    padding: 0 2rem 2rem;
+    background-color: #fff;
+    border-radius: 7px;
+    max-width: 300px;
+    min-width: 240px;
+    height: calc(100vh - 110px);
+    max-height: calc(100vh - 110px);
+    position: sticky;
+    top: 80px;
+    overflow: auto;
+  }
+
+  @media (max-width: 1310px) {
+    .ebike-products .product-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 767px) {
+    .ebike-products .product-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* 移动端样式 */
+  @media (max-width: 1024px) {
+    .ebike-products {
+      width: 100%;
+    }
+
+    .filters__header {
+      padding-top: 10px;
+      top: 32px;
+    }
+    /* 移动端触发按钮 */
+    .filters-mobile-trigger {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 1rem;
+      background: #000;
+      border: 1px solid #ebedf0;
+      border-radius: 7.5px;
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .filters-mobile-trigger svg {
+      width: 1.8rem;
+      height: 1.8rem;
+    }
+
+    .filters-mobile-trigger .filter-count {
+      background: #fff;
+      color: #000;
+      padding: 0.2rem 0.6rem;
+      border-radius: 1rem;
+      font-size: 1.2rem;
+      min-width: 2rem;
+      text-align: center;
+    }
+
+    /* 遮罩层 */
+    .filters-overlay {
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 9998;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .filters-overlay.is-visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Filters 变成抽屉 */
+    .filters-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 85%;
+      max-width: 320px;
+      height: 100%;
+      max-height: 100%;
+      border-radius: 0;
+      z-index: 9999;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+      max-width: 80vw;
+    }
+
+    .filters-container.is-open {
+      transform: translateX(0);
+    }
+
+    /* 抽屉关闭按钮 */
+    .filters-drawer-close {
+      display: flex;
+      position: absolute;
+      top: 1.6rem;
+      right: 1.6rem;
+      width: 3.2rem;
+      height: 3.2rem;
+      border: none;
+      background: none;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      position: sticky;
+      top: 0;
+      width: 100%;
+      justify-content: flex-end;
+      padding-top: 15px;
+      background-color: #fff;
+      padding-right: 0;
+    }
+
+    .filters-drawer-close svg {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+
+    /* 移动端过滤器栏 */
+    .filters-mobile-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .filters-mobile-header {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      justify-content: space-between;
+      width: 100%;
+      font-weight: 700;
+    }
+
+    .filters-mobile-results {
+      font-size: 1.4rem;
+      color: #666;
+      font-weight: 700;
+    }
+
+    .filters-mobile-results .highlight {
+      color: #fd4b17;
+      font-weight: 600;
+    }
+
+    .filters-mobile-clear {
+      font-size: 1.4rem;
+      color: #fd4b17;
+      text-decoration: none;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    .filters-mobile-clear:hover {
+      text-decoration: underline;
+    }
+  }
+
+  /* 桌面端隐藏移动端元素 */
+  @media (min-width: 1025px) {
+    .filters-drawer-close,
+    .filters-mobile-bar {
+      display: none;
+    }
+  }
+</style>
 
 <div class="filters__header">
   <span class="filters__results-count">
-    <span class="highlight js-results-shown">0</span> OF <span class="js-results-total">1</span> RESULTS
+    <span class="highlight js-results-shown er-font-bold">0</span> OF <span class="js-results-total">1</span> RESULTS
   </span>
   <a href="#" class="filters__clear-link js-clear-filters">Clear filters (<span class="js-active-count">1</span>)</a>
 </div>
@@ -685,320 +890,409 @@
     </ul>
   </div>
 </div>
-
 <script type="module">
-  var $filters = $('.filters');
-  var $products = $('[data-product-tags]');
+  // 移动端抽屉控制
+  $(function () {
+    // 防止重复注册监听器
+    if (window._filtersDrawerInitialized) return;
+    window._filtersDrawerInitialized = true;
 
-  // 获取 URL 查询参数
-  function getUrlParams() {
-    var params = {};
-    var search = window.location.search.substring(1);
-    if (search) {
-      search.split('&').forEach(function (pair) {
-        var parts = pair.split('=');
-        params[decodeURIComponent(parts[0])] = decodeURIComponent(parts[1] || '');
+    console.log('mobile drawer control');
+    var $container = $('.filters-container');
+    var $trigger = $('.filters-mobile-trigger');
+    var $overlay = $('.filters-overlay');
+    var $close = $('.filters-drawer-close');
+
+    function openDrawer() {
+      $container.addClass('is-open');
+      $overlay.addClass('is-visible');
+      $('body').css('overflow', 'hidden');
+    }
+
+    function closeDrawer() {
+      $container.removeClass('is-open');
+      $overlay.removeClass('is-visible');
+      $('body').css('overflow', '');
+    }
+
+    // 更新移动端按钮上的过滤器数量
+    function updateMobileFilterCount() {
+      var count = $container.find('input[type="checkbox"]:checked').length;
+      $container.find('input[type="radio"]:checked').each(function () {
+        if ($(this).val() !== 'all') count++;
       });
+      $trigger
+        .find('.filter-count')
+        .text(count)
+        .toggle(count > 0);
     }
-    return params;
-  }
 
-  // 初始化：检查 URL 参数并设置默认选中状态
-  function initFilters() {
-    var params = getUrlParams();
+    $trigger.on('click', openDrawer);
+    $overlay.on('click', closeDrawer);
+    $close.on('click', closeDrawer);
 
-    // category 和 model 是互斥的，不会同时存在于 URL 参数中
-    // 默认都选中 "All"
-    $filters.find('[data-filter-section="category"] input[value="all"]').prop('checked', true);
-    $filters.find('[data-filter-section="model"] input[value="all"]').prop('checked', true);
+    // 监听过滤器变化事件（先移除再添加，防止重复）
+    $(document)
+      .off('filters:changed.drawer filters:cleared.drawer')
+      .on('filters:changed.drawer filters:cleared.drawer', updateMobileFilterCount);
 
-    // 处理 category 参数（如果有，则覆盖默认值）
-    if (params.category && params.category !== 'all') {
-      var $categoryRadio = $filters.find('[data-filter-section="category"] input[value="' + params.category + '"]');
-      if ($categoryRadio.length) {
-        $categoryRadio.prop('checked', true);
+    // 页面初始化时更新一次
+    setTimeout(updateMobileFilterCount, 100);
+  });
+</script>
+<script type="module">
+  // 防止重复初始化
+  if (window._collectionFiltersInitialized) {
+    console.log('collection-filters already initialized, skipping');
+  } else {
+    window._collectionFiltersInitialized = true;
+
+    var $filters = $('.filters');
+    var $products = $('[data-product-tags]');
+
+    // 获取 URL 查询参数
+    function getUrlParams() {
+      var params = {};
+      var search = window.location.search.substring(1);
+      if (search) {
+        search.split('&').forEach(function (pair) {
+          var parts = pair.split('=');
+          params[decodeURIComponent(parts[0])] = decodeURIComponent(parts[1] || '');
+        });
       }
-      // model 保持 all（已在上面设置）
+      return params;
     }
 
-    // 处理 model 参数（如果有，则覆盖默认值）
-    if (params.model && params.model !== 'all') {
-      var $modelRadio = $filters.find('[data-filter-section="model"] input[value="' + params.model + '"]');
-      if ($modelRadio.length) {
-        $modelRadio.prop('checked', true);
+    // 初始化：检查 URL 参数并设置默认选中状态
+    function initFilters() {
+      var params = getUrlParams();
+
+      // category 和 model 是互斥的，不会同时存在于 URL 参数中
+      // 默认都选中 "All"
+      $filters.find('[data-filter-section="category"] input[value="all"]').prop('checked', true);
+      $filters.find('[data-filter-section="model"] input[value="all"]').prop('checked', true);
+
+      // 处理 category 参数（如果有，则覆盖默认值）
+      if (params.category && params.category !== 'all') {
+        var $categoryRadio = $filters.find('[data-filter-section="category"] input[value="' + params.category + '"]');
+        if ($categoryRadio.length) {
+          $categoryRadio.prop('checked', true);
+        }
+        // model 保持 all（已在上面设置）
       }
-      // category 保持 all（已在上面设置）
+
+      // 处理 model 参数（如果有，则覆盖默认值）
+      if (params.model && params.model !== 'all') {
+        var $modelRadio = $filters.find('[data-filter-section="model"] input[value="' + params.model + '"]');
+        if ($modelRadio.length) {
+          $modelRadio.prop('checked', true);
+        }
+        // category 保持 all（已在上面设置）
+      }
+
+      // 执行一次过滤
+      filterProducts();
+      updateCount();
     }
 
-    // 执行一次过滤
-    filterProducts();
-    updateCount();
-  }
+    // 获取当前选中的过滤条件
+    function getSelectedFilters() {
+      var filters = {
+        category: null,
+        model: null,
+        checkboxes: [],
+      };
 
-  // 获取当前选中的过滤条件
-  function getSelectedFilters() {
-    var filters = {
-      category: null,
-      model: null,
-      checkboxes: [],
-    };
+      // 获取单选的 category
+      var $categoryChecked = $filters.find('[data-filter-section="category"] input[type="radio"]:checked');
+      if ($categoryChecked.length && $categoryChecked.val() !== 'all') {
+        filters.category = $categoryChecked.val();
+      }
 
-    // 获取单选的 category
-    var $categoryChecked = $filters.find('[data-filter-section="category"] input[type="radio"]:checked');
-    if ($categoryChecked.length && $categoryChecked.val() !== 'all') {
-      filters.category = $categoryChecked.val();
-    }
+      // 获取单选的 model
+      var $modelChecked = $filters.find('[data-filter-section="model"] input[type="radio"]:checked');
+      if ($modelChecked.length && $modelChecked.val() !== 'all') {
+        filters.model = $modelChecked.val();
+      }
 
-    // 获取单选的 model
-    var $modelChecked = $filters.find('[data-filter-section="model"] input[type="radio"]:checked');
-    if ($modelChecked.length && $modelChecked.val() !== 'all') {
-      filters.model = $modelChecked.val();
-    }
-
-    // 获取多选的 checkbox 值
-    $filters.find('input[type="checkbox"]:checked').each(function () {
-      filters.checkboxes.push($(this).val());
-    });
-
-    return filters;
-  }
-
-  // 过滤产品
-  function filterProducts() {
-    var filters = getSelectedFilters();
-    var visibleCount = 0;
-    var totalCount = $products.length;
-
-    $products.each(function () {
-      var $product = $(this);
-      var tags = ($product.attr('data-product-tags') || '').split(',').map(function (t) {
-        return t.trim();
+      // 获取多选的 checkbox 值
+      $filters.find('input[type="checkbox"]:checked').each(function () {
+        filters.checkboxes.push($(this).val());
       });
 
-      var showProduct = true;
+      return filters;
+    }
 
-      // 检查 category（单选）
-      if (filters.category) {
-        if (tags.indexOf(filters.category) === -1) {
-          showProduct = false;
-        }
-      }
+    // 过滤产品
+    function filterProducts() {
+      var filters = getSelectedFilters();
+      var visibleCount = 0;
+      var totalCount = $products.length;
 
-      // 检查 model（单选）
-      if (showProduct && filters.model) {
-        if (tags.indexOf(filters.model) === -1) {
-          showProduct = false;
-        }
-      }
-
-      // 检查 checkboxes（多选 - 任意匹配）
-      // 按类型分组：price, range, weight, throttle
-      if (showProduct && filters.checkboxes.length > 0) {
-        var filterGroups = {};
-
-        filters.checkboxes.forEach(function (value) {
-          var type = '';
-          if (value.indexOf('price') === 0 || value.indexOf('over-') === 0) {
-            type = 'price';
-          } else if (value.indexOf('range') === 0) {
-            type = 'range';
-          } else if (value.indexOf('weight') === 0) {
-            type = 'weight';
-          } else if (value.indexOf('throttle') === 0) {
-            type = 'throttle';
-          }
-
-          if (type) {
-            if (!filterGroups[type]) filterGroups[type] = [];
-            filterGroups[type].push(value);
-          }
+      $products.each(function () {
+        var $product = $(this);
+        var tags = ($product.attr('data-product-tags') || '').split(',').map(function (t) {
+          return t.trim();
         });
 
-        // 每个分组内是"或"的关系，分组之间是"且"的关系
-        for (var groupType in filterGroups) {
-          var groupValues = filterGroups[groupType];
-          var hasMatch = false;
+        var showProduct = true;
 
-          for (var i = 0; i < groupValues.length; i++) {
-            if (tags.indexOf(groupValues[i]) !== -1) {
-              hasMatch = true;
+        // 检查 category（单选）
+        if (filters.category) {
+          if (tags.indexOf(filters.category) === -1) {
+            showProduct = false;
+          }
+        }
+
+        // 检查 model（单选）
+        if (showProduct && filters.model) {
+          if (tags.indexOf(filters.model) === -1) {
+            showProduct = false;
+          }
+        }
+
+        // 检查 checkboxes（多选 - 任意匹配）
+        // 按类型分组：price, range, weight, throttle
+        if (showProduct && filters.checkboxes.length > 0) {
+          var filterGroups = {};
+
+          filters.checkboxes.forEach(function (value) {
+            var type = '';
+            if (value.indexOf('price') === 0 || value.indexOf('over-') === 0) {
+              type = 'price';
+            } else if (value.indexOf('range') === 0) {
+              type = 'range';
+            } else if (value.indexOf('weight') === 0) {
+              type = 'weight';
+            } else if (value.indexOf('throttle') === 0) {
+              type = 'throttle';
+            }
+
+            if (type) {
+              if (!filterGroups[type]) filterGroups[type] = [];
+              filterGroups[type].push(value);
+            }
+          });
+
+          // 每个分组内是"或"的关系，分组之间是"且"的关系
+          for (var groupType in filterGroups) {
+            var groupValues = filterGroups[groupType];
+            var hasMatch = false;
+
+            for (var i = 0; i < groupValues.length; i++) {
+              if (tags.indexOf(groupValues[i]) !== -1) {
+                hasMatch = true;
+                break;
+              }
+            }
+
+            if (!hasMatch) {
+              showProduct = false;
               break;
             }
           }
-
-          if (!hasMatch) {
-            showProduct = false;
-            break;
-          }
         }
-      }
 
-      // 显示/隐藏产品
-      if (showProduct) {
-        $product.show();
-        visibleCount++;
-      } else {
-        $product.hide();
-      }
-    });
-
-    // 更新结果计数
-    $filters.find('.js-results-shown').text(visibleCount);
-    $filters.find('.js-results-total').text(totalCount);
-
-    // 更新各个过滤选项的计数
-    updateFilterCounts();
-  }
-
-  // 更新各过滤选项的数量统计（优化版本）
-  function updateFilterCounts() {
-    var filters = getSelectedFilters();
-
-    // 预先构建产品标签映射，避免重复解析
-    var baseProductTags = [];
-    $products.each(function () {
-      var tags = ($(this).attr('data-product-tags') || '').split(',').map(function (t) {
-        return t.trim();
+        // 显示/隐藏产品
+        if (showProduct) {
+          $product.show();
+          visibleCount++;
+        } else {
+          $product.hide();
+        }
       });
 
-      // 检查是否符合 category 和 model 条件
-      var matchesBase = true;
-      if (filters.category && tags.indexOf(filters.category) === -1) {
-        matchesBase = false;
-      }
-      if (matchesBase && filters.model && tags.indexOf(filters.model) === -1) {
-        matchesBase = false;
-      }
+      // 更新结果计数（桌面端和移动端）
+      $filters.find('.js-results-shown').text(visibleCount);
+      $filters.find('.js-results-total').text(totalCount);
+      $('.js-mobile-results-shown').text(visibleCount);
+      $('.js-mobile-results-total').text(totalCount);
 
-      if (matchesBase) {
-        baseProductTags.push(tags);
-      }
-    });
+      // 更新各个过滤选项的计数
+      updateFilterCounts();
 
-    // 统计每个 checkbox 值的匹配数量
-    var valueCounts = {};
-    $filters.find('input[type="checkbox"]').each(function () {
-      valueCounts[$(this).val()] = 0;
-    });
+      // 标记过滤完成，显示产品（防闪烁）
+      $('body').addClass('products-filtered');
+    }
 
-    // 一次遍历计算所有值的数量
-    baseProductTags.forEach(function (tags) {
-      for (var value in valueCounts) {
-        if (tags.indexOf(value) !== -1) {
-          valueCounts[value]++;
+    // 更新各过滤选项的数量统计（优化版本）
+    function updateFilterCounts() {
+      var filters = getSelectedFilters();
+
+      // 预先构建产品标签映射，避免重复解析
+      var baseProductTags = [];
+      $products.each(function () {
+        var tags = ($(this).attr('data-product-tags') || '').split(',').map(function (t) {
+          return t.trim();
+        });
+
+        // 检查是否符合 category 和 model 条件
+        var matchesBase = true;
+        if (filters.category && tags.indexOf(filters.category) === -1) {
+          matchesBase = false;
         }
-      }
+        if (matchesBase && filters.model && tags.indexOf(filters.model) === -1) {
+          matchesBase = false;
+        }
+
+        if (matchesBase) {
+          baseProductTags.push(tags);
+        }
+      });
+
+      // 统计每个 checkbox 值的匹配数量
+      var valueCounts = {};
+      $filters.find('input[type="checkbox"]').each(function () {
+        valueCounts[$(this).val()] = 0;
+      });
+
+      // 一次遍历计算所有值的数量
+      baseProductTags.forEach(function (tags) {
+        for (var value in valueCounts) {
+          if (tags.indexOf(value) !== -1) {
+            valueCounts[value]++;
+          }
+        }
+      });
+
+      // 更新 DOM
+      $filters.find('input[type="checkbox"]').each(function () {
+        var $countEl = $(this).closest('label').find('.filters__option-count');
+        if ($countEl.length) {
+          $countEl.text('(' + valueCounts[$(this).val()] + ')');
+        }
+      });
+    }
+
+    // 手风琴展开/收缩
+    $filters.on('click', '.filters__section-header', function () {
+      $(this)
+        .closest('.filters__section')
+        .toggleClass('is-collapsed')
+        .find('.filters__section-content')
+        .slideToggle(200);
     });
 
-    // 更新 DOM
-    $filters.find('input[type="checkbox"]').each(function () {
-      var $countEl = $(this).closest('label').find('.filters__option-count');
-      if ($countEl.length) {
-        $countEl.text('(' + valueCounts[$(this).val()] + ')');
+    // 更新 URL 查询参数
+    function updateUrl() {
+      var filters = getSelectedFilters();
+      var params = new URLSearchParams(window.location.search);
+
+      // 清除旧的 category 和 model 参数
+      params.delete('category');
+      params.delete('model');
+
+      // 只有不是 "all" 时才添加到 URL
+      if (filters.category) {
+        params.set('category', filters.category);
       }
+      if (filters.model) {
+        params.set('model', filters.model);
+      }
+
+      // 更新 URL（不刷新页面）
+      var newUrl = window.location.pathname;
+      if (params.toString()) {
+        newUrl += '?' + params.toString();
+      }
+      window.history.replaceState({}, '', newUrl);
+    }
+
+    // 平滑滚动到过滤器区域
+    function scrollToSection() {
+      var $section = $('section.er-bg-background.er-py-40');
+      if ($section.length) {
+        $('html, body').animate(
+          {
+            scrollTop: $section.offset().top,
+          },
+          300
+        );
+      }
+    }
+
+    // 过滤器变化
+    $filters.on('change', 'input[type="checkbox"], input[type="radio"]', function () {
+      var inputName = $(this).attr('name');
+
+      filterProducts();
+      updateCount();
+      scrollToSection();
+
+      // Category 或 Model 变化时更新 URL
+      if (inputName === 'category' || inputName === 'model') {
+        updateUrl();
+      }
+
+      $(document).trigger('filters:changed', {
+        type: inputName,
+        value: $(this).val(),
+        checked: $(this).is(':checked'),
+      });
     });
-  }
 
-  // 手风琴展开/收缩
-  $filters.on('click', '.filters__section-header', function () {
-    $(this).closest('.filters__section').toggleClass('is-collapsed').find('.filters__section-content').slideToggle(200);
-  });
+    // 清除所有
+    $filters.on('click', '.js-clear-filters', function (e) {
+      e.preventDefault();
 
-  // 更新 URL 查询参数
-  function updateUrl() {
-    var filters = getSelectedFilters();
-    var params = new URLSearchParams(window.location.search);
+      // 清除所有 checkbox
+      $filters.find('input[type="checkbox"]').prop('checked', false);
 
-    // 清除旧的 category 和 model 参数
-    params.delete('category');
-    params.delete('model');
+      // 重置 radio 到 "All"
+      $filters.find('[data-filter-section="category"] input[value="all"]').prop('checked', true);
+      $filters.find('[data-filter-section="model"] input[value="all"]').prop('checked', true);
 
-    // 只有不是 "all" 时才添加到 URL
-    if (filters.category) {
-      params.set('category', filters.category);
-    }
-    if (filters.model) {
-      params.set('model', filters.model);
-    }
-
-    // 更新 URL（不刷新页面）
-    var newUrl = window.location.pathname;
-    if (params.toString()) {
-      newUrl += '?' + params.toString();
-    }
-    window.history.replaceState({}, '', newUrl);
-  }
-
-  // 平滑滚动到过滤器区域
-  function scrollToSection() {
-    var $section = $('section.er-bg-background.er-py-40');
-    if ($section.length) {
-      $('html, body').animate(
-        {
-          scrollTop: $section.offset().top,
-        },
-        300
-      );
-    }
-  }
-
-  // 过滤器变化
-  $filters.on('change', 'input[type="checkbox"], input[type="radio"]', function () {
-    var inputName = $(this).attr('name');
-
-    filterProducts();
-    updateCount();
-    scrollToSection();
-
-    // Category 或 Model 变化时更新 URL
-    if (inputName === 'category' || inputName === 'model') {
+      filterProducts();
+      updateCount();
       updateUrl();
+      $(document).trigger('filters:cleared');
+    });
+
+    // 更新计数
+    function updateCount() {
+      var count = $filters.find('input[type="checkbox"]:checked').length;
+
+      // 单选：如果不是 "all" 就算 1 个
+      $filters.find('input[type="radio"]:checked').each(function () {
+        if ($(this).val() !== 'all') {
+          count++;
+        }
+      });
+
+      // 更新桌面端
+      $filters.find('.js-active-count').text(count);
+      $filters.find('.js-clear-filters').toggle(count > 0);
+
+      // 更新移动端
+      $('.js-mobile-active-count').text(count);
+      $('.js-mobile-clear-filters').toggle(count > 0);
     }
 
-    $(document).trigger('filters:changed', {
-      type: inputName,
-      value: $(this).val(),
-      checked: $(this).is(':checked'),
-    });
-  });
+    // 移动端清除过滤器（使用命名空间防止重复注册）
+    $(document)
+      .off('click.mobileClear')
+      .on('click.mobileClear', '.js-mobile-clear-filters', function (e) {
+        e.preventDefault();
 
-  // 清除所有
-  $filters.on('click', '.js-clear-filters', function (e) {
-    e.preventDefault();
+        // 清除所有 checkbox
+        $filters.find('input[type="checkbox"]').prop('checked', false);
 
-    // 清除所有 checkbox
-    $filters.find('input[type="checkbox"]').prop('checked', false);
+        // 重置 radio 到 "All"
+        $filters.find('[data-filter-section="category"] input[value="all"]').prop('checked', true);
+        $filters.find('[data-filter-section="model"] input[value="all"]').prop('checked', true);
 
-    // 重置 radio 到 "All"
-    $filters.find('[data-filter-section="category"] input[value="all"]').prop('checked', true);
-    $filters.find('[data-filter-section="model"] input[value="all"]').prop('checked', true);
+        filterProducts();
+        updateCount();
+        updateUrl();
+        $(document).trigger('filters:cleared');
+      });
 
-    filterProducts();
-    updateCount();
-    updateUrl();
-    $(document).trigger('filters:cleared');
-  });
+    // 获取当前状态（供外部使用）
+    window.getFiltersState = function () {
+      return getSelectedFilters();
+    };
 
-  // 更新计数
-  function updateCount() {
-    var count = $filters.find('input[type="checkbox"]:checked').length;
-
-    // 单选：如果不是 "all" 就算 1 个
-    $filters.find('input[type="radio"]:checked').each(function () {
-      if ($(this).val() !== 'all') {
-        count++;
-      }
-    });
-
-    $filters.find('.js-active-count').text(count);
-    $filters.find('.js-clear-filters').toggle(count > 0);
-  }
-
-  // 获取当前状态（供外部使用）
-  window.getFiltersState = function () {
-    return getSelectedFilters();
-  };
-
-  // 初始化
-  initFilters();
+    // 初始化
+    initFilters();
+  } // 结束 if-else 防重复初始化
 </script>
