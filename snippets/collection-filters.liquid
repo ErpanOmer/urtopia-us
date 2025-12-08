@@ -841,6 +841,56 @@
     // 更新结果计数
     $filters.find('.js-results-shown').text(visibleCount);
     $filters.find('.js-results-total').text(totalCount);
+
+    // 更新各个过滤选项的计数
+    updateFilterCounts();
+  }
+
+  // 更新各过滤选项的数量统计
+  function updateFilterCounts() {
+    var filters = getSelectedFilters();
+
+    // 获取当前符合 category 和 model 条件的产品
+    var $baseProducts = $products.filter(function () {
+      var tags = ($(this).attr('data-product-tags') || '').split(',').map(function (t) {
+        return t.trim();
+      });
+
+      // 检查 category
+      if (filters.category && tags.indexOf(filters.category) === -1) {
+        return false;
+      }
+
+      // 检查 model
+      if (filters.model && tags.indexOf(filters.model) === -1) {
+        return false;
+      }
+
+      return true;
+    });
+
+    // 遍历所有 checkbox 选项，统计匹配的产品数量
+    $filters.find('input[type="checkbox"]').each(function () {
+      var $checkbox = $(this);
+      var value = $checkbox.val();
+      var $countEl = $checkbox.closest('label').find('.filters__option-count');
+
+      if ($countEl.length) {
+        var count = 0;
+
+        $baseProducts.each(function () {
+          var tags = ($(this).attr('data-product-tags') || '').split(',').map(function (t) {
+            return t.trim();
+          });
+
+          if (tags.indexOf(value) !== -1) {
+            count++;
+          }
+        });
+
+        $countEl.text('(' + count + ')');
+      }
+    });
   }
 
   // 手风琴展开/收缩
