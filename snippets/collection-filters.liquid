@@ -929,12 +929,26 @@
     window.history.replaceState({}, '', newUrl);
   }
 
+  // 平滑滚动到过滤器区域
+  function scrollToSection() {
+    var $section = $('section.er-bg-background.er-py-40');
+    if ($section.length) {
+      $('html, body').animate(
+        {
+          scrollTop: $section.offset().top,
+        },
+        300
+      );
+    }
+  }
+
   // 过滤器变化
   $filters.on('change', 'input[type="checkbox"], input[type="radio"]', function () {
     var inputName = $(this).attr('name');
 
     filterProducts();
     updateCount();
+    scrollToSection();
 
     // Category 或 Model 变化时更新 URL
     if (inputName === 'category' || inputName === 'model') {
