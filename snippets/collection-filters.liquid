@@ -1,6 +1,6 @@
 {% comment %}
   Renders the collection filters component
-  
+
   Usage:
   {% render 'collection-filters' %}
 {% endcomment %}
@@ -14,7 +14,7 @@
   /* Filter Header */
   .filters__header {
     padding: 1.6rem 0;
-    border-bottom: 1px solid #EBEDF0;
+    border-bottom: 1px solid #ebedf0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -46,7 +46,7 @@
 
   /* Filter Section */
   .filters__section {
-    border-bottom: 1px solid #EBEDF0;
+    border-bottom: 1px solid #ebedf0;
   }
 
   .filters__section-header {
@@ -99,7 +99,7 @@
     position: relative;
   }
 
-  .filters__radio-option input[type="radio"] {
+  .filters__radio-option input[type='radio'] {
     position: absolute;
     opacity: 0;
     width: 0;
@@ -109,7 +109,7 @@
   .filters__radio-circle {
     width: 1.4rem; /* 14px */
     height: 1.4rem; /* 14px */
-    border: 1.5px solid #A0A1A2;
+    border: 1.5px solid #a0a1a2;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -128,11 +128,11 @@
     transition: opacity 0.2s, transform 0.2s;
   }
 
-  .filters__radio-option input[type="radio"]:checked + .filters__radio-circle {
+  .filters__radio-option input[type='radio']:checked + .filters__radio-circle {
     border-color: #242729;
   }
 
-  .filters__radio-option input[type="radio"]:checked + .filters__radio-circle .filters__radio-circle-inner {
+  .filters__radio-option input[type='radio']:checked + .filters__radio-circle .filters__radio-circle-inner {
     opacity: 1;
     transform: scale(1);
   }
@@ -152,7 +152,7 @@
     position: relative;
   }
 
-  .filters__checkbox-option input[type="checkbox"] {
+  .filters__checkbox-option input[type='checkbox'] {
     position: absolute;
     opacity: 0;
     width: 0;
@@ -162,7 +162,7 @@
   .filters__checkbox-box {
     width: 1.6rem; /* 16px */
     height: 1.6rem; /* 16px */
-    border: 1.5px solid #A0A1A2;
+    border: 1.5px solid #a0a1a2;
     border-radius: 0.3rem; /* 3px */
     display: flex;
     align-items: center;
@@ -177,18 +177,18 @@
     transition: opacity 0.2s, transform 0.2s;
   }
 
-  .filters__checkbox-option input[type="checkbox"]:checked + .filters__checkbox-box {
+  .filters__checkbox-option input[type='checkbox']:checked + .filters__checkbox-box {
     background-color: #fd4b17;
     border-color: #fd4b17;
   }
 
-  .filters__checkbox-option input[type="checkbox"]:checked + .filters__checkbox-box .filters__checkbox-check {
+  .filters__checkbox-option input[type='checkbox']:checked + .filters__checkbox-box .filters__checkbox-check {
     opacity: 1;
     transform: scale(1);
   }
 
   .filters__option-count {
-    color: #A0A1A2;
+    color: #a0a1a2;
     font-size: 1.4rem; /* 14px */
   }
 </style>
@@ -212,7 +212,7 @@
     <ul class="filters__options-list">
       <li>
         <label class="filters__radio-option">
-          <input type="radio" name="collection" value="all">
+          <input type="radio" name="model" value="all" checked>
           <span class="filters__radio-circle">
             <span class="filters__radio-circle-inner"></span>
           </span>
@@ -221,7 +221,7 @@
       </li>
       <li>
         <label class="filters__radio-option">
-          <input type="radio" name="collection" value="carbon-series">
+          <input type="radio" name="model" value="carbon-series">
           <span class="filters__radio-circle">
             <span class="filters__radio-circle-inner"></span>
           </span>
@@ -230,7 +230,7 @@
       </li>
       <li>
         <label class="filters__radio-option">
-          <input type="radio" name="collection" value="carbon-joy">
+          <input type="radio" name="model" value="carbon-joy">
           <span class="filters__radio-circle">
             <span class="filters__radio-circle-inner"></span>
           </span>
@@ -239,7 +239,7 @@
       </li>
       <li>
         <label class="filters__radio-option">
-          <input type="radio" name="collection" value="carbon-fold-series">
+          <input type="radio" name="model" value="carbon-fold-series">
           <span class="filters__radio-circle">
             <span class="filters__radio-circle-inner"></span>
           </span>
@@ -248,7 +248,7 @@
       </li>
       <li>
         <label class="filters__radio-option">
-          <input type="radio" name="collection" value="carbon-st">
+          <input type="radio" name="model" value="carbon-st">
           <span class="filters__radio-circle">
             <span class="filters__radio-circle-inner"></span>
           </span>
@@ -257,7 +257,7 @@
       </li>
       <li>
         <label class="filters__radio-option">
-          <input type="radio" name="collection" value="carbon-fusion">
+          <input type="radio" name="model" value="carbon-fusion">
           <span class="filters__radio-circle">
             <span class="filters__radio-circle-inner"></span>
           </span>
@@ -266,7 +266,7 @@
       </li>
       <li>
         <label class="filters__radio-option">
-          <input type="radio" name="collection" value="smart-ebikes">
+          <input type="radio" name="model" value="smart-ebikes">
           <span class="filters__radio-circle">
             <span class="filters__radio-circle-inner"></span>
           </span>
@@ -289,7 +289,7 @@
     <ul class="filters__options-list">
       <li>
         <label class="filters__radio-option">
-          <input type="radio" name="collection" value="all">
+          <input type="radio" name="category" value="all" checked>
           <span class="filters__radio-circle">
             <span class="filters__radio-circle-inner"></span>
           </span>
@@ -298,7 +298,7 @@
       </li>
       <li>
         <label class="filters__radio-option">
-          <input type="radio" name="collection" value="lightweight-ebikes">
+          <input type="radio" name="category" value="lightweight-ebikes">
           <span class="filters__radio-circle">
             <span class="filters__radio-circle-inner"></span>
           </span>
@@ -307,7 +307,7 @@
       </li>
       <li>
         <label class="filters__radio-option">
-          <input type="radio" name="collection" value="commuter-ebikes">
+          <input type="radio" name="category" value="commuter-ebikes">
           <span class="filters__radio-circle">
             <span class="filters__radio-circle-inner"></span>
           </span>
@@ -316,7 +316,7 @@
       </li>
       <li>
         <label class="filters__radio-option">
-          <input type="radio" name="collection" value="cruiser-ebikes">
+          <input type="radio" name="category" value="cruiser-ebikes">
           <span class="filters__radio-circle">
             <span class="filters__radio-circle-inner"></span>
           </span>
@@ -325,7 +325,7 @@
       </li>
       <li>
         <label class="filters__radio-option">
-          <input type="radio" name="collection" value="step-through-ebikes">
+          <input type="radio" name="category" value="step-through-ebikes">
           <span class="filters__radio-circle">
             <span class="filters__radio-circle-inner"></span>
           </span>
@@ -334,7 +334,7 @@
       </li>
       <li>
         <label class="filters__radio-option">
-          <input type="radio" name="collection" value="folding-ebikes">
+          <input type="radio" name="category" value="folding-ebikes">
           <span class="filters__radio-circle">
             <span class="filters__radio-circle-inner"></span>
           </span>
@@ -343,7 +343,7 @@
       </li>
       <li>
         <label class="filters__radio-option">
-          <input type="radio" name="collection" value="fat-tire-ebikes">
+          <input type="radio" name="category" value="fat-tire-ebikes">
           <span class="filters__radio-circle">
             <span class="filters__radio-circle-inner"></span>
           </span>
@@ -352,7 +352,7 @@
       </li>
       <li>
         <label class="filters__radio-option">
-          <input type="radio" name="collection" value="utility-cargo-ebikes">
+          <input type="radio" name="category" value="utility-cargo-ebikes">
           <span class="filters__radio-circle">
             <span class="filters__radio-circle-inner"></span>
           </span>
@@ -361,7 +361,7 @@
       </li>
       <li>
         <label class="filters__radio-option">
-          <input type="radio" name="collection" value="off-road-ebikes">
+          <input type="radio" name="category" value="off-road-ebikes">
           <span class="filters__radio-circle">
             <span class="filters__radio-circle-inner"></span>
           </span>
@@ -386,7 +386,14 @@
         <label class="filters__checkbox-option">
           <input type="checkbox" name="price" value="price-1500-2000">
           <span class="filters__checkbox-box">
-            <svg class="filters__checkbox-check" width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg
+              class="filters__checkbox-check"
+              width="10"
+              height="8"
+              viewBox="0 0 10 8"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </span>
@@ -397,7 +404,14 @@
         <label class="filters__checkbox-option">
           <input type="checkbox" name="price" value="price-2000-2500">
           <span class="filters__checkbox-box">
-            <svg class="filters__checkbox-check" width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg
+              class="filters__checkbox-check"
+              width="10"
+              height="8"
+              viewBox="0 0 10 8"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </span>
@@ -408,7 +422,14 @@
         <label class="filters__checkbox-option">
           <input type="checkbox" name="price" value="over-2000">
           <span class="filters__checkbox-box">
-            <svg class="filters__checkbox-check" width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg
+              class="filters__checkbox-check"
+              width="10"
+              height="8"
+              viewBox="0 0 10 8"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </span>
@@ -433,7 +454,14 @@
         <label class="filters__checkbox-option">
           <input type="checkbox" name="range" value="range-40-49">
           <span class="filters__checkbox-box">
-            <svg class="filters__checkbox-check" width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg
+              class="filters__checkbox-check"
+              width="10"
+              height="8"
+              viewBox="0 0 10 8"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </span>
@@ -444,7 +472,14 @@
         <label class="filters__checkbox-option">
           <input type="checkbox" name="range" value="range-50-59">
           <span class="filters__checkbox-box">
-            <svg class="filters__checkbox-check" width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg
+              class="filters__checkbox-check"
+              width="10"
+              height="8"
+              viewBox="0 0 10 8"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </span>
@@ -455,7 +490,14 @@
         <label class="filters__checkbox-option">
           <input type="checkbox" name="range" value="range-60-69">
           <span class="filters__checkbox-box">
-            <svg class="filters__checkbox-check" width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg
+              class="filters__checkbox-check"
+              width="10"
+              height="8"
+              viewBox="0 0 10 8"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </span>
@@ -466,7 +508,14 @@
         <label class="filters__checkbox-option">
           <input type="checkbox" name="range" value="range-70-79">
           <span class="filters__checkbox-box">
-            <svg class="filters__checkbox-check" width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg
+              class="filters__checkbox-check"
+              width="10"
+              height="8"
+              viewBox="0 0 10 8"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </span>
@@ -477,7 +526,14 @@
         <label class="filters__checkbox-option">
           <input type="checkbox" name="range" value="range-80-89">
           <span class="filters__checkbox-box">
-            <svg class="filters__checkbox-check" width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg
+              class="filters__checkbox-check"
+              width="10"
+              height="8"
+              viewBox="0 0 10 8"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </span>
@@ -502,7 +558,14 @@
         <label class="filters__checkbox-option">
           <input type="checkbox" name="weight" value="weight-under-30">
           <span class="filters__checkbox-box">
-            <svg class="filters__checkbox-check" width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg
+              class="filters__checkbox-check"
+              width="10"
+              height="8"
+              viewBox="0 0 10 8"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </span>
@@ -513,7 +576,14 @@
         <label class="filters__checkbox-option">
           <input type="checkbox" name="weight" value="weight-30-40">
           <span class="filters__checkbox-box">
-            <svg class="filters__checkbox-check" width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg
+              class="filters__checkbox-check"
+              width="10"
+              height="8"
+              viewBox="0 0 10 8"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </span>
@@ -524,7 +594,14 @@
         <label class="filters__checkbox-option">
           <input type="checkbox" name="weight" value="weight-40-50">
           <span class="filters__checkbox-box">
-            <svg class="filters__checkbox-check" width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg
+              class="filters__checkbox-check"
+              width="10"
+              height="8"
+              viewBox="0 0 10 8"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </span>
@@ -535,7 +612,14 @@
         <label class="filters__checkbox-option">
           <input type="checkbox" name="weight" value="weight-over-50">
           <span class="filters__checkbox-box">
-            <svg class="filters__checkbox-check" width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg
+              class="filters__checkbox-check"
+              width="10"
+              height="8"
+              viewBox="0 0 10 8"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </span>
@@ -560,7 +644,14 @@
         <label class="filters__checkbox-option">
           <input type="checkbox" name="throttle" value="throttle-yes">
           <span class="filters__checkbox-box">
-            <svg class="filters__checkbox-check" width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg
+              class="filters__checkbox-check"
+              width="10"
+              height="8"
+              viewBox="0 0 10 8"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </span>
@@ -571,11 +662,20 @@
         <label class="filters__checkbox-option">
           <input type="checkbox" name="throttle" value="throttle-no">
           <span class="filters__checkbox-box">
-            <svg class="filters__checkbox-check" width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg
+              class="filters__checkbox-check"
+              width="10"
+              height="8"
+              viewBox="0 0 10 8"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </span>
-          <span class="filters__option-label">Does not include throttle <span class="filters__option-count">(3)</span></span>
+          <span class="filters__option-label"
+            >Does not include throttle <span class="filters__option-count">(3)</span></span
+          >
         </label>
       </li>
     </ul>
@@ -583,58 +683,55 @@
 </div>
 
 <script type="module">
-var $filters = $('.filters');
+  var $filters = $('.filters');
 
-// 手风琴展开/收缩
-$filters.on('click', '.filters__section-header', function() {
-  $(this).closest('.filters__section')
-    .toggleClass('is-collapsed')
-    .find('.filters__section-content').slideToggle(200);
-});
+  // 手风琴展开/收缩
+  $filters.on('click', '.filters__section-header', function () {
+    $(this).closest('.filters__section').toggleClass('is-collapsed').find('.filters__section-content').slideToggle(200);
+  });
 
-// 过滤器变化
-$filters.on('change', 'input[type="checkbox"], input[type="radio"]', function() {
+  // 过滤器变化
+  $filters.on('change', 'input[type="checkbox"], input[type="radio"]', function () {
+    updateCount();
+    $(document).trigger('filters:changed', {
+      type: $(this).attr('name'),
+      value: $(this).val(),
+      checked: $(this).is(':checked'),
+    });
+  });
+
+  // 清除所有
+  $filters.on('click', '.js-clear-filters', function (e) {
+    e.preventDefault();
+    $filters.find('input').prop('checked', false);
+    updateCount();
+    $(document).trigger('filters:cleared');
+  });
+
+  // 更新计数
+  function updateCount() {
+    var count = $filters.find('input[type="checkbox"]:checked').length;
+
+    var groups = {};
+    $filters.find('input[type="radio"]:checked').each(function () {
+      groups[$(this).attr('name')] = true;
+    });
+    count += Object.keys(groups).length;
+
+    $filters.find('.js-active-count').text(count);
+    $filters.find('.js-clear-filters').toggle(count > 0);
+  }
+
+  // 获取当前状态
+  window.getFiltersState = function () {
+    var state = {};
+    $filters.find('input:checked').each(function () {
+      var name = $(this).attr('name');
+      if (!state[name]) state[name] = [];
+      state[name].push($(this).val());
+    });
+    return state;
+  };
+
   updateCount();
-  $(document).trigger('filters:changed', {
-    type: $(this).attr('name'),
-    value: $(this).val(),
-    checked: $(this).is(':checked')
-  });
-});
-
-// 清除所有
-$filters.on('click', '.js-clear-filters', function(e) {
-  e.preventDefault();
-  $filters.find('input').prop('checked', false);
-  updateCount();
-  $(document).trigger('filters:cleared');
-});
-
-// 更新计数
-function updateCount() {
-  var count = $filters.find('input[type="checkbox"]:checked').length;
-  
-  var groups = {};
-  $filters.find('input[type="radio"]:checked').each(function() {
-    groups[$(this).attr('name')] = true;
-  });
-  count += Object.keys(groups).length;
-
-  $filters.find('.js-active-count').text(count);
-  $filters.find('.js-clear-filters').toggle(count > 0);
-}
-
-// 获取当前状态
-window.getFiltersState = function() {
-  var state = {};
-  $filters.find('input:checked').each(function() {
-    var name = $(this).attr('name');
-    if (!state[name]) state[name] = [];
-    state[name].push($(this).val());
-  });
-  return state;
-};
-
-updateCount();
 </script>
-
