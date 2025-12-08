@@ -848,13 +848,45 @@
     $(this).closest('.filters__section').toggleClass('is-collapsed').find('.filters__section-content').slideToggle(200);
   });
 
+  // 更新 URL 查询参数
+  function updateUrl() {
+    var filters = getSelectedFilters();
+    var params = new URLSearchParams(window.location.search);
+
+    // 清除旧的 category 和 model 参数
+    params.delete('category');
+    params.delete('model');
+
+    // 只有不是 "all" 时才添加到 URL
+    if (filters.category) {
+      params.set('category', filters.category);
+    }
+    if (filters.model) {
+      params.set('model', filters.model);
+    }
+
+    // 更新 URL（不刷新页面）
+    var newUrl = window.location.pathname;
+    if (params.toString()) {
+      newUrl += '?' + params.toString();
+    }
+    window.history.replaceState({}, '', newUrl);
+  }
+
   // 过滤器变化
   $filters.on('change', 'input[type="checkbox"], input[type="radio"]', function () {
+    var inputName = $(this).attr('name');
+
     filterProducts();
     updateCount();
 
+    // Category 或 Model 变化时更新 URL
+    if (inputName === 'category' || inputName === 'model') {
+      updateUrl();
+    }
+
     $(document).trigger('filters:changed', {
-      type: $(this).attr('name'),
+      type: inputName,
       value: $(this).val(),
       checked: $(this).is(':checked'),
     });
