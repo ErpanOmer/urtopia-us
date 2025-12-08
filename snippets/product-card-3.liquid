@@ -18,7 +18,7 @@
         price-2000-2500
       {%- elsif product_variants.first.product.price >= 250000 -%}
         over-2500
-      {%- endif -%}{% for item in product_variants.first.product.metafields.custom.product_filters.value %},{{ item }}{% endfor %}
+      {%- endif -%}{%- for item in product_variants.first.product.metafields.custom.product_filters.value -%},{{ item }}{%- endfor %}
     "
     class="er-bg-white product-card"
   >
