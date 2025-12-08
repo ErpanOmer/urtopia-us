@@ -846,49 +846,51 @@
     updateFilterCounts();
   }
 
-  // 更新各过滤选项的数量统计
+  // 更新各过滤选项的数量统计（优化版本）
   function updateFilterCounts() {
     var filters = getSelectedFilters();
 
-    // 获取当前符合 category 和 model 条件的产品
-    var $baseProducts = $products.filter(function () {
+    // 预先构建产品标签映射，避免重复解析
+    var baseProductTags = [];
+    $products.each(function () {
       var tags = ($(this).attr('data-product-tags') || '').split(',').map(function (t) {
         return t.trim();
       });
 
-      // 检查 category
+      // 检查是否符合 category 和 model 条件
+      var matchesBase = true;
       if (filters.category && tags.indexOf(filters.category) === -1) {
-        return false;
+        matchesBase = false;
+      }
+      if (matchesBase && filters.model && tags.indexOf(filters.model) === -1) {
+        matchesBase = false;
       }
 
-      // 检查 model
-      if (filters.model && tags.indexOf(filters.model) === -1) {
-        return false;
+      if (matchesBase) {
+        baseProductTags.push(tags);
       }
-
-      return true;
     });
 
-    // 遍历所有 checkbox 选项，统计匹配的产品数量
+    // 统计每个 checkbox 值的匹配数量
+    var valueCounts = {};
     $filters.find('input[type="checkbox"]').each(function () {
-      var $checkbox = $(this);
-      var value = $checkbox.val();
-      var $countEl = $checkbox.closest('label').find('.filters__option-count');
+      valueCounts[$(this).val()] = 0;
+    });
 
+    // 一次遍历计算所有值的数量
+    baseProductTags.forEach(function (tags) {
+      for (var value in valueCounts) {
+        if (tags.indexOf(value) !== -1) {
+          valueCounts[value]++;
+        }
+      }
+    });
+
+    // 更新 DOM
+    $filters.find('input[type="checkbox"]').each(function () {
+      var $countEl = $(this).closest('label').find('.filters__option-count');
       if ($countEl.length) {
-        var count = 0;
-
-        $baseProducts.each(function () {
-          var tags = ($(this).attr('data-product-tags') || '').split(',').map(function (t) {
-            return t.trim();
-          });
-
-          if (tags.indexOf(value) !== -1) {
-            count++;
-          }
-        });
-
-        $countEl.text('(' + count + ')');
+        $countEl.text('(' + valueCounts[$(this).val()] + ')');
       }
     });
   }
