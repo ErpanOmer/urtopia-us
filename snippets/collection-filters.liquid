@@ -703,26 +703,27 @@
   function initFilters() {
     var params = getUrlParams();
 
-    // 处理 category 参数
-    if (params.category) {
+    // category 和 model 是互斥的，不会同时存在于 URL 参数中
+    // 默认都选中 "All"
+    $filters.find('[data-filter-section="category"] input[value="all"]').prop('checked', true);
+    $filters.find('[data-filter-section="model"] input[value="all"]').prop('checked', true);
+
+    // 处理 category 参数（如果有，则覆盖默认值）
+    if (params.category && params.category !== 'all') {
       var $categoryRadio = $filters.find('[data-filter-section="category"] input[value="' + params.category + '"]');
       if ($categoryRadio.length) {
         $categoryRadio.prop('checked', true);
       }
-    } else {
-      // 默认选中 Category 的 "All"
-      $filters.find('[data-filter-section="category"] input[value="all"]').prop('checked', true);
+      // model 保持 all（已在上面设置）
     }
 
-    // 处理 model 参数
-    if (params.model) {
+    // 处理 model 参数（如果有，则覆盖默认值）
+    if (params.model && params.model !== 'all') {
       var $modelRadio = $filters.find('[data-filter-section="model"] input[value="' + params.model + '"]');
       if ($modelRadio.length) {
         $modelRadio.prop('checked', true);
       }
-    } else {
-      // 默认选中 Model 的 "All"
-      $filters.find('[data-filter-section="model"] input[value="all"]').prop('checked', true);
+      // category 保持 all（已在上面设置）
     }
 
     // 执行一次过滤
