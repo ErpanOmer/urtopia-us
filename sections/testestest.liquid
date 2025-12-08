@@ -6,18 +6,197 @@
   }
   /* Filters container specific styles */
   .filters-container {
-    padding: 2rem;
+    padding: 0 2rem 2rem;
     background-color: #fff;
     border-radius: 7px;
     max-width: 300px;
+    min-width: 240px;
+    height: calc(100vh - 110px);
+    max-height: calc(100vh - 110px);
+    position: sticky;
+    top: 80px;
+    overflow: auto;
   }
-  
-  @media (max-width: 768px) {
+
+  @media (max-width: 1310px) {
+    .ebike-products .product-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 767px) {
+    .ebike-products .product-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 1024px) {
     .filters-container {
       display: none;
     }
   }
 </style>
+
+<script type="module">
+  // 过滤器标签与值的映射关系
+  window.FILTER_MAPPINGS = {
+    // Model
+    All: 'all',
+    'Carbon Series': 'carbon-series',
+    'Carbon Joy': 'carbon-joy',
+    'Carbon Fold Series': 'carbon-fold-series',
+    'Carbon ST': 'carbon-st',
+    'Carbon Fusion': 'carbon-fusion',
+    'Smart E-bikes': 'smart-ebikes',
+
+    // Category
+    'Lightweight Ebikes': 'lightweight-ebikes',
+    'Commuter Ebikes': 'commuter-ebikes',
+    'Cruiser Ebikes': 'cruiser-ebikes',
+    'Step-Through Ebikes': 'step-through-ebikes',
+    'Folding Ebikes': 'folding-ebikes',
+    'Fat Tire Ebikes': 'fat-tire-ebikes',
+    'Utility&Cargo Ebikes': 'utility-cargo-ebikes',
+    'Off Road Ebikes': 'off-road-ebikes',
+
+    // Price
+    '$1,500 to $2,000': 'price-1500-2000',
+    '$2,000 to $2,500': 'price-2000-2500',
+    'Over $2,500': 'over-2500',
+
+    // Range
+    '40 miles - 49 miles': 'range-40-49',
+    '50 miles - 59 miles': 'range-50-59',
+    '60 miles - 69 miles': 'range-60-69',
+    '70 miles - 79 miles': 'range-70-79',
+    '80 miles - 89 miles': 'range-80-89',
+
+    // Weight
+    'Under 30 lbs': 'weight-under-30',
+    '30 lbs - 40 lbs': 'weight-30-40',
+    '40 lbs - 50 lbs': 'weight-40-50',
+    '40 lbs-50 lbs': 'weight-40-50',
+    'Over 50 lbs': 'weight-over-50',
+
+    // Throttle
+    'Includes throttle': 'throttle-yes',
+    'Does not include throttle': 'throttle-no',
+  };
+
+  // 产品与标签的映射关系
+  window.PRODUCT_FILTERS = {
+    JOY: [
+      'carbon-series',
+      'lightweight-ebikes',
+      'carbon-joy',
+      'commuter-ebikes',
+      'step-through-ebikes',
+      'fat-tire-ebikes',
+      'utility-cargo-ebikes',
+      'range-70-79',
+      'weight-40-50',
+      'throttle-yes',
+    ],
+    'Joy Ultra': [
+      'carbon-series',
+      'lightweight-ebikes',
+      'carbon-joy',
+      'commuter-ebikes',
+      'step-through-ebikes',
+      'fat-tire-ebikes',
+      'utility-cargo-ebikes',
+      'range-70-79',
+      'weight-40-50',
+      'throttle-yes',
+    ],
+    'Carbon 1 Pro': [
+      'carbon-series',
+      'lightweight-ebikes',
+      'smart-ebikes',
+      'commuter-ebikes',
+      'cruiser-ebikes',
+      'range-80-89',
+      'weight-30-40',
+      'throttle-no',
+    ],
+    'Carbon 1 ST': [
+      'carbon-series',
+      'lightweight-ebikes',
+      'smart-ebikes',
+      'commuter-ebikes',
+      'cruiser-ebikes',
+      'step-through-ebikes',
+      'range-80-89',
+      'weight-30-40',
+      'throttle-no',
+    ],
+    Classic: [
+      'carbon-series',
+      'lightweight-ebikes',
+      'commuter-ebikes',
+      'cruiser-ebikes',
+      'range-70-79',
+      'weight-30-40',
+      'throttle-yes',
+    ],
+    'Classic ST': [
+      'carbon-series',
+      'lightweight-ebikes',
+      'carbon-st',
+      'commuter-ebikes',
+      'cruiser-ebikes',
+      'step-through-ebikes',
+      'range-70-79',
+      'weight-30-40',
+      'throttle-yes',
+    ],
+    'Fusion Pro': [
+      'carbon-series',
+      'lightweight-ebikes',
+      'carbon-fusion',
+      'cruiser-ebikes',
+      'step-through-ebikes',
+      'utility-cargo-ebikes',
+      'off-road-ebikes',
+      'range-70-79',
+      'weight-40-50',
+      'throttle-yes',
+    ],
+    'Fusion GT': [
+      'carbon-series',
+      'lightweight-ebikes',
+      'carbon-fusion',
+      'smart-ebikes',
+      'cruiser-ebikes',
+      'step-through-ebikes',
+      'utility-cargo-ebikes',
+      'off-road-ebikes',
+      'range-70-79',
+      'weight-40-50',
+      'throttle-yes',
+    ],
+    'Fold 1': [
+      'carbon-series',
+      'lightweight-ebikes',
+      'carbon-fold-series',
+      'step-through-ebikes',
+      'folding-ebikes',
+      'range-40-49',
+      'weight-under-30',
+      'throttle-no',
+    ],
+    'Fold ST': [
+      'carbon-series',
+      'lightweight-ebikes',
+      'carbon-fold-series',
+      'step-through-ebikes',
+      'folding-ebikes',
+      'range-50-59',
+      'weight-30-40',
+      'throttle-yes',
+    ],
+  };
+</script>
 
 <section class="er-bg-background er-py-40">
   <div class="er-mx-auto er-max-w-screen-2xl er-flex er-gap-x-12 er-px-6">
@@ -25,7 +204,7 @@
       {% render 'collection-filters' %}
     </div>
     <div class="ebike-products er-max-w-screen-xl">
-      {% render "product-cards" %}
+      {% render 'product-cards' %}
     </div>
   </div>
 </section>
