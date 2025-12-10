@@ -202,7 +202,7 @@
     appearance: none;
     -webkit-appearance: none;
     padding: 8px 32px 8px 12px;
-    border: 1px solid #ebedf0;
+    border: 1px solid #d8d8d8;
     border-radius: 6px;
     background-color: #fff;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
@@ -1296,6 +1296,16 @@
     // 过滤器变化
     $filters.on('change', 'input[type="checkbox"], input[type="radio"]', function () {
       var inputName = $(this).attr('name');
+      var inputValue = $(this).val();
+
+      // 互斥逻辑：Category 和 Model 不能同时选中非 all 的值
+      if (inputName === 'model' && inputValue !== 'all') {
+        // 如果选了 Model 且不是 all，重置 Category 为 all
+        $('input[name="category"][value="all"]').prop('checked', true);
+      } else if (inputName === 'category' && inputValue !== 'all') {
+        // 如果选了 Category 且不是 all，重置 Model 为 all
+        $('input[name="model"][value="all"]').prop('checked', true);
+      }
 
       filterProducts();
       updateCount();
