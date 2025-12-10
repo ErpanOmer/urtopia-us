@@ -2203,7 +2203,7 @@ window.addEventListener('load', async () => {
   };
 
   
-  if (![/\/collections\/e-bike-sale/, /\/collections\/e-bikes/, /\/pages\/carbon-expert/, /\/pages\/photo-contest/, /\/pages\/lightweight-ebike-urtopia-carbon-1-pro/, /\/collections\/urtopia-black-friday-sale/, /\/pages\/email-page/].some(pattern => pattern.test(window.location.pathname))) {
+  if (![/\/collections\/e-bike-sale/, /\/collections\/e-bikes/, /\/pages\/carbon-expert/, /\/pages\/urtopia-ces-2026/, /\/pages\/photo-contest/, /\/pages\/lightweight-ebike-urtopia-carbon-1-pro/, /\/collections\/urtopia-black-friday-sale/, /\/pages\/email-page/].some(pattern => pattern.test(window.location.pathname))) {
     task(() => {
       showSubscribeEmailDialog()
     }, 15000)
