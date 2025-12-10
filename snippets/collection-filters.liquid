@@ -6,6 +6,9 @@
 {% endcomment %}
 
 <style>
+  body .my-button {
+    transition: none;
+  }
   /* Filters Component Styles - Using 1rem = 10px base */
   .filters {
     font-size: 1.4rem; /* 14px */
@@ -191,9 +194,36 @@
     transform: scale(1);
   }
 
-  .filters__option-count {
-    color: #a0a1a2;
+  .filters__option-label {
     font-size: 1.4rem; /* 14px */
+  }
+
+  .sort-by-select {
+    appearance: none;
+    -webkit-appearance: none;
+    padding: 8px 32px 8px 12px;
+    border: 1px solid #ebedf0;
+    border-radius: 6px;
+    background-color: #fff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+    font-weight: 500;
+    color: #242729;
+    min-width: 160px;
+    transition: all 0.2s;
+  }
+
+  .sort-by-select:hover {
+    border-color: #999;
+    background-color: #fafafa;
+  }
+
+  .sort-by-select:focus {
+    border-color: #242729;
   }
 </style>
 <style>
@@ -204,11 +234,22 @@
   /* 防闪烁：产品卡片初始隐藏，JS 过滤完成后显示 */
   [data-product-tags] {
     opacity: 0;
-    transition: opacity 0.15s ease;
+    transform: translateY(10px) scale(0.98);
+    transition: opacity 0.2s ease, transform 0.2s ease;
   }
 
   .products-filtered [data-product-tags] {
     opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  /* 过滤时隐藏的产品卡片 */
+  .products-filtered [data-product-tags].is-hidden {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+    pointer-events: none;
+    position: absolute;
+    visibility: hidden;
   }
 
   /* 桌面端隐藏触发按钮和遮罩 */
@@ -258,7 +299,7 @@
       display: flex;
       align-items: center;
       gap: 0.8rem;
-      padding: 1rem;
+      padding: 0.7rem 1.5rem;
       background: #000;
       border: 1px solid #ebedf0;
       border-radius: 7.5px;
@@ -354,18 +395,19 @@
     /* 移动端过滤器栏 */
     .filters-mobile-bar {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1.5rem;
-      margin-bottom: 2rem;
+      flex-direction: column;
+      width: 100%;
+      margin: 1rem 0;
     }
 
     .filters-mobile-header {
       display: flex;
       align-items: center;
-      gap: 0.4rem;
       justify-content: space-between;
       width: 100%;
+      margin-top: 1rem;
+      font-size: 1.4rem;
+      color: #a0a1a2;
       font-weight: 700;
     }
 
@@ -1093,12 +1135,12 @@
           }
         }
 
-        // 显示/隐藏产品
+        // 显示/隐藏产品（使用 class 切换实现动画）
         if (showProduct) {
-          $product.show();
+          $product.removeClass('is-hidden');
           visibleCount++;
         } else {
-          $product.hide();
+          $product.addClass('is-hidden');
         }
       });
 
@@ -1200,16 +1242,56 @@
 
     // 平滑滚动到过滤器区域
     function scrollToSection() {
-      var $section = $('section.er-bg-background.er-py-40');
+      var $section = global_config.is_mobile ? $('.filters-mobile-bar') : $('.sorting');
       if ($section.length) {
         $('html, body').animate(
           {
-            scrollTop: $section.offset().top,
+            scrollTop: $section.offset().top + (global_config.is_mobile ? -80 : -90),
           },
-          300
+          200
         );
       }
     }
+
+    // 排序功能
+    var $productGrid = $('.product-grid');
+    var $originalProducts = $products.toArray(); // 保存初始顺序
+
+    function sortProducts(sortType) {
+      var $currentProducts = $products.toArray();
+
+      if (sortType === 'default') {
+        $.each($originalProducts, function (i, el) {
+          $productGrid.append(el);
+        });
+      } else {
+        $currentProducts.sort(function (a, b) {
+          var priceA = parseFloat($(a).attr('data-product-price')) || 0;
+          var priceB = parseFloat($(b).attr('data-product-price')) || 0;
+
+          if (sortType === 'price-ascending') {
+            return priceA - priceB;
+          } else if (sortType === 'price-descending') {
+            return priceB - priceA;
+          }
+          return 0;
+        });
+
+        $.each($currentProducts, function (i, el) {
+          $productGrid.append(el);
+        });
+      }
+    }
+
+    // 监听排序变化 (Desktop & Mobile)
+    var $sortSelects = $('#sort-by, #sort-by-mobile');
+
+    $sortSelects.on('change', function () {
+      var val = $(this).val();
+      // 同步两个下拉框的值
+      $sortSelects.val(val);
+      sortProducts(val);
+    });
 
     // 过滤器变化
     $filters.on('change', 'input[type="checkbox"], input[type="radio"]', function () {

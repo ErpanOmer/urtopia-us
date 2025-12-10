@@ -171,14 +171,71 @@
     </div>
 
 <div class="er-bg-background">
-  <div class="centeral-content ebike-products er-flex er-flex-col">
+</div>
+<section class="er-bg-background er-py-40 mb:er-py-16">
+   <div class="centeral-content er-flex er-flex-col er-px-6">
     <h2 class="er-m-0 text-size36 er-text-center mb:er-text-4xl mb:er-text-left er-mb-4">Electric Bikes</h2>
     <p class="text-size18 er-text-center er-opacity-80 mb:er-text-left mb:er-text-2xl er-max-w-screen-md er-mb-20 er-mx-auto mb:er-mb-8">
         <span>Urtopia transforms urban cycling with sleek, carbon fiber E Bikes built for city commutes, hybrid adventures, folds, cargo, and electric bike tours. Lightweight, smart, durable—each bike fuses anti‑theft, navigation, seamless assist, and aesthetic minimalism</span>
     </p>
-  {% render: "product-cards" %}
-</div>
-</div>
+   </div>
+  <div class="er-mx-auto er-max-w-screen-2xl er-flex er-gap-x-4 er-px-6 sorting er-items-center er-justify-end er-mb-8 mb:er-hidden">
+    <label for="sort-by" class="er-mr-2 text-size14 er-font-bold" style="color: #000;">Sort by:</label>
+    <select id="sort-by" class="sort-by-select">
+      <option value="default">Default</option>
+      <option value="price-ascending">Price, low to high</option>
+      <option value="price-descending">Price, high to low</option>
+    </select>
+  </div>
+  <div class="er-mx-auto er-max-w-screen-2xl er-flex er-gap-x-12 er-px-6">
+    <!-- Filters (桌面端侧边栏 / 移动端抽屉) -->
+    <div class="filters filters-container er-flex-1">
+      <button class="filters-drawer-close">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 6L18 18M6 18L18 6" stroke="#242729" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      {% render 'collection-filters' %}
+    </div>
+
+    <div class="ebike-products er-max-w-screen-xl">
+      <!-- 移动端过滤器栏 -->
+      <div class="filters-mobile-bar">
+        <div class="er-flex er-justify-between er-items-center er-w-full">
+          <button class="filters-mobile-trigger">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 6H20M4 12H20M4 18H12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <span>Filters</span>
+            <span class="filter-count" style="display: none;">0</span>
+          </button>
+
+          <div class="filters-mobile-sort">
+            <label for="sort-by-mobile" class="er-mr-2 text-size14 er-font-bold" style="color: #000;">Sort by:</label>
+            <select id="sort-by-mobile" class="sort-by-select" style="min-width: 140px; padding-left: 10px;">
+              <option value="default">Default</option>
+              <option value="price-ascending">Price, low to high</option>
+              <option value="price-descending">Price, high to low</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="filters-mobile-header">
+          <span class="filters-mobile-results">
+            <span class="highlight js-mobile-results-shown">0</span> OF
+            <span class="js-mobile-results-total">0</span> RESULTS
+          </span>
+          <a href="#" class="filters-mobile-clear js-mobile-clear-filters"
+            >Clear filters (<span class="js-mobile-active-count">0</span>)</a
+          >
+        </div>
+      </div>
+
+      {% render 'product-cards' %}
+    </div>
+  </div>
+</section>
+<div class="filters-overlay"></div>
 
 <div class="er-text-white er-bg-background">
   <div class="centeral-content mb:er-px-6">
