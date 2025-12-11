@@ -116,6 +116,8 @@
           <div class="er-w-[300px] er-flex-shrink-0 headermb:er-hidden">
             <img
               class="er-w-full er-h-full er-object-cover er-rounded-xl"
+              width="300"
+              height="400"
               src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26464_2x_25f7c551-c5ec-4884-ba28-4c228653143c.jpg?v=1762946603"
               loading="lazy"
               alt=""
@@ -211,3 +213,25 @@
     </div>
   </div>
 </div>
+
+<script>
+  $(document).ready(function () {
+    $('.tab-trigger').click(function () {
+      const target = $(this).data('target');
+      // Hide all contents
+      $('.tab-content').hide();
+      // Show target
+      $(target).show();
+
+      // Update trigger styles
+      $('.tab-trigger').css({
+        'border-left-color': 'transparent',
+        'font-weight': '500', // medium
+      });
+      $(this).css({
+        'border-left-color': '#FD4B17',
+        'font-weight': '700', // bold
+      });
+    });
+  });
+</script>
