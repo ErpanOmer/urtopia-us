@@ -132,17 +132,11 @@
         <div class="er-flex er-gap-8">
           <div class="er-flex-1 er-flex er-flex-col er-justify-between">
             <div class="er-grid er-grid-cols-4 er-gap-8 headermb:er-grid-cols-2 headermb:er-gap-4">
-              {{ collections['e-bikes'].metafields.custom.e_bikes_model.value }}
               {% for product_item in collections['e-bikes'].metafields.custom.e_bikes_model.value %}
                 <a
                   href="{{ product_item.first_available_variant.url }}"
                   class="er-bg-background er-rounded-xl er-p-8 er-flex er-flex-col er-items-center er-text-center er-justify-start er-relative headermb:er-py-6 headermb:er-px-4 hover:er-shadow-lg er-transition"
                 >
-                  {% if forloop.index < 5 %}
-                    <div class="er-absolute er-left-4 er-top-4 text-size12 er-font-bold er-bg-primary/15 er-text-primary er-rounded-xl er-px-3 er-py-1 mb:er-text-base mb:er-left-2 mb:er-top-2">
-                      NEW
-                    </div>
-                  {% endif %}
                   {{
                     product_item.first_available_variant
                     | image_url: width: 300
