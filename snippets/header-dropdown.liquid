@@ -50,14 +50,14 @@
               {% for product_item in collections['e-bikes'].metafields.custom.e_bieks_category.value %}
                 <a
                   href="/collections/e-bikes?category={{ product_item.key }}"
-                  class="er-p-8 er-flex er-flex-col er-items-center er-text-center er-justify-start er-relative headermb:er-py-6 headermb:er-px-4 er-transition"
+                  class="er-flex er-flex-col er-items-center er-text-center er-justify-start er-relative headermb:er-py-6 headermb:er-px-4 er-transition"
                 >
                   {{
                     product_item.image
                     | image_url: width: 300
                     | image_tag: class: 'hover:er-scale-105 er-transition er-aspect-[16/11] er-object-contain'
                   }}
-                  <div class="text-size16 er-font-bold er-mt-4 er-mb-2 mb:er-text-2xl">{{ product_item.name }}</div>
+                  <div class="text-size14 er-font-bold er-mt-4 er-mb-2 mb:er-text-2xl">{{ product_item.name }}</div>
                 </a>
               {% endfor %}
             </div>
