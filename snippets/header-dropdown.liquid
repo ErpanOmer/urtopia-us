@@ -233,6 +233,8 @@
 
     $('.tab-trigger').click(function () {
       $(this).closest(`[data-dropdown="header-dropdown"]`).find('.tab-content').hide();
+
+      console.log($(this).attr('data-target'));
       console.log(
         $(this)
           .closest(`[data-dropdown="header-dropdown"]`)
