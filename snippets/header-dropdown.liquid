@@ -233,6 +233,10 @@
 
     $('.tab-trigger').click(function () {
       $(this).closest('.headermb:er-pb-20').find('.tab-content').hide();
+      $(this)
+        .closest('.headermb:er-pb-20')
+        .find(`div[id="${$(this).attr('data-target')}"]`)
+        .show();
 
       // Update trigger styles
       $('.tab-trigger').css({
