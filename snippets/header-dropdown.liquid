@@ -132,6 +132,7 @@
         <div class="er-flex er-gap-8">
           <div class="er-flex-1 er-flex er-flex-col er-justify-between">
             <div class="er-grid er-grid-cols-4 er-gap-8 headermb:er-grid-cols-2 headermb:er-gap-4">
+              {{ collections['e-bikes'].custom.e_bikes_model.value }}
               {% for product_item in collections['e-bikes'].custom.e_bikes_model.value %}
                 <a
                   href="{{ product_item.first_available_variant.url }}"
