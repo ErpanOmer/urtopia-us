@@ -46,7 +46,7 @@
         <div class="er-flex-1 er-flex er-flex-col er-justify-between">
           <!-- Shop by Category Grid -->
           <div id="tab-shop-category" class="tab-content">
-            <div class="er-grid er-grid-cols-4 er-gap-x-8 er-gap-y-10 headermb:er-grid-cols-2 headermb:er-gap-4">
+            <div class="er-grid er-grid-cols-4 er-gap-x-8 er-gap-y-12 headermb:er-grid-cols-2 headermb:er-gap-4">
               {% for product_item in collections['e-bikes'].metafields.custom.e_bieks_category.value %}
                 <a
                   href="/collections/e-bikes?category={{ product_item.key }}"
@@ -57,7 +57,7 @@
                     | image_url: width: 300
                     | image_tag: class: 'hover:er-scale-105 er-transition er-object-contain'
                   }}
-                  <div class="text-size14 er-font-bold er-mt-6 mb:er-text-2xl">{{ product_item.name }}</div>
+                  <div class="text-size14 er-font-bold er-mt-5 mb:er-text-2xl">{{ product_item.name }}</div>
                 </a>
               {% endfor %}
             </div>
