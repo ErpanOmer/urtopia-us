@@ -214,24 +214,22 @@
   </div>
 </div>
 
-<script>
-  $(document).ready(function () {
-    $('.tab-trigger').click(function () {
-      const target = $(this).data('target');
-      // Hide all contents
-      $('.tab-content').hide();
-      // Show target
-      $(target).show();
+<script type="module">
+  $('.tab-trigger').click(function () {
+    const target = $(this).data('target');
+    // Hide all contents
+    $('.tab-content').hide();
+    // Show target
+    $(target).show();
 
-      // Update trigger styles
-      $('.tab-trigger').css({
-        'border-left-color': 'transparent',
-        'font-weight': '500', // medium
-      });
-      $(this).css({
-        'border-left-color': '#FD4B17',
-        'font-weight': '700', // bold
-      });
+    // Update trigger styles
+    $('.tab-trigger').css({
+      'border-left-color': 'transparent',
+      'font-weight': '500', // medium
+    });
+    $(this).css({
+      'border-left-color': '#FD4B17',
+      'font-weight': '700', // bold
     });
   });
 </script>
