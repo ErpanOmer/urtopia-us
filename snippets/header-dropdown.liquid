@@ -52,8 +52,12 @@
                   href="#"
                   class="er-bg-background er-rounded-xl er-p-8 er-flex er-flex-col er-items-center er-text-center er-justify-start er-relative headermb:er-py-6 headermb:er-px-4 hover:er-shadow-lg er-transition"
                 >
-                  {{ 'product-1' | placeholder_svg_tag: 'er-aspect-[16/11] er-object-contain er-w-full' }}
-                  <div class="text-size16 er-font-bold er-mt-4 er-mb-2 mb:er-text-2xl">{{ category }}</div>
+                  {{
+                    product_item.image
+                    | image_url: width: 300
+                    | image_tag: class: 'hover:er-scale-105 er-transition er-aspect-[16/11] er-object-contain'
+                  }}
+                  <div class="text-size16 er-font-bold er-mt-4 er-mb-2 mb:er-text-2xl">{{ product_item.name }}</div>
                 </a>
               {% endfor %}
             </div>
