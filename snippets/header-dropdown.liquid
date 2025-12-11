@@ -234,8 +234,9 @@
     $('.tab-trigger').click(function () {
       $(this).closest(`[data-dropdown="header-dropdown"]`).find('.tab-content').hide();
 
-      console.log($(this).attr('data-target'));
-      console.log($(this).closest(`[data-dropdown="header-dropdown"]`).find($(this).attr('data-target')).show());
+      setTimeout(() => {
+        $(this).closest(`[data-dropdown="header-dropdown"]`).find($(this).attr('data-target')).show();
+      }, 30);
 
       // Update trigger styles
       $('.tab-trigger').css({
