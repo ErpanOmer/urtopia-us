@@ -232,14 +232,7 @@
     window.header_dropdown = true;
 
     $('.tab-trigger').click(function () {
-      const target = $(this).attr('data-target');
-      console.log($(target));
-      // Hide all contents
-      $('.tab-content').hide();
-      // Show target
-      setTimeout(() => {
-        $(target).show();
-      }, 0);
+      $(this).closest('.headermb:er-pb-20').find('.tab-content').hide();
 
       // Update trigger styles
       $('.tab-trigger').css({
