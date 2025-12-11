@@ -232,9 +232,9 @@
     window.header_dropdown = true;
 
     $('.tab-trigger').click(function () {
-      $(this).closest('.headermb:er-pb-20').find('.tab-content').hide();
+      $(this).closest(`[data-dropdown="header-dropdown"]`).find('.tab-content').hide();
       $(this)
-        .closest('.headermb:er-pb-20')
+        .closest(`[data-dropdown="header-dropdown"]`)
         .find(`div[id="${$(this).attr('data-target')}"]`)
         .show();
 
