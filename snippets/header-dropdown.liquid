@@ -233,10 +233,7 @@
 
     $('.tab-trigger').click(function () {
       $(this).closest(`[data-dropdown="header-dropdown"]`).find('.tab-content').hide();
-      $(this)
-        .closest(`[data-dropdown="header-dropdown"]`)
-        .find(`div[id="${$(this).attr('data-target')}"]`)
-        .show();
+      console.log($(this).closest(`[data-dropdown="header-dropdown"]`).find('.tab-content'));
 
       // Update trigger styles
       $('.tab-trigger').css({
