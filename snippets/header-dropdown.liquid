@@ -228,24 +228,28 @@
 </div>
 
 <script type="module">
-  $('.tab-trigger').click(function () {
-    const target = $(this).attr('data-target');
-    console.log($(target));
-    // Hide all contents
-    $('.tab-content').hide();
-    // Show target
-    setTimeout(() => {
-      $(target).show();
-    }, 0);
+  if (!window.header_dropdown) {
+    window.header_dropdown = true;
 
-    // Update trigger styles
-    $('.tab-trigger').css({
-      'border-left-color': 'transparent',
-      'font-weight': '500', // medium
+    $('.tab-trigger').click(function () {
+      const target = $(this).attr('data-target');
+      console.log($(target));
+      // Hide all contents
+      $('.tab-content').hide();
+      // Show target
+      setTimeout(() => {
+        $(target).show();
+      }, 0);
+
+      // Update trigger styles
+      $('.tab-trigger').css({
+        'border-left-color': 'transparent',
+        'font-weight': '500', // medium
+      });
+      $(this).css({
+        'border-left-color': '#FD4B17',
+        'font-weight': '700', // bold
+      });
     });
-    $(this).css({
-      'border-left-color': '#FD4B17',
-      'font-weight': '700', // bold
-    });
-  });
+  }
 </script>
