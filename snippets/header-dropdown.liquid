@@ -163,10 +163,7 @@
 
     $('.tab-trigger').click(function () {
       $(this).closest(`[data-dropdown="header-dropdown"]`).find('.tab-content').hide();
-
-      setTimeout(() => {
-        $(this).closest(`[data-dropdown="header-dropdown"]`).find($(this).attr('data-target')).show();
-      }, 30);
+      $(this).closest(`[data-dropdown="header-dropdown"]`).find($(this).attr('data-target')).show();
 
       // Update trigger styles
       $('.tab-trigger').css({
