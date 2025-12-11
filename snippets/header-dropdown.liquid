@@ -229,7 +229,7 @@
 
 <script type="module">
   $('.tab-trigger').click(function () {
-    const target = $(this).data('target');
+    const target = $(this).attr('data-target');
     // Hide all contents
     $('.tab-content').hide();
     // Show target
