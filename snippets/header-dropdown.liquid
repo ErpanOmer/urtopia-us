@@ -127,86 +127,99 @@
       </div>
 
       <!-- Shop by Model Tab -->
+      <!-- Shop by Model Tab -->
       <div id="tab-shop-model" class="tab-content" style="display: none;">
-        <div class="er-flex er-flex-col er-gap-y-16">
-          <div class="er-grid er-grid-cols-4 er-gap-8 headermb:er-grid-cols-2 headermb:er-gap-4">
-            {% for product_item in collections['e-bikes'].products limit: 8 %}
-              {% if product_item.available %}
-                <a
-                  href="{{ product_item.first_available_variant.url }}"
-                  class="er-bg-background er-rounded-xl er-p-8 er-flex er-flex-col er-items-center er-text-center er-justify-start er-relative headermb:er-py-6 headermb:er-px-4"
-                >
-                  {% if forloop.index < 5 %}
-                    <div class="er-absolute er-left-4 er-top-4 text-size12 er-font-bold er-bg-primary/15 er-text-primary er-rounded-xl er-px-3 er-py-1 mb:er-text-base mb:er-left-2 mb:er-top-2">
-                      NEW
+        <div class="er-flex er-gap-8">
+          <div class="er-flex-1 er-flex er-flex-col er-justify-between">
+            <div class="er-grid er-grid-cols-4 er-gap-8 headermb:er-grid-cols-2 headermb:er-gap-4">
+              {% for product_item in collections['e-bikes'].products limit: 8 %}
+                {% if product_item.available %}
+                  <a
+                    href="{{ product_item.first_available_variant.url }}"
+                    class="er-bg-background er-rounded-xl er-p-8 er-flex er-flex-col er-items-center er-text-center er-justify-start er-relative headermb:er-py-6 headermb:er-px-4 hover:er-shadow-lg er-transition"
+                  >
+                    {% if forloop.index < 5 %}
+                      <div class="er-absolute er-left-4 er-top-4 text-size12 er-font-bold er-bg-primary/15 er-text-primary er-rounded-xl er-px-3 er-py-1 mb:er-text-base mb:er-left-2 mb:er-top-2">
+                        NEW
+                      </div>
+                    {% endif %}
+                    {{
+                      product_item.first_available_variant
+                      | image_url: width: 300
+                      | image_tag: class: 'hover:er-scale-105 er-transition er-aspect-[16/11] er-object-contain'
+                    }}
+                    <div class="text-size16 er-font-bold er-mt-4 er-mb-2 mb:er-text-2xl">
+                      {{ product_item.metafields.custom['product-in-header'].value.title }}
                     </div>
-                  {% endif %}
-                  {{
-                    product_item.first_available_variant
-                    | image_url: width: 300
-                    | image_tag: class: 'hover:er-scale-105 er-transition er-aspect-[16/11] er-object-contain'
-                  }}
-                  <div class="text-size16 er-font-bold er-mt-4 er-mb-2 mb:er-text-2xl">
-                    {{ product_item.metafields.custom['product-in-header'].value.title }}
-                  </div>
-                  <div class="text-size12 er-opacity-70">
-                    {{ product_item.metafields.custom['product-in-header'].value.discription }}
-                  </div>
-                </a>
-              {% endif %}
-            {% endfor %}
+                    <div class="text-size12 er-opacity-70">
+                      {{ product_item.metafields.custom['product-in-header'].value.discription }}
+                    </div>
+                  </a>
+                {% endif %}
+              {% endfor %}
+            </div>
+            <div class="er-flex er-items-center er-justify-evenly headermb:er-hidden er-mt-8">
+              <div class="er-flex er-items-center er-gap-x-3">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19842.svg?v=1763370868"
+                  width="25"
+                  height="25"
+                  loading="lazy"
+                  alt="{{ settings.shop_count }} Bike Shops"
+                >
+                <span class="text-size12">{{ settings.shop_count }} Bike Shops</span>
+              </div>
+              <div class="er-flex er-items-center er-gap-x-3">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26371.svg?v=1763107846"
+                  width="25"
+                  height="25"
+                  loading="lazy"
+                  alt="UL Safety Certified"
+                >
+                <span class="text-size12">UL Safety Certified</span>
+              </div>
+              <div class="er-flex er-items-center er-gap-x-3">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19753_1.svg?v=1762943829"
+                  width="25"
+                  height="25"
+                  loading="lazy"
+                  alt="Free Shipping"
+                >
+                <span class="text-size12">Free Shipping</span>
+              </div>
+              <div class="er-flex er-items-center er-gap-x-3">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19629_1_2a26a006-9c07-4f9f-93b4-5e2b80e0288c.svg?v=1762943828"
+                  width="25"
+                  height="25"
+                  loading="lazy"
+                  alt="2 Year Warranty"
+                >
+                <span class="text-size12">2 Year Warranty</span>
+              </div>
+              <div class="er-flex er-items-center er-gap-x-3">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19754_1.svg?v=1762943828"
+                  width="25"
+                  height="25"
+                  loading="lazy"
+                  alt="14-Day Returns"
+                >
+                <span class="text-size12">14-Day Returns</span>
+              </div>
+            </div>
           </div>
-          <div class="er-flex er-items-center er-justify-evenly headermb:er-hidden">
-            <div class="er-flex er-items-center er-gap-x-3">
-              <img
-                src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19842.svg?v=1763370868"
-                width="25"
-                height="25"
-                loading="lazy"
-                alt="{{ settings.shop_count }} Bike Shops"
-              >
-              <span class="text-size12">{{ settings.shop_count }} Bike Shops</span>
-            </div>
-            <div class="er-flex er-items-center er-gap-x-3">
-              <img
-                src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26371.svg?v=1763107846"
-                width="25"
-                height="25"
-                loading="lazy"
-                alt="UL Safety Certified"
-              >
-              <span class="text-size12">UL Safety Certified</span>
-            </div>
-            <div class="er-flex er-items-center er-gap-x-3">
-              <img
-                src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19753_1.svg?v=1762943829"
-                width="25"
-                height="25"
-                loading="lazy"
-                alt="Free Shipping"
-              >
-              <span class="text-size12">Free Shipping</span>
-            </div>
-            <div class="er-flex er-items-center er-gap-x-3">
-              <img
-                src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19629_1_2a26a006-9c07-4f9f-93b4-5e2b80e0288c.svg?v=1762943828"
-                width="25"
-                height="25"
-                loading="lazy"
-                alt="2 Year Warranty"
-              >
-              <span class="text-size12">2 Year Warranty</span>
-            </div>
-            <div class="er-flex er-items-center er-gap-x-3">
-              <img
-                src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19754_1.svg?v=1762943828"
-                width="25"
-                height="25"
-                loading="lazy"
-                alt="14-Day Returns"
-              >
-              <span class="text-size12">14-Day Returns</span>
-            </div>
+          <div class="er-w-[300px] er-flex-shrink-0 headermb:er-hidden">
+            <img
+              class="er-w-full er-h-full er-object-cover er-rounded-xl"
+              width="300"
+              height="400"
+              src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26464_2x_25f7c551-c5ec-4884-ba28-4c228653143c.jpg?v=1762946603"
+              loading="lazy"
+              alt=""
+            >
           </div>
         </div>
       </div>
