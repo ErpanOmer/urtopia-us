@@ -143,10 +143,10 @@
                     | image_tag: class: 'hover:er-scale-105 er-transition er-aspect-[16/11] er-object-contain'
                   }}
                   <div class="text-size16 er-font-bold er-mt-4 er-mb-2 mb:er-text-2xl">
-                    {{ product_item.metafields.custom['product-in-header'].value.title }}
+                    {{ product_item.name }}
                   </div>
                   <div class="text-size12 er-opacity-70">
-                    {{ product_item.metafields.custom['product-in-header'].value.discription }}
+                    {{ product_item.desc }}
                   </div>
                 </a>
               {% endfor %}
