@@ -234,7 +234,9 @@
     // Hide all contents
     $('.tab-content').hide();
     // Show target
-    $(target).show();
+    setTimeout(() => {
+      $(target).show();
+    }, 0);
 
     // Update trigger styles
     $('.tab-trigger').css({
