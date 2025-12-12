@@ -308,7 +308,12 @@
             </div>`);
 
             $(".product-panel-swiper .swiper-wrapper").before(img);
-            $(".product-panel-swiper .swiper-wrapper").before(text);
+
+            if (!global_config.is_mobile) {
+                $(".product-panel-swiper .swiper-wrapper").before(text);
+            } else {
+                $(".product-panel-swiper").before(text);
+            }
 
             window.product_panel_swiper.on('slideChange', function () {
                 img.css('opacity', this.realIndex > 0 ? 0 : 1);
