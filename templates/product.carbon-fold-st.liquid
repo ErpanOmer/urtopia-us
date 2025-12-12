@@ -313,7 +313,7 @@
                 $(".product-panel-swiper .swiper-wrapper").before(text);
             } else {
                 $(".product-panel-swiper").before(text);
-                text.css('position', 'static');
+                text.css('position', 'static').css('margin-top', '10px');
             }
 
             window.product_panel_swiper.on('slideChange', function () {
