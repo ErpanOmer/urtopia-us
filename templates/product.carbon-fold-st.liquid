@@ -313,6 +313,7 @@
                 $(".product-panel-swiper .swiper-wrapper").before(text);
             } else {
                 $(".product-panel-swiper").before(text);
+                text.css('position', 'static');
             }
 
             window.product_panel_swiper.on('slideChange', function () {
