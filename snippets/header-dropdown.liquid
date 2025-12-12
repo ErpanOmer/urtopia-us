@@ -100,7 +100,7 @@
         <div class="er-flex-1 er-flex er-flex-col er-justify-between">
           <!-- Shop by Category Grid -->
           <div id="tab-shop-category" class="tab-content">
-            <div class="er-grid er-grid-cols-4 er-gap-x-8 er-gap-y-12 headermb:er-grid-cols-2 headermb:er-gap-y-8">
+            <div class="er-grid er-grid-cols-4 er-gap-x-8 er-gap-y-12 headermb:er-grid-cols-2 headermb:er-gap-y-8 headermb:er-gap-x-4">
               {% for product_item in collections['e-bikes'].metafields.custom.e_bieks_category.value %}
                 <a
                   href="/collections/e-bikes?category={{ product_item.key }}"
