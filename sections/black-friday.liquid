@@ -29,19 +29,18 @@
     position: relative;
   }
 
-  .leftright::after {
-    content: "";
-    background: url(https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26671_2x_f448ae96-1e45-402d-9a76-08c5bf1b2103.png?v=1765523938) center center/contain no-repeat;
-    width: 80px;
-    height: 80px;
-    display: block;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    transform: translate(110%, 15%);
-  }
-
   @media (min-width: 768px) {
+      .leftright::after {
+          content: "";
+          background: url(https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26671_2x_f448ae96-1e45-402d-9a76-08c5bf1b2103.png?v=1765523938) center center/contain no-repeat;
+          width: 80px;
+          height: 80px;
+          display: block;
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          transform: translate(110%, 15%);
+        }
         .leftright::before {
             content: "";
             background: url(https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26678_2x_b8ebe023-5b37-499a-bc68-4e2dad4752de.png?v=1765523963) center center/contain no-repeat;
