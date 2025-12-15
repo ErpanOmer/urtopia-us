@@ -1,62 +1,246 @@
-<div class="headermb:er-pb-20">
-        <div class="centeral-content er-flex er-gap-x-20 headermb:er-flex-col headermb:er-px-6">
-            <div class="er-flex er-flex-col headermb:er-order-1">
-                <div class="er-flex er-flex-col er-text-left er-gap-y-8 headermb:er-hidden">
-                    <div class="text-size14 er-font-bold er-pl-4 er-text-dark" style="border-left: 3px solid #FD4B17;">Shop by Model</div>
-                </div>
-                <div class="er-my-10 mb:er-my-8" style="height: 1px;background-color: #e9e9e9;"></div>
-                <div class="er-flex er-flex-col er-text-left er-gap-y-8">
-                    {%- for childlink in linklists['4-0-main-menu'].links -%}
-                        {% if childlink.levels == 1 %}
-                            {% for link in childlink.links %}
-                                <a class="text-size14 er-font-medium" href="{{ link.url }}">{{ link.title }}</a>
-                            {% endfor %}
-                        {% endif %}
-                    {% endfor %}
-                </div>
-                <a href="/collections/urtopia-black-friday-sale" class="background-image er-aspect-square er-hidden headermb:er-block">
-                    <img class="!er-object-contain" width="300" height="100" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26464_2x_25f7c551-c5ec-4884-ba28-4c228653143c.jpg?v=1762946603" loading="lazy" alt="">
-                </a>
-            </div>
-            <div class="er-flex-1 er-flex er-flex-col er-gap-y-16">
-                <div class="er-grid er-grid-cols-3 xl:er-grid-cols-5 lg:er-grid-cols-4 er-gap-8 headermb:er-grid-cols-2 headermb:er-gap-4">
-                    {% for product_item in collections["e-bikes"].products %}
-                        {% if product_item.available %}
-                            <a href="{{ product_item.first_available_variant.url }}" class="er-bg-background er-rounded-xl er-p-8 er-flex er-flex-col er-items-center er-text-center er-justify-start er-relative headermb:er-py-6 headermb:er-px-4">
-                                {% if forloop.index < 5 %}
-                                    <div class="er-absolute er-left-4 er-top-4 text-size12 er-font-bold er-bg-primary/15 er-text-primary er-rounded-xl er-px-3 er-py-1 mb:er-text-base mb:er-left-2 mb:er-top-2">NEW</div>
-                                {% endif %}
-                                {{ product_item.first_available_variant | image_url: width: 300 | image_tag : class: "hover:er-scale-105 er-transition er-aspect-[16/11] er-object-contain" }}
-                                <div class="text-size16 er-font-bold er-mt-4 er-mb-2 mb:er-text-2xl">{{ product_item.metafields.custom.product-in-header.value.title }}</div>
-                                <div class="text-size12 er-opacity-70">
-                                    {{ product_item.metafields.custom.product-in-header.value.discription }}
-                                </div>
-                            </a>
-                        {% endif %}
-                    {% endfor %}
-                </div>
-                <div class="er-flex er-items-center er-justify-evenly headermb:er-hidden">
-                    <div class="er-flex er-items-center er-gap-x-3">
-                        <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19842.svg?v=1763370868" width="25" height="25" loading="lazy" alt="{{ settings.shop_count }} Bike Shops">
-                        <span class="text-size12">{{ settings.shop_count }} Bike Shops</span>
-                    </div>
-                    <div class="er-flex er-items-center er-gap-x-3">
-                        <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26371.svg?v=1763107846" width="25" height="25" loading="lazy" alt="UL Safety Certified">
-                        <span class="text-size12">UL Safety Certified</span>
-                    </div>
-                    <div class="er-flex er-items-center er-gap-x-3">
-                        <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19753_1.svg?v=1762943829" width="25" height="25" loading="lazy" alt="Free Shipping">
-                        <span class="text-size12">Free Shipping</span>
-                    </div>
-                    <div class="er-flex er-items-center er-gap-x-3">
-                        <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19629_1_2a26a006-9c07-4f9f-93b4-5e2b80e0288c.svg?v=1762943828" width="25" height="25" loading="lazy" alt="2 Year Warranty">
-                        <span class="text-size12">2 Year Warranty</span>
-                    </div>
-                    <div class="er-flex er-items-center er-gap-x-3">
-                        <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19754_1.svg?v=1762943828" width="25" height="25" loading="lazy" alt="14-Day Returns">
-                        <span class="text-size12">14-Day Returns</span>
-                    </div>
-                </div>
-            </div>
+<style>
+  /* Mobile Tab Styles */
+  @media (max-width: 989px) {
+    .mobile-tab-trigger {
+      color: #000;
+      width: 120px;
+    }
+    .mobile-tab-trigger.active {
+      background-color: #fd4b17;
+      color: #fff;
+    }
+  }
+
+  /* Desktop Tab Styles */
+  @media (min-width: 990px) {
+    .desktop-tab-trigger {
+      border-left: 3px solid transparent;
+      font-weight: 500;
+    }
+    .desktop-tab-trigger.active {
+      border-left: 3px solid #fd4b17;
+      font-weight: 700;
+    }
+  }
+</style>
+
+<div class="headermb:er-pb-20" data-dropdown="header-dropdown">
+  <div class="centeral-content er-flex er-gap-x-20 headermb:er-flex-col headermb:er-px-6">
+    <div class="er-flex er-flex-col headermb:er-order-1">
+      <div class="er-flex er-flex-col er-text-left er-gap-y-8 headermb:er-hidden">
+        <div
+          class="tab-trigger desktop-tab-trigger text-size14 er-pl-4 er-text-dark er-cursor-pointer active"
+          data-target="#tab-shop-category"
+        >
+          Shop by Category
         </div>
+        <div
+          class="tab-trigger desktop-tab-trigger text-size14 er-pl-4 er-text-dark er-cursor-pointer"
+          data-target="#tab-shop-model"
+        >
+          Shop by Model
+        </div>
+      </div>
+      <div class="er-my-10 mb:er-my-8" style="height: 1px;background-color: #e9e9e9;"></div>
+      <div class="er-flex er-flex-col er-text-left er-gap-y-8">
+        {%- for childlink in linklists['4-0-main-menu'].links -%}
+          {% if childlink.levels == 1 %}
+            {% for link in childlink.links %}
+              <a class="text-size14 er-font-medium" href="{{ link.url }}">{{ link.title }}</a>
+            {% endfor %}
+          {% endif %}
+        {% endfor %}
+      </div>
+      <a
+        href="/collections/e-bike-sale"
+        class="background-image er-aspect-square er-hidden headermb:er-block er-rounded-xl er-my-12"
+        style="aspect-ratio: 315/242;"
+      >
+        <img
+          class="er-object-contain er-rounded-xl"
+          width="275"
+          height="400"
+          src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20251212-114409.jpg?v=1765511067"
+          loading="lazy"
+          alt="Best Deal of the Year"
+        >
+        <div class="er-flex er-flex-col er-text-white er-items-start er-justify-start er-p-6">
+          <img
+            width="120"
+            height="120"
+            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2_2x_95972136-f9fa-458b-8989-d22b683c6e61.png?v=1765506999&width=150"
+            alt="Best Deal of the Year"
+            loading="lazy"
+          >
+          <span class="text-size16 er-font-medium er-mt-6">Best Deal of the Year</span>
+        </div>
+      </a>
     </div>
+    <div class="er-flex-1 er-flex er-flex-col er-gap-y-16 mb:er-gap-y-4">
+      <!-- Mobile Tabs -->
+      <div
+        class="er-hidden headermb:er-flex er-justify-center er-items-center er-rounded-full er-mx-auto er-my-6"
+        style="background-color: #f5f5f5;"
+      >
+        <div
+          class="tab-trigger mobile-tab-trigger er-flex-1 er-text-center er-py-4 er-rounded-full text-size14 er-font-bold er-cursor-pointer active"
+          data-target="#tab-shop-category"
+        >
+          Category
+        </div>
+        <div
+          class="tab-trigger mobile-tab-trigger er-flex-1 er-text-center er-py-4 er-rounded-full text-size14 er-font-bold er-cursor-pointer"
+          data-target="#tab-shop-model"
+        >
+          Model
+        </div>
+      </div>
+
+      <div class="er-flex er-gap-8">
+        <div class="er-flex-1 er-flex er-flex-col er-justify-between">
+          <!-- Shop by Category Grid -->
+          <div id="tab-shop-category" class="tab-content">
+            <div class="er-grid er-grid-cols-4 er-gap-x-8 er-gap-y-12 headermb:er-grid-cols-2 headermb:er-gap-y-8 headermb:er-gap-x-4">
+              {% for product_item in collections['e-bikes'].metafields.custom.e_bieks_category.value %}
+                <a
+                  href="/collections/e-bikes?category={{ product_item.key }}"
+                  class="er-flex er-flex-col er-items-center er-text-center er-justify-start er-relative er-transition"
+                >
+                  {{
+                    product_item.image
+                    | image_url: width: 300
+                    | image_tag: class: 'hover:er-scale-105 er-transition er-object-contain'
+                  }}
+                  <div class="text-size14 er-font-bold er-mt-4 mb:er-text-xl">{{ product_item.name }}</div>
+                </a>
+              {% endfor %}
+            </div>
+          </div>
+
+          <!-- Shop by Model Grid -->
+          <div id="tab-shop-model" class="tab-content" style="display: none;">
+            <div class="er-grid er-grid-cols-4 er-gap-8 headermb:er-grid-cols-2 headermb:er-gap-4">
+              {% for product_item in collections['e-bikes'].metafields.custom.e_bikes_model.value %}
+                <a
+                  href="/collections/e-bikes?model={{ product_item.key }}"
+                  class="er-bg-background er-rounded-xl er-p-8 er-flex er-flex-col er-items-center er-text-center er-justify-start er-relative headermb:er-py-6 headermb:er-px-4 hover:er-shadow-lg er-transition"
+                >
+                  {{
+                    product_item.image
+                    | image_url: width: 300
+                    | image_tag: class: 'hover:er-scale-105 er-transition er-aspect-[16/11] er-object-contain'
+                  }}
+                  <div class="text-size16 er-font-bold er-mt-4 er-mb-2 mb:er-text-2xl">
+                    {{ product_item.name }}
+                  </div>
+                  <div class="text-size12 er-opacity-70">
+                    {{ product_item.desc }}
+                  </div>
+                </a>
+              {% endfor %}
+            </div>
+          </div>
+
+          <!-- Shared Services Section -->
+          <div class="er-flex er-items-center er-justify-evenly headermb:er-hidden er-mt-8">
+            <div class="er-flex er-items-center er-gap-x-3">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19842.svg?v=1763370868"
+                width="25"
+                height="25"
+                loading="lazy"
+                alt="{{ settings.shop_count }} Bike Shops"
+              >
+              <span class="text-size12">{{ settings.shop_count }} Bike Shops</span>
+            </div>
+            <div class="er-flex er-items-center er-gap-x-3">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26371.svg?v=1763107846"
+                width="25"
+                height="25"
+                loading="lazy"
+                alt="UL Safety Certified"
+              >
+              <span class="text-size12">UL Safety Certified</span>
+            </div>
+            <div class="er-flex er-items-center er-gap-x-3">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19753_1.svg?v=1762943829"
+                width="25"
+                height="25"
+                loading="lazy"
+                alt="Free Shipping"
+              >
+              <span class="text-size12">Free Shipping</span>
+            </div>
+            <div class="er-flex er-items-center er-gap-x-3">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19629_1_2a26a006-9c07-4f9f-93b4-5e2b80e0288c.svg?v=1762943828"
+                width="25"
+                height="25"
+                loading="lazy"
+                alt="2 Year Warranty"
+              >
+              <span class="text-size12">2 Year Warranty</span>
+            </div>
+            <div class="er-flex er-items-center er-gap-x-3">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19754_1.svg?v=1762943828"
+                width="25"
+                height="25"
+                loading="lazy"
+                alt="14-Day Returns"
+              >
+              <span class="text-size12">14-Day Returns</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Shared Right Banner Image -->
+        <a
+          href="/collections/e-bike-sale"
+          class="headermb:er-hidden background-image er-rounded-xl"
+          style="width: 260px;aspect-ratio: 260 / 490;"
+        >
+          <img
+            class="er-object-contain er-rounded-xl"
+            width="275"
+            height="400"
+            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20251212-103009.jpg?v=1765506643"
+            loading="lazy"
+            alt=""
+          >
+          <div class="er-flex er-flex-col er-text-white er-items-center er-justify-start er-p-12">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2_2x_95972136-f9fa-458b-8989-d22b683c6e61.png?v=1765506999&width=150"
+              alt=""
+            >
+            <span class="text-size20 er-font-medium er-mt-6">Best Deal of the Year</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="module">
+  if (!window.header_dropdown) {
+    window.header_dropdown = true;
+
+    $('.tab-trigger').click(function () {
+      const container = $(this).closest(`[data-dropdown="header-dropdown"]`);
+      const target = $(this).attr('data-target');
+
+      // Hide all contents and show target
+      container.find('.tab-content').hide();
+      container.find(target).show();
+
+      // Update triggers
+      // Remove active from all triggers in this container
+      container.find('.tab-trigger').removeClass('active');
+
+      // Add active to all triggers attempting to show this target (syncs mobile/desktop)
+      container.find(`.tab-trigger[data-target="${target}"]`).addClass('active');
+    });
+  }
+</script>

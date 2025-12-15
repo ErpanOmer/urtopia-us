@@ -298,14 +298,27 @@
 
             $(this).parent().siblings().removeClass('active');
           });
-          })
+    })
 
           window.addEventListener('load', function () {
             const img = $(`<img class="er-absolute er-top-0 er-z-[2] er-transition er-opacity-100 mb:er-max-w-20 md:er-right-0 mb:er-left-0" width="70" height="104" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250211-151856.png?v=1739258383&width=100" alt="{{ product.title }}"/>`);
+            const text = $(`<div class="er-absolute er-flex er-flex-col er-text-left er-items-start er-top-0 er-z-[2] er-left-0 er-w-auto er-py-4 er-px-6 er-rounded-xl" style="background-color: #eee;">
+            <span class="text-size14 er-font-bold">Pre-Order Only</span>
+            <span class="text-size12">Estimated shipping starts in early March</span>
+            </div>`);
+
             $(".product-panel-swiper .swiper-wrapper").before(img);
+
+            if (!global_config.is_mobile) {
+                $(".product-panel-swiper .swiper-wrapper").before(text);
+            } else {
+                $(".product-panel-swiper").before(text);
+                text.css('position', 'static').css('margin-top', '10px');
+            }
 
             window.product_panel_swiper.on('slideChange', function () {
                 img.css('opacity', this.realIndex > 0 ? 0 : 1);
+                text.css('opacity', this.realIndex > 0 ? (global_config.is_mobile ? 1 : 0) : 1);
             })
         })
 </script>

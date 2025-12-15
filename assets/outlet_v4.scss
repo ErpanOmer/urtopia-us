@@ -693,7 +693,7 @@ h4 {
 
     .centeral-content {
         .promo-banner {
-            background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26314_2x_282d326c-0ee5-4976-989a-b8d876194f89.png?v=1761742764') center center/contain no-repeat;
+            background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26314_2x_e9c9c510-3bcb-42f5-b190-1735c5bec129.png?v=1765526771') center center/contain no-repeat;
             text-align: center;
             color: #fff;
             padding-left: 5%;
@@ -918,7 +918,7 @@ h4 {
 
             .promo-banner {
                 padding: 0 4vw 0 0;
-                background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20251030-103709.png?v=1761791873');
+                background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26697_2x_c45ff1d9-435a-48e0-ac81-192861c3c77e.png?v=1765527437');
                 background-size: cover;
                 background-position-x: right;
                 
@@ -1293,21 +1293,27 @@ h4 {
 }
 
 .ebike-products .product-grid .product-card:before {
-    width: 17%;
+    width: 18%;
     height: 21%;
     top: 7.5px;
-    background: transparent url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26493_2x_dba9e9aa-33dc-4103-8f9e-51e698549fcd.png?v=1762423797') center center/contain no-repeat;
+    background: transparent url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26680_2x_718722b9-09ac-45b7-9bd6-01d4759bfd3b.png?v=1765523008') top right/contain no-repeat;
 }
 
-.ebike-products .product-grid .product-card[data-product-handle="urtopia-joy-carbon-fat-tire-ebike"] {
+.ebike-products .product-grid .product-card[data-product-handle="urtopia-carbon-1-pro-ebike"] {
     &::before {
-        background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26497_2x_a2275fa2-53b9-4522-b723-9e322844f0a5.png?v=1762424899')
+        background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26679_2x_f280c0b5-3e71-4386-ab1a-6573fddf269d.png?v=1765523597')
     }
 }
 
-.ebike-products .product-grid .product-card[data-product-handle="urtopia-carbon-joy-ultra-ebike"] {
+.ebike-products .product-grid .product-card[data-product-handle="urtopia-carbon-1-step-thru-ebike"] {
     &::before {
-        background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26497_2x_a2275fa2-53b9-4522-b723-9e322844f0a5.png?v=1762424899')
+        background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26679_2x_f280c0b5-3e71-4386-ab1a-6573fddf269d.png?v=1765523597')
+    }
+}
+
+.ebike-products .product-grid .product-card[data-product-handle="urtopia-carbon-fusion-gt"] {
+    &::before {
+        background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26679_2x_f280c0b5-3e71-4386-ab1a-6573fddf269d.png?v=1765523597')
     }
 }
 
