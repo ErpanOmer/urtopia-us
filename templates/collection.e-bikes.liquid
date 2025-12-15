@@ -1,109 +1,11 @@
 {{ 'outlet_v4.scss.css' | asset_url | stylesheet_tag: preload: true }}
 <h1 class="er-sr-only">{{ page_title }}</h1>
-<div class="background-image er-aspect-[1920/425] mb:er-aspect-[375/500]">
-  {% render 'image',
-    first_screen: true,
-    src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19727_2x_21d75822-8ff3-4db7-b7f8-274b092c0dad.jpg?v=1742987538',
-    mb_src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC05417_2x_1474f03c-5e3f-434a-a1b3-fdf81084efe4.jpg?v=1745911864'
-  %}
-  <div class="er-grid er-grid-cols-2 er-h-full er-gap-x-80 mb:er-grid-cols-1 mb:er-pt-14">
-    <div class="mb:er-hidden"></div>
-    <div class="er-flex er-flex-col er-justify-center er-items-start mb:er-justify-start mb:er-items-center">
-      <div class="text-size30 er-text-white er-mb-6 mb:er-text-4xl er-text-center">{{ settings.sale_name }}</div>
-      <img
-        class="mb:er-max-w-sm mb:er-mb-6"
-        width="335"
-        height="75"
-        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25875_2x_91eb65db-3b79-4afa-865b-3b0895576482.png?v=1745910602"
-      >
-      {% render 'sale' %}
-    </div>
-  </div>
-  <style>
-    .sale {
-      width: 400px;
-      background-color: transparent;
-      overflow: hidden;
-      margin-bottom: 0;
-      margin-top: 60px;
-    }
-
-    .sale > .u14DemiBold_v2 {
-      display: none;
-    }
-
-    .sale > div:not(.u14DemiBold_v2) {
-      display: flex;
-      justify-content: space-between;
-      padding: 0;
-    }
-
-    .sale > div:not(.u14DemiBold_v2) > div {
-      border-left: none !important;
-      place-self: center;
-      width: 65px;
-      align-items: unset;
-      position: relative;
-    }
-
-    .sale .u36DemiBold_v2 {
-      display: block;
-      background-color: #fff;
-      padding: 15px 12px;
-      border-radius: 7px;
-      font-size: 30px;
-      margin-bottom: 7.5px;
-      position: relative;
-      color: #ff3684;
-    }
-
-    .sale .u36DemiBold_v2::after {
-      content: ':';
-      position: absolute;
-      top: 50%;
-      right: 0;
-      transform: translate(25px, -50%);
-      font-size: 25px;
-      font-weight: 300;
-      color: #fff;
-    }
-
-    .sale > div:not(.u14DemiBold_v2) > div span:last-child {
-      opacity: 1;
-      font-size: 12px;
-      color: #fff;
-      font-weight: 300;
-    }
-
-    @media (max-width: 767px) {
-      .sale {
-        max-width: 260px;
-        margin-top: 15px;
-      }
-
-      .sale .u36DemiBold_v2 {
-        font-size: 18px;
-        padding: 10px 8px;
-        color: #198cba;
-      }
-
-      .sale > div:not(.u14DemiBold_v2) > div {
-        width: 42px;
-      }
-
-      .sale > div:not(.u14DemiBold_v2) > div span:last-child {
-        font-size: 9px;
-      }
-
-      .sale .u36DemiBold_v2::after {
-        transform: translate(17px, -50%);
-      }
-    }
-  </style>
-</div>
-<div class="er-bg-[#F5F0ED] er-py-12">
+<section class="background-image er-aspect-[1920/300] mb:er-aspect-[375/200]">
+  {% render 'image', mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26684_2x_83380aa6-9653-4b7a-91d1-3630dc48eef3.jpg?v=1765793523", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26685_2x_d82d2cc1-ef89-47fe-a420-a6ea5e02bddb.jpg?v=1765793114" %}
+</section>
+<div class="er-bg-[#F5F0ED] er-py-12 mb:er-py-8">
   <div
-    class="centeral-content er-flex er-items-center er-justify-between mb:er-grid mb:er-grid-cols-2 mb:er-gap-y-8 mb:er-px-6"
+    class="centeral-content er-flex er-items-center er-justify-between mb:er-grid mb:er-grid-cols-2 mb:er-gap-y-6 mb:er-px-6"
   >
     <div class="er-flex er-items-center mb:er-flex-col mb:er-text-center">
       <img
@@ -196,16 +98,6 @@
 </div>
 
 <section class="er-bg-background er-py-40 mb:er-py-16" id="filters">
-  <div class="centeral-content er-flex er-flex-col er-px-6">
-    <h2 class="er-m-0 text-size36 er-text-center mb:er-text-4xl mb:er-text-left er-mb-4">Electric Bikes</h2>
-    <p class="text-size18 er-text-center er-opacity-80 mb:er-text-left mb:er-text-2xl er-max-w-screen-md er-mb-20 er-mx-auto mb:er-mb-8">
-      <span
-        >Urtopia transforms urban cycling with sleek, carbon fiber E Bikes built for city commutes, hybrid adventures,
-        folds, cargo, and electric bike tours. Lightweight, smart, durable—each bike fuses anti‑theft, navigation,
-        seamless assist, and aesthetic minimalism</span
-      >
-    </p>
-  </div>
   <div class="er-mx-auto er-max-w-screen-2xl er-flex er-gap-x-4 er-px-6 sorting er-items-center er-justify-end er-mb-8 mb:er-hidden">
     <label for="sort-by" class="er-mr-2 text-size14 er-font-bold" style="color: #000;">Sort by:</label>
     <select id="sort-by" class="sort-by-select">
@@ -264,47 +156,8 @@
 </section>
 <div class="filters-overlay"></div>
 
-<div class="er-text-white er-bg-background">
-  <div class="centeral-content mb:er-px-6">
-    <div class="background-image er-rounded-3xl er-overflow-hidden er-aspect-[1280/180] mb:er-aspect-square er-from-[#FF3684] er-to-[#FF8F1D] er-bg-gradient-to-b mb:er-bg-gradient-to-r">
-      <div class="er-flex er-h-full mb:er-flex-col">
-        <div class="er-basis-2/12 mb:er-basis-1/4 er-flex er-flex-col er-justify-center er-space-y-6 mb:er-flex-row mb:er-space-x-6 mb:er-space-y-0 mb:er-items-center mb:er-justify-start">
-          <img
-            loading="lazy"
-            class="er-translate-x-1/2 mb:er-max-w-28"
-            width="95"
-            height="0"
-            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25346_2x_1202f109-d0b0-4cb3-9c8b-e69e05274302.png?v=1743042755"
-            alt="{{ page_title }}"
-          >
-          <img
-            loading="lazy"
-            class="er-translate-x-1/2 mb:er-max-w-28"
-            width="95"
-            height="0"
-            src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/70_2x_c967b944-a6b4-4169-83f7-e9760740291d.png?v=1743042760"
-            alt="{{ page_title }}"
-          >
-        </div>
-        <div class="er-flex er-flex-col er-text-left er-items-left er-justify-center er-bg-black er-flex-1 er-pl-24 mb:er-p-8 md:er-rounded-l-3xl mb:er-rounded-tr-[50px]">
-          <h3 class="er-m-0 er-text-white text-size24 er-font-medium mb:er-text-3xl">Ride Now, Pay Later</h3>
-          <h2 class="er-m-0 er-text-white text-size36 er-my-3 mb:er-text-4xl mb:er-my-6">
-            Limited-Time <span style="color: #FF7BAE">0% APR</span> for 24 Months
-          </h2>
-          <p class="text-size20 mb:er-text-2xl">
-            <span
-              >A {{ all_products['urtopia-carbon-fold'].price | money_without_trailing_zeros }} purchase costs
-              {{ all_products['urtopia-carbon-fold'].price | divided_by: 24 | money }}/month for 24 months at 0% APR.</span
-            >
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
 <div class="er-bg-background">
-  <div class="centeral-content er-pt-48 er-flex er-flex-col mb:er-pt-24 mb:er-pb-24 mb:er-px-6">
+  <div class="centeral-content er-pt-24 er-flex er-flex-col mb:er-pt-12 mb:er-pb-24 mb:er-px-6">
     <h2 class="er-m-0 text-size36 er-text-center mb:er-text-4xl mb:er-text-left">Browse All Electric Bike Models</h2>
     <p class="text-size18 er-text-center er-opacity-80 mb:er-text-left mb:er-text-2xl er-mb-20 mb:er-mt-3 mb:er-mb-8">
       <span>Urban commutes, weekend adventures, or off-road thrills – there’s a model for you.</span>
