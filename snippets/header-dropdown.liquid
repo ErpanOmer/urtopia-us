@@ -106,11 +106,13 @@
                   href="/collections/e-bikes?category={{ product_item.key }}#filters"
                   class="er-flex er-flex-col er-items-center er-text-center er-justify-start er-relative er-transition"
                 >
-                  {{
-                    product_item.image
-                    | image_url: width: 400
-                    | image_tag: class: 'hover:er-scale-105 er-transition er-object-contain er-rounded-xl'
-                  }}
+                  <div class="er-flex er-rounded-xl er-overflow-hidden">
+                    {{
+                      product_item.image
+                      | image_url: width: 400
+                      | image_tag: class: 'hover:er-scale-105 er-transition er-object-cover er-rounded-xl'
+                    }}
+                  </div>
                   <div class="text-size14 er-font-bold er-mt-4 mb:er-text-xl">{{ product_item.name }}</div>
                 </a>
               {% endfor %}

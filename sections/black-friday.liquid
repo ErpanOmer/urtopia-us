@@ -207,8 +207,8 @@
     </div>
     {% endif %}
     <div class="er-pt-16 {% unless collection.handle == "urtopia-black-friday-sale" %}mb:er-aspect-[375/500] mb:!er-justify-start{% endunless %}">
-      <img class="mb:er-max-w-80 {% unless collection.handle == "urtopia-black-friday-sale" %}mb:!er-max-w-64{% endunless %}" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2_2x_95972136-f9fa-458b-8989-d22b683c6e61.png?v=1765506999" width="325" height="250" alt="">
-      <h2 class="text-size48 mb:er-text-5xl er-text-[#FF7BAE] er-mt-16 er-mb-10 mb:er-mx-auto mb:er-my-12 mb:er-text-center {% unless collection.handle == "urtopia-black-friday-sale" %}mb:!er-my-6{% endunless %}" style="color:#EAD677;">
+      <img class="mb:er-max-w-[60vw] {% unless collection.handle == "urtopia-black-friday-sale" %}mb:!er-max-w-64{% endunless %}" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2_2x_95972136-f9fa-458b-8989-d22b683c6e61.png?v=1765506999" width="325" height="250" alt="">
+      <h2 class="text-size48 mb:er-text-6xl er-text-[#FF7BAE] er-mt-16 er-mb-10 mb:er-mx-auto mb:er-my-16 mb:er-text-center {% unless collection.handle == "urtopia-black-friday-sale" %}mb:!er-my-6{% endunless %}" style="color:#EAD677;">
         Up to $1200 OFF
       </h2>
       {% render 'sale' %}
@@ -270,6 +270,17 @@
           
           
                     @media (max-width: 767px) {
+                      .bannerrrrrr .centeral-content>div:not(.swiperrrr) {
+                        padding: 8vw 0;
+                      }
+
+                      .bannerrrrrr .centeral-content>div:not(.swiperrrr)>div {
+                        padding: 0;
+                      }
+                      .sale > div:not(.u14DemiBold_v2) {
+                          max-width: 75vw;
+                          margin: auto;
+                      }
                       .sale > div:not(.u14DemiBold_v2) > div {
                         width: 60px;
                       }
