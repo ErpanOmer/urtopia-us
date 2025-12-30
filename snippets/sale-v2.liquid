@@ -8,15 +8,7 @@
 </style>
 <div id="count-down" class="er-font-base er-bg-black er-text-white er-rounded-2xl er-overflow-hidden er-mb-8 er-relative">
   <div style="background-position-x: right;" class="text-size20 mb:er-text-3xl er-font-black er-p-6 er-flex er-items-center er-bg-no-repeat" ddata-name="sale-name">
-    CHRISTMAS&nbsp;&nbsp;<span style="color: #FFDF48;">SALE</span>
-  </div>
-  <div class="er-flex er-flex-col er-px-7 er-py-4 er-items-start er-text-left mb:er-px-5" style="border-top: 1px solid #554B1770;">
-    <div class="text-size14 er-text-[13px] er-font-medium">Gear Up! <span style="color: #FFDF48;">Free&nbsp;{%- unless product.handle == 'urtopia-carbon-1-pro-ebike' or product.handle == 'urtopia-carbon-1-step-thru-ebike' or product.handle == 'urtopia-carbon-fusion-gt' -%}Airtag Kit, {%- endunless -%}Extra-Comfort Saddle and Water Bottle Cage</span> for the First 30 Orders!</div>
-    <div class="er-bg-[#FFDF4833] er-h-2 er-rounded-3xl er-w-full er-my-4">
-        <div class="er-bg-[#FFDF48] er-h-full er-rounded-3xl percent" style="width: 55%;"></div>
-    </div>
-    <span class="text-size14 er-font-medium mb:er-text-xl"><span style="color: #FFDF48;"><span class="count">22</span> Orders</span> So Far Today</span>
-    <span class="text-size12 er-opacity-80 mb:er-text-base">*Freebies will be added to your order automatically later today</span>
+    NEW YEAR&nbsp;&nbsp;<span style="color: #FFDF48;">SALE</span>
   </div>
   <div class="er-grid er-grid-cols-4 er-py-8 er-pb-10 mb:er-py-6 er-divide-x er-divide-y-0 er-divide-solid er-divide-primary/20 er-bg-dark">
     <div class="er-flex er-flex-col er-text-center er-items-center">
@@ -77,5 +69,5 @@
     {%- for item in coun_down -%}
       sale_end_times.push({ sale_name: `{{  item.sale_name  }}`, sale_end_time: `{{  item.sale_end_time  }}` });
     {%- endfor -%}
-    window.loaded_sale_countdown=!0;let e=0,t=("urtopia.myshopify.com"===Shopify.shop?540:-120)*6e4;function n(e=new Date){return e.getTime()+6e4*e.getTimezoneOffset()+t}function o(e){let[o,l,d]=sale_end_times[e].sale_end_time.split("-").map(Number);return $('#count-down > div[data-name="sale-name"]').html(sale_end_times[e].sale_name),n(new Date(Date.UTC(o,l-1,d,0,0,0,0)+t))}let l=[864e5,36e5,6e4,1e3],d=["02","23","59","59"];function a(t){let i=t-n();if(i<=0)return++e>sale_end_times.length-1?($("#count-down").hide(),console.log("Countdown Ended!")):a(o(e));{let s=[];for(let r=0;r<l.length;r++)s[r]=String(Math.floor(i/l[r])).padStart(2,"0"),i%=l[r];let u={};for(let f=0;f<s.length;f++)d[f]!==s[f]&&(u[f]=s[f],d[f]=s[f]);for(let m in u)$(`#count-down .er-grid > div:nth-child(${Number(m)+1})`).find(".er-text-6xl").text(u[m]);0 || refreshOrders(Number(d[1]))}setTimeout(a,1e3,t)}task(()=>{a(o(e))},0)}
+    window.loaded_sale_countdown=!0;let e=0,t=("urtopia.myshopify.com"===Shopify.shop?540:-120)*6e4;function n(e=new Date){return e.getTime()+6e4*e.getTimezoneOffset()+t}function o(e){let[o,l,d]=sale_end_times[e].sale_end_time.split("-").map(Number);return $('#count-down > div[data-name="sale-name"]').html(sale_end_times[e].sale_name),n(new Date(Date.UTC(o,l-1,d,0,0,0,0)+t))}let l=[864e5,36e5,6e4,1e3],d=["02","23","59","59"];function a(t){let i=t-n();if(i<=0)return++e>sale_end_times.length-1?($("#count-down").hide(),console.log("Countdown Ended!")):a(o(e));{let s=[];for(let r=0;r<l.length;r++)s[r]=String(Math.floor(i/l[r])).padStart(2,"0"),i%=l[r];let u={};for(let f=0;f<s.length;f++)d[f]!==s[f]&&(u[f]=s[f],d[f]=s[f]);for(let m in u)$(`#count-down .er-grid > div:nth-child(${Number(m)+1})`).find(".er-text-6xl").text(u[m]);1 || refreshOrders(Number(d[1]))}setTimeout(a,1e3,t)}task(()=>{a(o(e))},0)}
 </script>
