@@ -34,7 +34,7 @@ console.log("📦 Shopify files to sync:");
 filesToPush.forEach(f => console.log("  -", f));
 
 // 拼接一次命令，使用多个 --only
-let cmd = `shopify theme push --store ${STORE} --theme ${THEME_ID} --verbose --allow-live`;
+let cmd = `shopify theme push --store ${STORE} --theme ${THEME_ID} --allow-live`;
 filesToPush.forEach(f => {
   cmd += ` --only "${f}"`;
 });
