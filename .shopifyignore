@@ -4,6 +4,7 @@ node_modules
 package.json
 package-lock.json
 backup.js
+shopify-sync.js
 README.md
 tailwind.config.js
 ./tailwind.css
