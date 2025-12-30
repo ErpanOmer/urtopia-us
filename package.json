@@ -14,6 +14,7 @@
     "list": "theme get --password=shptka_dab499d4c49564633f7e939fd532c667 --store=urtopia.myshopify.com --list",
     "push": "git push origin master -f",
     "backup": "node backup.js",
+    "shopify1": "shopify theme push --only sections/testestest.liquid --theme 133930189048",
     "shopify": "shopify"
   },
   "repository": {
