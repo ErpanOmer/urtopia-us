@@ -170,9 +170,9 @@
         <li>Not returnable</li>
       </ul>
     {%- endif -%}
-    {%- if product.metafields.custom.show_count_down.value -%}
-      {%- render 'sale-v2' -%}
-    {%- endif -%}
+    {% unless settings.hide_sale_countdown -%}
+        {% render 'sale-v2' %}
+      {%- endunless -%}
     {%- for option in product.options_with_values -%}
       <fieldset
         class="option er-border-none er-p-0 er-space-y-4"

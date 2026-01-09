@@ -211,7 +211,9 @@
       <h2 class="text-size48 mb:er-text-6xl er-text-[#FF7BAE] er-mt-16 er-mb-10 mb:er-mx-auto mb:er-my-16 mb:er-text-center {% unless collection.handle == "urtopia-black-friday-sale" %}mb:!er-my-6{% endunless %}" style="color:#EAD677;">
         Up to $1200 OFF
       </h2>
-      {% render 'sale' %}
+      {% unless settings.hide_sale_countdown -%}
+        {% render 'sale' %}
+      {%- endunless -%}
       <style>
                     .sale {
                         width: 400px;
