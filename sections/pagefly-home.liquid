@@ -1,18 +1,34 @@
 {{ 'home.scss.css' | asset_url | stylesheet_tag: preload: true }}
 <h1 class="er-sr-only">{{ page_title }}</h1>
+
+<style>
+  @media (max-width: 768px) {
+    .background-mask {
+      background: rgba(0, 0, 0, 0.2);
+    }
+  }
+</style>
+
 <div class="background-image er-aspect-[1920/750] mb:er-aspect-[375/500] er-text-white">
-{% render 'image', first_screen: true, mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC02604_2x_f602d955-042f-4c61-b1ae-40b4c0f1192f.jpg?v=1765765464", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26687_2x_54c6b115-8d95-4c15-92ac-4bef4623ed9a.jpg?v=1765764454" %}
-  <div class="centeral-content er-flex er-flex-col er-items-start er-justify-center er-h-full mb:er-items-center mb:er-justify-start mb:er-text-center mb:er-pt-12">
-    <img class="mb:er-max-w-60" width="325" height="215" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2_2x_95972136-f9fa-458b-8989-d22b683c6e61.png?v=1765506999" alt="{{ page_title }}">
-    <h2 class="text-size30 er-mt-12 er-mb-16 mb:er-text-3xl mb:er-mb-8 mb:er-mt-4">Best Deal of the Year</h2>
-    <a class="er-button er-button-white" href="/collections/urtopia-black-friday-sale" target="_blank">Shop now</a>
+{% render 'image', first_screen: true, mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20260116-101516.jpg?v=1768529739", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1_5_1_5__PosterImage.jpg?v=1768528027" %}
+<video class="lozad" playsinline loop autoplay muted>
+  <!-- PC 端视频 -->
+  <source data-src="https://cdn.shopify.com/videos/c/o/v/fc05fef08cb3426582f2c896d6692603.mp4" type="video/mp4" media="(min-width: 768px)">
+  <!-- 移动端视频 -->
+  <source data-src="https://cdn.shopify.com/videos/c/o/v/8b2122ddcc21445e88741fda21893836.mp4" type="video/mp4" media="(max-width: 767px)">
+</video>
+<div class="background-mask"></div>
+  <div class="centeral-content er-flex er-flex-col er-items-start er-justify-center er-h-full mb:er-items-center mb:er-text-center">
+    <img class="mb:er-max-w-80" width="280" height="215" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26755_2x_58f8593c-0f60-453a-bcbc-24c5db3ce777.png?v=1768546937" alt="{{ page_title }}">
+    <h2 class="text-size24 er-mt-20 er-mb-12 mb:er-text-3xl mb:er-mt-12">New Year, Exclusive Prices</h2>
+    <a class="er-button er-button-white" href="/collections/e-bike-sale" target="_blank">Shop now</a>
   </div>
 </div>
 
 <div class="er-text-white er-pt-48 mb:er-pt-16">
         <div class="centeral-content mb:er-px-6">
             <div class="background-image er-aspect-[1280/450] mb:er-aspect-[345/500] md:er-rounded-2xl er-overflow-hidden">
-            {% render 'image', first_screen: true, class: "mb:!er-object-top" width: 1440, mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC02605_2x_65562263-e81a-499e-bc8a-c13bddb54eb4.jpg?v=1765765460", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC02605_2x_1bda43ff-ab87-4363-af90-caefb9287fd1.jpg?v=1765764447" %}
+            {% render 'image', first_screen: true, class: "mb:!er-object-top" width: 1440, mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26742_2x_74a81546-9523-4c09-83d8-54d781a8d9e6.jpg?v=1768529435", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26727_2x_12775191-759f-438f-8a0f-57ce9f3b55dd.jpg?v=1768529160" %}
             <div
                     class="er-flex er-flex-col er-items-start er-justify-center er-h-full er-pl-28 er-max-w-2xl mb:er-px-8 mb:er-pt-10 mb:er-items-center mb:er-justify-start mb:er-text-center">
                     <img width="100" height="96" class="mb:er-max-w-28" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2025-03-11_10.04.23_2x_111b6995-cd40-4ab4-b842-2fdcf298d0b5.png?v=1750399446" loading="lazy" alt="ces">
