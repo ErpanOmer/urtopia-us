@@ -18,19 +18,21 @@
     data-product-price="{{ product_variants.first.product.price }}"
     class="er-bg-white product-card"
   >
-    <div class="u14DemiBold_v2 tags">
-    <span>{{ product_discount_price | money_without_trailing_zeros }} OFF</span>
-    {% if product_tags %}
-      {% assign tags = product_tags | split: ',' %}
-      {% for tag in tags %}
-        {% if tag contains '</span>' %}
-          {{ tag }}
-        {% else %}
-          <span>{{ tag }}</span>
+    {% if product_variants.first.product.price != product_variants.first.product.compare_at_price %}
+      <div class="u14DemiBold_v2 tags">
+        <span>{{ product_discount_price | money_without_trailing_zeros }} OFF</span>
+        {% if product_tags %}
+          {% assign tags = product_tags | split: ',' %}
+          {% for tag in tags %}
+            {% if tag contains '</span>' %}
+              {{ tag }}
+            {% else %}
+              <span>{{ tag }}</span>
+            {% endif %}
+          {% endfor %}
         {% endif %}
-      {% endfor %}
+      </div>
     {% endif %}
-  </div>
     <img
       loading="lazy"
       width="371"
