@@ -13,8 +13,41 @@
             <h2 class="er-m-0 text-size36 mb:er-text-4xl mb:er-text-left">Clearance Outlet Sale</h2>
             <p class="text-size18 er-opacity-80 mb:er-text-left mb:er-text-2xl mb:er-mt-3 er-mb-16 er-mt-2 mb:er-mb-12">
                 <span>Last chance for Sale deals—final batch, no restocks!</span>
+                <br>
+                <i class="text-size14">(Please note: Outlet models do not include the complimentary 1-Year 4G Connect Service.)</i>
             </p>
             <div class="product-grid">
+                {% assign product = all_products['refurbished-carbon-classic'] %}
+                {% assign product_variants = product.variants | where: 'available' %}
+                {% assign product_uhmaya = '38 lbs<br>Carbon fiber,75 Miles<br>Max Range,750W<br>Peak Power' | split: ',' %}
+                {% render 'product-card-2',
+                    product_variants: product_variants,
+                    product_name: 'Carbon 1 Pro',
+                    product_variant_options_find_sort: 'M,L,S',
+                    product_description: 'Effortless rides, timeless carbon style',
+                    product_url: product.url,
+                    product_uhmaya: product_uhmaya
+                %}
+                {% assign product = all_products['refurbished-fusion-pro-e-bike'] %}
+                {% assign product_variants = product.variants | where: 'available' %}
+                {% assign product_uhmaya = '48 lbs<br>Carbon fiber,120 Miles<br>Max Range,500W<br>Motor' | split: ',' %}
+                {% render 'product-card-2',
+                    product_variants: product_variants,
+                    product_name: 'Carbon Fusion Pro',
+                    product_description: 'Explore Further with Dual Battery Range',
+                    product_url: product.url,
+                    product_uhmaya: product_uhmaya
+                %}
+                {% assign product = all_products['refurbished-joy-carbon'] %}
+                {% assign product_variants = product.variants | where: 'available' %}
+                {% assign product_uhmaya = '45 lbs<br>Carbon fiber,70 Miles<br>Max Range,500W<br>Motor' | split: ',' %}
+                {% render 'product-card-2',
+                product_variants: product_variants,
+                product_name: 'Joy Carbon E-Bike',
+                product_description: 'All-terrain, cargo, family-friendly ride',
+                product_url: product.url,
+                product_uhmaya: product_uhmaya
+                %}
                 {% assign product = all_products['refurbished-carbon-fusion-gt-e-bike'] %}
                 {% assign product_variants = product.variants | where: 'available' %}
                 {% assign product_uhmaya = '1500W<br>power, Carbon fiber<br>frame, 120<br>Miles' | split: ', ' %}
@@ -35,20 +68,7 @@
                 product_variant_options_find_sort: 'M,L,S',
                 product_url: product.url,
                 product_uhmaya: product_uhmaya
-                %}
-                {% assign product = all_products["urtopia-carbon-e-bike"] %}
-                {% assign product_variants = product.variants | where: "option1", "Carbon 1s · 350W · Shimano 7-Speed" | where: "available" %}
-                {% assign product_uhmaya = '33 lbs<br>lightweight, Full<br>carbon fiber, 60<br>Miles' | split: ', ' %}
-                {% render 'product-card-2',
-                    product_variants: product_variants,
-                    product_variant_options_find_sort: "M,L,S",
-                    product_name: 'Carbon 1s',
-                    product_description: 'Powerful drive system ensures minimal effort and maximum fun',
-                    product_discount_price: settings.carbon1s_ebike_discount_price,
-                    product_url: product.url,
-                    product_uhmaya: product_uhmaya
-                %}
-                
+                %}                
                 {% assign product = all_products['refurbished-carbon-1-step-thru-e-bike'] %}
                 {% assign product_variants = product.variants | where: 'available' %}
                 {% assign product_uhmaya = '36 lbs<br>lightweight, Full<br>carbon fiber, 80<br>Miles' | split: ', ' %}
@@ -80,7 +100,19 @@
                     product_reviews_count: product_reviews_count,
                     product_url: product.url,
                     product_uhmaya: product_uhmaya
-                %}      
+                %}
+                                {% assign product = all_products["urtopia-carbon-e-bike"] %}
+                {% assign product_variants = product.variants | where: "option1", "Carbon 1s · 350W · Shimano 7-Speed" | where: "available" %}
+                {% assign product_uhmaya = '33 lbs<br>lightweight, Full<br>carbon fiber, 60<br>Miles' | split: ', ' %}
+                {% render 'product-card-2',
+                    product_variants: product_variants,
+                    product_variant_options_find_sort: "M,L,S",
+                    product_name: 'Carbon 1s',
+                    product_description: 'Powerful drive system ensures minimal effort and maximum fun',
+                    product_discount_price: settings.carbon1s_ebike_discount_price,
+                    product_url: product.url,
+                    product_uhmaya: product_uhmaya
+                %} 
     </div>
 </div>
 </div>
