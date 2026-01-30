@@ -6,7 +6,7 @@
   {% render 'image', class: "mb:!er-object-bottom mb:!er-object-contain", first_screen: true, src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26788_2x_645882ea-cdaa-459a-9a10-024b172b769c.jpg?v=1769759308', mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26796_2x_33bd9142-0407-4808-8e42-4b12b21718c8.jpg?v=1769760341" %}
   <div class="centeral-content">
     <div class="mb:er-aspect-[375/660] mb:!er-items-center mb:er-text-center mb:!er-justify-start mb:!er-py-0">
-      <span class="text-size24 er-font-medium mb:er-text-3xl mb:er-mt-6">{{ settings.sale_name }}</span>
+      <span class="text-size24 er-font-medium mb:er-text-3xl mb:er-mt-[7vw]">{{ settings.sale_name }}</span>
       <h2 class="text-size60 er-mt-4 mb:er-text-6xl mb:er-my-6">Up to $670 OFF</h2>
       {% unless settings.hide_sale_countdown -%}
         {% render 'sale' %}
@@ -88,15 +88,15 @@
                         padding: 0;
                       }
                       .sale > div:not(.u14DemiBold_v2) {
-                          max-width: 70vw;
+                          max-width: 60vw;
                           margin: auto;
                       }
                       .sale > div:not(.u14DemiBold_v2) > div {
-                        width: 50px;
+                        width: 42px;
                       }
 
                       .sale .u36DemiBold_v2 {
-                        font-size: 22px;
+                        font-size: 18px;
                       }
 
                       .sale .u36DemiBold_v2::after {
