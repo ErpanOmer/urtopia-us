@@ -1,0 +1,57 @@
+# Urtopia US 项目 AI 编程规范 (Cursor / Trae / VSCode)
+
+这是一个深度定制的 Shopify 主题项目。作为 AI 助手，你必须严格遵守以下规则。
+
+## 1. 核心技术栈与风格
+- **框架**: Shopify Liquid + Vanilla JS (Web Components) + Tailwind CSS (定制版)。
+- **Tailwind 前缀**: ⚠️ **必须** 使用 `er-` 前缀。
+  - ✅ 正确: `er-flex er-w-full er-text-primary`
+  - ❌ 错误: `flex w-full text-primary`
+- **JS 风格**: 使用原生 ES6+ 和 Web Components。
+  - 定义组件: `class MyComponent extends HTMLElement { ... } customElements.define('my-component', MyComponent);`
+  - ❌ 禁止引入 React, Vue, jQuery 等新框架。
+
+## 2. 文件结构规范
+- **sections/**: 页面区块，必须包含 `{% schema %}`。
+  - 如果是拖拽组件，确保 Schema 设置极其详细。
+- **snippets/**: 可复用小组件。使用 `{% render 'name', prop: val %}` 调用。
+- **assets/**: 静态资源。
+  - ❌ **严禁** 直接修改 `assets/tailwind.min.css`。
+  - ❌ **严禁** 修改 `assets/` 下的自动生成文件。
+  - ✅ 样式修改请编辑根目录 `tailwind.css`。
+  - ✅ JS 修改请编辑 `assets/global.js` (核心逻辑) 或创建新的 JS 文件。
+- **Web Components**: 通常在 `assets/global.js` 或单独的 JS 文件中定义。
+
+## 3. 关键编码规则 (CRITICAL)
+
+### A. Tailwind CSS
+- **断点**:
+  - `mb`: `max-width: 768px` (移动端优先逻辑的反向，或特定移动端样式)。
+  - `headermb`: `max-width: 989px`.
+  - 所有类名必须加 `er-`。
+- **配置**: `preflight: false` (即没有默认的 CSS Reset，需要手动处理边距)。
+
+### B. JavaScript & 交互
+- **辅助函数**: 利用 `assets/global.js` 中已有的工具：
+  - `debounce(fn, wait)`: 防抖。
+  - `trapFocus(container)`: 模态框焦点管理（无障碍访问）。
+  - `fetchConfig(type)`: API 请求头生成。
+- **事件监听**: 优先使用 `this.addEventListener` 在组件内部管理。
+
+### C. 性能优化 (Lazy Loading)
+- 本项目使用了自定义的 JS 延迟加载机制。
+- **普通脚本**: 不要直接写 `<script src="...">`，除非能在 `theme.liquid` 头部被接管。
+- **图片**: 使用 `loading="lazy"`。
+- **Sections**: 甚至某些 HTML 内容可能是通过 `text/lazyload` 脚本处理的（参考 `theme.liquid`）。
+
+### D. 避免触碰区域
+- **PageFly**: 文件名以 `pf-` 开头或包含 `pagefly` 的文件是自动生成的，**绝对不要手动修改**，除非用户明确要求修复 PageFly 造成的 Bug。
+
+## 4. Liquid Schema 最佳实践
+- `id` 必须唯一且具描述性。
+- `settings` 应包含 `type: header` 进行分组，提高可读性。
+- 所有的文本内容应该使用 `label` 和 `default` 值。
+
+## 5. 针对 Trae/Cursor 的特殊指令
+- 如果用户要求“创建一个新组件”，默认指创建一个 **Liquid Snippet** (如果只是展示) 或 **Section** (如果需要配置)。
+- 生成代码时，总是通过注释解释为什么使用了 `er-` 前缀，以体现对规则的遵守。

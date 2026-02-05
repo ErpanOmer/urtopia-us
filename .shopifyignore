@@ -9,3 +9,11 @@ README.md
 tailwind.config.js
 ./tailwind.css
 .trae/
+.agent/
+.claude/
+.agents/
+.codebuddy/
+.codex/
+.gemini/
+.cursor/
+.cursorrules
