@@ -1,357 +1,579 @@
- <link rel="stylesheet" href="{{ 'about-us.scss.css' | asset_url }}" media="all" type="text/css">
- <style>
-h1,
-h2,
-h3,
-h4 {
+<link rel="stylesheet" href="{{ 'about-us.scss.css' | asset_url }}" media="all" type="text/css">
+<style>
+  h1,
+  h2,
+  h3,
+  h4 {
     margin: 0;
     color: inherit;
-}
+  }
 
-.swiper-pagination-bullet {
+  .swiper-pagination-bullet {
     border-radius: 2px;
-}
+  }
 
-@media (max-width: 768px) {
+  @media (max-width: 768px) {
     .swiper-pagination-bullet {
-        --swiper-pagination-bullet-width: 40px;
+      --swiper-pagination-bullet-width: 40px;
     }
 
     .about-us .together {
-        padding: 0 0 20vw;
+      padding: 0 0 20vw;
     }
 
-    .about-us .together .centeral-content>div:first-child {
+    .about-us .together .centeral-content > div:first-child {
       padding-top: 30vw;
     }
-
-}
+  }
 </style>
- 
- <section class="background-image er-aspect-[1920/400] mb:er-aspect-[375/200] er-text-white">
-        {% render 'image', first_screen: true, src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26765_2x_ec12fbed-4d85-41b0-9497-9b7fe31bb3db.jpg?v=1770171642" mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26805_2x_193c913a-145c-42eb-a7e2-6cc1961f9aca.jpg?v=1770171850" %}
-        <div class="centeral-content er-flex er-h-full er-flex-col er-justify-center er-items-start mb:er-items-center">
-            <h1 class="text-size48 er-mb-6 mb:er-text-4xl mb:er-mb-4">Service, Done Right</h1>
-            <span class="text-size18 mb:er-text-2xl">Support that stays with you.</span>
+
+<section class="background-image er-aspect-[1920/400] mb:er-aspect-[375/200] er-text-white">
+  {% render 'image',
+    first_screen: true,
+    src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26765_2x_ec12fbed-4d85-41b0-9497-9b7fe31bb3db.jpg?v=1770171642',
+    mb_src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26805_2x_193c913a-145c-42eb-a7e2-6cc1961f9aca.jpg?v=1770171850'
+  %}
+  <div class="centeral-content er-flex er-h-full er-flex-col er-justify-center er-items-start mb:er-items-center">
+    <h1 class="text-size48 er-mb-6 mb:er-text-4xl mb:er-mb-4">Service, Done Right</h1>
+    <span class="text-size18 mb:er-text-2xl">Support that stays with you.</span>
+  </div>
+</section>
+<section>
+  <div class="centeral-content er-flex er-items-center er-justify-evenly er-py-10 mb:er-flex-col mb:er-justify-center mb:er-items-start mb:er-gap-y-6 mb:er-text-left mb:er-px-6">
+    <div class="er-flex er-items-center er-gap-3">
+      <img
+        width="25"
+        height="25"
+        loading="lazy"
+        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19887.svg?v=1770284371"
+        alt="Video Call: Book now"
+      >
+      <h2 class="text-size18 er-font-bold mb:er-text-2xl">
+        Video Call:
+        <a
+          href="https://calendly.com/urtopia-techsupport/30min"
+          target="_blank"
+          class="er-button er-button-text er-underline er-underline-offset-2"
+          >Book now</a
+        >
+      </h2>
+    </div>
+    <div class="er-flex er-items-center er-gap-3">
+      <img
+        width="25"
+        height="25"
+        loading="lazy"
+        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19886.svg?v=1770284370"
+        alt="Video Call: Book now"
+      >
+      <h2 class="text-size18 er-font-bold mb:er-text-2xl">
+        Email:
+        <a
+          href="mailto:support@newurtopia.com"
+          class="er-button er-button-text er-select-auto er-underline er-underline-offset-2"
+          >support@newurtopia.com</a
+        >
+      </h2>
+    </div>
+    <div class="er-flex er-items-center er-gap-3">
+      <img
+        width="25"
+        height="25"
+        loading="lazy"
+        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19885.svg?v=1770284371"
+        alt="Video Call: Book now"
+      >
+      <h2 class="text-size18 er-font-bold mb:er-text-2xl">
+        Call:
+        <a href="tel:+19498996668" class="er-button er-button-text er-select-auto er-underline er-underline-offset-2"
+          >+1 (949) 899-6668</a
+        ><br class="md:er-hidden">
+        <span class="er-font-normal er-opacity-70">(Mon-Fri 11am- 8pm PST)</span>
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="er-bg-background er-py-48 mb:er-py-16">
+  <div class="centeral-content er-grid er-grid-cols-4 mb:er-grid-cols-2 er-gap-12 mb:er-gap-2 mb:er-px-6">
+    <div class="er-text-center er-flex er-flex-col er-items-center er-bg-white er-rounded-xl er-aspect-square">
+      <span class="flex-1"></span>
+      <img
+        width="80"
+        height="80"
+        class="mb:er-max-w-20"
+        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19629.svg?v=1770172363"
+        alt=""
+        loading="lazy"
+      >
+      <h3 class="text-size20 er-font-bold er-mt-10 er-mb-4 mb:er-mt-6 mb:er-mb-2 mb:er-text-2xl">
+        1,000+ Authorized<br>
+        Service Partners
+      </h3>
+      <span class="text-size18 mb:er-text-xl er-opacity-80">Service support, worldwide.</span>
+      <span class="flex-1"></span>
+      <div
+        class="er-bg-gradient-to-r er-from-[#FF3684] er-to-[#FF8F1D] er-h-4 er-w-full er-rounded-bl-3xl er-rounded-br-3xl"
+      ></div>
+    </div>
+    <div class="er-text-center er-flex er-flex-col er-items-center er-bg-white er-rounded-xl er-aspect-square">
+      <span class="flex-1"></span>
+      <img
+        width="80"
+        height="80"
+        class="mb:er-max-w-20"
+        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19875.svg?v=1770173147"
+        alt=""
+        loading="lazy"
+      >
+      <h3 class="text-size20 er-font-bold er-mt-10 er-mb-4 mb:er-mt-6 mb:er-mb-2 mb:er-text-2xl">
+        14-Day<br>
+        Open-Box Return
+      </h3>
+      <span class="text-size18 mb:er-text-xl er-opacity-80">Ride first. Decide later.</span>
+      <span class="flex-1"></span>
+      <div
+        class="er-bg-gradient-to-r er-from-[#FF3684] er-to-[#FF8F1D] er-h-4 er-w-full er-rounded-bl-3xl er-rounded-br-3xl"
+      ></div>
+    </div>
+    <div class="er-text-center er-flex er-flex-col er-items-center er-bg-white er-rounded-xl er-aspect-square">
+      <span class="flex-1"></span>
+      <img
+        width="80"
+        height="80"
+        class="mb:er-max-w-20"
+        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19628_107aa24e-195a-433c-bdb1-ecd68a3ca22d.svg?v=1770173147"
+        alt=""
+        loading="lazy"
+      >
+      <h3 class="text-size20 er-font-bold er-mt-10 er-mb-4 mb:er-mt-6 mb:er-mb-2 mb:er-text-2xl">
+        1-on-1<br>
+        Face-to-Face Support
+      </h3>
+      <span class="text-size18 mb:er-text-xl er-opacity-80">
+        <a
+          href="https://calendly.com/urtopia-techsupport/30min"
+          target="_blank"
+          class="er-button er-button-text er-underline er-underline-offset-2"
+          >Book now</a
+        ></span
+      >
+      <span class="flex-1"></span>
+      <div
+        class="er-bg-gradient-to-r er-from-[#FF3684] er-to-[#FF8F1D] er-h-4 er-w-full er-rounded-bl-3xl er-rounded-br-3xl"
+      ></div>
+    </div>
+    <div class="er-text-center er-flex er-flex-col er-items-center er-bg-white er-rounded-xl er-aspect-square">
+      <span class="flex-1"></span>
+      <img
+        width="80"
+        height="80"
+        class="mb:er-max-w-20"
+        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19876.svg?v=1770173147"
+        alt=""
+        loading="lazy"
+      >
+      <h3 class="text-size20 er-font-bold er-mt-10 er-mb-4 mb:er-mt-6 mb:er-mb-2 mb:er-text-2xl">
+        2-Year<br>
+        Warranty
+      </h3>
+      <span class="text-size18 mb:er-text-xl er-opacity-80">Coverage you can trust.</span>
+      <span class="flex-1"></span>
+      <div
+        class="er-bg-gradient-to-r er-from-[#FF3684] er-to-[#FF8F1D] er-h-4 er-w-full er-rounded-bl-3xl er-rounded-br-3xl"
+      ></div>
+    </div>
+    <div class="er-text-center er-flex er-flex-col er-items-center er-bg-white er-rounded-xl er-aspect-square">
+      <span class="flex-1"></span>
+      <img
+        width="80"
+        height="80"
+        class="mb:er-max-w-20"
+        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19873.svg?v=1770173147"
+        alt=""
+        loading="lazy"
+      >
+      <h3 class="text-size20 er-font-bold er-mt-10 er-mb-4 mb:er-mt-6 mb:er-mb-2 mb:er-text-2xl">
+        Scan-to-Diagnose<br>
+        System
+      </h3>
+      <span class="text-size18 mb:er-text-xl er-opacity-80">Scan. Diagnose. Solve.</span>
+      <span class="flex-1"></span>
+      <div
+        class="er-bg-gradient-to-r er-from-[#FF3684] er-to-[#FF8F1D] er-h-4 er-w-full er-rounded-bl-3xl er-rounded-br-3xl"
+      ></div>
+    </div>
+    <div class="er-text-center er-flex er-flex-col er-items-center er-bg-white er-rounded-xl er-aspect-square">
+      <span class="flex-1"></span>
+      <img
+        width="80"
+        height="80"
+        class="mb:er-max-w-20"
+        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19874.svg?v=1770173147"
+        alt=""
+        loading="lazy"
+      >
+      <h3 class="text-size20 er-font-bold er-mt-10 er-mb-4 mb:er-mt-6 mb:er-mb-2 mb:er-text-2xl">
+        Built-In Safety<br>
+        Intelligence
+      </h3>
+      <span class="text-size18 mb:er-text-xl er-opacity-80">Protection, built in.</span>
+      <span class="flex-1"></span>
+      <div
+        class="er-bg-gradient-to-r er-from-[#FF3684] er-to-[#FF8F1D] er-h-4 er-w-full er-rounded-bl-3xl er-rounded-br-3xl"
+      ></div>
+    </div>
+    <div class="er-text-center er-flex er-flex-col er-items-center er-bg-white er-rounded-xl er-aspect-square">
+      <span class="flex-1"></span>
+      <img
+        width="80"
+        height="80"
+        class="mb:er-max-w-20"
+        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19877.svg?v=1770173146"
+        alt=""
+        loading="lazy"
+      >
+      <h3 class="text-size20 er-font-bold er-mt-10 er-mb-4 mb:er-mt-6 mb:er-mb-2 mb:er-text-2xl">
+        Fast, Locally<br>
+        Available Spare Parts
+      </h3>
+      <span class="text-size18 mb:er-text-xl er-opacity-80">Ships within 3 days.</span>
+      <span class="flex-1"></span>
+      <div
+        class="er-bg-gradient-to-r er-from-[#FF3684] er-to-[#FF8F1D] er-h-4 er-w-full er-rounded-bl-3xl er-rounded-br-3xl"
+      ></div>
+    </div>
+    <div class="er-text-center er-flex er-flex-col er-items-center er-bg-white er-rounded-xl er-aspect-square">
+      <span class="flex-1"></span>
+      <img
+        width="140"
+        height="80"
+        class="mb:er-max-w-36"
+        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2026-01-23_18.03.26_2x_61a47a53-e2ea-4679-af8f-7593d097f4a6.png?v=1770173155"
+        alt=""
+        loading="lazy"
+      >
+      <h3 class="text-size20 er-font-bold er-mt-10 er-mb-4 mb:er-mt-6 mb:er-mb-2 mb:er-text-2xl">
+        4.5★<br>
+        Rated on Trustpilot
+      </h3>
+      <span class="text-size18 mb:er-text-xl er-opacity-80">Trusted by riders.</span>
+      <span class="flex-1"></span>
+      <div
+        class="er-bg-gradient-to-r er-from-[#FF3684] er-to-[#FF8F1D] er-h-4 er-w-full er-rounded-bl-3xl er-rounded-br-3xl"
+      ></div>
+    </div>
+  </div>
+</section>
+<section class="er-py-48 mb:er-pb-20 mb:er-pt-4 mb:er-bg-background">
+  <div class="centeral-content er-grid er-grid-cols-2 mb:er-grid-cols-1 er-gap-x-24 mb:er-px-0">
+    {% render 'image',
+      mb_src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19856_2x_969c1531-fad2-478c-921b-4482739b0c85.png?v=1770174563',
+      src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26766_2x_1a41d400-a0e6-40b6-9851-790638864a09.png?v=1770173996'
+    %}
+    <div class="er-flex er-flex-col er-h-full er-justify-center mb:er-px-6 mb:er-pt-8">
+      <h2 class="text-size36 mb:er-text-4xl">Online When You Need Answers. Offline When You Need Hands.</h2>
+      <p class="text-size18 er-max-w-3xl er-my-12 mb:er-text-2xl mb:er-my-8">
+        <span
+          >With over 1,000 authorized service partners worldwide, support is always close by. You don’t need to find a
+          shop or explain your bike — our partners already know Urtopia and how to service it properly.</span
+        >
+      </p>
+      <p class="text-size20 mb:er-text-2xl er-font-medium">
+        <span class="text-size48 mb:er-text-5xl">1,000+ </span>
+        <span> Authorized Service Partners </span>
+      </p>
+      <a
+        class="er-button er-button-dark er-mt-12"
+        href="https://newurtopia.com/pages/find-a-dealer"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Learn More</a
+      >
+    </div>
+  </div>
+</section>
+<section class="er-py-48 mb:er-pb-20 mb:er-pt-4 er-bg-background">
+  <div class="centeral-content er-grid er-grid-cols-2 mb:er-grid-cols-1 er-gap-x-24 mb:er-px-0">
+    <div class="er-flex er-flex-col er-h-full er-justify-center mb:er-px-6 mb:er-pt-8 mb:er-order-1">
+      <h2 class="text-size36 mb:er-text-4xl">14-Day Open-Box Return</h2>
+      <p class="text-size18 er-max-w-3xl er-my-12 mb:er-text-2xl mb:er-my-8">
+        <span
+          >Not sure until you ride it? That’s okay. Urtopia offers a 14-day return or exchange, even after opening the
+          box, so you can try it in real life before deciding.</span
+        >
+      </p>
+      <div class="er-grid er-grid-cols-3 er-border er-border-gray-200 er-max-w-3xl text-size16 mb:er-text-xl">
+        <div class="er-bg-gray/20 er-p-4 er-font-bold er-flex er-items-center">Typical Industry Practice</div>
+        <div class="er-p-4 er-col-span-2 er-font-bold er-bg-white er-flex er-items-center">Opened Box Policy</div>
+        <div style="border-top: 1px solid #ddd;" class="er-p-4 er-bg-gray/20 er-flex er-items-center">Some brands</div>
+        <div
+          style="border-top: 1px solid #eee;"
+          class="er-p-4 er-col-span-2  er-bg-white er-flex er-items-center"
+        >
+          50% restocking fee + shipping
         </div>
-    </section>
-    <section class="er-bg-background er-py-48 mb:er-py-20">
-        <div class="centeral-content er-grid er-grid-cols-4 mb:er-grid-cols-2 er-gap-12 mb:er-gap-2 mb:er-px-6">
-            <div class="er-text-center er-flex er-flex-col er-items-center er-bg-white er-rounded-xl er-aspect-square">
-                <span class="flex-1"></span>
-                <img width="80" height="80" class="mb:er-max-w-20"
-                    src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19629.svg?v=1770172363" alt="" loading="lazy">
-                <h3 class="text-size20 er-font-bold er-mt-10 er-mb-4 mb:er-mt-6 mb:er-mb-2 mb:er-text-2xl">1,000+
-                    Authorized<br>Service Partners</h3>
-                <span class="text-size18 mb:er-text-xl er-opacity-80">Service support, worldwide.</span>
-                <span class="flex-1"></span>
-                <div
-                    class="er-bg-gradient-to-r er-from-[#FF3684] er-to-[#FF8F1D] er-h-4 er-w-full er-rounded-bl-3xl er-rounded-br-3xl">
-                </div>
-            </div>
-            <div class="er-text-center er-flex er-flex-col er-items-center er-bg-white er-rounded-xl er-aspect-square">
-                <span class="flex-1"></span>
-                <img width="80" height="80" class="mb:er-max-w-20"
-                    src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19875.svg?v=1770173147" alt="" loading="lazy">
-                <h3 class="text-size20 er-font-bold er-mt-10 er-mb-4 mb:er-mt-6 mb:er-mb-2 mb:er-text-2xl">
-                    14-Day<br>Open-Box Return</h3>
-                <span class="text-size18 mb:er-text-xl er-opacity-80">Ride first. Decide later.</span>
-                <span class="flex-1"></span>
-                <div
-                    class="er-bg-gradient-to-r er-from-[#FF3684] er-to-[#FF8F1D] er-h-4 er-w-full er-rounded-bl-3xl er-rounded-br-3xl">
-                </div>
-            </div>
-            <div class="er-text-center er-flex er-flex-col er-items-center er-bg-white er-rounded-xl er-aspect-square">
-                <span class="flex-1"></span>
-                <img width="80" height="80" class="mb:er-max-w-20"
-                    src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19628_107aa24e-195a-433c-bdb1-ecd68a3ca22d.svg?v=1770173147"
-                    alt="" loading="lazy">
-                <h3 class="text-size20 er-font-bold er-mt-10 er-mb-4 mb:er-mt-6 mb:er-mb-2 mb:er-text-2xl">
-                    1-on-1<br>Face-to-Face Support</h3>
-                <span class="text-size18 mb:er-text-xl er-opacity-80">Live help, real people.</span>
-                <span class="flex-1"></span>
-                <div
-                    class="er-bg-gradient-to-r er-from-[#FF3684] er-to-[#FF8F1D] er-h-4 er-w-full er-rounded-bl-3xl er-rounded-br-3xl">
-                </div>
-            </div>
-            <div class="er-text-center er-flex er-flex-col er-items-center er-bg-white er-rounded-xl er-aspect-square">
-                <span class="flex-1"></span>
-                <img width="80" height="80" class="mb:er-max-w-20"
-                    src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19876.svg?v=1770173147" alt="" loading="lazy">
-                <h3 class="text-size20 er-font-bold er-mt-10 er-mb-4 mb:er-mt-6 mb:er-mb-2 mb:er-text-2xl">
-                    2-Year<br>Warranty</h3>
-                <span class="text-size18 mb:er-text-xl er-opacity-80">Coverage you can trust.</span>
-                <span class="flex-1"></span>
-                <div
-                    class="er-bg-gradient-to-r er-from-[#FF3684] er-to-[#FF8F1D] er-h-4 er-w-full er-rounded-bl-3xl er-rounded-br-3xl">
-                </div>
-            </div>
-            <div class="er-text-center er-flex er-flex-col er-items-center er-bg-white er-rounded-xl er-aspect-square">
-                <span class="flex-1"></span>
-                <img width="80" height="80" class="mb:er-max-w-20"
-                    src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19873.svg?v=1770173147" alt="" loading="lazy">
-                <h3 class="text-size20 er-font-bold er-mt-10 er-mb-4 mb:er-mt-6 mb:er-mb-2 mb:er-text-2xl">
-                    Scan-to-Diagnose<br>System</h3>
-                <span class="text-size18 mb:er-text-xl er-opacity-80">Scan. Diagnose. Solve.</span>
-                <span class="flex-1"></span>
-                <div
-                    class="er-bg-gradient-to-r er-from-[#FF3684] er-to-[#FF8F1D] er-h-4 er-w-full er-rounded-bl-3xl er-rounded-br-3xl">
-                </div>
-            </div>
-            <div class="er-text-center er-flex er-flex-col er-items-center er-bg-white er-rounded-xl er-aspect-square">
-                <span class="flex-1"></span>
-                <img width="80" height="80" class="mb:er-max-w-20"
-                    src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19874.svg?v=1770173147" alt="" loading="lazy">
-                <h3 class="text-size20 er-font-bold er-mt-10 er-mb-4 mb:er-mt-6 mb:er-mb-2 mb:er-text-2xl">Built-In
-                    Safety<br>Intelligence</h3>
-                <span class="text-size18 mb:er-text-xl er-opacity-80">Protection, built in.</span>
-                <span class="flex-1"></span>
-                <div
-                    class="er-bg-gradient-to-r er-from-[#FF3684] er-to-[#FF8F1D] er-h-4 er-w-full er-rounded-bl-3xl er-rounded-br-3xl">
-                </div>
-            </div>
-            <div class="er-text-center er-flex er-flex-col er-items-center er-bg-white er-rounded-xl er-aspect-square">
-                <span class="flex-1"></span>
-                <img width="80" height="80" class="mb:er-max-w-20"
-                    src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19877.svg?v=1770173146" alt="" loading="lazy">
-                <h3 class="text-size20 er-font-bold er-mt-10 er-mb-4 mb:er-mt-6 mb:er-mb-2 mb:er-text-2xl">Fast,
-                    Locally<br>Available Spare Parts</h3>
-                <span class="text-size18 mb:er-text-xl er-opacity-80">Ships within 3 days.</span>
-                <span class="flex-1"></span>
-                <div
-                    class="er-bg-gradient-to-r er-from-[#FF3684] er-to-[#FF8F1D] er-h-4 er-w-full er-rounded-bl-3xl er-rounded-br-3xl">
-                </div>
-            </div>
-            <div class="er-text-center er-flex er-flex-col er-items-center er-bg-white er-rounded-xl er-aspect-square">
-                <span class="flex-1"></span>
-                <img width="140" height="80" class="mb:er-max-w-36"
-                    src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2026-01-23_18.03.26_2x_61a47a53-e2ea-4679-af8f-7593d097f4a6.png?v=1770173155"
-                    alt="" loading="lazy">
-                <h3 class="text-size20 er-font-bold er-mt-10 er-mb-4 mb:er-mt-6 mb:er-mb-2 mb:er-text-2xl">4.5★<br>Rated
-                    on Trustpilot</h3>
-                <span class="text-size18 mb:er-text-xl er-opacity-80">Trusted by riders.</span>
-                <span class="flex-1"></span>
-                <div
-                    class="er-bg-gradient-to-r er-from-[#FF3684] er-to-[#FF8F1D] er-h-4 er-w-full er-rounded-bl-3xl er-rounded-br-3xl">
-                </div>
-            </div>
+        <div style="border-top: 1px solid #ddd;" class="er-p-4  er-bg-gray/20 er-flex er-items-center">Some brands</div>
+        <div
+          style="border-top: 1px solid #eee;"
+          class="er-p-4 er-col-span-2  er-bg-white er-flex er-items-center"
+        >
+          No returns once opened
         </div>
-    </section>
-    <section class="er-py-48 mb:er-pb-20 mb:er-pt-4 mb:er-bg-background">
-        <div class="centeral-content er-grid er-grid-cols-2 mb:er-grid-cols-1 er-gap-x-24 mb:er-px-0">
-             {% render 'image', mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19856_2x_969c1531-fad2-478c-921b-4482739b0c85.png?v=1770174563", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26766_2x_1a41d400-a0e6-40b6-9851-790638864a09.png?v=1770173996"  %}
-            <div class="er-flex er-flex-col er-h-full er-justify-center mb:er-px-6 mb:er-pt-8">
-                <h2 class="text-size36 mb:er-text-4xl">Online When You Need Answers. Offline When You Need Hands.</h2>
-                <p class="text-size18 er-max-w-3xl er-my-12 mb:er-text-2xl mb:er-my-8">
-                    <span>With over 1,000 authorized service partners worldwide, support is always close by. You don’t
-                        need to find a shop or explain your bike — our partners already know Urtopia and how to service
-                        it properly.</span>
-                </p>
-                <p class="text-size20 mb:er-text-2xl er-font-medium">
-                    <span class="text-size48 mb:er-text-5xl">1,000+ </span>
-                    <span>
-                        Authorized Service Partners
-                    </span>
-                </p>
-                <a class="er-button er-button-dark er-mt-12" href="https://newurtopia.com/pages/find-a-dealer"
-                    target="_blank" rel="noopener noreferrer">Learn More</a>
-            </div>
+        <div style="border-top: 1px solid #ddd;" class="er-p-4  er-bg-gray/20 er-flex er-items-center">Some brands</div>
+        <div
+          style="border-top: 1px solid #eee;"
+          class="er-p-4 er-col-span-2  er-bg-white er-flex er-items-center"
+        >
+          30-50% restocking + high shipping fees
         </div>
-    </section>
-    <section class="er-py-48 mb:er-pb-20 mb:er-pt-4 er-bg-background">
-        <div class="centeral-content er-grid er-grid-cols-2 mb:er-grid-cols-1 er-gap-x-24 mb:er-px-0">
-            <div class="er-flex er-flex-col er-h-full er-justify-center mb:er-px-6 mb:er-pt-8 mb:er-order-1">
-                <h2 class="text-size36 mb:er-text-4xl">14-Day Open-Box Return</h2>
-                <p class="text-size18 er-max-w-3xl er-my-12 mb:er-text-2xl mb:er-my-8">
-                    <span>Not sure until you ride it? That’s okay. Urtopia offers a 14-day return or exchange, even
-                        after opening the box, so you can try it in real life before deciding.</span>
-                </p>
-                <div class="er-grid er-grid-cols-3 er-border er-border-gray-200 er-max-w-3xl text-size16 mb:er-text-xl">
-                    <div class="er-bg-gray/20 er-p-4 er-font-bold er-flex er-items-center">Typical Industry Practice
-                    </div>
-                    <div class="er-p-4 er-col-span-2 er-font-bold er-bg-white er-flex er-items-center">Opened Box Policy
-                    </div>
-                    <div style="border-top: 1px solid #ddd;" class="er-p-4 er-bg-gray/20 er-flex er-items-center">Some
-                        brands</div>
-                    <div style="border-top: 1px solid #eee;"
-                        class="er-p-4 er-col-span-2  er-bg-white er-flex er-items-center">50% restocking fee + shipping
-                    </div>
-                    <div style="border-top: 1px solid #ddd;" class="er-p-4  er-bg-gray/20 er-flex er-items-center">Some
-                        brands</div>
-                    <div style="border-top: 1px solid #eee;"
-                        class="er-p-4 er-col-span-2  er-bg-white er-flex er-items-center">No returns once opened</div>
-                    <div style="border-top: 1px solid #ddd;" class="er-p-4  er-bg-gray/20 er-flex er-items-center">Some
-                        brands</div>
-                    <div style="border-top: 1px solid #eee;"
-                        class="er-p-4 er-col-span-2  er-bg-white er-flex er-items-center">30-50% restocking + high
-                        shipping fees</div>
-                    <div style="border-top: 1px solid #ddd;" class="er-p-4  er-bg-gray/20 er-flex er-items-center">Some
-                        brands</div>
-                    <div style="border-top: 1px solid #eee;"
-                        class="er-p-4 er-col-span-2  er-bg-white er-flex er-items-center">Flat $250-$350 return
-                        shipping</div>
-                </div>
-            </div>
-            {% render 'image', mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19878_2x_33c68af1-244e-49b3-9b0c-8c7b394f1499.jpg?v=1770176512", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19857_2x_56a03506-e11d-4507-88d2-856aa799ea7c.jpg?v=1770175413" %}
+        <div style="border-top: 1px solid #ddd;" class="er-p-4  er-bg-gray/20 er-flex er-items-center">Some brands</div>
+        <div
+          style="border-top: 1px solid #eee;"
+          class="er-p-4 er-col-span-2  er-bg-white er-flex er-items-center"
+        >
+          Flat $250-$350 return shipping
         </div>
-    </section>
-    <section class="background-image er-bg-black er-aspect-[1920/750] mb:er-aspect-auto er-text-white mb:er-pb-20">
-        {% render 'image', mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26821_2x_e860b5d0-cf65-4984-b24c-65b835fe6e01.jpg?v=1770184607", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26773_2x_c4ae0d87-6ccb-429b-b50c-06747c13bbd5.jpg?v=1770176796" %}
-        <div class="centeral-content er-grid er-grid-cols-2 er-h-full mb:er-grid-cols-1 mb:er-px-6">
-            <div class="mb:er-aspect-square"></div>
-            <div class="er-flex er-flex-col er-justify-center er-h-full er-space-y-20 mb:er-space-y-12">
-                <div class="er-flex er-flex-wrap er-items-center">
-                    <img class="er-max-w-24 mb:er-max-w-16" width="60" height="60"
-                        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19858.svg?v=1770176973"
-                        loading="lazy" alt="">
-                    <h3 class="text-size30 er-flex-1 er-ml-4 mb:er-text-3xl">1-on-1 Live Support</h3>
-                    <br>
-                    <div
-                        class="er-pl-28 text-size18 er-mt-4 er-pr-[10%] er-opacity-80 mb:er-text-2xl mb:er-pl-20 mb:er-mt-2">
-                        Skip tickets and forms. Book 1-on-1 live support with our technical team, show your bike on
-                        camera, and solve the issue together in real time with a real person.
-                    </div>
-                </div>
-                <div class="er-flex er-flex-wrap er-items-center">
-                    <img class="er-max-w-24 mb:er-max-w-14" width="55" height="60"
-                        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26767.svg?v=1770176973"
-                        loading="lazy" alt="">
-                    <h3 class="text-size30 er-flex-1 er-ml-6 mb:er-text-3xl mb:er-ml-6">2-Year Warranty</h3>
-                    <br>
-                    <div
-                        class="er-pl-28 text-size18 er-mt-4 er-pr-[10%] er-opacity-80 mb:er-text-2xl mb:er-pl-20 mb:er-mt-2">
-                        Every Urtopia e-bike comes with a 2-year warranty, covering key components with clear terms and
-                        dependable support you can trust.
-                    </div>
-                </div>
-                <div class="er-flex er-flex-wrap er-items-center">
-                    <img class="er-max-w-24 mb:er-max-w-14" width="50" height="60"
-                        src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26769.svg?v=1770176973"
-                        loading="lazy" alt="">
-                    <h3 class="text-size30 er-flex-1 er-ml-8 mb:er-text-3xl mb:er-ml-6">Fast, Local Spare Parts</h3>
-                    <br>
-                    <div
-                        class="er-pl-28 text-size18 er-mt-4 er-pr-[10%] er-opacity-8 mb:er-text-2xl mb:er-pl-20 mb:er-mt-2">
-                        We keep spare parts available locally, so most replacements ship within 3 days. Less waiting,
-                        more riding.
-                    </div>
-                </div>
-            </div>
+      </div>
+    </div>
+    {% render 'image',
+      mb_src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19878_2x_33c68af1-244e-49b3-9b0c-8c7b394f1499.jpg?v=1770176512',
+      src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19857_2x_56a03506-e11d-4507-88d2-856aa799ea7c.jpg?v=1770175413'
+    %}
+  </div>
+</section>
+<section class="background-image er-bg-black er-aspect-[1920/750] mb:er-aspect-auto er-text-white mb:er-pb-20">
+  {% render 'image',
+    mb_src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26821_2x_e860b5d0-cf65-4984-b24c-65b835fe6e01.jpg?v=1770184607',
+    src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26773_2x_c4ae0d87-6ccb-429b-b50c-06747c13bbd5.jpg?v=1770176796'
+  %}
+  <div class="centeral-content er-grid er-grid-cols-2 er-h-full mb:er-grid-cols-1 mb:er-px-6">
+    <div class="mb:er-aspect-square"></div>
+    <div class="er-flex er-flex-col er-justify-center er-h-full er-space-y-20 mb:er-space-y-12">
+      <div class="er-flex er-flex-wrap er-items-center">
+        <img
+          class="er-max-w-24 mb:er-max-w-16"
+          width="60"
+          height="60"
+          src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19858.svg?v=1770176973"
+          loading="lazy"
+          alt=""
+        >
+        <h3 class="text-size30 er-flex-1 er-ml-4 mb:er-text-3xl">
+          <a
+            href="https://calendly.com/urtopia-techsupport/30min"
+            target="_blank"
+            class="er-button er-button-white er-button-text er-underline er-underline-offset-4"
+            >1-on-1 Live Support</a
+          >
+        </h3>
+        <br>
+        <div
+          class="er-pl-28 text-size18 er-mt-4 er-pr-[10%] er-opacity-80 mb:er-text-2xl mb:er-pl-20 mb:er-mt-2"
+        >
+          Skip tickets and forms. Book 1-on-1 live support with our technical team, show your bike on camera, and solve
+          the issue together in real time with a real person.
         </div>
-    </section>
-    <section class="er-bg-background er-py-32 mb:er-py-16">
-        <div class="centeral-content mb:!er-px-6">
-            <div class="er-w-full er-flex er-items-center mb:er-flex-col">
-                <div class="er-basis-2/5 mb:er-basis-auto mb:er-px-0 mb:er-mb-12">
-                    <h3 class="text-size36 mb:er-text-4xl mb:er-leading-tight">Built-In Safety<br>Intelligence</h3>
-                    <p
-                        class="text-size18 er-max-w-2xl er-mt-8 er-mb-20 mb:er-text-2xl mb:er-mt-4 mb:er-mb-8 er-opacity-80">
-                        <span>
-                            Safety is built in, from GPS tracking and smart alerts to certified electronics and premium
-                            components.
-                        </span>
-                    </p>
-                    <a class="er-button er-button-dark" target="_blank"
-                        href="https://newurtopia.com/pages/pages-smartest-ebike">Learn More</a>
-                </div>
-                <div class="swappppr er-relative er-overflow-hidden er-basis-3/5 er-rounded-3xl mb:er-basis-auto mb:er-max-w-full"
-                    style="--swiper-theme-color: #000;--swiper-navigation-size: 25px;--swiper-pagination-color: #fff;--swiper-pagination-bullet-width: 80px;--swiper-pagination-bullet-height: 4px;">
-                    <div class="swiper-wrapper">
-                        <div
-                            class="swiper-slide background-image er-aspect-[750/500] er-text-white er-pl-20 er-pb-28 er-flex er-flex-col er-justify-end er-items-start er-box-border">
-                            <video playsinline loop autoplay muted class="lozad">
-                                <source data-src="https://cdn.shopify.com/videos/c/o/v/3031de939aae4282822fee184790559b.mp4"
-                                    type="video/mp4" media="(min-width: 768px)">
-                                <source data-src="https://cdn.shopify.com/videos/c/o/v/d9cc02f05a7e4df3971803a2adb6f908.mp4"
-                                    type="video/mp4" media="(max-width: 767px)">
-                            </video>
-                            <div class="background-mask"
-                                style="background-image: linear-gradient(0deg, #1D1C1B, #1D1C1B00);height: 50%;top: 50%;">
-                            </div>
-                            <h3 class="text-size36 er-mb-6 mb:er-hidden">GPS Tracking & Geo-Fence</h3>
-                            <p class="er-max-w-2xl text-size18 mb:er-hidden">
-                                <span>Real-time location tracking with virtual boundaries for added theft
-                                    protection.</span>
-                            </p>
-                        </div>
-                        <div
-                            class="swiper-slide background-image er-aspect-[750/500] er-text-white er-pl-20 er-pb-28 er-flex er-flex-col er-justify-end er-items-start er-box-border">
-                            <video playsinline loop autoplay muted class="lozad">
-                                <source data-src="https://cdn.shopify.com/videos/c/o/v/da68add17f0c4ff182d267312972799b.mp4"
-                                    type="video/mp4" media="(min-width: 768px)">
-                                <source data-src="https://cdn.shopify.com/videos/c/o/v/13ade4a164f140cd84ca3b4fff01c6d6.mp4"
-                                    type="video/mp4" media="(max-width: 767px)">
-                            </video>
-                            <div class="background-mask"
-                                style="background-image: linear-gradient(0deg, #1D1C1B, #1D1C1B00);height: 50%;top: 50%;">
-                            </div>
-                            <h3 class="text-size36 er-mb-6 mb:er-hidden">Movement Alarm</h3>
-                            <p class="er-max-w-2xl text-size18 mb:er-hidden">
-                                <span>Instant alerts triggered by unauthorized movement or tampering.</span>
-                            </p>
-                        </div>
-                        <div
-                            class="swiper-slide background-image er-aspect-[750/500] er-text-white er-pl-20 er-pb-28 er-flex er-flex-col er-justify-end er-items-start er-box-border">
-                            {% render 'image', mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26829_2x_08669252-b079-4ddb-8d99-d59ede69fc20.jpg?v=1770187576", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26780_2x_589a3912-a5bf-43c2-8f01-e734253f01a1.jpg?v=1770186253" %}
-                            <div class="background-mask"
-                                style="background-image: linear-gradient(0deg, #1D1C1B, #1D1C1B00);height: 50%;top: 50%;">
-                            </div>
-                            <h3 class="text-size36 er-mb-6 mb:er-hidden">UL Certification</h3>
-                            <p class="er-max-w-2xl text-size18 mb:er-hidden">
-                                <span>All electrical systems tested and certified to rigorous UL safety
-                                    standards.</span>
-                            </p>
-                        </div>
-                        <div
-                            class="swiper-slide background-image er-aspect-[750/500] er-text-white er-pl-20 er-pb-28 er-flex er-flex-col er-justify-end er-items-start er-box-border">
-                            {% render 'image', mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26830_2x_572ac1c4-163d-44b3-bd8d-ce14d420ea81.jpg?v=1770187752", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26781_2x_359a6ee4-dab3-4a4c-a2ff-3017e500f25b.jpg?v=1770186247  " %}
-                            <div class="background-mask"
-                                style="background-image: linear-gradient(0deg, #1D1C1B, #1D1C1B00);height: 50%;top: 50%;">
-                            </div>
-                            <h3 class="text-size36 er-mb-6 mb:er-hidden">Premium Component Quality</h3>
-                            <p class="er-max-w-2xl text-size18 mb:er-hidden">
-                                <span>Built with trusted components, including Samsung batteries, Shimano drivetrains,
-                                    and TEKTRO brakes.</span>
-                            </p>
-                        </div>
-                    </div>
-                    <div
-                        class="swiper-button-prev er-bg-white/50 er-rounded-tr-xl er-rounded-br-xl er-w-12 er-h-20 er-left-0 er-pr-2 hover:er-opacity-70 er-transition er-translate-y-[-25%] er-z-[1]">
-                    </div>
-                    <div
-                        class="swiper-button-next er-bg-white/50 er-rounded-tl-xl er-rounded-bl-xl er-w-12 er-h-20 er-right-0 er-pl-2 hover:er-opacity-70 er-transition er-translate-y-[-25%] er-z-[1]">
-                    </div>
-                    <div class="swiper-pagination !er-bottom-16 er-text-left er-pl-20 mb:!er-bottom-4 er-z-[1]"></div>
-                </div>
-                <div class="md:er-hidden mb:er-p-6 mb:er-pt-8 bottom-text">
-                    <h3 class="text-size18 er-font-bold er-mb-3">Smartbar Tech</h3>
-                    <p class="text-size12 er-opacity-80">Navigation, theft deterrence, AI assistant, and customizable
-                        smart features in one intelligent hub.</p>
-                </div>
-            </div>
+      </div>
+      <div class="er-flex er-flex-wrap er-items-center">
+        <img
+          class="er-max-w-24 mb:er-max-w-14"
+          width="55"
+          height="60"
+          src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26767.svg?v=1770176973"
+          loading="lazy"
+          alt=""
+        >
+        <h3 class="text-size30 er-flex-1 er-ml-6 mb:er-text-3xl mb:er-ml-6">2-Year Warranty</h3>
+        <br>
+        <div
+          class="er-pl-28 text-size18 er-mt-4 er-pr-[10%] er-opacity-80 mb:er-text-2xl mb:er-pl-20 mb:er-mt-2"
+        >
+          Every Urtopia e-bike comes with a 2-year warranty, covering key components with clear terms and dependable
+          support you can trust.
         </div>
-    </section>
-    <section class="er-py-48 mb:er-py-0 mb:er-bg-background">
-        <div class="centeral-content er-flex er-gap-x-28 mb:er-flex-col mb:er-px-0">
-            {% render 'image', class: "er-max-w-screen-md mb:er-max-w-full", mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/ac9aaa51-2a20-46bc-bd34-59daabaed309_1_2x_37c81322-c871-4377-b2da-c9b5c2cf7b14.jpg?v=1770188354", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/ac9aaa51-2a20-46bc-bd34-59daabaed309_1_2x_a4879814-7929-465c-84a1-5458b172981d.jpg?v=1770188033" %}
-            <div class="er-flex er-flex-col er-justify-center mb:er-px-6 mb:er-py-10">
-                <h2 class="text-size36 mb:er-text-4xl">Scan-to-Diagnose <br class="mb:er-hidden">System</h2>
-                <p class="text-size18 er-max-w-2xl er-mt-12 mb:er-text-2xl mb:er-mt-8">
-                    <span>
-                        Every Urtopia bike comes with a built-in QR code that connects your bike directly to our support system. With one scan, we can instantly access your bike model, firmware version, error logs, and battery or motor status. No guessing, no long explanations — just faster diagnosis and faster solutions.
-                    </span>
-                </p>
-            </div>
+      </div>
+      <div class="er-flex er-flex-wrap er-items-center">
+        <img
+          class="er-max-w-24 mb:er-max-w-14"
+          width="50"
+          height="60"
+          src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26769.svg?v=1770176973"
+          loading="lazy"
+          alt=""
+        >
+        <h3 class="text-size30 er-flex-1 er-ml-8 mb:er-text-3xl mb:er-ml-6">Fast, Local Spare Parts</h3>
+        <br>
+        <div
+          class="er-pl-28 text-size18 er-mt-4 er-pr-[10%] er-opacity-8 mb:er-text-2xl mb:er-pl-20 mb:er-mt-2"
+        >
+          We keep spare parts available locally, so most replacements ship within 3 days. Less waiting, more riding.
         </div>
-    </section>
-    <section class="about-us">
- <div class="together">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="er-bg-background er-py-32 mb:er-py-16">
+  <div class="centeral-content mb:!er-px-6">
+    <div class="er-w-full er-flex er-items-center mb:er-flex-col">
+      <div class="er-basis-2/5 mb:er-basis-auto mb:er-px-0 mb:er-mb-12">
+        <h3 class="text-size36 mb:er-text-4xl mb:er-leading-tight">
+          Built-In Safety<br>
+          Intelligence
+        </h3>
+        <p
+          class="text-size18 er-max-w-2xl er-mt-8 er-mb-20 mb:er-text-2xl mb:er-mt-4 mb:er-mb-8 er-opacity-80"
+        >
+          <span>
+            Safety is built in, from GPS tracking and smart alerts to certified electronics and premium components.
+          </span>
+        </p>
+        <a
+          class="er-button er-button-dark"
+          target="_blank"
+          href="https://newurtopia.com/pages/pages-smartest-ebike"
+          >Learn More</a
+        >
+      </div>
+      <div
+        class="swappppr er-relative er-overflow-hidden er-basis-3/5 er-rounded-3xl mb:er-basis-auto mb:er-max-w-full"
+        style="--swiper-theme-color: #000;--swiper-navigation-size: 25px;--swiper-pagination-color: #fff;--swiper-pagination-bullet-width: 80px;--swiper-pagination-bullet-height: 4px;"
+      >
+        <div class="swiper-wrapper">
+          <div
+            class="swiper-slide background-image er-aspect-[750/500] er-text-white er-pl-20 er-pb-28 er-flex er-flex-col er-justify-end er-items-start er-box-border"
+          >
+            <video playsinline loop autoplay muted class="lozad">
+              <source
+                data-src="https://cdn.shopify.com/videos/c/o/v/3031de939aae4282822fee184790559b.mp4"
+                type="video/mp4"
+                media="(min-width: 768px)"
+              >
+              <source
+                data-src="https://cdn.shopify.com/videos/c/o/v/d9cc02f05a7e4df3971803a2adb6f908.mp4"
+                type="video/mp4"
+                media="(max-width: 767px)"
+              >
+            </video>
+            <div
+              class="background-mask"
+              style="background-image: linear-gradient(0deg, #1D1C1B, #1D1C1B00);height: 50%;top: 50%;"
+            ></div>
+            <h3 class="text-size36 er-mb-6 mb:er-hidden">GPS Tracking & Geo-Fence</h3>
+            <p class="er-max-w-2xl text-size18 mb:er-hidden">
+              <span>Real-time location tracking with virtual boundaries for added theft protection.</span>
+            </p>
+          </div>
+          <div
+            class="swiper-slide background-image er-aspect-[750/500] er-text-white er-pl-20 er-pb-28 er-flex er-flex-col er-justify-end er-items-start er-box-border"
+          >
+            <video playsinline loop autoplay muted class="lozad">
+              <source
+                data-src="https://cdn.shopify.com/videos/c/o/v/da68add17f0c4ff182d267312972799b.mp4"
+                type="video/mp4"
+                media="(min-width: 768px)"
+              >
+              <source
+                data-src="https://cdn.shopify.com/videos/c/o/v/13ade4a164f140cd84ca3b4fff01c6d6.mp4"
+                type="video/mp4"
+                media="(max-width: 767px)"
+              >
+            </video>
+            <div
+              class="background-mask"
+              style="background-image: linear-gradient(0deg, #1D1C1B, #1D1C1B00);height: 50%;top: 50%;"
+            ></div>
+            <h3 class="text-size36 er-mb-6 mb:er-hidden">Movement Alarm</h3>
+            <p class="er-max-w-2xl text-size18 mb:er-hidden">
+              <span>Instant alerts triggered by unauthorized movement or tampering.</span>
+            </p>
+          </div>
+          <div
+            class="swiper-slide background-image er-aspect-[750/500] er-text-white er-pl-20 er-pb-28 er-flex er-flex-col er-justify-end er-items-start er-box-border"
+          >
+            {% render 'image',
+              mb_src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26829_2x_08669252-b079-4ddb-8d99-d59ede69fc20.jpg?v=1770187576',
+              src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26780_2x_589a3912-a5bf-43c2-8f01-e734253f01a1.jpg?v=1770186253'
+            %}
+            <div
+              class="background-mask"
+              style="background-image: linear-gradient(0deg, #1D1C1B, #1D1C1B00);height: 50%;top: 50%;"
+            ></div>
+            <h3 class="text-size36 er-mb-6 mb:er-hidden">UL Certification</h3>
+            <p class="er-max-w-2xl text-size18 mb:er-hidden">
+              <span>All electrical systems tested and certified to rigorous UL safety standards.</span>
+            </p>
+          </div>
+          <div
+            class="swiper-slide background-image er-aspect-[750/500] er-text-white er-pl-20 er-pb-28 er-flex er-flex-col er-justify-end er-items-start er-box-border"
+          >
+            {% render 'image',
+              mb_src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26830_2x_572ac1c4-163d-44b3-bd8d-ce14d420ea81.jpg?v=1770187752',
+              src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26781_2x_359a6ee4-dab3-4a4c-a2ff-3017e500f25b.jpg?v=1770186247  '
+            %}
+            <div
+              class="background-mask"
+              style="background-image: linear-gradient(0deg, #1D1C1B, #1D1C1B00);height: 50%;top: 50%;"
+            ></div>
+            <h3 class="text-size36 er-mb-6 mb:er-hidden">Premium Component Quality</h3>
+            <p class="er-max-w-2xl text-size18 mb:er-hidden">
+              <span
+                >Built with trusted components, including Samsung batteries, Shimano drivetrains, and TEKTRO brakes.</span
+              >
+            </p>
+          </div>
+        </div>
+        <div
+          class="swiper-button-prev er-bg-white/50 er-rounded-tr-xl er-rounded-br-xl er-w-12 er-h-20 er-left-0 er-pr-2 hover:er-opacity-70 er-transition er-translate-y-[-25%] er-z-[1]"
+        ></div>
+        <div
+          class="swiper-button-next er-bg-white/50 er-rounded-tl-xl er-rounded-bl-xl er-w-12 er-h-20 er-right-0 er-pl-2 hover:er-opacity-70 er-transition er-translate-y-[-25%] er-z-[1]"
+        ></div>
+        <div class="swiper-pagination !er-bottom-16 er-text-left er-pl-20 mb:!er-bottom-4 er-z-[1]"></div>
+      </div>
+      <div class="md:er-hidden mb:er-p-6 mb:er-pt-8 bottom-text">
+        <h3 class="text-size18 er-font-bold er-mb-3">Smartbar Tech</h3>
+        <p class="text-size12 er-opacity-80">
+          Navigation, theft deterrence, AI assistant, and customizable smart features in one intelligent hub.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="er-py-48 mb:er-py-0 mb:er-bg-background">
+  <div class="centeral-content er-flex er-gap-x-28 mb:er-flex-col mb:er-px-0">
+    {% render 'image',
+      class: 'er-max-w-screen-md mb:er-max-w-full',
+      mb_src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/ac9aaa51-2a20-46bc-bd34-59daabaed309_1_2x_37c81322-c871-4377-b2da-c9b5c2cf7b14.jpg?v=1770188354',
+      src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/ac9aaa51-2a20-46bc-bd34-59daabaed309_1_2x_a4879814-7929-465c-84a1-5458b172981d.jpg?v=1770188033'
+    %}
+    <div class="er-flex er-flex-col er-justify-center mb:er-px-6 mb:er-py-10">
+      <h2 class="text-size36 mb:er-text-4xl">
+        Scan-to-Diagnose <br class="mb:er-hidden">
+        System
+      </h2>
+      <p class="text-size18 er-max-w-2xl er-mt-12 mb:er-text-2xl mb:er-mt-8">
+        <span>
+          Every Urtopia bike comes with a built-in QR code that connects your bike directly to our support system. With
+          one scan, we can instantly access your bike model, firmware version, error logs, and battery or motor status.
+          No guessing, no long explanations — just faster diagnosis and faster solutions.
+        </span>
+      </p>
+    </div>
+  </div>
+</section>
+<section class="about-us">
+  <div class="together">
     <div class="centeral-content mb:er-px-6">
       <div class="er-flex er-flex-col er-justify-center mb:er-order-1">
-        <h2 class="text-size36 mb:er-text-4xl"><span style="color: rgb(36, 164, 110);">4.5★</span> Rated on Trustpilot</h2>
+        <h2 class="text-size36 mb:er-text-4xl">
+          <span style="color: rgb(36, 164, 110);">4.5★</span> Rated on Trustpilot
+        </h2>
         <p class="er-max-w-xl er-my-12 text-size18 mb:er-text-2xl mb:er-my-8">
           <span>
-            Urtopia is rated 4.5 stars on Trustpilot, based on real feedback from riders around the world. The rating reflects not only how our bikes ride, but how we support customers after delivery — through service, transparency, and long-term care.
+            Urtopia is rated 4.5 stars on Trustpilot, based on real feedback from riders around the world. The rating
+            reflects not only how our bikes ride, but how we support customers after delivery — through service,
+            transparency, and long-term care.
           </span>
         </p>
         <a href="/collections/e-bike-sale" class="er-button er-button-dark">Shop now</a>
@@ -373,9 +595,9 @@ h4 {
           </div>
         </div>
         <img
-           loading="lazy"
-           width="400"
-           height="550"
+          loading="lazy"
+          width="400"
+          height="550"
           src="https://cdn.shopify.com/s/files/1/0633/2068/6808/files/4_2x_7adaacee-d216-4817-a629-3f21dd5f68b1.jpg?v=1681480050"
           alt="{{ page_description }}"
         >
@@ -397,30 +619,28 @@ h4 {
       </div>
     </div>
   </div>
-    </section>
-  
-   
+</section>
 <script type="module">
   new Swiper('.swappppr', {
-      preloadImages: false,
-      effect: 'fade',
-      navigation: {
-        nextEl: '.swappppr .swiper-button-next',
-        prevEl: '.swappppr .swiper-button-prev',
+    preloadImages: false,
+    effect: 'fade',
+    navigation: {
+      nextEl: '.swappppr .swiper-button-next',
+      prevEl: '.swappppr .swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    // autoplay: {
+    //   disableOnInteraction: false,
+    // },
+    on: {
+      slideChange: function () {
+        const slide = $(this.slides[this.activeIndex]);
+        $('.swappppr').parent().find('.bottom-text h3').text(slide.find('h3').text());
+        $('.swappppr').parent().find('.bottom-text p').text(slide.find('p > span').text());
       },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true
-      },
-      // autoplay: {
-      //   disableOnInteraction: false,
-      // },
-      on: {
-        slideChange: function () {
-          const slide = $(this.slides[this.activeIndex])
-          $('.swappppr').parent().find('.bottom-text h3').text(slide.find('h3').text())
-          $('.swappppr').parent().find('.bottom-text p').text(slide.find('p > span').text())
-        },
-      },
-    });
+    },
+  });
 </script>
