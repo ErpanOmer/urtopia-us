@@ -124,7 +124,7 @@
                                         {% render 'icon-arrow' %}
                                         {{ link.title | escape }}
                                       </button>
-                                      {% render 'header-dropdown' %}
+                                       {% render 'header-dropdown', link: link.links %}
                                     </div>
                                   </div>
                                 </details>
@@ -399,7 +399,7 @@
                             {% render 'icon-caret' %}
                           </summary>
                           <div id="MegaMenu-Content-{{ forloop.index }}" class="mega-menu__content gradient motion-reduce global-settings-popup {% if link.title == 'E-Bike' %}mega_ebike_content{% endif %}" tabindex="-1">
-                            {% render 'header-dropdown' %}
+                            {% render 'header-dropdown', link: link.links %}
                           </div>
                         </details>
                       </header-menu>
