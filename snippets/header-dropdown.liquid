@@ -43,13 +43,9 @@
       </div>
       <div class="er-my-10 mb:er-my-8" style="height: 1px;background-color: #e9e9e9;"></div>
       <div class="er-flex er-flex-col er-text-left er-gap-y-8">
-        {%- for childlink in linklists['4-0-main-menu'].links -%}
-          {% if childlink.levels == 1 %}
-            {% for link in childlink.links %}
+            {% for link in links %}
               <a class="text-size14 er-font-medium" href="{{ link.url }}">{{ link.title }}</a>
             {% endfor %}
-          {% endif %}
-        {% endfor %}
       </div>
       <a
         href="/collections/e-bike-sale"
