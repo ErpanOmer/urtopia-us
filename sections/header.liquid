@@ -61,6 +61,10 @@
     padding-right: 2.25rem;
   }
 
+  .list-menu--disclosure {
+    width: auto !important;
+  }
+
 {%- endstyle -%}
 <svg xmlns="http://www.w3.org/2000/svg" class="hidden">
   <symbol id="icon-search" viewbox="0 0 18 19" fill="none">
@@ -108,6 +112,14 @@
                                           {{ item.title | escape }}
                                         </a>
                                       {% endfor %}
+                                      <a href="mailto:support@newurtopia.com" class="menu-drawer__menu-item list-menu__item link link--text er-flex er-items-end er-select-auto er-mt-8">
+                                        <img class="er-block er-mr-2" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19888.svg?v=1770366251" loading="lazy" alt="support@newurtopia.com">
+                                        <span>support@newurtopia.com</span>
+                                      </a>
+                                      <a href="mailto:support@newurtopia.com" class="menu-drawer__menu-item list-menu__item link link--text er-flex er-items-center !er-justify-start er-select-auto">
+                                        <img class="er-block er-mr-2" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19890.svg?v=1770366251" loading="lazy" alt="support@newurtopia.com">
+                                        <div class="er-select-auto">+1 (949) 899-6668<br><span class="er-opacity-70 text-size14">(Mon-Fri 11am- 8pm PST)</span></div>
+                                      </a>
                                     </div>
                                   </div>
                               </details>
@@ -124,7 +136,7 @@
                                         {% render 'icon-arrow' %}
                                         {{ link.title | escape }}
                                       </button>
-                                      {% render 'header-dropdown' %}
+                                       {% render 'header-dropdown', links: link.links %}
                                     </div>
                                   </div>
                                 </details>
@@ -382,12 +394,20 @@
                             <span {%- if link.child_active %} class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
                             {% render 'icon-caret' %}
                           </summary>
-                          <div class="header__submenu list-menu list-menu--disclosure gradient caption-large motion-reduce global-settings-popup" role="list" tabindex="-1">
+                          <div class="header__submenu list-menu list-menu--disclosure gradient caption-large motion-reduce global-settings-popup !er-shadow" role="list" tabindex="-1">
                             {% for childlink in link.links %}
-                              <a href="{{ childlink.url }}" class="header__menu-item list-menu__item link link--text focus-inset caption-large{% if childlink.current %} list-menu__item--active{% endif %}"{% if childlink.current %} aria-current="page"{% endif %}>
+                              <a href="{{ childlink.url }}" {%- if forloop.first -%}style="font-weight: bold;"{%- endif -%} class="header__menu-item list-menu__item link link--text focus-inset caption-large text-size14 er-font-medium er-block{% if childlink.current %} list-menu__item--active{% endif %}"{% if childlink.current %} aria-current="page"{% endif %}>
                                 {{ childlink.title | escape }}
                               </a>
                             {% endfor %}
+                            <a href="mailto:support@newurtopia.com" class="header__menu-item list-menu__item link link--text focus-inset caption-large text-size14 er-font-medium er-flex er-items-end !er-pr-20 er-select-auto">
+                              <img class="er-block er-mr-2" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19888.svg?v=1770366251" loading="lazy" alt="support@newurtopia.com">
+                              <span>support@newurtopia.com</span>
+                            </a>
+                            <a href="mailto:support@newurtopia.com" class="header__menu-item list-menu__item link link--text focus-inset caption-large text-size14 er-font-medium er-flex er-items-center !er-justify-start !er-pr-20 er-select-auto">
+                              <img class="er-block er-mr-2" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/19890.svg?v=1770366251" loading="lazy" alt="support@newurtopia.com">
+                              <div class="er-select-auto">+1 (949) 899-6668<br><span class="er-opacity-70 text-size12">(Mon-Fri 11am- 8pm PST)</span></div>
+                            </a>
                           </div>
                         </details>
                     </header-menu>
@@ -399,7 +419,7 @@
                             {% render 'icon-caret' %}
                           </summary>
                           <div id="MegaMenu-Content-{{ forloop.index }}" class="mega-menu__content gradient motion-reduce global-settings-popup {% if link.title == 'E-Bike' %}mega_ebike_content{% endif %}" tabindex="-1">
-                            {% render 'header-dropdown' %}
+                            {% render 'header-dropdown', links: link.links %}
                           </div>
                         </details>
                       </header-menu>
