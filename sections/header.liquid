@@ -57,6 +57,10 @@
     transition: all .4s;
   }
 
+  summary.list-menu__item {
+    padding-right: 2.25rem;
+  }
+
 {%- endstyle -%}
 <svg xmlns="http://www.w3.org/2000/svg" class="hidden">
   <symbol id="icon-search" viewbox="0 0 18 19" fill="none">
@@ -86,32 +90,52 @@
                     {%- for link in section.settings.menu.links -%}
                       <li>
                         {%- if link.links != blank -%}
-                          <details id="Details-menu-drawer-menu-item-{{ forloop.index }}">
-                            <summary class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.child_active %} menu-drawer__menu-item--active{% endif %}">
-                              {{ link.title | escape }}
-                              {% render 'icon-arrow' %}
-                              {% render 'icon-caret' %}
-                            </summary>
-                            <div id="link-{{ link.title | escape }}" class="menu-drawer__submenu has-submenu gradient motion-reduce" tabindex="-1">
-                              <div class="menu-drawer__inner-submenu">
-                                <button class="menu-drawer__close-button link link--text focus-inset" aria-expanded="true">
-                                  {% render 'icon-arrow' %}
+                           {% if link.handle == 'support' %}
+                              <details id="Details-menu-drawer-menu-item-{{ forloop.index }}">
+                                <summary class="menu-drawer__menu-item list-menu__item link link--text">
                                   {{ link.title | escape }}
-                                </button>
-                                {% render 'header-dropdown' %}
-                              </div>
-                            </div>
-                          </details>
+                                  {% render 'icon-arrow' %}
+                                  {% render 'icon-caret' %}
+                                </summary>
+                                <div id="link-{{ link.title | escape }}" class="menu-drawer__submenu has-submenu gradient motion-reduce" tabindex="-1">
+                                    <div class="menu-drawer__inner-submenu">
+                                      <button class="menu-drawer__close-button link link--text" aria-expanded="true">
+                                        {% render 'icon-arrow' %}
+                                        {{ link.title | escape }}
+                                      </button>
+                                      {% for item in link.links %}
+                                        <a href="{{ item.url }}" class="menu-drawer__menu-item list-menu__item link link--text{% if item.current %} menu-drawer__menu-item--active{% endif %}">
+                                          {{ item.title | escape }}
+                                        </a>
+                                      {% endfor %}
+                                    </div>
+                                  </div>
+                              </details>
+                            {% else %}
+                              <details id="Details-menu-drawer-menu-item-{{ forloop.index }}">
+                                  <summary class="menu-drawer__menu-item list-menu__item link link--text">
+                                    {{ link.title | escape }}
+                                    {% render 'icon-arrow' %}
+                                    {% render 'icon-caret' %}
+                                  </summary>
+                                  <div id="link-{{ link.title | escape }}" class="menu-drawer__submenu has-submenu gradient motion-reduce" tabindex="-1">
+                                    <div class="menu-drawer__inner-submenu">
+                                      <button class="menu-drawer__close-button link link--text" aria-expanded="true">
+                                        {% render 'icon-arrow' %}
+                                        {{ link.title | escape }}
+                                      </button>
+                                      {% render 'header-dropdown' %}
+                                    </div>
+                                  </div>
+                                </details>
+                           {% endif %}
                         {%- else -%}
-                          <a href="{{ link.url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.current %} menu-drawer__menu-item--active{% endif %}"{% if link.current %} aria-current="page"{% endif %}>
+                          <a href="{{ link.url }}" class="menu-drawer__menu-item list-menu__item link link--text"{% if link.current %} aria-current="page"{% endif %}>
                             {{ link.title | escape }}
                           </a>
                         {%- endif -%}
                       </li>
                     {%- endfor -%}
-                    <li class="er-flex er-items-end er-underline er-flex-1">
-                      <a class="menu-drawer__menu-item list-menu__item link link--text focus-inset" href="https://newurtopia.com/pages/track-my-package">Track My Package</a>
-                    </li>
                   </ul>
                 </nav>
                 <div class="menu-drawer__utility-links">
@@ -351,17 +375,35 @@
             {%- for link in section.settings.menu.links -%}
               <li>
                 {%- if link.links != blank -%}
-                  <header-menu>
-                    <details id="Details-HeaderMenu-{{ forloop.index }}" class="mega-menu">
-                      <summary class="header__menu-item list-menu__item link focus-inset">
-                        <span {%- if link.child_active %} class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
-                        {% render 'icon-caret' %}
-                      </summary>
-                      <div id="MegaMenu-Content-{{ forloop.index }}" class="mega-menu__content gradient motion-reduce global-settings-popup {% if link.title == 'E-Bike' %}mega_ebike_content{% endif %}" tabindex="-1">
-                        {% render 'header-dropdown' %}
-                      </div>
-                    </details>
-                  </header-menu>
+                  {% if link.handle == 'support' %}
+                    <header-menu>
+                        <details>
+                          <summary class="header__menu-item list-menu__item link focus-inset">
+                            <span {%- if link.child_active %} class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
+                            {% render 'icon-caret' %}
+                          </summary>
+                          <div class="header__submenu list-menu list-menu--disclosure gradient caption-large motion-reduce global-settings-popup" role="list" tabindex="-1">
+                            {% for childlink in link.links %}
+                              <a href="{{ childlink.url }}" class="header__menu-item list-menu__item link link--text focus-inset caption-large{% if childlink.current %} list-menu__item--active{% endif %}"{% if childlink.current %} aria-current="page"{% endif %}>
+                                {{ childlink.title | escape }}
+                              </a>
+                            {% endfor %}
+                          </div>
+                        </details>
+                    </header-menu>
+                    {% else %}
+                      <header-menu>
+                        <details id="Details-HeaderMenu-{{ forloop.index }}" class="mega-menu">
+                          <summary class="header__menu-item list-menu__item link focus-inset">
+                            <span {%- if link.child_active %} class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
+                            {% render 'icon-caret' %}
+                          </summary>
+                          <div id="MegaMenu-Content-{{ forloop.index }}" class="mega-menu__content gradient motion-reduce global-settings-popup {% if link.title == 'E-Bike' %}mega_ebike_content{% endif %}" tabindex="-1">
+                            {% render 'header-dropdown' %}
+                          </div>
+                        </details>
+                      </header-menu>
+                  {% endif %}
                 {%- else -%}
                   <a href="{{ link.url }}" class="header__menu-item header__menu-item list-menu__item link {% if link.title == "ORDER NOW" %}orderBtn{% endif %} link--text focus-inset"{% if link.current %} aria-current="page"{% endif %}>
                     <span {%- if link.current %} class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
