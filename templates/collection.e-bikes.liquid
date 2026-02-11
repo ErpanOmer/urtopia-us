@@ -113,7 +113,7 @@
 </div>
 
 <section class="er-bg-background er-py-40 mb:er-py-16" id="filters">
-  <div class="er-mx-auto er-max-w-screen-2xl er-flex er-gap-x-4 er-px-6 sorting er-items-center er-justify-end er-mb-8 mb:er-hidden {% unless collection.handle == 'e-bikes' %}__erpan-offscreen{% endunless %}">
+  <div class="er-mx-auto er-max-w-screen-2xl er-flex er-gap-x-4 er-px-6 sorting er-items-center er-justify-end er-mb-8 mb:er-hidden{% unless collection.handle == 'e-bikes' %} __erpan-offscreen{% endunless %}">
       <label for="sort-by" class="er-mr-2 text-size14 er-font-bold" style="color: #000;">Sort by:</label>
       <select id="sort-by" class="sort-by-select">
         <option value="default">Default</option>
@@ -121,9 +121,9 @@
         <option value="price-descending">Price, high to low</option>
       </select>
   </div>
-  <div class="er-mx-auto er-max-w-screen-2xl er-flex {% if collection.handle == 'e-bikes' %}er-gap-x-12 er-px-6{% endif %}">
+  <div class="er-mx-auto er-max-w-screen-2xl er-flex er-px-6{% if collection.handle == 'e-bikes' %} er-gap-x-12{% endif %}">
     <!-- Filters (桌面端侧边栏 / 移动端抽屉) -->
-    <div class="filters filters-container er-flex-1 {% unless collection.handle == 'e-bikes' %}__erpan-offscreen{% endunless %}">
+    <div class="filters filters-container er-flex-1{% unless collection.handle == 'e-bikes' %} __erpan-offscreen{% endunless %}">
         <button class="filters-drawer-close">
           <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M6 6L18 18M6 18L18 6" stroke="#242729" stroke-width="2" stroke-linecap="round"/>
@@ -132,9 +132,9 @@
         {% render 'collection-filters' %}
     </div>
 
-    <div class="ebike-products er-max-w-screen-xl {% unless collection.handle == 'e-bikes' %}centeral-content er-w-full{% endunless %}">
+    <div class="ebike-products er-max-w-screen-xl{% unless collection.handle == 'e-bikes' %} centeral-content er-w-full{% endunless %}">
       <!-- 移动端过滤器栏 -->
-        <div class="filters-mobile-bar {% unless collection.handle == 'e-bikes' %}__erpan-offscreen{% endunless %}">
+        <div class="filters-mobile-bar{% unless collection.handle == 'e-bikes' %} __erpan-offscreen{% endunless %}">
           <div class="er-flex er-justify-between er-items-center er-w-full">
             <button class="filters-mobile-trigger">
               <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
