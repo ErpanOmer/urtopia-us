@@ -1,5 +1,16 @@
 {{ 'outlet_v4.scss.css' | asset_url | stylesheet_tag: preload: true }}
 <h1 class="er-sr-only">{{ page_title }}</h1>
+<style>
+.__erpan-offscreen {
+  position: fixed !important;
+  left: -9999px !important;
+  top: -9999px !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+}
+</style>
 <section class="background-image er-aspect-[1920/300] mb:er-aspect-[375/200]">
 {% render 'image', mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20260130-105753_2x_fc00057d-1f49-41a5-be03-b958e2e075e5.jpg?v=1769762761", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26798_2x_29f6c2f0-8a44-45ea-ba87-d2588e792514.jpg?v=1769762656" %}
   <div class="centeral-content er-flex er-flex-col er-items-start er-justify-center er-h-full er-text-white">
@@ -102,57 +113,57 @@
 </div>
 
 <section class="er-bg-background er-py-40 mb:er-py-16" id="filters">
-  <div class="er-mx-auto er-max-w-screen-2xl er-flex er-gap-x-4 er-px-6 sorting er-items-center er-justify-end er-mb-8 mb:er-hidden">
-    <label for="sort-by" class="er-mr-2 text-size14 er-font-bold" style="color: #000;">Sort by:</label>
-    <select id="sort-by" class="sort-by-select">
-      <option value="default">Default</option>
-      <option value="price-ascending">Price, low to high</option>
-      <option value="price-descending">Price, high to low</option>
-    </select>
+  <div class="er-mx-auto er-max-w-screen-2xl er-flex er-gap-x-4 er-px-6 sorting er-items-center er-justify-end er-mb-8 mb:er-hidden {% unless collection.handle == 'e-bikes' %}__erpan-offscreen{% endunless %}">
+      <label for="sort-by" class="er-mr-2 text-size14 er-font-bold" style="color: #000;">Sort by:</label>
+      <select id="sort-by" class="sort-by-select">
+        <option value="default">Default</option>
+        <option value="price-ascending">Price, low to high</option>
+        <option value="price-descending">Price, high to low</option>
+      </select>
   </div>
-  <div class="er-mx-auto er-max-w-screen-2xl er-flex er-gap-x-12 er-px-6">
+  <div class="er-mx-auto er-max-w-screen-2xl er-flex {% if collection.handle == 'e-bikes' %}er-gap-x-12 er-px-6{% endif %}">
     <!-- Filters (桌面端侧边栏 / 移动端抽屉) -->
-    <div class="filters filters-container er-flex-1">
-      <button class="filters-drawer-close">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M6 6L18 18M6 18L18 6" stroke="#242729" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-      </button>
-      {% render 'collection-filters' %}
+    <div class="filters filters-container er-flex-1 {% unless collection.handle == 'e-bikes' %}__erpan-offscreen{% endunless %}">
+        <button class="filters-drawer-close">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 6L18 18M6 18L18 6" stroke="#242729" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+        {% render 'collection-filters' %}
     </div>
 
-    <div class="ebike-products er-max-w-screen-xl">
+    <div class="ebike-products er-max-w-screen-xl {% unless collection.handle == 'e-bikes' %}centeral-content er-w-full{% endunless %}">
       <!-- 移动端过滤器栏 -->
-      <div class="filters-mobile-bar">
-        <div class="er-flex er-justify-between er-items-center er-w-full">
-          <button class="filters-mobile-trigger">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4 6H20M4 12H20M4 18H12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-            <span>Filters</span>
-            <span class="filter-count" style="display: none;">0</span>
-          </button>
+        <div class="filters-mobile-bar {% unless collection.handle == 'e-bikes' %}__erpan-offscreen{% endunless %}">
+          <div class="er-flex er-justify-between er-items-center er-w-full">
+            <button class="filters-mobile-trigger">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 6H20M4 12H20M4 18H12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              <span>Filters</span>
+              <span class="filter-count" style="display: none;">0</span>
+            </button>
 
-          <div class="filters-mobile-sort">
-            <label for="sort-by-mobile" class="er-mr-2 text-size14 er-font-bold" style="color: #000;">Sort by:</label>
-            <select id="sort-by-mobile" class="sort-by-select" style="min-width: 140px; padding-left: 10px;">
-              <option value="default">Default</option>
-              <option value="price-ascending">Price, low to high</option>
-              <option value="price-descending">Price, high to low</option>
-            </select>
+            <div class="filters-mobile-sort">
+              <label for="sort-by-mobile" class="er-mr-2 text-size14 er-font-bold" style="color: #000;">Sort by:</label>
+              <select id="sort-by-mobile" class="sort-by-select" style="min-width: 140px; padding-left: 10px;">
+                <option value="default">Default</option>
+                <option value="price-ascending">Price, low to high</option>
+                <option value="price-descending">Price, high to low</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="filters-mobile-header">
+            <span class="filters-mobile-results">
+              <span class="highlight js-mobile-results-shown">0</span> OF
+              <span class="js-mobile-results-total">0</span> RESULTS
+            </span>
+            <a href="#" class="filters-mobile-clear js-mobile-clear-filters"
+              >Clear filters (<span class="js-mobile-active-count">0</span>)</a
+            >
           </div>
         </div>
-
-        <div class="filters-mobile-header">
-          <span class="filters-mobile-results">
-            <span class="highlight js-mobile-results-shown">0</span> OF
-            <span class="js-mobile-results-total">0</span> RESULTS
-          </span>
-          <a href="#" class="filters-mobile-clear js-mobile-clear-filters"
-            >Clear filters (<span class="js-mobile-active-count">0</span>)</a
-          >
-        </div>
-      </div>
 
       {% render 'product-cards' %}
     </div>
@@ -383,137 +394,141 @@
   </div>
 </div>
 
-<div class="centeral-content er-max-w-screen-md er-pt-24 er-pb-60 mb:er-pt-8 mb:er-pb-32 er-space-y-20 mb:er-px-6 mb:er-space-y-14">
-  <div class="">
-    <h2 class="er-m-0 text-size36 mb:er-text-4xl">Urtopia Carbon Fiber eBike: Lightweight and Smart</h2>
-    <p class="text-size18 er-opacity-80 er-my-8 mb:er-text-2xl mb:er-my-4">
-      <span
-        >In the vast realm of urban commuting and outdoor adventures, a range of electric bicycles stand out with
-        outstanding performance, innovative design and smart features. This curated collection of
-        <a class="my-link" href="https://newurtopia.com/blogs/blog/best-lightweight-ebike">carbon fiber ebikes</a>
-        showcases a variety of fascinating models, each with its own unique appeal and distinct benefits.</span
-      >
-    </p>
-  </div>
-  <div class="er-space-y-12 mb:er-space-y-8">
-    <h2 class="er-m-0 text-size36 mb:er-text-4xl">Urtopia’s Featured Electric Bikes</h2>
-    <div>
-      <h3 class="er-text-primary er-m-0 text-size24 mb:er-text-3xl">
-        City Commuter eBike – Your Ideal Choice for Convenient Fitness
-      </h3>
-      <p class="text-size18 er-opacity-80 er-my-8 mb:er-text-2xl mb:er-my-4">
-        <span>
-          Made entirely of carbon fiber and weighing only 37 pounds, the Urtopia
-          <a class="my-link" href="https://newurtopia.com/collections/lightweight-carbon-commuter-ebikes"
-            >Commuter E-Bike</a
-          >
-          is lightweight and easy to carry, making it perfect for subway connections or high-rise residential areas.
-          With a range of up to 80 miles, you can use it for daily commutes through city streets or weekend fitness
-          rides without having to worry about running out of power.
-        </span>
-      </p>
-    </div>
-    <div>
-      <h3 class="er-text-primary er-m-0 text-size24 mb:er-text-3xl">
-        Foldable eBike – For Efficient Space Utilization and Convenience
-      </h3>
+{% if collection.handle == 'e-bikes' %}
+  <div class="centeral-content er-max-w-screen-md er-pt-24 er-pb-60 mb:er-pt-8 mb:er-pb-32 er-space-y-20 mb:er-px-6 mb:er-space-y-14">
+    <div class="">
+      <h2 class="er-m-0 text-size36 mb:er-text-4xl">Urtopia Carbon Fiber eBike: Lightweight and Smart</h2>
       <p class="text-size18 er-opacity-80 er-my-8 mb:er-text-2xl mb:er-my-4">
         <span
-          >The <a class="my-link" href="https://newurtopia.com/products/urtopia-carbon-fold">foldable e-bike</a> stands
-          out with its highly efficient space utilization design, allowing it to be quickly folded for easy storage and
-          transportation. Whether placed in a car trunk or stored in a small indoor space, it's a perfect choice for
-          city commuting and short trips. Weighing just 29 lbs, it’s the world’s lightest e-bike – thanks to its full
-          carbon fiber frame and handlebar. Lightweight for easy carrying, yet incredibly durable for long-lasting
-          performance.</span
+          >In the vast realm of urban commuting and outdoor adventures, a range of electric bicycles stand out with
+          outstanding performance, innovative design and smart features. This curated collection of
+          <a class="my-link" href="https://newurtopia.com/blogs/blog/best-lightweight-ebike">carbon fiber ebikes</a>
+          showcases a variety of fascinating models, each with its own unique appeal and distinct benefits.</span
         >
       </p>
     </div>
-    <div>
-      <h3 class="er-text-primary er-m-0 text-size24 mb:er-text-3xl">
-        All-Terrain eBike – A Powerful Option for Tackling Complex Terrains
-      </h3>
-      <p class="text-size18 er-opacity-80 er-my-8 mb:er-text-2xl mb:er-my-4">
-        <span>
-          Urtopia’s
-          <a class="my-link" href="https://newurtopia.com/products/urtopia-carbon-fusion-gt">all-terrain e-bike</a>
-          boasts a powerful 1500W dual motor and a dual battery system with a range of up to 120 miles, effortlessly
-          handling various challenging terrains and enabling riders to explore longer distance.
-        </span>
-      </p>
-    </div>
-    <div>
-      <h3 class="er-text-primary er-m-0 text-size24 mb:er-text-3xl">
-        Step Through eBike – A Comfortable and Accessible Choice
-      </h3>
-      <p class="text-size18 er-opacity-80 er-my-8 mb:er-text-2xl mb:er-my-4">
-        <span>
-          The
-          <a class="my-link" href="https://newurtopia.com/collections/carbon-step-thru-ebikes">low-step e-bike</a>
-          features a design that makes mounting and dismounting effortless, especially suitable for riders of different
-          ages and physical conditions. It shares similar intelligent features and reliable power systems with the city
-          commuter and fitness model, offering a comfortable and convenient riding experience.
-        </span>
-      </p>
-    </div>
-    <div>
-      <h3 class="er-text-primary er-m-0 text-size24 mb:er-text-3xl">
-        Fat Tire Step-Through eBike – The World’s First Carbon Cruiser eBike
-      </h3>
-      <p class="text-size18 er-opacity-80 er-my-8 mb:er-text-2xl mb:er-my-4">
-        <span
-          >This lightweight
-          <a class="my-link" href="https://newurtopia.com/products/urtopia-joy-carbon-fat-tire-ebike"
-            >fat tire electric bicycle</a
+    <div class="er-space-y-12 mb:er-space-y-8">
+      <h2 class="er-m-0 text-size36 mb:er-text-4xl">Urtopia’s Featured Electric Bikes</h2>
+      <div>
+        <h3 class="er-text-primary er-m-0 text-size24 mb:er-text-3xl">
+          City Commuter eBike – Your Ideal Choice for Convenient Fitness
+        </h3>
+        <p class="text-size18 er-opacity-80 er-my-8 mb:er-text-2xl mb:er-my-4">
+          <span>
+            Made entirely of carbon fiber and weighing only 37 pounds, the Urtopia
+            <a class="my-link" href="https://newurtopia.com/collections/lightweight-carbon-commuter-ebikes"
+              >Commuter E-Bike</a
+            >
+            is lightweight and easy to carry, making it perfect for subway connections or high-rise residential areas.
+            With a range of up to 80 miles, you can use it for daily commutes through city streets or weekend fitness
+            rides without having to worry about running out of power.
+          </span>
+        </p>
+      </div>
+      <div>
+        <h3 class="er-text-primary er-m-0 text-size24 mb:er-text-3xl">
+          Foldable eBike – For Efficient Space Utilization and Convenience
+        </h3>
+        <p class="text-size18 er-opacity-80 er-my-8 mb:er-text-2xl mb:er-my-4">
+          <span
+            >The <a class="my-link" href="https://newurtopia.com/products/urtopia-carbon-fold">foldable e-bike</a> stands
+            out with its highly efficient space utilization design, allowing it to be quickly folded for easy storage and
+            transportation. Whether placed in a car trunk or stored in a small indoor space, it's a perfect choice for
+            city commuting and short trips. Weighing just 29 lbs, it’s the world’s lightest e-bike – thanks to its full
+            carbon fiber frame and handlebar. Lightweight for easy carrying, yet incredibly durable for long-lasting
+            performance.</span
           >
-          features a Toray <a class="my-link" href="https://newurtopia.com/pages/carbon-expert">carbon fiber frame</a>,
-          weighing just 50 pounds (approx. 23 kg), and is equipped with all-terrain wide tires, providing excellent
-          stability, grip, and a smooth riding experience on various surfaces. With a strong 330-pound (approx. 150 kg)
-          effective load capacity and sturdy integrated racks (rear rack can carry 60 pounds, front rack can carry 33
-          pounds), it is perfect for loading groceries, gear, or even carrying passengers. The low step-through frame
-          design ensures easy mounting and dismounting, making it particularly suitable for women and elderly riders,
-          while also fitting riders from 4 feet 11 inches to 6 feet 3 inches (approx. 1.50 m to 1.91 m) tall.</span
-        >
-      </p>
-    </div>
-    <div>
-      <h3 class="er-text-primary er-m-0 text-size24 mb:er-text-3xl">Why Choose Urtopia’s Electric Bikes?</h3>
-      <p class="text-size18 er-opacity-80 er-my-8 mb:er-text-2xl mb:er-my-4">
-        <b>- The perfect combination of lightness and high performance:</b> Urtopia electric bikes are made of carbon
-        fiber materials, which makes the race cars extremely lightweight while ensuring durability. Compared with
-        traditional materials, Urtopia carbon fiber electric bikes are lighter and more durable. Lightweight reduces
-        motor load, and high-capacity batteries can extend the range. <br>
-        <br>
-        <b> - Smart features enhance the riding experience:</b> Urtopia’s smart
-        <a href="https://newurtopia.com/pages/carbon-expert" class="my-link">carbon fiber electric bikes</a> are
-        equipped with advanced
-        <a href="https://newurtopia.com/pages/pages-smartest-ebike" class="my-link">smart features</a> to bring
-        convenience, safety and enjoyment to riders. The Urtopia smart e-bikes feature built-in GPS, Bluetooth, 4G, and
-        WiFi. Track your ride, find the bike, and navigate easily with GPS. Sync ride data in-real-time via 4G, update
-        your bike wirelessly (OTA update) with WiFi, and control it remotely or play music through Bluetooth. Customize
-        your ride by adjusting motor power in the app – ride smarter, your way.<br>
-        <br>
-        <b> - Attractive prices for premium ebikes:</b> Urtopia is committed to delivering high-quality carbon fiber
-        eBikes directly to consumers, making premium cycling more accessible. By offering the biggest possible discounts
-        during <a class="my-link" href="https://newurtopia.com/collections/e-bike-sale">seasonal sales</a>, we ensure
-        more riders can experience the agility and smoothness of carbon fiber. Our goal is to redefine carbon fiber
-        eBikes—not luxury ebikes, but as an affordable choice for everyone who’re willing to pay for good things.<br>
-        <br>
-        <b>- Flexible payment methods:</b> Urtopia partners with
-        <a class="my-link" href="https://newurtopia.com/pages/electric-bike-0-apr-financing">Affirm</a> and
-        <a class="my-link" href="https://newurtopia.com/pages/klarnafaq">Klarna</a> to offer flexible Buy Now, Pay Later
-        (BNPL) options, making it easier than ever to own a premium carbon fiber eBike. What sets us apart is our
-        <a class="my-link" href="https://newurtopia.com/pages/electric-bike-0-apr-financing"
-          >exclusive 0% APR financing</a
-        >, allowing riders to spread their payments over up to 24 months with no added interest. Enjoy the freedom of
-        riding now while paying at your own pace—affordable, convenient, and stress-free. <br>
-        <br>
-        Urtopia offers a range of high-quality, high-performance e-bikes. Whether you seek the convenience of urban
-        commuting or the thrill of outdoor adventure, you’ll find a model that meets your needs. Choosing Urtopia
-        e-bikes means choosing an efficient, smart, and eco-friendly way of traveling.
-      </p>
+        </p>
+      </div>
+      <div>
+        <h3 class="er-text-primary er-m-0 text-size24 mb:er-text-3xl">
+          All-Terrain eBike – A Powerful Option for Tackling Complex Terrains
+        </h3>
+        <p class="text-size18 er-opacity-80 er-my-8 mb:er-text-2xl mb:er-my-4">
+          <span>
+            Urtopia’s
+            <a class="my-link" href="https://newurtopia.com/products/urtopia-carbon-fusion-gt">all-terrain e-bike</a>
+            boasts a powerful 1500W dual motor and a dual battery system with a range of up to 120 miles, effortlessly
+            handling various challenging terrains and enabling riders to explore longer distance.
+          </span>
+        </p>
+      </div>
+      <div>
+        <h3 class="er-text-primary er-m-0 text-size24 mb:er-text-3xl">
+          Step Through eBike – A Comfortable and Accessible Choice
+        </h3>
+        <p class="text-size18 er-opacity-80 er-my-8 mb:er-text-2xl mb:er-my-4">
+          <span>
+            The
+            <a class="my-link" href="https://newurtopia.com/collections/carbon-step-thru-ebikes">low-step e-bike</a>
+            features a design that makes mounting and dismounting effortless, especially suitable for riders of different
+            ages and physical conditions. It shares similar intelligent features and reliable power systems with the city
+            commuter and fitness model, offering a comfortable and convenient riding experience.
+          </span>
+        </p>
+      </div>
+      <div>
+        <h3 class="er-text-primary er-m-0 text-size24 mb:er-text-3xl">
+          Fat Tire Step-Through eBike – The World’s First Carbon Cruiser eBike
+        </h3>
+        <p class="text-size18 er-opacity-80 er-my-8 mb:er-text-2xl mb:er-my-4">
+          <span
+            >This lightweight
+            <a class="my-link" href="https://newurtopia.com/products/urtopia-joy-carbon-fat-tire-ebike"
+              >fat tire electric bicycle</a
+            >
+            features a Toray <a class="my-link" href="https://newurtopia.com/pages/carbon-expert">carbon fiber frame</a>,
+            weighing just 50 pounds (approx. 23 kg), and is equipped with all-terrain wide tires, providing excellent
+            stability, grip, and a smooth riding experience on various surfaces. With a strong 330-pound (approx. 150 kg)
+            effective load capacity and sturdy integrated racks (rear rack can carry 60 pounds, front rack can carry 33
+            pounds), it is perfect for loading groceries, gear, or even carrying passengers. The low step-through frame
+            design ensures easy mounting and dismounting, making it particularly suitable for women and elderly riders,
+            while also fitting riders from 4 feet 11 inches to 6 feet 3 inches (approx. 1.50 m to 1.91 m) tall.</span
+          >
+        </p>
+      </div>
+      <div>
+        <h3 class="er-text-primary er-m-0 text-size24 mb:er-text-3xl">Why Choose Urtopia’s Electric Bikes?</h3>
+        <p class="text-size18 er-opacity-80 er-my-8 mb:er-text-2xl mb:er-my-4">
+          <b>- The perfect combination of lightness and high performance:</b> Urtopia electric bikes are made of carbon
+          fiber materials, which makes the race cars extremely lightweight while ensuring durability. Compared with
+          traditional materials, Urtopia carbon fiber electric bikes are lighter and more durable. Lightweight reduces
+          motor load, and high-capacity batteries can extend the range. <br>
+          <br>
+          <b> - Smart features enhance the riding experience:</b> Urtopia’s smart
+          <a href="https://newurtopia.com/pages/carbon-expert" class="my-link">carbon fiber electric bikes</a> are
+          equipped with advanced
+          <a href="https://newurtopia.com/pages/pages-smartest-ebike" class="my-link">smart features</a> to bring
+          convenience, safety and enjoyment to riders. The Urtopia smart e-bikes feature built-in GPS, Bluetooth, 4G, and
+          WiFi. Track your ride, find the bike, and navigate easily with GPS. Sync ride data in-real-time via 4G, update
+          your bike wirelessly (OTA update) with WiFi, and control it remotely or play music through Bluetooth. Customize
+          your ride by adjusting motor power in the app – ride smarter, your way.<br>
+          <br>
+          <b> - Attractive prices for premium ebikes:</b> Urtopia is committed to delivering high-quality carbon fiber
+          eBikes directly to consumers, making premium cycling more accessible. By offering the biggest possible discounts
+          during <a class="my-link" href="https://newurtopia.com/collections/e-bike-sale">seasonal sales</a>, we ensure
+          more riders can experience the agility and smoothness of carbon fiber. Our goal is to redefine carbon fiber
+          eBikes—not luxury ebikes, but as an affordable choice for everyone who’re willing to pay for good things.<br>
+          <br>
+          <b>- Flexible payment methods:</b> Urtopia partners with
+          <a class="my-link" href="https://newurtopia.com/pages/electric-bike-0-apr-financing">Affirm</a> and
+          <a class="my-link" href="https://newurtopia.com/pages/klarnafaq">Klarna</a> to offer flexible Buy Now, Pay Later
+          (BNPL) options, making it easier than ever to own a premium carbon fiber eBike. What sets us apart is our
+          <a class="my-link" href="https://newurtopia.com/pages/electric-bike-0-apr-financing"
+            >exclusive 0% APR financing</a
+          >, allowing riders to spread their payments over up to 24 months with no added interest. Enjoy the freedom of
+          riding now while paying at your own pace—affordable, convenient, and stress-free. <br>
+          <br>
+          Urtopia offers a range of high-quality, high-performance e-bikes. Whether you seek the convenience of urban
+          commuting or the thrill of outdoor adventure, you’ll find a model that meets your needs. Choosing Urtopia
+          e-bikes means choosing an efficient, smart, and eco-friendly way of traveling.
+        </p>
+      </div>
     </div>
   </div>
-</div>
+{% else %}
+  {{ collection.metafields.custom.faqs }}
+{% endif %}
 
 <script type="module">
   if (!global_config.is_mobile) {

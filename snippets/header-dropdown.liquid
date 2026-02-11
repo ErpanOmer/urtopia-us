@@ -100,7 +100,11 @@
             <div class="er-grid er-grid-cols-4 er-gap-x-8 er-gap-y-12 headermb:er-grid-cols-2 headermb:er-gap-y-8 headermb:er-gap-x-4">
               {% for product_item in collections['e-bikes'].metafields.custom.e_bieks_category.value %}
                 <a
-                  href="/collections/e-bikes?category={{ product_item.key }}#filters"
+                  {% if product_item.url %}
+                    href="{{ product_item.url }}?category={{ product_item.key }}#filters"
+                  {% else %}
+                    href="/collections/e-bikes?category={{ product_item.key }}#filters"
+                  {% endif %}
                   class="er-flex er-flex-col er-items-center er-text-center er-justify-start er-relative er-transition"
                 >
                   <div class="er-flex er-rounded-xl er-overflow-hidden">
