@@ -9,37 +9,11 @@
     display: inline-block;
     position: relative;
    }
-
-  #announcement-bar > div span::after {
-    content: "";
-    background: url(https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26542.svg?v=1762424999) center center no-repeat;
-    width: 25px;
-    height: 35px;
-    display: block;
-    position: absolute;
-    right: 0;
-    top: 0;
-    transform: translateX(105%);
-    background-size: 80%;
-  }
-
-  #announcement-bar > div span::before {
-            content: "";
-            background: url(https://cdn.shopify.com/s/files/1/0583/5810/4213/files/77012.svg?v=1762424998) center center no-repeat;
-            width: 25px;
-            height: 35px;
-            display: block;
-            position: absolute;
-            left: 0;
-            top: 0;
-            transform: translateX(-105%);
-                background-position-y: 35%;
- }
 </style>
 
 <div id="announcement-bar" class="er-font-base">
   <div>
-    <span>{{ settings.sale_name }} 👉 <a class="er-button er-button-text er-underline" href="/collections/e-bike-sale" style="color: #E0BD76;">Best Deals of the Year</a></span>
+    <span>{{ settings.sale_name }} <a class="er-button er-button-text er-underline" href="/collections/e-bike-sale" style="color: #E0BD76;">Up to $670 OFF</a></span>
   </div>
   {% comment %} <div>
     <span class="Klarna-logo er-mr-2" style="background-color: rgb(74, 74, 244);">{% render 'icon-affirm' %}</span>

@@ -2388,3 +2388,32 @@ $(document).on('submit', `.footer__newsletter.newsletter-form`, function (event)
 
       return false
   });
+
+// 使用示例
+if (global_config.is_mobile) {
+    waitForElement('#launcher', target => {
+      const patterns = [/\/products\//, /\/pages\/lightweight-ebike-urtopia-carbon-1-pro/]
+      for (const pattern of patterns) {
+        if (pattern.test(window.location.href)) {
+          $('#global2top').css('bottom', '132px');
+          target.style.setProperty('bottom', '75px', 'important');
+          break;
+        }
+      }
+      
+      const iframeDoc = target.contentDocument || target.contentWindow.document;
+      // 在 iframe 内部插入样式
+      const style = iframeDoc.createElement('style');
+      style.textContent = `
+              body div[shape="circle"] {
+                width: 48px;
+                height: 48px;
+              }
+          `;
+      iframeDoc.head.appendChild(style);
+    }, {
+      disconnectOnFound: true,
+      root: document.body, // 监听整个页面
+      debounceTime: 200, // 降低回调触发频率
+    });
+}
