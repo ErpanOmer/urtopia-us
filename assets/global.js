@@ -2163,6 +2163,12 @@ window.addEventListener('load', async () => {
   $(lazyScripts).each(function () {
     task(() => new Promise(resolve => {
       const script = this;
+      const url = new URL(script.src);
+
+      if (url.host === 'static.seel.com') {
+          return resolve();
+      }
+
       script.type = "text/javascript";
       script.async = false;
       script.defer = true;
