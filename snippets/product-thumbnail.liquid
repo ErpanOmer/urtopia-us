@@ -22,7 +22,7 @@
 
 <noscript>
   {%- if media.media_type == 'video' or media.media_type == 'external_video' -%}
-    <span class="product__media-icon motion-reduce quick-add-hidden" style="border: none;"></span>
+    <span class="product__media-icon motion-reduce quick-add-hidden" style="border: none;display: none;"></span>
     <div class="product__media media gradient global-media-settings" style="padding-top: {{ 1 | divided_by: media.preview_image.aspect_ratio | times: 100 }}%;">
       <img
         srcset="{% if media.preview_image.width >= 493 %}{{ media.preview_image | image_url: width: 493 }} 493w,{% endif %}
@@ -75,7 +75,7 @@
 </noscript>
 
 <modal-opener class="product__modal-opener product__modal-opener--{{ media.media_type }} no-js-hidden" data-modal="#ProductModal-{{ modal_id }}">
-  <span class="product__media-icon motion-reduce quick-add-hidden" style="border: none;" aria-hidden="true">
+  <span class="product__media-icon motion-reduce quick-add-hidden" style="border: none;display: none;" aria-hidden="true">
   </span>
 
   <div class="product__media media media--transparent gradient global-media-settings" style="padding-top: {{ 1 | divided_by: media.preview_image.aspect_ratio | times: 100 }}%;">

@@ -1128,7 +1128,7 @@
 }
 {% endschema %}
 
-{% if request.path == '/products/hitch-bike-rack-2-bikes' %}
+{% if  product.handle == 'hitch-bike-rack-2-bikes' %}
   <div class="centeral-content">
     <iframe class="er-aspect-video er-border-none er-mb-48 mb:er-mb-24 er-w-full"
                         src="https://www.youtube.com/embed/-yoT5a7z0MQ?start=0&autoplay=0&loop=0&mute=0&controls=1&enablejsapi=1"
@@ -1136,11 +1136,24 @@
   </div>
 {% endif %}
 
-{% if request.path == '/products/zenith-hud-glasses' %}
+{% if  product.handle == 'zenith-hud-glasses' %}
   <div class="centeral-content">
     <iframe class="er-aspect-video er-border-none er-mb-48 mb:er-mb-24 er-w-full"
                         src="https://www.youtube.com/embed/queeMO_uZkw?start=0&autoplay=0&loop=0&mute=0&controls=1&enablejsapi=1"
                         allowfullscreen title="Hitch Bike Rack" loading="lazy"></iframe>
+  </div>
+{% endif %}
+
+{% if product.handle == "e-wagon-air" %}
+  <div class="centeral-content mb:er-px-0 er-pb-48 mb:er-pb-24">
+    {% render 'image', mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1_936dd50f-709a-4687-8730-bf7c630768e8.png?v=1770891810", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1_f587ba27-1240-4cb0-9261-7a2d67f29efb.png?v=1770891514" %}
+    {% render 'image', mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2_f97c1d0e-deb2-48b6-aa08-acb3959ccad4.png?v=1770891811", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2_91544de2-6073-47d2-8dea-f5b0ca44054b.png?v=1770891515" %}
+    {% render 'image', mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3_45f314cd-88a2-454b-8dbb-dc70c2d7d5c4.png?v=1770891811", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3_46e9e802-2bd2-477c-9fab-088ce00fb45f.png?v=1770891515" %}
+    {% render 'image', mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/4_4a2659d3-4dad-41b9-8480-5030e265f516.png?v=1770891811", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/4_4613b733-d1f7-4b4a-b26d-36de7f0e2348.png?v=1770891514" %}
+    {% render 'image', mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/5_a505db15-5372-4288-b832-9015da059128.png?v=1770891811", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/5_900448b9-6274-4732-ba25-7dbbfce75392.png?v=1770891514" %}
+    {% render 'image', mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/6_b2adefba-d6e0-40bf-9e89-023d0831246b.png?v=1770891811", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/6_893f7648-ecaa-4ee3-b299-5116e982bd01.png?v=1770891514" %}
+    {% render 'image', mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/7_e51b25df-4aea-4e33-bdf7-1637591283a7.png?v=1770891810", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/7_7627ee7d-7ad4-4864-9cfa-6a82e4695880.png?v=1770891513" %}
+    {% render 'image', mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/8_26733e24-8f3c-4049-a6c6-3e4ed5222d30.png?v=1770891811", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/8.png?v=1770891514" %}
   </div>
 {% endif %}
                     
