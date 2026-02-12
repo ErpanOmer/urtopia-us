@@ -217,14 +217,14 @@
         "disabled": false,
         "settings": {}
       },
-      "7872257831342662540": {
-        "type": "shopify:\/\/apps\/worry-free-purchase\/blocks\/index\/c61a403d-127f-4a83-aa2d-dd891cc35fd1",
-        "disabled": false,
-        "settings": {}
-      },
       "11945366711752539959": {
         "type": "shopify:\/\/apps\/zendesk\/blocks\/zendesk_web_widget\/c0b417b1-b90b-4754-baaf-f55627e6acd4",
         "disabled": true,
+        "settings": {}
+      },
+      "7872257831342662540": {
+        "type": "shopify:\/\/apps\/worry-free-purchase\/blocks\/index\/c61a403d-127f-4a83-aa2d-dd891cc35fd1",
+        "disabled": false,
         "settings": {}
       }
     }
