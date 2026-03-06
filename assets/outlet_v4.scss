@@ -239,6 +239,12 @@ h4 {
             }
         }
 
+        &[data-stye="Urtopia Orange"] {
+            &::after {
+                background-color: #FD4B17;
+            }
+        }
+
       &[data-stye="Rose Red"] {
             &::after {
                 background-color: #FA003F;
@@ -445,6 +451,14 @@ h4 {
 
             &::after {
                 background-color: #6a6a6a;
+            }
+      }
+
+      &[data-stye="Urtopia Orange"] {
+        border-color: #FD4B17;
+        
+            &::after {
+                background-color: #FD4B17;
             }
       }
     }

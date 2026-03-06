@@ -1,0 +1,509 @@
+{{ 'carbon-fold-product.scss.css' | asset_url | stylesheet_tag: preload: true }}
+{{ 'outlet_v4.scss.css' | asset_url | stylesheet_tag: preload: true }}
+<style>
+  fieldset[option=Color] label[data-style="Glacier Blue"] {
+    --product-option-color: #9ec0d1;
+  }
+
+  fieldset[option=Color] label[data-style="Urtopia Orange"] {
+    --product-option-color: #FD4B17;
+  }
+
+   h1, h2, h3, h4 {
+    color: inherit;
+    margin: 0;
+    display: block;
+  }
+
+  .TakeItEasywithFold1 .centeral-content .items>div{
+    aspect-ratio:unset;
+  }
+
+.swiper-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2; 
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+  }
+</style>
+{% render 'product-panel', swiper_insert_index: 1, product_send_accessories_price: 29600 %}
+{% comment %} <div class="er-bg-background er-py-32 mb:er-py-16">
+    <div class="centeral-content mb:er-px-6">
+        <h2 class="text-size36 mb:er-text-4xl er-text-left er-w-full">Professional Reviews</h2>
+        <div class="er-grid xl:er-grid-cols-4 lg:er-grid-cols-3 md:er-grid-cols-2 er-grid-cols-1 er-mt-16 mb:er-mt-10 er-gap-y-16 er-gap-x-6 mb:er-overflow-x-scroll mb:er-flex mb:er-pb-8">
+            {%- for item in product.metafields.custom.review_list.value -%}
+                <div class="er-flex er-flex-col er-items-start er-cursor-pointer mb:er-min-w-[75vw]"
+                        onclick="showVideoDialog('https://www.youtube.com/embed/{{ item.youtube_id }}?autoplay=1&amp;cc_load_policy=1');return false;">
+                        {{ item.review_cover | image_url: width: 500 | image_tag: class: 'er-rounded-2xl mb:er-rounded-xl', loading: 'lazy' }}
+                        <p class="text-size16 er-mt-6 er-mb-8 mb:er-text-2xl mb:er-mb-6">
+                            <span>
+                                {{ item.review_desc }}
+                            </span>
+                        </p>
+                        <span class="er-flex-1"></span>
+                        <div class="er-flex er-items-center">
+                            {{ item.review_auther_cover | image_url: width: 30, height: 30 | image_tag: class: 'er-mr-4 er-rounded-full', loading: 'lazy' }}
+                            <span class="text-size16 er-font-medium mb:er-text-2xl">{{ item.review_auther_name }}</span>
+                        </div>
+                    </div>
+            {%- endfor -%}
+        </div>
+    </div>
+</div> {% endcomment %}
+<section
+    class="er-bg-black er-text-white er-aspect-[1920/600] mb:er-aspect-auto background-image mb:er-bg-background-warm mb:er-text-black" style="transform: translateY(1px);">
+      <video playsinline loop autoplay muted class="mb:!er-object-contain mb:!er-object-top lozad">
+        <source data-src="https://cdn.shopify.com/videos/c/o/v/0fe713d6c82e47c6aa0b554146e280df.mp4" type="video/mp4"
+            media="(min-width: 768px)">
+        <source data-src="https://cdn.shopify.com/videos/c/o/v/8bc4bda77cfa4047a6cbed933f2df840.mp4" type="video/mp4"
+            media="(max-width: 767px)">
+      </video>
+    <div class="background-mask mb:er-hidden" style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%);"></div>
+    <div
+        class="centeral-content er-h-full er-flex er-flex-col er-justify-center er-items-start er-text-left mb:er-pb-24 mb:er-px-6">
+        <div class="md:er-hidden er-aspect-[16/15] er-w-full"></div>
+        <h2 class="text-size36 mb:er-text-4xl">Light. Compact. Remarkable.</h2>
+        <p class="text-size18 er-max-w-3xl er-mt-10 er-mb-28 mb:er-text-2xl mb:er-mb-16">
+            <span>
+                Built with carbon fiber, Fold 2 is 50% lighter than aluminum, easy to carry, compact to store, and beautifully designed to move through your day with ease. </span>
+        </p>
+        <a
+            href="https://www.youtube.com/watch?v=BvTOLXYp8Vo" target="_blank"
+            class="er-button er-button-white mb:er-m-0 mb:[--er-btn-bg-color:theme(colors.dark)] mb:[--er-btn-text-color:theme(colors.white)] mb:er-text-white">Watch
+            video
+            <svg class="er-scale-150 er-translate-x-1/3 er-fill-dark mb:er-fill-white"
+                xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20">
+                <path
+                    d="m380-300 280-180-280-180v360ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+            </svg></a>
+    </div>
+</section>
+<section class="er-bg-background er-pt-64 er-pb-40 mb:er-pt-0 mb:er-pb-16">
+    <div class="centeral-content mb:er-px-6">
+      <div class="er-grid er-grid-cols-3 er-gap-5 mb:er-flex mb:er-flex-col" style="grid-template-rows: repeat(9, minmax(clamp(42px, 2.8vw, 68px), auto));">
+        <img width="850" height="514" class="er-block er-col-span-2 mb:er-col-span-1 er-rounded-2xl" style="grid-row: span 5 / span 5;" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_30_1.png?v=1772617723" loading="lazy" alt="integrated lights"> 
+
+        <article class="er-rounded-2xl er-overflow-hidden er-bg-[#1F1F1F] er-text-white er-p-8 mb:er-p-6 er-text-center mb:er-aspect-[345/200] background-image md:er-mt-12 md:er-translate-y-14 mb:er-order-1" style="grid-row: span 3 / span 3;">
+          <img width="418" height="263" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Rectangle_31_3bb7c39c-1441-45bf-8089-9ee491200c56.jpg?v=1772615431" loading="lazy" alt="integrated lights">
+          <h3 class="text-size30 mb:er-text-4xl er-font-semibold">Space-efficient</h3>
+        </article>
+
+        <article class="er-rounded-2xl er-overflow-hidden er-text-white er-p-8 mb:er-p-6 er-text-center mb:er-aspect-[345/200] background-image md:er-mt-10 md:er-translate-y-4 mb:er-order-1" style="grid-row: span 3 / span 3;">
+          <img width="418" height="263" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Rectangle_8_13a4b627-7a5d-4d7f-81fa-58d03d947dc4.jpg?v=1772615431" loading="lazy" alt="integrated lights">
+          <h3 class="text-size30 mb:er-text-4xl er-font-semibold">Torque Sensor</h3>
+        </article>
+
+        <article class="er-aspect-[850/350] er-box-border er-flex er-flex-col er-text-left er-justify-center er-items-left er-col-span-2 mb:er-col-span-1 er-rounded-2xl er-overflow-hidden er-text-white md:er-pl-28 mb:er-p-6 mb:er-aspect-[345/200] background-image" style="grid-row: span 4 / span 4;">
+          <img width="850" height="350" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Rectangle_30.jpg?v=1772615302" loading="lazy" alt="integrated lights">
+          <p class="text-18 mb:er-text-2xl er-font-medium">Up to</p>
+          <h3 class="text-size90 mb:er-text-7xl er-font-semibold er-mt-2 mb:er-mt-1">90 Miles</h3>
+          <p class="text-size24 mb:er-text-2xl er-font-medium er-mt-6 mb:er-mt-4">Dual Battery (45 + 45 mi)</p>
+        </article>
+
+        <article class="er-rounded-2xl er-overflow-hidden er-text-white er-p-8 mb:er-p-6 er-text-center mb:er-aspect-[345/200] background-image md:er-mt-4 mb:er-order-1" style="grid-row: span 3 / span 3;">
+          <img width="418" height="263" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/92b8d6a675411b07ec7e7e53a0c8b8c7_2e0dca7f-ea10-48dc-a8f0-167477010088.jpg?v=1772615431" loading="lazy" alt="integrated lights">
+          <h3 class="text-size30 mb:er-text-4xl er-font-semibold">Integrated Lights</h3>
+        </article>
+      </div>
+    </div>
+</section>
+    <section class="er-bg-background er-pt-16 er-pb-56 mb:er-pt-12 mb:er-pb-36">
+    <h2 class="text-size36 er-text-center er-w-full er-mb-32 mb:er-text-4xl mb:er-mb-16">Why Carbon Fiber Is Worth It?</h2>
+    <section
+        class="er-mx-auto er-max-w-[768px] er-grid er-grid-cols-3 er-rounded-2xl er-shadow-sm er-text-white mb:er-grid-cols-[1fr_1.5fr_1.5fr] mb:er-rounded-none">
+        <div class="er-pl-6 er-flex er-flex-col er-justify-end er-rounded-l-2xl er-pb-6 mb:er-pl-4 mb:er-pb-4 mb:er-rounded-none"
+            style="background-color: #005AA8;">
+            <div class="er-flex er-items-end er-py-6 er-px-4 mb:er-pr-4 mb:er-pl-0 mb:er-py-3">
+                <b class="text-size20 mb:er-text-2xl er-font-bold">Advantages</b>
+            </div>
+            <div
+                class="er-flex er-flex-col er-justify-center er-items-start er-text-left er-border-0 er-border-t er-border-solid er-border-t-white/25 er-h-28 mb:er-h-20 er-px-4 mb:er-px-2 mb:er-pl-0">
+                <b class="text-size18 mb:er-text-base er-font-medium">45% lighter</b>
+                <span class="text-size14 mb:er-text-sm">(same geometry)</span>
+            </div>
+            <div
+                class="er-flex er-flex-col er-justify-center er-items-start er-text-left er-border-0 er-border-t er-border-solid er-border-t-white/25 er-h-28 mb:er-h-20 er-px-4 mb:er-px-2 mb:er-pl-0">
+                <b class="text-size18 mb:er-text-base er-font-medium">35× higher</b>
+                <span class="text-size14 mb:er-text-sm">tensile strength</span>
+            </div>
+            <div
+                class="er-flex er-flex-col er-justify-center er-items-start er-text-left er-border-0 er-border-t er-border-solid er-border-t-white/25 er-h-28 mb:er-h-20 er-px-4 mb:er-px-2 mb:er-pl-0">
+                <b class="text-size18 mb:er-text-base er-font-medium">3× stiffer</b>
+                <span class="text-size14 mb:er-text-sm"></span>
+            </div>
+            <div
+                class="er-flex er-flex-col er-justify-center er-items-start er-text-left er-border-0 er-border-t er-border-solid er-border-t-white/25 er-h-28 mb:er-h-20 er-px-4 mb:er-px-2 mb:er-pl-0">
+                <b class="text-size18 mb:er-text-base er-font-medium">Greater</b>
+                <span class="text-size14 mb:er-text-sm">design freedom</span>
+            </div>
+            <div
+                class="er-flex er-flex-col er-justify-center er-items-start er-text-left er-border-0 er-border-t er-border-solid er-border-t-white/25 er-h-28 mb:er-h-20 er-px-4 mb:er-px-2 mb:er-pl-0">
+                <b class="text-size18 mb:er-text-base er-font-medium">Lighter</b>
+                <span class="text-size14 mb:er-text-sm">more joyful ride</span>
+            </div>
+            <div
+                class="er-flex er-flex-col er-justify-center er-items-start er-text-left er-border-0 er-border-t er-border-solid er-border-t-white/25 er-h-28 mb:er-h-20 er-px-4 mb:er-px-2 mb:er-pl-0">
+                <b class="text-size18 mb:er-text-base er-font-medium">More comfortable</b>
+                <span class="text-size14 mb:er-text-sm"> on long rides</span>
+            </div>
+            <div
+                class="er-flex er-flex-col er-justify-center er-items-start er-text-left er-border-0 er-border-t er-border-solid er-border-t-white/25 er-h-28 mb:er-h-20 er-px-4 mb:er-px-2 mb:er-pl-0">
+                <b class="text-size18 mb:er-text-base er-font-medium">Longer lifespan</b>
+                <span class="text-size14 mb:er-text-sm">& better value</span>
+            </div>
+        </div>
+        <div class="er-flex er-flex-col er-justify-end er-bg-cover er-bg-no-repeat er-bg-top er-mt-[-25px] er-mb-[-25px] mb:er-mt-[-15px] mb:er-mb-[-15px] er-rounded-2xl er-overflow-hidden er-shadow-sm er-pb-16 mb:er-pb-10"
+            style="background-color: rgb(18, 108, 185);">
+            <div class="er-flex er-items-end er-py-6 mb:er-py-3 er-px-7 mb:er-px-3 er-aspect-[6/5] er-bg-cover er-bg-top er-bg-no-repeat"
+                style="background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/3_a022611d-4635-4119-8fb8-1fd37939c4e5.jpg?v=1772622205');">
+                <b class="text-size20 mb:er-text-2xl er-font-bold">Carbon Fiber</b>
+            </div>
+            <div
+                class="er-h-28 mb:er-h-20 er-flex er-items-center text-size16 mb:er-text-sm er-font-medium er-border-0 er-border-t er-border-solid er-border-t-white/25 er-px-7 mb:er-px-3">
+                ～1.5g/cm³</div>
+            <div
+                class="er-h-28 mb:er-h-20 er-flex er-items-center text-size16 mb:er-text-sm er-font-medium er-border-0 er-border-t er-border-solid er-border-t-white/25 er-px-7 mb:er-px-3">
+                ～7000MPa</div>
+            <div
+                class="er-h-28 mb:er-h-20 er-flex er-items-center text-size16 mb:er-text-sm er-font-medium er-border-0 er-border-t er-border-solid er-border-t-white/25 er-px-7 mb:er-px-3">
+                ～200GPa</div>
+            <div
+                class="er-h-28 mb:er-h-20 er-flex er-items-center text-size16 mb:er-text-sm er-font-medium er-border-0 er-border-t er-border-solid er-border-t-white/25 er-px-7 mb:er-px-3">
+                Smooth, aerodynamic,<br>flexible forms</div>
+            <div
+                class="er-h-28 mb:er-h-20 er-flex er-items-center text-size16 mb:er-text-sm er-font-medium er-border-0 er-border-t er-border-solid er-border-t-white/25 er-px-7 mb:er-px-3">
+                Agile, easy to<br>maintain speed</div>
+            <div
+                class="er-h-28 mb:er-h-20 er-flex er-items-center text-size16 mb:er-text-sm er-font-medium er-border-0 er-border-t er-border-solid er-border-t-white/25 er-px-7 mb:er-px-3">
+                Absorb and<br>dissipate vibration</div>
+            <div
+                class="er-h-28 mb:er-h-20 er-flex er-items-center text-size16 mb:er-text-sm er-font-medium er-border-0 er-border-t er-border-solid er-border-t-white/25 er-px-7 mb:er-px-3">
+                Resistant to fatigue</div>
+        </div>
+        <div
+            class="er-flex er-flex-col er-justify-end er-bg-dark er-rounded-r-2xl er-pb-6 mb:er-pb-4 mb:er-rounded-none">
+            <div class="er-flex er-items-end er-py-6 mb:er-py-3 er-px-4 mb:er-px-0 er-flex-1 er-bg-cover er-bg-top er-bg-no-repeat er-rounded-tr-2xl er-relative"
+                style="background-image: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250523-145513.jpg?v=1747983325');">
+                <b class="text-size20 mb:er-text-xl er-font-bold er-pl-24 mb:er-pl-14 mb:er-whitespace-nowrap">Aluminum Alloy</b>
+                <i
+                    class="text-size72 er-absolute er-left-0 er-top-1/3 er-tracking-wide er-translate-x-[-50%] mb:er-text-5xl" style="filter: drop-shadow(0 0 10px #0000005A);">V.<span
+                        style="color: #128FFF;">S.</span></i>
+            </div>
+            <div
+                class="er-h-28 mb:er-h-20 er-flex er-items-center text-size16 mb:er-text-sm er-font-medium er-border-0 er-border-t er-border-solid er-border-t-white/15 er-ml-[-50px] mb:er-ml-[-33px]">
+                <span
+                    class="text-size12 mb:er-text-sm er-block er-bg-white er-text-dark er-w-40 er-min-w-40 mb:mb:er-min-w-24  mb:er-w-24 er-text-center er-py-4 mb:er-py-2 er-rounded-full er-mr-8 mb:er-mr-4 mb:er-px-1">Weight</span><span>～2.7g/cm³</span>
+            </div>
+            <div
+                class="er-h-28 mb:er-h-20 er-flex er-items-center text-size16 mb:er-text-sm er-font-medium er-border-0 er-border-t er-border-solid er-border-t-white/15 er-ml-[-50px] mb:er-ml-[-33px]">
+                <span
+                    class="text-size12 mb:er-text-sm er-block er-bg-white er-text-dark er-w-40 er-min-w-40 mb:mb:er-min-w-24  mb:er-w-24 er-text-center er-py-4 mb:er-py-2 er-rounded-full er-mr-8 mb:er-mr-4 mb:er-px-1">Strength</span><span>～200MPa</span>
+            </div>
+            <div
+                class="er-h-28 mb:er-h-20 er-flex er-items-center text-size16 mb:er-text-sm er-font-medium er-border-0 er-border-t er-border-solid er-border-t-white/15 er-ml-[-50px] mb:er-ml-[-33px]">
+                <span
+                    class="text-size12 mb:er-text-sm er-block er-bg-white er-text-dark er-w-40 er-min-w-40 mb:mb:er-min-w-24  mb:er-w-24 er-text-center er-py-4 mb:er-py-2 er-rounded-full er-mr-8 mb:er-mr-4 mb:er-px-1">Stiffness</span><span>～70GPa</span>
+            </div>
+            <div
+                class="er-h-28 mb:er-h-20 er-flex er-items-center text-size16 mb:er-text-sm er-font-medium er-border-0 er-border-t er-border-solid er-border-t-white/15 er-ml-[-50px] mb:er-ml-[-33px]">
+                <span
+                    class="text-size12 mb:er-text-sm er-block er-bg-white er-text-dark er-w-40 er-min-w-40 mb:mb:er-min-w-24  mb:er-w-24 er-text-center er-py-4 mb:er-py-2 er-rounded-full er-mr-8 mb:er-mr-4 mb:er-px-1">Design</span><span>Welded
+                    joints, limited shapes, visible welds</span>
+            </div>
+            <div
+                class="er-h-28 mb:er-h-20 er-flex er-items-center text-size16 mb:er-text-sm er-font-medium er-border-0 er-border-t er-border-solid er-border-t-white/15 er-ml-[-50px] mb:er-ml-[-33px]">
+                <span
+                    class="text-size12 mb:er-text-sm er-block er-bg-white er-text-dark er-w-40 er-min-w-40 mb:mb:er-min-w-24  mb:er-w-24 er-text-center er-py-4 mb:er-py-2 er-rounded-full er-mr-8 mb:er-mr-4 mb:er-px-1">Ride
+                    quality</span><span>Heavier, harder to maneuver</span>
+            </div>
+            <div
+                class="er-h-28 mb:er-h-20 er-flex er-items-center text-size16 mb:er-text-sm er-font-medium er-border-0 er-border-t er-border-solid er-border-t-white/15 er-ml-[-50px] mb:er-ml-[-33px]">
+                <span
+                    class="text-size12 mb:er-text-sm er-block er-bg-white er-text-dark er-w-40 er-min-w-40 mb:mb:er-min-w-24  mb:er-w-24 er-text-center er-py-4 mb:er-py-2 er-rounded-full er-mr-8 mb:er-mr-4 mb:er-px-1">Comfortability</span><span>Transfers
+                    vibration rigidly</span>
+            </div>
+            <div
+                class="er-h-28 mb:er-h-20 er-flex er-items-center text-size16 mb:er-text-sm er-font-medium er-border-0 er-border-t er-border-solid er-border-t-white/15 er-ml-[-50px] mb:er-ml-[-33px]">
+                <span
+                    class="text-size12 mb:er-text-sm er-block er-bg-white er-text-dark er-w-40 er-min-w-40 mb:mb:er-min-w-24  mb:er-w-24 er-text-center er-py-4 mb:er-py-2 er-rounded-full er-mr-8 mb:er-mr-4 mb:er-px-1">Durability</span><span>Prone
+                    to fatigue &<br>welding degradation</span>
+            </div>
+        </div>
+    </section>
+</section>
+<section class="er-pb-56 mb:er-py-20">
+        <div class="quality TakeItEasywithFold1">
+        <div class="centeral-content mb:er-px-6">
+            <h2 class="text-size36 mb:er-text-4xl mb:er-leading-snug er-mb-3 mb:er-mb-0">Fold it. Stow it. Ride anywhere.</h2>
+            <div class="items swiper-wrapper er-mt-16 mb:er-mt-8">
+            <div class="swiper-slide er-rounded-2xl er-overflow-hidden">
+                <img
+                loading="lazy" width="551" height="400" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2025.11_-_Urtopia_Joy_2-063_1.jpg?v=1772677172&width=700"
+                alt="{{ page_description }}"
+                >
+            </div>
+            <div class="swiper-slide er-rounded-2xl er-overflow-hidden">
+                <img
+                loading="lazy" width="551" height="400" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2025.11_-_Urtopia_Joy_2-102.jpg?v=1772677172&width=700"
+                alt="{{ page_description }}"
+                >
+            </div>
+             <div class="swiper-slide er-rounded-2xl er-overflow-hidden">
+                <img
+                loading="lazy" width="551" height="400" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2025.11_-_Urtopia_Joy_2-122.jpg?v=1772677172&width=700"
+                alt="{{ page_description }}"
+                >
+            </div>
+            <div class="swiper-slide er-rounded-2xl er-overflow-hidden">
+                <img loading="lazy" width="551" height="400" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2025.11_-_Urtopia_Joy_2-027.jpg?v=1772677172&width=700" alt="{{ page_description }}">
+            </div>
+            <div class="swiper-slide er-rounded-2xl er-overflow-hidden">
+                <img
+                loading="lazy" width="551" height="400" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2025.11_-_Urtopia_Joy_2-063.jpg?v=1772677173&width=700"
+                alt="{{ page_description }}"
+                >
+            </div>
+            <div class="swiper-slide er-rounded-2xl er-overflow-hidden">
+                <img
+                loading="lazy" width="551" height="400" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2025.11_-_Urtopia_Joy_2-069.jpg?v=1772677172&width=700"
+                alt="{{ page_description }}"
+                >
+            </div>
+            <div class="swiper-slide er-rounded-2xl er-overflow-hidden">
+                <img
+                loading="lazy" width="551" height="400" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2025.11_-_Urtopia_Joy_2-081.jpg?v=1772677171&width=700"
+                alt="{{ page_description }}"
+                >
+            </div>
+            <div class="swiper-slide er-rounded-2xl er-overflow-hidden">
+                <img
+                loading="lazy" width="551" height="400" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2025.11_-_Urtopia_Joy_2-099.jpg?v=1772677172&width=700"
+                alt="{{ page_description }}"
+                >
+            </div>
+            <div class="swiper-slide er-rounded-2xl er-overflow-hidden">
+                <img
+                loading="lazy" width="551" height="400" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2025.11_-_Urtopia_Joy_2-152.jpg?v=1772677393&width=700"
+                alt="{{ page_description }}"
+                >
+            </div>
+            </div>
+            <div class="swiper-scrollbar"></div>
+            <div class="buttons mobileHide">
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            </div>
+        </div>
+        </div>
+    </section>
+  <section class="er-bg-background er-py-48 mb:er-py-20">
+  <div class="centeral-content mb:er-px-6">
+        <h2 class="text-size36 mb:er-text-4xl er-m-0">Quality in details</h2>
+        <div class="er-mt-10 quality_in_details er-relative er-overflow-x-hidden er-pb-40 mb:er-pb-16" style="--swiper-navigation-size: 27px; --swiper-navigation-color:#fff;">
+            <div class="swiper-wrapper">
+                {% for item in product.metafields.custom.quality_in_details.value %}
+                    {% assign text = item.text | split: "---" %}
+                    <div class="swiper-slide er-flex er-flex-col">
+                        {{ item.image | image_url: width: 500 |  image_tag: loading: 'lazy', class: "er-rounded-3xl" }}
+                        <h3 class="text-size20 er-my-6 er-font-bold er-text-3xl">{{ text.first }}</h3>
+                        <p class="text-size18 er-opacity-80 mb:er-text-[16px] er-max-w-2xl">
+                            <span>{{ text.last }}</span>
+                        </p>
+                    </div>
+                    
+                {% endfor %}  
+            </div>
+            <div class="swiper-scrollbar er-bg-opacity-10 !er-w-full !er-left-0"></div>
+            <div class="swiper-button-prev er-bottom-12 er-right-[60px] er-left-auto er-top-auto er-bg-dark er-rounded-full er-p-8 after:er-text-3xl mb:er-hidden er-z-2 er-box-border"></div>
+            <div class="swiper-button-next er-bottom-12 er-right-0 er-left-auto er-top-auto er-bg-dark er-rounded-full er-p-8 after:er-text-3xl mb:er-hidden er-z-2 er-box-border"></div>
+        </div>
+    </div>
+</section>
+<section class="er-aspect-[1920/750] mb:er-aspect-auto background-image er-bg-background">
+        <video playsinline loop autoplay muted class="mb:!er-object-contain mb:!er-object-top lozad">
+            <source data-src="https://cdn.shopify.com/videos/c/o/v/ee595e6e3468464ab6b26dc4fc491aca.mp4" type="video/mp4"
+                media="(min-width: 768px)">
+            <source data-src="https://cdn.shopify.com/videos/c/o/v/201f9a983a4b4bf9a668c911483da42d.mp4" type="video/mp4"
+                media="(max-width: 767px)">
+        </video>
+        <div
+            class="centeral-content er-h-full er-flex er-flex-col er-justify-center er-items-start er-text-left mb:er-pb-20 mb:er-px-6">
+            <div class="md:er-hidden er-aspect-[16/15] er-w-full"></div>
+            <h2 class="text-size36 mb:er-text-4xl mb:er-leading-snug">A bike, cargo, and more!</h2>
+            <p class="text-size18 er-max-w-3xl er-mt-10 mb:er-text-2xl">
+                <span>This versatile folding e-bike adapts to your daily life. Add accessories for kids, cargo, pets, or leisure — whether commuting, running errands, or exploring, it makes every ride simple and convenient.</span>
+            </p>
+        </div>
+    </section>
+        <section class="er-bg-background md:er-pt-56">
+      <div class="centeral-content mb:er-px-6">
+        <div class="er-grid er-grid-cols-2 mb:er-grid-cols-1">
+          <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2025-10-18_16.38.01_2x_effe36e7-762b-4328-bf21-56a95bd3a73a.jpg?v=1761553347" loading="lazy" alt="">
+          <div class="er-bg-white er-flex er-flex-col er-justify-center er-px-28 mb:er-px-6 mb:er-py-12">
+            <h3 class="text-size36 mb:er-text-4xl">It’s Time to Give It a Spin!</h3>
+            <p class="text-size18 er-mt-12 er-mb-20 mb:er-text-2xl mb:er-my-8">
+              <span>
+                Experience the ride in person — with over {{ settings.shop_count }} service partners across the U.S., you can enjoy a professional test ride and discover the Urtopia difference for yourself.
+              </span>
+            </p>
+            <a class="er-button er-button-dark" href="https://newurtopia.com/pages/find-a-dealer">Test ride</a>
+          </div>
+          <div class="er-bg-white er-flex er-flex-col er-justify-center er-px-28 mb:er-px-6 mb:er-py-12 mb:er-order-1">
+            <h3 class="text-size36 mb:er-text-4xl">Local Care, Anytime</h3>
+            <div class="text-size18 er-my-12 mb:er-text-2xl mb:er-my-8">
+              <div>Enjoy complete peace of mind with Urtopia’s trusted service network:</div>
+              <ul class="er-p-0 er-list-none er-space-y-10 mb:er-space-y-8">
+                <li class="marker:er-hidden er-flex er-items-center">
+                  <img class="er-block er-mr-6" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26153.svg?v=1761559856" loading="lazy" alt="">
+                  <span>2-year warranty on all e-bikes</span>
+                </li>
+               <li class="marker:er-hidden er-flex er-items-center">
+                  <img class="er-block er-mr-6" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26152.svg?v=1761559856" loading="lazy" alt="">
+                  <span>24-hour service response via our in-app support portal</span>
+                </li>
+                <li class="marker:er-hidden er-flex er-items-center">
+                  <img class="er-block er-mr-6" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26154.svg?v=1761559856" loading="lazy" alt="">
+                  <span>Spare parts available locally, shipping within 3 days</span>
+                </li>
+                <li class="marker:er-hidden er-flex er-items-center">
+                  <img class="er-block er-mr-6" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/76863.svg?v=1761559856" loading="lazy" alt="">
+                  <span>10+ technical experts with a 99% satisfaction rate</span>
+                </li>
+              </ul>
+            </div>
+            <a class="er-button er-button-dark" href="https://newurtopia.com/pages/care">Learn more</a>
+          </div>
+          <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC00386_1_2x_a0c03d87-7030-4065-aa68-9be927e0d927.jpg?v=1761553352" loading="lazy" alt="">
+        </div>
+      </div>
+    </section>
+    <div class="faq er-bg-background er-py-48 mb:er-py-20" style="display: none;">
+        <div class="centeral-content">
+          <h2 class="u36Medium_v2">FAQs</h2>
+          <div class="items">
+            <div class="item">
+              <h3 class="u24Medium_v2 text-size24">
+                <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="{{ page_title }}">
+                1. How durable is the carbon frame of the Carbon Fold 2?
+              </h3>
+              <p class="u17Light_v2 text-size18">
+                <span>The Carbon Fold 2 uses high-quality Toray T700/T800 carbon fibers and EPS molding technology. This creates a lightweight, strong, and impact-resistant frame with a seamless interior, eliminating stress points and enhancing durability. The result is a precisely constructed frame, as reliable as the best race bikes.</span>
+            </p>
+            </div>
+            <div class="item">
+              <h3 class="u24Medium_v2 text-size24">
+                <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="{{ page_title }}">
+                2. Why does the Carbon Fold 2 use a hub motor instead of a mid-drive motor?
+              </h3>
+              <p class="u17Light_v2 text-size18">
+                <span>Hub motors are lighter, smoother, and more responsive, making them ideal for city and gravel roads. Mid-drive motors, while better for steep climbs, tend to be heavier, noisier, and more complex. The Carbon Joy Ultra, designed for urban and gravel environments, features a hub motor for agile riding experience. For those looking to conquer steep climbs, our Fusion model is available.</span>
+              </p>
+            </div>
+            <div class="item">
+              <h3 class="u24Medium_v2 text-size24">
+                <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="{{ page_title }}">
+                3. Is the handlebar adjustable?
+              </h3>
+              <p class="u17Light_v2 text-size18">
+                <span>
+                    Yes, this bike comes with a 60° adujstable handlbar that allows the rider to achieve desired riding position.
+                </span>
+              </p>
+            </div>
+            <div class="item">
+              <h3 class="u24Medium_v2 text-size24">
+                <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="{{ page_title }}">
+               4. Is the Carbon Fold 2 suitable for different weather conditions?
+              </h3>
+              <p class="u17Light_v2 text-size18">
+                <span>Yes, the Carbon Fold 2 is designed to perform well in various weather conditions. It is IP65 rated for dust and water resistance, ensuring protection against rain and splashes. Additionally, it can accommodate tires up to 45c in width, providing excellent stability and traction on wet or uneven surfaces. Whether you’re riding in rain, dust, or on rough terrain, the Carbon 1 Pro is built to handle it all.</span>
+              </p>
+            </div>
+            <div class="item">
+              <h3 class="u24Medium_v2 text-size24">
+                <img loading="lazy" width="25" height="16" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Untitled-1.svg?v=1738911832" alt="{{ page_title }}">
+               5. What is the display on Carbon Fold 2
+              </h3>
+              <p class="u17Light_v2 text-size18">
+                <span>Carbon Fold 2 comes with a bright LCD display that shows speed, battery and assist mode. It also comes with a USB-C port to charge your phone during a ride</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+{% render 'size-guide-and-specs-template' %}
+<div class="centeral-content er-px-6 judgemeeeeee">{% include "judgeme_widgets", widget_type: "judgeme_review_widget", concierge_install: false %}</div>
+<script type="module">
+  task(() => {
+        new Swiper('.TakeItEasywithFold1 .centeral-content', {
+            slidesPerView: global_config.is_mobile ? 1.25 : 3,
+            spaceBetween: global_config.is_mobile ? 16 : 32,
+            preloadImages: false,
+            navigation: {
+              nextEl: '.TakeItEasywithFold1 .centeral-content .swiper-button-next',
+              prevEl: '.TakeItEasywithFold1 .centeral-content .swiper-button-prev',
+            },
+            scrollbar: {
+              el: '.TakeItEasywithFold1 .centeral-content .swiper-scrollbar',
+              draggable: true
+            },
+          });
+      })
+
+      task(() => {
+              new Swiper('.quality_in_details', {
+                  slidesPerView: global_config.is_mobile ? 1.25 : 3,
+                  spaceBetween: global_config.is_mobile ? 16 : 32,
+                  preloadImages: false,
+                  navigation: {
+                      nextEl: '.quality_in_details .swiper-button-next',
+                      prevEl: '.quality_in_details .swiper-button-prev',
+                  },
+                  scrollbar: {
+                      el: '.quality_in_details .swiper-scrollbar',
+                      draggable: true
+                  },
+              });
+    })
+
+    task(() => {
+            $('.faq .items .item .u24Medium_v2').click(function () {
+            $(this).siblings('.u17Light_v2').slideToggle().parent().siblings().find('.u17Light_v2').slideUp();
+
+            if ($(this).parent().hasClass('active')) {
+              $(this).parent().removeClass('active');
+            } else {
+              $(this).parent().addClass('active');
+            }
+
+            $(this).parent().siblings().removeClass('active');
+          });
+    })
+
+          window.addEventListener('load', function () {
+            const img = $(`<img class="er-absolute er-top-0 er-z-[2] er-transition er-opacity-100 mb:er-max-w-20 md:er-right-0 mb:er-left-0" width="70" height="104" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250211-151856.png?v=1739258383&width=100" alt="{{ product.title }}"/>`);
+
+            $(".product-panel-swiper .swiper-wrapper").before(img);
+
+            window.product_panel_swiper.on('slideChange', function () {
+                img.css('opacity', this.realIndex > 0 ? 0 : 1);
+            })
+        })
+
+        task(() => {
+          const video_img = $(`<img class="swiper-video er-transition" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/yt_icon_rgb.png?v=1743577722&width=80">`);
+
+          $(".product-panel-swiper .swiper-wrapper").before(video_img);
+
+          video_img.click(function () {
+              showVideoDialog('https://www.youtube.com/embed/-Jj48ROzcqI?autoplay=1&cc_load_policy=1')
+          });
+
+          window.product_panel_swiper.on('slideChange', function () {
+                video_img.css('opacity', this.realIndex === 1 ? 1 : 0);
+          })
+        })
+</script>

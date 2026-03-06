@@ -3,23 +3,23 @@
 <h1 class="er-sr-only">{{ page_title }}</h1>
 
 <div class="bannerrrrrr background-image er-bg-dark">
-  {% render 'image', class: "mb:!er-object-bottom mb:!er-object-contain", first_screen: true, src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_group_f2d98827-659a-4642-98da-2d5d40dab991.jpg?v=1771140492', mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Rectangle_4.jpg?v=1771140492" %}
+  {% render 'image', class: "mb:!er-object-bottom mb:!er-object-contain", first_screen: true, src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1_1_1.jpg?v=1772765025', mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2_1.jpg?v=1772765025" %}
   <div class="centeral-content">
-    <div class="mb:er-aspect-[375/660] mb:!er-items-center mb:er-text-center mb:!er-justify-start mb:!er-py-0">
+    <div class="mb:er-aspect-[375/710] mb:!er-items-center mb:er-text-center mb:!er-justify-start mb:!er-py-0">
       <span class="text-size24 er-font-medium mb:er-text-3xl mb:er-mt-[7vw]">{{ settings.sale_name }}</span>
       <h2 class="text-size60 er-mt-4 mb:er-text-6xl mb:er-my-6">Up to $670 OFF</h2>
       {% unless settings.hide_sale_countdown -%}
         {% render 'sale' %}
       {%- endunless -%}
-      <a href="https://www.youtube.com/watch?v=LGb0W-i5Dqo" target="_blank" rel="noopener noreferrer" class="mb:er-order-[-1] md:er-max-w-[360px] md:er-flex md:er-p-[3px] md:er-bg-white md:er-rounded-3xl md:er-items-center md:er-justify-center">
+      <div onclick="showVideoDialog('https://www.youtube.com/embed/-Jj48ROzcqI?autoplay=1&cc_load_policy=1')" href="https://www.youtube.com/watch?v=LGb0W-i5Dqo" target="_blank" rel="noopener noreferrer" class="mb:er-order-[-1] md:er-max-w-[360px] md:er-flex md:er-p-[3px] md:er-bg-white md:er-rounded-3xl md:er-items-center md:er-justify-center er-cursor-pointer">
         <img class="md:er-rounded-2xl er-block" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20260130-162029.jpg?v=1769761252" loading="lazy" alt="{{ page_title }}" width="768" height="200">
-      </a>
+      </div>
       <style>
                     .sale {
                         width: 360px;
                         background-color: transparent;
                         overflow: hidden;
-                        margin: 30px 0 50px;
+                        margin: 30px 0 30px;
                     }
           
                     .sale > .u14DemiBold_v2 {
@@ -47,7 +47,7 @@
                         font-size: 28px;
                         margin-bottom: 5px;
                         position: relative;
-                        color:rgb(170, 20, 20);
+                        color:#2D89C7;
                             aspect-ratio: 1;
                       display: flex;
                       align-items: center;
@@ -63,7 +63,7 @@
                         transform: translate(22px, -50%);
                         font-size: 25px;
                         font-weight: 300;
-                        color: red;
+                        color: #2D89C7;
                         opacity: 0;
                     }
           
@@ -204,70 +204,32 @@
     </div>
   </div>
 </div>
-<div class="er-bg-background-warm er-py-48 mb:er-py-16">
-        <div class="centeral-content er-grid er-grid-cols-3 er-gap-16 mb:er-grid-cols-1 mb:er-px-6 mb:er-gap-y-5">
-            <div class="er-rounded-2xl er-bg-center er-bg-cover er-bg-no-repeat er-bg-white">
-                <div
-                    class="er-flex er-flex-col er-items-center er-justify-center er-text-center er-translate-y-[-30px] mb:er-translate-y-0 mb:er-flex-row mb:er-py-6 mb:er-px-8 mb:er-justify-start mb:er-text-left mb:er-gap-x-10">
-                    <img class="mb:er-max-w-32" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26732.png?v=1771142032" width="100" height="70" alt="">
-                    <span class="text-size20 er-mt-12 er-mb-2 mb:er-text-2xl mb:er-my-0">High-value carbon
-                        eBike<br>starting at <span class="text-size16 er-font-bold md:er-hidden">{{ all_products['urtopia-carbon-fold-step-thru-ebike'].price | money_without_trailing_zeros }}</span></span>
-                    <span class="text-size36 mb:er-text-4xl mb:er-hidden">{{ all_products['urtopia-carbon-fold-step-thru-ebike'].price | money_without_trailing_zeros }}</span>
-                </div>
-            </div>
-            <div class="er-rounded-2xl er-bg-center er-bg-cover er-bg-no-repeat er-bg-white">
-                <div
-                    class="er-flex er-flex-col er-items-center er-justify-center er-text-center er-translate-y-[-30px] mb:er-translate-y-0 mb:er-flex-row mb:er-py-6 mb:er-px-8 mb:er-justify-start mb:er-text-left mb:er-gap-x-10">
-                    <img class="mb:er-max-w-32" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26735.png?v=1771142033" width="100" height="70" alt="">
-                        <div class="er-grid er-grid-cols-2 er-mt-12 er-gap-x-20 mb:er-grid-cols-1 mb:er-my-0">
-                            <div class="er-flex er-flex-col er-text-center er-items-center mb:er-flex-row mb:er-gap-x-2">
-                                <span class="text-size20 mb:er-text-2xl">Save</span>
-                                <span class="text-size36 er-my-1 mb:er-text-2xl">{{ 20000 | money_without_trailing_zeros }}</span>
-                                <span class="text-size20 mb:er-text-2xl">on {{ 300000 | money_without_trailing_zeros }}</span>
-                            </div>
-                            <div class="er-flex er-flex-col er-text-center er-items-center mb:er-flex-row mb:er-gap-x-2">
-                                <span class="text-size20 mb:er-text-2xl">Save</span>
-                                <span class="text-size36 er-my-1 mb:er-text-2xl">{{ 50000 | money_without_trailing_zeros }}</span>
-                                <span class="text-size20 mb:er-text-2xl">on {{ 500000 | money_without_trailing_zeros }}</span>
-                            </div>
-                        </div>
-                </div>
-            </div>
-            <div class="er-rounded-2xl er-bg-center er-bg-cover er-bg-no-repeat er-bg-white">
-                <div
-                    class="er-flex er-flex-col er-items-center er-justify-center er-text-center er-translate-y-[-30px] mb:er-translate-y-0 mb:er-flex-row mb:er-py-6 mb:er-px-8 mb:er-justify-start mb:er-text-left mb:er-gap-x-10">
-                    <img class="mb:er-max-w-32" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/26736.png?v=1771142033" width="100" height="70" alt="">
-                    <span class="text-size20 er-mt-12 er-mb-2 mb:er-text-2xl mb:er-my-0"><span class="er-font-bold md:er-hidden">Free installation</span><br class="md:er-hidden">At selected<br class="mb:er-hidden"><span> stores</span></span>
-                    <span class="text-size36 mb:er-text-4xl mb:er-hidden">Free installation</span>
-                </div>
-            </div>
+
+<div class="er-bg-background-warm er-pt-64 mb:er-pt-12">
+  <div class="centeral-content er-text-white mb:er-px-6">
+
+    <div class="er-grid er-grid-cols-5 er-gap-6 mb:er-grid-cols-1 mb:er-gap-4">
+      <div class="mb:er-aspect-[16/11] background-image er-rounded-2xl mb:er-rounded-xl er-flex er-flex-col er-items-center er-justify-end text-center er-pb-10 er-col-span-3 er-mt-[-83px] mb:er-pb-5 mb:er-col-span-1 mb:er-mt-0">
+        {% render "image", class: "!er-object-top mb:!er-object-contain mb:!er-object-bottom", mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_34.png?v=1772776229", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Frame_27.png?v=1772766396" %}
+        <h2 class="text-size36 mb:er-text-3xl">Featherlight Carbon Frame</h2>
+        <h3 class="text-size18 er-mt-2 mb:er-text-2xl mb:er-mt-1">Ultra-light. Stronger than aluminum.</h3>
+      </div>
+      <div class="er-flex er-flex-col er-gap-6 er-col-span-2 mb:er-col-span-1 mb:er-gap-4">
+        <div class="er-aspect-[540/245] background-image er-rounded-2xl mb:er-rounded-xl er-flex er-flex-col er-items-center er-justify-end text-center er-pb-10 mb:er-pb-5">
+          <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Rectangle_19.jpg?v=1772766396" alt="{{ settings.shop_count }}+ Bike Shops">
+          <h2 class="text-size36 mb:er-text-3xl">{{ settings.shop_count }}+ Bike Shops</h2>
+          <h3 class="text-size18 er-mt-2 mb:er-text-2xl mb:er-mt-1">Service and support near you.</h3>
         </div>
-    </div>
-<div class="er-bg-background-warm er-text-white">
-        <div class="centeral-content mb:er-px-6">
-            <div class="background-image er-aspect-[1280/450] mb:er-aspect-auto er-rounded-3xl er-overflow-hidden">
-            {% render 'image', class: "mb:!er-object-top" width: 1440, mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Rectangle_7_1.jpg?v=1771148462", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Rectangle_6_727bf27c-fde0-4d4e-bae8-b104db756333.jpg?v=1771140656" %}
-                 <!-- <div class="background-mask !er-w-1/2 mb:er-hidden" style="background-image: linear-gradient(90deg, #0888BA, #0D89BA00);"></div>     -->
-                 <div
-                    class="er-flex er-flex-col er-items-start er-justify-center er-h-full er-pl-28 er-max-w-2xl mb:er-px-8 mb:er-pt-10">
-                    <h2
-                        class="er-m-0 er-text-white text-size18 er-bg-gradient-to-r er-from-[#FF3684] er-to-[#FF8F1D] er-py-3 er-px-11 er-rounded-full mb:er-self-center mb:er-text-2xl">
-                        <b>BEST PRICE EVER</b>
-                    </h2>
-                    <div class="md:er-hidden er-aspect-square er-w-9/12"></div>
-                    <h3 class="er-m-0 er-text-white text-size18 er-font-medium er-mt-16 mb:er-text-2xl">Carbon Classic & Classic ST</h3>
-                    <span class="text-size30 er-mt-4 mb:er-text-4xl"><u
-                            class="text-size24 mb:er-text-3xl">Was $2,299</u> <u>Now $1,999</u></span>
-                    <p class="text-size18 er-mb-16 er-mt-8 mb:er-text-2xl mb:er-mb-10 mb:er-mt-6">
-                        <span>
-                           With an ultra-light carbon frame, up to 75 miles of range, and a design that’s easy, comfy, and built tough — this is the best deal on a premium carbon e-bike.
-                        </span>
-                    </p>
-                    <a class="er-button er-button-white mb:er-mb-20" href="/products/urtopia-carbon-classic-ebike" target="_blank">Shop now</a>
-                </div>
-            </div>
+        <div class="er-aspect-[540/245] background-image er-rounded-2xl mb:er-rounded-xl er-flex er-flex-col er-items-center er-justify-end text-center er-pb-10 mb:er-pb-5">
+          <img src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Rectangle_19_1.jpg?v=1772766396" alt="Extra $200 Savings">
+          <h2 class="text-size36 mb:er-text-3xl">Extra $200 Savings</h2>
+          <h3 class="text-size18 er-mt-2 mb:er-text-2xl mb:er-mt-1">On orders over $3,000.</h3>
         </div>
+      </div>
     </div>
+  </div>
+</div>
+
 
 <div class="er-bg-background-warm">
   <div class="centeral-content ebike-products er-flex er-flex-col">

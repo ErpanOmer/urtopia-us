@@ -140,6 +140,10 @@
               title: 'Carbon Fold ST',
               size_map: { "One Size":"Fit for 4’11’’~6’5’’" }
             },
+            9426496356600: {
+              title: 'Carbon Fold 2',
+              size_map: { "One Size":"Fit for 5’1’’~6’1’’" }
+            },
         }
 
         const bikes_info = []
@@ -162,6 +166,8 @@
                 ...bikes_custom_config['{{ product.id }}']
              })
         {% endfor %}
+
+        console.log('bikes_info', bikes_info)
 
 
         for (const info of bikes_info) {
@@ -285,7 +291,7 @@
                 // })
             })
 
-            changeProduct($(`.buyany select[name="left"]`).parent().parent(), 8792002461944)
-            changeProduct($(`.buyany select[name="right"]`).parent().parent(), 8792002461944)
+            changeProduct($(`.buyany select[name="left"]`).parent().parent(), 9426496356600)
+            changeProduct($(`.buyany select[name="right"]`).parent().parent(), 9426496356600)
         }, 100)
 </script>

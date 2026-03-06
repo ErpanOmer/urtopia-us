@@ -20,6 +20,16 @@
         product_url: product.url,
         product_uhmaya: product_uhmaya
       %}
+      {% assign product = all_products['urtopia-carbon-fold-2-ebike'] %}
+      {% assign product_variants =  product.variants | where: 'available' %}
+      {% assign product_uhmaya = '35 lbs---Carbon fiber,90 Miles---Max Range,2 Step---Folding,Torque---Sensor' | split: ',' %}
+      {% render 'product-card-3',
+        product_variants: product_variants,
+        product_name: 'Carbon Fold 2 E-Bike',
+        product_description: 'The Art of Folding, Powered by Carbon.',
+        product_url: product.url,
+        product_uhmaya: product_uhmaya
+      %}
       {% assign product = all_products['urtopia-carbon-fold-step-thru-ebike'] %}
       {% assign product_variants = product.variants | where: 'available' %}
       {% assign product_uhmaya = '31 lbs---Carbon fiber,50 Miles---Max Range,2 Step---Folding,Torque---Sensor' | split: ',' %}
