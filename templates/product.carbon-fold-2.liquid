@@ -311,7 +311,11 @@
                 {% for item in product.metafields.custom.quality_in_details.value %}
                     {% assign text = item.text | split: "---" %}
                     <div class="swiper-slide er-flex er-flex-col">
-                        {{ item.image | image_url: width: 500 |  image_tag: loading: 'lazy', class: "er-rounded-3xl" }}
+                       {% if item.image.value.media_type == "video" %}
+                          <video data-src="{{ item.image | file_url }}" class="er-rounded-3xl lozad" playsinline loop autoplay muted></video>
+                       {% else %}
+                          {{ item.image | image_url: width: 500 |  image_tag: loading: 'lazy', class: "er-rounded-3xl" }}
+                       {% endif %}
                         <h3 class="text-size20 er-my-6 er-font-bold er-text-3xl">{{ text.first }}</h3>
                         <p class="text-size18 er-opacity-80 mb:er-text-[16px] er-max-w-2xl">
                             <span>{{ text.last }}</span>
