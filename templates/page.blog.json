@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "1657212710159ada39": {
@@ -23,7 +32,7 @@
         "1657212710e2c184de-1"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/20220619-untitled-9871.jpg",
+        "image": "shopify://shop_images/20220619-untitled-9871.jpg",
         "image_overlay_opacity": 0,
         "image_height": "small",
         "adapt_height_first_image": true,
@@ -50,7 +59,7 @@
     "1657259341dfa77e5a": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "<!-- Start Stockist.co widget -->\n<div class=\"page-width\">\n<div data-stockist-widget-tag=\"u12821\">Loading store locator\nfrom <a href=\"https:\/\/stockist.co\">Stockist store locator<\/a>...<\/div>\n<script>\n  (function(s,t,o,c,k){c=s.createElement(t);c.src=o;c.async=1;\n  k=s.getElementsByTagName(t)[0];k.parentNode.insertBefore(c,k);\n  })(document,'script','\/\/stockist.co\/embed\/v1\/widget.min.js');\n<\/script>\n<\/div>\n\n<!-- End Stockist.co widget -->",
+        "custom_liquid": "<!-- Start Stockist.co widget -->\n<div class=\"page-width\">\n<div data-stockist-widget-tag=\"u12821\">Loading store locator\nfrom <a href=\"https://stockist.co\">Stockist store locator</a>...</div>\n<script>\n  (function(s,t,o,c,k){c=s.createElement(t);c.src=o;c.async=1;\n  k=s.getElementsByTagName(t)[0];k.parentNode.insertBefore(c,k);\n  })(document,'script','//stockist.co/embed/v1/widget.min.js');\n</script>\n</div>\n\n<!-- End Stockist.co widget -->",
         "color_scheme": "background-1",
         "padding_top": 40,
         "padding_bottom": 52
@@ -77,7 +86,7 @@
         "16572168943735c795-1": {
           "type": "text",
           "settings": {
-            "text": "<p>But there is more! We partner with selected stores across the country to make the Urtopia dream within your reach. Our retail partners' extensive expertise will help you avoid headaches in fine-tuning and problem diagnosis, keeping your bike and yourself always in the best shape.<\/p><p><\/p><p>More stores are on the way, so keep coming back!<\/p>",
+            "text": "<p>But there is more! We partner with selected stores across the country to make the Urtopia dream within your reach. Our retail partners' extensive expertise will help you avoid headaches in fine-tuning and problem diagnosis, keeping your bike and yourself always in the best shape.</p><p></p><p>More stores are on the way, so keep coming back!</p>",
             "text_style": "body"
           }
         }
@@ -87,7 +96,7 @@
         "16572168943735c795-1"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/20220620-untitled-2729.jpg",
+        "image": "shopify://shop_images/20220620-untitled-2729.jpg",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
@@ -113,7 +122,7 @@
         "1657212330d0c5091a-1": {
           "type": "text",
           "settings": {
-            "text": "<p>Recommend your favorite stores to us, we’ll make it true!<br\/><\/p>",
+            "text": "<p>Recommend your favorite stores to us, we’ll make it true!<br/></p>",
             "text_style": "body"
           }
         },
@@ -121,7 +130,7 @@
           "type": "button",
           "settings": {
             "button_label": "Contact Us",
-            "button_link": "shopify:\/\/pages\/contactus"
+            "button_link": "shopify://pages/contactus"
           }
         }
       },
@@ -131,7 +140,7 @@
         "1657212330d0c5091a-2"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/20220708-123307.jpg",
+        "image": "shopify://shop_images/20220708-123307.jpg",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "text_first",
@@ -157,7 +166,7 @@
         "165727567667310b21-1": {
           "type": "text",
           "settings": {
-            "text": "<p>The sooner you order the sooner you ride.<\/p>",
+            "text": "<p>The sooner you order the sooner you ride.</p>",
             "text_style": "body"
           }
         },
@@ -165,7 +174,7 @@
           "type": "button",
           "settings": {
             "button_label": "Buy Now",
-            "button_link": "shopify:\/\/products\/urtopia-carbon-e-bike-2"
+            "button_link": "shopify://products/urtopia-carbon-e-bike-2"
           }
         }
       },
@@ -175,7 +184,7 @@
         "165727567667310b21-2"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/E-Bike119.png",
+        "image": "shopify://shop_images/E-Bike119.png",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
