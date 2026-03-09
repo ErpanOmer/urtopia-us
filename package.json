@@ -8,8 +8,8 @@
   "scripts": {
     "css": "npx tailwindcss -i ./tailwind.css -o ./assets/tailwind.min.css --minify",
     "watch-css": "npx tailwindcss -i ./tailwind.css -o ./assets/tailwind.min.css --watch --minify",
-    "dev": "run-p watch-css theme-dev",
-    "theme-dev": "shopify theme dev --open --store=urtopia.myshopify.com --theme=136550744312",
+    "dev": "concurrently \"npm:watch-css\" \"npm:theme-dev\"",
+    "theme-dev": "shopify theme dev --store=urtopia.myshopify.com --theme=136550744312 --open",
     "pull": "shopify theme pull --store=urtopia.myshopify.com --live",
     "list": "shopify theme list --store=urtopia.myshopify.com",
     "push": "git push origin master -f",
@@ -31,6 +31,7 @@
     "@tailwindcss/forms": "^0.5.10",
     "@tailwindcss/typography": "^0.5.16",
     "autoprefixer": "^10.4.20",
+    "concurrently": "^9.2.1",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.17"
