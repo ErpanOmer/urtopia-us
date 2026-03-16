@@ -1,0 +1,33 @@
+<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=762c717c-bb80-49ee-bfeb-1d347a5ab731" defer> </script>
+<script src="https://chat.quickcep.com/initQuickChat.js?platform=shopify&accessId=76776b1c-3b62-48ec-96da-a4c84d824168" defer></script>
+  
+<script type="module">
+    const QuickChat = !!window.sessionStorage.getItem('QuickChat');
+
+    document.head.insertAdjacentHTML('beforeend', `
+            <style>
+                #quick-chat-iframe {
+                    display: ${QuickChat ? 'none' : 'block'} !important;
+                }
+
+                #launcher {
+                    display: ${QuickChat ? 'block' : 'none'};
+                }
+            </style>
+    `);
+
+    window.quickChatReadyHook = function () {
+        window.quickEmitter.on('goThirdPlatform', (data) => {
+            console.log('goThirdPlatform', data);
+            // 关闭快牛聊天探头
+            window.quickChatApi.close();
+            window.sessionStorage.setItem('QuickChat', 'QuickChat');
+             document.querySelector('#launcher').style.setProperty('display', 'block', 'important');
+            
+            setTimeout(() => {
+                // 打开zenDesk
+                zE('messenger', 'open');
+            }, 0);
+        });
+    }
+</script>
