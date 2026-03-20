@@ -1,44 +1,65 @@
 {{ 'home.scss.css' | asset_url | stylesheet_tag: preload: true }}
 <h1 class="er-sr-only">{{ page_title }}</h1>
 
-<style>
-  @media (max-width: 768px) {
-    .background-mask {
-      background: rgba(0, 0, 0, 0.2);
-    }
+<style id="pf-home-top-style" media="all">
+  .header-wrapper.gradient {
+      background: transparent;
+  }
+
+  .header-wrapper.gradient .header__inline-menu > ul > li > a,
+  .header-wrapper.gradient .header__inline-menu > ul > li > header-menu > details > summary > span,
+  .header-wrapper.gradient .header__inline-menu > ul > li > header-menu > details > summary > span + svg {
+    color: #fff;
+  }
+
+  .header>.header__heading-link svg {
+    fill: #fff;
+  }
+
+  .header__icons a {
+    color: #fff;
+  }
+
+  .header__icon span {
+    color: #fff;
   }
 </style>
 
-<div class="background-image md:er-h-[750px] mb:er-aspect-[375/500] er-text-white">
-{% render 'image', first_screen: true, mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20260116-101516.jpg?v=1768529739", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1_5_1_5__PosterImage.jpg?v=1768528027" %}
+<div class="background-image er-aspect-[1920/850] mb:er-aspect-[375/500] er-text-white banner er-pb-40 mb:er-pt-32">
+{% render 'image', first_screen: true, mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/27975.jpg?v=1773916823", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/1_5_1_1_-_1_1.jpg?v=1773915100" %}
 <video class="lozad" playsinline loop autoplay muted>
   <!-- PC 端视频 -->
-  <source data-src="https://cdn.shopify.com/videos/c/o/v/afc9abf193b24df5b29f35865972d905.mp4" type="video/mp4" media="(min-width: 768px)">
+  <source data-src="https://cdn.shopify.com/videos/c/o/v/0b63693896584bf699d4ac8d54105a60.mp4" type="video/mp4" media="(min-width: 768px)">
   <!-- 移动端视频 -->
-  <source data-src="https://cdn.shopify.com/videos/c/o/v/a78c6eefb2e74072a3b753b7845fc26d.mp4" type="video/mp4" media="(max-width: 767px)">
+  <source data-src="https://cdn.shopify.com/videos/c/o/v/a0c7ccdb4d104dff8d2a1046785907ae.mp4" type="video/mp4" media="(max-width: 767px)">
 </video>
 <div class="background-mask"></div>
-  <div class="centeral-content er-flex er-flex-col er-items-start er-justify-center er-h-full mb:er-items-center mb:er-text-center">
-    <img class="mb:er-max-w-80" width="340" height="215" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_32.png?v=1772763680" alt="{{ page_title }}">
-    <h2 class="text-size30 er-mt-20 er-mb-12 mb:er-text-3xl mb:er-mt-12">Up to $670 OFF</h2>
-    <a class="er-button er-button-white" href="/collections/e-bike-sale" target="_blank">Shop now</a>
+  <div class="centeral-content er-flex er-flex-col er-items-start er-justify-end er-h-full mb:er-items-center mb:er-justify-center mb:er-text-center">
+    <h3 class="text-size36 mb:er-text-4xl">New Arrival</h3>
+    <h2 class="text-size72 mb:er-text-6xl er-my-3 mb:er-my-4">Carbon Fold 2</h2>
+    <p class="text-size18 mb:er-text-2xl">
+      <span>
+        The Art of Folding, Powered by Carbon.
+      </span>
+    </p>
+    <a class="er-button er-button-white er-mt-12 mb:er-mt-16" href="/products/urtopia-carbon-fold-2-ebike?variant=48042758668536" target="_blank">Shop now</a>
   </div>
 </div>
 
-<div class="er-text-white er-pt-48 mb:er-pt-16">
+<div id="pf-home-second-screen" class="er-text-white er-pt-48 mb:er-pt-16">
         <div class="centeral-content mb:er-px-6">
             <div class="background-image er-aspect-[1280/450] mb:er-aspect-[345/500] er-rounded-2xl er-overflow-hidden">
-            {% render 'image', first_screen: true, class: "mb:!er-object-top" width: 1440, mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_group_1_ddb31f4b-fdb9-4328-bd9a-bfcdc0c05992.jpg?v=1772763898", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Rectangle_6_1_9b33c1c2-f5bc-40f4-809d-c382ed0a8be9.jpg?v=1772763900" %}
+            {% render 'image', first_screen: true, class: "mb:!er-object-top" width: 1440, mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Mask_group_7b9d51ac-1c4d-457e-b666-ca92d95a8695.jpg?v=1773917285", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Rectangle_6_b037b471-3174-4c00-841d-4ede96b09104.jpg?v=1773916598" %}
             <div
                     class="er-flex er-flex-col er-items-start er-justify-center er-h-full er-pl-28 er-max-w-2xl mb:er-px-8 mb:er-pt-10 mb:er-items-center mb:er-justify-start mb:er-text-center">
-                    <img width="100" height="96" class="mb:er-max-w-28" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/2025-03-11_10.04.23_2x_111b6995-cd40-4ab4-b842-2fdcf298d0b5.png?v=1750399446" loading="lazy" alt="ces">
-                    <h2 class="er-m-0 er-text-white text-size24 er-font-medium er-mt-6 mb:er-text-3xl">Best-valued Carbon Ebike</h2>
-                    <p class="text-size18 er-my-10 mb:er-text-2xl mb:er-my-4">
+                    <img width="140" height="96" class="mb:er-max-w-36" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_52.png?v=1773916533" loading="lazy" alt="ces">
+                    {% comment %} <h2 class="er-m-0 er-text-white text-size24 er-font-medium er-mt-6 mb:er-text-3xl">Best-valued Carbon Ebike</h2> {% endcomment %}
+                    <p class="text-size18 er-mb-12 er-mt-2 mb:er-text-2xl mb:er-my-6">
                         <span>
                           Full carbon construction • 35 lbs ultra-light • Extended to 95 miles. Sleek design — premium carbon e-bike, now {{ all_products['urtopia-carbon-fold-2-ebike'].price | money_without_trailing_zeros }}.
                         </span>
                     </p>
-                    <a class="er-button er-button-white mb:er-mb-12" href="/products/urtopia-carbon-fold-2-ebike" target="_blank">Shop now</a>
+                    <a class="er-button er-button-white mb:er-mb-12" href="/collections/e-bike-sale" target="_blank">Shop now</a>
                 </div>
             </div>
         </div>
@@ -167,4 +188,215 @@
     </a>
   </div>
 </div>
+<script type="module">
+  const jq = window.jQuery || window.$;
+  if (!jq) {
+    console.warn('pf-home: jQuery not found');
+  } else {
+    jq(function ($) {
+      var $win = $(window);
+      var $topStyle = $('#pf-home-top-style');
+      var $stickyHeader = $('sticky-header').first();
+      var $headerSection = $('#shopify-section-header');
+      var $headerWrapper = $stickyHeader.find('.header-wrapper').first();
+      var $mobileDrawerDetails = $stickyHeader.find('#Details-menu-drawer-container').first();
+      var $motionTarget = $headerSection.length ? $headerSection : $stickyHeader;
+      var styleThreshold = 100;
+      var hideThreshold = 200;
+      var lastScrollTop = $win.scrollTop();
+      var isHeaderVisible = true;
+      var ticking = false;
+      var isMenuMode = false;
+      var preMenuState = null;
+      var lastAppliedTopStyleActive = true;
+      var lastAppliedHeaderWhite = false;
+      var stickyEl = $stickyHeader.get(0);
+
+      if (!$stickyHeader.length) {
+        return;
+      }
+
+      if (!$headerWrapper.length) {
+        $headerWrapper = $('.header-wrapper').first();
+      }
+
+      if (stickyEl) {
+        stickyEl.preventHide = true;
+        if (stickyEl.onScrollHandler) {
+          window.removeEventListener('scroll', stickyEl.onScrollHandler);
+        }
+      }
+
+      $motionTarget.css({
+        transition: 'transform 0.48s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.36s ease',
+        willChange: 'transform, opacity',
+        transform: 'translate3d(0, 0, 0)',
+        opacity: '1',
+        backfaceVisibility: 'hidden'
+      });
+
+      $headerWrapper.css('transition', 'none');
+
+      function toggleTopStyle(isActive) {
+        if (!$topStyle.length) return;
+        lastAppliedTopStyleActive = !!isActive;
+        $topStyle.attr('media', isActive ? 'all' : 'not all');
+      }
+
+      function toggleHeaderWhite(isWhite) {
+        lastAppliedHeaderWhite = !!isWhite;
+        if (isWhite) {
+          $motionTarget.css('background-color', '#fff');
+          $headerWrapper.css('background-color', '#fff');
+        } else {
+          $motionTarget.css('background-color', '');
+          $headerWrapper.css('background-color', '');
+        }
+      }
+
+      function showHeader() {
+        if (isHeaderVisible) {
+          $headerSection.removeClass('shopify-section-header-hidden');
+          return;
+        }
+        isHeaderVisible = true;
+        $headerSection.removeClass('shopify-section-header-hidden');
+        $motionTarget.css({
+          transform: 'translate3d(0, 0, 0)',
+          opacity: '1',
+          pointerEvents: ''
+        });
+      }
+
+      function hideHeader() {
+        if (!isHeaderVisible) return;
+        isHeaderVisible = false;
+        $motionTarget.css({
+          transform: 'translate3d(0, -110%, 0)',
+          opacity: '0',
+          pointerEvents: 'none'
+        });
+      }
+
+      function isSubmenuOpen() {
+        var desktopSubmenuOpen = $stickyHeader.find('header-menu details[open]').length > 0;
+        var mobileDrawerOpen = false;
+
+        if ($mobileDrawerDetails.length) {
+          var drawerHasOpenAttr = $mobileDrawerDetails.is('[open]');
+          var drawerIsAnimatingOpen = $mobileDrawerDetails.hasClass('menu-opening');
+          var headerHasMenuOpenClass = $headerSection.hasClass('menu-open');
+
+          // Theme core removes [open] with a ~400ms delay on close. Treat drawer as closed
+          // once close starts (menu-opening/menu-open removed) to avoid restore lag.
+          mobileDrawerOpen = drawerHasOpenAttr && (drawerIsAnimatingOpen || headerHasMenuOpenClass);
+        }
+
+        return desktopSubmenuOpen || mobileDrawerOpen;
+      }
+
+      function onSubmenuStateChange() {
+        var menuOpen = isSubmenuOpen();
+
+        if (menuOpen && !isMenuMode) {
+          preMenuState = {
+            topStyleActive: lastAppliedTopStyleActive,
+            headerWhite: lastAppliedHeaderWhite,
+            headerVisible: isHeaderVisible
+          };
+          isMenuMode = true;
+          toggleTopStyle(false);
+          toggleHeaderWhite(true);
+          showHeader();
+          return;
+        }
+
+        if (!menuOpen && isMenuMode) {
+          isMenuMode = false;
+          if (preMenuState) {
+            toggleTopStyle(preMenuState.topStyleActive);
+            toggleHeaderWhite(preMenuState.headerWhite);
+            if (preMenuState.headerVisible) {
+              showHeader();
+            } else {
+              hideHeader();
+            }
+          }
+          preMenuState = null;
+          lastScrollTop = $win.scrollTop();
+        }
+      }
+
+      function updateHeaderState() {
+        var currentTop = $win.scrollTop();
+        var topStyleActive = currentTop <= styleThreshold;
+        var isScrollingUp = currentTop < lastScrollTop;
+        var isScrollingDown = currentTop > lastScrollTop;
+
+        onSubmenuStateChange();
+        if (isMenuMode) {
+          lastScrollTop = currentTop;
+          ticking = false;
+          return;
+        }
+
+        toggleTopStyle(topStyleActive);
+        toggleHeaderWhite(!topStyleActive);
+
+        if (currentTop <= hideThreshold) {
+          showHeader();
+        } else if (isScrollingUp) {
+          showHeader();
+        } else if (isScrollingDown) {
+          hideHeader();
+        }
+
+        lastScrollTop = currentTop;
+        ticking = false;
+      }
+
+      function requestUpdate() {
+        if (ticking) return;
+        ticking = true;
+        window.requestAnimationFrame(updateHeaderState);
+      }
+
+      $(document).on('toggle.pfHomeStickyMenu', 'sticky-header header-menu details', function () {
+        onSubmenuStateChange();
+      });
+
+      $(document).on('click.pfHomeStickyMenu', 'sticky-header header-menu details > summary', function () {
+        window.setTimeout(onSubmenuStateChange, 0);
+      });
+
+      $(document).on('toggle.pfHomeStickyMenu', 'sticky-header #Details-menu-drawer-container', function () {
+        onSubmenuStateChange();
+      });
+
+      $(document).on('click.pfHomeStickyMenu', 'sticky-header .header__icon--menu.header__icon--summary', function () {
+        window.setTimeout(onSubmenuStateChange, 0);
+      });
+
+      $(document).on('click.pfHomeStickyMenu', 'sticky-header .menu-drawer__close-button', function () {
+        window.setTimeout(onSubmenuStateChange, 0);
+      });
+
+      if ($mobileDrawerDetails.length) {
+        var mobileDrawerEl = $mobileDrawerDetails.get(0);
+        mobileDrawerEl.addEventListener('toggle', onSubmenuStateChange);
+
+        var mobileDrawerObserver = new MutationObserver(function () {
+          onSubmenuStateChange();
+        });
+        mobileDrawerObserver.observe(mobileDrawerEl, {
+          attributes: true,
+          attributeFilter: ['open']
+        });
+      }
+
+      $win.on('scroll.pfHomeSticky resize.pfHomeSticky', requestUpdate);
+      updateHeaderState();
+    });
+  }
+</script>
 {% render 'quiz-dialog' %}

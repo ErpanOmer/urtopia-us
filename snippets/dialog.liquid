@@ -76,7 +76,7 @@
       };
   });
 </script>
-<script>
+<script type="module">
   fetch(window.location.pathname + '?sections=cart-drawer').then(r => r.json()).then(r => {
     document.body.insertAdjacentHTML('beforeend',r['cart-drawer']);
   })
@@ -85,3 +85,98 @@
     document.body.insertAdjacentHTML('beforeend',r['footer']);
   });
 </script>
+{% unless template.name == 'index' or template.name == 'product' %}
+  <script type="module">
+    const jq = window.jQuery || window.$;
+
+    if (jq) {
+      jq(function ($) {
+        var $win = $(window);
+        var $stickyHeader = $('sticky-header').first();
+        var $headerSection = $('#shopify-section-header');
+        var $motionTarget = $headerSection.length ? $headerSection : $stickyHeader;
+        var hideThreshold = 200;
+        var lastScrollTop = $win.scrollTop();
+        var scrollDirection = 'down';
+        var isHeaderVisible = true;
+        var ticking = false;
+        var stickyEl = $stickyHeader.get(0);
+
+        if (!$stickyHeader.length) {
+          return;
+        }
+
+        if (stickyEl) {
+          stickyEl.preventHide = true;
+          if (stickyEl.onScrollHandler) {
+            window.removeEventListener('scroll', stickyEl.onScrollHandler);
+          }
+        }
+
+        $motionTarget.css({
+          transition: 'transform 0.48s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.36s ease',
+          willChange: 'transform, opacity',
+          transform: 'translate3d(0, 0, 0)',
+          opacity: '1',
+          backfaceVisibility: 'hidden'
+        });
+
+        function showHeader() {
+          $headerSection.removeClass('shopify-section-header-hidden');
+          if (isHeaderVisible) {
+            $motionTarget.css('pointer-events', '');
+            return;
+          }
+
+          isHeaderVisible = true;
+          $motionTarget.css({
+            transform: 'translate3d(0, 0, 0)',
+            opacity: '1',
+            pointerEvents: ''
+          });
+        }
+
+        function hideHeader() {
+          if (!isHeaderVisible) return;
+          isHeaderVisible = false;
+          $motionTarget.css({
+            transform: 'translate3d(0, -110%, 0)',
+            opacity: '0',
+            pointerEvents: 'none'
+          });
+        }
+
+        function updateHeaderState() {
+          var currentTop = $win.scrollTop();
+          var delta = currentTop - lastScrollTop;
+
+          if (delta > 1) {
+            scrollDirection = 'down';
+          } else if (delta < -1) {
+            scrollDirection = 'up';
+          }
+
+          if (currentTop <= hideThreshold) {
+            showHeader();
+          } else if (scrollDirection === 'up') {
+            showHeader();
+          } else {
+            hideHeader();
+          }
+
+          lastScrollTop = currentTop;
+          ticking = false;
+        }
+
+        function requestUpdate() {
+          if (ticking) return;
+          ticking = true;
+          window.requestAnimationFrame(updateHeaderState);
+        }
+
+        $win.on('scroll.dialogSticky resize.dialogSticky', requestUpdate);
+        updateHeaderState();
+      });
+    }
+  </script>
+{% endunless %}
