@@ -111,7 +111,7 @@
                     {{
                       product_item.image
                       | image_url: width: 400
-                      | image_tag: class: 'hover:er-scale-105 er-transition er-object-cover er-rounded-xl'
+                      | image_tag: class: 'hover:er-scale-105 er-transition er-object-cover er-rounded-xl', loading: 'lazy'
                     }}
                   </div>
                   <div class="text-size14 er-font-bold er-mt-4 mb:er-text-xl">{{ product_item.name }}</div>
@@ -131,7 +131,7 @@
                   {{
                     product_item.image
                     | image_url: width: 400
-                    | image_tag: class: 'hover:er-scale-105 er-transition er-aspect-[16/11] er-object-contain'
+                    | image_tag: class: 'hover:er-scale-105 er-transition er-aspect-[16/11] er-object-contain', loading: 'lazy'
                   }}
                   <div class="text-size16 er-font-bold er-mt-4 er-mb-2 mb:er-text-2xl">
                     {{ product_item.name }}
