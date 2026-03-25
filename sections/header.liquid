@@ -69,6 +69,10 @@
   .list-menu--disclosure {
     width: auto !important;
   }
+
+  details[open] .er-absolute.er-right-2.er-top-5.er-transition-all {
+    transform: rotate(180deg);
+  }
   
 {%- endstyle -%}
 <svg xmlns="http://www.w3.org/2000/svg" class="hidden">
@@ -88,7 +92,9 @@
           <summary class="header__icon header__icon--menu header__icon--summary link focus-inset" aria-label="{{ 'sections.header.menu' | t }}">
             <span>
               {% render 'icon-hamburger' %}
-              {% render 'icon-close' %}
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-close !er-w-12 !er-h-12" width="32" height="32" viewBox="0 0 80 80" fill="currentColor">
+                <path d="M40.0833 43.1667L22.6667 60.6667C22.1667 61.1667 21.625 61.4167 21.0417 61.4167C20.4583 61.4167 19.8889 61.1389 19.3333 60.5833C18.8333 60.0278 18.5972 59.5 18.625 59C18.6528 58.5 18.9167 57.9722 19.4167 57.4167L36.75 40L19.3333 22.4167C18.8889 21.9167 18.6528 21.4028 18.625 20.875C18.5972 20.3472 18.8333 19.8056 19.3333 19.25C19.8889 18.6944 20.4444 18.4028 21 18.375C21.5556 18.3472 22.1111 18.6111 22.6667 19.1667L40.0833 36.6667L57.3333 19.1667C57.8333 18.6667 58.375 18.4167 58.9583 18.4167C59.5417 18.4167 60.1111 18.6944 60.6667 19.25C61.1667 19.8056 61.4028 20.3333 61.375 20.8333C61.3472 21.3333 61.0833 21.8611 60.5833 22.4167L43.25 40L60.5833 57.4167C61.0278 57.8611 61.2778 58.3611 61.3333 58.9167C61.3889 59.4722 61.1667 60.0278 60.6667 60.5833C60.1111 61.1389 59.5556 61.4306 59 61.4583C58.4444 61.4861 57.8889 61.2222 57.3333 60.6667L40.0833 43.1667Z" fill="currentColor"/>
+              </svg>
             </span>
           </summary>
           <div id="menu-drawer" class="gradient menu-drawer motion-reduce" tabindex="-1">
@@ -103,13 +109,12 @@
                               <details id="Details-menu-drawer-menu-item-{{ forloop.index }}">
                                 <summary class="menu-drawer__menu-item list-menu__item link link--text">
                                   {{ link.title | escape }}
-                                  {% render 'icon-arrow' %}
-                                  {% render 'icon-caret' %}
+                                  {% render 'icon-arrow2', class: 'er-absolute er-right-8' %}
                                 </summary>
                                 <div id="link-{{ link.title | escape }}" class="menu-drawer__submenu has-submenu gradient motion-reduce" tabindex="-1">
                                     <div class="menu-drawer__inner-submenu">
                                       <button class="menu-drawer__close-button link link--text er-mb-4" aria-expanded="true">
-                                        {% render 'icon-arrow' %}
+                                        {% render 'icon-arrow2', class: 'er-rotate-180 er-mr-2 er-h-11 er-w-11' %}
                                         {{ link.title | escape }}
                                       </button>
                                       {% for item in link.links %}
@@ -132,13 +137,12 @@
                               <details id="Details-menu-drawer-menu-item-{{ forloop.index }}">
                                   <summary class="menu-drawer__menu-item list-menu__item link link--text">
                                     {{ link.title | escape }}
-                                    {% render 'icon-arrow' %}
-                                    {% render 'icon-caret' %}
+                                    {% render 'icon-arrow2', class: 'er-absolute er-right-8' %}
                                   </summary>
                                   <div id="link-{{ link.title | escape }}" class="menu-drawer__submenu has-submenu gradient motion-reduce" tabindex="-1">
                                     <div class="menu-drawer__inner-submenu">
                                       <button class="menu-drawer__close-button link link--text" aria-expanded="true">
-                                        {% render 'icon-arrow' %}
+                                        {% render 'icon-arrow2', class: 'er-rotate-180 er-mr-2 er-h-11 er-w-11' %}
                                         {{ link.title | escape }}
                                       </button>
                                        {% render 'header-dropdown', links: link.links %}
@@ -346,7 +350,7 @@
                     <details id="Details-HeaderMenu-{{ forloop.index }}">
                       <summary class="header__menu-item list-menu__item link focus-inset">
                         <span {%- if link.child_active %} class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
-                        {% render 'icon-caret' %}
+                        {% render 'icon-caret2' %}
                       </summary>
                       <ul id="HeaderMenu-MenuList-{{ forloop.index }}" class="header__submenu list-menu list-menu--disclosure gradient caption-large motion-reduce global-settings-popup" role="list" tabindex="-1">
                         {%- for childlink in link.links -%}
@@ -359,7 +363,7 @@
                               <details id="Details-HeaderSubMenu-{{ forloop.index }}">
                                 <summary class="header__menu-item link link--text list-menu__item focus-inset caption-large">
                                   <span>{{ childlink.title | escape }}</span>
-                                  {% render 'icon-caret' %}
+                                  {% render 'icon-caret2' %}
                                 </summary>
                                 <ul id="HeaderMenu-SubMenuList-{{ forloop.index }}" class="header__submenu list-menu motion-reduce">
                                   {%- for grandchildlink in childlink.links -%}
@@ -397,7 +401,7 @@
                         <details>
                           <summary class="header__menu-item list-menu__item link focus-inset">
                             <span {%- if link.child_active %} class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
-                            {% render 'icon-caret' %}
+                            {% render 'icon-caret2' %}
                           </summary>
                           <div class="header__submenu list-menu list-menu--disclosure gradient caption-large motion-reduce global-settings-popup !er-shadow" role="list" tabindex="-1">
                             {% for childlink in link.links %}
@@ -421,7 +425,7 @@
                         <details id="Details-HeaderMenu-{{ forloop.index }}" class="mega-menu">
                           <summary class="header__menu-item list-menu__item link focus-inset">
                             <span {%- if link.child_active %} class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
-                            {% render 'icon-caret' %}
+                            {% render 'icon-caret2' %}
                           </summary>
                           <div id="MegaMenu-Content-{{ forloop.index }}" class="mega-menu__content gradient motion-reduce global-settings-popup {% if link.title == 'E-Bike' %}mega_ebike_content{% endif %}" tabindex="-1">
                             {% render 'header-dropdown', links: link.links %}
@@ -446,8 +450,8 @@
         <details>
           <summary class="header__icon header__icon--search header__icon--summary link focus-inset modal__toggle" aria-haspopup="dialog" aria-label="{{ 'general.search.search' | t }}">
             <span>
-              <svg class="modal__toggle-open icon icon-search" width="20" height="20" aria-hidden="true" focusable="false" role="presentation">
-                <use href="#icon-search">
+              <svg class="er-transition-all hover:er-scale-105 md:er-opacity-75" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 80 80" fill="none">
+                <path d="M65.5833 68.5L44.5833 47.5C42.9167 48.8889 40.875 49.9583 38.4583 50.7083C36.0417 51.4583 33.75 51.8333 31.5833 51.8333C25.9167 51.8333 21.1111 49.8611 17.1667 45.9167C13.2222 41.9722 11.25 37.1667 11.25 31.5C11.25 25.8333 13.2222 21.0278 17.1667 17.0833C21.1111 13.1389 25.9167 11.1667 31.5833 11.1667C37.25 11.1667 42.0556 13.1389 46 17.0833C49.9444 21.0278 51.9167 25.8333 51.9167 31.5C51.9167 33.8333 51.5417 36.1389 50.7917 38.4167C50.0417 40.6945 49 42.6389 47.6667 44.25L68.75 65.3333L65.5833 68.5ZM31.5833 47.3333C36.0833 47.3333 39.8472 45.8195 42.875 42.7917C45.9028 39.7639 47.4167 36 47.4167 31.5C47.4167 27 45.9028 23.2361 42.875 20.2083C39.8472 17.1806 36.0833 15.6667 31.5833 15.6667C27.0833 15.6667 23.3194 17.1806 20.2917 20.2083C17.2639 23.2361 15.75 27 15.75 31.5C15.75 36 17.2639 39.7639 20.2917 42.7917C23.3194 45.8195 27.0833 47.3333 31.5833 47.3333Z" fill="currentColor"/>
               </svg>
               <svg class="modal__toggle-close icon icon-close" width="17" height="17" aria-hidden="true" focusable="false" role="presentation">
                 <use href="#icon-close">
@@ -506,8 +510,8 @@
                 </predictive-search>
               {%- endif -%}
               <button type="button" class="search-modal__close-button modal__close-button link link--text focus-inset" aria-label="{{ 'accessibility.close' | t }}">
-                <svg class="icon icon-close" width="17" height="17" aria-hidden="true" focusable="false" role="presentation">
-                  <use href="#icon-close">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 80 80" fill="currentColor">
+                  <path d="M40.0833 43.1667L22.6667 60.6667C22.1667 61.1667 21.625 61.4167 21.0417 61.4167C20.4583 61.4167 19.8889 61.1389 19.3333 60.5833C18.8333 60.0278 18.5972 59.5 18.625 59C18.6528 58.5 18.9167 57.9722 19.4167 57.4167L36.75 40L19.3333 22.4167C18.8889 21.9167 18.6528 21.4028 18.625 20.875C18.5972 20.3472 18.8333 19.8056 19.3333 19.25C19.8889 18.6944 20.4444 18.4028 21 18.375C21.5556 18.3472 22.1111 18.6111 22.6667 19.1667L40.0833 36.6667L57.3333 19.1667C57.8333 18.6667 58.375 18.4167 58.9583 18.4167C59.5417 18.4167 60.1111 18.6944 60.6667 19.25C61.1667 19.8056 61.4028 20.3333 61.375 20.8333C61.3472 21.3333 61.0833 21.8611 60.5833 22.4167L43.25 40L60.5833 57.4167C61.0278 57.8611 61.2778 58.3611 61.3333 58.9167C61.3889 59.4722 61.1667 60.0278 60.6667 60.5833C60.1111 61.1389 59.5556 61.4306 59 61.4583C58.4444 61.4861 57.8889 61.2222 57.3333 60.6667L40.0833 43.1667Z" fill="currentColor"/>
                 </svg>
               </button>
             </div>
@@ -517,7 +521,9 @@
 
       {%- if shop.customer_accounts_enabled -%}
         <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}">
-          {% render 'icon-account' %}
+          <svg class="er-transition-all hover:er-scale-105 er-opacity-75" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 80 80" fill="none">
+            <path d="M32.2917 33.2083C30.2084 31.125 29.1667 28.5556 29.1667 25.5C29.1667 22.4444 30.2084 19.875 32.2917 17.7917C34.3751 15.7083 36.9445 14.6667 40.0001 14.6667C43.0556 14.6667 45.6251 15.7083 47.7084 17.7917C49.7917 19.875 50.8334 22.4444 50.8334 25.5C50.8334 28.5556 49.7917 31.125 47.7084 33.2083C45.6251 35.2917 43.0556 36.3333 40.0001 36.3333C36.9445 36.3333 34.3751 35.2917 32.2917 33.2083ZM15.1667 65.75V58.8333C15.1667 57.2222 15.5973 55.75 16.4584 54.4167C17.3195 53.0833 18.5001 52.0556 20.0001 51.3333C23.2779 49.7222 26.5973 48.5139 29.9584 47.7083C33.3195 46.9028 36.6667 46.5 40.0001 46.5C43.3334 46.5 46.6806 46.9028 50.0417 47.7083C53.4029 48.5139 56.7223 49.7222 60.0001 51.3333C61.5001 52.0556 62.6806 53.0833 63.5417 54.4167C64.4029 55.75 64.8334 57.2222 64.8334 58.8333V65.75H15.1667ZM19.6667 61.25H60.3334V58.8333C60.3334 58.0556 60.1251 57.375 59.7084 56.7917C59.2917 56.2083 58.6945 55.7222 57.9167 55.3333C55.1945 54.0556 52.2726 53.0139 49.1509 52.2083C46.0298 51.4028 42.9795 51 40.0001 51C37.0206 51 33.9704 51.3889 30.8492 52.1667C27.7276 52.9444 24.8056 54 22.0834 55.3333C21.3056 55.6667 20.7084 56.1389 20.2917 56.75C19.8751 57.3611 19.6667 58.0556 19.6667 58.8333V61.25ZM44.5001 30C45.7223 28.7778 46.3334 27.2778 46.3334 25.5C46.3334 23.7222 45.7223 22.2222 44.5001 21C43.2779 19.7778 41.7779 19.1667 40.0001 19.1667C38.2223 19.1667 36.7223 19.7778 35.5001 21C34.2779 22.2222 33.6667 23.7222 33.6667 25.5C33.6667 27.2778 34.2779 28.7778 35.5001 30C36.7223 31.2222 38.2223 31.8333 40.0001 31.8333C41.7779 31.8333 43.2779 31.2222 44.5001 30Z" fill="currentColor"/>
+          </svg>
           <span class="visually-hidden">
             {%- liquid
               if customer
@@ -531,7 +537,9 @@
       {%- endif -%}
 
       <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" {% if template == 'cart' %} style="display: none;" {% endif %} id="cart-icon-bubble">
-        {% render 'icon-cart' %}
+        <svg class="er-transition-all hover:er-scale-105 md:er-opacity-75" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 80 80" fill="none">
+          <path d="M22.1667 71.6667C20.1261 71.6667 18.4217 70.9822 17.0533 69.6133C15.6844 68.245 15 66.5405 15 64.5V29.3333C15 27.2933 15.6844 25.5889 17.0533 24.22C18.4217 22.8511 20.1261 22.1667 22.1667 22.1667H27.75V20C27.75 16.6667 28.9394 13.8889 31.3183 11.6667C33.6972 9.44444 36.5911 8.33333 40 8.33333C43.4089 8.33333 46.3028 9.44444 48.6817 11.6667C51.0606 13.8889 52.25 16.6667 52.25 20V22.1667H57.8333C59.8733 22.1667 61.5778 22.8511 62.9467 24.22C64.3156 25.5889 65 27.2933 65 29.3333V64.5C65 66.5405 64.3156 68.245 62.9467 69.6133C61.5778 70.9822 59.8733 71.6667 57.8333 71.6667H22.1667ZM22.1667 67.1667H57.8333C58.5 67.1667 59.1111 66.8889 59.6667 66.3333C60.2222 65.7778 60.5 65.1667 60.5 64.5V29.3333C60.5 28.6667 60.2222 28.0555 59.6667 27.5C59.1111 26.9444 58.5 26.6667 57.8333 26.6667H52.25V34.4167C52.25 35.0278 52.0278 35.5555 51.5833 36C51.1389 36.4444 50.6111 36.6667 50 36.6667C49.3889 36.6667 48.8611 36.4444 48.4167 36C47.9722 35.5555 47.75 35.0278 47.75 34.4167V26.6667H32.25V34.4167C32.25 35.0278 32.0278 35.5555 31.5833 36C31.1389 36.4444 30.6111 36.6667 30 36.6667C29.3889 36.6667 28.8611 36.4444 28.4167 36C27.9722 35.5555 27.75 35.0278 27.75 34.4167V26.6667H22.1667C21.5 26.6667 20.8889 26.9444 20.3333 27.5C19.7778 28.0555 19.5 28.6667 19.5 29.3333V64.5C19.5 65.1667 19.7778 65.7778 20.3333 66.3333C20.8889 66.8889 21.5 67.1667 22.1667 67.1667ZM32.25 22.1667H47.75V20C47.75 17.8889 47 16.1667 45.5 14.8333C44 13.5 42.1667 12.8333 40 12.8333C37.8333 12.8333 36 13.5 34.5 14.8333C33 16.1667 32.25 17.8889 32.25 20V22.1667Z" fill="currentColor"/>
+        </svg>
         <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
         {%- if cart != empty -%}
           <div class="cart-count-bubble">
