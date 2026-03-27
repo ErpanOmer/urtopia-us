@@ -830,7 +830,7 @@
       let isVisible = false; // 记录当前状态
       let ticking = false; // 防止 requestAnimationFrame 频繁执行
       const target = $('.product-bar');
-      const threshold = screen.availHeight * 2; // 触发计算的阈值
+      const threshold = screen.availHeight * 1; // 触发计算的阈值
       const isMobile = global_config.is_mobile; // 判断是否是移动端
 
       function updateNavbar(scrollTop) {

@@ -87,7 +87,7 @@
     document.body.insertAdjacentHTML('beforeend',r['footer']);
   });
 </script>
-{% unless template.name == 'index' or template.name == 'product' %}
+{% unless template.name == 'index' %}
   <script type="module">
     const jq = window.jQuery || window.$;
 
@@ -116,7 +116,7 @@
         }
 
         $motionTarget.css({
-          transition: 'transform 0.48s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.36s ease',
+          transition: 'transform 0.36s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.36s ease',
           willChange: 'transform, opacity',
           transform: 'translate3d(0, 0, 0)',
           opacity: '1',
