@@ -13,7 +13,7 @@
 
 {% render 'product-panel', swiper_insert_index: 1 %}
 <div class="professional er-bg-background-warm">
-  <div class="centeral-content">
+  <div class="centeral-content mb:er-px-6">
     <h2 class="u36Medium_v2">Professional Review</h2>
     <div class="videos swiper-wrapper">
         {%- for item in product.metafields.custom.review_list.value -%}
@@ -35,8 +35,8 @@
     </div>
   </div>
 </div>
-
-<section class="er-bg-background-warm er-pb-56 mb:er-pt-20 mb:er-pb-36">
+{% render 'inner-rotor-motor', video_pc: "https://cdn.shopify.com/videos/c/o/v/2a6bea1547ac43d89fa05b879acb4686.mp4", video_mobile: "https://cdn.shopify.com/videos/c/o/v/120b591fea524b948daa9d6841d7d1af.mp4" %}
+<section class="er-bg-background-warm er-py-56 mb:er-pt-20 mb:er-pb-36">
     <h2 class="text-size36 er-text-center er-w-full er-mb-32 mb:er-text-4xl mb:er-mb-24">Why Carbon Fiber Is Worth It?</h2>
     <section
         class="er-mx-auto er-max-w-[768px] er-grid er-grid-cols-3 er-rounded-2xl er-shadow-sm er-text-white mb:er-grid-cols-[1fr_1.5fr_1.5fr] mb:er-rounded-none">
@@ -169,8 +169,8 @@
                 media="(max-width: 767px)">
         </video>
         <div
-            class="centeral-content er-h-full er-flex er-flex-col er-justify-center er-items-start er-text-left mb:er-pt-8 mb:er-pb-20">
-            <div class="md:er-hidden er-aspect-square er-w-full"></div>
+            class="centeral-content er-h-full er-flex er-flex-col er-justify-center er-items-start er-text-left mb:er-pt-8 mb:er-pb-20 mb:er-px-6">
+            <div class="md:er-hidden er-aspect-[16/15] er-w-full"></div>
             <h2 class="text-size48 mb:er-text-4xl">Light to Lift,<br>Power to Climb</h2>
             <p class="text-size18 er-max-w-3xl er-mt-10 er-mb-28 mb:er-text-2xl mb:er-mb-16">
                 <span>
@@ -191,8 +191,8 @@
 <section
         class="er-text-white er-aspect-[1920/750] mb:er-aspect-auto background-image mb:er-text-black">
         {% render 'image', class: "mb:!er-object-contain mb:!er-object-top", mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC01926_2x_f8a36535-ede3-4d31-bb8d-32b358df4e9f.jpg?v=1746690115", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25431_2x_a8ce91d6-4395-408b-b0b4-e17097dbd285.jpg?v=1746688255" %}
-        <div class="centeral-content er-h-full mb:er-pt-8 mb:er-pb-20 er-flex er-gap-x-28 mb:er-flex-col">
-            <div class="er-aspect-square er-w-1/2 mb:er-w-full"></div>
+        <div class="centeral-content er-h-full mb:er-pt-8 mb:er-pb-20 er-flex er-gap-x-28 mb:er-flex-col mb:er-px-6">
+            <div class="er-aspect-[16/15] er-w-1/2 mb:er-w-full"></div>
             <div class="er-flex er-flex-col er-justify-center er-items-start er-text-left">
                 <h2 class="text-size48 mb:er-text-4xl mb:er-leading-snug">120 Miles Long<br>Range eBike</h2>
                 <p class="text-size18 er-max-w-3xl er-mt-10 mb:er-text-2xl">
@@ -211,8 +211,8 @@
   <section
         class="er-text-white er-aspect-[1920/750] mb:er-aspect-auto background-image mb:er-text-black">
         {% render 'image', class: "mb:!er-object-contain mb:!er-object-top", mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20250625-145311.jpg?v=1750834449", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25430_2x_cb2ac714-9f61-42d0-a0d5-14e08fca0ed7.jpg?v=1750833321" %}
-        <div class="centeral-content er-h-full mb:er-pt-8 mb:er-pb-20 er-flex er-gap-x-28 mb:er-flex-col">
-            <div class="er-aspect-square er-w-1/2 mb:er-w-full"></div>
+        <div class="centeral-content er-h-full mb:er-pt-8 mb:er-pb-20 er-flex er-gap-x-28 mb:er-flex-col mb:er-px-6">
+            <div class="er-aspect-[16/14] er-w-1/2 mb:er-w-full"></div>
             <div class="er-flex er-flex-col er-justify-center er-items-start er-text-left">
                 <h2 class="text-size48 mb:er-text-4xl mb:er-leading-snug">Step Through,<br>Ride Comfort</h2>
                 <p class="text-size18 er-max-w-3xl er-mt-10 mb:er-text-2xl">
@@ -226,8 +226,8 @@
 <section
         class="er-text-white er-aspect-[1920/750] mb:er-aspect-auto background-image mb:er-text-black">
         {% render 'image', class: "mb:!er-object-contain mb:!er-object-top", mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/DSC02114_2x_3281ec21-1f14-479c-8206-3909d58906a8.jpg?v=1746689483", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25429_2x_ba24227b-dc04-4ee8-9c07-7beb7f7e0146.jpg?v=1746688636" %}
-        <div class="centeral-content er-h-full mb:er-pt-8 mb:er-pb-20 er-flex er-gap-x-28 mb:er-flex-col">
-            <div class="er-aspect-square er-w-1/2 mb:er-w-full md:er-hidden"></div>
+        <div class="centeral-content er-h-full mb:er-pt-8 mb:er-pb-20 er-flex er-gap-x-28 mb:er-flex-col mb:er-px-6">
+            <div class="er-aspect-[16/14] er-w-1/2 mb:er-w-full md:er-hidden"></div>
             <div class="er-flex er-flex-col er-justify-center er-items-start er-text-left">
                 <h2 class="text-size48 mb:er-text-4xl mb:er-leading-snug">Lightweight <br class="mb:er-hidden">Carbon Fiber Frame</h2>
                 <p class="text-size18 er-max-w-3xl er-mt-10 mb:er-text-2xl">
@@ -238,7 +238,7 @@
             </div>
         </div>
     </section>
-<div class="er-max-w-screen-xl er-mx-auto er-px-12 er-my-56 mb:er-mb-20 mb:er-mt-0 mb:er-pr-0">
+<div class="er-max-w-screen-xl er-mx-auto er-px-12 er-my-56 mb:er-mb-20 mb:er-mt-0 mb:er-pr-0 mb:er-px-6">
         <h2 class="text-size48 mb:er-text-4xl er-m-0">Quality in details</h2>
         <div class="er-mt-10 quality_in_details er-relative er-overflow-x-hidden er-pb-40 mb:er-pb-16" style="--swiper-navigation-size: 27px; --swiper-navigation-color:#fff;">
             <div class="swiper-wrapper">
@@ -262,8 +262,8 @@
 <section
         class="er-text-white er-aspect-[1920/750] mb:er-aspect-auto background-image mb:er-text-black">
         {% render 'image', class: "mb:!er-object-contain mb:!er-object-top", mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/7_0022_2x_b77a6a52-785b-4477-aef7-156eda95cd20.jpg?v=1750833737", src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/25428_2x_45e2c291-fa9c-4697-93a7-52a1a8cc7ba5.jpg?v=1750833469" %}
-        <div class="centeral-content er-h-full mb:er-pt-8 mb:er-pb-20 er-flex er-gap-x-28 mb:er-flex-col">
-            <div class="er-aspect-square er-w-1/2 mb:er-w-full md:er-hidden"></div>
+        <div class="centeral-content er-h-full mb:er-pt-8 mb:er-pb-20 er-flex er-gap-x-28 mb:er-flex-col mb:er-px-6">
+            <div class="er-aspect-[16/14] er-w-1/2 mb:er-w-full md:er-hidden"></div>
             <div class="er-flex er-flex-col er-justify-center er-items-start er-text-left">
                 <h2 class="text-size48 mb:er-text-4xl mb:er-leading-snug">Smooth, <br class="mb:er-hidden">All-Terrain Ride</h2>
                 <p class="text-size18 er-max-w-3xl er-mt-10 mb:er-text-2xl">
@@ -283,8 +283,8 @@
                 media="(max-width: 767px)">
         </video>
         <div class="background-mask mb:er-hidden" style="background-image: linear-gradient(270deg, #000000, #00000000);left: 50%;"></div>
-        <div class="centeral-content er-h-full mb:er-pt-8 er-flex er-gap-x-28 mb:er-flex-col">
-            <div class="er-aspect-square er-w-1/2 mb:er-w-full"></div>
+        <div class="centeral-content er-h-full mb:er-pt-8 er-flex er-gap-x-28 mb:er-flex-col mb:er-px-6">
+            <div class="er-aspect-[16/14] er-w-1/2 mb:er-w-full"></div>
             <div class="er-flex er-flex-col er-justify-center er-items-start er-text-left">
                 <h2 class="text-size48 mb:er-text-4xl mb:er-leading-snug">Carry Up to 330 lbs</h2>
                 <p class="text-size18 er-max-w-3xl er-mt-10 mb:er-text-2xl">

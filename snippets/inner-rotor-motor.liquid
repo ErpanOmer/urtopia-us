@@ -1,0 +1,179 @@
+{% liquid
+  assign video_pc = video_pc | default: "https://cdn.shopify.com/videos/c/o/v/927f7d811c7241779e1123cf14358973.mp4"
+  assign video_mobile = video_mobile | default: "https://cdn.shopify.com/videos/c/o/v/c550e449ec1b44eb8b2cf812a2dd07d6.mp4"
+%}
+
+<section class="background-image er-aspect-[1920/750] mb:er-aspect-auto mb:er-pb-16">
+    <video playsinline loop autoplay muted class="mb:!er-object-contain mb:!er-object-top lozad">
+        <source data-src="{{ video_pc }}" type="video/mp4"
+            media="(min-width: 768px)">
+        <source data-src="{{ video_mobile }}" type="video/mp4"
+            media="(max-width: 767px)">
+    </video>
+    <div class="centeral-content er-grid er-grid-cols-2 er-h-full mb:er-grid-cols-1 mb:er-px-6">
+        <div class="er-aspect-[16/15]"></div>
+        <div class="er-flex er-flex-col er-justify-center er-text-left er-h-full er-max-w-3xl er-place-self-center">
+             <h2 class="text-size36 mb:er-text-4xl">Inner Rotor Motor</h2>
+             <p class="text-size20 er-font-semibold er-mt-2 mb:er-text-3xl">
+                <span>Better than conventional hub motors</span>
+             </p>
+             <p class="text-size18 er-mt-10 mb:er-text-2xl mb:er-mt-8">
+                <span>Delivers instant power with a lighter, quieter ride — built for smoother, more natural cycling.</span>
+             </p>
+             <div class="er-grid er-grid-cols-3 er-mt-10">
+                <div class="er-flex er-flex-col">
+                    <span class="text-size48 mb:er-text-5xl">2×</span>
+                    <span class="text-size18 er-opacity-80 mb:er-text-2xl">faster response</span>
+                </div>
+                <div class="er-flex er-flex-col er-items-center">
+                    <span class="text-size48 mb:er-text-5xl">40%</span>
+                    <span class="text-size18 er-opacity-80 mb:er-text-2xl">lighter</span>
+                </div>
+                <div class="er-flex er-flex-col er-items-center">
+                    <span class="text-size48 mb:er-text-5xl">30%</span>
+                    <span class="text-size18 er-opacity-80 mb:er-text-2xl">less noise</span>
+                </div>
+             </div>
+             <button data-dialog-id="inner-rotor-motor" class="er-button er-button-dark er-mt-16 mb:er-mt-10">
+              Learn more
+              <div class="er-bg-white er-text-black er-flex" style="border-radius: 50%;transform: translateX(25%);">
+              <svg xmlns="http://www.w3.org/2000/svg" class="mb:er-max-w-8 mb:er-max-h-8" width="24" height="24" viewBox="0 0 114 114" fill="currentColor">
+  <g clip-path="url(#clip0_490_144)">
+    <path d="M58.8668 58.7488L58.9257 83.4386C58.9257 84.1457 58.7195 84.7055 58.307 85.118C57.8945 85.5305 57.2954 85.7367 56.5098 85.7367C55.7634 85.6974 55.2232 85.4912 54.8893 85.118C54.5554 84.7448 54.3688 84.185 54.3295 83.4386L54.2706 58.8666L29.5219 58.7488C28.854 58.7095 28.3237 58.5131 27.9309 58.1595C27.538 57.806 27.322 57.256 27.2827 56.5096C27.2827 55.7239 27.4693 55.1249 27.8425 54.7124C28.2157 54.2999 28.7951 54.0937 29.5808 54.0937L54.2706 54.1526L54.0938 29.5806C54.0938 28.8735 54.3001 28.3137 54.7125 27.9012C55.125 27.4888 55.7241 27.2825 56.5098 27.2825C57.2562 27.3218 57.7963 27.5281 58.1302 27.9012C58.4641 28.2744 58.6507 28.8342 58.69 29.5806L58.8668 54.2704L83.4388 54.3294C84.0673 54.3294 84.5976 54.5061 85.0297 54.8597C85.4619 55.2132 85.6976 55.7632 85.7369 56.5096C85.7369 57.2953 85.5503 57.8944 85.1771 58.3068C84.8039 58.7193 84.2244 58.9256 83.4388 58.9256L58.8668 58.7488Z" fill="currentColor"/>
+  </g>
+  <defs>
+    <clipPath id="clip0_490_144">
+      <rect width="80" height="80" fill="white" transform="translate(0 56.5685) rotate(-45)"/>
+    </clipPath>
+  </defs>
+</svg>
+              </div>
+            </button>
+        </div>
+    </div>
+</section>
+
+<dialog id="inner-rotor-motor" style="max-width: 92vw;">
+  <div class="er-relative er-pl-12 er-py-24 er-bg-white er-max-w-screen-lg er-rounded-2xl mb:er-pl-6 mb:er-pr-2 mb:er-pb-12 mb:er-pt-20">
+    <span class="close er-absolute er-right-8 er-top-2 er-text-7xl er-font-extralight er-cursor-pointer mb:er-top-0 mb:er-right-4">×</span>
+    <div class="er-overflow-y-auto er-max-h-[80vh] er-pl-12 er-pr-20 mb:er-px-0 mb:er-pr-4">
+          <div class="er-rounded-2xl er-overflow-hidden er-grid er-grid-cols-2 mb:er-gap-x-3">
+            {% render 'image', mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20260331-111211_2.jpg?v=1775124238", src: 'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20260331-111211_1.jpg?v=1775115188', class: "er-block" %}
+            {% render 'image', mb_src: "https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20260331-111409_2.jpg?v=1775124238", src:'https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20260331-111409_1.jpg?v=1775115187', class: "er-block" %}
+    </div>
+
+    <div class="er-rounded-2xl er-overflow-hidden er-grid er-grid-cols-2 er-my-12 mb:er-my-8">
+       <img class="er-place-self-center mb:er-max-w-32" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/20260331-111205_1.png?v=1775115496" alt="Inner Rotor Motor" loading="lazy" width="150" height="150">
+       <img class="er-place-self-center mb:er-max-w-32" src="https://cdn.shopify.com/s/files/1/0583/5810/4213/files/df_1.png?v=1775115496" alt="Conventional Hub Motor" loading="lazy" width="150" height="150">
+    </div>
+
+    <div class="er-overflow-x-auto">
+      <table style="border: 1px solid #E6E6E6;" class="er-min-w-full er-table-auto er-border-separate er-border-spacing-0 er-overflow-hidden er-bg-white er-shadow-sm er-ring-1 er-ring-gray-200 ">
+        <thead>
+          <tr class="er-bg-gray-50">
+            <th class="er-w-40 er-border-b er-border-gray-200 er-px-12 er-py-5 er-text-left er-text-sm er-font-medium er-text-gray-500 mb:er-hidden"></th>
+            <th class="er-border-b er-border-l er-border-gray-200 er-px-12 er-py-8 er-text-left er-text-4xl er-font-semibold er-leading-tight text-gray-900 md:er-whitespace-nowrap er-bg-background mb:er-text-xl mb:er-px-4">
+              Inner Rotor Motor
+            </th>
+            <th class="er-border-b er-border-l er-border-gray-200 er-px-12 er-py-8 er-text-left er-text-4xl er-font-semibold er-leading-tight er-text-gray-900 md:er-whitespace-nowrap md:er-flex md:er-items-baseline mb:er-text-xl mb:er-px-4">
+              Conventional Hub Motor
+              <span class="er-ml-1 er-block er-text-2xl er-font-medium er-text-gray-500 mb:er-hidden">
+                (Outer Rotor)
+              </span>
+            </th>
+          </tr>
+        </thead>
+
+        <tbody class="er-divide-y er-divide-gray-200">
+          <tr class="hover:er-bg-gray-50/70">
+            <th style="border-top: 1px solid #E6E6E6;" class="er-bg-gray-50 er-px-12 er-py-8 er-text-left er-text-3xl er-font-semibold er-text-gray-500 er-whitespace-nowrap mb:er-hidden">
+              Weight
+            </th>
+            <td style="border-top: 1px solid #E6E6E6;" class="er-px-12 er-py-8 er-text-3xl er-text-gray-700 md:er-whitespace-nowrap er-bg-background mb:er-text-xl mb:er-px-4">
+              1.5-2.9 kg
+            </td>
+            <td style="border-top: 1px solid #E6E6E6;" class="er-border-l er-border-gray-200 er-px-12 er-py-8 er-text-3xl er-text-gray-700 md:er-whitespace-nowrap mb:er-text-xl mb:er-px-4">
+              2.5-4.5 kg
+            </td>
+          </tr>
+
+          <tr class="hover:er-bg-gray-50/70">
+            <th style="border-top: 1px solid #E6E6E6;" class="er-bg-gray-50 er-px-12 er-py-8 er-text-left er-text-3xl er-font-semibold er-text-gray-500 er-whitespace-nowrap mb:er-hidden">
+              Noise
+            </th>
+            <td style="border-top: 1px solid #E6E6E6;" class="er-px-12 er-py-8 er-text-3xl er-text-gray-700 md:er-whitespace-nowrap er-bg-background mb:er-text-xl mb:er-px-4">
+              &lt; 55 dB
+              <span class="er-ml-1 er-text-gray-500">(quiet &amp; smooth)</span>
+            </td>
+            <td style="border-top: 1px solid #E6E6E6;" class="er-border-l er-border-gray-200 er-px-12 er-py-8 er-text-3xl er-text-gray-700 md:er-whitespace-nowrap mb:er-text-xl mb:er-px-4">
+              55-65 dB
+              <span class="er-ml-1 er-text-gray-500">(Noticeably louder)</span>
+            </td>
+          </tr>
+
+          <tr class="hover:er-bg-gray-50/70">
+            <th style="border-top: 1px solid #E6E6E6;" class="er-bg-gray-50 er-px-12 er-py-8 er-text-left er-text-3xl er-font-semibold er-text-gray-500 er-whitespace-nowrap mb:er-hidden">
+              Response
+            </th>
+            <td style="border-top: 1px solid #E6E6E6;" class="er-px-12 er-py-8 er-text-3xl er-text-gray-900 md:er-whitespace-nowrap er-bg-background mb:er-text-xl mb:er-px-4">
+              2x faster
+            </td>
+            <td style="border-top: 1px solid #E6E6E6;" class="er-border-l er-border-gray-200 er-px-12 er-py-8 er-text-3xl er-text-gray-700 md:er-whitespace-nowrap mb:er-text-xl mb:er-px-4">
+              Standard
+            </td>
+          </tr>
+
+          <tr class="hover:er-bg-gray-50/70">
+            <th style="border-top: 1px solid #E6E6E6;" class="er-bg-gray-50 er-px-12 er-py-8 er-text-left er-text-3xl er-font-semibold er-text-gray-500 er-whitespace-nowrap mb:er-hidden mb:er-px-4">
+              Ride Feel
+            </th>
+            <td style="border-top: 1px solid #E6E6E6;" class="er-px-12 er-py-8 er-text-3xl er-text-gray-900 md:er-whitespace-nowrap er-bg-background mb:er-text-xl mb:er-px-4">
+              Effortless &amp; Silent
+            </td>
+            <td style="border-top: 1px solid #E6E6E6;" class="er-border-l er-border-gray-200 er-px-12 er-py-8 er-text-3xl er-text-gray-700 md:er-whitespace-nowrap mb:er-text-xl mb:er-px-4">
+              Clunky &amp; Noisy
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="er-mt-24 er-space-y-16 mb:er-space-y-8 mb:er-mt-12">
+      <section class="er-flex er-flex-col">
+        <h3 class="text-size24  mb:er-text-3xl er-font-semibold">Why it feels better</h3>
+        <p class="text-size18 mb:er-text-2xl er-font-semibold er-opacity-70 er-mt-2">Smaller, faster, more precise</p>
+        <p class="text-size18 mb:er-text-2xl er-opacity-70 er-mt-5">
+          The inner rotor spins at a smaller radius with lower inertia, paired with high-ratio precision gears, so
+          power kicks in the moment you need it - with no lag and no hesitation.
+        </p>
+      </section>
+
+      <section class="er-flex er-flex-col">
+        <h3 class="text-size24  mb:er-text-3xl er-font-semibold">Why it's quieter</h3>
+        <p class="text-size18 mb:er-text-2xl er-font-semibold er-opacity-70 er-mt-2">More comfort</p>
+        <p class="text-size18 mb:er-text-2xl er-opacity-70 er-mt-5">
+          All moving parts enclosed in a rigid metal housing lock noise at the source, while high-precision gears
+          with minimal profile deviation ensure smooth, vibration-free operation.
+        </p>
+      </section>
+
+      <section class="er-flex er-flex-col"> 
+        <h3 class="text-size24  mb:er-text-3xl er-font-semibold">Why it's lighter</h3>
+        <p class="text-size18 mb:er-text-2xl er-font-semibold er-opacity-70 er-mt-2">More compact by design</p>
+        <p class="text-size18 mb:er-text-2xl er-opacity-70 er-mt-5">
+          A more integrated structure eliminates bulk, reducing overall weight for a lighter ride.
+        </p>
+      </section>
+    </div>
+    </div>
+  </div>
+</dialog>
+
+<script type="module">
+
+$('button[data-dialog-id="inner-rotor-motor"]').on('click', function () {
+    console.log($(this).attr('data-dialog-id'))
+
+    showDialog(document.getElementById($(this).attr('data-dialog-id')))
+})
+</script>
