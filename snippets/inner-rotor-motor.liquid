@@ -1,10 +1,11 @@
 {% liquid
   assign video_pc = video_pc | default: "https://cdn.shopify.com/videos/c/o/v/927f7d811c7241779e1123cf14358973.mp4"
   assign video_mobile = video_mobile | default: "https://cdn.shopify.com/videos/c/o/v/c550e449ec1b44eb8b2cf812a2dd07d6.mp4"
+  assign video_height = video_height | default: 750
 %}
 
-<section class="background-image er-aspect-[1920/750] mb:er-aspect-auto mb:er-pb-16">
-    <video playsinline loop autoplay muted class="mb:!er-object-contain mb:!er-object-top lozad">
+<section class="background-image {% if video_height %}er-aspect-[1920/{{ video_height }}]{% endif %} mb:er-aspect-auto mb:er-pb-16">
+    <video playsinline autoplay muted class="mb:!er-object-contain mb:!er-object-top lozad">
         <source data-src="{{ video_pc }}" type="video/mp4"
             media="(min-width: 768px)">
         <source data-src="{{ video_mobile }}" type="video/mp4"
@@ -25,11 +26,11 @@
                     <span class="text-size48 mb:er-text-5xl">2×</span>
                     <span class="text-size18 er-opacity-80 mb:er-text-2xl">faster response</span>
                 </div>
-                <div class="er-flex er-flex-col er-items-center">
+                <div class="er-flex er-flex-col mb:er-pl-[20%]">
                     <span class="text-size48 mb:er-text-5xl">40%</span>
                     <span class="text-size18 er-opacity-80 mb:er-text-2xl">lighter</span>
                 </div>
-                <div class="er-flex er-flex-col er-items-center">
+                <div class="er-flex er-flex-col mb:er-pl-[20%]">
                     <span class="text-size48 mb:er-text-5xl">30%</span>
                     <span class="text-size18 er-opacity-80 mb:er-text-2xl">less noise</span>
                 </div>
@@ -103,7 +104,7 @@
             </th>
             <td style="border-top: 1px solid #E6E6E6;" class="er-px-12 er-py-8 er-text-3xl er-text-gray-700 md:er-whitespace-nowrap er-bg-background mb:er-text-xl mb:er-px-4">
               &lt; 55 dB
-              <span class="er-ml-1 er-text-gray-500">(quiet &amp; smooth)</span>
+              <span class="er-ml-1 er-text-gray-500">(Quiet &amp; Smooth)</span>
             </td>
             <td style="border-top: 1px solid #E6E6E6;" class="er-border-l er-border-gray-200 er-px-12 er-py-8 er-text-3xl er-text-gray-700 md:er-whitespace-nowrap mb:er-text-xl mb:er-px-4">
               55-65 dB
