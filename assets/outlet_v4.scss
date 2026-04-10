@@ -220,14 +220,14 @@ h4 {
         display: flex;
         align-items: center;
         justify-content: center;
-        border: 2px solid transparent;
+        border: 1px solid transparent;
         background-color: transparent;
 
         &::after {
             content: "";
             display: inline-block;
-            height: 22px;
-            width: 22px;
+            height: 24px;
+            width: 24px;
             border-radius: 100%;
         }
 
@@ -1379,47 +1379,46 @@ h4 {
   background-color: #fff;
 }
 
-.ebike-products .product-grid .product-card:before {
-  background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_89_1.png?v=1774857349') center top/contain no-repeat;
-    width: 57px;
-    height: 84px;
+// .ebike-products .product-grid .product-card:before {
+//   background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_89_1.png?v=1774857349') center top/contain no-repeat;
+//     width: 57px;
+//     height: 84px;
+// }
+
+.ebike-products .product-grid .product-card[data-product-handle="urtopia-carbon-joy-ultra-ebike"] .tags {
+    background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_108.png?v=1775799945') center top/contain no-repeat;
+    width: 93px;
+    height: 48px;
+    top: 12px;
 }
 
-.ebike-products .product-grid .product-card[data-product-handle="urtopia-carbon-1-pro-ebike"] .tags {
-    background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_90_1.png?v=1774851178') center top/contain no-repeat;
-    width: 95px;
-    height: 60px;
-    top: 0;
-}
-
-.ebike-products .product-grid .product-card[data-product-handle="urtopia-carbon-1-pro-ebike"] .tags > span {
+.ebike-products .product-grid .product-card[data-product-handle="urtopia-carbon-joy-ultra-ebike"] .tags > span {
     display: none;
 }
 
-.ebike-products .product-grid .product-card[data-product-handle="urtopia-fusion-pro-carbon-long-range-ebike"] .tags {
-    background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_90_2.png?v=1774851842') center top/contain no-repeat;
-    width: 95px;
-    height: 63px;
-    top: 0;
-}
+// .ebike-products .product-grid .product-card[data-product-handle="urtopia-fusion-pro-carbon-long-range-ebike"] .tags {
+//     background: url('https://cdn.shopify.com/s/files/1/0583/5810/4213/files/Group_90_2.png?v=1774851842') center top/contain no-repeat;
+//     width: 95px;
+//     height: 63px;
+//     top: 0;
+// }
 
-.ebike-products .product-grid .product-card[data-product-handle="urtopia-fusion-pro-carbon-long-range-ebike"] .tags > span {
-    display: none;
-}
+// .ebike-products .product-grid .product-card[data-product-handle="urtopia-fusion-pro-carbon-long-range-ebike"] .tags > span {
+//     display: none;
+// }
 
 
 
-.ebike-products .product-grid .product-card[data-product-handle="urtopia-carbon-fold-2-ebike"]:before,
-.ebike-products .product-grid .product-card[data-product-handle="urtopia-carbon-1-pro-ebike"]:before,
-.ebike-products .product-grid .product-card[data-product-handle="urtopia-carbon-1-step-thru-ebike"]:before,
-.ebike-products .product-grid .product-card[data-product-handle="urtopia-carbon-fusion-gt"]:before
-{
-    height: 115px;
-    background-position-y: bottom;
-    width: 53px;
-}
+// .ebike-products .product-grid .product-card[data-product-handle="urtopia-carbon-fold-2-ebike"]:before,
+// .ebike-products .product-grid .product-card[data-product-handle="urtopia-carbon-1-pro-ebike"]:before,
+// .ebike-products .product-grid .product-card[data-product-handle="urtopia-carbon-1-step-thru-ebike"]:before,
+// .ebike-products .product-grid .product-card[data-product-handle="urtopia-carbon-fusion-gt"]:before
+// {
+//     height: 115px;
+//     background-position-y: bottom;
+//     width: 53px;
+// }
 
-.ebike-products .product-grid .product-card[data-product-handle="urtopia-carbon-fold-2-ebike"]::after,
 .ebike-products .product-grid .product-card[data-product-handle="urtopia-carbon-1-pro-ebike"]::after,
 .ebike-products .product-grid .product-card[data-product-handle="urtopia-carbon-1-step-thru-ebike"]::after,
 .ebike-products .product-grid .product-card[data-product-handle="urtopia-carbon-fusion-gt"]::after {
@@ -1437,9 +1436,5 @@ h4 {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.ebike-products .product-grid .product-card[data-product-handle="urtopia-carbon-fold-2-ebike"]::after {
-    content: "NEW";
 }
 

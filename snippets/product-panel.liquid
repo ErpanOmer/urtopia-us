@@ -207,7 +207,7 @@
                 class="er-button er-button-dark er-px-6 text-size14 er-py-2 er-rounded-xl er-min-w-28{% unless option_value.name == current_variant.options.first %} er-button-outline{% endunless %}"
               {% else -%}
                 data-style="{{ option_value }}"
-                class="er-group er-w-14 er-h-14 er-rounded-full er-border-2 er-border-solid er-border-transparent er-cursor-pointer er-transition er-bg-[var(--product-option-color)] er-p-[2px] er-bg-clip-content [&[class~='active']]:er-border-[var(--product-option-color)] er-relative{% if option_value.name == current_variant.options.last %} active{% endif %}"
+                class="er-group er-w-14 er-h-14 er-rounded-full er-border er-border-solid er-border-transparent er-cursor-pointer er-transition er-bg-[var(--product-option-color)] er-p-[2px] er-bg-clip-content [&[class~='active']]:er-border-[var(--product-option-color)] er-relative{% if option_value.name == current_variant.options.last %} active{% endif %}"
               {% endif %}
             >
               <input
@@ -263,7 +263,7 @@
           </div>
         </label>
         <div class="er-border-0 er-border-b er-border-solid er-border-b-border er-my-4 mb:er-my-3"></div>
-        <label class="er-bg-border er-pl-2 mb:er-pl-1 er-pr-4 er-py-4 er-select-none er-pointer-events-none er-flex er-items-center peer-checked:er-bg-primary er-rounded-lg er-transition-colors er-gap-x-3">
+        {% comment %} <label class="er-bg-border er-pl-2 mb:er-pl-1 er-pr-4 er-py-4 er-select-none er-pointer-events-none er-flex er-items-center peer-checked:er-bg-primary er-rounded-lg er-transition-colors er-gap-x-3">
           <input
             checked
             type="checkbox"
@@ -293,7 +293,7 @@
             </del>
           </div>
         </label>
-        <div class="er-border-0 er-border-b er-border-solid er-border-b-border er-my-4 mb:er-my-3"></div>
+        <div class="er-border-0 er-border-b er-border-solid er-border-b-border er-my-4 mb:er-my-3"></div> {% endcomment %}
         {%- assign counter = 0 -%}
         {% for prod in product_accessories %}
           {%- if prod.available -%}
