@@ -9,7 +9,7 @@
  */
 {
   "current": {
-    "sale_name": "Easter Sale",
+    "sale_name": "Earth Day Sale",
     "shop_count": "1000+",
     "sale_end_time": "2024-9-13",
     "carbon1s_ebike_discount_price": "0",
@@ -211,11 +211,6 @@
     },
     "content_for_index": [],
     "blocks": {
-      "pagefly-page-builder": {
-        "type": "shopify://apps/pagefly-page-builder/blocks/app-embed/83e179f7-59a0-4589-8c66-c0dddf959200",
-        "disabled": true,
-        "settings": {}
-      },
       "6251270934270006384": {
         "type": "shopify://apps/stape-server-gtm/blocks/gtm/7e13c847-7971-409d-8fe0-29ec14d5f048",
         "disabled": false,
@@ -235,14 +230,6 @@
         "type": "shopify://apps/worry-free-purchase/blocks/index/c61a403d-127f-4a83-aa2d-dd891cc35fd1",
         "disabled": true,
         "settings": {}
-      },
-      "127709043890318779": {
-        "type": "shopify://apps/aiod-all-in-1-discount/blocks/install-snippets/9537caf0-36d5-4981-a648-8961a8e85652",
-        "disabled": true,
-        "settings": {
-          "aiod_v2_call": "",
-          "aiod_dev_api_call": ""
-        }
       }
     }
   },
