@@ -476,60 +476,17 @@
           <span class="filters__option-label">All</span>
         </label>
       </li>
-      <li>
-        <label class="filters__radio-option">
-          <input type="radio" name="model" value="carbon-series">
-          <span class="filters__radio-circle">
-            <span class="filters__radio-circle-inner"></span>
-          </span>
-          <span class="filters__option-label">Carbon Series</span>
-        </label>
-      </li>
-      <li>
-        <label class="filters__radio-option">
-          <input type="radio" name="model" value="carbon-joy">
-          <span class="filters__radio-circle">
-            <span class="filters__radio-circle-inner"></span>
-          </span>
-          <span class="filters__option-label">Carbon Joy</span>
-        </label>
-      </li>
-      <li>
-        <label class="filters__radio-option">
-          <input type="radio" name="model" value="carbon-fold-series">
-          <span class="filters__radio-circle">
-            <span class="filters__radio-circle-inner"></span>
-          </span>
-          <span class="filters__option-label">Carbon Fold Series</span>
-        </label>
-      </li>
-      <li>
-        <label class="filters__radio-option">
-          <input type="radio" name="model" value="carbon-st">
-          <span class="filters__radio-circle">
-            <span class="filters__radio-circle-inner"></span>
-          </span>
-          <span class="filters__option-label">Carbon ST</span>
-        </label>
-      </li>
-      <li>
-        <label class="filters__radio-option">
-          <input type="radio" name="model" value="carbon-fusion">
-          <span class="filters__radio-circle">
-            <span class="filters__radio-circle-inner"></span>
-          </span>
-          <span class="filters__option-label">Carbon Fusion</span>
-        </label>
-      </li>
-      <li>
-        <label class="filters__radio-option">
-          <input type="radio" name="model" value="smart-ebikes">
-          <span class="filters__radio-circle">
-            <span class="filters__radio-circle-inner"></span>
-          </span>
-          <span class="filters__option-label">Smart E-bikes</span>
-        </label>
-      </li>
+      {% for product_item in collections['e-bikes'].metafields.custom.e_bikes_model.value %}
+        <li>
+          <label class="filters__radio-option">
+            <input type="radio" name="model" data-url="/collections/e-bikes" value="{{ product_item.key }}">
+            <span class="filters__radio-circle">
+              <span class="filters__radio-circle-inner"></span>
+            </span>
+            <span class="filters__option-label">{{ product_item.name }}</span>
+          </label>
+        </li>
+      {% endfor %}
     </ul>
   </div>
 </div>
@@ -553,78 +510,17 @@
           <span class="filters__option-label">All</span>
         </label>
       </li>
-      <li>
-        <label class="filters__radio-option">
-          <input type="radio" name="category" value="lightweight-ebikes">
-          <span class="filters__radio-circle">
-            <span class="filters__radio-circle-inner"></span>
-          </span>
-          <span class="filters__option-label">Lightweight Ebikes</span>
-        </label>
-      </li>
-      <li>
-        <label class="filters__radio-option">
-          <input type="radio" name="category" value="commuter-ebikes">
-          <span class="filters__radio-circle">
-            <span class="filters__radio-circle-inner"></span>
-          </span>
-          <span class="filters__option-label">Commuter Ebikes</span>
-        </label>
-      </li>
-      <li>
-        <label class="filters__radio-option">
-          <input type="radio" name="category" value="cruiser-ebikes">
-          <span class="filters__radio-circle">
-            <span class="filters__radio-circle-inner"></span>
-          </span>
-          <span class="filters__option-label">Cruiser Ebikes</span>
-        </label>
-      </li>
-      <li>
-        <label class="filters__radio-option">
-          <input type="radio" name="category" value="step-through-ebikes">
-          <span class="filters__radio-circle">
-            <span class="filters__radio-circle-inner"></span>
-          </span>
-          <span class="filters__option-label">Step-Through Ebikes</span>
-        </label>
-      </li>
-      <li>
-        <label class="filters__radio-option">
-          <input type="radio" name="category" value="folding-ebikes">
-          <span class="filters__radio-circle">
-            <span class="filters__radio-circle-inner"></span>
-          </span>
-          <span class="filters__option-label">Folding Ebikes</span>
-        </label>
-      </li>
-      <li>
-        <label class="filters__radio-option">
-          <input type="radio" name="category" value="fat-tire-ebikes">
-          <span class="filters__radio-circle">
-            <span class="filters__radio-circle-inner"></span>
-          </span>
-          <span class="filters__option-label">Fat Tire Ebikes</span>
-        </label>
-      </li>
-      <li>
-        <label class="filters__radio-option">
-          <input type="radio" name="category" value="utility-cargo-ebikes">
-          <span class="filters__radio-circle">
-            <span class="filters__radio-circle-inner"></span>
-          </span>
-          <span class="filters__option-label">Utility&Cargo Ebikes</span>
-        </label>
-      </li>
-      <li>
-        <label class="filters__radio-option">
-          <input type="radio" name="category" value="off-road-ebikes">
-          <span class="filters__radio-circle">
-            <span class="filters__radio-circle-inner"></span>
-          </span>
-          <span class="filters__option-label">Off Road Ebikes</span>
-        </label>
-      </li>
+      {% for product_item in collections['e-bikes'].metafields.custom.e_bieks_category.value %}
+        <li>
+          <label class="filters__radio-option">
+            <input type="radio" name="category" data-url="{{ product_item.url }}" value="{{ product_item.key }}">
+            <span class="filters__radio-circle">
+              <span class="filters__radio-circle-inner"></span>
+            </span>
+            <span class="filters__option-label">{{ product_item.name }}</span>
+          </label>
+        </li>
+      {% endfor %}
     </ul>
   </div>
 </div>
@@ -1226,9 +1122,32 @@
     });
 
     // 更新 URL 查询参数
+    function updateCollectionHandlePath(pathname, nextPath) {
+      var safePathname = pathname || window.location.pathname || '';
+      var normalizedPath = (nextPath || '').trim();
+
+      if (!normalizedPath) {
+        return safePathname;
+      }
+
+      if (normalizedPath.indexOf('/collections/') === 0) {
+        return normalizedPath;
+      }
+
+      try {
+        var parsedUrl = new URL(normalizedPath, window.location.origin);
+        if (parsedUrl.pathname.indexOf('/collections/') === 0) {
+          return parsedUrl.pathname;
+        }
+      } catch (e) {}
+
+      return safePathname;
+    }
+
     function updateUrl() {
       var filters = getSelectedFilters();
       var params = new URLSearchParams(window.location.search);
+      var pathname = window.location.pathname;
 
       // 清除旧的 category 和 model 参数
       params.delete('category');
@@ -1236,14 +1155,20 @@
 
       // 只有不是 "all" 时才添加到 URL
       if (filters.category) {
+        var $checkedCategoryInput = $filters.find('[data-filter-section="category"] input[type="radio"]:checked');
+        var categoryPath = ($checkedCategoryInput.attr('data-url') || '').trim();
         params.set('category', filters.category);
+        pathname = updateCollectionHandlePath(pathname, categoryPath);
       }
       if (filters.model) {
+        var $checkedModelInput = $filters.find('[data-filter-section="model"] input[type="radio"]:checked');
+        var modelPath = ($checkedModelInput.attr('data-url') || '').trim();
         params.set('model', filters.model);
+        pathname = updateCollectionHandlePath(pathname, modelPath);
       }
 
       // 更新 URL（不刷新页面）
-      var newUrl = window.location.pathname;
+      var newUrl = pathname;
       if (params.toString()) {
         newUrl += '?' + params.toString();
       }
