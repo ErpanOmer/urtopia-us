@@ -457,39 +457,6 @@
   <a href="#" class="filters__clear-link js-clear-filters">Clear filters (<span class="js-active-count">1</span>)</a>
 </div>
 
-<!-- Model Section -->
-<div class="filters__section" data-filter-section="model">
-  <div class="filters__section-header">
-    <span class="filters__section-title">Model</span>
-    <svg class="filters__section-arrow" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M1 1L5 5L9 1" stroke="#242729" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-  </div>
-  <div class="filters__section-content">
-    <ul class="filters__options-list">
-      <li>
-        <label class="filters__radio-option">
-          <input type="radio" name="model" value="all" checked>
-          <span class="filters__radio-circle">
-            <span class="filters__radio-circle-inner"></span>
-          </span>
-          <span class="filters__option-label">All</span>
-        </label>
-      </li>
-      {% for product_item in collections['e-bikes'].metafields.custom.e_bikes_model.value %}
-        <li>
-          <label class="filters__radio-option">
-            <input type="radio" name="model" data-url="/collections/e-bikes" value="{{ product_item.key }}">
-            <span class="filters__radio-circle">
-              <span class="filters__radio-circle-inner"></span>
-            </span>
-            <span class="filters__option-label">{{ product_item.name }}</span>
-          </label>
-        </li>
-      {% endfor %}
-    </ul>
-  </div>
-</div>
 
 <!-- Category Section -->
 <div class="filters__section" data-filter-section="category">
@@ -514,6 +481,40 @@
         <li>
           <label class="filters__radio-option">
             <input type="radio" name="category" data-url="{{ product_item.url }}" value="{{ product_item.key }}">
+            <span class="filters__radio-circle">
+              <span class="filters__radio-circle-inner"></span>
+            </span>
+            <span class="filters__option-label">{{ product_item.name }}</span>
+          </label>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+
+<!-- Model Section -->
+<div class="filters__section" data-filter-section="model">
+  <div class="filters__section-header">
+    <span class="filters__section-title">Model</span>
+    <svg class="filters__section-arrow" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1 1L5 5L9 1" stroke="#242729" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <div class="filters__section-content">
+    <ul class="filters__options-list">
+      <li>
+        <label class="filters__radio-option">
+          <input type="radio" name="model" value="all" checked>
+          <span class="filters__radio-circle">
+            <span class="filters__radio-circle-inner"></span>
+          </span>
+          <span class="filters__option-label">All</span>
+        </label>
+      </li>
+      {% for product_item in collections['e-bikes'].metafields.custom.e_bikes_model.value %}
+        <li>
+          <label class="filters__radio-option">
+            <input type="radio" name="model" data-url="/collections/e-bikes" value="{{ product_item.key }}">
             <span class="filters__radio-circle">
               <span class="filters__radio-circle-inner"></span>
             </span>
