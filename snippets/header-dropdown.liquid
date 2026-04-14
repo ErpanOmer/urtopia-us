@@ -45,7 +45,7 @@
       <div class="er-my-10 mb:er-my-8" style="height: 1px;background-color: #e9e9e9;"></div>
       <div class="er-flex er-flex-col er-text-left er-gap-y-8">
             {% for link in links %}
-              <a class="text-size14 er-font-medium" href="{{ link.url }}">{{ link.title }}</a>
+              <a class="text-size14 er-font-medium {% if forloop.first %}er-button er-rounded-lg{% endif %}" href="{{ link.url }}">{{ link.title }}</a>
             {% endfor %}
       </div>
       <a
