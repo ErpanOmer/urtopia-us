@@ -151,40 +151,40 @@ body {
 
   /* 步数2 */
   .text-size10 {
-    @apply er-text-[10px] er-leading-snug er-tracking-normal er-font-normal er-inline-block;
+    @apply er-text-[10px] er-leading-normal er-tracking-normal er-font-normal er-inline-block;
   }
 
   .text-size12 {
-    @apply er-text-[12px] er-leading-snug er-tracking-normal er-font-normal er-inline-block;
+    @apply er-text-[12px] er-leading-normal er-tracking-normal er-font-normal er-inline-block;
   }
 
   .text-size14 {
-    @apply er-text-[14px] er-leading-snug er-tracking-normal er-font-normal er-inline-block;
+    @apply er-text-[14px] er-leading-normal er-tracking-normal er-font-normal er-inline-block;
   }
 
   .text-size16 {
-    @apply er-text-[16px] er-leading-snug er-tracking-normal er-font-normal er-inline-block;
+    @apply er-text-[16px] er-leading-normal er-tracking-normal er-font-normal er-inline-block;
   }
 
   .text-size18 {
-    @apply er-text-[18px] er-leading-snug er-tracking-normal er-font-normal er-inline-block;
+    @apply er-text-[18px] er-leading-normal er-tracking-normal er-font-normal er-inline-block;
   }
 
   .text-size20 {
-    @apply er-text-[20px] er-leading-snug er-tracking-normal er-font-normal er-inline-block;
+    @apply er-text-[20px] er-leading-normal er-tracking-normal er-font-normal er-inline-block;
   }
 
   /* 步数6 */
   .text-size24 {
-    @apply er-text-[24px] er-leading-tight er-tracking-normal er-font-semibold er-inline-block;
+    @apply er-text-[24px] er-leading-snug er-tracking-normal er-font-semibold er-inline-block;
   }
 
   .text-size30 {
-    @apply er-text-[30px] er-leading-tight er-tracking-normal er-font-semibold er-inline-block;
+    @apply er-text-[30px] er-leading-snug er-tracking-normal er-font-semibold er-inline-block;
   }
 
   .text-size36 {
-    @apply er-text-[36px] er-leading-tight er-tracking-normal er-font-semibold er-inline-block;
+    @apply er-text-[36px] er-leading-snug er-tracking-normal er-font-semibold er-inline-block;
   }
 
   /* 步数12 */
@@ -202,14 +202,14 @@ body {
 
   /* 步数18 */
   .text-size90 {
-    @apply er-text-[90px] er-leading-[1.125] er-tracking-normal er-font-semibold er-inline-block;
+    @apply er-text-[90px] er-leading-tight er-tracking-normal er-font-semibold er-inline-block;
   }
 
   .text-size108 {
-    @apply er-text-[108px] er-leading-[1.125] er-tracking-normal er-font-semibold er-inline-block;
+    @apply er-text-[108px] er-leading-tight er-tracking-normal er-font-semibold er-inline-block;
   }
 
   .text-size126 {
-    @apply er-text-[126px] er-leading-[1.125] er-tracking-normal er-font-semibold er-inline-block;
+    @apply er-text-[126px] er-leading-tight er-tracking-normal er-font-semibold er-inline-block;
   }
 }
